@@ -2142,12 +2142,176 @@ th_gensokyo_continent = {
 			th_yakumo_mansion_area = {
 				th_yakumo_mansion_province = {
 					th_yakumo_mansion
+					th_first_ward
+					th_second_ward
+					th_third_ward
+					th_forth_ward
+				}
+				th_outer_world_port_province = {
+					th_asia_port
+					th_europe_port
+					th_africa_port
+					th_north_new_world_port
+					th_south_new_world_port
+				}
+				th_mayouhiga_province = {
+					th_chens_room
+					th_rans_room
+					th_yukaris_room
+					th_lost_courtyard
+				}
+				th_cats_village_province = {
+					th_cats_amusement_park
+					th_orange_clan
+					th_white_clan
+					th_black_clan
+					th_calico_clan
+				}
+				th_yakumo_bay_province = {
+					th_local_port_authority
+					th_yakumo_beach
+					th_zenki_area
+					th_goki_area
+				}
+				th_goblins_hill_province = {
+					th_surface_forest
+					th_surface_cave_settlement
+					th_deep_cave_settlement
+					th_hidden_air_pocket
+					th_treasure_chanber
+				}
+				th_mysterious_cherry_blossom_path_province = {
+					th_front_mysterious_cherry_blossom_path
+					th_middle_mysterious_cherry_blossom_path
+					th_back_mysterious_cherry_blossom_path
+				}
+				th_monitoring_station_of_borders_province = {
+					th_monitoring_station_of_borders
+					th_magical_power_unit_area
+					th_maintenance_device_area
+					th_booster_device_area
+				}
+				th_zashiki_warashi_center_province = {
+					th_zashiki_warashi_dormitory
+					th_zashiki_warashi_resources_department
+					th_north_office_building_complex
+					th_south_office_building_complex
+					th_east_office_building_complex
 				}
 			}
 			th_netherworld_area = {
-				th_netherworld_province = {
-					th_hakugyokurou
+				th_barrier_of_death_province = {
+					th_barrier_of_death
+					th_barrier_of_pride
+					th_barrier_of_warth
+					th_barrier_of_sloth
+					th_barrier_of_gluttony
 				}
+				th_grassland_of_phantom_province ={
+					th_sea_of_lycoris
+					th_white_chrysanthemum_bank
+					th_fly_lair
+					th_deadly_stream
+					th_picnic_spot_for_somebody
+				}
+				th_phantom_watchtower_province = {
+					th_ghast_tower
+					th_black_tower
+					th_phantom_arsenal
+					th_deadbody_moonlight
+				}
+				th_netherworld_baibican_province = {
+					th_fake_life_village
+					th_skeleton_castle_tower
+					th_tomb_first_dead
+					th_skull_checkpoint
+				}
+				th_barrier_of_life_province = {
+					th_barrier_of_life
+					th_barrier_of_humility
+					th_barrier_of_kindness
+					th_barrier_of_deligence
+					th_barrier_of_temperance
+				}
+				th_steps_to_hakugyokurou_province = {
+					th_steps_1_to_1600
+					th_steps_1601_to_3200
+					th_steps_3201_to_4800
+					th_steps_4801_to_6400
+					th_steps_6401_to_8000
+				}
+				th_snowy_garden_province = {
+					th_snow_gloem_factory
+					th_artifical_stream
+					th_strange_rockwork
+					th_zombie_tearoom
+				}
+				th_hakugyokurou_province = {
+					th_irreversible_entrance
+					th_yuyukos_room
+					th_greater_kitchen
+					th_rock_garden
+					th_surrounding_hallway
+				}
+				th_saigyou_ayakashi_province = {
+					th_north_branch_of_saigyou_ayakashi
+					th_south_branch_of_saigyou_ayakashi
+					th_east_branch_of_saigyou_ayakashi
+					th_west_branch_of_saigyou_ayakashi
+					th_turnk_of_saigyou_ayakashi
+				}
+				th_sea_of_cherry_blossom_province = {
+					th_north_aokigahara_forest
+					th_south_aokigahara_forest
+					th_lost_temple
+					th_the_beach
+				}
+				th_netherworld_garden_province = {
+					th_paper_windmill_garden
+					th_coin_eyes_bridge
+					th_yuanbao_valley
+					th_paper_doll_village
+				}
+				th_phantom_wonderland_province = {
+					th_endless_tea_party
+					th_decay_library
+					th_castel_ruins
+					th_phantom_wonderland
+					th_death_metal_rock_bar
+				}
+				th_echo_cementry_province = {
+					th_diavolo_crimson_hotel
+					th_kenny_cementry
+					th_24th_graveyard
+					th_tomitake_marsh
+					th_mami_tea_field
+				}
+				th_tomb_chanber_province = {
+					th_skeleton_pyramaid
+					th_saigyouji_ossuary
+					th_maxxranas
+					th_drown_tomb
+				}
+				th_necropolis_port_province = {
+					th_drown_fleet_port
+					th_black_beard_bay
+					th_davy_jones_locker
+					th_deep_sea_lair
+				}
+				th_konpaku_mansion_province = {
+					th_swordplay_dojo
+					th_giant_garden
+					th_konpaku_fosse
+					th_youmus_room
+					th_ghost_village
+				}
+				th_youki_monument_province = {
+					th_youki_monument
+					th_tomb_of_swords
+					th_youki_port
+					th_reed_field
+				}
+
 			}
 		}
 		th_gensokyo_human_village_region = {
