@@ -42676,3 +42676,51 @@ th_hyakki_yakou_zaka = 0cc157
 th_sando_yomu_kairo = a9a2bf
 th_sando_rimon_kekkai = 011d01
 th_myourenji_west_mon = 558204
+###迷途之家地区
+th_first_ward = 3d8976
+th_second_ward = abe29e
+th_third_ward = a8512f
+th_forth_ward = 8ff007
+th_asia_port = 1467aa
+th_europe_port = 7ede3b
+th_africa_port = 7ae0fb
+th_north_new_world_port = 61337c
+th_south_new_world_port = 2eb3b8
+th_chens_room = 688e1f
+th_rans_room = 944376
+th_yukaris_room = 243947
+th_lost_courtyard = 93c759
+th_cats_amusement_park = 85398f
+th_orange_clan = a5d15a
+th_white_clan = 8e2014
+th_black_clan = b71a68
+th_calico_clan = edeb4c
+#八云海湾
+th_local_port_authority = b9a42d
+th_yakumo_beach = 82db1f
+th_zenki_area = ad9571
+th_goki_area = fa977e
+th_yakumo_bay_shiun_misaki = 7e7245
+#地精山丘
+th_surface_forest = 95a8c2
+th_surface_cave_settlement = 086719
+th_deep_cave_settlement = 972cc5
+th_hidden_air_pocket = 73de22
+th_treasure_chanber = b78c05
+#夜樱怪道
+th_front_mysterious_cherry_blossom_path = 54ad10
+th_middle_mysterious_cherry_blossom_path = 303938
+th_back_mysterious_cherry_blossom_path = 48dc7e
+th_yosakura_kaidou_sakura_fubuki_sandou = da745e   
+th_yosakura_kaidou_gyaku_ben_gawa = c45429
+#座敷童子中心
+th_zashiki_warashi_dormitory = 5ea265
+th_zashiki_warashi_resources_department = 5034d0
+th_north_office_building_complex = e8dA0a
+th_south_office_building_complex = 6a8b92
+th_east_office_building_complex = ee661a
+#结界观测站
+th_monitoring_station_of_borders = e93999
+th_magical_power_unit_area = 424a2a
+th_maintenance_device_area = b88871
+th_booster_device_area = f800e5

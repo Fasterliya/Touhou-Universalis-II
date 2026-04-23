@@ -2172,6 +2172,7 @@ th_gensokyo_continent = {
 					th_yakumo_beach
 					th_zenki_area
 					th_goki_area
+					th_yakumo_bay_shiun_misaki
 				}
 				th_goblins_hill_province = {
 					th_surface_forest
@@ -2184,6 +2185,8 @@ th_gensokyo_continent = {
 					th_front_mysterious_cherry_blossom_path
 					th_middle_mysterious_cherry_blossom_path
 					th_back_mysterious_cherry_blossom_path
+					th_yosakura_kaidou_sakura_fubuki_sandou
+					th_yosakura_kaidou_gyaku_ben_gawa
 				}
 				th_monitoring_station_of_borders_province = {
 					th_monitoring_station_of_borders
@@ -2247,6 +2250,7 @@ th_gensokyo_continent = {
 					th_zombie_tearoom
 				}
 				th_hakugyokurou_province = {
+					th_hakugyokurou
 					th_irreversible_entrance
 					th_yuyukos_room
 					th_greater_kitchen
