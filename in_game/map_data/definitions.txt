@@ -2315,7 +2315,12 @@ th_gensokyo_continent = {
 					th_youki_port
 					th_reed_field
 				}
-
+				th_borei_genya_province = {
+					th_borei_genya
+					th_borei_genya_mugen_sougen
+					th_borei_genya_yuukon_bakuden
+					th_dankyu_kyuuryou
+				}
 			}
 		}
 		th_gensokyo_human_village_region = {

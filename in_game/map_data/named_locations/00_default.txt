@@ -42724,3 +42724,103 @@ th_monitoring_station_of_borders = e93999
 th_magical_power_unit_area = 424a2a
 th_maintenance_device_area = b88871
 th_booster_device_area = f800e5
+###冥界地区
+#幽之结界
+th_barrier_of_death = 3a7f2c
+th_barrier_of_pride = 9e4b8f
+th_barrier_of_warth = d36728
+th_barrier_of_sloth = f802e4
+th_barrier_of_gluttony = b3f772
+#精魂草坪
+th_sea_of_lycoris = 7d5c0f
+th_white_chrysanthemum_bank = 2e8c1b
+th_fly_lair = 5f0b9a
+th_deadly_stream = 4c7d6e
+th_picnic_spot_for_somebody = 9b3f2d
+#魂之眺台
+th_ghast_tower = 8d0c7a
+th_black_tower = 1b5c9f
+th_phantom_arsenal = 3c9f02
+th_deadbody_moonlight = 0f9d4e
+#冥界城楼
+th_fake_life_village = 3c8d7f
+th_skeleton_castle_tower = 6a0b9d
+th_tomb_first_dead = 5b7f1c
+th_skull_checkpoint = e8bcbc
+#明之结界
+th_barrier_of_life = 8d0f3a
+th_barrier_of_humility = 2b9c7d
+th_barrier_of_kindness = 4e8b2f
+th_barrier_of_deligence = 6c0a9d
+th_barrier_of_temperance = 9f1b4c
+#白玉楼阶梯
+th_steps_1_to_1600 = 7d8e0f
+th_steps_1601_to_3200 = 3b9c6e
+th_steps_3201_to_4800 = 5a0f8c
+th_steps_4801_to_6400 = 9d2b7c
+th_steps_6401_to_8000 = 22b678
+#雪之庭院
+th_snow_gloem_factory = 4c9d2b
+th_artifical_stream = 7a0c8e
+th_strange_rockwork = 6b9f1d
+th_zombie_tearoom = e842e8
+#白玉楼
+th_irreversible_entrance = 9d0f4b
+th_yuyukos_room = fc6705
+th_greater_kitchen = 08814b
+th_rock_gardenv = 8d7c1e
+th_surrounding_hallway = dbf9db
+#西行妖
+th_north_branch_of_saigyou_ayakashi = 6f0c9a
+th_south_branch_of_saigyou_ayakashi = ebbaf9
+th_east_branch_of_saigyou_ayakashi = 9a1b6c
+th_west_branch_of_saigyou_ayakashi = 7c0f8d
+th_turnk_of_saigyou_ayakashi = 5d9b2a
+#樱之海
+th_north_aokigahara_forest = 8b3c7e
+th_south_aokigahara_forest = 9c0d5a
+th_lost_temple = 6f8e2b
+th_the_beach = 4a9c1f
+#幽冥庭院
+th_paper_windmill_garden = 6ebfaf
+th_coin_eyes_bridge = 9e2c4b
+th_yuanbao_valley = 5f8a3d
+th_paper_doll_village = 7c0e9b
+#幽灵乐土
+th_endless_tea_party = 9b2d6c
+th_decay_library = 1e02a6
+th_castel_ruins = 6d9c3b
+th_phantom_wonderland = 4b0c9e
+th_death_metal_rock_end = 9c7d2a
+#墓室地穴
+th_diavolo_crimson_hotel = 8b0f5c
+th_kenny_cementry = 7a9d3e
+th_24th_graveyard = 6c0b8f
+th_tomitake_marsh = 295810
+th_mami_tea_field = ce7f36
+#回响墓园
+th_skeleton_pyramaid = 5b9d1f
+th_saigyouji_ossuary = fb88bb
+th_maxxranas = dfa40b
+th_drown_tomb = 8a0f9c
+#亡者之港
+th_drown_fleet_port = cdd89b
+th_black_beard_bay = 4c0a8f
+th_davy_jones_locker = 9d7b1a
+th_deep_sea_lair = 8c0f6d
+#魂魄府邸
+th_swordplay_dojo = 7a9b3f
+th_giant_garden = 5c0d9e
+th_konpaku_fosse = 35676f
+th_youmus_room = 8d0f5c
+th_ghost_village = 6a9c3b
+#妖忌纪念地
+th_youki_monument = 9c0b7e
+th_tomb_of_swords = 8b2d5a
+th_youki_port = 7d0f9a
+th_reed_field = 9a3c6b
+#亡灵田野
+th_borei_genya = 6cd7aa
+th_borei_genya_mugen_sougen = 96f533
+th_borei_genya_yuukon_bakuden = b80566
+th_dankyu_kyuuryou = 680fb0
