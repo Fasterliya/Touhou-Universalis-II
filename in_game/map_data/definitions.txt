@@ -2254,7 +2254,7 @@ th_gensokyo_continent = {
 					th_irreversible_entrance
 					th_yuyukos_room
 					th_greater_kitchen
-					th_rock_garden
+					th_rock_gardenv
 					th_surrounding_hallway
 				}
 				th_saigyou_ayakashi_province = {
@@ -2281,7 +2281,7 @@ th_gensokyo_continent = {
 					th_decay_library
 					th_castel_ruins
 					th_phantom_wonderland
-					th_death_metal_rock_bar
+					th_death_metal_rock_end
 				}
 				th_echo_cementry_province = {
 					th_diavolo_crimson_hotel
