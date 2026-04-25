@@ -2254,7 +2254,7 @@ th_gensokyo_continent = {
 					th_irreversible_entrance
 					th_yuyukos_room
 					th_greater_kitchen
-					th_rock_gardenv
+					th_rock_garden
 					th_surrounding_hallway
 				}
 				th_saigyou_ayakashi_province = {
@@ -2320,6 +2320,129 @@ th_gensokyo_continent = {
 					th_borei_genya_mugen_sougen
 					th_borei_genya_yuukon_bakuden
 					th_dankyu_kyuuryou
+				}
+			}
+			th_lost_bamboo_forest_area = {
+				th_flower_city_in_the_sky_province = {
+					th_outside_of_the_border_of_the_life_and_death
+					th_poltergeists_lounge
+					th_upper_level_of_flower_city
+					th_lower_level_of_flower_city
+					th_unverified_sakura_border
+				}
+				th_shelter_for_the_lost_province = {
+					th_shelter_for_the_lost
+					th_bamboo_forest_garrison
+					th_hidden_youseis_pool
+					th_marked_exit_1
+				}
+				th_huziwara_mansion_province = {
+					th_huziwara_mansion
+					th_straw_fence
+					th_huziwara_traning_house
+					th_bamboo_forest_ninja_warehouse
+					th_huziwara_chicken_farm
+				}
+				th_huziwara_port_province = {
+					th_huziwara_port
+					th_marked_exit_2
+					th_mokous_grill
+					th_inextinguishable_lantern_path
+				}
+				th_battlefield_in_bamboo_forest_province = {
+					th_burned_bamboo_forest
+					th_buried_jade_bamboo_forest
+					th_broken_diamon_bamboo_forest
+					th_horai_bamboo_forest
+				}
+				th_lovers_secret_place_province = {
+					th_kaguya_hideout
+					th_keine_hideout
+					th_sumireko_hideout
+					th_secret_path_of_princess
+				}
+				th_eirins_pharmacy_province = {
+					th_eirins_warehouse
+					th_lunar_labs
+					th_herbs_cultivation_base
+					th_horai_pharmacy
+				}
+				th_dense_bamboo_forest_province = {
+					th_road_to_village
+					th_marked_entrance_1
+					th_night_sparrow_house
+					th_sparrow_wine_source
+					th_dense_bamboo_forest
+				}
+				th_tewis_rabbit_hole_province = {
+					th_tewis_rabbit_hole
+					th_rabbit_beauty_salon
+					th_rabbit_trap_school
+					th_cace_of_caerbannog
+				}
+				th_endless_corridor_province = {
+					th_endless_corridor
+					th_endless_byobu
+					th_room_of_night-luminous_pear
+					th_fake_kinkakuji
+					th_fake_ginkakuji
+				}
+				th_herb_garden_province = {
+					th_rabbit_farm
+					th_drugged_mochi_factory
+					th_herb_garden
+					th_lunar_rabbit_kolkhoz
+				}
+				th_rabbit_burrow_province = {
+					th_rabbit_port
+					th_rabbit_wonderland
+					th_rabbit_assembly_hall
+					th_youkai_rabbit_village
+					th_reisens_house
+				}
+				th_lunar_rabbit_shelter_province = {
+					th_lunar_rabbit_labor_camp
+					th_lunar_rabbit_detention_center
+					th_lunar_rabbit_collective_canteen
+					th_mangengasaki_port
+				}
+				th_eientei_province = {
+					th_kaguyas_room
+					th_game_console_collection
+					th_courtyard_for_product_elixir
+					th_moon_viewing_terrance
+					th_eirins_clinic
+				}
+				th_bamboo_forest_beach_province = {
+					th_lunar_port
+					th_panda_habitat
+					th_marked_entrance_2
+					th_sunflower_outpost
+				}
+				th_canal_of_willows_province = {
+					th_dullahan_path
+					th_toll_gate
+					th_kogasas_house
+					th_house_of_seiran_and_ringo
+					th_aqueduct
+				}
+				th_werewolf_forest_province = {
+					th_kagerou_house
+					th_abandoned_werewolf_mansion
+					th_yasumizu_village
+					th_lykaion_forest
+				}
+				th_rehearsal_venue_province = {
+					th_triangular_prism_plain
+					th_french_horn_meander
+					th_violoncello_embankment
+					th_synthesizer_avenue ##与秘封俱乐部接壤
+				}
+				th_performance_venue_province = {
+					th_first_performance_stage
+					th_xylophone_hill
+					th_requiem_plain
+					th_piano_throne
 				}
 			}
 		}
