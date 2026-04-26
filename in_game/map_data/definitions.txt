@@ -2336,7 +2336,7 @@ th_gensokyo_continent = {
 					th_kagerou_house
 					th_abandoned_werewolf_mansion
 					th_yasumizu_village
-					th_lykaion_forest
+					th_lykaion_mountain
 				}
 				th_rehearsal_venue_province = {
 					th_triangular_prism_plain
@@ -2603,7 +2603,7 @@ th_gensokyo_continent = {
 				th_endless_corridor_province = {
 					th_endless_corridor
 					th_endless_byobu
-					th_room_of_night-luminous_pear
+					th_room_of_night_luminous_pear
 					th_fake_kinkakuji
 					th_fake_ginkakuji
 				}
