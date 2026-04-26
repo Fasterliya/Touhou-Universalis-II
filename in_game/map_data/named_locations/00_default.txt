@@ -42676,6 +42676,28 @@ th_hyakki_yakou_zaka = 0cc157
 th_sando_yomu_kairo = a9a2bf
 th_sando_rimon_kekkai = 011d01
 th_myourenji_west_mon = 558204
+#柳之运河
+th_dullahan_path = 3d9c2a
+th_toll_gate = 7a0b9f
+th_kogasas_house = 4da678
+th_house_of_seiran_and_ringo = 8c3f5d
+th_aqueduct = 5b9d0e
+#狼人之森
+th_kagerou_house = e7bd33
+th_abandoned_werewolf_mansion = c6012f
+th_yasumizu_village = 4d0a9e
+th_lykaion_mountain = 9a2b7c
+#排练场地
+th_triangular_prism_plain = 8b0f9d
+th_french_horn_meander = 7d9a3c
+th_violoncello_embankment = 5e0c9b
+th_synthesizer_avenue = 0fde84
+#演奏场地
+th_first_performance_stage = da3a53
+th_xylophone_hill = 045b51
+th_requiem_plain = 4c0a9d
+th_piano_throne = 41c281
+
 ###迷途之家地区
 th_first_ward = 3d8976
 th_second_ward = abe29e
@@ -42824,3 +42846,87 @@ th_borei_genya = 6cd7aa
 th_borei_genya_mugen_sougen = 96f533
 th_borei_genya_yuukon_bakuden = b80566
 th_dankyu_kyuuryou = 680fb0
+###迷途竹林
+#天空的花之都
+th_outside_of_the_border_of_the_life_and_death = 1f9a3b
+th_poltergeists_lounge = 8c5d0e
+th_upper_level_of_flower_city = 7b0c9d
+th_lower_level_of_flower_city = 2a9e6f
+th_unverified_sakura_border = df91ff
+#迷途者庇护所
+th_shelter_for_the_lost = 3f8c2d
+th_bamboo_forest_garrison = 6c0a9b
+th_hidden_youseis_pool = 9b3e7a
+th_marked_exit_1 = 5d9c0f
+th_lost_sanctuary_kikan_shourou = f992aa
+#藤原邸
+th_huziwara_mansion = 8a0e7c
+th_straw_fence = 7b9d2a
+th_huziwara_traning_house = 4c0b9e
+th_bamboo_forest_ninja_warehouse = 9d2f6b
+th_huziwara_chicken_farm = 801818
+#藤原港
+th_huziwara_port = 3c9d5a
+th_marked_exit_2 = 9a1b7d
+th_mokous_grill = 9bba7f
+th_inextinguishable_lantern_path = 7b9e3a
+#竹林沙场
+th_burned_bamboo_forest = 5a0d8c
+th_buried_jade_bamboo_forest = 23cd6f
+th_broken_diamon_bamboo_forest = 8d0f9a
+th_horai_bamboo_forest = 6a9b1e
+#有情人秘所
+th_kaguya_hideout = fdd838
+th_keine_hideout = 9d3b7c
+th_sumireko_hideout = 83fa42
+th_secret_path_of_princess = 5b9d2f
+#永琳的药房
+th_eirins_warehouse = 8bb482
+th_lunar_labs = 9d0e5a
+th_herbs_cultivation_base = e27a94
+th_horai_pharmacy = 4a0d9b
+#茂密竹林
+th_road_to_village = 9c7a2d
+th_marked_entrance_1 = 5f171e
+th_night_sparrow_house = 7a9d4e
+th_sparrow_wine_source = 9f1653
+th_dense_bamboo_forest = 3d2c85
+#帝的兔子洞
+th_tewis_rabbit_hole = 8f0c7b
+th_rabbit_beauty_salon = 6b9d3f
+th_rabbit_trap_school = 4e0a9c
+th_cace_of_caerbannog = 42d296
+#无尽长廊
+th_endless_corridor = 23e009
+th_endless_byobu = 7a9b2e
+th_room_of_night_luminous_pear = 5d0c9a
+th_fake_kinkakuji = 9c3b6d
+th_fake_ginkakuji = 8a0f9e
+#草药园圃
+th_rabbit_farm = d1c099
+th_drugged_mochi_factory = 4b0c9d
+th_herb_garden = a58ebe
+th_lunar_rabbit_kolkhoz = 8f0d5b
+th_herb_garden_doka_hatake = 6fec8c
+#兔子窟
+th_rabbit_port = 7b9c3a
+th_rabbit_wonderland = 5a0e9d
+th_rabbit_assembly_hall = 9c2b6a
+th_youkai_rabbit_village = 8d0f7e
+th_reisens_house = 6f9a1b
+#永远亭
+th_kaguyas_room = e8467e
+th_game_console_collection = 548f38
+th_courtyard_for_product_elixir = e93e18
+th_moon_viewing_terrance = 7d9b2e
+th_eirins_clinic = de671a
+#月兔收容所
+th_lunar_rabbit_labor_camp = 9c1b7f
+th_lunar_rabbit_detention_center = f6ee8d
+th_lunar_rabbit_collective_canteen = 6b9c3d
+th_mangengasaki_port = a9ff97
+#竹林岸浜
+th_lunar_port = a7e57f
+th_panda_habitat = 8c0f9a
+th_marked_entrance_2 = 7a9b1f
+th_sunflower_outpost = 2e9972
