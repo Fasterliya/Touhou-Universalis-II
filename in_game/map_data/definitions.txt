@@ -2764,9 +2764,81 @@ th_gensokyo_continent = {
 
 				}
 			}
-			th_rear_door_country_area = {
-				th_rear_door_country_province = {
-					th_rear_door_country
+			th_back_door_country_area = {
+				th_borders_of_the_back_door_province = {
+					th_border_of_spring_and_fall
+					th_border_of_summer_and_winter
+					th_gap_seasons_path ##一定要夹在上面两个地点中间
+					th_chaos_land
+				}
+				th_land_of_the_back_door_province = {
+					th_plain_of_seven_stars
+					th_tengu_shirine
+					th_origin_of_ley_lines
+					th_silk_stream
+					th_people-free_noh_drama_stage
+				}
+				th_tableland_of_the_dancers_province = {
+					th_mais_room
+					th_satonos_room
+					th_myoga_ginger_garden
+					th_thin_bamboo_plantation
+				}
+				th_dark_borders_province = {
+					th_memory_modification_center
+					th_common_sense_transformation_center
+					th_personality_reconstruction_center
+					th_body_rebuild_center
+					th_deep_dark
+				}
+			}
+		}
+		th_foot_of_youkai_moutian_region = {
+			th_western_youkai_forest_area = {
+				th_youkai_forest_province = {
+					th_youkai_forest
+					th_body_dumping_area
+					th_calamity_forest
+					th_deep_forest_path_to_holy_land
+					th_fortuna_county
+				}
+				th_youkai_coast_province = {
+					th_youkai_coast
+					th_fearness_beach
+					th_hina_port
+					th_etrnal_night_forest
+				}
+				th_untrodden_vally_province = {
+					th_genbu_ravine
+					th_kappa_commercial_street
+					th_automater_cucumenber_farm
+					th_start_of_nagashi_bina
+				}
+				th_shadow_forest_province = {
+					th_lightness_boulevard
+					th_fortune_cat_house
+					th_giant_toads_pond
+					th_lost_single_path
+				}
+				th_gloomy_swamp_province = {
+					th_misfortune_swamp
+					th_calamity_port
+					th_dark_hills
+					th_miasma_forest
+				}
+				th_hina_doll_workshop_province = {
+					th_hina_dolls_workshop
+					th_misfortune_godess_mansion
+					th_locking_misfortune_borders
+					th_hina_dolls_recycle_center
+					th_temple_of_misfortune
+				}
+				th_kasens_hermit_world_province = {
+					th_immortal_mansion
+					th_eagle_house
+					th_immortal_dojo
+					th_pets_room
+					th_kasens_room
 				}
 			}
 		}
