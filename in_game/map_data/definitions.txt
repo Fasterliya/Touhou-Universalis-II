@@ -2539,6 +2539,7 @@ th_gensokyo_continent = {
 			}
 		}
 		th_gensokyo_magic_forest_region = {
+			
 			th_lost_bamboo_forest_south_area = {
 				th_flower_city_in_the_sky_province = {
 					th_outside_of_the_border_of_the_life_and_death
@@ -2763,41 +2764,9 @@ th_gensokyo_continent = {
 					th_aki_maple_corridor
 
 				}
-			}
-			th_back_door_country_area = {
-				th_borders_of_the_back_door_province = {
-					th_border_of_spring_and_fall
-					th_border_of_summer_and_winter
-					th_gap_seasons_path ##一定要夹在上面两个地点中间
-					th_chaos_land
-				}
-				th_land_of_the_back_door_province = {
-					th_plain_of_seven_stars
-					th_tengu_shirine
-					th_origin_of_ley_lines
-					th_silk_stream
-					th_people-free_noh_drama_stage
-				}
-				th_tableland_of_the_dancers_province = {
-					th_mais_room
-					th_satonos_room
-					th_myoga_ginger_garden
-					th_thin_bamboo_plantation
-				}
-				th_dark_borders_province = {
-					th_memory_modification_center
-					th_common_sense_transformation_center
-					th_personality_reconstruction_center
-					th_body_rebuild_center
-					th_deep_dark
-				}
-			}
-		}
-		th_foot_of_youkai_moutian_region = {
-			th_western_youkai_forest_area = {
 				th_youkai_forest_province = {
 					th_youkai_forest
-					th_body_dumping_area
+					th_body_dumping_place
 					th_calamity_forest
 					th_deep_forest_path_to_holy_land
 					th_fortuna_county
@@ -2808,16 +2777,18 @@ th_gensokyo_continent = {
 					th_hina_port
 					th_etrnal_night_forest
 				}
+			}
+			th_western_youkai_forest_area = {
 				th_untrodden_vally_province = {
-					th_genbu_ravine
-					th_kappa_commercial_street
-					th_automater_cucumenber_farm
+					th_keikoku_mugen_zandou
+					th_keikoku_bousen_shiryu
+					th_keikoku_kijin_shoukei
 					th_start_of_nagashi_bina
 				}
 				th_shadow_forest_province = {
 					th_lightness_boulevard
 					th_fortune_cat_house
-					th_giant_toads_pond
+					th_inei_shinrin_yuugen_jukai
 					th_lost_single_path
 				}
 				th_gloomy_swamp_province = {
@@ -2839,6 +2810,34 @@ th_gensokyo_continent = {
 					th_immortal_dojo
 					th_pets_room
 					th_kasens_room
+				}
+			}
+			th_back_door_country_area = {
+				th_borders_of_the_back_door_province = {
+					th_border_of_spring_and_fall
+					th_border_of_summer_and_winter
+					th_gap_seasons_path ##一定要夹在上面两个地点中间
+					th_chaos_land
+				}
+				th_land_of_the_back_door_province = {
+					th_plain_of_seven_stars
+					th_tengu_shirine
+					th_origin_of_ley_lines
+					th_silk_stream
+					th_people_free_noh_drama_stage
+				}
+				th_tableland_of_the_dancers_province = {
+					th_mais_room
+					th_satonos_room
+					th_myoga_ginger_garden
+					th_thin_bamboo_plantation
+				}
+				th_dark_borders_province = {
+					th_memory_modification_center
+					th_common_sense_transformation_center
+					th_personality_reconstruction_center
+					th_body_rebuild_center
+					th_deep_dark
 				}
 			}
 		}

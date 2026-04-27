@@ -42465,8 +42465,66 @@ th_autumn_worship_hall = 69ab98
 th_ginkgo_courtyard = 695e46
 th_stone_lantern = 8c56fA
 th_aki_maple_corridor = 47cc22
+##妖怪的树海
+th_youkai_forest = 53c14e
+th_body_dumping_place = 326021
+th_calamity_forest = 6d9b2f
+th_deep_forest_path_to_holy_land = 5b0a9e
+th_fortuna_county = 9d3a5c
+#妖怪海岸
+th_youkai_coast = 8c0f9b
+th_fearness_beach = 7a9d2e
+th_hina_port = e7c3c8
+th_etrnal_night_forest = 9c2d7a
+#阻绝人际的溪谷
+th_keikoku_mugen_zandou = 18cc8b
+th_keikoku_bousen_shiryu = 5d12b3
+th_keikoku_kijin_shoukei = 21a63c
+th_start_of_nagashi_bina = f1bfab
+#阴翳森林
+th_lightness_boulevard = 8f0a9b
+th_fortune_cat_house = 7b9c2d
+th_inei_shinrin_yuugen_jukai = 4e0b9d
+th_lost_single_path = 9c3b6a
+#阴暗沼泽
+th_misfortune_swamp = 3d621d
+th_calamity_port = 6a9c1f
+th_dark_hills = cf1146
+th_miasma_forest = 9d3c7b
+#雏人偶工坊
+th_hina_dolls_workshop = df2a0d
+th_misfortune_godess_mansion = 7d9b3e
+th_locking_misfortune_borders = 4a0c9d
+th_hina_dolls_recycle_center = fd92c0
+th_temple_of_misfortune = 8a0f9c
+#华扇的仙界
+th_immortal_mansion = 6b9d2f
+th_eagle_house = 5c0b9a
+th_immortal_dojo = 14a37e
+th_pets_room = da9e72
+th_kasens_room = ae230d
+#后户之境
+th_border_of_spring_and_fall = 2e8d5c
+th_gap_seasons_path = 7b0a9f
+th_border_of_summer_and_winter = a94e04
+th_chaos_land = 8072bc
 #后户之国
-th_rear_door_country = ceae08
+th_plain_of_seven_stars = 6c9b2e
+th_tengu_shirine = 5a0c9e
+th_origin_of_ley_lines = dec518
+th_silk_stream = 5ed132
+th_people_free_noh_drama_stage = 7d9c3f
+#踊者之台
+th_mais_room = f0e25b
+th_satonos_room = f8bc12
+th_myoga_ginger_garden = 8b0f9a
+th_thin_bamboo_plantation = 4ae699
+#暗黑结界
+th_memory_modification_center = 5c0b9f
+th_common_sense_transformation_center = 9d2c7b
+th_personality_reconstruction_center = e18787
+th_body_rebuild_center = 7b9d3e
+th_deep_dark = ed2072
 #博丽 HKR
 # area首府
 th_barrier_nexus = f94e3b
@@ -42824,7 +42882,7 @@ th_mami_tea_field = ce7f36
 th_skeleton_pyramaid = 5b9d1f
 th_saigyouji_ossuary = fb88bb
 th_maxxranas = dfa40b
-th_drown_tomb = 8a0f9c
+th_drown_tomb = 3b681c
 #亡者之港
 th_drown_fleet_port = cdd89b
 th_black_beard_bay = 4c0a8f
@@ -42930,3 +42988,5 @@ th_lunar_port = a7e57f
 th_panda_habitat = 8c0f9a
 th_marked_entrance_2 = 7a9b1f
 th_sunflower_outpost = 2e9972
+
+###后户之国
