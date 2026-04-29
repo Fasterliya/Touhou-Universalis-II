@@ -2842,6 +2842,100 @@ th_gensokyo_continent = {
 			}
 		}
 	}
+	th_outer_gensokyo_world_sub_continent = {
+		th_heaven_region = {
+			th_heaven_area = {
+				th_heaven_province = {
+					th_center_of_heaven
+					th_heaven_port
+					th_high_palace
+					th_heart_of_keystone
+				}
+				th_coiled_dragon_mountain_province = {
+					th_horn_fragon_village
+					th_flood_dragon_port
+					th_golden_dragon_mountain
+					th_coiled_dragon_mountain
+				}
+				th_celesital_township_province = {
+					th_celestia_village
+					th_first_peach_garden
+					th_rainy_cloud_grassland
+					th_seven_celestial_maiden_avenue
+				}
+				th_jade_village_province = {
+					th_gem_land
+					th_ruby_city
+					th_jade_village
+					th_sapphire_river
+					th_diamond_quarry
+				}
+				th_cloud_of_spring_province = {
+					th_rainbow_factory
+					th_rain_storm_command
+					th_lightning_storm_port
+					th_plain_in_sunshine
+				}
+				th_uchouten_province_province = {
+					th_unhouten
+					th_unlimited_realm
+					th_infinite_consciousness_realm
+					th_nothing_realm
+				}
+				th_windward_land_province = {
+					th_flower_land
+					th_vulcano_cloud
+					th_nutmeg_land
+					th_parrot_cloud
+				}
+				th_hinanawi_mansion_province = {
+					th_hinanawi_mansion
+					th_jade_avenue
+					th_private_peach_garden
+					th_nawi_shrine
+				}
+				th_grass_garden_province_province = {
+					th_elixir_workshop
+					th_peach_garden_for_banquet
+					th_fishing_spot_on_clouds
+					th_celestial_activity_center
+				}
+			}
+			th_dragon_palace_area = {
+				th_dragon_palace_province = {
+					th_dragon_palace
+					th_dragon_messenger_dormitory
+					th_ikus_house
+					th_celestial_dragon_forbidden_area
+				}
+				th_keystone_port_province = {
+					th_keystone_port
+					th_floating_clouds_seaside
+					th_dense_fog_shore
+					th_eye_of_storm
+				}
+				th_thunder_balcony_province = {
+					th_thunder_swimer_neighbourhood
+					th_imperial_dragon_hills
+					th_lightning_fork
+					th_thunder_zone
+					th_dragon_breathe
+				}
+				th_keystone_factory_province = {
+					th_keystone_factory
+					th_hinanawi_meteorological_bureau
+					th_aurora_exhibition
+					th_hermit_home
+				}
+				th_heavrn_high_hall_province = {
+					th_heavrn_high_hall
+					th_high_port
+					th_pure_clean_cloud
+					th_first_celestial
+				}
+			}
+		}
+	}
 }
 
 	asia = {
