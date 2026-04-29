@@ -2842,7 +2842,7 @@ th_gensokyo_continent = {
 			}
 		}
 	}
-	th_outer_gensokyo_world_sub_continent = {
+	th_gensokyo_outer_world_sub_continent = {
 		th_heaven_region = {
 			th_heaven_area = {
 				th_heaven_province = {
