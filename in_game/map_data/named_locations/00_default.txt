@@ -42988,5 +42988,89 @@ th_lunar_port = a7e57f
 th_panda_habitat = 8c0f9a
 th_marked_entrance_2 = 7a9b1f
 th_sunflower_outpost = 2e9972
-
-###后户之国
+###天界地区
+#天界
+th_center_of_heaven = 26ec40
+th_ping_heaven_door = 9d42b6
+th_celestial_realm_tong_ming_ge = db5048
+th_heart_of_keystone = c8307d
+th_floating_isles_zhe_xian_ju = ead56c
+#蟠龙之峰
+th_horn_fragon_village = 76e419
+th_flood_dragon_port = 1db85f
+th_jade_dragon_mountain = e79c24
+th_coiled_dragon_mountain = 825ae3
+th_coiled_dragon_peak_pool = ef473d
+#天人市镇
+th_celestia_village = 3df69c
+th_first_peach_garden = b147d8
+th_rainy_cloud_grassland = 68c12f
+th_seven_celestial_maiden_avenue = f52a7e
+th_celestial_isles_yuqing_que = 4602af
+#翡翠村落
+th_jade_village_qingxiao = cc460a
+th_jade_city = 96f35b
+th_jade_village = 41c79d
+th_watari_kairou = d3621f
+th_diamond_quarry = 7ae53c
+#春之云
+th_rainbow_factory = 73c971
+th_rain_storm_command = c24da8
+th_lightning_storm_port = 57e12b
+th_plain_in_sunshine = f9b74d
+th_kenten_kyouko = a7a1c9
+#有顶天
+th_unhouten = ba9de8
+th_unlimited_void = 8df15c
+th_infinite_consciousness_sphere = 1c69d3
+th_nothing_realm = e482af
+#向风之国
+th_flower_land = f35a8d
+th_vulcano_cloud = 9f107c
+th_nutmeg_land = a573d7
+th_parrot_cloud = f6842a
+#比那名居府邸
+th_hinanawi_mansion = 67ef21
+th_jade_avenue = c60371
+th_private_peach_garden = 73c91e
+th_nawi_shrine = e2a807
+th_nayori_residence_stone = fade5f
+#草木园地
+th_elixir_workshop = c9437d
+th_peach_garden_for_banquet = 61e25b
+th_fishing_spot_on_clouds = f0389c
+th_celestial_activity_center = 761a1c
+#龙宫
+th_dragon_palace = 8ae53d
+th_grove_jade_shell_beach = 4bc19f
+th_ikus_house = d2571c
+th_celestial_dragon_forbidden_place = d672cb
+th_sea_world_reflecting_pool = ebe24a
+th_palace_xuanhai_main_hall = 389d42
+th_palace_rain_prayer_altar = 94883a
+th_sea_pacifying_stele = fa53b6
+#要石之港
+th_keystone_port = c89587
+th_floating_clouds_seaside = c54da8
+th_dense_fog_shore = 53e12f
+th_eye_of_storm = f8b34d
+th_jade_capital_terrace_main = 007706
+th_terrace_milky_way_waterfall = ccd858
+#雷霆露台
+th_thunder_swimer_neighbourhood = f21567
+th_imperial_dragon_hills = 479f5e
+th_lightning_fork = eb90ea
+th_thunder_zone = df2cef
+th_dragon_breathe = c082d7
+#要石工厂
+th_tribulation_tempering_field = 6bd429
+th_hinanawi_meteorological_bureau = b351e7
+th_aurora_exhibition = 2fc86d
+th_hermit_home = 91e34a
+th_isolated_archipelago = ad52d0
+#天界高堂
+th_heavrn_high_hall = 581dc7
+th_high_port = d76bf2
+th_pure_clean_cloud = e42994
+th_first_celestial = 15f8ac
+th_mirror_jian_xin_yu = 82b753
