@@ -2949,6 +2949,10 @@ th_gensokyo_continent = {
 				}
 			}
 		}
+	}
+}
+th_moon_continent = {
+	th_moon_sub_continent = {
 		th_moon_region ={
 			th_city_of_moon_area = {
 				th_city_of_moon_province = {
@@ -2957,35 +2961,47 @@ th_gensokyo_continent = {
 					th_royal_guard_garrison
 					th_kegare_purify_core
 					th_border_of_lunar_darkside
+					th_imperial_garden
+					th_imperial_palace_moonlight_library
 				}
 				th_sea_of_tranquility_province = {
 					th_sea_of_tranquility
 					th_sea_of_serenity
 					th_lunarian_border
-					th_lunar-rabbit_factory
+					th_lunar_rabbit_factory
+					th_sea_of_tranquility_port
 				}
 				th_doremy_dream_world_province = {
 					th_morbid_clock_tower
 					th_ruined_library
 					th_doremy_palace
 					th_blue_warp_gate
+					th_dreamworld_weavers_plain
+					th_dreamworld_weavers_island
 				}
 				th_lunarian_wilderness_province = {
 					th_apollo_13_wreckage
-					th_star_banners
+					th_star_banners_wasteland
 					th_darkness_of_astronauts
 					th_yutu_rover_dormancy
-				}
-				th_kai_an_channel_province = {
-					th_first_kai_an_channel
-					th_second_kai_an_channel
-					th_third_kai_an_channel
-					th_fourth_kai_an_channel
+					th_plains_flowing_glow_river
 				}
 				th_apollo_meridians_province = {
 					th_armstong_footstep
 					th_broken_apollo_11
 					th_hangtian_barony
+					th_meridian_monitoring_station
+					th_meridian_fuse_boundary
+				}
+			}
+			th_moon_plain_area = {
+				th_kai_an_channel_province = {
+					th_first_kai_an_channel
+					th_second_kai_an_channel
+					th_passage_floating_life_ferry
+					th_an_passage_awakening_crevice
+					th_an_illusory_sea_junction
+					th_dreamwarden_outpost
 				}
 				th_lunar_rabbits_frontier_region_province = {
 					th_lunar_rabbit_barrack
@@ -2999,6 +3015,7 @@ th_gensokyo_continent = {
 					th_princess_prison
 					th_insurgent_lunar_rabbits_concentration_camp
 					th_kegare_execution_chamber
+					th_prison_repentance_well
 				}
 				th_watatsuki_no_palace_province = {
 					th_watatsuki_no_palace
@@ -3027,7 +3044,7 @@ th_gensokyo_continent = {
 					th_tycho_crater
 				}
 				th_sea_of_crisis_province = {
-					th_sea_of_tranquility
+					th_sea_of_untranquility
 					th_ocean_of_storms
 					th_sea_of_cold
 					th_sea_of_rain
@@ -3045,6 +3062,8 @@ th_gensokyo_continent = {
 					th_grave_for_toyotamahime
 					th_grave_for_tamayorihime
 				}
+			}
+			th_lunar_surface_area = {
 				th_clown_village_province = {
 					th_clown_village
 					th_red_nose_forest
@@ -3062,6 +3081,7 @@ th_gensokyo_continent = {
 					th_full_moon_top
 					th_waning_moon_peninsula
 					th_lunar_eclipse_port
+					th_bay_tide_song_lighthouse
 				}
 				th_longinus_crater_province = {
 					th_sage_deadbody_locker
@@ -3073,6 +3093,8 @@ th_gensokyo_continent = {
 					th_tanguy_island
 					th_mori_island
 					th_dali_island
+					th_isle_non_euclidean_garden
+					th_lunar_isle_inverted_waterfall
 				}
 			}
 			th_colony_of_hell_goddess_area = {
@@ -3085,6 +3107,7 @@ th_gensokyo_continent = {
 				th_hecatia_plateau_province = {
 					th_hecate_avenue
 					th_oreadia
+					th_ourea_cliff
 					th_yew_forest
 					th_datura_garden
 				}
@@ -3093,12 +3116,17 @@ th_gensokyo_continent = {
 					th_eye_of_prometheus
 					th_clotho_great_plain
 					th_pallas_school
+					th_three_worlds_rift_observatory
+					th_archipelago_river_of_estuary
 				}
 				th_dream_hell_of_otherworld_province = {
 					th_nyx_temple
 					th_hecatia_mansion
 					th_atlas_mountain
 					th_lachesis_pass
+					th_atlas_mountain_valley
+					th_archipelago_karmic_fire_cliff
+					th_dream_devouring_maelstrom
 				}
 				th_dream_hell_of_moon_province = {
 					th_selene_temple

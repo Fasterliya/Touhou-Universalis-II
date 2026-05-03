@@ -43074,3 +43074,150 @@ th_high_port = d76bf2
 th_pure_clean_cloud = e42994
 th_first_celestial = 15f8ac
 th_mirror_jian_xin_yu = 82b753
+###月球地区
+#月之都
+th_palace_of_moon = 3c9d2a
+th_takamagahara = 916633
+th_royal_guard_garrison = ddda2a
+th_kegare_purify_core = cdbe2e
+th_border_of_lunar_darkside = 8ffe50
+th_imperial_garden = a580e0
+th_imperial_palace_moonlight_library = 8b5598
+#静海
+th_sea_of_tranquility = 9f0c8a
+th_sea_of_serenity = 6c9b1f
+th_lunarian_border = ed67ff
+th_lunar_rabbit_factory = b28671
+th_sea_of_tranquility_port = 6448cd
+#哆来咪梦境世界
+th_morbid_clock_tower = bf8250
+th_ruined_library = 2f582f
+th_doremy_palace = 50767c
+th_blue_warp_gate = 9c3a6d
+th_dreamworld_weavers_plain = ec6f9d
+th_dreamworld_weavers_island = bdda88
+#月人原野
+th_apollo_13_wreckage = fe335e
+th_star_banners_wasteland = 2f821d
+th_darkness_of_astronauts = ce577a
+th_yutu_rover_dormancy = 9d2b5a
+th_plains_flowing_glow_river = f9545b
+#槐安通道
+th_first_kai_an_channel = 97d665
+th_second_kai_an_channel = 7b9d2e
+th_passage_floating_life_ferry = ea676a
+th_an_passage_awakening_crevice = 9d3b6c
+th_an_illusory_sea_junction = f2aa21
+th_dreamwarden_outpost = e8d2ab
+#阿波罗经络
+th_armstong_footstep = 8a0f9d
+th_broken_apollo_11 = 6c9b3f
+th_hangtian_barony = 4b0a9c
+th_meridian_monitoring_station = 892c20
+th_meridian_fuse_boundary = 7245be
+#月兔戍区
+th_lunar_rabbit_barrack = 24b874
+th_lunar_peach_forest = 8b0f9c
+th_lunar_rabbit_farm = 7a9c1d
+th_lunar_rabbit_dormitory_area = 5d0b9a
+th_lunar_rabbit_recycle = b4f001
+#罪人之狱
+th_change_special_prison = edb93d
+th_princess_prison = 6b9c2f
+th_insurgent_lunar_rabbits_concentration_camp = 9d97ba
+th_kegare_execution_chamber = 9d2c6a
+th_prison_repentance_well = a52b51
+#绵月宫
+th_watatsuki_no_palace = f3b7a7
+th_toyohime_no_peach_forest = 7b9d3a
+th_watatsuki_no_tranning_ground = 5c0a9d
+th_yorihime_no_tea_room = 00d12b
+#银白之港
+th_sliver_white_port = 8a0f9b
+th_sea_of_clouds = 6d9b2c
+th_sea_of_moisture = a04e87
+th_dark_matter_engine = ad76e1
+#纯化村落
+th_purely_plain = 2d9c4a
+th_sea_of_fertility = 7c0a8f
+th_seventy_two_grape_land = 9e3d5b
+th_pure_village = 8b5f4d
+#纯狐根据地
+th_bofeng_tomb = 5c9d1e
+th_junkos_base = 9f0b7a
+th_sea_of_nectar = dd732E
+th_tycho_crater = 4e0a9d
+#危海
+th_sea_of_untranquility = 9a2c6c
+th_ocean_of_storms = 8b1f9d
+th_sea_of_cold = 7d9a4c
+th_sea_of_rain = c84e6f
+th_sea_of_vapours = 9c4a6d
+#月兔驻屯地
+th_copernicus_crater = 855ddc
+th_kepler_crater = 6c9d3f
+th_arstarchus_crater = 4a0b9d
+th_lunar_rabbit_rebel_alliance_castle = 9d3b5a
+#月之民坟茔
+th_lunarian_tomb = 8c1f9a
+th_grave_for_amanosagume = 8ece16
+th_grave_for_toyotamahime = 9da2b0
+th_grave_for_tamayorihime = 9c4b7b
+#小丑之村
+th_clown_village = a1cb21
+th_red_nose_forest = 6b9c1f
+th_clown_port = 815386
+th_lampades_shore = 9d2a6d
+#克劳恩的月面
+th_clownpiece_cabin = 59c67f
+th_lunar_yousei_port = a21e02
+th_hecate_vulcan = 5b0c9d
+th_freighter_cemetery = 9c3a7e
+#月牙海湾
+th_crescent_bay = a6668e
+th_full_moon_top = 6c9b2d
+th_waning_moon_peninsula = d2cbff
+th_lunar_eclipse_port = 9d2b5c
+th_bay_tide_song_lighthouse = 80d363
+#朗格努斯火山口
+th_sage_deadbody_locker = 8a1f9d
+th_kaaba_prototype = 7b9c2f
+th_port_of_the_slain = 4cb447
+th_olympos_basin = 9d4a6b
+#超现实的月之岛
+th_tanguy_island = 25b753
+th_mori_island = 6a9d1c
+th_dali_island = 4d0a9b
+th_isle_non_euclidean_garden = f27538
+th_lunar_isle_inverted_waterfall = 2e6f31
+th_dream_devouring_maelstrom = c3a195
+#拉碧斯拉祖利半岛
+th_tethys_port = ad8efc
+th_blessed_three_way_fork = 7c0a8e
+th_horn_of_lenty = 9e3d5c
+th_anemoi_valley = 8b5f4e
+#赫卡提亚高原
+th_hecate_avenue = 5c9d1f
+th_oreadia = 9f0b7b
+th_ourea_cliff = a4450f
+th_yew_forest = 4e0a9e
+th_datura_garden = 9a2c6d
+#地球梦境地狱
+th_gaea_temple = 8b1f9e
+th_eye_of_prometheus = 7d9a4d
+th_clotho_great_plain = 5f0c9c
+th_pallas_school = 9c4a6e
+th_three_worlds_rift_observatory = ea5a88
+th_archipelago_river_of_estuary = ba13d6
+#异界梦境地狱
+th_nyx_temple = b80636
+th_hecatia_mansion = 6c9d40
+th_atlas_mountain = 0e8c35
+th_lachesis_pass = 9d3b5b
+th_atlas_mountain_valley = 354214
+th_archipelago_karmic_fire_cliff = f1fb51
+#月球梦境地狱
+th_selene_temple = 8c1f9b
+th_coeus_port = 7b9d2f
+th_astraios_lake = e0ebc5
+th_perses_highland = 9c4b7c
