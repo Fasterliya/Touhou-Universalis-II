@@ -2949,6 +2949,121 @@ th_gensokyo_continent = {
 				}
 			}
 		}
+		th_youkai_mountain_western_foot_region = {
+			th_kappas_country_area = {
+				th_cucumenber_garden_province = {
+					th_cucumenber_garden
+					th_breeding_base
+					th_water_supply_system
+					th_cucumenber_port
+				}
+				th_kappa_beach_province = {
+					th_kappa_beach
+					th_kappa_port
+					th_basalt_rock_beach
+					th_diving_paradise
+				}
+				th_tinkers_village_province = {
+					th_craftsman_hall
+					th_goblin_shop
+					th_area_13
+					th_gear_automatic_port
+				}
+				th_secret_workshop_province = {
+					th_waterproof_lab
+					th_under_water_port
+					th_mermaid_village
+					th_riverbed_habitat
+					th_treasure_bay
+				}
+				th_kappa_capital_province = {
+					th_kappa_capital
+					th_smart_first_city
+					th_sponge_second_city
+					th_nitoris_mansion
+				}
+				th_kappa_valley_province = {
+					th_kappa_valley
+					th_flooding_lowland
+					th_mangroove_swamp
+					th_kappas_dam
+				}
+				th_genbu_ravine_province = {
+					th_genbu_port
+					th_genbu_ravine
+					th_scale_hills
+					th_genbu_habitat
+					th_wealth_shrine
+				}
+			}
+			th_yamawaros_country_area = {
+				th_kappa_ruined_city_province = {
+					th_abandoned_workshop
+					th_wall_of_veto
+					th_bunker_buster_crater
+					th_implosion_bomb_ruins
+					th_acid_river
+				}
+				th_invention_exhibition_hall_province = {
+					th_invention_exhibition_hall
+					th_yamawaro_railway
+					th_high_tech_developement_zone
+					th_takanes_mansion
+				}
+				th_kappa_test_field_province = {
+					th_twin_sunflower_field
+					th_supremium_field
+					th_gourmaryllis_field
+					th_top_secret_cucumenber_field
+				}
+				th_secret_haven_cliff_province = {
+					th_secret_haven_cliff
+					th_yamawaro_bassion
+					th_cliff_of_dispair
+					th_wargame_land
+				}
+				th_false_heaven_shelf_province = {
+					th_false_heaven_shelf
+					th_mountain_foot_no_go_zone
+					th_sannyo_casino
+					th_secret_green_cliff
+				}
+				th_industrial_ruins_province = {
+					th_infected_industry_area
+					th_water_gel_explosive_forest
+					th_break_ridgepole
+					th_yamawaro_hill_side
+				}
+			}
+			th_shinning_niddle_castle_area = {
+				th_shining_needle_castle_province = {
+					th_shining_needle_castle_tenshukaku
+					th_private_inner_chamber
+					th_shining_needle_castle_main_bailey
+					th_shining_needle_castle_ground_hall
+					th_uchide_no_kozuchi_room
+				}
+				th_shining_needle_castle_anteroom_province = {
+					th_shining_needle_castle_second_bailey
+					th_shining_needle_castle_third_bailey
+					th_fusoshin_swamp
+					th_shining_needle_castle_watch_tower
+					th_shining_needle_castle_stone_wall
+				}
+				th_kobitos_treasure_chanmber_province = {
+					th_mithril_gate
+					th_useless_divice_room
+					th_dusty_srsenal
+					th_empty_chamber
+				}
+				th_shining_path_province = {
+					th_shining_path
+					th_levitation_garden
+					th_magical_thundercloud
+					th_shaking_plain
+				}
+			}
+		}
 	}
 }
 th_moon_continent = {
