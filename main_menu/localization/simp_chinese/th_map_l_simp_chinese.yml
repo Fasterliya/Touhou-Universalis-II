@@ -835,7 +835,7 @@ th_sliver_white_port: "银白之港"
 th_sea_of_clouds: "雾海"
 th_sea_of_moisture: "湿海"
 th_dark_matter_engine: " 暗物质能量引擎"
-###纯化之国区域
+###
 ##省份
 th_pure_village_province: "纯化村落"
 th_junkos_base_province: "纯狐根据地"
@@ -891,7 +891,7 @@ th_mori_island: "米罗岛"
 th_dali_island: "达利岛"
 th_isle_non_euclidean_garden: "非欧几里得花园"
 th_lunar_isle_inverted_waterfall: "逆流月瀑"
-###地狱女神殖民地地区
+##
 ##省份
 th_lapislazuli_peninsula_province: "拉碧斯拉祖利半岛"
 th_hecatia_plateau_province: "赫卡提亚高原"
@@ -925,7 +925,11 @@ th_selene_temple: "赛勒涅神庙"
 th_coeus_port: "科俄斯港"
 th_astraios_lake: "阿斯特赖俄斯湖"
 th_perses_highland: "珀尔修斯高地"
-###山麓地区
+###山麓区域
+##地区
+th_kappas_country_area: "河童之国"
+th_yamawaros_country_area: "山童之国"
+th_shinning_niddle_castle_area: "辉针城"
 ##省份
 th_cucumenber_garden_province: "黄瓜园圃"
 th_kappa_beach_province: "河童海滩"
@@ -989,7 +993,7 @@ th_supremium_field: "终极精华田"
 th_gourmaryllis_field: "彼方兰田"
 th_top_secret_cucumenber_field: "绝密黄瓜田"
 th_secret_haven_cliff: "秘天崖"
-th_yamawaro_bassion: "山童兵营"
+th_yamawaro_barracks: "山童兵营"
 th_cliff_of_dispair: "绝望之壁"
 th_wargame_land: "生存游戏场"
 th_false_heaven_shelf: "伪天棚"
@@ -1018,3 +1022,134 @@ th_shining_path: "闪光小径"
 th_levitation_garden: "浮空花园"
 th_magical_thundercloud: "魔力雷云"
 th_shaking_plain: "震动平原"
+###妖怪之山大区
+##地区
+th_northern_youkai_mountain_range_area: "妖怪之山北脉"
+th_youkai_mountain_area: "妖怪之山"
+th_sanctuaries_area: "圣域"
+th_southern_youkai_mountain_range_area: "妖怪之山南脉"
+##省份
+th_houjuus_arrival_province: "封兽降临地"
+th_hidden_place_of_seiga_province: "青娥藏匿地"
+th_rainbow_dragon_cave_province: "虹龙洞"
+th_crow_tengu_district_province: "鸦天狗辖区"
+th_moon_rainbow_market_province: "月虹市场"
+th_izanagi_mine_province: "伊奘诺矿井"
+th_tengus_village_province: "天狗聚落"
+th_tenmas_base_province: "天魔驻地"
+th_top_of_youkai_mountain_province: "妖怪山顶" ##重新划分范围
+th_mountain_stronghold_province: "山间要塞" ##重新划分范围
+th_peony_garden_province: "牡丹园"
+th_yamaubes_hut_province: "山姥棚屋"
+th_asama_joue_mountain_province: "浅间净秽山" ##魔法针叶林
+th_deep_asama_joue_mountain_province: "浅间净秽山深处" ##山城营房
+th_waterfall_of_nine_heavens_province: "九天瀑布"
+th_tengus_fortification_province: "天狗营垒"
+th_white_wolf_tengu_district_province: "白狼天狗辖区"
+th_tengu_outpost_province: "天狗前哨"
+th_bunbun_news_press_province: "文文。新闻社"
+th_hatate_news_press_province: "花果子念报社"
+#地点
+th_houjuus_arrival: "封兽降临地"
+th_unknown_forbbiden_area: "未知禁区"
+th_worship_mountain_path: "参拜山道"
+th_temples_blockade_zone: "寺庙封锁区"
+th_hidden_place_of_seiga: "青娥藏匿地"
+th_evil_immortal_world: "邪仙界"
+th_seigas_mansion: "青娥仙宅"
+th_wraith_path: "死灵通道"
+th_lonely_grave: "孤独坟冢"
+th_entrance_of_rainbow_dragon_cave: "虹龙洞入口"
+th_dragon_balls_mine: "龙珠矿坑"
+th_non_oxygen_pass: "无氧通道"
+th_momoyos_cave: "百百世洞穴"
+th_end_of_rainbow_dragon_cave: "虹龙洞底"
+th_crow_forest: "乌鸦森林"
+th_no_vacation_editorial_office: "无休编辑部"
+th_village_of_crow_tengu: "鸦天狗之里"
+th_black_feather_secret_way: "黑羽秘道"
+th_iizunamarus_mansion: "饭纲丸宅邸"
+th_high_sky_on_the_top: "山顶高空"
+th_moon_rainbow_market: "月虹市场"
+th_chimatas_holy_mansion: "市场神居"
+th_rainbow_valley: "彩虹山谷"
+th_tenkyu_avenue: "天弓大道"
+th_izanagi_mine: "伊奘诺矿脉"
+th_rapid_reaction_force_barrision: "快反部队驻地"
+th_zenkoji_temple: "善光寺"
+th_izanagi_mountain: "伊邪那岐山"
+th_tengu_capital: "天狗都城"
+th_michigami_shirine: "道祖神社"
+th_village_of_high_nose_tengu: "鼻高天狗之里"
+th_kurama_news_press: "鞍马乐报社"
+th_pipe_fox_secret_path: "管狐秘道"
+th_tenma_castle: "天魔堡"
+th_tenma_avenue: "天魔大道"
+th_tenmas_wine_cellar: "天魔酒窖"
+th_forbbiden_top: "禁绝巅峰"
+th_mountain_stronghold: "山间要塞"
+th_white_wolfs_fortress_complex: "白狼堡垒群"
+th_spy_center: "间谍中心"
+th_crow_tengu_tea_party: "鸦天狗茶会"
+th_stargazing_zpot: "观星处"
+th_snow_covered_mountain_top: "覆雪顶峰"
+th_ownerless_market: "无主市场"
+th_youkai_mountain_top: "妖怪山顶"
+th_peony_garden: "牡丹园"
+th_peony_pool: "牡丹鱼池"
+th_throns_trail: "荆棘小道"
+th_shadow_of_right_arm: "断臂之影"
+th_yamaubes_hut: "山姥小屋"
+th_ubames_mansion: "姥芽宅邸"
+th_chimi_enclosure: "魑魅围栏"
+th_sanctuaries_avenue: "圣域大道"
+th_narekos_pass: "驯子关卡"
+th_petrochemical_thorns_hole: "石化荆棘竖穴"
+th_orange_warp_gate: "橙色传送门"
+th_no_deer_hunt_ground: "无鹿猎鹿场"
+th_ninas_room: "贝子的房间"
+th_four_seasons_hole: "四季竖穴"
+th_zoltaxian_labyrinth: "佐塔克斯迷宫"
+th_iwanaga_shrine: "磐永神社"
+th_waterfall_of_nine_heavens: "九天瀑布"
+th_white_wolf_barracks: "白狼兵营"
+th_water_curtain_cave: "水帘洞"
+th_kaer_morhen_stone: "凯尔莫罕巨石"
+th_tengus_fortification: "天狗营垒"
+th_maple_forest: "枫叶林"
+th_orichalcum_mine: "山铜之乡"
+th_cableway_terminal: "索道终点站"
+th_village_of_white_wolf: "白狼天狗之里"
+th_wild_colosseum: "野性竞技场"
+th_momiji_room: "椛的小屋"
+th_doggy_food_street: "猛犬美食街"
+th_tengu_outpost: "天狗前哨"
+th_white_wolf_watch_tower: "白狼望楼"
+th_mountain_fortress: "山间堡垒"
+th_hillside_village: "半山山村"
+th_bunbun_news_press: "文文新闻社"
+th_ayas_mansion: "文之宅邸"
+th_wind_of_gossip: "流言之风"
+th_tengu_portrait_studio: "天狗照相馆"
+th_hatate_news_press: "花果子念报社"
+th_hatates_mansion: "果之宅邸"
+th_antenna_matrix: "天线矩阵"
+th_tengu_border: "天狗边疆"
+###守矢神社大区
+##地区
+守矢神社北部
+守矢神社南部
+##省份
+守矢屯营
+守矢岸浜
+守矢府邸
+大蛤蟆之池
+守矢神社
+幻草原
+风神之湖
+守矢索道
+御柱的墓场
+大地之谷
+迷雾酒肆
+神风之谷
+#地点

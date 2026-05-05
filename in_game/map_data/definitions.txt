@@ -3064,6 +3064,143 @@ th_gensokyo_continent = {
 				}
 			}
 		}
+		th_youkai_mountain_region = {
+			th_northern_youkai_mountain_range_area = {
+				th_houjuus_arrival_province = {
+					th_houjuus_arrival
+					th_unknown_forbbiden_area
+					th_worship_mountain_path
+					th_temples_blockade_zone
+				}
+				th_hidden_place_of_seiga_province = {
+					th_hidden_place_of_seiga
+					th_evil_immortal_world
+					th_seigas_mansion
+					th_wraith_path
+					th_lonely_grave
+				}
+				th_rainbow_dragon_cave_province = {
+					th_entrance_of_rainbow_dragon_cave
+					th_dragon_balls_mine
+					th_non_oxygen_pass
+					th_momoyos_cave
+					th_end_of_rainbow_dragon_cave
+				}
+				th_crow_tengu_district_province = {
+					th_crow_forest
+					th_no_vacation_editorial_office
+					th_village_of_crow_tengu
+					th_black_feather_secret_way
+					th_iizunamarus_mansion
+				}
+				th_moon_rainbow_market_province = {
+					th_high_sky_on_the_top
+					th_moon_rainbow_market
+					th_chimatas_holy_mansion
+					th_rainbow_valley
+					th_tenkyu_avenue
+				}
+			}
+			th_youkai_mountain_area = {
+				th_izanagi_mine_province = {
+					th_izanagi_mine
+					th_rapid_reaction_force_barrision
+					th_zenkoji_temple
+					th_izanagi_mountain
+				}
+				th_tengus_village_province = {
+					th_tengu_capital
+					th_michigami_shirine
+					th_village_of_high_nose_tengu
+					th_kurama_news_press
+					th_pipe_fox_secret_path
+				}
+				th_tenmas_base_province = {
+					th_tenma_castle
+					th_tenma_avenue
+					th_tenmas_wine_cellar
+					th_forbbiden_top
+				}
+				th_top_of_youkai_mountain_province = {
+					th_crow_tengu_tea_party
+					th_stargazing_zpot
+					th_snow_covered_mountain_top
+					th_ownerless_market
+					th_youkai_mountain_top
+				}
+				th_mountain_stronghold_province = {
+					th_mountain_stronghold
+					th_white_wolfs_fortress_complex
+					th_spy_center
+				}
+			}
+			th_sanctuaries_area = {
+				th_peony_garden_province = {
+					th_peony_garden
+					th_peony_pool
+					th_throns_trail
+					th_shadow_of_right_arm
+				}
+				th_yamaubes_hut_province = {
+					th_yamaubes_hut
+					th_ubames_mansion
+					th_chimi_enclosure
+					th_sanctuaries_avenue
+
+				}
+				th_asama_joue_mountain_province = {
+					th_narekos_pass
+					th_petrochemical_thorns_hole
+					th_orange_warp_gate
+					th_no_deer_hunt_ground
+
+				}
+				th_deep_asama_joue_mountain_province = {
+					th_ninas_room
+					th_four_seasons_hole
+					th_zoltaxian_labyrinth
+					th_iwanaga_shrine
+				}
+				th_waterfall_of_nine_heavens_province = {
+					th_waterfall_of_nine_heavens
+					th_white_wolf_barracks
+					th_water_curtain_cave
+					th_kaer_morhen_stone
+				}
+			}
+			th_southern_youkai_mountain_range_area = {
+				th_tengus_fortification_province = {
+					th_tengus_fortification
+					th_maple_forest
+					th_orichalcum_mine
+					th_cableway_terminal
+				}
+				th_white_wolf_tengu_district_province = {
+					th_village_of_white_wolf
+					th_wild_colosseum
+					th_momiji_room
+					th_doggy_food_street
+				}
+				th_tengu_outpost_province = {
+					th_tengu_outpost
+					th_white_wolf_watch_tower
+					th_mountain_fortress
+					th_hillside_village
+				}
+				th_bunbun_news_press_province = {
+					th_bunbun_news_press
+					th_ayas_mansion
+					th_wind_of_gossip
+					th_tengu_portrait_studio
+				}
+				th_hatate_news_press_province = {
+					th_hatate_news_press
+					th_hatates_mansion
+					th_antenna_matrix
+					th_tengu_border
+				}
+			}
+		}
 	}
 }
 th_moon_continent = {
