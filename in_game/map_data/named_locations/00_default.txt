@@ -43221,3 +43221,233 @@ th_selene_temple = 8c1f9b
 th_coeus_port = 7b9d2f
 th_astraios_lake = e0ebc5
 th_perses_highland = 9c4b7c
+#玄武之泽地区&河童之国
+#黄瓜园圃
+th_cucumenber_garden = 2c9e3b
+th_breeding_base = 7a0b8f
+th_water_supply_system = 9d3c6e
+th_cucumenber_port = 8b5f5d
+th_nursery_luminous_greenhouse = 84ae92
+#河童海滩
+th_kappa_beach = 4d9c0f
+th_kappa_port = 9e0c7a
+th_basalt_rock_beach = 8250fd
+th_diving_paradise = 5a0c9d
+#修补匠之村
+th_craftsman_hall = f21d97
+th_goblin_shop = 8c1f9d
+th_area_13 = 7d9a4e
+th_gear_automatic_port = 15e76e
+#秘密工坊
+th_waterproof_lab = 9c4a7d
+th_under_water_port = 8a0f6e
+th_mermaid_village = ec2e73
+th_riverbed_habitat = 4c0a9b
+th_treasure_bay = 9d3b6a
+#河童都会
+th_kappa_capital = 53e257
+th_smart_first_city = ad54ed
+th_sponge_second_city = 5b0c9e
+th_nitoris_mansion = 0cb61c
+th_river_network_hub = add325
+#河童溪谷
+th_kappa_valley = ec8eae
+th_flooding_lowland = 6a9d1f
+th_mangroove_swamp = dd7e79
+th_kappas_dam = 9d2b5d
+th_kappa_ravine_watermill_workshops = da69f3
+th_ravine_dish_stone_shoal = 9afe9e
+#玄武涧
+th_genbu_port = 8c1f9e
+th_genbu_ravine = 8bb6b8
+th_scale_hills = 534303
+th_genbu_habitat = 9f7c93
+th_wealth_shrine = ed993c
+#河童墟市
+th_abandoned_workshop = 6c9b2f
+th_wall_of_veto = 4d0a9c
+th_bunker_buster_crater = 9c3b7d
+th_implosion_bomb_ruins = de0f59
+th_acid_river = 7d9a3f
+#发明展厅
+th_invention_exhibition_hall = 5e0c9d
+th_yamawaro_railway = 9c2a6e
+th_high_tech_developement_zone = fed9c2
+th_takanes_mansion = 6b9c1e
+th_invention_exhibition_hall_practical = e20830
+#河童试验田
+th_twin_sunflower_field = f06b5e
+th_supremium_field = 9d3c5b
+th_gourmaryllis_field = 8c0f9e
+th_top_secret_cucumenber_field = 7a9d2f
+th_withering_hellebore_main = fcea90
+th_kappa_test_fields_river_hub = fd1ce5
+#秘天崖
+th_secret_haven_cliff = 2fb601
+th_yamawaro_barracks = 9c4b6d
+th_cliff_of_dispair = 8b0f7a
+th_wargame_land = 6c9d4e
+#伪天棚
+th_false_heaven_shelf = 4f0a9b
+th_mountain_foot_no_go_zone = b84bf7
+th_sannyo_casino = ced69a
+th_secret_green_cliff = 7b9c1d
+th_smoke_and_snow_tundra_main = 86939c
+th_snow_tundra_rime_forest = 89b71e
+#产业废墟
+th_infected_industry_area = e3aa0d
+th_water_gel_explosive_forest = 07c31d
+th_break_ridgepole = 8b0f9b
+th_yamawaro_hill_side = 6d9c2f
+#辉针城
+th_shining_needle_castle_tenshukaku = c4b97a
+th_private_inner_chamber = 9d3b5e
+th_shining_needle_castle_main_bailey = c8cbe3
+th_shining_needle_castle_ground_hall = 7c9b2e
+th_uchide_no_kozuchi_room = f2cefb
+#辉针城前庭
+th_shining_needle_castle_second_bailey = 9d4a7b
+th_shining_needle_castle_third_bailey = c9defc
+th_fusoshin_swamp = 6a9d3c
+th_shining_needle_castle_watch_tower = 4d0b9a
+th_shining_needle_castle_stone_wall = 6530c9
+#小人族藏宝室
+th_mithril_gate = e68e68
+th_useless_divice_room = 7d9a1f
+th_dusty_srsenal = 67d052
+th_empty_chamber = 8bb739
+th_diminutive_treasure_vault_library = c6e928
+#闪光小径
+th_shining_path = 5d4978
+th_levitation_garden = 6b9c4e
+th_magical_thundercloud = 4a0b9c
+th_shaking_plain = 9d3c7a
+###妖怪之山区域
+#封兽降临地
+th_houjuus_arrival = 2e9a4c
+th_unknown_forbbiden_area = cada22
+th_worship_mountain_path = 9e3d6b
+th_temples_blockade_zone = 8b5f5e
+#青娥藏匿地
+th_hidden_place_of_seiga = 5d9c1f
+th_evil_immortal_world = 9f0c7b
+th_seigas_mansion = ccc2b9
+th_wraith_path = 4e0a9f
+th_lonely_grave = 6f6318
+#虹龙洞
+th_entrance_of_rainbow_dragon_cave = 8b1f9f
+th_dragon_balls_mine = 7d9a4f
+th_non_oxygen_pass = d85e72
+th_momoyos_cave = 9c4a7e
+th_end_of_rainbow_dragon_cave = cf1c5d
+#鸦天狗辖区
+th_crow_forest = 6b9d40
+th_no_vacation_editorial_office = 4c0a9c
+th_village_of_crow_tengu = 30a873
+th_black_feather_secret_way = baac3d
+th_iizunamarus_mansion = 7a9c2e
+th_iizunamarus_mountain = 941baa
+#月虹市场
+th_high_sky_on_the_top = 5b0c9f
+th_moon_rainbow_market = 9c4b7d
+th_chimatas_holy_mansion = 8d0f9b
+th_rainbow_valley = 6a9d20
+th_tenkyu_avenue = eefa44
+th_shiro_mine_main = 8ce945
+#伊奘诺矿井
+th_izanagi_mine = 9d2b5e
+th_rapid_reaction_force_barrision = 8c1f9f
+th_zenkoji_temple = 634c74
+th_izanagi_mountain = 5c0b9b
+th_izanagi_mine_misogi_spring = 46dd9f
+#天狗聚落
+th_tengu_capital = 9d4a6c
+th_tenma_hall_main = bbfd10
+th_tenma_hall_crow_platform = b65e11
+th_michigami_shirine = 8b0f9e
+th_village_of_high_nose_tengu = 6c9b31
+th_tengu_settlement_onigawara = 9c3b7e
+th_tengu_artisan_quarter = e93056
+#鞍马山#天魔驻地
+th_forbbiden_top = 9c2a6f
+th_kurama_news_press = 4d0a9d
+th_kurama_mountain_main = efb150
+th_kurama_mountain_tengu_grove = 9fb8a4
+th_kurama_mountain_ibuki_waterfall = f36c90
+th_hatate_news_press = 8b0f8e
+th_bunbun_news_press = ce87f6
+#山间要塞
+th_mountain_stronghold = 8d0f7d
+th_white_wolfs_fortress_complex = a56aa6
+th_spy_center = a93b0e
+#妖怪山顶
+th_crow_tengu_tea_party = ee460a
+th_stargazing_zpot = 8c0f9f
+th_snow_covered_mountain_top = 7a9d30
+th_ownerless_market = 5d0b9b
+th_youkai_mountain_top = 9c4b6e
+th_ayas_mansion = 3fe848
+th_hatates_mansion = fd7ae4
+th_mountain_summit_approach = c1d782
+#牡丹园
+th_peony_garden = 8b0f7b
+th_peony_pool = 6c9d4f
+th_throns_trail = 4f0a9c
+th_shadow_of_right_arm = c287f8
+th_peony_garden_mound = edca17
+#山姥棚屋
+th_yamaubes_hut = 93f37d
+th_ubames_mansion = 7b9c1e
+th_chimi_enclosure = 56f922
+th_sanctuaries_avenue = 9d2b4d
+th_shack_stone_garden = 7ca994
+#浅间净秽山
+th_narekos_pass = 924dee
+th_petrochemical_thorns_hole = 9a6073
+th_orange_warp_gate = 42d127
+th_no_deer_hunt_ground = 9d3b5f
+#浅间净秽山深处
+th_ninas_room = 20dc32
+th_four_seasons_hole = bcdfa4
+th_zoltaxian_labyrinth = 759843
+th_iwanaga_shrine = ee1f60
+th_joue_inverted_pyramid = ac46dd
+#九天瀑布
+th_waterfall_of_nine_heavens = 8c0f8f
+th_white_wolf_barracks = 6a9d3d
+th_water_curtain_cave = f9cd8b
+th_kaer_morhen_stone = bab543
+th_atago_san_main = f783d7
+#天狗营垒
+th_tengus_fortification = 8fb286
+th_maple_forest = 7d9a1e
+th_orichalcum_mine = 5e0c9c
+th_cableway_terminal = 9d2a7d
+th_encampment_mountain_range_pass = c6c689
+#白狼天狗辖区
+th_village_of_white_wolf = dc6151
+th_wild_colosseum = 6b9c4f
+th_momiji_room = 7616ec
+th_doggy_food_street = d232ba
+th_wolf_tengu_waterfall = f3f84c
+th_white_wolf_tengu_dojo = e97d1d
+#天狗前哨
+th_tengu_outpost = 8b0f7c
+th_white_wolf_watch_tower = 6c9d5e
+th_mountain_fortress = 4f0a9d
+th_hillside_village = 9d3a6c
+th_tengu_outpost_plank_road = dc7f24
+th_tengu_outpost_boundary_stone = a8e27e
+#天狗镜池
+th_tengu_mirror_pond_main = f8d29d
+th_kami_pond_abyss = 924ed4
+th_silent_plankway = b4b412
+th_purity_filth_spring = 5cf281
+th_take_oyama_main = b53287
+#南之二岳
+th_hikosan_main = 876d2d   
+th_omine_san_main = 7ee438
+th_southern_second_peak_pass = e68fd5
+th_weeping_wind_canyon = d32564
+th_omine_san_ancient_path = 3c6316
+th_omine_san_guardian_forest = 8a62cb

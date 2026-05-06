@@ -2956,6 +2956,7 @@ th_gensokyo_continent = {
 					th_breeding_base
 					th_water_supply_system
 					th_cucumenber_port
+					th_nursery_luminous_greenhouse
 				}
 				th_kappa_beach_province = {
 					th_kappa_beach
@@ -2981,12 +2982,15 @@ th_gensokyo_continent = {
 					th_smart_first_city
 					th_sponge_second_city
 					th_nitoris_mansion
+					th_river_network_hub
 				}
 				th_kappa_valley_province = {
 					th_kappa_valley
 					th_flooding_lowland
 					th_mangroove_swamp
 					th_kappas_dam
+					th_kappa_ravine_watermill_workshops
+					th_ravine_dish_stone_shoal
 				}
 				th_genbu_ravine_province = {
 					th_genbu_port
@@ -3009,16 +3013,19 @@ th_gensokyo_continent = {
 					th_yamawaro_railway
 					th_high_tech_developement_zone
 					th_takanes_mansion
+					th_invention_exhibition_hall_practical
 				}
 				th_kappa_test_field_province = {
 					th_twin_sunflower_field
 					th_supremium_field
 					th_gourmaryllis_field
 					th_top_secret_cucumenber_field
+					th_withering_hellebore_main
+					th_kappa_test_fields_river_hub
 				}
 				th_secret_haven_cliff_province = {
 					th_secret_haven_cliff
-					th_yamawaro_bassion
+					th_yamawaro_barracks
 					th_cliff_of_dispair
 					th_wargame_land
 				}
@@ -3027,6 +3034,8 @@ th_gensokyo_continent = {
 					th_mountain_foot_no_go_zone
 					th_sannyo_casino
 					th_secret_green_cliff
+					th_smoke_and_snow_tundra_main
+					th_snow_tundra_rime_forest
 				}
 				th_industrial_ruins_province = {
 					th_infected_industry_area
@@ -3055,6 +3064,7 @@ th_gensokyo_continent = {
 					th_useless_divice_room
 					th_dusty_srsenal
 					th_empty_chamber
+					th_diminutive_treasure_vault_library
 				}
 				th_shining_path_province = {
 					th_shining_path
@@ -3092,6 +3102,7 @@ th_gensokyo_continent = {
 					th_village_of_crow_tengu
 					th_black_feather_secret_way
 					th_iizunamarus_mansion
+					th_iizunamarus_mountain
 				}
 				th_moon_rainbow_market_province = {
 					th_high_sky_on_the_top
@@ -3099,6 +3110,7 @@ th_gensokyo_continent = {
 					th_chimatas_holy_mansion
 					th_rainbow_valley
 					th_tenkyu_avenue
+					th_shiro_mine_main
 				}
 			}
 			th_youkai_mountain_area = {
@@ -3107,19 +3119,25 @@ th_gensokyo_continent = {
 					th_rapid_reaction_force_barrision
 					th_zenkoji_temple
 					th_izanagi_mountain
+					th_izanagi_mine_misogi_spring
 				}
 				th_tengus_village_province = {
 					th_tengu_capital
+					th_tenma_hall_main
+					th_tenma_hall_crow_platform
 					th_michigami_shirine
 					th_village_of_high_nose_tengu
-					th_kurama_news_press
-					th_pipe_fox_secret_path
+					th_tengu_settlement_onigawara
+					th_tengu_artisan_quarter
 				}
 				th_tenmas_base_province = {
-					th_tenma_castle
-					th_tenma_avenue
-					th_tenmas_wine_cellar
+					th_kurama_news_press
 					th_forbbiden_top
+					th_kurama_mountain_main
+					th_kurama_mountain_tengu_grove
+					th_kurama_mountain_ibuki_waterfall
+					th_hatate_news_press
+					th_bunbun_news_press
 				}
 				th_top_of_youkai_mountain_province = {
 					th_crow_tengu_tea_party
@@ -3127,6 +3145,9 @@ th_gensokyo_continent = {
 					th_snow_covered_mountain_top
 					th_ownerless_market
 					th_youkai_mountain_top
+					th_ayas_mansion
+					th_hatates_mansion
+					th_mountain_summit_approach
 				}
 				th_mountain_stronghold_province = {
 					th_mountain_stronghold
@@ -3140,13 +3161,14 @@ th_gensokyo_continent = {
 					th_peony_pool
 					th_throns_trail
 					th_shadow_of_right_arm
+					th_peony_garden_mound
 				}
 				th_yamaubes_hut_province = {
 					th_yamaubes_hut
 					th_ubames_mansion
 					th_chimi_enclosure
 					th_sanctuaries_avenue
-
+					th_shack_stone_garden
 				}
 				th_asama_joue_mountain_province = {
 					th_narekos_pass
@@ -3160,12 +3182,14 @@ th_gensokyo_continent = {
 					th_four_seasons_hole
 					th_zoltaxian_labyrinth
 					th_iwanaga_shrine
+					th_joue_inverted_pyramid 
 				}
 				th_waterfall_of_nine_heavens_province = {
 					th_waterfall_of_nine_heavens
 					th_white_wolf_barracks
 					th_water_curtain_cave
 					th_kaer_morhen_stone
+					th_atago_san_main
 				}
 			}
 			th_southern_youkai_mountain_range_area = {
@@ -3174,30 +3198,38 @@ th_gensokyo_continent = {
 					th_maple_forest
 					th_orichalcum_mine
 					th_cableway_terminal
+					th_encampment_mountain_range_pass
 				}
 				th_white_wolf_tengu_district_province = {
 					th_village_of_white_wolf
 					th_wild_colosseum
 					th_momiji_room
 					th_doggy_food_street
+					th_wolf_tengu_waterfall
+					th_white_wolf_tengu_dojo
 				}
 				th_tengu_outpost_province = {
 					th_tengu_outpost
 					th_white_wolf_watch_tower
 					th_mountain_fortress
 					th_hillside_village
+					th_tengu_outpost_plank_road
+					th_tengu_outpost_boundary_stone
 				}
-				th_bunbun_news_press_province = {
-					th_bunbun_news_press
-					th_ayas_mansion
-					th_wind_of_gossip
-					th_tengu_portrait_studio
+				th_hikosan_mirror_pond_province = {
+					th_tengu_mirror_pond_main
+					th_kami_pond_abyss
+					th_silent_plankway
+					th_purity_filth_spring
+					th_take_oyama_main
 				}
-				th_hatate_news_press_province = {
-					th_hatate_news_press
-					th_hatates_mansion
-					th_antenna_matrix
-					th_tengu_border
+				th_southern_second_peak_province = {
+					th_hikosan_main
+					th_omine_san_main
+					th_southern_second_peak_pass
+					th_weeping_wind_canyon
+					th_omine_san_ancient_path
+					th_omine_san_guardian_forest
 				}
 			}
 		}
