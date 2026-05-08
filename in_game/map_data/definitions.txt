@@ -2840,6 +2840,108 @@ th_gensokyo_continent = {
 				}
 			}
 		}
+		th_moriya_shirine_region = {
+			th_nortern_moriya_shrine_area = {
+				th_moriya_garrison_province = {
+					th_moriya_garrison
+					th_hell_outpost
+					th_wind_goddess_pass
+					th_idol_ferry_crossing
+				}
+				th_moriya_beach_province = {
+					th_kochiya_port
+					th_moriya_estuary
+					th_land_of_frogs
+					th_short_lived_forest
+				}
+				th_moriya_mansion_province = {
+					th_moriya_port
+					th_moriya_holy_mansion
+					th_kochiya_mansion
+					th_mountain_goddess_loved_hills
+				}
+				th_big_toad_lake_province = {
+					th_big_toad_lake
+					th_kappa_major_bridge
+					th_kappa_station
+					th_frog_port
+				}
+				th_moriya_shirine_province = {
+					th_moriya_shrine_honden
+					th_moriya_shrine_haiden
+					th_moriya_shrine_shamushu
+					th_moriya_shrine_temizuya
+					th_moriya_shrine_road
+					th_moriya_shrine_station
+				}
+				th_phantom_meadow_province = {
+					th_weastern_phantom_meadow
+					th_weastern_phantom_meadow
+					th_ghost_horde
+					th_breeze_hills
+					th_still_wasteland
+				}
+			}
+			th_soutern_moriya_shinre_area = {
+				th_lake_of_wind_god_province = {
+					th_lake_of_wind_god
+					th_zealot_billage
+					th_hillside_of_qian
+					th_worship_of_onbashira
+					th_miracle_idol_office
+					th_land_of_seven_holy_stones_and_seven_holy_trees
+				}
+				th_moriya_cableway_province = {
+					th_cableway_start
+					th_cableway_tengu_line
+					th_cableway_kappa_line
+					th_cableway_hell_new_line
+					th_tornado_maple_forest
+				}
+				th_cemetery_of_onbashira_province = {
+					th_cemetery_of_onbashira
+					th_prayer_hills
+					th_gold_pieces_riber_bend
+					th_border_market
+				}
+				th_valley_of_earth_province = {
+					th_valley_of_earth
+					th_wind_castle
+					th_snakes_hole
+					th_border_of_faith
+				}
+				th_fog_tavern_province = {
+					th_fog_pub
+					th_miracle_cellaring
+					th_terraced_fields
+					th_beautuful_fountainhead
+					th_green_gate
+				}
+				th_holy_wind_valley_province = {
+					th_holy_wind_valley
+					th_gods_hoad
+					th_red_frogs_tomb
+					th_hill_of_wind_and_rain
+				}
+			}
+		}
+		th_animal_realm_region = {
+			th_northern_animal_realm_area = {
+
+			}
+			th_primate_spirit_garden_area = {
+
+			}
+			th_eastern_animal_realm_area = {
+
+			}
+			th_western_animal_realm_area = {
+
+			}
+			th_southern_animal_realm_area = {
+
+			}
+		}
 	}
 	th_gensokyo_outer_world_sub_continent = {
 		th_heaven_region = {

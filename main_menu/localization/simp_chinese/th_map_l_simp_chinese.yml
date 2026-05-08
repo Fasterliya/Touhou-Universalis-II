@@ -1169,22 +1169,124 @@ th_southern_second_peak_pass: "双牙关"
 th_weeping_wind_canyon: "风神峠"
 th_omine_san_ancient_path: "古旧山参道"
 th_omine_san_guardian_forest: "护法之森"
-
-# ###守矢神社大区
-# ##地区
-# 守矢神社北部
-# 守矢神社南部
-# ##省份
-# 守矢屯营
-# 守矢岸浜
-# 守矢府邸
-# 大蛤蟆之池
-# 守矢神社
-# 幻草原
-# 风神之湖
-# 守矢索道
-# 御柱的墓场
-# 大地之谷
-# 迷雾酒肆
-# 神风之谷
-# #地点
+###守矢神社大区
+##地区
+th_nortern_moriya_shrine_area: "守矢神社北部"
+th_soutern_moriya_shinre_area: "守矢神社南部"
+##省份
+th_moriya_garrison_province: "守矢屯营"
+th_moriya_beach_province: "守矢岸浜"
+th_moriya_mansion_province: "守矢府邸"
+th_big_toad_lake_province: "大蛤蟆之池"
+th_moriya_shrine_province: "守矢神社"
+th_phantom_meadow_province: "幻草原"
+th_lake_of_wind_god_province: "风神之湖"
+th_moriya_cableway_province: "守矢索道"
+th_cemetery_of_onbashira_province: "御柱的墓场"
+th_valley_of_earth_province: "大地之谷"
+th_fog_tavern_province: "迷雾酒肆"
+th_holy_wind_valley_province: "神风之谷"
+#地点
+th_moriya_garrison: "守矢屯营"
+th_hell_outpost: "地狱前哨"
+th_wind_goddess_pass: "风神关口"
+th_idol_ferry_crossing: "偶像渡口"
+th_kochiya_port: "东风港"
+th_moriya_estuary: "守矢河口"
+th_land_of_frogs: "青蛙之国"
+th_short_lived_forest: "短命森林"
+th_moriya_port: "守矢津"
+th_moriya_holy_mansion: "守矢神居"
+th_kochiya_mansion: "东风谷宅邸"
+th_mountain_goddess_loved_hills: "山神眷丘"
+th_big_toad_lake: "大蛤蟆之池"
+th_kappa_major_bridge: "河童大桥"
+th_kappa_station: "索道河童站"
+th_frog_port: "青蛙之港"
+th_moriya_shrine_honden: "守矢神社本殿
+th_moriya_shrine_haiden: "守矢神社拜殿"
+th_moriya_shrine_shamushu: "守矢社务所"
+th_moriya_shrine_temizuya: "守矢手水舍"
+th_moriya_shrine_road: "守矢神社参道"
+th_moriya_shrine_station: "守矢神社索道站"
+th_eastern_phantom_meadow: "幻草原东部"
+th_weastern_phantom_meadow: "幻草原西部"
+th_ghost_horde: "魂灵大帐"
+th_breeze_hills: "残风丘陵"
+th_still_wasteland: "无风荒地"
+th_lake_of_wind_god: "风神之湖"
+th_zealot_billage: "狂信村落"
+th_hillside_of_qian: "乾之坡"
+th_worship_of_onbashira: "御柱之崇"
+th_miracle_idol_office: "奇迹偶像事务所"
+th_land_of_seven_holy_stones_and_seven_holy_trees: "七石七木之地"
+th_cableway_start: "索道始发站"
+th_cableway_tengu_line: "天狗线"
+th_cableway_kappa_line: "河童线"
+th_cableway_hell_new_line: "地狱新线"
+th_tornado_maple_forest: "龙卷枫林" ##与所有线接壤
+th_friendship_coniferous_forest: "友谊针叶林"
+th_mountain_range_of_kun: "坤之山脉"
+th_valley_of_earth: "大地之谷"
+th_wind_castle: "神风堡"
+th_snakes_hole: "蛇之穴"
+th_border_of_faith: "信仰边境"
+th_cemetery_of_onbashira: "御柱的墓场"
+th_prayer_hills: "祈愿丘陵"
+th_gold_pieces_riber_bend: "碎金河湾"
+th_border_market: "边境市集"
+th_fog_pub: "迷雾酒肆"
+th_miracle_cellaring: "奇迹窖藏"
+th_terraced_fields: "神德梯田"
+th_beautuful_fountainhead: "美丽源泉"
+th_green_gate: "翠绿之门"
+th_holy_wind_valley: "神风之谷"
+th_gods_hoad: "御神渡"
+th_red_frogs_tomb: "赤蛙冢"
+th_hill_of_wind_and_rain: "风雨山丘"
+###畜生界大区
+##地区
+th_northern_animal_realm_area: "畜生界北部"
+th_primate_spirit_garden_area: "灵长园"
+th_eastern_animal_realm_area: "畜生界东部"
+th_western_animal_realm_area: "畜生界西部"
+th_southern_animal_realm_area: "畜生界南部"
+##省份
+#未知之扉
+#灵长园
+#灵长类之境
+#野兽大都会
+#迷失魂灵庇护所
+#魂之壶
+#贪欲之渊
+#奈河沿岸
+#亡灵泥沼
+#埴轮工厂
+#水獭灵岗楼
+#人灵市镇
+#野狼灵竞技场
+#呼啸地狱
+#虚与实的境界
+#地狱边境
+#畜生界之扉
+#嚎哭洞穴
+#无明旷原
+#兽王园
+#畜生界
+#未定位的地狱
+#野兽灵之丘
+#套索兽道
+#野兽之町
+#悲伤山冈
+#虚空边界
+#遗物之丘
+#中有之道
+#再思之道
+#血池地狱
+#石油之海
+#黄泉
+#鬼疫之关
+###地狱大区
+##地区
+##省份
+#地点
