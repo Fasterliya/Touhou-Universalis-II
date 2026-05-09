@@ -1035,6 +1035,9 @@ sea_zones = {
 # LAKES
 ########
 lakes = { 
+	### TH LAKE
+	th_lake_of_wind_god
+	###
     malaren hjalmaren_lake vattern vanern siljan storsjon enare_trask torne_trask storavan uddjaur vastenjaure akkajaure	# Sweden
 	mjosa #norway
 	lake_muritz

@@ -43451,3 +43451,87 @@ th_southern_second_peak_pass = e68fd5
 th_weeping_wind_canyon = d32564
 th_omine_san_ancient_path = 3c6316
 th_omine_san_guardian_forest = 8a62cb
+###守矢区域
+#守矢屯营
+th_moriya_garrison = da3b72
+th_hell_outpost = 8a0b9f
+th_wind_goddess_pass = 9d4c6e
+th_idol_ferry_crossing = 8b6f5f
+th_hell_wind_warrier = 39e704
+#守矢岸浜
+th_kochiya_port = 5e9d2f
+th_moriya_estuary = aa3c40
+th_land_of_frogs = ecc320
+th_short_lived_forest = 65bf0b
+th_moriya_coast_ashi_wara = ab40fc
+#守矢府邸
+th_moriya_port = 9b3c7d
+th_moriya_holy_mansion = 8a1f9e
+th_kochiya_mansion = 6d9b51
+th_mountain_goddess_loved_hills = 5c0b9e
+th_moriya_divine_sake_cellar = bd5247
+th_divine_resonance_pool = 6bcb3d
+th_kamikaze_island_main = ddc8b1
+#大蛤蟆之池
+th_big_toad_lake = 9d4b6c
+th_kappa_major_bridge = e24fd0
+th_kappa_station = 2bb947
+th_frog_port = 9ce5a3
+th_great_toad_pond_bog = da5cfe
+#守矢神社
+th_moriya_shrine_honden = edb319
+th_moriya_shrine_haiden = 8d0f9c
+th_moriya_shrine_shamushu = 6b8140
+th_moriya_shrine_temizuya = a0ec9b
+th_moriya_shrine_road = 9d3c6b
+th_moriya_shrine_station = c185f1
+#幻草原
+th_eastern_phantom_meadow = 7b9d4f
+th_weastern_phantom_meadow = 5d0c9e
+th_ghost_horde = 9c4b7f
+th_breeze_hills = e1ea58
+th_still_wasteland = 6c9d31
+#风神之湖
+th_lake_of_wind_god = 1a08c6
+th_zealot_billage = f08d74
+th_hillside_of_qian = 8b0f9f
+th_worship_of_onbashira = a787da
+th_miracle_idol_office = 5c0b9d
+th_land_of_seven_holy_stones_and_seven_holy_trees = 9d4a6d
+th_lake_kamikaze_himorogi = 9de150
+th_lake_kamikaze_windwatch = 5db548
+th_lake_of_the_winds_senpu = 7f73c6
+#守矢索道
+th_cableway_start = 939f98
+th_cableway_tengu_line = 6b9d1e
+th_cableway_kappa_line = 8a68e8
+th_cableway_hell_new_line = 9c3b7f
+th_tornado_maple_forest = 8cc192
+#御柱的墓场
+th_cemetery_of_onbashira = cbee1d
+th_prayer_hills = cebbf9
+th_gold_pieces_riber_bend = 7a9d3f
+th_border_market = 96bb88
+th_shattered_gold_customs = f274d9
+th_shattered_gold_shallows = caf23f
+th_prayer_hill_terrace = 27b362
+#大地之谷
+th_valley_of_earth = b03e5a
+th_wind_castle = f7b0b7
+th_snakes_hole = 57c911
+th_border_of_faith = 4a0b9e
+th_wind_god_valley_tengu = 39c649
+th_god_valley_meditation = f45792
+#迷雾酒肆
+th_fog_pub = ff4301
+th_miracle_cellaring = 8b0f7d
+th_terraced_fields = f07d5c
+th_beautuful_fountainhead = 4f0a9f
+th_green_gate = 9d3a7e
+th_misty_sake_den_kappa = feda15
+#神风之谷
+th_holy_wind_valley = de8db6
+th_gods_hoad = 7b9c2e
+th_red_frogs_tomb = 5a0c9f
+th_hill_of_wind_and_rain = 9d4b7c
+th_divine_wind_hanging_meadow = c7738c
