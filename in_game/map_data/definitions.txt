@@ -2958,6 +2958,129 @@ th_gensokyo_continent = {
 
 			}
 		}
+		th_sunflower_field_region = {
+			th_perfect_split_coast_area = {
+				th_garden_of_the_sun_province = {
+					th_garden_of_the_sun
+					th_garden_of_the_sun_cottage
+					th_garden_of_the_sun_sundial
+					th_garden_of_the_sun_maze
+					th_garden_of_the_sun_corridor
+				}
+				th_sunset_plain_main_province = {
+					th_sunset_plain_main
+					th_sunset_plain_watchtower
+					th_sunset_plain_lake
+					th_sunset_plain_grass_sea
+					th_sunset_plain_forest
+					th_sunset_port
+					th_sunset_harbor_observatory
+				}
+				th_flower_field_open_air_stage_province = {
+					th_flower_field_open_air_stage_main
+					th_flower_field_echo_wall
+					th_flower_field_fairy_stands
+					th_flower_field_backstage
+					th_primordial_flower_sea
+				}
+				th_sunbathing_beach_province = {
+					th_sunbathing_beach_main
+					th_sunbathing_beach_parasol
+					th_nightshade_sea
+					th_sunbathing_beach_nectar_spring
+					th_sunlight_harbor
+				}
+			}
+			th_bell_gathering_hills_area = {
+				th_bell_gathering_hills_province = {
+					th_bell_gathering_hills_main
+					th_rappaccini_poison_garden
+					th_bell_hills_patchwork_stage
+					th_court_of_oblivion_main
+					th_court_of_oblivion_tailoring_bench
+				}
+				th_bell_gathering_hills_lily_valley_province = {
+					th_lily_valley_poison_sea
+					th_suzusuzu_stage_main
+					th_lily_sea_old_path
+					th_lily_sea_finale_theater
+					th_lily_sea_border_hedge
+				}
+				th_dreamland_province = {
+					th_dreamland
+					th_dream_world_stardust_plain
+					th_dream_world_gengetsu_lake
+					th_dreamland_border
+					th_dreamland_limbo_spiral
+				}
+			}
+			th_sunlit_expanse_main_area = {
+				th_mugenkan_province = {
+					th_mugenkan_main_hall
+					th_mugenkan_wonderland_garden
+					th_mugenkan_fantasy_wasteland
+					th_yuuka_bedchamber
+					th_mugenkan_sleeping_terror_chamber
+				}
+				th_mugenkan_lake_of_blood_province = {
+					th_lake_of_blood
+					th_lake_of_blood_vampire_pier
+					th_blood_phoneme_corridor
+					th_blood_dried_pass
+					th_mugenkan_erosion_beach
+					th_mugenkan_boiler_room
+				}
+				th_dream_world_border_province = {
+					th_dream_world_border
+					th_dream_world_crack_observatory
+					th_dream_world_evil_pier
+					th_unnamed_star
+					th_dream_world_silent_garden
+				}
+			}
+			th_unnamed_dream_world_main_area = {
+				th_dreamscape_hall_province = {
+					th_dream_world_sisters_boudoir
+					th_dreamscape_hall
+					th_dream_world_mirror_hall
+					th_dream_world_inverted_spire
+					th_reversed_border
+					th_sky_abyss_depths
+				}
+				th_doremy_retreat_dreamland_province = {
+					th_deep_dream_chamber
+					th_dreamland_kaian_path
+					th_dream_soul_pool
+					th_dream_dweller_market
+					th_eternal_spring_dream_theater
+				}
+				th_gemstone_terrace_dreamland_province = {
+					th_gemstone_terrace_dreamland
+					th_demon_twins_cloister
+					th_dream_teardrop_spring
+					th_crimson_pact_altar
+					th_gengetsu_solo_stage
+				}
+				th_lotus_pathway_dreamland_province = {
+					th_lotus_pathway_dreamland
+					th_nameless_lake_shore
+					th_dreamland_foam_outpost
+					th_phantom_morning_mist_plain
+				}
+			}
+			th_engineer_nation_area = {
+				th_rika_mansion_province = {
+					th_rika_mansion_hall
+					th_rika_tank_hangar
+					th_nameless_dream_well
+					th_rika_eastern_border_outpost
+				}
+			}
+			th_phantom_dream_realm_main_area = {
+
+			}
+
+		}
 	}
 	th_gensokyo_outer_world_sub_continent = {
 		th_heaven_region = {
