@@ -3370,8 +3370,8 @@ th_gensokyo_continent = {
 					th_makai_barrier
 					th_abyss_gaze_gate
 					th_fallen_angel_shackle_platform
-					th_sariel_judgment_hall
-					th_sariel_judgment_masion
+					th_chaos_core_reactor
+					th_sariel_judgment_old_masion
 				}
 				th_makai_monstrosity_province = {
 					th_location_refraction_rise
@@ -3456,10 +3456,55 @@ th_gensokyo_continent = {
 					th_makai_demon_rose_night_garden
 					th_makai_metropolis_center
 				}
-				
+				th_makai_genesis_obelisk_province = {
+					th_makai_genesis_obelisk
+					th_genesis_origin_plaza
+					th_genesis_fresco
+					th_yumeko_manor
+				}
+				th_makai_frontier_province = {
+					th_makai_frontier
+					th_makai_mad_hatter_frontier_tea
+					th_makai_frontier_east
+					th_makai_zero_gate
+				}
 			}
 			th_makai_peninsula_area = {
-
+				th_makai_harbor_province = {
+					th_makai_harbor
+					th_dimensional_seawall
+					th_luize_traveler_ground
+					th_wonderland_travel_agency
+					th_returner_sanatorium
+					th_otherworld_souvenir_market
+				}
+				th_dharmadhatu_province = {
+					th_dharmadhatu_makai
+					th_false_sun_dark
+					th_makai_emptiness_pool
+					th_makai_city_mirage
+				}
+				th_ruins_of_vina_province = {
+					th_ruins_of_vina
+					th_elis_star_rod_tower
+					th_pixel_ruin_plain
+					th_fallen_temple_vestibule_before
+					th_makai_bat_roost
+				}
+				th_fallen_shrine_province = {
+					th_inverted_cross_corridor
+					th_civilization_of_magic_library
+					th_six_winged_throne_room
+					th_sariel_judgment_masion
+					th_sariel_judgment_room
+				}
+				th_elysion_province = {
+					th_frozen_hymn_church
+					th_golden_apple_orchard
+					th_angel_dry_dock
+					th_elysian_cargo_market
+					th_elysion_makai
+				}
 			}
 		}
 	}
