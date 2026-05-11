@@ -2138,7 +2138,7 @@ th_gensokyo_continent = {
 				}
 			}
 		}
-		th_gensokyo_meikai_region = {
+		th_gensokyo_makai_region = {
 			th_yakumo_mansion_area = {
 				th_yakumo_mansion_province = {
 					th_yakumo_mansion
@@ -3150,7 +3150,112 @@ th_gensokyo_continent = {
 					th_spellbook_bazaar
 				}
 			}
+		}
+		th_makai_region = {
+			th_makai_seaside_area = {
+				th_makai_wonderland_province = {
+					th_doll_heart_tower
+					th_red_queen_maze
+					th_late_rabbit_hole
+					th_doll_tea_party_garden
+					th_alice_old_room
+					th_makai_wonderland
+				}
+				th_makai_barrier_province = {
+					th_makai_barrier
+					th_abyss_gaze_gate
+					th_fallen_angel_shackle_platform
+					th_sariel_judgment_hall
+					th_sariel_judgment_masion
+				}
+				th_makai_monstrosity_province = {
+					th_location_refraction_rise
+					th_prismatic_field
+					th_makai_dew_disperse
+					th_makai_monstrosity
+					th_makai_fae_atelier
+					th_makai_eternal_cacophony
+				}
+				th_silken_vault_province = {
+					th_makai_silken_vault
+					th_brocade_bazaar
+					th_moonshade_grove
+					th_makai_gleam_quay
+					th_mithril_roadstead
+				}
+				th_pandemonium_capital_province = {
+					th_makai_gate_of_myriad_demons
+					th_stellar_laboratory
+					th_grotesque_armory
+					th_silver_key_cloister
+					th_makai_silent_chapel
+				}
 
+			}
+			th_weastern_makai_area = {
+				th_makai_fairy_garden_province = {
+					th_makai_candy_fountain
+					th_phantom_butterfly_valley
+					th_makai_rainbow_dandelion_meadow
+					th_makai_fairy_garden
+					th_upside_down_grove
+				}
+				th_makai_frozen_world_province = {
+					th_makai_frozen_world_west
+					th_makai_frozen_world_south
+					th_makai_forbidden_magic
+					th_makai_mai_yuki
+					th_judas_mirror_court
+				}
+				th_makai_chaos_abyss_province = {
+					th_makai_chaos_abyss
+					th_temporal_fissure
+					th_makai_great_scar
+					th_th_katuganya_makai
+					th_reverse_creation_spiral
+				}
+				th_genesis_cloister_province = {
+					th_genesis_cloister_hall
+					th_makai_loom_of_forms
+					th_makai_spiral_gene_stairs
+					th_makai_hall_of_mirrors
+					th_makai_concept_incubator_element
+				}
+				th_mononoke_machi_province = {
+					th_borges_library_branch
+					th_shinki_old_atelier
+					th_cheshire_cat_alley
+					th_upside_down_garden
+					th_mononoke_machi
+				}
+			}
+			th_eastern_makai_area = {
+				th_makai_world_gate_province = {
+					th_makai_world_gate_post
+					th_makai_saras_watch_post
+					th_gate_of_the_forgotten
+					th_mana_nexus_ring_makai
+					th_makai_hole_vertical_street
+				}
+				th_makai_hidden_realms_province = {
+					th_makai_hidden_realms
+					th_makai_dharma_realm_checkerboard_plain
+					th_diagonal_avenue_street
+					th_romantic_children_cross
+					th_magus_pilgrim_tower
+				}
+				th_makai_metropolis_province = {
+					th_makai_central_library
+					th_makai_reverse_sewer_network
+					th_makai_hijiri_byakuren_berth
+					th_makai_demon_rose_night_garden
+					th_makai_metropolis_center
+				}
+				
+			}
+			th_makai_peninsula_area = {
+
+			}
 		}
 	}
 	th_gensokyo_outer_world_sub_continent = {
