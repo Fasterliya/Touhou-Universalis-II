@@ -2975,6 +2975,7 @@ th_gensokyo_continent = {
 					th_sunset_plain_forest
 					th_sunset_port
 					th_sunset_harbor_observatory
+					th_twilight_mist_flower_field
 				}
 				th_flower_field_open_air_stage_province = {
 					th_flower_field_open_air_stage_main
@@ -2982,6 +2983,8 @@ th_gensokyo_continent = {
 					th_flower_field_fairy_stands
 					th_flower_field_backstage
 					th_primordial_flower_sea
+					th_flower_tide_wharf
+					th_stardust_flower_cape
 				}
 				th_sunbathing_beach_province = {
 					th_sunbathing_beach_main
@@ -3005,6 +3008,8 @@ th_gensokyo_continent = {
 					th_lily_sea_old_path
 					th_lily_sea_finale_theater
 					th_lily_sea_border_hedge
+					th_memory_lily_hill
+					th_eternal_slumber_lily_hill
 				}
 				th_dreamland_province = {
 					th_dreamland
@@ -3012,6 +3017,7 @@ th_gensokyo_continent = {
 					th_dream_world_gengetsu_lake
 					th_dreamland_border
 					th_dreamland_limbo_spiral
+					th_slumber_coral_reef
 				}
 			}
 			th_sunlit_expanse_main_area = {
@@ -3021,6 +3027,8 @@ th_gensokyo_continent = {
 					th_mugenkan_fantasy_wasteland
 					th_yuuka_bedchamber
 					th_mugenkan_sleeping_terror_chamber
+					th_blood_lake_reflection_hall
+					th_yuuka_mansion_balcony
 				}
 				th_mugenkan_lake_of_blood_province = {
 					th_lake_of_blood
@@ -3036,6 +3044,8 @@ th_gensokyo_continent = {
 					th_dream_world_evil_pier
 					th_unnamed_star
 					th_dream_world_silent_garden
+					th_border_dissolution_point
+					th_final_dream_rainbow_bridge
 				}
 			}
 			th_unnamed_dream_world_main_area = {
@@ -3066,6 +3076,7 @@ th_gensokyo_continent = {
 					th_nameless_lake_shore
 					th_dreamland_foam_outpost
 					th_phantom_morning_mist_plain
+					th_lotus_shadow_beach
 				}
 			}
 			th_engineer_nation_area = {
@@ -3074,10 +3085,70 @@ th_gensokyo_continent = {
 					th_rika_tank_hangar
 					th_nameless_dream_well
 					th_rika_eastern_border_outpost
+					th_rika_turbine_test_stand
+					th_rika_rooms
+				}
+				th_phantom_plain_province = {
+					th_phantom_plain
+					th_eternal_night_plain
+					th_border_wilderness
+					th_phantom_foam_hill
+					th_dreamland_border_fault
+					th_phase_folding_square
+				}
+				th_rika_tank_factory_province = {
+					th_rika_tank_factory_hall
+					th_tank_final_assembly
+					th_eastern_country_line_3
+					th_turbine_test_stand
+					th_engine_development_room
+					th_engine_oil_black_lake
+				}
+				th_tank_graveyard_province = {
+					th_tank_graveyard
+					th_rika_prototype_grave
+					th_eastern_country_abandoned_line
+					th_rika_shotdown_zone
+					th_turbine_barrow
+				}
+				th_anomalous_space_time_province = {
+					th_anomalous_space_time
+					th_space_time_turbulence_corridor
+					th_resonance_fissure
+					th_dream_realm_path
+					th_evil_eye_gaze_corridor
+					th_dimensional_fold_belt
 				}
 			}
 			th_phantom_dream_realm_main_area = {
-
+				th_apprentice_home_province = {
+					th_apprentice_home
+					th_marisa_apprentice_workshop
+					th_dreamrealm_student_danmaku_field
+					th_magic_resonance_tower
+					th_mima_teaching_chamber
+				}
+				th_dreamrealm_reima_den_province = {
+					th_dreamrealm_reima_den_main_hall
+					th_soul_binding_chamber
+					th_mima_throne_room
+					th_cult_library
+					th_witch_pact_chamber
+					th_dream_realm_gaze_dome
+				}
+				th_dream_realm_center_province = {
+					th_dream_realm_center
+					th_border_harmony_chamber
+					th_witches_gathering_square
+					th_star_moon_prophecy_tower
+					th_spell_weaving_atelier
+				}
+				th_dream_realm_gate_province = {
+					th_dream_realm_gate
+					th_moonbow_bridge_market
+					th_dream_pet_market
+					th_spellbook_bazaar
+				}
 			}
 
 		}

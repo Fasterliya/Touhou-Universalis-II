@@ -43535,3 +43535,161 @@ th_gods_hoad = 7b9c2e
 th_red_frogs_tomb = 5a0c9f
 th_hill_of_wind_and_rain = 9d4b7c
 th_divine_wind_hanging_meadow = c7738c
+###太阳花田地区
+#
+#太阳花田
+th_garden_of_the_sun = 3f9a6d
+th_garden_of_the_sun_cottage = 55e734
+th_garden_of_the_sun_sundial = 40d622
+th_garden_of_the_sun_maze = 95abdb
+th_garden_of_the_sun_corridor = 6e9d4f
+#日落原野
+th_sunset_plain_main = fd3bbe
+th_sunset_plain_watchtower = f8007b
+th_sunset_plain_lake = 0c03bd
+th_sunset_plain_grass_sea = 9b4c8d
+th_sunset_plain_forest = 8a3f9e
+th_sunset_port = 6d9b7c
+th_sunset_harbor_observatory = b26b60
+th_twilight_mist_flower_field = d04bcc
+#露天舞台
+th_flower_field_open_air_stage_main = 9d5b7e
+th_flower_field_echo_wall = 8c2f9d
+th_flower_field_fairy_stands = 7b9d6f
+th_flower_field_backstage = 5d1c9e
+th_primordial_flower_sea = ee1165
+th_flower_tide_wharf = d137b3
+th_stardust_flower_cape = d84732
+#日光浴场
+th_sunbathing_beach_main = 8b3f9c
+th_sunbathing_beach_parasol = 6a9d5e
+th_nightshade_sea = bbec1f
+th_sunbathing_beach_nectar_spring = 9d4c7b
+th_sunlight_harbor = 8c2f9e
+#铃集之丘
+th_bell_gathering_hills_main = 7d9b4f
+th_rappaccini_poison_garden = 5f1c9d
+th_bell_hills_patchwork_stage = 9c7b6e
+th_court_of_oblivion_main = 8a4f9c
+th_court_of_oblivion_tailoring_bench = fb555b
+#铃兰花海
+th_lily_valley_poison_sea = fce4ba
+th_suzusuzu_stage_main = 9d5c8c
+th_lily_sea_old_path = 2ebe05
+th_lily_sea_finale_theater = 7a9c6e
+th_lily_sea_border_hedge = 5c1b9d
+th_memory_lily_hill = dc9418
+th_eternal_slumber_lily_hill = 7ced1b
+#梦幻之地
+th_dreamland = 9d6b7f
+th_dream_world_stardust_plain = c879ec
+th_dream_world_gengetsu_lake = 1d2ad8
+th_dreamland_border = 4a0b9f
+th_dreamland_limbo_spiral = 9d5c6d
+th_slumber_coral_reef = 9c97a9
+#梦幻馆
+th_mugenkan_main_hall = 8b3f9f
+th_mugenkan_wonderland_garden = 7a9c4f
+th_mugenkan_fantasy_wasteland = 5d1c9f
+th_yuuka_bedchamber = 9c7b8d
+th_mugenkan_sleeping_terror_chamber = 8a5f9c
+th_blood_lake_reflection_hall = e79bcb
+th_yuuka_mansion_balcony = ab6fd9
+#血之湖
+th_lake_of_blood = 1b34af
+th_lake_of_blood_vampire_pier = b74953
+th_blood_phoneme_corridor = 9d6c7b
+th_blood_dried_pass = 8c3f9e
+th_mugenkan_erosion_beach = 7d9b5f
+th_mugenkan_boiler_room = fc00ab
+#梦幻世界结界
+th_dream_world_border = e97ea4
+th_dream_world_crack_observatory = 8a6f9d
+th_dream_world_evil_pier = 6b9d4f
+th_unnamed_star = 4d0b9f
+th_dream_world_silent_garden = 9d7c5d
+th_border_dissolution_point = a35fba
+th_final_dream_rainbow_bridge = 10e971
+#梦境厅堂
+th_dream_world_sisters_boudoir = dcfc99
+th_dreamscape_hall = 7a9c6f
+th_dream_world_mirror_hall = d5a0dd
+th_dream_world_inverted_spire = 9d8b7c
+th_reversed_border = 8a7f9d
+th_sky_abyss_depths = 6d9b4e
+#哆来咪静修处
+th_deep_dream_chamber = 4f0b9d
+th_dreamland_kaian_path = 9d6c5e
+th_dream_soul_pool = 8c5f9f
+th_dream_dweller_market = 7b9d7f
+th_eternal_spring_dream_theater = dc829c
+#珠玉之台
+th_gemstone_terrace_dreamland = ed79d2
+th_demon_twins_cloister = c57559
+th_dream_teardrop_spring = 6c9d5f
+th_crimson_pact_altar = 4e0b9c
+th_gengetsu_solo_stage = 9d7c4b
+#莲之径
+th_lotus_pathway_dreamland = d55f4f
+th_nameless_lake_shore = 7a9c5e
+th_dreamland_foam_outpost = 5f1c9b
+th_phantom_morning_mist_plain = 9d8b7d
+th_lotus_shadow_beach = ed2db9
+#里香邸
+th_rika_mansion_hall = c4aa08
+th_rika_tank_hangar = 6d9b6e
+th_nameless_dream_well = 4c0b9d
+th_rika_eastern_border_outpost = 9d6c5f
+th_rika_turbine_test_stand = 8c5f9d
+th_rika_rooms = 4ee750
+#幻野
+th_phantom_plain = 7b9d8f
+th_eternal_night_plain = f506de
+th_border_wilderness = 03ed1d
+th_phantom_foam_hill = 8a6f9f
+th_dreamland_border_fault = 6c9d7f
+th_phase_folding_square = bb83db
+#战车工厂
+th_rika_tank_factory_hall = 83f256
+th_tank_final_assembly = e4f84b
+th_eastern_country_line_3 = f25417
+th_turbine_test_stand = 00f522
+th_engine_development_room = f89fb1
+th_engine_oil_black_lake = 9f7cb9
+#战车坟场
+th_tank_graveyard = 4e0b9e
+th_rika_prototype_grave = 9d7c5c
+th_eastern_country_abandoned_line = 8c6f9c
+th_rika_shotdown_zone = 7a9c6d
+th_turbine_barrow = ef2ff7
+#异空
+th_anomalous_space_time = 9d6c6b
+th_space_time_turbulence_corridor = 1f9e68
+th_resonance_fissure = 7b9d4e
+th_dream_realm_path = 5d1c9a
+th_evil_eye_gaze_corridor = 9c8b5f
+th_dimensional_fold_belt = c95f92
+#学徒之家
+th_apprentice_home = 8a6f9b
+th_marisa_apprentice_workshop = 6c9d7e
+th_dreamrealm_student_danmaku_field = 4e0b9b
+th_magic_resonance_tower = 9d7c4d
+th_mima_teaching_chamber = 22d232
+#灵魔殿
+th_dreamrealm_reima_den_main_hall = 9ae356
+th_soul_binding_chamber = f8bbb7
+th_mima_throne_room = 7a9c5f
+th_cult_library = fe53b8
+th_witch_pact_chamber = 9d8b2e
+th_dream_realm_gaze_dome = 8a7f9b
+#幻梦界中心
+th_dream_realm_center = 6d9b4d
+th_border_harmony_chamber = dc88e3
+th_witches_gathering_square = 9d6c4c
+th_star_moon_prophecy_tower = 8c5f9a
+th_spell_weaving_atelier = 7b9d3f
+#幻梦界之扉
+th_dream_realm_gate = 5d1c9b
+th_moonbow_bridge_market = 9c8b1e
+th_dream_pet_market = 8a6f9a
+th_spellbook_bazaar = 6c9d2f

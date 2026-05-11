@@ -1035,8 +1035,11 @@ sea_zones = {
 # LAKES
 ########
 lakes = { 
-	### TH LAKE
+	### TH LAKE Gensokyo
 	th_lake_of_wind_god
+	th_lake_of_blood
+	th_sunset_plain_lake
+	th_dream_world_gengetsu_lake
 	###
     malaren hjalmaren_lake vattern vanern siljan storsjon enare_trask torne_trask storavan uddjaur vastenjaure akkajaure	# Sweden
 	mjosa #norway
@@ -1206,6 +1209,8 @@ lakes = {
 # Blocks unit movement.
 
 impassable_mountains = {
+	#Gensokyo
+	th_lily_valley_poison_sea
 	#Europe
 	s_jamtland_wasteland n_jamtland_wasteland jotunheim hardangervidda skanderna north_skanderna vattnajokull icelandic_highlands hofsjokull langjokull eyjafjallajokull
 	eiriksfjord norway_wasteland_a norway_wasteland_b norway_wasteland_c
