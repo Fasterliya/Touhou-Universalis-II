@@ -43535,6 +43535,233 @@ th_gods_hoad = 7b9c2e
 th_red_frogs_tomb = 5a0c9f
 th_hill_of_wind_and_rain = 9d4b7c
 th_divine_wind_hanging_meadow = c7738c
+###畜生界大区
+#
+#未知之扉
+th_gate_of_inknown = c366fe
+th_primate_barrier = 9c3e9f
+th_wall_of_hopoless = 8d7f6a
+th_hani_depression = 7c8f7b
+th_haniwa_doll_sentry_array = 3fb81a
+#灵长园
+th_primate_spirit_garden = 6e9d6f
+th_haniyasushin_shrine = 9f4f8c
+th_hope_altar = 5a9b8b
+th_haniwa_port = 4b2c9a
+th_haniwa_shaping_palace = 9ce601
+th_peninsula_spine_avenue = d782d5
+th_idol_prayer_steps = c83e29
+th_primate_deepwater_port = cead29
+th_human_preserve_idol_realm = f92a7d
+th_central_processing_terminal = e1e965
+th_clay_island = 40e84c
+th_unfinished_colossus_island = 87218a
+#灵长类之境
+th_clay_bay = 9b6c9e
+th_village_of_isolate = e45f46
+th_human_spirit_village = 7b9d9c
+th_withered_field = 5c3d9b
+th_silent_fishing_village = b85877
+th_clay_outpost = fc9482
+th_tool_graveyard = ac4689
+#野兽大都会
+th_beast_downtown = 9d8b7f
+th_shimokita = d25b1d
+th_primate_lower_city = 6a9d8d
+th_haniwa_precinct = 4d2c9b
+th_arc_light_emitter = 13ac2e
+th_shaping_bureau = f1935e
+th_human_doll_citizen_apartments = 9187db
+#水獭灵岗楼
+th_otter_spirit_watchtower = 9c7a6e
+th_castor_clan = 8b6f9d
+th_red_panda_cave = 7c9baf
+th_iron_branch_dam = 5e3c9a
+th_kike_secret_way = 9d6b9f
+th_pangolin_bunker = d616bd
+th_albatross_storm_nest = c8c114
+#人灵市镇
+th_primate_spirit_township = fadf3c
+th_delusion_prosperity = 31f654
+th_tenkyuu_branch_office = f3f32e
+th_primate_meander = 804ead
+th_bloody_turbulence = e80e3b
+th_st_haniwa_mountain = 446c7a
+th_penguin_ice_outpost = a1a63c
+#野狼灵竞技场
+th_haniwa_basin = aa0d38
+th_old_village_of_wolf_spirit = 9c6bcd
+th_wolf_spirit_arena = e28b70
+th_wild_plain = 6a9def
+th_limitation_hills = d0e30e
+th_scab = f57a84
+#迷失魂灵庇护所
+th_lost_souls_shelter = d60036
+th_tagnation_port = 7b9cfe
+th_skeleton_plateau = 5c3b9e
+th_gaze_westward_hillock = 9d6bde
+#魂之壶
+th_atonement_lock = f30891
+th_yamato_beach = eadc58
+th_marigold_confluence = 8ae39f
+th_pot_of_souls = 9c8a4f
+th_prayer_differential_tower = b85049
+th_lepton_resonance_arc_stream = e55f23
+#贪欲之渊
+th_dark_abyss = 51f129
+th_pot_of_greed = f7979d
+th_camp_of_artorias = 42e179
+th_burl_heart = 9d6b1e
+th_greed_black_market = ea8a74
+th_desire_tidal_flat = 29cc08
+th_dragon_crystal_main_island = 862d8f
+th_sloth_lagoon_island = f2d220
+#奈河沿岸
+th_naihe_bridge = 8b5f9e
+th_well_of_frogotten = ce2f72
+th_last_chance = 4c2b9f
+th_baos_post_station = fc670e
+th_utopia_reflection = ac94ed
+th_reincarnation_whirlpool_palace = df54ab
+#亡灵泥沼
+th_dead_swamp = f5997e
+th_forest_of_hunt = 7b9c4f
+th_idol_bay = 5e3c9c
+th_black_sand_beach = 9d6b2f
+#埴轮工厂
+th_haniwa_factory = 6ef950
+th_haniwa_barracks = 6d9b5f
+th_haniwa_subrbs = 4d2b9f
+th_idol_frontier = 9c8a5f
+th_dead_zone = f06968
+th_dregs_shantytown = 40e55a
+th_faith_clay_pool_island = 9db06c
+th_loyalty_maze_island = e464a5
+th_anvil_root_bridge = 28f932
+#叫唤地狱
+th_screaming_hell = eb3982
+th_scorching_hell = 5f3c9b
+th_avici_hell = 9d6b3f
+th_deer_hunting_hell = 376537
+#虚与实的境界
+th_border_of_fake_and_reality = bd76fe
+th_reviving_hell = 43d97d
+th_kalasutra_hell = 9d7a4f
+th_samghata_hell = e184db
+th_concept_collapse_abyss = 83bd4f
+th_bee_hive_array = d50197
+#地狱边境
+th_throne_of_caelestinus_V = fec227
+th_abandoned_baby_park = 5d3c9d
+th_cobble_riverbank = 9c6b4f
+th_stone_stacking_ring = 692539
+th_hell_windless_plain = a749fa
+th_hell_path_of_confusion = d777be
+#畜生界之扉
+th_pass_of_animal_realm = fe7a7a
+th_kike_gang_skyscraper = c241c3
+th_yachies_mansion = 4d6a53
+th_gold_brance_wall = 94e941
+th_village_of_otters = 7a9caf
+th_underwater_cellar = 93d2ba
+#嚎哭洞穴
+th_crying_cave = 5b3c9e
+th_interrogation_house = b80568
+th_betray_blade = c3e097
+th_biten_tree_house = d75d1d
+th_spongilla_fragilis_garden = 4c2b9b
+#无明旷原
+th_no_live_wilderness = f4be30
+th_deadly_hillside = e65bcd
+th_top_of_regression = 0f8b28
+th_strange_mine = a3b1bb
+th_echo_cavern = b40711
+th_false_moon_dark = b48f3e
+#兽王园
+th_beast_king_garden = 9c6b6f
+th_unfinished_land = 2af052
+th_relie_throne = b4724c
+th_nothing = 4d2b9c
+th_oni_tavern = 9d8a7f
+#中有之道
+th_road_of_liminality = de6363
+th_death_commercial_street = e496a6
+th_withered_flowers_garden = d3d0bb
+th_pretas_yelling = e97760
+#再思之道
+th_road_of_reconsideration = f4c91e
+th_lycoris_field = d5dfd4
+th_ghost_queue = 2ebc7b
+th_regret_echo_bridge = 959e1c
+th_pain_equivalence_scale = d08a72
+#畜生界
+th_untamed_horse_grassland = 9d7a9f
+th_beast_froniter = 3a511d
+th_galloping_horese_avenue = 7b9c5f
+th_throne_of_reject = f57ac3
+#未定位的地狱
+th_chaos_storm = 9c6b8f
+th_fear_of_oni = db0375
+th_blood_wine_of_sinner = 6d9b6f
+th_happyness_plantation = c87914
+#野兽灵之丘
+th_skeleton_ridge = 94db11
+th_hills_of_beast_spirit = ebb2c3
+th_haunted_gold_mine = 987e13
+th_bloody_factory = 4c2b9e
+th_coward_burrow = ca23ce
+#套索兽道
+th_lasso_beast_road = 9d8a8f
+th_road_of_slavery = ebce04
+th_undead_settlement = c7774a
+th_ash_barren = 5b3c9a
+th_broken_horn_graveyard = e0607d
+#野兽之町
+th_new_city_of_wolf_spirit = b646cb
+th_keiga_gang_skyscraper = 63de35
+th_saki_mansion = 7b9c9f
+th_pegasus_fortress = 5d3c9b
+#悲伤山冈
+th_sadness_hillock = 9c6baf
+th_sunken_corpse_riverbed = c42634
+th_kaiji_casino = 6a65c3
+th_hidden_corn_field = 58cf87
+th_tearless_peak = abaa3a
+th_solid_rain_cliff = ed89d6
+#虚空边界
+th_void_of_fate = d2a320
+th_void_of_end = ca78af
+th_void_of_think = 7a9cbf
+th_void_of_nothing = 5b3c9d
+#遗物之丘
+th_relic_hill = 9d6bcf
+th_valley_of_new_three_artifact = 8b5f9d
+th_game_console_dead_end = 6c9d1f
+th_oblivon_time = 4c2b9c
+th_sentinel_cliff = d83842
+#血池地狱
+th_blood_pond_hell = 1cc222
+th_artery_of_petroleum = 14e92a
+th_toutetsu_cabin = fee1e6
+th_brain_of_beast = 5d3c9e
+#石油之海
+th_sea_of_petroleum = 9c6b1f
+th_infinite_food = 32dc5d
+th_greedy_gusher = 6d9b3f
+th_bottomless_pit = 3c7071
+th_desire_cracking_plant = 77ea3d
+#黄泉
+th_huangquan = 9d8aaf
+th_oni_hunting_chain = f1a03d
+th_mourning_border = 6e33a5
+th_zoo_of_extince_animals = 5b3c9f
+#鬼渡之关
+th_oniwatari_pass = 6cb70a
+th_straightforward_traffic_sign = f6c1f8
+th_death_door = 31cb44
+th_oniwatari_shrine = 4c2b9a
+th_crossing_black_market = 23671f
+
 ###太阳花田地区
 #
 #太阳花田
@@ -43756,7 +43983,7 @@ th_genesis_cloister_hall = 7a9c3f
 th_makai_loom_of_forms = becfad
 th_makai_spiral_gene_stairs = 9d6b2e
 th_makai_hall_of_mirrors = 8b5f9c
-th_makai_concept_incubator_element = #CB3873
+th_makai_concept_incubator_element = cb3873
 #魔物之町
 th_borges_library_branch = 37fe51
 th_shinki_old_atelier = 9d8a4f

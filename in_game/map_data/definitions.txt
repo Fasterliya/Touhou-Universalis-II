@@ -2948,24 +2948,40 @@ th_gensokyo_continent = {
 					th_primate_barrier
 					th_wall_of_hopoless
 					th_hani_depression
+					th_haniwa_doll_sentry_array
+					
 				}
 				th_primate_spirit_garden_province = {
 					th_primate_spirit_garden
 					th_haniyasushin_shrine
 					th_hope_altar
 					th_haniwa_port
+					th_haniwa_shaping_palace
+					th_peninsula_spine_avenue
+					th_idol_prayer_steps
+					th_primate_deepwater_port
+					th_human_preserve_idol_realm
+					th_central_processing_terminal
+					th_clay_island
+					th_unfinished_colossus_island
 				}
 				th_land_of_primate_province = {
 					th_clay_bay
 					th_village_of_isolate
 					th_human_spirit_village
 					th_withered_field
+					th_silent_fishing_village
+					th_clay_outpost
+					th_tool_graveyard
 				}
 				th_beast_metropolis_province = {
 					th_beast_downtown
 					th_shimokita
 					th_primate_lower_city
 					th_haniwa_precinct
+					th_arc_light_emitter
+					th_shaping_bureau
+					th_human_doll_citizen_apartments
 				}
 				th_otter_spirit_watchtower_province = {
 					th_otter_spirit_watchtower
@@ -2973,6 +2989,8 @@ th_gensokyo_continent = {
 					th_red_panda_cave
 					th_iron_branch_dam
 					th_kike_secret_way
+					th_pangolin_bunker
+					th_albatross_storm_nest
 				}
 				th_human_spirit_township_province = {
 					th_primate_spirit_township
@@ -2981,6 +2999,7 @@ th_gensokyo_continent = {
 					th_primate_meander
 					th_bloody_turbulence
 					th_st_haniwa_mountain
+					th_penguin_ice_outpost
 				}
 				th_wolf_spirit_arena_province = {
 					th_haniwa_basin
@@ -3003,18 +3022,26 @@ th_gensokyo_continent = {
 					th_yamato_beach
 					th_marigold_confluence
 					th_pot_of_souls
+					th_prayer_differential_tower
+					th_lepton_resonance_arc_stream
 				}
 				th_abyss_of_greed_province = {
 					th_dark_abyss
 					th_pot_of_greed
 					th_camp_of_artorias
 					th_burl_heart
+					th_greed_black_market
+					th_desire_tidal_flat
+					th_dragon_crystal_main_island
+					th_sloth_lagoon_island
 				}
 				th_naihe_riverbank_province = {
 					th_naihe_bridge
 					th_well_of_frogotten
 					th_last_chance
 					th_baos_post_station
+					th_utopia_reflection
+					th_reincarnation_whirlpool_palace
 				}
 				th_undead_quagmire_province = {
 					th_dead_swamp
@@ -3028,6 +3055,10 @@ th_gensokyo_continent = {
 					th_haniwa_subrbs
 					th_idol_frontier
 					th_dead_zone
+					th_dregs_shantytown
+					th_faith_clay_pool_island
+					th_loyalty_maze_island
+					th_anvil_root_bridge
 				}
 			}
 			th_eastern_animal_realm_area = {
@@ -3042,12 +3073,16 @@ th_gensokyo_continent = {
 					th_reviving_hell
 					th_kalasutra_hell
 					th_samghata_hell
+					th_concept_collapse_abyss
+					th_bee_hive_array
 				}
 				th_limbo_province = {
 					th_throne_of_caelestinus_V
 					th_abandoned_baby_park
 					th_cobble_riverbank
 					th_stone_stacking_ring
+					th_hell_windless_plain
+					th_hell_path_of_confusion
 				}
 				th_gate_of_animal_realm_province = {
 					th_pass_of_animal_realm
@@ -3055,6 +3090,7 @@ th_gensokyo_continent = {
 					th_yachies_mansion
 					th_gold_brance_wall
 					th_village_of_otters
+					th_underwater_cellar
 				}
 				th_crying_cave_province = {
 					th_crying_cave
@@ -3068,6 +3104,8 @@ th_gensokyo_continent = {
 					th_deadly_hillside
 					th_top_of_regression
 					th_strange_mine
+					th_echo_cavern
+					th_false_moon_dark
 				}
 				th_beast_king_garden_province = {
 					th_beast_king_garden
@@ -3086,6 +3124,8 @@ th_gensokyo_continent = {
 					th_road_of_reconsideration
 					th_lycoris_field
 					th_ghost_queue
+					th_regret_echo_bridge
+					th_pain_equivalence_scale
 				}
 			}
 			th_western_animal_realm_area = {
@@ -3106,12 +3146,14 @@ th_gensokyo_continent = {
 					th_hills_of_beast_spirit
 					th_haunted_gold_mine
 					th_bloody_factory
+					th_coward_burrow
 				}
 				th_lasso_beast_road_province = {
 					th_lasso_beast_road
 					th_road_of_slavery
 					th_undead_settlement
 					th_ash_barren
+					th_broken_horn_graveyard
 				}
 				th_beast_town_province = {
 					th_new_city_of_wolf_spirit
@@ -3124,6 +3166,8 @@ th_gensokyo_continent = {
 					th_sunken_corpse_riverbed
 					th_kaiji_casino
 					th_hidden_corn_field
+					th_tearless_peak
+					th_solid_rain_cliff
 				}
 				th_void_border_province = {
 					th_void_of_fate
@@ -3131,11 +3175,12 @@ th_gensokyo_continent = {
 					th_void_of_think
 					th_void_of_nothing
 				}
-				th_relic_hill_province_province = {
+				th_relic_hill_province = {
 					th_relic_hill
 					th_valley_of_new_three_artifact
 					th_game_console_dead_end
 					th_oblivon_time
+					th_sentinel_cliff
 				}
 				th_blood_pond_hell_province = {
 					th_blood_pond_hell
@@ -3148,6 +3193,7 @@ th_gensokyo_continent = {
 					th_infinite_food
 					th_greedy_gusher
 					th_bottomless_pit
+					th_desire_cracking_plant
 				}
 				th_huangquan_province = {
 					th_huangquan
@@ -3157,9 +3203,10 @@ th_gensokyo_continent = {
 				}
 				th_oni_epidemic_pass_province = {
 					th_oniwatari_pass
-					th_straightforward_sign
+					th_straightforward_traffic_sign
 					th_death_door
 					th_oniwatari_shrine
+					th_crossing_black_market
 				}
 			}
 		}
@@ -3423,7 +3470,7 @@ th_gensokyo_continent = {
 					th_makai_chaos_abyss
 					th_temporal_fissure
 					th_makai_great_scar
-					th_th_katuganya_makai
+					th_katuganya_makai
 					th_reverse_creation_spiral
 				}
 				th_genesis_cloister_province = {
@@ -3492,7 +3539,7 @@ th_gensokyo_continent = {
 				}
 				th_dharmadhatu_province = {
 					th_dharmadhatu_makai
-					th_false_sun_dark
+					th_false_sun
 					th_makai_emptiness_pool
 					th_makai_city_mirage
 				}
@@ -3522,7 +3569,7 @@ th_gensokyo_continent = {
 				th_hakurei_old_shrine_province = {
 					th_old_reimu_old_trace
 					th_old_outer_world_junk_pile
-					th_kana_anaberal_masion
+					th_kana_anaberal_masion_hidden
 					th_hakurei_roofless_honden
 					th_hakurei_old_sando
 				}
