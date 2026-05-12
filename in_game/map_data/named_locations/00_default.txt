@@ -43693,3 +43693,223 @@ th_dream_realm_gate = 5d1c9b
 th_moonbow_bridge_market = 9c8b1e
 th_dream_pet_market = 8a6f9a
 th_spellbook_bazaar = 6c9d2f
+###魔界
+#不可思议之国
+th_doll_heart_tower = 4f9a7e
+th_red_queen_maze = 9c2d9f
+th_late_rabbit_hole = 8d6e7f
+th_doll_tea_party_garden = 7c8f6a
+th_alice_old_room = 5e9d5f
+th_makai_wonderland = cc6761
+th_stagnant_melody_bay = 98e511
+th_golden_ratio_cloister = 8388c2
+#魔界结界
+th_makai_barrier = 6d9b7b
+th_abyss_gaze_gate = 4a1b9d
+th_fallen_angel_shackle_platform = 9b5c8e
+th_chaos_core_reactor = cd7a45
+th_sariel_judgment_old_masion = 7b9d8c
+th_rainbow_silence_shoal = 966e35
+#虹彩花园
+th_location_refraction_rise = 5c2c9e
+th_prismatic_field = 9d7b6f
+th_makai_dew_disperse = c2485e
+th_makai_monstrosity = 6a9d5d
+th_makai_fae_atelier = 4d1b9f
+th_makai_eternal_cacophony = 9c8c7e
+th_makai_ideal_city_ruin_island = 8c855e
+#魔界丝绸集市
+th_makai_silken_vault = 8b7f9d
+th_brocade_bazaar = 7c9b6e
+th_moonshade_grove = 52c337
+th_makai_gleam_quay = 9d6b5f
+th_mithril_roadstead = 8c5f9c
+#万魔殿
+th_makai_gate_of_myriad_demons = 6b9d3c
+th_stellar_laboratory = c371d5
+th_grotesque_armory = 5de236
+th_silver_key_cloister = fc84b1
+th_makai_silent_chapel = 7a9c4d
+th_silver_key_cloister_workroom = cf6a1a
+th_time_tuning_chamber = e7d2ec
+#魔界妖精聚集地
+th_makai_candy_fountain = 5d2c9c
+th_phantom_butterfly_valley = 9c6b3f
+th_makai_rainbow_dandelion_meadow = d9c74a
+th_makai_fairy_garden = 6d9b2e
+th_upside_down_grove = 4c2b9d
+th_fairy_el_dorado_island = ce3d90
+#冰封世界
+th_makai_frozen_world_west = 9d8a5f
+th_makai_frozen_world_south = 4ac14e
+th_makai_forbidden_magic = 7b9c5e
+th_makai_mai_yuki = 5f2c9b
+th_judas_mirror_court = 9c6b4d
+#混沌深渊
+th_makai_chaos_abyss = 8a5f9b
+th_temporal_fissure = 6d9b1f
+th_makai_great_scar = 4b2c9e
+th_katuganya_makai = 9d7a6f
+th_reverse_creation_spiral = d7c78d
+#创世殿堂
+th_genesis_cloister_hall = 7a9c3f
+th_makai_loom_of_forms = becfad
+th_makai_spiral_gene_stairs = 9d6b2e
+th_makai_hall_of_mirrors = 8b5f9c
+th_makai_concept_incubator_element = #CB3873
+#魔物之町
+th_borges_library_branch = 37fe51
+th_shinki_old_atelier = 9d8a4f
+th_cheshire_cat_alley = 8c7f9a
+th_upside_down_garden = 7b9c6d
+th_mononoke_machi = 5e2c9d
+#魔界之扉
+th_makai_world_gate_post = 9c6b5c
+th_makai_saras_watch_post = d8d32a
+th_gate_of_the_forgotten = 6d9b5e
+th_mana_nexus_ring_makai = 4f2b9c
+th_makai_hole_vertical_street = 9d7a3e
+th_makai_barrier_seam = 18f434
+#魔界秘境
+th_makai_hidden_realms = fb215e
+th_makai_dharma_realm_checkerboard_plain = 90aacc
+th_diagonal_avenue_street = cd1a31
+th_romantic_children_cross = 9d6b1d
+th_magus_pilgrim_tower = 4a0f7a
+#魔界大都会
+th_makai_central_library = fcece3
+th_makai_reverse_sewer_network = 907e32
+th_makai_hijiri_byakuren_berth = 9d8a2f
+th_makai_demon_rose_night_garden = de3119
+th_makai_metropolis_center = 7b9c8f
+th_eternal_dusk_theater = 68bc20
+th_shinki_creation_museum = f17a73
+th_makai_crystal_apartment = cf972d
+#创生方尖碑
+th_makai_genesis_obelisk = 5c2b9c
+th_genesis_origin_plaza = 9d6b4c
+th_genesis_fresco = e5c680
+th_yumeko_manor = 6d9b9f
+#魔界边境
+th_makai_frontier = a8a75e
+th_makai_mad_hatter_frontier_tea = 9d7a5e
+th_makai_frontier_east = 5dff46
+th_makai_zero_gate = 7a9c7f
+th_fractal_plain_makai = 53813a
+#魔界之港
+th_makai_harbor = 5b2c9a
+th_dimensional_seawall = 97fe79
+th_luize_traveler_ground = d8e17f
+th_wonderland_travel_agency = 6c9d8f
+th_returner_sanatorium = 4d2b9a
+th_otherworld_souvenir_market = 48f023
+#法界
+th_dharmadhatu_makai = 548f78
+th_false_sun = 7b9c9e
+th_makai_emptiness_pool = 933b90
+th_makai_city_mirage = 9d6b7c
+#维纳的废墟
+th_ruins_of_vina = bdc3ee
+th_elis_star_rod_tower = 6d9baf
+th_pixel_ruin_plain = 4e2b9c
+th_fallen_temple_vestibule_before = 9d7a6e
+th_makai_bat_roost = 8c6f9a
+#堕落神殿
+th_inverted_cross_corridor = 7a9c8e
+th_civilization_of_magic_library = fee26f
+th_six_winged_throne_room = 9d6b8d
+th_sariel_judgment_masion = 8b5f9a
+th_sariel_judgment_room = 6c9dbf
+#仙境
+th_frozen_hymn_church = 4d2b9b
+th_golden_apple_orchard = 9d8a3e
+th_angel_dry_dock = 8c7f9b
+th_elysian_cargo_market = 7b9caf
+th_elysion_makai = e0ec11
+#博丽旧社
+th_old_reimu_old_trace = 9d6b9c
+th_old_outer_world_junk_pile = faa39d
+th_kana_anaberal_masion_hidden = 6d9bce
+th_hakurei_roofless_honden = 4e2b9a
+th_hakurei_old_sando = 9d7a7e
+#通往魔界的洞穴
+th_cave_to_makai = 8c6f9b
+th_elis_smuggle_path = 7a9cbe
+th_secret_stream_to_harbor = 5b2c9c
+th_wonderland_port_forgotten = 9d6bab
+th_hakurei_abandon_shrine_old = 8b5f9b
+th_sariel_waiting_pavilion = 6c9ddf
+#博丽旧社庭院
+th_old_hakurei_shrine_torii_labyrinth = 7e8014
+th_hakurei_old_shrine_garden = 9d8a4e
+th_green_landscape_islands = 8c7f9c
+th_old_hakurei_asetic_path = a1ade5
+#旧社后山
+th_hakurei_back_mountain = 5c2b9d
+th_hakurei_former_miko_grave_mound = 9d6bbc
+th_hakurei_lake_upper_valley = 8a5f9d
+th_old_tree_hakurei_shinbaku = 6d9bef
+th_hakurei_trial_slope = 4e2b9d
+#梦幻遗迹
+th_illusionary_ruins_main = 9d7a8e
+th_inception_mirror_layer = 8c6f9d
+th_ruins_convergence_point = 7a9cde
+th_dream_diary_corridor = 5b2c9d
+th_illusionary_ruins_outdoor = 9d6bcd
+#紫野
+th_murasakino_location = cae13d
+th_inverted_murasaki_bamboo = fa89b4
+th_old_cutoff_sanzu_river = 4d2b9d
+th_old_prototype_gap_corridor = 9d8a5e
+th_old_shigan_port = 8c7f9d
+th_old_higanbana_cliff = 9c5d7a
+#蓬松松爱莲魔法店
+th_fluffy_ellen_magic_shop_main = 5c2b9e
+th_fluffy_ellen_magic_masion_main = 9d6bdc
+th_fluffy_ellen_magic_shop_room = 8a5f9e
+th_socrates_philosophy_bone_room = 6d9b1c
+th_ellen_walking_teacup_garden = f9f5de
+#明罗道场
+th_meira_dojo_main = 9d7a9e
+th_fumairoku_archive_location = 8c6f9e
+th_meira_dojo_masion = e19695
+th_cut_bonds_testing_stone = 5b2c9e
+th_meira_no_thought_sword_steps = 9d6beb
+#卡娜安娜贝拉尔的洋馆
+th_kana_mansion_main = 8b5f9f
+th_kana_maidens_blank_bedroom = 6c9d2c
+th_kana_faded_memory_foyer = 4d2b9e
+th_kana_sighing_corridor = 9d8a6e
+th_phantom_banquet_hall = 8c7f9e
+#朝仓实验室
+th_abandoned_magic_room = 7b9c1f
+th_crystal_computer_array = 5c2b9f
+th_asakura_laboratory_room = 9d6bfa
+th_me_controller_core = 8a5f9f
+th_crystal_growth_chamber = 6d9b3c
+th_asakura_laboratory_tech_room = ce673a
+#往昔地狱之扉
+th_former_hell_gate = 4e2b9f
+th_sin_flame_furnace = 9d7aaf
+th_old_grudge_precipitation_pool = 8c6f9f
+th_sin_flame_man_room = 7a9c2f
+#静寂神殿
+th_astral_approach_main = fb22d0
+th_astral_approach_konngara_dojo = 9d6b1a
+th_masterless_buddha_altar = 8b5fa9
+th_child_attendant_cell = 6c9d4c
+th_silent_bell_tower = 4d2b8f
+th_silent_sanctuary_main = 9d8a7e
+#炎之腐界
+th_impure_flame_shrine = 8c7f8f
+th_flame_core_abyss_outdoor = 39b969
+th_kikuri_abode_main = 5c2b8e
+th_flame_festering_lake = 9d6b2a
+th_silent_sanctuary_vestibule = 8a5f8e
+th_flame_core_abyss = 6d9b5c
+th_old_hig_port = c35bce
+#祠
+th_nameless_jizo_shrine = 4e2b8e
+th_time_rot_rain_shrine = 9d7abf
+th_hungry_ghost_offering_shrine = ce18d0
+th_inverted_pillar = b97ad2

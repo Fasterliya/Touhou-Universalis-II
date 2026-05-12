@@ -3365,6 +3365,8 @@ th_gensokyo_continent = {
 					th_doll_tea_party_garden
 					th_alice_old_room
 					th_makai_wonderland
+					th_stagnant_melody_bay
+					th_golden_ratio_cloister
 				}
 				th_makai_barrier_province = {
 					th_makai_barrier
@@ -3372,6 +3374,7 @@ th_gensokyo_continent = {
 					th_fallen_angel_shackle_platform
 					th_chaos_core_reactor
 					th_sariel_judgment_old_masion
+					th_rainbow_silence_shoal
 				}
 				th_makai_monstrosity_province = {
 					th_location_refraction_rise
@@ -3380,6 +3383,7 @@ th_gensokyo_continent = {
 					th_makai_monstrosity
 					th_makai_fae_atelier
 					th_makai_eternal_cacophony
+					th_makai_ideal_city_ruin_island
 				}
 				th_silken_vault_province = {
 					th_makai_silken_vault
@@ -3394,6 +3398,8 @@ th_gensokyo_continent = {
 					th_grotesque_armory
 					th_silver_key_cloister
 					th_makai_silent_chapel
+					th_silver_key_cloister_workroom
+					th_time_tuning_chamber
 				}
 
 			}
@@ -3404,6 +3410,7 @@ th_gensokyo_continent = {
 					th_makai_rainbow_dandelion_meadow
 					th_makai_fairy_garden
 					th_upside_down_grove
+					th_fairy_el_dorado_island
 				}
 				th_makai_frozen_world_province = {
 					th_makai_frozen_world_west
@@ -3441,6 +3448,7 @@ th_gensokyo_continent = {
 					th_gate_of_the_forgotten
 					th_mana_nexus_ring_makai
 					th_makai_hole_vertical_street
+					th_makai_barrier_seam
 				}
 				th_makai_hidden_realms_province = {
 					th_makai_hidden_realms
@@ -3455,6 +3463,9 @@ th_gensokyo_continent = {
 					th_makai_hijiri_byakuren_berth
 					th_makai_demon_rose_night_garden
 					th_makai_metropolis_center
+					th_eternal_dusk_theater
+					th_shinki_creation_museum
+					th_makai_crystal_apartment
 				}
 				th_makai_genesis_obelisk_province = {
 					th_makai_genesis_obelisk
@@ -3467,6 +3478,7 @@ th_gensokyo_continent = {
 					th_makai_mad_hatter_frontier_tea
 					th_makai_frontier_east
 					th_makai_zero_gate
+					th_fractal_plain_makai
 				}
 			}
 			th_makai_peninsula_area = {
@@ -3506,6 +3518,115 @@ th_gensokyo_continent = {
 					th_elysion_makai
 				}
 			}
+			th_hakurei_old_shrine_west_area = {
+				th_hakurei_old_shrine_province = {
+					th_old_reimu_old_trace
+					th_old_outer_world_junk_pile
+					th_kana_anaberal_masion
+					th_hakurei_roofless_honden
+					th_hakurei_old_sando
+				}
+				th_cave_to_makai_province = {
+					th_cave_to_makai
+					th_elis_smuggle_path
+					th_secret_stream_to_harbor
+					th_wonderland_port_forgotten
+					th_hakurei_abandon_shrine_old
+					th_sariel_waiting_pavilion
+				}
+				th_hakurei_old_shrine_garden_province = {
+					th_old_hakurei_shrine_torii_labyrinth
+					th_hakurei_old_shrine_garden
+					th_green_landscape_islands
+					th_old_hakurei_asetic_path
+				}
+				th_hakurei_back_mountain_province = {
+					th_hakurei_back_mountain
+					th_hakurei_former_miko_grave_mound
+					th_hakurei_lake_upper_valley
+					th_old_tree_hakurei_shinbaku
+					th_hakurei_trial_slope
+				}
+				th_illusionary_ruins_province = {
+					th_illusionary_ruins_main
+					th_inception_mirror_layer
+					th_ruins_convergence_point
+					th_dream_diary_corridor
+					th_illusionary_ruins_outdoor
+				}
+
+			}
+			th_hakurei_old_shrine_area = {
+				th_murasakino_province = {
+					th_murasakino_location
+					th_inverted_murasaki_bamboo
+					th_old_cutoff_sanzu_river
+					th_old_prototype_gap_corridor
+					th_old_shigan_port
+					th_old_higanbana_cliff
+				}
+				th_fluffy_ellen_magic_shop_province = {
+					th_fluffy_ellen_magic_shop_main
+					th_fluffy_ellen_magic_masion_main
+					th_fluffy_ellen_magic_shop_room
+					th_socrates_philosophy_bone_room
+					th_ellen_walking_teacup_garden
+				}
+				th_meira_dojo_province = {
+					th_meira_dojo_main
+					th_fumairoku_archive_location
+					th_meira_dojo_masion
+					th_cut_bonds_testing_stone
+					th_meira_no_thought_sword_steps
+				}
+				th_kana_mansion_province = {
+					th_kana_mansion_main
+					th_kana_maidens_blank_bedroom
+					th_kana_faded_memory_foyer
+					th_kana_sighing_corridor
+					th_phantom_banquet_hall
+				}
+				th_asakura_laboratory_province = {
+					th_abandoned_magic_room
+					th_crystal_computer_array
+					th_asakura_laboratory_room
+					th_me_controller_core
+					th_crystal_growth_chamber
+					th_asakura_laboratory_tech_room
+				}
+			}
+			th_former_hell_area = {
+				th_former_hell_gate_province = {
+					th_former_hell_gate
+					th_sin_flame_furnace
+					th_old_grudge_precipitation_pool
+					th_sin_flame_man_room
+				}
+				th_silent_sanctuary_province = {
+					th_astral_approach_main
+					th_astral_approach_konngara_dojo
+					th_masterless_buddha_altar
+					th_child_attendant_cell
+					th_silent_bell_tower
+					th_silent_sanctuary_main
+				}
+				th_flaming_rot_realm_province = {
+					th_impure_flame_shrine
+					th_flame_core_abyss_outdoor
+					th_kikuri_abode_main
+					th_flame_festering_lake
+					th_silent_sanctuary_vestibule
+					th_flame_core_abyss
+					th_old_hig_port
+				}
+				th_myriad_shrines_province = {
+					th_nameless_jizo_shrine
+					th_time_rot_rain_shrine
+					th_hungry_ghost_offering_shrine
+					th_inverted_pillar
+				}
+			}
+
 		}
 	}
 	th_gensokyo_outer_world_sub_continent = {
