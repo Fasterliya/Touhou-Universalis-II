@@ -3163,6 +3163,145 @@ th_gensokyo_continent = {
 				}
 			}
 		}
+		rh_hell_reigion = {
+			th_northern_hell_area = {
+				th_yama_sentry_province = {
+					th_yama_sentry
+					th_jizo_maze
+					th_onimi_barracks
+					th_jiulun_palace
+				}
+				th_judge_backyard_province = {
+					th_taihe_palace
+					th_emperors_mansion
+					th_black_tea_garden
+					th_thousands_purple_sakura_blossom
+				}
+				th_higanbana_plain_province = {
+					th_higanbana_plain
+					th_xuanming_palace
+					th_no_vitality_mountain_pass
+					th_yama_plain
+				}
+				th_souls_detention_center_province = {
+					th_souls_detention_center
+					th_onimi_house
+					th_taigongs_fishing_spot
+					th_pride_of_death
+				}
+				th_far_shore_province = {
+					th_far_shore
+					th_paradise_upstream
+					th_horse_head_village
+					th_pingzhong_terrace
+				}
+				th_yamas_palace_province = {
+					th_yama_palace
+					th_bizhen_palace
+					th_suying_palace
+					th_city_of_feng
+					th_jetavana_ruined_shrine
+				}
+			}
+			th_western_hell_area = {
+				th_port_of_hell_province = {
+					th_hell_port
+					th_windless_col
+					th_outsider_souls_village
+					th_qifei_palace
+				}
+				th_miasma_field_province = {
+					th_miasma_field
+					th_hills_of_after_death
+					th_hole_of_the_border
+					th_fossil_coast
+				}
+				th_purgatorium_province = {
+					th_purgatory
+					th_wuchang_shore
+					th_depression_of_chaos_qi
+					th_bull_head_village
+					th_jiuji_palace
+				}
+				th_teahouse_at_hell_province = {
+					th_forbbiden_zone_of_onimi_head
+					th_little_devil_town
+					th_jizo_palace
+					th_teahouse_at_hell
+				}
+				th_death_retreat_province = {
+					th_komachis_hideout
+					th_expedition_port
+					th_hazbin_hotel
+					th_alchemy_workhouse
+				}
+			}
+			th_eastern_hell_area = {
+				th_santu_river_province = {
+					th_santu_river_bank
+					th_chenghuang_temple
+					th_xiwen_meander
+					th_separate_souls_ferry
+				}
+				th_dark_flame_forest_province = {
+					th_smoldering_forest
+					th_massacre_wildrness
+					th_will_castle
+					th_nine_spirng_pass
+				}
+				th_end_of_souls_province = {
+					th_withered_chrysanthemum_field
+					th_land_ofcontrition
+					th_atonement_trail
+					th_enlightenment_mine
+					th_end_of_souls
+				}
+				th_pass_of_hell_province = {
+					th_pass_of_hell
+					th_tai_palace
+					th_regret
+					th_mingchen_palace
+				}
+				th_niwataris_entry_province = {
+					th_niwataris_entry
+					th_hundreds_days_resentment
+					th_outside_world_entry
+					th_wrongfully_killed_dormitory
+				}
+			}
+			th_southern_hell_area = {
+				th_tomb_of_memories_province = {
+					th_sai_no_kawara
+					th_village_of_foundling
+					th_eika_cabin
+					th_yama_terakoya
+				}
+				th_sai_no_kawara_province = {
+					th_start_of_memorie
+					th_miare_office
+					th_unheard_old_haunt
+					th_camellia_garden
+				}
+				th_grand_magi_residence_province = {
+					th_grand_magi_residence
+					th_puming_palace
+					th_mortals_annex
+					th_offerings_avenue
+				}
+				th_souls_river_province = {
+					th_souls_river
+					th_shenhua_palace
+					th_tongue_pulling_cave
+					th_quarter_sessions
+				}
+				th_hecatia_temple_province = {
+					th_hecatia_temple
+					th_porphyra_dyehouse
+					th_port_of_goddess
+					th_hedes_inn
+				}
+			}
+		}
 		th_sunflower_field_region = {
 			th_perfect_split_coast_area = {
 				th_garden_of_the_sun_province = {
