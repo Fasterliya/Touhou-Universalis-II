@@ -3210,37 +3210,47 @@ th_gensokyo_continent = {
 				}
 			}
 		}
-		rh_hell_reigion = {
+		th_hell_region = {
 			th_northern_hell_area = {
 				th_yama_sentry_province = {
 					th_yama_sentry
 					th_jizo_maze
 					th_onimi_barracks
 					th_jiulun_palace
+					th_yama_outpost_harbor
+					th_isle_void_gaze
 				}
 				th_judge_backyard_province = {
 					th_taihe_palace
 					th_emperors_mansion
 					th_black_tea_garden
 					th_thousands_purple_sakura_blossom
+					th_isle_rust_shield_island
+					th_hell_low_wall
+					th_hell_pending_cases
 				}
 				th_higanbana_plain_province = {
 					th_higanbana_plain
 					th_xuanming_palace
 					th_no_vitality_mountain_pass
 					th_yama_plain
+					th_shoreless_field_out
+					th_shoreless_field
 				}
 				th_souls_detention_center_province = {
 					th_souls_detention_center
 					th_onimi_house
 					th_taigongs_fishing_spot
 					th_pride_of_death
+					th_nameless_steles
 				}
 				th_far_shore_province = {
 					th_far_shore
 					th_paradise_upstream
 					th_horse_head_village
 					th_pingzhong_terrace
+					th_yesterday_mirror
+					th_soul_return_steles
 				}
 				th_yamas_palace_province = {
 					th_yama_palace
@@ -3248,6 +3258,13 @@ th_gensokyo_continent = {
 					th_suying_palace
 					th_city_of_feng
 					th_jetavana_ruined_shrine
+					th_jetavana_ruined_shrine_door
+					th_life_death_archive
+					th_hall_of_judgment
+					th_sin_mirror_platform
+					th_hell_punishment_chamber
+					th_hell_reward_pool
+					th_hell_guard_barracks
 				}
 			}
 			th_western_hell_area = {
@@ -3256,12 +3273,16 @@ th_gensokyo_continent = {
 					th_windless_col
 					th_outsider_souls_village
 					th_qifei_palace
+					th_yin_yang_customs
+					th_hell_appeal_court
 				}
 				th_miasma_field_province = {
 					th_miasma_field
 					th_hills_of_after_death
 					th_hole_of_the_border
 					th_fossil_coast
+					th_isle_infinite_light
+					th_isle_infinite_light_coast
 				}
 				th_purgatorium_province = {
 					th_purgatory
@@ -3269,18 +3290,27 @@ th_gensokyo_continent = {
 					th_depression_of_chaos_qi
 					th_bull_head_village
 					th_jiuji_palace
+					th_purge_ironworks_port
+					th_purgatorial_foundry_port
+					th_purge_ironworks_port_village
+					th_isle_no_self_rock
+					th_isle_emptiness_islands
 				}
 				th_teahouse_at_hell_province = {
 					th_forbbiden_zone_of_onimi_head
 					th_little_devil_town
 					th_jizo_palace
 					th_teahouse_at_hell
+					th_scorching_great_forge
+					th_chief_oni_headquarters
 				}
 				th_death_retreat_province = {
 					th_komachis_hideout
 					th_expedition_port
 					th_hazbin_hotel
 					th_alchemy_workhouse
+					th_market_ferryman_tavern
+					th_market_higan_tea
 				}
 			}
 			th_eastern_hell_area = {
@@ -3295,6 +3325,7 @@ th_gensokyo_continent = {
 					th_massacre_wildrness
 					th_will_castle
 					th_nine_spirng_pass
+					th_waste_thousand_year_sea
 				}
 				th_end_of_souls_province = {
 					th_withered_chrysanthemum_field
@@ -3306,8 +3337,10 @@ th_gensokyo_continent = {
 				th_pass_of_hell_province = {
 					th_pass_of_hell
 					th_tai_palace
-					th_regret
+					th_regret_location
 					th_mingchen_palace
+					th_waste_return_monument
+					th_gate_mandala_altar
 				}
 				th_niwataris_entry_province = {
 					th_niwataris_entry
@@ -3328,24 +3361,32 @@ th_gensokyo_continent = {
 					th_miare_office
 					th_unheard_old_haunt
 					th_camellia_garden
+					th_riverbed_endless_shore
 				}
 				th_grand_magi_residence_province = {
 					th_grand_magi_residence
 					th_puming_palace
 					th_mortals_annex
 					th_offerings_avenue
+					th_hall_rites_cage
 				}
 				th_souls_river_province = {
 					th_souls_river
 					th_shenhua_palace
 					th_tongue_pulling_cave
 					th_quarter_sessions
+					th_river_soul_lotus
+					th_river_soul_shallows
 				}
 				th_hecatia_temple_province = {
 					th_hecatia_temple
 					th_porphyra_dyehouse
 					th_port_of_goddess
 					th_hedes_inn
+					th_hell_hecate_kennels
+					th_hecate_main_hall
+					th_hell_hecate_cape
+					th_waste_ink_pool
 				}
 			}
 		}
@@ -3812,7 +3853,13 @@ th_gensokyo_continent = {
 					th_inverted_pillar
 				}
 			}
-
+		}
+		th_old_hell_region = {
+			th_land_of_silence_area = {
+				th_hell_peninsula_province = {
+					th_hell_peninsula_main
+				}
+			}
 		}
 	}
 	th_gensokyo_outer_world_sub_continent = {

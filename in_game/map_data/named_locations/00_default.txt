@@ -44140,3 +44140,156 @@ th_nameless_jizo_shrine = 4e2b8e
 th_time_rot_rain_shrine = 9d7abf
 th_hungry_ghost_offering_shrine = ce18d0
 th_inverted_pillar = b97ad2
+##彼岸大区
+#
+#阎魔岗哨
+th_yama_sentry = 6f9c9e
+th_jizo_maze = 9d4f9f
+th_onimi_barracks = 8c8f7a
+th_jiulun_palace = 7b9f8b
+th_yama_outpost_harbor = ea17ac
+th_isle_void_gaze = f7f936
+#判官后院
+th_taihe_palace = 89ce4e
+th_emperors_mansion = 9f5f8c
+th_black_tea_garden = 4a9c9b
+th_thousands_purple_sakura_blossom = 9b7c9e
+th_isle_rust_shield_island = df32bb
+th_hell_low_wall = b64271
+th_hell_pending_cases = 9dc33e
+#彼岸花原野
+th_higanbana_plain = d3be04
+th_xuanming_palace = 7c9eac
+th_no_vitality_mountain_pass = 5d4d9b
+th_yama_plain = 9e8b7f
+th_shoreless_field_out = 60a64a
+th_shoreless_field = 0ffd4c
+#魂灵候审处
+th_souls_detention_center = 8c8f9e
+th_onimi_house = 6a9e9d
+th_taigongs_fishing_spot = 4e3c9b
+th_pride_of_death = 9d7b6e
+th_nameless_steles = add0ea
+#彼岸
+th_far_shore = e9e476
+th_paradise_upstream = 7d9cbf
+th_horse_head_village = 5f4c9a
+th_pingzhong_terrace = 9e6b9f
+th_yesterday_mirror = f10028
+th_soul_return_steles = b4f947
+#阎魔殿
+th_yama_palace = d0b725
+th_bizhen_palace = 6d9ece
+th_suying_palace = 4c3b9c
+th_city_of_feng = 9e9a5e
+th_jetavana_ruined_shrine = 8c8f9b
+th_jetavana_ruined_shrine_door = bf68de
+th_life_death_archive = ba5143
+th_hall_of_judgment = f66a61
+th_sin_mirror_platform = 721ece
+th_hell_punishment_chamber = 08db87
+th_hell_reward_pool = af8ace
+th_hell_guard_barracks = 05db10
+#地狱之港
+th_hell_port = b74874
+th_windless_col = 5b4c9d
+th_outsider_souls_village = 9c7bcd
+th_qifei_palace = 8b6f9c
+th_yin_yang_customs = e942f8
+th_hell_appeal_court = e6aa9a
+#瘴气原野
+th_miasma_field = c5a428
+th_hills_of_after_death = 43e86f
+th_hole_of_the_border = 9d8a8e
+th_fossil_coast = ed7d47
+th_isle_infinite_light = 8ec27d
+th_isle_infinite_light_coast = 2ecf48
+#炼狱之境
+th_purgatory = 8a5bb5
+th_wuchang_shore = c2f46d
+th_depression_of_chaos_qi = 9e6bde
+th_bull_head_village = da76a5
+th_jiuji_palace = 6d9c1f
+th_purge_ironworks_port = be740b
+th_purgatorial_foundry_port = c4de51
+th_purge_ironworks_port_village = ed74c5
+th_isle_no_self_rock = c80d9c
+th_isle_emptiness_islands = dc8d2f
+#鬼神长总番所
+th_forbbiden_zone_of_onimi_head = 4b3c9e
+th_little_devil_town = 9c9a4f
+th_jizo_palace = c5c13a
+th_teahouse_at_hell = ded9cc
+th_scorching_great_forge = 97c122
+th_chief_oni_headquarters = e991c0
+#死神静修处
+th_komachis_hideout = 5d4c9b
+th_expedition_port = 9e7b1e
+th_hazbin_hotel = 8b6f9e
+th_alchemy_workhouse = 6d4493
+th_market_ferryman_tavern = ee862a
+th_market_higan_tea = 2fc224
+#三途河
+th_santu_river_bank = abe47a
+th_chenghuang_temple = c3ce6c
+th_xiwen_meander = fcc8cb
+th_separate_souls_ferry = 9e42e5
+#阴燃森林
+th_smoldering_forest = e77b0c
+th_massacre_wildrness = 9e6b2f
+th_will_castle = cb3ee9
+th_nine_spirng_pass = 6d9c5f
+th_waste_thousand_year_sea = fdefc6
+#灵魂的终点
+th_withered_chrysanthemum_field = 4e3b9f
+th_land_ofcontrition = d2c2be
+th_atonement_trail = 8c8f9d
+th_enlightenment_mine = f04b0d
+th_end_of_souls = 5f4c9b
+#地狱之扉
+th_pass_of_hell = 52eea8
+th_tai_palace = 8b6f9a
+th_regret_location = ed4233
+th_mingchen_palace = 4c3b9a
+th_waste_return_monument = cb12fb
+th_gate_mandala_altar = 494ab6
+#二羽渡神的口岸
+th_niwataris_entry = 6f85f2
+th_hundreds_days_resentment = 933dd0
+th_outside_world_entry = efaea2
+th_wrongfully_killed_dormitory = 5d4c9d
+#回忆之冢
+th_sai_no_kawara = 9c7b4f
+th_village_of_foundling = c86a92
+th_eika_cabin = 6d9c9f
+th_yama_terakoya = 4e3b9c
+#赛之河原
+th_start_of_memorie = 9e9a6f
+th_miare_office = 8c8f9c
+th_unheard_old_haunt = db0d64
+th_camellia_garden = 5b4c9e
+th_riverbed_endless_shore = b65dd8
+#大法之馆
+th_grand_magi_residence = c2c831
+th_puming_palace = f62e6a
+th_mortals_annex = f79f39
+th_offerings_avenue = 4c3b9b
+th_hall_rites_cage = e4fc6e
+#魂之川
+th_souls_river = 9d8a6f
+th_shenhua_palace = 14e62c
+th_tongue_pulling_cave = f07367
+th_quarter_sessions = 5e4c9d
+th_river_soul_lotus = bd98f4
+th_river_soul_shallows = c1ba74
+#赫卡提亚神殿
+th_hecatia_temple = 9c7b6f
+th_porphyra_dyehouse = baac36
+th_port_of_goddess = dce524
+th_hedes_inn = 4e3b9d
+th_hell_hecate_kennels = bcaff1
+th_hecate_main_hall = ff6869
+th_hell_hecate_cape = d9972a
+th_waste_ink_pool = 6b8c46
+###旧地狱
+th_hell_peninsula_main = f893c6
