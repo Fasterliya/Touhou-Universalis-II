@@ -3858,6 +3858,289 @@ th_gensokyo_continent = {
 			th_land_of_silence_area = {
 				th_hell_peninsula_province = {
 					th_hell_peninsula_main
+					th_hell_flayed_coast
+					th_hell_steamer_valley
+					th_hell_stone_plains_island
+					th_hell_blood_cape
+					th_penitent_sinners_coast
+				}
+				th_hell_town_of_repentance_province = {
+					th_hell_town_of_repentance
+					th_repent_mouth
+					th_repent_corridor_sea
+					th_repent_forest_door_hell
+					th_pillar_of_tears_islet
+					th_burden_shedding_beach_port
+				}
+				th_hell_sunken_village_province = {
+					th_sunken_main_street
+					th_sunken_lighthouse
+					th_sunken_ship_graveyard
+					th_sunken_shell_wall
+				}
+				th_hell_nazrin_lair_province = {
+					th_nazrin_outpost
+					th_hell_nazrin_door
+					th_hell_nazrin_workbench
+					th_hell_nazrin_shushushushushuchu
+				}
+				th_hell_muenzuka_province = {
+					th_hell_muenzuka_main
+					th_muenzuka_junk_hill
+					th_hell_muenzuka_lamp
+					th_muezuka_re_hec
+					th_stranded_soul_shoal
+				}
+			}
+			th_yomi_gate_hell_area = {
+				th_hazy_barrier_hell_province = {
+					th_hazy_barrier_hell
+					th_hazy_fading_path
+					th_hazy_memory_fog
+					th_hell_hazy_echo
+				}
+				th_shrine_of_death_province = {
+					th_shrine_of_death
+					th_shrine_of_death_door
+					th_hell_death_office
+					th_hell_ghost_death_bell
+					th_soul_lantern_forest
+				}
+				th_solitus_strand_province = {
+					th_solitus_strand
+					th_hell_solitus_tide
+					th_hell_solitus_shore
+					th_hell_solitus_reef
+					th_monolith_of_silent_witness
+				}
+				th_hell_ossuary_field_province = {
+					th_hell_ossuary_field
+					th_hell_ossuary_lair
+					th_hell_ossuary_seepage
+					th_hell_ossuary_stratum
+				}
+			}
+			th_blazing_hell_area = {
+				th_underground_harbor_province = {
+					th_underground_harbor_east
+					th_harbor_fuel_depot
+					th_harbor_waste_pool
+					th_harbor_magma_wharf
+					th_underground_harbor_west
+					th_steam_bath_hospital
+				}
+				th_hidden_site_geothermal_province = {
+					th_hidden_site_geothermal
+					th_hidden_cryo_pool
+					th_hidden_rin_cache
+					th_old_hell_hidden_heart
+				}
+				th_nuclear_fusion_center_province = {
+					th_nuclear_fusion_center
+					th_assisted_enhanced_fusion_reactor
+					th_center_energy_corridors
+					th_center_ruined_reactor
+					th_assisted_enhanced_fusion_reactor_computer
+				}
+				th_nuclear_furnace_province = {
+					th_nuclear_furnace_main
+					th_americium_isotope_plasma_turbine
+					th_tungsten_disulfide_manufacturing_site
+					th_laser_energy_storage_warehouse
+					th_reactor_coolant_circulation_center
+					th_implosion_compressor
+				}
+				th_forgotten_hamlet_province = {
+					th_forgotten_hamlet
+					th_village_valley_windless
+					th_village_path_eroded
+					th_village_lane_bone
+					th_submerged_foundation_reef
+				}
+				th_blazing_hell_remains_province = {
+					th_blazing_hell_remains
+					th_hell_tribunal
+					th_hell_bloodpool
+					th_hell_pipes_outer
+					th_hell_river_slag
+				}
+				th_corpse_stockpile_center_province = {
+					th_corpse_stockpile_center
+					th_rin_hell_yard_sorting
+					th_corpse_zone_compost
+					th_corpse_corner_appraise
+				}
+
+			}
+			th_palace_of_earth_spirits_area = {
+				th_hellcats_rest_province = {
+					th_hellcats_rest
+					th_rest_post_scratch
+					th_rest_door_catcart
+					th_hellcats_room
+				}
+				th_chireiden_core_complex_province = {
+					th_chireiden_entrance_hall
+					th_chireiden_entrance_hall_main
+					th_chireiden_vivarium_pet
+					th_chireiden_room_koishi
+					th_chireiden_room_satori
+					th_chireiden_library_second
+					th_chireiden_archive_of_overheard_secrets
+					th_chireiden_whispering_pipe_organ
+					th_palace_of_the_earth_spirits_second_floor
+				}
+				th_chireiden_courtyard_province = {
+					th_chireiden_courtyard_heart
+					th_courtyard_shrubs_crystal
+					th_courtyard_path_pet
+					th_rose_garden_oblivion
+					th_courtyard_swing_koishi
+					th_courtyard_dome_sky
+				}
+				th_chireiden_balcony_satori_province = {
+					th_chireiden_balcony_satori
+					th_balcony_observatory_eye
+					th_balcony_platform_view
+					th_dream_dimension_generator
+				}
+				th_underground_great_hollow_province = {
+					th_underground_great_hollow
+					th_hollow_isles_floating
+					th_hollow_forest_crystal
+					th_basalt_canyon
+					th_hollow_tower_signal
+					th_ceiling_of_false_stars
+				}
+				th_twilight_grotto_province = {
+					th_weird_fungus_forest
+					th_crimson_fungus_forest
+					th_cave_pool_spore
+					th_cave_forest_crystal
+				}
+				th_gate_of_the_depths_province = {
+					th_gate_of_the_depths
+					th_gate_camp_wanderer
+					th_crystal_echo_hollow
+					th_miasma_sunken_depression
+				}
+
+			}
+			th_genso_kazaana_area = {
+				th_youkai_mountain_hot_springs_province = {
+					th_springs_bath_mixed
+					th_springs_vent_steam
+					th_springs_room_tengu
+					th_springs_nest_egg
+					th_springs_recovery_vip
+				}
+				th_old_hell_hidden_hill_province = {
+					th_old_hell_hidden_hill
+					th_hill_den_stray
+					th_hill_bazaar_rust
+					th_hill_den_stray_street
+				}
+				th_kazaana_yamame_web_province = {
+					th_kazaana_yamame_web
+					th_yamame_bridge_web
+					th_yamame_shaft_vent
+					th_kazaana_hidden_eye
+					th_kazaana_webway
+				}
+				th_underground_villiage_province = {
+					th_hamlet_mine_fluorite
+					th_dregs_tunnels_safe
+					th_settlement_labor_market
+					th_hamlet_earth_spirit
+					th_great_stalactite_market
+				}
+				th_old_hell_geyser_trail_province = {
+					th_old_hell_geyser_trail
+					th_trail_marsh_entrance
+					th_trail_pillars_jet
+					th_trail_crystal_sulfur
+					th_trail_fissure
+					th_trail_stones_spring
+				}
+				th_old_hell_dai_onsen_province = {
+					th_onsen_gate_neon
+					th_onsen_pool_hellfish
+					th_onsen_street_market
+					th_onsen_bath_goka
+					th_onsen_pool_seishin
+					th_crystal_hum_sauna_cave
+				}
+				th_old_hell_geyser_core_province = {
+					th_old_hell_geyser_core
+					th_core_lake_boiling
+					th_core_boiler_abandoned
+					th_core_interface_power
+				}
+			}
+			th_former_captial_area = {
+				th_former_captial_province = {
+					th_rarely_trodden_bridge
+					th_hell_bridge_cottage
+					th_bridge_spring_envy
+					th_bridge_bones_nameless
+				}
+				th_former_capital_west_boulevard_province = {
+					th_former_capital_west_avenue
+					th_hyakki_lanterngate
+					th_hells_izakaya
+					th_west_bookstore_strange
+					th_west_shop_tang
+					th_west_stall_mimei_street
+				}
+				th_former_capital_central_district_province = {
+					th_former_capital_central_district
+					th_central_club_hyakki
+					th_central_boulevard_enma
+					th_bustling_feast_gakidou
+					th_central_district_samurai
+					th_sake_laden_wharf
+				}
+				th_former_capital_northern_district_province = {
+					th_former_capital_northern_district
+					th_north_camp_ironanvil
+					th_north_zone_dormitory
+					th_oni_north_customs_gate
+				}
+				th_oni_quarters_street_province = {
+					th_oni_quarters_street
+					th_shuten_alley
+					th_suika_old_house
+					th_hoshiguma_bar
+					th_phantom_lantern_alley
+					th_oni_harbor_location
+				}
+				th_oni_brewery_core_province = {
+					th_oni_brewery_core
+					th_fermentation_blood_pool
+					th_giant_gourd_aging_hall
+					th_yeast_wraith_garden
+					th_oni_drunken_sandbank_market
+				}
+				th_oni_arena_province = {
+					th_oni_arena_location
+					th_oni_colosseum_location
+					th_feast_hall_of_victors_and_vanquished
+					th_silent_bet_den
+					th_feral_beast_menagerie
+				}
+				th_abyssal_tunnel_network_province = {
+					th_abyssal_tunnel_network
+					th_bucket_suspension_chasm
+					th_bucket_suspension_room
+					th_tear_stalactite_forest
+				}
+				th_geyser_field_surface_province = {
+					th_geyser_field_surface
+					th_hell_terraced_springs
+					th_geothermal_vein_mine
+					th_dragon_breath_vent
+					th_steam_shroud_atoll
+					th_boiling_tide_channel_port
 				}
 			}
 		}

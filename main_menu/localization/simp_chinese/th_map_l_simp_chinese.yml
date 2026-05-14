@@ -1,13 +1,36 @@
 ﻿l_simp_chinese:
+ th_gensokyo_continent: "幻想乡"
+ th_moon_continent: "月球"
  gensokyo: "幻想乡"
+ th_gensokyo_outer_world_sub_continent: "外部界域"
  th_scarlet_devil_mansion: "红魔馆"
  th_misty_lake: "雾之湖"
  th_east_bank_of_misty_lake: "东雾之湖"
  th_west_bank_of_misty_lake: "西雾之湖"
  th_norh_bank_of_misty_lake: "北雾之湖"
+ th_misty_lake_province: "雾之湖"
+ th_misty_sea_area: "雾之湖"
 
 
 ### 博丽地区
+# 区域
+ th_hakurei_foothills_area: "博丽山麓"
+ th_hakurei_shrine_area: "博丽神社"
+ th_hakurei_coast_area: "博丽海滨"
+# 省份
+ th_barrier_nexus_province: "结界中枢"
+ th_wine_cellar_province: "藏酒库房"
+ th_hakurei_foothills_province: "博丽山麓"
+ th_training_grounds_province: "修炼校场"
+ th_hakurei_shrine_province: "博丽神社"
+ th_hakurei_mansion_province: "博丽府邸"
+ th_cherry_blossom_grove_province: "樱花林地"
+ th_spring_colors_trail_province: "春色小径"
+ th_hakurei_coast_province: "博丽海岸"
+ th_canal_port_province: "运河港口"
+ th_hakurei_seaside_province: "博丽岸滨"
+ th_meditation_grounds_province: "冥想地"
+### 地点
  th_hakurei_shrine: "博丽神社"
  th_barrier_nexus: "结界中枢"
  th_wine_cellar: "藏酒库房"
@@ -20,7 +43,6 @@
  th_hakurei_seaside: "博丽岸滨"
  th_meditation_grounds: "冥想地"
  th_training_grounds: "修炼校场"
-### 地点
  th_main_hall_plaza: "博丽神社本殿"
  th_torii_approach: "鸟居参道"
  th_hakurei_engawa: "神社缘侧"
@@ -56,6 +78,33 @@
  th_peninsula_lighthouse: "半岛灯塔"
  th_windbreak_pine_forest: "防风林"
 #红魔馆地区
+#区域
+ th_gensokyo_hakurei_region: "雾之湖"
+#地区
+ th_scarlet_devil_mansion_area: "红魔馆湖心岛"
+ th_scarlet_path_area: "绯红之道"
+ th_scarlet_lost_city_area: "失落之城"
+ th_southern_fariy_kingdom_area: "妖精之国南部"
+ th_northern_fariy_kingdom_area: "妖精之国北部"
+#省份
+ th_scarlet_devil_mansion_province: "红魔馆本馆"
+ th_scarlet_devil_gate_province: "红魔馆庭院"
+ th_scarlet_path_province: "绯红之道"
+ th_flandres_playground_province: "芙兰的游乐场"
+ th_mermaid_sanctuary_province: "人鱼秘境"
+ th_mansion_garden_province: "洋馆外庭院"
+ th_lost_city_province: "失落之城"
+ th_scarlet_training_ground_province: "训练场地"
+ th_crimson_mountain_province: "绯红之山"
+ th_ice_room_province: "冰之室"
+ th_great_fairy_treehouse_province: "大妖精树屋"
+ th_three_fairies_mansion_province: "三妖精府邸"
+ th_fairy_shrine_province: "妖精破庙"
+ th_fairy_shore_province: "妖精岸滨"
+ th_winter_jasmine_trail_province: "迎春花小径"
+ th_derelict_mansion_province: "废弃洋馆"
+ th_eternal_garden_province: "永恒花园"
+#地点
  th_main_gate_plaza: "红魔馆大门"
  th_scarlet_gatekeeper_hut: "门番岗亭"
  th_scarlet_outer_garden: "洋馆亭院"
@@ -127,7 +176,16 @@
  th_endless_rose_corridor: "拱形长廊"
  th_flower_clock_of_time: "花之钟"
 ###魔法森林地区
+ th_gensokyo_magic_forest_region: "原始森林"
+##地区
+ th_magic_forest_area: "魔法森林"
+ th_kirisame_forest_area: "雾雨之森"
+ th_forest_shore_area: "森林海岸"
+ th_eastern_youkai_sea_area: "妖怪的树海东部"
+ th_western_youkai_forest_area: "妖怪的树海西部"
 ##省份
+ th_bountiful_shrine_province: "丰穰之祠"
+ th_autumn_worship_hall_province: "秋之拜殿"
  th_youkai_forest_province: "妖怪的树海"
  th_youkai_coast_province: "妖怪海岸"
  th_untrodden_vally_province: "阻绝人际的溪谷"
@@ -247,8 +305,15 @@
  th_open_air_roast_yard: "烧烤摊"
  th_stage_regulars_corner: "夜雀歌台"
 ### 人间之里地区
+ th_gensokyo_human_village_region: "人间之里"
 #地区
  th_village_outskirts_area: "村落远郊"
+ th_southern_human_village_area: "人类村落"
+ th_western_human_village_area: "繁荣市镇"
+ th_north_myourenji_hondo_area: "命莲寺北部"
+ th_south_eastern_human_village_area: "人间之里-命莲寺参道"
+ th_myourenji_hondo_area: "命莲寺"
+ th_shingiro_area: "心绮楼"
 #地点
  th_honcho_dori: "流川埠头"
  th_workshop_yokocho: "工坊后巷"
@@ -429,6 +494,7 @@ th_north_office_building_complex: "北部写字楼群"
 th_south_office_building_complex: "南部写字楼群"
 th_east_office_building_complex: "东部写字楼群"
 ###冥界地区
+th_gensokyo_makai_region: "隙间-冥界"
 ##省份
 th_barrier_of_death_province: "幽之结界"
 th_grassland_of_ghost_province: "精魄草坪"
@@ -671,6 +737,7 @@ th_body_rebuild_center: "肉体重建中心"
 th_deep_dark: "深邃黑暗"
 
 ####外部界域大区
+th_heaven_region: "天界"
 ###天界区域
 ##地区
 th_loong_island_area: "龙之岛"
@@ -765,6 +832,8 @@ th_pure_clean_cloud: "纯净之云"
 th_first_celestial: "初始天人登陆地"
 th_mirror_jian_xin_yu: "鉴心屿"
 ###月之都区域
+th_moon_sub_continent: "月球"
+th_moon_region: "月球"
 ##地区
 th_city_of_moon_area: "月之都"
 th_moon_plain_area: "月人之地"
@@ -926,6 +995,7 @@ th_coeus_port: "科俄斯港"
 th_astraios_lake: "阿斯特赖俄斯湖"
 th_perses_highland: "珀尔修斯高地"
 ###山麓区域
+th_youkai_mountain_western_foot_region: "玄武之泽"
 ##地区
 th_kappas_country_area: "河童之国"
 th_yamawaros_country_area: "山童之国"
@@ -1033,6 +1103,7 @@ th_levitation_garden: "浮空花园"
 th_magical_thundercloud: "魔力雷云"
 th_shaking_plain: "震动平原"
 ###妖怪之山大区
+th_youkai_mountain_region: "妖怪之山"
 ##地区
 th_northern_youkai_mountain_range_area: "妖怪之山北脉"
 th_youkai_mountain_area: "妖怪之山"
@@ -1169,6 +1240,7 @@ th_weeping_wind_canyon: "风神峠"
 th_omine_san_ancient_path: "古旧山参道"
 th_omine_san_guardian_forest: "护法之森"
 ###守矢神社大区
+th_moriya_shirine_region: "守矢"
 ##地区
 th_nortern_moriya_shrine_area: "守矢神社北部"
 th_soutern_moriya_shinre_area: "守矢神社南部"
@@ -1260,6 +1332,7 @@ th_red_frogs_tomb: "赤蛙冢"
 th_hill_of_wind_and_rain: "风雨山丘"
 th_divine_wind_hanging_meadow: "悬风草甸"
 ###畜生界大区
+th_animal_realm_region: "畜生界"
 ##地区
 th_primate_spirit_garden_area: "灵长园"
 th_northern_animal_realm_area: "畜生界北部"
@@ -2055,7 +2128,329 @@ th_inverted_pillar: "残柱"
 th_old_hell_region: "旧地狱"
 #地区
 th_land_of_silence_area: "死寂之地"
+th_yomi_gate_hell_area: "黄泉之扉"
+th_blazing_hell_area: "灼热地狱"
+th_palace_of_earth_spirits_area: "地灵殿"
+th_genso_kazaana_area: "幻想风穴"
+th_former_captial_area: "旧都"
 #省份
 th_hell_peninsula_province: "地狱半岛"
+th_hell_town_of_repentance_province: "悔悟之町"
+th_hell_sunken_village_province: "沉没之村"
+th_hell_nazrin_lair_province: "纳兹琳的老巢"
+th_hell_muenzuka_province: "无缘冢"
+th_hazy_barrier_hell_province: "朦胧结界"
+th_shrine_of_death_province: "死之祠堂"
+th_solitus_strand_province: "孑然岸滨"
+th_hell_ossuary_field_province: "埋骨场"
+th_underground_harbor_province: "地底之港"
+th_hidden_site_geothermal_province: "隐蔽地点"
+th_nuclear_fusion_center_province: "核融合中心"
+th_nuclear_furnace_province: "核熔炉"
+th_forgotten_hamlet_province: "遗忘村落"
+th_blazing_hell_remains_province: "灼热地狱"
+th_corpse_stockpile_center_province: "尸体堆放处"
+th_hellcats_rest_province: "地狱猫憩所"
+th_chireiden_core_complex_province: "地灵殿"
+th_chireiden_courtyard_province: "地灵殿庭院"
+th_chireiden_balcony_satori_province: "地灵殿天台"
+th_underground_great_hollow_province: "地底大空洞"
+th_twilight_grotto_province: "暮光之穴"
+th_gate_of_the_depths_province: "地底之扉"
+th_youkai_mountain_hot_springs_province: "妖怪之山温泉"
+th_old_hell_hidden_hill_province: "隐蔽之丘"
+th_kazaana_yamame_web_province: "幻想风穴"
+th_underground_villiage_province: "地底集镇"
+th_old_hell_geyser_trail_province: "间歇泉小道"
+th_old_hell_dai_onsen_province: "大温泉"
+th_old_hell_geyser_core_province: "间歇泉中心"
+th_former_captial_province: "阻绝人迹之桥"
+th_former_capital_west_boulevard_province: "旧都西大街"
+th_former_capital_central_district_province: "旧都中心"
+th_former_capital_northern_district_province: "旧都北大街"
+th_oni_quarters_street_province: "鬼之町"
+th_oni_brewery_core_province: "鬼之糟坊"
+th_oni_arena_province: "鬼之擂台"
+th_abyssal_tunnel_network_province: "地底的深道"
+th_geyser_field_surface_province: "间歇泉泉眼"
 #地点
 th_hell_peninsula_main: "地狱半岛"
+th_hell_flayed_coast: "剥皮海岸"
+th_hell_steamer_valley: "蒸笼地狱"
+th_hell_stone_plains_island: "石压列岛"
+th_hell_blood_cape: "血海海岬"
+th_penitent_sinners_coast: "悔罪海岸"
+th_hell_town_of_repentance: "悔悟之町"
+th_repent_mouth: "泪壶洞口"
+th_repent_corridor_sea: "刀山火海"
+th_repent_forest_door_hell: "悔悟之扉"
+th_pillar_of_tears_islet: "泣泪沙洲"
+th_burden_shedding_beach_port: "卸负港口"
+th_sunken_main_street: "淤泥主街町"
+th_sunken_lighthouse: "遗忘灯塔"
+th_sunken_ship_graveyard: "沉船墓场"
+th_sunken_shell_wall: "贝壳回音滩"
+th_nazrin_outpost: "无缘冢边境哨站"
+th_hell_nazrin_door: "吱吱作响的木屋"
+th_hell_nazrin_workbench: "结构指南工作台"
+th_hell_nazrin_shushushushushuchu: "鼠数数珠数处"
+th_hell_muenzuka_main: "无缘冢"
+th_muenzuka_junk_hill: "凋落物之丘"
+th_hell_muenzuka_lamp: "归途之灯"
+th_muezuka_re_hec: "赫卡提亚的凝视点"
+th_stranded_soul_shoal: "无缘浅沙"
+th_hazy_barrier_hell: "朦胧结界"
+th_hazy_fading_path: "褪色者之径"
+th_hazy_memory_fog: "朦胧之雾"
+th_hell_hazy_echo: "现世的残响"
+th_shrine_of_death: "死之祠"
+th_shrine_of_death_door: "死之祠山门"
+th_hell_death_office: "鬼神值班处"
+th_hell_ghost_death_bell: "魂铃槐树林"
+th_soul_lantern_forest: "别离山道"
+th_solitus_strand: "孑然石岸"
+th_hell_solitus_tide: "细胞自噬滩"
+th_hell_solitus_shore: "独步沙洲"
+th_hell_solitus_reef: "独钓海角"
+th_monolith_of_silent_witness: "默证石岸"
+th_hell_ossuary_field: "埋骨场"
+th_hell_ossuary_lair: "怨灵巢穴"
+th_hell_ossuary_seepage: "灵魂沙荒原"
+th_hell_ossuary_stratum: "终末的腐殖层"
+th_underground_harbor_east: "地底之港市镇东部"
+th_harbor_fuel_depot: "怨灵燃料中继站"
+th_harbor_waste_pool: "融合废料处理池"
+th_harbor_magma_wharf: "熔岩港口"
+th_underground_harbor_west: "地底之港市镇西部"
+th_steam_bath_hospital: "地底疗养院"
+th_hidden_site_geothermal: "隐蔽地点"
+th_hidden_cryo_pool: "灵体冻结池"
+th_hidden_rin_cache: "阿燐的藏尸处"
+th_old_hell_hidden_heart: "灼热地狱之心"
+th_nuclear_fusion_center: "核融合中心"
+th_assisted_enhanced_fusion_reactor: "辅助强化型核聚变反应堆MKI"
+th_center_energy_corridors: "激光能源靶仓"
+th_center_ruined_reactor: "废核电遗址"
+th_assisted_enhanced_fusion_reactor_computer: "反应堆控制器"
+th_nuclear_furnace_main: "核熔炉中心"
+th_americium_isotope_plasma_turbine: "镅-241等离子涡轮"
+th_tungsten_disulfide_manufacturing_site: "二硫化钨反应中心"
+th_laser_energy_storage_warehouse: "激光能源源仓"
+th_reactor_coolant_circulation_center: "反应堆冷却液循环中心"
+th_implosion_compressor: "聚爆压缩机"
+th_forgotten_hamlet: "遗忘村落"
+th_village_valley_windless: "无风谷"
+th_village_path_eroded: "被侵蚀的小路"
+th_village_lane_bone: "骨菇沽"
+th_submerged_foundation_reef: "沉基石礁"
+th_blazing_hell_remains: "灼热大地"
+th_hell_tribunal: "废弃审判所"
+th_hell_bloodpool: "血热地狱遗址"
+th_hell_pipes_outer: "核熔炉外围管道"
+th_hell_river_slag: "熔炉污水处理中心"
+th_corpse_stockpile_center: "尸体堆放处"
+th_rin_hell_yard_sorting: "尸体分拣中心"
+th_corpse_zone_compost: "无害化处理处"
+th_corpse_corner_appraise: "寻宝鉴定集市"
+th_hellcats_rest: "地狱猫憩所"
+th_rest_post_scratch: "地狱猫磨爪柱"
+th_rest_door_catcart: "废弃猫车"
+th_hellcats_room: "燐的小屋"
+th_chireiden_entrance_hall: "地灵殿玄关"
+th_chireiden_entrance_hall_main: "地灵殿大广间"
+th_chireiden_vivarium_pet: "宠物乐园"
+th_chireiden_room_koishi: "恋的房间"
+th_chireiden_room_satori: "觉的房间"
+th_chireiden_library_second: "第二图书馆"
+th_chireiden_archive_of_overheard_secrets: "地灵殿秘藏库"
+th_chireiden_whispering_pipe_organ: "地灵殿音乐厅"
+th_palace_of_the_earth_spirits_second_floor: "地灵殿二楼大厅"
+th_chireiden_courtyard_heart: "庭院中庭"
+th_courtyard_shrubs_crystal: "地热结晶花园"
+th_courtyard_path_pet: "宠物散步小径"
+th_rose_garden_oblivion: "蔷薇花园"
+th_courtyard_swing_koishi: "无意识秋千"
+th_courtyard_dome_sky: "地底天穹"
+th_chireiden_balcony_satori: "觉的露台"
+th_balcony_observatory_eye: "第三只眼观测点"
+th_balcony_platform_view: "仰望天花板观景台"
+th_dream_dimension_generator: "梦境帷幕能源塔"
+th_underground_great_hollow: "大空洞"
+th_hollow_isles_floating: "地底通天柱"
+th_hollow_forest_crystal: "倒旋水晶树"
+th_basalt_canyon: "玄武岩峡谷"
+th_hollow_tower_signal: "废弃信号塔"
+th_ceiling_of_false_stars: "伪星之天"
+th_weird_fungus_forest: "诡异菌森林"
+th_crimson_fungus_forest: "绯红菌森林"
+th_cave_pool_spore: "孢子沉淀池"
+th_cave_forest_crystal: "荧光菌盖林"
+th_gate_of_the_depths: "地底之扉"
+th_gate_camp_wanderer: "徘徊怨灵之道"
+th_crystal_echo_hollow: "回声洞窟"
+th_miasma_sunken_depression: "瘴气之谷"
+th_springs_bath_mixed: "露天混浴场"
+th_springs_vent_steam: "热泉蒸汽喷口"
+th_springs_room_tengu: "温泉更衣室"
+th_springs_nest_egg: "温泉蛋兜售处"
+th_springs_recovery_vip: "药浴VIP温泉包间"
+th_old_hell_hidden_hill: "隐蔽之丘"
+th_hill_den_stray: "地灵村落"
+th_hill_bazaar_rust: "锈色跳蚤市集"
+th_hill_den_stray_street: "地灵街区"
+th_kazaana_yamame_web: "山女之巢"
+th_yamame_bridge_web: "蜘蛛网吊桥"
+th_yamame_shaft_vent: "风穴坠落窟"
+th_kazaana_hidden_eye: "洞窟风之眼"
+th_kazaana_webway: "土蜘蛛密道"
+th_hamlet_mine_fluorite: "萤石矿村"
+th_dregs_tunnels_safe: "安全空穴隧道"
+th_settlement_labor_market: "地底劳务市场"
+th_hamlet_earth_spirit: "地灵古聚落"
+th_great_stalactite_market: "大钟乳镇"
+th_old_hell_geyser_trail: "间歇泉小道"
+th_trail_marsh_entrance: "沸水沼泽"
+th_trail_pillars_jet: "喷气岩石滩"
+th_trail_crystal_sulfur: "硫磺水晶矿山"
+th_trail_fissure: "地热裂缝"
+th_trail_stones_spring: "不稳定的气热浮石"
+th_onsen_gate_neon: "大温泉大厅"
+th_onsen_pool_hellfish: "下界鱼疗池"
+th_onsen_street_market: "温泉街横町"
+th_onsen_bath_goka: "业火汤"
+th_onsen_pool_seishin: "清心汤"
+th_crystal_hum_sauna_cave: "桑拿洞穴"
+th_old_hell_geyser_core: "间歇泉中心"
+th_core_lake_boiling: "沸水受热中心"
+th_core_boiler_abandoned: "旧地狱锅炉"
+th_core_interface_power: "旧地狱热能接口"
+th_rarely_trodden_bridge: "阻绝人迹之桥 "
+th_hell_bridge_cottage: "桥姬的小屋"
+th_bridge_spring_envy: "嫉妒之泉"
+th_bridge_bones_nameless: "堕落的谷底"
+th_former_capital_west_avenue: "旧都西大街"
+th_hyakki_lanterngate: "百鬼夜行牌楼"
+th_hells_izakaya: "地狱居酒屋"
+th_west_bookstore_strange: "鬼异闻书屋"
+th_west_shop_tang: "地上物商铺"
+th_west_stall_mimei_street: "地狱小吃街"
+th_former_capital_central_district: "旧都广场"
+th_central_club_hyakki: "大妖怪赌场"
+th_central_boulevard_enma: "旧阎魔大道"
+th_bustling_feast_gakidou: "饿鬼道饭店"
+th_central_district_samurai: "勇仪的宅邸"
+th_sake_laden_wharf: "尊酒港"
+th_former_capital_northern_district: "旧都北大街"
+th_north_camp_ironanvil: "鬼族军械所"
+th_north_zone_dormitory: "旧都民众居住区"
+th_oni_north_customs_gate: "旧都通路"
+th_oni_quarters_street: "鬼族大街"
+th_shuten_alley: "酒吞童子之町"
+th_suika_old_house: "萃香的旧居"
+th_hoshiguma_bar: "星熊酒场"
+th_phantom_lantern_alley: "幽胧巷"
+th_oni_harbor_location: "魁之港"
+th_oni_brewery_core: "鬼之糟坊"
+th_fermentation_blood_pool: "酒虫酿酒窖"
+th_giant_gourd_aging_hall: "酒葫种植园"
+th_yeast_wraith_garden: "酵母培养中心"
+th_oni_drunken_sandbank_market: "鬼之醉砂"
+th_oni_arena_location: "鬼之擂台"
+th_oni_colosseum_location: "鬼之斗技场"
+th_feast_hall_of_victors_and_vanquished: "休憩酒会厅"
+th_silent_bet_den: "擂台观众下注台"
+th_feral_beast_menagerie: "猛兽囚笼"
+th_abyssal_tunnel_network: "地底的深道"
+th_bucket_suspension_chasm: "吊桶大裂罅"
+th_bucket_suspension_room: "琪斯美的小屋"
+th_tear_stalactite_forest: "钟乳石林"
+th_geyser_field_surface: "间歇泉表层"
+th_hell_terraced_springs: "阶泉村"
+th_geothermal_vein_mine: "通往地底的竖井口"
+th_dragon_breath_vent: "龙息喷泉口"
+th_steam_shroud_atoll: "环蒸汽群岛"
+th_boiling_tide_channel_port: "沸潮港"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#

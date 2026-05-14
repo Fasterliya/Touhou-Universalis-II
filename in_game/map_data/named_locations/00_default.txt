@@ -44292,4 +44292,239 @@ th_hecate_main_hall = ff6869
 th_hell_hecate_cape = d9972a
 th_waste_ink_pool = 6b8c46
 ###旧地狱
+#
+#地狱半岛
 th_hell_peninsula_main = f893c6
+th_hell_flayed_coast = da7d44
+th_hell_steamer_valley = 9d5f9f
+th_hell_stone_plains_island = 8c9f8a
+th_hell_blood_cape = 7baf9b
+th_penitent_sinners_coast = b7b0f4
+#悔悟之町
+th_hell_town_of_repentance = 6e9e8f
+th_repent_mouth = 9f6f8c
+th_repent_corridor_sea = 5b9d9c
+th_repent_forest_door_hell = 9c8d9e
+th_pillar_of_tears_islet = a62894
+th_burden_shedding_beach_port = 9c35e7
+#沉没之村
+th_sunken_main_street = f13004
+th_sunken_lighthouse = 7d9ebc
+th_sunken_ship_graveyard = d802c5
+th_sunken_shell_wall = 9e9b8f
+#纳兹琳的老巢
+th_nazrin_outpost = 85f329
+th_hell_nazrin_door = 6a9f9d
+th_hell_nazrin_workbench = 4f4d9b
+th_hell_nazrin_shushushushushuchu = 9d8b7e
+#无缘冢
+th_hell_muenzuka_main = 616bfe
+th_muenzuka_junk_hill = 7c9ecf
+th_hell_muenzuka_lamp = 5f5c9a
+th_muezuka_re_hec = 9e7b9f
+th_stranded_soul_shoal = e2dba3
+#朦胧结界
+th_hazy_barrier_hell = f5bb97
+th_hazy_fading_path = 6d9fce
+th_hazy_memory_fog = 4d4b9c
+th_hell_hazy_echo = 9e9a6e
+#死之祠堂
+th_shrine_of_death = d850e3
+th_shrine_of_death_door = 7a9cdf
+th_hell_death_office = 077f52
+th_hell_ghost_death_bell = 9c8bcd
+th_soul_lantern_forest = 21c33b
+#孑然岸滨
+th_solitus_strand = 8b7f9c
+th_hell_solitus_tide = 6a9eef
+th_hell_solitus_shore = de5c8f
+th_hell_solitus_reef = 9d8a8d
+th_monolith_of_silent_witness = 97fe35
+#埋骨场
+th_hell_ossuary_field = d02a59
+th_hell_ossuary_lair = 1fa089
+th_hell_ossuary_seepage = 5c5b9e
+th_hell_ossuary_stratum = 90b95c
+#地底之港
+th_underground_harbor_east = d47343
+th_harbor_fuel_depot = 6d9f1f
+th_harbor_waste_pool = 4b4c9e
+th_harbor_magma_wharf = 9c9a5f
+th_underground_harbor_west = bb925a
+th_steam_bath_hospital = cf5520
+#隐蔽地点
+th_hidden_site_geothermal = da2f62
+th_hidden_cryo_pool = 57e53a
+th_hidden_rin_cache = 5d5c9b
+th_old_hell_hidden_heart = 9e8b1e
+#核融合中心
+th_nuclear_fusion_center = d3ac6b
+th_assisted_enhanced_fusion_reactor = 4a4a1b
+th_center_energy_corridors = 23855f
+th_center_ruined_reactor = 9d9a3e
+th_assisted_enhanced_fusion_reactor_computer = 13e21c
+#核熔炉
+th_nuclear_furnace_main = fc2dd5
+th_americium_isotope_plasma_turbine = 8bfaaa
+th_tungsten_disulfide_manufacturing_site = 9e7b2f
+th_laser_energy_storage_warehouse = aa6a8d
+th_reactor_coolant_circulation_center = 6d9f6f
+th_implosion_compressor = 4d4b9f
+#遗忘村落
+th_forgotten_hamlet = 9c9a6f
+th_village_valley_windless = 8c9f9c
+th_village_path_eroded = b07d69
+th_village_lane_bone = 5f5c9d
+th_submerged_foundation_reef = cfa851
+#灼热地狱
+th_blazing_hell_remains = 9e8b3f
+th_hell_tribunal = 8b8f9b
+th_hell_bloodpool = 8fc798
+th_hell_pipes_outer = 4c4b9a
+th_hell_river_slag = 9d9a4f
+#尸体堆放处
+th_corpse_stockpile_center = f99dab
+th_rin_hell_yard_sorting = 4ce03a
+th_corpse_zone_compost = 5d5c9e
+th_corpse_corner_appraise = 25ac80
+#地狱猫憩所
+th_hellcats_rest = 8dcc39
+th_rest_post_scratch = 6d9fbf
+th_rest_door_catcart = 449c8f
+th_hellcats_room = 9e9a7f
+#地灵殿
+th_chireiden_entrance_hall = fb4fdc
+th_chireiden_entrance_hall_main = 6860b8
+th_chireiden_vivarium_pet = 5b5c9f
+th_chireiden_room_koishi = 9d8b5f
+th_chireiden_room_satori = f1c7bb
+th_chireiden_library_second = fc23ef
+th_chireiden_archive_of_overheard_secrets = c7a547
+th_chireiden_whispering_pipe_organ = eeb1ea
+th_palace_of_the_earth_spirits_second_floor = e22f38
+#地灵殿庭院
+th_chireiden_courtyard_heart = f03c8b
+th_courtyard_shrubs_crystal = 9d9a6e
+th_courtyard_path_pet = f1eaba
+th_rose_garden_oblivion = 7b9c3f
+th_courtyard_swing_koishi = 5e5c9d
+th_courtyard_dome_sky = 9e7b6f
+#地灵殿天台
+th_chireiden_balcony_satori = 3d9269
+th_balcony_observatory_eye = 6d9f4f
+th_balcony_platform_view = 4d4b9d
+th_dream_dimension_generator = 9c9a8f
+#地底大空洞
+th_underground_great_hollow = 8c9f9e
+th_hollow_isles_floating = af0b7b
+th_hollow_forest_crystal = 5f5c9e
+th_basalt_canyon = 108e2f
+th_hollow_tower_signal = 0ad22e
+th_ceiling_of_false_stars = ed03bc
+#暮光之穴
+th_weird_fungus_forest = 6c9d6f
+th_crimson_fungus_forest = 4c4b9f
+th_cave_pool_spore = 9e9a9f
+th_cave_forest_crystal = 748fcd
+#地底之扉
+th_gate_of_the_depths = fa5d4a
+th_gate_camp_wanderer = 5d5c9a
+th_crystal_echo_hollow = 9c7b8f
+th_miasma_sunken_depression = 8a7f9e
+#妖怪之山温泉
+th_springs_bath_mixed = 6d9f8f
+th_springs_vent_steam = 4e4b9c
+th_springs_room_tengu = 9e9aaf
+th_springs_nest_egg = 8c9f9d
+th_springs_recovery_vip = 7a9c8f
+#隐蔽之丘
+th_old_hell_hidden_hill = fcbe4b
+th_hill_den_stray = 9d8b9f
+th_hill_bazaar_rust = 8b8f9c
+th_hill_den_stray_street = d1ec3a
+#幻想风穴
+th_kazaana_yamame_web = 4c4b9b
+th_yamame_bridge_web = 9e9a1f
+th_yamame_shaft_vent = 494385
+th_kazaana_hidden_eye = 7b9cff
+th_kazaana_webway = 5e5c9c
+#地底集镇
+th_hamlet_mine_fluorite = 9c7b2f
+th_dregs_tunnels_safe = 8a7f9f
+th_settlement_labor_market = 6d9fdf
+th_hamlet_earth_spirit = 4d4b9a
+th_great_stalactite_market = c5a99a
+#间歇泉小道
+th_old_hell_geyser_trail = 9e9a3f
+th_trail_marsh_entrance = 8c9f9a
+th_trail_pillars_jet = a75acf
+th_trail_crystal_sulfur = 5b5c9b
+th_trail_fissure = 9d8b4f
+th_trail_stones_spring = 8b8f9d
+#大温泉
+th_onsen_gate_neon = 8bea9b
+th_onsen_pool_hellfish = e4dc62
+th_onsen_street_market = 9d9a5e
+th_onsen_bath_goka = feb4c7
+th_onsen_pool_seishin = c8c833
+th_crystal_hum_sauna_cave = 5d5c9d
+#间歇泉中心
+th_old_hell_geyser_core = 9e7b5f
+th_core_lake_boiling = 8a7f9c
+th_core_boiler_abandoned = 6d9f5f
+th_core_interface_power = 4e4b9d
+#阻绝人迹之桥
+th_rarely_trodden_bridge = 9c9a7f
+th_hell_bridge_cottage = 55a87d
+th_bridge_spring_envy = b5098a
+th_bridge_bones_nameless = c3c0a1
+#旧都西大街
+th_former_capital_west_avenue = 9d8b8f
+th_hyakki_lanterngate = 8b8f9e
+th_hells_izakaya = eb4652
+th_west_bookstore_strange = 91d19c
+th_west_shop_tang = 9e9a8f
+th_west_stall_mimei_street = dec78d
+#旧都中心
+th_former_capital_central_district = 79e33f
+th_central_club_hyakki = ea4a42
+th_central_boulevard_enma = 9c7b9f
+th_bustling_feast_gakidou = 53c966
+th_central_district_samurai = e06176
+th_sake_laden_wharf = dbd725
+#旧都北大街
+th_former_capital_northern_district = dc4892
+th_north_camp_ironanvil = 8c9f9b
+th_north_zone_dormitory = 7a9c1f
+th_oni_north_customs_gate = 8a5f42
+#鬼之町
+th_oni_quarters_street = 9d8baf
+th_shuten_alley = b49f3a
+th_suika_old_house = 9ec811
+th_hoshiguma_bar = bc360f
+th_phantom_lantern_alley = 9d9a1f
+th_oni_harbor_location = d7fa47
+#鬼之糟坊
+th_oni_brewery_core = 58c70c
+th_fermentation_blood_pool = ff2680
+th_giant_gourd_aging_hall = b779e4
+th_yeast_wraith_garden = e87e71
+th_oni_drunken_sandbank_market = 1fc160
+#鬼之擂台
+th_oni_arena_location = 6d9f7f
+th_oni_colosseum_location = 5f693f
+th_feast_hall_of_victors_and_vanquished = 9c9a2f
+th_silent_bet_den = f174db
+th_feral_beast_menagerie = fa7e51
+#地底的深道
+th_abyssal_tunnel_network = 5b5c9e
+th_bucket_suspension_chasm = 9d8b3f
+th_bucket_suspension_room = 26dd4d
+th_tear_stalactite_forest = 6c9d9f
+#间歇泉泉眼
+th_geyser_field_surface = df3e6d
+th_hell_terraced_springs = 9e9a4f
+th_geothermal_vein_mine = ed5233
+th_dragon_breath_vent = 9d8cdc
+th_steam_shroud_atoll = 70db30
+th_boiling_tide_channel_port = aa45e0
