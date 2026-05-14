@@ -42275,18 +42275,23 @@ th_west_bank_of_misty_lake = 06ead1
 th_norh_bank_of_misty_lake = 3365f1
 
 #红魔馆 SCR 
-
 #红魔馆大门
 th_main_gate_plaza = d43770
-th_scarlet_gatekeeper_hut = f80b1d 
-th_scarlet_outer_garden = f6Bd01
-th_flandre_confinement = 31e01c
+th_scarlet_moonlight_fountain_plaza = f80b1d 
+th_golem_gardeners_shed = f6Bd01
+th_eternal_rose_maze = 31e01c
+th_crimson_centerpiece_fountain = e6b7f9
+th_midnight_blooming_garden = 3afd7d
 #红魔馆中心
-th_great_library = 8a2c1e
-th_forbidden_section = d4efae
-th_central_courtyard_garden = 750fa9
-th_head_maid_office = 33d772
-th_scarlet_devil_mansion = c12216
+th_scarlet_grand_entrance_hall = 8a2c1e
+th_scarlet_gaze_balcony = d4efae
+th_voile_library_grand_hall = 750fa9
+th_perfect_maid_armory = 33d772
+th_scarlet_moonlight_tea_room = c12216
+th_seven_star_summoning_chamber = da10ca
+th_underground_wine_cellar = e0d06b
+th_scarlet_dream_bedchamber = 7b2622
+th_frandre_scarlet_bedchamber = 375c15
 #绯红之道
 th_scarlet_path = 987ca9
 th_crimson_moon_bridge = 2bc973
@@ -43074,6 +43079,30 @@ th_high_port = d76bf2
 th_pure_clean_cloud = e42994
 th_first_celestial = 15f8ac
 th_mirror_jian_xin_yu = 82b753
+#可能性移动飞船舱
+th_yumemi_okazaki_probability_ship = f0833c
+th_quantum_logic_bridge = 6f9eaf
+th_internal_transit_tunnels = 9d6f9a
+th_specimen_chamber_of_fantasy_beings = 8caf8b
+th_docking_port_for_the_impossible = 7b9fac
+th_main_engineering_bay = 5e9f9d
+#冈崎研究室
+th_yumemi_molecular_biolab = a20db0
+th_genome_of_magic_sequencing_hall = c0216b
+th_himera_cultivation_vats = a648b1
+th_protein_synthesis_of_spell_casting = 3d8c76
+#冈崎兵工厂
+th_yumemi_arms_factory_hall = aeb468
+th_law_breaching_forge = c3c602
+th_armor_plating_press = d59bb5
+th_yumemi_arms_factory_advanced = a4e6d1
+#冈崎魔法武器库
+th_yumemi_magical_arsenal = 938884
+th_weaponized_theorem_case_files = 2e4c0a
+th_spell_card_analysis_and_replication_lab = 50c85b
+th_enchantment_assembly_line = a80194
+
+
 ###月球地区
 #月之都
 th_palace_of_moon = 3c9d2a

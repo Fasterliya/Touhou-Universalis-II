@@ -2025,17 +2025,24 @@ th_gensokyo_continent = {
 			#红魔馆
 			th_scarlet_devil_mansion_area = {
 				th_scarlet_devil_mansion_province = {
-					th_great_library
-					th_forbidden_section
-					th_central_courtyard_garden
-					th_head_maid_office
-					th_scarlet_devil_mansion
+					th_scarlet_grand_entrance_hall
+					th_scarlet_gaze_balcony
+					th_voile_library_grand_hall`
+					th_perfect_maid_armory
+					th_scarlet_moonlight_tea_room
+					th_seven_star_summoning_chamber
+					th_underground_wine_cellar
+					th_scarlet_dream_bedchamber
+					th_frandre_scarlet_bedchamber
+
 				}
 				th_scarlet_devil_gate_province = {
 					th_main_gate_plaza
-					th_scarlet_gatekeeper_hut
-					th_scarlet_outer_garden
-					th_flandre_confinement
+					th_scarlet_moonlight_fountain_plaza
+					th_golem_gardeners_shed
+					th_eternal_rose_maze
+					th_crimson_centerpiece_fountain
+					th_midnight_blooming_garden
 				}
 			}
 			th_scarlet_path_area = {
@@ -4251,7 +4258,37 @@ th_gensokyo_continent = {
 					th_first_celestial
 					th_mirror_jian_xin_yu
 				}
+
 			}
+			th_probability_space_cruiser_area = {
+				th_yumemi_okazaki_probability_ship_province = {
+					th_yumemi_okazaki_probability_ship
+					th_quantum_logic_bridge
+					th_internal_transit_tunnels
+					th_specimen_chamber_of_fantasy_beings
+					th_docking_port_for_the_impossible
+					th_main_engineering_bay
+				}
+				th_yumemi_molecular_biolab_province = {
+					th_yumemi_molecular_biolab
+					th_genome_of_magic_sequencing_hall
+					th_himera_cultivation_vats
+					th_protein_synthesis_of_spell_casting
+				}
+				th_yumemi_arms_factory_province = {
+					th_yumemi_arms_factory_hall
+					th_law_breaching_forge
+					th_armor_plating_press
+					th_yumemi_arms_factory_advanced
+				}
+				th_yumemi_magical_arsenal_province = {
+					th_yumemi_magical_arsenal
+					th_weaponized_theorem_case_files
+					th_spell_card_analysis_and_replication_lab
+					th_enchantment_assembly_line
+				}
+			}
+
 		}
 		th_youkai_mountain_western_foot_region = {
 			th_kappas_country_area = {
