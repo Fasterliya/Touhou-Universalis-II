@@ -42296,25 +42296,35 @@ th_frandre_scarlet_bedchamber = 375c15
 th_scarlet_path = 987ca9
 th_crimson_moon_bridge = 2bc973
 th_fate_corridor = d4100f
+th_vampiric_vine_valley = f1d095
 #芙兰的游乐场
 th_flandres_playground = 16d838
-th_outerdoor_garden = 56bc6a
+th_lake_of_blood_reflections = 56bc6a
 th_scarlet_backup_storage = 394e40
+th_path_of_the_crimson_moon = c16574
+th_scarlet_fog_bog = 4f017c
+th_hidden_garden_of_forbidden_blooms = adda5c
 #人鱼秘境
 th_mermaid_sanctuary = e11201
 th_tide_song_cavern = 520121
 th_coral_corridor = 7b80bc
 th_moonlit_tidal_pool = a73fa9
+th_secret_path_to_the_lakeshore = ced29b
+th_wakasagihime_manor = e527e8
 #失落之城
 th_forgotten_royal_court = 9f9888
 th_sunken_quarter = c7af88
 th_lost_city = 926df3
 th_clocktower_of_time = 60bc19
+th_whispering_residential_quarter = 4cfd5c
 #洋馆花园
 th_maze_hedge = 4ca454
 th_eternal_night_orchid_bed = cdc9a7
 th_moonlight_music_pavilion = 3ea979
 th_black_tea_gazebo = b94d77
+th_crimson_creek_bridge = 4dec53
+th_eternal_dusk_beach = c6c63e
+th_crimson_tide_harbor = 93f5b0
 #绯红之山
 th_crimson_mountain = 9a571e
 th_bloodmoon_peak = 74a482
@@ -42326,6 +42336,8 @@ th_scarlet_danmaku_proving_ground = c941e5
 th_silver_blade_corridor = 8f38ad
 th_ice_fariy_island = 942739
 th_silent_library = 8b115e
+th_crimson_vein_mine = f2cc94
+th_chaos_gravity_grove = b65e2b
 #冰之室
 th_ice_room = a2fb27
 th_frost_blossom_garden = 37652e
@@ -42533,44 +42545,58 @@ th_deep_dark = ed2072
 #博丽 HKR
 # area首府
 th_barrier_nexus = f94e3b
-th_wine_cellar = f91ea1
 th_hakurei_foothills = 2d653a
 th_hakurei_mansion = 631341
 th_cherry_blossom_grove = fcc0f0
-th_hakurei_coast = 664716
-th_canal_port = ac8654
-th_hakurei_seaside = 10c93e
 th_meditation_grounds = f38056
 th_training_grounds = 1c9d7b
-th_spring_colors_trail = 95b9ab
 #博丽神社
 th_hakurei_shrine = f24c45
 th_main_hall_plaza = 8a8559
 th_torii_approach = b28dc5
 th_hakurei_engawa = c66acc
+th_the_always_open_back_gate = 7487b2
+th_hakurei_offering_hall_of_sparse_faith = f8de8a
 #春色小径
+th_spring_colors_trail = 95b9ab
 th_east_wind_trail = f1b334
 th_falling_flowers_flowing_water = 77a2b2
+th_echo_of_new_life_ravine = 64bb85
+th_whispering_willow_grove = e7ff1a
 #博丽府邸
 th_shrine_maiden_residence = 30e32f
 th_tea_room_corridor = 254e1d
 th_hakurei_storage_backyard = eac27d
+th_austere_sleeping_chamber = daa53d
+th_offering_reception_hall = e617fc
 #樱花林地
 th_front_hill_sakura = 08e63d
 th_ravine_cherry_path = fdc92e
-th_shrine_back_grove = f8d391
+th_thousand_petal_path = 3ddb79
+th_blossom_viewing_pavilion = 19c65d
+th_petal_drift_stream = 7ce81a
 #运河港口
+th_canal_port = ac8654
 th_boatwright_workshop = 7d14e4
-th_lock_gate_house = 9e833b
+th_fantasy_canal_harbor = 9e833b
 th_main_canal = ab188c
+th_exorcism_charm_workshop = 8347d0
+th_hakurei_boundary_marker_wharf = 7cc676
 #博丽海岸
+th_hakurei_coast = 664716
 th_east_coast_rocks = 7e088a
 th_sea_view_cliff = ec5877
 th_cape_lighthouse = 26f1be
+th_sacred_torii_beach = f82d84
+th_harbor_masters_observatory = d6563b
+th_tidal_pool_of_memories = 8eb703
 #博丽岸滨
+th_hakurei_seaside = 10c93e
 th_white_sand_beach = 157f46
 th_seaside_promenade = c03d5c
 th_tidal_pool = 9ed9bc
+th_komainu_coastal_guard_post = 66af85
+th_komainu_coastal_guard_room = cf2a2c
 #训练校场
 th_main_practice_field = ef5daf
 th_archery_range = ab02c4
@@ -42579,17 +42605,23 @@ th_back_hill_platform = 7d2656
 th_tranquil_woods = bfc33d
 th_streamside_rocks = e6218d
 th_under_the_old_cherry = afd3b5
+th_ancient_pine_platform = fc511f
 #博丽山麓
 th_mountain_gate_stairs = fbd699
 th_kazami_trail = 809204
 th_clear_mirror_still_water = d67d58
 #藏酒库房
+th_wine_cellar = f91ea1
 th_drunken_immortal_brewery = 558f52
 th_moonlight_cellar = aca0d3
+th_suika_brewery_vault = c6711f
+th_drunken_boulder_bed = 74810b
 #博丽半岛
 th_seafood_drying_field = 6d7b25
 th_peninsula_lighthouse = 5bd783
 th_windbreak_pine_forest = dc10c3
+th_vein_of_living_jade = e40046
+th_vein_of_living_jade_port = bd5132
 #香霖堂
 th_honcho_dori = 92882d
 th_workshop_yokocho = 42ec21	
@@ -42714,6 +42746,31 @@ th_myourenji_teien = c1f7ad
 th_myourenji_saidou = a6682c
 th_myourenji_sobo = f51c2c
 th_myourenji_shoro = 671c01
+#妖怪狸之森
+th_bake_danuki_forest = 8f9f9e
+th_shape_shifting_avenue = 9d8f9b
+th_fude_brush_shrine_gate = 8cbf9d
+th_leaf_coin_market = 7bafae
+th_human_village_backdoor_hill = 6e9f9f
+th_tanuki_belly_drum_theater = 9f9f9e
+th_one_night_inn_signpost = 87b02c
+#命莲寺北
+th_myouren_temple_north_district = 9cae9f
+th_lotus_sutra_stone_path = c914b7
+th_unzans_nap_rock = 7d9fcf
+th_belfry_of_dawn_chant = 5f7e9b
+th_abbots_private_meditation_grove = 9eac8f
+th_sutra_transcription_shed = 8c9faf
+th_lantern_lit_memorial_hall = 6a9fbf
+#圣輦船
+th_lotus_bow_deck = 4f8e9c
+th_unzans_cloud_berth = 9d9d7e
+th_mandala_guest_hall = 8b9f9f
+th_monk_quarters_cell_block = 7c9fef
+th_nazrin_s_treasure_hold = 5e9e9a
+th_dragon_protector_prow = 9f8c9f
+
+
 #梦殿大祀庙
 th_muden_daishibyo_shibyo_honden = e488a5
 th_muden_daishibyo_chinmin_chi = bee03f
@@ -44557,3 +44614,93 @@ th_geothermal_vein_mine = ed5233
 th_dragon_breath_vent = 9d8cdc
 th_steam_shroud_atoll = 70db30
 th_boiling_tide_channel_port = aa45e0
+###仙界大区
+#神灵庙索道
+th_cableway_of_divine_spirit_mausoleum = 7f9f9e
+th_kappas_shinbutsushugou = 9d7f9b
+th_echo_of_yamabiko = 8cbf9c
+th_road_of_virtue = 7bafad
+th_mountains_rivers_scroll = fbd236
+th_ascension_pillar_transfer = baf565
+#宫古之扉
+th_gate_of_miyako = 6e9f9e
+th_recite_poetry_forest = 9f8f9d
+th_wuxings_lawn = 5b9f9f
+th_poisonous_deadbody_riverbank = 9c9d9f
+th_guardian_shikigami_sentry_post = df5bb8
+#太子布道室
+th_mikos_sermon = 8a8f9e
+th_pure_heart_pavilion = 7d9fce
+th_wordless_stele_valley = 5f6d9b
+th_pass_of_li = d2db9f
+th_viewing_platform_of_the_true_gate = dc735b
+th_echo_of_ten_arguments_pillars = 6263d1
+th_mikos_sermon_gate = 5fcc2e
+th_cup_of_enlightenment_tea_service = dbabfe
+#梦殿
+th_dream_palace = 8c9f9f
+th_immortal_ascension_terrace = 6a9faf
+th_time_stop_tower = 4f7d9c
+th_mountain_of_dui = 9d8c7e
+#老君庙
+th_lotus_pool = db332e
+th_laojuns_temple = 7c9fdf
+th_jade_pavilion = 5e8d9a
+th_yinyang_dormitory = 9f7b9f
+th_cauldron_of_chaos_altar = d035b8
+th_purple_gold_crucible = a09c6e
+#隐士之山
+th_mountain_of_hermits = 3617a6
+th_borken_axe_forest = a733ff
+th_land_of_qian = 4c8d9c
+th_wu_ling = 9e9c6e
+#白银村落
+th_silver_village = f4156d
+th_cinnabar_plain = 7a9f3f
+th_forest_of_zhen = fe63c3
+th_lead_power_suburb = 9d9b1e
+th_five_metal_shrine = 6f543a
+#神灵庙
+th_divine_spirit_mausoleum = e49b4c
+th_mikos_room = 6c9f5f
+th_private_dojo = 4d8d9f
+th_outer_world_path = 9e8a3e
+th_hall_of_two_sages_hearing = f5e2a9
+#太子冥想室
+th_mikos_meditation_house = 1eb580
+th_house_of_sanshi = 7b9f7f
+th_four_monkey_backyard = 5e8d9c
+th_ancient_moon_garden = 9f7b2f
+#丹鼎研制场
+th_development_site_of_alchemical_cauldron = 8a9f9f
+th_hill_of_fire = 8f6e47
+th_forest_of_xun = 4c8d9d
+th_thousands_souls_prison = 9e9c7f
+th_mercury_and_cinnabar_refinery = 23e227
+#古老洞窟
+th_cave_of_gen = 29d615
+th_buried_bone_buddha_hall = 7a9faf
+th_revive_cave = 577b0e
+th_broken_soul_calming_door = 9d9b3f
+#雷鸣之林
+th_thunder_forest = 8b9f9d
+th_fidelity_peak = 6c9fbf
+th_soga_barrier = 4d8d9a
+th_sects_town = 9e8a5f
+th_lightning_struck_cedar_grove = cdfa7e
+#方士术场
+th_alchemists_venue = f2b8eA
+th_eye_of_desires = 7b9f1f
+th_exploitation_workshop = e2501e
+th_hover_sword_ridge = 9f7b4f
+#风水藏书阁
+th_kalpa_pass = 187e33
+th_mononobe_scripture_depository = 8be49f
+th_original_fire_pavilion = b52cf2
+th_fengshui_steppe = 9e9c8f
+th_feng_shui_puppet_rehearsal_stage = bb7452
+#仙人道场
+th_immortal_dojo_main = b5a950
+th_river_of_kan = 7a9f2f
+th_disciple_village = 5f8d9d
+th_deep_forest_of_immortals_realm = 9d9b5f

@@ -1952,11 +1952,15 @@ th_gensokyo_continent = {
 					th_seafood_drying_field
 					th_peninsula_lighthouse
 					th_windbreak_pine_forest
+					th_vein_of_living_jade
+					th_vein_of_living_jade_port
 				}
 				th_wine_cellar_province = {
 					th_wine_cellar
 					th_drunken_immortal_brewery
 					th_moonlight_cellar
+					th_suika_brewery_vault
+					th_drunken_boulder_bed
 				}
 				th_hakurei_foothills_province = {
 					th_hakurei_foothills
@@ -1977,23 +1981,32 @@ th_gensokyo_continent = {
 					th_main_hall_plaza
 					th_torii_approach
 					th_hakurei_engawa
+					th_the_always_open_back_gate
+					th_hakurei_offering_hall_of_sparse_faith
 				}
 				th_hakurei_mansion_province = {
 					th_hakurei_mansion
 					th_shrine_maiden_residence
 					th_tea_room_corridor
 					th_hakurei_storage_backyard
+					th_austere_sleeping_chamber
+					th_offering_reception_hall
 				}
 				th_cherry_blossom_grove_province = {
 					th_cherry_blossom_grove
 					th_front_hill_sakura
 					th_ravine_cherry_path
+					th_thousand_petal_path
+					th_blossom_viewing_pavilion
+					th_petal_drift_stream
 
 				}
 				th_spring_colors_trail_province = {
 					th_spring_colors_trail
 					th_east_wind_trail
 					th_falling_flowers_flowing_water
+					th_echo_of_new_life_ravine
+					th_whispering_willow_grove
 				}
 			}
 			th_hakurei_coast_area = {
@@ -2002,24 +2015,32 @@ th_gensokyo_continent = {
 					th_east_coast_rocks
 					th_sea_view_cliff
 					th_cape_lighthouse
+					th_sacred_torii_beach
+					th_harbor_masters_observatory
+					th_tidal_pool_of_memories
 				}
 				th_canal_port_province = {
 					th_canal_port
 					th_boatwright_workshop
+					th_fantasy_canal_harbor
 					th_main_canal
-					th_shrine_back_grove
+					th_exorcism_charm_workshop
+					th_hakurei_boundary_marker_wharf
 				}
 				th_hakurei_seaside_province = {
 					th_hakurei_seaside
 					th_white_sand_beach
 					th_seaside_promenade
 					th_tidal_pool
+					th_komainu_coastal_guard_post
+					th_komainu_coastal_guard_room
 				}
 				th_meditation_grounds_province = {
 					th_meditation_grounds
 					th_tranquil_woods
 					th_streamside_rocks
 					th_under_the_old_cherry
+					th_ancient_pine_platform
 				}
 			}
 			#红魔馆
@@ -2050,17 +2071,23 @@ th_gensokyo_continent = {
 					th_scarlet_path
 					th_crimson_moon_bridge
 					th_fate_corridor
+					th_vampiric_vine_valley
 				}
 				th_flandres_playground_province = {
 					th_flandres_playground
-					th_outerdoor_garden
+					th_lake_of_blood_reflections
 					th_scarlet_backup_storage
+					th_path_of_the_crimson_moon
+					th_scarlet_fog_bog
+					th_hidden_garden_of_forbidden_blooms
 				}
 				th_mermaid_sanctuary_province = {
 					th_mermaid_sanctuary
 					th_tide_song_cavern
 					th_coral_corridor
 					th_moonlit_tidal_pool
+					th_secret_path_to_the_lakeshore
+					th_wakasagihime_manor
 				}
 			}
 			th_scarlet_lost_city_area = {
@@ -2069,12 +2096,16 @@ th_gensokyo_continent = {
 					th_eternal_night_orchid_bed
 					th_moonlight_music_pavilion
 					th_black_tea_gazebo
+					th_crimson_creek_bridge
+					th_eternal_dusk_beach
+					th_crimson_tide_harbor
 				}
 				th_lost_city_province = {
 					th_forgotten_royal_court
 					th_sunken_quarter
 					th_lost_city
 					th_clocktower_of_time
+					th_whispering_residential_quarter
 				}
 				th_scarlet_training_ground_province = {
 					th_scarlet_training_ground
@@ -2082,6 +2113,8 @@ th_gensokyo_continent = {
 					th_silver_blade_corridor
 					th_ice_fariy_island
 					th_silent_library
+					th_crimson_vein_mine
+					th_chaos_gravity_grove
 				}
 				th_crimson_mountain_province = {
 					th_crimson_mountain
@@ -2404,6 +2437,32 @@ th_gensokyo_continent = {
 					th_myourenji_saidou
 					th_myourenji_sobo
 					th_myourenji_shoro
+				}
+				th_bake_danuki_forest_province = {
+					th_bake_danuki_forest
+					th_shape_shifting_avenue
+					th_fude_brush_shrine_gate
+					th_leaf_coin_market
+					th_human_village_backdoor_hill
+					th_tanuki_belly_drum_theater
+					th_one_night_inn_signpost
+				}
+				th_myouren_temple_north_district_province = {
+					th_myouren_temple_north_district
+					th_lotus_sutra_stone_path
+					th_unzans_nap_rock
+					th_belfry_of_dawn_chant
+					th_abbots_private_meditation_grove
+					th_sutra_transcription_shed
+					th_lantern_lit_memorial_hall
+				}
+				th_holy_palanquin_ship_province = {
+					th_lotus_bow_deck
+					th_unzans_cloud_berth
+					th_mandala_guest_hall
+					th_monk_quarters_cell_block
+					th_nazrin_s_treasure_hold
+					th_dragon_protector_prow
 				}
 			}
 			th_north_myourenji_hondo_area = {
@@ -2847,7 +2906,7 @@ th_gensokyo_continent = {
 				}
 			}
 		}
-				th_youkai_mountain_western_foot_region = {
+		th_youkai_mountain_western_foot_region = {
 			th_kappas_country_area = {
 				th_cucumenber_garden_province = {
 					th_cucumenber_garden
@@ -3138,18 +3197,25 @@ th_gensokyo_continent = {
 					th_kappas_shinbutsushugou
 					th_echo_of_yamabiko
 					th_road_of_virtue
+					th_mountains_rivers_scroll
+					th_ascension_pillar_transfer
 				}
 				th_gate_of_miyako_province = {
 					th_gate_of_miyako
 					th_recite_poetry_forest
 					th_wuxings_lawn
 					th_poisonous_deadbody_riverbank
+					th_guardian_shikigami_sentry_post
 				}
 				th_mikos_sermon_province = {
 					th_mikos_sermon
 					th_pure_heart_pavilion
 					th_wordless_stele_valley
 					th_pass_of_li
+					th_viewing_platform_of_the_true_gate
+					th_echo_of_ten_arguments_pillars
+					th_mikos_sermon_gate
+					th_cup_of_enlightenment_tea_service
 				}
 				th_dream_palace_province = {
 					th_dream_palace
@@ -3162,6 +3228,8 @@ th_gensokyo_continent = {
 					th_laojuns_temple
 					th_jade_pavilion
 					th_yinyang_dormitory
+					th_cauldron_of_chaos_altar
+					th_purple_gold_crucible
 				}
 				th_mountain_of_hermits_province = {
 					th_mountain_of_hermits
@@ -3174,6 +3242,7 @@ th_gensokyo_continent = {
 					th_cinnabar_plain
 					th_forest_of_zhen
 					th_lead_power_suburb
+					th_five_metal_shrine
 				}
 			}
 			th_miko_no_immortal_realim_area = {
@@ -3182,6 +3251,7 @@ th_gensokyo_continent = {
 					th_mikos_room
 					th_private_dojo
 					th_outer_world_path
+					th_hall_of_two_sages_hearing
 				}
 				th_mikos_meditation_house_province = {
 					th_mikos_meditation_house
@@ -3194,6 +3264,7 @@ th_gensokyo_continent = {
 					th_hill_of_fire
 					th_forest_of_xun
 					th_thousands_souls_prison
+					th_mercury_and_cinnabar_refinery
 				}
 				th_ancient_cave_province = {
 					th_cave_of_gen
@@ -3206,6 +3277,7 @@ th_gensokyo_continent = {
 					th_fidelity_peak
 					th_soga_barrier
 					th_sects_town
+					th_lightning_struck_cedar_grove
 				}
 				th_alchemists_venue_province = {
 					th_alchemists_venue
@@ -3218,9 +3290,10 @@ th_gensokyo_continent = {
 					th_mononobe_scripture_depository
 					th_original_fire_pavilion
 					th_fengshui_steppe
+					th_feng_shui_puppet_rehearsal_stage
 				}
 				th_immortals_drill_province = {
-					th_immortal_dojo
+					th_immortal_dojo_main
 					th_river_of_kan
 					th_disciple_village
 					th_deep_forest_of_immortals_realm
