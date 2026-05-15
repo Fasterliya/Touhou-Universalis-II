@@ -42384,8 +42384,8 @@ th_flower_clock_of_time = 748068
 th_yakumo_mansion = ac0dc8
 #白玉楼
 th_hakugyokurou = ca4741
-#人间之里
-th_village_gate_plaza = e1b553
+# #人间之里
+# th_village_gate_plaza = e1b553
 
 ### 魔法森林地区
 #魔法森林

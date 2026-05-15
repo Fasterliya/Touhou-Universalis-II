@@ -2045,6 +2045,14 @@ th_gensokyo_continent = {
 			}
 			#红魔馆
 			th_scarlet_devil_mansion_area = {
+				th_scarlet_devil_gate_province = {
+					th_main_gate_plaza
+					th_scarlet_moonlight_fountain_plaza
+					th_golem_gardeners_shed
+					th_eternal_rose_maze
+					th_crimson_centerpiece_fountain
+					th_midnight_blooming_garden
+				}
 				th_scarlet_devil_mansion_province = {
 					th_scarlet_grand_entrance_hall
 					th_scarlet_gaze_balcony
@@ -2056,14 +2064,6 @@ th_gensokyo_continent = {
 					th_scarlet_dream_bedchamber
 					th_frandre_scarlet_bedchamber
 
-				}
-				th_scarlet_devil_gate_province = {
-					th_main_gate_plaza
-					th_scarlet_moonlight_fountain_plaza
-					th_golem_gardeners_shed
-					th_eternal_rose_maze
-					th_crimson_centerpiece_fountain
-					th_midnight_blooming_garden
 				}
 			}
 			th_scarlet_path_area = {
@@ -2489,10 +2489,10 @@ th_gensokyo_continent = {
 				}
 			}
 			th_western_human_village_area = {
-				th_village_gate_plaza_province = {
-					#人间之里
-					th_village_gate_plaza
-				}
+				# th_village_gate_plaza_province = {
+				# 	#人间之里
+				# 	th_village_gate_plaza
+				# }
 				th_nishi_odori_province = {
 					th_nishi_odori
 					th_ryujin_sama_sekizou
