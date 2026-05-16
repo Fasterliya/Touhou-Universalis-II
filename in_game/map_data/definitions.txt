@@ -2048,21 +2048,22 @@ th_gensokyo_continent = {
 				th_scarlet_devil_gate_province = {
 					th_main_gate_plaza
 					th_scarlet_moonlight_fountain_plaza
-					th_golem_gardeners_shed
 					th_eternal_rose_maze
-					th_crimson_centerpiece_fountain
 					th_midnight_blooming_garden
+					th_crimson_centerpiece_fountain
+					th_guardian_golem_shed
 				}
 				th_scarlet_devil_mansion_province = {
 					th_scarlet_grand_entrance_hall
 					th_scarlet_gaze_balcony
-					th_voile_library_grand_hall`
+					th_voile_library_grand_hall
 					th_perfect_maid_armory
-					th_scarlet_moonlight_tea_room
 					th_seven_star_summoning_chamber
 					th_underground_wine_cellar
 					th_scarlet_dream_bedchamber
 					th_frandre_scarlet_bedchamber
+					th_gargoyle_sentinel_gallery
+					th_scarlet_moonlight_tea_room
 
 				}
 			}

@@ -42278,20 +42278,21 @@ th_norh_bank_of_misty_lake = 3365f1
 #红魔馆大门
 th_main_gate_plaza = d43770
 th_scarlet_moonlight_fountain_plaza = f80b1d 
-th_golem_gardeners_shed = f6Bd01
 th_eternal_rose_maze = 31e01c
+th_midnight_blooming_garden = 8ab560
 th_crimson_centerpiece_fountain = e6b7f9
-th_midnight_blooming_garden = 3afd7d
+th_guardian_golem_shed = bcc92c
 #红魔馆中心
 th_scarlet_grand_entrance_hall = 8a2c1e
 th_scarlet_gaze_balcony = d4efae
 th_voile_library_grand_hall = 750fa9
 th_perfect_maid_armory = 33d772
-th_scarlet_moonlight_tea_room = c12216
 th_seven_star_summoning_chamber = da10ca
 th_underground_wine_cellar = e0d06b
 th_scarlet_dream_bedchamber = 7b2622
 th_frandre_scarlet_bedchamber = 375c15
+th_gargoyle_sentinel_gallery = 4fcd58
+th_scarlet_moonlight_tea_room = d13efa
 #绯红之道
 th_scarlet_path = 987ca9
 th_crimson_moon_bridge = 2bc973
