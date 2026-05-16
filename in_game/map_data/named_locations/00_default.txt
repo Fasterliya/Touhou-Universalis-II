@@ -42268,12 +42268,184 @@ munduyskoye_lake = 00b7a6
 
 ### TOUHOU
 gensokyo = 951651
-
+#雾之湖
 th_misty_lake = 4149ae
 th_east_bank_of_misty_lake = 8ffefb
 th_west_bank_of_misty_lake = 06ead1
 th_norh_bank_of_misty_lake = 3365f1
+th_mermaid_bay_sea = 112c8b
+th_mist_channel_sea_north = 1447d1
+th_mist_channel_sea_south = 65efef
+th_fog_channel_stratts_sea = 1166ac
+#博丽海
+th_hakurei_dreamlike_bay_sea = 4034b3
+th_southern_hakurei_gulf_sea = 1292d1
+th_mirror_gulf_sea = 0f3798
+th_first_snow_sea = 45b5ef
+th_hakurei_inland_sea = 11c4ee
+th_first_snow_sea_north = 0738b4
+th_southern_hakurei_gulf_west_sea = 38abc0
+#隙间海
+th_gap_sea_location = 85e8fe
+th_void_sea_location = 0d45fc
+th_border_whirlpool_sea = 27ebd7
+th_phantom_reef_sea = 2b70e6
+th_tidecall_gulf_sea = 313197
+th_mirage_undercurrent_sea = 1453fb
+#幽冥云海
+th_soul_sea_location = 3864da
+th_nether_cloud_bay_sea = 2018b8
+th_nether_cloud_sea = 26b7e0
+###西幻想乡海
+th_netherworld_sea_location = 1d0676
+th_ghost_sea_location = 0f5ce0
+th_river_of_forgetfulness_strait_sea = 4400bc
+th_river_of_forgetfulness_strait_sea_north = 7fc5ef
+th_lightless_deep_sea = 10358d
+th_lightless_deep_sea_north = 0453da
+th_sunken_soul_sea = 3965f0
+th_samsara_current_sea = 350ef1
+th_dead_silence_reef_sea = 0b23b2
+#竹林
+th_eternal_night_calm_bay_south_sea = 05e9ca
+th_eternal_night_calm_bay_north_sea = 3c39e5
+th_hourai_shoal_sea = 343bd6
+th_lost_light_strait_sea = 1db2c0
+th_moon_jump_sea = 0655f7
+th_ete_outdoor_sea = 3b3dd6
+th_ete_outdoor_sea_north = 1f6dc5
+th_inaba_reef_sea = 7ef4d3
+th_boundary_trench_sea = 32d2e8
+###北幻想乡海
+#梦月之海
+th_sea_of_dreams_and_moon_sea = 13eaf8
+th_purification_strait_sea = 2d84f2
+th_nightmare_undercurrent_sea = 1ee6ef
+th_sleep_under_moon_sea = 466bf0
+th_dream_mirror_whirlpool_sea = 144db7
+th_ice_milk_sea = 0b23e4
+th_dream_tranquil_sea = 34d6f6
+#神灵之海
+th_lunar_capital_east_sea = 0c73d7
+th_sage_sea_east_margin_sea = 068ddd
+th_sage_sea_west_margin_sea = 364fc5
+th_toyohime_connection_channel_sea = 48f8ce
+th_crescent_moon_bay_sea = 18dae7
+th_silver_sand_cove_sea = 0251e6
+th_crescent_bar_sea = 395dfb
+th_dream_reality_sea1 = 327cfb
+th_dream_reality_sea2 = 16c5ff
+#西月之海
+th_feather_robe_crossing_sea = 3eb7f3
+th_waning_corner_sea = 3c72ff
+th_eternal_sleep_sea = 32fdf4
+th_tsukuyomi_dream_throne_sea = 030bef
+th_eientei_west_reflection_sea = 0cd9f1
+th_lunar_debris_west_zone_sea = 277dc5
+th_lunar_star_dweller_sea = 1f16ef
+th_waning_full_corner_sea = 466feb
 
+#玄云海东部
+th_earthquake_omen_sea = 47d8d7
+th_rolling_cloud_maelstrom_sea = 1493ed
+th_rainbow_cloud_current_sea = 2887dd
+th_chalk_sea_location = 364aeb
+th_scarlet_cloud_omen_sea = 2dbfb2
+#玄云海西部
+th_cloud_whale_migration_sea = 024ab3
+th_hakurei_border_cloud_sea = 05a7ef
+th_mountain_summit_sea = 0737aa
+th_auspicious_cloud_sea = 4ab8e0
+th_nirvana_west_coast_sea = 26b0e7
+#龙之岛海
+th_heaven_dragon_island_sea = 5eB8ed
+th_coiled_dragon_main_reef_sea = 140bf9
+th_sleeping_dragon_sea = 86f6c4
+th_cloud_dragon_swirl = 8bf0f5
+th_dragon_island_inland_sea = 2009ca
+th_ryujin_festival_sea = 0f1af6
+th_dragon_island_inland_sea_west = 0cf7f4
+th_dragon_pearl_reef_sea = 24c0df
+th_dragon_pearl_reef_sea_south = 1c30ec
+th_heaven_sent_dragon_rain_sea = a0f3fa
+th_heaven_sent_dragon_rain_sea_west = 0e41dd
+th_dragon_scale_strait_sea = 6ee2f8
+#西魔界海
+th_makai_west_sea = 131bea
+th_frozen_demon_sea = 39aaf4
+th_hourai_seal_sea = 1b3ed2
+th_create_world_sea1 = 1547d4
+th_create_world_sea2 = 5ef4db
+th_create_world_sea3 = 0036b1
+th_primordial_sea = 0325cb
+th_lightdark_divide_sea = 2a6ac9
+th_elemental_boiling_sea = 05cbe8
+th_elemental_boiling_sea2 = 15e5bf
+th_causality_start_sea = 1555a8
+#东魔界海
+th_fangzhang_golden_sea_west = 19a1ff
+th_fangzhang_golden_sea_west2 = 70eff6
+th_fangzhang_golden_sea_west3 = 0904d9
+th_fangzhang_golden_sea_west4 = 3a7bf1
+th_forbidden_zone_sea = 086dec
+th_forbidden_zone_sea_west = 23bfd8
+th_magic_waste_world_sea = 404efd
+th_temporal_axis_turbulence_sea = 1c66f4
+th_mirror_reflection_sea = 1103d1
+#守矢海盆
+th_divine_mark_reef_sea = 066fef
+th_shintoku_bay_sea = 21adfa
+th_shintoku_bay_sea_east = 2f67bf
+th_cucumber_field_bay = 2d61e3
+th_fuujin_sea = 336bed
+th_moriya_front_sea = 3244dd
+th_moriya_front_sea_input = 40ecfb
+th_genbu_sawa_sea = 23f4df
+th_keiki_bay_sea = 09a7f5
+th_keiki_bay_sea_west = 24bdc3
+#彼岸
+th_western_pure_land_sea = 0ce1b9
+th_enma_judgment_bay_sea = 3798c7
+th_enma_judgment_bay_sea1 = 1805e6
+th_eternal_night_sea = 3dc7eb
+th_mugen_sea_location = 4cd8f9
+th_mizuko_sea_location = 1265b2
+th_shuuen_shizumi_umi_sea = 0f7df9
+th_higan_shore_sea = 18aeb4
+th_higan_shore_sea2 = 2d9dd8 
+th_higan_shore_sea3 = 1d77f4
+th_higan_shore_sea4 = 458fdc
+th_inishie_saiban_umi = 70cee7
+th_danen_umi_sea = 1398fc
+th_divine_mold_sea = 325dae
+th_divine_mold_sea2 = 4eb7e6
+th_kego_no_umi_sea = 01e6ba
+#守矢外海
+th_ka_mei_shallow_sea = 0317f5
+th_amagoi_sea = 27cdf9
+th_amagoi_sea2 = 2fdfe4
+th_suwa_maelstrom_sea = 2761f6
+th_gokoku_bay_sea = 2ea3e1
+#地狱海
+th_oni_feast_bay_sea = 1660d4
+th_oni_feast_bay_sea2 = 3d8dcd
+th_oni_feast_bay_sea3 = 293dc1
+th_hai_goku_reefs_sea = 37afed
+th_hai_goku_reefs_sea2 = 1723cf
+th_s_io_mist_sea = 16c9bc
+th_s_io_mist_sea2 = 19a4f8
+th_jigoku_shindo_trench_sea = 334dd5
+th_jigoku_shindo_trench_sea2 = 1949fa
+th_kokujou_kou_kai_sea = 2877fb
+th_shakunetsu_shiogama_sea = 203b8c
+th_shakunetsu_shiogama_sea2 = 13a5e2
+th_shakunetsu_shiogama_sea3 = 5494f7
+th_kyoukan_rekka_sea = 46e9eb
+th_shugou_teppou_umi = 93fdea
+th_abiki_zankyo_umi_sea = 2173ba
+
+### 85 84 83 81 2 3 5 11 10 62 42 43 44 45 46 47 48
+### 12 13 14 15 9 16 77
 #红魔馆 SCR 
 #红魔馆大门
 th_main_gate_plaza = d43770

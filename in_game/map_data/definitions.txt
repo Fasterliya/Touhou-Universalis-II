@@ -13468,8 +13468,221 @@ pacific_ocean_continent = {
 			th_misty_sea_area = {
 				th_misty_lake_province = {
 					th_misty_lake th_east_bank_of_misty_lake th_west_bank_of_misty_lake th_norh_bank_of_misty_lake
+					th_mermaid_bay_sea
+				}
+				th_mist_channel_province = {
+					th_mist_channel_sea_north
+					th_mist_channel_sea_south
+					th_fog_channel_stratts_sea
+					th_hakurei_dreamlike_bay_sea
 				}
 			}
+			th_southern_hakurei_gulf_sea_area = {
+				th_southern_hakurei_gulf_sea_province = {
+					th_southern_hakurei_gulf_sea
+					th_mirror_gulf_sea
+					th_first_snow_sea 
+					th_hakurei_inland_sea
+					th_first_snow_sea_north
+					th_southern_hakurei_gulf_west_sea
+					th_tidecall_gulf_sea
+				}
+				th_gap_sea_province = {
+					th_gap_sea_location
+					th_void_sea_location
+					th_border_whirlpool_sea
+					th_phantom_reef_sea
+					th_mirage_undercurrent_sea
+				}
+				th_nether_cloud_sea_province = {
+					th_soul_sea_location
+					th_nether_cloud_bay_sea
+					th_nether_cloud_sea
+				}
+			}
+			th_southern_hell_coast_sea_area = {
+				th_southern_hell_coast_sea_province = {
+                    th_oni_feast_bay_sea
+					th_oni_feast_bay_sea2
+					th_oni_feast_bay_sea3
+					th_hai_goku_reefs_sea
+					th_hai_goku_reefs_sea2
+					th_s_io_mist_sea
+					th_s_io_mist_sea2
+					th_jigoku_shindo_trench_sea
+					th_jigoku_shindo_trench_sea2
+					th_kokujou_kou_kai_sea
+					th_shakunetsu_shiogama_sea
+					th_shakunetsu_shiogama_sea2
+					th_shakunetsu_shiogama_sea3
+					th_kyoukan_rekka_sea
+					th_shugou_teppou_umi
+					th_abiki_zankyo_umi_sea
+				}
+			}
+		}
+		th_gensokyo_ocean_west_sea_region = {
+			th_gensokyo_ocean_west_sea_area = {
+				th_netherworld_sea_province = {
+					th_netherworld_sea_location
+					th_ghost_sea_location
+					th_river_of_forgetfulness_strait_sea
+					th_river_of_forgetfulness_strait_sea_north
+					th_lightless_deep_sea
+					th_lightless_deep_sea_north
+					th_sunken_soul_sea
+					th_samsara_current_sea
+					th_dead_silence_reef_sea
+				}
+				th_bamboo_forest_of_the_lost_sea_province = {
+					th_eternal_night_calm_bay_south_sea
+					th_eternal_night_calm_bay_north_sea
+					th_hourai_shoal_sea
+					th_lost_light_strait_sea
+					th_moon_jump_sea
+					th_ete_outdoor_sea
+					th_ete_outdoor_sea_north
+					th_inaba_reef_sea
+					th_boundary_trench_sea
+				}
+			}
+		}
+		th_gensokyo_ocean_moriya_sea_region = {
+			th_moriya_basin_sea_area = {
+				th_moriya_basin_sea_province = {
+					th_divine_mark_reef_sea
+					th_shintoku_bay_sea
+					th_shintoku_bay_sea_east
+					th_cucumber_field_bay
+					th_fuujin_sea
+					th_moriya_front_sea
+					th_moriya_front_sea_input
+					th_genbu_sawa_sea
+					th_keiki_bay_sea
+					th_keiki_bay_sea_west
+					
+				}
+				th_higan_west_sea_province = {
+					th_western_pure_land_sea
+					th_enma_judgment_bay_sea
+					th_enma_judgment_bay_sea1
+					th_eternal_night_sea
+					th_mugen_sea_location
+					th_mizuko_sea_location
+					th_shuuen_shizumi_umi_sea
+					th_higan_shore_sea
+					th_higan_shore_sea2
+					th_higan_shore_sea3
+					th_higan_shore_sea4
+					th_inishie_saiban_umi
+					th_danen_umi_sea
+					th_divine_mold_sea
+					th_divine_mold_sea2
+					th_kego_no_umi_sea
+
+				}
+				th_moriya_basin_outsea_province = {
+					th_ka_mei_shallow_sea
+					th_amagoi_sea
+					th_amagoi_sea2
+					th_suwa_maelstrom_sea
+					th_gokoku_bay_sea
+				}
+			}
+
+		}
+		th_gensokyo_ocean_north_sea_region = {
+			th_makai_west_sea_area = {
+				th_makai_west_sea_province = {
+					th_makai_west_sea
+					th_frozen_demon_sea
+					th_hourai_seal_sea
+					th_create_world_sea1
+					th_create_world_sea2
+					th_create_world_sea3
+					th_primordial_sea
+					th_lightdark_divide_sea
+					th_elemental_boiling_sea
+					th_elemental_boiling_sea2
+					th_causality_start_sea
+				}
+				th_makai_east_sea_province = {
+                    th_fangzhang_golden_sea_west
+					th_fangzhang_golden_sea_west2
+					th_fangzhang_golden_sea_west3
+					th_fangzhang_golden_sea_west4
+					th_forbidden_zone_sea
+					th_forbidden_zone_sea_west
+					th_magic_waste_world_sea
+					th_temporal_axis_turbulence_sea
+					th_mirror_reflection_sea
+				}
+			}
+			th_celestial_cloud_sea_area = {
+				th_mysterious_sea_of_clouds_east_province = {
+					th_earthquake_omen_sea
+					th_rolling_cloud_maelstrom_sea
+					th_rainbow_cloud_current_sea
+					th_chalk_sea_location
+					th_scarlet_cloud_omen_sea
+				}
+				th_mysterious_sea_of_clouds_west_province = {
+					th_cloud_whale_migration_sea
+					th_hakurei_border_cloud_sea
+					th_mountain_summit_sea
+					th_auspicious_cloud_sea
+					th_nirvana_west_coast_sea
+				}
+				th_heaven_dragon_island_sea_province = {
+					th_heaven_dragon_island_sea
+					th_coiled_dragon_main_reef_sea
+					th_sleeping_dragon_sea
+					th_cloud_dragon_swirl
+					th_dragon_island_inland_sea
+					th_ryujin_festival_sea
+					th_dragon_island_inland_sea_west
+					th_dragon_pearl_reef_sea
+					th_dragon_pearl_reef_sea_south
+					th_heaven_sent_dragon_rain_sea
+					th_heaven_sent_dragon_rain_sea_west
+					th_dragon_scale_strait_sea
+				}
+			}
+			th_lunar_capital_sea_area = {
+				th_sea_of_dreams_and_moon_province = {
+					th_sea_of_dreams_and_moon_sea
+					th_purification_strait_sea
+					th_nightmare_undercurrent_sea
+					th_sleep_under_moon_sea
+					th_dream_mirror_whirlpool_sea
+					th_ice_milk_sea
+					th_dream_tranquil_sea
+				}
+				th_lunar_capital_east_sea_province = {
+					th_lunar_capital_east_sea
+					th_sage_sea_east_margin_sea
+					th_sage_sea_west_margin_sea
+					th_toyohime_connection_channel_sea
+					th_crescent_moon_bay_sea
+					th_silver_sand_cove_sea
+					th_crescent_bar_sea
+					th_dream_reality_sea1
+					th_dream_reality_sea2
+
+				}
+				th_lunar_capital_west_sea_province = {
+					th_feather_robe_crossing_sea
+					th_waning_corner_sea
+					th_eternal_sleep_sea
+					th_tsukuyomi_dream_throne_sea
+					th_eientei_west_reflection_sea
+					th_lunar_debris_west_zone_sea
+					th_lunar_star_dweller_sea
+					th_waning_full_corner_sea
+					
+				}
+			}
+
 		}
 	}
 	north_pacific_ocean_sub_continent = {
