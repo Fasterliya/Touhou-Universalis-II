@@ -42266,8 +42266,24 @@ munduyskoye_lake = 00b7a6
 #UNUSED = 11d2f6
 
 
+th_cannot_entry_mountain1 = fd888e
+th_cannot_entry_mountain2 = ffcfa2
+th_cannot_entry_mountain3 = e8b5b0
+th_cannot_entry_mountain4 = ed8db5
+th_cannot_entry_mountain5 = 9ee866
+th_cannot_entry_mountain6 = fb32a5
+th_cannot_entry_mountain7 = e40f32
+th_cannot_entry_mountain8 = e540b1
+th_cannot_entry_mountain9 = 6bed18
+th_cannot_entry_mountain10 = da2560
+th_cannot_entry_mountain11 = 61ab1e
+th_cannot_entry_mountain12 = ae3a5b
+th_cannot_entry_mountain13 = 55f562
+th_cannot_entry_mountain14 = f99e3f
+th_cannot_entry_mountain15 = 7d985c
+th_cannot_entry_mountain16 = df3ff5
 ### TOUHOU
-gensokyo = 951651
+# gensokyo = 951651
 #雾之湖
 th_misty_lake = 4149ae
 th_east_bank_of_misty_lake = 8ffefb

@@ -1938,13 +1938,13 @@
 	
 th_gensokyo_continent = {
 	th_gensokyo_sub_continent = {
-		th_gensokyo_region = {
-			th_gensokyo_area = {
-				th_gensokyo_province = {
-					gensokyo
-				}
-			}
-		}
+		# th_gensokyo_region = {
+		# 	th_gensokyo_area = {
+		# 		th_gensokyo_province = {
+		# 			gensokyo
+		# 		}
+		# 	}
+		# }
 		th_gensokyo_hakurei_region = {
 			th_hakurei_foothills_area = {
 				th_barrier_nexus_province = {
@@ -2122,6 +2122,7 @@ th_gensokyo_continent = {
 					th_bloodmoon_peak
 					th_thorny_path
 					th_nightwhisper_spring
+					th_cannot_entry_mountain3
 				}
 			}
 			th_southern_fariy_kingdom_area = {
@@ -2180,27 +2181,7 @@ th_gensokyo_continent = {
 			}
 		}
 		th_gensokyo_makai_region = {
-			th_yakumo_mansion_area = {
-				th_yakumo_mansion_province = {
-					th_yakumo_mansion
-					th_first_ward
-					th_second_ward
-					th_third_ward
-					th_forth_ward
-				}
-				th_outer_world_port_province = {
-					th_asia_port
-					th_europe_port
-					th_africa_port
-					th_north_new_world_port
-					th_south_new_world_port
-				}
-				th_mayouhiga_province = {
-					th_chens_room
-					th_rans_room
-					th_yukaris_room
-					th_lost_courtyard
-				}
+			th_yakumo_mansion_west_area = {
 				th_cats_village_province = {
 					th_cats_amusement_park
 					th_orange_clan
@@ -2221,6 +2202,28 @@ th_gensokyo_continent = {
 					th_deep_cave_settlement
 					th_hidden_air_pocket
 					th_treasure_chanber
+				}
+			}
+			th_yakumo_mansion_area = {
+				th_yakumo_mansion_province = {
+					th_yakumo_mansion
+					th_first_ward
+					th_second_ward
+					th_third_ward
+					th_forth_ward
+				}
+				th_outer_world_port_province = {
+					th_asia_port
+					th_europe_port
+					th_africa_port
+					th_north_new_world_port
+					th_south_new_world_port
+				}
+				th_mayouhiga_province = {
+					th_chens_room
+					th_rans_room
+					th_yukaris_room
+					th_lost_courtyard
 				}
 				th_mysterious_cherry_blossom_path_province = {
 					th_front_mysterious_cherry_blossom_path
@@ -2243,13 +2246,14 @@ th_gensokyo_continent = {
 					th_east_office_building_complex
 				}
 			}
-			th_netherworld_area = {
+			th_netherworld_north_area = {
 				th_barrier_of_death_province = {
 					th_barrier_of_death
 					th_barrier_of_pride
 					th_barrier_of_warth
 					th_barrier_of_sloth
 					th_barrier_of_gluttony
+					th_cannot_entry_mountain1
 				}
 				th_grassland_of_phantom_province ={
 					th_sea_of_lycoris
@@ -2276,6 +2280,7 @@ th_gensokyo_continent = {
 					th_barrier_of_kindness
 					th_barrier_of_deligence
 					th_barrier_of_temperance
+					th_cannot_entry_mountain2
 				}
 				th_steps_to_hakugyokurou_province = {
 					th_steps_1_to_1600
@@ -2290,6 +2295,8 @@ th_gensokyo_continent = {
 					th_strange_rockwork
 					th_zombie_tearoom
 				}
+			}
+			th_netherworld_area = {
 				th_hakugyokurou_province = {
 					th_hakugyokurou
 					th_irreversible_entrance
@@ -2876,6 +2883,8 @@ th_gensokyo_continent = {
 					th_immortal_dojo
 					th_pets_room
 					th_kasens_room
+					th_cannot_entry_mountain10
+					th_cannot_entry_mountain11
 				}
 			}
 			th_back_door_country_area = {
@@ -2915,6 +2924,7 @@ th_gensokyo_continent = {
 					th_water_supply_system
 					th_cucumenber_port
 					th_nursery_luminous_greenhouse
+					th_cannot_entry_mountain5
 				}
 				th_kappa_beach_province = {
 					th_kappa_beach
@@ -3016,6 +3026,7 @@ th_gensokyo_continent = {
 					th_fusoshin_swamp
 					th_shining_needle_castle_watch_tower
 					th_shining_needle_castle_stone_wall
+					th_cannot_entry_mountain9
 				}
 				th_kobitos_treasure_chanmber_province = {
 					th_mithril_gate
@@ -3141,6 +3152,7 @@ th_gensokyo_continent = {
 					th_zoltaxian_labyrinth
 					th_iwanaga_shrine
 					th_joue_inverted_pyramid 
+					th_cannot_entry_mountain12
 				}
 				th_waterfall_of_nine_heavens_province = {
 					th_waterfall_of_nine_heavens
@@ -3188,6 +3200,7 @@ th_gensokyo_continent = {
 					th_weeping_wind_canyon
 					th_omine_san_ancient_path
 					th_omine_san_guardian_forest
+					th_cannot_entry_mountain16
 				}
 			}
 		}
@@ -3217,6 +3230,8 @@ th_gensokyo_continent = {
 					th_echo_of_ten_arguments_pillars
 					th_mikos_sermon_gate
 					th_cup_of_enlightenment_tea_service
+					th_cannot_entry_mountain13
+					th_cannot_entry_mountain14
 				}
 				th_dream_palace_province = {
 					th_dream_palace
@@ -3298,6 +3313,7 @@ th_gensokyo_continent = {
 					th_river_of_kan
 					th_disciple_village
 					th_deep_forest_of_immortals_realm
+					th_cannot_entry_mountain4
 				}
 			}
 		}
@@ -3367,6 +3383,7 @@ th_gensokyo_continent = {
 					th_cableway_kappa_line
 					th_cableway_hell_new_line
 					th_tornado_maple_forest
+					th_cannot_entry_mountain8
 				}
 				th_cemetery_of_onbashira_province = {
 					th_cemetery_of_onbashira
@@ -3376,6 +3393,7 @@ th_gensokyo_continent = {
 					th_shattered_gold_customs
 					th_shattered_gold_shallows
 					th_prayer_hill_terrace
+					th_cannot_entry_mountain6
 				}
 				th_valley_of_earth_province = {
 					th_valley_of_earth
@@ -3655,6 +3673,7 @@ th_gensokyo_continent = {
 					th_greedy_gusher
 					th_bottomless_pit
 					th_desire_cracking_plant
+					th_cannot_entry_mountain7
 				}
 				th_huangquan_province = {
 					th_huangquan
@@ -4234,6 +4253,7 @@ th_gensokyo_continent = {
 					th_hakurei_lake_upper_valley
 					th_old_tree_hakurei_shinbaku
 					th_hakurei_trial_slope
+					th_cannot_entry_mountain15
 				}
 				th_illusionary_ruins_province = {
 					th_illusionary_ruins_main
@@ -4464,6 +4484,7 @@ th_gensokyo_continent = {
 					th_balcony_observatory_eye
 					th_balcony_platform_view
 					th_dream_dimension_generator
+					th_cannot_entry_mountain16
 				}
 				th_underground_great_hollow_province = {
 					th_underground_great_hollow
