@@ -2150,6 +2150,7 @@ th_gensokyo_continent = {
 					th_fairy_shrine
 					th_leaf_wish_rack
 					th_fairy_gathering_ring
+					th_shrine_star_point
 				}
 				th_fairy_shore_province = {
 					th_fairy_shore
@@ -2379,24 +2380,33 @@ th_gensokyo_continent = {
 					th_kogasas_house
 					th_house_of_seiran_and_ringo
 					th_aqueduct
+					th_house_of_seiran_and_ringo2
+					th_weeping_willow_promenade
+					th_washwomen_s_steps
 				}
 				th_werewolf_forest_province = {
 					th_kagerou_house
 					th_abandoned_werewolf_mansion
 					th_yasumizu_village
 					th_lykaion_mountain
+					th_moon_touched_clearing
+					th_bane_herb_garden
 				}
 				th_rehearsal_venue_province = {
 					th_triangular_prism_plain
 					th_french_horn_meander
 					th_violoncello_embankment
 					th_synthesizer_avenue ##与秘封俱乐部接壤
+					th_harp_string_valley
+					th_flute_bamboo_grove
 				}
 				th_performance_venue_province = {
 					th_first_performance_stage
 					th_xylophone_hill
 					th_requiem_plain
 					th_piano_throne
+					th_timpani_hillocks
+					th_echo_chamber_cavern
 				}
 			}
 			th_south_eastern_human_village_area = {
@@ -2660,6 +2670,8 @@ th_gensokyo_continent = {
 					th_lunar_labs
 					th_herbs_cultivation_base
 					th_horai_pharmacy
+					th_shade_loving_herb_beds
+					th_fragrant_herb_arbor
 				}
 				th_dense_bamboo_forest_province = {
 					th_road_to_village
@@ -2732,6 +2744,7 @@ th_gensokyo_continent = {
 					th_doll_atelier_main_hall
 					th_grimoire_blueprint_study
 					th_margatroid_room
+					th_margatroid_theater
 				}
 				th_miasma_rain_forest_province = {
 					th_miasma_rain_forest
@@ -2744,6 +2757,7 @@ th_gensokyo_continent = {
 					th_diner_main_hall
 					th_open_air_roast_yard
 					th_stage_regulars_corner
+					th_diner_pantry
 				}
 				th_mana_saturated_forest_province = {
 					th_mana_saturated_forest
@@ -2771,6 +2785,8 @@ th_gensokyo_continent = {
 					th_dusk_waters_edge
 					th_night_heron_perch
 					th_firefly_reed_bed
+					th_fungal_lantern_gallery
+					th_shadow_stalkers_path
 				}
 				th_youkai_beast_path_province = {
 					th_youkai_beast_path
@@ -2783,6 +2799,7 @@ th_gensokyo_continent = {
 					th_cluttered_display_hall
 					th_potion_brewing_bench
 					th_attic_loft_nook
+					th_main_hall_of_chaotic_wonders
 				}
 				th_mushroom_woods_province = {
 					th_mushroom_woods

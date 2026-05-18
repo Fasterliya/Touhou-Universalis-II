@@ -42553,6 +42553,7 @@ th_tidal_pool_playground = 0fa01f
 th_fairy_shrine = c10378
 th_leaf_wish_rack = e7a999
 th_fairy_gathering_ring = da58f4
+th_shrine_star_point = c3205b
 #迎春小径
 th_winter_jasmine_trail = 92a200
 th_harbinger_bridge = edfd70
@@ -42617,6 +42618,7 @@ th_kirisame_magic_shop = f32e6d
 th_cluttered_display_hall = bbaaac
 th_potion_brewing_bench = e3ea36
 th_attic_loft_nook = ba3ec4
+th_main_hall_of_chaotic_wonders = 7ce166
 #妖怪兽道
 th_youkai_beast_path = f61371
 th_claw_marked_great_tree = 78b371
@@ -42627,6 +42629,8 @@ th_nightfall_shore_grove = 128f14
 th_dusk_waters_edge = 907e6d
 th_night_heron_perch = 973467
 th_firefly_reed_bed = 44ea2e
+th_fungal_lantern_gallery = ac6814
+th_shadow_stalkers_path = a2fac1
 #成美林地
 th_seibi_grove = 968bab
 th_cleansing_heart_stream = 0ffb95
@@ -42638,6 +42642,7 @@ th_night_sparrow_diner = 7a3e69
 th_diner_main_hall = 827780
 th_open_air_roast_yard = 28b826
 th_stage_regulars_corner = 8be92a
+th_diner_pantry = ef404d
 #瘴雨之森
 th_miasma_rain_forest = 7b84cb
 th_rot_heart_giant_tree = d7d188
@@ -42660,6 +42665,7 @@ th_margatroid_atrium = dd7dd6
 th_doll_atelier_main_hall = cd44b3
 th_grimoire_blueprint_study = db6838
 th_margatroid_room = 331a16
+th_margatroid_theater = 9e67c9
 #丰穰之祠堂
 th_bountiful_shrine = 0cf137
 th_inari_torii = d5048a
@@ -42990,22 +42996,31 @@ th_dullahan_path = 3d9c2a
 th_toll_gate = 7a0b9f
 th_kogasas_house = 4da678
 th_house_of_seiran_and_ringo = 8c3f5d
+th_house_of_seiran_and_ringo2 = e76439
+th_weeping_willow_promenade = 83f845
+th_washwomen_s_steps = a83bd3
 th_aqueduct = 5b9d0e
 #狼人之森
 th_kagerou_house = e7bd33
 th_abandoned_werewolf_mansion = c6012f
 th_yasumizu_village = 4d0a9e
 th_lykaion_mountain = 9a2b7c
+th_moon_touched_clearing = f69e04
+th_bane_herb_garden = bbfe89
 #排练场地
 th_triangular_prism_plain = 8b0f9d
 th_french_horn_meander = 7d9a3c
 th_violoncello_embankment = 5e0c9b
 th_synthesizer_avenue = 0fde84
+th_harp_string_valley = b55541
+th_flute_bamboo_grove = fa99f1
 #演奏场地
 th_first_performance_stage = da3a53
 th_xylophone_hill = 045b51
 th_requiem_plain = 4c0a9d
 th_piano_throne = 41c281
+th_timpani_hillocks = e3cc88
+th_echo_chamber_cavern = 20ed44
 
 ###迷途之家地区
 th_first_ward = 3d8976
@@ -43194,6 +43209,8 @@ th_eirins_warehouse = 8bb482
 th_lunar_labs = 9d0e5a
 th_herbs_cultivation_base = e27a94
 th_horai_pharmacy = 4a0d9b
+th_shade_loving_herb_beds = e7a821
+th_fragrant_herb_arbor = e143de
 #茂密竹林
 th_road_to_village = 9c7a2d
 th_marked_entrance_1 = 5f171e
