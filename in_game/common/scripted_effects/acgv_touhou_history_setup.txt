@@ -1,0 +1,17 @@
+﻿th_gensokyo_history_setup_scr_effect = {
+	#技术提示-具体的开局设置
+
+	c:T00 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_reimilia
+			surname = touhou_scarlet
+			culture = th_vampire_culture
+			adm = 80
+			dip = 82
+			mil = 91
+			age = 17
+			trait = touhou_reimu_traits
+		}
+		
+	}
+}

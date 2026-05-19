@@ -1,0 +1,214 @@
+﻿th_gensokyo_language = {
+	#另外提示：目前mod的语言系统预备做成施法语言，请注意
+	#技术提示-语言定义：语言的定义在这里，下一行是地图颜色
+	color = map_naples
+	#这里是所属于语族
+	family = th_gensokyo_language_family
+	
+	#这里是语言所属的方言
+	#因为具体的语言体系问题，我不推荐在施法语言处写自己的名字命名
+	#转而采用方言里面写名字是我推荐的做法
+	dialects = {
+		acgv_touhou_eastern_dialect = {
+			#下面分别是：男名，女名，王朝名，非贵族名
+			#据蠢驴所说，好像直接.对应方言也行
+			#不错的改动
+			#上面说的大概类似name_kaito.miku_dialect: "KAITO"这样
+			#不过仍然需要有个原初不加点的就是了
+			male_names = {
+				name_kaito
+				name_gakupo
+				name_ren
+				name_kiyoteru
+				#因为懒得做男女分头像，所以女名也在里面
+				name_miku
+				name_luka
+				name_meiko
+				name_rin
+				name_gumi
+				name_yuki
+				name_ia
+				name_teto
+				name_sora
+				name_yukari
+				name_akari
+				name_maki
+				name_moka
+				name_kotone
+				name_akane
+				name_aoi
+				name_rikka
+				name_karin
+				name_chifuyu
+				name_minato
+			}
+			female_names = {
+				name_miku
+				name_luka
+				name_meiko
+				name_rin
+				name_gumi
+				name_yuki
+				name_ia
+				name_teto
+				name_sora
+				name_yukari
+				name_akari
+				name_maki
+				#所以从这里开始我就没加后缀了，各位记得本地化的时候写自己的.方言
+				name_moka
+				name_kotone
+				name_akane
+				name_aoi
+				name_rikka
+				name_karin
+				name_chifuyu
+				name_minato
+			}
+			dynasty_names = {
+				name_hatsune
+				name_megurine
+				name_kamui
+				name_kagamine
+				name_hiyama
+				name_kasane
+				name_haruno
+				name_kizuna
+				name_yuzuki
+				name_tsurumaki
+				name_kai
+				#同理
+				name_miyamai
+				name_futaba
+				name_tsunose
+				name_hanakuma
+				name_natsuki
+				name_koharu
+				name_kotonoha
+			}
+			lowborn = {
+				name_hatsune
+				name_megurine
+				name_kamui
+				name_kagamine
+				name_hiyama
+				name_kasane
+				name_haruno
+				name_kizuna
+				name_yuzuki
+				name_tsurumaki
+				name_kai
+				name_miyamai
+				name_futaba
+				name_tsunose
+				name_hanakuma
+				name_natsuki
+				name_koharu
+				name_kotonoha
+			}
+			location_prefix = "location_prefix_swedish"
+			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
+		}
+		acgv_touhou_western_dialect = {
+			#下面分别是：男名，女名，王朝名，非贵族名
+			#据蠢驴所说，好像直接.对应方言也行
+			#不错的改动
+			#上面说的大概类似name_kaito.miku_dialect: "KAITO"这样
+			#不过仍然需要有个原初不加点的就是了
+			male_names = {
+				name_kaito
+				name_gakupo
+				name_ren
+				name_kiyoteru
+				#因为懒得做男女分头像，所以女名也在里面
+				name_miku
+				name_luka
+				name_meiko
+				name_rin
+				name_gumi
+				name_yuki
+				name_ia
+				name_teto
+				name_sora
+				name_yukari
+				name_akari
+				name_maki
+				name_moka
+				name_kotone
+				name_akane
+				name_aoi
+				name_rikka
+				name_karin
+				name_chifuyu
+				name_minato
+			}
+			female_names = {
+				name_miku
+				name_luka
+				name_meiko
+				name_rin
+				name_gumi
+				name_yuki
+				name_ia
+				name_teto
+				name_sora
+				name_yukari
+				name_akari
+				name_maki
+				#所以从这里开始我就没加后缀了，各位记得本地化的时候写自己的.方言
+				name_moka
+				name_kotone
+				name_akane
+				name_aoi
+				name_rikka
+				name_karin
+				name_chifuyu
+				name_minato
+			}
+			dynasty_names = {
+				name_hatsune
+				name_megurine
+				name_kamui
+				name_kagamine
+				name_hiyama
+				name_kasane
+				name_haruno
+				name_kizuna
+				name_yuzuki
+				name_tsurumaki
+				name_kai
+				#同理
+				name_miyamai
+				name_futaba
+				name_tsunose
+				name_hanakuma
+				name_natsuki
+				name_koharu
+				name_kotonoha
+			}
+			lowborn = {
+				name_hatsune
+				name_megurine
+				name_kamui
+				name_kagamine
+				name_hiyama
+				name_kasane
+				name_haruno
+				name_kizuna
+				name_yuzuki
+				name_tsurumaki
+				name_kai
+				name_miyamai
+				name_futaba
+				name_tsunose
+				name_hanakuma
+				name_natsuki
+				name_koharu
+				name_kotonoha
+			}
+		}
+	}
+
+	#这里是贵族专属中间名定义（比如冯·，德·此类），不需要的话复制我这个就行
+	location_prefix = "location_prefix_swedish"
+}

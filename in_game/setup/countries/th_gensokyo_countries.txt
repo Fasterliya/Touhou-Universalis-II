@@ -1,0 +1,11 @@
+﻿#红魔馆
+T00 = {
+	color = rgb { 240 47 47 }
+
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+
+	description_category = diplomatic
+
+	difficulty = 1
+}

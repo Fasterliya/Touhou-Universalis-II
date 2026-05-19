@@ -1,0 +1,12 @@
+T00_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T00_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}

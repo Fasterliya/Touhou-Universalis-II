@@ -1,0 +1,6 @@
+﻿T00 = {
+	flag_definition = {
+		coa = T00_start_flag
+		priority = 1
+	}
+}

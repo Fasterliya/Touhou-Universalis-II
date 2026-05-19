@@ -1,0 +1,11 @@
+﻿# avoid naming the same as Cultures and Languages
+#技术提示-文化组：在这里定义文化组
+#上面英文也告诉你了，不要把文化和语言命名成一样的，不然会闪退
+th_gensokyo_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}

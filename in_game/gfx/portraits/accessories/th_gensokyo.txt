@@ -1,0 +1,221 @@
+﻿#技术提示-加了肖像后请务必在此处也加内容，把hatsune_miku改成你自己的
+touhou_marisa = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_marisa_entity" } }
+touhou_alice = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_alice_entity" } }
+touhou_shinki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_shinki_entity" } }
+touhou_yukari = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yukari_entity" } }
+
+touhou_anaberal = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_anaberal_entity" } }
+touhou_asakura = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_asakura_entity" } }
+touhou_elis = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_elis_entity" } }
+touhou_ellen = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ellen_entity" } }
+touhou_elly = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_elly_entity" } }
+
+touhou_gengetsu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_gengetsu_entity" } }
+touhou_genjii = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_genjii_entity" } }
+touhou_kiruri = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kiruri_entity" } }
+touhou_kitashirakawa = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kitashirakawa_entity" } }
+touhou_konngara = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_konngara_entity" } }
+
+touhou_kotohime = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kotohime_entity" } }
+touhou_kurumi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kurumi_entity" } }
+touhou_luize = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_luize_entity" } }
+touhou_mai = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mai_entity" } }
+touhou_meira = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_meira_entity" } }
+
+touhou_mima = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mima_entity" } }
+touhou_mugetsu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mugetsu_entity" } }
+touhou_okazaki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_okazaki_entity" } }
+touhou_old_reimu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_old_reimu_entity" } }
+touhou_orange = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_orange_entity" } }
+
+touhou_rika = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_rika_entity" } }
+touhou_rin = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_rin_entity" } }
+touhou_sara = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sara_entity" } }
+touhou_sariel = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sariel_entity" } }
+touhou_yuki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yuki_entity" } }
+
+touhou_yumeko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yumeko_entity" } }
+touhou_cirno = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_cirno_entity" } }
+touhou_daiyousei = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_daiyousei_entity" } }
+touhou_devil = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_devil_entity" } }
+touhou_eirin = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_eirin_entity" } }
+
+touhou_flandre = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_flandre_entity" } }
+touhou_jyoon = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_jyoon_entity" } }
+touhou_kaguya = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kaguya_entity" } }
+touhou_keine = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_keine_entity" } }
+touhou_kokoro = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kokoro_entity" } }
+
+touhou_lorelei = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_lorelei_entity" } }
+touhou_meirin = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_meirin_entity" } }
+touhou_mokou = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mokou_entity" } }
+touhou_patchouli = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_patchouli_entity" } }
+touhou_reimilia = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_reimilia_entity" } }
+
+touhou_reisen = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_reisen_entity" } }
+touhou_rumia = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_rumia_entity" } }
+touhou_sakuya = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sakuya_entity" } }
+touhou_shion = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_shion_entity" } }
+touhou_suika = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_suika_entity" } }
+
+touhou_sumireko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sumireko_entity" } }
+touhou_tenshi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_tenshi_entity" } }
+touhou_tewi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_tewi_entity" } }
+touhou_wriggle = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_wriggle_entity" } }
+touhou_akyuu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_akyuu_entity" } }
+
+touhou_aya = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_aya_entity" } }
+touhou_chimata = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_chimata_entity" } }
+touhou_hatate = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_hatate_entity" } }
+touhou_hearn = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_hearn_entity" } }
+touhou_hina = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_hina_entity" } }
+
+touhou_iku = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_iku_entity" } }
+touhou_kanako = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kanako_entity" } }
+touhou_kasen = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kasen_entity" } }
+touhou_komachi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_komachi_entity" } }
+touhou_kosuzu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kosuzu_entity" } }
+
+touhou_lunar = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_lunar_entity" } }
+touhou_megumu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_megumu_entity" } }
+touhou_melancholy = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_melancholy_entity" } }
+touhou_mike = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mike_entity" } }
+touhou_minoriko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_minoriko_entity" } }
+
+touhou_misumaru = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_misumaru_entity" } }
+touhou_miyoi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_miyoi_entity" } }
+touhou_mizuchi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mizuchi_entity" } }
+touhou_momizi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_momizi_entity" } }
+touhou_momoyo = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_momoyo_entity" } }
+
+touhou_nitori = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_nitori_entity" } }
+touhou_reading = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_reading_entity" } }
+touhou_renko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_renko_entity" } }
+touhou_rinnosuke = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_rinnosuke_entity" } }
+touhou_sanae = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sanae_entity" } }
+
+touhou_sannyo = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sannyo_entity" } }
+touhou_shikieiki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_shikieiki_entity" } }
+touhou_sizuha = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sizuha_entity" } }
+touhou_star = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_star_entity" } }
+touhou_sunny = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sunny_entity" } }
+
+touhou_suwako = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_suwako_entity" } }
+touhou_takane = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_takane_entity" } }
+touhou_teller = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_teller_entity" } }
+touhou_toyohime = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_toyohime_entity" } }
+touhou_tsukasa = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_tsukasa_entity" } }
+
+touhou_yorihime = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yorihime_entity" } }
+touhou_yuka = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yuka_entity" } }
+touhou_nemuno = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_nemuno_entity" } }
+touhou_nue = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_nue_entity" } }
+touhou_okina = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_okina_entity" } }
+
+touhou_parsee = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_parsee_entity" } }
+touhou_raiko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_raiko_entity" } }
+touhou_rin_chi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_rin_chi_entity" } }
+touhou_ringo = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ringo_entity" } }
+touhou_sagume = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sagume_entity" } }
+
+touhou_satono = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_satono_entity" } }
+touhou_satori = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_satori_entity" } }
+touhou_seiga = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_seiga_entity" } }
+touhou_seiran = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_seiran_entity" } }
+touhou_sejia = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sejia_entity" } }
+
+touhou_sekibanki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_sekibanki_entity" } }
+touhou_shinmyoumaru = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_shinmyoumaru_entity" } }
+touhou_shou = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_shou_entity" } }
+touhou_toziko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_toziko_entity" } }
+touhou_utuho = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_utuho_entity" } }
+
+touhou_wakasagihime = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_wakasagihime_entity" } }
+touhou_yamame = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yamame_entity" } }
+touhou_aunn = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_aunn_entity" } }
+touhou_bayakuren = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_bayakuren_entity" } }
+touhou_benben = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_benben_entity" } }
+
+touhou_clownpiece = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_clownpiece_entity" } }
+touhou_doremy = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_doremy_entity" } }
+touhou_futo = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_futo_entity" } }
+touhou_hecatia = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_hecatia_entity" } }
+touhou_junko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_junko_entity" } }
+
+touhou_kagerou = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kagerou_entity" } }
+touhou_kisume = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kisume_entity" } }
+touhou_kogasa = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kogasa_entity" } }
+touhou_koishi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_koishi_entity" } }
+touhou_kyouko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kyouko_entity" } }
+
+touhou_larva = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_larva_entity" } }
+touhou_mai_tian = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mai_tian_entity" } }
+touhou_mamizu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mamizu_entity" } }
+touhou_miku = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_miku_entity" } }
+touhou_minamitu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_minamitu_entity" } }
+
+touhou_narumi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_narumi_entity" } }
+touhou_nazrin = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_nazrin_entity" } }
+touhou_yatsuhashi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yatsuhashi_entity" } }
+touhou_yoshika = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yoshika_entity" } }
+touhou_yugi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yugi_entity" } }
+touhou_ichiri = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ichiri_entity" } }
+
+touhou_biten = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_biten_entity" } }
+touhou_chen = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_chen_entity" } }
+touhou_chiyari = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_chiyari_entity" } }
+touhou_eika = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_eika_entity" } }
+touhou_enoko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_enoko_entity" } }
+
+touhou_hisami = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_hisami_entity" } }
+touhou_keiki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_keiki_entity" } }
+touhou_kutaka = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kutaka_entity" } }
+touhou_letty = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_letty_entity" } }
+touhou_lily_b = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_lily_b_entity" } }
+
+touhou_lily_w = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_lily_w_entity" } }
+touhou_lunasa = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_lunasa_entity" } }
+touhou_lyrica = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_lyrica_entity" } }
+touhou_mayumi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mayumi_entity" } }
+touhou_merlin = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_merlin_entity" } }
+
+touhou_ran = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ran_entity" } }
+touhou_reisen_2 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_reisen_2_entity" } }
+touhou_saki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_saki_entity" } }
+touhou_urumi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_urumi_entity" } }
+touhou_yachie = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yachie_entity" } }
+
+touhou_youmu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_youmu_entity" } }
+touhou_yuma = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yuma_entity" } }
+touhou_yuyuko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yuyuko_entity" } }
+touhou_zanmu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_zanmu_entity" } }
+touhou_ariya = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ariya_entity" } }
+
+touhou_asama = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_asama_entity" } }
+touhou_chimi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_chimi_entity" } }
+touhou_dolls1 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_dolls1_entity" } }
+touhou_jacket = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_jacket_entity" } }
+touhou_label = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_label_entity" } }
+
+touhou_layla = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_layla_entity" } }
+touhou_nareko = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_nareko_entity" } }
+touhou_nina = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_nina_entity" } }
+touhou_ubame = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ubame_entity" } }
+touhou_youki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_youki_entity" } }
+
+touhou_passer1 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer1_entity" } }
+touhou_passer2 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer2_entity" } }
+touhou_passer3 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer3_entity" } }
+touhou_passer4 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer4_entity" } }
+touhou_passer5 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer5_entity" } }
+
+touhou_passer6 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer6_entity" } }
+touhou_passer7 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer7_entity" } }
+touhou_passer8 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer8_entity" } }
+touhou_passer9 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer9_entity" } }
+touhou_passer10 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer10_entity" } }
+
+touhou_passer11 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer11_entity" } }
+touhou_passer12 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer12_entity" } }
+touhou_passer13 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer13_entity" } }
+touhou_passer14 = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_passer14_entity" } }

@@ -1,0 +1,35 @@
+current_age = age_1_traditions
+countries = {
+	countries = {
+		T00 = {
+			own_control_core = {
+				th_scarlet_grand_entrance_hall
+			}
+			starting_technology_level = 3
+			include = "expl_mediterranean"
+			include = "expl_silk_road_west"
+			include = "expl_silk_road_center"
+			include = "expl_silk_road_east"
+			include = "expl_indian_trade_route"
+			#政府改革
+			include = "catholic_monarchy"
+			discovered_regions = {
+				th_gensokyo_continent
+			}
+			government = {
+				ruler = random
+				reforms = {
+					# acgv_th_hk1_listen_closely_reform
+					# acgv_th_gensokyo_faith_defender_reform
+				}
+			}
+			country_rank = rank_kingdom
+			capital = rothenburg
+			dynasty = hatsune_dynasty
+			tolerated_cultures = {
+				
+			}
+			court_language = th_gensokyo_language
+		}
+	}
+}

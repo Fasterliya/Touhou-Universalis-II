@@ -1,0 +1,155 @@
+
+
+###################################################
+### 脚本：将所有人口转化为该tag的文化与宗教
+### 使用方法：
+
+# acgv_common_history_setup_start_pop_culture_scr_effect = {
+# 	culture = <文化>
+# 	religion = <宗教>
+# }
+th_common_history_setup_start_pop_culture_scr_effect = {
+	every_pop = {
+		change_pop_culture = culture:$culture$  #文化
+		change_pop_religion = religion:$religion$ #宗教
+	}
+	while = {
+		limit = { 
+			any_character = {
+				NOT = {
+					culture = culture:$culture$
+				}
+			}
+		}
+		random_character = {
+			limit = {
+				NOT = {
+					culture = culture:$culture$
+				}
+			}
+			save_scope_as = killing_target
+			kill_character = scope:killing_target
+			clear_saved_scope = killing_target
+		}
+		random_list = {
+			50 = {
+				create_character = {
+					culture = culture:$culture$
+					female = yes
+				}
+			}
+			50 = {
+				create_character = {
+					culture = culture:$culture$
+				}
+			}
+		}
+	}
+}
+
+###################################################
+### 脚本：创建统治者
+### 使用方法：
+# acgv_common_history_setup_create_ruler_scr_effect = {
+# 	character = xana_xana #格式为 <作品name缩写>_<角色name>
+# 	surname = xana_hongshi #格式为 <作品name缩写>_<角色surname>
+# 	culture = acgv_xana_xana_culture #文化
+# 	ethnicity = acgv_touhou_ethnicity #遗传组
+# 	religion = xinghuangdi #宗教
+# 	## 点数
+# 	adm = 100
+# 	dip = 100
+# 	mil = 100
+# 	age = 16
+# 	## 点数_END
+# 	trait = xana_traits  #统治者特质
+# }
+th_common_history_setup_create_ruler_scr_effect = {
+	create_character = {
+		first_name = name_$character$
+		adm = $adm$ dip = $dip$ mil = $mil$
+		religion = religion:$religion$
+		culture = culture:$culture$
+		estate = clergy_estate	
+		birth_location = location:ROOT.capital
+		age = $age$
+		female = yes
+		ethnicity = ethnicity:$ethnicity$	#遗传组
+		save_scope_as = new_character
+	}
+	ruler = {	
+		save_scope_as = old_ruler_1
+	}
+	set_new_ruler = scope:new_character
+	kill_character = scope:old_ruler_1
+	clear_saved_scope = old_ruler_1
+	scope:new_character = {	
+		found_dynasty = name_$surname$
+		change_dynasty = dynasty:name_$surname$
+		set_variable = {
+			name = portrait_locked
+			value = flag:$character$
+		}
+		change_character_culture = culture:$culture$
+		remove_traits_of_category = ruler
+		add_trait = trait:$trait$
+		add_character_modifier = {
+			modifier = acgv_immortal
+			years = -1
+			mode = add_and_extend
+		}
+	}
+	clear_saved_scope = new_character
+}
+
+
+###################################################
+### 脚本：创建角色（非统治者）
+### 使用方法：
+
+# acgv_common_history_setup_character_scr_effect = {
+# 	character = name_qiyala #格式为 <作品name缩写>_<角色name>
+# 	surname = name_jiguang ##格式为 <作品name缩写>_<角色surname>
+# 	culture = acgv_xana_xana_culture #文化
+# 	ethnicity = acgv_touhou_ethnicity #遗传组
+# 	religion = xinghuangdi #宗教
+# 	estate = noble #阶层
+# 	adm = 95
+# 	dip = 95
+# 	mil = 95
+# 	age = 16
+# 	trait = qiyala_traits #角色特质
+# }
+
+th_common_history_setup_character_scr_effect = {
+	create_character = {
+		first_name = name_$character$
+		adm = $adm$ dip = $dip$ mil = $mil$
+		religion = religion:$religion$
+		culture = culture:$culture$
+		estate = estate_type:$estate$
+		birth_location = location:ROOT.capital
+		age = $age$
+		female = yes
+		ethnicity = ethnicity:$ethnicity$
+		save_scope_as = new_character
+	}
+	scope:new_character = {	
+		found_dynasty = name_$surname$
+		change_dynasty = dynasty:name_$surname$
+		set_variable = {
+			name = portrait_locked
+			value = flag:$character$
+		}
+		change_character_culture = culture:$culture$
+		remove_traits_of_category = general
+		remove_traits_of_category = ruler
+		add_trait = trait:$trait$
+		add_character_modifier = {
+			modifier = acgv_immortal
+			years = -1
+			mode = add_and_extend
+		}
+	}
+	clear_saved_scope = new_character
+}
