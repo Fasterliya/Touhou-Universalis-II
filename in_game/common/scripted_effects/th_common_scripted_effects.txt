@@ -93,11 +93,11 @@ th_common_history_setup_create_ruler_scr_effect = {
 		change_character_culture = culture:$culture$
 		remove_traits_of_category = ruler
 		add_trait = trait:$trait$
-		add_character_modifier = {
-			modifier = acgv_immortal
-			years = -1
-			mode = add_and_extend
-		}
+		# add_character_modifier = {
+		# 	modifier = acgv_immortal
+		# 	years = -1
+		# 	mode = add_and_extend
+		# }
 	}
 	clear_saved_scope = new_character
 }

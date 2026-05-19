@@ -1,7 +1,7 @@
 ﻿touhou_reimu_traits = {	#技术提示-特质，比较易懂，自己看吧
 	category = ruler
 	allow = {
-		acgv_portrait_trigger = yes
+		th_portrait_trigger = yes
 	}
 	modifier = {
 		land_morale_modifier = 0.10

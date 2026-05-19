@@ -1,8 +1,8 @@
 ﻿#技术提示-文化和文化的语言定义在这里
 th_vampire_culture = { 
-	language = terra_linguafranca
+	language = th_gensokyo_language
 	color = rgb {255 128 0}
-	# tags = { acgv_arknights_gfx }
+	tags = { th_gensokyo_gfx }
 	opinions = {
 	}
 	culture_groups = {

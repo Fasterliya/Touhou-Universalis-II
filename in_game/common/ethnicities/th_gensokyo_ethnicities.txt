@@ -2,7 +2,7 @@
 # Ethnicity templates are used in other ethnicities and templates in this folder
 #技术提示-肖像及遗传
 #这个ethnicity是用来测试的，目前对应的是所有vocaloid角色的信息
-#如果要加新的，开个新文件，也别忘了去acgv_portrait_trigger里面改对应内容
+#如果要加新的，开个新文件，也别忘了去th_portrait_trigger里面改对应内容
 th_gensokyo_ethnicity = {
 	template = "ethnicity_template"
 	

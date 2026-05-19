@@ -6,12 +6,42 @@
 			character = touhou_reimilia
 			surname = touhou_scarlet
 			culture = th_vampire_culture
+			religion = catholic
+			ethnicity = ethnicity:th_gensokyo_ethnicity
 			adm = 80
 			dip = 82
 			mil = 91
 			age = 17
 			trait = touhou_reimu_traits
 		}
-		
 	}
 }
+
+# create_character = {
+# 		first_name = name_touhou_reimilia
+# 		adm = 80 dip = 80 mil = 80
+# 		religion = religion:$religion$
+# 		culture = culture:$culture$
+# 		estate = clergy_estate	
+# 		birth_location = location:ROOT.capital
+# 		age = 17
+# 		female = yes
+# 		ethnicity = ethnicity:th_gensokyo_ethnicity	#遗传组
+# 		save_scope_as = new_character
+# 	}
+# 	ruler = {	
+# 		save_scope_as = old_ruler_1
+# 	}
+# 	set_new_ruler = scope:new_character
+# 	kill_character = scope:old_ruler_1
+# 	clear_saved_scope = old_ruler_1
+# 	scope:new_character = {	
+# 		found_dynasty = name_touhou_scarlet
+# 		change_dynasty = dynasty:name_touhou_scarlet
+# 		set_variable = {
+# 			name = portrait_locked
+# 			value = flag:touhou_reimilia
+# 		}
+# 		change_character_culture = culture:$culture$
+# 		remove_traits_of_category = ruler
+# 	}

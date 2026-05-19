@@ -3,7 +3,10 @@ countries = {
 	countries = {
 		T00 = {
 			own_control_core = {
-				th_scarlet_grand_entrance_hall
+				th_scarlet_grand_entrance_hall th_crimson_centerpiece_fountain th_scarlet_moonlight_fountain_plaza th_main_gate_plaza th_scarlet_gaze_balcony th_voile_library_grand_hall th_guardian_golem_shed th_seven_star_summoning_chamber
+				th_frandre_scarlet_bedchamber th_scarlet_moonlight_tea_room th_gargoyle_sentinel_gallery th_scarlet_dream_bedchamber th_perfect_maid_armory th_eternal_rose_maze th_underground_wine_cellar th_midnight_blooming_garden th_crimson_tide_harbor
+				th_crimson_creek_bridge th_scarlet_path th_fate_corridor th_vampiric_vine_valley th_crimson_moon_bridge th_eternal_night_orchid_bed th_flandres_playground th_scarlet_fog_bog th_maze_hedge th_scarlet_backup_storage
+				th_hidden_garden_of_forbidden_blooms th_path_of_the_crimson_moon th_nightwhisper_spring
 			}
 			starting_technology_level = 3
 			include = "expl_mediterranean"
