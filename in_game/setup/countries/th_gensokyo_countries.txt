@@ -362,7 +362,7 @@ T32 = {
 T33 = {
 	color = rgb { 255 122 25 }
 	culture_definition = th_vampire_culture
-	religion_definition = islamic
+	religion_definition = orthodox
 	description_category = diplomatic
 	difficulty = 3
 }
@@ -389,7 +389,7 @@ T35 = {
 T36 = {
 	color = rgb { 8 184 29 }
 	culture_definition = th_vampire_culture
-	religion_definition = islamic
+	religion_definition = orthodox
 	description_category = diplomatic
 	difficulty = 2
 }
@@ -416,7 +416,7 @@ T38 = {
 T39 = {
 	color = rgb { 161 45 47 }
 	culture_definition = th_vampire_culture
-	religion_definition = islamic
+	religion_definition = orthodox
 	description_category = diplomatic
 	difficulty = 2
 }
@@ -443,7 +443,7 @@ T41 = {
 T42 = {
 	color = rgb { 201 175 147 }
 	culture_definition = th_vampire_culture
-	religion_definition = islamic
+	religion_definition = orthodox
 	description_category = diplomatic
 	difficulty = 2
 }
@@ -470,7 +470,7 @@ T44 = {
 T45 = {
 	color = rgb { 51 122 92 }
 	culture_definition = th_vampire_culture
-	religion_definition = islamic
+	religion_definition = orthodox
 	description_category = diplomatic
 	difficulty = 2
 }
@@ -497,7 +497,7 @@ T47 = {
 T48 = {
 	color = rgb { 207 161 217 }
 	culture_definition = th_vampire_culture
-	religion_definition = islamic
+	religion_definition = orthodox
 	description_category = diplomatic
 	difficulty = 2
 }
@@ -532,6 +532,294 @@ T51 = {
 #心绮楼
 T52 = {
 	color = rgb { 227 112 225 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#永远亭
+T53 = {
+	color = rgb { 106 204 62 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#藤原氏
+T54 = {
+	color = rgb { 224 119 121 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#幸运竹林
+T55 = {
+	color = rgb { 209 224 201 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#竹林药铺
+T56 = {
+	color = rgb { 185 224 145 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#邪仙界
+T57 = {
+	color = rgb { 184 203 224 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#魔界
+T58 = {
+	color = rgb { 224 176 61 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#魔人旅社
+T59 = {
+	color = rgb { 211 133 224 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#博丽旧社
+T60 = {
+	color = rgb { 184 68 165 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#蓬松松爱莲魔法店
+T61 = {
+	color = rgb { 235 233 128 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#太阳花田
+T62 = {
+	color = rgb { 233 235 44 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#铃集之丘
+T63 = {
+	color = rgb { 233 247 243 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#朝仓实验室
+T64 = {
+	color = rgb { 224 74 245 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#静寂神殿
+T65 = {
+	color = rgb { 99 75 75 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#幻梦界
+T66 = {
+	color = rgb { 7 122 90 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#战车道
+T67 = {
+	color = rgb { 168 150 131 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#安娜贝拉尔的洋馆
+T68 = {
+	color = rgb { 107 120 201 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#时空旅人
+T69 = {
+	color = rgb { 201 48 101 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#天界
+T70 = {
+	color = rgb { 95 156 201 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#龙宫
+T71 = {
+	color = rgb { 57 103 201 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#月之都
+T72 = {
+	color = rgb { 227 112 225 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#血之湖
+T73 = {
+	color = rgb { 201 69 71 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#梦幻世界
+T74 = {
+	color = rgb { 227 226 212 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#堀川乐团
+T75 = {
+	color = rgb { 135 173 140 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#宫古之扉
+T76 = {
+	color = rgb { 106 72 171 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#紫之祥云
+T77 = {
+	color = rgb { 219 171 217 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#山彦参道
+T78 = {
+	color = rgb { 82 173 172 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#堕落神殿
+T79 = {
+	color = rgb { 146 186 240 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#纯化之月
+T80 = {
+	color = rgb { 240 195 155 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#梦境地狱
+T81 = {
+	color = rgb { 227 86 145 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#克劳恩皮西亚
+T82 = {
+	color = rgb { 142 92 186 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#华扇的仙界
+T83 = {
+	color = rgb { 240 130 219 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#黄泉寂灭之国
+T84 = {
+	color = rgb { 149 240 152 }
 	culture_definition = th_vampire_culture
 	religion_definition = orthodox
 	description_category = economic
