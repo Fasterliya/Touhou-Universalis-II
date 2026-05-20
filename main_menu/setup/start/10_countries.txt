@@ -442,8 +442,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1318.1.1 end_date = 1331.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1331.1.1 end_date = 1333.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1333.1.1 end_date = 1.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             #ruler_term = { character = ach_robert_taranto start_date = 1333.1.1 regnal_number = 1 } # As Co-Ruler with his mother
             regnal_numbers = {
                name_william = 2
@@ -463,7 +463,7 @@ countries = {
             privilege = {
                lat_latin_crusader_elite
             }
-          } #dynasty = anjou_taranto_dynasty
+          }
       }
 
 
@@ -1608,7 +1608,7 @@ countries = {
             privilege = {
                lat_latin_crusader_elite
             }
-          } #dynasty = anjou_durazzo_dynasty
+          }
       }
 
 
@@ -2886,8 +2886,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1272.11.20 end_date = 1306.4.7 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1306.4.7 end_date = 1325.9.10 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1325.9.10 end_date = 1.1.1 regnal_number = 3 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_william = 10
                name_ebles = 1
@@ -3152,8 +3152,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1308.4.3 end_date = 1321.4.5 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1321.4.5 end_date = 1335.4.5 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.4.5 end_date = 1.1.1 regnal_number = 3 }
-             # Junior Co-Ruler until 1308
 
+            # Junior Co-Ruler until 1308
             regnal_numbers = {
                name_gunther = 2
                name_comita = 3
@@ -4469,8 +4469,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1264.1.1 end_date = 1279.3.16 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1279.3.16 end_date = 1302.7.11 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1302.7.11 end_date = 1.1.1 regnal_number = 2 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_hugh = 1
                name_enguerrand = 1
@@ -5113,8 +5113,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1291.10.1 end_date = 1302.9.1 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1302.9.1 end_date = 1336.11.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1336.11.11 end_date = 1.1.1 regnal_number = 4 }
-             # Marital Co-Ruler
 
+            # Marital Co-Ruler
             regnal_numbers = {
                name_frederick = 3
                name_theodoric = 2
@@ -5879,8 +5879,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1280.1.1 end_date = 1314.1.1 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1314.1.1 end_date = 1325.10.13 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1325.10.13 end_date = 1332.8.6 regnal_number = 2 }
-             # Marital Co-Ruler until 1170
 
+            # Marital Co-Ruler until 1170
             regnal_numbers = {
                name_baldwin = 2
                name_arnulf = 3
@@ -7142,8 +7142,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1327.1.1 end_date = 1334.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1334.1.1 end_date = 1335.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.1.1 end_date = 1.1.1 regnal_number = 1 }
-             # In fact she ruled until 1358 together with her husband and her son.
 
+            # In fact she ruled until 1358 together with her husband and her son.
             regnal_numbers = {
                name_wido = 1
                name_hubert = 1
@@ -7753,8 +7753,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1286.10.8 end_date = 1305.11.18 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1305.11.18 end_date = 1312.8.27 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1312.8.27 end_date = 1.1.1 regnal_number = 3 }
-             # As Marital Co-Ruler
 
+            # As Marital Co-Ruler
             regnal_numbers = {
                name_salomon = 1
                name_alan = 4
@@ -8021,8 +8021,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1291.1.1 end_date = 1292.9.30 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1292.9.30 end_date = 1318.11.22 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1318.11.22 end_date = 1.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_albert = 2
                name_henry = 1
@@ -8294,12 +8294,12 @@ countries = {
 
          government = {
 
-            #Bir Chand, founder; (r.?697–730)
+            #Bir Chand, founder; (r.?697?730)
             #Udhran Chand
             #Jaskarn Chand
             #Madanbrahm Chand
             #Ahl Chand
-            #Kahal Chand, 6th Raja;(r.?890–930)
+            #Kahal Chand, 6th Raja;(r.?890?930)
             #Slar Chand
             #Men Chand
             #Sen Chand
@@ -8307,14 +8307,14 @@ countries = {
             #Kahn Chand, 11th Raja. Conquered Hindur, which he created as a separate realm for his second son.
             #Ajit Chand, 12th Raja (son of Khan Chand)
             #Gokul Chand
-            #Udai Chand, (r.?1133–1143)
+            #Udai Chand, (r.?1133?1143)
             #Gen Chand
             #Pruthvi Chand
-            #Sangar Chand, (r.?1197–1220)
-            #Megh Chand, (r.?1220–1251)
+            #Sangar Chand, (r.?1197?1220)
+            #Megh Chand, (r.?1220?1251)
             #Dev Chand
             #Ahim Chand
-            #Abhisand Chand, (r.?1302–1317)
+            #Abhisand Chand, (r.?1302?1317)
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1317.1.1 end_date = 1.1.1 regnal_number = 0 }
           }
       }
@@ -8562,8 +8562,8 @@ countries = {
          government = {
 
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 2 }
-             #Actually 1340, but 1337 Büdingen was split between four families, which is really hard to portray with only one location :|
 
+            #Actually 1340, but 1337 B?dingen was split between four families, which is really hard to portray with only one location :|
             regnal_numbers = {
                name_henry = 2
             }
@@ -9130,8 +9130,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1294.5.21 end_date = 1320.10.12 regnal_number = 9 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1320.10.12 end_date = 1328.5.24 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1328.5.24 end_date = 1.1.1 regnal_number = 3 }
-             # Emperor in Nikaea
 
+            # Emperor in Nikaea
             privilege = {
                elaborate_court_ceremonies
                noble_serfdom_rights
@@ -10266,7 +10266,7 @@ countries = {
             privilege = {
                lat_latin_crusader_elite
             }
-          } #dynasty = anjou_taranto_dynasty
+          }
       }
 
 
@@ -11016,15 +11016,6 @@ countries = {
             amdowa_culture mulam_culture yugur_culture monguor_culture uyghur_culture sui_culture rma_culture
             lahu_culture hmong_culture
          }
-          modifier = "chi_factional_strife"
-         start_date = 1328.1.1
-         date = 1368.1.1
-          modifier = "chi_administration_in_disarray"
-         start_date = 1328.1.1
-         date = 1368.1.1
-          modifier = "chi_yuan_religious_stability"
-         start_date = 1337.1.1
-         date = 1368.1.1
 
          government = {
             sinicized_vs_unsinicized = -50
@@ -11050,8 +11041,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.10.8 end_date = 1332.10.2 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1332.10.23 end_date = 1332.12.14 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1333.7.19 end_date = 1.1.1 regnal_number = 0 }
-             #Technically until his death, but Jayaatu launched a coup in October and otherwise the error log complains if they overlap
-          }
+
+             #Technically until his death, but Jayaatu launched a coup in October and otherwise the error log complains if they overlap
+         }
       }
 
 
@@ -12213,8 +12205,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1316.1.1 end_date = 1325.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1325.1.1 end_date = 1329.3.1 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.3.1 end_date = 1.1.1 regnal_number = 2 }
-             # Junior Co-Ruler until 1316
-          }
+
+             # Junior Co-Ruler until 1316
+         }
       }
 
 
@@ -13291,8 +13284,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1327.1.1 end_date = 1329.1.1 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.1.1 end_date = 1331.1.1 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1333.1.1 end_date = 1.1.1 regnal_number = 0 }
-             # Really Unknown, but he is known to be Duke of Candia and this era Duke is not known
-          }
+
+             # Really Unknown, but he is known to be Duke of Candia and this era Duke is not known
+         }
       }
 
 
@@ -14143,8 +14137,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1306.4.26 end_date = 1310.6.5 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1310.6.5 end_date = 1324.8.31 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1324.8.31 end_date = 1.1.1 regnal_number = 4 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_wido = 1
                name_aimeric = 1
@@ -14482,8 +14476,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1320.1.25 end_date = 1326.1.1 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1326.1.1 end_date = 1329.1.1 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.1.1 end_date = 1332.8.2 regnal_number = 2 }
-             #Yes, there are 2 Valdemar III
 
+            #Yes, there are 2 Valdemar III
             regnal_numbers = {
                name_guthrum = 1
                name_harold = 3
@@ -15381,10 +15375,7 @@ countries = {
                peasants_fewer_levies
                peasants_protected_faith
             }
-             satisfaction = 0.30
-             satisfaction = 0.25
-             satisfaction = 0.25
-         }
+          }
       }
 
 
@@ -15850,8 +15841,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1170.1.1 end_date = 1186.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1186.1.1 end_date = 1200.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1217.1.1 end_date = 1220.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             # Annexed to Polotsk, later to Vitebsk since 1220
             regnal_numbers = {
                name_roman = 1
@@ -16658,8 +16649,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1323.1.1 end_date = 1335.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.1.1 end_date = 1336.1.1 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1336.1.1 end_date = 1.1.1 regnal_number = 0 }
-             # As Governor of Epirus
 
+            # As Governor of Epirus
             regnal_numbers = {
                name_michael = 2
                name_theodore = 1
@@ -17405,8 +17396,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1307.1.21 end_date = 1322.1.3 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1322.1.3 end_date = 1330.1.21 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1330.1.21 end_date = 1.1.1 regnal_number = 3 }
-             # Marital Co-Ruler
 
+            # Marital Co-Ruler
             regnal_numbers = {
                name_otto.name_william = 1
                name_stephen = 1
@@ -17583,8 +17574,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1317.7.17 end_date = 1335.12.31 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.12.31 end_date = 1336.12.31 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 3 }
-             # As venetian governor
-          }
+
+             # As venetian governor
+         }
       }
 
 
@@ -17667,8 +17659,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1279.1.1 end_date = 1305.3.7 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1305.3.7 end_date = 1322.9.17 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1322.9.17 end_date = 1.1.1 regnal_number = 1 }
-             #Associated
 
+            #Associated
             regnal_numbers = {
                name_arnulf = 3
                name_baldwin = 9
@@ -17778,9 +17770,6 @@ countries = {
          tolerated_cultures = {
             emilian
          }
-          modifier = "interdict"
-         start_date = 1000.1.1
-         date = 1345.1.1
 
          government = {
             traditionalist_vs_innovative = 40
@@ -18068,8 +18057,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1316.11.20 end_date = 1322.1.3 regnal_number = 5 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1322.1.3 end_date = 1328.3.21 regnal_number = 4 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1328.4.1 end_date = 1.1.1 regnal_number = 6 }
-             # Second reign
 
+            # Second reign
             regnal_numbers = {
                name_theodoric = 4
                name_thobald = 1
@@ -18916,8 +18905,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1317.12.10 end_date = 1318.7.27 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.1.1 end_date = 1336.12.31 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 0 }
-             # Among others
-          }
+
+             # Among others
+         }
       }
 
 
@@ -19447,7 +19437,7 @@ countries = {
             #Tartora Khan	1205-1236
             #the Dareli queen (name
             #Torra Khan	1241-1275
-            #Shah Ra’is Khan	1275
+            #Shah Ra?is Khan	1275
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1276.1.1 end_date = 1.1.1 regnal_number = 2 }
 
             regnal_numbers = {
@@ -19579,7 +19569,7 @@ countries = {
          include = "expl_northern_europe"
 
          government = {
-            #Controlled by the Säckingen Abbey for the most part until 1387
+            #Controlled by the S?ckingen Abbey for the most part until 1387
             ruler = random
           }
       }
@@ -21037,8 +21027,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1301.1.1 end_date = 1308.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1308.1.1 end_date = 1323.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1323.1.1 end_date = 1.1.1 regnal_number = 2 }
-             #Start date as the date of the coronation
 
+            #Start date as the date of the coronation
             privilege = {
                novi_fori
                market_fairs
@@ -21519,7 +21509,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1270.1.1 end_date = 1290.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1290.1.1 end_date = 1334.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1334.1.1 end_date = 1.1.1 regnal_number = 1 }
-          } #Following the line of ?????, as the main line geneaology has a lot of problems, with too many generations in between
+          }
       }
 
 
@@ -21800,7 +21790,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1300.10.2 end_date = 1310.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1310.1.1 end_date = 1314.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1314.1.1 end_date = 1.1.1 regnal_number = 1 }
-          } #https://chibasi.net/tou.htm#rekidai
+          }
       }
 
 
@@ -23023,7 +23013,7 @@ countries = {
 
          government = {
 
-             #Abbey reform
+             #Abbey reform
          }
       }
 
@@ -25544,20 +25534,20 @@ countries = {
 
          government = {
 
-            #Vidyadhara (Vidyadhara)	1003–1035
-            #Vijaya-Pala (Vijayapala)	1035–1050
-            #Deva-Varman	1050–1060
-            #Kirtti-Varman (Kirtivarman)	1060–1100
-            #Sallakshana-Varman (Sallak?a?avarman)	1100–1110
-            #Jaya-Varman	1110–1120
-            #Prithvi-Varman (P?thvivarman)	1120–1128
-            #Madana-Varman	1128–1164
-            #Yasho-Varman II	1164–1165
-            #Paramardi-Deva	1165–1203
-            #Trailokya-Varman	1203–1245
-            #Vira-Varman (Viravarman)	1245–1285
-            #Bhoja-Varman	1285–1288
-            #Hammira-Varman (Hammiravarman)	1288–1311
+            #Vidyadhara (Vidyadhara)	1003?1035
+            #Vijaya-Pala (Vijayapala)	1035?1050
+            #Deva-Varman	1050?1060
+            #Kirtti-Varman (Kirtivarman)	1060?1100
+            #Sallakshana-Varman (Sallak?a?avarman)	1100?1110
+            #Jaya-Varman	1110?1120
+            #Prithvi-Varman (P?thvivarman)	1120?1128
+            #Madana-Varman	1128?1164
+            #Yasho-Varman II	1164?1165
+            #Paramardi-Deva	1165?1203
+            #Trailokya-Varman	1203?1245
+            #Vira-Varman (Viravarman)	1245?1285
+            #Bhoja-Varman	1285?1288
+            #Hammira-Varman (Hammiravarman)	1288?1311
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1311.1.1 end_date = 1.1.1 regnal_number = 2 }
 
             regnal_numbers = {
@@ -27527,8 +27517,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1321.1.1 end_date = 1324.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1324.1.1 end_date = 1331.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1331.1.1 end_date = 1.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             privilege = {
                clergy_powerful_dioceses
                market_fairs
@@ -28922,8 +28912,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1267.1.1 end_date = 1272.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1272.1.1 end_date = 1311.8.28 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1311.8.28 end_date = 1.1.1 regnal_number = 1 }
-             #Not actually the first one, but not much info about all the preceding ones so started with him
-          }
+
+             #Not actually the first one, but not much info about all the preceding ones so started with him
+         }
       }
 
 
@@ -29073,8 +29064,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1268.10.29 end_date = 1284.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1284.1.1 end_date = 1285.5.20 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1285.5.20 end_date = 1291.5.28 regnal_number = 2 }
-             # Marital Co-Ruler
 
+            # Marital Co-Ruler
             regnal_numbers = {
                name_godfrey = 1
                name_baldwin = 5
@@ -30940,8 +30931,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1228.1.1 end_date = 1229.4.9 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1229.4.9 end_date = 1237.3.27 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1237.3.27 end_date = 1261.7.25 regnal_number = 2 }
-             # Co-Ruler during the minority of Baldwin II
 
+            # Co-Ruler during the minority of Baldwin II
             regnal_numbers = {
                name_baldwin = 2
                name_henry = 1
@@ -33340,8 +33331,8 @@ countries = {
 
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1161.1.1 end_date = 1165.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1183.8.23 end_date = 1200.10.25 regnal_number = 1 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_conrad = 1
                name_henry = 1
@@ -35291,8 +35282,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1159.1.1 end_date = 1165.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1165.1.1 end_date = 1167.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1167.1.1 end_date = 1216.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             # Lithuanian rulers since 1216 until 1242 when it was annexed
             regnal_numbers = {
                name_gleb = 1
@@ -37706,8 +37697,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1242.1.1 end_date = 1250.4.25 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1250.4.25 end_date = 1252.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1328.2.1 end_date = 1.1.1 regnal_number = 2 }
-             # Unknown when he ceded the title to his sister
 
+            # Unknown when he ceded the title to his sister
             #ruler_term = { character = nav_philip_iii_evreux start_date = 1328.2.1 regnal_number = 2 } # Marital Co-Ruler
             regnal_numbers = {
                name_robert = 3
@@ -41801,8 +41792,9 @@ countries = {
             heir_selection = republic_4_year_terms
 
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 0 }
-             #no Imperial Advocate between 1336 and 1338
-          }
+
+             #no Imperial Advocate between 1336 and 1338
+         }
       }
 
 
@@ -42597,8 +42589,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1218.5.19 end_date = 1250.12.13 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1250.12.13 end_date = 1254.5.21 regnal_number = 4 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1291.5.5 end_date = 1298.7.2 regnal_number = 1 }
-             #Enumerated as successor of Conrad I who was German King 911–918 but not Emperor
-          }
+
+             #Enumerated as successor of Conrad I who was German King 911?918 but not Emperor
+         }
       }
 
 
@@ -45720,8 +45713,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1272.11.20 end_date = 1307.7.8 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1307.7.8 end_date = 1327.1.20 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1327.1.25 end_date = 1.1.1 regnal_number = 3 }
-             # became Lord of Ireland before being King of England
 
+            # became Lord of Ireland before being King of England
             # same numbering as England
             regnal_numbers = {
                name_william = 2
@@ -46193,8 +46186,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1199.5.27 end_date = 1204.4.28 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1241.1.1 end_date = 1271.8.21 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1311.12.1 end_date = 1316.11.20 regnal_number = 1 }
-             # Restored
 
+            # Restored
             #Annexed to France since 1316
             regnal_numbers = {
                name_gerard = 1
@@ -46256,8 +46249,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1268.1.1 end_date = 1290.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1307.1.1 end_date = 1336.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1336.1.1 end_date = 1.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_iziaslav = 3
                name_vseslav = 3
@@ -46312,9 +46305,6 @@ countries = {
          tolerated_cultures = {
             kashubian ashkenazi
          }
-          modifier = "interdict"
-         start_date = 1000.1.1
-         date = 1342.1.1
 
          government = {
             centralization_vs_decentralization = 80
@@ -46820,7 +46810,7 @@ countries = {
          our_cores_conquered_by_others = {
             mandore osian nagaur khed pali kurki ajmer merta nagaur makrana
             sambhar
-         } #Mandore + parts of Marwar. At its greatest extent the dynasty had however ruled most of northern India.
+         } #Mandore + parts of Marwar. At its greatest extent the dynasty had however ruled most of northern India.
 
          include = "expl_india_hindu"
          include = "india_limited_monarchy"
@@ -48718,8 +48708,9 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1326.8.1 end_date = 1331.1.1 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1334.1.1 end_date = 1335.1.1 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.1.1 end_date = 1.1.1 regnal_number = 3 }
-             # As Podestá
-          }
+
+             # As Podest?
+         }
       }
 
 
@@ -49028,8 +49019,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1251.1.1 end_date = 1271.1.1 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1271.1.1 end_date = 1304.1.1 regnal_number = 4 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1304.1.1 end_date = 1.1.1 regnal_number = 5 }
-             # Marital Co-Ruler
 
+            # Marital Co-Ruler
             regnal_numbers = {
                name_reginald = 1
                name_eblo = 2
@@ -50287,8 +50278,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1292.11.17 end_date = 1296.7.10 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1306.3.25 end_date = 1329.6.7 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.6.7 end_date = 1333.5.14 regnal_number = 2 }
-             # exile in france
 
+            # exile in france
             regnal_numbers = {
                name_robert = 1
                name_john = 1
@@ -51282,8 +51273,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1282.11.26 end_date = 1285.11.11 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1285.11.11 end_date = 1295.12.11 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1295.12.11 end_date = 1.1.1 regnal_number = 3 }
-             # Marital Co-Ruler
 
+            # Marital Co-Ruler
             regnal_numbers = {
                name_roger = 3
                name_simeon = 1
@@ -52027,8 +52018,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1325.3.12 end_date = 1326.8.15 regnal_number = 5 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1326.8.15 end_date = 1330.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1330.1.1 end_date = 1.1.1 regnal_number = 5 }
-             #Yes, there are 2 Erik I
 
+            #Yes, there are 2 Erik I
             regnal_numbers = {
                name_olaf = 1
                name_canute = 2
@@ -54944,6 +54935,53 @@ countries = {
       }
 
 
+      T03 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_central_plaza th_mitsuke_ban_goya th_ura_nagaya_dori th_wayside_shrine th_minami_tsuji_kouban th_tsuji_shidou th_sagi_no_shoshitsu th_nagaya_nami_higashiguchi th_nagarekawa_bashi_minamizume_hiroba th_minami_daimon_dori
+            th_mihan_hiroba th_kashihon_gura th_bookstore_yokocho th_suzunaan th_higashi_yokocho th_zaimoku_cho th_village_bell_tower th_police_outpost th_crossroads_teahouse th_old_well_mouth
+            th_village_office th_western_village_street th_hori_bata_dori th_nishi_kido_guchi th_tsuji_dou th_kamiya_cho th_gakusha_shukubo_cho th_hieda_residence th_antique_market th_hieda_residence_front_street
+            th_nagarekawa_bridge_south_ab th_south_market th_signpost_fork th_kourindou_main_store th_workshop_yokocho th_honcho_dori th_boundary_stone_road th_cattle_grazing_slope th_grain_drying_field th_watermill_mill
+            th_east_fence_vegetable_garden th_west_slope_wheat_field th_village_outskirts th_asobi_niwa th_ura_nagaya_dori_2 th_kita_odori th_kyouzai_gura th_sensei_no_heya th_terakoya_mae th_terakoya_gakudo
+            th_hatago_yokocho th_sakagura_dori th_nagashidai_mae th_dozou_soko th_umaya_mae th_yuya th_geodon_tei_main_hall th_saikumachi_dori th_satoyama_no_mori th_nishi_mi_ban
+            th_suzuko_ya th_seiran_ya th_ryujin_sama_sekizou th_nishi_odori
+         }
+
+         #????
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
       T04 = {
          capital = rothenburg
          court_language = th_gensokyo_language
@@ -54956,7 +54994,8 @@ countries = {
             th_hakurei_offering_hall_of_sparse_faith th_the_always_open_back_gate th_hakurei_engawa th_torii_approach th_main_hall_plaza th_meditation_grounds th_komainu_coastal_guard_room th_komainu_coastal_guard_post th_tidal_pool
             th_seaside_promenade th_white_sand_beach th_hakurei_seaside th_hakurei_boundary_marker_wharf th_exorcism_charm_workshop th_main_canal th_fantasy_canal_harbor th_boatwright_workshop th_canal_port th_tidal_pool_of_memories
             th_harbor_masters_observatory th_sacred_torii_beach th_cape_lighthouse th_sea_view_cliff th_east_coast_rocks th_hakurei_coast th_tranquil_woods th_streamside_rocks th_under_the_old_cherry th_ancient_pine_platform
-            th_back_hill_platform th_main_practice_field th_training_grounds th_vein_of_living_jade_port th_windbreak_pine_forest th_peninsula_lighthouse th_seafood_drying_field th_vein_of_living_jade th_kazami_trail
+            th_back_hill_platform th_main_practice_field th_training_grounds th_vein_of_living_jade_port th_windbreak_pine_forest th_peninsula_lighthouse th_seafood_drying_field th_vein_of_living_jade th_kazami_trail th_drunken_boulder_bed
+            th_suika_brewery_vault th_moonlight_cellar th_drunken_immortal_brewery th_wine_cellar th_barrier_nexus th_archery_range th_clear_mirror_still_water th_hakurei_foothills th_mountain_gate_stairs
          }
 
          #????
@@ -55162,7 +55201,7 @@ countries = {
 
 
       T09 = {
-         capital = rothenburg
+         capital = th_kirisame_residence
          court_language = th_gensokyo_language
          country_rank = rank_kingdom
          starting_technology_level = 3
@@ -55335,7 +55374,7 @@ countries = {
 
          own_control_core = {
             th_origin_of_ley_lines th_deep_dark th_body_rebuild_center th_personality_reconstruction_center th_common_sense_transformation_center th_memory_modification_center th_thin_bamboo_plantation th_myoga_ginger_garden th_satonos_room
-            th_mais_room th_chaos_land th_gap_seasons_path th_border_of_summer_and_winter th_border_of_spring_and_fall th_people_free_noh_drama_stage th_silk_stream th_tengu_shirine th_plain_of_seven_stars th_spore_geyser_valle
+            th_mais_room th_chaos_land th_gap_seasons_path th_border_of_summer_and_winter th_border_of_spring_and_fall th_people_free_noh_drama_stage th_silk_stream th_tengu_shirine th_plain_of_seven_stars
          }
 
          #????
@@ -55644,7 +55683,8 @@ countries = {
             th_weird_fungus_forest th_ceiling_of_false_stars th_hollow_tower_signal th_basalt_canyon th_hollow_forest_crystal th_hollow_isles_floating th_underground_great_hollow th_cannot_entry_mountain16 th_dream_dimension_generator
             th_balcony_platform_view th_balcony_observatory_eye th_chireiden_balcony_satori th_courtyard_dome_sky th_courtyard_swing_koishi th_rose_garden_oblivion th_courtyard_path_pet th_chireiden_courtyard_heart
             th_palace_of_the_earth_spirits_second_floor th_chireiden_whispering_pipe_organ th_chireiden_archive_of_overheard_secrets th_chireiden_library_second th_chireiden_room_satori th_chireiden_room_koishi th_chireiden_vivarium_pet
-            th_chireiden_entrance_hall th_hellcats_room th_rest_door_catcart th_rest_post_scratch th_hellcats_rest
+            th_chireiden_entrance_hall th_hill_den_stray_street th_hill_bazaar_rust th_hill_den_stray th_old_hell_hidden_hill th_springs_recovery_vip th_springs_nest_egg th_springs_room_tengu th_springs_vent_steam th_springs_bath_mixed
+            th_trail_fissure th_core_interface_power th_core_boiler_abandoned th_old_hell_geyser_core th_core_lake_boiling
          }
 
          #????
@@ -55685,7 +55725,8 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_yamame_shaft_vent
+            th_yamame_shaft_vent th_old_hell_geyser_trail th_great_stalactite_market th_hamlet_earth_spirit th_hamlet_mine_fluorite th_settlement_labor_market th_yamame_bridge_web th_dregs_tunnels_safe th_onsen_bath_goka th_trail_stones_spring
+            th_trail_pillars_jet th_trail_crystal_sulfur th_kazaana_webway th_trail_marsh_entrance th_kazaana_yamame_web th_kazaana_hidden_eye th_onsen_pool_hellfish
          }
 
          #????
@@ -55726,9 +55767,8 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_bridge_spring_envy th_central_district_samurai th_bridge_bones_nameless th_hell_bridge_cottage th_rarely_trodden_bridge th_oni_drunken_sandbank_market th_yeast_wraith_garden th_giant_gourd_aging_hall th_fermentation_blood_pool
-            th_oni_brewery_core th_oni_harbor_location th_phantom_lantern_alley th_hoshiguma_bar th_suika_old_house th_shuten_alley th_oni_quarters_street th_sake_laden_wharf th_bustling_feast_gakidou th_central_boulevard_enma
-            th_central_club_hyakki th_former_capital_central_district th_north_camp_ironanvil th_bucket_suspension_room th_tear_stalactite_forest th_abyssal_tunnel_network
+            th_bridge_spring_envy th_bridge_bones_nameless th_hell_bridge_cottage th_rarely_trodden_bridge th_north_camp_ironanvil th_bucket_suspension_room th_tear_stalactite_forest th_abyssal_tunnel_network th_oni_north_customs_gate
+            th_former_capital_northern_district th_north_zone_dormitory
          }
 
          #????
@@ -55770,7 +55810,9 @@ countries = {
 
          own_control_core = {
             th_central_district_samurai th_oni_drunken_sandbank_market th_yeast_wraith_garden th_giant_gourd_aging_hall th_fermentation_blood_pool th_oni_brewery_core th_oni_harbor_location th_phantom_lantern_alley th_hoshiguma_bar th_suika_old_house
-            th_shuten_alley th_oni_quarters_street th_sake_laden_wharf th_bustling_feast_gakidou th_central_boulevard_enma th_central_club_hyakki th_former_capital_central_district
+            th_shuten_alley th_oni_quarters_street th_sake_laden_wharf th_bustling_feast_gakidou th_central_boulevard_enma th_central_club_hyakki th_former_capital_central_district th_west_stall_mimei_street th_west_shop_tang
+            th_west_bookstore_strange th_hells_izakaya th_hyakki_lanterngate th_former_capital_west_avenue th_geothermal_vein_mine th_hell_terraced_springs th_oni_colosseum_location th_silent_bet_den th_feast_hall_of_victors_and_vanquished
+            th_feral_beast_menagerie th_oni_arena_location
          }
 
          #????
@@ -55815,7 +55857,11 @@ countries = {
             th_lepton_resonance_arc_stream th_prayer_differential_tower th_pot_of_souls th_marigold_confluence th_yamato_beach th_atonement_lock th_human_doll_citizen_apartments th_shaping_bureau th_arc_light_emitter th_haniwa_precinct
             th_primate_lower_city th_shimokita th_beast_downtown th_tool_graveyard th_clay_outpost th_silent_fishing_village th_withered_field th_human_spirit_village th_village_of_isolate th_clay_bay
             th_unfinished_colossus_island th_clay_island th_central_processing_terminal th_human_preserve_idol_realm th_primate_deepwater_port th_idol_prayer_steps th_peninsula_spine_avenue th_haniwa_port th_hope_altar th_haniyasushin_shrine
-            th_primate_spirit_garden
+            th_primate_spirit_garden th_sloth_lagoon_island th_dragon_crystal_main_island th_desire_tidal_flat th_burl_heart th_camp_of_artorias th_pot_of_greed th_dark_abyss th_greed_black_market th_anvil_root_bridge
+            th_loyalty_maze_island th_idol_frontier th_faith_clay_pool_island th_dregs_shantytown th_dead_zone th_haniwa_subrbs th_haniwa_barracks th_haniwa_factory th_black_sand_beach th_idol_bay
+            th_forest_of_hunt th_dead_swamp th_reincarnation_whirlpool_palace th_utopia_reflection th_baos_post_station th_last_chance th_well_of_frogotten th_naihe_bridge th_jizo_maze th_scab
+            th_limitation_hills th_wolf_spirit_arena th_old_village_of_wolf_spirit th_haniwa_basin th_wild_plain th_albatross_storm_nest th_pangolin_bunker th_kike_secret_way th_iron_branch_dam th_red_panda_cave
+            th_castor_clan th_otter_spirit_watchtower th_penguin_ice_outpost th_bloody_turbulence th_primate_meander th_tenkyuu_branch_office th_delusion_prosperity th_primate_spirit_township th_st_haniwa_mountain
          }
 
          #????
@@ -55856,11 +55902,18 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_yama_palace th_market_higan_tea th_market_ferryman_tavern th_alchemy_workhouse th_hazbin_hotel th_expedition_port th_komachis_hideout th_chief_oni_headquarters th_scorching_great_forge th_teahouse_at_hell
-            th_jizo_palace th_little_devil_town th_forbbiden_zone_of_onimi_head th_isle_emptiness_islands th_isle_no_self_rock th_purge_ironworks_port_village th_purgatorial_foundry_port th_purge_ironworks_port th_jiuji_palace th_bull_head_village
-            th_depression_of_chaos_qi th_wuchang_shore th_purgatory th_isle_infinite_light_coast th_isle_infinite_light th_fossil_coast th_hole_of_the_border th_hills_of_after_death th_miasma_field th_hell_appeal_court
-            th_yin_yang_customs th_qifei_palace th_outsider_souls_village th_windless_col th_hell_port th_hell_guard_barracks th_hell_reward_pool th_hell_punishment_chamber th_sin_mirror_platform th_hall_of_judgment
-            th_life_death_archive th_jetavana_ruined_shrine_door th_jetavana_ruined_shrine th_city_of_feng th_suying_palace th_bizhen_palace
+            th_yama_palace th_chief_oni_headquarters th_scorching_great_forge th_teahouse_at_hell th_jizo_palace th_little_devil_town th_forbbiden_zone_of_onimi_head th_isle_emptiness_islands th_isle_no_self_rock th_purge_ironworks_port_village
+            th_purgatorial_foundry_port th_purge_ironworks_port th_jiuji_palace th_bull_head_village th_depression_of_chaos_qi th_wuchang_shore th_purgatory th_isle_infinite_light_coast th_isle_infinite_light th_fossil_coast
+            th_hole_of_the_border th_hills_of_after_death th_miasma_field th_hell_appeal_court th_yin_yang_customs th_qifei_palace th_outsider_souls_village th_windless_col th_hell_port th_hell_guard_barracks
+            th_hell_reward_pool th_hell_punishment_chamber th_sin_mirror_platform th_hall_of_judgment th_life_death_archive th_jetavana_ruined_shrine_door th_jetavana_ruined_shrine th_city_of_feng th_suying_palace th_bizhen_palace
+            th_soul_return_steles th_souls_detention_center th_pingzhong_terrace th_paradise_upstream th_isle_void_gaze th_isle_rust_shield_island th_thousands_purple_sakura_blossom th_hell_low_wall th_xuanming_palace th_black_tea_garden
+            th_pride_of_death th_onimi_house th_taigongs_fishing_spot th_shoreless_field_out th_no_vitality_mountain_pass th_yama_plain th_higanbana_plain th_jiulun_palace th_onimi_barracks th_yama_outpost_harbor
+            th_yama_sentry th_emperors_mansion th_hell_pending_cases th_taihe_palace th_yesterday_mirror th_chenghuang_temple th_far_shore th_river_soul_lotus th_quarter_sessions th_souls_river
+            th_river_soul_shallows th_hazbin_hotel th_komachis_hideout th_repent_corridor_sea th_repent_mouth th_repent_forest_door_hell th_hell_town_of_repentance th_pillar_of_tears_islet th_burden_shedding_beach_port th_hell_flayed_coast
+            th_hell_stone_plains_island th_hell_blood_cape th_hell_peninsula_main th_penitent_sinners_coast th_waste_ink_pool th_hell_hecate_cape th_hecate_main_hall th_hell_steamer_valley th_hedes_inn th_porphyra_dyehouse
+            th_hecatia_temple th_port_of_goddess th_eika_cabin th_yama_terakoya th_village_of_foundling th_miare_office th_niwataris_entry th_hundreds_days_resentment th_wrongfully_killed_dormitory th_regret_location
+            th_tai_palace th_massacre_wildrness th_will_castle th_nine_spirng_pass th_nameless_steles th_horse_head_village th_xiwen_meander th_sunken_ship_graveyard th_offerings_avenue th_start_of_memorie
+            th_unheard_old_haunt
          }
 
          #????
@@ -56021,7 +56074,7 @@ countries = {
 
 
       T29 = {
-         capital = rothenburg
+         capital = th_eternal_garden
          court_language = th_gensokyo_language
          country_rank = rank_kingdom
          starting_technology_level = 3
@@ -56062,16 +56115,929 @@ countries = {
 
 
       T30 = {
-         capital = rothenburg
+         capital = th_crumbling_hall
          court_language = th_gensokyo_language
          country_rank = rank_kingdom
          starting_technology_level = 3
 
          own_control_core = {
-            th_crumbling_hall th_ownerless_study th_rusted_gate th_derelict_mansion
+            th_crumbling_hall th_derelict_mansion th_rusted_gate th_ownerless_study
          }
 
          #????
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T31 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_hakugyokurou th_dankyu_kyuuryou th_borei_genya_yuukon_bakuden th_borei_genya_mugen_sougen th_borei_genya th_reed_field th_youki_port th_tomb_of_swords th_youki_monument th_ghost_village
+            th_youmus_room th_konpaku_fosse th_giant_garden th_swordplay_dojo th_deep_sea_lair th_davy_jones_locker th_black_beard_bay th_drown_fleet_port th_drown_tomb th_maxxranas
+            th_saigyouji_ossuary th_skeleton_pyramaid th_mami_tea_field th_tomitake_marsh th_24th_graveyard th_north_branch_of_saigyou_ayakashi th_kenny_cementry th_diavolo_crimson_hotel th_death_metal_rock_end th_phantom_wonderland
+            th_castel_ruins th_decay_library th_endless_tea_party th_paper_doll_village th_yuanbao_valley th_coin_eyes_bridge th_paper_windmill_garden th_the_beach th_lost_temple th_south_aokigahara_forest
+            th_north_aokigahara_forest th_turnk_of_saigyou_ayakashi th_west_branch_of_saigyou_ayakashi th_east_branch_of_saigyou_ayakashi th_south_branch_of_saigyou_ayakashi th_surrounding_hallway th_rock_gardenv th_greater_kitchen th_yuyukos_room
+            th_irreversible_entrance th_zombie_tearoom th_strange_rockwork th_artifical_stream th_snow_gloem_factory th_steps_6401_to_8000 th_steps_4801_to_6400 th_steps_3201_to_4800 th_steps_1601_to_3200 th_steps_1_to_1600
+            th_cannot_entry_mountain2 th_barrier_of_temperance th_barrier_of_deligence th_barrier_of_kindness th_barrier_of_humility th_barrier_of_life th_skull_checkpoint th_tomb_first_dead th_skeleton_castle_tower th_fake_life_village
+            th_deadbody_moonlight th_phantom_arsenal th_black_tower th_ghast_tower th_picnic_spot_for_somebody th_deadly_stream th_fly_lair th_white_chrysanthemum_bank th_sea_of_lycoris th_cannot_entry_mountain1
+            th_barrier_of_gluttony th_barrier_of_sloth th_barrier_of_warth th_barrier_of_pride th_barrier_of_death
+         }
+
+         #????
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T32 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_myourenji_hondo th_myourenji_shoro th_myourenji_sobo th_myourenji_saidou th_myourenji_teien th_myourenji_shugyo_dojo th_myourenji_kyozo th_myouren_temple_north_district th_lotus_sutra_stone_path th_sutra_transcription_shed
+            th_abbots_private_meditation_grove th_unzans_nap_rock th_unzans_cloud_berth th_monk_quarters_cell_block th_high_speed_hovercraft_launch_deck th_high_speed_hovercraft_high_speed_taxiway th_high_speed_hovercraft_weather_observation_post
+         }
+
+         #????
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T33 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_tora_no_maru_hoshi th_tora_no_maru_hoshi_junsan_dou th_tora_no_maru_hoshi_kokyo_seki th_tora_no_maru_hoshi_shiren_no_iwaya th_tora_no_maru_hoshi_hoto_rin th_zansetsu_no_michi th_harumachi_no_oka th_sando_yomu_kairo th_hyakki_yakou_zaka
+         }
+
+         #????
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T34 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_nazrin_s_treasure_hold th_mandala_guest_hall th_lotus_bow_deck th_dragon_protector_prow th_zansetsu_kairo th_zansetsu_no_michi_yosetsu th_zansetsu_no_michi_setpi_iwa
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T35 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_mermaid_sanctuary th_wakasagihime_manor th_lake_of_blood_reflections th_moonlit_tidal_pool th_steam_shroud_atoll th_tide_song_cavern th_coral_corridor th_secret_path_to_the_lakeshore
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T36 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_kogasa_blacksmith th_old_locust_tree th_grindstone_bench th_ironstock_pile th_datie_street th_myourenji_sando_kiyotaki_bashi th_kyuukei_sekidou th_myouren_hill_mon th_myouren_sando_ishidan th_myorenji_sando
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T37 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_avici_hell th_spongilla_fragilis_garden th_biten_tree_house th_betray_blade th_interrogation_house th_crying_cave th_underwater_cellar th_village_of_otters th_gold_brance_wall th_yachies_mansion
+            th_kike_gang_skyscraper th_pass_of_animal_realm th_hell_path_of_confusion th_hell_windless_plain th_stone_stacking_ring th_cobble_riverbank th_abandoned_baby_park th_throne_of_caelestinus_V th_bee_hive_array th_concept_collapse_abyss
+            th_samghata_hell th_kalasutra_hell th_reviving_hell th_border_of_fake_and_reality th_deer_hunting_hell th_scorching_hell th_screaming_hell th_false_moon_dark th_echo_cavern th_top_of_regression
+            th_deadly_hillside th_no_live_wilderness th_strange_mine
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T38 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_happyness_plantation th_blood_wine_of_sinner th_fear_of_oni th_chaos_storm th_skeleton_ridge th_throne_of_reject th_galloping_horese_avenue th_beast_froniter th_untamed_horse_grassland th_broken_horn_graveyard
+            th_ash_barren th_undead_settlement th_road_of_slavery th_lasso_beast_road th_coward_burrow th_bloody_factory th_haunted_gold_mine th_hills_of_beast_spirit th_void_of_nothing th_void_of_think
+            th_hidden_corn_field th_void_of_end th_void_of_fate th_pegasus_fortress th_saki_mansion th_keiga_gang_skyscraper th_new_city_of_wolf_spirit th_sentinel_cliff th_oblivon_time th_game_console_dead_end
+            th_valley_of_new_three_artifact th_relic_hill th_solid_rain_cliff th_tearless_peak th_kaiji_casino th_sunken_corpse_riverbed th_sadness_hillock
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T39 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_sea_of_petroleum th_desire_cracking_plant th_bottomless_pit th_greedy_gusher th_infinite_food th_hell_hazy_echo th_hazy_memory_fog th_hazy_fading_path th_hazy_barrier_hell th_soul_lantern_forest
+            th_hell_ghost_death_bell th_hell_death_office th_shrine_of_death_door th_shrine_of_death th_pretas_yelling th_withered_flowers_garden th_death_commercial_street th_road_of_liminality th_pain_equivalence_scale th_regret_echo_bridge
+            th_ghost_queue th_lycoris_field th_road_of_reconsideration th_brain_of_beast th_toutetsu_cabin th_artery_of_petroleum th_blood_pond_hell th_crossing_black_market th_oniwatari_shrine th_death_door
+            th_straightforward_traffic_sign th_zoo_of_extince_animals th_mourning_border th_oni_hunting_chain th_huangquan th_oniwatari_pass
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T40 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_solitus_strand th_hell_solitus_tide th_hell_solitus_shore th_hell_solitus_reef th_monolith_of_silent_witness th_stranded_soul_shoal th_muezuka_re_hec th_hell_muenzuka_lamp th_hell_muenzuka_main th_muenzuka_junk_hill
+            th_hell_ossuary_field th_hell_ossuary_lair th_hell_ossuary_seepage th_hell_ossuary_stratum th_underground_harbor_east th_harbor_fuel_depot th_harbor_waste_pool th_harbor_magma_wharf th_underground_harbor_west th_steam_bath_hospital
+            th_hell_nazrin_workbench th_hell_nazrin_door th_sunken_lighthouse th_sunken_shell_wall th_sunken_ship_graveyard
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T41 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_riverbed_endless_shore th_camellia_garden th_shenhua_palace th_land_ofcontrition th_hall_rites_cage th_grand_magi_residence th_mortals_annex th_puming_palace
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T42 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_sai_no_kawara th_outside_world_entry th_waste_return_monument th_gate_mandala_altar th_mingchen_palace th_pass_of_hell th_nazrin_outpost th_hell_nazrin_shushushushushuchu th_sunken_main_street
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T43 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_market_higan_tea th_market_ferryman_tavern th_alchemy_workhouse th_expedition_port th_enlightenment_mine th_hell_hecate_kennels th_tongue_pulling_cave th_smoldering_forest th_end_of_souls th_atonement_trail
+            th_withered_chrysanthemum_field th_santu_river_bank th_separate_souls_ferry
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T44 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_hellcats_rest th_village_path_eroded th_old_hell_hidden_heart th_hidden_rin_cache th_hidden_cryo_pool th_hidden_site_geothermal th_corpse_corner_appraise th_corpse_zone_compost th_rin_hell_yard_sorting th_corpse_stockpile_center
+            th_hellcats_room th_rest_door_catcart th_rest_post_scratch
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T45 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_nuclear_furnace_main th_implosion_compressor th_reactor_coolant_circulation_center th_laser_energy_storage_warehouse th_tungsten_disulfide_manufacturing_site th_americium_isotope_plasma_turbine
+            th_assisted_enhanced_fusion_reactor_computer th_center_ruined_reactor th_assisted_enhanced_fusion_reactor th_center_energy_corridors th_nuclear_fusion_center th_forgotten_hamlet th_hell_pipes_outer th_hell_bloodpool th_hell_river_slag
+            th_village_lane_bone th_blazing_hell_remains th_hell_tribunal th_village_valley_windless th_submerged_foundation_reef
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T46 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_bucket_suspension_chasm th_onsen_pool_seishin th_onsen_gate_neon th_crystal_hum_sauna_cave th_onsen_street_market th_dragon_breath_vent th_boiling_tide_channel_port th_geyser_field_surface th_phantom_lantern_alley
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T47 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_shining_needle_castle_ground_hall th_shining_needle_castle_stone_wall th_shining_needle_castle_watch_tower th_fusoshin_swamp th_shining_needle_castle_third_bailey th_shining_needle_castle_second_bailey th_uchide_no_kozuchi_room
+            th_shining_needle_castle_main_bailey th_private_inner_chamber th_shining_needle_castle_tenshukaku th_shining_path th_magical_thundercloud th_shaking_plain th_levitation_garden
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T48 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_useless_divice_room th_empty_chamber th_dusty_srsenal th_mithril_gate th_diminutive_treasure_vault_library
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T49 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_weeping_willow_promenade th_washwomen_s_steps th_house_of_seiran_and_ringo2 th_house_of_seiran_and_ringo th_aqueduct th_dullahan_path th_violoncello_embankment
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T50 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_bane_herb_garden th_moon_touched_clearing th_yasumizu_village th_abandoned_werewolf_mansion th_kagerou_house th_marked_entrance_2
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T51 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_divine_spirit_mausoleum th_deep_forest_of_immortals_realm th_disciple_village th_feng_shui_puppet_rehearsal_stage th_river_of_kan th_immortal_dojo_main th_fengshui_steppe th_original_fire_pavilion th_mononobe_scripture_depository
+            th_kalpa_pass th_hover_sword_ridge th_exploitation_workshop th_eye_of_desires th_alchemists_venue th_lightning_struck_cedar_grove th_sects_town th_soga_barrier th_fidelity_peak th_thunder_forest
+            th_broken_soul_calming_door th_revive_cave th_buried_bone_buddha_hall th_cave_of_gen th_mercury_and_cinnabar_refinery th_thousands_souls_prison th_forest_of_xun th_hill_of_fire th_development_site_of_alchemical_cauldron
+            th_ancient_moon_garden th_four_monkey_backyard th_house_of_sanshi th_mikos_meditation_house th_hall_of_two_sages_hearing th_outer_world_path th_private_dojo th_mikos_room th_muden_daishibyo_yume_kaeri_sando
+            th_muden_daishibyo_seimu_no_kane th_muden_daishibyo_musen_no_dan th_muden_daishibyo_chinmin_chi th_muden_daishibyo_shibyo_honden th_muden_daishibyo_kisen_bunryu
+         }
+
+         include = "expl_mediterranean"
+         include = "expl_silk_road_west"
+         include = "expl_silk_road_center"
+         include = "expl_silk_road_east"
+         include = "expl_indian_trade_route"
+         include = "catholic_monarchy"
+
+         discovered_regions = {
+            th_gensokyo_hakurei_region
+            th_gensokyo_makai_region
+            th_gensokyo_human_village_region
+            th_gensokyo_magic_forest_region
+            th_youkai_mountain_western_foot_region
+            th_youkai_mountain_region
+            th_immortal_realm_region
+            th_moriya_shirine_region
+            th_animal_realm_region
+            th_hell_region
+            th_sunflower_field_region
+            th_makai_region
+            th_old_hell_region
+            th_heaven_region
+         }
+
+         government = {
+            ruler = random
+          }
+      }
+
+
+      T52 = {
+         capital = th_crumbling_hall
+         court_language = th_gensokyo_language
+         country_rank = rank_kingdom
+         starting_technology_level = 3
+
+         own_control_core = {
+            th_shingiro th_dougu_kata th_noh_stage th_kenbutsuse_mae th_gakuya_yokocho th_rouzen_dori th_mokuzai_tsubo_ba th_nagaya_ura_roji th_streetcorner_well th_men_nagaya
+            th_hashigakari
+         }
+
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -57765,7 +58731,7 @@ countries = {
                name_henry = 2
             }
 
-             #ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1335.4.2 regnal_number = 1 } # As Marital Co-Ruler
+             #ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1335.4.2 regnal_number = 1 } # As Marital Co-Ruler
          }
       }
 
@@ -58875,10 +59841,10 @@ countries = {
             land_vs_naval = 50
              
 
-            #Maravarman Sundara I	1216–1238 CE
-            #Sundaravarman Kulasekara II	1238–1240 CE
-            #Maravarman Sundara II	1238–1251 CE
-            #Jatavarman Sundara I	1251–1268 CE
+            #Maravarman Sundara I	1216?1238 CE
+            #Sundaravarman Kulasekara II	1238?1240 CE
+            #Maravarman Sundara II	1238?1251 CE
+            #Jatavarman Sundara I	1251?1268 CE
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1268.1.1 end_date = 1310.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1310.1.1 end_date = 1327.1.1 regnal_number = 4 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1327.1.1 end_date = 1.1.1 regnal_number = 4 }
@@ -59890,8 +60856,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1330.5.3 end_date = 1332.1.8 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1332.1.8 end_date = 1332.9.23 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1332.9.23 end_date = 1.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_alexis = 2
                name_andronikos = 3
@@ -62659,8 +63625,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1287.1.1 end_date = 1297.1.1 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1297.1.1 end_date = 1320.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1320.1.1 end_date = 1.1.1 regnal_number = 1 }
-             # Restored
 
+            # Restored
             regnal_numbers = {
                name_briachislav = 3
                name_vseslav = 2
@@ -62974,7 +63940,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1311.11.29 end_date = 1329.7.22 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.7.22 end_date = 1.1.1 regnal_number = 2 }
 
-             #ruler_term = { character = ver_alberto_ii_scala start_date = 1329.7.22 regnal_number = 2 } # Co-Ruler until 1351
+             #ruler_term = { character = ver_alberto_ii_scala start_date = 1329.7.22 regnal_number = 2 } # Co-Ruler until 1351
          }
       }
 
@@ -63443,8 +64409,8 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1301.1.1 end_date = 1308.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1308.1.1 end_date = 1323.1.1 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1323.1.1 end_date = 1.1.1 regnal_number = 2 }
-             #Start date as the date of the coronation
 
+            #Start date as the date of the coronation
             privilege = {
                novi_fori
                market_fairs
@@ -64802,8 +65768,8 @@ countries = {
 
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1277.1.1 end_date = 1322.1.1 regnal_number = 3 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1322.7.18 end_date = 1.1.1 regnal_number = 2 }
-             #It isn't really known who actually ruled in this period. For simplicity sake we assume it was Werner
 
+            #It isn't really known who actually ruled in this period. For simplicity sake we assume it was Werner
             regnal_numbers = {
                Werner = 3
                Siegfried = 2

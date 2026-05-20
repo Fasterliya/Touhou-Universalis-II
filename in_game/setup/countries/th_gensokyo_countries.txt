@@ -1,333 +1,539 @@
 ﻿#红魔馆
 T00 = {
-	color = rgb { 240 47 47 }
-
+	color = rgb { 191 54 54 }
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #琪露利亚
 T01 = {
 	color = rgb { 166 212 237 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #大妖精
 T02 = {
 	color = rgb { 88 214 126 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #博丽
 T04 = {
-	color = rgb { 214 90 16 }
-
+	color = rgb { 240 47 47 }
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 
 #迷途之家
 T05 = {
 	color = rgb { 152 82 214 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #三妖精
 T06 = {
 	color = rgb { 214 129 214 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #迎春花小径
 T07 = {
 	color = rgb { 255 255 218 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #人偶之森
 T08 = {
 	color = rgb { 255 254 246 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #雾雨之森
 T09 = {
 	color = rgb { 151 227 89 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #三头犬之林
 T10 = {
 	color = rgb { 203 222 227 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #夜雀食堂
 T11 = {
 	color = rgb { 212 84 152 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #萤火之森
 T12 = {
 	color = rgb { 212 224 141 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #后户之国
 T13 = {
 	color = rgb { 135 59 61 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #守矢
 T14 = {
 	color = rgb { 114 199 84 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #妖怪之森
 T15 = {
 	color = rgb { 33 199 40 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #宵暗之森
 T16 = {
 	color = rgb { 70 73 74 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #丰穰之祠
 T17 = {
 	color = rgb { 255 194 107 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #天狗
 T18 = {
 	color = rgb { 89 73 73 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #山佬
 T19 = {
 	color = rgb { 160 214 102 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #地灵殿
 T20 = {
 	color = rgb { 178 237 221 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #幻想风穴
 T21 = {
 	color = rgb { 237 214 135 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #水桥
 T22 = {
 	color = rgb { 107 237 149 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #旧都
 T23 = {
 	color = rgb { 199 175 135 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #偶像之境
 T24 = {
-	color = rgb { 214 90 16 }
-
+	color = rgb { 144 227 219 }
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #彼岸
 T25 = {
 	color = rgb { 247 32 238 }
 	# color = rgb { 113 114 199 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #河童
 T26 = {
 	color = rgb { 56 158 70 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #山童
 T27 = {
 	color = rgb { 43 122 54 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #驹草赌场
 T28 = {
 	color = rgb { 181 92 201 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 
 #永恒花园
 T29 = {
 	color = rgb { 78 201 187 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
-
+	
 	difficulty = 1
 }
 #普利兹姆莉巴
 T30 = {
 	color = rgb { 92 155 158 }
-
+	
 	culture_definition = th_vampire_culture
 	religion_definition = catholic
-
+	
 	description_category = diplomatic
+	
+	difficulty = 1
+}
+#人间之里
+T03 = {
+	color = rgb { 255 183 58 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = diplomatic
+	difficulty = 1
+}
 
+#冥界
+T31 = {
+	color = rgb { 142 135 255 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 2
+}
+
+#命莲寺
+T32 = {
+	color = rgb { 202 177 255 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#宝塔禅林
+T33 = {
+	color = rgb { 255 122 25 }
+	culture_definition = th_vampire_culture
+	religion_definition = islamic
+	description_category = diplomatic
+	difficulty = 3
+}
+
+#寻龙门
+T34 = {
+	color = rgb { 172 197 219 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 2
+}
+
+#秘境
+T35 = {
+	color = rgb { 107 206 219 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#小伞铁匠铺
+T36 = {
+	color = rgb { 8 184 29 }
+	culture_definition = th_vampire_culture
+	religion_definition = islamic
+	description_category = diplomatic
+	difficulty = 2
+}
+
+#鬼杰组
+T37 = {
+	color = rgb { 253 255 40 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 3
+}
+
+#劲牙组
+T38 = {
+	color = rgb { 84 94 53 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#刚欲同盟
+T39 = {
+	color = rgb { 161 45 47 }
+	culture_definition = th_vampire_culture
+	religion_definition = islamic
+	description_category = diplomatic
+	difficulty = 2
+}
+
+#孑然岸滨
+T40 = {
+	color = rgb { 99 147 222 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 3
+}
+
+#水子石滩
+T41 = {
+	color = rgb { 221 182 247 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#牛鬼河原
+T42 = {
+	color = rgb { 201 175 147 }
+	culture_definition = th_vampire_culture
+	religion_definition = islamic
+	description_category = diplomatic
+	difficulty = 2
+}
+
+#三途河
+T43 = {
+	color = rgb { 115 132 201 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 3
+}
+
+#涡轮地狱
+T44 = {
+	color = rgb { 171 80 82 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#核热地狱
+T45 = {
+	color = rgb { 51 122 92 }
+	culture_definition = th_vampire_culture
+	religion_definition = islamic
+	description_category = diplomatic
+	difficulty = 2
+}
+
+#地底井
+T46 = {
+	color = rgb { 30 122 110 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 3
+}
+
+#辉针城
+T47 = {
+	color = rgb { 217 161 81 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#九十九组
+T48 = {
+	color = rgb { 207 161 217 }
+	culture_definition = th_vampire_culture
+	religion_definition = islamic
+	description_category = diplomatic
+	difficulty = 2
+}
+
+#柳下运河
+T49 = {
+	color = rgb { 38 153 140 }
+	culture_definition = th_vampire_culture
+	religion_definition = catholic
+	description_category = military
+	difficulty = 3
+}
+
+#狼人竹林
+T50 = {
+	color = rgb { 153 118 136 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#仙界
+T51 = {
+	color = rgb { 227 225 190 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
+	difficulty = 1
+}
+
+#心绮楼
+T52 = {
+	color = rgb { 227 112 225 }
+	culture_definition = th_vampire_culture
+	religion_definition = orthodox
+	description_category = economic
 	difficulty = 1
 }
