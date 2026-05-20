@@ -236,10 +236,10 @@ th_cannot_entry_mountain2 = { topography = mountain_wasteland climate = oceanic 
 th_cannot_entry_mountain3 = { topography = mountain_wasteland vegetation = forest climate = oceanic }
 th_cannot_entry_mountain4 = { topography = mountain_wasteland climate = continental }
 th_cannot_entry_mountain5 = { topography = wetlands_wasteland climate = continental }
-th_cannot_entry_mountain6 = { topography = mountain_wasteland climate = continental }
+th_cannot_entry_mountain6 = { topography = mountain_wasteland vegetation = forest climate = continental }
 th_cannot_entry_mountain7 = { topography = mountain_wasteland vegetation = desert climate = continental }
-th_cannot_entry_mountain8 = { topography = mountain_wasteland climate = continental }
-th_cannot_entry_mountain9 = { topography = mountain_wasteland climate = continental }
+th_cannot_entry_mountain8 = { topography = mountain_wasteland vegetation = forest climate = continental }
+th_cannot_entry_mountain9 = { topography = mountain_wasteland vegetation = forest climate = continental }
 th_cannot_entry_mountain10 = { topography = mountain_wasteland vegetation = forest climate = oceanic }
 th_cannot_entry_mountain11 = { topography = mountain_wasteland vegetation = farmland climate = oceanic }
 th_cannot_entry_mountain12 = { topography = mountains vegetation = sparse climate = continental }
@@ -913,9 +913,9 @@ th_mokuzai_tsubo_ba = { topography = flatland vegetation = farmland climate = oc
 #村落树林
 #村落树林
 th_nishi_odori = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_ryujin_sama_sekizou = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_ryujin_sama_sekizou = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_seiran_ya = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_suzuko_ya = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_suzuko_ya = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_nishi_mi_ban = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_satoyama_no_mori = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_saikumachi_dori = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -945,13 +945,17 @@ th_asobi_niwa = { topography = flatland vegetation = farmland climate = oceanic 
 #村落远郊
 #村落远郊
 #村落远郊
-th_village_outskirts = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_west_slope_wheat_field = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#村落远郊
+#村落远郊
+#村落远郊
+#村落远郊
+th_village_outskirts = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_west_slope_wheat_field = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_east_fence_vegetable_garden = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_watermill_mill = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_watermill_mill = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_grain_drying_field = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cattle_grazing_slope = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_boundary_stone_road = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cattle_grazing_slope = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_boundary_stone_road = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #小伞铁匠铺
 #小伞铁匠铺
 #小伞铁匠铺
@@ -1164,9 +1168,17 @@ th_lykaion_mountain = { topography = flatland vegetation = forest climate = ocea
 #排练场地
 #排练场地
 #排练场地
-th_triangular_prism_plain = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#排练场地
+#排练场地
+#排练场地
+#排练场地
+#排练场地
+#排练场地
+#排练场地
+#排练场地
+th_triangular_prism_plain = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_french_horn_meander = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_violoncello_embankment = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_violoncello_embankment = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_synthesizer_avenue = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #演奏场地
 #演奏场地
@@ -1476,53 +1488,77 @@ th_dankyu_kyuuryou = { topography = flatland vegetation = woods climate = oceani
 #天空的花之都
 ###迷途竹林
 #天空的花之都
-th_outside_of_the_border_of_the_life_and_death = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+###迷途竹林
+#天空的花之都
+###迷途竹林
+#天空的花之都
+###迷途竹林
+#天空的花之都
+###迷途竹林
+#天空的花之都
+th_outside_of_the_border_of_the_life_and_death = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_poltergeists_lounge = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_upper_level_of_flower_city = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lower_level_of_flower_city = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_unverified_sakura_border = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_upper_level_of_flower_city = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lower_level_of_flower_city = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_unverified_sakura_border = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #迷途者庇护所
 #迷途者庇护所
 #迷途者庇护所
 #迷途者庇护所
 th_shelter_for_the_lost = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bamboo_forest_garrison = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hidden_youseis_pool = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bamboo_forest_garrison = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hidden_youseis_pool = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_marked_exit_1 = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lost_sanctuary_kikan_shourou = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lost_sanctuary_kikan_shourou = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #藤原邸
 #藤原邸
 #藤原邸
 #藤原邸
-th_huziwara_mansion = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_straw_fence = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#藤原邸
+#藤原邸
+#藤原邸
+#藤原邸
+th_huziwara_mansion = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_straw_fence = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_huziwara_traning_house = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bamboo_forest_ninja_warehouse = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_huziwara_chicken_farm = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bamboo_forest_ninja_warehouse = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_huziwara_chicken_farm = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #藤原港
 #藤原港
 #藤原港
 #藤原港
-th_huziwara_port = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_marked_exit_2 = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#藤原港
+#藤原港
+#藤原港
+#藤原港
+th_huziwara_port = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_marked_exit_2 = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_mokous_grill = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_inextinguishable_lantern_path = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #竹林沙场
 #竹林沙场
 #竹林沙场
 #竹林沙场
-th_burned_bamboo_forest = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_buried_jade_bamboo_forest = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_broken_diamon_bamboo_forest = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_horai_bamboo_forest = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#竹林沙场
+#竹林沙场
+#竹林沙场
+#竹林沙场
+th_burned_bamboo_forest = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_buried_jade_bamboo_forest = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_broken_diamon_bamboo_forest = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_horai_bamboo_forest = { topography = flatland vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #有情人秘所
 #有情人秘所
 #有情人秘所
 #有情人秘所
-th_kaguya_hideout = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#有情人秘所
+#有情人秘所
+#有情人秘所
+#有情人秘所
+th_kaguya_hideout = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_keine_hideout = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sumireko_hideout = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_secret_path_of_princess = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_secret_path_of_princess = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #永琳的药房
 #永琳的药房
 #永琳的药房
@@ -1535,71 +1571,103 @@ th_horai_pharmacy = { topography = flatland vegetation = woods climate = oceanic
 #茂密竹林
 #茂密竹林
 #茂密竹林
-th_road_to_village = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_marked_entrance_1 = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_night_sparrow_house = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_sparrow_wine_source = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dense_bamboo_forest = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#茂密竹林
+#茂密竹林
+#茂密竹林
+#茂密竹林
+th_road_to_village = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_marked_entrance_1 = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_night_sparrow_house = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_sparrow_wine_source = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dense_bamboo_forest = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #帝的兔子洞
 #帝的兔子洞
 #帝的兔子洞
 #帝的兔子洞
-th_tewis_rabbit_hole = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_rabbit_beauty_salon = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_rabbit_trap_school = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cace_of_caerbannog = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#帝的兔子洞
+#帝的兔子洞
+#帝的兔子洞
+#帝的兔子洞
+th_tewis_rabbit_hole = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_rabbit_beauty_salon = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_rabbit_trap_school = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cace_of_caerbannog = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #无尽长廊
 #无尽长廊
 #无尽长廊
 #无尽长廊
-th_endless_corridor = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#无尽长廊
+#无尽长廊
+#无尽长廊
+#无尽长廊
+th_endless_corridor = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_endless_byobu = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_room_of_night_luminous_pear = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_room_of_night_luminous_pear = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_fake_kinkakuji = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_fake_ginkakuji = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_fake_ginkakuji = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #草药园圃
 #草药园圃
 #草药园圃
 #草药园圃
-th_rabbit_farm = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#草药园圃
+#草药园圃
+#草药园圃
+#草药园圃
+th_rabbit_farm = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_drugged_mochi_factory = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_herb_garden = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lunar_rabbit_kolkhoz = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lunar_rabbit_kolkhoz = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_herb_garden_doka_hatake = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #兔子窟
 #兔子窟
 #兔子窟
 #兔子窟
-th_rabbit_port = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#兔子窟
+#兔子窟
+#兔子窟
+#兔子窟
+th_rabbit_port = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_rabbit_wonderland = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_rabbit_assembly_hall = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_youkai_rabbit_village = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_rabbit_assembly_hall = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_youkai_rabbit_village = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_reisens_house = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #永远亭
 #永远亭
 #永远亭
 #永远亭
-th_kaguyas_room = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_game_console_collection = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_courtyard_for_product_elixir = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#永远亭
+#永远亭
+#永远亭
+#永远亭
+th_kaguyas_room = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_game_console_collection = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_courtyard_for_product_elixir = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moon_viewing_terrance = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_eirins_clinic = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_eirins_clinic = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #月兔收容所
 #月兔收容所
 #月兔收容所
 #月兔收容所
-th_lunar_rabbit_labor_camp = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lunar_rabbit_detention_center = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lunar_rabbit_collective_canteen = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_mangengasaki_port = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#月兔收容所
+#月兔收容所
+#月兔收容所
+#月兔收容所
+th_lunar_rabbit_labor_camp = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lunar_rabbit_detention_center = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lunar_rabbit_collective_canteen = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_mangengasaki_port = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #竹林岸浜
 #竹林岸浜
 #竹林岸浜
 #竹林岸浜
-th_lunar_port = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#竹林岸浜
+#竹林岸浜
+#竹林岸浜
+#竹林岸浜
+th_lunar_port = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_panda_habitat = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_marked_entrance_2 = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_sunflower_outpost = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_marked_entrance_2 = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_sunflower_outpost = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 ###天界地区
 #天界
 ###天界地区
@@ -2000,17 +2068,29 @@ th_perses_highland = { topography = flatland vegetation = woods climate = oceani
 #黄瓜园圃
 #玄武之泽地区&河童之国
 #黄瓜园圃
-th_cucumenber_garden = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_breeding_base = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_water_supply_system = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cucumenber_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_nursery_luminous_greenhouse = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#玄武之泽地区&河童之国
+#黄瓜园圃
+#玄武之泽地区&河童之国
+#黄瓜园圃
+#玄武之泽地区&河童之国
+#黄瓜园圃
+#玄武之泽地区&河童之国
+#黄瓜园圃
+th_cucumenber_garden = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_breeding_base = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_water_supply_system = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cucumenber_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_nursery_luminous_greenhouse = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #河童海滩
 #河童海滩
 #河童海滩
 #河童海滩
-th_kappa_beach = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kappa_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#河童海滩
+#河童海滩
+#河童海滩
+#河童海滩
+th_kappa_beach = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kappa_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_basalt_rock_beach = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_diving_paradise = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #修补匠之村
@@ -2018,60 +2098,80 @@ th_diving_paradise = { topography = flatland vegetation = woods climate = contin
 #修补匠之村
 #修补匠之村
 th_craftsman_hall = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_goblin_shop = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_area_13 = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_goblin_shop = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_area_13 = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_gear_automatic_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #秘密工坊
 #秘密工坊
 #秘密工坊
 #秘密工坊
-th_waterproof_lab = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_under_water_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#秘密工坊
+#秘密工坊
+#秘密工坊
+#秘密工坊
+th_waterproof_lab = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_under_water_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_mermaid_village = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_riverbed_habitat = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_treasure_bay = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_treasure_bay = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #河童都会
 #河童都会
 #河童都会
 #河童都会
-th_kappa_capital = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_smart_first_city = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#河童都会
+#河童都会
+#河童都会
+#河童都会
+th_kappa_capital = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_smart_first_city = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sponge_second_city = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_nitoris_mansion = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_nitoris_mansion = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_river_network_hub = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #河童溪谷
 #河童溪谷
 #河童溪谷
 #河童溪谷
-th_kappa_valley = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_flooding_lowland = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_mangroove_swamp = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kappas_dam = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#河童溪谷
+#河童溪谷
+#河童溪谷
+#河童溪谷
+th_kappa_valley = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_flooding_lowland = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_mangroove_swamp = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kappas_dam = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_kappa_ravine_watermill_workshops = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_ravine_dish_stone_shoal = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_ravine_dish_stone_shoal = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #玄武涧
 #玄武涧
 #玄武涧
 #玄武涧
-th_genbu_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_genbu_ravine = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#玄武涧
+#玄武涧
+#玄武涧
+#玄武涧
+th_genbu_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_genbu_ravine = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_scale_hills = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_genbu_habitat = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_wealth_shrine = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_genbu_habitat = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_wealth_shrine = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #河童墟市
 #河童墟市
 #河童墟市
 #河童墟市
 th_abandoned_workshop = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_wall_of_veto = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bunker_buster_crater = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_implosion_bomb_ruins = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_wall_of_veto = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bunker_buster_crater = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_implosion_bomb_ruins = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_acid_river = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #发明展厅
 #发明展厅
 #发明展厅
 #发明展厅
-th_invention_exhibition_hall = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#发明展厅
+#发明展厅
+#发明展厅
+#发明展厅
+th_invention_exhibition_hall = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_yamawaro_railway = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_high_tech_developement_zone = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_takanes_mansion = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -2081,72 +2181,96 @@ th_invention_exhibition_hall_practical = { topography = flatland vegetation = wo
 #河童试验田
 #河童试验田
 th_twin_sunflower_field = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_supremium_field = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_gourmaryllis_field = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_top_secret_cucumenber_field = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_supremium_field = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_gourmaryllis_field = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_top_secret_cucumenber_field = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_withering_hellebore_main = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kappa_test_fields_river_hub = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kappa_test_fields_river_hub = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #秘天崖
 #秘天崖
 #秘天崖
 #秘天崖
-th_secret_haven_cliff = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_yamawaro_barracks = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cliff_of_dispair = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#秘天崖
+#秘天崖
+#秘天崖
+#秘天崖
+th_secret_haven_cliff = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_yamawaro_barracks = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cliff_of_dispair = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_wargame_land = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #伪天棚
 #伪天棚
 #伪天棚
 #伪天棚
-th_false_heaven_shelf = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_mountain_foot_no_go_zone = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_sannyo_casino = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#伪天棚
+#伪天棚
+#伪天棚
+#伪天棚
+th_false_heaven_shelf = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_mountain_foot_no_go_zone = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_sannyo_casino = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_secret_green_cliff = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_smoke_and_snow_tundra_main = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_snow_tundra_rime_forest = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_smoke_and_snow_tundra_main = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_snow_tundra_rime_forest = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #产业废墟
 #产业废墟
 #产业废墟
 #产业废墟
-th_infected_industry_area = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_water_gel_explosive_forest = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_break_ridgepole = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_yamawaro_hill_side = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#产业废墟
+#产业废墟
+#产业废墟
+#产业废墟
+th_infected_industry_area = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_water_gel_explosive_forest = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_break_ridgepole = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_yamawaro_hill_side = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #辉针城
 #辉针城
 #辉针城
 #辉针城
 th_shining_needle_castle_tenshukaku = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_private_inner_chamber = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_private_inner_chamber = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_shining_needle_castle_main_bailey = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_shining_needle_castle_ground_hall = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_uchide_no_kozuchi_room = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_uchide_no_kozuchi_room = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#辉针城前庭
+#辉针城前庭
+#辉针城前庭
+#辉针城前庭
 #辉针城前庭
 #辉针城前庭
 #辉针城前庭
 #辉针城前庭
 th_shining_needle_castle_second_bailey = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shining_needle_castle_third_bailey = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_fusoshin_swamp = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shining_needle_castle_watch_tower = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shining_needle_castle_third_bailey = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_fusoshin_swamp = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shining_needle_castle_watch_tower = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_shining_needle_castle_stone_wall = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #小人族藏宝室
 #小人族藏宝室
 #小人族藏宝室
 #小人族藏宝室
-th_mithril_gate = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_useless_divice_room = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dusty_srsenal = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#小人族藏宝室
+#小人族藏宝室
+#小人族藏宝室
+#小人族藏宝室
+th_mithril_gate = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_useless_divice_room = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dusty_srsenal = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_empty_chamber = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_diminutive_treasure_vault_library = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_diminutive_treasure_vault_library = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #闪光小径
 #闪光小径
 #闪光小径
 #闪光小径
-th_shining_path = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#闪光小径
+#闪光小径
+#闪光小径
+#闪光小径
+th_shining_path = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_levitation_garden = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_magical_thundercloud = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shaking_plain = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_magical_thundercloud = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shaking_plain = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 ###妖怪之山区域
 #封兽降临地
 ###妖怪之山区域
@@ -2417,8 +2541,16 @@ th_take_oyama_main = { topography = mountains vegetation = sparse climate = cont
 #南之二岳
 #南之二岳
 #南之二岳
-th_hikosan_main = { topography = mountains vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_omine_san_main = { topography = mountains vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#南之二岳
+#南之二岳
+#南之二岳
+#南之二岳
+#南之二岳
+#南之二岳
+#南之二岳
+#南之二岳
+th_hikosan_main = { topography = mountains vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_omine_san_main = { topography = mountains vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_southern_second_peak_pass = { topography = mountains vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_weeping_wind_canyon = { topography = mountains vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_omine_san_ancient_path = { topography = mountains vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -2431,31 +2563,47 @@ th_omine_san_guardian_forest = { topography = mountains vegetation = sparse clim
 #守矢屯营
 ###守矢区域
 #守矢屯营
-th_moriya_garrison = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hell_outpost = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_wind_goddess_pass = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+###守矢区域
+#守矢屯营
+###守矢区域
+#守矢屯营
+###守矢区域
+#守矢屯营
+###守矢区域
+#守矢屯营
+th_moriya_garrison = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hell_outpost = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_wind_goddess_pass = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_idol_ferry_crossing = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hell_wind_warrier = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hell_wind_warrier = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #守矢岸浜
 #守矢岸浜
 #守矢岸浜
 #守矢岸浜
-th_kochiya_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#守矢岸浜
+#守矢岸浜
+#守矢岸浜
+#守矢岸浜
+th_kochiya_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moriya_estuary = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_land_of_frogs = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_short_lived_forest = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_short_lived_forest = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moriya_coast_ashi_wara = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #守矢府邸
 #守矢府邸
 #守矢府邸
 #守矢府邸
-th_moriya_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_moriya_holy_mansion = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kochiya_mansion = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_mountain_goddess_loved_hills = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_moriya_divine_sake_cellar = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_divine_resonance_pool = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kamikaze_island_main = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#守矢府邸
+#守矢府邸
+#守矢府邸
+#守矢府邸
+th_moriya_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_moriya_holy_mansion = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kochiya_mansion = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_mountain_goddess_loved_hills = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_moriya_divine_sake_cellar = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_divine_resonance_pool = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kamikaze_island_main = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #大蛤蟆之池
 #大蛤蟆之池
 #大蛤蟆之池
@@ -2463,89 +2611,121 @@ th_kamikaze_island_main = { topography = flatland vegetation = woods climate = c
 th_big_toad_lake = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_kappa_major_bridge = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_kappa_station = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_frog_port = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_frog_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_great_toad_pond_bog = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #守矢神社
 #守矢神社
 #守矢神社
 #守矢神社
-th_moriya_shrine_honden = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#守矢神社
+#守矢神社
+#守矢神社
+#守矢神社
+th_moriya_shrine_honden = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moriya_shrine_haiden = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moriya_shrine_shamushu = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moriya_shrine_temizuya = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moriya_shrine_road = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_moriya_shrine_station = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_moriya_shrine_station = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #幻草原
 #幻草原
 #幻草原
 #幻草原
-th_eastern_phantom_meadow = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#幻草原
+#幻草原
+#幻草原
+#幻草原
+th_eastern_phantom_meadow = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_weastern_phantom_meadow = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_ghost_horde = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_breeze_hills = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_still_wasteland = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_ghost_horde = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_breeze_hills = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_still_wasteland = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #风神之湖
 #风神之湖
 #风神之湖
 #风神之湖
-th_lake_of_wind_god = { topography = lakes vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#风神之湖
+#风神之湖
+#风神之湖
+#风神之湖
+th_lake_of_wind_god = { topography = lakes vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_zealot_billage = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hillside_of_qian = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_worship_of_onbashira = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_miracle_idol_office = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hillside_of_qian = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_worship_of_onbashira = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_miracle_idol_office = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_land_of_seven_holy_stones_and_seven_holy_trees = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lake_kamikaze_himorogi = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lake_kamikaze_windwatch = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lake_of_the_winds_senpu = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lake_kamikaze_himorogi = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lake_kamikaze_windwatch = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lake_of_the_winds_senpu = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #守矢索道
 #守矢索道
 #守矢索道
 #守矢索道
-th_cableway_start = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cableway_tengu_line = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cableway_kappa_line = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_cableway_hell_new_line = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_tornado_maple_forest = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#守矢索道
+#守矢索道
+#守矢索道
+#守矢索道
+th_cableway_start = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cableway_tengu_line = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cableway_kappa_line = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_cableway_hell_new_line = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_tornado_maple_forest = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #御柱的墓场
 #御柱的墓场
 #御柱的墓场
 #御柱的墓场
-th_cemetery_of_onbashira = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_prayer_hills = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#御柱的墓场
+#御柱的墓场
+#御柱的墓场
+#御柱的墓场
+th_cemetery_of_onbashira = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_prayer_hills = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_gold_pieces_riber_bend = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_border_market = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shattered_gold_customs = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_border_market = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shattered_gold_customs = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_shattered_gold_shallows = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_prayer_hill_terrace = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #大地之谷
 #大地之谷
 #大地之谷
 #大地之谷
+#大地之谷
+#大地之谷
+#大地之谷
+#大地之谷
 th_valley_of_earth = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_wind_castle = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_snakes_hole = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_border_of_faith = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_wind_castle = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_snakes_hole = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_border_of_faith = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_wind_god_valley_tengu = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_god_valley_meditation = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #迷雾酒肆
 #迷雾酒肆
 #迷雾酒肆
 #迷雾酒肆
-th_fog_pub = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_miracle_cellaring = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_terraced_fields = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_beautuful_fountainhead = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#迷雾酒肆
+#迷雾酒肆
+#迷雾酒肆
+#迷雾酒肆
+th_fog_pub = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_miracle_cellaring = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_terraced_fields = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_beautuful_fountainhead = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_green_gate = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_misty_sake_den_kappa = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #神风之谷
 #神风之谷
 #神风之谷
 #神风之谷
-th_holy_wind_valley = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_gods_hoad = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_red_frogs_tomb = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hill_of_wind_and_rain = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_divine_wind_hanging_meadow = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#神风之谷
+#神风之谷
+#神风之谷
+#神风之谷
+th_holy_wind_valley = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_gods_hoad = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_red_frogs_tomb = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hill_of_wind_and_rain = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_divine_wind_hanging_meadow = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 ###畜生界大区
 #
 #未知之扉
@@ -2558,159 +2738,223 @@ th_divine_wind_hanging_meadow = { topography = flatland vegetation = woods clima
 ###畜生界大区
 #
 #未知之扉
-th_gate_of_inknown = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_primate_barrier = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+###畜生界大区
+#
+#未知之扉
+###畜生界大区
+#
+#未知之扉
+###畜生界大区
+#
+#未知之扉
+###畜生界大区
+#
+#未知之扉
+th_gate_of_inknown = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_primate_barrier = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_wall_of_hopoless = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hani_depression = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniwa_doll_sentry_array = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hani_depression = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniwa_doll_sentry_array = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #灵长园
 #灵长园
 #灵长园
 #灵长园
-th_primate_spirit_garden = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniyasushin_shrine = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hope_altar = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniwa_port = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniwa_shaping_palace = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_peninsula_spine_avenue = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_idol_prayer_steps = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_primate_deepwater_port = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_human_preserve_idol_realm = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_central_processing_terminal = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_clay_island = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_unfinished_colossus_island = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#灵长园
+#灵长园
+#灵长园
+#灵长园
+th_primate_spirit_garden = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniyasushin_shrine = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hope_altar = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniwa_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniwa_shaping_palace = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_peninsula_spine_avenue = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_idol_prayer_steps = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_primate_deepwater_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_human_preserve_idol_realm = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_central_processing_terminal = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_clay_island = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_unfinished_colossus_island = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #灵长类之境
 #灵长类之境
 #灵长类之境
 #灵长类之境
-th_clay_bay = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_village_of_isolate = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_human_spirit_village = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_withered_field = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_silent_fishing_village = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_clay_outpost = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_tool_graveyard = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#灵长类之境
+#灵长类之境
+#灵长类之境
+#灵长类之境
+th_clay_bay = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_village_of_isolate = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_human_spirit_village = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_withered_field = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_silent_fishing_village = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_clay_outpost = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_tool_graveyard = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #野兽大都会
 #野兽大都会
 #野兽大都会
 #野兽大都会
-th_beast_downtown = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shimokita = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_primate_lower_city = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniwa_precinct = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_arc_light_emitter = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shaping_bureau = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_human_doll_citizen_apartments = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#野兽大都会
+#野兽大都会
+#野兽大都会
+#野兽大都会
+th_beast_downtown = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shimokita = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_primate_lower_city = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniwa_precinct = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_arc_light_emitter = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shaping_bureau = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_human_doll_citizen_apartments = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#水獭灵岗楼
+#水獭灵岗楼
+#水獭灵岗楼
+#水獭灵岗楼
 #水獭灵岗楼
 #水獭灵岗楼
 #水獭灵岗楼
 #水獭灵岗楼
 th_otter_spirit_watchtower = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_castor_clan = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_red_panda_cave = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_iron_branch_dam = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_red_panda_cave = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_iron_branch_dam = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_kike_secret_way = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_pangolin_bunker = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_albatross_storm_nest = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_pangolin_bunker = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_albatross_storm_nest = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #人灵市镇
 #人灵市镇
 #人灵市镇
 #人灵市镇
-th_primate_spirit_township = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_delusion_prosperity = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_tenkyuu_branch_office = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_primate_meander = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bloody_turbulence = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#人灵市镇
+#人灵市镇
+#人灵市镇
+#人灵市镇
+th_primate_spirit_township = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_delusion_prosperity = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_tenkyuu_branch_office = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_primate_meander = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bloody_turbulence = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_st_haniwa_mountain = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_penguin_ice_outpost = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #野狼灵竞技场
 #野狼灵竞技场
 #野狼灵竞技场
 #野狼灵竞技场
-th_haniwa_basin = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#野狼灵竞技场
+#野狼灵竞技场
+#野狼灵竞技场
+#野狼灵竞技场
+th_haniwa_basin = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_old_village_of_wolf_spirit = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_wolf_spirit_arena = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_wild_plain = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_wolf_spirit_arena = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_wild_plain = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_limitation_hills = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_scab = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #迷失魂灵庇护所
 #迷失魂灵庇护所
 #迷失魂灵庇护所
 #迷失魂灵庇护所
-th_lost_souls_shelter = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_tagnation_port = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_skeleton_plateau = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_gaze_westward_hillock = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#迷失魂灵庇护所
+#迷失魂灵庇护所
+#迷失魂灵庇护所
+#迷失魂灵庇护所
+th_lost_souls_shelter = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_tagnation_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_skeleton_plateau = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_gaze_westward_hillock = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #魂之壶
 #魂之壶
 #魂之壶
 #魂之壶
-th_atonement_lock = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_yamato_beach = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_marigold_confluence = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_pot_of_souls = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_prayer_differential_tower = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lepton_resonance_arc_stream = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#魂之壶
+#魂之壶
+#魂之壶
+#魂之壶
+th_atonement_lock = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_yamato_beach = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_marigold_confluence = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_pot_of_souls = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_prayer_differential_tower = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lepton_resonance_arc_stream = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #贪欲之渊
 #贪欲之渊
 #贪欲之渊
 #贪欲之渊
-th_dark_abyss = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_pot_of_greed = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_camp_of_artorias = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_burl_heart = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_greed_black_market = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_desire_tidal_flat = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dragon_crystal_main_island = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_sloth_lagoon_island = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#贪欲之渊
+#贪欲之渊
+#贪欲之渊
+#贪欲之渊
+th_dark_abyss = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_pot_of_greed = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_camp_of_artorias = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_burl_heart = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_greed_black_market = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_desire_tidal_flat = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dragon_crystal_main_island = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_sloth_lagoon_island = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #奈河沿岸
 #奈河沿岸
 #奈河沿岸
 #奈河沿岸
-th_naihe_bridge = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_well_of_frogotten = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_last_chance = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_baos_post_station = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_utopia_reflection = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_reincarnation_whirlpool_palace = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#奈河沿岸
+#奈河沿岸
+#奈河沿岸
+#奈河沿岸
+th_naihe_bridge = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_well_of_frogotten = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_last_chance = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_baos_post_station = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_utopia_reflection = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_reincarnation_whirlpool_palace = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #亡灵泥沼
 #亡灵泥沼
 #亡灵泥沼
 #亡灵泥沼
-th_dead_swamp = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_forest_of_hunt = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_idol_bay = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_black_sand_beach = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#亡灵泥沼
+#亡灵泥沼
+#亡灵泥沼
+#亡灵泥沼
+th_dead_swamp = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_forest_of_hunt = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_idol_bay = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_black_sand_beach = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #埴轮工厂
 #埴轮工厂
 #埴轮工厂
 #埴轮工厂
-th_haniwa_factory = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniwa_barracks = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_haniwa_subrbs = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_idol_frontier = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dead_zone = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dregs_shantytown = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_faith_clay_pool_island = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_loyalty_maze_island = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_anvil_root_bridge = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#埴轮工厂
+#埴轮工厂
+#埴轮工厂
+#埴轮工厂
+th_haniwa_factory = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniwa_barracks = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_haniwa_subrbs = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_idol_frontier = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dead_zone = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dregs_shantytown = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_faith_clay_pool_island = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_loyalty_maze_island = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_anvil_root_bridge = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #叫唤地狱
 #叫唤地狱
 #叫唤地狱
 #叫唤地狱
-th_screaming_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_scorching_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_avici_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_deer_hunting_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#叫唤地狱
+#叫唤地狱
+#叫唤地狱
+#叫唤地狱
+th_screaming_hell = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_scorching_hell = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_avici_hell = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_deer_hunting_hell = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #虚与实的境界
 #虚与实的境界
 #虚与实的境界
 #虚与实的境界
 th_border_of_fake_and_reality = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_reviving_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kalasutra_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_samghata_hell = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_concept_collapse_abyss = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kalasutra_hell = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_samghata_hell = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_concept_collapse_abyss = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_bee_hive_array = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #地狱边境
 #地狱边境
@@ -2720,16 +2964,16 @@ th_throne_of_caelestinus_V = { topography = flatland vegetation = desert climate
 th_abandoned_baby_park = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_cobble_riverbank = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_stone_stacking_ring = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hell_windless_plain = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hell_path_of_confusion = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hell_windless_plain = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hell_path_of_confusion = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #畜生界之扉
 #畜生界之扉
 #畜生界之扉
 #畜生界之扉
 th_pass_of_animal_realm = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kike_gang_skyscraper = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_yachies_mansion = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_gold_brance_wall = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kike_gang_skyscraper = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_yachies_mansion = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_gold_brance_wall = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_village_of_otters = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_underwater_cellar = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #嚎哭洞穴
@@ -2737,7 +2981,7 @@ th_underwater_cellar = { topography = flatland vegetation = desert climate = con
 #嚎哭洞穴
 #嚎哭洞穴
 th_crying_cave = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_interrogation_house = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_interrogation_house = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_betray_blade = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_biten_tree_house = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_spongilla_fragilis_garden = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -2745,54 +2989,70 @@ th_spongilla_fragilis_garden = { topography = flatland vegetation = desert clima
 #无明旷原
 #无明旷原
 #无明旷原
-th_no_live_wilderness = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_deadly_hillside = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_top_of_regression = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_strange_mine = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_echo_cavern = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_false_moon_dark = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#无明旷原
+#无明旷原
+#无明旷原
+#无明旷原
+th_no_live_wilderness = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_deadly_hillside = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_top_of_regression = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_strange_mine = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_echo_cavern = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_false_moon_dark = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #兽王园
 #兽王园
 #兽王园
 #兽王园
-th_beast_king_garden = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#兽王园
+#兽王园
+#兽王园
+#兽王园
+th_beast_king_garden = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_unfinished_land = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_relie_throne = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_nothing = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_oni_tavern = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_nothing = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_oni_tavern = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #中有之道
 #中有之道
 #中有之道
 #中有之道
-th_road_of_liminality = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_death_commercial_street = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_withered_flowers_garden = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_pretas_yelling = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#中有之道
+#中有之道
+#中有之道
+#中有之道
+th_road_of_liminality = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_death_commercial_street = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_withered_flowers_garden = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_pretas_yelling = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #再思之道
 #再思之道
 #再思之道
 #再思之道
 th_road_of_reconsideration = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_lycoris_field = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_ghost_queue = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_lycoris_field = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_ghost_queue = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_regret_echo_bridge = { topography = flatland vegetation = woods climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_pain_equivalence_scale = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_pain_equivalence_scale = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #畜生界
 #畜生界
 #畜生界
 #畜生界
 th_untamed_horse_grassland = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_beast_froniter = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_galloping_horese_avenue = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_galloping_horese_avenue = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_throne_of_reject = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #未定位的地狱
 #未定位的地狱
 #未定位的地狱
 #未定位的地狱
-th_chaos_storm = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_fear_of_oni = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_blood_wine_of_sinner = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_happyness_plantation = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#未定位的地狱
+#未定位的地狱
+#未定位的地狱
+#未定位的地狱
+th_chaos_storm = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_fear_of_oni = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_blood_wine_of_sinner = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_happyness_plantation = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #野兽灵之丘
 #野兽灵之丘
 #野兽灵之丘
@@ -2806,7 +3066,11 @@ th_coward_burrow = { topography = flatland vegetation = desert climate = contine
 #套索兽道
 #套索兽道
 #套索兽道
-th_lasso_beast_road = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#套索兽道
+#套索兽道
+#套索兽道
+#套索兽道
+th_lasso_beast_road = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_road_of_slavery = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_undead_settlement = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_ash_barren = { topography = flatland vegetation = desert climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -2909,7 +3173,7 @@ th_garden_of_the_sun = { topography = flatland vegetation = woods climate = ocea
 th_garden_of_the_sun_cottage = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_garden_of_the_sun_sundial = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_garden_of_the_sun_maze = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_garden_of_the_sun_corridor = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_garden_of_the_sun_corridor = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #日落原野
 #日落原野
 #日落原野
@@ -2921,7 +3185,7 @@ th_garden_of_the_sun_corridor = { topography = flatland vegetation = grasslands 
 th_sunset_plain_main = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sunset_plain_watchtower = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sunset_plain_lake = { topography = lakes vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_sunset_plain_grass_sea = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_sunset_plain_grass_sea = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sunset_plain_forest = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sunset_port = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_sunset_harbor_observatory = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -3322,11 +3586,11 @@ th_mononoke_machi = { topography = flatland vegetation = woods climate = mediter
 #魔界之扉
 #魔界之扉
 th_makai_world_gate_post = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_makai_saras_watch_post = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_gate_of_the_forgotten = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_makai_saras_watch_post = { topography = flatland vegetation = forest climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_gate_of_the_forgotten = { topography = flatland vegetation = forest climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_mana_nexus_ring_makai = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_makai_hole_vertical_street = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_makai_barrier_seam = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_makai_barrier_seam = { topography = flatland vegetation = forest climate = mediterranean religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #魔界秘境
 #魔界秘境
 #魔界秘境
@@ -3988,27 +4252,31 @@ th_springs_recovery_vip = { topography = flatland vegetation = forest climate = 
 #隐蔽之丘
 #隐蔽之丘
 th_old_hell_hidden_hill = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hill_den_stray = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hill_den_stray = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_hill_bazaar_rust = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_hill_den_stray_street = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #幻想风穴
 #幻想风穴
 #幻想风穴
 #幻想风穴
-th_kazaana_yamame_web = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#幻想风穴
+#幻想风穴
+#幻想风穴
+#幻想风穴
+th_kazaana_yamame_web = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_yamame_bridge_web = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_yamame_shaft_vent = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_yamame_shaft_vent = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_kazaana_hidden_eye = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_kazaana_webway = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_kazaana_webway = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #地底集镇
 #地底集镇
 #地底集镇
 #地底集镇
 th_hamlet_mine_fluorite = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dregs_tunnels_safe = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_settlement_labor_market = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dregs_tunnels_safe = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_settlement_labor_market = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_hamlet_earth_spirit = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_great_stalactite_market = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_great_stalactite_market = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #间歇泉小道
 #间歇泉小道
 #间歇泉小道
@@ -4036,15 +4304,19 @@ th_crystal_hum_sauna_cave = { topography = flatland vegetation = woods climate =
 th_old_hell_geyser_core = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_core_lake_boiling = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_core_boiler_abandoned = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_core_interface_power = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_core_interface_power = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #阻绝人迹之桥
 #阻绝人迹之桥
 #阻绝人迹之桥
 #阻绝人迹之桥
-th_rarely_trodden_bridge = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hell_bridge_cottage = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bridge_spring_envy = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bridge_bones_nameless = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#阻绝人迹之桥
+#阻绝人迹之桥
+#阻绝人迹之桥
+#阻绝人迹之桥
+th_rarely_trodden_bridge = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hell_bridge_cottage = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bridge_spring_envy = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bridge_bones_nameless = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #旧都西大街
 #旧都西大街
 #旧都西大街
@@ -4069,17 +4341,21 @@ th_sake_laden_wharf = { topography = plateau vegetation = grasslands climate = o
 #旧都北大街
 #旧都北大街
 #旧都北大街
-th_former_capital_northern_district = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_north_camp_ironanvil = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_north_zone_dormitory = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_oni_north_customs_gate = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#旧都北大街
+#旧都北大街
+#旧都北大街
+#旧都北大街
+th_former_capital_northern_district = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_north_camp_ironanvil = { topography = plateau vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_north_zone_dormitory = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_oni_north_customs_gate = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #鬼之町
 #鬼之町
 #鬼之町
 #鬼之町
 th_oni_quarters_street = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shuten_alley = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_suika_old_house = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shuten_alley = { topography = plateau vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_suika_old_house = { topography = plateau vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_hoshiguma_bar = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_phantom_lantern_alley = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_oni_harbor_location = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
@@ -4087,38 +4363,54 @@ th_oni_harbor_location = { topography = plateau vegetation = grasslands climate 
 #鬼之糟坊
 #鬼之糟坊
 #鬼之糟坊
-th_oni_brewery_core = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_fermentation_blood_pool = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_giant_gourd_aging_hall = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_yeast_wraith_garden = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_oni_drunken_sandbank_market = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#鬼之糟坊
+#鬼之糟坊
+#鬼之糟坊
+#鬼之糟坊
+th_oni_brewery_core = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_fermentation_blood_pool = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_giant_gourd_aging_hall = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_yeast_wraith_garden = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_oni_drunken_sandbank_market = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #鬼之擂台
 #鬼之擂台
 #鬼之擂台
 #鬼之擂台
-th_oni_arena_location = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_oni_colosseum_location = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_feast_hall_of_victors_and_vanquished = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_silent_bet_den = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_feral_beast_menagerie = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#鬼之擂台
+#鬼之擂台
+#鬼之擂台
+#鬼之擂台
+th_oni_arena_location = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_oni_colosseum_location = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_feast_hall_of_victors_and_vanquished = { topography = plateau vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_silent_bet_den = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_feral_beast_menagerie = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #地底的深道
 #地底的深道
 #地底的深道
 #地底的深道
-th_abyssal_tunnel_network = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bucket_suspension_chasm = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_bucket_suspension_room = { topography = mountains vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_tear_stalactite_forest = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#地底的深道
+#地底的深道
+#地底的深道
+#地底的深道
+th_abyssal_tunnel_network = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bucket_suspension_chasm = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_bucket_suspension_room = { topography = mountains vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_tear_stalactite_forest = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 #间歇泉泉眼
 #间歇泉泉眼
 #间歇泉泉眼
 #间歇泉泉眼
-th_geyser_field_surface = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_hell_terraced_springs = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_geothermal_vein_mine = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_dragon_breath_vent = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_steam_shroud_atoll = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_boiling_tide_channel_port = { topography = plateau vegetation = sparse climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+#间歇泉泉眼
+#间歇泉泉眼
+#间歇泉泉眼
+#间歇泉泉眼
+th_geyser_field_surface = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_hell_terraced_springs = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_geothermal_vein_mine = { topography = plateau vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_dragon_breath_vent = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_steam_shroud_atoll = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_boiling_tide_channel_port = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 ###仙界大区
 #神灵庙索道
 ###仙界大区
@@ -4270,14 +4562,14 @@ th_weeping_willow_promenade = { topography = flatland vegetation = grasslands cl
 th_washwomen_s_steps = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_moon_touched_clearing = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_bane_herb_garden = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_harp_string_valley = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_harp_string_valley = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_flute_bamboo_grove = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_timpani_hillocks = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_echo_chamber_cavern = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_fungal_lantern_gallery = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_shadow_stalkers_path = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_shade_loving_herb_beds = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
-th_fragrant_herb_arbor = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_shade_loving_herb_beds = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
+th_fragrant_herb_arbor = { topography = flatland vegetation = forest climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_main_hall_of_chaotic_wonders = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_margatroid_theater = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_diner_pantry = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
