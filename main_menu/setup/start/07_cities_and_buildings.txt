@@ -1022,7 +1022,6 @@ locations = {
    benevento = { rank = town town_setup = italian_town }
    savona = { rank = town town_setup = italian_coastal_town }
    bungu_kongo = { rank = town town_setup = east_african_town }
-   gensokyo = { rank = rural_settlement }
 }
 building_manager = {
    castle = { tag = SWE level = 1 location = stockholm }
@@ -3497,6 +3496,23 @@ building_manager = {
    stockade = { tag = AZF level = 1 location = as_suwaydirah }
    stockade = { tag = ZIB level = 1 location = madin_bani_sulaym }
    stockade = { tag = ZIB level = 1 location = al_ghrabah }
+   seat_of_cardinal = { tag = PAP level = 1 location = avignon }
+   seat_of_cardinal = { tag = PAP level = 1 location = rome }
+   seat_of_cardinal = { tag = PAP level = 1 location = tivoli }
+   seat_of_cardinal = { tag = PAP level = 1 location = palestrina }
+   seat_of_cardinal = { tag = PAP level = 1 location = velletri }
+   seat_of_cardinal = { tag = FRA level = 1 location = toulouse }
+   seat_of_cardinal = { tag = FRA level = 1 location = bazas }
+   seat_of_cardinal = { tag = FRA level = 1 location = lyon }
+   seat_of_cardinal = { tag = FRA level = 1 location = langres }
+   seat_of_cardinal = { tag = FRA level = 1 location = paris }
+   seat_of_cardinal = { tag = FRA level = 1 location = bourges }
+   seat_of_cardinal = { tag = NRB level = 1 location = narbonne }
+   seat_of_cardinal = { tag = AUX level = 1 location = auxerre }
+   seat_of_cardinal = { tag = NAP level = 1 location = manfredonia }
+   seat_of_cardinal = { tag = NAP level = 1 location = naples }
+   seat_of_cardinal = { tag = PRO level = 1 location = aix_en_provence }
+   seat_of_cardinal = { tag = CAS level = 1 location = cartagena }
    seat_of_cardinal = { tag = PAP level = 1 location = avignon }
    seat_of_cardinal = { tag = PAP level = 1 location = rome }
    seat_of_cardinal = { tag = PAP level = 1 location = tivoli }

@@ -1,4 +1,18 @@
 ﻿#技术提示-文化和文化的语言定义在这里
+
+#妖怪
+th_yokai_culture = {
+	language = acgv_touhou_eastern_dialect
+	color = rgb {214 82 255}
+	tags = { th_gensokyo_gfx }
+	opinions = {
+	}
+	culture_groups = {
+		th_gensokyo_culture_group
+	}
+}
+
+#吸血鬼
 th_vampire_culture = { 
 	language = acgv_touhou_eastern_dialect
 	color = rgb {255 128 0}
@@ -8,4 +22,1384 @@ th_vampire_culture = {
 	culture_groups = {
 		th_gensokyo_culture_group
 	}
+}
+
+#地狱妖精
+th_hell_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {211 6 251}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#光之妖精
+th_light_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {230 50 120}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#花妖精
+th_flower_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {121 204 5}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#季节妖精
+th_season_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {9 239 170}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#僵尸妖精
+th_zombie_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {96 5 38}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#树妖精
+th_tree_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {114 1 187}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#现象妖精
+th_phenomenon_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {145 230 64}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#叶妖精
+th_leaf_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {147 114 227}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#元素妖精
+th_elemental_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {120 57 3}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#半人半灵
+th_half_human_half_phantom_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {65 28 192}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#人鱼
+th_mermaid_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {204 59 94}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#兽人
+th_beastman_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {169 54 203}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#恶魔
+th_demon_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {164 221 49}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#天使
+th_angel_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {187 94 240}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#古笼火
+th_korobori_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {154 58 154}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#镜付丧
+th_mirror_tsukumogami_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {211 133 95}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#乐器妖
+th_instrument_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {79 62 78}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#铃彦姬
+th_suzuhime_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {175 32 73}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#面灵气
+th_menreiki_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {53 115 91}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#枪毛长
+th_spear_hair_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {157 162 56}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#伞妖
+th_umbrella_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {255 98 102}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#文车妖
+th_fuguruma_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {19 19 68}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#衣付丧
+th_cloth_tsukumogami_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {101 235 167}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#座敷童子
+th_zashiki_warashi_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {241 122 126}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#鬼族
+th_oni_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {111 27 192}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#牛鬼
+th_ushioni_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {111 69 191}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#人鬼
+th_human_oni_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {225 101 113}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#河童
+th_kappa_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {145 40 117}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#山童
+th_yamawaro_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {55 251 0}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#白狼天狗
+th_white_wolf_tengu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {49 113 185}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#鼻高天狗
+th_long_nose_tengu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {170 234 58}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#木叶天狗
+th_leaf_tengu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {119 47 112}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#山伏天狗
+th_yamabushi_tengu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {11 72 217}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#鸦天狗
+th_crow_tengu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {245 216 200}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#贝妖
+th_shell_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {189 2 136}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#魑魅
+th_chimi_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {57 10 216}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#魔物
+th_monster_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {139 233 24}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#山彦
+th_yamabiko_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {164 67 111}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#天龙
+th_heavenly_dragon_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {128 99 75}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#土蜘蛛
+th_tsuchigumo_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {18 171 63}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖虫
+th_yokai_insect_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {122 202 43}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖狗
+th_yokai_dog_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {63 37 139}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖龟
+th_yokai_turtle_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {131 230 174}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖貉
+th_yokai_tanuki_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {22 123 79}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖猴
+th_yokai_monkey_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {34 63 192}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖虎
+th_yokai_tiger_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {89 88 230}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖狼
+th_yokai_wolf_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {221 93 226}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖鹿
+th_yokai_deer_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {213 154 112}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖马
+th_yokai_horse_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {249 148 227}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖猫
+th_yokai_cat_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {173 197 107}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖鸟
+th_yokai_bird_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {202 133 231}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖牛
+th_yokai_ox_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {23 44 203}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖犬
+th_yokai_inu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {135 186 60}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖蛇
+th_yokai_snake_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {87 8 144}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖鼠
+th_yokai_rat_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {121 192 193}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖兔
+th_yokai_rabbit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {243 224 27}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#夜雀
+th_night_sparrow_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {245 97 122}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#狛犬
+th_komainu_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {240 249 229}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#不可名状
+th_unnamable_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {147 139 178}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#地藏
+th_jizo_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {141 150 119}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#地藏稚妖
+th_jizo_child_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {231 139 198}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#黄泉女
+th_yomi_woman_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {114 42 193}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#僵尸
+th_jiangshi_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {141 9 61}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#觉妖怪
+th_satori_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {231 180 213}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#山姥
+th_yamanba_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {33 222 176}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#山女郎
+th_mountain_woman_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {144 69 165}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#巡骨妖
+th_bone_tour_yokai_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {184 228 8}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#造型神
+th_creator_god_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {135 74 250}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#月兔
+th_moon_rabbit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {101 34 178}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#蓬莱人
+th_houraijin_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {22 30 195}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#尸解仙
+th_shikaisen_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {222 184 131}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#天人
+th_tennin_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {179 159 196}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#仙人
+th_sennin_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {16 106 34}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#魔界民
+th_makai_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {201 134 94}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#魔法使
+th_magician_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {135 145 185}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#纯化民
+th_purified_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {57 14 251}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#村落人类
+th_village_human_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {34 10 69}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#村落外人类
+th_wild_human_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {33 235 35}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#二羽渡民
+th_niwatari_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {190 211 124}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#丰穰民
+th_houjou_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {242 169 70}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#旧幻想乡人类
+th_old_gensokyo_human_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {154 38 110}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#梦之住人
+th_dream_dweller_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {215 154 100}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#山内聚居人类
+th_mountain_settlement_human_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {222 49 230}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#神社周边人类
+th_shrine_surrounding_human_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {83 30 184}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#守矢民
+th_moriya_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {144 88 226}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#外界民
+th_outside_world_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {82 152 106}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#小人族
+th_little_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {31 126 186}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#异界民
+th_other_world_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {161 54 79}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#障碍民
+th_barrier_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {25 252 156}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#月之民-人间之里
+th_moon_people_human_village_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {15 108 98}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#月之民-永远亭
+th_moon_people_eientei_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {237 77 239}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#月之民
+th_moon_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {68 191 30}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#大鹫灵
+th_great_eagle_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {53 109 249}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#灵长灵
+th_primate_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {93 204 30}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#水獭灵
+th_otter_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {212 36 220}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#野狼灵
+th_wolf_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {71 111 187}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#水子之灵
+th_mizuko_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {17 207 116}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#亡灵
+th_undead_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {18 52 154}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#船幽灵
+th_ship_ghost_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {186 9 64}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#地缚灵
+th_earthbound_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {12 162 172}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#地灵
+th_earth_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {250 67 48}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#恶灵
+th_evil_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {174 224 169}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#浮游灵
+th_floating_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {36 122 148}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#骚灵
+th_poltergeist_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {150 127 119}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#生灵
+th_living_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {162 45 194}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#怨灵
+th_vengeful_spirit_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {110 151 70}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#幽灵
+th_ghost_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {105 20 141}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#钓瓶落
+th_tsurube_otoshi_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {11 76 127}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#祸殃民
+th_calamity_people_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {176 107 190}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#桥姬
+th_hashihime_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {140 34 130}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#人偶
+th_doll_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {148 3 16}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#死神
+th_shinigami_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {5 92 147}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#天邪鬼
+th_amanjaku_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {199 239 51}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#古神人
+th_ancient_god_person_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {92 140 1}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#天火人
+th_sky_fire_person_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {161 86 247}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
 }

@@ -199841,7 +199841,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 0.855
+        = {           type = peasants  religion = orthodox size = 0.855
       }define_pop
 
 
@@ -199965,7 +199965,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 1.726
+        = {           type = peasants  religion = orthodox size = 1.726
       }define_pop
 
 
@@ -199983,7 +199983,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 1.748
+        = {           type = peasants  religion = orthodox size = 1.748
       }define_pop
 
 
@@ -200001,7 +200001,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 1.031
+        = {           type = peasants  religion = orthodox size = 1.031
       }define_pop
 
 
@@ -200023,7 +200023,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 1.181
+        = {           type = peasants  religion = orthodox size = 1.181
       }}
    preveza = {
       define_pop
@@ -200083,7 +200083,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 1.511
+        = {           type = peasants  religion = orthodox size = 1.511
       }define_pop
 
 
@@ -200105,7 +200105,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 0.631
+        = {           type = peasants  religion = orthodox size = 0.631
       }define_pop
 
 
@@ -200137,7 +200137,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 0.907
+        = {           type = peasants  religion = orthodox size = 0.907
       }define_pop
 
 
@@ -200705,7 +200705,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 0.820
+        = {           type = peasants  religion = orthodox size = 0.820
       }define_pop
 
 
@@ -200733,7 +200733,7 @@ locations = {
       }define_pop
 
 
-        = {           type = peasants  culture = arvanite religion = orthodox size = 0.659
+        = {           type = peasants  religion = orthodox size = 0.659
       }define_pop
 
 
@@ -241353,10 +241353,18 @@ locations = {
 
         = {           type = tribesmen  culture = nganasan_culture religion = samoyedic_paganism size = 0.157
       }}
-   gensokyo = {
+   th_rans_room = {
       define_pop
 
 
-        = {           type = nobles  culture = wetsuweten_culture religion = mahayana size = 0.100
+        = {           type = nobles  culture = th_vampire_culture religion = th_gensokyo_old_hakurei_shinto size = 13.001
+      }define_pop
+
+
+        = {           type = clergy  culture = th_vampire_culture religion = th_gensokyo_old_hakurei_shinto size = 0.100
+      }define_pop
+
+
+        = {           type = burghers  culture = th_vampire_culture religion = th_gensokyo_old_hakurei_shinto size = 2.000
       }}
 }
