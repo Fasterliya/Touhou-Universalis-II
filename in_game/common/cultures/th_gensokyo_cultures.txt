@@ -1,6 +1,6 @@
 ﻿#技术提示-文化和文化的语言定义在这里
 th_vampire_culture = { 
-	language = th_gensokyo_language
+	language = acgv_touhou_eastern_dialect
 	color = rgb {255 128 0}
 	tags = { th_gensokyo_gfx }
 	opinions = {
