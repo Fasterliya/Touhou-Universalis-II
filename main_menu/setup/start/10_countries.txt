@@ -11042,7 +11042,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1332.10.23 end_date = 1332.12.14 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1333.7.19 end_date = 1.1.1 regnal_number = 0 }
 
-             #Technically until his death, but Jayaatu launched a coup in October and otherwise the error log complains if they overlap
+             #Technically until his death, but Jayaatu launched a coup in October and otherwise the error log complains if they overlap
          }
       }
 
@@ -12206,7 +12206,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1325.1.1 end_date = 1329.3.1 regnal_number = 2 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.3.1 end_date = 1.1.1 regnal_number = 2 }
 
-             # Junior Co-Ruler until 1316
+             # Junior Co-Ruler until 1316
          }
       }
 
@@ -13285,7 +13285,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.1.1 end_date = 1331.1.1 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1333.1.1 end_date = 1.1.1 regnal_number = 0 }
 
-             # Really Unknown, but he is known to be Duke of Candia and this era Duke is not known
+             # Really Unknown, but he is known to be Duke of Candia and this era Duke is not known
          }
       }
 
@@ -17575,7 +17575,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.12.31 end_date = 1336.12.31 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 3 }
 
-             # As venetian governor
+             # As venetian governor
          }
       }
 
@@ -18906,7 +18906,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.1.1 end_date = 1336.12.31 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 0 }
 
-             # Among others
+             # Among others
          }
       }
 
@@ -23013,7 +23013,7 @@ countries = {
 
          government = {
 
-             #Abbey reform
+             #Abbey reform
          }
       }
 
@@ -28913,7 +28913,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1272.1.1 end_date = 1311.8.28 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1311.8.28 end_date = 1.1.1 regnal_number = 1 }
 
-             #Not actually the first one, but not much info about all the preceding ones so started with him
+             #Not actually the first one, but not much info about all the preceding ones so started with him
          }
       }
 
@@ -41793,7 +41793,7 @@ countries = {
 
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1337.1.1 end_date = 1.1.1 regnal_number = 0 }
 
-             #no Imperial Advocate between 1336 and 1338
+             #no Imperial Advocate between 1336 and 1338
          }
       }
 
@@ -42590,7 +42590,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1250.12.13 end_date = 1254.5.21 regnal_number = 4 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1291.5.5 end_date = 1298.7.2 regnal_number = 1 }
 
-             #Enumerated as successor of Conrad I who was German King 911?918 but not Emperor
+             #Enumerated as successor of Conrad I who was German King 911?918 but not Emperor
          }
       }
 
@@ -46810,7 +46810,7 @@ countries = {
          our_cores_conquered_by_others = {
             mandore osian nagaur khed pali kurki ajmer merta nagaur makrana
             sambhar
-         } #Mandore + parts of Marwar. At its greatest extent the dynasty had however ruled most of northern India.
+         } #Mandore + parts of Marwar. At its greatest extent the dynasty had however ruled most of northern India.
 
          include = "expl_india_hindu"
          include = "india_limited_monarchy"
@@ -48709,7 +48709,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1334.1.1 end_date = 1335.1.1 regnal_number = 0 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1335.1.1 end_date = 1.1.1 regnal_number = 3 }
 
-             # As Podest?
+             # As Podest?
          }
       }
 
@@ -54948,7 +54948,7 @@ countries = {
             th_nagarekawa_bridge_south_ab th_south_market th_signpost_fork th_kourindou_main_store th_workshop_yokocho th_honcho_dori th_boundary_stone_road th_cattle_grazing_slope th_grain_drying_field th_watermill_mill
             th_east_fence_vegetable_garden th_west_slope_wheat_field th_village_outskirts th_asobi_niwa th_ura_nagaya_dori_2 th_kita_odori th_kyouzai_gura th_sensei_no_heya th_terakoya_mae th_terakoya_gakudo
             th_hatago_yokocho th_sakagura_dori th_nagashidai_mae th_dozou_soko th_umaya_mae th_yuya th_geodon_tei_main_hall th_saikumachi_dori th_satoyama_no_mori th_nishi_mi_ban
-            th_suzuko_ya th_seiran_ya th_ryujin_sama_sekizou th_nishi_odori
+            th_suzuko_ya th_seiran_ya th_ryujin_sama_sekizou th_nishi_odori th_synthesizer_avenue
          }
 
          #????
@@ -57474,10 +57474,9 @@ countries = {
          own_control_core = {
             th_garden_of_the_sun th_sunbathing_beach_nectar_spring th_sunbathing_beach_parasol th_sunset_port th_sunset_plain_watchtower th_eternal_slumber_lily_hill th_flower_tide_wharf th_sunset_plain_grass_sea th_sunset_plain_forest
             th_flower_field_echo_wall th_flower_field_fairy_stands th_flower_field_backstage th_twilight_mist_flower_field th_sunset_harbor_observatory th_sunset_plain_main th_primordial_flower_sea th_stardust_flower_cape
-            th_flower_field_open_air_stage_main th_timpani_hillocks th_xylophone_hill th_garden_of_the_sun_corridor th_garden_of_the_sun_maze th_garden_of_the_sun_sundial th_garden_of_the_sun_cottage th_requiem_plain th_yuuka_mansion_balcony
-            th_blood_lake_reflection_hall th_mugenkan_sleeping_terror_chamber th_yuuka_bedchamber th_mugenkan_main_hall th_mugenkan_wonderland_garden th_mugenkan_fantasy_wasteland th_suzusuzu_stage_main th_lily_sea_border_hedge th_flute_bamboo_grove
-            th_harp_string_valley th_synthesizer_avenue th_nightshade_sea th_french_horn_meander th_triangular_prism_plain th_slumber_coral_reef th_dreamland_limbo_spiral th_dreamland_border th_dream_world_gengetsu_lake th_dream_world_stardust_plain
-            th_dreamland
+            th_flower_field_open_air_stage_main th_garden_of_the_sun_corridor th_garden_of_the_sun_maze th_garden_of_the_sun_sundial th_garden_of_the_sun_cottage th_yuuka_mansion_balcony th_blood_lake_reflection_hall
+            th_mugenkan_sleeping_terror_chamber th_yuuka_bedchamber th_mugenkan_main_hall th_mugenkan_wonderland_garden th_mugenkan_fantasy_wasteland th_suzusuzu_stage_main th_lily_sea_border_hedge th_nightshade_sea th_slumber_coral_reef
+            th_dreamland_limbo_spiral th_dreamland_border th_dream_world_gengetsu_lake th_dream_world_stardust_plain th_dreamland
          }
 
          include = "expl_mediterranean"
@@ -57517,8 +57516,8 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_bell_gathering_hills_main th_court_of_oblivion_tailoring_bench th_court_of_oblivion_main th_bell_hills_patchwork_stage th_rappaccini_poison_garden th_piano_throne th_echo_chamber_cavern th_lily_sea_finale_theater th_lily_sea_old_path
-            th_memory_lily_hill
+            th_bell_gathering_hills_main th_court_of_oblivion_tailoring_bench th_court_of_oblivion_main th_bell_hills_patchwork_stage th_rappaccini_poison_garden th_lily_sea_finale_theater th_lily_sea_old_path th_memory_lily_hill th_piano_throne
+            th_echo_chamber_cavern
          }
 
          include = "expl_mediterranean"
@@ -57531,7 +57530,6 @@ countries = {
          discovered_regions = {
             th_gensokyo_hakurei_region
             th_gensokyo_makai_region
-            th_gensokyo_human_village_region
             th_gensokyo_magic_forest_region
             th_youkai_mountain_western_foot_region
             th_youkai_mountain_region
@@ -57543,6 +57541,7 @@ countries = {
             th_makai_region
             th_old_hell_region
             th_heaven_region
+            th_gensokyo_human_village_region
          }
 
          government = {
@@ -58020,7 +58019,7 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_first_performance_stage
+            th_first_performance_stage th_flute_bamboo_grove th_french_horn_meander th_harp_string_valley th_triangular_prism_plain th_timpani_hillocks th_requiem_plain th_xylophone_hill
          }
 
          include = "expl_mediterranean"
@@ -60082,7 +60081,7 @@ countries = {
                name_henry = 2
             }
 
-             #ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1335.4.2 regnal_number = 1 } # As Marital Co-Ruler
+             #ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1335.4.2 regnal_number = 1 } # As Marital Co-Ruler
          }
       }
 
@@ -65291,7 +65290,7 @@ countries = {
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1311.11.29 end_date = 1329.7.22 regnal_number = 1 }
             ruler_term  = { character = Arcanum_Empty_Character start_date = 1329.7.22 end_date = 1.1.1 regnal_number = 2 }
 
-             #ruler_term = { character = ver_alberto_ii_scala start_date = 1329.7.22 regnal_number = 2 } # Co-Ruler until 1351
+             #ruler_term = { character = ver_alberto_ii_scala start_date = 1329.7.22 regnal_number = 2 } # Co-Ruler until 1351
          }
       }
 
