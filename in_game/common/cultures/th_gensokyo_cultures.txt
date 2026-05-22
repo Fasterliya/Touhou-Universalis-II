@@ -24,6 +24,18 @@ th_vampire_culture = {
 	}
 }
 
+#女仆妖精
+th_maid_fairy_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {187 131 212}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
 #地狱妖精
 th_hell_fairy_culture = {
         language = acgv_touhou_eastern_dialect
@@ -48,7 +60,7 @@ th_light_fairy_culture = {
         }
 }
 
-#花妖精
+#植物妖精
 th_flower_fairy_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {121 204 5}
@@ -84,34 +96,10 @@ th_zombie_fairy_culture = {
         }
 }
 
-#树妖精
-th_tree_fairy_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {114 1 187}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
 #现象妖精
 th_phenomenon_fairy_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {145 230 64}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
-#叶妖精
-th_leaf_fairy_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {147 114 227}
         tags = { th_gensokyo_gfx }
         opinions = {
         }
@@ -516,7 +504,7 @@ th_yokai_insect_culture = {
         }
 }
 
-#妖狗
+#妖犬
 th_yokai_dog_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {63 37 139}
@@ -528,7 +516,7 @@ th_yokai_dog_culture = {
         }
 }
 
-#妖龟
+#妖鼍
 th_yokai_turtle_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {131 230 174}
@@ -568,18 +556,6 @@ th_yokai_monkey_culture = {
 th_yokai_tiger_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {89 88 230}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
-#妖狼
-th_yokai_wolf_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {221 93 226}
         tags = { th_gensokyo_gfx }
         opinions = {
         }
@@ -640,18 +616,6 @@ th_yokai_bird_culture = {
 th_yokai_ox_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {23 44 203}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
-#妖犬
-th_yokai_inu_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {135 186 60}
         tags = { th_gensokyo_gfx }
         opinions = {
         }

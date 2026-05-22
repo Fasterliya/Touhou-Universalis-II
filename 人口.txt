@@ -1,0 +1,271 @@
+# 幻想乡的人口设定，与欧陆风云5的城镇的等级，再之后组合的省份中，会特别标注 城镇，城市，大城市，若没有标注自动修改为乡村，并且以乡村的人口结构进行填写
+# 乡村的人口结构，其中90%为农民，8——9%为劳工，贵族与教士大约在0.5%，市民在0.1%
+# 城镇的人口结构，其中80%为农民，10%为劳工，3.5%的人口为士兵，3.5%的人口为市民，贵族人口占比在1.7%，教士人口在1.8%
+# 城市的人口结构，其中70%为农民，劳工在12%，士兵在7.5%，市民在6%，教士在4%，贵族在2%
+# 大城市的人口结构与城市相同，市民相对增加2%，士兵下降2%
+# 注：人口的阶层结构的具体百分比需要进行一定比例的上下浮动，确保一定看上去的真实度，而不是都相同。但同时禁止比例完全失调出人口结构
+# 注：幻想乡的地点人口总数设定，其中大城市允许在90k-110k浮动，城市允许在45K-60K浮动，城镇在15-25K浮动，乡村在5K-10K浮动
+# 注：幻想乡的人口不同地区的系数修正，其中地狱，旧地狱x0.85，冥界x1.05.，人间之里x1.25，妖怪之山x1.10，雾之湖1.0，迷途竹林0.95，魔法森林0.90，守矢0.98，河童1.0，魔界1.05，太阳花田1.03
+# 地形修正 山脉x0.90，平地x1.15，丘陵x1.0，高原x1.0，湿地x0.97
+# 植被修正 农田x1.15，草地x1.0，原野x1.0，林地x0.97，森林x0.93
+# 该省份是否有河流经过x1.02
+# 结构如下
+# <省份键值> = {
+# 	define_pop = {	type = <阶层键值>	size = 0.015	culture = <文化键值>	religion = <宗教键值> }
+# 	注意，size 每1单位代表1000人，如size = 0.015为150人
+# 	如此向下增加此省份的人口类型
+# 	define_pop = {	type = clergy	size = 0.071	culture = bulgarian	religion = orthodox }
+# 	define_pop = {	type = clergy	size = 0.013	culture = greek_culture	religion = orthodox }
+# 	define_pop = {	type = burghers	size = 1.445	culture = bulgarian	religion = orthodox }
+# }
+# 注：幻想乡文化中有多种妖精，其中有光之妖精，植物妖精，季节妖精，元素妖精，现象妖精，（详情参考文化附件）
+# 除了地狱妖精和僵尸妖精，女仆妖精需要单独描述以外，之后的描述中只要提到妖精，就将妖精的人口在（光之妖精，花妖精，季节妖精，元素妖精，现象妖精，叶妖精，树妖精）
+# 之中挑选2-3种随机分配人口数量。
+# 注：幻想乡文化中也有多种妖兽（含有妖虫，妖犬，妖鼍，妖貉，妖猴，妖虎，妖狼，妖鹿，妖马，妖猫，妖鸟，妖牛，妖蛇，妖鼠，妖兔见详细附录）
+# 之后的描述中只要提到妖兽，就将妖兽的人口在（含有妖虫，妖犬，妖鼍，妖貉，妖猴，妖虎，妖狼，妖鹿，妖马，妖猫，妖鸟，妖牛，妖蛇，妖鼠，妖兔）
+# 就在从其中随机抽选2-5种文化在对应之中随机分配人口数量。
+# 注：宗教，开局宗教存在 th_gensokyo_old_hakurei_shinto th_gensokyo_buddhism th_gensokyo_taoism th_gensokyo_eat_raw th_gensokyo_tenma_mount
+# 如果没有特殊标注的信仰或者混杂信仰，则自动视作为100%信仰th_gensokyo_old_hakurei_shinto
+# 博丽地区（位于雾之湖）主体人口：（妖精54%，神社周边人类18%，村落外人类16%，妖怪5%，妖兽5%，鬼1.5%，外界人0.5%）
+# 注：所有地区下级地点的人口可以在我标明的主体范围内滑动，存在在某些地点聚居的情况，如果特殊标注，即将此地区的此类文化人口尽可能集中在此省份或者地点内，在总体地区层次上依然保留主体比例
+# 博丽神社省（主要的神社周边人类，村落人类聚居点）
+# th_hakurei_shrine 城市，人口
+# th_main_hall_plaza 
+# th_torii_approach 集镇
+# th_hakurei_engawa 集镇
+# th_the_always_open_back_gate
+# th_hakurei_offering_hall_of_sparse_faith 城市
+# 结界中枢
+# th_barrier_nexus 
+# th_seafood_drying_field
+# th_peninsula_lighthouse
+# th_windbreak_pine_forest
+# th_vein_of_living_jade 集镇
+# th_vein_of_living_jade_port 集镇
+# 藏酒库房（主要的鬼族，妖怪聚居点）
+# th_wine_cellar
+# th_drunken_immortal_brewery 城市 主要鬼族
+# th_moonlight_cellar
+# th_suika_brewery_vault 主要鬼族
+# th_drunken_boulder_bed 集镇
+# 博丽山麓（主要的妖兽妖怪聚居）
+# th_hakurei_foothills
+# th_mountain_gate_stairs
+# th_kazami_trail
+# th_clear_mirror_still_water
+# 博丽府邸（主要的神社周边人类，村落人类聚居点）
+# th_hakurei_mansion 集镇
+# th_shrine_maiden_residence 城市
+# th_tea_room_corridor 集镇
+# th_hakurei_storage_backyard
+# th_austere_sleeping_chamber
+# th_offering_reception_hall
+# 樱花林地（未有特殊地点）
+# th_cherry_blossom_grove 集镇
+# th_front_hill_sakura
+# th_ravine_cherry_path
+# th_thousand_petal_path
+# th_blossom_viewing_pavilion
+# th_petal_drift_stream 集镇 河流
+# 春色小径（主要的妖兽聚居点）
+# th_spring_colors_trail
+# th_east_wind_trail
+# th_falling_flowers_flowing_water 集镇 河流
+# th_echo_of_new_life_ravine 集镇 河流
+# th_whispering_willow_grove
+# 修炼校场（主要的神社周边人类，村落人类聚居点）
+# th_training_grounds 
+# th_main_practice_field
+# th_archery_range
+# th_back_hill_platform
+# 博丽海岸（未有特殊地点）
+# th_hakurei_coast
+# th_east_coast_rocks
+# th_sea_view_cliff
+# th_cape_lighthouse
+# th_sacred_torii_beach
+# th_harbor_masters_observatory 集镇
+# th_tidal_pool_of_memories
+# 运河港口（主要的神社周边人类，村落人类聚居点）
+# th_canal_port 集镇
+# th_boatwright_workshop
+# th_fantasy_canal_harbor 集镇
+# th_main_canal
+# th_exorcism_charm_workshop
+# th_hakurei_boundary_marker_wharf
+# 冥想地（未有特殊地点）
+# th_meditation_grounds
+# th_tranquil_woods 集镇
+# th_streamside_rocks
+# th_under_the_old_cherry
+# th_ancient_pine_platform
+# 博丽岸滨（未有特殊地点）
+# th_hakurei_seaside
+# th_white_sand_beach
+# th_seaside_promenade 集镇
+# th_tidal_pool
+# th_komainu_coastal_guard_post
+# th_komainu_coastal_guard_room
+# 红魔馆地区（位于雾之湖）主体人口：（女仆妖精40%，妖精22%，地精24%，村落外人类11%，魔法使1.2%，恶魔1.0%，吸血鬼0.5%，外界人0.3%）
+# 红魔馆本馆（主要的恶魔，魔法使，吸血鬼聚居点）
+# th_scarlet_grand_entrance_hall 城市
+# th_scarlet_gaze_balcony
+# th_voile_library_grand_hall 集镇 （主要的魔法使，恶魔聚居点）
+# th_perfect_maid_armory
+# th_seven_star_summoning_chamber
+# th_underground_wine_cellar 集镇
+# th_scarlet_dream_bedchamber
+# th_frandre_scarlet_bedchamber
+# th_gargoyle_sentinel_gallery 集镇 （主要的恶魔聚居点）
+# th_scarlet_moonlight_tea_room
+# 红魔馆庭院 （主要的地精，女仆妖精聚居点）
+# th_main_gate_plaza 
+# th_scarlet_moonlight_fountain_plaza 集镇
+# th_eternal_rose_maze
+# th_midnight_blooming_garden
+# th_crimson_centerpiece_fountain
+# th_guardian_golem_shed 集镇（主要地精聚居点）
+# 绯红之道（妖精聚居点）
+# th_scarlet_path
+# th_crimson_moon_bridge
+# th_fate_corridor
+# th_vampiric_vine_valley
+# 血映湖滨（妖精聚居点）
+# th_flandres_playground
+# th_lake_of_blood_reflections
+# th_scarlet_backup_storage 集镇
+# th_path_of_the_crimson_moon
+# th_scarlet_fog_bog
+# th_hidden_garden_of_forbidden_blooms
+# 人鱼秘境（妖精聚居点）
+# th_mermaid_sanctuary 集镇
+# th_tide_song_cavern
+# th_coral_corridor
+# th_moonlit_tidal_pool
+# th_secret_path_to_the_lakeshore
+# th_wakasagihime_manor 集镇
+# 洋馆外庭院（妖精聚居点）
+# th_maze_hedge
+# th_eternal_night_orchid_bed
+# th_moonlight_music_pavilion
+# th_black_tea_gazebo
+# th_crimson_creek_bridge
+# th_eternal_dusk_beach
+# th_crimson_tide_harbor 集镇
+# 绯红之山
+# th_crimson_mountain
+# th_bloodmoon_peak
+# th_thorny_path
+# th_nightwhisper_spring
+# th_cannot_entry_mountain3
+#琪露利亚地区（位雾之湖），主体人口（元素妖精43%，妖精57%，妖怪2%，地藏0.2%，魔法使0.2%）
+# 失落之城
+# th_forgotten_royal_court
+# th_sunken_quarter
+# th_lost_city
+# th_clocktower_of_time
+# th_whispering_residential_quarter
+# 训练场地（妖精聚居点）
+# th_scarlet_training_ground 集镇
+# th_scarlet_danmaku_proving_ground
+# th_silver_blade_corridor
+# th_ice_fariy_island
+# th_silent_library
+# th_crimson_vein_mine
+# th_chaos_gravity_grove
+# 冰之室（妖精聚居点）
+# th_ice_room 城市
+# th_frost_blossom_garden
+# th_eternal_frozen_lake 河流
+# th_crystal_corridor
+# 大妖精树屋（妖精聚居点）
+# th_great_fairy_treehouse 
+# th_treehouse_main_hall 集镇
+# th_vine_ladder_slide
+# th_leaf_curtain_balcony 集镇
+# 三妖精府邸（主要的光之妖精聚居点）
+# th_three_fairies_mansion 集镇
+# th_trio_war_council_room
+# th_leaf_view_deck
+# th_luna_room
+# th_sunny_room
+# th_star_room
+# 妖精破庙
+# th_fairy_shrine 
+# th_leaf_wish_rack
+# th_fairy_gathering_ring 集镇
+# th_shrine_star_point
+# 妖精岸滨
+# th_fairy_shore
+# th_broken_shell_beach
+# th_driftwood_hut
+# th_tidal_pool_playground 集镇
+# 迎春花小径（主要的季节妖精聚居点）
+# th_winter_jasmine_trail 集镇
+# th_harbinger_bridge 河流
+# th_spring_view_pavilion 集镇
+# th_thaw_glade
+# th_golden_belt_corridor
+# 永恒花园（主要的现象妖精聚居点）
+# th_eternal_garden 集镇
+# th_stagnant_fountain
+# th_endless_rose_corridor
+# th_flower_clock_of_time 集镇
+# 普利兹姆利巴洋馆（妖精62%，骚灵35%,妖怪2%，地藏0.2%，魔法使0.2%）
+# 废弃洋馆
+# th_derelict_mansion 集镇
+# th_rusted_gate
+# th_crumbling_hall 集镇
+# th_ownerless_study
+# 妖怪的树海地区（位于魔法森林，均视作河流穿过）主体人口（36%植物妖精，12%妖精，44%妖怪，2%地藏）
+# 妖怪的树海
+# th_youkai_forest 集镇
+# th_body_dumping_place
+# th_calamity_forest
+# th_deep_forest_path_to_holy_land
+# th_fortuna_county 集镇
+# 妖怪海岸
+# th_youkai_coast
+# th_fearness_beach
+# th_hina_port 集镇
+# th_etrnal_night_forest
+# 阻绝人际的溪谷
+# th_keikoku_mugen_zandou
+# th_keikoku_bousen_shiryu
+# th_keikoku_kijin_shoukei
+# th_start_of_nagashi_bina
+# 阴翳森林
+# th_lightness_boulevard
+# th_fortune_cat_house 集镇
+# th_inei_shinrin_yuugen_jukai
+# th_lost_single_path
+# 阴暗沼泽
+# th_misfortune_swamp
+# th_calamity_port 集镇
+# th_dark_hills
+# th_miasma_forest
+# 雏人偶工坊
+# th_hina_dolls_workshop 集镇
+# th_misfortune_godess_mansion 城市
+# th_locking_misfortune_borders
+# th_hina_dolls_recycle_center
+# th_temple_of_misfortune
+# 华扇的仙界地区（主体人口：妖精39%，村落外人类35%，仙人12%）
+# 华扇的仙界
+# th_immortal_mansion 城市
+# th_eagle_house
+# th_immortal_dojo 集镇
+# th_pets_room
+# th_kasens_room 集镇
+# 丰穰之祠地区（主体人口：妖精25%，丰穰民41%，村落外人类16%，村落人类4%，妖怪4%，0.5%地藏）
+# 丰穰之祠（丰穰民和村落外人类主要聚集点）
+# th_bountiful_shrine 城市 河流
+# th_inari_torii 河流
+# th_aki_main_hall 城市 河流
+# th_aki_chozya 河流
+# th_harvest_altar
+# 秋之拜殿
+# th_autumn_worship_hall 集镇
+# th_ginkgo_courtyard
+# th_stone_lantern
+# th_aki_maple_corridor
