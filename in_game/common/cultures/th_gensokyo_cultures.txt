@@ -1,27 +1,51 @@
 ﻿#技术提示-文化和文化的语言定义在这里
 
+#管狐
+th_itsuna_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {142 140 192}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
 #妖怪
+th_yokai_fox_culture = {
+        language = acgv_touhou_eastern_dialect
+        color = rgb {67 95 163}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
+}
+
+#妖狐
 th_yokai_culture = {
-	language = acgv_touhou_eastern_dialect
-	color = rgb {214 82 255}
-	tags = { th_gensokyo_gfx }
-	opinions = {
-	}
-	culture_groups = {
-		th_gensokyo_culture_group
-	}
+        language = acgv_touhou_eastern_dialect
+        color = rgb {214 82 255}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
 }
 
 #吸血鬼
 th_vampire_culture = { 
-	language = acgv_touhou_eastern_dialect
-	color = rgb {255 128 0}
-	tags = { th_gensokyo_gfx }
-	opinions = {
-	}
-	culture_groups = {
-		th_gensokyo_culture_group
-	}
+        language = acgv_touhou_eastern_dialect
+        color = rgb {255 128 0}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
+        }
 }
 
 #女仆妖精
@@ -1164,7 +1188,7 @@ th_undead_spirit_culture = {
         }
 }
 
-#船幽灵
+#念缚灵
 th_ship_ghost_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {186 9 64}
