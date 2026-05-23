@@ -2,6 +2,7 @@
 ### 文化组
  th_gensokyo_culture_group: "幻想乡文化组"
 ### 文化
+ th_itsuna_culture: "饭纲使"
  th_maid_fairy_culture: "女仆妖精"
  th_yokai_culture: "妖怪"
  th_vampire_culture: "吸血鬼"
@@ -60,6 +61,7 @@
  th_yokai_snake_culture: "妖蛇"
  th_yokai_rat_culture: "妖鼠"
  th_yokai_rabbit_culture: "妖兔"
+ th_yokai_fox_culture: "妖狐"
  th_night_sparrow_culture: "夜雀"
  th_komainu_culture: "狛犬"
  th_unnamable_culture: "不可名状"
