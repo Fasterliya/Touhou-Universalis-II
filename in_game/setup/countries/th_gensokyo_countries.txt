@@ -1,4 +1,4 @@
-﻿#红魔馆
+﻿#红魔馆 蕾米莉亚
 T00 = {
 	color = rgb { 191 54 54 }
 	
@@ -9,7 +9,7 @@ T00 = {
 	
 	difficulty = 1
 }
-#琪露利亚
+#琪露利亚 琪露诺 冰之室的
 T01 = {
 	color = rgb { 166 212 237 }
 	
@@ -20,7 +20,7 @@ T01 = {
 	
 	difficulty = 1
 }
-#大妖精
+#大妖精 大妖精 妖精之国的
 T02 = {
 	color = rgb { 88 214 126 }
 	
@@ -31,7 +31,7 @@ T02 = {
 	
 	difficulty = 1
 }
-#博丽
+#博丽 博丽 灵梦
 T04 = {
 	color = rgb { 240 47 47 }
 	
@@ -43,7 +43,7 @@ T04 = {
 	difficulty = 1
 }
 
-#迷途之家
+#迷途之家 八云 紫
 T05 = {
 	color = rgb { 152 82 214 }
 	
@@ -54,7 +54,7 @@ T05 = {
 	
 	difficulty = 1
 }
-#三妖精
+#三妖精 桑尼 米尔克
 T06 = {
 	color = rgb { 214 129 214 }
 	
@@ -65,7 +65,7 @@ T06 = {
 	
 	difficulty = 1
 }
-#迎春花小径
+#迎春花小径 莉莉白 春告的
 T07 = {
 	color = rgb { 255 255 218 }
 	
@@ -76,7 +76,7 @@ T07 = {
 	
 	difficulty = 1
 }
-#人偶之森
+#人偶之森 爱丽丝 玛格特罗伊德
 T08 = {
 	color = rgb { 255 254 246 }
 	
@@ -87,7 +87,7 @@ T08 = {
 	
 	difficulty = 1
 }
-#雾雨之森
+#雾雨之森 雾雨 魔理沙
 T09 = {
 	color = rgb { 151 227 89 }
 	
@@ -98,7 +98,7 @@ T09 = {
 	
 	difficulty = 1
 }
-#三头犬之林
+#三头犬之林 三头 慧之子
 T10 = {
 	color = rgb { 203 222 227 }
 	
@@ -109,7 +109,7 @@ T10 = {
 	
 	difficulty = 1
 }
-#夜雀食堂
+#夜雀食堂 米斯蒂娅 萝拉蕾
 T11 = {
 	color = rgb { 212 84 152 }
 	
@@ -120,7 +120,7 @@ T11 = {
 	
 	difficulty = 1
 }
-#萤火之森
+#萤火之森 莉格露 奈特巴格
 T12 = {
 	color = rgb { 212 224 141 }
 	
@@ -131,7 +131,7 @@ T12 = {
 	
 	difficulty = 1
 }
-#后户之国
+#后户之国 摩多罗 隐歧奈
 T13 = {
 	color = rgb { 135 59 61 }
 	
@@ -142,7 +142,7 @@ T13 = {
 	
 	difficulty = 1
 }
-#守矢
+#守矢 东风谷 早苗
 T14 = {
 	color = rgb { 114 199 84 }
 	
@@ -153,7 +153,7 @@ T14 = {
 	
 	difficulty = 1
 }
-#妖怪之森
+#妖怪之森 键山 雏
 T15 = {
 	color = rgb { 33 199 40 }
 	
@@ -164,7 +164,7 @@ T15 = {
 	
 	difficulty = 1
 }
-#宵暗之森
+#宵暗之森 露米娅 宵暗的
 T16 = {
 	color = rgb { 70 73 74 }
 	
@@ -175,7 +175,7 @@ T16 = {
 	
 	difficulty = 1
 }
-#丰穰之祠
+#丰穰之祠 秋 穰子
 T17 = {
 	color = rgb { 255 194 107 }
 	
@@ -186,7 +186,7 @@ T17 = {
 	
 	difficulty = 1
 }
-#天狗
+#天狗 饭纲丸 龙
 T18 = {
 	color = rgb { 89 73 73 }
 	
@@ -197,7 +197,7 @@ T18 = {
 	
 	difficulty = 1
 }
-#山佬
+#山佬 坂田 合欢
 T19 = {
 	color = rgb { 160 214 102 }
 	
@@ -208,7 +208,7 @@ T19 = {
 	
 	difficulty = 1
 }
-#地灵殿
+#地灵殿 古明地 觉
 T20 = {
 	color = rgb { 178 237 221 }
 	
@@ -219,7 +219,7 @@ T20 = {
 	
 	difficulty = 1
 }
-#幻想风穴
+#幻想风穴 黑谷 山女
 T21 = {
 	color = rgb { 237 214 135 }
 	
@@ -230,7 +230,7 @@ T21 = {
 	
 	difficulty = 1
 }
-#水桥
+#水桥 水桥 帕露西
 T22 = {
 	color = rgb { 107 237 149 }
 	
@@ -241,7 +241,7 @@ T22 = {
 	
 	difficulty = 1
 }
-#旧都
+#旧都 星熊 勇仪
 T23 = {
 	color = rgb { 199 175 135 }
 	
@@ -252,7 +252,7 @@ T23 = {
 	
 	difficulty = 1
 }
-#偶像之境
+#偶像之境 埴安神 袿姬
 T24 = {
 	color = rgb { 144 227 219 }
 	
@@ -263,7 +263,7 @@ T24 = {
 	
 	difficulty = 1
 }
-#彼岸
+#彼岸 四季 映姬
 T25 = {
 	color = rgb { 247 32 238 }
 	# color = rgb { 113 114 199 }
@@ -275,7 +275,7 @@ T25 = {
 	
 	difficulty = 1
 }
-#河童
+#河童 河城 荷取
 T26 = {
 	color = rgb { 56 158 70 }
 	
@@ -286,7 +286,7 @@ T26 = {
 	
 	difficulty = 1
 }
-#山童
+#山童 山城 高岭
 T27 = {
 	color = rgb { 43 122 54 }
 	
@@ -297,7 +297,7 @@ T27 = {
 	
 	difficulty = 1
 }
-#驹草赌场
+#驹草赌场 驹草 山如
 T28 = {
 	color = rgb { 181 92 201 }
 	
@@ -309,7 +309,7 @@ T28 = {
 	difficulty = 1
 }
 
-#永恒花园
+#永恒花园 爱塔妮缇 拉尔瓦
 T29 = {
 	color = rgb { 78 201 187 }
 	
@@ -320,7 +320,7 @@ T29 = {
 	
 	difficulty = 1
 }
-#普利兹姆莉巴
+#普利兹姆莉巴 露娜萨 普利兹姆利巴
 T30 = {
 	color = rgb { 92 155 158 }
 	
@@ -331,7 +331,7 @@ T30 = {
 	
 	difficulty = 1
 }
-#人间之里
+#人间之里 空置，随机一个名称
 T03 = {
 	color = rgb { 255 183 58 }
 	culture_definition = th_vampire_culture
@@ -340,7 +340,7 @@ T03 = {
 	difficulty = 1
 }
 
-#冥界
+#冥界 西行寺 幽幽子
 T31 = {
 	color = rgb { 142 135 255 }
 	culture_definition = th_vampire_culture
@@ -349,7 +349,7 @@ T31 = {
 	difficulty = 2
 }
 
-#命莲寺
+#命莲寺 圣 白莲
 T32 = {
 	color = rgb { 202 177 255 }
 	culture_definition = th_vampire_culture
@@ -358,7 +358,7 @@ T32 = {
 	difficulty = 1
 }
 
-#宝塔禅林
+#宝塔禅林 寅丸 星
 T33 = {
 	color = rgb { 255 122 25 }
 	culture_definition = th_vampire_culture
@@ -367,7 +367,7 @@ T33 = {
 	difficulty = 3
 }
 
-#寻龙门
+#寻龙门 纳兹琳 毘沙门天的
 T34 = {
 	color = rgb { 172 197 219 }
 	culture_definition = th_vampire_culture
@@ -376,7 +376,7 @@ T34 = {
 	difficulty = 2
 }
 
-#秘境
+#秘境 若鹭姬 秘境的
 T35 = {
 	color = rgb { 107 206 219 }
 	culture_definition = th_vampire_culture
@@ -385,7 +385,7 @@ T35 = {
 	difficulty = 1
 }
 
-#小伞铁匠铺
+#小伞铁匠铺 多多良 小伞
 T36 = {
 	color = rgb { 8 184 29 }
 	culture_definition = th_vampire_culture
@@ -394,7 +394,7 @@ T36 = {
 	difficulty = 2
 }
 
-#鬼杰组
+#鬼杰组  吉吊 八千慧
 T37 = {
 	color = rgb { 253 255 40 }
 	culture_definition = th_vampire_culture
@@ -403,7 +403,7 @@ T37 = {
 	difficulty = 3
 }
 
-#劲牙组
+#劲牙组 骊驹 早鬼
 T38 = {
 	color = rgb { 84 94 53 }
 	culture_definition = th_vampire_culture
@@ -412,7 +412,7 @@ T38 = {
 	difficulty = 1
 }
 
-#刚欲同盟
+#刚欲同盟 饕餮 尤魔
 T39 = {
 	color = rgb { 161 45 47 }
 	culture_definition = th_vampire_culture
@@ -421,7 +421,7 @@ T39 = {
 	difficulty = 2
 }
 
-#孑然岸滨
+#孑然岸滨 庭渡 久诧歌
 T40 = {
 	color = rgb { 99 147 222 }
 	culture_definition = th_vampire_culture
@@ -430,7 +430,7 @@ T40 = {
 	difficulty = 3
 }
 
-#水子石滩
+#水子石滩 戎 璎花
 T41 = {
 	color = rgb { 221 182 247 }
 	culture_definition = th_vampire_culture
@@ -439,7 +439,7 @@ T41 = {
 	difficulty = 1
 }
 
-#牛鬼河原
+#牛鬼河原 牛崎 润美
 T42 = {
 	color = rgb { 201 175 147 }
 	culture_definition = th_vampire_culture
@@ -448,7 +448,7 @@ T42 = {
 	difficulty = 2
 }
 
-#三途河
+#三途河 小野塚 小町
 T43 = {
 	color = rgb { 115 132 201 }
 	culture_definition = th_vampire_culture
@@ -457,7 +457,7 @@ T43 = {
 	difficulty = 3
 }
 
-#涡轮地狱
+#涡轮地狱 火焰猫 燐
 T44 = {
 	color = rgb { 171 80 82 }
 	culture_definition = th_vampire_culture
@@ -466,7 +466,7 @@ T44 = {
 	difficulty = 1
 }
 
-#核热地狱
+#核热地狱 灵乌路 空
 T45 = {
 	color = rgb { 51 122 92 }
 	culture_definition = th_vampire_culture
@@ -475,7 +475,7 @@ T45 = {
 	difficulty = 2
 }
 
-#地底井
+#地底井 大裂隙的 琪斯美
 T46 = {
 	color = rgb { 30 122 110 }
 	culture_definition = th_vampire_culture
@@ -484,7 +484,7 @@ T46 = {
 	difficulty = 3
 }
 
-#辉针城
+#辉针城 少名 针妙丸
 T47 = {
 	color = rgb { 217 161 81 }
 	culture_definition = th_vampire_culture
@@ -493,7 +493,7 @@ T47 = {
 	difficulty = 1
 }
 
-#九十九组
+#九十九组 九十九 弁弁
 T48 = {
 	color = rgb { 207 161 217 }
 	culture_definition = th_vampire_culture
@@ -502,7 +502,7 @@ T48 = {
 	difficulty = 2
 }
 
-#柳下运河
+#柳下运河 柳下的 赤蛮奇
 T49 = {
 	color = rgb { 38 153 140 }
 	culture_definition = th_vampire_culture
@@ -511,7 +511,7 @@ T49 = {
 	difficulty = 3
 }
 
-#狼人竹林
+#狼人竹林 今泉 影狼
 T50 = {
 	color = rgb { 153 118 136 }
 	culture_definition = th_vampire_culture
@@ -520,7 +520,7 @@ T50 = {
 	difficulty = 1
 }
 
-#仙界
+#仙界 丰聪耳 神子
 T51 = {
 	color = rgb { 227 225 190 }
 	culture_definition = th_vampire_culture
@@ -529,7 +529,7 @@ T51 = {
 	difficulty = 1
 }
 
-#心绮楼
+#心绮楼 秦 心
 T52 = {
 	color = rgb { 227 112 225 }
 	culture_definition = th_vampire_culture
@@ -538,7 +538,7 @@ T52 = {
 	difficulty = 1
 }
 
-#永远亭
+#永远亭 蓬莱山 辉夜
 T53 = {
 	color = rgb { 106 204 62 }
 	culture_definition = th_vampire_culture
@@ -547,7 +547,7 @@ T53 = {
 	difficulty = 1
 }
 
-#藤原氏
+#藤原氏 藤原 妹红
 T54 = {
 	color = rgb { 224 119 121 }
 	culture_definition = th_vampire_culture
@@ -556,7 +556,7 @@ T54 = {
 	difficulty = 1
 }
 
-#幸运竹林
+#幸运竹林 因幡 帝
 T55 = {
 	color = rgb { 209 224 201 }
 	culture_definition = th_vampire_culture
@@ -565,7 +565,7 @@ T55 = {
 	difficulty = 1
 }
 
-#竹林药铺
+#竹林药铺 因幡 铃仙
 T56 = {
 	color = rgb { 185 224 145 }
 	culture_definition = th_vampire_culture
@@ -574,7 +574,7 @@ T56 = {
 	difficulty = 1
 }
 
-#邪仙界
+#邪仙界 霍 青娥
 T57 = {
 	color = rgb { 184 203 224 }
 	culture_definition = th_vampire_culture
@@ -583,7 +583,7 @@ T57 = {
 	difficulty = 1
 }
 
-#魔界
+#魔界 神绮 魔界的
 T58 = {
 	color = rgb { 224 176 61 }
 	culture_definition = th_vampire_culture
@@ -592,7 +592,7 @@ T58 = {
 	difficulty = 1
 }
 
-#魔人旅社
+#魔人旅社 露易兹 灵天的
 T59 = {
 	color = rgb { 211 133 224 }
 	culture_definition = th_vampire_culture
@@ -601,7 +601,7 @@ T59 = {
 	difficulty = 1
 }
 
-#博丽旧社
+#博丽旧社 博丽的 明罗 
 T60 = {
 	color = rgb { 184 68 165 }
 	culture_definition = th_vampire_culture
@@ -610,7 +610,7 @@ T60 = {
 	difficulty = 1
 }
 
-#蓬松松爱莲魔法店
+#蓬松松爱莲魔法店 蓬松松的 爱莲
 T61 = {
 	color = rgb { 235 233 128 }
 	culture_definition = th_vampire_culture
@@ -619,7 +619,7 @@ T61 = {
 	difficulty = 1
 }
 
-#太阳花田
+#太阳花田 风见 幽香
 T62 = {
 	color = rgb { 233 235 44 }
 	culture_definition = th_vampire_culture
@@ -628,7 +628,7 @@ T62 = {
 	difficulty = 1
 }
 
-#铃集之丘
+#铃集之丘 梅蒂欣 梅兰可莉
 T63 = {
 	color = rgb { 233 247 243 }
 	culture_definition = th_vampire_culture
@@ -637,7 +637,7 @@ T63 = {
 	difficulty = 1
 }
 
-#朝仓实验室
+#朝仓实验室 朝仓 理香子
 T64 = {
 	color = rgb { 224 74 245 }
 	culture_definition = th_vampire_culture
@@ -646,7 +646,7 @@ T64 = {
 	difficulty = 1
 }
 
-#静寂神殿
+#静寂神殿 矜羯罗 静寂的
 T65 = {
 	color = rgb { 99 75 75 }
 	culture_definition = th_vampire_culture
@@ -655,7 +655,7 @@ T65 = {
 	difficulty = 1
 }
 
-#幻梦界
+#幻梦界 魅魔 幻梦界的
 T66 = {
 	color = rgb { 7 122 90 }
 	culture_definition = th_vampire_culture
@@ -664,7 +664,7 @@ T66 = {
 	difficulty = 1
 }
 
-#战车道
+#战车道 里香 战车道的
 T67 = {
 	color = rgb { 168 150 131 }
 	culture_definition = th_vampire_culture
@@ -673,7 +673,7 @@ T67 = {
 	difficulty = 1
 }
 
-#安娜贝拉尔的洋馆
+#安娜贝拉尔的洋馆 卡娜 安娜贝拉尔
 T68 = {
 	color = rgb { 107 120 201 }
 	culture_definition = th_vampire_culture
@@ -682,7 +682,7 @@ T68 = {
 	difficulty = 1
 }
 
-#时空旅人
+#时空旅人 冈崎 梦美
 T69 = {
 	color = rgb { 201 48 101 }
 	culture_definition = th_vampire_culture
@@ -691,7 +691,7 @@ T69 = {
 	difficulty = 1
 }
 
-#天界
+#天界 比那名居 天子
 T70 = {
 	color = rgb { 95 156 201 }
 	culture_definition = th_vampire_culture
@@ -700,7 +700,7 @@ T70 = {
 	difficulty = 1
 }
 
-#龙宫
+#龙宫 永江 衣玖
 T71 = {
 	color = rgb { 57 103 201 }
 	culture_definition = th_vampire_culture
@@ -709,7 +709,7 @@ T71 = {
 	difficulty = 1
 }
 
-#月之都
+#月之都 绵月 丰姬
 T72 = {
 	color = rgb { 227 112 225 }
 	culture_definition = th_vampire_culture
@@ -718,7 +718,7 @@ T72 = {
 	difficulty = 1
 }
 
-#血之湖
+#血之湖 胡桃 猩红的
 T73 = {
 	color = rgb { 201 69 71 }
 	culture_definition = th_vampire_culture
@@ -727,7 +727,7 @@ T73 = {
 	difficulty = 1
 }
 
-#梦幻世界
+#梦幻世界 幻梦的 幻月
 T74 = {
 	color = rgb { 227 226 212 }
 	culture_definition = th_vampire_culture
@@ -736,7 +736,7 @@ T74 = {
 	difficulty = 1
 }
 
-#堀川乐团
+#堀川乐团 堀川 雷鼓
 T75 = {
 	color = rgb { 135 173 140 }
 	culture_definition = th_vampire_culture
@@ -745,7 +745,7 @@ T75 = {
 	difficulty = 1
 }
 
-#宫古之扉
+#宫古之扉 宫古 芳香
 T76 = {
 	color = rgb { 106 72 171 }
 	culture_definition = th_vampire_culture
@@ -754,7 +754,7 @@ T76 = {
 	difficulty = 1
 }
 
-#紫之祥云
+#紫之祥云 云居 一轮
 T77 = {
 	color = rgb { 219 171 217 }
 	culture_definition = th_vampire_culture
@@ -763,7 +763,7 @@ T77 = {
 	difficulty = 1
 }
 
-#山彦参道
+#山彦参道 幽谷 响子
 T78 = {
 	color = rgb { 82 173 172 }
 	culture_definition = th_vampire_culture
@@ -772,7 +772,7 @@ T78 = {
 	difficulty = 1
 }
 
-#堕落神殿
+#堕落神殿 萨丽爱尔 魔界的
 T79 = {
 	color = rgb { 146 186 240 }
 	culture_definition = th_vampire_culture
@@ -781,7 +781,7 @@ T79 = {
 	difficulty = 1
 }
 
-#纯化之月
+#纯化之月 纯狐 仙灵的
 T80 = {
 	color = rgb { 240 195 155 }
 	culture_definition = th_vampire_culture
@@ -790,7 +790,7 @@ T80 = {
 	difficulty = 1
 }
 
-#梦境地狱
+#梦境地狱 赫卡提亚 拉碧丝拉祖利
 T81 = {
 	color = rgb { 227 86 145 }
 	culture_definition = th_vampire_culture
@@ -799,7 +799,7 @@ T81 = {
 	difficulty = 1
 }
 
-#克劳恩皮西亚
+#克劳恩皮西亚 克劳恩皮丝 异界的
 T82 = {
 	color = rgb { 142 92 186 }
 	culture_definition = th_vampire_culture
@@ -808,7 +808,7 @@ T82 = {
 	difficulty = 1
 }
 
-#华扇的仙界
+#华扇的仙界 茨木 华扇
 T83 = {
 	color = rgb { 240 130 219 }
 	culture_definition = th_vampire_culture
@@ -816,8 +816,8 @@ T83 = {
 	description_category = economic
 	difficulty = 1
 }
-
-#黄泉寂灭之国
+ 
+#黄泉寂灭之国 日白 残无
 T84 = {
 	color = rgb { 149 240 152 }
 	culture_definition = th_vampire_culture
