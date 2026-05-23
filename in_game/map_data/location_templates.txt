@@ -3557,10 +3557,10 @@ th_moriya_coast_ashi_wara = { topography = flatland vegetation = woods climate =
 #守矢府邸
 th_moriya_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = fiber_crops  natural_harbor_suitability = 0.75 }
 th_moriya_holy_mansion = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
-th_kochiya_mansion = { topography = hills vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = wool  natural_harbor_suitability = 0.75 }
-th_mountain_goddess_loved_hills = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = potato  natural_harbor_suitability = 0.75 }
+th_kochiya_mansion = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = wool  natural_harbor_suitability = 0.75 }
+th_mountain_goddess_loved_hills = { topography = hills vegetation = farmland climate = continental religion = catholic culture = shua_culture raw_material = potato  natural_harbor_suitability = 0.75 }
 th_moriya_divine_sake_cellar = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = wild_game  natural_harbor_suitability = 0.75 }
-th_divine_resonance_pool = { topography = hills vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
+th_divine_resonance_pool = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
 th_kamikaze_island_main = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = iron  natural_harbor_suitability = 0.75 }
 #大蛤蟆之池
 #大蛤蟆之池
@@ -3628,7 +3628,7 @@ th_still_wasteland = { topography = mountains vegetation = forest climate = cont
 #风神之湖
 th_lake_of_wind_god = { topography = lakes vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_zealot_billage = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = potato  natural_harbor_suitability = 0.75 }
-th_hillside_of_qian = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = lumber  natural_harbor_suitability = 0.75 }
+th_hillside_of_qian = { topography = hills vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = lumber  natural_harbor_suitability = 0.75 }
 th_worship_of_onbashira = { topography = wetlands vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
 th_miracle_idol_office = { topography = flatland vegetation = forest climate = continental religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
 th_land_of_seven_holy_stones_and_seven_holy_trees = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
@@ -3942,7 +3942,7 @@ th_scab = { topography = flatland vegetation = desert climate = continental reli
 th_lost_souls_shelter = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = clay  natural_harbor_suitability = 0.75 }
 th_tagnation_port = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = beeswax  natural_harbor_suitability = 0.75 }
 th_skeleton_plateau = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
-th_gaze_westward_hillock = { topography = flatland vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = fruit  natural_harbor_suitability = 0.75 }
+th_gaze_westward_hillock = { topography = hills vegetation = sparse climate = continental religion = catholic culture = shua_culture raw_material = fruit  natural_harbor_suitability = 0.75 }
 #魂之壶
 #魂之壶
 #魂之壶
@@ -4470,7 +4470,7 @@ th_suzusuzu_stage_main = { topography = flatland vegetation = woods climate = oc
 th_lily_sea_old_path = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = beeswax  natural_harbor_suitability = 0.75 }
 th_lily_sea_finale_theater = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
 th_lily_sea_border_hedge = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
-th_memory_lily_hill = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
+th_memory_lily_hill = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
 th_eternal_slumber_lily_hill = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
 #梦幻之地
 #梦幻之地
@@ -5208,13 +5208,17 @@ th_meira_no_thought_sword_steps = { topography = flatland vegetation = grassland
 th_kana_mansion_main = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
 th_kana_maidens_blank_bedroom = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = livestock  natural_harbor_suitability = 0.75 }
 th_kana_faded_memory_foyer = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = tea  natural_harbor_suitability = 0.75 }
-th_kana_sighing_corridor = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
-th_phantom_banquet_hall = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
+th_kana_sighing_corridor = { topography = hills vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = rice  natural_harbor_suitability = 0.75 }
+th_phantom_banquet_hall = { topography = hills vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = wheat  natural_harbor_suitability = 0.75 }
 #朝仓实验室
 #朝仓实验室
 #朝仓实验室
 #朝仓实验室
-th_abandoned_magic_room = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = tea  natural_harbor_suitability = 0.75 }
+#朝仓实验室
+#朝仓实验室
+#朝仓实验室
+#朝仓实验室
+th_abandoned_magic_room = { topography = hills vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = tea  natural_harbor_suitability = 0.75 }
 th_crystal_computer_array = { topography = flatland vegetation = woods climate = mediterranean religion = catholic culture = shua_culture raw_material = gems  natural_harbor_suitability = 0.75 }
 th_asakura_laboratory_room = { topography = hills vegetation = forest climate = mediterranean religion = catholic culture = shua_culture raw_material = iron  natural_harbor_suitability = 0.75 }
 th_me_controller_core = { topography = hills vegetation = forest climate = mediterranean religion = catholic culture = shua_culture raw_material = coal  natural_harbor_suitability = 0.75 }
