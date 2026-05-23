@@ -393,8 +393,8 @@
 # th_hell_wind_warrier
 # 守矢岸浜（天狗分布极少，有部分河童）
 # th_kochiya_port 集镇 （主要的守矢民聚集点）
-# th_moriya_estuary 河流
-# th_land_of_frogs 河流
+# th_moriya_estuary 大河
+# th_land_of_frogs 大河
 # th_short_lived_forest 河流
 # th_moriya_coast_ashi_wara 
 # 守矢府邸（天狗分布极少）
@@ -406,16 +406,16 @@
 # th_divine_resonance_pool 河流
 # th_kamikaze_island_main
 # 大蛤蟆之池（天狗分布极少，有部分河童）
-# th_big_toad_lake 河流
+# th_big_toad_lake 大河
 # th_kappa_major_bridge 河流 （主要的河童聚集点）
-# th_kappa_station 河流 （主要的河童聚集点）
-# th_frog_port 河流
-# th_great_toad_pond_bog 河流
+# th_kappa_station 大河 （主要的河童聚集点）
+# th_frog_port 大河
+# th_great_toad_pond_bog 大河
 # 守矢神社（主要的守矢民聚集点，几乎无妖精、天狗分布）
 # th_moriya_shrine_honden 河流 集镇
-# th_moriya_shrine_haiden 河流 集镇
-# th_moriya_shrine_shamushu 河流 集镇
-# th_moriya_shrine_temizuya 河流 集镇
+# th_moriya_shrine_haiden 大河 集镇
+# th_moriya_shrine_shamushu 大和 集镇
+# th_moriya_shrine_temizuya 大河 集镇
 # th_moriya_shrine_road
 # th_moriya_shrine_station
 # 幻草原（几乎无天狗分布，有部分河童分布）
@@ -425,11 +425,11 @@
 # th_breeze_hills 河流
 # th_still_wasteland
 # 风神之湖（有部分天狗分布，有部分妖精分布）
-# th_zealot_village 集镇 河流
+# th_zealot_village 集镇 大河
 # th_hillside_of_qian 河流
 # th_worship_of_onbashira
 # th_miracle_idol_office
-# th_land_of_seven_holy_stones_and_seven_holy_trees 河流
+# th_land_of_seven_holy_stones_and_seven_holy_trees 大河
 # 守矢索道（有许多天狗分布）
 # th_cableway_start 集镇
 # th_cableway_tengu_line
@@ -449,7 +449,7 @@
 # th_wind_castle 集镇
 # th_snakes_hole 
 # th_border_of_faith
-# th_wind_god_valley_tengu
+# th_wind_god_valley_tengu 大河
 # th_god_valley_meditation 
 # 迷雾酒肆（有许多天狗分布，有部分妖精分布）
 # th_fog_pub 河流
@@ -464,3 +464,250 @@
 # th_red_frogs_tomb
 # th_hill_of_wind_and_rain 河流
 # th_divine_wind_hanging_meadow
+#畜生界 （位于地狱） （总体人口分布：灵长灵40%，地狱妖精30%，野狼灵10%，水獭灵10%，大鹫灵10%，埴轮5%）
+# 未知之扉 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_gate_of_inknown 河流
+# th_primate_barrier
+# th_wall_of_hopoless
+# th_hani_depression 城镇 河流
+# th_haniwa_doll_sentry_array
+# 灵长园 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_primate_spirit_garden 城镇
+# th_haniyasushin_shrine 城镇
+# th_hope_altar 河流
+# th_haniwa_port
+# th_haniwa_shaping_palace 城市
+# th_peninsula_spine_avenue
+# th_idol_prayer_steps 大河
+# th_primate_deepwater_port
+# th_human_preserve_idol_realm 大河
+# th_central_processing_terminal 大河
+# th_clay_island
+# th_unfinished_colossus_island
+# th_clay_bay
+# 灵长类之境 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_village_of_isolate 城镇 河流
+# th_human_spirit_village
+# th_withered_field
+# th_silent_fishing_village
+# th_clay_outpost
+# th_tool_graveyard
+# 野兽大都会 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_beast_downtown 城镇
+# th_shimokita
+# th_primate_lower_city
+# th_haniwa_precinct
+# th_arc_light_emitter
+# th_shaping_bureau
+# th_human_doll_citizen_apartments
+# 水獭灵岗楼 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_otter_spirit_watchtower 河流
+# th_castor_clan 河流
+# th_red_panda_cave
+# th_iron_branch_dam 河流
+# th_kike_secret_way 大河
+# th_pangolin_bunker 大河
+# th_albatross_storm_nest 河流
+# 人灵市镇 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_primate_spirit_township 城镇 河流
+# th_delusion_prosperity 河流
+# th_tenkyuu_branch_office
+# th_primate_meander
+# th_bloody_turbulence
+# th_st_haniwa_mountain 河流
+# th_penguin_ice_outpost
+# 野狼灵竞技场 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_haniwa_basin
+# th_old_village_of_wolf_spirit
+# th_wolf_spirit_arena
+# th_wild_plain
+# th_limitation_hills
+# th_scab
+# 迷失魂灵庇护所 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_lost_souls_shelter
+# th_tagnation_port 城镇
+# th_skeleton_plateau
+# th_gaze_westward_hillock
+# th_atonement_lock
+# 魂之壶 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_yamato_beach
+# th_marigold_confluence
+# th_pot_of_souls
+# th_prayer_differential_tower
+# th_lepton_resonance_arc_stream
+# 贪欲之渊 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_dark_abyss
+# th_pot_of_greed
+# th_camp_of_artorias
+# th_burl_heart
+# th_greed_black_market
+# th_desire_tidal_flat
+# th_dragon_crystal_main_island
+# th_sloth_lagoon_island
+# 奈河沿岸 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_naihe_bridge
+# th_well_of_frogotten
+# th_last_chance
+# th_baos_post_station
+# th_utopia_reflection
+# th_reincarnation_whirlpool_palace
+# 亡灵泥沼 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_dead_swamp
+# th_forest_of_hunt
+# th_idol_bay
+# th_black_sand_beach
+# 埴轮工厂 （野狼灵、水獭灵、大鹫灵分布极少）
+# th_haniwa_factory 城镇
+# th_haniwa_barracks
+# th_haniwa_subrbs
+# th_idol_frontier
+# th_dead_zone
+# th_dregs_shantytown
+# th_faith_clay_pool_island
+# th_loyalty_maze_island
+# h_anvil_root_bridge
+# 叫唤地狱
+# th_screaming_hell
+# th_scorching_hell
+# th_avici_hell
+# th_deer_hunting_hell
+# 虚与实的境界
+# th_border_of_fake_and_reality
+# th_reviving_hell
+# th_kalasutra_hell
+# th_samghata_hell
+# th_concept_collapse_abyss
+# th_bee_hive_array
+# 地狱边境
+# th_throne_of_caelestinus_V
+# th_abandoned_baby_park
+# th_cobble_riverbank
+# th_stone_stacking_ring
+# th_hell_windless_plain
+# th_hell_path_of_confusion
+# 畜生界之扉
+# th_pass_of_animal_realm
+# th_kike_gang_skyscraper 城镇
+# th_yachies_mansion
+# th_gold_brance_wall
+# th_village_of_otters
+# th_underwater_cellar
+# 嚎哭洞穴
+# th_crying_cave
+# th_interrogation_house
+# th_betray_blade
+# th_biten_tree_house
+# th_spongilla_fragilis_garden
+# 无明旷原
+# th_no_live_wilderness
+# th_deadly_hillside
+# th_top_of_regression 河流
+# th_strange_mine
+# th_echo_cavern
+# th_false_moon_dark
+# 兽王园
+# th_beast_king_garden 城市
+# th_unfinished_land
+# th_relie_throne
+# th_nothing
+# th_oni_tavern
+# 中有之道
+# th_road_of_liminality
+# th_death_commercial_street
+# th_withered_flowers_garden
+# th_pretas_yelling
+# 再思之道
+# th_road_of_reconsideration
+# th_lycoris_field
+# th_ghost_queue
+# th_regret_echo_bridge 河流
+# th_pain_equivalence_scale 河流
+# 畜生界
+# th_untamed_horse_grassland
+# th_beast_froniter 河流
+# th_galloping_horese_avenue 河流
+# th_throne_of_reject
+# 未定位的地狱
+# th_chaos_storm 河流
+# th_fear_of_oni
+# th_blood_wine_of_sinner
+# th_happyness_plantation 河流
+# 野兽灵之丘
+# th_skeleton_ridge 河流
+# th_hills_of_beast_spirit 河流
+# th_haunted_gold_mine 河流
+# th_bloody_factory 河流
+# th_coward_burrow 河流
+# 套索兽道
+# th_lasso_beast_road 河流
+# th_road_of_slavery 大河
+# th_undead_settlement 城镇
+# th_ash_barren
+# th_broken_horn_graveyard
+# 野兽之町
+# th_new_city_of_wolf_spirit
+# th_keiga_gang_skyscraper 城市
+# th_saki_mansion
+# th_pegasus_fortress 河流
+# 悲伤山冈
+# th_sadness_hillock 河流
+# th_sunken_corpse_riverbed 河流
+# th_kaiji_casino
+# th_hidden_corn_field 河流
+# th_tearless_peak 河流
+# th_solid_rain_cliff 河流
+# 虚空边界
+# th_void_of_fate
+# th_void_of_end
+# th_void_of_think
+# th_void_of_nothing
+# 遗物之丘
+# th_relic_hill 河流
+# th_valley_of_new_three_artifact 河流
+# th_game_console_dead_end
+# th_oblivon_time 河流
+# th_sentinel_cliff 河流
+# 血池地狱
+# th_blood_pond_hell
+# th_artery_of_petroleum
+# th_toutetsu_cabin 城市
+# th_brain_of_beast
+# 石油之海
+# th_sea_of_petroleum
+# th_infinite_food
+# th_greedy_gusher 河流
+# th_bottomless_pit 河流
+# th_desire_cracking_plant 河流
+# 黄泉
+# th_huangquan 河流
+# th_oni_hunting_chain 河流
+# th_mourning_border
+# th_zoo_of_extince_animals 河流
+# 鬼渡之关
+# th_oniwatari_pass 城镇 大河
+# th_straightforward_traffic_sign 河流
+# th_death_door 河流
+# th_oniwatari_shrine 城镇 大河
+# th_crossing_black_market 河流
+# 彼岸 （位于地狱） （总体人口分布：地狱妖精67%，死神27%，阎魔6%）
+# 阎魔岗哨
+# 判官后院
+# 彼岸花原野
+# 魂灵候审处
+# 彼岸
+# 阎魔殿
+# 地狱之港
+# 瘴气原野
+# 炼狱之境
+# 鬼神长总番所
+# 死神静修处
+# 三途河
+# 阴燃森林
+# 灵魂的终点
+# 地狱之扉
+# 二羽渡神的口岸
+# 回忆之冢
+# 赛之河原
+# 大法之馆
+# 魂之川
+# 赫卡提亚神殿
