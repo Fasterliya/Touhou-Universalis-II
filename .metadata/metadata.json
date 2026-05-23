@@ -2,7 +2,7 @@
 	"name":	"东方风云",
 	"id":	"name.touhou",
 	"version":	"0.1",
-	"supported_game_version":	"1.1.8",
+	"supported_game_version":	"1.2.3",
 	"short_description":	"东方风云",
 	"tags":	["Alternative history", "Characters", "Diplomacy", "Events", "Flags", "Gameplay", "Government and Estates", "Historical", "Map"],
 	"relationships":	[],

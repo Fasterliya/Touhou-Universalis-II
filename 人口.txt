@@ -269,3 +269,83 @@
 # th_ginkgo_courtyard
 # th_stone_lantern
 # th_aki_maple_corridor
+# 守矢神社地区（总和主体人口：守矢民64%，天狗12%且自东南向西北分布逐渐减少，山内聚居人类10%，村落外人类8%，河童3%，妖精3%）
+# 守矢屯营（天狗分布少）
+# th_moriya_garrison 集镇 （主要的守矢民聚集点）
+# th_hell_outpost
+# th_wind_goddess_pass
+# th_idol_ferry_crossing 河流
+# th_hell_wind_warrier
+# 守矢岸浜（天狗分布极少，有部分河童）
+# th_kochiya_port 集镇 （主要的守矢民聚集点）
+# th_moriya_estuary 河流
+# th_land_of_frogs 河流
+# th_short_lived_forest 河流
+# th_moriya_coast_ashi_wara 
+# 守矢府邸（天狗分布极少）
+# th_moriya_port（主要的守矢民聚集点）
+# th_moriya_holy_mansion 河流 城市 （主要的守矢民聚集点）
+# th_kochiya_mansion 集镇 河流
+# th_mountain_goddess_loved_hills 河流
+# th_moriya_divine_sake_cellar
+# th_divine_resonance_pool 河流
+# th_kamikaze_island_main
+# 大蛤蟆之池（天狗分布极少，有部分河童）
+# th_big_toad_lake 河流
+# th_kappa_major_bridge 河流 （主要的河童聚集点）
+# th_kappa_station 河流 （主要的河童聚集点）
+# th_frog_port 河流
+# th_great_toad_pond_bog 河流
+# 守矢神社（主要的守矢民聚集点，几乎无妖精、天狗分布）
+# th_moriya_shrine_honden 河流 集镇
+# th_moriya_shrine_haiden 河流 集镇
+# th_moriya_shrine_shamushu 河流 集镇
+# th_moriya_shrine_temizuya 河流 集镇
+# th_moriya_shrine_road
+# th_moriya_shrine_station
+# 幻草原（几乎无天狗分布，有部分河童分布）
+# th_weastern_phantom_meadow
+# th_eastern_phantom_meadow 河流
+# th_ghost_horde
+# th_breeze_hills 河流
+# th_still_wasteland
+# 风神之湖（有部分天狗分布，有部分妖精分布）
+# th_zealot_village 集镇 河流
+# th_hillside_of_qian 河流
+# th_worship_of_onbashira
+# th_miracle_idol_office
+# th_land_of_seven_holy_stones_and_seven_holy_trees 河流
+# 守矢索道（有许多天狗分布）
+# th_cableway_start 集镇
+# th_cableway_tengu_line
+# th_cableway_kappa_line
+# th_cableway_hell_new_line
+# th_tornado_maple_forest
+# 御柱的墓场（有部分天狗分布）
+# th_cemetery_of_onbashira
+# th_prayer_hills 河流
+# th_gold_pieces_riber_bend
+# th_border_market
+# th_shattered_gold_customs 河流
+# th_shattered_gold_shallows 河流
+# th_prayer_hill_terrace 河流
+# 大地之谷（有许多天狗分布，有部分妖精分布）
+# th_valley_of_earth 河流
+# th_wind_castle 集镇
+# th_snakes_hole 
+# th_border_of_faith
+# th_wind_god_valley_tengu
+# th_god_valley_meditation 
+# 迷雾酒肆（有许多天狗分布，有部分妖精分布）
+# th_fog_pub 河流
+# th_miracle_cellaring 河流
+# th_terraced_fields 河流
+# th_beautuful_fountainhead 河流
+# th_green_gate
+# th_misty_sake_den_kappa 河流
+# 神风之谷（有许多天狗分布）
+# th_holy_wind_valley 集镇
+# th_gods_hoad
+# th_red_frogs_tomb
+# th_hill_of_wind_and_rain 河流
+# th_divine_wind_hanging_meadow

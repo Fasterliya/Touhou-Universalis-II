@@ -3385,7 +3385,7 @@ th_gensokyo_continent = {
 			th_soutern_moriya_shinre_area = {
 				th_lake_of_wind_god_province = {
 					th_lake_of_wind_god
-					th_zealot_billage
+					th_zealot_village
 					th_hillside_of_qian
 					th_worship_of_onbashira
 					th_miracle_idol_office
