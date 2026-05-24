@@ -58426,7 +58426,7 @@ countries = {
 
 
       T27 = {
-         capital = th_craftsman_hall
+         capital = th_high_tech_developement_zone
          court_language = acgv_touhou_eastern_dialect
          country_rank = rank_kingdom
          starting_technology_level = 3
