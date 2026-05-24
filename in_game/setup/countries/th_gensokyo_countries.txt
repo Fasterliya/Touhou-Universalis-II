@@ -13,7 +13,7 @@ T00 = {
 T01 = {
 	color = rgb { 166 212 237 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_elemental_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -24,7 +24,7 @@ T01 = {
 T02 = {
 	color = rgb { 88 214 126 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_flower_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -35,7 +35,7 @@ T02 = {
 T04 = {
 	color = rgb { 240 47 47 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_shrine_surrounding_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -47,7 +47,7 @@ T04 = {
 T05 = {
 	color = rgb { 152 82 214 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_fox_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -58,7 +58,7 @@ T05 = {
 T06 = {
 	color = rgb { 214 129 214 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_light_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -69,7 +69,7 @@ T06 = {
 T07 = {
 	color = rgb { 255 255 218 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_season_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -80,7 +80,7 @@ T07 = {
 T08 = {
 	color = rgb { 255 254 246 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_magician_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -91,7 +91,7 @@ T08 = {
 T09 = {
 	color = rgb { 151 227 89 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_magician_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -102,7 +102,7 @@ T09 = {
 T10 = {
 	color = rgb { 203 222 227 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_dog_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -113,7 +113,7 @@ T10 = {
 T11 = {
 	color = rgb { 212 84 152 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_night_sparrow_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -124,7 +124,7 @@ T11 = {
 T12 = {
 	color = rgb { 212 224 141 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_insect_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -135,7 +135,7 @@ T12 = {
 T13 = {
 	color = rgb { 135 59 61 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_barrier_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -146,7 +146,7 @@ T13 = {
 T14 = {
 	color = rgb { 114 199 84 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_moriya_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -157,7 +157,7 @@ T14 = {
 T15 = {
 	color = rgb { 33 199 40 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_fox_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -168,7 +168,7 @@ T15 = {
 T16 = {
 	color = rgb { 70 73 74 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_fox_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -179,7 +179,7 @@ T16 = {
 T17 = {
 	color = rgb { 255 194 107 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_houjou_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -190,7 +190,7 @@ T17 = {
 T18 = {
 	color = rgb { 89 73 73 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_crow_tengu_culture
 	religion_definition = th_gensokyo_tenma_mount
 	
 	description_category = diplomatic
@@ -201,7 +201,7 @@ T18 = {
 T19 = {
 	color = rgb { 160 214 102 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yamanba_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -212,7 +212,7 @@ T19 = {
 T20 = {
 	color = rgb { 178 237 221 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_satori_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -223,7 +223,7 @@ T20 = {
 T21 = {
 	color = rgb { 237 214 135 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_tsuchigumo_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -234,7 +234,7 @@ T21 = {
 T22 = {
 	color = rgb { 107 237 149 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_hashihime_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -245,7 +245,7 @@ T22 = {
 T23 = {
 	color = rgb { 199 175 135 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_oni_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -256,7 +256,7 @@ T23 = {
 T24 = {
 	color = rgb { 144 227 219 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_creator_god_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -268,7 +268,7 @@ T25 = {
 	color = rgb { 247 32 238 }
 	# color = rgb { 113 114 199 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yama_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -279,7 +279,7 @@ T25 = {
 T26 = {
 	color = rgb { 56 158 70 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_kappa_culture
 	religion_definition = th_gensokyo_tenma_mount
 	
 	description_category = diplomatic
@@ -290,7 +290,7 @@ T26 = {
 T27 = {
 	color = rgb { 43 122 54 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_yamawaro_culture
 	religion_definition = th_gensokyo_tenma_mount
 	
 	description_category = diplomatic
@@ -301,7 +301,7 @@ T27 = {
 T28 = {
 	color = rgb { 181 92 201 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_mountain_woman_culture
 	religion_definition = th_gensokyo_tenma_mount
 	
 	description_category = diplomatic
@@ -313,7 +313,7 @@ T28 = {
 T29 = {
 	color = rgb { 78 201 187 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_phenomenon_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -324,7 +324,7 @@ T29 = {
 T30 = {
 	color = rgb { 92 155 158 }
 	
-	culture_definition = th_vampire_culture
+	culture_definition = th_poltergeist_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -334,7 +334,7 @@ T30 = {
 #人间之里 空置，随机一个名称
 T03 = {
 	color = rgb { 255 183 58 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = diplomatic
 	difficulty = 1
@@ -343,7 +343,7 @@ T03 = {
 #冥界 西行寺 幽幽子
 T31 = {
 	color = rgb { 142 135 255 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_undead_spirit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = military
 	difficulty = 2
@@ -352,7 +352,7 @@ T31 = {
 #命莲寺 圣 白莲
 T32 = {
 	color = rgb { 202 177 255 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_buddhism
 	description_category = economic
 	difficulty = 1
@@ -361,7 +361,7 @@ T32 = {
 #宝塔禅林 寅丸 星
 T33 = {
 	color = rgb { 255 122 25 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_buddhism
 	description_category = diplomatic
 	difficulty = 3
@@ -370,7 +370,7 @@ T33 = {
 #寻龙门 纳兹琳 毘沙门天的
 T34 = {
 	color = rgb { 172 197 219 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_buddhism
 	description_category = military
 	difficulty = 2
@@ -379,7 +379,7 @@ T34 = {
 #秘境 若鹭姬 秘境的
 T35 = {
 	color = rgb { 107 206 219 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -388,7 +388,7 @@ T35 = {
 #小伞铁匠铺 多多良 小伞
 T36 = {
 	color = rgb { 8 184 29 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = diplomatic
 	difficulty = 2
@@ -397,7 +397,7 @@ T36 = {
 #鬼杰组  吉吊 八千慧
 T37 = {
 	color = rgb { 253 255 40 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_otter_spirit_culture
 	religion_definition = th_gensokyo_eat_raw
 	description_category = military
 	difficulty = 3
@@ -406,7 +406,7 @@ T37 = {
 #劲牙组 骊驹 早鬼
 T38 = {
 	color = rgb { 84 94 53 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_wolf_spirit_culture
 	religion_definition = th_gensokyo_eat_raw
 	description_category = economic
 	difficulty = 1
@@ -415,7 +415,7 @@ T38 = {
 #刚欲同盟 饕餮 尤魔
 T39 = {
 	color = rgb { 161 45 47 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_great_eagle_spirit_culture
 	religion_definition = th_gensokyo_eat_raw
 	description_category = diplomatic
 	difficulty = 2
@@ -424,7 +424,7 @@ T39 = {
 #孑然岸滨 庭渡 久诧歌
 T40 = {
 	color = rgb { 99 147 222 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_niwatari_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = military
 	difficulty = 3
@@ -433,7 +433,7 @@ T40 = {
 #水子石滩 戎 璎花
 T41 = {
 	color = rgb { 221 182 247 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_mizuko_spirit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -442,7 +442,7 @@ T41 = {
 #牛鬼河原 牛崎 润美
 T42 = {
 	color = rgb { 201 175 147 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_ushioni_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = diplomatic
 	difficulty = 2
@@ -451,7 +451,7 @@ T42 = {
 #三途河 小野塚 小町
 T43 = {
 	color = rgb { 115 132 201 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_shinigami_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = military
 	difficulty = 3
@@ -460,7 +460,7 @@ T43 = {
 #涡轮地狱 火焰猫 燐
 T44 = {
 	color = rgb { 171 80 82 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_cat_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -469,7 +469,7 @@ T44 = {
 #核热地狱 灵乌路 空
 T45 = {
 	color = rgb { 51 122 92 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_bird_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = diplomatic
 	difficulty = 2
@@ -478,7 +478,7 @@ T45 = {
 #地底井 大裂隙的 琪斯美
 T46 = {
 	color = rgb { 30 122 110 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_tsurube_otoshi_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = military
 	difficulty = 3
@@ -487,7 +487,7 @@ T46 = {
 #辉针城 少名 针妙丸
 T47 = {
 	color = rgb { 217 161 81 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_little_people_culture
 	religion_definition = th_gensokyo_tenma_mount
 	description_category = economic
 	difficulty = 1
@@ -496,7 +496,7 @@ T47 = {
 #九十九组 九十九 弁弁
 T48 = {
 	color = rgb { 207 161 217 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_instrument_yokai_culture
 	religion_definition = th_gensokyo_tenma_mount
 	description_category = diplomatic
 	difficulty = 2
@@ -505,7 +505,7 @@ T48 = {
 #柳下运河 柳下的 赤蛮奇
 T49 = {
 	color = rgb { 38 153 140 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_fox_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = military
 	difficulty = 3
@@ -523,7 +523,7 @@ T50 = {
 #仙界 丰聪耳 神子
 T51 = {
 	color = rgb { 227 225 190 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_beastman_culture
 	religion_definition = th_gensokyo_taoism
 	description_category = economic
 	difficulty = 1
@@ -532,7 +532,7 @@ T51 = {
 #心绮楼 秦 心
 T52 = {
 	color = rgb { 227 112 225 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -541,7 +541,7 @@ T52 = {
 #永远亭 蓬莱山 辉夜
 T53 = {
 	color = rgb { 106 204 62 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_moon_people_eientei_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -550,7 +550,7 @@ T53 = {
 #藤原氏 藤原 妹红
 T54 = {
 	color = rgb { 224 119 121 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_wild_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -559,7 +559,7 @@ T54 = {
 #幸运竹林 因幡 帝
 T55 = {
 	color = rgb { 209 224 201 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_rabbit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -568,7 +568,7 @@ T55 = {
 #竹林药铺 因幡 铃仙
 T56 = {
 	color = rgb { 185 224 145 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_rabbit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -577,7 +577,7 @@ T56 = {
 #邪仙界 霍 青娥
 T57 = {
 	color = rgb { 184 203 224 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_sennin_culture
 	religion_definition = th_gensokyo_taoism
 	description_category = economic
 	difficulty = 1
@@ -586,7 +586,7 @@ T57 = {
 #魔界 神绮 魔界的
 T58 = {
 	color = rgb { 224 176 61 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_makai_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -595,7 +595,7 @@ T58 = {
 #魔人旅社 露易兹 灵天的
 T59 = {
 	color = rgb { 211 133 224 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_makai_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -604,7 +604,7 @@ T59 = {
 #博丽旧社 博丽的 明罗 
 T60 = {
 	color = rgb { 184 68 165 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_old_gensokyo_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -613,7 +613,7 @@ T60 = {
 #蓬松松爱莲魔法店 蓬松松的 爱莲
 T61 = {
 	color = rgb { 235 233 128 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_magician_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -622,7 +622,7 @@ T61 = {
 #太阳花田 风见 幽香
 T62 = {
 	color = rgb { 233 235 44 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -631,7 +631,7 @@ T62 = {
 #铃集之丘 梅蒂欣 梅兰可莉
 T63 = {
 	color = rgb { 233 247 243 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_doll_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -640,7 +640,7 @@ T63 = {
 #朝仓实验室 朝仓 理香子
 T64 = {
 	color = rgb { 224 74 245 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_magician_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -649,7 +649,7 @@ T64 = {
 #静寂神殿 矜羯罗 静寂的
 T65 = {
 	color = rgb { 99 75 75 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_oni_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -658,7 +658,7 @@ T65 = {
 #幻梦界 魅魔 幻梦界的
 T66 = {
 	color = rgb { 7 122 90 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_evil_spirit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -667,7 +667,7 @@ T66 = {
 #战车道 里香 战车道的
 T67 = {
 	color = rgb { 168 150 131 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_old_gensokyo_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -676,7 +676,7 @@ T67 = {
 #安娜贝拉尔的洋馆 卡娜 安娜贝拉尔
 T68 = {
 	color = rgb { 107 120 201 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_poltergeist_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -685,7 +685,7 @@ T68 = {
 #时空旅人 冈崎 梦美
 T69 = {
 	color = rgb { 201 48 101 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_outside_world_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -694,7 +694,7 @@ T69 = {
 #天界 比那名居 天子
 T70 = {
 	color = rgb { 95 156 201 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_tennin_culture
 	religion_definition = th_gensokyo_taoism
 	description_category = economic
 	difficulty = 1
@@ -703,7 +703,7 @@ T70 = {
 #龙宫 永江 衣玖
 T71 = {
 	color = rgb { 57 103 201 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_tennin_culture
 	religion_definition = th_gensokyo_taoism
 	description_category = economic
 	difficulty = 1
@@ -712,7 +712,7 @@ T71 = {
 #月之都 绵月 丰姬
 T72 = {
 	color = rgb { 227 112 225 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_moon_people_human_village_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -730,7 +730,7 @@ T73 = {
 #梦幻世界 幻梦的 幻月
 T74 = {
 	color = rgb { 227 226 212 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_demon_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -739,7 +739,7 @@ T74 = {
 #堀川乐团 堀川 雷鼓
 T75 = {
 	color = rgb { 135 173 140 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_instrument_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -748,7 +748,7 @@ T75 = {
 #宫古之扉 宫古 芳香
 T76 = {
 	color = rgb { 106 72 171 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_jiangshi_culture
 	religion_definition = th_gensokyo_taoism
 	description_category = economic
 	difficulty = 1
@@ -757,7 +757,7 @@ T76 = {
 #紫之祥云 云居 一轮
 T77 = {
 	color = rgb { 219 171 217 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_buddhism
 	description_category = economic
 	difficulty = 1
@@ -766,7 +766,7 @@ T77 = {
 #山彦参道 幽谷 响子
 T78 = {
 	color = rgb { 82 173 172 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -775,7 +775,7 @@ T78 = {
 #堕落神殿 萨丽爱尔 魔界的
 T79 = {
 	color = rgb { 146 186 240 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_angel_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -784,7 +784,7 @@ T79 = {
 #纯化之月 纯狐 仙灵的
 T80 = {
 	color = rgb { 240 195 155 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_purified_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -793,7 +793,7 @@ T80 = {
 #梦境地狱 赫卡提亚 拉碧丝拉祖利
 T81 = {
 	color = rgb { 227 86 145 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_other_world_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -802,7 +802,7 @@ T81 = {
 #克劳恩皮西亚 克劳恩皮丝 异界的
 T82 = {
 	color = rgb { 142 92 186 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_hell_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -811,7 +811,7 @@ T82 = {
 #华扇的仙界 茨木 华扇
 T83 = {
 	color = rgb { 240 130 219 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_sennin_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
@@ -820,7 +820,7 @@ T83 = {
 #黄泉寂灭之国 日白 残无
 T84 = {
 	color = rgb { 149 240 152 }
-	culture_definition = th_vampire_culture
+	culture_definition = th_oni_culture
 	religion_definition = th_gensokyo_eat_raw
 	description_category = economic
 	difficulty = 1

@@ -57229,6 +57229,8 @@ countries = {
             th_whispering_residential_quarter th_clocktower_of_time th_forgotten_royal_court
          }
 
+         accepted_cultures = { th_maid_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture th_phenomenon_fairy_culture th_wild_human_culture th_mermaid_culture th_light_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_magician_culture th_demon_culture th_yokai_culture th_outside_world_people_culture th_jizo_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57272,6 +57274,8 @@ countries = {
             th_eternal_dusk_beach th_chaos_gravity_grove th_vine_ladder_slide
          }
 
+         accepted_cultures = { th_season_fairy_culture th_light_fairy_culture th_phenomenon_fairy_culture th_maid_fairy_culture }
+         tolerated_cultures = { th_flower_fairy_culture th_wild_human_culture th_mermaid_culture th_yokai_culture th_magician_culture th_demon_culture th_jizo_culture th_vampire_culture th_outside_world_people_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57314,6 +57318,8 @@ countries = {
             th_great_fairy_treehouse th_leaf_curtain_balcony th_treehouse_main_hall th_broken_shell_beach
          }
 
+         accepted_cultures = { th_elemental_fairy_culture th_light_fairy_culture th_phenomenon_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_yokai_culture th_jizo_culture th_magician_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57362,6 +57368,8 @@ countries = {
             th_suzuko_ya th_seiran_ya th_ryujin_sama_sekizou th_nishi_odori th_synthesizer_avenue
          }
 
+         accepted_cultures = { th_yokai_culture }
+         tolerated_cultures = { th_wild_human_culture th_shrine_surrounding_human_culture th_flower_fairy_culture th_season_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_houjou_people_culture th_zashiki_warashi_culture th_outside_world_people_culture th_crow_tengu_culture th_jizo_culture th_instrument_yokai_culture th_yokai_rabbit_culture th_yokai_dog_culture th_fuguruma_culture th_umbrella_yokai_culture th_ghost_culture th_moon_people_human_village_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57410,6 +57418,8 @@ countries = {
             th_suika_brewery_vault th_moonlight_cellar th_drunken_immortal_brewery th_wine_cellar th_barrier_nexus th_archery_range th_clear_mirror_still_water th_hakurei_foothills th_mountain_gate_stairs
          }
 
+         accepted_cultures = { th_wild_human_culture th_elemental_fairy_culture th_season_fairy_culture th_phenomenon_fairy_culture th_light_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_yokai_culture th_oni_culture th_yokai_snake_culture th_yokai_tanuki_culture th_outside_world_people_culture th_yokai_rat_culture th_yokai_bird_culture th_yokai_tiger_culture th_yokai_monkey_culture th_yokai_rabbit_culture th_yokai_ox_culture th_yokai_horse_culture th_yokai_dog_culture th_yokai_turtle_culture th_yokai_deer_culture th_yokai_cat_culture th_yokai_insect_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57456,6 +57466,8 @@ countries = {
             th_zenki_area th_goki_area th_yakumo_bay_shiun_misaki th_surface_forest th_surface_cave_settlement th_deep_cave_settlement th_hidden_air_pocket th_treasure_chanber
          }
 
+         accepted_cultures = { th_yokai_culture th_zashiki_warashi_culture th_flower_fairy_culture th_light_fairy_culture th_elemental_fairy_culture th_yokai_dog_culture th_yokai_cat_culture th_season_fairy_culture th_unnamable_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_outside_world_people_culture th_yokai_ox_culture th_yokai_rabbit_culture th_yokai_monkey_culture th_yokai_tiger_culture th_yokai_horse_culture th_yokai_turtle_culture th_yokai_rat_culture th_yokai_tanuki_culture th_yokai_insect_culture th_yokai_deer_culture th_yokai_bird_culture th_yokai_snake_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57499,6 +57511,8 @@ countries = {
             th_fairy_shrine th_shrine_star_point th_fairy_gathering_ring
          }
 
+         accepted_cultures = { th_elemental_fairy_culture th_season_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_phenomenon_fairy_culture th_yokai_culture th_jizo_culture th_magician_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57541,6 +57555,8 @@ countries = {
             th_spring_view_pavilion th_winter_jasmine_trail th_tidal_pool_playground th_thaw_glade th_harbinger_bridge
          }
 
+         accepted_cultures = { th_elemental_fairy_culture th_light_fairy_culture }
+         tolerated_cultures = { th_flower_fairy_culture th_phenomenon_fairy_culture th_yokai_culture th_jizo_culture th_magician_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57585,6 +57601,8 @@ countries = {
             th_windwhisper_trail th_miasma_rain_forest th_rot_heart_giant_tree th_seibi_ancient_tree th_cleansing_heart_stream th_seibi_grove
          }
 
+         accepted_cultures = { th_flower_fairy_culture th_doll_culture th_yokai_culture th_yokai_insect_culture }
+         tolerated_cultures = { th_jizo_culture th_yokai_turtle_culture th_yokai_rabbit_culture th_yokai_ox_culture th_yokai_cat_culture th_yokai_horse_culture th_yokai_rat_culture th_yokai_snake_culture th_yokai_bird_culture th_yokai_deer_culture th_yokai_tanuki_culture th_yokai_monkey_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57629,6 +57647,8 @@ countries = {
             th_spore_geyser_valle th_woodcutter_rest th_lost_traveler_fork th_reed_shallow_bay th_forest_shore th_giant_agaric_cluster th_grove_stone_altar th_mycelium_network_nexus th_mushroom_woods
          }
 
+         accepted_cultures = { th_flower_fairy_culture th_yokai_insect_culture }
+         tolerated_cultures = { th_yokai_culture th_doll_culture th_yokai_turtle_culture th_yokai_deer_culture th_yokai_rat_culture th_yokai_horse_culture th_yokai_snake_culture th_yokai_tanuki_culture th_yokai_cat_culture th_yokai_ox_culture th_yokai_tiger_culture th_yokai_monkey_culture th_yokai_dog_culture th_yokai_bird_culture th_yokai_rabbit_culture th_jizo_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57671,6 +57691,8 @@ countries = {
             th_belfry_ruins th_desolate_courtyard th_fairy_derelict_temple
          }
 
+         accepted_cultures = { th_flower_fairy_culture th_yokai_insect_culture }
+         tolerated_cultures = { th_yokai_culture th_magician_culture th_yokai_rabbit_culture th_yokai_deer_culture th_yokai_snake_culture th_yokai_tanuki_culture th_yokai_horse_culture th_yokai_bird_culture th_yokai_monkey_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57713,6 +57735,8 @@ countries = {
             th_diner_main_hall th_diner_pantry th_stage_regulars_corner th_open_air_roast_yard th_night_sparrow_diner th_nocturnal_stream th_claw_marked_great_tree th_youkai_beast_path th_broken_pillar_mountain_gate
          }
 
+         accepted_cultures = { th_flower_fairy_culture th_yokai_culture th_yokai_insect_culture th_elemental_fairy_culture th_village_human_culture th_light_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_moon_people_eientei_culture th_wild_human_culture th_maid_fairy_culture th_yokai_horse_culture th_yokai_bird_culture th_shrine_surrounding_human_culture th_phenomenon_fairy_culture th_magician_culture th_yokai_dog_culture th_jizo_culture th_yokai_rabbit_culture th_yokai_ox_culture th_yokai_rat_culture th_yokai_monkey_culture th_yokai_turtle_culture th_sennin_culture th_tennin_culture th_yokai_tiger_culture th_yokai_cat_culture th_yokai_deer_culture th_yokai_tanuki_culture th_outside_world_people_culture th_yokai_snake_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57755,6 +57779,8 @@ countries = {
             th_night_heron_perch th_shadow_stalkers_path th_firefly_reed_bed th_fungal_lantern_gallery th_dusk_waters_edge th_nightfall_shore_grove th_rotting_totem_poles th_youkai_air_misty_valley
          }
 
+         accepted_cultures = { th_flower_fairy_culture }
+         tolerated_cultures = { th_yokai_culture th_magician_culture th_yokai_cat_culture th_yokai_rabbit_culture th_yokai_bird_culture th_yokai_monkey_culture th_yokai_tanuki_culture th_yokai_dog_culture th_yokai_tiger_culture th_yokai_deer_culture th_yokai_ox_culture th_yokai_rat_culture th_yokai_snake_culture th_yokai_horse_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57798,6 +57824,7 @@ countries = {
             th_mais_room th_chaos_land th_gap_seasons_path th_border_of_summer_and_winter th_border_of_spring_and_fall th_people_free_noh_drama_stage th_silk_stream th_tengu_shirine th_plain_of_seven_stars
          }
 
+         accepted_cultures = { th_zashiki_warashi_culture th_season_fairy_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57847,6 +57874,8 @@ countries = {
             th_idol_ferry_crossing th_wind_goddess_pass th_hell_outpost th_moriya_garrison
          }
 
+         accepted_cultures = { th_mountain_settlement_human_culture th_long_nose_tengu_culture th_wild_human_culture th_white_wolf_tengu_culture th_yamabushi_tengu_culture }
+         tolerated_cultures = { th_kappa_culture th_season_fairy_culture th_phenomenon_fairy_culture th_flower_fairy_culture th_elemental_fairy_culture th_light_fairy_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57890,6 +57919,8 @@ countries = {
             th_body_dumping_place th_youkai_forest th_etrnal_night_forest th_hina_port th_fearness_beach th_youkai_coast th_misfortune_godess_mansion th_hina_dolls_workshop
          }
 
+         accepted_cultures = { th_yokai_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_jizo_culture th_phenomenon_fairy_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57932,6 +57963,8 @@ countries = {
             th_dark_hills th_temple_of_misfortune th_hina_dolls_recycle_center th_locking_misfortune_borders th_miasma_forest th_calamity_port th_misfortune_swamp th_inei_shinrin_yuugen_jukai
          }
 
+         accepted_cultures = { th_yokai_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_phenomenon_fairy_culture th_season_fairy_culture th_jizo_culture th_light_fairy_culture th_elemental_fairy_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -57974,6 +58007,8 @@ countries = {
             th_aki_main_hall th_aki_maple_corridor th_stone_lantern th_ginkgo_courtyard th_autumn_worship_hall th_aki_chozya th_harvest_altar th_inari_torii th_bountiful_shrine
          }
 
+         accepted_cultures = { th_wild_human_culture th_elemental_fairy_culture th_season_fairy_culture th_flower_fairy_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_village_human_culture th_yokai_culture th_light_fairy_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58025,6 +58060,8 @@ countries = {
             th_southern_second_peak_pass th_weeping_wind_canyon th_omine_san_ancient_path th_omine_san_guardian_forest th_tenma_hall_main
          }
 
+         accepted_cultures = { th_long_nose_tengu_culture th_yamabushi_tengu_culture th_white_wolf_tengu_culture th_yokai_dog_culture th_kappa_culture th_yokai_culture th_yamawaro_culture }
+         tolerated_cultures = { th_heavenly_dragon_culture th_yamabiko_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_season_fairy_culture th_flower_fairy_culture th_yokai_bird_culture th_yokai_cat_culture th_mountain_woman_culture th_yokai_insect_culture th_yokai_ox_culture th_yokai_horse_culture th_yokai_rabbit_culture th_yokai_snake_culture th_yokai_tiger_culture th_yokai_turtle_culture th_yokai_monkey_culture th_yokai_deer_culture th_yokai_rat_culture th_yokai_tanuki_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58068,6 +58105,8 @@ countries = {
             th_shack_stone_garden th_sanctuaries_avenue th_chimi_enclosure th_yamaubes_hut
          }
 
+         accepted_cultures = { 山佬 th_flower_fairy_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_elemental_fairy_culture th_light_fairy_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58115,6 +58154,8 @@ countries = {
             th_trail_fissure th_core_interface_power th_core_boiler_abandoned th_old_hell_geyser_core th_core_lake_boiling
          }
 
+         accepted_cultures = { th_earth_spirit_culture th_hell_fairy_culture th_vengeful_spirit_culture th_yokai_cat_culture th_yokai_bird_culture th_zombie_fairy_culture }
+         tolerated_cultures = { th_oni_culture th_tsuchigumo_culture th_ghost_culture th_tsurube_otoshi_culture th_bone_tour_yokai_culture th_yokai_culture th_korobori_culture th_long_nose_tengu_culture th_white_wolf_tengu_culture th_yamabushi_tengu_culture th_crow_tengu_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58158,6 +58199,8 @@ countries = {
             th_trail_pillars_jet th_trail_crystal_sulfur th_kazaana_webway th_trail_marsh_entrance th_kazaana_yamame_web th_kazaana_hidden_eye th_onsen_pool_hellfish
          }
 
+         accepted_cultures = { th_earth_spirit_culture th_ghost_culture th_hell_fairy_culture th_tsurube_otoshi_culture th_bone_tour_yokai_culture th_yokai_culture }
+         tolerated_cultures = { th_korobori_culture th_oni_culture th_yamabushi_tengu_culture th_long_nose_tengu_culture th_crow_tengu_culture th_white_wolf_tengu_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58201,6 +58244,8 @@ countries = {
             th_former_capital_northern_district th_north_zone_dormitory
          }
 
+         accepted_cultures = { th_oni_culture th_ghost_culture th_hell_fairy_culture th_tsuchigumo_culture th_earth_spirit_culture th_yokai_culture }
+         tolerated_cultures = { th_tsurube_otoshi_culture th_korobori_culture th_bone_tour_yokai_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58246,6 +58291,8 @@ countries = {
             th_feral_beast_menagerie th_oni_arena_location
          }
 
+         accepted_cultures = { th_ghost_culture th_hell_fairy_culture th_tsuchigumo_culture th_earth_spirit_culture th_yokai_culture }
+         tolerated_cultures = { th_hashihime_culture th_tsurube_otoshi_culture th_korobori_culture th_bone_tour_yokai_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58296,6 +58343,8 @@ countries = {
             th_castor_clan th_otter_spirit_watchtower th_penguin_ice_outpost th_bloody_turbulence th_primate_meander th_tenkyuu_branch_office th_delusion_prosperity th_primate_spirit_township th_st_haniwa_mountain
          }
 
+         accepted_cultures = { th_primate_spirit_culture th_hell_fairy_culture th_wolf_spirit_culture th_otter_spirit_culture th_great_eagle_spirit_culture }
+         tolerated_cultures = { th_shinigami_culture th_undead_spirit_culture th_mizuko_spirit_culture th_floating_spirit_culture th_ghost_culture th_oni_culture th_niwatari_people_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58349,6 +58398,8 @@ countries = {
             th_unheard_old_haunt
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_shinigami_culture th_undead_spirit_culture th_mizuko_spirit_culture }
+         tolerated_cultures = { th_floating_spirit_culture th_ghost_culture th_niwatari_people_culture th_oni_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58393,6 +58444,8 @@ countries = {
             th_twin_sunflower_field th_kappa_valley th_kappas_dam th_genbu_habitat th_genbu_ravine th_flooding_lowland th_genbu_port th_wealth_shrine th_scale_hills
          }
 
+         accepted_cultures = { th_yamawaro_culture th_little_people_culture th_season_fairy_culture th_light_fairy_culture th_mountain_settlement_human_culture }
+         tolerated_cultures = { th_flower_fairy_culture th_elemental_fairy_culture th_phenomenon_fairy_culture th_leaf_tengu_culture th_white_wolf_tengu_culture th_crow_tengu_culture th_long_nose_tengu_culture th_yamabushi_tengu_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58437,6 +58490,8 @@ countries = {
             th_kappa_ravine_watermill_workshops th_yamawaro_barracks th_wargame_land
          }
 
+         accepted_cultures = { th_kappa_culture th_little_people_culture th_light_fairy_culture th_flower_fairy_culture th_mountain_settlement_human_culture }
+         tolerated_cultures = { th_phenomenon_fairy_culture th_elemental_fairy_culture th_crow_tengu_culture th_yamabushi_tengu_culture th_leaf_tengu_culture th_long_nose_tengu_culture th_season_fairy_culture th_white_wolf_tengu_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58480,6 +58535,8 @@ countries = {
             th_mountain_foot_no_go_zone th_false_heaven_shelf th_secret_green_cliff
          }
 
+         accepted_cultures = { th_yamawaro_culture th_kappa_culture th_little_people_culture th_season_fairy_culture th_mountain_settlement_human_culture th_flower_fairy_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_elemental_fairy_culture th_long_nose_tengu_culture th_light_fairy_culture th_yamabushi_tengu_culture th_crow_tengu_culture th_white_wolf_tengu_culture th_leaf_tengu_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58522,6 +58579,8 @@ countries = {
             th_eternal_garden th_flower_clock_of_time th_endless_rose_corridor th_stagnant_fountain th_golden_belt_corridor
          }
 
+         accepted_cultures = { th_elemental_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_light_fairy_culture th_yokai_culture th_jizo_culture th_magician_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58564,6 +58623,8 @@ countries = {
             th_crumbling_hall th_derelict_mansion th_rusted_gate th_ownerless_study
          }
 
+         accepted_cultures = { th_elemental_fairy_culture th_flower_fairy_culture th_phenomenon_fairy_culture th_light_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_yokai_culture th_jizo_culture th_magician_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58614,6 +58675,8 @@ countries = {
             th_barrier_of_gluttony th_barrier_of_sloth th_barrier_of_warth th_barrier_of_pride th_barrier_of_death
          }
 
+         accepted_cultures = { th_ghost_culture th_poltergeist_culture th_phenomenon_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_half_human_half_phantom_culture th_outside_world_people_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58659,6 +58722,8 @@ countries = {
             th_lantern_lit_memorial_hall th_belfry_of_dawn_chant th_fude_brush_shrine_gate
          }
 
+         accepted_cultures = { th_yokai_culture th_wild_human_culture th_season_fairy_culture th_elemental_fairy_culture }
+         tolerated_cultures = { th_yamabiko_culture th_flower_fairy_culture th_phenomenon_fairy_culture th_earthbound_spirit_culture th_yokai_tiger_culture th_yokai_tanuki_culture th_light_fairy_culture th_magician_culture th_houjou_people_culture th_yokai_snake_culture th_jiangshi_culture th_yokai_ox_culture th_instrument_yokai_culture th_yokai_insect_culture th_fuguruma_culture th_yokai_monkey_culture th_yokai_rabbit_culture th_yokai_deer_culture th_yokai_cat_culture th_korobori_culture th_yokai_bird_culture th_yokai_dog_culture th_yokai_horse_culture th_suzuhime_culture th_outside_world_people_culture th_yokai_turtle_culture th_yokai_rat_culture th_spear_hair_yokai_culture th_cloth_tsukumogami_culture th_long_nose_tengu_culture th_yamabushi_tengu_culture th_white_wolf_tengu_culture th_umbrella_yokai_culture th_mirror_tsukumogami_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58701,6 +58766,8 @@ countries = {
             th_tora_no_maru_hoshi th_tora_no_maru_hoshi_junsan_dou th_tora_no_maru_hoshi_kokyo_seki th_tora_no_maru_hoshi_shiren_no_iwaya th_tora_no_maru_hoshi_hoto_rin th_zansetsu_no_michi th_harumachi_no_oka th_sando_yomu_kairo th_hyakki_yakou_zaka
          }
 
+         accepted_cultures = { th_yokai_culture th_phenomenon_fairy_culture th_wild_human_culture th_elemental_fairy_culture }
+         tolerated_cultures = { th_yamabiko_culture th_season_fairy_culture th_yokai_tanuki_culture th_earthbound_spirit_culture th_flower_fairy_culture th_yokai_tiger_culture th_light_fairy_culture th_magician_culture th_houjou_people_culture th_jiangshi_culture th_yokai_deer_culture th_yokai_rabbit_culture th_mirror_tsukumogami_culture th_yokai_monkey_culture th_yokai_dog_culture th_yokai_ox_culture th_suzuhime_culture th_fuguruma_culture th_instrument_yokai_culture th_outside_world_people_culture th_yokai_insect_culture th_cloth_tsukumogami_culture th_yokai_turtle_culture th_white_wolf_tengu_culture th_yokai_rat_culture th_yokai_snake_culture th_korobori_culture th_spear_hair_yokai_culture th_umbrella_yokai_culture th_yamabushi_tengu_culture th_yokai_horse_culture th_yokai_bird_culture th_long_nose_tengu_culture th_yokai_cat_culture }
          #????
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
@@ -58743,6 +58810,8 @@ countries = {
             th_nazrin_s_treasure_hold th_mandala_guest_hall th_lotus_bow_deck th_dragon_protector_prow th_zansetsu_kairo th_zansetsu_no_michi_yosetsu th_zansetsu_no_michi_setpi_iwa
          }
 
+         accepted_cultures = { th_yokai_culture th_elemental_fairy_culture th_wild_human_culture th_season_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture th_yamabiko_culture th_earthbound_spirit_culture th_yokai_tiger_culture th_yokai_tanuki_culture th_flower_fairy_culture th_phenomenon_fairy_culture th_magician_culture th_yokai_ox_culture th_houjou_people_culture th_yokai_deer_culture th_jiangshi_culture th_umbrella_yokai_culture th_yokai_cat_culture th_yokai_horse_culture th_cloth_tsukumogami_culture th_yokai_snake_culture th_fuguruma_culture th_yokai_insect_culture th_yokai_bird_culture th_outside_world_people_culture th_yokai_rabbit_culture th_instrument_yokai_culture th_yokai_dog_culture th_yamabushi_tengu_culture th_suzuhime_culture th_yokai_turtle_culture th_yokai_monkey_culture th_yokai_rat_culture th_long_nose_tengu_culture th_white_wolf_tengu_culture th_korobori_culture th_mirror_tsukumogami_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -58784,6 +58853,8 @@ countries = {
             th_mermaid_sanctuary th_wakasagihime_manor th_lake_of_blood_reflections th_moonlit_tidal_pool th_steam_shroud_atoll th_tide_song_cavern th_coral_corridor th_secret_path_to_the_lakeshore
          }
 
+         accepted_cultures = { th_maid_fairy_culture th_light_fairy_culture th_wild_human_culture th_season_fairy_culture th_mermaid_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_oni_culture th_ghost_culture th_hell_fairy_culture th_magician_culture th_tsuchigumo_culture th_demon_culture th_earth_spirit_culture th_yokai_culture th_vampire_culture th_hashihime_culture th_outside_world_people_culture th_tsurube_otoshi_culture th_korobori_culture th_bone_tour_yokai_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -58825,6 +58896,8 @@ countries = {
             th_kogasa_blacksmith th_old_locust_tree th_grindstone_bench th_ironstock_pile th_datie_street th_silent_forest_jakko_koken th_silent_forest th_silent_forest_mokugosha_kyoboku
          }
 
+         accepted_cultures = { th_yokai_culture th_elemental_fairy_culture th_wild_human_culture th_light_fairy_culture }
+         tolerated_cultures = { th_yamabiko_culture th_flower_fairy_culture th_season_fairy_culture th_earthbound_spirit_culture th_yokai_tiger_culture th_yokai_tanuki_culture th_magician_culture th_yokai_ox_culture th_houjou_people_culture th_jiangshi_culture th_spear_hair_yokai_culture th_phenomenon_fairy_culture th_yokai_turtle_culture th_yokai_cat_culture th_yokai_bird_culture th_yokai_insect_culture th_suzuhime_culture th_instrument_yokai_culture th_yokai_monkey_culture th_outside_world_people_culture th_yokai_horse_culture th_korobori_culture th_yokai_deer_culture th_long_nose_tengu_culture th_cloth_tsukumogami_culture th_white_wolf_tengu_culture th_fuguruma_culture th_yamabushi_tengu_culture th_yokai_dog_culture th_yokai_rabbit_culture th_yokai_rat_culture th_mirror_tsukumogami_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -58869,6 +58942,7 @@ countries = {
             th_deadly_hillside th_no_live_wilderness th_strange_mine
          }
 
+         accepted_cultures = { th_primate_spirit_culture th_hell_fairy_culture th_creator_god_culture th_wolf_spirit_culture th_great_eagle_spirit_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -58913,6 +58987,7 @@ countries = {
             th_valley_of_new_three_artifact th_relic_hill th_solid_rain_cliff th_tearless_peak th_kaiji_casino th_sunken_corpse_riverbed th_sadness_hillock
          }
 
+         accepted_cultures = { th_primate_spirit_culture th_hell_fairy_culture th_creator_god_culture th_otter_spirit_culture th_great_eagle_spirit_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -58957,6 +59032,7 @@ countries = {
             th_straightforward_traffic_sign th_zoo_of_extince_animals th_mourning_border th_oni_hunting_chain th_huangquan th_oniwatari_pass
          }
 
+         accepted_cultures = { th_primate_spirit_culture th_hell_fairy_culture th_creator_god_culture th_wolf_spirit_culture th_otter_spirit_culture th_floating_spirit_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59000,6 +59076,8 @@ countries = {
             th_hell_nazrin_workbench th_hell_nazrin_door th_sunken_lighthouse th_sunken_shell_wall th_sunken_ship_graveyard
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_ghost_culture th_undead_spirit_culture th_vengeful_spirit_culture th_floating_spirit_culture }
+         tolerated_cultures = { th_mizuko_spirit_culture th_shinigami_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59041,6 +59119,8 @@ countries = {
             th_riverbed_endless_shore th_camellia_garden th_shenhua_palace th_land_ofcontrition th_hall_rites_cage th_grand_magi_residence th_mortals_annex th_puming_palace
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_shinigami_culture th_undead_spirit_culture }
+         tolerated_cultures = { th_floating_spirit_culture th_ghost_culture th_oni_culture th_niwatari_people_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59082,6 +59162,8 @@ countries = {
             th_sai_no_kawara th_outside_world_entry th_waste_return_monument th_gate_mandala_altar th_mingchen_palace th_pass_of_hell th_nazrin_outpost th_hell_nazrin_shushushushushuchu th_sunken_main_street
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_shinigami_culture th_undead_spirit_culture th_mizuko_spirit_culture th_niwatari_people_culture th_floating_spirit_culture }
+         tolerated_cultures = { th_ghost_culture th_oni_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59124,6 +59206,8 @@ countries = {
             th_withered_chrysanthemum_field th_santu_river_bank th_separate_souls_ferry
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_undead_spirit_culture th_mizuko_spirit_culture }
+         tolerated_cultures = { th_floating_spirit_culture th_ghost_culture th_oni_culture th_niwatari_people_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59166,6 +59250,8 @@ countries = {
             th_hellcats_room th_rest_door_catcart th_rest_post_scratch
          }
 
+         accepted_cultures = { th_vengeful_spirit_culture th_earth_spirit_culture th_yokai_bird_culture th_hell_fairy_culture th_zombie_fairy_culture }
+         tolerated_cultures = { th_oni_culture th_satori_yokai_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59209,6 +59295,8 @@ countries = {
             th_village_lane_bone th_blazing_hell_remains th_hell_tribunal th_village_valley_windless th_submerged_foundation_reef
          }
 
+         accepted_cultures = { th_vengeful_spirit_culture th_earth_spirit_culture th_yokai_cat_culture th_zombie_fairy_culture }
+         tolerated_cultures = { th_hell_fairy_culture th_satori_yokai_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59250,6 +59338,8 @@ countries = {
             th_bucket_suspension_chasm th_onsen_pool_seishin th_onsen_gate_neon th_crystal_hum_sauna_cave th_onsen_street_market th_dragon_breath_vent th_boiling_tide_channel_port th_geyser_field_surface th_phantom_lantern_alley
          }
 
+         accepted_cultures = { th_earth_spirit_culture th_ghost_culture th_tsuchigumo_culture th_oni_culture th_hell_fairy_culture th_yokai_culture }
+         tolerated_cultures = { th_korobori_culture th_bone_tour_yokai_culture th_hashihime_culture th_long_nose_tengu_culture th_white_wolf_tengu_culture th_crow_tengu_culture th_yamabushi_tengu_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59292,6 +59382,8 @@ countries = {
             th_shining_needle_castle_main_bailey th_private_inner_chamber th_shining_needle_castle_tenshukaku th_shining_path th_magical_thundercloud th_shaking_plain th_levitation_garden
          }
 
+         accepted_cultures = { th_yamawaro_culture th_kappa_culture th_elemental_fairy_culture th_phenomenon_fairy_culture th_mountain_settlement_human_culture th_season_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture th_yamabushi_tengu_culture th_long_nose_tengu_culture th_crow_tengu_culture th_white_wolf_tengu_culture th_flower_fairy_culture th_leaf_tengu_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59333,6 +59425,8 @@ countries = {
             th_useless_divice_room th_empty_chamber th_dusty_srsenal th_mithril_gate th_diminutive_treasure_vault_library
          }
 
+         accepted_cultures = { th_yamawaro_culture th_kappa_culture th_little_people_culture th_phenomenon_fairy_culture th_season_fairy_culture th_mountain_settlement_human_culture }
+         tolerated_cultures = { th_crow_tengu_culture th_white_wolf_tengu_culture th_yamabushi_tengu_culture th_flower_fairy_culture th_elemental_fairy_culture th_long_nose_tengu_culture th_light_fairy_culture th_leaf_tengu_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59374,6 +59468,8 @@ countries = {
             th_weeping_willow_promenade th_washwomen_s_steps th_house_of_seiran_and_ringo2 th_house_of_seiran_and_ringo th_aqueduct th_dullahan_path th_violoncello_embankment
          }
 
+         accepted_cultures = { th_village_human_culture th_yokai_rabbit_culture th_instrument_yokai_culture th_wild_human_culture th_yokai_culture th_yokai_dog_culture }
+         tolerated_cultures = { th_ghost_culture th_mirror_tsukumogami_culture th_fuguruma_culture th_cloth_tsukumogami_culture th_suzuhime_culture th_umbrella_yokai_culture th_outside_world_people_culture th_moon_people_human_village_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59415,6 +59511,8 @@ countries = {
             th_bane_herb_garden th_moon_touched_clearing th_yasumizu_village th_abandoned_werewolf_mansion th_kagerou_house th_marked_entrance_2
          }
 
+         accepted_cultures = { th_village_human_culture th_yokai_rabbit_culture th_wild_human_culture th_instrument_yokai_culture th_yokai_culture }
+         tolerated_cultures = { th_yokai_dog_culture th_ghost_culture th_mirror_tsukumogami_culture th_spear_hair_yokai_culture th_umbrella_yokai_culture th_suzuhime_culture th_cloth_tsukumogami_culture th_season_fairy_culture th_phenomenon_fairy_culture th_light_fairy_culture th_fuguruma_culture th_outside_world_people_culture th_moon_people_human_village_culture th_jizo_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59462,6 +59560,8 @@ countries = {
             th_echo_of_ten_arguments_pillars th_cup_of_enlightenment_tea_service th_viewing_platform_of_the_true_gate
          }
 
+         accepted_cultures = { th_wild_human_culture th_sennin_culture th_jiangshi_culture }
+         tolerated_cultures = { th_light_fairy_culture th_yokai_culture th_phenomenon_fairy_culture th_flower_fairy_culture th_fuguruma_culture th_korobori_culture th_spear_hair_yokai_culture th_elemental_fairy_culture th_season_fairy_culture th_mirror_tsukumogami_culture th_umbrella_yokai_culture th_suzuhime_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59510,6 +59610,8 @@ countries = {
             th_hashigakari
          }
 
+         accepted_cultures = { th_menreiki_culture th_season_fairy_culture }
+         tolerated_cultures = { th_fuguruma_culture th_yokai_culture th_wild_human_culture th_shrine_surrounding_human_culture th_instrument_yokai_culture th_flower_fairy_culture th_spear_hair_yokai_culture th_light_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_houjou_people_culture th_cloth_tsukumogami_culture th_umbrella_yokai_culture th_mirror_tsukumogami_culture th_zashiki_warashi_culture th_korobori_culture th_outside_world_people_culture th_suzuhime_culture th_jizo_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59559,6 +59661,8 @@ countries = {
             th_dense_bamboo_forest th_sparrow_wine_source th_night_sparrow_house th_marked_entrance_1 th_rabbit_trap_school th_lunar_rabbit_kolkhoz th_herb_garden_doka_hatake
          }
 
+         accepted_cultures = { th_yokai_rabbit_culture th_wild_human_culture th_village_human_culture th_yokai_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_flower_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_season_fairy_culture th_jizo_culture th_instrument_yokai_culture th_fuguruma_culture th_umbrella_yokai_culture th_yokai_dog_culture th_ghost_culture th_outside_world_people_culture th_moon_people_human_village_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59602,6 +59706,8 @@ countries = {
             th_bamboo_forest_garrison th_shelter_for_the_lost th_unverified_sakura_border th_lower_level_of_flower_city th_upper_level_of_flower_city th_poltergeists_lounge th_outside_of_the_border_of_the_life_and_death
          }
 
+         accepted_cultures = { th_season_fairy_culture th_yokai_rabbit_culture th_village_human_culture th_flower_fairy_culture th_yokai_culture th_elemental_fairy_culture th_phenomenon_fairy_culture th_light_fairy_culture }
+         tolerated_cultures = { th_yokai_tiger_culture th_yokai_ox_culture th_yokai_cat_culture th_yokai_insect_culture th_yokai_snake_culture th_yokai_rat_culture th_yokai_horse_culture th_yokai_turtle_culture th_yokai_tanuki_culture th_yokai_monkey_culture th_yokai_deer_culture th_yokai_bird_culture th_yokai_dog_culture th_outside_world_people_culture th_jizo_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59643,6 +59749,8 @@ countries = {
             th_tewis_rabbit_hole th_cace_of_caerbannog th_endless_byobu th_kogasas_house th_toll_gate th_endless_corridor th_rabbit_beauty_salon
          }
 
+         accepted_cultures = { th_village_human_culture th_wild_human_culture th_yokai_culture th_season_fairy_culture th_elemental_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture th_instrument_yokai_culture th_phenomenon_fairy_culture th_umbrella_yokai_culture th_yokai_dog_culture th_flower_fairy_culture th_ghost_culture th_spear_hair_yokai_culture th_cloth_tsukumogami_culture th_jizo_culture th_outside_world_people_culture th_moon_people_human_village_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59685,6 +59793,8 @@ countries = {
             th_lunar_rabbit_labor_camp
          }
 
+         accepted_cultures = { th_wild_human_culture th_village_human_culture th_yokai_culture th_elemental_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_phenomenon_fairy_culture th_flower_fairy_culture th_light_fairy_culture th_jizo_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59727,6 +59837,7 @@ countries = {
             th_mountain_of_hermits
          }
 
+         accepted_cultures = { th_jiangshi_culture th_wild_human_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59776,6 +59887,8 @@ countries = {
             th_gate_of_the_forgotten th_makai_saras_watch_post th_makai_world_gate_post th_magus_pilgrim_tower th_romantic_children_cross th_diagonal_avenue_street th_makai_dharma_realm_checkerboard_plain th_makai_hidden_realms
          }
 
+         accepted_cultures = { th_monster_culture th_demon_culture th_doll_culture th_old_gensokyo_human_culture }
+         tolerated_cultures = { th_evil_spirit_culture th_magician_culture th_season_fairy_culture th_phenomenon_fairy_culture th_light_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture th_angel_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59818,6 +59931,8 @@ countries = {
             th_makai_hijiri_byakuren_berth th_makai_mad_hatter_frontier_tea
          }
 
+         accepted_cultures = { th_outside_world_people_culture th_demon_culture th_old_gensokyo_human_culture th_monster_culture th_flower_fairy_culture th_light_fairy_culture }
+         tolerated_cultures = { th_phenomenon_fairy_culture th_magician_culture th_season_fairy_culture th_angel_culture th_doll_culture th_evil_spirit_culture th_elemental_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59862,6 +59977,8 @@ countries = {
             th_murasakino_location th_old_prototype_gap_corridor
          }
 
+         accepted_cultures = { th_elemental_fairy_culture th_flower_fairy_culture th_season_fairy_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59904,6 +60021,8 @@ countries = {
             th_meira_dojo_main th_meira_dojo_masion
          }
 
+         accepted_cultures = { th_monster_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_demon_culture th_flower_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59949,6 +60068,8 @@ countries = {
             th_dreamland_limbo_spiral th_dreamland_border th_dream_world_gengetsu_lake th_dream_world_stardust_plain th_dreamland
          }
 
+         accepted_cultures = { th_flower_fairy_culture th_phenomenon_fairy_culture th_poltergeist_culture th_season_fairy_culture th_ghost_culture th_doll_culture }
+         tolerated_cultures = { th_yokai_rabbit_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -59991,6 +60112,8 @@ countries = {
             th_echo_chamber_cavern
          }
 
+         accepted_cultures = { th_flower_fairy_culture th_phenomenon_fairy_culture th_yokai_culture th_village_human_culture }
+         tolerated_cultures = { th_season_fairy_culture th_yokai_rabbit_culture th_instrument_yokai_culture th_wild_human_culture th_yokai_dog_culture th_mirror_tsukumogami_culture th_ghost_culture th_korobori_culture th_umbrella_yokai_culture th_fuguruma_culture th_outside_world_people_culture th_moon_people_human_village_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60032,6 +60155,8 @@ countries = {
             th_asakura_laboratory_tech_room th_crystal_growth_chamber th_me_controller_core th_asakura_laboratory_room th_crystal_computer_array th_abandoned_magic_room th_dream_realm_path th_resonance_fissure th_evil_eye_gaze_corridor
          }
 
+         accepted_cultures = { th_demon_culture th_old_gensokyo_human_culture th_yokai_culture }
+         tolerated_cultures = { th_unnamable_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60075,6 +60200,8 @@ countries = {
             th_sin_flame_furnace th_former_hell_gate
          }
 
+         accepted_cultures = { th_evil_spirit_culture th_undead_spirit_culture th_demon_culture th_magician_culture th_elemental_fairy_culture th_vengeful_spirit_culture th_mirror_tsukumogami_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_flower_fairy_culture th_season_fairy_culture th_light_fairy_culture th_yokai_culture th_vampire_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60118,6 +60245,8 @@ countries = {
             th_marisa_apprentice_workshop th_apprentice_home
          }
 
+         accepted_cultures = { th_magician_culture th_demon_culture th_poltergeist_culture th_ghost_culture th_phenomenon_fairy_culture th_light_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_yokai_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60161,6 +60290,8 @@ countries = {
             th_eastern_country_line_3 th_eternal_night_plain th_phantom_foam_hill th_border_wilderness
          }
 
+         accepted_cultures = { th_village_human_culture th_yokai_culture th_light_fairy_culture th_elemental_fairy_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_flower_fairy_culture th_season_fairy_culture th_ghost_culture th_unnamable_culture th_korobori_culture th_instrument_yokai_culture th_mirror_tsukumogami_culture th_spear_hair_yokai_culture th_suzuhime_culture th_fuguruma_culture th_umbrella_yokai_culture th_cloth_tsukumogami_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60202,6 +60333,8 @@ countries = {
             th_kana_mansion_main th_fumairoku_archive_location th_phantom_banquet_hall th_kana_sighing_corridor th_kana_faded_memory_foyer th_kana_maidens_blank_bedroom
          }
 
+         accepted_cultures = { th_season_fairy_culture th_flower_fairy_culture th_elemental_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture th_magician_culture th_evil_spirit_culture th_demon_culture th_monster_culture th_phenomenon_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60245,6 +60378,8 @@ countries = {
             th_internal_transit_tunnels th_quantum_logic_bridge th_yumemi_okazaki_probability_ship th_illusionary_ruins_outdoor th_dream_diary_corridor th_ruins_convergence_point th_inception_mirror_layer th_illusionary_ruins_main
          }
 
+         accepted_cultures = { th_old_gensokyo_human_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture th_magician_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60290,6 +60425,8 @@ countries = {
             th_celestial_realm_tong_ming_ge th_ping_heaven_door th_center_of_heaven
          }
 
+         accepted_cultures = { th_phenomenon_fairy_culture th_elemental_fairy_culture th_season_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_light_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60333,6 +60470,8 @@ countries = {
             th_floating_clouds_seaside th_keystone_port th_sea_pacifying_stele th_palace_rain_prayer_altar th_palace_xuanhai_main_hall th_sea_world_reflecting_pool th_celestial_dragon_forbidden_place th_grove_jade_shell_beach th_dragon_palace
          }
 
+         accepted_cultures = { th_phenomenon_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_light_fairy_culture th_elemental_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60379,6 +60518,7 @@ countries = {
             th_sea_of_tranquility th_imperial_palace_moonlight_library th_imperial_garden th_border_of_lunar_darkside th_kegare_purify_core th_royal_guard_garrison th_takamagahara
          }
 
+         accepted_cultures = { th_moon_people_culture th_moon_rabbit_culture th_dream_dweller_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60420,6 +60560,8 @@ countries = {
             th_mugenkan_boiler_room th_phantom_plain th_blood_phoneme_corridor th_dreamland_border_fault th_phase_folding_square th_mugenkan_erosion_beach th_lake_of_blood_vampire_pier th_blood_dried_pass th_final_dream_rainbow_bridge
          }
 
+         accepted_cultures = { th_demon_culture th_monster_culture th_elemental_fairy_culture th_flower_fairy_culture th_light_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_angel_culture th_evil_spirit_culture th_phenomenon_fairy_culture th_magician_culture th_yokai_culture th_dream_dweller_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60464,6 +60606,8 @@ countries = {
             th_dream_world_evil_pier th_dream_world_crack_observatory
          }
 
+         accepted_cultures = { th_monster_culture th_evil_spirit_culture th_angel_culture th_light_fairy_culture }
+         tolerated_cultures = { th_vampire_culture th_dream_dweller_culture th_flower_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_season_fairy_culture th_magician_culture th_yokai_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60505,6 +60649,8 @@ countries = {
             th_first_performance_stage th_flute_bamboo_grove th_french_horn_meander th_harp_string_valley th_triangular_prism_plain th_timpani_hillocks th_requiem_plain th_xylophone_hill
          }
 
+         accepted_cultures = { th_village_human_culture th_yokai_rabbit_culture th_wild_human_culture th_yokai_culture th_yokai_dog_culture }
+         tolerated_cultures = { th_ghost_culture th_spear_hair_yokai_culture th_korobori_culture th_fuguruma_culture th_suzuhime_culture th_umbrella_yokai_culture th_cloth_tsukumogami_culture th_mirror_tsukumogami_culture th_outside_world_people_culture th_moon_people_human_village_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60547,6 +60693,8 @@ countries = {
             th_poisonous_deadbody_riverbank th_wuxings_lawn th_recite_poetry_forest
          }
 
+         accepted_cultures = { th_wild_human_culture th_sennin_culture th_instrument_yokai_culture }
+         tolerated_cultures = { th_suzuhime_culture th_spear_hair_yokai_culture th_cloth_tsukumogami_culture th_korobori_culture th_umbrella_yokai_culture th_fuguruma_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60588,6 +60736,8 @@ countries = {
             th_sky_ruins th_high_speed_hovercraft_hangar_maintenance_bay th_high_speed_hovercraft_emergency_landing_zone th_silent_forest_seichishi_mizuumi th_floating_foundation_stones th_hanging_garden_ruins th_sky_ruins_sea_of_clouds_edge
          }
 
+         accepted_cultures = { th_yokai_culture th_phenomenon_fairy_culture th_wild_human_culture th_light_fairy_culture }
+         tolerated_cultures = { th_yamabiko_culture th_earthbound_spirit_culture th_flower_fairy_culture th_yokai_tiger_culture th_elemental_fairy_culture th_yokai_tanuki_culture th_season_fairy_culture th_yokai_dog_culture th_magician_culture th_houjou_people_culture th_jiangshi_culture th_yokai_rat_culture th_yokai_snake_culture th_yokai_rabbit_culture th_yokai_cat_culture th_umbrella_yokai_culture th_mirror_tsukumogami_culture th_yokai_monkey_culture th_spear_hair_yokai_culture th_yokai_horse_culture th_yokai_ox_culture th_outside_world_people_culture th_yokai_deer_culture th_cloth_tsukumogami_culture th_yokai_insect_culture th_korobori_culture th_white_wolf_tengu_culture th_yamabushi_tengu_culture th_fuguruma_culture th_suzuhime_culture th_long_nose_tengu_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60629,6 +60779,8 @@ countries = {
             th_myorenji_sando th_silent_forest_mufurin th_broken_bridge_corridor th_myourenji_sando_kiyotaki_bashi th_myouren_hill_mon th_myouren_sando_ishidan th_kyuukei_sekidou
          }
 
+         accepted_cultures = { th_yokai_culture th_wild_human_culture th_elemental_fairy_culture th_phenomenon_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture th_yamabiko_culture th_flower_fairy_culture th_yokai_tiger_culture th_light_fairy_culture th_earthbound_spirit_culture th_yokai_tanuki_culture th_magician_culture th_houjou_people_culture th_jiangshi_culture th_yokai_turtle_culture th_yokai_ox_culture th_yokai_rabbit_culture th_yokai_horse_culture th_yokai_rat_culture th_suzuhime_culture th_yokai_deer_culture th_instrument_yokai_culture th_yokai_bird_culture th_yokai_monkey_culture th_cloth_tsukumogami_culture th_mirror_tsukumogami_culture th_yokai_dog_culture th_outside_world_people_culture th_spear_hair_yokai_culture th_fuguruma_culture th_yokai_snake_culture th_umbrella_yokai_culture th_yamabushi_tengu_culture th_long_nose_tengu_culture th_korobori_culture th_white_wolf_tengu_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60671,6 +60823,8 @@ countries = {
             th_pixel_ruin_plain th_elis_star_rod_tower th_ruins_of_vina th_sariel_judgment_room th_six_winged_throne_room th_civilization_of_magic_library th_inverted_cross_corridor
          }
 
+         accepted_cultures = { th_demon_culture th_makai_people_culture th_old_gensokyo_human_culture th_outside_world_people_culture th_light_fairy_culture th_season_fairy_culture }
+         tolerated_cultures = { th_magician_culture th_phenomenon_fairy_culture th_flower_fairy_culture th_elemental_fairy_culture th_monster_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60714,6 +60868,8 @@ countries = {
             th_grave_for_tamayorihime
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_dream_dweller_culture }
+         tolerated_cultures = { th_sennin_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60757,6 +60913,7 @@ countries = {
             th_clown_port th_archipelago_karmic_fire_cliff th_dream_devouring_maelstrom th_selene_temple th_coeus_port th_astraios_lake th_perses_highland
          }
 
+         accepted_cultures = { th_hell_fairy_culture th_dream_dweller_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60839,6 +60996,8 @@ countries = {
             th_immortal_mansion th_kasens_room th_pets_room th_immortal_dojo th_eagle_house th_cannot_entry_mountain11
          }
 
+         accepted_cultures = { th_wild_human_culture th_light_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture }
+         tolerated_cultures = { th_season_fairy_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"
@@ -60880,6 +61039,7 @@ countries = {
             th_beast_king_garden th_unfinished_land th_relie_throne th_nothing th_oni_tavern
          }
 
+         accepted_cultures = { th_primate_spirit_culture th_hell_fairy_culture th_creator_god_culture th_wolf_spirit_culture th_otter_spirit_culture th_great_eagle_spirit_culture }
          include = "expl_mediterranean"
          include = "expl_silk_road_west"
          include = "expl_silk_road_center"

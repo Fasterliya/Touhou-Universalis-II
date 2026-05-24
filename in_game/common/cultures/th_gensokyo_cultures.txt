@@ -24,7 +24,7 @@ th_itsuna_culture = {
         }
 }
 
-#妖怪
+#妖狐
 th_yokai_fox_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {67 95 163}
@@ -36,7 +36,7 @@ th_yokai_fox_culture = {
         }
 }
 
-#妖狐
+#妖怪
 th_yokai_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {214 82 255}
