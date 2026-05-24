@@ -2412,3 +2412,104 @@
 # th_harbor_magma_wharf 集镇 大河
 # th_underground_harbor_west 集镇 河流
 # th_steam_bath_hospital
+# 玄武之泽地区 （总人口分布：妖精29%，山童19%，河童19%，六种天狗14%，小人族12%，山内聚居人类7%）
+# 黄瓜园圃 （河童分布远大于山童，无小人族分布，天狗少量分布）
+# th_cucumenber_garden 大河
+# th_breeding_base 河流
+# th_water_supply_system 集镇 大河
+# th_cucumenber_port 集镇 大河
+# th_nursery_luminous_greenhouse 大河
+# 河童海滩 （河童分布远大于山童，无小人族分布，天狗少量分布）
+# th_kappa_beach 集镇 大河
+# th_kappa_port 城市 大河
+# th_basalt_rock_beach 大河
+# th_diving_paradise 大河
+# 修补匠之村 （河童分布远大于山童，无小人族分布，天狗少量分布）
+# th_craftsman_hall 河流
+# th_goblin_shop 河流
+# th_area_13 集镇 大河
+# th_gear_automatic_port 河流
+# 秘密工坊 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
+# th_waterproof_lab 大河
+# th_under_water_port 集镇
+# th_mermaid_village
+# th_riverbed_habitat 大河
+# th_treasure_bay 集镇
+# 河童都会 （河童分布远大于山童，无小人族分布，天狗少量分布）
+# th_kappa_capital 大都会 大河
+# th_smart_first_city 集镇 河流
+# th_sponge_second_city 集镇 河流
+# th_nitoris_mansion 城市 大河
+# th_river_network_hub 大河
+# 河童溪谷 （河童分布远大于山童分布，无小人族分布，天狗少量分布）
+# th_kappa_valley 集镇 大河
+# th_flooding_lowland 集镇 大河
+# th_mangroove_swamp 大河
+# th_kappas_dam 大河
+# th_kappa_ravine_watermill_workshops 集镇 大河
+# th_ravine_dish_stone_shoal
+# 玄武涧 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
+# th_genbu_port 集镇 大河
+# th_genbu_ravine 大河
+# th_scale_hills 河流
+# th_genbu_habitat 大河
+# th_wealth_shrine 大河
+# 河童墟市 （山童分布远大于河童，无小人族分布，天狗少量分布）
+# th_abandoned_workshop 河流
+# th_wall_of_veto 河流
+# th_bunker_buster_crater 河流
+# th_implosion_bomb_ruins 河流
+# th_acid_river 大河
+# 发明展厅 （山童分布远大于河童，无小人族分布，天狗少量分布）
+# th_invention_exhibition_hall 城市 大河
+# th_yamawaro_railway 大河
+# th_high_tech_developement_zone 城市 河流
+# th_takanes_mansion 河流
+# th_invention_exhibition_hall_practical 大河
+# 河童试验田 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
+# th_twin_sunflower_field 河流
+# th_supremium_field 河流
+# th_gourmaryllis_field 河流
+# th_top_secret_cucumenber_field 集镇 河流
+# th_withering_hellebore_main 
+# th_kappa_test_fields_river_hub 河流
+# 秘天崖 （山童分布远大于河童，无小人族分布，天狗少量分布）
+# th_secret_haven_cliff 集镇 河流
+# th_yamawaro_barracks
+# th_cliff_of_dispair 河流
+# th_wargame_land
+# 伪天棚 （山童分布远大于河童，无小人族分布，天狗分布）
+# th_false_heaven_shelf 集镇
+# th_mountain_foot_no_go_zone
+# th_sannyo_casino
+# th_secret_green_cliff 河流
+# th_smoke_and_snow_tundra_main 河流
+# th_snow_tundra_rime_forest
+# 产业废墟 （山童分布远大于河童，无小人族分布，天狗分布）
+# th_infected_industry_area
+# th_water_gel_explosive_forest
+# th_break_ridgepole
+# th_yamawaro_hill_side
+# 辉针城 （小人族主要聚集地）
+# th_shining_needle_castle_tenshukaku 城市 河流
+# th_private_inner_chamber 集镇
+# th_shining_needle_castle_main_bailey 河流
+# th_shining_needle_castle_ground_hall
+# th_uchide_no_kozuchi_room
+# 辉针城前庭 （小人族次要聚集地）
+# th_shining_needle_castle_second_bailey
+# th_shining_needle_castle_third_bailey
+# th_fusoshin_swamp 河流
+# th_shining_needle_castle_watch_tower 河流
+# th_shining_needle_castle_stone_wall
+# 小人族藏宝室 （小人族次要聚集地）
+# th_mithril_gate 河流
+# th_useless_divice_room
+# th_dusty_srsenal
+# th_empty_chamber
+# th_diminutive_treasure_vault_library 河流
+# 闪光小径 （无小人族分布，山内聚集人类主要聚集地）
+# th_shining_path
+# th_levitation_garden
+# th_magical_thundercloud
+# th_shaking_plain
