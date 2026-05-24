@@ -59808,7 +59808,7 @@ countries = {
 
 
       T59 = {
-         capital = th_luize_traveler_ground
+         capital = th_returner_sanatorium
          court_language = acgv_touhou_eastern_dialect
          country_rank = rank_kingdom
          starting_technology_level = 3
