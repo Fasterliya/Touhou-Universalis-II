@@ -1,2515 +1,2518 @@
-# 幻想乡的人口设定，与欧陆风云5的城镇的等级，再之后组合的省份中，会特别标注 城镇，城市，大城市，若没有标注自动修改为乡村，并且以乡村的人口结构进行填写
-# 乡村的人口结构，其中90%为农民，8——9%为劳工，贵族与教士大约在0.5%，市民在0.1%
-# 城镇的人口结构，其中80%为农民，10%为劳工，3.5%的人口为士兵，3.5%的人口为市民，贵族人口占比在1.7%，教士人口在1.8%
-# 城市的人口结构，其中70%为农民，劳工在12%，士兵在7.5%，市民在6%，教士在4%，贵族在2%
-# 大城市的人口结构与城市相同，市民相对增加2%，士兵下降2%
-# 注：贵族人口设定，其中贵族人口永远优先按照该地区标记的主流文化优先给，而妖精在除妖精主流国家以外始终最小可能成为贵族，其次是各类妖兽，各类付丧神成为贵族可能性较低。
-# 注：人口的阶层结构的具体百分比需要进行一定比例的上下浮动，确保一定看上去的真实度，而不是都相同。但同时禁止比例完全失调出人口结构
-# 注：幻想乡的地点人口总数设定，其中大都会允许在100k-120k浮动，城市允许在60K-75K浮动，城镇在20-30K浮动，乡村在5K-10K浮动
-# 地形修正 山脉x0.90，平地x1.17，丘陵x0.98，高原x0.95，湿地x0.95
-# 植被修正 农田x1.20，草地x1.0，原野x1.0，林地x0.97，森林x0.93
-# 该省份是否有河流经过x1.05,若标记为大河，则为x1.12
-# 结构如下
-# <省份键值> = {
-# 	define_pop = {	type = <阶层键值>	size = 0.015	culture = <文化键值>	religion = <宗教键值> }
-# 	注意，size 每1单位代表1000人，如size = 0.015为150人
-# 	如此向下增加此省份的人口类型
-# 	define_pop = {	type = clergy	size = 0.071	culture = bulgarian	religion = orthodox }
-# 	define_pop = {	type = clergy	size = 0.013	culture = greek_culture	religion = orthodox }
-# 	define_pop = {	type = burghers	size = 1.445	culture = bulgarian	religion = orthodox }
-# }
-# 修改城镇等级
-# 注：幻想乡文化中有多种妖精，其中有光之妖精，植物妖精，季节妖精，元素妖精，现象妖精，（详情参考文化附件）
-# 除了地狱妖精和僵尸妖精，女仆妖精需要单独描述以外，之后的描述中只要提到妖精，就将妖精的人口在（光之妖精，花妖精，季节妖精，元素妖精，现象妖精，叶妖精，树妖精）
-# 之中挑选2-3种随机分配人口数量。
-# 注：幻想乡文化中也有多种妖兽（含有妖虫，妖犬，妖鼍，妖貉，妖猴，妖虎，妖狼，妖鹿，妖马，妖猫，妖鸟，妖牛，妖蛇，妖鼠，妖兔，妖狐见详细附录）
-# 之后的描述中只要提到妖兽，就将妖兽的人口在（含有妖虫，妖犬，妖鼍，妖貉，妖猴，妖虎，妖狼，妖鹿，妖马，妖猫，妖鸟，妖牛，妖蛇，妖鼠，妖兔,妖狐）
-# 就在从其中随机抽选2-5种文化在对应之中完全随机分配人口数量。
-# 同理，描述为天狗时，为随机的（山伏天狗，鼻高天狗，白狼天狗），除鸦天狗必须特殊说明
-# 同理，描述为付丧神时，为随机抽选2-3个的（古笼火，镜付丧，乐器妖，铃彦姬，枪毛长，伞妖，文车妖，衣付丧）之一，除面灵气必须特殊说明
-# 其中随机的文化不要平均分配，不同的地点单独分别生成。
-# 注：埴轮为造型神文化 外界人为外界民
-# 注：所有地区下级地点的人口可以在我标明的主体范围内滑动（地区总人口），如果标注「聚居」就得在存在在某些地点聚居「并且该地点可以比例失衡」的情况，即将此地区内我分配好的文化人口尽可能集中在此地点内，保证不同人口文化分布不平均，只需要在总体保存比例差不多就行
-# 注：宗教，开局宗教存在 th_gensokyo_old_hakurei_shinto th_gensokyo_buddhism th_gensokyo_taoism th_gensokyo_eat_raw th_gensokyo_tenma_mount
-# 如果没有特殊标注的信仰或者混杂信仰，则自动视作为100%信仰th_gensokyo_old_hakurei_shinto
-# th_gensokyo_old_hakurei_shinto为博丽风俗，th_gensokyo_buddhism为佛教，th_gensokyo_taoism道教，th_gensokyo_eat_raw啖生道，th_gensokyo_tenma_mount山
-# 其中天狗，鸦天狗，山童，河童，山佬，山女郎必定为山信仰。仙人必定为道教信仰，各种人类和各种民文化必定不可能信仰山，造型神文化必定不能是啖生道
-# 以下博丽地区（主流文化，神社周边人类）（系数x1.0）主体人口：（妖精54%，神社周边人类18%，村落外人类16%，妖怪5%，妖兽5%，鬼1.5%，外界人0.5%）
-# 博丽神社省（主要的神社周边人类，村落人类聚居点）
-# th_hakurei_shrine 城市 河流
-# th_main_hall_plaza 河流
-# th_torii_approach 集镇 河流
-# th_hakurei_engawa 集镇
-# th_the_always_open_back_gate 河流
-# th_hakurei_offering_hall_of_sparse_faith 集镇
-# 结界中枢
-# th_barrier_nexus 
-# th_seafood_drying_field
-# th_peninsula_lighthouse
-# th_windbreak_pine_forest
-# th_vein_of_living_jade 集镇
-# th_vein_of_living_jade_port 集镇
-# 藏酒库房（主要的鬼族，妖怪聚居点）
-# th_wine_cellar
-# th_drunken_immortal_brewery 城市 主要鬼族
-# th_moonlight_cellar
-# th_suika_brewery_vault 主要鬼族
-# th_drunken_boulder_bed 集镇
-# 博丽山麓（主要的妖兽妖怪聚居）
-# th_hakurei_foothills
-# th_mountain_gate_stairs
-# th_kazami_trail 集镇 河流
-# th_clear_mirror_still_water 河流
-# 博丽府邸（主要的神社周边人类，村落人类聚居点）
-# th_hakurei_mansion 集镇
-# th_shrine_maiden_residence 城市
-# th_tea_room_corridor 集镇
-# th_hakurei_storage_backyard
-# th_austere_sleeping_chamber
-# th_offering_reception_hall
-# 樱花林地（未有特殊地点）
-# th_cherry_blossom_grove 集镇 河流
-# th_front_hill_sakura 大河
-# th_ravine_cherry_path 河流
-# th_thousand_petal_path 河流
-# th_blossom_viewing_pavilion
-# th_petal_drift_stream 集镇 大河
-# 春色小径（主要的妖兽聚居点）
-# th_spring_colors_trail
-# th_east_wind_trail
-# th_falling_flowers_flowing_water 集镇 河流
-# th_echo_of_new_life_ravine 集镇 河流
-# th_whispering_willow_grove
-# 修炼校场（主要的神社周边人类，村落人类聚居点）
-# th_training_grounds 
-# th_main_practice_field
-# th_archery_range
-# th_back_hill_platform
-# 博丽海岸（未有特殊地点）
-# th_hakurei_coast
-# th_east_coast_rocks
-# th_sea_view_cliff
-# th_cape_lighthouse
-# th_sacred_torii_beach 河流
-# th_harbor_masters_observatory 集镇
-# th_tidal_pool_of_memories 河流
-# 运河港口（主要的神社周边人类，村落人类聚居点）
-# th_canal_port 集镇 大河
-# th_boatwright_workshop 大河
-# th_fantasy_canal_harbor 集镇 河流
-# th_main_canal 河流
-# th_exorcism_charm_workshop
-# th_hakurei_boundary_marker_wharf
-# 冥想地（未有特殊地点）
-# th_meditation_grounds 河流
-# th_tranquil_woods 集镇 河流
-# th_streamside_rocks 河流
-# th_under_the_old_cherry 河流
-# th_ancient_pine_platform 河流
-# 博丽岸滨（未有特殊地点）
-# th_hakurei_seaside 河流
-# th_white_sand_beach
-# th_seaside_promenade 集镇 河流
-# th_tidal_pool 河流
-# th_komainu_coastal_guard_post
-# th_komainu_coastal_guard_room 河流
-# 以下红魔馆地区（主流文化，吸血鬼）（位于雾之湖）主体人口：（女仆妖精40%，妖精22%，地精24%，村落外人类11%，魔法使1.2%，恶魔1.0%，吸血鬼0.5%，外界人0.3%，人鱼10%）
-# 红魔馆本馆（主要的恶魔，魔法使，吸血鬼聚居点）
-# th_scarlet_grand_entrance_hall 城市
-# th_scarlet_gaze_balcony
-# th_voile_library_grand_hall 集镇 （主要的魔法使，恶魔聚居点）
-# th_perfect_maid_armory
-# th_seven_star_summoning_chamber
-# th_underground_wine_cellar 集镇
-# th_scarlet_dream_bedchamber
-# th_frandre_scarlet_bedchamber
-# th_gargoyle_sentinel_gallery 集镇 （主要的恶魔聚居点）
-# th_scarlet_moonlight_tea_room
-# 红魔馆庭院 （主要的地精，女仆妖精聚居点）
-# th_main_gate_plaza 
-# th_scarlet_moonlight_fountain_plaza 集镇
-# th_eternal_rose_maze
-# th_midnight_blooming_garden
-# th_crimson_centerpiece_fountain
-# th_guardian_golem_shed 集镇（主要地精聚居点）
-# 绯红之道（妖精聚居点）
-# th_scarlet_path
-# th_crimson_moon_bridge
-# th_fate_corridor
-# th_vampiric_vine_valley
-# 血映湖滨（妖精聚居点）
-# th_flandres_playground
-# th_lake_of_blood_reflections
-# th_scarlet_backup_storage 集镇
-# th_path_of_the_crimson_moon
-# th_scarlet_fog_bog 大河
-# th_hidden_garden_of_forbidden_blooms
-# 人鱼秘境（妖精聚居点）（所有的人鱼都聚居在此）
-# th_mermaid_sanctuary 集镇 河流
-# th_tide_song_cavern
-# th_coral_corridor
-# th_moonlit_tidal_pool
-# th_secret_path_to_the_lakeshore 河流
-# th_wakasagihime_manor 集镇 河流
-# 洋馆外庭院（妖精聚居点）
-# th_maze_hedge 河流
-# th_eternal_night_orchid_bed 河流
-# th_moonlight_music_pavilion
-# th_black_tea_gazebo
-# th_crimson_creek_bridge
-# th_eternal_dusk_beach 河流 集镇
-# th_crimson_tide_harbor 集镇 河流
-# 绯红之山
-# th_crimson_mountain 
-# th_bloodmoon_peak 河流
-# th_thorny_path 河流
-# th_nightwhisper_spring （注意）
+# 以下博丽地区（主流文化，神社周边人类）（人口系数x1.0）主体人口：（妖精54%，神社周边人类18%，村落外人类16%，妖怪5%，妖兽5%，鬼1.5%，外界民0.5%）
+	# 宗教组成「博丽风俗」
+	# 博丽神社「村落外人类聚居」「神社周边人类聚居」
+		# th_hakurei_shrine 城市 河流
+		# th_main_hall_plaza 河流
+		# th_torii_approach 集镇 河流
+		# th_hakurei_engawa 集镇
+		# th_the_always_open_back_gate 河流
+		# th_hakurei_offering_hall_of_sparse_faith 集镇
+	# 结界中枢
+		# th_barrier_nexus 
+		# th_seafood_drying_field
+		# th_peninsula_lighthouse
+		# th_windbreak_pine_forest
+		# th_vein_of_living_jade 集镇
+		# th_vein_of_living_jade_port 集镇
+	# 藏酒库房「鬼族A聚居」「妖怪聚居」
+		# th_wine_cellar
+		# th_drunken_immortal_brewery 城市 「鬼族A聚居」
+		# th_moonlight_cellar
+		# th_suika_brewery_vault 「鬼族聚居」
+		# th_drunken_boulder_bed 集镇
+	# 博丽山麓「妖兽A聚居」「妖怪聚居」
+		# th_hakurei_foothills
+		# th_mountain_gate_stairs
+		# th_kazami_trail 集镇 河流
+		# th_clear_mirror_still_water 河流
+	# 博丽府邸「村落外人类聚居」「神社周边人类聚居」
+		# th_hakurei_mansion 集镇
+		# th_shrine_maiden_residence 城市 「村落外人类聚居」「神社周边人类聚居」
+		# th_tea_room_corridor 集镇
+		# th_hakurei_storage_backyard
+		# th_austere_sleeping_chamber
+		# th_offering_reception_hall
+	# 樱花林地
+		# th_cherry_blossom_grove 集镇 河流
+		# th_front_hill_sakura 大河
+		# th_ravine_cherry_path 河流
+		# th_thousand_petal_path 河流
+		# th_blossom_viewing_pavilion
+		# th_petal_drift_stream 集镇 大河
+	# 春色小径「妖兽聚居」
+		# th_spring_colors_trail
+		# th_east_wind_trail
+		# th_falling_flowers_flowing_water 集镇 河流
+		# th_echo_of_new_life_ravine 集镇 河流
+		# th_whispering_willow_grove
+	# 修炼校场「村落外人类聚居」「神社周边人类聚居」
+		# th_training_grounds 
+		# th_main_practice_field
+		# th_archery_range
+		# th_back_hill_platform
+	# 博丽海岸
+		# th_hakurei_coast
+		# th_east_coast_rocks
+		# th_sea_view_cliff
+		# th_cape_lighthouse
+		# th_sacred_torii_beach 河流
+		# th_harbor_masters_observatory 集镇
+		# th_tidal_pool_of_memories 河流
+	# 运河港口「村落外人类聚居」「神社周边人类聚居」
+		# th_canal_port 集镇 大河
+		# th_boatwright_workshop 大河
+		# th_fantasy_canal_harbor 集镇 河流
+		# th_main_canal 河流
+		# th_exorcism_charm_workshop
+		# th_hakurei_boundary_marker_wharf
+	# 冥想地
+		# th_meditation_grounds 河流
+		# th_tranquil_woods 集镇 河流
+		# th_streamside_rocks 河流
+		# th_under_the_old_cherry 河流
+		# th_ancient_pine_platform 河流
+	# 博丽岸滨
+		# th_hakurei_seaside 河流
+		# th_white_sand_beach
+		# th_seaside_promenade 集镇 河流
+		# th_tidal_pool 河流
+		# th_komainu_coastal_guard_post
+		# th_komainu_coastal_guard_room 河流
+# 以下红魔馆地区（主流文化，吸血鬼）（位于雾之湖）主体人口：（女仆妖精40%，妖精22%，地精24%，村落外人类11%，魔法使1.2%，恶魔1.0%，吸血鬼0.5%，外界民0.3%，人鱼10%）
+	# 宗教组成「博丽风俗」
+	# 红魔馆本馆「吸血鬼聚居」「恶魔聚居」「地精聚居」「女仆妖精聚居」
+		# th_scarlet_grand_entrance_hall 城市 「吸血鬼聚居」
+		# th_scarlet_gaze_balcony
+		# th_voile_library_grand_hall 集镇 「恶魔B聚居」「魔法使A聚居」
+		# th_perfect_maid_armory
+		# th_seven_star_summoning_chamber
+		# th_underground_wine_cellar 集镇
+		# th_scarlet_dream_bedchamber
+		# th_frandre_scarlet_bedchamber
+		# th_gargoyle_sentinel_gallery 集镇 「恶魔B聚居」
+		# th_scarlet_moonlight_tea_room
+	# 红魔馆庭院 「女仆妖精聚居」「地精A聚居」
+		# th_main_gate_plaza 
+		# th_scarlet_moonlight_fountain_plaza 集镇
+		# th_eternal_rose_maze
+		# th_midnight_blooming_garden
+		# th_crimson_centerpiece_fountain
+		# th_guardian_golem_shed 集镇 「地精聚居」
+	# 绯红之道「妖精聚居」
+		# th_scarlet_path
+		# th_crimson_moon_bridge
+		# th_fate_corridor
+		# th_vampiric_vine_valley
+	# 血映湖滨「妖精聚居」
+		# th_flandres_playground
+		# th_lake_of_blood_reflections
+		# th_scarlet_backup_storage 集镇
+		# th_path_of_the_crimson_moon
+		# th_scarlet_fog_bog 大河
+		# th_hidden_garden_of_forbidden_blooms
+	# 人鱼秘境「人鱼聚居」
+		# th_mermaid_sanctuary 集镇 河流
+		# th_tide_song_cavern
+		# th_coral_corridor
+		# th_moonlit_tidal_pool
+		# th_secret_path_to_the_lakeshore 河流
+		# th_wakasagihime_manor 集镇 河流
+	# 洋馆外庭院「妖精聚居」
+		# th_maze_hedge 河流
+		# th_eternal_night_orchid_bed 河流
+		# th_moonlight_music_pavilion
+		# th_black_tea_gazebo
+		# th_crimson_creek_bridge
+		# th_eternal_dusk_beach 河流 集镇
+		# th_crimson_tide_harbor 集镇 河流
+	# 绯红之山
+		# th_crimson_mountain 
+		# th_bloodmoon_peak 河流
+		# th_thorny_path 河流
+		# th_nightwhisper_spring 
 # 以下琪露利亚地区（主流文化，所有妖精）位雾之湖），主体人口（元素妖精43%，妖精57%，妖怪2%，地藏0.2%，魔法使0.2%）
-# 失落之城
-# th_forgotten_royal_court
-# th_sunken_quarter
-# th_lost_city
-# th_clocktower_of_time
-# th_whispering_residential_quarter
-# 训练场地（妖精聚居点）
-# th_scarlet_training_ground 集镇
-# th_scarlet_danmaku_proving_ground
-# th_silver_blade_corridor
-# th_ice_fariy_island
-# th_silent_library
-# th_crimson_vein_mine 河流
-# th_chaos_gravity_grove 河流
-# 冰之室（妖精聚居点）
-# th_ice_room 城市
-# th_frost_blossom_garden 河流 集镇
-# th_eternal_frozen_lake 
-# th_crystal_corridor
-# 大妖精树屋（妖精聚居点）
-# th_great_fairy_treehouse 
-# th_treehouse_main_hall 集镇
-# th_vine_ladder_slide
-# th_leaf_curtain_balcony 集镇 河流
-# 三妖精府邸（主要的光之妖精聚居点）
-# th_three_fairies_mansion 城市
-# th_trio_war_council_room
-# th_leaf_view_deck
-# th_luna_room
-# th_sunny_room
-# th_star_room
-# 妖精神龛
-# th_fairy_shrine 
-# th_leaf_wish_rack 集镇 河流
-# th_fairy_gathering_ring 集镇 河流
-# th_shrine_star_point 
-# 妖精岸滨
-# th_fairy_shore 集镇 大河
-# th_broken_shell_beach 河流
-# th_driftwood_hut
-# th_tidal_pool_playground 集镇
-# 迎春花小径（主要的季节妖精聚居点）
-# th_winter_jasmine_trail 集镇
-# th_harbinger_bridge 河流 集镇
-# th_spring_view_pavilion 
-# th_thaw_glade 大河
-# th_golden_belt_corridor
-# 永恒花园（主要的现象妖精聚居点）
-# th_eternal_garden 集镇
-# th_stagnant_fountain
-# th_endless_rose_corridor
-# th_flower_clock_of_time 集镇
-# 以下普利兹姆利巴洋馆（系数x1.0）（主流文化，骚灵）（妖精62%，骚灵35%,妖怪2%，地藏0.2%，魔法使0.2%）
-# 废弃洋馆
-# th_derelict_mansion 集镇
-# th_rusted_gate
-# th_crumbling_hall 集镇
-# th_ownerless_study
-# 以下妖怪的树海地区（系数x0.95）（主流文化，妖怪）（位于魔法森林，均视作河流穿过）主体人口（36%植物妖精，12%妖精，44%妖怪，2%地藏）
-# 妖怪的树海
-# th_youkai_forest 集镇
-# th_body_dumping_place
-# th_calamity_forest
-# th_deep_forest_path_to_holy_land
-# th_fortuna_county 集镇
-# 妖怪海岸
-# th_youkai_coast
-# th_fearness_beach
-# th_hina_port 集镇
-# th_etrnal_night_forest
-# 阻绝人际的溪谷
-# th_keikoku_mugen_zandou
-# th_keikoku_bousen_shiryu
-# th_keikoku_kijin_shoukei
-# th_start_of_nagashi_bina
-# 阴翳森林
-# th_lightness_boulevard
-# th_fortune_cat_house 集镇
-# th_inei_shinrin_yuugen_jukai
-# th_lost_single_path
-# 阴暗沼泽
-# th_misfortune_swamp
-# th_calamity_port 集镇
-# th_dark_hills
-# th_miasma_forest
-# 雏人偶工坊
-# th_hina_dolls_workshop 集镇
-# th_misfortune_godess_mansion 城市
-# th_locking_misfortune_borders
-# th_hina_dolls_recycle_center
-# th_temple_of_misfortune
-# 以下华扇的仙界地区（系数x1.1）（主流文化，仙人，村落外人类）（主体人口：妖精39%，村落外人类35%，仙人12%）
-# 华扇的仙界
-# th_immortal_mansion 城市
-# th_eagle_house
-# th_immortal_dojo 集镇
-# th_pets_room
-# th_kasens_room 集镇
-# 以下丰穰之祠地区（系数x1.2）（主流文化，丰穰民）（（主体人口：妖精25%，丰穰民41%，村落外人类16%，村落人类4%，妖怪4%，0.5%地藏）
-# 丰穰之祠（丰穰民和村落外人类主要聚集点）
-# th_bountiful_shrine 城市 大河
-# th_inari_torii 河流
-# th_aki_main_hall 城市 大河
-# th_aki_chozya 大河
-# th_harvest_altar 大河
-# 秋之拜殿
-# th_autumn_worship_hall 集镇
-# th_ginkgo_courtyard
-# th_stone_lantern 大河
-# th_aki_maple_corridor 河流
-# 以下后户之国地区(系数x0.95)（主流文化，障碍民）（主体人口：障碍民76%、座敷童子12%，季节妖精5%）
-# 暗黑结界
-# th_memory_modification_center
-# th_common_sense_transformation_center 河流
-# th_personality_reconstruction_center 集镇 河流
-# th_body_rebuild_center
-# th_deep_dark
-# 勇者之台
-# th_mais_room
-# th_satonos_room
-# th_myoga_ginger_garden 集镇 大河
-# th_thin_bamboo_plantation
-# 后户之国
-# th_plain_of_seven_stars
-# th_tengu_shirine
-# th_origin_of_ley_lines 集镇 河流
-# th_silk_stream
-# th_people_free_noh_drama_stage
-# 后户之境
-# th_border_of_spring_and_fall 河流
-# th_border_of_summer_and_winter 河流
-# th_gap_seasons_path 河流
-# th_chaos_land 集镇 大河
-# 以下人偶之森地区（系数1.0）（主流文化，人偶，魔法使）（主体人口，植物妖精53%，人偶26%，妖怪5%，地藏1%，魔法使2%）
-# 饱含魔力的森林
-# th_mana_saturated_forest
-# th_mana_spring 河流
-# th_living_crystal_cluster 河流
-# th_runestone_ancient_tree
-# 魔法森林
-# th_magic_forest
-# th_foxfire_woodland_trail 河流
-# th_tranquil_moon_lake
-# th_star_mirror_spring 河流 集镇
-# th_mist_enshrouded_giant_redwoods 河流
-# 玛格特罗伊德邸(人偶与魔法使的主要聚居点)
-# th_margatroid_residence 河流 集镇
-# th_seven_color_tea_parlor
-# th_margatroid_atrium 河流 人偶聚居点 集镇
-# th_doll_atelier_main_hall 城市（人偶聚居点）大河
-# th_grimoire_blueprint_study
-# th_margatroid_room 集镇
-# th_margatroid_theater 集镇
-# 障雨之森（妖怪主要聚居点）
-# th_miasma_rain_forest 河流
-# th_rot_heart_giant_tree 河流
-# th_toxic_swamp_fringe 
-# th_silent_deadwater_pond
-# 置行堀（地藏主要聚居点）
-# th_oki_gutters 河流 集镇
-# th_misty_waterway 河流
-# th_discard_heap 河流
-# th_echo_culvert 河流
-# 以下夜雀食堂地区（系数x1.0）（主流文化，夜雀）（夜雀15%，妖精25%，妖怪15%，永远亭5%，地藏1%，魔法使2%，妖兽12%，女仆妖精4%，村落人类7%，村落外人类5%，神社周边人类3%，外界人0.1%，仙人0.3%，天人0.3%）
-# 夜雀食堂
-# th_night_sparrow_diner  
-# th_diner_main_hall 城市 大河
-# th_open_air_roast_yard
-# th_stage_regulars_corner 河流 集镇
-# th_diner_pantry
+	# 宗教组成「博丽风俗」
+	# 失落之城「妖精聚居」
+		# th_forgotten_royal_court
+		# th_sunken_quarter
+		# th_lost_city
+		# th_clocktower_of_time
+		# th_whispering_residential_quarter
+	# 训练场地「妖精聚居」
+		# th_scarlet_training_ground 集镇
+		# th_scarlet_danmaku_proving_ground
+		# th_silver_blade_corridor
+		# th_ice_fariy_island
+		# th_silent_library
+		# th_crimson_vein_mine 河流
+		# th_chaos_gravity_grove 河流
+	# 冰之室「元素妖精B聚居」
+		# th_ice_room 城市
+		# th_frost_blossom_garden 河流 集镇
+		# th_eternal_frozen_lake 
+		# th_crystal_corridor
+	# 大妖精树屋「妖精聚居」
+		# th_great_fairy_treehouse 
+		# th_treehouse_main_hall 集镇
+		# th_vine_ladder_slide
+		# th_leaf_curtain_balcony 集镇 河流
+	# 三妖精府邸「光之妖精B聚居」
+		# th_three_fairies_mansion 城市
+		# th_trio_war_council_room
+		# th_leaf_view_deck
+		# th_luna_room
+		# th_sunny_room
+		# th_star_room
+	# 妖精神龛「妖精聚居」
+		# th_fairy_shrine 
+		# th_leaf_wish_rack 集镇 河流
+		# th_fairy_gathering_ring 集镇 河流
+		# th_shrine_star_point 
+	# 妖精岸滨「妖精聚居」
+		# th_fairy_shore 集镇 大河
+		# th_broken_shell_beach 河流
+		# th_driftwood_hut
+		# th_tidal_pool_playground 集镇
+	# 迎春花小径「季节妖精B聚居」
+		# th_winter_jasmine_trail 集镇
+		# th_harbinger_bridge 河流 集镇
+		# th_spring_view_pavilion 
+		# th_thaw_glade 大河
+		# th_golden_belt_corridor
+	# 永恒花园「现象妖精B聚居」
+		# th_eternal_garden 集镇
+		# th_stagnant_fountain
+		# th_endless_rose_corridor
+		# th_flower_clock_of_time 集镇
+# 以下普利兹姆利巴洋馆（人口系数x1.0）（主流文化，骚灵）主体人口（妖精62%，骚灵35%,妖怪2%，地藏0.2%，魔法使0.2%）
+	# 宗教组成「博丽风俗」
+	# 废弃洋馆
+		# th_derelict_mansion 集镇 「骚灵B聚居」
+		# th_rusted_gate
+		# th_crumbling_hall 集镇
+		# th_ownerless_study
+# 以下妖怪的树海地区（人口系数x0.95）（主流文化，妖怪）主体人口（36%植物妖精，12%妖精，44%妖怪，2%地藏）
+	# 宗教组成「博丽风俗45%，山55%」
+	# 妖怪的树海「山A分布」
+		# th_youkai_forest 集镇 「妖怪聚居」
+		# th_body_dumping_place
+		# th_calamity_forest
+		# th_deep_forest_path_to_holy_land
+		# th_fortuna_county 集镇 「妖怪聚居」
+	# 妖怪海岸「山C分布」
+		# th_youkai_coast
+		# th_fearness_beach
+		# th_hina_port 集镇 「妖怪聚居」
+		# th_etrnal_night_forest
+	# 阻绝人际的溪谷 「妖精聚居」「山A分布」
+		# th_keikoku_mugen_zandou
+		# th_keikoku_bousen_shiryu
+		# th_keikoku_kijin_shoukei
+		# th_start_of_nagashi_bina
+	# 阴翳森林「山A分布」
+		# th_lightness_boulevard
+		# th_fortune_cat_house 集镇
+		# th_inei_shinrin_yuugen_jukai
+		# th_lost_single_path
+	# 阴暗沼泽「山B分布」
+		# th_misfortune_swamp
+		# th_calamity_port 集镇
+		# th_dark_hills
+		# th_miasma_forest
+	# 雏人偶工坊「山C分布」
+		# th_hina_dolls_workshop 集镇
+		# th_misfortune_godess_mansion 城市 「妖怪聚居」
+		# th_locking_misfortune_borders
+		# th_hina_dolls_recycle_center
+		# th_temple_of_misfortune
+# 以下华扇的仙界地区（人口系数x1.1）（主流文化，仙人，村落外人类）（主体人口：妖精29%，村落外人类35%，仙人12%）
+	# 宗教组成「东派道教」
+	# 华扇的仙界
+		# th_immortal_mansion 城市 「仙人A聚居」「村落外人类B聚居」
+		# th_eagle_house
+		# th_immortal_dojo 集镇
+		# th_pets_room
+		# th_kasens_room 集镇
+# 以下丰穰之祠地区（人口系数x1.23）（主流文化，丰穰民）（主体人口：妖精25%，丰穰民41%，村落外人类16%，村落人类4%，妖怪4%，0.5%地藏）
+	# 宗教组成「博丽风俗95%，山5%」
+	# 丰穰之祠「村落外人类B聚居」「丰穰民A聚居」「山C分布」
+		# th_bountiful_shrine 城市 大河
+		# th_inari_torii 河流
+		# th_aki_main_hall 城市 大河
+		# th_aki_chozya 大河
+		# th_harvest_altar 大河
+	# 秋之拜殿 「村落人类B聚居」 「山A分布」
+		# th_autumn_worship_hall 集镇 「村落人类B聚居」
+		# th_ginkgo_courtyard
+		# th_stone_lantern 大河
+		# th_aki_maple_corridor 河流
+# 以下后户之国地区(人口系数x0.95)（主流文化，障碍民）主体人口：（障碍民76%、座敷童子12%，季节妖精5%）
+	# 宗教组成「博丽风俗90%，山10%」
+	# 暗黑结界「山A分布」
+		# th_memory_modification_center
+		# th_common_sense_transformation_center 河流
+		# th_personality_reconstruction_center 集镇 河流
+		# th_body_rebuild_center
+		# th_deep_dark
+	# 勇者之台「山C分布」
+		# th_mais_room
+		# th_satonos_room
+		# th_myoga_ginger_garden 集镇 大河
+		# th_thin_bamboo_plantation
+	# 后户之国「障碍民B聚居」
+		# th_plain_of_seven_stars
+		# th_tengu_shirine
+		# th_origin_of_ley_lines 集镇 河流
+		# th_silk_stream
+		# th_people_free_noh_drama_stage
+	# 后户之境「季节妖精聚居」
+		# th_border_of_spring_and_fall 河流
+		# th_border_of_summer_and_winter 河流
+		# th_gap_seasons_path 河流
+		# th_chaos_land 集镇 大河
+# 以下人偶之森地区（人口系数x1.0）（主流文化，人偶，魔法使）主体人口，（植物妖精53%，人偶26%，妖怪5%，地藏1%，魔法使2%，妖虫4%）
+	# 宗教组成「博丽风俗」
+	# 饱含魔力的森林「植物妖精聚居」
+		# th_mana_saturated_forest
+		# th_mana_spring 河流
+		# th_living_crystal_cluster 河流
+		# th_runestone_ancient_tree
+	# 魔法森林「魔法使聚居」
+		# th_magic_forest
+		# th_foxfire_woodland_trail 河流
+		# th_tranquil_moon_lake
+		# th_star_mirror_spring 河流 集镇
+		# th_mist_enshrouded_giant_redwoods 河流
+	# 玛格特罗伊德邸「人偶聚居」「魔法使聚居」
+		# th_margatroid_residence 河流 集镇 「魔法使A聚居」
+		# th_seven_color_tea_parlor
+		# th_margatroid_atrium 河流 集镇 「人偶B聚居」
+		# th_doll_atelier_main_hall 城市 大河 「人偶B聚居」
+		# th_grimoire_blueprint_study
+		# th_margatroid_room 集镇
+		# th_margatroid_theater 集镇
+	# 障雨之森「妖怪聚居」「妖虫A聚居」
+		# th_miasma_rain_forest 河流
+		# th_rot_heart_giant_tree 河流
+		# th_toxic_swamp_fringe 
+		# th_silent_deadwater_pond
+	# 置行堀「地藏A聚居」
+		# th_oki_gutters 河流 集镇 「地藏聚居」
+		# th_misty_waterway 河流
+		# th_discard_heap 河流
+		# th_echo_culvert 河流
+# 以下夜雀食堂地区（人口系数x1.0）（主流文化，夜雀）（夜雀15%，妖精25%，妖怪15%，永远亭5%，地藏1%，魔法使2%，妖兽12%，女仆妖精4%，村落人类7%，村落外人类5%，神社周边人类3%，外界民0.1%，仙人0.3%，天人0.3%）
+	# 宗教组成「博丽风俗」
+	# 夜雀食堂
+		# th_night_sparrow_diner  
+		# th_diner_main_hall 城市 大河
+		# th_open_air_roast_yard
+		# th_stage_regulars_corner 河流 集镇「夜雀聚居」
+		# th_diner_pantry
 # 以下萤火之森地区（系数x1.0）（主流文化，妖虫）（植物妖精56%，妖虫30%，妖兽5%，妖怪2.5%，魔法使1%）
-#萤火之森
-# th_nightfall_shore_grove 大河 集镇
-# th_dusk_waters_edge  大河
-# th_night_heron_perch 大河
-# th_firefly_reed_bed 大河
-# th_fungal_lantern_gallery
-# th_shadow_stalkers_path 大河 集镇
-# 妖怪兽道（主要的妖怪聚集地）
-# th_youkai_beast_path 集镇 大河
-# th_claw_marked_great_tree
-# th_youkai_air_misty_valley 集镇 大河
-# th_nocturnal_stream 大河
-# 雾雨之森地区（系数x0.99）（主流文化，魔法使，村落外人类）（村落外人类5%，植物妖精56%，妖兽20%，妖怪12%，魔法使2.5%，地藏2%，人偶14%）
-# 雾雨魔法店
-# th_kirisame_magic_shop 河流 集镇
-# th_cluttered_display_hall 大河
-# th_potion_brewing_bench 大河 集镇
-# th_attic_loft_nook
-# th_main_hall_of_chaotic_wonders 大河
-# 雾雨邸
-# th_kirisame_residence 城市
-# th_kirisame_room 河流
-# th_overgrown_front_yard 集镇 大河
-# th_kirisame_abandoned_library 河流
-# th_kirisame_mansion_genkan 河流
-# 蘑菇集簇地
-# th_mushroom_woods 集镇 大河
-# th_giant_agaric_cluster
-# th_rotting_totem_poles
-# th_spore_geyser_valle
-# th_mycelium_network_nexus 集镇 大河
-# 森林海岸
-# th_forest_shore 集镇 大河
-# th_driftwood_strand 河流
-# th_reed_shallow_bay 城市 大河
-# th_fisherman_old_stakes 河流
-# th_mist_woodland 河流
-# 森林边缘
-# th_forest_fringe
-# th_border_marker_trail
-# th_bramble_palisade
-# th_woodcutter_rest 集镇 河流
-# th_lost_traveler_fork 集镇 河流
-# 成美林地
-# th_seibi_grove
-# th_cleansing_heart_stream 河流
-# th_grove_stone_altar 河流
-# th_seibi_ancient_tree 集镇 大河
-# th_windwhisper_trail 集镇 河流
-# 妖精破庙（妖兽主要聚居地）
-# th_fairy_derelict_temple 河流
-# th_broken_pillar_mountain_gate
-# th_belfry_ruins 集镇 大河
-# th_desolate_courtyard
-# 以下迷途竹林地区(总体人口系数x0.92)（主流文化，永远亭，妖兔）（总和主体人口：妖兔64%，村落外人类12%，村落人类10%，妖精25%，妖怪10%，永远亭-月之民2%，地藏0.5%，0.1%外界人）
-# 永琳的药房（主要聚居村落外人类）
-# th_eirins_warehouse 集镇 大河
-# th_lunar_labs
-# th_herbs_cultivation_base
-# th_horai_pharmacy 集镇
-# th_shade_loving_herb_beds
-# th_fragrant_herb_arbor
-# 茂密竹林（主要聚居村落人类，妖精）
-# th_road_to_village
-# th_marked_entrance_1
-# th_night_sparrow_house 集镇
-# th_sparrow_wine_source 大河 集镇
-# th_dense_bamboo_forest 
-# 帝的兔子洞（主要聚居妖兔）
-# th_tewis_rabbit_hole 集镇
-# th_rabbit_beauty_salon 集镇
-# th_rabbit_trap_school 集镇
-# th_cace_of_caerbannog
-# 无尽长廊
-# th_endless_corridor
-# th_endless_byobu
-# th_room_of_night_luminous_pear 集镇 大河
-# th_fake_kinkakuji 
-# th_fake_ginkakuji 集镇 河流
-# 草药园圃
-# th_rabbit_farm 河流 集镇
-# th_drugged_mochi_factory
-# th_herb_garden 集镇 大河
-# th_lunar_rabbit_kolkhoz
-# th_herb_garden_doka_hatake
-# 兔子窟
-# th_rabbit_port
-# th_rabbit_wonderland
-# th_rabbit_assembly_hall 集镇
-# th_youkai_rabbit_village 集镇
-# th_reisens_house
-# 月兔收容所
-# th_lunar_rabbit_labor_camp 河流
-# th_lunar_rabbit_detention_center
-# th_lunar_rabbit_collective_canteen
-# th_mangengasaki_port 河流 集镇
-# 永远亭
-# th_kaguyas_room 城市 （主要聚居永远亭-月之民，妖兔）
-# th_game_console_collection
-# th_courtyard_for_product_elixir 集镇 河流
-# th_moon_viewing_terrance
-# th_eirins_clinic
-# 竹林岸滨
-# th_lunar_port 河流 集镇
-# th_panda_habitat 河流
-# th_marked_entrance_2 河流
-# th_sunflower_outpost
-# 以下迷途竹林地区(总体人口系数x0.92)（主流文化，村落外人类）（总体主体人口：季节妖精8%，妖精32%，妖兔14%。村落外人类21%，村落人类10%，妖兽12%，妖怪8%，外界人0.3%，地藏0.1%）
-# 天空的花之都
-# th_outside_of_the_border_of_the_life_and_death
-# th_poltergeists_lounge 河流
-# th_upper_level_of_flower_city 河流 集镇
-# th_lower_level_of_flower_city
-# th_unverified_sakura_border 河流
-# 迷途者庇护所
-# th_shelter_for_the_lost 城市 河流 （村落人类，和村落外人类主要聚居点）
-# th_bamboo_forest_garrison 
-# th_hidden_youseis_pool 河流 集镇 （妖精聚居）
-# th_marked_exit_1
-# th_lost_sanctuary_kikan_shourou 河流 
-# 藤原邸
-# th_huziwara_mansion 城市 （村落人类，和村落外人类主要聚居点）
-# th_straw_fence
-# th_huziwara_traning_house
-# th_bamboo_forest_ninja_warehouse
-# th_huziwara_chicken_farm
-# 藤原港
-# th_huziwara_port 河流 集镇
-# th_marked_exit_2
-# th_mokous_grill
-# th_inextinguishable_lantern_path
-# 竹林沙场
-# th_burned_bamboo_forest
-# th_buried_jade_bamboo_forest
-# th_broken_diamon_bamboo_forest
-# th_horai_bamboo_forest
-# 有情人秘所
-# th_kaguya_hideout
-# th_keine_hideout
-# th_sumireko_hideout
-# th_secret_path_of_princess 集镇
-# 以下冥界地区(总体人口系数x1.05)（主流文化，亡灵）（总体主体人口：季节妖精10%，现象妖精12%，亡灵35%，幽灵23%，骚灵15%，半人半灵1%，外界人0.3%）
-# 幽之结界
-# th_barrier_of_death 河流 集镇（骚灵主要聚居点）
-# th_barrier_of_pride
-# th_barrier_of_warth
-# th_barrier_of_sloth 河流
-# th_barrier_of_gluttony
-# 精魄草坪
-# th_sea_of_lycoris 河流
-# th_white_chrysanthemum_bank 河流
-# th_fly_lair
-# th_deadly_stream 河流	
-# th_picnic_spot_for_somebody 河流 集镇
-# 魂之眺台
-# th_ghast_tower 集镇
-# th_black_tower 集镇
-# th_phantom_arsenal
-# th_deadbody_moonlight
-# 冥界城楼
-# th_fake_life_village 集镇
-# th_skeleton_castle_tower
-# th_tomb_first_dead
-# th_skull_checkpoint
-# 明之结界
-# th_barrier_of_life
-# th_barrier_of_humility
-# th_barrier_of_kindness 河流 集镇（骚灵主要聚居点）
-# th_barrier_of_deligence
-# th_barrier_of_temperance 河流
-# 白玉楼阶梯
-# th_steps_1_to_1600 河流
-# th_steps_1601_to_3200
-# th_steps_3201_to_4800 河流
-# th_steps_4801_to_6400
-# th_steps_6401_to_8000
-# 雪之庭院
-# th_snow_gloem_factory 
-# th_artifical_stream 河流
-# th_strange_rockwork 河流 集镇 （妖精主要聚居点）
-# th_zombie_tearoom 
-#以下地点不再有骚灵和妖精出现
-# 白玉楼（半人半灵主要聚居点）
-# th_hakugyokurou 城市
-# th_irreversible_entrance
-# th_yuyukos_room 集镇
-# th_greater_kitchen
-# th_rock_gardenv
-# th_surrounding_hallway
-# 西行妖
-# th_north_branch_of_saigyou_ayakashi
-# th_south_branch_of_saigyou_ayakashi
-# th_east_branch_of_saigyou_ayakashi
-# th_west_branch_of_saigyou_ayakashi
-# 樱之海
-# th_north_aokigahara_forest 集镇 河流
-# th_south_aokigahara_forest 
-# th_lost_temple
-# th_the_beach
-# 幽冥庭院
-# th_paper_windmill_garden 河流
-# th_coin_eyes_bridge
-# th_yuanbao_valley 河流
-# th_paper_doll_village 河流 集镇
-# 幽灵乐土
-# th_endless_tea_party
-# th_decay_library
-# th_castel_ruins
-# th_phantom_wonderland 城市
-# th_death_metal_rock_end
-# 墓室地穴
-# th_diavolo_crimson_hotel 集镇
-# th_kenny_cementry
-# th_24th_graveyard
-# th_tomitake_marsh 河流
-# th_mami_tea_field 河流
-# 回响墓园
-# th_skeleton_pyramaid
-# th_saigyouji_ossuary
-# th_maxxranas
-# th_drown_tomb 集镇
-# 亡者之港
-# th_drown_fleet_port 河流 集镇
-# th_black_beard_bay
-# th_davy_jones_locker 河流
-# th_deep_sea_lair 河流
-# 魂魄府邸（半人半灵聚居地）
-# th_swordplay_dojo 河流
-# th_giant_garden
-# th_konpaku_fosse 河流
-# th_youmus_room 河流 集镇 半人半灵聚居地）
-# th_ghost_village 集镇
-# 妖忌纪念地
-# th_youki_monument
-# th_tomb_of_swords
-# th_youki_port 河流 集镇
-# th_reed_field 河流
-# 亡灵田野
-# th_borei_genya
-# th_borei_genya_mugen_sougen
-# th_borei_genya_yuukon_bakuden
-# th_dankyu_kyuuryou
-# 以下人间之里地区(总体系数x1.35)（主流文化，村落人类）（主体人口：鸦天狗0.3%，妖精15%，村落人类80%，村落外人类5%，神社周边人类5%，丰穰民2%，地藏0.3%，外界人0.4%，妖怪6%，座敷童子1%）
-# 人间之里收到佛教影响（佛教14%，博丽风俗86%）
-# 西大街 （佛教聚居点）
-# th_nishi_odori 大河
-# th_ryujin_sama_sekizou 大河 
-# th_seiran_ya 大河 集镇
-# th_suzuko_ya 大河 集镇
-# th_nishi_mi_ban 
-# th_satoyama_no_mori 大河 
-# th_saikumachi_dori 大河 集镇
-# 酒藏街（主要聚居妖怪，妖怪都在这）
-# th_geodon_tei_main_hall 大河 城市 （主要聚居妖怪）
-# th_yuya 大河
-# th_umaya_mae 大河
-# th_dozou_soko
-# th_nagashidai_mae 大河 集镇
-# th_sakagura_dori
-# th_hatago_yokocho 大河
-# 北大街
-# th_terakoya_gakudo 城市
-# th_terakoya_mae
-# th_sensei_no_heya 集镇
-# th_kyouzai_gura
-# th_kita_odori 大河
-# th_ura_nagaya_dori_2 大河
-# th_asobi_niwa 大河
-# 村落田野
-# th_village_outskirts
-# th_west_slope_wheat_field
-# th_east_fence_vegetable_garden 大河
-# th_watermill_mill 大河
-# th_grain_drying_field 大河
-# th_cattle_grazing_slope 大河
-# th_boundary_stone_road 大河
-# 流川桥（佛教聚居点）
-# th_honcho_dori 大河
-# th_workshop_yokocho 集镇 佛教聚居点） 
-# th_kourindou_main_store 城市
-# th_antique_market 大河 集镇 佛教聚居点）
-# th_signpost_fork 大河
-# th_south_market 大河 集镇
-# th_nagarekawa_bridge_south_ab 大河
-# 稗田町
-# th_hieda_residence_front_street 大河
-# th_hieda_residence 大河 城市
-# th_gakusha_shukubo_cho 大河 集镇
-# th_kamiya_cho 集镇
-# th_tsuji_dou 集镇
-# th_nishi_kido_guchi 集镇
-# th_hori_bata_dori 大河
-# 村落广场（佛教聚居点）
-# th_western_village_street 大河 
-# th_central_plaza 大河 大都会
-# th_village_office 大河 集镇
-# th_old_well_mouth 大河 集镇
-# th_crossroads_teahouse 大河 集镇
-# th_police_outpost 大河 集镇
-# th_village_bell_tower 大河 集镇
-# th_zaimoku_cho 大河 集镇
-# th_higashi_yokocho 大河 集镇
-# 南大门街
-# th_suzunaan 城市 大河
-# th_bookstore_yokocho 集镇
-# th_kashihon_gura 集镇 大河
-# th_mihan_hiroba 大河
-# th_minami_daimon_dori 大河
-# th_nagarekawa_bashi_minamizume_hiroba 集镇 大河
-# th_nagaya_nami_higashiguchi 集镇 大河
-# 里长屋街
-# th_sagi_no_shoshitsu 大河 集镇
-# th_tsuji_shidou 大河 
-# th_minami_tsuji_kouban 大河
-# th_wayside_shrine 大河 集镇
-# th_ura_nagaya_dori
-# th_mitsuke_ban_goya 集镇
-# 以下心绮楼地区(总体系数x1.37)（主流文化，村落人类）（主体人口：面灵气10%，付丧神21%，妖精23%，村落人类52%，村落外人类5%，神社周边人类5%，丰穰民2%，地藏0.3%，外界人0.4%，妖怪6%，座敷童子1%）
-# 宗教：佛教15%，道教13%，其余为博丽风俗
-# 心绮楼（面灵气聚居点）
-# th_shingiro 河流 城市 （面灵气，付丧神聚居点）
-# th_rouzen_dori 
-# th_gakuya_yokocho 河流 集镇
-# th_kenbutsuse_mae 河流
-# th_noh_stage 河流
-# th_dougu_kata 河流
-# 能面长廊
-# th_hashigakari 大河 集镇 
-# th_men_nagaya 大河 （面灵气，付丧神聚居点）
-# th_streetcorner_well
-# th_nagaya_ura_roji 集镇
-# th_mokuzai_tsubo_ba
-# 梦境大祀殿（此地人口单独设定为（12%仙人，22%妖精，12%付丧神，9%妖怪，42%村落外人类））
-# th_muden_daishibyo_shibyo_honden 河流 集镇
-# th_muden_daishibyo_chinmin_chi
-# th_muden_daishibyo_musen_no_dan 河流 集镇
-# th_muden_daishibyo_seimu_no_kane
-# th_muden_daishibyo_yume_kaeri_sando 河流
-# th_muden_daishibyo_kisen_bunryu 河流
-# 以下命莲寺地区(总体系数x1.35)（主流文化，村落人类，妖怪）（总和主体人口：妖精32%，妖怪17%。，魔法使2%，村落人类35%，村落外人类10%，妖虎4%，妖兽10%，山彦6%，貉妖3%，外界人0.5%，丰穰民1.5%,天狗0.7%，付丧神4%，念缚灵5%。地缚灵3.1%，僵尸1.4%。幽灵2.5%）
-# 注意命莲寺地区约31%人信仰佛教，7%人信仰道教，1.8%人信仰山，其余为信仰博丽风俗
-# 命莲寺（）
-# th_myourenji_hondo 城市
-# th_myourenji_kyozo
-# th_myourenji_shugyo_dojo 大河
-# th_myourenji_teien 大河 集镇
-# th_myourenji_saidou
-# th_myourenji_sobo 集镇
-# th_myourenji_shoro
-# 妖怪狸之森（31%的妖貉聚居，其余按照命莲寺的人口分布，没有人类和丰穰民，外界民分布）
-# th_bake_danuki_forest 河流
-# th_shape_shifting_avenue
-# th_fude_brush_shrine_gate 集镇
-# th_leaf_coin_market 大河 集镇（妖貉聚居）
-# th_human_village_backdoor_hill 河流
-# th_tanuki_belly_drum_theater
-# th_one_night_inn_signpost
-# 命莲寺北部（）
-# th_myouren_temple_north_district
-# th_lotus_sutra_stone_path 大河
-# th_unzans_nap_rock 河流
-# th_belfry_of_dawn_chant
-# th_abbots_private_meditation_grove 大河
-# th_sutra_transcription_shed 大河 集镇
-# th_lantern_lit_memorial_hall 集镇
-# 圣辇船
-# th_lotus_bow_deck
-# th_unzans_cloud_berth 集镇 大河
-# th_mandala_guest_hall
-# th_monk_quarters_cell_block
-# th_nazrin_s_treasure_hold
-# th_dragon_protector_prow
-# 春侍之丘（15%妖兽聚居，其余按照命莲寺的人口分布，没有人类和丰穰民，外界民分布）
-# th_zansetsu_no_michi
-# th_zansetsu_no_michi_yosetsu 大河
-# th_zansetsu_no_michi_setpi_iwa 河流
-# th_zansetsu_kairo
-# th_harumachi_no_oka 河流
-# 宝塔禅林（23%的妖虎妖兽聚居，其余按照命莲寺的人口分布，没有人类和丰穰民，外界民分布）
-# th_tora_no_maru_hoshi
-# th_tora_no_maru_hoshi_hoto_rin 集镇 河流
-# th_tora_no_maru_hoshi_shiren_no_iwaya 河流
-# th_tora_no_maru_hoshi_kokyo_seki 河流
-# th_tora_no_maru_hoshi_junsan_dou 河流
-# 妖怪里参道（妖怪聚居，其余按照命莲寺的人口分布。没有人类和丰穰民，外界民分布）
-# th_yokai_ri_sando 河流
-# th_hyakki_yakou_zaka 河流 集镇
-# th_sando_yomu_kairo 河流 集镇
-# th_sando_rimon_kekkai 河流
-# th_myourenji_west_mon 河流
-# 小伞铁匠铺
-# th_kogasa_blacksmith 大河 集镇
-# th_datie_street 大河
-# th_ironstock_pile 大河
-# th_grindstone_bench
-# th_old_locust_tree 大河
-# 命莲寺参道
-# th_myorenji_sando
-# th_myouren_sando_ishidan 大河
-# th_myouren_hill_mon 河流
-# th_myourenji_sando_kiyotaki_bashi 集镇 河流
-# th_kyuukei_sekidou
-# 静寂森林
-# th_silent_forest 集镇
-# th_silent_forest_mufurin 大河
-# th_silent_forest_mokugosha_kyoboku
-# th_silent_forest_jakko_koken
-# th_silent_forest_seichishi_mizuumi
-# 高速浮游艇
-# th_high_speed_hovercraft_launch_deck
-# th_high_speed_hovercraft_hangar_maintenance_bay 集镇
-# th_high_speed_hovercraft_high_speed_taxiway
-# th_high_speed_hovercraft_emergency_landing_zone
-# th_high_speed_hovercraft_weather_observation_post 大河
-# 天空遗迹
-# th_sky_ruins 集镇
-# th_floating_foundation_stones 大河
-# th_broken_bridge_corridor 大河 集镇
-# th_hanging_garden_ruins 大河
-# th_sky_ruins_sea_of_clouds_edge
-# 以下为铃兰花海地区（总体系数x0.95）（主流文化，人偶）（综合主体人口：植物妖精63%，人偶27%，妖怪7%，现象妖精10%，季节妖精5%）
-# 铃集之丘
-# th_bell_gathering_hills_main 河流 集镇
-# th_rappaccini_poison_garden 河流 
-# th_bell_hills_patchwork_stage 河流
-# th_court_of_oblivion_main 河流
-# th_court_of_oblivion_tailoring_bench 河流
-# 铃兰花海
-# th_suzusuzu_stage_main 河流
-# th_lily_sea_old_path
-# th_lily_sea_finale_theater 河流 集镇
-# th_lily_sea_border_hedge 河流
-# th_memory_lily_hill 河流
-# th_eternal_slumber_lily_hill 河流
-# 以下为太阳画图地区（总体系数x0.95）（主流文化，妖怪）（综合主体人口：植物妖精54%，妖怪17%，幽灵8%，骚灵10%，季节妖精8%，现象妖精10%，人偶5%，妖兔4%）
-# 太阳花田
-# th_garden_of_the_sun 城市
-# th_garden_of_the_sun_cottage 河流
-# th_garden_of_the_sun_sundial 大河 集镇（主要为妖精）
-# th_garden_of_the_sun_maze 河流
-# th_garden_of_the_sun_corridor 河流
-# 日落原野
-# th_sunset_plain_main
-# th_sunset_plain_watchtower
-# th_sunset_plain_grass_sea 河流
-# th_sunset_plain_forest 河流
-# th_sunset_port 集镇 河流
-# th_sunset_harbor_observatory
-# th_twilight_mist_flower_field
-# 露天舞台（妖兔，幽灵聚居点）
-# th_flower_field_open_air_stage_main 大河 
-# th_flower_field_echo_wall 集镇（主要为妖精）
-# th_flower_field_fairy_stands
-# th_flower_field_backstage
-# th_primordial_flower_sea
-# th_flower_tide_wharf 大河 集镇（妖精聚居点）
-# th_stardust_flower_cape 大河
-# 日光浴场
-# th_sunbathing_beach_parasol
-# th_nightshade_sea 河流
-# th_sunbathing_beach_nectar_spring 大河
-# 梦幻之地（其中13%的恶灵，8.6%魔法使，1.6%不可名状）
-# th_dreamland 河流 集镇
-# th_dream_world_stardust_plain 河流
-# th_dreamland_border
-# th_dreamland_limbo_spiral 河流
-# th_slumber_coral_reef 河流
-# 梦幻馆
-# th_mugenkan_main_hall 集镇
-# th_mugenkan_wonderland_garden 河流
-# th_mugenkan_fantasy_wasteland 河流
-# th_yuuka_bedchamber
-# th_mugenkan_sleeping_terror_chamber
-# th_blood_lake_reflection_hall
-# th_yuuka_mansion_balcony 集镇 大河
-# 以下血之湖地区（系数x1.02）（主流文化，吸血鬼）(综合主体人口：妖精32%，恶魔17%，吸血鬼23%，天使1.8%，妖怪2.3%，魔物8%，魔法使3.3%)
-# 血之湖（吸血鬼聚居）
-# th_lake_of_blood_vampire_pier
-# th_blood_phoneme_corridor
-# th_blood_dried_pass
-# th_mugenkan_erosion_beach
-# th_mugenkan_boiler_room
-# th_final_dream_rainbow_bridge
-# 以下梦幻世界地区（系数x1.10）（主流文化，恶魔）(综合主体人口：妖精25%，恶魔32%，吸血鬼5%，天使7%，妖怪2.3%，魔物12%，恶灵12%，魔法使2.5%，梦之住人5%)
-# 梦幻世界结界
-# th_dream_world_border
-# th_dream_world_crack_observatory
-# th_dream_world_evil_pier 大河 集镇 （恶灵聚居点）
-# th_unnamed_star 河流  
-# th_dream_world_silent_garden
-# th_border_dissolution_point
-# 梦境厅堂
-# th_dream_world_sisters_boudoir
-# th_dreamscape_hall 城市（恶魔，天使聚居点）
-# th_dream_world_mirror_hall
-# th_dream_world_inverted_spire
-# th_reversed_border
-# th_sky_abyss_depths
-# 哆来咪静修处
-# th_deep_dream_chamber
-# th_dreamland_kaian_path
-# th_dream_soul_pool
-# th_dream_dweller_market 集镇 （梦之住人聚居点）
-# th_eternal_spring_dream_theater
-# th_sunlight_harbor 集镇 大河
-# th_sunbathing_beach_main 集镇 大河（恶魔，魔物聚居点）
-# 珠玉之台
-# th_gemstone_terrace_dreamland
-# th_demon_twins_cloister 集镇
-# th_dream_teardrop_spring
-# th_crimson_pact_altar
-# th_gengetsu_solo_stage
-# 莲之径（恶灵，魔法使聚居点）
-# th_lotus_pathway_dreamland 河流
-# th_nameless_lake_shore 河流
-# th_dreamland_foam_outpost
-# th_phantom_morning_mist_plain 大河 集镇（恶灵聚居点）
-# th_lotus_shadow_beach
-# th_dreamland_border_fault
-# th_phase_folding_square
-# th_phantom_plain
-# 以下为工程师之国地区（总体系数x1.08）（主流文化，旧幻想乡人类）（总和主体人口：旧幻想乡人类21%，村落人类39%，妖精25%，不可思议1.7%，妖怪7%，付丧神2%，幽灵2%）
-# 里香邸
-# th_rika_mansion_hall 城市
-# th_rika_tank_hangar 集镇
-# th_nameless_dream_well
-# th_rika_eastern_border_outpost
-# th_rika_turbine_test_stand
-# th_rika_rooms
-# 幻野
-# th_eternal_night_plain
-# th_border_wilderness
-# th_phantom_foam_hill
-# 战车工厂
-# th_rika_tank_factory_hall 集镇
-# th_tank_final_assembly
-# th_eastern_country_line_3
-# th_turbine_test_stand 河流
-# th_engine_development_room
-# th_engine_oil_black_lake
-# 战车坟场
-# th_tank_graveyard
-# th_rika_prototype_grave
-# th_eastern_country_abandoned_line 河流 集镇
-# th_rika_shotdown_zone 河流 
-# th_turbine_barrow
-# 异空（不可思议和妖怪，幽灵只集中在此）
-# th_anomalous_space_time 河流
-# th_space_time_turbulence_corridor
-# th_dimensional_fold_belt 河流
-# 以下朝仓实验室地区（总体系数x1.02）（主流文化，魔法使）（综合主体人口：魔法使21%，恶魔10%，旧幻想乡人类10%，不可思议1.8%，妖怪4%）
-# 朝仓实验室
-# th_abandoned_magic_room 集镇
-# th_crystal_computer_array
-# th_asakura_laboratory_room
-# th_me_controller_core 集镇
-# th_crystal_growth_chamber
-# th_asakura_laboratory_tech_room
-# 异（不可思议和妖怪只集中在此）
-# th_evil_eye_gaze_corridor
-# th_resonance_fissure
-# th_dream_realm_path
-# 以下为卡娜安娜贝拉尔的洋馆地区（总体系数x1.01）（主流文化，骚灵）（骚灵45%，妖精40%，恶魔2%，恶灵4%，魔法使1.5%）
-# th_kana_mansion_main 河流 集镇
-# th_kana_maidens_blank_bedroom
-# th_kana_faded_memory_foyer 河流
-# th_kana_sighing_corridor 河流
-# th_phantom_banquet_hall
-# 以下为爱莲魔法店地区（总体系数x1.06）（主流文化，魔法使）（魔法使24%，妖精33%，恶魔3%，魔物17%）
-# 爱莲魔法店
-# th_fluffy_ellen_magic_shop_main
-# th_fluffy_ellen_magic_masion_main
-# th_fluffy_ellen_magic_shop_room 集镇 河流
-# th_socrates_philosophy_bone_room 集镇（魔物聚居点）
-# th_ellen_walking_teacup_garden 河流
-# 明罗道场
-# th_meira_dojo_main 河流 集镇
-# th_fumairoku_archive_location 河流
-# th_meira_dojo_masion 河流
-# th_cut_bonds_testing_stone 河流
-# th_meira_no_thought_sword_steps 河流
-# 以下为博丽旧社地区（总体系数x1.0）（主流文化，旧幻想乡人类）（总体人口：旧幻想乡人类33%，妖精25%）
-# 紫野
-# th_murasakino_location
-# th_inverted_murasaki_bamboo 大河
-# th_old_cutoff_sanzu_river 河流
-# th_old_prototype_gap_corridor 河流
-# th_old_shigan_port 大河
-# th_old_higanbana_cliff 大河 集镇
-# 博丽旧社
-# th_old_reimu_old_trace
-# th_old_outer_world_junk_pile
-# th_kana_anaberal_masion_hidden
-# th_hakurei_roofless_honden 城市
-# th_hakurei_old_sando 河流
-# 通往魔界的洞穴（妖精15%，魔界民26%，恶魔12%，旧幻想乡人类12%，魔物23%）
-# th_cave_to_makai
-# th_elis_smuggle_path 大河
-# th_secret_stream_to_harbor
-# th_wonderland_port_forgotten 大河 集镇
-# th_hakurei_abandon_shrine_old
-# th_sariel_waiting_pavilion 河流
-# 博丽旧社庭院
-# th_old_hakurei_shrine_torii_labyrinth 河流
-# th_hakurei_old_shrine_garden 河流 集镇
-# th_green_landscape_islands 河流
-# th_old_hakurei_asetic_path 大河 集镇
-# 博丽后山
-# th_hakurei_back_mountain 河流
-# th_hakurei_former_miko_grave_mound 河流
-# th_hakurei_lake_upper_valley 河流
-# th_old_tree_hakurei_shinbaku
-# th_hakurei_trial_slope 河流
-# 梦幻遗迹（23%外界人，15%旧幻想乡人类，23%妖精，魔法使2%）
-# th_illusionary_ruins_main 集镇
-# th_inception_mirror_layer
-# th_ruins_convergence_point
-# th_dream_diary_corridor
-# th_illusionary_ruins_outdoor
-# 以下为静寂神殿地区（总体系数x1.0）（主流文化，鬼族）（总体人口：鬼族12%，恶灵25%，妖精31%，恶魔10%，魔法使10%，亡灵12%，妖怪4%，吸血鬼2%,镜付丧7%，怨灵8%）
-# 宗教主要为佛教，占比67%，其余为博丽风俗
-# 往昔地狱之扉
-# th_former_hell_gate
-# th_sin_flame_furnace 河流
-# th_old_grudge_precipitation_pool 河流 集镇 （怨灵聚居点）
-# th_sin_flame_man_room
-# 静寂神殿
-# th_astral_approach_main 城市
-# th_astral_approach_konngara_dojo
-# th_masterless_buddha_altar
-# th_child_attendant_cell
-# th_silent_bell_tower
-# th_silent_sanctuary_main
-# 炎之腐界（镜付丧聚居点）
-# th_impure_flame_shrine 大河
-# th_flame_core_abyss_outdoor 河流
-# th_kikuri_abode_main 河流
-# th_flame_festering_lake 大河
-# th_silent_sanctuary_vestibule 河流 集镇
-# th_flame_core_abyss
-# th_old_hig_port 大河 集镇
-# 祠
-# th_nameless_jizo_shrine
-# th_time_rot_rain_shrine
-# th_hungry_ghost_offering_shrine
-# th_inverted_pillar
-# 以下为时空旅人地区（总体系数x1.0）（主流文化，外界人）（（总体人口：外界人27%，旧幻想乡人类23%，妖精25%，魔法使2%）
-# 可能性移动飞船
-# th_yumemi_okazaki_probability_ship
-# th_quantum_logic_bridge
-# th_internal_transit_tunnels 集镇
-# th_specimen_chamber_of_fantasy_beings
-# th_docking_port_for_the_impossible
-# th_main_engineering_bay 城市
-# 冈崎研究室
-# th_yumemi_molecular_biolab 集镇
-# th_genome_of_magic_sequencing_hall
-# th_himera_cultivation_vats
-# th_protein_synthesis_of_spell_casting
-# 冈崎工厂
-# th_yumemi_arms_factory_hall 集镇
-# th_law_breaching_forge
-# th_armor_plating_press
-# th_yumemi_arms_factory_advanced
-# 冈崎附魔研究室
-# th_yumemi_magical_arsenal
-# th_weaponized_theorem_case_files
-# th_spell_card_analysis_and_replication_lab 集镇
-# th_enchantment_assembly_line
-
-# 以下为龙宫地区（总体系数x1.12）（主流文化，天人）（（总体人口：天人75%，妖精25%）
-# 宗教为东派道教100%
-# 龙宫
-# th_dragon_palace 
-# th_grove_jade_shell_beach 大河
-# th_ikus_house 城市
-# th_celestial_dragon_forbidden_place 大河
-# th_sea_world_reflecting_pool 大河
-# th_palace_xuanhai_main_hall 大河 城市
-# th_palace_rain_prayer_altar 大河
-# th_sea_pacifying_stele 大河
-# 要石之港
-# th_keystone_port 集镇
-# th_floating_clouds_seaside
-# th_dense_fog_shore
-# th_eye_of_storm
-# th_jade_capital_terrace_main
-# th_terrace_milky_way_waterfall
-# 雷霆露台
-# th_thunder_swimer_neighbourhood 集镇
-# th_imperial_dragon_hills
-# th_lightning_fork
-# th_thunder_zone
-# th_dragon_breathe
-# 要石工厂
-# th_tribulation_tempering_field
-# th_hinanawi_meteorological_bureau 集镇
-# th_aurora_exhibition
-# th_hermit_home
-# th_isolated_archipelago
-# 天界高堂
-# th_heavrn_high_hall
-# th_high_port 集镇
-# th_pure_clean_cloud
-# th_first_celestial
-# th_mirror_jian_xin_yu
-# 以下为天界地区（总体系数x1.15）（主流文化，天人）（（总体人口：天人69%，妖精28%）
-# 宗教为东派道教100%
-# 天界
-# th_center_of_heaven
-# th_ping_heaven_door
-# th_celestial_realm_tong_ming_ge 集镇
-# th_heart_of_keystone
-# th_floating_isles_zhe_xian_ju
-# 蟠龙之峰
-# th_horn_fragon_village 大河 
-# th_flood_dragon_port 大河 集镇
-# th_jade_dragon_mountain 大河
-# th_coiled_dragon_mountain 大河
-# th_coiled_dragon_peak_pool 大河
-# 天人市镇
-# th_celestia_village 集镇
-# th_first_peach_garden 大河
-# th_rainy_cloud_grassland 大河
-# th_seven_celestial_maiden_avenue
-# th_celestial_isles_yuqing_que
-# 翡翠村落
-# th_jade_village_qingxiao 集镇
-# th_jade_city
-# th_jade_village
-# th_watari_kairou
-# th_diamond_quarry
-# 春之云
-# th_rainbow_factory
-# th_rain_storm_command
-# th_lightning_storm_port
-# th_plain_in_sunshine
-# th_kenten_kyouko
-# 有顶天
-# th_unhouten
-# th_unlimited_void
-# th_infinite_consciousness_sphere
-# th_nothing_realm
-# 向风之国
-# th_flower_land
-# th_vulcano_cloud
-# th_nutmeg_land
-# th_parrot_cloud
-# 比那名居邸
-# th_hinanawi_mansion 城市
-# th_jade_avenue
-# th_private_peach_garden
-# th_nawi_shrine
-# th_nayori_residence_stone
-# 草木园地
-# th_elixir_workshop 集镇
-# th_peach_garden_for_banquet
-# th_fishing_spot_on_clouds
-# th_celestial_activity_center
-# 以下为仙界地区（总体系数x1.00）（主流文化，村落外人类，仙人）（（总体人口：村落外人类35%，仙人19%,僵尸14%）
-# 宗教为东派道教100%
-# 神灵庙
-# th_divine_spirit_mausoleum 城市
-# th_mikos_room
-# th_private_dojo
-# th_outer_world_path
-# th_hall_of_two_sages_hearing
-# 太子冥想室
-# th_mikos_meditation_house
-# th_house_of_sanshi 河流
-# th_four_monkey_backyard 集镇 大河
-# th_ancient_moon_garden 河流
-# 丹鼎研制场
-# th_development_site_of_alchemical_cauldron 集镇
-# th_hill_of_fire
-# th_forest_of_xun
-# th_thousands_souls_prison
-# th_mercury_and_cinnabar_refinery
-# 古老洞窟
-# th_cave_of_gen
-# th_buried_bone_buddha_hall
-# th_revive_cave
-# th_broken_soul_calming_door
-# 雷鸣之林
-# th_thunder_forest
-# th_fidelity_peak
-# th_soga_barrier
-# th_sects_town 集镇
-# th_lightning_struck_cedar_grove
-# 方士术场
-# th_alchemists_venue
-# th_eye_of_desires
-# th_exploitation_workshop 集镇
-# th_hover_sword_ridge
-# 风水藏书阁
-# th_kalpa_pass
-# th_mononobe_scripture_depository
-# th_original_fire_pavilion 集镇
-# th_fengshui_steppe
-# th_feng_shui_puppet_rehearsal_stage
-# 仙人道场
-# th_immortal_dojo_main
-# th_river_of_kan
-# th_disciple_village 集镇
-# th_deep_forest_of_immortals_realm
-# 以下为邪仙界地区（总体系数x1.00）（主流文化，仙人，僵尸）（（总体人口：村落外人类25%，仙人21%,僵尸29%）
-# 太子布道室
-# th_mikos_sermon 集镇
-# th_pure_heart_pavilion 河流
-# th_wordless_stele_valley 河流
-# th_pass_of_li
-# th_viewing_platform_of_the_true_gate 河流
-# th_echo_of_ten_arguments_pillars 河流 集镇
-# th_mikos_sermon_gate
-# th_cup_of_enlightenment_tea_service
-# 梦殿
-# th_dream_palace 城市 大河
-# th_immortal_ascension_terrace
-# th_time_stop_tower 河流
-# th_mountain_of_dui 河流
-# 老君庙
-# th_lotus_pool
-# th_laojuns_temple 集镇 大河
-# th_jade_pavilion 河流
-# th_yinyang_dormitory 河流
-# th_cauldron_of_chaos_altar
-# th_purple_gold_crucible
-# 隐士之山
-# th_mountain_of_hermits
-# th_borken_axe_forest 大河
-# th_land_of_qian
-# th_wu_ling
-# 白银村落
-# th_silver_village 集镇
-# th_cinnabar_plain 河流
-# th_forest_of_zhen 河流
-# th_lead_power_suburb 河流
-# th_five_metal_shrine 河流
-# 以下为宫古之扉地区（总体系数x0.96）（主流文化，僵尸，仙人）（（总体人口：村落外人类35%，仙人10%,僵尸36%，付丧神25%）
-# 山河绘卷
-# th_cableway_of_divine_spirit_mausoleum 河流
-# th_kappas_shinbutsushugou 河流 集镇（其中有54%河童）
-# th_echo_of_yamabiko 河流
-# th_road_of_virtue
-# th_mountains_rivers_scroll 河流
-# th_ascension_pillar_transfer 河流
-# 宫古之扉
-# th_gate_of_miyako 集镇
-# th_recite_poetry_forest
-# th_wuxings_lawn 河流
-# th_poisonous_deadbody_riverbank 河流
-# th_guardian_shikigami_sentry_post
-# 以下为幻梦界地区（总体系数x1.08）（主流文化，恶灵）（（总体人口：恶灵25%，妖精31%，恶魔10%，魔法使16%，幽灵8%，妖怪4%，骚灵9%）
-# 学徒之家
-# th_apprentice_home 集镇
-# th_marisa_apprentice_workshop
-# th_dreamrealm_student_danmaku_field
-# th_magic_resonance_tower 集镇
-# th_mima_teaching_chamber
-# 灵魔殿
-# th_dreamrealm_reima_den_main_hall 城市
-# th_soul_binding_chamber 集镇
-# th_mima_throne_room
-# th_cult_library
-# th_witch_pact_chamber
-# th_dream_realm_gaze_dome
-# 幻梦界中心
-# th_dream_realm_center 大河
-# th_border_harmony_chamber 大河
-# th_witches_gathering_square 集镇 河流
-# th_star_moon_prophecy_tower
-# th_spell_weaving_atelier 集镇
-# 幻梦界之扉
-# th_dream_realm_gate
-# th_moonbow_bridge_market 集镇
-# th_dream_pet_market
-# th_spellbook_bazaar
-# 以下人间之里外部地区(总体系数x1.15)（主流文化，村落人类）（（总和主体人口，村落人类39%，村落外人类10%，付丧神10%，乐器妖9%，妖怪5%，妖犬5%，妖兔12%，幽灵3%，外界人0.2%，人间之里-月之民0.1%）
-# 柳下运河
-# th_dullahan_path 河流
-# th_toll_gate
-# th_kogasas_house
-# th_house_of_seiran_and_ringo 集镇 （人间之里-月之民只会出现在这）妖兔聚居点
-# th_aqueduct 河流
-# th_house_of_seiran_and_ringo2 集镇 （人间之里-月之民只会出现在这） 妖兔聚居点
-# th_weeping_willow_promenade 河流
-# th_washwomen_s_steps
-# 狼人竹林（妖犬聚居点，妖兔聚居点）
-# th_kagerou_house 集镇
-# th_abandoned_werewolf_mansion 大河
-# th_yasumizu_village 集镇
-# th_lykaion_mountain
-# th_moon_touched_clearing 河流
-# th_bane_herb_garden 大河
-# 排练场地（乐器妖，付丧神聚居点仅会出现在这附近，15%骚灵）
-# th_triangular_prism_plain 河流 集镇
-# th_french_horn_meander 河流
-# th_violoncello_embankment 河流
-# th_synthesizer_avenue ##与秘封俱乐部接壤
-# th_harp_string_valley 河流
-# th_flute_bamboo_grove
-# 演奏场地（乐器妖，付丧神聚居点仅会出现在这附近，10%骚灵）
-# th_first_performance_stage 集镇 大河
-# th_xylophone_hill 河流
-# th_requiem_plain 河流
-# th_piano_throne 河流
-# th_timpani_hillocks
-# th_echo_chamber_cavern 大河
-
-# 以下妖怪之山地区(总体系数x1.17)（主流文化，鸦天狗）（（总和主体人口：鸦天狗12%，天狗53%，妖精7%，河童12%，山童7%，山女郎0.7%，管狐15%，妖怪8%，天龙5%，山彦2%，妖兽8%）
-# 宗教100%信仰为山
-# 伊奘诺洞穴(大百足聚居点)
-# th_izanagi_mine(大百足聚居点) 集镇 河流
-# th_rapid_reaction_force_barrision
-# th_zenkoji_temple
-# th_izanagi_mountain 河流
-# th_izanagi_mine_misogi_spring
-# 天狗聚落
-# th_tengu_capital 大都会 大河
-# th_tenma_hall_main 城市 河流
-# th_tenma_hall_crow_platform 河流
-# th_michigami_shirine 河流
-# th_village_of_high_nose_tengu 集镇
-# th_tengu_settlement_onigawara 集镇
-# th_tengu_artisan_quarter 城市
-# 鞍马山
-# th_kurama_news_press 城市 河流
-# th_forbbiden_top 河流
-# th_kurama_mountain_main 河流
-# th_kurama_mountain_tengu_grove 河流
-# th_kurama_mountain_ibuki_waterfall 河流
-# th_hatate_news_press 集镇
-# th_bunbun_news_press 集镇
-# 妖怪山顶
-# th_crow_tengu_tea_party 河流
-# th_stargazing_zpot
-# th_snow_covered_mountain_top 河流
-# th_ownerless_market 集镇
-# th_youkai_mountain_top 河流
-# th_ayas_mansion
-# th_hatates_mansion
-# th_mountain_summit_approach
-# 山间要塞
-# th_mountain_stronghold 河流
-# th_white_wolfs_fortress_complex 集镇 河流
-# th_spy_center
-# 封兽降临地
-# th_houjuus_arrival
-# th_unknown_forbbiden_area
-# th_worship_mountain_path
-# th_temples_blockade_zone
-# 青娥藏匿地
-# th_hidden_place_of_seiga
-# th_evil_immortal_world 集镇 
-# th_seigas_mansion
-# th_wraith_path
-# th_lonely_grave
-# 虹龙洞
-# th_entrance_of_rainbow_dragon_cave
-# th_dragon_balls_mine
-# th_non_oxygen_pass
-# th_momoyos_cave 集镇 (大百足聚居点) 
-# th_end_of_rainbow_dragon_cave
-# 鸦天狗辖区（管狐聚居店）
-# th_crow_forest
-# th_no_vacation_editorial_office
-# th_village_of_crow_tengu 城市
-# th_black_feather_secret_way
-# th_iizunamarus_mansion 集镇  （管狐聚居店）
-# th_iizunamarus_mountain （管狐聚居店）
-# 月虹市场
-# th_high_sky_on_the_top
-# th_moon_rainbow_market 集镇
-# th_chimatas_holy_mansion
-# th_rainbow_valley 大河
-# th_tenkyu_avenue 河流
-# th_shiro_mine_main 大河
-# 天狗营垒
-# th_tengus_fortification
-# th_maple_forest
-# th_orichalcum_mine
-# th_cableway_terminal
-# th_encampment_mountain_range_pass
-# 白狼天狗辖区
-# th_village_of_white_wolf 集镇 河流
-# th_wild_colosseum
-# th_momiji_room
-# th_doggy_food_street 集镇 河流
-# th_wolf_tengu_waterfall
-# th_white_wolf_tengu_dojo 河流
-# 天狗前哨
-# th_tengu_outpost
-# th_white_wolf_watch_tower 河流
-# th_mountain_fortress 河流
-# th_hillside_village 集镇 河流
-# th_tengu_outpost_plank_road
-# th_tengu_outpost_boundary_stone
-# 天狗镜原
-# th_tengu_mirror_pond_main 大河
-# th_kami_pond_abyss 大河
-# th_silent_plankway 河流
-# th_purity_filth_spring 大河
-# th_take_oyama_main 大河
-# 南之二岳
-# th_hikosan_main 河流
-# th_omine_san_main 大河
-# th_southern_second_peak_pass 
-# th_weeping_wind_canyon 大河
-# th_omine_san_ancient_path 大河
-# th_omine_san_guardian_forest 大河
-# 九天瀑布
-# th_waterfall_of_nine_heavens 河流
-# th_white_wolf_barracks 大河 集镇
-# th_water_curtain_cave 大河
-# th_kaer_morhen_stone 河流
-# th_atago_san_main 河流
-# 牡丹园
-# th_peony_garden 河流 集镇
-# th_peony_pool 河流
-# th_throns_trail
-# th_shadow_of_right_arm 河流
-# th_peony_garden_mound
-# 以下圣域地区(总体系数x1.00)（主流文化，山佬）（（总和主体人口：植物妖精32%，妖精18%，山佬55%）
-# 山佬棚屋
-# th_yamaubes_hut 集镇 河流
-# th_ubames_mansion
-# th_chimi_enclosure
-# th_sanctuaries_avenue 河流 集镇
-# th_shack_stone_garden
-# 浅间净秽山
-# th_narekos_pass
-# th_petrochemical_thorns_hole
-# th_orange_warp_gate
-# th_no_deer_hunt_ground 河流
-# 浅间净秽山深处
-# th_ninas_room 河流
-# th_four_seasons_hole 河流
-# th_zoltaxian_labyrinth 河流 
-# th_iwanaga_shrine 集镇
-# th_joue_inverted_pyramid 
-# 以下迷途之家地区(总体系数x1.00)（主流文化，妖怪）（（总和主体人口：妖怪25%，不可名状8%，妖狐8%，妖猫8%，座敷童子12%，外界人5%，妖兽12%，妖精30%，地精17%）
-# 猫咪村落（妖猫的主要聚居点）
-# th_cats_amusement_park 集镇 （妖猫的主要聚居点）
-# th_orange_clan 河流
-# th_white_clan 河流
-# th_black_clan 河流
-# th_calico_clan
-# 八云海湾
-# th_local_port_authority 集镇
-# th_yakumo_beach
-# th_zenki_area
-# th_goki_area 河流
-# th_yakumo_bay_shiun_misaki
-# 地精山丘（地精的主要聚居点）
-# th_surface_forest 河流
-# th_surface_cave_settlement
-# th_deep_cave_settlement 河流
-# th_hidden_air_pocket 河流
-# th_treasure_chanber 河流 集镇
-# 八云邸（妖怪，不可名状主要聚居点）
-# th_yakumo_mansion 城市 河流
-# th_first_ward 河流
-# th_second_ward 河流
-# th_third_ward 河流
-# th_forth_ward 河流
-# 外界之港（外界人的主要聚居点）
-# th_asia_port 集镇
-# th_europe_port
-# th_africa_port
-# th_north_new_world_port
-# th_south_new_world_port
-# 迷途之家
-# th_chens_room
-# th_rans_room
-# th_yukaris_room 集镇 大河
-# th_lost_courtyard
-# 夜樱怪道
-# th_front_mysterious_cherry_blossom_path
-# th_middle_mysterious_cherry_blossom_path
-# th_back_mysterious_cherry_blossom_path
-# th_yosakura_kaidou_sakura_fubuki_sandou
-# th_yosakura_kaidou_gyaku_ben_gawa 集镇 （43%幽灵，聚居地）
-# 结界观测中心
-# th_monitoring_station_of_borders 集镇
-# th_magical_power_unit_area
-# th_maintenance_device_area
-# th_booster_device_area
-# 座敷童子中心（座敷童子的主要聚居点）
-# th_zashiki_warashi_dormitory
-# th_zashiki_warashi_resources_department 集镇
-# th_north_office_building_complex
-# th_south_office_building_complex
-# th_east_office_building_complex
-# 以下幻想风穴地区(总体系数x0.85)（主流文化，土蜘蛛，钓瓶落）（（总和主体人口：天狗5%，鸦天狗1.5%，土蜘蛛22%，幽灵21%，地灵49%，钓瓶落10%，地狱妖精12%，鬼族5%，巡骨妖8%,古笼火7%，妖怪8%）
-# 妖怪之山温泉（鸦天狗和天狗只出现在这）
-# th_springs_bath_mixed 河流
-# th_springs_vent_steam 河流
-# th_springs_room_tengu
-# th_springs_nest_egg
-# th_springs_recovery_vip 河流
-# 隐蔽之丘（地灵聚居点）
-# th_old_hell_hidden_hill 河流
-# th_hill_den_stray
-# th_hill_bazaar_rust
-# th_hill_den_stray_street 河流 集镇
-# 幻想风穴（土蜘蛛聚居点）
-# th_kazaana_yamame_web 集镇
-# th_yamame_bridge_web
-# th_yamame_shaft_vent
-# th_kazaana_hidden_eye
-# th_kazaana_webway
-# 地底集镇（地灵聚居点）
-# th_hamlet_mine_fluorite
-# th_dregs_tunnels_safe
-# th_settlement_labor_market 集镇 
-# th_hamlet_earth_spirit 集镇 地灵聚居点）
-# th_great_stalactite_market
-# 间歇泉小道
-# th_old_hell_geyser_trail 河流
-# th_trail_marsh_entrance
-# th_trail_pillars_jet 河流
-# th_trail_crystal_sulfur 集镇
-# th_trail_fissure 河流
-# th_trail_stones_spring
-# 大温泉
-# th_onsen_gate_neon 河流
-# th_onsen_pool_hellfish 河流
-# th_onsen_street_market 河流 集镇
-# th_onsen_bath_goka 河流
-# th_onsen_pool_seishin 河流
-# th_crystal_hum_sauna_cave 河流
-# 间歇泉中心
-# th_old_hell_geyser_core 河流 集镇
-# th_core_lake_boiling
-# th_core_boiler_abandoned
-# th_core_interface_power 河流
-# 以下旧都地区（系数x0.88）（主流文化，鬼，桥姬）（（总和主体人口：鬼族23%，土蜘蛛15%，幽灵23%，地灵13%，钓瓶落4%，地狱妖精18%，妖怪12%，巡骨妖2%,古笼火3%，桥姬5%）
-# 阻绝人际之桥（桥姬聚居点）
-# th_rarely_trodden_bridge 大河 集镇
-# th_hell_bridge_cottage
-# th_bridge_spring_envy 大河
-# th_bridge_bones_nameless
-# 旧都西大街
-# th_former_capital_west_avenue 河流
-# th_hyakki_lanterngate
-# th_hells_izakaya 集镇
-# th_west_bookstore_strange 河流 集镇
-# th_west_shop_tang
-# th_west_stall_mimei_street 集镇
-# 旧都中心
-# th_former_capi（鬼族聚居点）tal_central_district 大都会
-# th_central_club_hyakki
-# th_central_boulevard_enma
-# th_bustling_feast_gakidou
-# th_central_district_samurai
-# th_sake_laden_wharf 大河 集镇
-# 旧都北大街
-# th_former_capital_northern_district 大河
-# th_north_camp_ironanvil
-# th_north_zone_dormitory 大河
-# th_oni_north_customs_gate
-# 鬼之町（鬼族聚居点）
-# th_oni_quarters_street 大河 城市
-# th_shuten_alley 大河 集镇
-# th_suika_old_house 
-# th_hoshiguma_bar 大河
-# th_phantom_lantern_alley
-# th_oni_harbor_location 大河 集镇
-# 鬼之糟访
-# th_oni_brewery_core 集镇
-# th_fermentation_blood_pool
-# th_giant_gourd_aging_hall
-# th_yeast_wraith_garden
-# th_oni_drunken_sandbank_market
-# 鬼之擂台
-# th_oni_arena_location 集镇
-# th_oni_colosseum_location
-# th_feast_hall_of_victors_and_vanquished
-# th_silent_bet_den
-# th_feral_beast_menagerie
-# 地底的深道（钓瓶落，土蜘蛛，巡骨妖聚居点）
-# th_abyssal_tunnel_network
-# th_bucket_suspension_chasm
-# th_bucket_suspension_room
-# th_tear_stalactite_forest
-# 间歇泉泉眼（钓瓶落，土蜘蛛，巡骨妖聚居点，地灵聚居点）
-# th_geyser_field_surface
-# th_hell_terraced_springs 集镇
-# th_geothermal_vein_mine
-# th_dragon_breath_vent
-# th_steam_shroud_atoll
-# th_boiling_tide_channel_port 集镇
-# 以下灼热地区(总体系数x0.75)（主流文化，妖猫，妖鸟）（（综合主体人口：地灵23%，怨灵56%，妖猫23%，妖鸟15%，僵尸妖精13%，地狱妖精5%，觉妖怪0.7%,）
-# 隐蔽地点（妖猫聚居点）
-# th_hidden_site_geothermal 河流
-# th_hidden_cryo_pool 集镇
-# th_hidden_rin_cache
-# th_old_hell_hidden_heart 河流
-# 核融合中心（妖鸟聚居点）
-# th_nuclear_fusion_center 大河 城市
-# th_assisted_enhanced_fusion_reactor 大河
-# th_center_energy_corridors 大河
-# th_center_ruined_reactor 河流
-# th_assisted_enhanced_fusion_reactor_computer 大河
-# 核熔炉（妖鸟聚居点）
-# th_nuclear_furnace_main 大河
-# th_americium_isotope_plasma_turbine 大河
-# th_tungsten_disulfide_manufacturing_site 大河 集镇
-# th_laser_energy_storage_warehouse 
-# th_reactor_coolant_circulation_center 大河 集镇
-# th_implosion_compressor 大河
-# 遗忘村落
-# th_forgotten_hamlet 河流 集镇
-# th_village_valley_windless
-# th_village_path_eroded
-# th_village_lane_bone 河流
-# th_submerged_foundation_reef
-# 灼热地狱（怨灵聚居点）
-# th_blazing_hell_remains
-# th_hell_tribunal
-# th_hell_bloodpool 集镇
-# th_hell_pipes_outer
-# th_hell_river_slag
-# 尸体堆放处（怨灵聚居点）
-# th_corpse_stockpile_center 河流 集镇
-# th_rin_hell_yard_sorting
-# th_corpse_zone_compost 河流
-# th_corpse_corner_appraise 河流
-# 以下地灵殿地区(总体系数x0.85)（主流文化，觉妖怪，妖猫，妖鸟）（（总体人口：觉妖怪3.3%，怨灵25%，地灵15%，鬼族5%，僵尸妖精7%，地狱妖精23%，妖猫11%，妖鸟10%）
-# 地狱猫憩所（妖猫，妖鸟聚居点）
-# th_hellcats_rest 河流
-# th_rest_post_scratch 河流
-# th_rest_door_catcart 河流
-# th_hellcats_room 河流
-# 地灵殿
-# th_chireiden_entrance_hall
-# th_chireiden_entrance_hall_main 城市
-# th_chireiden_vivarium_pet 集镇 （妖猫，妖鸟聚居点）
-# th_chireiden_room_koishi
-# th_chireiden_room_satori
-# th_chireiden_library_second 集镇
-# th_chireiden_archive_of_overheard_secrets
-# th_chireiden_whispering_pipe_organ
-# th_palace_of_the_earth_spirits_second_floor
-# 地灵殿庭院
-# th_chireiden_courtyard_heart 集镇
-# th_courtyard_shrubs_crystal 河流
-# th_courtyard_path_pet 河流
-# th_rose_garden_oblivion 河流
-# th_courtyard_swing_koishi
-# th_courtyard_dome_sky
-# 觉的露台
-# th_chireiden_balcony_satori 集镇
-# th_balcony_observatory_eye
-# th_balcony_platform_view
-# th_dream_dimension_generator
-# th_cannot_entry_mountain16
-# 地底大空洞
-# th_underground_great_hollow
-# th_hollow_isles_floating
-# th_hollow_forest_crystal 大河
-# th_basalt_canyon 大河 集镇
-# th_hollow_tower_signal
-# th_ceiling_of_false_stars
-# 暮光之穴
-# th_weird_fungus_forest 河流
-# th_crimson_fungus_forest 
-# th_cave_pool_spore 
-# th_cave_forest_crystal 河流
-# 地底之扉
-# th_gate_of_the_depths 大河
-# th_gate_camp_wanderer 集镇（怨灵聚居点）  河流
-# th_crystal_echo_hollow 
-# th_miasma_sunken_depression 河流
-# 以下月之都地区(总体系数x1.25)（主流文化，月之民）（（总和主体人口：月之民76%，月兔23%，梦之住人15%）
-# 月都
-# th_palace_of_moon 大河 大都会
-# th_takamagahara 大河 城市
-# th_royal_guard_garrison
-# th_kegare_purify_core
-# th_border_of_lunar_darkside
-# th_imperial_garden
-# th_imperial_palace_moonlight_library 大河
-# 静海
-# th_sea_of_tranquility
-# th_sea_of_serenity
-# th_lunarian_border
-# th_lunar_rabbit_factory
-# th_sea_of_tranquility_port 城市 大河
-# 哆来咪的梦境世界（梦之住人聚居点）
-# th_morbid_clock_tower
-# th_ruined_library
-# th_doremy_palace 集镇
-# th_blue_warp_gate
-# th_dreamworld_weavers_plain
-# th_dreamworld_weavers_island
-# 月人原野
-# th_apollo_13_wreckage
-# th_star_banners_wasteland
-# th_darkness_of_astronauts
-# th_yutu_rover_dormancy
-# th_plains_flowing_glow_river 集镇
-# 阿波罗经络（梦之住人聚居点）
-# th_armstong_footstep
-# th_broken_apollo_11
-# th_hangtian_barony
-# th_meridian_monitoring_station 集镇
-# th_meridian_fuse_boundary
-# 槐安通道（梦之住人聚居点）
-# th_first_kai_an_channel
-# th_second_kai_an_channel
-# th_passage_floating_life_ferry
-# th_an_passage_awakening_crevice
-# th_an_illusory_sea_junction
-# th_dreamwarden_outpost 集镇
-# 月兔戍区
-# th_lunar_rabbit_barrack 集镇
-# th_lunar_peach_forest
-# th_lunar_rabbit_farm
-# th_lunar_rabbit_dormitory_area 城市
-# th_lunar_rabbit_recycle
-# 罪人之狱
-# th_change_special_prison
-# th_princess_prison
-# th_insurgent_lunar_rabbits_concentration_camp
-# th_kegare_execution_chamber
-# th_prison_repentance_well
-# 绵月宫
-# th_watatsuki_no_palace 城市
-# th_toyohime_no_peach_forest
-# th_watatsuki_no_tranning_ground 集镇
-# th_yorihime_no_tea_room
-# 银白之港
-# th_sliver_white_port 
-# th_sea_of_clouds 城市
-# th_sea_of_moisture
-# th_dark_matter_engine
-# 以下纯化之月地区(总体系数x0.95)（主流文化，纯化民）（（主体人口，仙人2%.纯化民15%，地狱妖精65%，梦之住人15%）
-# 纯化村落
-# th_purely_plain
-# th_sea_of_fertility 集镇
-# th_seventy_two_grape_land 城市
-# th_pure_village 城市
-# 纯狐根据地
-# th_bofeng_tomb
-# th_junkos_base 集镇
-# th_sea_of_nectar
-# th_tycho_crater
-# 危海
-# th_sea_of_untranquility
-# th_ocean_of_storms
-# th_sea_of_cold
-# th_sea_of_rain
-# th_sea_of_vapours
-# 月兔驻屯地
-# th_copernicus_crater
-# th_kepler_crater
-# th_arstarchus_crater
-# th_lunar_rabbit_rebel_alliance_castle 集镇
-# 月之民坟冢
-# th_lunarian_tomb
-# th_grave_for_amanosagume
-# th_grave_for_toyotamahime
-# th_grave_for_tamayorihime
-# 以下小丑之村地区(总体系数x1.1)（主流文化，地狱妖精）（（地狱妖精100%）
-# 小丑之村
-# th_clown_village 集镇
-# th_red_nose_forest
-# th_clown_port 集镇
-# th_lampades_shore
-# 克劳恩的月面
-# th_clownpiece_cabin 集镇
-# th_lunar_yousei_port 集镇
-# th_hecate_vulcan
-# th_freighter_cemetery
-#荒地
-# th_crescent_bay
-# th_full_moon_top
-# th_waning_moon_peninsula
-# th_lunar_eclipse_port
-# th_bay_tide_song_lighthouse
-# th_sage_deadbody_locker
-# th_kaaba_prototype
-# th_port_of_the_slain
-# th_olympos_basin
-# th_tanguy_island
-# th_mori_island
-# th_dali_island
-# th_isle_non_euclidean_garden
-# th_lunar_isle_inverted_waterfall
-# 以下为魔界地区（总体系数x1.00）（主流文化，魔界民，恶魔，魔法使，）（（总体人口：魔法使6%，魔界民45%，妖精24%，魔物25%，恶魔15%，天使3%，旧幻想乡人类10%，恶灵7%，人哦14%）
-# 不可思议之国(人偶主要聚居点)
-# th_doll_heart_tower 集镇
-# th_red_queen_maze
-# th_late_rabbit_hole
-# th_doll_tea_party_garden
-# th_alice_old_room 集镇
-# th_makai_wonderland
-# th_stagnant_melody_bay
-# th_golden_ratio_cloister
-# 魔界结界
-# th_makai_barrier 大河
-# th_abyss_gaze_gate
-# th_fallen_angel_shackle_platform 大河
-# th_chaos_core_reactor 河流
-# th_sariel_judgment_old_masion 集镇
-# th_rainbow_silence_shoal
-# 虹彩花园（妖精聚居点）
-# th_location_refraction_rise
-# th_prismatic_field
-# th_makai_dew_disperse
-# th_makai_monstrosity
-# th_makai_fae_atelier 集镇（妖精聚居点）
-# th_makai_eternal_cacophony 集镇
-# th_makai_ideal_city_ruin_island
-# 魔界丝绸集市
-# th_makai_silken_vault 
-# th_brocade_bazaar 集镇 河流
-# th_moonshade_grove 河流
-# th_makai_gleam_quay 集镇 河流
-# th_mithril_roadstead
-# 万魔殿
-# th_makai_gate_of_myriad_demons
-# th_stellar_laboratory
-# th_grotesque_armory
-# th_silver_key_cloister
-# th_makai_silent_chapel 城市
-# th_silver_key_cloister_workroom
-# th_time_tuning_chamber 集镇
-# 魔界妖精聚居地（妖精聚居点）
-# th_makai_candy_fountain
-# th_phantom_butterfly_valley 
-# th_makai_rainbow_dandelion_meadow
-# th_makai_fairy_garden 集镇
-# th_upside_down_grove
-# th_fairy_el_dorado_island
-# 冰封世界（恶魔聚居点）
-# th_makai_frozen_world_west
-# th_makai_frozen_world_south 河流
-# th_makai_forbidden_magic 河流
-# th_makai_mai_yuki 河流
-# th_judas_mirror_court 集镇
-# 创世殿堂
-# th_makai_chaos_abyss
-# th_temporal_fissure 河流
-# th_makai_great_scar
-# th_katuganya_makai
-# th_reverse_creation_spiral
-# 混沌深渊
-# th_genesis_cloister_hall 河流
-# th_makai_loom_of_forms 河流
-# th_makai_spiral_gene_stairs
-# th_makai_hall_of_mirrors 集镇
-# th_makai_concept_incubator_element 河流
-# 魔物之町（魔物聚居点）
-# th_borges_library_branch 河流
-# th_shinki_old_atelier
-# th_cheshire_cat_alley 河流
-# th_upside_down_garden 河流
-# th_mononoke_machi 河流 集镇
-# 魔界之扉
-# th_makai_world_gate_post
-# th_makai_saras_watch_post 河流
-# th_gate_of_the_forgotten
-# th_mana_nexus_ring_makai
-# th_makai_hole_vertical_street 集镇
-# th_makai_barrier_seam
-# 魔界秘境
-# th_makai_hidden_realms
-# th_makai_dharma_realm_checkerboard_plain
-# th_diagonal_avenue_street 集镇
-# th_romantic_children_cross
-# th_magus_pilgrim_tower
-# 魔界大都会
-# th_makai_central_library 河流
-# th_makai_reverse_sewer_network 河流
-# th_makai_hijiri_byakuren_berth 河流
-# th_makai_demon_rose_night_garden
-# th_makai_metropolis_center 城市 河流
-# th_eternal_dusk_theater 集镇
-# th_shinki_creation_museum 河流
-# th_makai_crystal_apartment 集镇
-# 创生方尖碑
-# th_makai_genesis_obelisk
-# th_genesis_origin_plaza
-# th_genesis_fresco
-# th_yumeko_manor 集镇
-# 魔界边境
-# th_makai_frontier
-# th_makai_mad_hatter_frontier_tea 集镇
-# th_makai_frontier_east
-# th_makai_zero_gate
-# th_fractal_plain_makai
-# 以下魔界之港地区（总体系数1.04）（主流文化，魔界民，外界人）（（总体人口，魔法使5%，旧幻想乡人类15%，妖精26%，魔界民17%，外界人25%，天使3%，恶魔14%，魔物8%）
-# 魔界之港
-# th_makai_harbor 河流
-# th_dimensional_seawall
-# th_luize_traveler_ground
-# th_wonderland_travel_agency 河流
-# th_returner_sanatorium 河流 城市
-# th_otherworld_souvenir_market 河流 集镇
-# 法界
-# th_dharmadhatu_makai 集镇 魔法使聚居地 大河
-# th_false_sun 大河
-# th_makai_emptiness_pool
-# th_makai_city_mirage
-# 以下堕落神殿地区（总体系数1.00）（主流文化，恶魔，天使）（（总体人口，妖精24%，魔法使5%，天使17%，恶魔34%，魔界民15%，外界人7%，旧幻想乡人类9%。恶灵7%）
-# 维纳的废墟
-# th_ruins_of_vina
-# th_elis_star_rod_tower 集镇
-# th_pixel_ruin_plain
-# th_fallen_temple_vestibule_before
-# th_makai_bat_roost
-# 堕落神殿
-# th_inverted_cross_corridor
-# th_civilization_of_magic_library
-# th_six_winged_throne_room
-# th_sariel_judgment_masion 城市
-# th_sariel_judgment_room
-# 仙境
-# th_frozen_hymn_church
-# th_golden_apple_orchard
-# th_angel_dry_dock 集镇
-# th_elysian_cargo_market 集镇
-# th_elysion_makai
-
-# 以下梦境地狱地区(总体系数x0.97)（主流文化，异界民）（（总体人口：异界民44%，梦之住人24%，地狱妖精64%，15%纯化民）
-# 拉碧斯拉祖利半岛
-# th_tethys_port 集镇
-# th_blessed_three_way_fork
-# th_horn_of_lenty 集镇
-# th_anemoi_valley
-# 赫卡提亚高原
-# th_hecate_avenue 集镇 
-# th_oreadia
-# th_ourea_cliff
-# th_yew_forest
-# th_datura_garden
-# 地球梦境地狱
-# th_gaea_temple
-# th_eye_of_prometheus
-# th_clotho_great_plain
-# th_pallas_school 集镇
-# th_three_worlds_rift_observatory
-# th_archipelago_river_of_estuary
-# 异界梦境地狱
-# th_nyx_temple 集镇
-# th_hecatia_mansion 城市
-# th_lachesis_pass
-# th_atlas_mountain_valley
-# th_archipelago_karmic_fire_cliff
-# th_dream_devouring_maelstrom
-# 月球梦境地狱
-# th_selene_temple
-# th_coeus_port 集镇
-# th_astraios_lake
-# th_perses_highland
-# 以下守矢神社地区(总体系数x0.97)（主流文化，守矢民）（（总和主体人口：守矢民24%，天狗22%且自东南向西北分布逐渐减少，山内聚居人类21%，村落外人类8%，河童3%，妖精3%）
-# 宗教（博丽风俗占比34%，其余的所有妖怪信仰山）
-# 守矢屯营（天狗分布少）
-# th_moriya_garrison 集镇 （主要的守矢民聚集点）
-# th_hell_outpost
-# th_wind_goddess_pass
-# th_idol_ferry_crossing 河流
-# th_hell_wind_warrier
-# 守矢岸浜（天狗分布极少，有部分河童）
-# th_kochiya_port 集镇 （主要的守矢民聚集点）
-# th_moriya_estuary 大河
-# th_land_of_frogs 大河
-# th_short_lived_forest 河流
-# th_moriya_coast_ashi_wara 
-# 守矢府邸（天狗分布极少）
-# th_moriya_port（主要的守矢民聚集点）
-# th_moriya_holy_mansion 河流 城市 （主要的守矢民聚集点）
-# th_kochiya_mansion 集镇 河流
-# th_mountain_goddess_loved_hills 河流
-# th_moriya_divine_sake_cellar
-# th_divine_resonance_pool 河流
-# th_kamikaze_island_main
-# 大蛤蟆之池（天狗分布极少，有部分河童）
-# th_big_toad_lake 大河
-# th_kappa_major_bridge 河流 （主要的河童聚集点）
-# th_kappa_station 大河 （主要的河童聚集点）
-# th_frog_port 大河
-# th_great_toad_pond_bog 大河
-# 守矢神社（主要的守矢民聚集点，几乎无妖精、天狗分布）
-# th_moriya_shrine_honden 河流 集镇
-# th_moriya_shrine_haiden 大河 集镇
-# th_moriya_shrine_shamushu 大和 集镇
-# th_moriya_shrine_temizuya 大河 集镇
-# th_moriya_shrine_road
-# th_moriya_shrine_station
-# 幻草原（几乎无天狗分布，有部分河童分布）
-# th_weastern_phantom_meadow
-# th_eastern_phantom_meadow 河流
-# th_ghost_horde
-# th_breeze_hills 河流
-# th_still_wasteland
-# 的以下省份天狗几乎全部集中在此地区，而非上面的省份，之后的所有妖怪人口全部信仰山
-# 风神之湖（有部分天狗分布，有部分妖精分布）
-# th_zealot_village 集镇 大河
-# th_hillside_of_qian 河流
-# th_worship_of_onbashira
-# th_miracle_idol_office
-# th_land_of_seven_holy_stones_and_seven_holy_trees 大河
-# 守矢索道（有许多天狗分布）
-# th_cableway_start 集镇
-# th_cableway_tengu_line
-# th_cableway_kappa_line
-# th_cableway_hell_new_line
-# th_tornado_maple_forest
-# 御柱的墓场（有部分天狗分布）
-# th_cemetery_of_onbashira
-# th_prayer_hills 河流
-# th_gold_pieces_riber_bend
-# th_border_market
-# th_shattered_gold_customs 河流
-# th_shattered_gold_shallows 河流
-# th_prayer_hill_terrace 河流
-# 大地之谷（有许多天狗分布，有部分妖精分布）
-# th_valley_of_earth 河流
-# th_wind_castle 集镇
-# th_snakes_hole 
-# th_border_of_faith
-# th_wind_god_valley_tengu 大河
-# th_god_valley_meditation 
-# 迷雾酒肆（有许多天狗分布，有部分妖精分布）
-# th_fog_pub 河流
-# th_miracle_cellaring 河流
-# th_terraced_fields 河流
-# th_beautuful_fountainhead 河流
-# th_green_gate
-# th_misty_sake_den_kappa 河流
-# 神风之谷（有许多天狗分布）
-# th_holy_wind_valley 集镇
-# th_gods_hoad
-# th_red_frogs_tomb
-# th_hill_of_wind_and_rain 河流
-# th_divine_wind_hanging_meadow
-#畜生界 （系数x0.85） （主流文化，野狼灵，水獭灵，大鹫灵，造型神）（（总体人口分布：造型神12%，灵长灵40%，地狱妖精30%，野狼灵10%，水獭灵10%，大鹫灵10%，埴轮5%）
-# 以下的省份宗教为（55%的啖生道，45%的人信仰博丽风俗）
-# 未知之扉 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_gate_of_inknown 河流
-# th_primate_barrier
-# th_wall_of_hopoless
-# th_hani_depression 集镇 河流
-# th_haniwa_doll_sentry_array
-# 灵长园 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_primate_spirit_garden 集镇
-# th_haniyasushin_shrine 集镇
-# th_hope_altar 河流
-# th_haniwa_port
-# th_haniwa_shaping_palace 城市
-# th_peninsula_spine_avenue
-# th_idol_prayer_steps 大河
-# th_primate_deepwater_port
-# th_human_preserve_idol_realm 大河
-# th_central_processing_terminal 大河
-# th_clay_island
-# th_unfinished_colossus_island
-# th_clay_bay
-# 灵长类之境 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_village_of_isolate 集镇 河流
-# th_human_spirit_village
-# th_withered_field
-# th_silent_fishing_village
-# th_clay_outpost
-# th_tool_graveyard
-# 野兽大都会 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_beast_downtown 集镇
-# th_shimokita
-# th_primate_lower_city
-# th_haniwa_precinct
-# th_arc_light_emitter
-# th_shaping_bureau
-# th_human_doll_citizen_apartments
-# 水獭灵岗楼 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_otter_spirit_watchtower 河流
-# th_castor_clan 河流
-# th_red_panda_cave
-# th_iron_branch_dam 河流
-# th_kike_secret_way 大河
-# th_pangolin_bunker 大河
-# th_albatross_storm_nest 河流
-# 人灵市镇 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_primate_spirit_township 集镇 河流
-# th_delusion_prosperity 河流
-# th_tenkyuu_branch_office
-# th_primate_meander
-# th_bloody_turbulence
-# th_st_haniwa_mountain 河流
-# th_penguin_ice_outpost
-# 野狼灵竞技场 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_haniwa_basin
-# th_old_village_of_wolf_spirit
-# th_wolf_spirit_arena
-# th_wild_plain
-# th_limitation_hills
-# th_scab
-# 迷失魂灵庇护所 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_lost_souls_shelter
-# th_tagnation_port 集镇
-# th_skeleton_plateau
-# th_gaze_westward_hillock
-# th_atonement_lock
-# 魂之壶 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_yamato_beach
-# th_marigold_confluence
-# th_pot_of_souls
-# th_prayer_differential_tower
-# th_lepton_resonance_arc_stream
-# 贪欲之渊 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_dark_abyss
-# th_pot_of_greed
-# th_camp_of_artorias
-# th_burl_heart
-# th_greed_black_market
-# th_desire_tidal_flat
-# th_dragon_crystal_main_island
-# th_sloth_lagoon_island
-# 奈河沿岸 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_naihe_bridge
-# th_well_of_frogotten
-# th_last_chance
-# th_baos_post_station
-# th_utopia_reflection
-# th_reincarnation_whirlpool_palace
-# 亡灵泥沼 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_dead_swamp
-# th_forest_of_hunt
-# th_idol_bay
-# th_black_sand_beach
-# 埴轮工厂 （野狼灵、水獭灵、大鹫灵分布极少）
-# th_haniwa_factory 集镇
-# th_haniwa_barracks
-# th_haniwa_subrbs
-# th_idol_frontier
-# th_dead_zone
-# th_dregs_shantytown
-# th_faith_clay_pool_island
-# th_loyalty_maze_island
-# h_anvil_root_bridge
-# 以下的省份宗教为（99%的人信仰啖生道）
-# 叫唤地狱 （埴轮无分布）
-# th_screaming_hell
-# th_scorching_hell
-# th_avici_hell
-# th_deer_hunting_hell
-# 虚与实的境界 （埴轮无分布）
-# th_border_of_fake_and_reality
-# th_reviving_hell
-# th_kalasutra_hell
-# th_samghata_hell
-# th_concept_collapse_abyss
-# th_bee_hive_array
-# 地狱边境 （埴轮无分布）
-# th_throne_of_caelestinus_V 集镇
-# th_abandoned_baby_park
-# th_cobble_riverbank
-# th_stone_stacking_ring
-# th_hell_windless_plain
-# th_hell_path_of_confusion
-# 畜生界之扉 （埴轮无分布）
-# th_pass_of_animal_realm
-# th_kike_gang_skyscraper 集镇
-# th_yachies_mansion
-# th_gold_brance_wall
-# th_village_of_otters
-# th_underwater_cellar
-# 嚎哭洞穴 （埴轮无分布）
-# th_crying_cave
-# th_interrogation_house
-# th_betray_blade
-# th_biten_tree_house
-# th_spongilla_fragilis_garden
-# 无明旷原 （埴轮无分布）
-# th_no_live_wilderness
-# th_deadly_hillside
-# th_top_of_regression 河流
-# th_strange_mine
-# th_echo_cavern
-# th_false_moon_dark
-# 兽王园 （埴轮无分布）
-# th_beast_king_garden 城市
-# th_unfinished_land
-# th_relie_throne
-# th_nothing
-# th_oni_tavern
-# 中有之道 （埴轮无分布）
-# th_road_of_liminality
-# th_death_commercial_street
-# th_withered_flowers_garden
-# th_pretas_yelling
-# 再思之道 （埴轮无分布）
-# th_road_of_reconsideration
-# th_lycoris_field
-# th_ghost_queue
-# th_regret_echo_bridge 河流
-# th_pain_equivalence_scale 河流
-# 畜生界 （埴轮无分布）
-# th_untamed_horse_grassland
-# th_beast_froniter 河流
-# th_galloping_horese_avenue 河流
-# th_throne_of_reject
-# 未定位的地狱 （埴轮无分布）
-# th_chaos_storm 河流
-# th_fear_of_oni
-# th_blood_wine_of_sinner
-# th_happyness_plantation 河流
-# 野兽灵之丘 （埴轮无分布）
-# th_skeleton_ridge 河流
-# th_hills_of_beast_spirit 河流
-# th_haunted_gold_mine 河流
-# th_bloody_factory 河流
-# th_coward_burrow 河流
-# 套索兽道 （埴轮无分布）
-# th_lasso_beast_road 河流
-# th_road_of_slavery 大河
-# th_undead_settlement 集镇
-# th_ash_barren
-# th_broken_horn_graveyard
-# 野兽之町 （埴轮无分布）
-# th_new_city_of_wolf_spirit
-# th_keiga_gang_skyscraper 城市
-# th_saki_mansion
-# th_pegasus_fortress 河流
-# 悲伤山冈 （埴轮无分布）
-# th_sadness_hillock 河流
-# th_sunken_corpse_riverbed 河流
-# th_kaiji_casino
-# th_hidden_corn_field 河流
-# th_tearless_peak 河流
-# th_solid_rain_cliff 河流
-# 虚空边界 （埴轮无分布）
-# th_void_of_fate
-# th_void_of_end
-# th_void_of_think
-# th_void_of_nothing
-# 遗物之丘 （埴轮无分布）
-# th_relic_hill 河流
-# th_valley_of_new_three_artifact 河流
-# th_game_console_dead_end
-# th_oblivon_time 河流
-# th_sentinel_cliff 河流
-# 血池地狱 （埴轮无分布）
-# th_blood_pond_hell
-# th_artery_of_petroleum
-# th_toutetsu_cabin 城市
-# th_brain_of_beast
-# 石油之海 （埴轮无分布）
-# th_sea_of_petroleum
-# th_infinite_food
-# th_greedy_gusher 河流
-# th_bottomless_pit 河流
-# th_desire_cracking_plant 河流
-# 黄泉 （埴轮无分布）
-# th_huangquan 河流
-# th_oni_hunting_chain 河流
-# th_mourning_border
-# th_zoo_of_extince_animals 河流
-# 鬼渡之关 （埴轮无分布）
-# th_oniwatari_pass 集镇 大河
-# th_straightforward_traffic_sign 河流
-# th_death_door 河流
-# th_oniwatari_shrine 集镇 大河
-# th_crossing_black_market 河流
-# 彼岸 （系数x0.90） （主流文化，阎魔，死神）（（总体人口分布：地狱妖精53%，死神27%，阎魔6%，水子之灵12%，鬼2%，亡灵16%，浮游灵6%，幽灵5%，二羽渡民2%）
-# 阎魔岗哨
-# th_yama_sentry 集镇 大河
-# th_jizo_maze
-# th_onimi_barracks
-# th_jiulun_palace 河流
-# th_yama_outpost_harbor
-# th_isle_void_gaze
-# 判官后院
-# th_taihe_palace
-# th_emperors_mansion
-# th_black_tea_garden 集镇
-# th_thousands_purple_sakura_blossom
-# th_isle_rust_shield_island
-# th_hell_low_wall
-# th_hell_pending_cases
-# 彼岸花原野
-# th_higanbana_plain 河流
-# th_xuanming_palace 河流
-# th_no_vitality_mountain_pass 河流
-# th_yama_plain 集镇 大河
-# 魂灵候审处
-# th_souls_detention_center
-# th_onimi_house
-# th_taigongs_fishing_spot 河流
-# th_pride_of_death
-# th_nameless_steles 河流
-# 彼岸
-# th_far_shore 集镇 大河
-# th_paradise_upstream
-# th_horse_head_village
-# th_pingzhong_terrace
-# th_yesterday_mirror
-# th_soul_return_steles
-# 阎魔殿 （阎魔的主要聚集地）
-# th_yama_palace 城市
-# th_bizhen_palace
-# th_suying_palace
-# th_city_of_feng 集镇 大河
-# th_jetavana_ruined_shrine
-# th_jetavana_ruined_shrine_door 大河
-# th_life_death_archive
-# th_hall_of_judgment 城市
-# th_sin_mirror_platform
-# th_hell_punishment_chamber
-# th_hell_reward_pool
-# th_hell_guard_barracks
-# 地狱之港
-# th_hell_port 集镇
-# th_windless_col
-# th_outsider_souls_village
-# th_qifei_palace
-# th_yin_yang_customs
-# th_hell_appeal_court
-# 瘴气原野
-# th_miasma_field
-# th_hills_of_after_death
-# th_hole_of_the_border
-# th_fossil_coast
-# th_isle_infinite_light
-# th_isle_infinite_light_coast
-# 炼狱之境
-# th_purgatory
-# th_wuchang_shore
-# th_depression_of_chaos_qi
-# th_bull_head_village
-# th_jiuji_palace
-# th_purge_ironworks_port
-# th_purgatorial_foundry_port
-# th_purge_ironworks_port_village
-# th_isle_no_self_rock
-# th_isle_emptiness_islands
-# 鬼神长总番所
-# th_forbbiden_zone_of_onimi_head
-# th_little_devil_town
-# th_jizo_palace 集镇
-# th_teahouse_at_hell
-# th_scorching_great_forge
-# th_chief_oni_headquarters 集镇
-# 死神静修处
-# th_komachis_hideout
-# th_expedition_port 城市 大河
-# th_hazbin_hotel 集镇
-# th_alchemy_workhouse
-# th_market_ferryman_tavern
-# th_market_higan_tea
-# 三途河 （死神的主要聚集地）
-# th_santu_river_bank 集镇 大河
-# th_chenghuang_temple 大河
-# th_xiwen_meander 大河
-# th_separate_souls_ferry 大河
-# 阴燃森林
-# th_smoldering_forest
-# th_massacre_wildrness 河流
-# th_will_castle 集镇
-# th_nine_spirng_pass
-# th_waste_thousand_year_sea
-# 灵魂的终点
-# th_withered_chrysanthemum_field
-# th_land_ofcontrition
-# th_atonement_trail
-# th_enlightenment_mine
-# th_end_of_souls
-# 地狱之扉
-# th_pass_of_hell 集镇 大河
-# th_tai_palace 河流
-# th_regret_location 河流
-# th_mingchen_palace 河流
-# th_waste_return_monument
-# th_gate_mandala_altar
-# 二羽渡神的口岸（二羽渡民聚居点）
-# th_niwataris_entry 集镇 河流
-# th_hundreds_days_resentment 河流
-# th_outside_world_entry 河流
-# th_wrongfully_killed_dormitory 河流
-# 回忆之冢
-# th_sai_no_kawara 集镇 大河
-# th_village_of_foundling 大河
-# th_eika_cabin 大河
-# th_yama_terakoya 大河
-# 赛之河原（水子之灵和牛鬼聚居地）
-# th_start_of_memorie  集镇 大河
-# th_miare_office 河流
-# th_unheard_old_haunt
-# th_camellia_garden 大河
-# th_riverbed_endless_shore 大河
-# 大法之馆
-# th_grand_magi_residence
-# th_puming_palace 大河
-# th_mortals_annex
-# th_offerings_avenue
-# th_hall_rites_cage
-# 魂之川（死神聚居地）
-# th_souls_river 大河
-# th_shenhua_palace 集镇
-# th_tongue_pulling_cave 集镇 大河
-# th_quarter_sessions 大河
-# th_river_soul_lotus 大河
-# th_river_soul_shallows 大河
-# 赫卡提亚神殿（13%异界民）
-# th_hecatia_temple 集镇 大河
-# th_porphyra_dyehouse
-# th_port_of_goddess
-# th_hedes_inn 大河
-# th_hell_hecate_kennels 大河
-# th_hecate_main_hall 集镇 大河
-# th_hell_hecate_cape
-# th_waste_ink_pool
-# 以下死寂之地地区（系数x0.90）（主流文化，亡灵，死神）（（总体人口：亡灵25%，地狱妖精41%，水子之灵12%，死神12%，二羽渡民17%，幽灵6%，浮游灵8%）
-# 地狱半岛
-# th_hell_peninsula_main
-# th_hell_flayed_coast
-# th_hell_steamer_valley
-# th_hell_stone_plains_island
-# th_hell_blood_cape
-# th_penitent_sinners_coast
-# 悔悟之町
-# th_hell_town_of_repentance 集镇
-# th_repent_mouth 大河
-# th_repent_corridor_sea
-# th_repent_forest_door_hell
-# th_pillar_of_tears_islet
-# th_burden_shedding_beach_port
-# 沉没之村
-# th_sunken_main_street 集镇
-# th_sunken_lighthouse 大河
-# th_sunken_ship_graveyard
-# th_sunken_shell_wall
-# 纳兹琳的老巢
-# th_nazrin_outpost
-# th_hell_nazrin_door 集镇
-# th_hell_nazrin_workbench
-# th_hell_nazrin_shushushushushuchu
-# 以下朦胧结界地区（系数x0.85）（主流文化，大鹫灵）（（总体人口：浮游灵15%，地狱妖精21%，大鹫灵31%，灵长灵10%）
-# 朦胧结界
-# th_hazy_barrier_hell 
-# th_hazy_fading_path 集镇 大河
-# th_hazy_memory_fog
-# th_hell_hazy_echo
-# 死之祠堂
-# th_shrine_of_death
-# th_shrine_of_death_door
-# th_hell_death_office 集镇
-# th_hell_ghost_death_bell 大河
-# th_soul_lantern_forest 大河
-# 以下孑然岸滨地区（系数x0.90）（主流文化，二羽渡民）（总体人口：二羽渡民41%，地狱妖精21%，幽灵12%，浮游灵5%，怨灵7%，亡灵8%）
-# 无缘冢（位于彼岸，亡灵和幽灵在这里）
-# th_hell_muenzuka_main 集镇
-# th_muenzuka_junk_hill
-# th_hell_muenzuka_lamp
-# th_muezuka_re_hec
-# th_stranded_soul_shoal
-# 孑然岸滨（位于旧地狱不会存在亡灵和幽灵）
-# th_solitus_strand 城市 大河
-# th_hell_solitus_tide
-# th_hell_solitus_shore 大河
-# th_hell_solitus_reef
-# th_monolith_of_silent_witness
-# 埋骨场（位于旧地狱不会存在亡灵和幽灵）
-# th_hell_ossuary_field
-# th_hell_ossuary_lair 河流 集镇 （怨灵集中）
-# th_hell_ossuary_seepage 河流
-# th_hell_ossuary_stratum 河流
-# 地底之港（位于旧地狱不会存在亡灵和幽灵）
-# th_underground_harbor_east 大河
-# th_harbor_fuel_depot
-# th_harbor_waste_pool 河流
-# th_harbor_magma_wharf 集镇 大河
-# th_underground_harbor_west 集镇 河流
-# th_steam_bath_hospital
-# 玄武之泽地区 （系数x1.03）（主流文化，河童，山童）（总人口分布：妖精29%，山童19%，河童19%，六种天狗14%，小人族12%，山内聚居人类7%）
-# 黄瓜园圃 （河童分布远大于山童，无小人族分布，天狗少量分布）
-# th_cucumenber_garden 大河
-# th_breeding_base 河流
-# th_water_supply_system 集镇 大河
-# th_cucumenber_port 集镇 大河
-# th_nursery_luminous_greenhouse 大河
-# 河童海滩 （河童分布远大于山童，无小人族分布，天狗少量分布）
-# th_kappa_beach 集镇 大河
-# th_kappa_port 城市 大河
-# th_basalt_rock_beach 大河
-# th_diving_paradise 大河
-# 修补匠之村 （河童分布远大于山童，无小人族分布，天狗少量分布）
-# th_craftsman_hall 河流
-# th_goblin_shop 河流
-# th_area_13 集镇 大河
-# th_gear_automatic_port 河流
-# 秘密工坊 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
-# th_waterproof_lab 大河
-# th_under_water_port 集镇
-# th_mermaid_village
-# th_riverbed_habitat 大河
-# th_treasure_bay 集镇
-# 河童都会 （河童分布远大于山童，无小人族分布，天狗少量分布）
-# th_kappa_capital 大都会 大河
-# th_smart_first_city 集镇 河流
-# th_sponge_second_city 集镇 河流
-# th_nitoris_mansion 城市 大河
-# th_river_network_hub 大河
-# 河童溪谷 （河童分布远大于山童分布，无小人族分布，天狗少量分布）
-# th_kappa_valley 集镇 大河
-# th_flooding_lowland 集镇 大河
-# th_mangroove_swamp 大河
-# th_kappas_dam 大河
-# th_kappa_ravine_watermill_workshops 集镇 大河
-# th_ravine_dish_stone_shoal
-# 玄武涧 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
-# th_genbu_port 集镇 大河
-# th_genbu_ravine 大河
-# th_scale_hills 河流
-# th_genbu_habitat 大河
-# th_wealth_shrine 大河
-# 河童墟市 （山童分布远大于河童，无小人族分布，天狗少量分布）
-# th_abandoned_workshop 河流
-# th_wall_of_veto 河流
-# th_bunker_buster_crater 河流
-# th_implosion_bomb_ruins 河流
-# th_acid_river 大河
-# 发明展厅 （山童分布远大于河童，无小人族分布，天狗少量分布）
-# th_invention_exhibition_hall 城市 大河
-# th_yamawaro_railway 大河
-# th_high_tech_developement_zone 城市 河流
-# th_takanes_mansion 河流
-# th_invention_exhibition_hall_practical 大河
-# 河童试验田 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
-# th_twin_sunflower_field 河流
-# th_supremium_field 河流
-# th_gourmaryllis_field 河流
-# th_top_secret_cucumenber_field 集镇 河流
-# th_withering_hellebore_main 
-# th_kappa_test_fields_river_hub 河流
-# 秘天崖 （山童分布远大于河童，无小人族分布，天狗少量分布）
-# th_secret_haven_cliff 集镇 河流
-# th_yamawaro_barracks
-# th_cliff_of_dispair 河流
-# th_wargame_land
-# 伪天棚 （山童分布远大于河童，无小人族分布，天狗分布）
-# th_false_heaven_shelf 集镇
-# th_mountain_foot_no_go_zone
-# th_sannyo_casino
-# th_secret_green_cliff 河流
-# th_smoke_and_snow_tundra_main 河流
-# th_snow_tundra_rime_forest
-# 产业废墟 （山童分布远大于河童，无小人族分布，天狗分布）
-# th_infected_industry_area
-# th_water_gel_explosive_forest
-# th_break_ridgepole
-# th_yamawaro_hill_side
-# 辉针城 （小人族主要聚集地）
-# th_shining_needle_castle_tenshukaku 城市 河流
-# th_private_inner_chamber 集镇
-# th_shining_needle_castle_main_bailey 河流
-# th_shining_needle_castle_ground_hall
-# th_uchide_no_kozuchi_room
-# 辉针城前庭 （小人族次要聚集地）
-# th_shining_needle_castle_second_bailey
-# th_shining_needle_castle_third_bailey
-# th_fusoshin_swamp 河流
-# th_shining_needle_castle_watch_tower 河流
-# th_shining_needle_castle_stone_wall
-# 小人族藏宝室 （小人族次要聚集地）
-# th_mithril_gate 河流
-# th_useless_divice_room
-# th_dusty_srsenal
-# th_empty_chamber
-# th_diminutive_treasure_vault_library 河流
-# 闪光小径 （无小人族分布，山内聚集人类主要聚集地）
-# th_shining_path
-# th_levitation_garden
-# th_magical_thundercloud
-# th_shaking_plain
+	# 宗教组成「博丽风俗」
+	#萤火之森 「妖虫A聚居」
+		# th_nightfall_shore_grove 大河 集镇 「妖虫A聚居」
+		# th_dusk_waters_edge  大河
+		# th_night_heron_perch 大河
+		# th_firefly_reed_bed 大河
+		# th_fungal_lantern_gallery
+		# th_shadow_stalkers_path 大河 集镇
+	# 妖怪兽道「妖怪聚居」
+		# th_youkai_beast_path 集镇 大河 「妖怪聚居」
+		# th_claw_marked_great_tree
+		# th_youkai_air_misty_valley 集镇 大河
+		# th_nocturnal_stream 大河
+# 以下雾雨之森地区（人口系数x0.99）（主流文化，魔法使，村落外人类）（村落外人类5%，植物妖精56%，妖兽20%，妖怪12%，魔法使2.5%，地藏2%，人偶14%）
+	# 宗教组成「博丽风俗」
+	# 雾雨魔法店「魔法使B聚居」「人偶B聚居」
+		# th_kirisame_magic_shop 河流 集镇
+		# th_cluttered_display_hall 大河
+		# th_potion_brewing_bench 大河 集镇
+		# th_attic_loft_nook
+		# th_main_hall_of_chaotic_wonders 大河
+	# 雾雨邸 「魔法使B聚居」「人偶C聚居」
+		# th_kirisame_residence 城市
+		# th_kirisame_room 河流
+		# th_overgrown_front_yard 集镇 大河
+		# th_kirisame_abandoned_library 河流
+		# th_kirisame_mansion_genkan 河流
+	# 蘑菇集簇地
+		# th_mushroom_woods 集镇 大河
+		# th_giant_agaric_cluster
+		# th_rotting_totem_poles
+		# th_spore_geyser_valle
+		# th_mycelium_network_nexus 集镇 大河
+	# 森林海岸
+		# th_forest_shore 集镇 大河
+		# th_driftwood_strand 河流
+		# th_reed_shallow_bay 城市 大河
+		# th_fisherman_old_stakes 河流
+		# th_mist_woodland 河流
+	# 森林边缘
+		# th_forest_fringe
+		# th_border_marker_trail
+		# th_bramble_palisade
+		# th_woodcutter_rest 集镇 河流
+		# th_lost_traveler_fork 集镇 河流
+	# 成美林地「地藏A聚居」
+		# th_seibi_grove
+		# th_cleansing_heart_stream 河流
+		# th_grove_stone_altar 河流
+		# th_seibi_ancient_tree 集镇 大河
+		# th_windwhisper_trail 集镇 河流
+	# 妖精破庙「妖兽B聚居」
+		# th_fairy_derelict_temple 河流
+		# th_broken_pillar_mountain_gate
+		# th_belfry_ruins 集镇 大河
+		# th_desolate_courtyard
+# 以下迷途竹林地区(人口系数x0.92)（主流文化，永远亭，妖兔）（总和主体人口：妖兔64%，村落外人类12%，村落人类10%，妖精25%，妖怪10%，月之民-永远亭2%，地藏0.5%，0.1%外界民）
+	# 宗教组成「博丽风俗」
+	# 永琳的药房「村落外人类A聚居」
+		# th_eirins_warehouse 集镇 大河
+		# th_lunar_labs
+		# th_herbs_cultivation_base
+		# th_horai_pharmacy 集镇
+		# th_shade_loving_herb_beds
+		# th_fragrant_herb_arbor
+	# 茂密竹林「村落人类A聚居」「妖兔聚居」
+		# th_road_to_village
+		# th_marked_entrance_1
+		# th_night_sparrow_house 集镇
+		# th_sparrow_wine_source 大河 集镇
+		# th_dense_bamboo_forest 
+	# 帝的兔子洞「妖兔B聚居」
+		# th_tewis_rabbit_hole 集镇
+		# th_rabbit_beauty_salon 集镇
+		# th_rabbit_trap_school 集镇
+		# th_cace_of_caerbannog
+	# 无尽长廊
+		# th_endless_corridor
+		# th_endless_byobu
+		# th_room_of_night_luminous_pear 集镇 大河
+		# th_fake_kinkakuji 
+		# th_fake_ginkakuji 集镇 河流
+	# 草药园圃「妖兔B聚居」
+		# th_rabbit_farm 河流 集镇
+		# th_drugged_mochi_factory
+		# th_herb_garden 集镇 大河
+		# th_lunar_rabbit_kolkhoz
+		# th_herb_garden_doka_hatake
+	# 兔子窟「妖兔B聚居」
+		# th_rabbit_port
+		# th_rabbit_wonderland
+		# th_rabbit_assembly_hall 集镇
+		# th_youkai_rabbit_village 集镇
+		# th_reisens_house
+	# 月兔收容所「妖兔B聚居」
+		# th_lunar_rabbit_labor_camp 河流
+		# th_lunar_rabbit_detention_center
+		# th_lunar_rabbit_collective_canteen
+		# th_mangengasaki_port 河流 集镇
+	# 永远亭「永远亭-月之民A聚居」「妖兔B聚居」
+		# th_kaguyas_room 城市 「永远亭-月之民A聚居」「妖兔B聚居」
+		# th_game_console_collection
+		# th_courtyard_for_product_elixir 集镇 河流
+		# th_moon_viewing_terrance
+		# th_eirins_clinic
+	# 竹林岸滨
+		# th_lunar_port 河流 集镇
+		# th_panda_habitat 河流
+		# th_marked_entrance_2 河流
+		# th_sunflower_outpost
+# 以下迷途竹林地区(人口系数x0.92)（主流文化，村落外人类）（总体主体人口：季节妖精8%，妖精32%，妖兔14%。村落外人类21%，村落人类10%，妖兽12%，妖怪8%，外界民0.3%，地藏0.1%）
+	# 宗教组成「博丽风俗」	
+	# 天空的花之都「妖精A聚居」
+		# th_outside_of_the_border_of_the_life_and_death
+		# th_poltergeists_lounge 河流
+		# th_upper_level_of_flower_city 河流 集镇
+		# th_lower_level_of_flower_city
+		# th_unverified_sakura_border 河流
+	# 迷途者庇护所「村落外人类B聚居」
+		# th_shelter_for_the_lost 城市 河流 「村落外人类B聚居」
+		# th_bamboo_forest_garrison 
+		# th_hidden_youseis_pool 河流 集镇 「妖精A聚居」
+		# th_marked_exit_1
+		# th_lost_sanctuary_kikan_shourou 河流 
+	# 藤原邸「村落人类B聚居」「村落外人类B聚居」
+		# th_huziwara_mansion 城市 「村落人类B聚居」「村落外人类B聚居」
+		# th_straw_fence
+		# th_huziwara_traning_house
+		# th_bamboo_forest_ninja_warehouse
+		# th_huziwara_chicken_farm
+	# 藤原港「妖兔B聚居」
+		# th_huziwara_port 河流 集镇
+		# th_marked_exit_2
+		# th_mokous_grill
+		# th_inextinguishable_lantern_path
+	# 竹林沙场「妖兔聚居」
+		# th_burned_bamboo_forest
+		# th_buried_jade_bamboo_forest
+		# th_broken_diamon_bamboo_forest
+		# th_horai_bamboo_forest
+	# 有情人秘所
+		# th_kaguya_hideout
+		# th_keine_hideout
+		# th_sumireko_hideout
+		# th_secret_path_of_princess 集镇
+# 以下冥界地区(人口系数x1.05)（主流文化，亡灵）（总体主体人口：季节妖精10%，现象妖精12%，亡灵35%，幽灵23%，骚灵15%，半人半灵1%，外界民0.3%）
+	# 宗教组成「博丽风俗」	
+	# 幽之结界
+		# th_barrier_of_death 河流 集镇「骚灵A聚居」
+		# th_barrier_of_pride
+		# th_barrier_of_warth
+		# th_barrier_of_sloth 河流
+		# th_barrier_of_gluttony
+	# 精魄草坪
+		# th_sea_of_lycoris 河流
+		# th_white_chrysanthemum_bank 河流
+		# th_fly_lair
+		# th_deadly_stream 河流	
+		# th_picnic_spot_for_somebody 河流 集镇
+	# 魂之眺台
+		# th_ghast_tower 集镇
+		# th_black_tower 集镇
+		# th_phantom_arsenal
+		# th_deadbody_moonlight
+	# 冥界城楼
+		# th_fake_life_village 集镇
+		# th_skeleton_castle_tower
+		# th_tomb_first_dead
+		# th_skull_checkpoint
+	# 明之结界
+		# th_barrier_of_life
+		# th_barrier_of_humility
+		# th_barrier_of_kindness 河流 集镇「骚灵B聚居」
+		# th_barrier_of_deligence
+		# th_barrier_of_temperance 河流
+	# 白玉楼阶梯
+		# th_steps_1_to_1600 河流
+		# th_steps_1601_to_3200
+		# th_steps_3201_to_4800 河流
+		# th_steps_4801_to_6400
+		# th_steps_6401_to_8000
+	# 雪之庭院
+		# th_snow_gloem_factory 
+		# th_artifical_stream 河流
+		# th_strange_rockwork 河流 集镇 「妖精A聚居」
+		# th_zombie_tearoom 
+	# 白玉楼「半人半灵聚居」
+		# th_hakugyokurou 城市
+		# th_irreversible_entrance
+		# th_yuyukos_room 集镇
+		# th_greater_kitchen
+		# th_rock_gardenv
+		# th_surrounding_hallway
+	# 西行妖
+		# th_north_branch_of_saigyou_ayakashi
+		# th_south_branch_of_saigyou_ayakashi
+		# th_east_branch_of_saigyou_ayakashi
+		# th_west_branch_of_saigyou_ayakashi
+	# 樱之海
+		# th_north_aokigahara_forest 集镇 河流
+		# th_south_aokigahara_forest 
+		# th_lost_temple
+		# th_the_beach
+	# 幽冥庭院
+		# th_paper_windmill_garden 河流
+		# th_coin_eyes_bridge
+		# th_yuanbao_valley 河流
+		# th_paper_doll_village 河流 集镇
+	# 幽灵乐土
+		# th_endless_tea_party
+		# th_decay_library
+		# th_castel_ruins
+		# th_phantom_wonderland 城市
+		# th_death_metal_rock_end
+	# 墓室地穴
+		# th_diavolo_crimson_hotel 集镇
+		# th_kenny_cementry
+		# th_24th_graveyard
+		# th_tomitake_marsh 河流
+		# th_mami_tea_field 河流
+	# 回响墓园
+		# th_skeleton_pyramaid
+		# th_saigyouji_ossuary
+		# th_maxxranas
+		# th_drown_tomb 集镇
+	# 亡者之港
+		# th_drown_fleet_port 河流 集镇
+		# th_black_beard_bay
+		# th_davy_jones_locker 河流
+		# th_deep_sea_lair 河流
+	# 魂魄府邸「半人半灵A聚居」
+		# th_swordplay_dojo 河流
+		# th_giant_garden
+		# th_konpaku_fosse 河流
+		# th_youmus_room 河流 集镇 「半人半灵A聚居」
+		# th_ghost_village 集镇
+	# 妖忌纪念地
+		# th_youki_monument
+		# th_tomb_of_swords
+		# th_youki_port 河流 集镇
+		# th_reed_field 河流
+	# 亡灵田野
+		# th_borei_genya
+		# th_borei_genya_mugen_sougen
+		# th_borei_genya_yuukon_bakuden
+		# th_dankyu_kyuuryou
+# 以下人间之里地区(人口系数x1.35)（主流文化，村落人类）（主体人口：鸦天狗0.3%，妖精15%，村落人类80%，村落外人类5%，神社周边人类5%，丰穰民2%，地藏0.3%，外界民0.4%，妖怪6%，座敷童子1%）
+	# 宗教组成「博丽风俗85%，东乘佛教15%」	
+	# 西大街 「东乘佛教C分布」
+		# th_nishi_odori 大河
+		# th_ryujin_sama_sekizou 大河 
+		# th_seiran_ya 大河 集镇
+		# th_suzuko_ya 大河 集镇
+		# th_nishi_mi_ban 
+		# th_satoyama_no_mori 大河 
+		# th_saikumachi_dori 大河 集镇
+	# 酒藏街「妖怪A聚居」「鸦天狗A聚居」「东乘佛教C分布」
+		# th_geodon_tei_main_hall 大河 城市 （主要聚居妖怪）
+		# th_yuya 大河
+		# th_umaya_mae 大河
+		# th_dozou_soko
+		# th_nagashidai_mae 大河 集镇
+		# th_sakagura_dori
+		# th_hatago_yokocho 大河
+	# 北大街
+		# th_terakoya_gakudo 城市
+		# th_terakoya_mae
+		# th_sensei_no_heya 集镇
+		# th_kyouzai_gura
+		# th_kita_odori 大河
+		# th_ura_nagaya_dori_2 大河
+		# th_asobi_niwa 大河
+	# 村落田野
+		# th_village_outskirts
+		# th_west_slope_wheat_field
+		# th_east_fence_vegetable_garden 大河
+		# th_watermill_mill 大河
+		# th_grain_drying_field 大河
+		# th_cattle_grazing_slope 大河
+		# th_boundary_stone_road 大河
+	# 流川桥「东乘佛教A分布」
+		# th_honcho_dori 大河
+		# th_workshop_yokocho 集镇
+		# th_kourindou_main_store 城市
+		# th_antique_market 大河 集镇
+		# th_signpost_fork 大河
+		# th_south_market 大河 集镇
+		# th_nagarekawa_bridge_south_ab 大河
+	# 稗田町
+		# th_hieda_residence_front_street 大河
+		# th_hieda_residence 大河 城市
+		# th_gakusha_shukubo_cho 大河 集镇
+		# th_kamiya_cho 集镇
+		# th_tsuji_dou 集镇
+		# th_nishi_kido_guchi 集镇
+		# th_hori_bata_dori 大河
+	# 村落广场「东乘佛教C分布」
+		# th_western_village_street 大河 
+		# th_central_plaza 大河 大都会
+		# th_village_office 大河 集镇
+		# th_old_well_mouth 大河 集镇
+		# th_crossroads_teahouse 大河 集镇
+		# th_police_outpost 大河 集镇
+		# th_village_bell_tower 大河 集镇
+		# th_zaimoku_cho 大河 集镇
+		# th_higashi_yokocho 大河 集镇
+	# 南大门街
+		# th_suzunaan 城市 大河
+		# th_bookstore_yokocho 集镇
+		# th_kashihon_gura 集镇 大河
+		# th_mihan_hiroba 大河
+		# th_minami_daimon_dori 大河
+		# th_nagarekawa_bashi_minamizume_hiroba 集镇 大河
+		# th_nagaya_nami_higashiguchi 集镇 大河
+	# 里长屋街
+		# th_sagi_no_shoshitsu 大河 集镇
+		# th_tsuji_shidou 大河 
+		# th_minami_tsuji_kouban 大河
+		# th_wayside_shrine 大河 集镇
+		# th_ura_nagaya_dori
+		# th_mitsuke_ban_goya 集镇
+# 以下心绮楼地区(人口系数x1.38)（主流文化，村落人类）（主体人口：面灵气10%，付丧神21%，妖精23%，村落人类52%，村落外人类5%，神社周边人类5%，丰穰民2%，地藏0.3%，外界民0.4%，妖怪6%，座敷童子1%）
+	# 宗教构成（博丽风俗65%，东乘佛教17%，东派道教18%）
+	# 心绮楼「东乘佛教C分布」
+		# th_shingiro 河流 城市 「面灵气A聚居」「付丧神A聚居」
+		# th_rouzen_dori 
+		# th_gakuya_yokocho 河流 集镇
+		# th_kenbutsuse_mae 河流
+		# th_noh_stage 河流
+		# th_dougu_kata 河流
+	# 能面长廊「东乘佛教C分布」
+		# th_hashigakari 大河 集镇 
+		# th_men_nagaya 大河 「面灵气A聚居」「付丧神A聚居」
+		# th_streetcorner_well
+		# th_nagaya_ura_roji 集镇
+		# th_mokuzai_tsubo_ba
+	# 梦境大祀殿（此地点人口单独设定为（12%仙人，22%妖精，12%付丧神，9%妖怪，42%村落外人类））「东派道教A分布」
+		# th_muden_daishibyo_shibyo_honden 河流 集镇
+		# th_muden_daishibyo_chinmin_chi
+		# th_muden_daishibyo_musen_no_dan 河流 集镇
+		# th_muden_daishibyo_seimu_no_kane
+		# th_muden_daishibyo_yume_kaeri_sando 河流
+		# th_muden_daishibyo_kisen_bunryu 河流
+# 以下命莲寺地区(人口系数x1.35)（主流文化，村落人类，妖怪）（主体人口：妖精32%，妖怪17%。，魔法使2%，村落人类35%，村落外人类10%，妖虎4%，妖兽10%，山彦6%，貉妖3%，外界民0.5%，丰穰民1.5%,天狗0.7%，付丧神4%，念缚灵5%。地缚灵3.1%，僵尸1.4%。幽灵2.5%）
+	# 宗教构成（博丽风俗65%，东乘佛教17%，东派道教18%）
+	# 命莲寺（）
+		# th_myourenji_hondo 城市
+		# th_myourenji_kyozo
+		# th_myourenji_shugyo_dojo 大河
+		# th_myourenji_teien 大河 集镇
+		# th_myourenji_saidou
+		# th_myourenji_sobo 集镇
+		# th_myourenji_shoro
+	# 妖怪狸之森（31%的妖貉聚居，其余按照命莲寺的人口分布，没有人类和丰穰民，外界民分布）
+		# th_bake_danuki_forest 河流
+		# th_shape_shifting_avenue
+		# th_fude_brush_shrine_gate 集镇
+		# th_leaf_coin_market 大河 集镇（妖貉聚居）
+		# th_human_village_backdoor_hill 河流
+		# th_tanuki_belly_drum_theater
+		# th_one_night_inn_signpost
+	# 命莲寺北部（）
+		# th_myouren_temple_north_district
+		# th_lotus_sutra_stone_path 大河
+		# th_unzans_nap_rock 河流
+		# th_belfry_of_dawn_chant
+		# th_abbots_private_meditation_grove 大河
+		# th_sutra_transcription_shed 大河 集镇
+		# th_lantern_lit_memorial_hall 集镇
+	# 圣辇船
+		# th_lotus_bow_deck
+		# th_unzans_cloud_berth 集镇 大河
+		# th_mandala_guest_hall
+		# th_monk_quarters_cell_block
+		# th_nazrin_s_treasure_hold
+		# th_dragon_protector_prow
+	# 春侍之丘（15%妖兽聚居，其余按照命莲寺的人口分布，没有人类和丰穰民，外界民分布）
+		# th_zansetsu_no_michi
+		# th_zansetsu_no_michi_yosetsu 大河
+		# th_zansetsu_no_michi_setpi_iwa 河流
+		# th_zansetsu_kairo
+		# th_harumachi_no_oka 河流
+	# 宝塔禅林（23%的妖虎妖兽聚居，其余按照命莲寺的人口分布，没有人类和丰穰民，外界民分布）
+		# th_tora_no_maru_hoshi
+		# th_tora_no_maru_hoshi_hoto_rin 集镇 河流
+		# th_tora_no_maru_hoshi_shiren_no_iwaya 河流
+		# th_tora_no_maru_hoshi_kokyo_seki 河流
+		# th_tora_no_maru_hoshi_junsan_dou 河流
+	# 妖怪里参道（妖怪聚居，其余按照命莲寺的人口分布。没有人类和丰穰民，外界民分布）
+		# th_yokai_ri_sando 河流
+		# th_hyakki_yakou_zaka 河流 集镇
+		# th_sando_yomu_kairo 河流 集镇
+		# th_sando_rimon_kekkai 河流
+		# th_myourenji_west_mon 河流
+	# 小伞铁匠铺
+		# th_kogasa_blacksmith 大河 集镇
+		# th_datie_street 大河
+		# th_ironstock_pile 大河
+		# th_grindstone_bench
+		# th_old_locust_tree 大河
+	# 命莲寺参道
+		# th_myorenji_sando
+		# th_myouren_sando_ishidan 大河
+		# th_myouren_hill_mon 河流
+		# th_myourenji_sando_kiyotaki_bashi 集镇 河流
+		# th_kyuukei_sekidou
+	# 静寂森林
+		# th_silent_forest 集镇
+		# th_silent_forest_mufurin 大河
+		# th_silent_forest_mokugosha_kyoboku
+		# th_silent_forest_jakko_koken
+		# th_silent_forest_seichishi_mizuumi
+	# 高速浮游艇
+		# th_high_speed_hovercraft_launch_deck
+		# th_high_speed_hovercraft_hangar_maintenance_bay 集镇
+		# th_high_speed_hovercraft_high_speed_taxiway
+		# th_high_speed_hovercraft_emergency_landing_zone
+		# th_high_speed_hovercraft_weather_observation_post 大河
+	# 天空遗迹
+		# th_sky_ruins 集镇
+		# th_floating_foundation_stones 大河
+		# th_broken_bridge_corridor 大河 集镇
+		# th_hanging_garden_ruins 大河
+		# th_sky_ruins_sea_of_clouds_edge
+# 以下为铃兰花海地区（人口系数x0.95）（主流文化，人偶）（主体人口：植物妖精63%，人偶27%，妖怪7%，现象妖精10%，季节妖精5%）
+	# 宗教组成「博丽风俗」	
+	# 铃集之丘
+		# th_bell_gathering_hills_main 河流 集镇
+		# th_rappaccini_poison_garden 河流 
+		# th_bell_hills_patchwork_stage 河流
+		# th_court_of_oblivion_main 河流
+		# th_court_of_oblivion_tailoring_bench 河流
+	# 铃兰花海
+		# th_suzusuzu_stage_main 河流
+		# th_lily_sea_old_path
+		# th_lily_sea_finale_theater 河流 集镇 「人偶A聚居」
+		# th_lily_sea_border_hedge 河流
+		# th_memory_lily_hill 河流
+		# th_eternal_slumber_lily_hill 河流
+# 以下为太阳花田地区（总体系数x0.95）（主流文化，妖怪）（主体人口：植物妖精54%，妖怪17%，幽灵8%，骚灵10%，季节妖精8%，现象妖精10%，人偶5%，妖兔4%）
+	# 宗教组成「博丽风俗」	
+	# 太阳花田
+		# th_garden_of_the_sun 城市 「妖怪聚居」「人偶A聚居」
+		# th_garden_of_the_sun_cottage 河流
+		# th_garden_of_the_sun_sundial 大河 集镇「妖精A聚居」
+		# th_garden_of_the_sun_maze 河流
+		# th_garden_of_the_sun_corridor 河流
+	# 日落原野
+		# th_sunset_plain_main
+		# th_sunset_plain_watchtower
+		# th_sunset_plain_grass_sea 河流
+		# th_sunset_plain_forest 河流
+		# th_sunset_port 集镇 河流
+		# th_sunset_harbor_observatory
+		# th_twilight_mist_flower_field
+	# 露天舞台「妖兔聚居」「骚灵聚居」「幽灵聚居」
+		# th_flower_field_open_air_stage_main 大河 
+		# th_flower_field_echo_wall 集镇「妖精A聚居」
+		# th_flower_field_fairy_stands
+		# th_flower_field_backstage
+		# th_primordial_flower_sea
+		# th_flower_tide_wharf 大河 集镇（妖精聚居点）
+		# th_stardust_flower_cape 大河
+	# 日光浴场
+		# th_sunbathing_beach_parasol
+		# th_nightshade_sea 河流
+		# th_sunbathing_beach_nectar_spring 大河
+	# 梦幻之地（单独设定人口其中13%的恶灵，8.6%魔法使，1.6%不可名状）
+		# th_dreamland 河流 集镇
+		# th_dream_world_stardust_plain 河流
+		# th_dreamland_border
+		# th_dreamland_limbo_spiral 河流
+		# th_slumber_coral_reef 河流
+	# 梦幻馆
+		# th_mugenkan_main_hall 集镇
+		# th_mugenkan_wonderland_garden 河流
+		# th_mugenkan_fantasy_wasteland 河流
+		# th_yuuka_bedchamber
+		# th_mugenkan_sleeping_terror_chamber
+		# th_blood_lake_reflection_hall
+		# th_yuuka_mansion_balcony 集镇 大河
+# 以下血之湖地区（人口系数x1.02）（主流文化，吸血鬼）(主体人口：妖精32%，恶魔17%，吸血鬼23%，天使1.8%，妖怪2.3%，魔物8%，魔法使3.3%)
+	# 血之湖「吸血鬼聚居」
+		# th_lake_of_blood_vampire_pier
+		# th_blood_phoneme_corridor
+		# th_blood_dried_pass
+		# th_mugenkan_erosion_beach
+		# th_mugenkan_boiler_room 集镇 河流
+		# th_final_dream_rainbow_bridge
+# 以下梦幻世界地区（人口系数x1.10）（主流文化，恶魔）(主体人口：妖精25%，恶魔32%，吸血鬼5%，天使7%，妖怪2.3%，魔物12%，恶灵12%，魔法使2.5%，梦之住人5%)
+	# 梦幻世界结界 「恶魔B聚居」
+		# th_dream_world_border
+		# th_dream_world_crack_observatory
+		# th_dream_world_evil_pier 大河 集镇 「恶灵B聚居」 
+		# th_unnamed_star 河流  
+		# th_dream_world_silent_garden
+		# th_border_dissolution_point
+	# 梦境厅堂 「恶魔B聚居」
+		# th_dream_world_sisters_boudoir 集镇 「恶魔B聚居」
+		# th_dreamscape_hall 城市「恶魔A聚居」 「天使A聚居」
+		# th_dream_world_mirror_hall
+		# th_dream_world_inverted_spire
+		# th_reversed_border
+		# th_sky_abyss_depths
+	# 哆来咪静修处 「梦之住人A聚居」「恶魔聚居」「魔物B聚居」
+		# th_deep_dream_chamber
+		# th_dreamland_kaian_path
+		# th_dream_soul_pool
+		# th_dream_dweller_market 集镇 「梦之住人A聚居」
+		# th_eternal_spring_dream_theater
+		# th_sunlight_harbor 集镇 大河
+		# th_sunbathing_beach_main 集镇 大河
+	# 珠玉之台
+		# th_gemstone_terrace_dreamland
+		# th_demon_twins_cloister 集镇
+		# th_dream_teardrop_spring
+		# th_crimson_pact_altar
+		# th_gengetsu_solo_stage
+	# 莲之径「恶灵B聚居」「魔法使B聚居」
+		# th_lotus_pathway_dreamland 河流
+		# th_nameless_lake_shore 河流
+		# th_dreamland_foam_outpost
+		# th_phantom_morning_mist_plain 大河 集镇「恶灵B聚居」 「魔法使B聚居」
+		# th_lotus_shadow_beach
+		# th_dreamland_border_fault
+		# th_phase_folding_square
+		# th_phantom_plain
+# 以下为工程师之国地区（人口系数x1.08）（主流文化，旧幻想乡人类）（主体人口：旧幻想乡人类21%，村落人类39%，妖精25%，不可名状1.7%，妖怪7%，付丧神2%，幽灵2%）
+	# 宗教组成「博丽风俗」	
+	# 里香邸
+		# th_rika_mansion_hall 城市
+		# th_rika_tank_hangar 集镇
+		# th_nameless_dream_well
+		# th_rika_eastern_border_outpost
+		# th_rika_turbine_test_stand
+		# th_rika_rooms
+	# 幻野
+		# th_eternal_night_plain
+		# th_border_wilderness
+		# th_phantom_foam_hill
+	# 战车工厂
+		# th_rika_tank_factory_hall 集镇
+		# th_tank_final_assembly
+		# th_eastern_country_line_3
+		# th_turbine_test_stand 河流
+		# th_engine_development_room
+		# th_engine_oil_black_lake
+	# 战车坟场「付丧神A聚居」
+		# th_tank_graveyard
+		# th_rika_prototype_grave
+		# th_eastern_country_abandoned_line 河流 集镇
+		# th_rika_shotdown_zone 河流 
+		# th_turbine_barrow
+	# 异空「不可名状A聚居」「妖怪A聚居」「幽灵A聚居」
+		# th_anomalous_space_time 河流
+		# th_space_time_turbulence_corridor
+		# th_dimensional_fold_belt 河流
+# 以下朝仓实验室地区（人口系数x1.02）（主流文化，魔法使）（主体人口：魔法使21%，恶魔10%，旧幻想乡人类10%，不可思议1.8%，妖怪4%）
+	# 宗教组成「科学论」	
+	# 朝仓实验室
+		# th_abandoned_magic_room 集镇
+		# th_crystal_computer_array
+		# th_asakura_laboratory_room
+		# th_me_controller_core 集镇
+		# th_crystal_growth_chamber
+		# th_asakura_laboratory_tech_room
+	# 异「不可思议A聚居」「妖怪A聚居」
+		# th_evil_eye_gaze_corridor
+		# th_resonance_fissure
+		# th_dream_realm_path
+# 以下为卡娜安娜贝拉尔的洋馆地区（人口系数x1.01）（主流文化，骚灵）（主体人口：骚灵45%，妖精40%，恶魔2%，恶灵4%，魔法使1.5%）
+	# 宗教组成「博丽风俗」	
+	#卡娜安娜贝拉尔的洋馆
+		# th_kana_mansion_main 河流 集镇 「骚灵A聚居」
+		# th_kana_maidens_blank_bedroom
+		# th_kana_faded_memory_foyer 河流
+		# th_kana_sighing_corridor 河流
+		# th_phantom_banquet_hall
+# 以下为爱莲魔法店地区（人口系数x1.06）（主流文化，魔法使）（主体人口：魔法使24%，妖精33%，恶魔3%，魔物17%,旧幻想乡人类25%）
+	# 宗教组成「博丽风俗」	
+	# 爱莲魔法店
+		# th_fluffy_ellen_magic_shop_main
+		# th_fluffy_ellen_magic_masion_main
+		# th_fluffy_ellen_magic_shop_room 集镇 河流 「魔法使A聚居」「恶魔B聚居」
+		# th_socrates_philosophy_bone_room 集镇 「魔物聚居」
+		# th_ellen_walking_teacup_garden 河流
+	# 明罗道场「旧幻想乡人类A聚居」
+		# th_meira_dojo_main 河流 集镇 
+		# th_fumairoku_archive_location 河流
+		# th_meira_dojo_masion 河流
+		# th_cut_bonds_testing_stone 河流
+		# th_meira_no_thought_sword_steps 河流
+# 以下为博丽旧社地区（人口系数x1.0）（主流文化，旧幻想乡人类）（主体人口：旧幻想乡人类60%，妖精25%）
+	# 宗教组成「博丽风俗」	
+	# 紫野
+		# th_murasakino_location
+		# th_inverted_murasaki_bamboo 大河
+		# th_old_cutoff_sanzu_river 河流
+		# th_old_prototype_gap_corridor 河流
+		# th_old_shigan_port 大河
+		# th_old_higanbana_cliff 大河 集镇
+	# 博丽旧社「旧幻想乡人类聚居」
+		# th_old_reimu_old_trace
+		# th_old_outer_world_junk_pile
+		# th_kana_anaberal_masion_hidden
+		# th_hakurei_roofless_honden 城市
+		# th_hakurei_old_sando 河流
+	# 通往魔界的洞穴「妖精A聚居」「魔界民A聚居」「恶魔A聚居」「魔物A聚居」
+		# th_cave_to_makai
+		# th_elis_smuggle_path 大河
+		# th_secret_stream_to_harbor
+		# th_wonderland_port_forgotten 大河 集镇
+		# th_hakurei_abandon_shrine_old
+		# th_sariel_waiting_pavilion 河流
+	# 博丽旧社庭院
+		# th_old_hakurei_shrine_torii_labyrinth 河流
+		# th_hakurei_old_shrine_garden 河流 集镇
+		# th_green_landscape_islands 河流
+		# th_old_hakurei_asetic_path 大河 集镇
+	# 博丽后山
+		# th_hakurei_back_mountain 河流
+		# th_hakurei_former_miko_grave_mound 河流
+		# th_hakurei_lake_upper_valley 河流
+		# th_old_tree_hakurei_shinbaku
+		# th_hakurei_trial_slope 河流
+	# 梦幻遗迹（单独设定23%外界民，15%旧幻想乡人类，23%妖精，魔法使2%）
+		# th_illusionary_ruins_main 集镇
+		# th_inception_mirror_layer
+		# th_ruins_convergence_point
+		# th_dream_diary_corridor
+		# th_illusionary_ruins_outdoor
+# 以下为静寂神殿地区（人口系数x1.0）（主流文化，鬼族）（主体人口：鬼族12%，恶灵25%，妖精31%，恶魔10%，魔法使10%，亡灵12%，妖怪4%，吸血鬼2%,镜付丧7%，怨灵8%）
+	# 宗教组成「东乘佛教78%，博丽风俗22%」	
+	# 往昔地狱之扉 「博丽风俗C分布」
+		# th_former_hell_gate
+		# th_sin_flame_furnace 河流
+		# th_old_grudge_precipitation_pool 河流 集镇 「怨灵A聚居」「亡灵A聚居」
+		# th_sin_flame_man_room
+	# 静寂神殿「鬼族B聚居」
+		# th_astral_approach_main 城市
+		# th_astral_approach_konngara_dojo
+		# th_masterless_buddha_altar
+		# th_child_attendant_cell
+		# th_silent_bell_tower
+		# th_silent_sanctuary_main
+	# 炎之腐界「镜付丧A聚居」「博丽风俗C分布」
+		# th_impure_flame_shrine 大河
+		# th_flame_core_abyss_outdoor 河流
+		# th_kikuri_abode_main 河流
+		# th_flame_festering_lake 大河
+		# th_silent_sanctuary_vestibule 河流 集镇
+		# th_flame_core_abyss
+		# th_old_hig_port 大河 集镇
+	# 祠「魔法使B聚居」「博丽风俗C分布」
+		# th_nameless_jizo_shrine
+		# th_time_rot_rain_shrine
+		# th_hungry_ghost_offering_shrine
+		# th_inverted_pillar
+# 以下为时空旅人地区（人口系数x1.0）（主流文化，外界民）（（主体人口：外界民27%，旧幻想乡人类23%，妖精25%，魔法使2%）
+	# 宗教组成「科学论」	
+	# 可能性移动飞船
+		# th_yumemi_okazaki_probability_ship
+		# th_quantum_logic_bridge
+		# th_internal_transit_tunnels 集镇
+		# th_specimen_chamber_of_fantasy_beings
+		# th_docking_port_for_the_impossible
+		# th_main_engineering_bay 城市
+	# 冈崎研究室 「外界民B聚居」
+		# th_yumemi_molecular_biolab 集镇
+		# th_genome_of_magic_sequencing_hall
+		# th_himera_cultivation_vats
+		# th_protein_synthesis_of_spell_casting
+	# 冈崎工厂
+		# th_yumemi_arms_factory_hall 集镇
+		# th_law_breaching_forge
+		# th_armor_plating_press
+		# th_yumemi_arms_factory_advanced
+	# 冈崎附魔研究室
+		# th_yumemi_magical_arsenal
+		# th_weaponized_theorem_case_files
+		# th_spell_card_analysis_and_replication_lab 集镇
+		# th_enchantment_assembly_line
+# 以下为龙宫地区（人口系数x1.12）（主流文化，天人）（（主体人口：天人75%，妖精25%）
+	# 宗教组成「东派道教」
+	# 龙宫
+		# th_dragon_palace 
+		# th_grove_jade_shell_beach 大河
+		# th_ikus_house 城市
+		# th_celestial_dragon_forbidden_place 大河
+		# th_sea_world_reflecting_pool 大河
+		# th_palace_xuanhai_main_hall 大河 城市
+		# th_palace_rain_prayer_altar 大河
+		# th_sea_pacifying_stele 大河
+	# 要石之港
+		# th_keystone_port 集镇
+		# th_floating_clouds_seaside
+		# th_dense_fog_shore
+		# th_eye_of_storm
+		# th_jade_capital_terrace_main
+		# th_terrace_milky_way_waterfall
+	# 雷霆露台
+		# th_thunder_swimer_neighbourhood 集镇
+		# th_imperial_dragon_hills
+		# th_lightning_fork
+		# th_thunder_zone
+		# th_dragon_breathe
+	# 要石工厂
+		# th_tribulation_tempering_field
+		# th_hinanawi_meteorological_bureau 集镇
+		# th_aurora_exhibition
+		# th_hermit_home
+		# th_isolated_archipelago
+	# 天界高堂
+		# th_heavrn_high_hall
+		# th_high_port 集镇
+		# th_pure_clean_cloud
+		# th_first_celestial
+		# th_mirror_jian_xin_yu
+# 以下为天界地区（人口系数x1.15）（主流文化，天人）（（主体人口：天人69%，妖精28%）
+	# 宗教组成「东派道教」
+	# 天界
+		# th_center_of_heaven
+		# th_ping_heaven_door
+		# th_celestial_realm_tong_ming_ge 集镇
+		# th_heart_of_keystone
+		# th_floating_isles_zhe_xian_ju
+	# 蟠龙之峰
+		# th_horn_fragon_village 大河 
+		# th_flood_dragon_port 大河 集镇
+		# th_jade_dragon_mountain 大河
+		# th_coiled_dragon_mountain 大河
+		# th_coiled_dragon_peak_pool 大河
+	# 天人市镇
+		# th_celestia_village 集镇
+		# th_first_peach_garden 大河
+		# th_rainy_cloud_grassland 大河
+		# th_seven_celestial_maiden_avenue
+		# th_celestial_isles_yuqing_que
+	# 翡翠村落
+		# th_jade_village_qingxiao 集镇
+		# th_jade_city
+		# th_jade_village
+		# th_watari_kairou
+		# th_diamond_quarry
+	# 春之云
+		# th_rainbow_factory
+		# th_rain_storm_command
+		# th_lightning_storm_port
+		# th_plain_in_sunshine
+		# th_kenten_kyouko
+	# 有顶天
+		# th_unhouten
+		# th_unlimited_void
+		# th_infinite_consciousness_sphere
+		# th_nothing_realm
+	# 向风之国
+		# th_flower_land
+		# th_vulcano_cloud
+		# th_nutmeg_land
+		# th_parrot_cloud
+	# 比那名居邸
+		# th_hinanawi_mansion 城市
+		# th_jade_avenue
+		# th_private_peach_garden
+		# th_nawi_shrine
+		# th_nayori_residence_stone
+	# 草木园地
+		# th_elixir_workshop 集镇
+		# th_peach_garden_for_banquet
+		# th_fishing_spot_on_clouds
+		# th_celestial_activity_center
+# 以下为仙界地区（人口系数x1.00）（主流文化，村落外人类，仙人）（（主体人口：村落外人类35%，仙人19%,僵尸14%）
+	# 宗教组成「东派道教」
+	# 神灵庙 
+		# th_divine_spirit_mausoleum 城市 「仙人A聚居」
+		# th_mikos_room
+		# th_private_dojo
+		# th_outer_world_path
+		# th_hall_of_two_sages_hearing
+	# 太子冥想室
+		# th_mikos_meditation_house
+		# th_house_of_sanshi 河流
+		# th_four_monkey_backyard 集镇 大河
+		# th_ancient_moon_garden 河流
+	# 丹鼎研制场
+		# th_development_site_of_alchemical_cauldron 集镇 「仙人B聚居」
+		# th_hill_of_fire
+		# th_forest_of_xun
+		# th_thousands_souls_prison
+		# th_mercury_and_cinnabar_refinery
+	# 古老洞窟
+		# th_cave_of_gen
+		# th_buried_bone_buddha_hall
+		# th_revive_cave
+		# th_broken_soul_calming_door
+	# 雷鸣之林
+		# th_thunder_forest
+		# th_fidelity_peak
+		# th_soga_barrier
+		# th_sects_town 集镇 「村落外人类B聚居」
+		# th_lightning_struck_cedar_grove
+	# 方士术场
+		# th_alchemists_venue
+		# th_eye_of_desires
+		# th_exploitation_workshop 集镇 「仙人聚居」
+		# th_hover_sword_ridge
+	# 风水藏书阁
+		# th_kalpa_pass
+		# th_mononobe_scripture_depository
+		# th_original_fire_pavilion 集镇
+		# th_fengshui_steppe
+		# th_feng_shui_puppet_rehearsal_stage
+	# 仙人道场
+		# th_immortal_dojo_main
+		# th_river_of_kan
+		# th_disciple_village 集镇
+		# th_deep_forest_of_immortals_realm
+# 以下为邪仙界地区（人口系数x1.00）（主流文化，仙人，僵尸）（（主体人口：村落外人类25%，仙人21%,僵尸29%）
+	# 宗教组成「东派道教」
+	# 太子布道室
+		# th_mikos_sermon 集镇
+		# th_pure_heart_pavilion 河流
+		# th_wordless_stele_valley 河流
+		# th_pass_of_li
+		# th_viewing_platform_of_the_true_gate 河流
+		# th_echo_of_ten_arguments_pillars 河流 集镇
+		# th_mikos_sermon_gate
+		# th_cup_of_enlightenment_tea_service
+	# 梦殿
+		# th_dream_palace 城市 大河
+		# th_immortal_ascension_terrace
+		# th_time_stop_tower 河流
+		# th_mountain_of_dui 河流
+	# 老君庙
+		# th_lotus_pool
+		# th_laojuns_temple 集镇 大河
+		# th_jade_pavilion 河流
+		# th_yinyang_dormitory 河流
+		# th_cauldron_of_chaos_altar
+		# th_purple_gold_crucible
+	# 隐士之山
+		# th_mountain_of_hermits
+		# th_borken_axe_forest 大河
+		# th_land_of_qian
+		# th_wu_ling
+	# 白银村落
+		# th_silver_village 集镇
+		# th_cinnabar_plain 河流
+		# th_forest_of_zhen 河流
+		# th_lead_power_suburb 河流
+		# th_five_metal_shrine 河流
+# 以下为宫古之扉地区（人口系数x0.96）（主流文化，僵尸，仙人）（（主体人口：村落外人类35%，仙人10%,僵尸36%，付丧神25%，河童4%）
+	# 宗教组成「东派道教75%，东乘佛教25%」
+	# 山河绘卷 「东乘佛教A分布」
+		# th_cableway_of_divine_spirit_mausoleum 河流
+		# th_kappas_shinbutsushugou 河流 集镇「河童A聚居」
+		# th_echo_of_yamabiko 河流
+		# th_road_of_virtue
+		# th_mountains_rivers_scroll 河流
+		# th_ascension_pillar_transfer 河流
+	# 宫古之扉
+		# th_gate_of_miyako 集镇 「仙人聚居」
+		# th_recite_poetry_forest
+		# th_wuxings_lawn 河流
+		# th_poisonous_deadbody_riverbank 河流
+		# th_guardian_shikigami_sentry_post
+# 以下为幻梦界地区（人口系数x1.08）（主流文化，恶灵）（（主体人口：恶灵25%，妖精31%，恶魔10%，魔法使16%，幽灵8%，妖怪4%，骚灵9%）
+	# 宗教组成「博丽风俗」
+	# 学徒之家 「魔法使B聚居」
+		# th_apprentice_home 集镇 「魔法使B聚居」「恶魔聚居」
+		# th_marisa_apprentice_workshop
+		# th_dreamrealm_student_danmaku_field
+		# th_magic_resonance_tower 集镇 「魔法使B聚居」
+		# th_mima_teaching_chamber
+	# 灵魔殿 「恶灵A聚居」
+		# th_dreamrealm_reima_den_main_hall 城市 「恶灵A聚居」
+		# th_soul_binding_chamber 集镇 「幽灵B聚居」「骚灵B聚居」
+		# th_mima_throne_room
+		# th_cult_library
+		# th_witch_pact_chamber
+		# th_dream_realm_gaze_dome
+	# 幻梦界中心 「魔法使B聚居」
+		# th_dream_realm_center 大河
+		# th_border_harmony_chamber 大河
+		# th_witches_gathering_square 集镇 河流
+		# th_star_moon_prophecy_tower
+		# th_spell_weaving_atelier 集镇
+	# 幻梦界之扉
+		# th_dream_realm_gate
+		# th_moonbow_bridge_market 集镇 「妖怪B聚居」
+		# th_dream_pet_market
+		# th_spellbook_bazaar
+# 以下人间之里外部地区(人口系数x1.15)（主流文化，村落人类）（（总和主体人口，村落人类39%，村落外人类10%，付丧神10%，乐器妖9%，妖怪5%，妖犬5%，妖兔12%，幽灵3%，外界民0.2%，月之民-永远亭0.1%）
+	# 宗教组成「博丽风俗」
+	# 柳下运河 「村落人类A聚居」「村落外人类A聚居」
+		# th_dullahan_path 河流
+		# th_toll_gate
+		# th_kogasas_house
+		# th_house_of_seiran_and_ringo 集镇 「月之民-永远亭A聚居」「妖兔A聚居」
+		# th_aqueduct 河流
+		# th_house_of_seiran_and_ringo2 集镇 「月之民-永远亭A聚居」「妖兔A聚居」
+		# th_weeping_willow_promenade 河流
+		# th_washwomen_s_steps
+	# 狼人竹林「妖兔B聚居」「妖犬A聚居」
+		# th_kagerou_house 集镇
+		# th_abandoned_werewolf_mansion 大河
+		# th_yasumizu_village 集镇
+		# th_lykaion_mountain
+		# th_moon_touched_clearing 河流
+		# th_bane_herb_garden 大河
+	# 排练场地「村落外人类B聚居」「乐器妖A聚居」「付丧神A聚居」「骚灵B聚居」
+		# th_triangular_prism_plain 河流 集镇
+		# th_french_horn_meander 河流
+		# th_violoncello_embankment 河流
+		# th_synthesizer_avenue ##与秘封俱乐部接壤
+		# th_harp_string_valley 河流
+		# th_flute_bamboo_grove
+	# 演奏场地「乐器妖A聚居」「付丧神A聚居」「骚灵B聚居」
+		# th_first_performance_stage 集镇 大河
+		# th_xylophone_hill 河流
+		# th_requiem_plain 河流
+		# th_piano_throne 河流
+		# th_timpani_hillocks
+		# th_echo_chamber_cavern 大河
+# 以下妖怪之山地区(人口系数x1.17)（主流文化，鸦天狗）（主体人口：鸦天狗12%，白狼天狗24%，山伏天狗13%，鼻高天狗13%，妖精7%，河童12%，山童7%，山女郎0.7%，管狐15%，妖怪8%，天龙5%，山彦2%，妖兽8%，不可名状0.3%，仙人0.2%）
+	# 宗教组成「山」
+	# 伊奘诺洞穴「大百足A聚居」
+		# th_izanagi_mine 集镇 河流 「大百足A聚居」
+		# th_rapid_reaction_force_barrision
+		# th_zenkoji_temple
+		# th_izanagi_mountain 河流
+		# th_izanagi_mine_misogi_spring
+	# 天狗聚落 「鸦天狗A聚居」「河童B聚居」「山童B聚居」
+		# th_tengu_capital 大都会 大河
+		# th_tenma_hall_main 城市 河流
+		# th_tenma_hall_crow_platform 河流
+		# th_michigami_shirine 河流
+		# th_village_of_high_nose_tengu 集镇
+		# th_tengu_settlement_onigawara 集镇
+		# th_tengu_artisan_quarter 城市
+	# 鞍马山
+		# th_kurama_news_press 城市 河流 「鸦天狗B聚居」
+		# th_forbbiden_top 河流
+		# th_kurama_mountain_main 河流
+		# th_kurama_mountain_tengu_grove 河流
+		# th_kurama_mountain_ibuki_waterfall 河流
+		# th_hatate_news_press 集镇 「鸦天狗B聚居」
+		# th_bunbun_news_press 集镇 「鸦天狗B聚居」
+	# 妖怪山顶
+		# th_crow_tengu_tea_party 河流
+		# th_stargazing_zpot
+		# th_snow_covered_mountain_top 河流
+		# th_ownerless_market 集镇
+		# th_youkai_mountain_top 河流
+		# th_ayas_mansion
+		# th_hatates_mansion
+		# th_mountain_summit_approach
+	# 山间要塞
+		# th_mountain_stronghold 河流
+		# th_white_wolfs_fortress_complex 集镇 河流
+		# th_spy_center
+	# 封兽降临地「不可名状A聚居」
+		# th_houjuus_arrival
+		# th_unknown_forbbiden_area
+		# th_worship_mountain_path
+		# th_temples_blockade_zone
+	# 青娥藏匿地「仙人A聚居」
+		# th_hidden_place_of_seiga
+		# th_evil_immortal_world 集镇 
+		# th_seigas_mansion
+		# th_wraith_path
+		# th_lonely_grave
+	# 虹龙洞「大百足B聚居」
+		# th_entrance_of_rainbow_dragon_cave
+		# th_dragon_balls_mine
+		# th_non_oxygen_pass
+		# th_momoyos_cave 集镇 「大百足B聚居」
+		# th_end_of_rainbow_dragon_cave
+	# 鸦天狗辖区「管狐B聚居」
+		# th_crow_forest
+		# th_no_vacation_editorial_office
+		# th_village_of_crow_tengu 城市
+		# th_black_feather_secret_way
+		# th_iizunamarus_mansion 集镇  「管狐B聚居」
+		# th_iizunamarus_mountain 「管狐B聚居」
+	# 月虹市场
+		# th_high_sky_on_the_top
+		# th_moon_rainbow_market 集镇
+		# th_chimatas_holy_mansion
+		# th_rainbow_valley 大河
+		# th_tenkyu_avenue 河流
+		# th_shiro_mine_main 大河
+	# 天狗营垒
+		# th_tengus_fortification
+		# th_maple_forest
+		# th_orichalcum_mine
+		# th_cableway_terminal
+		# th_encampment_mountain_range_pass
+	# 白狼天狗辖区
+		# th_village_of_white_wolf 集镇 河流 「白狼天狗B聚居」
+		# th_wild_colosseum
+		# th_momiji_room
+		# th_doggy_food_street 集镇 河流
+		# th_wolf_tengu_waterfall
+		# th_white_wolf_tengu_dojo 河流
+	# 天狗前哨
+		# th_tengu_outpost
+		# th_white_wolf_watch_tower 河流
+		# th_mountain_fortress 河流
+		# th_hillside_village 集镇 河流 「白狼天狗B聚居」
+		# th_tengu_outpost_plank_road
+		# th_tengu_outpost_boundary_stone
+	# 天狗镜原
+		# th_tengu_mirror_pond_main 大河
+		# th_kami_pond_abyss 大河
+		# th_silent_plankway 河流
+		# th_purity_filth_spring 大河
+		# th_take_oyama_main 大河
+	# 南之二岳
+		# th_hikosan_main 河流
+		# th_omine_san_main 大河
+		# th_southern_second_peak_pass 
+		# th_weeping_wind_canyon 大河
+		# th_omine_san_ancient_path 大河
+		# th_omine_san_guardian_forest 大河
+	# 九天瀑布
+		# th_waterfall_of_nine_heavens 河流
+		# th_white_wolf_barracks 大河 集镇 「白狼天狗B聚居」
+		# th_water_curtain_cave 大河
+		# th_kaer_morhen_stone 河流
+		# th_atago_san_main 河流
+	# 牡丹园
+		# th_peony_garden 河流 集镇
+		# th_peony_pool 河流
+		# th_throns_trail
+		# th_shadow_of_right_arm 河流
+		# th_peony_garden_mound
+# 以下圣域地区(人口系数x1.00)（主流文化，山佬）（主体人口：植物妖精32%，妖精18%，山佬55%）
+	# 宗教组成「山」
+	# 山佬棚屋
+		# th_yamaubes_hut 集镇 河流 「山姥聚居」
+		# th_ubames_mansion
+		# th_chimi_enclosure
+		# th_sanctuaries_avenue 河流 集镇 「山姥聚居」
+		# th_shack_stone_garden
+	# 浅间净秽山
+		# th_narekos_pass
+		# th_petrochemical_thorns_hole
+		# th_orange_warp_gate
+		# th_no_deer_hunt_ground 河流
+	# 浅间净秽山深处
+		# th_ninas_room 河流
+		# th_four_seasons_hole 河流
+		# th_zoltaxian_labyrinth 河流 
+		# th_iwanaga_shrine 集镇
+		# th_joue_inverted_pyramid 
+# 以下迷途之家地区(人口系数x1.00)（主流文化，妖怪）（主体人口：妖怪25%，不可名状8%，妖狐8%，妖猫8%，座敷童子12%，外界民5%，妖兽12%，妖精30%，地精17%）
+	# 猫咪村落「妖猫A聚居」「妖狐B聚居」
+		# th_cats_amusement_park 集镇 （妖猫的主要聚居点）
+		# th_orange_clan 河流
+		# th_white_clan 河流
+		# th_black_clan 河流
+		# th_calico_clan
+	# 八云海湾
+		# th_local_port_authority 集镇
+		# th_yakumo_beach
+		# th_zenki_area
+		# th_goki_area 河流
+		# th_yakumo_bay_shiun_misaki
+	# 地精山丘「地精B聚居」
+		# th_surface_forest 河流
+		# th_surface_cave_settlement
+		# th_deep_cave_settlement 河流
+		# th_hidden_air_pocket 河流
+		# th_treasure_chanber 河流 集镇
+	# 八云邸「妖怪B聚居」「妖狐B聚居」「不可名状A聚居」
+		# th_yakumo_mansion 城市 河流
+		# th_first_ward 河流
+		# th_second_ward 河流
+		# th_third_ward 河流
+		# th_forth_ward 河流
+	# 外界之港「外界民A聚居」
+		# th_asia_port 集镇
+		# th_europe_port
+		# th_africa_port
+		# th_north_new_world_port
+		# th_south_new_world_port
+	# 迷途之家
+		# th_chens_room
+		# th_rans_room
+		# th_yukaris_room 集镇 大河
+		# th_lost_courtyard
+	# 夜樱怪道
+		# th_front_mysterious_cherry_blossom_path
+		# th_middle_mysterious_cherry_blossom_path
+		# th_back_mysterious_cherry_blossom_path
+		# th_yosakura_kaidou_sakura_fubuki_sandou
+		# th_yosakura_kaidou_gyaku_ben_gawa 集镇 （43%幽灵，聚居地）
+	# 结界观测中心
+		# th_monitoring_station_of_borders 集镇
+		# th_magical_power_unit_area
+		# th_maintenance_device_area
+		# th_booster_device_area
+	# 座敷童子中心「座敷童子A聚居」
+		# th_zashiki_warashi_dormitory
+		# th_zashiki_warashi_resources_department 集镇
+		# th_north_office_building_complex
+		# th_south_office_building_complex
+		# th_east_office_building_complex
+# 以下幻想风穴地区(人口系数x0.85)（主流文化，土蜘蛛，钓瓶落）（主体人口：白狼天狗0.5%，鸦天狗0.4%，土蜘蛛22%，幽灵21%，地灵49%，钓瓶落10%，地狱妖精12%，鬼族5%，巡骨妖8%,古笼火7%，妖怪8%）
+	# 宗教组成「博丽风俗70%，山30%」
+	# 妖怪之山温泉「鸦天狗A聚居」「白狼天狗A聚居」「山A分布」
+		# th_springs_bath_mixed 河流 集镇
+		# th_springs_vent_steam 河流
+		# th_springs_room_tengu
+		# th_springs_nest_egg
+		# th_springs_recovery_vip 河流
+	# 隐蔽之丘「地灵B聚居」 「山A分布」
+		# th_old_hell_hidden_hill 河流
+		# th_hill_den_stray
+		# th_hill_bazaar_rust
+		# th_hill_den_stray_street 河流 集镇 「地灵B聚居」
+	# 幻想风穴「土蜘蛛B聚居」「山A分布」
+		# th_kazaana_yamame_web 集镇
+		# th_yamame_bridge_web
+		# th_yamame_shaft_vent
+		# th_kazaana_hidden_eye
+		# th_kazaana_webway
+	# 地底集镇「地灵B聚居」「山A分布」
+		# th_hamlet_mine_fluorite
+		# th_dregs_tunnels_safe
+		# th_settlement_labor_market 集镇 
+		# th_hamlet_earth_spirit 集镇 「地灵B聚居」
+		# th_great_stalactite_market
+	# 间歇泉小道
+		# th_old_hell_geyser_trail 河流
+		# th_trail_marsh_entrance
+		# th_trail_pillars_jet 河流
+		# th_trail_crystal_sulfur 集镇 「土蜘蛛B聚居」「钓瓶落B聚居」
+		# th_trail_fissure 河流
+		# th_trail_stones_spring
+	# 大温泉
+		# th_onsen_gate_neon 河流
+		# th_onsen_pool_hellfish 河流
+		# th_onsen_street_market 河流 集镇
+		# th_onsen_bath_goka 河流
+		# th_onsen_pool_seishin 河流
+		# th_crystal_hum_sauna_cave 河流
+	# 间歇泉中心
+		# th_old_hell_geyser_core 河流 集镇 「土蜘蛛B聚居」「钓瓶落B聚居」
+		# th_core_lake_boiling
+		# th_core_boiler_abandoned
+		# th_core_interface_power 河流
+# 以下旧都地区（人口系数x0.88）（主流文化，鬼，桥姬）（主体人口：鬼族23%，土蜘蛛15%，幽灵23%，地灵13%，钓瓶落4%，地狱妖精18%，妖怪12%，巡骨妖2%,古笼火3%，桥姬5%）
+	# 宗教组成「博丽风俗」
+	# 阻绝人际之桥「桥姬A聚居」
+		# th_rarely_trodden_bridge 大河 集镇
+		# th_hell_bridge_cottage
+		# th_bridge_spring_envy 大河
+		# th_bridge_bones_nameless
+	# 旧都西大街
+		# th_former_capital_west_avenue 河流
+		# th_hyakki_lanterngate
+		# th_hells_izakaya 集镇
+		# th_west_bookstore_strange 河流 集镇
+		# th_west_shop_tang
+		# th_west_stall_mimei_street 集镇
+	# 旧都中心「鬼族A聚居」
+		# th_former_capital_central_district 大都会 「鬼族A聚居」
+		# th_central_club_hyakki
+		# th_central_boulevard_enma
+		# th_bustling_feast_gakidou
+		# th_central_district_samurai
+		# th_sake_laden_wharf 大河 集镇
+	# 旧都北大街
+		# th_former_capital_northern_district 大河
+		# th_north_camp_ironanvil
+		# th_north_zone_dormitory 大河
+		# th_oni_north_customs_gate
+	# 鬼之町「鬼族A聚居」
+		# th_oni_quarters_street 大河 城市
+		# th_shuten_alley 大河 集镇 「古笼火B聚居」
+		# th_suika_old_house 
+		# th_hoshiguma_bar 大河
+		# th_phantom_lantern_alley
+		# th_oni_harbor_location 大河 集镇
+	# 鬼之糟访「鬼族B聚居」
+		# th_oni_brewery_core 集镇
+		# th_fermentation_blood_pool
+		# th_giant_gourd_aging_hall
+		# th_yeast_wraith_garden
+		# th_oni_drunken_sandbank_market
+	# 鬼之擂台「鬼族B聚居」
+		# th_oni_arena_location 集镇
+		# th_oni_colosseum_location
+		# th_feast_hall_of_victors_and_vanquished
+		# th_silent_bet_den
+		# th_feral_beast_menagerie
+	# 地底的深道「钓瓶落B聚居」「土蜘蛛B聚居」「巡骨妖B聚居」
+		# th_abyssal_tunnel_network
+		# th_bucket_suspension_chasm
+		# th_bucket_suspension_room
+		# th_tear_stalactite_forest
+	# 间歇泉泉眼「钓瓶落B聚居」「土蜘蛛B聚居」「巡骨妖B聚居」「地灵A聚居」
+		# th_geyser_field_surface
+		# th_hell_terraced_springs 集镇
+		# th_geothermal_vein_mine
+		# th_dragon_breath_vent
+		# th_steam_shroud_atoll
+		# th_boiling_tide_channel_port 集镇
+# 以下灼热地区(人口系数x0.75)（主流文化，妖猫，妖鸟）（主体人口：地灵23%，怨灵56%，妖猫23%，妖鸟15%，僵尸妖精13%，地狱妖精5%，觉妖怪0.7%,）
+	# 宗教组成「博丽风俗」
+	# 隐蔽地点「妖猫A聚居」
+		# th_hidden_site_geothermal 河流
+		# th_hidden_cryo_pool 集镇
+		# th_hidden_rin_cache
+		# th_old_hell_hidden_heart 河流
+	# 核融合中心「妖鸟A聚居」
+		# th_nuclear_fusion_center 大河 城市
+		# th_assisted_enhanced_fusion_reactor 大河
+		# th_center_energy_corridors 大河
+		# th_center_ruined_reactor 河流
+		# th_assisted_enhanced_fusion_reactor_computer 大河
+	# 核熔炉「妖鸟A聚居」
+		# th_nuclear_furnace_main 大河
+		# th_americium_isotope_plasma_turbine 大河
+		# th_tungsten_disulfide_manufacturing_site 大河 集镇
+		# th_laser_energy_storage_warehouse 
+		# th_reactor_coolant_circulation_center 大河 集镇
+		# th_implosion_compressor 大河
+	# 遗忘村落
+		# th_forgotten_hamlet 河流 集镇 「地灵B聚居」
+		# th_village_valley_windless
+		# th_village_path_eroded
+		# th_village_lane_bone 河流
+		# th_submerged_foundation_reef
+	# 灼热地狱「怨灵B聚居」
+		# th_blazing_hell_remains
+		# th_hell_tribunal
+		# th_hell_bloodpool 集镇
+		# th_hell_pipes_outer
+		# th_hell_river_slag
+	# 尸体堆放处「怨灵B聚居」
+		# th_corpse_stockpile_center 河流 集镇
+		# th_rin_hell_yard_sorting
+		# th_corpse_zone_compost 河流
+		# th_corpse_corner_appraise 河流
+# 以下地灵殿地区(人口系数x0.85)（主流文化，觉妖怪，妖猫，妖鸟）（（总体人口：觉妖怪3.3%，怨灵25%，地灵15%，鬼族5%，僵尸妖精7%，地狱妖精23%，妖猫11%，妖鸟10%）
+	# 宗教组成「博丽风俗85%，山15%」
+	# 地狱猫憩所「妖鸟A聚居」「妖猫A聚居」
+		# th_hellcats_rest 河流
+		# th_rest_post_scratch 河流
+		# th_rest_door_catcart 河流
+		# th_hellcats_room 河流
+	# 地灵殿 「觉妖怪A聚居」
+		# th_chireiden_entrance_hall
+		# th_chireiden_entrance_hall_main 城市
+		# th_chireiden_vivarium_pet 集镇 「妖鸟B聚居」「妖猫B聚居」
+		# th_chireiden_room_koishi
+		# th_chireiden_room_satori
+		# th_chireiden_library_second 集镇 「觉妖怪A聚居」
+		# th_chireiden_archive_of_overheard_secrets
+		# th_chireiden_whispering_pipe_organ
+		# th_palace_of_the_earth_spirits_second_floor
+	# 地灵殿庭院
+		# th_chireiden_courtyard_heart 集镇 「地狱妖精聚居」
+		# th_courtyard_shrubs_crystal 河流
+		# th_courtyard_path_pet 河流
+		# th_rose_garden_oblivion 河流
+		# th_courtyard_swing_koishi
+		# th_courtyard_dome_sky
+	# 觉的露台
+		# th_chireiden_balcony_satori 集镇 「地狱妖精聚居」
+		# th_balcony_observatory_eye
+		# th_balcony_platform_view
+		# th_dream_dimension_generator
+		# th_cannot_entry_mountain16
+	# 地底大空洞「山C分布」
+		# th_underground_great_hollow
+		# th_hollow_isles_floating
+		# th_hollow_forest_crystal 大河
+		# th_basalt_canyon 大河 集镇
+		# th_hollow_tower_signal
+		# th_ceiling_of_false_stars
+	# 暮光之穴「山A分布」
+		# th_weird_fungus_forest 河流
+		# th_crimson_fungus_forest 
+		# th_cave_pool_spore 
+		# th_cave_forest_crystal 河流
+	# 地底之扉「山A分布」
+		# th_gate_of_the_depths 大河
+		# th_gate_camp_wanderer 集镇 河流 「怨灵聚居」「地灵聚居」
+		# th_crystal_echo_hollow 
+		# th_miasma_sunken_depression 河流
+# 以下月之都地区(人口系数x1.50)（主流文化，月之民）（主体人口：月之民76%，月兔23%，梦之住人15%）
+	# 宗教组成「月人思想100%」
+	# 月都 「月之民A聚居」
+		# th_palace_of_moon 大河 大都会
+		# th_takamagahara 大河 城市
+		# th_royal_guard_garrison
+		# th_kegare_purify_core
+		# th_border_of_lunar_darkside
+		# th_imperial_garden
+		# th_imperial_palace_moonlight_library 大河
+	# 静海「月之民B聚居」
+		# th_sea_of_tranquility
+		# th_sea_of_serenity
+		# th_lunarian_border
+		# th_lunar_rabbit_factory
+		# th_sea_of_tranquility_port 城市 大河
+	# 哆来咪的梦境世界「梦之住人A聚居」
+		# th_morbid_clock_tower
+		# th_ruined_library
+		# th_doremy_palace 集镇
+		# th_blue_warp_gate
+		# th_dreamworld_weavers_plain
+		# th_dreamworld_weavers_island
+	# 月人原野
+		# th_apollo_13_wreckage
+		# th_star_banners_wasteland
+		# th_darkness_of_astronauts
+		# th_yutu_rover_dormancy
+		# th_plains_flowing_glow_river 集镇
+	# 阿波罗经络「梦之住人B聚居」
+		# th_armstong_footstep
+		# th_broken_apollo_11
+		# th_hangtian_barony
+		# th_meridian_monitoring_station 集镇
+		# th_meridian_fuse_boundary
+	# 槐安通道「梦之住人B聚居」
+		# th_first_kai_an_channel
+		# th_second_kai_an_channel
+		# th_passage_floating_life_ferry
+		# th_an_passage_awakening_crevice
+		# th_an_illusory_sea_junction
+		# th_dreamwarden_outpost 集镇
+	# 月兔戍区「月兔A聚居」
+		# th_lunar_rabbit_barrack 集镇
+		# th_lunar_peach_forest
+		# th_lunar_rabbit_farm
+		# th_lunar_rabbit_dormitory_area 城市
+		# th_lunar_rabbit_recycle
+	# 罪人之狱「月兔聚居」
+		# th_change_special_prison
+		# th_princess_prison
+		# th_insurgent_lunar_rabbits_concentration_camp
+		# th_kegare_execution_chamber
+		# th_prison_repentance_well
+	# 绵月宫
+		# th_watatsuki_no_palace 城市
+		# th_toyohime_no_peach_forest
+		# th_watatsuki_no_tranning_ground 集镇
+		# th_yorihime_no_tea_room
+	# 银白之港
+		# th_sliver_white_port 
+		# th_sea_of_clouds 城市
+		# th_sea_of_moisture
+		# th_dark_matter_engine
+# 以下纯化之月地区(人口系数x1.1)（主流文化，纯化民）（主体人口，仙人2%.纯化民15%，地狱妖精65%，月兔10%）
+	# 宗教组成「博丽风俗」
+	# 纯化村落「仙人A聚居」「纯化民A聚居」
+		# th_purely_plain
+		# th_sea_of_fertility 集镇
+		# th_seventy_two_grape_land 城市
+		# th_pure_village 城市
+	# 纯狐根据地
+		# th_bofeng_tomb
+		# th_junkos_base 集镇
+		# th_sea_of_nectar
+		# th_tycho_crater
+	# 危海
+		# th_sea_of_untranquility
+		# th_ocean_of_storms
+		# th_sea_of_cold
+		# th_sea_of_rain
+		# th_sea_of_vapours
+	# 月兔驻屯地「月兔A聚居」
+		# th_copernicus_crater
+		# th_kepler_crater
+		# th_arstarchus_crater
+		# th_lunar_rabbit_rebel_alliance_castle 集镇
+	# 月之民坟冢
+		# th_lunarian_tomb
+		# th_grave_for_amanosagume
+		# th_grave_for_toyotamahime
+		# th_grave_for_tamayorihime
+# 以下小丑之村地区(人口系数x1.1)（主流文化，地狱妖精）（主体人口，地狱妖精100%）
+	# 宗教组成「博丽风俗」
+	# 小丑之村
+	# th_clown_village 集镇
+	# th_red_nose_forest
+	# th_clown_port 集镇
+	# th_lampades_shore
+	# 克劳恩的月面
+	# th_clownpiece_cabin 集镇
+	# th_lunar_yousei_port 集镇
+	# th_hecate_vulcan
+	# th_freighter_cemetery
+	#荒地
+	# th_crescent_bay
+	# th_full_moon_top
+	# th_waning_moon_peninsula
+	# th_lunar_eclipse_port
+	# th_bay_tide_song_lighthouse
+	# th_sage_deadbody_locker
+	# th_kaaba_prototype
+	# th_port_of_the_slain
+	# th_olympos_basin
+	# th_tanguy_island
+	# th_mori_island
+	# th_dali_island
+	# th_isle_non_euclidean_garden
+	# th_lunar_isle_inverted_waterfall
+# 以下魔界地区（人口系数x1.00）（主流文化，魔界民，恶魔，魔法使，）（主体人口：魔法使6%，魔界民45%，妖精24%，魔物25%，恶魔15%，天使3%，旧幻想乡人类10%，恶灵7%，人偶14%）
+	# 宗教组成「博丽风俗」
+	# 不可思议之国「人偶A聚居」
+		# th_doll_heart_tower 集镇
+		# th_red_queen_maze
+		# th_late_rabbit_hole
+		# th_doll_tea_party_garden
+		# th_alice_old_room 集镇
+		# th_makai_wonderland
+		# th_stagnant_melody_bay
+		# th_golden_ratio_cloister
+	# 魔界结界
+		# th_makai_barrier 大河
+		# th_abyss_gaze_gate
+		# th_fallen_angel_shackle_platform 大河
+		# th_chaos_core_reactor 河流
+		# th_sariel_judgment_old_masion 集镇
+		# th_rainbow_silence_shoal
+	# 虹彩花园「妖精A聚居」
+		# th_location_refraction_rise
+		# th_prismatic_field
+		# th_makai_dew_disperse
+		# th_makai_monstrosity
+		# th_makai_fae_atelier 集镇「妖精A聚居」
+		# th_makai_eternal_cacophony 集镇
+		# th_makai_ideal_city_ruin_island
+	# 魔界丝绸集市
+		# th_makai_silken_vault 
+		# th_brocade_bazaar 集镇 河流
+		# th_moonshade_grove 河流
+		# th_makai_gleam_quay 集镇 河流
+		# th_mithril_roadstead
+	# 万魔殿
+		# th_makai_gate_of_myriad_demons
+		# th_stellar_laboratory
+		# th_grotesque_armory
+		# th_silver_key_cloister
+		# th_makai_silent_chapel 城市
+		# th_silver_key_cloister_workroom
+		# th_time_tuning_chamber 集镇
+	# 魔界妖精聚居地「妖精A聚居」
+		# th_makai_candy_fountain
+		# th_phantom_butterfly_valley 
+		# th_makai_rainbow_dandelion_meadow
+		# th_makai_fairy_garden 集镇
+		# th_upside_down_grove
+		# th_fairy_el_dorado_island
+	# 冰封世界「恶魔B聚居」「天使B聚居」
+		# th_makai_frozen_world_west
+		# th_makai_frozen_world_south 河流
+		# th_makai_forbidden_magic 河流
+		# th_makai_mai_yuki 河流
+		# th_judas_mirror_court 集镇
+	# 创世殿堂
+		# th_makai_chaos_abyss
+		# th_temporal_fissure 河流
+		# th_makai_great_scar
+		# th_katuganya_makai
+		# th_reverse_creation_spiral
+	# 混沌深渊
+		# th_genesis_cloister_hall 河流
+		# th_makai_loom_of_forms 河流
+		# th_makai_spiral_gene_stairs
+		# th_makai_hall_of_mirrors 集镇
+		# th_makai_concept_incubator_element 河流
+	# 魔物之町「魔物A聚居」
+		# th_borges_library_branch 河流
+		# th_shinki_old_atelier
+		# th_cheshire_cat_alley 河流
+		# th_upside_down_garden 河流
+		# th_mononoke_machi 河流 集镇
+	# 魔界之扉
+		# th_makai_world_gate_post
+		# th_makai_saras_watch_post 河流
+		# th_gate_of_the_forgotten
+		# th_mana_nexus_ring_makai
+		# th_makai_hole_vertical_street 集镇
+		# th_makai_barrier_seam
+	# 魔界秘境
+		# th_makai_hidden_realms
+		# th_makai_dharma_realm_checkerboard_plain
+		# th_diagonal_avenue_street 集镇
+		# th_romantic_children_cross
+		# th_magus_pilgrim_tower
+	# 魔界大都会「魔界民聚居」「魔物聚居」
+		# th_makai_central_library 河流
+		# th_makai_reverse_sewer_network 河流
+		# th_makai_hijiri_byakuren_berth 河流
+		# th_makai_demon_rose_night_garden
+		# th_makai_metropolis_center 城市 河流
+		# th_eternal_dusk_theater 集镇
+		# th_shinki_creation_museum 河流 
+		# th_makai_crystal_apartment 集镇
+	# 创生方尖碑
+		# th_makai_genesis_obelisk
+		# th_genesis_origin_plaza
+		# th_genesis_fresco
+		# th_yumeko_manor 集镇
+	# 魔界边境
+		# th_makai_frontier
+		# th_makai_mad_hatter_frontier_tea 集镇 「魔法使A聚居」「恶灵A聚居」「旧幻想乡人A聚居」
+		# th_makai_frontier_east
+		# th_makai_zero_gate
+		# th_fractal_plain_makai
+# 以下魔界之港地区（人口系数1.04）（主流文化，魔界民，外界民）（主体人口：魔法使5%，旧幻想乡人类15%，妖精26%，魔界民17%，外界民25%，天使3%，恶魔14%，魔物8%）
+	# 宗教组成「博丽风俗」
+	# 魔界之港
+		# th_makai_harbor 河流
+		# th_dimensional_seawall
+		# th_luize_traveler_ground
+		# th_wonderland_travel_agency 河流
+		# th_returner_sanatorium 河流 城市
+		# th_otherworld_souvenir_market 河流 集镇
+	# 法界
+		# th_dharmadhatu_makai 集镇 大河 「魔法使A聚居」
+		# th_false_sun 大河
+		# th_makai_emptiness_pool
+		# th_makai_city_mirage
+# 以下堕落神殿地区（人口系数1.00）（主流文化，恶魔，天使）（（主体人口，妖精24%，魔法使5%，天使17%，恶魔34%，魔界民15%，外界民7%，旧幻想乡人类9%。恶灵7%）
+	# 宗教组成「博丽风俗」
+	# 维纳的废墟「旧幻想乡人类A聚居」「恶灵A聚居」「魔法使A聚居」
+		# th_ruins_of_vina
+		# th_elis_star_rod_tower 集镇 「恶魔B聚居」
+		# th_pixel_ruin_plain
+		# th_fallen_temple_vestibule_before
+		# th_makai_bat_roost
+	# 堕落神殿
+		# th_inverted_cross_corridor
+		# th_civilization_of_magic_library
+		# th_six_winged_throne_room
+		# th_sariel_judgment_masion 城市 「天使B聚居」「恶魔B聚居」
+		# th_sariel_judgment_room
+	# 仙境
+		# th_frozen_hymn_church
+		# th_golden_apple_orchard
+		# th_angel_dry_dock 集镇
+		# th_elysian_cargo_market 集镇 「妖精聚居」「外界民A聚居」
+		# th_elysion_makai
+# 以下梦境地狱地区(人口系数x0.97)（主流文化，异界民）（（主体人口：异界民44%，梦之住人24%，地狱妖精64%，15%纯化民）
+	# 宗教组成「博丽风俗」
+	# 拉碧斯拉祖利半岛
+		# th_tethys_port 集镇
+		# th_blessed_three_way_fork
+		# th_horn_of_lenty 集镇
+		# th_anemoi_valley
+	# 赫卡提亚高原
+		# th_hecate_avenue 集镇 
+		# th_oreadia
+		# th_ourea_cliff
+		# th_yew_forest
+		# th_datura_garden
+	# 地球梦境地狱
+		# th_gaea_temple
+		# th_eye_of_prometheus
+		# th_clotho_great_plain
+		# th_pallas_school 集镇
+		# th_three_worlds_rift_observatory
+		# th_archipelago_river_of_estuary
+	# 异界梦境地狱
+		# th_nyx_temple 集镇
+		# th_hecatia_mansion 城市
+		# th_lachesis_pass
+		# th_atlas_mountain_valley
+		# th_archipelago_karmic_fire_cliff
+		# th_dream_devouring_maelstrom
+	# 月球梦境地狱
+		# th_selene_temple
+		# th_coeus_port 集镇
+		# th_astraios_lake
+		# th_perses_highland
+# 以下守矢神社地区(人口系数x0.97)（主流文化，守矢民）（（主体人口：守矢民24%，天狗22%且自东南向西北分布逐渐减少，山内聚居人类21%，村落外人类8%，河童3%，妖精3%）
+	# 宗教组成「博丽风俗36%，山74%」
+	# 守矢屯营（天狗分布少）
+		# th_moriya_garrison 集镇 （主要的守矢民聚集点）
+		# th_hell_outpost
+		# th_wind_goddess_pass
+		# th_idol_ferry_crossing 河流
+		# th_hell_wind_warrier
+	# 守矢岸浜（天狗分布极少，有部分河童）
+		# th_kochiya_port 集镇 （主要的守矢民聚集点）
+		# th_moriya_estuary 大河
+		# th_land_of_frogs 大河
+		# th_short_lived_forest 河流
+		# th_moriya_coast_ashi_wara 
+	# 守矢府邸（天狗分布极少）
+		# th_moriya_port（主要的守矢民聚集点）
+		# th_moriya_holy_mansion 河流 城市 （主要的守矢民聚集点）
+		# th_kochiya_mansion 集镇 河流
+		# th_mountain_goddess_loved_hills 河流
+		# th_moriya_divine_sake_cellar
+		# th_divine_resonance_pool 河流
+		# th_kamikaze_island_main
+	# 大蛤蟆之池（天狗分布极少，有部分河童）
+		# th_big_toad_lake 大河
+		# th_kappa_major_bridge 河流 （主要的河童聚集点）
+		# th_kappa_station 大河 （主要的河童聚集点）
+		# th_frog_port 大河
+		# th_great_toad_pond_bog 大河
+	# 守矢神社（主要的守矢民聚集点，几乎无妖精、天狗分布）
+		# th_moriya_shrine_honden 河流 集镇
+		# th_moriya_shrine_haiden 大河 集镇
+		# th_moriya_shrine_shamushu 大和 集镇
+		# th_moriya_shrine_temizuya 大河 集镇
+		# th_moriya_shrine_road
+		# th_moriya_shrine_station
+	# 幻草原（几乎无天狗分布，有部分河童分布）
+		# th_weastern_phantom_meadow
+		# th_eastern_phantom_meadow 河流
+		# th_ghost_horde
+		# th_breeze_hills 河流
+		# th_still_wasteland
+	# 风神之湖（天狗聚居，有部分妖精分布）
+		# th_zealot_billage 集镇 大河
+		# th_hillside_of_qian 河流
+		# th_worship_of_onbashira
+		# th_miracle_idol_office
+		# th_land_of_seven_holy_stones_and_seven_holy_trees 大河
+		# th_lake_kamikaze_himorogi
+		# th_lake_kamikaze_windwatch
+		# th_lake_of_the_winds_senpu
+	# 守矢索道（天狗聚居
+		# th_cableway_start 集镇
+		# th_cableway_tengu_line
+		# th_cableway_kappa_line
+		# th_cableway_hell_new_line
+		# th_tornado_maple_forest
+	# 御柱的墓场（有天狗聚
+		# th_cemetery_of_onbashira
+		# th_prayer_hills 河流
+		# th_gold_pieces_riber_bend
+		# th_border_market
+		# th_shattered_gold_customs 河流
+		# th_shattered_gold_shallows 河流
+		# th_prayer_hill_terrace 河流
+	# 大地之谷（有许多天狗分布，有部分妖精分布）
+		# th_valley_of_earth 河流
+		# th_wind_castle 集镇
+		# th_snakes_hole 
+		# th_border_of_faith
+		# th_wind_god_valley_tengu 大河
+		# th_god_valley_meditation 
+	# 迷雾酒肆（（天狗聚，有部分妖精分布）
+		# th_fog_pub 河流
+		# th_miracle_cellaring 河流
+		# th_terraced_fields 河流
+		# th_beautuful_fountainhead 河流
+		# th_green_gate
+		# th_misty_sake_den_kappa 河流
+	# 神风之谷（（天狗聚居
+		# th_holy_wind_valley 集镇
+		# th_gods_hoad
+		# th_red_frogs_tomb
+		# th_hill_of_wind_and_rain 河流
+		# th_divine_wind_hanging_meadow
+# 以下畜生界地区（人口系数x0.85）（主流文化，野狼灵，水獭灵，大鹫灵，造型神）（主体人口：造型神12%，灵长灵40%，地狱妖精30%，野狼灵10%，水獭灵10%，大鹫灵10%，造型神5%）
+	# 以下的省份宗教为（55%的啖生道，45%的人信仰博丽风俗）
+	# 未知之扉 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_gate_of_inknown 河流
+		# th_primate_barrier
+		# th_wall_of_hopoless
+		# th_hani_depression 集镇 河流
+		# th_haniwa_doll_sentry_array
+	# 灵长园 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_primate_spirit_garden 集镇
+		# th_haniyasushin_shrine 集镇
+		# th_hope_altar 河流
+		# th_haniwa_port
+		# th_haniwa_shaping_palace 城市
+		# th_peninsula_spine_avenue
+		# th_idol_prayer_steps 大河
+		# th_primate_deepwater_port
+		# th_human_preserve_idol_realm 大河
+		# th_central_processing_terminal 大河
+		# th_clay_island
+		# th_unfinished_colossus_island
+		# th_clay_bay
+	# 灵长类之境 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_village_of_isolate 集镇 河流
+		# th_human_spirit_village
+		# th_withered_field
+		# th_silent_fishing_village
+		# th_clay_outpost
+		# th_tool_graveyard
+	# 野兽大都会 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_beast_downtown 集镇
+		# th_shimokita
+		# th_primate_lower_city
+		# th_haniwa_precinct
+		# th_arc_light_emitter
+		# th_shaping_bureau
+		# th_human_doll_citizen_apartments
+	# 水獭灵岗楼 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_otter_spirit_watchtower 河流
+		# th_castor_clan 河流
+		# th_red_panda_cave
+		# th_iron_branch_dam 河流
+		# th_kike_secret_way 大河
+		# th_pangolin_bunker 大河
+		# th_albatross_storm_nest 河流
+	# 人灵市镇 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_primate_spirit_township 集镇 河流
+		# th_delusion_prosperity 河流
+		# th_tenkyuu_branch_office
+		# th_primate_meander
+		# th_bloody_turbulence
+		# th_st_haniwa_mountain 河流
+		# th_penguin_ice_outpost
+	# 野狼灵竞技场 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_haniwa_basin
+		# th_old_village_of_wolf_spirit
+		# th_wolf_spirit_arena
+		# th_wild_plain
+		# th_limitation_hills
+		# th_scab
+	# 迷失魂灵庇护所 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_lost_souls_shelter
+		# th_tagnation_port 集镇
+		# th_skeleton_plateau
+		# th_gaze_westward_hillock
+		# th_atonement_lock
+	# 魂之壶 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_yamato_beach
+		# th_marigold_confluence
+		# th_pot_of_souls
+		# th_prayer_differential_tower
+		# th_lepton_resonance_arc_stream
+	# 贪欲之渊 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_dark_abyss
+		# th_pot_of_greed
+		# th_camp_of_artorias
+		# th_burl_heart
+		# th_greed_black_market
+		# th_desire_tidal_flat
+		# th_dragon_crystal_main_island
+		# th_sloth_lagoon_island
+	# 奈河沿岸 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_naihe_bridge
+		# th_well_of_frogotten
+		# th_last_chance
+		# th_baos_post_station
+		# th_utopia_reflection
+		# th_reincarnation_whirlpool_palace
+	# 亡灵泥沼 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_dead_swamp
+		# th_forest_of_hunt
+		# th_idol_bay
+		# th_black_sand_beach
+	# 造型神工厂 （野狼灵、水獭灵、大鹫灵分布极少）
+		# th_haniwa_factory 集镇
+		# th_haniwa_barracks
+		# th_haniwa_subrbs
+		# th_idol_frontier
+		# th_dead_zone
+		# th_dregs_shantytown
+		# th_faith_clay_pool_island
+		# th_loyalty_maze_island
+		# h_anvil_root_bridge
+	# 以下的省份宗教为（99%的人信仰啖生道）
+	# 叫唤地狱 （造型神无分布）
+		# th_screaming_hell
+		# th_scorching_hell
+		# th_avici_hell
+		# th_deer_hunting_hell
+	# 虚与实的境界 （造型神无分布）
+		# th_border_of_fake_and_reality
+		# th_reviving_hell
+		# th_kalasutra_hell
+		# th_samghata_hell
+		# th_concept_collapse_abyss
+		# th_bee_hive_array
+	# 地狱边境 （造型神无分布）
+		# th_throne_of_caelestinus_V 集镇
+		# th_abandoned_baby_park
+		# th_cobble_riverbank
+		# th_stone_stacking_ring
+		# th_hell_windless_plain
+		# th_hell_path_of_confusion
+	# 畜生界之扉 （造型神无分布）
+		# th_pass_of_animal_realm
+		# th_kike_gang_skyscraper 集镇
+		# th_yachies_mansion
+		# th_gold_brance_wall
+		# th_village_of_otters
+		# th_underwater_cellar
+	# 嚎哭洞穴 （造型神无分布）
+		# th_crying_cave
+		# th_interrogation_house
+		# th_betray_blade
+		# th_biten_tree_house
+		# th_spongilla_fragilis_garden
+	# 无明旷原 （造型神无分布）
+		# th_no_live_wilderness
+		# th_deadly_hillside
+		# th_top_of_regression 河流
+		# th_strange_mine
+		# th_echo_cavern
+		# th_false_moon_dark
+	# 兽王园 （造型神无分布）
+		# th_beast_king_garden 城市
+		# th_unfinished_land
+		# th_relie_throne
+		# th_nothing
+		# th_oni_tavern
+	# 中有之道 （造型神无分布）
+		# th_road_of_liminality
+		# th_death_commercial_street
+		# th_withered_flowers_garden
+		# th_pretas_yelling
+	# 再思之道 （造型神无分布）
+		# th_road_of_reconsideration
+		# th_lycoris_field
+		# th_ghost_queue
+		# th_regret_echo_bridge 河流
+		# th_pain_equivalence_scale 河流
+	# 畜生界 （造型神无分布）
+		# th_untamed_horse_grassland
+		# th_beast_froniter 河流
+		# th_galloping_horese_avenue 河流
+		# th_throne_of_reject
+	# 未定位的地狱 （造型神无分布）
+		# th_chaos_storm 河流
+		# th_fear_of_oni
+		# th_blood_wine_of_sinner
+		# th_happyness_plantation 河流
+	# 野兽灵之丘 （造型神无分布）
+		# th_skeleton_ridge 河流
+		# th_hills_of_beast_spirit 河流
+		# th_haunted_gold_mine 河流
+		# th_bloody_factory 河流
+		# th_coward_burrow 河流
+	# 套索兽道 （造型神无分布）
+		# th_lasso_beast_road 河流
+		# th_road_of_slavery 大河
+		# th_undead_settlement 集镇
+		# th_ash_barren
+		# th_broken_horn_graveyard
+	# 野兽之町 （造型神无分布）
+		# th_new_city_of_wolf_spirit
+		# th_keiga_gang_skyscraper 城市
+		# th_saki_mansion
+		# th_pegasus_fortress 河流
+	# 悲伤山冈 （造型神无分布）
+		# th_sadness_hillock 河流
+		# th_sunken_corpse_riverbed 河流
+		# th_kaiji_casino
+		# th_hidden_corn_field 河流
+		# th_tearless_peak 河流
+		# th_solid_rain_cliff 河流
+	# 虚空边界 （造型神无分布）
+		# th_void_of_fate
+		# th_void_of_end
+		# th_void_of_think
+		# th_void_of_nothing
+	# 遗物之丘 （造型神无分布）
+		# th_relic_hill 河流
+		# th_valley_of_new_three_artifact 河流
+		# th_game_console_dead_end
+		# th_oblivon_time 河流
+		# th_sentinel_cliff 河流
+	# 血池地狱 （造型神无分布）
+		# th_blood_pond_hell
+		# th_artery_of_petroleum
+		# th_toutetsu_cabin 城市
+		# th_brain_of_beast
+	# 石油之海 （造型神无分布）
+		# th_sea_of_petroleum
+		# th_infinite_food
+		# th_greedy_gusher 河流
+		# th_bottomless_pit 河流
+		# th_desire_cracking_plant 河流
+	# 黄泉 （造型神无分布）
+		# th_huangquan 河流
+		# th_oni_hunting_chain 河流
+		# th_mourning_border
+		# th_zoo_of_extince_animals 河流
+	# 鬼渡之关 （造型神无分布）
+		# th_oniwatari_pass 集镇 大河
+		# th_straightforward_traffic_sign 河流
+		# th_death_door 河流
+		# th_oniwatari_shrine 集镇 大河
+		# th_crossing_black_market 河流
+# 以下彼岸地区 （人口系数x0.90） （主流文化，阎魔，死神）（主体人口：地狱妖精53%，死神27%，阎魔6%，水子之灵12%，鬼2%，亡灵16%，浮游灵6%，幽灵5%，二羽渡民2%）
+	# 阎魔岗哨
+		# th_yama_sentry 集镇 大河
+		# th_jizo_maze
+		# th_onimi_barracks
+		# th_jiulun_palace 河流
+		# th_yama_outpost_harbor
+		# th_isle_void_gaze
+	# 判官后院
+		# th_taihe_palace
+		# th_emperors_mansion
+		# th_black_tea_garden 集镇
+		# th_thousands_purple_sakura_blossom
+		# th_isle_rust_shield_island
+		# th_hell_low_wall
+		# th_hell_pending_cases
+	# 彼岸花原野
+		# th_higanbana_plain 河流
+		# th_xuanming_palace 河流
+		# th_no_vitality_mountain_pass 河流
+		# th_yama_plain 集镇 大河
+	# 魂灵候审处
+		# th_souls_detention_center
+		# th_onimi_house
+		# th_taigongs_fishing_spot 河流
+		# th_pride_of_death
+		# th_nameless_steles 河流
+	# 彼岸
+		# th_far_shore 集镇 大河
+		# th_paradise_upstream
+		# th_horse_head_village
+		# th_pingzhong_terrace
+		# th_yesterday_mirror
+		# th_soul_return_steles
+	# 阎魔殿 （阎魔的主要聚集地）
+		# th_yama_palace 城市
+		# th_bizhen_palace
+		# th_suying_palace
+		# th_city_of_feng 集镇 大河
+		# th_jetavana_ruined_shrine
+		# th_jetavana_ruined_shrine_door 大河
+		# th_life_death_archive
+		# th_hall_of_judgment 城市
+		# th_sin_mirror_platform
+		# th_hell_punishment_chamber
+		# th_hell_reward_pool
+		# th_hell_guard_barracks
+	# 地狱之港
+		# th_hell_port 集镇
+		# th_windless_col
+		# th_outsider_souls_village
+		# th_qifei_palace
+		# th_yin_yang_customs
+		# th_hell_appeal_court
+	# 瘴气原野
+		# th_miasma_field
+		# th_hills_of_after_death
+		# th_hole_of_the_border
+		# th_fossil_coast
+		# th_isle_infinite_light
+		# th_isle_infinite_light_coast
+	# 炼狱之境
+		# th_purgatory
+		# th_wuchang_shore
+		# th_depression_of_chaos_qi
+		# th_bull_head_village
+		# th_jiuji_palace
+		# th_purge_ironworks_port
+		# th_purgatorial_foundry_port
+		# th_purge_ironworks_port_village
+		# th_isle_no_self_rock
+		# th_isle_emptiness_islands
+	# 鬼神长总番所
+		# th_forbbiden_zone_of_onimi_head
+		# th_little_devil_town
+		# th_jizo_palace 集镇
+		# th_teahouse_at_hell
+		# th_scorching_great_forge
+		# th_chief_oni_headquarters 集镇
+	# 死神静修处
+		# th_komachis_hideout
+		# th_expedition_port 城市 大河
+		# th_hazbin_hotel 集镇
+		# th_alchemy_workhouse
+		# th_market_ferryman_tavern
+		# th_market_higan_tea
+	# 三途河 （死神的主要聚集地）
+		# th_santu_river_bank 集镇 大河
+		# th_chenghuang_temple 大河
+		# th_xiwen_meander 大河
+		# th_separate_souls_ferry 大河
+	# 阴燃森林
+		# th_smoldering_forest
+		# th_massacre_wildrness 河流
+		# th_will_castle 集镇
+		# th_nine_spirng_pass
+		# th_waste_thousand_year_sea
+	# 灵魂的终点
+		# th_withered_chrysanthemum_field
+		# th_land_ofcontrition
+		# th_atonement_trail
+		# th_enlightenment_mine
+		# th_end_of_souls
+	# 地狱之扉
+		# th_pass_of_hell 集镇 大河
+		# th_tai_palace 河流
+		# th_regret_location 河流
+		# th_mingchen_palace 河流
+		# th_waste_return_monument
+		# th_gate_mandala_altar
+	# 二羽渡神的口岸（二羽渡民聚居点）
+		# th_niwataris_entry 集镇 河流
+		# th_hundreds_days_resentment 河流
+		# th_outside_world_entry 河流
+		# th_wrongfully_killed_dormitory 河流
+	# 回忆之冢
+		# th_sai_no_kawara 集镇 大河
+		# th_village_of_foundling 大河
+		# th_eika_cabin 大河
+		# th_yama_terakoya 大河
+	# 赛之河原（水子之灵和牛鬼聚居地）
+		# th_start_of_memorie  集镇 大河
+		# th_miare_office 河流
+		# th_unheard_old_haunt
+		# th_camellia_garden 大河
+		# th_riverbed_endless_shore 大河
+	# 大法之馆
+		# th_grand_magi_residence
+		# th_puming_palace 大河
+		# th_mortals_annex
+		# th_offerings_avenue
+		# th_hall_rites_cage
+	# 魂之川（死神聚居地）
+		# th_souls_river 大河
+		# th_shenhua_palace 集镇
+		# th_tongue_pulling_cave 集镇 大河
+		# th_quarter_sessions 大河
+		# th_river_soul_lotus 大河
+		# th_river_soul_shallows 大河
+	# 赫卡提亚神殿（13%异界民）
+		# th_hecatia_temple 集镇 大河
+		# th_porphyra_dyehouse
+		# th_port_of_goddess
+		# th_hedes_inn 大河
+		# th_hell_hecate_kennels 大河
+		# th_hecate_main_hall 集镇 大河
+		# th_hell_hecate_cape
+		# th_waste_ink_pool
+# 以下死寂之地地区（人口系数x0.90）（主流文化，亡灵，死神）（（主体人口：亡灵25%，地狱妖精41%，水子之灵12%，死神12%，二羽渡民17%，幽灵6%，浮游灵8%）
+	# 地狱半岛
+		# th_hell_peninsula_main
+		# th_hell_flayed_coast
+		# th_hell_steamer_valley
+		# th_hell_stone_plains_island
+		# th_hell_blood_cape
+		# th_penitent_sinners_coast
+	# 悔悟之町
+		# th_hell_town_of_repentance 集镇
+		# th_repent_mouth 大河
+		# th_repent_corridor_sea
+		# th_repent_forest_door_hell
+		# th_pillar_of_tears_islet
+		# th_burden_shedding_beach_port
+	# 沉没之村
+		# th_sunken_main_street 集镇
+		# th_sunken_lighthouse 大河
+		# th_sunken_ship_graveyard
+		# th_sunken_shell_wall
+	# 纳兹琳的老巢
+		# th_nazrin_outpost
+		# th_hell_nazrin_door 集镇
+		# th_hell_nazrin_workbench
+		# th_hell_nazrin_shushushushushuchu
+# 以下朦胧结界地区（人口系数x0.85）（主流文化，大鹫灵）（主体人口：浮游灵15%，地狱妖精21%，大鹫灵31%，灵长灵10%）
+	# 朦胧结界
+		# th_hazy_barrier_hell 
+		# th_hazy_fading_path 集镇 大河
+		# th_hazy_memory_fog
+		# th_hell_hazy_echo
+	# 死之祠堂
+		# th_shrine_of_death
+		# th_shrine_of_death_door
+		# th_hell_death_office 集镇
+		# th_hell_ghost_death_bell 大河
+		# th_soul_lantern_forest 大河
+# 以下孑然岸滨地区（人口系数x0.90）（主流文化，二羽渡民）（主体人口：二羽渡民41%，地狱妖精21%，幽灵12%，浮游灵5%，怨灵7%，亡灵8%）
+	# 无缘冢（位于彼岸，亡灵和幽灵在这里）
+		# th_hell_muenzuka_main 集镇
+		# th_muenzuka_junk_hill
+		# th_hell_muenzuka_lamp
+		# th_muezuka_re_hec
+		# th_stranded_soul_shoal
+	# 孑然岸滨（位于旧地狱不会存在亡灵和幽灵）
+		# th_solitus_strand 城市 大河
+		# th_hell_solitus_tide
+		# th_hell_solitus_shore 大河
+		# th_hell_solitus_reef
+		# th_monolith_of_silent_witness
+	# 埋骨场（位于旧地狱不会存在亡灵和幽灵）
+		# th_hell_ossuary_field
+		# th_hell_ossuary_lair 河流 集镇 （怨灵集中）
+		# th_hell_ossuary_seepage 河流
+		# th_hell_ossuary_stratum 河流
+	# 地底之港（位于旧地狱不会存在亡灵和幽灵）
+		# th_underground_harbor_east 大河
+		# th_harbor_fuel_depot
+		# th_harbor_waste_pool 河流
+		# th_harbor_magma_wharf 集镇 大河
+		# th_underground_harbor_west 集镇 河流
+		# th_steam_bath_hospital
+# 以下玄武之泽地区 （人口系数x1.03）（主流文化，河童，山童）（主体人口：妖精29%，山童19%，河童19%，天狗14%，山内聚居人类7%）
+	# 黄瓜园圃 （河童分布远大于山童，无小人族分布，天狗少量分布）
+		# th_cucumenber_garden 大河
+		# th_breeding_base 河流
+		# th_water_supply_system 集镇 大河
+		# th_cucumenber_port 集镇 大河
+		# th_nursery_luminous_greenhouse 大河
+	# 河童海滩 （河童分布远大于山童，无小人族分布，天狗少量分布）
+		# th_kappa_beach 集镇 大河
+		# th_kappa_port 城市 大河
+		# th_basalt_rock_beach 大河
+		# th_diving_paradise 大河
+	# 修补匠之村 （河童分布远大于山童，无小人族分布，天狗少量分布）
+		# th_craftsman_hall 河流
+		# th_goblin_shop 河流
+		# th_area_13 集镇 大河
+		# th_gear_automatic_port 河流
+	# 秘密工坊 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
+		# th_waterproof_lab 大河
+		# th_under_water_port 集镇
+		# th_mermaid_village
+		# th_riverbed_habitat 大河
+		# th_treasure_bay 集镇
+	# 河童都会 （河童分布远大于山童，无小人族分布，天狗少量分布）
+		# th_kappa_capital 大都会 大河
+		# th_smart_first_city 集镇 河流
+		# th_sponge_second_city 集镇 河流
+		# th_nitoris_mansion 城市 大河
+		# th_river_network_hub 大河
+	# 河童溪谷 （河童分布远大于山童分布，无小人族分布，天狗少量分布）
+		# th_kappa_valley 集镇 大河
+		# th_flooding_lowland 集镇 大河
+		# th_mangroove_swamp 大河
+		# th_kappas_dam 大河
+		# th_kappa_ravine_watermill_workshops 集镇 大河
+		# th_ravine_dish_stone_shoal
+	# 玄武涧 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
+		# th_genbu_port 集镇 大河
+		# th_genbu_ravine 大河
+		# th_scale_hills 河流
+		# th_genbu_habitat 大河
+		# th_wealth_shrine 大河
+	# 河童墟市 （山童分布远大于河童，无小人族分布，天狗少量分布）
+		# th_abandoned_workshop 河流
+		# th_wall_of_veto 河流
+		# th_bunker_buster_crater 河流
+		# th_implosion_bomb_ruins 河流
+		# th_acid_river 大河
+	# 发明展厅 （山童分布远大于河童，无小人族分布，天狗少量分布）
+		# th_invention_exhibition_hall 城市 大河
+		# th_yamawaro_railway 大河
+		# th_high_tech_developement_zone 城市 河流
+		# th_takanes_mansion 河流
+		# th_invention_exhibition_hall_practical 大河
+	# 河童试验田 （河童分布约等于山童分布，无小人族分布，天狗少量分布）
+		# th_twin_sunflower_field 河流
+		# th_supremium_field 河流
+		# th_gourmaryllis_field 河流
+		# th_top_secret_cucumenber_field 集镇 河流
+		# th_withering_hellebore_main 
+		# th_kappa_test_fields_river_hub 河流
+	# 秘天崖 （山童分布远大于河童，无小人族分布，天狗少量分布）
+		# th_secret_haven_cliff 集镇 河流
+		# th_yamawaro_barracks
+		# th_cliff_of_dispair 河流
+		# th_wargame_land
+	# 伪天棚 （山童分布远大于河童，无小人族分布，天狗分布）
+		# th_false_heaven_shelf 集镇
+		# th_mountain_foot_no_go_zone
+		# th_sannyo_casino
+		# th_secret_green_cliff 河流
+		# th_smoke_and_snow_tundra_main 河流
+		# th_snow_tundra_rime_forest
+	# 产业废墟 （山童分布远大于河童，无小人族分布，天狗分布）
+		# th_infected_industry_area
+		# th_water_gel_explosive_forest
+		# th_break_ridgepole
+		# th_yamawaro_hill_side
+# 以下辉针城地区 （人口系数x1.02）（主流文化，小人族，乐器妖）（主体人口，小人族55%，乐器妖25%）
+	# 辉针城 （小人族主要聚集地）
+		# th_shining_needle_castle_tenshukaku 城市 河流
+		# th_private_inner_chamber 集镇
+		# th_shining_needle_castle_main_bailey 河流
+		# th_shining_needle_castle_ground_hall
+		# th_uchide_no_kozuchi_room
+	# 辉针城前庭 （小人族次要聚集地）
+		# th_shining_needle_castle_second_bailey
+		# th_shining_needle_castle_third_bailey
+		# th_fusoshin_swamp 河流
+		# th_shining_needle_castle_watch_tower 河流
+		# th_shining_needle_castle_stone_wall
+	# 小人族藏宝室 （小人族次要聚集地）
+		# th_mithril_gate 河流
+		# th_useless_divice_room
+		# th_dusty_srsenal
+		# th_empty_chamber
+		# th_diminutive_treasure_vault_library 河流
+	# 闪光小径 （无小人族分布，山内聚集人类主要聚集地）
+		# th_shining_path
+		# th_levitation_garden
+		# th_magical_thundercloud
+		# th_shaking_plain
