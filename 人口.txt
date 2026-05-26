@@ -1366,60 +1366,6 @@
 		# th_zoltaxian_labyrinth 河流 
 		# th_iwanaga_shrine 集镇
 		# th_joue_inverted_pyramid 
-# 以下迷途之家地区(人口系数x1.00)（主流文化，妖怪）（主体人口：妖怪25%，不可名状8%，妖狐8%，妖猫8%，座敷童子12%，外界民5%，妖兽12%，妖精30%，地精17%）
-	# 宗教组成「东派道教」
-	# 猫咪村落「妖猫A聚居」「妖狐B聚居」
-		# th_cats_amusement_park 集镇 （妖猫的主要聚居点）
-		# th_orange_clan 河流
-		# th_white_clan 河流
-		# th_black_clan 河流
-		# th_calico_clan
-	# 八云海湾
-		# th_local_port_authority 集镇
-		# th_yakumo_beach
-		# th_zenki_area
-		# th_goki_area 河流
-		# th_yakumo_bay_shiun_misaki
-	# 地精山丘「地精B聚居」
-		# th_surface_forest 河流
-		# th_surface_cave_settlement
-		# th_deep_cave_settlement 河流
-		# th_hidden_air_pocket 河流
-		# th_treasure_chanber 河流 集镇
-	# 八云邸「妖怪B聚居」「妖狐B聚居」「不可名状A聚居」
-		# th_yakumo_mansion 城市 河流
-		# th_first_ward 河流
-		# th_second_ward 河流
-		# th_third_ward 河流
-		# th_forth_ward 河流
-	# 外界之港「外界民A聚居」
-		# th_asia_port 集镇
-		# th_europe_port
-		# th_africa_port
-		# th_north_new_world_port
-		# th_south_new_world_port
-	# 迷途之家
-		# th_chens_room
-		# th_rans_room
-		# th_yukaris_room 集镇 大河
-		# th_lost_courtyard
-	# 夜樱怪道
-		# th_front_mysterious_cherry_blossom_path
-		# th_middle_mysterious_cherry_blossom_path
-		# th_back_mysterious_cherry_blossom_path
-		# th_yosakura_kaidou_sakura_fubuki_sandou
-		# th_yosakura_kaidou_gyaku_ben_gawa 集镇 （43%幽灵，聚居地）
-	# 结界观测中心
-		# th_monitoring_station_of_borders 集镇
-		# th_magical_power_unit_area
-		# th_maintenance_device_area
-		# th_booster_device_area
-	# 座敷童子中心「座敷童子A聚居」
-		# th_zashiki_warashi_dormitory
-		# th_zashiki_warashi_resources_department 集镇
-		# th_north_office_building_complex
-		# th_south_office_building_complex
-		# th_east_office_building_complex
 # 以下幻想风穴地区(人口系数x0.85)（主流文化，土蜘蛛，钓瓶落）（主体人口：白狼天狗0.5%，鸦天狗0.4%，土蜘蛛22%，幽灵21%，地灵49%，钓瓶落10%，地狱妖精12%，鬼族5%，巡骨妖8%,古笼火7%，妖怪8%）
 	# 宗教组成「博丽风俗70%，山30%」
 	# 妖怪之山温泉「鸦天狗A聚居」「白狼天狗A聚居」「山A分布」
@@ -2414,6 +2360,10 @@
 		# th_harbor_magma_wharf 集镇 大河 「二羽渡民B聚居」
 		# th_underground_harbor_west 集镇 河流
 		# th_steam_bath_hospital
+
+
+
+
 # 以下玄武之泽地区 （人口系数x1.03）（主流文化，河童，山童）（主体人口：妖精29%，山童19%，河童19%，天狗14%，山女郎2%）
 	# 黄瓜园圃 「河童B聚居」「山童聚居」
 		# th_cucumenber_garden 大河
@@ -2492,6 +2442,8 @@
 		# th_water_gel_explosive_forest
 		# th_break_ridgepole
 		# th_yamawaro_hill_side
+
+
 # 以下辉针城地区 （人口系数x1.02）（主流文化，小人族，乐器妖）（主体人口，小人族55%，乐器妖25%）
 	# 辉针城 「小人族A聚居」
 		# th_shining_needle_castle_tenshukaku 城市 河流
@@ -2516,3 +2468,62 @@
 		# th_levitation_garden
 		# th_magical_thundercloud
 		# th_shaking_plain
+
+
+
+
+
+# 以下迷途之家地区(人口系数x1.00)（主流文化，妖怪）（主体人口：妖怪25%，不可名状8%，妖狐8%，妖猫8%，座敷童子12%，外界民5%，妖兽12%，妖精30%，地精17%）
+	# 宗教组成「博丽风俗」
+	# 猫咪村落「妖猫A聚居」「妖狐B聚居」
+		# th_cats_amusement_park 集镇 （妖猫的主要聚居点）
+		# th_orange_clan 河流
+		# th_white_clan 河流
+		# th_black_clan 河流
+		# th_calico_clan
+	# 八云海湾
+		# th_local_port_authority 集镇
+		# th_yakumo_beach
+		# th_zenki_area
+		# th_goki_area 河流
+		# th_yakumo_bay_shiun_misaki
+	# 地精山丘「地精B聚居」
+		# th_surface_forest 河流
+		# th_surface_cave_settlement
+		# th_deep_cave_settlement 河流
+		# th_hidden_air_pocket 河流
+		# th_treasure_chanber 河流 集镇
+	# 八云邸「妖怪B聚居」「妖狐B聚居」「不可名状A聚居」
+		# th_yakumo_mansion 城市 河流
+		# th_first_ward 河流
+		# th_second_ward 河流
+		# th_third_ward 河流
+		# th_forth_ward 河流
+	# 外界之港「外界民A聚居」
+		# th_asia_port 集镇
+		# th_europe_port
+		# th_africa_port
+		# th_north_new_world_port
+		# th_south_new_world_port
+	# 迷途之家
+		# th_chens_room
+		# th_rans_room
+		# th_yukaris_room 集镇 大河
+		# th_lost_courtyard
+	# 夜樱怪道
+		# th_front_mysterious_cherry_blossom_path
+		# th_middle_mysterious_cherry_blossom_path
+		# th_back_mysterious_cherry_blossom_path
+		# th_yosakura_kaidou_sakura_fubuki_sandou
+		# th_yosakura_kaidou_gyaku_ben_gawa 集镇 （43%幽灵，聚居地）
+	# 结界观测中心
+		# th_monitoring_station_of_borders 集镇
+		# th_magical_power_unit_area
+		# th_maintenance_device_area
+		# th_booster_device_area
+	# 座敷童子中心「座敷童子A聚居」
+		# th_zashiki_warashi_dormitory
+		# th_zashiki_warashi_resources_department 集镇
+		# th_north_office_building_complex
+		# th_south_office_building_complex
+		# th_east_office_building_complex
