@@ -1,0 +1,6 @@
+﻿gensokyo_accepted_culture_count = {
+    value = 0
+    every_accepted_culture = {
+        add = 1
+    }
+}

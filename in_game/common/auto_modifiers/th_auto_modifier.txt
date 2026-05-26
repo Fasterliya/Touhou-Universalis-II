@@ -1,0 +1,11 @@
+﻿gensokyo_cultural_harmony = {
+    potential_trigger = {
+        has_advance = gensokyo_cultural_harmony_advance
+    }
+
+    scales_with = gensokyo_accepted_culture_count
+
+    trade_efficiency = 0.02
+    global_manpower_modifier = 0.02
+    diplomatic_reputation = 0.5
+}
