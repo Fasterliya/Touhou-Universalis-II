@@ -47,7 +47,7 @@ T04 = {
 T05 = {
 	color = rgb { 152 82 214 }
 	
-	culture_definition = th_yokai_fox_culture
+	culture_definition = th_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -157,7 +157,7 @@ T14 = {
 T15 = {
 	color = rgb { 33 199 40 }
 	
-	culture_definition = th_yokai_fox_culture
+	culture_definition = th_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -168,7 +168,7 @@ T15 = {
 T16 = {
 	color = rgb { 70 73 74 }
 	
-	culture_definition = th_yokai_fox_culture
+	culture_definition = th_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
@@ -505,7 +505,7 @@ T48 = {
 #柳下运河 柳下的 赤蛮奇
 T49 = {
 	color = rgb { 38 153 140 }
-	culture_definition = th_yokai_fox_culture
+	culture_definition = th_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = military
 	difficulty = 3
@@ -712,7 +712,7 @@ T71 = {
 #月之都 绵月 丰姬
 T72 = {
 	color = rgb { 227 112 225 }
-	culture_definition = th_moon_people_human_village_culture
+	culture_definition = th_moon_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1
