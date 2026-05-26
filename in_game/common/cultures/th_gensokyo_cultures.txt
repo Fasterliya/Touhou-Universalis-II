@@ -276,18 +276,6 @@ th_menreiki_culture = {
         }
 }
 
-#枪毛长
-th_spear_hair_yokai_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {157 162 56}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
 #伞妖
 th_umbrella_yokai_culture = {
         language = acgv_touhou_eastern_dialect
@@ -304,18 +292,6 @@ th_umbrella_yokai_culture = {
 th_fuguruma_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {19 19 68}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
-#衣付丧
-th_cloth_tsukumogami_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {101 235 167}
         tags = { th_gensokyo_gfx }
         opinions = {
         }
@@ -592,30 +568,6 @@ th_yokai_monkey_culture = {
 th_yokai_tiger_culture = {
         language = acgv_touhou_eastern_dialect
         color = rgb {89 88 230}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
-#妖鹿
-th_yokai_deer_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {213 154 112}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
-        }
-}
-
-#妖马
-th_yokai_horse_culture = {
-        language = acgv_touhou_eastern_dialect
-        color = rgb {249 148 227}
         tags = { th_gensokyo_gfx }
         opinions = {
         }
