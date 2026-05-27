@@ -127,11 +127,14 @@
 ### 语言
 th_gensokyo_language_family: "幻想乡语族"
 th_gensokyo_language: "幻想乡汉语"
-acgv_touhou_eastern_dialect: "幻想乡汉语"
+th_gensokyo_common_dialect: "幻想乡汉语"
 th_lunar_language: "月之民语族"
 th_lunar_language: "月之民语"
 th_lunarian_dialect: "月之雅言"
 th_rabbit_lunarian_dialect: "玉兔言"
+th_human_gensokyo_dialect: "幻想民语"
+th_tengu_sato_dialect: "山里语"
+th_makai_dialect: "魔界语"
 
 ### 宗教
 th_gensokyo_old_hakurei_shinto: "博丽风俗"

@@ -3798,7 +3798,7 @@
 		
 		T72 = {
 			capital = th_palace_of_moon
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_lunarian_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			

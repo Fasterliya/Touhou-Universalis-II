@@ -63,7 +63,7 @@ th_yokai_culture = {
 
 #吸血鬼
 th_vampire_culture = { 
-        language = acgv_touhou_eastern_dialect
+        language = th_makai_dialect
         color = rgb {255 128 0}
         tags = { th_gensokyo_gfx }
         opinions = {
@@ -1071,7 +1071,7 @@ th_moon_people_human_village_culture = {
 
 #月之民-永远亭
 th_moon_people_eientei_culture = {
-        language = acgv_touhou_eastern_dialect
+        language = th_lunarian_dialect
         color = rgb {237 77 239}
         tags = { th_gensokyo_gfx }
         opinions = {
@@ -1083,7 +1083,7 @@ th_moon_people_eientei_culture = {
 
 #月之民
 th_moon_people_culture = {
-        language = acgv_touhou_eastern_dialect
+        language = th_lunarian_dialect
         color = rgb {68 191 30}
         tags = { th_gensokyo_gfx }
         opinions = {

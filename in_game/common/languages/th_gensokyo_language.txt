@@ -9,6 +9,10 @@
 	#因为具体的语言体系问题，我不推荐在施法语言处写自己的名字命名
 	#转而采用方言里面写名字是我推荐的做法
 	dialects = {
+		th_gensokyo_common_dialect = {
+			location_prefix = "location_prefix_swedish"
+			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
+		}
 		acgv_touhou_eastern_dialect = {
 			#下面分别是：男名，女名，王朝名，非贵族名
 			#据蠢驴所说，好像直接.对应方言也行
@@ -109,118 +113,65 @@
 			location_prefix = "location_prefix_swedish"
 			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
 		}
-		acgv_touhou_western_dialect = {
-			#下面分别是：男名，女名，王朝名，非贵族名
-			#据蠢驴所说，好像直接.对应方言也行
-			#不错的改动
-			#上面说的大概类似name_kaito.miku_dialect: "KAITO"这样
-			#不过仍然需要有个原初不加点的就是了
-			male_names = {
-				name_kaito
-				name_gakupo
-				name_ren
-				name_kiyoteru
-				#因为懒得做男女分头像，所以女名也在里面
-				name_miku
-				name_luka
-				name_meiko
-				name_rin
-				name_gumi
-				name_yuki
-				name_ia
-				name_teto
-				name_sora
-				name_yukari
-				name_akari
-				name_maki
-				name_moka
-				name_kotone
-				name_akane
-				name_aoi
-				name_rikka
-				name_karin
-				name_chifuyu
-				name_minato
-			}
-			female_names = {
-				name_miku
-				name_luka
-				name_meiko
-				name_rin
-				name_gumi
-				name_yuki
-				name_ia
-				name_teto
-				name_sora
-				name_yukari
-				name_akari
-				name_maki
-				#所以从这里开始我就没加后缀了，各位记得本地化的时候写自己的.方言
-				name_moka
-				name_kotone
-				name_akane
-				name_aoi
-				name_rikka
-				name_karin
-				name_chifuyu
-				name_minato
-			}
-			dynasty_names = {
-				name_hatsune
-				name_megurine
-				name_kamui
-				name_kagamine
-				name_hiyama
-				name_kasane
-				name_haruno
-				name_kizuna
-				name_yuzuki
-				name_tsurumaki
-				name_kai
-				#同理
-				name_miyamai
-				name_futaba
-				name_tsunose
-				name_hanakuma
-				name_natsuki
-				name_koharu
-				name_kotonoha
-			}
-			lowborn = {
-				name_hatsune
-				name_megurine
-				name_kamui
-				name_kagamine
-				name_hiyama
-				name_kasane
-				name_haruno
-				name_kizuna
-				name_yuzuki
-				name_tsurumaki
-				name_kai
-				name_miyamai
-				name_futaba
-				name_tsunose
-				name_hanakuma
-				name_natsuki
-				name_koharu
-				name_kotonoha
-			}
+		#幻想民语
+		th_human_gensokyo_dialect = {
+			
 		}
-	}
+		#山里语
+		th_tengu_sato_dialect = {
+			
+		}
+		#魔界语
+		th_makai_dialect = {
+			
+		}
+		#妖精东方语
+		th_hanakage_dialect = {
 
-	#这里是贵族专属中间名定义（比如冯·，德·此类），不需要的话复制我这个就行
+		}
+		#妖精西方语
+		th_akari_dialect = {
+
+		}
+		#荒灵语（畜生界）
+		th_kegare_dialect = {
+
+		}
+		#彼岸语
+		th_higan_dialect = {
+
+		}
+		#骚灵语
+		th_reion_dialect = {
+
+		}
+		#妖兽语
+		th_youjuu_dialect = {
+
+		}
+		#妖怪语
+		th_youkai_dialect = {
+
+		}
+		#西方妖怪语
+		th_western_folk_dialect = {}
+	}
 	location_prefix = "location_prefix_swedish"
 }
 
+#月之民语
 th_lunar_language = {
 	dialects = {
+		#月之雅言
 		th_lunarian_dialect = {
-
-
+			location_prefix = "location_prefix_swedish"
+			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
 		}
+		#玉兔言
 		th_rabbit_lunarian_dialect = {
-			
+			location_prefix = "location_prefix_swedish"
+			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
 		}
 	}
+	location_prefix = "location_prefix_swedish"
 }
