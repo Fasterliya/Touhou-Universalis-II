@@ -198,7 +198,6 @@ th_gensokyo_tenma_mount = {
 	custom_tags = { protestant church_aspects }
 }
 
-
 th_gensokyo_lunar_religion = {
 	color = rgb { 55 6 79	 }
 	group = th_gensokyo_religion_group

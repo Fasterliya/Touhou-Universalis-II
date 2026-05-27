@@ -212,3 +212,15 @@
 	#这里是贵族专属中间名定义（比如冯·，德·此类），不需要的话复制我这个就行
 	location_prefix = "location_prefix_swedish"
 }
+
+th_lunar_language = {
+	dialects = {
+		th_lunarian_dialect = {
+
+
+		}
+		th_rabbit_lunarian_dialect = {
+			
+		}
+	}
+}

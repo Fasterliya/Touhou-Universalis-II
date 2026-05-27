@@ -1,0 +1,70 @@
+﻿starting_technology_level = 3
+#技术提示-一连串的开局设置，相当于是被打包好的，只能同名调用
+government = {
+	type = monarchy
+	heir_selection = cognatic_primogeniture
+	
+	#初始拉条是下面这些
+	#负数是左侧，正数是右侧
+	centralization_vs_decentralization = 40
+	traditionalist_vs_innovative = 30
+	spiritualist_vs_humanist = -50
+	aristocracy_vs_plutocracy = -40
+	serfdom_vs_free_subjects = -10
+	mercantilism_vs_free_trade = -10
+	belligerent_vs_conciliatory = 10
+	quality_vs_quantity = 0
+	offensive_vs_defensive = -20
+	land_vs_naval = -30
+	capital_economy_vs_traditional_economy = 40
+	individualism_vs_communalism = 20
+	outward_vs_inward = 20
+	#下面这个是议事会的类型
+	#有需要去in_game/common/parliament_types里写新的东西
+	parliament = {
+		parliament_type = estate_parliament_vocaloid
+	}
+	
+	#Estate Privileges
+	#下面这些是开局各个阶层的特权，有加新阶层的也随便写
+	#中间的空格只是为了易读性
+	privilege = {
+		#nobles
+		nobles_land_rights
+		noble_marriage_rights
+		noble_fortification_licenses
+	
+		#clergy
+		clergy_literacy_rights
+		clergy_enforced_unity
+
+		#burghers
+		market_fairs
+		formal_guilds
+		building_roads_rights
+
+		#Commoners
+		allow_hunting
+		communal_lands
+	}
+	#下面这些是初始法律
+	#有想新加的去in_game/common/laws里加
+	laws = {
+		feudal_de_jure_law = by_tradition
+		medieval_levy_law = peasant_levies
+		royal_court_customs_law = aristocratic_court_policy
+		censorship = limited_censorship
+		education_masses_law = basic_religious_education
+		administrative_system = feudal_administration
+		cultural_traditions_law = martial_society
+		marriage_law = monogamous_marriage
+		heir_religion_law = heir_same_religion
+		legal_code_law = civil_law_policy
+		maritime_law = protect_trade_routes
+		piracy_law = anti_piracy_policy
+		distribution_of_power_law = dop_favor_the_ruler_miku_ver
+		immigration_law = open_borders_law
+		mining_law = nobles_mining_law
+	}
+}
+
