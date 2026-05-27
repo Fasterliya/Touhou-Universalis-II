@@ -1,4 +1,4 @@
-﻿gensokyo_accepted_culture_count = {
+﻿th_gensokyo_accepted_culture_script_value = {
     value = 0
     every_accepted_culture = {
         add = 1

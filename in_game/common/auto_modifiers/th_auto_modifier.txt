@@ -1,9 +1,9 @@
-﻿gensokyo_cultural_harmony = {
+﻿th_gensokyo_culture_harmony_auto_modifier = {
     potential_trigger = {
-        has_advance = gensokyo_cultural_harmony_advance
+        has_advance = th_panegyric_of_all_things_advance
     }
 
-    scales_with = gensokyo_accepted_culture_count
+    scales_with = th_gensokyo_accepted_culture_script_value
 
     trade_efficiency = 0.02
     global_manpower_modifier = 0.02

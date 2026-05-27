@@ -1,8 +1,29 @@
-﻿gensokyo_cultural_harmony_advance = {
+﻿th_panegyric_of_all_things_advance = {
     age = age_1_traditions
     depth = 0
     allow_children = no
     starting_technology_level = 1
+
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+
+    allow = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+
+    ai_weight = {
+        value = 0
+    }
+}
+
+th_origin_dream_advance = {
+    age = age_1_traditions
+    depth = 0
+    allow_children = no
+    starting_technology_level = 1
+
+    cultures_capacity = 20
 
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
