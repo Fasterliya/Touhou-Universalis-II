@@ -1,0 +1,34 @@
+﻿th_gensokyo_town = {
+	temple = 1
+	tools_guild = 1
+	brewery = 1
+	weapon_guild = 2
+	paper_guild = 1
+	granary = 1
+	tannery = 1
+	mason = 1
+	pottery_guild = 1
+	winery = 1
+	marketplace = 1
+}
+
+th_gensokyo_city = {
+	temple = 1
+	tools_guild = 1
+	distillers_guild = 1
+	brewery = 1
+	weapon_guild = 3
+	paper_guild = 3
+	cloth_guild = 1
+	fine_cloth_guild = 1
+	scriptorium = 1
+	glass_guild = 1
+	mason = 2
+	pottery_guild = 2
+	furniture_guild = 1
+	granary = 1
+	castle = 1
+	tannery = 1
+	winery = 2
+	marketplace = 2
+}
