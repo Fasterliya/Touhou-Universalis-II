@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
   th_gensokyo_continent: "幻想乡"
   th_moon_continent: "月球"
-  gensokyo: "幻想乡"
+  th_gensokyo_sub_continent: "幻想乡"
   th_gensokyo_outer_world_sub_continent: "外部界域"
   
   ### 海域地图
@@ -61,6 +61,7 @@
   th_kyoukan_rekka_sea: "叫唤湾"
   th_shugou_teppou_umi: "铁砲海"
   th_abiki_zankyo_umi_sea: "阿鼻海"
+  th_abiki_zankyo_umi_sea2: "孑然海"
   
   ### 北部海
   #地区
@@ -192,7 +193,8 @@ th_amagoi_sea2: "雨乞之海北部"
 th_suwa_maelstrom_sea: "神明之涡"
 th_gokoku_bay_sea: "五谷丰登海"
   ### 幻想乡东部海域
-  th_gensokyo_ocean_west_sea_area: "东幻想乡海"
+th_gensokyo_ocean_west_sea_region: "东幻想乡海"
+th_gensokyo_ocean_west_sea_area: "东幻想乡海"
   #省份
 th_netherworld_sea_province: "冥界海"
 th_bamboo_forest_of_the_lost_sea_province: "竹林海"
@@ -1025,6 +1027,7 @@ th_requiem_plain: "镇魂曲平原"
 th_piano_throne: "钢琴王座"
   ###妖怪之山山麓大区
   ##省份
+th_back_door_country_area: "后户之国"
 th_borders_of_the_back_door_province: "后户之境"
 th_land_of_the_back_door_province: "后户之国"
 th_tableland_of_the_dancers_province: "踊者之台"
