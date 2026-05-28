@@ -13556,6 +13556,7 @@ pacific_ocean_continent = {
 					th_kyoukan_rekka_sea
 					th_shugou_teppou_umi
 					th_abiki_zankyo_umi_sea
+					th_abiki_zankyo_umi_sea2
 				}
 			}
 		}

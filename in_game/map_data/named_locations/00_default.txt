@@ -42459,6 +42459,7 @@ th_shakunetsu_shiogama_sea3 = 5494f7
 th_kyoukan_rekka_sea = 46e9eb
 th_shugou_teppou_umi = 93fdea
 th_abiki_zankyo_umi_sea = 2173ba
+th_abiki_zankyo_umi_sea2 = 2b69cc
 
 ### 85 84 83 81 2 3 5 11 10 62 42 43 44 45 46 47 48
 ### 12 13 14 15 9 16 77
