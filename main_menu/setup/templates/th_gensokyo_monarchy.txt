@@ -22,7 +22,7 @@ government = {
 	#下面这个是议事会的类型
 	#有需要去in_game/common/parliament_types里写新的东西
 	parliament = {
-		parliament_type = estate_parliament_vocaloid
+		parliament_type = estate_parliament
 	}
 	
 	#Estate Privileges
