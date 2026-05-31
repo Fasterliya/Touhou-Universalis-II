@@ -1,9 +1,9 @@
-th_gensokyo_culture_chronicle = {
+﻿th_gensokyo_culture_chronicle = {
 	monthly_spawn_chance = 1
 	hint_tag = hint_th_gensokyo_culture_chronicle
 
 	can_start = {
-		has_advance = th_panegyric_of_all_things_advance
+		always = yes
 	}
 
 	can_end = {

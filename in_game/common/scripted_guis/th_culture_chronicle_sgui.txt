@@ -7,7 +7,48 @@
 		always = yes
 	}
 	effect = {
+		set_variable = { name = th_cc_page value = 0 }
+		set_variable = { name = th_cc_page_start value = 0 }
+		set_variable = { name = th_cc_page_end value = 20 }
 		th_culture_chronicle_refresh_lists = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+}
+
+th_cc_prev_page = {
+	scope = country
+	is_shown = {
+		always = yes
+	}
+	is_valid = {
+		var:th_cc_page > 0
+	}
+	effect = {
+		change_variable = { name = th_cc_page subtract = 1 }
+		change_variable = { name = th_cc_page_start subtract = 20 }
+		change_variable = { name = th_cc_page_end subtract = 20 }
+		th_cc_refresh_display = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+}
+
+th_cc_next_page = {
+	scope = country
+	is_shown = {
+		always = yes
+	}
+	is_valid = {
+		var:th_cc_has_next_page = 1
+	}
+	effect = {
+		change_variable = { name = th_cc_page add = 1 }
+		change_variable = { name = th_cc_page_start add = 20 }
+		change_variable = { name = th_cc_page_end add = 20 }
+		th_cc_refresh_display = yes
 	}
 	ai_is_valid = {
 		always = no
@@ -32,3 +73,4 @@ th_culture_chronicle_open_sgui = {
 		always = no
 	}
 }
+
