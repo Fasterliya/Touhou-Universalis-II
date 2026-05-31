@@ -1,15 +1,15 @@
 ﻿th_panegyric_of_all_things_advance = {
     age = age_1_traditions
     depth = 0
-    allow_children = no
-    starting_technology_level = 1
+    allow_children = yes
+    starting_technology_level = 3
 
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
     }
 
     allow = {
-        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+       has_embraced_institution = institution:th_genesis_of_gensokyo_institution
     }
 
     ai_weight = {
@@ -19,9 +19,8 @@
 
 th_origin_dream_advance = {
     age = age_1_traditions
-    depth = 0
-    allow_children = no
-    starting_technology_level = 1
+    starting_technology_level = 3
+    requires = th_panegyric_of_all_things_advance
 
     cultures_capacity = 20
 
@@ -30,7 +29,7 @@ th_origin_dream_advance = {
     }
 
     allow = {
-        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+        
     }
 
     ai_weight = {

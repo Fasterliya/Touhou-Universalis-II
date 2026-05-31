@@ -1282,7 +1282,7 @@ impassable_mountains = {
 	th_cannot_entry_mountain9 th_cannot_entry_mountain10 th_cannot_entry_mountain11 th_cannot_entry_mountain12 
 	th_cannot_entry_mountain13 th_cannot_entry_mountain14 th_cannot_entry_mountain15 th_cannot_entry_mountain16
 	#山脉
-	th_atlas_mountain 
+	th_atlas_mountain th_turnk_of_saigyou_ayakashi
 	#Europe
 	s_jamtland_wasteland n_jamtland_wasteland jotunheim hardangervidda skanderna north_skanderna vattnajokull icelandic_highlands hofsjokull langjokull eyjafjallajokull
 	eiriksfjord norway_wasteland_a norway_wasteland_b norway_wasteland_c

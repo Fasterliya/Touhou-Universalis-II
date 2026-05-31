@@ -1,0 +1,19 @@
+﻿th_genesis_of_gensokyo_institution = {
+	age = age_1_traditions 
+	
+	
+	can_spawn = {
+		has_owner = yes
+		num_pop_type:clergy > 0
+	}
+	
+	promote_chance = {
+		add = {
+			value = num_pop_type:clergy
+			multiply = 100
+		}
+	}
+	
+	#秒传
+	spread = 0.5
+}
