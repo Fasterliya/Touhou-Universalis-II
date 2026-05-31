@@ -1,0 +1,31 @@
+situation_panel = {
+	blockoverride "panel_content" {
+		vbox = {
+			using = layoutpolicy_expanding
+			using = bg_main_inner_notabs_alt
+			using = window_main_tabs_margin_alt
+			visible = "[Not(SituationView.GetActiveSituation.HasEnded)]"
+			spacing = 10
+
+			widget = {
+				layoutpolicy_horizontal = expanding
+				size = { -1 10 }
+			}
+
+			button_regular = {
+				parentanchor = hcenter
+				size = { 280 50 }
+				icon = {
+					texture = "[SituationView.GetActiveSituation.GetIcon]"
+					size = { 32 32 }
+				}
+				text_single = {
+					text = "TH_CULTURE_CHRONICLE_OPEN_BTN"
+				}
+				onclick = "[GetVariableSystem.Set('th_culture_chronicle_open', 'yes')]"
+			}
+
+			expand = {}
+		}
+	}
+}

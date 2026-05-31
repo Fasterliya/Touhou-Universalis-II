@@ -1,0 +1,20 @@
+th_gensokyo_culture_chronicle = {
+	monthly_spawn_chance = 1
+	hint_tag = hint_th_gensokyo_culture_chronicle
+
+	can_start = {
+		has_advance = th_panegyric_of_all_things_advance
+	}
+
+	can_end = {
+		always = no
+	}
+
+	visible = {
+		is_human = yes
+	}
+
+	on_start = {
+		th_culture_chronicle_refresh_lists = yes
+	}
+}

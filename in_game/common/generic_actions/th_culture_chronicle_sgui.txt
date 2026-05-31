@@ -1,0 +1,15 @@
+﻿th_culture_chronicle_refresh = {
+	scope = country
+	is_shown = {
+		always = yes
+	}
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		th_culture_chronicle_refresh_lists = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+}

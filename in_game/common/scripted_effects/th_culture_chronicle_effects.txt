@@ -1,0 +1,807 @@
+﻿th_culture_chronicle_refresh_lists = {
+	clear_global_variable_list = th_culture_chronicle_accepted
+	clear_global_variable_list = th_culture_chronicle_unaccepted
+
+	every_accepted_culture = {
+		add_to_global_variable_list = { name = th_culture_chronicle_accepted target = this }
+	}
+
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_goblin_culture }
+			"culture_percentage_in_country(culture:th_goblin_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_goblin_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yama_culture }
+			"culture_percentage_in_country(culture:th_yama_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yama_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_itsuna_culture }
+			"culture_percentage_in_country(culture:th_itsuna_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_itsuna_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_fox_culture }
+			"culture_percentage_in_country(culture:th_yokai_fox_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_fox_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_culture }
+			"culture_percentage_in_country(culture:th_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_vampire_culture }
+			"culture_percentage_in_country(culture:th_vampire_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_vampire_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_maid_fairy_culture }
+			"culture_percentage_in_country(culture:th_maid_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_maid_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_hell_fairy_culture }
+			"culture_percentage_in_country(culture:th_hell_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_hell_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_light_fairy_culture }
+			"culture_percentage_in_country(culture:th_light_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_light_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_flower_fairy_culture }
+			"culture_percentage_in_country(culture:th_flower_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_flower_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_season_fairy_culture }
+			"culture_percentage_in_country(culture:th_season_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_season_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_zombie_fairy_culture }
+			"culture_percentage_in_country(culture:th_zombie_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_zombie_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_phenomenon_fairy_culture }
+			"culture_percentage_in_country(culture:th_phenomenon_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_phenomenon_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_elemental_fairy_culture }
+			"culture_percentage_in_country(culture:th_elemental_fairy_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_elemental_fairy_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_half_human_half_phantom_culture }
+			"culture_percentage_in_country(culture:th_half_human_half_phantom_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_half_human_half_phantom_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_mermaid_culture }
+			"culture_percentage_in_country(culture:th_mermaid_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_mermaid_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_beastman_culture }
+			"culture_percentage_in_country(culture:th_beastman_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_beastman_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_demon_culture }
+			"culture_percentage_in_country(culture:th_demon_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_demon_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_angel_culture }
+			"culture_percentage_in_country(culture:th_angel_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_angel_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_korobori_culture }
+			"culture_percentage_in_country(culture:th_korobori_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_korobori_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_mirror_tsukumogami_culture }
+			"culture_percentage_in_country(culture:th_mirror_tsukumogami_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_mirror_tsukumogami_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_instrument_yokai_culture }
+			"culture_percentage_in_country(culture:th_instrument_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_instrument_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_suzuhime_culture }
+			"culture_percentage_in_country(culture:th_suzuhime_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_suzuhime_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_menreiki_culture }
+			"culture_percentage_in_country(culture:th_menreiki_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_menreiki_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_umbrella_yokai_culture }
+			"culture_percentage_in_country(culture:th_umbrella_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_umbrella_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_fuguruma_culture }
+			"culture_percentage_in_country(culture:th_fuguruma_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_fuguruma_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_zashiki_warashi_culture }
+			"culture_percentage_in_country(culture:th_zashiki_warashi_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_zashiki_warashi_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_oni_culture }
+			"culture_percentage_in_country(culture:th_oni_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_oni_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_ushioni_culture }
+			"culture_percentage_in_country(culture:th_ushioni_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_ushioni_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_human_oni_culture }
+			"culture_percentage_in_country(culture:th_human_oni_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_human_oni_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_kappa_culture }
+			"culture_percentage_in_country(culture:th_kappa_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_kappa_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yamawaro_culture }
+			"culture_percentage_in_country(culture:th_yamawaro_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yamawaro_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_white_wolf_tengu_culture }
+			"culture_percentage_in_country(culture:th_white_wolf_tengu_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_white_wolf_tengu_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_long_nose_tengu_culture }
+			"culture_percentage_in_country(culture:th_long_nose_tengu_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_long_nose_tengu_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_leaf_tengu_culture }
+			"culture_percentage_in_country(culture:th_leaf_tengu_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_leaf_tengu_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yamabushi_tengu_culture }
+			"culture_percentage_in_country(culture:th_yamabushi_tengu_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yamabushi_tengu_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_crow_tengu_culture }
+			"culture_percentage_in_country(culture:th_crow_tengu_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_crow_tengu_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_shell_yokai_culture }
+			"culture_percentage_in_country(culture:th_shell_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_shell_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_chimi_culture }
+			"culture_percentage_in_country(culture:th_chimi_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_chimi_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_monster_culture }
+			"culture_percentage_in_country(culture:th_monster_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_monster_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yamabiko_culture }
+			"culture_percentage_in_country(culture:th_yamabiko_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yamabiko_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_heavenly_dragon_culture }
+			"culture_percentage_in_country(culture:th_heavenly_dragon_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_heavenly_dragon_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_tsuchigumo_culture }
+			"culture_percentage_in_country(culture:th_tsuchigumo_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_tsuchigumo_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_insect_culture }
+			"culture_percentage_in_country(culture:th_yokai_insect_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_insect_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_dog_culture }
+			"culture_percentage_in_country(culture:th_yokai_dog_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_dog_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_turtle_culture }
+			"culture_percentage_in_country(culture:th_yokai_turtle_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_turtle_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_tanuki_culture }
+			"culture_percentage_in_country(culture:th_yokai_tanuki_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_tanuki_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_monkey_culture }
+			"culture_percentage_in_country(culture:th_yokai_monkey_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_monkey_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_tiger_culture }
+			"culture_percentage_in_country(culture:th_yokai_tiger_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_tiger_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_cat_culture }
+			"culture_percentage_in_country(culture:th_yokai_cat_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_cat_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_bird_culture }
+			"culture_percentage_in_country(culture:th_yokai_bird_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_bird_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_ox_culture }
+			"culture_percentage_in_country(culture:th_yokai_ox_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_ox_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_snake_culture }
+			"culture_percentage_in_country(culture:th_yokai_snake_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_snake_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_rat_culture }
+			"culture_percentage_in_country(culture:th_yokai_rat_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_rat_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yokai_rabbit_culture }
+			"culture_percentage_in_country(culture:th_yokai_rabbit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yokai_rabbit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_night_sparrow_culture }
+			"culture_percentage_in_country(culture:th_night_sparrow_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_night_sparrow_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_komainu_culture }
+			"culture_percentage_in_country(culture:th_komainu_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_komainu_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_unnamable_culture }
+			"culture_percentage_in_country(culture:th_unnamable_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_unnamable_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_jizo_culture }
+			"culture_percentage_in_country(culture:th_jizo_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_jizo_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_jizo_child_yokai_culture }
+			"culture_percentage_in_country(culture:th_jizo_child_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_jizo_child_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yomi_woman_culture }
+			"culture_percentage_in_country(culture:th_yomi_woman_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yomi_woman_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_jiangshi_culture }
+			"culture_percentage_in_country(culture:th_jiangshi_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_jiangshi_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_satori_yokai_culture }
+			"culture_percentage_in_country(culture:th_satori_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_satori_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_yamanba_culture }
+			"culture_percentage_in_country(culture:th_yamanba_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_yamanba_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_mountain_woman_culture }
+			"culture_percentage_in_country(culture:th_mountain_woman_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_mountain_woman_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_bone_tour_yokai_culture }
+			"culture_percentage_in_country(culture:th_bone_tour_yokai_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_bone_tour_yokai_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_creator_god_culture }
+			"culture_percentage_in_country(culture:th_creator_god_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_creator_god_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_moon_rabbit_culture }
+			"culture_percentage_in_country(culture:th_moon_rabbit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_moon_rabbit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_houraijin_culture }
+			"culture_percentage_in_country(culture:th_houraijin_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_houraijin_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_shikaisen_culture }
+			"culture_percentage_in_country(culture:th_shikaisen_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_shikaisen_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_tennin_culture }
+			"culture_percentage_in_country(culture:th_tennin_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_tennin_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_sennin_culture }
+			"culture_percentage_in_country(culture:th_sennin_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_sennin_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_makai_people_culture }
+			"culture_percentage_in_country(culture:th_makai_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_makai_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_magician_culture }
+			"culture_percentage_in_country(culture:th_magician_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_magician_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_purified_people_culture }
+			"culture_percentage_in_country(culture:th_purified_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_purified_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_village_human_culture }
+			"culture_percentage_in_country(culture:th_village_human_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_village_human_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_wild_human_culture }
+			"culture_percentage_in_country(culture:th_wild_human_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_wild_human_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_niwatari_people_culture }
+			"culture_percentage_in_country(culture:th_niwatari_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_niwatari_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_houjou_people_culture }
+			"culture_percentage_in_country(culture:th_houjou_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_houjou_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_old_gensokyo_human_culture }
+			"culture_percentage_in_country(culture:th_old_gensokyo_human_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_old_gensokyo_human_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_dream_dweller_culture }
+			"culture_percentage_in_country(culture:th_dream_dweller_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_dream_dweller_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_mountain_settlement_human_culture }
+			"culture_percentage_in_country(culture:th_mountain_settlement_human_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_mountain_settlement_human_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_shrine_surrounding_human_culture }
+			"culture_percentage_in_country(culture:th_shrine_surrounding_human_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_shrine_surrounding_human_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_moriya_people_culture }
+			"culture_percentage_in_country(culture:th_moriya_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_moriya_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_outside_world_people_culture }
+			"culture_percentage_in_country(culture:th_outside_world_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_outside_world_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_little_people_culture }
+			"culture_percentage_in_country(culture:th_little_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_little_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_other_world_people_culture }
+			"culture_percentage_in_country(culture:th_other_world_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_other_world_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_barrier_people_culture }
+			"culture_percentage_in_country(culture:th_barrier_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_barrier_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_moon_people_human_village_culture }
+			"culture_percentage_in_country(culture:th_moon_people_human_village_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_moon_people_human_village_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_moon_people_eientei_culture }
+			"culture_percentage_in_country(culture:th_moon_people_eientei_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_moon_people_eientei_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_moon_people_culture }
+			"culture_percentage_in_country(culture:th_moon_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_moon_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_great_eagle_spirit_culture }
+			"culture_percentage_in_country(culture:th_great_eagle_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_great_eagle_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_primate_spirit_culture }
+			"culture_percentage_in_country(culture:th_primate_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_primate_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_otter_spirit_culture }
+			"culture_percentage_in_country(culture:th_otter_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_otter_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_wolf_spirit_culture }
+			"culture_percentage_in_country(culture:th_wolf_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_wolf_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_mizuko_spirit_culture }
+			"culture_percentage_in_country(culture:th_mizuko_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_mizuko_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_undead_spirit_culture }
+			"culture_percentage_in_country(culture:th_undead_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_undead_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_ship_ghost_culture }
+			"culture_percentage_in_country(culture:th_ship_ghost_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_ship_ghost_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_earthbound_spirit_culture }
+			"culture_percentage_in_country(culture:th_earthbound_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_earthbound_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_earth_spirit_culture }
+			"culture_percentage_in_country(culture:th_earth_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_earth_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_evil_spirit_culture }
+			"culture_percentage_in_country(culture:th_evil_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_evil_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_floating_spirit_culture }
+			"culture_percentage_in_country(culture:th_floating_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_floating_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_poltergeist_culture }
+			"culture_percentage_in_country(culture:th_poltergeist_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_poltergeist_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_living_spirit_culture }
+			"culture_percentage_in_country(culture:th_living_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_living_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_vengeful_spirit_culture }
+			"culture_percentage_in_country(culture:th_vengeful_spirit_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_vengeful_spirit_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_ghost_culture }
+			"culture_percentage_in_country(culture:th_ghost_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_ghost_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_tsurube_otoshi_culture }
+			"culture_percentage_in_country(culture:th_tsurube_otoshi_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_tsurube_otoshi_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_calamity_people_culture }
+			"culture_percentage_in_country(culture:th_calamity_people_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_calamity_people_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_hashihime_culture }
+			"culture_percentage_in_country(culture:th_hashihime_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_hashihime_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_doll_culture }
+			"culture_percentage_in_country(culture:th_doll_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_doll_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_shinigami_culture }
+			"culture_percentage_in_country(culture:th_shinigami_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_shinigami_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_amanjaku_culture }
+			"culture_percentage_in_country(culture:th_amanjaku_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_amanjaku_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_ancient_god_person_culture }
+			"culture_percentage_in_country(culture:th_ancient_god_person_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_ancient_god_person_culture }
+	}
+	if = {
+		limit = {
+			NOT = { has_accepted_culture = culture:th_sky_fire_person_culture }
+			"culture_percentage_in_country(culture:th_sky_fire_person_culture)" > 0
+		}
+		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_sky_fire_person_culture }
+	}
+}
