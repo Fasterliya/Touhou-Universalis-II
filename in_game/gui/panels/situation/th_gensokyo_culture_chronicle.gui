@@ -50,10 +50,9 @@ situation_panel = {
 			scrollwidget = {
 				vbox = {
 					fixedgridbox = {
-						visible = "[Not(IsDataModelEmpty(GetGlobalList('th_cc_accepted_display')))]"
 						addcolumn = 100%
 						addrow = 28
-						datamodel = "[GetGlobalList('th_cc_accepted_display')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('th_cc_accepted_display')]"
 						item = {
 							widget = {
 								size = { 100% 28 }
@@ -64,10 +63,9 @@ situation_panel = {
 						}
 					}
 					fixedgridbox = {
-						visible = "[Not(IsDataModelEmpty(GetGlobalList('th_cc_unaccepted_display')))]"
 						addcolumn = 100%
 						addrow = 28
-						datamodel = "[GetGlobalList('th_cc_unaccepted_display')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('th_cc_unaccepted_display')]"
 						item = {
 							widget = {
 								size = { 100% 28 }

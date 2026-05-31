@@ -1,10 +1,10 @@
 locations = {
 	#大都会metropolis
-	th_central_plaza = { rank = city town_setup = th_gensokyo_city }
-	th_tengu_capital = { rank = city town_setup = th_gensokyo_city }
-	th_palace_of_moon = { rank = city town_setup = th_gensokyo_city }
-	th_makai_metropolis_center = { rank = city town_setup = th_gensokyo_city }
-	th_kappa_capital = { rank = city town_setup = th_gensokyo_city }
+	th_central_plaza = { rank = megalopolis town_setup = th_gensokyo_city }
+	th_tengu_capital = { rank = megalopolis town_setup = th_gensokyo_city }
+	th_palace_of_moon = { rank = megalopolis town_setup = th_gensokyo_city }
+	th_makai_metropolis_center = { rank = megalopolis town_setup = th_gensokyo_city }
+	th_kappa_capital = { rank = megalopolis town_setup = th_gensokyo_city }
 	#以下
 	th_hakurei_shrine = { rank = city town_setup = th_gensokyo_city }
 	th_torii_approach = { rank = town town_setup = th_gensokyo_town }
