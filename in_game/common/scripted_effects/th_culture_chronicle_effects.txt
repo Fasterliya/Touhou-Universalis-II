@@ -804,4 +804,2992 @@
 		}
 		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_sky_fire_person_culture }
 	}
+
+	th_cc_refresh_display = yes
+}
+
+th_cc_refresh_display = {
+	clear_global_variable_list = th_cc_accepted_display
+	clear_global_variable_list = th_cc_unaccepted_display
+
+	set_variable = { name = th_cc_idx value = 0 }
+
+	culture = {
+		save_scope_as = th_cc_primary
+	}
+
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_goblin_culture
+				scope:th_cc_primary = culture:th_goblin_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_goblin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_goblin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yama_culture
+				scope:th_cc_primary = culture:th_yama_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yama_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yama_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_itsuna_culture
+				scope:th_cc_primary = culture:th_itsuna_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_itsuna_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_itsuna_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_fox_culture
+				scope:th_cc_primary = culture:th_yokai_fox_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_fox_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_fox_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_culture
+				scope:th_cc_primary = culture:th_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_vampire_culture
+				scope:th_cc_primary = culture:th_vampire_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_vampire_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_vampire_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_maid_fairy_culture
+				scope:th_cc_primary = culture:th_maid_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_maid_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_maid_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_hell_fairy_culture
+				scope:th_cc_primary = culture:th_hell_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_hell_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_hell_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_light_fairy_culture
+				scope:th_cc_primary = culture:th_light_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_light_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_light_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_flower_fairy_culture
+				scope:th_cc_primary = culture:th_flower_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_flower_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_flower_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_season_fairy_culture
+				scope:th_cc_primary = culture:th_season_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_season_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_season_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_zombie_fairy_culture
+				scope:th_cc_primary = culture:th_zombie_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_zombie_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_zombie_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_phenomenon_fairy_culture
+				scope:th_cc_primary = culture:th_phenomenon_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_phenomenon_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_phenomenon_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_elemental_fairy_culture
+				scope:th_cc_primary = culture:th_elemental_fairy_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_elemental_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_elemental_fairy_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_half_human_half_phantom_culture
+				scope:th_cc_primary = culture:th_half_human_half_phantom_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_half_human_half_phantom_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_half_human_half_phantom_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_mermaid_culture
+				scope:th_cc_primary = culture:th_mermaid_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_mermaid_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_mermaid_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_beastman_culture
+				scope:th_cc_primary = culture:th_beastman_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_beastman_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_beastman_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_demon_culture
+				scope:th_cc_primary = culture:th_demon_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_demon_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_demon_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_angel_culture
+				scope:th_cc_primary = culture:th_angel_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_angel_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_angel_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_korobori_culture
+				scope:th_cc_primary = culture:th_korobori_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_korobori_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_korobori_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_mirror_tsukumogami_culture
+				scope:th_cc_primary = culture:th_mirror_tsukumogami_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_mirror_tsukumogami_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_mirror_tsukumogami_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_instrument_yokai_culture
+				scope:th_cc_primary = culture:th_instrument_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_instrument_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_instrument_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_suzuhime_culture
+				scope:th_cc_primary = culture:th_suzuhime_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_suzuhime_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_suzuhime_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_menreiki_culture
+				scope:th_cc_primary = culture:th_menreiki_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_menreiki_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_menreiki_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_umbrella_yokai_culture
+				scope:th_cc_primary = culture:th_umbrella_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_umbrella_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_umbrella_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_fuguruma_culture
+				scope:th_cc_primary = culture:th_fuguruma_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_fuguruma_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_fuguruma_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_zashiki_warashi_culture
+				scope:th_cc_primary = culture:th_zashiki_warashi_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_zashiki_warashi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_zashiki_warashi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_oni_culture
+				scope:th_cc_primary = culture:th_oni_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_oni_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_oni_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_ushioni_culture
+				scope:th_cc_primary = culture:th_ushioni_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_ushioni_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_ushioni_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_human_oni_culture
+				scope:th_cc_primary = culture:th_human_oni_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_human_oni_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_human_oni_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_kappa_culture
+				scope:th_cc_primary = culture:th_kappa_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_kappa_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_kappa_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yamawaro_culture
+				scope:th_cc_primary = culture:th_yamawaro_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yamawaro_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamawaro_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_white_wolf_tengu_culture
+				scope:th_cc_primary = culture:th_white_wolf_tengu_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_white_wolf_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_white_wolf_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_long_nose_tengu_culture
+				scope:th_cc_primary = culture:th_long_nose_tengu_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_long_nose_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_long_nose_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_leaf_tengu_culture
+				scope:th_cc_primary = culture:th_leaf_tengu_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_leaf_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_leaf_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yamabushi_tengu_culture
+				scope:th_cc_primary = culture:th_yamabushi_tengu_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yamabushi_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamabushi_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_crow_tengu_culture
+				scope:th_cc_primary = culture:th_crow_tengu_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_crow_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_crow_tengu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_shell_yokai_culture
+				scope:th_cc_primary = culture:th_shell_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_shell_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_shell_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_chimi_culture
+				scope:th_cc_primary = culture:th_chimi_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_chimi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_chimi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_monster_culture
+				scope:th_cc_primary = culture:th_monster_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_monster_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_monster_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yamabiko_culture
+				scope:th_cc_primary = culture:th_yamabiko_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yamabiko_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamabiko_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_heavenly_dragon_culture
+				scope:th_cc_primary = culture:th_heavenly_dragon_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_heavenly_dragon_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_heavenly_dragon_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_tsuchigumo_culture
+				scope:th_cc_primary = culture:th_tsuchigumo_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_tsuchigumo_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_tsuchigumo_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_insect_culture
+				scope:th_cc_primary = culture:th_yokai_insect_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_insect_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_insect_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_dog_culture
+				scope:th_cc_primary = culture:th_yokai_dog_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_dog_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_dog_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_turtle_culture
+				scope:th_cc_primary = culture:th_yokai_turtle_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_turtle_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_turtle_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_tanuki_culture
+				scope:th_cc_primary = culture:th_yokai_tanuki_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_tanuki_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_tanuki_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_monkey_culture
+				scope:th_cc_primary = culture:th_yokai_monkey_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_monkey_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_monkey_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_tiger_culture
+				scope:th_cc_primary = culture:th_yokai_tiger_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_tiger_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_tiger_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_cat_culture
+				scope:th_cc_primary = culture:th_yokai_cat_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_cat_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_cat_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_bird_culture
+				scope:th_cc_primary = culture:th_yokai_bird_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_bird_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_bird_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_ox_culture
+				scope:th_cc_primary = culture:th_yokai_ox_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_ox_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_ox_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_snake_culture
+				scope:th_cc_primary = culture:th_yokai_snake_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_snake_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_snake_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_rat_culture
+				scope:th_cc_primary = culture:th_yokai_rat_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_rat_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_rat_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yokai_rabbit_culture
+				scope:th_cc_primary = culture:th_yokai_rabbit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_rabbit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_rabbit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_night_sparrow_culture
+				scope:th_cc_primary = culture:th_night_sparrow_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_night_sparrow_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_night_sparrow_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_komainu_culture
+				scope:th_cc_primary = culture:th_komainu_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_komainu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_komainu_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_unnamable_culture
+				scope:th_cc_primary = culture:th_unnamable_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_unnamable_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_unnamable_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_jizo_culture
+				scope:th_cc_primary = culture:th_jizo_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_jizo_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_jizo_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_jizo_child_yokai_culture
+				scope:th_cc_primary = culture:th_jizo_child_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_jizo_child_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_jizo_child_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yomi_woman_culture
+				scope:th_cc_primary = culture:th_yomi_woman_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yomi_woman_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yomi_woman_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_jiangshi_culture
+				scope:th_cc_primary = culture:th_jiangshi_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_jiangshi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_jiangshi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_satori_yokai_culture
+				scope:th_cc_primary = culture:th_satori_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_satori_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_satori_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_yamanba_culture
+				scope:th_cc_primary = culture:th_yamanba_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_yamanba_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamanba_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_mountain_woman_culture
+				scope:th_cc_primary = culture:th_mountain_woman_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_mountain_woman_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_mountain_woman_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_bone_tour_yokai_culture
+				scope:th_cc_primary = culture:th_bone_tour_yokai_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_bone_tour_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_bone_tour_yokai_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_creator_god_culture
+				scope:th_cc_primary = culture:th_creator_god_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_creator_god_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_creator_god_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_moon_rabbit_culture
+				scope:th_cc_primary = culture:th_moon_rabbit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_moon_rabbit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_rabbit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_houraijin_culture
+				scope:th_cc_primary = culture:th_houraijin_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_houraijin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_houraijin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_shikaisen_culture
+				scope:th_cc_primary = culture:th_shikaisen_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_shikaisen_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_shikaisen_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_tennin_culture
+				scope:th_cc_primary = culture:th_tennin_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_tennin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_tennin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_sennin_culture
+				scope:th_cc_primary = culture:th_sennin_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_sennin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_sennin_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_makai_people_culture
+				scope:th_cc_primary = culture:th_makai_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_makai_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_makai_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_magician_culture
+				scope:th_cc_primary = culture:th_magician_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_magician_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_magician_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_purified_people_culture
+				scope:th_cc_primary = culture:th_purified_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_purified_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_purified_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_village_human_culture
+				scope:th_cc_primary = culture:th_village_human_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_village_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_village_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_wild_human_culture
+				scope:th_cc_primary = culture:th_wild_human_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_wild_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_wild_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_niwatari_people_culture
+				scope:th_cc_primary = culture:th_niwatari_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_niwatari_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_niwatari_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_houjou_people_culture
+				scope:th_cc_primary = culture:th_houjou_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_houjou_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_houjou_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_old_gensokyo_human_culture
+				scope:th_cc_primary = culture:th_old_gensokyo_human_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_old_gensokyo_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_old_gensokyo_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_dream_dweller_culture
+				scope:th_cc_primary = culture:th_dream_dweller_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_dream_dweller_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_dream_dweller_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_mountain_settlement_human_culture
+				scope:th_cc_primary = culture:th_mountain_settlement_human_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_mountain_settlement_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_mountain_settlement_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_shrine_surrounding_human_culture
+				scope:th_cc_primary = culture:th_shrine_surrounding_human_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_shrine_surrounding_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_shrine_surrounding_human_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_moriya_people_culture
+				scope:th_cc_primary = culture:th_moriya_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_moriya_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_moriya_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_outside_world_people_culture
+				scope:th_cc_primary = culture:th_outside_world_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_outside_world_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_outside_world_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_little_people_culture
+				scope:th_cc_primary = culture:th_little_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_little_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_little_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_other_world_people_culture
+				scope:th_cc_primary = culture:th_other_world_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_other_world_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_other_world_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_barrier_people_culture
+				scope:th_cc_primary = culture:th_barrier_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_barrier_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_barrier_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_moon_people_human_village_culture
+				scope:th_cc_primary = culture:th_moon_people_human_village_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_moon_people_human_village_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_people_human_village_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_moon_people_eientei_culture
+				scope:th_cc_primary = culture:th_moon_people_eientei_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_moon_people_eientei_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_people_eientei_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_moon_people_culture
+				scope:th_cc_primary = culture:th_moon_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_moon_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_great_eagle_spirit_culture
+				scope:th_cc_primary = culture:th_great_eagle_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_great_eagle_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_great_eagle_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_primate_spirit_culture
+				scope:th_cc_primary = culture:th_primate_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_primate_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_primate_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_otter_spirit_culture
+				scope:th_cc_primary = culture:th_otter_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_otter_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_otter_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_wolf_spirit_culture
+				scope:th_cc_primary = culture:th_wolf_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_wolf_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_wolf_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_mizuko_spirit_culture
+				scope:th_cc_primary = culture:th_mizuko_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_mizuko_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_mizuko_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_undead_spirit_culture
+				scope:th_cc_primary = culture:th_undead_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_undead_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_undead_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_ship_ghost_culture
+				scope:th_cc_primary = culture:th_ship_ghost_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_ship_ghost_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_ship_ghost_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_earthbound_spirit_culture
+				scope:th_cc_primary = culture:th_earthbound_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_earthbound_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_earthbound_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_earth_spirit_culture
+				scope:th_cc_primary = culture:th_earth_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_earth_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_earth_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_evil_spirit_culture
+				scope:th_cc_primary = culture:th_evil_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_evil_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_evil_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_floating_spirit_culture
+				scope:th_cc_primary = culture:th_floating_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_floating_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_floating_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_poltergeist_culture
+				scope:th_cc_primary = culture:th_poltergeist_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_poltergeist_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_poltergeist_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_living_spirit_culture
+				scope:th_cc_primary = culture:th_living_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_living_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_living_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_vengeful_spirit_culture
+				scope:th_cc_primary = culture:th_vengeful_spirit_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_vengeful_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_vengeful_spirit_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_ghost_culture
+				scope:th_cc_primary = culture:th_ghost_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_ghost_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_ghost_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_tsurube_otoshi_culture
+				scope:th_cc_primary = culture:th_tsurube_otoshi_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_tsurube_otoshi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_tsurube_otoshi_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_calamity_people_culture
+				scope:th_cc_primary = culture:th_calamity_people_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_calamity_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_calamity_people_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_hashihime_culture
+				scope:th_cc_primary = culture:th_hashihime_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_hashihime_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_hashihime_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_doll_culture
+				scope:th_cc_primary = culture:th_doll_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_doll_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_doll_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_shinigami_culture
+				scope:th_cc_primary = culture:th_shinigami_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_shinigami_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_shinigami_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_amanjaku_culture
+				scope:th_cc_primary = culture:th_amanjaku_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_amanjaku_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_amanjaku_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_ancient_god_person_culture
+				scope:th_cc_primary = culture:th_ancient_god_person_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_ancient_god_person_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_ancient_god_person_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_accepted_culture = culture:th_sky_fire_person_culture
+				scope:th_cc_primary = culture:th_sky_fire_person_culture
+			}
+		}
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_accepted_display target = culture:th_sky_fire_person_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+	else = {
+		if = {
+			limit = {
+				var:th_cc_idx >= var:th_cc_page_start
+				var:th_cc_idx < var:th_cc_page_end
+			}
+			add_to_global_variable_list = { name = th_cc_unaccepted_display target = culture:th_sky_fire_person_culture }
+		}
+		change_variable = { name = th_cc_idx add = 1 }
+	}
+
+	if = {
+		limit = {
+			var:th_cc_idx > var:th_cc_page_end
+		}
+		set_variable = { name = th_cc_has_next_page value = 1 }
+	}
+	else = {
+		set_variable = { name = th_cc_has_next_page value = 0 }
+	}
 }

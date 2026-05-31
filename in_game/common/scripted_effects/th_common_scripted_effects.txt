@@ -153,3 +153,17 @@ th_common_history_setup_character_scr_effect = {
 	}
 	clear_saved_scope = new_character
 }
+
+###################################################
+### 脚本：填充幻想乡各省份的粮食到上限
+### 用途：开局调用
+th_gensokyo_fill_province_food_scr_effect = {
+	every_province = {
+		limit = {
+			any_location_in_province = {
+				continent = continent:th_gensokyo_continent
+			}
+		}
+		change_province_food = 1000
+	}
+}

@@ -13,3 +13,22 @@
 		always = no
 	}
 }
+
+th_culture_chronicle_open_sgui = {
+	scope = country
+	is_shown = {
+		always = yes
+	}
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		set_variable = { name = th_cc_page value = 0 }
+		set_variable = { name = th_cc_page_start value = 0 }
+		set_variable = { name = th_cc_page_end value = 20 }
+		th_culture_chronicle_refresh_lists = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+}

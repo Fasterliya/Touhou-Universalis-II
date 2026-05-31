@@ -222,4 +222,8 @@ market_manager = {
 
 	add_market = th_hakugyokurou
 
+	add_market = th_solitus_strand
+
+	add_market = th_hakurei_shrine
+
 }

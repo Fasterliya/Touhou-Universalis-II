@@ -1,31 +1,100 @@
 situation_panel = {
-	blockoverride "panel_content" {
-		vbox = {
-			using = layoutpolicy_expanding
-			using = bg_main_inner_notabs_alt
-			using = window_main_tabs_margin_alt
-			visible = "[Not(SituationView.GetActiveSituation.HasEnded)]"
-			spacing = 10
+	blockoverride "situation_subheader_content" {}
 
-			widget = {
-				layoutpolicy_horizontal = expanding
-				size = { -1 10 }
-			}
+	blockoverride "situation_panel_main_content" {
+		text_single = {
+			using = Font_Type_Headers
+			using = Font_Size_Big
+			default_format = "#header_titles"
+			text = "TH_CULTURE_CHRONICLE_TITLE"
+		}
+
+		hbox = {
+			parentanchor = hcenter
+			spacing = 12
 
 			button_regular = {
-				parentanchor = hcenter
-				size = { 280 50 }
-				icon = {
-					texture = "[SituationView.GetActiveSituation.GetIcon]"
-					size = { 32 32 }
-				}
+				size = { 120 32 }
 				text_single = {
-					text = "TH_CULTURE_CHRONICLE_OPEN_BTN"
+					text = "TH_CULTURE_CHRONICLE_PREV_PAGE"
 				}
-				onclick = "[GetVariableSystem.Set('th_culture_chronicle_open', 'yes')]"
+				onclick = "[GetScriptedGui('th_cc_prev_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			}
-
-			expand = {}
+			text_single = {
+				using = Font_Size_Medium
+				default_format = "#subtle_name"
+				text = "TH_CULTURE_CHRONICLE_PAGE_INDICATOR"
+			}
+			button_regular = {
+				size = { 120 32 }
+				text_single = {
+					text = "TH_CULTURE_CHRONICLE_NEXT_PAGE"
+				}
+				onclick = "[GetScriptedGui('th_cc_next_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
 		}
+
+		widget = {
+			layoutpolicy_horizontal = expanding
+			size = { -1 4 }
+		}
+
+		scrollarea = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			size = { -1 600 }
+			scrollbarpolicy_horizontal = always_off
+			scrollbar_vertical = {
+				using = Scrollbar_Vertical
+			}
+			scrollwidget = {
+				vbox = {
+					fixedgridbox = {
+						visible = "[Not(IsDataModelEmpty(GetGlobalList('th_cc_accepted_display')))]"
+						addcolumn = 100%
+						addrow = 28
+						datamodel = "[GetGlobalList('th_cc_accepted_display')]"
+						item = {
+							widget = {
+								size = { 100% 28 }
+								text_single = {
+									text = "[Scope.GetCulture.GetName]"
+								}
+							}
+						}
+					}
+					fixedgridbox = {
+						visible = "[Not(IsDataModelEmpty(GetGlobalList('th_cc_unaccepted_display')))]"
+						addcolumn = 100%
+						addrow = 28
+						datamodel = "[GetGlobalList('th_cc_unaccepted_display')]"
+						item = {
+							widget = {
+								size = { 100% 28 }
+								text_single = {
+									text = "TH_CULTURE_CHRONICLE_UNKNOWN"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		widget = {
+			layoutpolicy_horizontal = expanding
+			size = { -1 4 }
+		}
+
+		button_regular = {
+			parentanchor = hcenter
+			size = { 200 40 }
+			text_single = {
+				text = "TH_CULTURE_CHRONICLE_REFRESH"
+			}
+			onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		expand = {}
 	}
 }
