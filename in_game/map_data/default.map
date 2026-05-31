@@ -456,6 +456,7 @@ sea_zones = {
 	th_jigoku_shindo_trench_sea th_jigoku_shindo_trench_sea2 th_kokujou_kou_kai_sea
 	th_shakunetsu_shiogama_sea th_shakunetsu_shiogama_sea2 th_shakunetsu_shiogama_sea3
 	th_kyoukan_rekka_sea th_shugou_teppou_umi th_abiki_zankyo_umi_sea
+	th_abiki_zankyo_umi_sea2
 	### TH_END
 	
 	# Baltic Sea
