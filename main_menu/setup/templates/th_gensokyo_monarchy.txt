@@ -50,7 +50,7 @@ government = {
 	#下面这些是初始法律
 	#有想新加的去in_game/common/laws里加
 	laws = {
-		feudal_de_jure_law = by_tradition
+		# feudal_de_jure_law = by_tradition
 		medieval_levy_law = peasant_levies
 		royal_court_customs_law = aristocratic_court_policy
 		censorship = limited_censorship
