@@ -3,7 +3,7 @@
 	countries = {
 		T00 = {
 			capital = th_scarlet_grand_entrance_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -58,7 +58,7 @@
 		
 		T01 = {
 			capital = th_ice_room
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -110,7 +110,7 @@
 		
 		T02 = {
 			capital = th_great_fairy_treehouse
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -161,7 +161,7 @@
 		
 		T03 = {
 			capital = th_central_plaza
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -218,7 +218,7 @@
 		
 		T04 = {
 			capital = th_hakurei_shrine
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -275,7 +275,7 @@
 		
 		T05 = {
 			capital = th_yakumo_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -330,7 +330,7 @@
 		
 		T06 = {
 			capital = th_three_fairies_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -382,7 +382,7 @@
 		
 		T07 = {
 			capital = th_spring_view_pavilion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -433,7 +433,7 @@
 		
 		T08 = {
 			capital = th_margatroid_theater
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -486,7 +486,7 @@
 		
 		T09 = {
 			capital = th_kirisame_residence
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -539,7 +539,7 @@
 		
 		T10 = {
 			capital = th_belfry_ruins
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -590,7 +590,7 @@
 		
 		T11 = {
 			capital = th_diner_main_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -641,7 +641,7 @@
 		
 		T12 = {
 			capital = th_night_heron_perch
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -692,7 +692,7 @@
 		
 		T13 = {
 			capital = th_origin_of_ley_lines
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -743,7 +743,7 @@
 		
 		T14 = {
 			capital = th_moriya_shrine_honden
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -801,7 +801,7 @@
 		
 		T15 = {
 			capital = th_youkai_forest
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -853,7 +853,7 @@
 		
 		T16 = {
 			capital = th_dark_hills
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -904,7 +904,7 @@
 		
 		T17 = {
 			capital = th_aki_main_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -955,7 +955,7 @@
 		
 		T18 = {
 			capital = th_tenma_hall_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1015,7 +1015,7 @@
 		
 		T19 = {
 			capital = th_ubames_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1067,7 +1067,7 @@
 		
 		T20 = {
 			capital = th_chireiden_entrance_hall_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1123,7 +1123,7 @@
 		
 		T21 = {
 			capital = th_yamame_shaft_vent
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1175,7 +1175,7 @@
 		
 		T22 = {
 			capital = th_bridge_spring_envy
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1227,7 +1227,7 @@
 		
 		T23 = {
 			capital = th_central_district_samurai
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1281,7 +1281,7 @@
 		
 		T24 = {
 			capital = th_haniwa_shaping_palace
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1340,7 +1340,7 @@
 		
 		T25 = {
 			capital = th_yama_palace
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1402,7 +1402,7 @@
 		
 		T26 = {
 			capital = th_kappa_capital
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1455,7 +1455,7 @@
 		
 		T27 = {
 			capital = th_high_tech_developement_zone
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1508,7 +1508,7 @@
 		
 		T28 = {
 			capital = th_sannyo_casino
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1560,7 +1560,7 @@
 		
 		T29 = {
 			capital = th_eternal_garden
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1611,7 +1611,7 @@
 		
 		T30 = {
 			capital = th_crumbling_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1662,7 +1662,7 @@
 		
 		T31 = {
 			capital = th_hakugyokurou
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1721,7 +1721,7 @@
 		
 		T32 = {
 			capital = th_myourenji_hondo
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1775,7 +1775,7 @@
 		
 		T33 = {
 			capital = th_tora_no_maru_hoshi
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1826,7 +1826,7 @@
 		
 		T34 = {
 			capital = th_nazrin_s_treasure_hold
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1876,7 +1876,7 @@
 		
 		T35 = {
 			capital = th_mermaid_sanctuary
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1926,7 +1926,7 @@
 		
 		T36 = {
 			capital = th_kogasa_blacksmith
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -1976,7 +1976,7 @@
 		
 		T37 = {
 			capital = th_avici_hell
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2028,7 +2028,7 @@
 		
 		T38 = {
 			capital = th_happyness_plantation
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2080,7 +2080,7 @@
 		
 		T39 = {
 			capital = th_sea_of_petroleum
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2132,7 +2132,7 @@
 		
 		T40 = {
 			capital = th_solitus_strand
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2184,7 +2184,7 @@
 		
 		T41 = {
 			capital = th_riverbed_endless_shore
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2234,7 +2234,7 @@
 		
 		T42 = {
 			capital = th_sai_no_kawara
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2284,7 +2284,7 @@
 		
 		T43 = {
 			capital = th_market_higan_tea
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2335,7 +2335,7 @@
 		
 		T44 = {
 			capital = th_hellcats_rest
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2386,7 +2386,7 @@
 		
 		T45 = {
 			capital = th_nuclear_furnace_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2438,7 +2438,7 @@
 		
 		T46 = {
 			capital = th_bucket_suspension_chasm
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2488,7 +2488,7 @@
 		
 		T47 = {
 			capital = th_shining_needle_castle_ground_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2539,7 +2539,7 @@
 		
 		T48 = {
 			capital = th_useless_divice_room
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2589,7 +2589,7 @@
 		
 		T49 = {
 			capital = th_weeping_willow_promenade
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2639,7 +2639,7 @@
 		
 		T50 = {
 			capital = th_bane_herb_garden
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2689,7 +2689,7 @@
 		
 		T51 = {
 			capital = th_divine_spirit_mausoleum
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2752,7 +2752,7 @@
 		
 		T52 = {
 			capital = th_shingiro
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2810,7 +2810,7 @@
 		
 		T53 = {
 			capital = th_kaguyas_room
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2862,7 +2862,7 @@
 		
 		T54 = {
 			capital = th_huziwara_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2914,7 +2914,7 @@
 		
 		T55 = {
 			capital = th_tewis_rabbit_hole
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -2964,7 +2964,7 @@
 		
 		T56 = {
 			capital = th_horai_pharmacy
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3015,7 +3015,7 @@
 		
 		T57 = {
 			capital = th_dream_palace
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3065,7 +3065,7 @@
 		
 		T58 = {
 			capital = th_makai_silent_chapel
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3123,7 +3123,7 @@
 		
 		T59 = {
 			capital = th_returner_sanatorium
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3174,7 +3174,7 @@
 		
 		T60 = {
 			capital = th_hakurei_roofless_honden
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3227,7 +3227,7 @@
 		
 		T61 = {
 			capital = th_fluffy_ellen_magic_masion_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3278,7 +3278,7 @@
 		
 		T62 = {
 			capital = th_garden_of_the_sun
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3332,7 +3332,7 @@
 		
 		T63 = {
 			capital = th_bell_gathering_hills_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3383,7 +3383,7 @@
 		
 		T64 = {
 			capital = th_asakura_laboratory_tech_room
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3433,7 +3433,7 @@
 		
 		T65 = {
 			capital = th_silent_sanctuary_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3485,7 +3485,7 @@
 		
 		T66 = {
 			capital = th_dreamrealm_reima_den_main_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3537,7 +3537,7 @@
 		
 		T67 = {
 			capital = th_rika_mansion_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3589,7 +3589,7 @@
 		
 		T68 = {
 			capital = th_kana_mansion_main
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3639,7 +3639,7 @@
 		
 		T69 = {
 			capital = th_main_engineering_bay
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3691,7 +3691,7 @@
 		
 		T70 = {
 			capital = th_hinanawi_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3745,7 +3745,7 @@
 		
 		T71 = {
 			capital = th_ikus_house
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3836,7 +3836,7 @@
 		
 		T73 = {
 			capital = th_mugenkan_boiler_room
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3886,7 +3886,7 @@
 		
 		T74 = {
 			capital = th_dreamscape_hall
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3939,7 +3939,7 @@
 		
 		T75 = {
 			capital = th_first_performance_stage
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -3989,7 +3989,7 @@
 		
 		T76 = {
 			capital = th_gate_of_miyako
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4040,7 +4040,7 @@
 		
 		T77 = {
 			capital = th_sky_ruins
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4090,7 +4090,7 @@
 		
 		T78 = {
 			capital = th_myorenji_sando
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4140,7 +4140,7 @@
 		
 		T79 = {
 			capital = th_sariel_judgment_masion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4191,7 +4191,7 @@
 		
 		T80 = {
 			capital = th_pure_village
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4227,7 +4227,7 @@
 		
 		T81 = {
 			capital = th_hecatia_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4262,7 +4262,7 @@
 		
 		T82 = {
 			capital = th_clown_village
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4294,7 +4294,7 @@
 		
 		T83 = {
 			capital = th_immortal_mansion
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			
@@ -4344,7 +4344,7 @@
 		
 		T84 = {
 			capital = th_beast_king_garden
-			court_language = acgv_touhou_eastern_dialect
+			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
 			

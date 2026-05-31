@@ -10,17 +10,7 @@
 	#转而采用方言里面写名字是我推荐的做法
 	dialects = {
 		th_gensokyo_common_dialect = {
-			location_prefix = "location_prefix_swedish"
-			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
-		}
-		acgv_touhou_eastern_dialect = {
-			#下面分别是：男名，女名，王朝名，非贵族名
-			#据蠢驴所说，好像直接.对应方言也行
-			#不错的改动
-			#上面说的大概类似name_kaito.miku_dialect: "KAITO"这样
-			#不过仍然需要有个原初不加点的就是了
 			male_names = {
-				name_kaito
 			}
 			female_names = {
 			}
@@ -31,48 +21,43 @@
 			location_prefix = "location_prefix_swedish"
 			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
 		}
-		#幻想民语
-		th_human_gensokyo_dialect = {
-			
+		#东方语
+		th_gensokyo_eastern_dialect = {
+			male_names = {
+			}
+			female_names = {
+			}
+			dynasty_names = {
+			}
+			lowborn = {
+			}
+			location_prefix = "location_prefix_swedish"
+			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
 		}
-		#山里语
-		th_tengu_sato_dialect = {
-			
+		#西方语
+		th_gensokyo_western_dialect = {
+			male_names = {
+			}
+			female_names = {
+			}
+			dynasty_names = {
+			}
+			lowborn = {
+			}
+			location_prefix = "location_prefix_swedish"
 		}
-		#魔界语
-		th_makai_dialect = {
-			
+		acgv_touhou_eastern_dialect = {
+			male_names = {
+			}
+			female_names = {
+			}
+			dynasty_names = {
+			}
+			lowborn = {
+			}
+			location_prefix = "location_prefix_swedish"
+			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
 		}
-		#妖精东方语
-		th_hanakage_dialect = {
-
-		}
-		#妖精西方语
-		th_akari_dialect = {
-
-		}
-		#荒灵语（畜生界）
-		th_kegare_dialect = {
-
-		}
-		#彼岸语
-		th_higan_dialect = {
-
-		}
-		#骚灵语
-		th_reion_dialect = {
-
-		}
-		#妖兽语
-		th_youjuu_dialect = {
-
-		}
-		#妖怪语
-		th_youkai_dialect = {
-
-		}
-		#西方妖怪语
-		th_western_folk_dialect = {}
 	}
 	location_prefix = "location_prefix_swedish"
 }
