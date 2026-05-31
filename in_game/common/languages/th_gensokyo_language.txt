@@ -46,18 +46,6 @@
 			}
 			location_prefix = "location_prefix_swedish"
 		}
-		acgv_touhou_eastern_dialect = {
-			male_names = {
-			}
-			female_names = {
-			}
-			dynasty_names = {
-			}
-			lowborn = {
-			}
-			location_prefix = "location_prefix_swedish"
-			character_name_order = "CHARACTER_NAME_ORDER_PREFIX_LASTNAME_NAME_SUFFIX_NICKNAME_NUMBER"
-		}
 	}
 	location_prefix = "location_prefix_swedish"
 }
