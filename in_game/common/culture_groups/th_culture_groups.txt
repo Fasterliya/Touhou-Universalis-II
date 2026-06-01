@@ -1,7 +1,116 @@
-﻿# avoid naming the same as Cultures and Languages
-#技术提示-文化组：在这里定义文化组
-#上面英文也告诉你了，不要把文化和语言命名成一样的，不然会闪退
+﻿#幻想乡文化组
 th_gensokyo_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#妖怪文化组
+th_gensokyo_youkai_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#人类文化组
+th_gensokyo_hito_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#神明文化组
+th_gensokyo_kami_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#灵文化组
+th_gensokyo_ghost_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#妖精文化组
+th_gensokyo_fairy_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#月之民文化组
+th_gensokyo_lunarian_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+
+#文化亚组
+
+#恶魔文化组
+th_gensokyo_demon_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#天狗文化组
+th_gensokyo_tengu_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#河童文化组
+th_gensokyo_kappa_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#妖兽文化组
+th_gensokyo_beast_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#付丧神文化组
+th_gensokyo_tsukumogami_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#超人文化组
+th_gensokyo_ultraman_culture_group = {
 	country_modifier = {
 	}
 	character_modifier = {

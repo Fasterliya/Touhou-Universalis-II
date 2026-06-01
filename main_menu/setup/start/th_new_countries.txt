@@ -15,8 +15,8 @@
 				th_whispering_residential_quarter th_clocktower_of_time th_forgotten_royal_court
 			}
 			
-			accepted_cultures = { th_maid_fairy_culture th_elemental_fairy_culture th_flower_fairy_culture th_phenomenon_fairy_culture th_wild_human_culture th_mermaid_culture th_light_fairy_culture th_season_fairy_culture }
-			tolerated_cultures = { th_magician_culture th_demon_culture th_yokai_culture th_outside_world_people_culture th_jizo_culture }
+			accepted_cultures = { th_maid_fairy_culture th_magician_cultur }
+			tolerated_cultures = { th_flower_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_season_fairy_culture th_wild_human_culture }
 			#????
 			# include = "expl_mediterranean"
 			include = "th_gensokyo_monarchy"
@@ -485,7 +485,7 @@
 		
 		
 		T09 = {
-			capital = th_kirisame_residence
+			capital = th_potion_brewing_bench
 			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
@@ -1974,8 +1974,8 @@
 		}
 		
 		
-		T37 = {
-			capital = th_avici_hell
+		T37 = { 
+			capital = th_kike_gang_skyscraper
 			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
@@ -2027,7 +2027,7 @@
 		
 		
 		T38 = {
-			capital = th_happyness_plantation
+			capital = th_keiga_gang_skyscraper
 			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
@@ -2079,7 +2079,7 @@
 		
 		
 		T39 = {
-			capital = th_sea_of_petroleum
+			capital = th_toutetsu_cabin
 			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
@@ -2761,8 +2761,8 @@
 				th_hashigakari
 			}
 			
-			accepted_cultures = { th_menreiki_culture th_season_fairy_culture }
-			tolerated_cultures = { th_fuguruma_culture th_yokai_culture th_wild_human_culture th_shrine_surrounding_human_culture th_instrument_yokai_culture th_flower_fairy_culture th_spear_hair_yokai_culture th_light_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_houjou_people_culture th_cloth_tsukumogami_culture th_umbrella_yokai_culture th_mirror_tsukumogami_culture th_zashiki_warashi_culture th_korobori_culture th_outside_world_people_culture th_suzuhime_culture th_jizo_culture }
+			accepted_cultures = { th_village_human_culture}
+			tolerated_cultures = { th_season_fairy_culture th_fuguruma_culture th_yokai_culture th_wild_human_culture th_shrine_surrounding_human_culture th_instrument_yokai_culture th_flower_fairy_culture th_spear_hair_yokai_culture th_light_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_houjou_people_culture th_cloth_tsukumogami_culture th_umbrella_yokai_culture th_mirror_tsukumogami_culture th_zashiki_warashi_culture th_korobori_culture th_outside_world_people_culture th_suzuhime_culture th_jizo_culture }
 			# include = "expl_mediterranean"
 			include = "th_gensokyo_monarchy"
 			# include = "expl_silk_road_west"

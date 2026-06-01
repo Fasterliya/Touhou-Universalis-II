@@ -2,26 +2,28 @@
 
 #地精
 th_goblin_culture = {
-         language = th_gensokyo_western_dialect
+        language = th_gensokyo_western_dialect
         color = rgb {173 159 227}
         tags = { th_gensokyo_gfx }
         opinions = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         } 
 }
 
 
 #阎魔
 th_yama_culture = {
-         language = th_gensokyo_eastern_dialect
+        language = th_gensokyo_eastern_dialect
         color = rgb {173 159 227}
         tags = { th_gensokyo_gfx }
         opinions = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         } 
 }
 
@@ -34,6 +36,7 @@ th_itsuna_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -46,6 +49,7 @@ th_yokai_fox_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -58,6 +62,7 @@ th_yokai_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -70,6 +75,8 @@ th_vampire_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_demon_culture_group
         }
 }
 
@@ -82,6 +89,7 @@ th_maid_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -94,6 +102,7 @@ th_hell_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -106,6 +115,7 @@ th_light_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -118,6 +128,7 @@ th_flower_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -130,6 +141,7 @@ th_season_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -142,6 +154,7 @@ th_zombie_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -154,6 +167,7 @@ th_phenomenon_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -166,6 +180,7 @@ th_elemental_fairy_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_fairy_culture_group
         }
 }
 
@@ -178,6 +193,8 @@ th_half_human_half_phantom_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -190,6 +207,7 @@ th_mermaid_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -202,6 +220,7 @@ th_beastman_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -214,6 +233,8 @@ th_demon_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_demon_culture_group
         }
 }
 
@@ -226,6 +247,8 @@ th_angel_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_demon_culture_group
         }
 }
 
@@ -238,6 +261,8 @@ th_korobori_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -250,6 +275,8 @@ th_mirror_tsukumogami_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -262,6 +289,8 @@ th_instrument_yokai_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -274,6 +303,8 @@ th_suzuhime_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -286,6 +317,8 @@ th_menreiki_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -298,6 +331,8 @@ th_umbrella_yokai_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -310,6 +345,8 @@ th_fuguruma_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tsukumogami_culture_group
         }
 }
 
@@ -322,6 +359,7 @@ th_zashiki_warashi_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -334,6 +372,7 @@ th_oni_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -346,6 +385,7 @@ th_ushioni_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -358,6 +398,7 @@ th_human_oni_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -370,6 +411,8 @@ th_kappa_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_kappa_culture_group
         }
 }
 
@@ -382,6 +425,8 @@ th_yamawaro_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_kappa_culture_group
         }
 }
 
@@ -394,6 +439,8 @@ th_white_wolf_tengu_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tengu_culture_group
         }
 }
 
@@ -406,6 +453,8 @@ th_long_nose_tengu_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tengu_culture_group
         }
 }
 
@@ -418,6 +467,8 @@ th_leaf_tengu_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tengu_culture_group
         }
 }
 
@@ -430,6 +481,8 @@ th_yamabushi_tengu_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tengu_culture_group
         }
 }
 
@@ -442,6 +495,8 @@ th_crow_tengu_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_tengu_culture_group
         }
 }
 
@@ -454,6 +509,7 @@ th_shell_yokai_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -466,6 +522,7 @@ th_chimi_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -478,6 +535,8 @@ th_monster_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_demon_culture_group
         }
 }
 
@@ -490,6 +549,7 @@ th_yamabiko_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -502,6 +562,7 @@ th_heavenly_dragon_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -514,6 +575,7 @@ th_tsuchigumo_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -526,6 +588,7 @@ th_yokai_insect_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -538,6 +601,8 @@ th_yokai_dog_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -550,6 +615,8 @@ th_yokai_turtle_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -562,6 +629,8 @@ th_yokai_tanuki_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -574,6 +643,8 @@ th_yokai_monkey_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -586,6 +657,8 @@ th_yokai_tiger_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -598,6 +671,8 @@ th_yokai_cat_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -610,6 +685,8 @@ th_yokai_bird_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -622,6 +699,8 @@ th_yokai_ox_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -634,6 +713,8 @@ th_yokai_snake_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -646,6 +727,8 @@ th_yokai_rat_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -658,6 +741,8 @@ th_yokai_rabbit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_beast_culture_group
         }
 }
 
@@ -670,6 +755,7 @@ th_night_sparrow_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -682,6 +768,7 @@ th_komainu_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -694,6 +781,7 @@ th_unnamable_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -706,18 +794,7 @@ th_jizo_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
-        }
-}
-
-#地藏稚妖
-th_jizo_child_yokai_culture = {
-        language = th_gensokyo_eastern_dialect
-        color = rgb {231 139 198}
-        tags = { th_gensokyo_gfx }
-        opinions = {
-        }
-        culture_groups = {
-                th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -730,6 +807,7 @@ th_yomi_woman_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -742,6 +820,7 @@ th_jiangshi_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -754,6 +833,7 @@ th_satori_yokai_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -766,6 +846,7 @@ th_yamanba_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -778,6 +859,7 @@ th_mountain_woman_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -790,6 +872,7 @@ th_bone_tour_yokai_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -802,6 +885,7 @@ th_creator_god_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -814,6 +898,7 @@ th_moon_rabbit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_lunarian_culture_group
         }
 }
 
@@ -826,6 +911,8 @@ th_houraijin_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_lunarian_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -838,6 +925,8 @@ th_shikaisen_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_ultraman_culture_group
         }
 }
 
@@ -850,6 +939,8 @@ th_tennin_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_ultraman_culture_group
         }
 }
 
@@ -862,6 +953,8 @@ th_sennin_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_ultraman_culture_group
         }
 }
 
@@ -874,6 +967,9 @@ th_makai_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
+                th_gensokyo_demon_culture_group
         }
 }
 
@@ -886,6 +982,10 @@ th_magician_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_ultraman_culture_group
+
         }
 }
 
@@ -898,6 +998,8 @@ th_purified_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -910,6 +1012,7 @@ th_village_human_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -922,6 +1025,7 @@ th_wild_human_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -934,6 +1038,8 @@ th_niwatari_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -946,6 +1052,8 @@ th_houjou_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -958,6 +1066,7 @@ th_old_gensokyo_human_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -970,6 +1079,7 @@ th_dream_dweller_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -982,6 +1092,7 @@ th_mountain_settlement_human_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -994,6 +1105,7 @@ th_shrine_surrounding_human_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -1006,6 +1118,8 @@ th_moriya_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -1018,6 +1132,7 @@ th_outside_world_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -1030,6 +1145,7 @@ th_little_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -1042,6 +1158,8 @@ th_other_world_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -1054,6 +1172,8 @@ th_barrier_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -1066,6 +1186,8 @@ th_moon_people_human_village_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_lunarian_culture_group
+                th_gensokyo_hito_culture_group
         }
 }
 
@@ -1078,6 +1200,7 @@ th_moon_people_eientei_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_lunarian_culture_group
         }
 }
 
@@ -1089,7 +1212,7 @@ th_moon_people_culture = {
         opinions = {
         }
         culture_groups = {
-                th_gensokyo_culture_group
+                th_gensokyo_lunarian_culture_group
         }
 }
 
@@ -1102,6 +1225,7 @@ th_great_eagle_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1114,6 +1238,7 @@ th_primate_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1126,6 +1251,7 @@ th_otter_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1138,6 +1264,7 @@ th_wolf_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1150,6 +1277,7 @@ th_mizuko_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1162,6 +1290,7 @@ th_undead_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1174,6 +1303,7 @@ th_ship_ghost_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1186,6 +1316,7 @@ th_earthbound_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1198,6 +1329,7 @@ th_earth_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1210,6 +1342,7 @@ th_evil_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1222,6 +1355,7 @@ th_floating_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1234,6 +1368,7 @@ th_poltergeist_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1246,6 +1381,7 @@ th_living_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1258,6 +1394,7 @@ th_vengeful_spirit_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1270,6 +1407,7 @@ th_ghost_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_ghost_culture_group
         }
 }
 
@@ -1282,6 +1420,7 @@ th_tsurube_otoshi_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -1294,6 +1433,8 @@ th_calamity_people_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -1306,6 +1447,7 @@ th_hashihime_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -1318,6 +1460,9 @@ th_doll_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_hito_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_ultraman_culture_group
         }
 }
 
@@ -1330,6 +1475,7 @@ th_shinigami_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -1342,6 +1488,7 @@ th_amanjaku_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }
 
@@ -1354,6 +1501,8 @@ th_ancient_god_person_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
+                th_gensokyo_kami_culture_group
         }
 }
 
@@ -1366,5 +1515,6 @@ th_sky_fire_person_culture = {
         }
         culture_groups = {
                 th_gensokyo_culture_group
+                th_gensokyo_youkai_culture_group
         }
 }

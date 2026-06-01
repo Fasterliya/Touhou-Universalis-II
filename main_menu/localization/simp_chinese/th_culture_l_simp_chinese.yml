@@ -1,6 +1,18 @@
 ﻿l_simp_chinese:
 ### 文化组
  th_gensokyo_culture_group: "幻想乡文化组"
+ th_gensokyo_youkai_culture_group: "妖怪文化组"
+ th_gensokyo_hito_culture_group: "人类文化组"
+ th_gensokyo_kami_culture_group: "神明文化组"
+ th_gensokyo_ghost_culture_group: "灵文化组"
+ th_gensokyo_fairy_culture_group: "妖精文化组"
+ th_gensokyo_lunarian_culture_group: "月之民文化组"
+ th_gensokyo_demon_culture_group: "恶魔文化组"
+ th_gensokyo_tengu_culture_group: "天狗文化组"
+ th_gensokyo_kappa_culture_group: "河童文化组"
+ th_gensokyo_beast_culture_group: "妖兽文化组"
+ th_gensokyo_tsukumogami_culture_group: "付丧神文化组"
+ th_gensokyo_ultraman_culture_group: "超人文化组"
 ### 文化
  th_goblin_culture: "地精"
  th_yama_culture: "阎魔"
@@ -68,7 +80,6 @@
  th_komainu_culture: "狛犬"
  th_unnamable_culture: "不可名状"
  th_jizo_culture: "地藏"
- th_jizo_child_yokai_culture: "地藏稚妖"
  th_yomi_woman_culture: "黄泉女"
  th_jiangshi_culture: "僵尸"
  th_satori_yokai_culture: "觉妖怪"
@@ -813,3 +824,7 @@ th_gensokyo_theory_of_science_ADJ: "科学论"
  th_genesis_of_gensokyo_institution: "幻想乡缘起"
  th_genesis_of_gensokyo_institution_desc: "在幻想乡的初始年代，故事诞生于篝火旁的闲谈之中，流传于人与人的耳语之间，又在一代代人的讲述与传承中延续。妖怪的身影、神明的奇迹、异变的见闻与古老的传说，共同编织着这片土地最初的记忆。\n\n然而，再精彩的故事也会因遗忘而消散，再久远的传说也会随着岁月而失落。为了让妖怪不会被遗忘，让传说不会湮没于时光之中，记录逐渐成为一件重要的事情。\n\n那些被书写于纸页之上的故事，开始超越口耳相传的传说，化作能够流传后世的历史。而幻想乡，也因此第一次拥有了属于自己的记忆。"
  STATIC_MODIFIER_NAME_th_genesis_of_gensokyo_institution_birth: "$th_genesis_of_gensokyo_institution$发源地"
+
+###特质
+ touhou_gensokyo_ruler_traits: "幻想乡君主"
+ touhou_gensokyo_ruler_ciruno_traits: "湖之智者"

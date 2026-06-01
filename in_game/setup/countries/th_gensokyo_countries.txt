@@ -523,7 +523,7 @@ T50 = {
 #仙界 丰聪耳 神子
 T51 = {
 	color = rgb { 227 225 190 }
-	culture_definition = th_beastman_culture
+	culture_definition = th_sennin_culture
 	religion_definition = th_gensokyo_taoism
 	description_category = economic
 	difficulty = 1
@@ -532,7 +532,7 @@ T51 = {
 #心绮楼 秦 心
 T52 = {
 	color = rgb { 227 112 225 }
-	culture_definition = th_village_human_culture
+	culture_definition = th_menreiki_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	description_category = economic
 	difficulty = 1

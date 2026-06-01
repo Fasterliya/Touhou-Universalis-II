@@ -13,7 +13,7 @@
 			adm = 78
 			dip = 85
 			mil = 72
-			age = 13
+			age = 505
 			trait = touhou_gensokyo_ruler_traits
 		}
 	}
@@ -24,11 +24,11 @@
 			culture = th_elemental_fairy_culture
 			religion = th_gensokyo_old_hakurei_shinto
 			ethnicity = ethnicity:th_gensokyo_ethnicity
-			adm = 45
-			dip = 38
-			mil = 88
-			age = 60
-			trait = touhou_gensokyo_ruler_traits
+			adm = 99
+			dip = 99
+			mil = 99
+			age = 68
+			trait = touhou_gensokyo_ruler_ciruno_traits
 		}
 	}
 	c:T02 = {
@@ -357,7 +357,7 @@
 		th_common_history_setup_create_ruler_scr_effect = {
 			character = touhou_shikieiki
 			surname = touhou_yamaxanadu
-			culture = th_shinigami_culture
+			culture = th_yama_culture
 			religion = th_gensokyo_old_hakurei_shinto
 			ethnicity = ethnicity:th_gensokyo_ethnicity
 			adm = 95

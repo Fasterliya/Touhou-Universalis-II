@@ -1,17 +1,19 @@
-﻿th_panegyric_of_all_things_advance = {
+﻿
+
+th_panegyric_of_all_things_advance = {
     age = age_1_traditions
     depth = 0
     allow_children = yes
     starting_technology_level = 3
-
+    
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
     }
-
+    
     allow = {
-       has_embraced_institution = institution:th_genesis_of_gensokyo_institution
+        has_embraced_institution = institution:th_genesis_of_gensokyo_institution
     }
-
+    
     ai_weight = {
         value = 0
     }
@@ -21,17 +23,134 @@ th_origin_dream_advance = {
     age = age_1_traditions
     starting_technology_level = 3
     requires = th_panegyric_of_all_things_advance
-
-    cultures_capacity = 20
-
+    
+    cultures_capacity = 5
+    
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
     }
-
+    
     allow = {
         
     }
+    
+    ai_weight = {
+        value = 0
+    }
+}
 
+th_endless_fantasy_advance = {
+    age = age_1_traditions
+    starting_technology_level = 3
+    requires = th_panegyric_of_all_things_advance
+    
+    cabinet_efficiency = 0.025
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+th_gensokyo_chronicle_advance = {
+    age = age_1_traditions
+    starting_technology_level = 4
+    requires = th_endless_fantasy_advance
+    
+    cultural_tradition_modifier = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+th_balance_between_youkai_and_hito_advance = {
+    age = age_1_traditions
+    starting_technology_level = 4
+    requires = th_endless_fantasy_advance
+    
+    antagonism_received_modifier = -0.03
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+th_gensokyo_sages_advance = {
+    age = age_1_traditions
+    starting_technology_level = 4
+    requires = th_gensokyo_chronicle_advance
+    
+    replace_cabinet_member_cost_modifier = -0.15
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+th_spell_card_rules_advance = {
+    age = age_1_traditions
+    starting_technology_level = 4
+    requires = th_gensokyo_sages_advance
+    
+    estate_power_from_cabinet = -0.20
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+th_incident_resolution_advance = {
+    age = age_1_traditions
+    starting_technology_level = 4
+    requires = th_gensokyo_sages_advance
+    
+    army_tradition_decay = -0.001
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
     ai_weight = {
         value = 0
     }

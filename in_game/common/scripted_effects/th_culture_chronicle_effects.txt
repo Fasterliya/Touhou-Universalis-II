@@ -421,13 +421,6 @@
 	}
 	if = {
 		limit = {
-			NOT = { has_accepted_culture = culture:th_jizo_child_yokai_culture }
-			"culture_percentage_in_country(culture:th_jizo_child_yokai_culture)" > 0
-		}
-		add_to_global_variable_list = { name = th_culture_chronicle_unaccepted target = culture:th_jizo_child_yokai_culture }
-	}
-	if = {
-		limit = {
 			NOT = { has_accepted_culture = culture:th_yomi_woman_culture }
 			"culture_percentage_in_country(culture:th_yomi_woman_culture)" > 0
 		}
@@ -2349,32 +2342,6 @@ th_cc_refresh_display = {
 				var:th_cc_idx < var:th_cc_page_end
 			}
 			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_jizo_culture }
-		}
-		change_variable = { name = th_cc_idx add = 1 }
-	}
-	if = {
-		limit = {
-			OR = {
-				has_accepted_culture = culture:th_jizo_child_yokai_culture
-				scope:th_cc_primary = culture:th_jizo_child_yokai_culture
-			}
-		}
-		if = {
-			limit = {
-				var:th_cc_idx >= var:th_cc_page_start
-				var:th_cc_idx < var:th_cc_page_end
-			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_jizo_child_yokai_culture }
-		}
-		change_variable = { name = th_cc_idx add = 1 }
-	}
-	else = {
-		if = {
-			limit = {
-				var:th_cc_idx >= var:th_cc_page_start
-				var:th_cc_idx < var:th_cc_page_end
-			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_jizo_child_yokai_culture }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}

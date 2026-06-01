@@ -7,3 +7,14 @@
 		is_immortal = yes
 	}
 }
+
+touhou_gensokyo_ruler_ciruno_traits = {
+	category = ruler
+	allow = {
+		th_portrait_trigger = yes
+	}
+	modifier = {
+		is_immortal = yes
+		research_speed = 0.05
+	}
+}
