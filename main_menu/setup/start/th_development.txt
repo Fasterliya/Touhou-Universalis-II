@@ -1,4 +1,10 @@
 development = {
+# all valid values is added together
+#
+# region, area, province_definition or location can be used
+# location_rank, climate, topography or vegetation keys can be used
+# coastal, river
+
 	# base — 每个地块的基础值（base game 原值）
 	base = -2
 	
@@ -53,4 +59,10 @@ development = {
 	th_old_hell_region = 25
 	th_heaven_region = 35
 	th_moon_region = 45
+
+	th_central_plaza = 60
+	th_tengu_capital = 55
+	th_palace_of_moon = 75
+	th_makai_metropolis_center = 55
+	th_kappa_capital = 45
 }
