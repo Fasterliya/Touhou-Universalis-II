@@ -44,7 +44,7 @@ th_endless_fantasy_advance = {
     starting_technology_level = 3
     requires = th_panegyric_of_all_things_advance
     
-    cabinet_efficiency = 0.025
+    tolerance_heretic = 1
     
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }

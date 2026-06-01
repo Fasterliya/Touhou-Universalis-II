@@ -825,6 +825,9 @@ th_gensokyo_theory_of_science_ADJ: "科学论"
  th_genesis_of_gensokyo_institution: "幻想乡缘起"
  th_genesis_of_gensokyo_institution_desc: "在幻想乡的初始年代，故事诞生于篝火旁的闲谈之中，流传于人与人的耳语之间，又在一代代人的讲述与传承中延续。妖怪的身影、神明的奇迹、异变的见闻与古老的传说，共同编织着这片土地最初的记忆。\n\n然而，再精彩的故事也会因遗忘而消散，再久远的传说也会随着岁月而失落。为了让妖怪不会被遗忘，让传说不会湮没于时光之中，记录逐渐成为一件重要的事情。\n\n那些被书写于纸页之上的故事，开始超越口耳相传的传说，化作能够流传后世的历史。而幻想乡，也因此第一次拥有了属于自己的记忆。"
  STATIC_MODIFIER_NAME_th_genesis_of_gensokyo_institution_birth: "$th_genesis_of_gensokyo_institution$发源地"
+ th_gensokyo_fantasy_journey_institution: "见闻与物语"
+ th_gensokyo_fantasy_journey_institution_desc: "在漫长的岁月中，幻想乡的历史始终由先祖与御阿礼之子所书写。人们相信流传下来的故事，相信《幻想乡缘起》中记载的一切，并将未知视为不可触及的神秘。\n\n然而，随着印刷、抄录与文学的兴盛，越来越多的故事开始在人间之里流传。它们不再仅仅是关于神明、妖怪。旅人的见闻、商人的经历、学者的研究，以及无数普通人的幻想，都逐渐成为新的故事。人们第一次意识到，能被记录的并非只有历史，还有「人」的故事。\n\n于是，人们开始离开熟悉的村落，探索森林、山岳与湖泊；开始尝试理解世界运行的规律，而非满足于祖辈留下的解释。神秘依旧存在，但它不再仅是恐惧与禁忌。人与妖怪的交流逐渐增加，商业与旅行日益繁荣，新的思想沿着道路与书本传播至幻想乡各处。\n\n这是一个属于旅人、学者与小说家的时代。从被传颂的故事，到亲身经历的故事；从被记录的历史，到属于众人的时代。"
+ STATIC_MODIFIER_NAME_th_gensokyo_fantasy_journey_institution_birth: "$th_gensokyo_fantasy_journey_institution$发源地"
 
 ###特质
  touhou_gensokyo_ruler_traits: "幻想乡君主"

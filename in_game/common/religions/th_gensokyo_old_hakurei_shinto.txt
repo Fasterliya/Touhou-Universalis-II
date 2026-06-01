@@ -19,6 +19,10 @@
 	}
 	
 	opinions = {
+		th_gensokyo_buddhism = kindred
+		th_gensokyo_taoism = kindred
+		th_gensokyo_theory_of_science = kindred
+		th_gensokyo_theory_of_science = positive
 	}
 
 	unique_names = {
@@ -59,6 +63,10 @@ th_gensokyo_buddhism = {
 	}
 	
 	opinions = {
+		th_gensokyo_old_hakurei_shinto = kindred
+		th_gensokyo_taoism = kindred
+		th_gensokyo_theory_of_science = kindred
+		th_gensokyo_theory_of_science = positive
 	}
 
 	unique_names = {
@@ -99,6 +107,10 @@ th_gensokyo_taoism = {
 	}
 	
 	opinions = {
+		th_gensokyo_old_hakurei_shinto = kindred
+		th_gensokyo_buddhism = kindred
+		th_gensokyo_theory_of_science = kindred
+		th_gensokyo_theory_of_science = positive
 	}
 
 	unique_names = {
@@ -179,6 +191,7 @@ th_gensokyo_tenma_mount = {
 	}
 	
 	opinions = {
+		th_gensokyo_old_hakurei_shinto = kindred
 	}
 
 	unique_names = {
@@ -219,6 +232,11 @@ th_gensokyo_lunar_religion = {
 	}
 	
 	opinions = {
+		th_gensokyo_old_hakurei_shinto = enemy
+		th_gensokyo_buddhism = negative
+		th_gensokyo_taoism = negative
+		th_gensokyo_eat_raw = negative
+		th_gensokyo_tenma_mount = negative
 	}
 
 	unique_names = {
@@ -259,6 +277,9 @@ th_gensokyo_theory_of_science = {
 	}
 	
 	opinions = {
+		th_gensokyo_old_hakurei_shinto = kindred
+		th_gensokyo_buddhism = kindred
+		th_gensokyo_taoism = kindred
 	}
 
 	unique_names = {
