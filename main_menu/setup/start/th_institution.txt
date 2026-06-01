@@ -1,4 +1,4 @@
-﻿locations={
+locations={
 
 th_main_gate_plaza = {
     feudalism = yes
