@@ -2,7 +2,7 @@
 	color = rgb { 211 121 232 }
 	group = th_gensokyo_religion_group
 	
-	enable = 9999.1.1 
+	enable = 1.1.1 
 	
 	religious_aspects = 1
 	has_religious_influence = yes
