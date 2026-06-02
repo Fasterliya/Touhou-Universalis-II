@@ -1,6 +1,7 @@
 ﻿l_simp_chinese:
 
 #革新
+##第一时代
  th_panegyric_of_all_things_advance: "在歌颂一切之物的时代"
  th_panegyric_of_all_things_advance_desc: "在最初的时代，人们尚未将世界分为神圣或恐怖，生灵或器物。群山、河流、大地、森林，以及那些尚未拥有名字的存在，都被一同讲述，一同歌颂。\n\n薄暮与神秘笼罩着大地，黑暗之外潜伏着无人知晓之物。人们敬畏黑暗，也畏惧未知。而那些口耳相传的故事，对于怪异的想象，对黑暗的恐惧，渐渐交织汇聚。\n\n幻想————也正是在这样的传承之中诞生。"
  th_origin_dream_advance: "最初之梦"
@@ -17,3 +18,8 @@
  th_spell_card_rules_advance_desc: "为了让妖怪之间能够以更加公平的方式解决纷争，贤者们共同确立符卡规则。自此之后，决斗不再仅仅追求胜负。弹幕成为表达自身存在与理念的方式。即使弱者，也拥有挑战强者的资格。而被称作符卡规则的契约，也成为维系幻想乡平衡的基石。"
  th_incident_resolution_advance: "异变秩序"
  th_incident_resolution_advance_desc: "对于幻想乡而言，异变本身亦是维系幻想的重要组成部分。妖怪借此展现存在。神明借此传播信仰。而人类则通过解决异变重新确立平衡。"
+##第二时代
+ th_age_of_stories_and_observations_advance: "流传的故事"
+ th_age_of_stories_and_observations_advance_desc: "这是一个属于旅人、学者与小说家的时代。随着书籍、抄本与故事在幻想乡的广泛流传，人们开始走出熟悉的村落，前往幻想乡更遥远的地方。见闻被记录，传说被整理，「故事」将被重新讲述。"
+ th_fantasy_book_compacts_advance: "书籍热潮"
+ th_fantasy_book_compacts_advance_desc: "书籍成为新的纽带。契约、故事与知识随着纸页传播至幻想乡的各处。来自妖怪之山的新闻、铃奈庵收藏的奇书、或是旅人自作的传记，被抄录、借阅与流传。不同的种族开始阅读相同的「故事」，不同的文化开始分享相同的「见闻」。"

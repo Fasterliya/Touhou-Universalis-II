@@ -155,3 +155,44 @@ th_incident_resolution_advance = {
         value = 0
     }
 }
+
+##第二时代
+#流传的故事
+th_age_of_stories_and_observations_advance = {
+    age = age_2_renaissance
+    depth = 0
+    allow_children = yes
+    starting_technology_level = 3
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        has_embraced_institution = institution:th_gensokyo_fantasy_journey_institution
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+#书籍热潮
+th_fantasy_book_compacts_advance = {
+    age = age_2_renaissance
+    starting_technology_level = 4
+    requires = th_age_of_stories_and_observations_advance
+    
+    army_tradition_decay = -0.001
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
