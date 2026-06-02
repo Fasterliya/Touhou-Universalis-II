@@ -4,7 +4,7 @@ touhou_alice = { entity = { required_tags = "" shared_pose_entity = head entity 
 touhou_shinki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_shinki_entity" } }
 touhou_yukari = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yukari_entity" } }
 
-touhou_anaberal = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_anaberal_entity" } }
+touhou_kana = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kana_entity" } }
 touhou_asakura = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_asakura_entity" } }
 touhou_elis = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_elis_entity" } }
 touhou_ellen = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ellen_entity" } }

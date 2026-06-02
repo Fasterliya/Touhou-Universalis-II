@@ -78,21 +78,21 @@ entity = {
 }
 #卡娜
 pdxmesh = {
-	name = "touhou_anaberal_mesh"
+	name = "touhou_kana_mesh"
 	file = "hm_prophet.mesh"
 	scale = 0.8
 	meshsettings = {
 		name = "prophet_shieldShape"
 		index = 0
-		texture_diffuse = "touhou_anaberal.dds"
-		texture_specular = "touhou_anaberal.dds"
+		texture_diffuse = "touhou_kana.dds"
+		texture_specular = "touhou_kana.dds"
 		shader = "portrait_attachment_alpha_to_coverage"
 		shader_file = "gfx/hmportrait.shader"
 	}
 }
 entity = {
-	name = "touhou_anaberal_entity"
-	pdxmesh = "touhou_anaberal_mesh"
+	name = "touhou_kana_entity"
+	pdxmesh = "touhou_kana_mesh"
 }
 #朝仓
 pdxmesh = {

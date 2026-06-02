@@ -115,12 +115,12 @@ th_gensokyo_portrait = {
 	}
 
 	#卡娜安娜贝拉尔
-	touhou_anaberal = {
+	touhou_kana = {
 		dna_modifiers = {
 			accessory = {
 				mode = replace
 				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
-				template = touhou_anaberal	#在这里和对应头像对上
+				template = touhou_kana	#在这里和对应头像对上
 				value = 0.5
 			}
 		}
@@ -132,7 +132,7 @@ th_gensokyo_portrait = {
 
 				ethnicity ?= ethnicity:th_gensokyo_ethnicity
 
-				var:portrait_locked ?= flag:touhou_anaberal
+				var:portrait_locked ?= flag:touhou_kana
 			}
 		}
 	}

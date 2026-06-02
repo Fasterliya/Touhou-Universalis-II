@@ -7,7 +7,7 @@
 	set_variable = { name = portrait_locked value = flag:touhou_yukari }
 	set_variable = { name = portrait_locked value = flag:touhou_passer1 }
 
-	set_variable = { name = portrait_locked value = flag:touhou_anaberal }
+	set_variable = { name = portrait_locked value = flag:touhou_kana }
 	set_variable = { name = portrait_locked value = flag:touhou_asakura }
 	set_variable = { name = portrait_locked value = flag:touhou_elis }
 	set_variable = { name = portrait_locked value = flag:touhou_ellen }

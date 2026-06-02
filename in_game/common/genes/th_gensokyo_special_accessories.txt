@@ -48,9 +48,9 @@ accessory_genes = {
 		}
 
 		#
-		touhou_anaberal = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+		touhou_kana = {	#比如我想往术力口的肖像组里加人，就是照着这个改
 			index = 5
-			male = { 1 = touhou_anaberal }
+			male = { 1 = touhou_kana }
 			female = male
 			boy = male
 			girl = male

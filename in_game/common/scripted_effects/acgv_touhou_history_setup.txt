@@ -719,8 +719,8 @@
 	}
 	c:T51 = {
 		th_common_history_setup_create_ruler_scr_effect = {
-			character = touhou_toyosatomimi
-			surname = touhou_miku
+			character = touhou_miku
+			surname = touhou_toyosatomimi
 			culture = th_shikaisen_culture
 			religion = th_gensokyo_taoism
 			ethnicity = ethnicity:th_gensokyo_ethnicity
