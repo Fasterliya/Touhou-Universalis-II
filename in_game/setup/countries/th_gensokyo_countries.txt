@@ -713,7 +713,7 @@ T71 = {
 T72 = {
 	color = rgb { 227 112 225 }
 	culture_definition = th_moon_people_culture
-	religion_definition = th_gensokyo_old_hakurei_shinto
+	religion_definition = th_gensokyo_lunar_religion
 	description_category = economic
 	difficulty = 1
 }

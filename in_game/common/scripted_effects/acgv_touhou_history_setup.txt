@@ -411,8 +411,8 @@
 	}
 	c:T29 = {
 		th_common_history_setup_create_ruler_scr_effect = {
-			character = touhou_eternity
-			surname = touhou_larva
+			character = touhou_larva
+			surname = touhou_eternity
 			culture = th_phenomenon_fairy_culture
 			religion = th_gensokyo_old_hakurei_shinto
 			ethnicity = ethnicity:th_gensokyo_ethnicity
