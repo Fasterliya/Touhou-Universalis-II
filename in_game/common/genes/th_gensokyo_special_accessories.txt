@@ -57,9 +57,9 @@ accessory_genes = {
 			adolescent_boy = male
 			adolescent_girl = male
 		}
-		touhou_asakura = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+		touhou_rikako = {	#比如我想往术力口的肖像组里加人，就是照着这个改
 			index = 6
-			male = { 1 = touhou_asakura }
+			male = { 1 = touhou_rikako }
 			female = male
 			boy = male
 			girl = male
@@ -204,9 +204,9 @@ accessory_genes = {
 			adolescent_boy = male
 			adolescent_girl = male
 		}
-		touhou_okazaki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+		touhou_yumemi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
 			index = 22
-			male = { 1 = touhou_okazaki }
+			male = { 1 = touhou_yumemi }
 			female = male
 			boy = male
 			girl = male

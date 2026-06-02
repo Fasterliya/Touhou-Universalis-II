@@ -96,21 +96,21 @@ entity = {
 }
 #朝仓
 pdxmesh = {
-	name = "touhou_asakura_mesh"
+	name = "touhou_rikako_mesh"
 	file = "hm_prophet.mesh"
 	scale = 0.8
 	meshsettings = {
 		name = "prophet_shieldShape"
 		index = 0
-		texture_diffuse = "touhou_asakura.dds"
-		texture_specular = "touhou_asakura.dds"
+		texture_diffuse = "touhou_rikako.dds"
+		texture_specular = "touhou_rikako.dds"
 		shader = "portrait_attachment_alpha_to_coverage"
 		shader_file = "gfx/hmportrait.shader"
 	}
 }
 entity = {
-	name = "touhou_asakura_entity"
-	pdxmesh = "touhou_asakura_mesh"
+	name = "touhou_rikako_entity"
+	pdxmesh = "touhou_rikako_mesh"
 }
 #伊莉丝
 pdxmesh = {
@@ -384,21 +384,21 @@ entity = {
 }
 #草莓
 pdxmesh = {
-	name = "touhou_okazaki_mesh"
+	name = "touhou_yumemi_mesh"
 	file = "hm_prophet.mesh"
 	scale = 0.8
 	meshsettings = {
 		name = "prophet_shieldShape"
 		index = 0
-		texture_diffuse = "touhou_okazaki.dds"
-		texture_specular = "touhou_okazaki.dds"
+		texture_diffuse = "touhou_yumemi.dds"
+		texture_specular = "touhou_yumemi.dds"
 		shader = "portrait_attachment_alpha_to_coverage"
 		shader_file = "gfx/hmportrait.shader"
 	}
 }
 entity = {
-	name = "touhou_okazaki_entity"
-	pdxmesh = "touhou_okazaki_mesh"
+	name = "touhou_yumemi_entity"
+	pdxmesh = "touhou_yumemi_mesh"
 }
 #旧作灵梦
 pdxmesh = {

@@ -137,12 +137,12 @@ th_gensokyo_portrait = {
 		}
 	}
 	#朝仓
-	touhou_asakura = {
+	touhou_rikako = {
 		dna_modifiers = {
 			accessory = {
 				mode = replace
 				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
-				template = touhou_asakura	#在这里和对应头像对上
+				template = touhou_rikako	#在这里和对应头像对上
 				value = 0.5
 			}
 		}
@@ -154,7 +154,7 @@ th_gensokyo_portrait = {
 
 				ethnicity ?= ethnicity:th_gensokyo_ethnicity
 
-				var:portrait_locked ?= flag:touhou_asakura
+				var:portrait_locked ?= flag:touhou_rikako
 			}
 		}
 	}
@@ -489,12 +489,12 @@ th_gensokyo_portrait = {
 		}
 	}
 	#草莓
-	touhou_okazaki = {
+	touhou_yumemi = {
 		dna_modifiers = {
 			accessory = {
 				mode = replace
 				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
-				template = touhou_okazaki	#在这里和对应头像对上
+				template = touhou_yumemi	#在这里和对应头像对上
 				value = 0.5
 			}
 		}
@@ -506,7 +506,7 @@ th_gensokyo_portrait = {
 
 				ethnicity ?= ethnicity:th_gensokyo_ethnicity
 
-				var:portrait_locked ?= flag:touhou_okazaki
+				var:portrait_locked ?= flag:touhou_yumemi
 			}
 		}
 	}

@@ -5,7 +5,7 @@ touhou_shinki = { entity = { required_tags = "" shared_pose_entity = head entity
 touhou_yukari = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yukari_entity" } }
 
 touhou_kana = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_kana_entity" } }
-touhou_asakura = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_asakura_entity" } }
+touhou_rikako = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_rikako_entity" } }
 touhou_elis = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_elis_entity" } }
 touhou_ellen = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_ellen_entity" } }
 touhou_elly = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_elly_entity" } }
@@ -24,7 +24,7 @@ touhou_meira = { entity = { required_tags = "" shared_pose_entity = head entity 
 
 touhou_mima = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mima_entity" } }
 touhou_mugetsu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_mugetsu_entity" } }
-touhou_okazaki = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_okazaki_entity" } }
+touhou_yumemi = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_yumemi_entity" } }
 touhou_old_reimu = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_old_reimu_entity" } }
 touhou_orange = { entity = { required_tags = "" shared_pose_entity = head entity = "touhou_orange_entity" } }
 
