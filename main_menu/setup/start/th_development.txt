@@ -1,64 +1,56 @@
-# INJECT:development = {
-# 	# # base — 每个地块的基础值（base game 原值）
-# 	# base = -2
+development = {
+	# base — 每个地块的基础值（base game 原值）
+	base = -2
 	
-# 	# # 水域/河流/道路（base game 原值）
-# 	# coastal = 5
-# 	# river = 0.5
-# 	# road = 2
+	# 水域/河流/道路（base game 原值）
+	coastal = 5
+	river = 0.5
+	road = 2
 	
-# 	# # 地点等级（base game 原值）
-# 	# city = 5
-# 	# town = 2
+	# 地点等级（base game 原值）
+	city = 5
+	town = 2
 	
-# 	# # 植被（base game 原值）
-# 	# grasslands = 1
-# 	# farmland = 3
-# 	# sparse = -1
-# 	# forest = -2
-# 	# woods = -1
-# 	# desert = -3
-# 	# jungle = -4
+	# 植被（base game 原值）
+	grasslands = 1
+	farmland = 3
+	sparse = -1
+	forest = -2
+	woods = -1
+	desert = -3
+	jungle = -4
 	
-# 	# # 气候（base game 原值）
-# 	# tropical = -3
-# 	# subtropical = 2
-# 	# oceanic = 1
-# 	# arid = -4
-# 	# cold_arid = -3
-# 	# mediterranean = 2
-# 	# continental = 1
-# 	# arctic = -5
+	# 气候（base game 原值）
+	tropical = -3
+	subtropical = 2
+	oceanic = 1
+	arid = -4
+	cold_arid = -3
+	mediterranean = 2
+	continental = 1
+	arctic = -5
 	
-# 	# # 地形（base game 原值）
-# 	# flatland = 1
-# 	# mountains = -3
-# 	# hills = -2
-# 	# plateau = -1
-# 	# wetlands = -4
+	# 地形（base game 原值）
+	flatland = 1
+	mountains = -3
+	hills = -2
+	plateau = -1
+	wetlands = -4
 	
-	
-
-# 	#TH 幻想乡区域
-# 	th_gensokyo_hakurei_region = 30
-# 	th_gensokyo_makai_region = 25
-# 	th_gensokyo_human_village_region = 40
-# 	th_gensokyo_magic_forest_region = 30
-# 	th_youkai_mountain_western_foot_region = 35
-# 	th_youkai_mountain_region = 35
-# 	th_immortal_realm_region = 30
-# 	th_moriya_shirine_region = 30
-# 	th_animal_realm_region = 25
-# 	th_hell_region = 25
-# 	th_sunflower_field_region = 30
-# 	th_makai_region = 30
-# 	th_old_hell_region = 25
-# 	th_heaven_region = 35
-# 	th_moon_region = 45
-
-# 	th_central_plaza = 60
-# 	th_tengu_capital = 55
-# 	th_palace_of_moon = 75
-# 	th_makai_metropolis_center = 55
-# 	th_kappa_capital = 45
-# }
+	#TH 幻想乡区域
+	th_gensokyo_hakurei_region = 30
+	th_gensokyo_makai_region = 25
+	th_gensokyo_human_village_region = 40
+	th_gensokyo_magic_forest_region = 30
+	th_youkai_mountain_western_foot_region = 35
+	th_youkai_mountain_region = 35
+	th_immortal_realm_region = 30
+	th_moriya_shirine_region = 30
+	th_animal_realm_region = 25
+	th_hell_region = 25
+	th_sunflower_field_region = 30
+	th_makai_region = 30
+	th_old_hell_region = 25
+	th_heaven_region = 35
+	th_moon_region = 45
+}
