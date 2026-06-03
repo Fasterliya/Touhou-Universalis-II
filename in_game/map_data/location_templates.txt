@@ -181,6 +181,7 @@ th_shakunetsu_shiogama_sea3 = { topography = ocean climate = oceanic }
 th_kyoukan_rekka_sea = { topography = ocean climate = oceanic }
 th_shugou_teppou_umi = { topography = ocean climate = oceanic }
 th_abiki_zankyo_umi_sea = { topography = ocean climate = oceanic }
+th_abiki_zankyo_umi_sea2 = { topography = ocean climate = oceanic }
 #不可通行山脉
 th_cannot_entry_mountain1 = { topography = mountain_wasteland climate = oceanic }
 th_cannot_entry_mountain2 = { topography = mountain_wasteland climate = oceanic }
