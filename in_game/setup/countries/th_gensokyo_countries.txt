@@ -331,7 +331,7 @@ T30 = {
 	
 	difficulty = 1
 }
-#人间之里 空置，随机一个名称
+#人间之里 仅保留中心广场
 T03 = {
 	color = rgb { 255 183 58 }
 	culture_definition = th_village_human_culture
@@ -823,5 +823,95 @@ T84 = {
 	culture_definition = th_oni_culture
 	religion_definition = th_gensokyo_eat_raw
 	description_category = economic
+	difficulty = 1
+}
+
+#清兰
+T85 = {
+	color = rgb { 135 206 235 }
+	culture_definition = th_moon_people_human_village_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#铃瑚
+T86 = {
+	color = rgb { 255 182 193 }
+	culture_definition = th_moon_people_human_village_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#美宵
+T87 = {
+	color = rgb { 186 85 211 }
+	culture_definition = th_village_human_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#小铃
+T88 = {
+	color = rgb { 218 165 32 }
+	culture_definition = th_village_human_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#阿求
+T89 = {
+	color = rgb { 180 30 50 }
+	culture_definition = th_village_human_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#朱鹭子
+T90 = {
+	color = rgb { 255 215 0 }
+	culture_definition = th_village_human_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#香霖
+T91 = {
+	color = rgb { 60 160 100 }
+	culture_definition = th_village_human_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#慧音
+T92 = {
+	color = rgb { 65 105 225 }
+	culture_definition = th_village_human_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#堇子
+T93 = {
+	color = rgb { 138 43 226 }
+	culture_definition = th_outside_world_people_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
+	difficulty = 1
+}
+
+#二岩猯藏（佐渡）
+T94 = {
+	color = rgb { 180 150 110 }
+	culture_definition = th_yokai_tanuki_culture
+	religion_definition = th_gensokyo_old_hakurei_shinto
+	description_category = diplomatic
 	difficulty = 1
 }

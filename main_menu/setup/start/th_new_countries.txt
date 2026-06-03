@@ -158,34 +158,20 @@
 			}
 		}
 		
-		
-		T03 = {
+				T03 = {
 			capital = th_central_plaza
 			court_language = th_gensokyo_common_dialect
 			country_rank = rank_kingdom
 			starting_technology_level = 3
-			
+
 			own_control_core = {
-				th_central_plaza th_mitsuke_ban_goya th_ura_nagaya_dori th_wayside_shrine th_minami_tsuji_kouban th_tsuji_shidou th_sagi_no_shoshitsu th_nagaya_nami_higashiguchi th_nagarekawa_bashi_minamizume_hiroba th_minami_daimon_dori
-				th_mihan_hiroba th_kashihon_gura th_bookstore_yokocho th_suzunaan th_higashi_yokocho th_zaimoku_cho th_village_bell_tower th_police_outpost th_crossroads_teahouse th_old_well_mouth
-				th_village_office th_western_village_street th_hori_bata_dori th_nishi_kido_guchi th_tsuji_dou th_kamiya_cho th_gakusha_shukubo_cho th_hieda_residence th_antique_market th_hieda_residence_front_street
-				th_nagarekawa_bridge_south_ab th_south_market th_signpost_fork th_kourindou_main_store th_workshop_yokocho th_honcho_dori th_boundary_stone_road th_cattle_grazing_slope th_grain_drying_field th_watermill_mill
-				th_east_fence_vegetable_garden th_west_slope_wheat_field th_village_outskirts th_asobi_niwa th_ura_nagaya_dori_2 th_kita_odori th_kyouzai_gura th_sensei_no_heya th_terakoya_mae th_terakoya_gakudo
-				th_hatago_yokocho th_sakagura_dori th_nagashidai_mae th_dozou_soko th_umaya_mae th_yuya th_geodon_tei_main_hall th_saikumachi_dori th_satoyama_no_mori th_nishi_mi_ban
-				th_suzuko_ya th_seiran_ya th_ryujin_sama_sekizou th_nishi_odori th_synthesizer_avenue
+				th_central_plaza
 			}
-			
+
 			accepted_cultures = { th_yokai_culture }
-			tolerated_cultures = { th_wild_human_culture th_shrine_surrounding_human_culture th_flower_fairy_culture th_season_fairy_culture th_phenomenon_fairy_culture th_elemental_fairy_culture th_light_fairy_culture th_houjou_people_culture th_zashiki_warashi_culture th_outside_world_people_culture th_crow_tengu_culture th_jizo_culture th_instrument_yokai_culture th_yokai_rabbit_culture th_yokai_dog_culture th_fuguruma_culture th_umbrella_yokai_culture th_ghost_culture th_moon_people_human_village_culture }
-			#????
-			# include = "expl_mediterranean"
+			tolerated_cultures = { th_yokai_culture }
 			include = "th_gensokyo_monarchy"
-			# include = "expl_silk_road_west"
-			# include = "expl_silk_road_center"
-			# include = "expl_silk_road_east"
-			# include = "expl_indian_trade_route"
-			# include = "catholic_monarchy"
-			
+
 			discovered_regions = {
 				th_gensokyo_hakurei_region
 				th_gensokyo_makai_region
@@ -206,7 +192,7 @@
 				th_gensokyo_ocean_moriya_sea_region
 				th_gensokyo_ocean_north_sea_region
 			}
-			
+
 			government = {
 				ruler = random
 				reforms = {
@@ -215,6 +201,437 @@
 			}
 		}
 		
+		
+
+		T85 = {
+			capital = th_seiran_ya
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_seiran_ya th_nishi_odori th_ryujin_sama_sekizou th_nishi_mi_ban th_western_village_street th_old_well_mouth
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_village_human_culture th_yokai_rabbit_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T86 = {
+			capital = th_suzuko_ya
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_suzuko_ya th_satoyama_no_mori th_saikumachi_dori th_police_outpost th_zaimoku_cho th_higashi_yokocho
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_village_human_culture th_yokai_rabbit_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T87 = {
+			capital = th_geodon_tei_main_hall
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_geodon_tei_main_hall th_yuya th_umaya_mae th_dozou_soko th_nagashidai_mae th_sakagura_dori th_hatago_yokocho
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T88 = {
+			capital = th_suzunaan
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_suzunaan th_bookstore_yokocho th_kashihon_gura th_mihan_hiroba th_minami_daimon_dori th_nagarekawa_bashi_minamizume_hiroba th_nagaya_nami_higashiguchi
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T89 = {
+			capital = th_hieda_residence
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_hieda_residence th_hieda_residence_front_street th_gakusha_shukubo_cho th_kamiya_cho th_tsuji_dou th_nishi_kido_guchi th_hori_bata_dori
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T90 = {
+			capital = th_sagi_no_shoshitsu
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_sagi_no_shoshitsu th_tsuji_shidou th_minami_tsuji_kouban th_wayside_shrine th_ura_nagaya_dori th_mitsuke_ban_goya
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T91 = {
+			capital = th_kourindou_main_store
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_kourindou_main_store th_honcho_dori th_workshop_yokocho th_antique_market th_signpost_fork th_south_market th_nagarekawa_bridge_south_ab
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T92 = {
+			capital = th_terakoya_gakudo
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_terakoya_gakudo th_terakoya_mae th_sensei_no_heya th_kyouzai_gura th_kita_odori th_ura_nagaya_dori_2 th_asobi_niwa
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T93 = {
+			capital = th_synthesizer_avenue
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_synthesizer_avenue th_boundary_stone_road th_village_office th_crossroads_teahouse th_village_bell_tower
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_village_human_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
+
+		T94 = {
+			capital = th_village_outskirts
+			court_language = th_gensokyo_common_dialect
+			country_rank = rank_kingdom
+			starting_technology_level = 3
+
+			own_control_core = {
+				th_village_outskirts th_west_slope_wheat_field th_east_fence_vegetable_garden th_watermill_mill th_grain_drying_field th_cattle_grazing_slope
+			}
+
+			accepted_cultures = { th_yokai_culture }
+			tolerated_cultures = { th_village_human_culture th_yokai_culture }
+			include = "th_gensokyo_monarchy"
+
+			discovered_regions = {
+				th_gensokyo_hakurei_region
+				th_gensokyo_makai_region
+				th_gensokyo_human_village_region
+				th_gensokyo_magic_forest_region
+				th_youkai_mountain_western_foot_region
+				th_youkai_mountain_region
+				th_immortal_realm_region
+				th_moriya_shirine_region
+				th_animal_realm_region
+				th_hell_region
+				th_sunflower_field_region
+				th_makai_region
+				th_old_hell_region
+				th_heaven_region
+				th_gensokyo_ocean_south_sea_region
+				th_gensokyo_ocean_west_sea_region
+				th_gensokyo_ocean_moriya_sea_region
+				th_gensokyo_ocean_north_sea_region
+			}
+
+			government = {
+				ruler = random
+				reforms = {
+					th_gensokyo_government_reform
+				}
+			}
+		}
 		
 		T04 = {
 			capital = th_hakurei_shrine
