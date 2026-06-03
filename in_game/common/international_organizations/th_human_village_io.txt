@@ -1,0 +1,5 @@
+﻿th_human_village_io = {
+    unique = yes
+    has_leader_country = no
+    has_parliament = no
+}
