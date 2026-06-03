@@ -65,6 +65,7 @@ government = {
 		distribution_of_power_law = dop_favor_the_ruler_miku_ver
 		immigration_law = open_borders_law
 		mining_law = nobles_mining_law
+		coin_laws = silver_coins
 	}
 }
 
