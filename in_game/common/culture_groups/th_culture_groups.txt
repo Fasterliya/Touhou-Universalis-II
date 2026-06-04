@@ -1,11 +1,11 @@
 ﻿#幻想乡文化组
 th_gensokyo_culture_group = {
 	country_modifier = {
+		global_pop_assimilation_speed_modifier = -1.0
 	}
 	character_modifier = {
 	}
 	location_modifier = {
-		local_pop_assimilation_speed_modifier = -1.0
 	}
 }
 #妖怪文化组
