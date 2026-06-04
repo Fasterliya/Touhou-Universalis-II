@@ -5,6 +5,7 @@ th_gensokyo_culture_group = {
 	character_modifier = {
 	}
 	location_modifier = {
+		local_pop_assimilation_speed_modifier = -1.0
 	}
 }
 #妖怪文化组
