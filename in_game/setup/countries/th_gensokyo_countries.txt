@@ -2,7 +2,7 @@
 T00 = {
 	color = rgb { 191 54 54 }
 	
-	culture_definition = th_maid_fairy_culture
+	culture_definition = th_vampire_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
 	
 	description_category = diplomatic
