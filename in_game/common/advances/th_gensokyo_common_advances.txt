@@ -164,6 +164,8 @@ th_age_of_stories_and_observations_advance = {
     allow_children = yes
     starting_technology_level = 3
     
+    promote_institution_chance = 0.50
+    
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
     }
@@ -176,13 +178,250 @@ th_age_of_stories_and_observations_advance = {
         value = 0
     }
 }
-#书籍热潮
+#风之所在
 th_fantasy_book_compacts_advance = {
     age = age_2_renaissance
-    starting_technology_level = 4
     requires = th_age_of_stories_and_observations_advance
     
-    army_tradition_decay = -0.001
+    books_used_for_minting = yes
+    books_impacts_inflation = -0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+#字字珠玑
+th_words_like_pearls_advance = {
+    age = age_2_renaissance
+    requires = th_fantasy_book_compacts_advance
+    
+    research_speed_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#遥远之物
+th_the_distant_one_advance = {
+    age = age_2_renaissance
+    
+    requires = th_fantasy_book_compacts_advance
+    
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#异变新叙事
+th_new_narratives_of_incidents_advance = {
+    age = age_2_renaissance
+    requires = th_the_distant_one_advance
+    
+    army_initiative = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#暗红命运
+th_scarlet_destiny_advance = {
+    age = age_2_renaissance
+    requires = th_new_narratives_of_incidents_advance
+    
+    inland_sea_proximity_impact = -0.10
+    global_food_decay_modifier = -0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+#妖妖之梦
+th_phantom_dreams_advance = {
+    age = age_2_renaissance
+    requires = th_new_narratives_of_incidents_advance
+    
+    global_monthly_food_modifier = 0.15
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+#永久之夜
+th_eternal_night_advance = {
+    age = age_2_renaissance
+    requires = th_new_narratives_of_incidents_advance
+    
+    power_projection = 10  
+    monthly_diplomats = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#百闻录
+th_cartography_of_rumors_advance = {
+    age = age_2_renaissance
+    requires = th_words_like_pearls_advance
+    
+    trade_range = 100
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+#森罗秘闻
+th_chronicles_of_mysteries_advance = {
+    age = age_2_renaissance
+    requires = th_words_like_pearls_advance
+    
+    global_clergy_max_literacy = 5
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#符卡改革
+th_danmaku_reformation_advance = {
+    age = age_2_renaissance
+    requires = th_chronicles_of_mysteries_advance
+    
+    land_morale_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+#印刷术
+th_printing_press_adoption_advance = {
+    age = age_2_renaissance
+    requires = th_words_like_pearls_advance
+    
+    embrace_institution_cost_modifier = -0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#新闻业
+th_emergent_journalism_advance = {
+    age = age_2_renaissance
+    requires = th_printing_press_adoption_advance
+    
+    global_institution_growth_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#白银货币
+th_silver_currency_standard_advance = {
+    age = age_2_renaissance
+    requires = th_fantasy_book_compacts_advance
+    
+    silver_impacts_inflation = -0.05
     
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
