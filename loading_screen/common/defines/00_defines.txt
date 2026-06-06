@@ -1492,8 +1492,8 @@ NPop = {
 	
 	REBEL_DANGER_THRESHOLD = 0.95
 	
-	POP_MINORITY_SIMILAR_THRESHOLD	= 4		#if more or equal of this of pops of type in location, join either same culture or religion
-	POP_MINORITY_JUST_MERGE_THRESHOLD	= 8		#if more or equal of this of pops of type in location, join largest
+	POP_MINORITY_SIMILAR_THRESHOLD	= 10000000		#if more or equal of this of pops of type in location, join either same culture or religion
+	POP_MINORITY_JUST_MERGE_THRESHOLD	= 10000000		#if more or equal of this of pops of type in location, join largest
 
 	YEARLY_POP_SATISFACTION_FROM_EVENTS_DECAY = 0.01 # percentage, will display as value * 100
 }

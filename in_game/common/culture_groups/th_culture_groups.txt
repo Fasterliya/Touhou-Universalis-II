@@ -1,7 +1,15 @@
 ﻿#幻想乡文化组
 th_gensokyo_culture_group = {
 	country_modifier = {
-		global_pop_assimilation_speed_modifier = -1.0
+		global_pop_assimilation_speed_modifier = -10.0
+		global_nobles_assimilation_blocked = yes
+		global_clergy_assimilation_blocked = yes
+		global_burghers_assimilation_blocked = yes
+		global_peasants_assimilation_blocked = yes
+		global_laborers_assimilation_blocked = yes
+		global_soldiers_assimilation_blocked = yes
+		global_slaves_assimilation_blocked = yes
+		global_tribesmen_assimilation_blocked = yes
 	}
 	character_modifier = {
 	}
