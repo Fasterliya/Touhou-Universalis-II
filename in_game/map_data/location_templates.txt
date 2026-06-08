@@ -8,41 +8,46 @@ th_norh_bank_of_misty_lake = { topography = inland_sea climate = oceanic }
 th_mermaid_bay_sea = { topography = inland_sea climate = oceanic }
 th_mist_channel_sea_north = { topography = inland_sea climate = oceanic }
 th_mist_channel_sea_south = { topography = inland_sea climate = oceanic }
-th_fog_channel_stratts_sea = { topography = inland_sea climate = oceanic }
+th_fog_channel_stratts_sea = { topography = coastal_ocean climate = oceanic }
 #博丽海
-th_hakurei_dreamlike_bay_sea = { topography = inland_sea climate = oceanic }
-th_southern_hakurei_gulf_sea = { topography = ocean climate = oceanic }
-th_mirror_gulf_sea = { topography = ocean climate = oceanic }
-th_first_snow_sea = { topography = ocean climate = oceanic }
-th_hakurei_inland_sea = { topography = ocean climate = oceanic }
-th_first_snow_sea_north = { topography = ocean climate = oceanic }
-th_southern_hakurei_gulf_west_sea = { topography = ocean climate = oceanic }
+#博丽海
+th_hakurei_dreamlike_bay_sea = { topography = coastal_ocean climate = oceanic }
+th_southern_hakurei_gulf_sea = { topography = coastal_ocean climate = oceanic }
+th_mirror_gulf_sea = { topography = coastal_ocean climate = oceanic }
+th_first_snow_sea = { topography = coastal_ocean climate = oceanic }
+th_hakurei_inland_sea = { topography = coastal_ocean climate = oceanic }
+th_first_snow_sea_north = { topography = coastal_ocean climate = oceanic }
+th_southern_hakurei_gulf_west_sea = { topography = coastal_ocean climate = oceanic }
 #隙间海
-th_gap_sea_location = { topography = ocean climate = oceanic }
-th_void_sea_location = { topography = ocean climate = oceanic }
+#隙间海
+th_gap_sea_location = { topography = coastal_ocean climate = oceanic }
+th_void_sea_location = { topography = coastal_ocean climate = oceanic }
 th_border_whirlpool_sea = { topography = ocean climate = oceanic }
-th_phantom_reef_sea = { topography = ocean climate = oceanic }
+th_phantom_reef_sea = { topography = coastal_ocean climate = oceanic }
 th_tidecall_gulf_sea = { topography = ocean climate = oceanic }
-th_mirage_undercurrent_sea = { topography = ocean climate = oceanic }
+th_mirage_undercurrent_sea = { topography = coastal_ocean climate = oceanic }
 #幽冥云海
-th_soul_sea_location = { topography = ocean climate = oceanic }
-th_nether_cloud_bay_sea = { topography = ocean climate = oceanic }
-th_nether_cloud_sea = { topography = ocean climate = oceanic }
+#幽冥云海
+th_soul_sea_location = { topography = coastal_ocean climate = oceanic }
+th_nether_cloud_bay_sea = { topography = coastal_ocean climate = oceanic }
+th_nether_cloud_sea = { topography = coastal_ocean climate = oceanic }
 ###西幻想乡海
-th_netherworld_sea_location = { topography = ocean climate = oceanic }
-th_ghost_sea_location = { topography = ocean climate = oceanic }
-th_river_of_forgetfulness_strait_sea = { topography = ocean climate = oceanic }
+###西幻想乡海
+th_netherworld_sea_location = { topography = coastal_ocean climate = oceanic }
+th_ghost_sea_location = { topography = coastal_ocean climate = oceanic }
+th_river_of_forgetfulness_strait_sea = { topography = coastal_ocean climate = oceanic }
 th_river_of_forgetfulness_strait_sea_north = { topography = ocean climate = oceanic }
-th_lightless_deep_sea = { topography = ocean climate = oceanic }
-th_lightless_deep_sea_north = { topography = ocean climate = oceanic }
-th_sunken_soul_sea = { topography = ocean climate = oceanic }
+th_lightless_deep_sea = { topography = coastal_ocean climate = oceanic }
+th_lightless_deep_sea_north = { topography = coastal_ocean climate = oceanic }
+th_sunken_soul_sea = { topography = coastal_ocean climate = oceanic }
 th_samsara_current_sea = { topography = ocean climate = oceanic }
 th_dead_silence_reef_sea = { topography = ocean climate = oceanic }
 #竹林
-th_eternal_night_calm_bay_south_sea = { topography = ocean climate = oceanic }
-th_eternal_night_calm_bay_north_sea = { topography = ocean climate = oceanic }
-th_hourai_shoal_sea = { topography = ocean climate = oceanic }
-th_lost_light_strait_sea = { topography = ocean climate = oceanic }
+#竹林
+th_eternal_night_calm_bay_south_sea = { topography = coastal_ocean climate = oceanic }
+th_eternal_night_calm_bay_north_sea = { topography = coastal_ocean climate = oceanic }
+th_hourai_shoal_sea = { topography = coastal_ocean climate = oceanic }
+th_lost_light_strait_sea = { topography = coastal_ocean climate = oceanic }
 th_moon_jump_sea = { topography = ocean climate = oceanic }
 th_ete_outdoor_sea = { topography = ocean climate = oceanic }
 th_ete_outdoor_sea_north = { topography = ocean climate = oceanic }
@@ -56,13 +61,21 @@ th_boundary_trench_sea = { topography = ocean climate = oceanic }
 #梦月之海
 ###北幻想乡海
 #梦月之海
-th_sea_of_dreams_and_moon_sea = { topography = ocean climate = oceanic }
+###北幻想乡海
+#梦月之海
+###北幻想乡海
+#梦月之海
+###北幻想乡海
+#梦月之海
+###北幻想乡海
+#梦月之海
+th_sea_of_dreams_and_moon_sea = { topography = coastal_ocean climate = oceanic }
 th_purification_strait_sea = { topography = ocean climate = oceanic }
 th_nightmare_undercurrent_sea = { topography = ocean climate = oceanic }
-th_sleep_under_moon_sea = { topography = ocean climate = oceanic }
+th_sleep_under_moon_sea = { topography = coastal_ocean climate = oceanic }
 th_dream_mirror_whirlpool_sea = { topography = ocean climate = oceanic }
 th_ice_milk_sea = { topography = ocean climate = oceanic }
-th_dream_tranquil_sea = { topography = ocean climate = oceanic }
+th_dream_tranquil_sea = { topography = coastal_ocean climate = oceanic }
 #神灵之海
 th_lunar_capital_east_sea = { topography = ocean climate = oceanic }
 th_sage_sea_east_margin_sea = { topography = ocean climate = oceanic }
@@ -84,104 +97,112 @@ th_lunar_star_dweller_sea = { topography = ocean climate = oceanic }
 th_waning_full_corner_sea = { topography = ocean climate = oceanic }
 
 #玄云海东部
-th_earthquake_omen_sea = { topography = ocean climate = oceanic }
-th_rolling_cloud_maelstrom_sea = { topography = ocean climate = oceanic }
-th_rainbow_cloud_current_sea = { topography = ocean climate = oceanic }
-th_chalk_sea_location = { topography = ocean climate = oceanic }
+#玄云海东部
+th_earthquake_omen_sea = { topography = coastal_ocean climate = oceanic }
+th_rolling_cloud_maelstrom_sea = { topography = coastal_ocean climate = oceanic }
+th_rainbow_cloud_current_sea = { topography = coastal_ocean climate = oceanic }
+th_chalk_sea_location = { topography = coastal_ocean climate = oceanic }
 th_scarlet_cloud_omen_sea = { topography = ocean climate = oceanic }
 #玄云海西部
-th_cloud_whale_migration_sea = { topography = ocean climate = oceanic }
-th_hakurei_border_cloud_sea = { topography = ocean climate = oceanic }
-th_mountain_summit_sea = { topography = ocean climate = oceanic }
-th_auspicious_cloud_sea = { topography = ocean climate = oceanic }
-th_nirvana_west_coast_sea = { topography = ocean climate = oceanic }
+#玄云海西部
+th_cloud_whale_migration_sea = { topography = coastal_ocean climate = oceanic }
+th_hakurei_border_cloud_sea = { topography = coastal_ocean climate = oceanic }
+th_mountain_summit_sea = { topography = coastal_ocean climate = oceanic }
+th_auspicious_cloud_sea = { topography = coastal_ocean climate = oceanic }
+th_nirvana_west_coast_sea = { topography = coastal_ocean climate = oceanic }
 #龙之岛海
-th_heaven_dragon_island_sea = { topography = ocean climate = oceanic }
-th_coiled_dragon_main_reef_sea = { topography = ocean climate = oceanic }
+#龙之岛海
+th_heaven_dragon_island_sea = { topography = coastal_ocean climate = oceanic }
+th_coiled_dragon_main_reef_sea = { topography = coastal_ocean climate = oceanic }
 th_sleeping_dragon_sea = { topography = ocean climate = oceanic }
-th_cloud_dragon_swirl = { topography = ocean climate = oceanic }
-th_dragon_island_inland_sea = { topography = ocean climate = oceanic }
+th_cloud_dragon_swirl = { topography = coastal_ocean climate = oceanic }
+th_dragon_island_inland_sea = { topography = coastal_ocean climate = oceanic }
 th_ryujin_festival_sea = { topography = ocean climate = oceanic }
-th_dragon_island_inland_sea_west = { topography = ocean climate = oceanic }
+th_dragon_island_inland_sea_west = { topography = coastal_ocean climate = oceanic }
 th_dragon_pearl_reef_sea = { topography = ocean climate = oceanic }
-th_dragon_pearl_reef_sea_south = { topography = ocean climate = oceanic }
+th_dragon_pearl_reef_sea_south = { topography = coastal_ocean climate = oceanic }
 th_heaven_sent_dragon_rain_sea = { topography = ocean climate = oceanic }
-th_heaven_sent_dragon_rain_sea_west = { topography = ocean climate = oceanic }
+th_heaven_sent_dragon_rain_sea_west = { topography = coastal_ocean climate = oceanic }
 th_dragon_scale_strait_sea = { topography = ocean climate = oceanic }
 #西魔界海
-th_makai_west_sea = { topography = ocean climate = mediterranean }
-th_frozen_demon_sea = { topography = ocean climate = mediterranean }
-th_hourai_seal_sea = { topography = ocean climate = mediterranean }
+#西魔界海
+th_makai_west_sea = { topography = coastal_ocean climate = mediterranean }
+th_frozen_demon_sea = { topography = coastal_ocean climate = mediterranean }
+th_hourai_seal_sea = { topography = coastal_ocean climate = mediterranean }
 th_create_world_sea1 = { topography = ocean climate = mediterranean }
 th_create_world_sea2 = { topography = ocean climate = mediterranean }
-th_create_world_sea3 = { topography = ocean climate = mediterranean }
+th_create_world_sea3 = { topography = coastal_ocean climate = mediterranean }
 th_primordial_sea = { topography = ocean climate = mediterranean }
-th_lightdark_divide_sea = { topography = ocean climate = mediterranean }
-th_elemental_boiling_sea = { topography = ocean climate = mediterranean }
-th_elemental_boiling_sea2 = { topography = ocean climate = mediterranean }
-th_causality_start_sea = { topography = ocean climate = mediterranean }
+th_lightdark_divide_sea = { topography = coastal_ocean climate = mediterranean }
+th_elemental_boiling_sea = { topography = coastal_ocean climate = mediterranean }
+th_elemental_boiling_sea2 = { topography = coastal_ocean climate = mediterranean }
+th_causality_start_sea = { topography = coastal_ocean climate = mediterranean }
 #东魔界海
 th_fangzhang_golden_sea_west = { topography = ocean climate = mediterranean }
-th_fangzhang_golden_sea_west2 = { topography = ocean climate = mediterranean }
+th_fangzhang_golden_sea_west2 = { topography = narrows climate = mediterranean }
 th_fangzhang_golden_sea_west3 = { topography = ocean climate = mediterranean }
 th_fangzhang_golden_sea_west4 = { topography = ocean climate = mediterranean }
-th_forbidden_zone_sea = { topography = ocean climate = mediterranean }
-th_forbidden_zone_sea_west = { topography = ocean climate = mediterranean }
-th_magic_waste_world_sea = { topography = ocean climate = mediterranean }
+th_forbidden_zone_sea = { topography = coastal_ocean climate = mediterranean }
+th_forbidden_zone_sea_west = { topography = coastal_ocean climate = mediterranean }
+th_magic_waste_world_sea = { topography = coastal_ocean climate = mediterranean }
 th_temporal_axis_turbulence_sea = { topography = ocean climate = mediterranean }
-th_mirror_reflection_sea = { topography = ocean climate = mediterranean }
+th_mirror_reflection_sea = { topography = coastal_ocean climate = mediterranean }
 #守矢海盆
-th_divine_mark_reef_sea = { topography = ocean climate = continental }
-th_shintoku_bay_sea = { topography = ocean climate = continental }
-th_shintoku_bay_sea_east = { topography = ocean climate = continental }
-th_cucumber_field_bay = { topography = ocean climate = continental }
-th_fuujin_sea = { topography = ocean climate = continental }
-th_moriya_front_sea = { topography = ocean climate = continental }
-th_moriya_front_sea_input = { topography = ocean climate = continental }
-th_genbu_sawa_sea = { topography = ocean climate = continental }
-th_keiki_bay_sea = { topography = ocean climate = continental }
-th_keiki_bay_sea_west = { topography = ocean climate = continental }
+#守矢海盆
+th_divine_mark_reef_sea = { topography = inland_sea climate = continental }
+th_shintoku_bay_sea = { topography = inland_sea climate = continental }
+th_shintoku_bay_sea_east = { topography = inland_sea climate = continental }
+th_cucumber_field_bay = { topography = inland_sea climate = continental }
+th_fuujin_sea = { topography = inland_sea climate = continental }
+th_moriya_front_sea = { topography = inland_sea climate = continental }
+th_moriya_front_sea_input = { topography = inland_sea climate = continental }
+th_genbu_sawa_sea = { topography = inland_sea climate = continental }
+th_keiki_bay_sea = { topography = inland_sea climate = continental }
+th_keiki_bay_sea_west = { topography = inland_sea climate = continental }
 #彼岸
-th_western_pure_land_sea = { topography = ocean climate = subtropical }
+#彼岸
+th_western_pure_land_sea = { topography = coastal_ocean climate = subtropical }
 th_enma_judgment_bay_sea = { topography = ocean climate = subtropical }
-th_enma_judgment_bay_sea1 = { topography = ocean climate = subtropical }
-th_eternal_night_sea = { topography = ocean climate = subtropical }
+th_enma_judgment_bay_sea1 = { topography = coastal_ocean climate = subtropical }
+th_eternal_night_sea = { topography = coastal_ocean climate = subtropical }
 th_mugen_sea_location = { topography = ocean climate = subtropical }
 th_mizuko_sea_location = { topography = ocean climate = subtropical }
 th_shuuen_shizumi_umi_sea = { topography = ocean climate = subtropical }
-th_higan_shore_sea = { topography = ocean climate = subtropical }
-th_higan_shore_sea2 = { topography = ocean climate = subtropical }
-th_higan_shore_sea3 = { topography = ocean climate = subtropical }
-th_higan_shore_sea4 = { topography = ocean climate = subtropical }
-th_inishie_saiban_umi = { topography = ocean climate = subtropical }
+th_higan_shore_sea = { topography = coastal_ocean climate = subtropical }
+th_higan_shore_sea2 = { topography = coastal_ocean climate = subtropical }
+th_higan_shore_sea3 = { topography = coastal_ocean climate = subtropical }
+th_higan_shore_sea4 = { topography = coastal_ocean climate = subtropical }
+th_inishie_saiban_umi = { topography = coastal_ocean climate = subtropical }
 th_danen_umi_sea = { topography = ocean climate = subtropical }
-th_divine_mold_sea = { topography = ocean climate = subtropical }
-th_divine_mold_sea2 = { topography = ocean climate = subtropical }
-th_kego_no_umi_sea = { topography = ocean climate = subtropical }
+th_divine_mold_sea = { topography = coastal_ocean climate = subtropical }
+th_divine_mold_sea2 = { topography = coastal_ocean climate = subtropical }
+th_kego_no_umi_sea = { topography = coastal_ocean climate = subtropical }
 #守矢外海
-th_ka_mei_shallow_sea = { topography = ocean climate = continental }
+#守矢外海
+th_ka_mei_shallow_sea = { topography = coastal_ocean climate = continental }
 th_amagoi_sea = { topography = ocean climate = continental }
 th_amagoi_sea2 = { topography = ocean climate = continental }
 th_suwa_maelstrom_sea = { topography = ocean climate = continental }
 th_gokoku_bay_sea = { topography = ocean climate = continental }
 #地狱海
-th_oni_feast_bay_sea = { topography = ocean climate = oceanic }
-th_oni_feast_bay_sea2 = { topography = ocean climate = oceanic }
-th_oni_feast_bay_sea3 = { topography = ocean climate = oceanic }
+#地狱海
+th_oni_feast_bay_sea = { topography = coastal_ocean climate = oceanic }
+th_oni_feast_bay_sea2 = { topography = coastal_ocean climate = oceanic }
+th_oni_feast_bay_sea3 = { topography = coastal_ocean climate = oceanic }
 th_hai_goku_reefs_sea = { topography = ocean climate = oceanic }
-th_hai_goku_reefs_sea2 = { topography = ocean climate = oceanic }
+th_hai_goku_reefs_sea2 = { topography = coastal_ocean climate = oceanic }
 th_s_io_mist_sea = { topography = ocean climate = oceanic }
 th_s_io_mist_sea2 = { topography = ocean climate = oceanic }
-th_jigoku_shindo_trench_sea = { topography = ocean climate = oceanic }
-th_jigoku_shindo_trench_sea2 = { topography = ocean climate = oceanic }
-th_kokujou_kou_kai_sea = { topography = ocean climate = oceanic }
-th_shakunetsu_shiogama_sea = { topography = ocean climate = oceanic }
+th_jigoku_shindo_trench_sea = { topography = coastal_ocean climate = oceanic }
+th_jigoku_shindo_trench_sea2 = { topography = coastal_ocean climate = oceanic }
+th_kokujou_kou_kai_sea = { topography = coastal_ocean climate = oceanic }
+th_shakunetsu_shiogama_sea = { topography = coastal_ocean climate = oceanic }
 th_shakunetsu_shiogama_sea2 = { topography = ocean climate = oceanic }
-th_shakunetsu_shiogama_sea3 = { topography = ocean climate = oceanic }
-th_kyoukan_rekka_sea = { topography = ocean climate = oceanic }
+th_shakunetsu_shiogama_sea3 = { topography = coastal_ocean climate = oceanic }
+th_kyoukan_rekka_sea = { topography = coastal_ocean climate = oceanic }
 th_shugou_teppou_umi = { topography = ocean climate = oceanic }
 th_abiki_zankyo_umi_sea = { topography = ocean climate = oceanic }
-th_abiki_zankyo_umi_sea2 = { topography = ocean climate = oceanic }
+th_abiki_zankyo_umi_sea2 = { topography = coastal_ocean climate = oceanic }
 #不可通行山脉
 th_cannot_entry_mountain1 = { topography = mountain_wasteland climate = oceanic }
 th_cannot_entry_mountain2 = { topography = mountain_wasteland climate = oceanic }
@@ -30096,9 +30117,9 @@ chichijima_coast = { topography = coastal_ocean climate = tropical}
 anijima_coast = { topography = coastal_ocean climate = tropical}
 kita_iwo_jima_coast_2 = { topography = coastal_ocean climate = tropical}
 iwo_jima_coast_2 = { topography = coastal_ocean climate = tropical}
-ogasawara_islands_high_sea_1 = { topography = ocean climate = tropical}
-ogasawara_islands_high_sea_2 = { topography = ocean climate = tropical}
-ogasawara_islands_high_sea_3 = { topography = ocean climate = tropical}
+ogasawara_islands_high_sea_1 = { topography = coastal_ocean climate = tropical }
+ogasawara_islands_high_sea_2 = { topography = coastal_ocean climate = tropical }
+ogasawara_islands_high_sea_3 = { topography = coastal_ocean climate = tropical }
 ogasawara_islands_high_sea_4 = { topography = ocean climate = tropical}
 ogasawara_islands_high_sea_5 = { topography = ocean climate = tropical}
 ogasawara_islands_high_sea_6 = { topography = ocean climate = tropical}
