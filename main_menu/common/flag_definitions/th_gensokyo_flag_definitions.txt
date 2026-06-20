@@ -47,6 +47,13 @@ T09 = {
 	}
 }
 
+T10 = {
+	flag_definition = {
+		coa = T10_start_flag
+		priority = 1
+	}
+}
+
 T13 = {
 	flag_definition = {
 		coa = T13_start_flag
@@ -169,6 +176,27 @@ T60 = {
 T62 = {
 	flag_definition = {
 		coa = T62_start_flag
+		priority = 1
+	}
+}
+
+T88 = {
+	flag_definition = {
+		coa = T88_start_flag
+		priority = 1
+	}
+}
+
+T89 = {
+	flag_definition = {
+		coa = T89_start_flag
+		priority = 1
+	}
+}
+
+T94 = {
+	flag_definition = {
+		coa = T94_start_flag
 		priority = 1
 	}
 }
