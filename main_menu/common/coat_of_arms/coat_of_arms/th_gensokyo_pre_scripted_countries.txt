@@ -10,3 +10,285 @@ T00_start_flag = {
 		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
 	}
 }
+
+T01_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T01_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T04_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T04_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T05_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T05_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T06_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T06_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T08_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T08_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T09_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T09_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T13_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T13_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T14_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T14_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T15_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T15_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T17_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T17_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T18_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T18_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T25_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	#在textured_emblem下面加你的国旗中心
+	#上面说的textured_emblem详见main_menu/gfx/coat_of_arms
+	#然后把下面这个改成你的国旗的dds名字就可以
+		texture = "T25_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T26_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T26_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T29_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T29_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T31_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	#两侧的颜色
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T31_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T34_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T34_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T37_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T37_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T38_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T38_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T43_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T43_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T51_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T51_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T53_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T53_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T54_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T54_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T60_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T60_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T62_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T62_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
