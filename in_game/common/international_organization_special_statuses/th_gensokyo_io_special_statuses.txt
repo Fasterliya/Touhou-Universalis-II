@@ -1,0 +1,83 @@
+### 幻想乡国际组织 — 特殊席位定义
+
+### ============================================================
+### 席位1：贤者  th_gensokyo_io_sages_special_status
+### 仅限3位，开局锁定：迷途之家(T05)、后户之国(T13)、华扇的仙界(T83)
+### ============================================================
+th_gensokyo_io_sages_special_status = {
+    max = 3
+    can_be_removed = no
+
+    auto_bestowal_trigger = {
+        has_variable = th_is_gensokyo_sage_country
+    }
+
+    auto_rescind_trigger = {
+        always = no
+    }
+
+    # 贤者享有较大议会投票加成
+    leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    non_leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    IO_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+}
+
+### ============================================================
+### 席位2：阎魔  th_gensokyo_io_yama_special_status
+### 仅限1位，开局锁定：彼岸(T25)，IO领袖
+### ============================================================
+th_gensokyo_io_yama_special_status = {
+    max = 1
+    can_be_removed = no
+
+    auto_bestowal_trigger = {
+        has_variable = th_is_gensokyo_yama_country
+    }
+
+    auto_rescind_trigger = {
+        always = no
+    }
+
+    leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    non_leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    IO_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+}
+
+### ============================================================
+### 席位3：人类村落  th_gensokyo_io_human_village_special_status
+### 仅限1位，开局锁定：首都在人间之里region的国家(T03)
+### ============================================================
+th_gensokyo_io_human_village_special_status = {
+    max = 1
+    can_be_removed = no
+
+    auto_bestowal_trigger = {
+        has_variable = th_is_gensokyo_human_village_country
+    }
+
+    auto_rescind_trigger = {
+        always = no
+    }
+
+    leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    non_leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    IO_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+}

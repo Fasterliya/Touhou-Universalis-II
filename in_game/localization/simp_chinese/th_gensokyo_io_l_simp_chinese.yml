@@ -1,0 +1,44 @@
+﻿l_simp_chinese:
+
+### 幻想乡国际组织 — 本地化
+
+### === IO名称与描述 ===
+ th_gensokyo_io: "幻想乡"
+ th_gensokyo_io_desc: "维系幻想乡诸国平衡的国际组织，由贤者与阎魔共同维护大结界秩序。"
+
+### === 特殊席位 ===
+ th_gensokyo_io_sages_special_status: "贤者"
+ th_gensokyo_io_sages_special_status_desc: "幻想乡最古老的三位贤者，分别镇守大结界的关键节点。"
+
+ th_gensokyo_io_yama_special_status: "阎魔"
+ th_gensokyo_io_yama_special_status_desc: "执掌彼岸的审判者，裁决幻想乡诸国的是非善恶，担任幻想乡议会的领袖。"
+
+ th_gensokyo_io_human_village_special_status: "人类村落"
+ th_gensokyo_io_human_village_special_status_desc: "人间之里的代表，守护幻想乡人类聚居地的权益。"
+
+### === 议会 ===
+ th_gensokyo_io_parliament: "幻想乡议会"
+ th_gensokyo_parliament_seat: "幻想乡议会席位"
+
+### === 变量名称 ===
+ th_gensokyo_unity_var: "幻想乡团结度"
+ th_gensokyo_unity_var_desc: "衡量幻想乡诸国的凝聚力，来源于调停异变、解决异变、和平建设等正面行为，因侵略扩张与外界入侵而损耗。"
+
+ th_gensokyo_personal_contribution_var: "个人贡献度"
+ th_gensokyo_personal_contribution_var_desc: "该国家为幻想乡稳定所做的贡献，基于税基与弹幕火力按月累积。"
+
+ th_gensokyo_personal_influence_var: "个人影响力"
+ th_gensokyo_personal_influence_var_desc: "该国家在幻想乡议会中的政治影响力，每50点增加1票议会投票权重。每个时代结束时清零。"
+
+ th_gensokyo_notorious_reputation_var: "幻想乡恶名"
+ th_gensokyo_notorious_reputation_var_desc: "该国家在幻想乡中的恶名值（0-100），因宣战和扩张领土而增加。恶名越高，个人影响力获取越少。"
+
+### === 议会提案 ===
+ th_gensokyo_parliament_resolution_1_title: "幻想乡和平决议"
+ th_gensokyo_parliament_resolution_1_desc: "提案维持幻想乡内部的和平秩序。"
+
+ th_gensokyo_parliament_resolution_2_title: "异变应对决议"
+ th_gensokyo_parliament_resolution_2_desc: "提案统一应对幻想乡内发生的异变。"
+
+ th_gensokyo_parliament_resolution_3_title: "外界防御决议"
+ th_gensokyo_parliament_resolution_3_desc: "提案增强幻想乡对外界入侵的防御能力。"

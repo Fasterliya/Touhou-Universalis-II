@@ -1,0 +1,45 @@
+### 幻想乡国际组织 — 主定义
+
+th_gensokyo_io = {
+    unique = yes
+
+    # 领袖 — 彼岸（阎魔席位holder），由开局脚本锁定
+    has_leader_country = yes
+    leader_change_method = none
+
+    # 议会 — 法律辩论，投票权重 = 个人影响力/50
+    has_parliament = yes
+    parliament_type = th_gensokyo_io_parliament
+
+    # === 加入条件 ===
+    # 首都位于幻想乡大陆的AI自动加入；玩家可手动加入
+    # 排除：叛军国家
+    join = {
+        capital = {
+            continent = continent:th_gensokyo_continent
+        }
+        NOT = { is_rebel = yes }
+    }
+
+    # === 退出 ===
+    # 始终禁止脱离
+    leave = {
+        always = no
+    }
+
+    # === IO 核心变量（声明） ===
+    # 幻想乡团结度 th_gensokyo_unity_var — 由 monthly pulse 及事件维护
+
+    # === 修正 ===
+    # 所有成员国的基础修正（待后续填充数值）
+    member_modifier = {
+    }
+
+    # 领袖国修正（待后续填充）
+    leader_modifier = {
+    }
+
+    # IO整体修正（待后续填充）
+    international_organization_modifier = {
+    }
+}

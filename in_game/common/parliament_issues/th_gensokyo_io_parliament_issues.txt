@@ -1,0 +1,19 @@
+### 幻想乡IO — 议会议题（空壳，由后续人工填充具体效果）
+
+### 议题1：幻想乡和平决议
+th_gensokyo_parliament_resolution_1 = {
+    issue_type = th_gensokyo_io_parliament
+    # TODO: 人工填写 resolution effects, support triggers, ai weights
+}
+
+### 议题2：异变应对决议
+th_gensokyo_parliament_resolution_2 = {
+    issue_type = th_gensokyo_io_parliament
+    # TODO: 人工填写
+}
+
+### 议题3：外界防御决议
+th_gensokyo_parliament_resolution_3 = {
+    issue_type = th_gensokyo_io_parliament
+    # TODO: 人工填写
+}
