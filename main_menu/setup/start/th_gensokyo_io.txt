@@ -1,0 +1,33 @@
+### ============================================================
+### 幻想乡国际组织 — 开局人口
+### T00-T94 全部加入，特殊席位变量在此分配
+### ============================================================
+
+### Step 1: 特殊席位标记变量（必须在 IO 初始化之前设置）
+c:T05 = { set_variable = th_is_gensokyo_sage_country }
+c:T13 = { set_variable = th_is_gensokyo_sage_country }
+c:T83 = { set_variable = th_is_gensokyo_sage_country }
+
+c:T25 = { set_variable = th_is_gensokyo_yama_country }
+
+c:T03 = { set_variable = th_is_gensokyo_human_village_country }
+
+### Step 2: IO 初始化
+international_organization_manager = {
+	add_international_organization = {
+		type = th_gensokyo_io
+		creation_date = 1337.4.1
+		members = {
+			T00 T01 T02 T03 T04 T05 T06 T07 T08 T09
+			T10 T11 T12 T13 T14 T15 T16 T17 T18 T19
+			T20 T21 T22 T23 T24 T25 T26 T27 T28 T29
+			T30 T31 T32 T33 T34 T35 T36 T37 T38 T39
+			T40 T41 T42 T43 T44 T45 T46 T47 T48 T49
+			T50 T51 T52 T53 T54 T55 T56 T57 T58 T59
+			T60 T61 T62 T63 T64 T65 T66 T67 T68 T69
+			T70 T71 T72 T73 T74 T75 T76 T77 T78 T79
+			T80 T81 T82 T83 T84 T85 T86 T87 T88 T89
+			T90 T91 T92 T93 T94
+		}
+	}
+}
