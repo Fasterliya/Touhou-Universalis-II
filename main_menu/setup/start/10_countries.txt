@@ -58071,8 +58071,8 @@ countries = {
 
          own_control_core = {
             th_moriya_shrine_haiden th_divine_wind_hanging_meadow th_hill_of_wind_and_rain th_red_frogs_tomb th_gods_hoad th_holy_wind_valley th_misty_sake_den_kappa th_green_gate th_beautuful_fountainhead th_terraced_fields
-            th_miracle_cellaring th_fog_pub th_god_valley_meditation th_wind_god_valley_tengu th_border_of_faith th_snakes_hole th_wind_castle th_valley_of_earth th_cannot_entry_mountain6 th_prayer_hill_terrace
-            th_shattered_gold_shallows th_shattered_gold_customs th_border_market th_gold_pieces_riber_bend th_prayer_hills th_cemetery_of_onbashira th_cannot_entry_mountain8 th_lake_of_the_winds_senpu th_lake_kamikaze_windwatch
+            th_miracle_cellaring th_fog_pub th_god_valley_meditation th_wind_god_valley_tengu th_border_of_faith th_snakes_hole th_wind_castle th_valley_of_earth th_prayer_hill_terrace
+            th_shattered_gold_shallows th_shattered_gold_customs th_border_market th_gold_pieces_riber_bend th_prayer_hills th_cemetery_of_onbashira th_lake_of_the_winds_senpu th_lake_kamikaze_windwatch
             th_lake_kamikaze_himorogi th_land_of_seven_holy_stones_and_seven_holy_trees th_miracle_idol_office th_cableway_hell_new_line th_cableway_start th_cableway_tengu_line th_tornado_maple_forest th_cableway_kappa_line th_worship_of_onbashira
             th_hillside_of_qian th_zealot_billage th_still_wasteland th_breeze_hills th_ghost_horde th_eastern_phantom_meadow th_weastern_phantom_meadow th_moriya_shrine_station th_moriya_shrine_road th_moriya_shrine_temizuya
             th_moriya_shrine_shamushu th_moriya_shrine_honden th_great_toad_pond_bog th_frog_port th_kappa_station th_kappa_major_bridge th_big_toad_lake th_kamikaze_island_main th_divine_resonance_pool th_moriya_divine_sake_cellar
@@ -58445,7 +58445,7 @@ countries = {
 
          own_control_core = {
             th_chireiden_entrance_hall_main th_courtyard_shrubs_crystal th_miasma_sunken_depression th_crystal_echo_hollow th_gate_camp_wanderer th_gate_of_the_depths th_cave_forest_crystal th_cave_pool_spore th_crimson_fungus_forest
-            th_weird_fungus_forest th_ceiling_of_false_stars th_hollow_tower_signal th_basalt_canyon th_hollow_forest_crystal th_hollow_isles_floating th_underground_great_hollow th_cannot_entry_mountain16 th_dream_dimension_generator
+            th_weird_fungus_forest th_ceiling_of_false_stars th_hollow_tower_signal th_basalt_canyon th_hollow_forest_crystal th_hollow_isles_floating th_underground_great_hollow th_dream_dimension_generator
             th_balcony_platform_view th_balcony_observatory_eye th_chireiden_balcony_satori th_courtyard_dome_sky th_courtyard_swing_koishi th_rose_garden_oblivion th_courtyard_path_pet th_chireiden_courtyard_heart
             th_palace_of_the_earth_spirits_second_floor th_chireiden_whispering_pipe_organ th_chireiden_archive_of_overheard_secrets th_chireiden_library_second th_chireiden_room_satori th_chireiden_room_koishi th_chireiden_vivarium_pet
             th_chireiden_entrance_hall th_hill_den_stray_street th_hill_bazaar_rust th_hill_den_stray th_old_hell_hidden_hill th_springs_recovery_vip th_springs_nest_egg th_springs_room_tengu th_springs_vent_steam th_springs_bath_mixed
@@ -59136,8 +59136,8 @@ countries = {
             th_castel_ruins th_decay_library th_endless_tea_party th_paper_doll_village th_yuanbao_valley th_coin_eyes_bridge th_paper_windmill_garden th_the_beach th_lost_temple th_south_aokigahara_forest
             th_north_aokigahara_forest th_turnk_of_saigyou_ayakashi th_west_branch_of_saigyou_ayakashi th_east_branch_of_saigyou_ayakashi th_south_branch_of_saigyou_ayakashi th_surrounding_hallway th_rock_gardenv th_greater_kitchen th_yuyukos_room
             th_irreversible_entrance th_zombie_tearoom th_strange_rockwork th_artifical_stream th_snow_gloem_factory th_steps_6401_to_8000 th_steps_4801_to_6400 th_steps_3201_to_4800 th_steps_1601_to_3200 th_steps_1_to_1600
-            th_cannot_entry_mountain2 th_barrier_of_temperance th_barrier_of_deligence th_barrier_of_kindness th_barrier_of_humility th_barrier_of_life th_skull_checkpoint th_tomb_first_dead th_skeleton_castle_tower th_fake_life_village
-            th_deadbody_moonlight th_phantom_arsenal th_black_tower th_ghast_tower th_picnic_spot_for_somebody th_deadly_stream th_fly_lair th_white_chrysanthemum_bank th_sea_of_lycoris th_cannot_entry_mountain1
+            th_barrier_of_temperance th_barrier_of_deligence th_barrier_of_kindness th_barrier_of_humility th_barrier_of_life th_skull_checkpoint th_tomb_first_dead th_skeleton_castle_tower th_fake_life_village
+            th_deadbody_moonlight th_phantom_arsenal th_black_tower th_ghast_tower th_picnic_spot_for_somebody th_deadly_stream th_fly_lair th_white_chrysanthemum_bank th_sea_of_lycoris
             th_barrier_of_gluttony th_barrier_of_sloth th_barrier_of_warth th_barrier_of_pride th_barrier_of_death
          }
 
@@ -60886,7 +60886,7 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_hakurei_roofless_honden th_cannot_entry_mountain15 th_hakurei_trial_slope th_old_tree_hakurei_shinbaku th_hakurei_lake_upper_valley th_hakurei_former_miko_grave_mound th_hakurei_back_mountain th_old_hakurei_asetic_path
+            th_hakurei_roofless_honden th_hakurei_trial_slope th_old_tree_hakurei_shinbaku th_hakurei_lake_upper_valley th_hakurei_former_miko_grave_mound th_hakurei_back_mountain th_old_hakurei_asetic_path
             th_green_landscape_islands th_hakurei_old_shrine_garden th_old_hakurei_shrine_torii_labyrinth th_sariel_waiting_pavilion th_hakurei_abandon_shrine_old th_wonderland_port_forgotten th_secret_stream_to_harbor th_elis_smuggle_path
             th_cave_to_makai th_hakurei_old_sando th_kana_anaberal_masion_hidden th_old_outer_world_junk_pile th_old_reimu_old_trace th_old_higanbana_cliff th_old_shigan_port th_old_cutoff_sanzu_river th_inverted_murasaki_bamboo
             th_murasakino_location th_old_prototype_gap_corridor
@@ -62185,7 +62185,7 @@ countries = {
          starting_technology_level = 3
 
          own_control_core = {
-            th_immortal_mansion th_kasens_room th_pets_room th_immortal_dojo th_eagle_house th_cannot_entry_mountain11
+            th_immortal_mansion th_kasens_room th_pets_room th_immortal_dojo th_eagle_house
          }
 
          # include = "expl_mediterranean"
