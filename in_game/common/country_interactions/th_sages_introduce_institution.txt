@@ -1,0 +1,114 @@
+th_sages_introduce_institution = {
+    type = diplomacy
+    category = CATEGORY_FRIENDLY_ACTIONS
+    
+    potential = {
+        is_member_of_international_organization = th_sages_council_io
+    }
+    
+    allow = {
+        th_gensokyo_io = {
+            check_variable = {
+                name = th_gensokyo_unity_var
+                compare = greater_than_or_equal
+                value = 10
+            }
+        }
+        any_known_country = {
+            any_active_institution = {
+                root = { NOT = { has_institution = prev } }
+            }
+        }
+    }
+    
+    effect = {
+        th_gensokyo_io = {
+            change_variable = {
+                name = th_gensokyo_unity_var
+                subtract = 10
+            }
+            clamp_variable = {
+                name = th_gensokyo_unity_var
+                min = 0
+                max = 100
+            }
+        }
+        
+        random_list = {
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = th_genesis_of_gensokyo_institution }
+                    NOT = { has_institution = th_genesis_of_gensokyo_institution }
+                }
+                embrace_institution = th_genesis_of_gensokyo_institution
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = th_gensokyo_fantasy_journey_institution }
+                    NOT = { has_institution = th_gensokyo_fantasy_journey_institution }
+                }
+                embrace_institution = th_gensokyo_fantasy_journey_institution
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:professional_soldiers }
+                    NOT = { has_institution = institution:professional_soldiers }
+                }
+                embrace_institution = institution:professional_soldiers
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:renaissance }
+                    NOT = { has_institution = institution:renaissance }
+                }
+                embrace_institution = institution:renaissance
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:colonialism }
+                    NOT = { has_institution = institution:colonialism }
+                }
+                embrace_institution = institution:colonialism
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:printing_press }
+                    NOT = { has_institution = institution:printing_press }
+                }
+                embrace_institution = institution:printing_press
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:global_trade }
+                    NOT = { has_institution = institution:global_trade }
+                }
+                embrace_institution = institution:global_trade
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:manufactories }
+                    NOT = { has_institution = institution:manufactories }
+                }
+                embrace_institution = institution:manufactories
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:enlightenment }
+                    NOT = { has_institution = institution:enlightenment }
+                }
+                embrace_institution = institution:enlightenment
+            }
+            1 = {
+                trigger = {
+                    any_known_country = { has_institution = institution:industrialization }
+                    NOT = { has_institution = institution:industrialization }
+                }
+                embrace_institution = institution:industrialization
+            }
+        }
+    }
+    
+    ai_will_do = {
+        value = 0
+    }
+}

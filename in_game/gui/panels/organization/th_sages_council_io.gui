@@ -80,8 +80,6 @@ organization_panel = {
                 }
             }
 
-            blockoverride "organization_main_actions_extra_visible" { visible = yes }
-
             datacontext = "[InternationalOrganizationsView.GetInternationalOrganization]"
 
             ### ==============================================
@@ -239,32 +237,98 @@ organization_panel = {
                     ### 分隔
                     widget = { parentanchor = hcenter size = { 480 1 } margins_top = 4 margins_bottom = 6 divider_horizontal_bg = {} }
 
-                    ### 行动区域
+                    ### ==============================================
+                    ### Main Actions 区域
+                    ### 参考: members.gui io_overview_actions + ACGV button_regular_diamond 模式
+                    ### 按钮通过 datacontext → ScriptedGui.Execute 触发
+                    ### 架构: country_interaction (外交面板) ↔ scripted_gui (GUI执行) 镜像同步
+                    ### ==============================================
                     vbox = {
+                        using = bg_paper_card_situations
+                        using = bg_cabinet_card_frame
                         layoutpolicy_horizontal = expanding spacing = 4 margins_top = 2 margins_bottom = 4 margin = { 20 0 }
-                        text_single = {
-                            using = Font_Size_Small default_format = "#header_titles"
-                            raw_text = "[Localize('TH_SAGES_ACTIONS_LABEL')]" margins_bottom = 4
+
+                        ### 卡片头部 — 对应 members.gui card_actions header
+                        widget = {
+                            layoutpolicy_horizontal = expanding
+                            size = { -1 40 }
+                            minimumsize = { 400 40 }
+                            using = bg_scroll_card_header
+
+                            hbox = {
+                                layoutpolicy_horizontal = expanding spacing = 4 margin = { 10 0 }
+                                expand = {}
+                                icon = {
+                                    size = { 25 25 }
+                                    texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetIcon]"
+                                    texture_density = 2
+                                }
+                                text_single = {
+                                    using = Font_Size_Small default_format = "#header_titles"
+                                    raw_text = "[Localize('TH_SAGES_ACTIONS_LABEL')]"
+                                }
+                                expand = {}
+                            }
                         }
 
-                        button_regular = {
-                            size = { -1 36 }
-                            text = "th_sages_introduce_institution"
-                            visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
-                            enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                            onclick = "[GetScriptedGui('th_sages_introduce_institution').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                            tooltipwidget = {
-                                ContextualTooltipType = {
-                                    blockoverride "title_text" { raw_text = "[Localize('th_sages_introduce_institution')]" }
-                                    blockoverride "tooltip_content" {
-                                        vbox = {
-                                            spacing = 4
-                                            text_multi = { using = Font_Size_Tiny default_format = "#default" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
-                                            text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_cost')]" }
+                        ### 按钮列表 — 对应 members.gui organization_main_actions_extra
+                        vbox = {
+                            layoutpolicy_horizontal = expanding spacing = 6 margin = { 15 10 }
+
+                            ### ── 引入思潮 ──
+                            button_regular_diamond = {
+                                layoutpolicy_horizontal = expanding
+                                size = { -1 36 }
+                                datacontext = "[GetScriptedGui('th_sages_introduce_institution')]"
+                                text = "th_sages_introduce_institution"
+                                visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
+                                enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                tooltipwidget = {
+                                    ContextualTooltipType = {
+                                        blockoverride "title_text" { raw_text = "[Localize('th_sages_introduce_institution')]" }
+                                        blockoverride "tooltip_content" {
+                                            vbox = {
+                                                spacing = 4
+                                                text_multi = { using = Font_Size_Tiny default_format = "#default" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
+                                                text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_cost')]" }
+                                            }
                                         }
                                     }
                                 }
                             }
+
+                            ### ════════════════════════════════════════
+                            ### 预留位: 添加新按钮按以下模板
+                            ### ════════════════════════════════════════
+                            ### 每添加一个按钮需要 3 个文件:
+                            ###   1. common/country_interactions/<key>.txt  — 外交面板交互定义
+                            ###   2. common/scripted_guis/<key>_sgui.txt    — GUI 执行 (is_shown/is_valid/effect)
+                            ###   3. localization: <key>, <key>_desc, <key>_cost
+                            ###
+                            ### button_regular_diamond = {
+                            ###     layoutpolicy_horizontal = expanding
+                            ###     size = { -1 36 }
+                            ###     datacontext = "[GetScriptedGui('your_key')]"
+                            ###     text = "your_key"
+                            ###     visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
+                            ###     enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                            ###     onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                            ###     tooltipwidget = {
+                            ###         ContextualTooltipType = {
+                            ###             blockoverride "title_text" { raw_text = "[Localize('your_key')]" }
+                            ###             blockoverride "tooltip_content" {
+                            ###                 vbox = {
+                            ###                     spacing = 4
+                            ###                     text_multi = { using = Font_Size_Tiny default_format = "#default" max_width = 260 raw_text = "[Localize('your_key_desc')]" }
+                            ###                     text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('your_key_cost')]" }
+                            ###                 }
+                            ###             }
+                            ###         }
+                            ###     }
+                            ### }
+                            ###
+                            ### ════════════════════════════════════════
                         }
                     }
 
