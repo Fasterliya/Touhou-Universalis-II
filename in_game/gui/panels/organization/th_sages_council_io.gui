@@ -1,0 +1,283 @@
+### 贤者议会 — IO面板
+### 覆写 panel_content (ACGV模式)
+### 变量: ios_information_header (PDS标准 | 贤者威望+团结度)
+### 二级标签: 概览+辩论
+
+organization_panel = {
+    blockoverride "panel_content" {
+
+        ### ==============================================
+        ### 1. 标题栏
+        ### ==============================================
+        window_header_alt = {
+            using = bg_main_inner_alt
+            blockoverride "window_header_alt_color_texture"{
+                using = color_default_brown_texture
+            }
+            blockoverride "header_text_object" {
+                flowcontainer = {
+                    parentanchor = center
+                    ignoreinvisible = yes
+                    spacing = 5
+                    datacontext = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                    button = {
+                        size = { 100% 100% }
+                        tooltip_enabled = no
+                        onmousehierarchyenter = "[PdxGuiWidget.SetHighlightInternationalOrganization( InternationalOrganization.Self)]"
+                    }
+                    icon = {
+                        size = {30 30}
+                        texture = "[InternationalOrganization.GetIcon]"
+                        texture_density = 2
+                        glow = { name = "drop_shadow" glow_radius = 3 color = {0.0 0.0 0.0 1.0} alpha = 0.3 }
+                    }
+                    header_title = {
+                        autoresize = yes maximumsize = { 420 -1 }
+                        text = "[InternationalOrganization.GetNameWithNoTooltip]"
+                    }
+                    button_pin = {
+                        parentanchor = vcenter size = { 23 23 }
+                        visible = "[IsPlayerValid]"
+                        onclick = "[ToggleIOFav(InternationalOrganization.Self)]"
+                        checked = "[IsIOFaved(InternationalOrganization.Self)]"
+                        tooltipwidget = { LeftClickButtonTooltip = { blockoverride "onclick_text" { text = "[SelectLocalization(IsIOFaved(InternationalOrganization.Self), 'UNPIN_OUTLINER', 'PIN_OUTLINER')]" } } }
+                    }
+                    tooltipwidget = { using = InternationalOrganization_tooltip }
+                }
+            }
+        }
+
+        ### ==============================================
+        ### 2. 主体
+        ### ==============================================
+        vbox = {
+            using = layoutpolicy_expanding
+            using = bg_main_inner_notabs_alt
+            using = window_main_tabs_margin_alt
+
+            ### 子标题栏
+            block "ios_common_subheader" {
+                hbox = {
+                    block "common_ios_subheader_properties" {
+                        layoutpolicy_horizontal = expanding size = { -1 35 } margin = { 5 }
+                    }
+                    block "common_ios_subheader_decor" {}
+                    hbox = {
+                        block "common_ios_subheader_left_data_properties" {
+                            layoutpolicy_horizontal = expanding layoutstretchfactor_horizontal = 1 spacing = 5
+                        }
+                        widget = { size = { 30 40 } }
+                        expand = {}
+                    }
+                    block "organization_panel_middle_botton" {}
+                    hbox = {
+                        block "common_ios_subheader_right_data_properties" {
+                            layoutpolicy_horizontal = expanding layoutstretchfactor_horizontal = 1 spacing = 5
+                        }
+                        expand = {}
+                        block "organization_panel_right_header" {}
+                    }
+                }
+            }
+
+            blockoverride "organization_main_actions_extra_visible" { visible = yes }
+
+            datacontext = "[InternationalOrganizationsView.GetInternationalOrganization]"
+
+            ### ==============================================
+            ### IO变量信息栏 (PDS ios_information_header)
+            ### ==============================================
+            ios_information_header = {
+                blockoverride "ios_information_header_visible" { visible = yes }
+                blockoverride "ios_information_header_content_extra_1" {
+                    using = ios_header_content_extra_template
+                    blockoverride "ios_header_content_extra" {
+                        hbox = {
+                            spacing = 4
+                            text_single = {
+                                margin_right = 4 autoresize = yes align = right fontsize = 13
+                                raw_text = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var').GetValue|0]"
+                            }
+                            hbox = {
+                                using = organization_piechart_template
+                                blockoverride "organization_piechart_size" { size = { 25 25 } }
+                                blockoverride "organization_piechart_value" {
+                                    value = "[FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var'))]"
+                                }
+                                blockoverride "organization_piechart_max_value" {
+                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var')))]"
+                                }
+                                blockoverride "organization_piechart_icon" {
+                                    texture = "gfx/interface/icons/modifier_types/prestige.dds"
+                                }
+                            }
+                        }
+                        tooltipwidget = {
+                            ContextualTooltipType = {
+                                blockoverride "title_text" { raw_text = "[Localize('th_sages_prestige_var')]" }
+                                blockoverride "concept_link" { text = "[international_organization|e]" }
+                                blockoverride "tooltip_content" {
+                                    vbox = {
+                                        spacing = 3
+                                        text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_ACTIVE_TIERS_LABEL')]" margins_bottom = 2 }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_20')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_40')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_60').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_60')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_80').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_80')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_100').IsSet]" using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" }
+                                        text_single = { visible = "[And(Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet),Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet))]" using = Font_Size_Tiny default_format = "#subtle_name" raw_text = "[Localize('TH_SAGES_NO_ACTIVE_TIER')]" }
+                                        widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                        hbox = { spacing = 4 margins_bottom = 2 icon = { size = { 16 16 } texture = "gfx/interface/icons/modifiers/_default.dds" texture_density = 2 } text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_MAX_PREVIEW_LABEL')]" } }
+                                        text_single = { using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" margins_bottom = 1 }
+                                        text_multi = { using = Font_Size_Tiny default_format = "#subtle_name" max_width = 200 raw_text = "[Localize('th_sages_prestige_tier_100_desc')]" margins_bottom = 2 }
+                                        text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 200 raw_text = "[Localize('TH_SAGES_TIER_100_MODIFIERS_PREVIEW')]" }
+                                        widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                        text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_sages_prestige_var_desc')]" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                blockoverride "ios_header_content_divider" {}
+                blockoverride "ios_information_header_content_extra_2" {
+                    using = ios_header_content_extra_template
+                    blockoverride "ios_header_content_extra" {
+                        hbox = {
+                            spacing = 4
+                            text_single = {
+                                margin_right = 4 autoresize = yes align = right fontsize = 13
+                                raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
+                            }
+                            hbox = {
+                                using = organization_piechart_template
+                                blockoverride "organization_piechart_size" { size = { 25 25 } }
+                                blockoverride "organization_piechart_value" {
+                                    value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
+                                }
+                                blockoverride "organization_piechart_max_value" {
+                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
+                                }
+                                blockoverride "organization_piechart_icon" {
+                                    texture = "gfx/interface/icons/modifier_types/unity.dds"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ### ==============================================
+            ### 二级标签
+            ### ==============================================
+            header_secondary_tabs = {
+                blockoverride "secondary_tabs_margin" { margin_top = 4 spacing = 2 }
+                blockoverride "content" {
+                    button_secondary_tab_alt = {
+                        using = layoutpolicy_expanding visible = yes
+                        blockoverride "tab_text" { raw_text = "[Localize('TH_SAGES_TAB_OVERVIEW')]" }
+                        onclick = "[InternationalOrganizationsView.Vars.Set( 'organizations', 'overview' )]"
+                        down = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+                    }
+                    button_secondary_tab_alt = {
+                        using = layoutpolicy_expanding visible = yes
+                        blockoverride "tab_text" { raw_text = "[Localize('TH_SAGES_TAB_DEBATE')]" }
+                        onclick = "[InternationalOrganizationsView.Vars.Set( 'organizations', 'parliament' )]"
+                        down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'parliament' )]"
+                    }
+                }
+            }
+
+            ### ==============================================
+            ### 内容面板
+            ### ==============================================
+            vbox = {
+                using = layoutpolicy_expanding
+                using = bg_secondary_inner_alt
+
+                ### === 总览 Tab ===
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+                    spacing = 6
+                    margin = { 10 10 }
+
+                    ### 插图 + 三国旗帜
+                    widget = {
+                        layoutpolicy_horizontal = expanding
+                        size = { -1 160 }
+                        margins_top = 4 margins_bottom = 4
+
+                        background = {
+                            texture = "gfx/interface/illustrations/international_organization_types/th_sages_council_io.dds"
+                            texture_density = 1 spriteType = stretched spriteborder = { 0 0 }
+                        }
+                        block "sages_council_io_illustration" {}
+
+                        hbox = {
+                            parentanchor = center widgetanchor = center spacing = 48 ignoreinvisible = yes
+
+                            vbox = {
+                                spacing = 4
+                                country_flag_mid = { datacontext = "[GetCountry('T13')]" }
+                                text_single = { using = Font_Size_Small default_format = "#color_white" raw_text = "[GetCountry('T13').GetNameWithNoTooltip]" }
+                            }
+                            vbox = {
+                                spacing = 4
+                                country_flag_mid_plus = { datacontext = "[GetCountry('T05')]" }
+                                text_single = { using = Font_Size_Medium default_format = "#color_white" raw_text = "[GetCountry('T05').GetNameWithNoTooltip]" }
+                            }
+                            vbox = {
+                                spacing = 4
+                                country_flag_mid = { datacontext = "[GetCountry('T83')]" }
+                                text_single = { using = Font_Size_Small default_format = "#color_white" raw_text = "[GetCountry('T83').GetNameWithNoTooltip]" }
+                            }
+                        }
+                    }
+
+                    ### 分隔
+                    widget = { parentanchor = hcenter size = { 480 1 } margins_top = 4 margins_bottom = 6 divider_horizontal_bg = {} }
+
+                    ### 行动区域
+                    vbox = {
+                        layoutpolicy_horizontal = expanding spacing = 4 margins_top = 2 margins_bottom = 4 margin = { 20 0 }
+                        text_single = {
+                            using = Font_Size_Small default_format = "#header_titles"
+                            raw_text = "[Localize('TH_SAGES_ACTIONS_LABEL')]" margins_bottom = 4
+                        }
+
+                        button_regular = {
+                            size = { -1 36 }
+                            text = "th_sages_introduce_institution"
+                            visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
+                            enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                            onclick = "[GetScriptedGui('th_sages_introduce_institution').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                            tooltipwidget = {
+                                ContextualTooltipType = {
+                                    blockoverride "title_text" { raw_text = "[Localize('th_sages_introduce_institution')]" }
+                                    blockoverride "tooltip_content" {
+                                        vbox = {
+                                            spacing = 4
+                                            text_multi = { using = Font_Size_Tiny default_format = "#default" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
+                                            text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_cost')]" }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    expand = {}
+                }
+
+                ### === 辩论 Tab ===
+                organization_panel_parliament_area = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'parliament' )]"
+                }
+            }
+        }
+    }
+}
