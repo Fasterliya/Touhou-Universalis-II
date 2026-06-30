@@ -22,6 +22,11 @@ l_japanese:
 
  th_gensokyo_io_yama_leader_title: "閻魔"
 
+ ### IO変数名（エンジンはここから表示名を読み取る）
+ th_gensokyo_unity_var: "幻想郷団結度"
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+ ### 法律
  th_gensokyo_unity_vision_law: "結束の理念"
  th_gensokyo_barrier_policy_law: "大結界政策"
  th_gensokyo_incident_response_law: "異変対応方針"

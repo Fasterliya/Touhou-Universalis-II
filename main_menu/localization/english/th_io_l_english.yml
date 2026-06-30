@@ -22,6 +22,11 @@ l_english:
 
  th_gensokyo_io_yama_leader_title: "Yama"
 
+ ### IO Variable display name (read by engine from here)
+ th_gensokyo_unity_var: "Gensokyo Unity"
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+ ### Laws
  th_gensokyo_unity_vision_law: "Unity Vision"
  th_gensokyo_barrier_policy_law: "Great Barrier Policy"
  th_gensokyo_incident_response_law: "Incident Response Doctrine"

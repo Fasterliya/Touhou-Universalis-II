@@ -22,6 +22,11 @@ l_simp_chinese:
 
  th_gensokyo_io_yama_leader_title: "阎魔"
 
+ ### IO变量名称（引擎从此读取变量显示名）
+ th_gensokyo_unity_var: "幻想乡团结度"
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+ ### 法律
  th_gensokyo_unity_vision_law: "团结愿景"
  th_gensokyo_barrier_policy_law: "大结界政策"
  th_gensokyo_incident_response_law: "异变应对法则"

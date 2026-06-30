@@ -27,10 +27,18 @@
  th_gensokyo_io_parliament: "幻想乡议会"
  th_gensokyo_parliament_seat: "幻想乡议会席位"
 
-### === 变量名称 ===
+### === IO变量名称 ===
  th_gensokyo_unity_var: "幻想乡团结度"
  th_gensokyo_unity_var_desc: "衡量幻想乡诸国的凝聚力，来源于调停异变、解决异变、和平建设等正面行为，因侵略扩张与外界入侵而损耗。"
 
+### === IO变量格式 ===
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+### === IO变量月度变化描述 ===
+ TH_GENSOKYO_UNITY_BASE: "基础维系"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部和平"
+
+### === 国家变量名称 ===
  th_gensokyo_personal_contribution_var: "个人贡献度"
  th_gensokyo_personal_contribution_var_desc: "该国家为幻想乡稳定所做的贡献，基于税基与弹幕火力按月累积。"
 
@@ -43,12 +51,6 @@
 ### === 变量悬浮显示 ===
  th_gensokyo_member_vars_display: "个人变量总览"
  th_gensokyo_member_vars_display_desc: "查看本国在幻想乡中的个人影响力、个人贡献度与恶名值。"
- TH_GENSOKYO_MEMBER_VARS_TOOLTIP: "§Y个人影响力§W: [Country.GetVariable('th_gensokyo_personal_influence_var')] 点\n§Y个人贡献度§W: [Country.GetVariable('th_gensokyo_personal_contribution_var')] 点\n§Y幻想乡恶名§W: [Country.GetVariable('th_gensokyo_notorious_reputation_var')] 点\n\n§G—— 变量说明 ——§\n• 个人影响力: 决定议会投票权重（每50点+1票），时代更迭时清零。\n• 个人贡献度: 基于税基与弹幕火力累积，体现为国家对幻想乡的实质贡献。\n• 幻想乡恶名: 因宣战与扩张而增加（0-100），恶名越高则影响力获取越慢。"
-
-### === 变量月度变化描述 ===
- TH_GENSOKYO_UNITY_FORMAT: "团结度"
- TH_GENSOKYO_UNITY_BASE: "基础维系"
- TH_GENSOKYO_UNITY_FROM_PEACE: "内部和平"
 
 ### === 议会提案 ===
  th_gensokyo_parliament_resolution_1_title: "幻想乡和平决议"
