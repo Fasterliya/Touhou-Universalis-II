@@ -1,49 +1,120 @@
-### 幻想乡国际组织 — 主定义
+### 幻想乡国际组织 — 主定义（参考 ACGV acgv_touhou_gensokyo_empire + basemod hre/lordship 规范写法）
 
 th_gensokyo_io = {
+    has_target = no
     unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+    show_leave_message = no
+    use_laws_as_join_reason = no
+    should_show_ruler_history = yes
+    show_on_diplomatic_map = yes
 
-    # 领袖 — 彼岸（阎魔席位holder），由开局脚本锁定
+    # === 领袖 — 彼岸(T25)阎魔席位，start 文件预分配 ===
     has_leader_country = yes
+    leader_type = country
+    leader_title_key = "th_gensokyo_io_yama_leader_title"
+    leader_change_trigger_type = none
     leader_change_method = none
-    leader_title_key = th_gensokyo_io_yama_leader_title
+    override_ruler_title = yes
 
-    # 议会 — 法律辩论，投票权重 = 个人影响力/50
+    # === 外交地图颜色 ===
+    leader_color = hsv360 { 10 80 80 }
+    member_color = hsv360 { 45 40 60 }
+
+    # === 议会 ===
     has_parliament = yes
     parliament_type = th_gensokyo_io_parliament
+    resolution_widget = parliament
 
-    # 法律系统
+    # === 法律 ===
     laws = {
         th_gensokyo_unity_vision_law
         th_gensokyo_barrier_policy_law
         th_gensokyo_incident_response_law
     }
 
-    # 特殊席位
+    # === 特殊席位 ===
     special_statuses_implemented = {
-        th_gensokyo_io_sages_special_status
         th_gensokyo_io_yama_special_status
         th_gensokyo_io_guardian_special_status
+        th_gensokyo_io_sages_special_status
         th_gensokyo_io_human_village_special_status
     }
 
-    # === 加入条件 ===
-    # 首都位于幻想乡大陆的AI自动加入；玩家可手动加入
-    # 排除：叛军国家
-    join = {
+    # === 外交与战争 ===
+    can_declare_war = {
+        always = yes
+    }
+    gives_military_access_to_all_when_at_war = yes
+
+    # === 成员管理 ===
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = yes
+    }
+
+    can_join_trigger = {
         capital = {
             continent = continent:th_gensokyo_continent
         }
-        NOT = { is_rebel = yes }
+        is_rebel_country = no
+    }
+    join_visible_trigger = {
+        capital = {
+            continent = continent:th_gensokyo_continent
+        }
     }
 
-    # === 退出 ===
-    # 始终禁止脱离
-    leave = {
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
         always = no
     }
 
-    # === IO 核心变量 ===
+    # === 加入/创建效果 ===
+    on_joined = {
+    }
+    on_left = {
+    }
+    monthly_effect = {
+    }
+
+    # === 政策投票 ===
+    can_initiate_policy_votes = {
+        is_leader_of_international_organization = scope:recipient
+    }
+    can_vote_in_parliament = {
+        is_member_of_international_organization = scope:recipient
+    }
+
+    # === 敌意 / AE ===
+    antagonism_towards_leader_modifier = 0.1
+    antagonism_modifier_for_taking_land_from_fellow_member = 0.5
+    antagonism_modifier_for_taking_land_from_member_as_outsider = 0.75
+    no_cb_price_modifier_for_fellow_member = 0.75
+
+    # === 修正 ===
+    member_modifier = {
+        # TODO: 后续人工填写
+    }
+    leader_modifier = {
+        # TODO: 后续人工填写
+    }
+    non_leader_modifier = {
+        # TODO: 后续人工填写
+    }
+    international_organization_modifier = {
+        # TODO: 后续人工填写
+    }
+
+    # === IO 变量 ===
     variables = {
         th_gensokyo_unity_var = {
             format = "TH_GENSOKYO_UNITY_FORMAT"
@@ -58,7 +129,9 @@ th_gensokyo_io = {
                 add = {
                     desc = "TH_GENSOKYO_UNITY_FROM_PEACE"
                     if = {
-                        limit = { international_organization_has_internal_peace = yes }
+                        limit = {
+                            international_organization_has_internal_peace = yes
+                        }
                         value = 0.2
                     }
                 }
@@ -66,16 +139,23 @@ th_gensokyo_io = {
         }
     }
 
-    # === 修正 ===
-    # 所有成员国的基础修正（由法律和政策动态填充）
-    member_modifier = {
+    # === AI ===
+    ai_desire_to_join = {
+        add = {
+            desc = "BASE_VALUE"
+            value = 50
+        }
     }
-
-    # 领袖国修正（由法律和政策动态填充）
-    leader_modifier = {
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
     }
-
-    # IO整体修正（由法律和政策动态填充）
-    international_organization_modifier = {
+    ai_issue_voting_bias = {
+        add = {
+            desc = "INERTIA"
+            value = -1
+        }
     }
 }

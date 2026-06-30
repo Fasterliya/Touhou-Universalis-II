@@ -1,100 +1,110 @@
-### 幻想乡国际组织 — 特殊席位定义（参考ACGV acgv_gensokyo_empire 格式）
+### 幻想乡国际组织 — 特殊席位定义（参考 ACGV acgv_gensokyo_empire 格式，逐个字段对齐）
 
 ### ============================================================
 ### 席位1：阎魔（IO领袖）th_gensokyo_io_yama_special_status
 ### 仅限1位，开局锁定：彼岸(T25)
+### map_color: 深红 — 审判与裁决之色
 ### ============================================================
 th_gensokyo_io_yama_special_status = {
     max_countries = 1
     priority = 20
     leader = yes
 
-    auto_bestowal_trigger = {
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
     }
-
+    auto_bestowal_trigger = {
+        always = yes
+    }
     auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
     }
 
     modifier = {
+        # TODO: 后续人工填写阎魔修正值
     }
-
     special_status_power = {
         value = 200
     }
-
     map_color = hsv360 { 10 80 80 }
 }
 
 ### ============================================================
 ### 席位2：幻想乡守护 th_gensokyo_io_guardian_special_status
 ### 仅限1位，开局锁定：博丽神社(T04)
+### map_color: 青蓝 — 大结界与天空之色
 ### ============================================================
 th_gensokyo_io_guardian_special_status = {
     max_countries = 1
     priority = 18
 
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+    }
     auto_bestowal_trigger = {
     }
-
     auto_rescind_trigger = {
     }
 
     modifier = {
+        # TODO: 后续人工填写守护修正值
     }
-
     special_status_power = {
         value = 180
     }
-
     map_color = hsv360 { 200 70 75 }
 }
 
 ### ============================================================
 ### 席位3：贤者 th_gensokyo_io_sages_special_status
 ### 仅限3位，开局锁定：迷途之家(T05)、后户之国(T13)、华扇的仙界(T83)
+### map_color: 金橙 — 古老智慧与威望之色
 ### ============================================================
 th_gensokyo_io_sages_special_status = {
     max_countries = 3
     priority = 15
 
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+    }
     auto_bestowal_trigger = {
     }
-
     auto_rescind_trigger = {
     }
 
     modifier = {
+        # TODO: 后续人工填写贤者修正值
     }
-
     special_status_power = {
         value = 100
     }
-
     map_color = hsv360 { 40 70 80 }
 }
 
 ### ============================================================
 ### 席位4：人类村落 th_gensokyo_io_human_village_special_status
-### 所有人间之里IO成员国自动获得，最多20位
+### 所有人间之里IO成员国，最多20位
+### map_color: 草绿 — 人类聚居农耕之色
 ### ============================================================
 th_gensokyo_io_human_village_special_status = {
     max_countries = 20
     priority = 5
 
+    can_bestow_trigger = {
+        is_member_of_international_organization = th_human_village_io
+    }
     auto_bestowal_trigger = {
         is_member_of_international_organization = th_human_village_io
     }
-
     auto_rescind_trigger = {
         NOT = { is_member_of_international_organization = th_human_village_io }
     }
 
     modifier = {
+        # TODO: 后续人工填写人类村落修正值
     }
-
     special_status_power = {
         value = 25
     }
-
     map_color = hsv360 { 80 40 75 }
 }

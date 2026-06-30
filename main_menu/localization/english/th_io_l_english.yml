@@ -8,11 +8,12 @@ l_english:
  th_sages_council_io: "Sages' Council"
  th_sages_council_io_desc: "The supreme deliberative body formed by Gensokyo's three most ancient sages."
 
+ ### Special Statuses
  th_gensokyo_io_sages_special_status: "Sage"
  th_gensokyo_io_sages_special_status_desc: "One of Gensokyo's three most ancient sages, guarding a key node of the Great Barrier."
 
  th_gensokyo_io_yama_special_status: "Yama"
- th_gensokyo_io_yama_special_status_desc: "The judge who presides over Higan, arbitrating right and wrong among Gensokyo's nations, serving as leader of the Gensokyo Parliament."
+ th_gensokyo_io_yama_special_status_desc: "The judge who presides over Higan, arbitrating right and wrong among Gensokyo's nations, and serving as leader of the Gensokyo Parliament."
 
  th_gensokyo_io_guardian_special_status: "Guardian of Gensokyo"
  th_gensokyo_io_guardian_special_status_desc: "The shrine maiden of Hakurei Shrine, eternal guardian of the Great Barrier. The Hakurei power passed down through generations maintains the boundary between Gensokyo and the Outside World."
@@ -22,23 +23,45 @@ l_english:
 
  th_gensokyo_io_yama_leader_title: "Yama"
 
- ### IO Variable display name (read by engine from here)
+ ### IO Variables (engine reads display name + piechart from here)
  th_gensokyo_unity_var: "Gensokyo Unity"
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "Base Maintenance"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "Internal Peace"
+
+ ### Country Variables
+ th_gensokyo_personal_contribution_var: "Personal Contribution"
+ th_gensokyo_personal_influence_var: "Personal Influence"
+ th_gensokyo_notorious_reputation_var: "Gensokyo Infamy"
 
  ### Laws
  th_gensokyo_unity_vision_law: "Unity Vision"
+ th_gensokyo_unity_vision_law_desc: "Determines the direction through which Gensokyo's unity is cultivated and harnessed."
+
  th_gensokyo_barrier_policy_law: "Great Barrier Policy"
+ th_gensokyo_barrier_policy_law_desc: "Determines the maintenance intensity and degree of openness of Gensokyo's Great Barrier."
+
  th_gensokyo_incident_response_law: "Incident Response Doctrine"
+ th_gensokyo_incident_response_law_desc: "Determines the strategy and code of conduct for responding to incidents within Gensokyo."
 
  isolation_defense_policy: "Isolation Defense"
+ isolation_defense_policy_desc: "Seal the Great Barrier tightly, consolidating unity through internal peace."
  balance_path_policy: "Path of Balance"
+ balance_path_policy_desc: "Maintain the Great Barrier as it has always been, impartial and steady."
  open_inclusive_policy: "Open Inclusiveness"
+ open_inclusive_policy_desc: "Relax the Great Barrier's restrictions to welcome new ideas from beyond."
 
  reinforced_barrier_policy: "Reinforced Barrier"
+ reinforced_barrier_policy_desc: "Pour the strength of all Gensokyo into reinforcing the Great Barrier."
  maintained_barrier_policy: "Maintained Barrier"
+ maintained_barrier_policy_desc: "Maintain the Great Barrier according to established traditions."
  relaxed_barrier_policy: "Relaxed Barrier"
+ relaxed_barrier_policy_desc: "Moderately relax the Great Barrier's restrictions to facilitate exchange."
 
  duel_resolution_policy: "Danmaku Duel Rules"
+ duel_resolution_policy_desc: "Resolve incidents through one-on-one danmaku duels."
  joint_suppression_policy: "Joint Suppression"
+ joint_suppression_policy_desc: "Nations act in concert, suppressing incidents with collective strength."
  diplomatic_mediation_policy: "Diplomatic Mediation"
+ diplomatic_mediation_policy_desc: "Resolve the root causes of incidents through negotiation and mediation."

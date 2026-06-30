@@ -8,6 +8,7 @@ l_japanese:
  th_sages_council_io: "賢者議会"
  th_sages_council_io_desc: "幻想郷に最も古き三賢者より成る最高議事機関。"
 
+ ### 特殊席位
  th_gensokyo_io_sages_special_status: "賢者"
  th_gensokyo_io_sages_special_status_desc: "幻想郷に最も古き三賢者の一人にして、大結界の要衝を守護する者。"
 
@@ -22,23 +23,45 @@ l_japanese:
 
  th_gensokyo_io_yama_leader_title: "閻魔"
 
- ### IO変数名（エンジンはここから表示名を読み取る）
+ ### IO変数（エンジンが表示名と円グラフをここから読み取る）
  th_gensokyo_unity_var: "幻想郷団結度"
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "基礎維持"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部平和"
+
+ ### 国家変数
+ th_gensokyo_personal_contribution_var: "個人貢献度"
+ th_gensokyo_personal_influence_var: "個人影響力"
+ th_gensokyo_notorious_reputation_var: "幻想郷悪名"
 
  ### 法律
  th_gensokyo_unity_vision_law: "結束の理念"
+ th_gensokyo_unity_vision_law_desc: "幻想郷の結束の力の方向性と運用の道を定める。"
+
  th_gensokyo_barrier_policy_law: "大結界政策"
+ th_gensokyo_barrier_policy_law_desc: "幻想郷の大結界の維持強度と開放度を定める。"
+
  th_gensokyo_incident_response_law: "異変対応方針"
+ th_gensokyo_incident_response_law_desc: "幻想郷で異変が発生した際の対応戦略と行動指針を定める。"
 
  isolation_defense_policy: "孤立堅守"
+ isolation_defense_policy_desc: "大結界の門を固く閉ざし、内部の平和によって結束の力を凝集する。"
  balance_path_policy: "均衡の道"
+ balance_path_policy_desc: "大結界の既存の法を維持し、偏らず揺るがず。"
  open_inclusive_policy: "開放包摂"
+ open_inclusive_policy_desc: "大結界の制限を緩和し、外界の新しき思いを歓迎する。"
 
  reinforced_barrier_policy: "結界強化"
+ reinforced_barrier_policy_desc: "全郷の力を結集して大結界を強化する。"
  maintained_barrier_policy: "結界維持"
+ maintained_barrier_policy_desc: "既存の伝統に従い大結界の運転を維持する。"
  relaxed_barrier_policy: "結界緩和"
+ relaxed_barrier_policy_desc: "交流を円滑にするため大結界の制限を適度に緩和する。"
 
  duel_resolution_policy: "弾幕決闘規則"
+ duel_resolution_policy_desc: "一対一の弾幕決闘によって異変を解決する。"
  joint_suppression_policy: "連合鎮圧"
+ joint_suppression_policy_desc: "諸国が連合して行動し、集団の力で異変を鎮圧する。"
  diplomatic_mediation_policy: "外交調停"
+ diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。"
