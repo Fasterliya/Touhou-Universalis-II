@@ -6,10 +6,26 @@ th_gensokyo_io = {
     # 领袖 — 彼岸（阎魔席位holder），由开局脚本锁定
     has_leader_country = yes
     leader_change_method = none
+    leader_title_key = th_gensokyo_io_yama_leader_title
 
     # 议会 — 法律辩论，投票权重 = 个人影响力/50
     has_parliament = yes
     parliament_type = th_gensokyo_io_parliament
+
+    # 法律系统
+    laws = {
+        th_gensokyo_unity_vision_law
+        th_gensokyo_barrier_policy_law
+        th_gensokyo_incident_response_law
+    }
+
+    # 特殊席位
+    special_statuses_implemented = {
+        th_gensokyo_io_sages_special_status
+        th_gensokyo_io_yama_special_status
+        th_gensokyo_io_guardian_special_status
+        th_gensokyo_io_human_village_special_status
+    }
 
     # === 加入条件 ===
     # 首都位于幻想乡大陆的AI自动加入；玩家可手动加入
@@ -27,19 +43,39 @@ th_gensokyo_io = {
         always = no
     }
 
-    # === IO 核心变量（声明） ===
-    # 幻想乡团结度 th_gensokyo_unity_var — 由 monthly pulse 及事件维护
+    # === IO 核心变量 ===
+    variables = {
+        th_gensokyo_unity_var = {
+            format = "TH_GENSOKYO_UNITY_FORMAT"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 0
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "TH_GENSOKYO_UNITY_BASE"
+                    value = 0.1
+                }
+                add = {
+                    desc = "TH_GENSOKYO_UNITY_FROM_PEACE"
+                    if = {
+                        limit = { international_organization_has_internal_peace = yes }
+                        value = 0.2
+                    }
+                }
+            }
+        }
+    }
 
     # === 修正 ===
-    # 所有成员国的基础修正（待后续填充数值）
+    # 所有成员国的基础修正（由法律和政策动态填充）
     member_modifier = {
     }
 
-    # 领袖国修正（待后续填充）
+    # 领袖国修正（由法律和政策动态填充）
     leader_modifier = {
     }
 
-    # IO整体修正（待后续填充）
+    # IO整体修正（由法律和政策动态填充）
     international_organization_modifier = {
     }
 }

@@ -1,3 +1,39 @@
-﻿l_english:
+l_english:
  th_human_village_io: "Human Village"
  th_human_village_io_desc: "A confederation formed by nations in the Human Village and Myouren Temple regions."
+
+ th_gensokyo_io: "Gensokyo"
+ th_gensokyo_io_desc: "An international organization maintaining the balance of Gensokyo, with the Sages and Yama jointly upholding the Great Barrier's order."
+
+ th_sages_council_io: "Sages' Council"
+ th_sages_council_io_desc: "The supreme deliberative body formed by Gensokyo's three most ancient sages."
+
+ th_gensokyo_io_sages_special_status: "Sage"
+ th_gensokyo_io_sages_special_status_desc: "One of Gensokyo's three most ancient sages, guarding a key node of the Great Barrier."
+
+ th_gensokyo_io_yama_special_status: "Yama"
+ th_gensokyo_io_yama_special_status_desc: "The judge who presides over Higan, arbitrating right and wrong among Gensokyo's nations, serving as leader of the Gensokyo Parliament."
+
+ th_gensokyo_io_guardian_special_status: "Guardian of Gensokyo"
+ th_gensokyo_io_guardian_special_status_desc: "The shrine maiden of Hakurei Shrine, eternal guardian of the Great Barrier. The Hakurei power passed down through generations maintains the boundary between Gensokyo and the Outside World."
+
+ th_gensokyo_io_human_village_special_status: "Human Village"
+ th_gensokyo_io_human_village_special_status_desc: "Representatives of the Human Village, protecting the interests of Gensokyo's human settlements."
+
+ th_gensokyo_io_yama_leader_title: "Yama"
+
+ th_gensokyo_unity_vision_law: "Unity Vision"
+ th_gensokyo_barrier_policy_law: "Great Barrier Policy"
+ th_gensokyo_incident_response_law: "Incident Response Doctrine"
+
+ isolation_defense_policy: "Isolation Defense"
+ balance_path_policy: "Path of Balance"
+ open_inclusive_policy: "Open Inclusiveness"
+
+ reinforced_barrier_policy: "Reinforced Barrier"
+ maintained_barrier_policy: "Maintained Barrier"
+ relaxed_barrier_policy: "Relaxed Barrier"
+
+ duel_resolution_policy: "Danmaku Duel Rules"
+ joint_suppression_policy: "Joint Suppression"
+ diplomatic_mediation_policy: "Diplomatic Mediation"

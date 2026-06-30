@@ -1,3 +1,39 @@
-﻿l_simp_chinese:
+l_simp_chinese:
  th_human_village_io: "人间之里"
  th_human_village_io_desc: "人间之里及命连寺区域各国组成的联合组织。"
+
+ th_gensokyo_io: "幻想乡"
+ th_gensokyo_io_desc: "维系幻想乡诸国平衡的国际组织，由贤者与阎魔共同维护大结界秩序。"
+
+ th_sages_council_io: "贤者议会"
+ th_sages_council_io_desc: "由幻想乡最古老的三位贤者组成的最高议事机构。"
+
+ th_gensokyo_io_sages_special_status: "贤者"
+ th_gensokyo_io_sages_special_status_desc: "幻想乡最古老的三位贤者，分别镇守大结界的关键节点。"
+
+ th_gensokyo_io_yama_special_status: "阎魔"
+ th_gensokyo_io_yama_special_status_desc: "执掌彼岸的审判者，幻想乡议会的领袖。"
+
+ th_gensokyo_io_guardian_special_status: "幻想乡守护"
+ th_gensokyo_io_guardian_special_status_desc: "博丽神社的巫女，大结界永恒的守护者。"
+
+ th_gensokyo_io_human_village_special_status: "人类村落"
+ th_gensokyo_io_human_village_special_status_desc: "人间之里的代表，守护幻想乡人类聚居地的权益。"
+
+ th_gensokyo_io_yama_leader_title: "阎魔"
+
+ th_gensokyo_unity_vision_law: "团结愿景"
+ th_gensokyo_barrier_policy_law: "大结界政策"
+ th_gensokyo_incident_response_law: "异变应对法则"
+
+ isolation_defense_policy: "孤立坚守"
+ balance_path_policy: "平衡之道"
+ open_inclusive_policy: "开放包容"
+
+ reinforced_barrier_policy: "强化结界"
+ maintained_barrier_policy: "维持结界"
+ relaxed_barrier_policy: "宽松结界"
+
+ duel_resolution_policy: "弹幕决斗规则"
+ joint_suppression_policy: "联合镇压"
+ diplomatic_mediation_policy: "外交调解"

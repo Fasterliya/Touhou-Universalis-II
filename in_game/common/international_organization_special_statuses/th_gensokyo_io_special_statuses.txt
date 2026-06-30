@@ -30,11 +30,12 @@ th_gensokyo_io_sages_special_status = {
 
 ### ============================================================
 ### 席位2：阎魔  th_gensokyo_io_yama_special_status
-### 仅限1位，开局锁定：彼岸(T25)，IO领袖
+### 仅限1位，开局锁定：彼岸(T25)，同时也是IO领袖
 ### ============================================================
 th_gensokyo_io_yama_special_status = {
     max = 1
     can_be_removed = no
+    leader = yes
 
     auto_bestowal_trigger = {
         has_variable = th_is_gensokyo_yama_country
@@ -56,19 +57,47 @@ th_gensokyo_io_yama_special_status = {
 }
 
 ### ============================================================
-### 席位3：人类村落  th_gensokyo_io_human_village_special_status
-### 仅限1位，开局锁定：首都在人间之里region的国家(T03)
+### 席位3：幻想乡守护  th_gensokyo_io_guardian_special_status
+### 仅限1位，开局锁定：博丽神社(T04)
+### 大结界的守护者，享有独特的防御增益
 ### ============================================================
-th_gensokyo_io_human_village_special_status = {
+th_gensokyo_io_guardian_special_status = {
     max = 1
     can_be_removed = no
 
     auto_bestowal_trigger = {
-        has_variable = th_is_gensokyo_human_village_country
+        has_variable = th_is_gensokyo_guardian_country
     }
 
     auto_rescind_trigger = {
         always = no
+    }
+
+    leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    non_leader_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+    IO_modifier = {
+        # TODO: 后续人工填写修正值
+    }
+}
+
+### ============================================================
+### 席位4：人类村落  th_gensokyo_io_human_village_special_status
+### 所有人间之里IO成员国自动获得
+### ============================================================
+th_gensokyo_io_human_village_special_status = {
+    max = 20
+    can_be_removed = no
+
+    auto_bestowal_trigger = {
+        is_member_of_international_organization = th_human_village_io
+    }
+
+    auto_rescind_trigger = {
+        NOT = { is_member_of_international_organization = th_human_village_io }
     }
 
     leader_modifier = {

@@ -5,43 +5,43 @@
 ### 幻想乡团结度 增加（在IO scope上调用）
 ### 使用: th_gensokyo_io_unity_var_add_effect = { value = 10 }
 th_gensokyo_io_unity_var_add_effect = {
-	change_variable = {
-		name = th_gensokyo_unity_var
-		add = $value$
-	}
+    change_variable = {
+        name = th_gensokyo_unity_var
+        add = $value$
+    }
 }
 
 ### 幻想乡个人贡献度 增加（在国家scope上调用）
 ### 使用: th_gensokyo_io_contribution_var_add_effect = { value = 5 }
 th_gensokyo_io_contribution_var_add_effect = {
-	change_variable = {
-		name = th_gensokyo_personal_contribution_var
-		add = $value$
-	}
+    change_variable = {
+        name = th_gensokyo_personal_contribution_var
+        add = $value$
+    }
 }
 
 ### 幻想乡个人影响力 增加（在国家scope上调用）
 ### 使用: th_gensokyo_io_influence_var_add_effect = { value = 50 }
 th_gensokyo_io_influence_var_add_effect = {
-	change_variable = {
-		name = th_gensokyo_personal_influence_var
-		add = $value$
-	}
+    change_variable = {
+        name = th_gensokyo_personal_influence_var
+        add = $value$
+    }
 }
 
 ### 幻想乡恶名 增加（在国家scope上调用）
 ### 自动钳制到[0, 100]
 ### 使用: th_gensokyo_io_notorious_reputation_var_add_effect = { value = 10 }
 th_gensokyo_io_notorious_reputation_var_add_effect = {
-	change_variable = {
-		name = th_gensokyo_notorious_reputation_var
-		add = $value$
-	}
-	clamp_variable = {
-		name = th_gensokyo_notorious_reputation_var
-		min = 0
-		max = 100
-	}
+    change_variable = {
+        name = th_gensokyo_notorious_reputation_var
+        add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_notorious_reputation_var
+        min = 0
+        max = 100
+    }
 }
 
 ### ===========================================================
@@ -49,9 +49,24 @@ th_gensokyo_io_notorious_reputation_var_add_effect = {
 ### 用途：在开局on_game_start链中调用
 ### ===========================================================
 th_gensokyo_io_init_special_status_vars_scr_effect = {
-	c:T05 = { set_variable = th_is_gensokyo_sage_country }
-	c:T13 = { set_variable = th_is_gensokyo_sage_country }
-	c:T83 = { set_variable = th_is_gensokyo_sage_country }
-	c:T25 = { set_variable = th_is_gensokyo_yama_country }
-	c:T03 = { set_variable = th_is_gensokyo_human_village_country }
+    # 三贤者席位
+    c:T05 = { set_variable = th_is_gensokyo_sage_country }
+    c:T13 = { set_variable = th_is_gensokyo_sage_country }
+    c:T83 = { set_variable = th_is_gensokyo_sage_country }
+
+    # 阎魔席位（IO领袖）
+    c:T25 = { set_variable = th_is_gensokyo_yama_country }
+
+    # 幻想乡守护
+    c:T04 = { set_variable = th_is_gensokyo_guardian_country }
+
+    # 人类村落席位 — 所有village IO成员自动获得
+    # （由 special_status auto_bestowal_trigger 基于IO成员身份自动分配，
+    #   此处预留变量标记供其他系统引用）
+    every_country = {
+        limit = {
+            is_member_of_international_organization = th_human_village_io
+        }
+        set_variable = th_is_gensokyo_human_village_country
+    }
 }

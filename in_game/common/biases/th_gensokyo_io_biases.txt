@@ -1,0 +1,16 @@
+### ============================================================
+### 幻想乡IO — 成员国好感度偏差
+### 引擎要求每个IO必须有对应的 opinion bias，否则报错
+### ============================================================
+
+io_opinion_th_gensokyo_io = {
+    value = 25
+}
+
+io_opinion_th_sages_council_io = {
+    value = 30
+}
+
+io_opinion_th_human_village_io = {
+    value = 20
+}

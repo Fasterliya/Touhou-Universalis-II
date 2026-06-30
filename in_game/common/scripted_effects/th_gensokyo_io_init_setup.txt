@@ -3,14 +3,36 @@
 ### 用途：在开局 th_on_game_start 中调用
 ### ===========================================================
 th_gensokyo_io_init_setup_scr_effect = {
-	# 初始化IO团结度
-	th_gensokyo_io = {
-		set_variable = {
-			name = th_gensokyo_unity_var
-			value = 50
-		}
-	}
-	# 初始化各成员国的变量（空壳，具体值后续人工填写）
-	# TODO: every_member_country scope在IO上不可用，
-	# 需通过 on_game_start 的 every_country + is_member 单独初始化
+    # 初始化IO团结度
+    th_gensokyo_io = {
+        set_variable = {
+            name = th_gensokyo_unity_var
+            value = 50
+        }
+    }
+
+    # === 初始化所有成员国的个人变量 ===
+    every_country = {
+        limit = {
+            is_member_of_international_organization = th_gensokyo_io
+        }
+
+        # 个人影响力 — 初始为0
+        set_variable = {
+            name = th_gensokyo_personal_influence_var
+            value = 0
+        }
+
+        # 个人贡献度 — 初始为0
+        set_variable = {
+            name = th_gensokyo_personal_contribution_var
+            value = 0
+        }
+
+        # 恶名 — 初始为0
+        set_variable = {
+            name = th_gensokyo_notorious_reputation_var
+            value = 0
+        }
+    }
 }

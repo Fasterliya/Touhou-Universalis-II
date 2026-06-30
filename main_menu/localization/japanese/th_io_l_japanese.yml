@@ -1,3 +1,39 @@
-﻿l_japanese:
+l_japanese:
  th_human_village_io: "人間の里"
  th_human_village_io_desc: "人間の里及び命蓮寺区域の諸国より成る聯合組織なり。"
+
+ th_gensokyo_io: "幻想郷"
+ th_gensokyo_io_desc: "幻想郷の諸国の均衡を保つ国際組織。賢者と閻魔が共に大結界の秩序を守護する。"
+
+ th_sages_council_io: "賢者議会"
+ th_sages_council_io_desc: "幻想郷に最も古き三賢者より成る最高議事機関。"
+
+ th_gensokyo_io_sages_special_status: "賢者"
+ th_gensokyo_io_sages_special_status_desc: "幻想郷に最も古き三賢者の一人にして、大結界の要衝を守護する者。"
+
+ th_gensokyo_io_yama_special_status: "閻魔"
+ th_gensokyo_io_yama_special_status_desc: "彼岸を司る審判者。幻想郷の諸国の是非善悪を裁き、幻想郷議会の長を務める。"
+
+ th_gensokyo_io_guardian_special_status: "幻想郷の守護"
+ th_gensokyo_io_guardian_special_status_desc: "博麗神社の巫女、大結界の永遠なる守護者。代々受け継がれる博麗の力が幻想郷と外界の境界を保つ。"
+
+ th_gensokyo_io_human_village_special_status: "人間の里"
+ th_gensokyo_io_human_village_special_status_desc: "人間の里の代表として、幻想郷の人間集落の権益を守護する者。"
+
+ th_gensokyo_io_yama_leader_title: "閻魔"
+
+ th_gensokyo_unity_vision_law: "結束の理念"
+ th_gensokyo_barrier_policy_law: "大結界政策"
+ th_gensokyo_incident_response_law: "異変対応方針"
+
+ isolation_defense_policy: "孤立堅守"
+ balance_path_policy: "均衡の道"
+ open_inclusive_policy: "開放包摂"
+
+ reinforced_barrier_policy: "結界強化"
+ maintained_barrier_policy: "結界維持"
+ relaxed_barrier_policy: "結界緩和"
+
+ duel_resolution_policy: "弾幕決闘規則"
+ joint_suppression_policy: "連合鎮圧"
+ diplomatic_mediation_policy: "外交調停"
