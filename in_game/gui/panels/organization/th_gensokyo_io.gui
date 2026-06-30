@@ -1,0 +1,149 @@
+organization_geodiplomatic_theme = {
+
+    # === 标签页导航 ===
+    # 概览标签 — 始终显示
+    blockoverride "organization_overview_tab_visible" {}
+
+    # 成员标签 — 独立可见
+    blockoverride "organization_members_tab_visible" {}
+    blockoverride "organization_members_tab_down" {
+        down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+    }
+    blockoverride "organization_panel_members_visible" {
+        visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+    }
+
+    # === 概览面板可见性 ===
+    blockoverride "organization_panel_overview_visible" {
+        visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+    }
+
+    # === 概览顶部信息卡（IO描述）===
+    blockoverride "organization_overview_list_custom_top_extra" {
+        vbox = {
+            margin = { 10 5 }
+            layoutpolicy_horizontal = expanding
+            card_expandable = {
+                blockoverride "header_content" {
+                    margin = { 20 0 }
+                    icon = {
+                        size = { 30 30 }
+                        block "common_header_icon_texture" {
+                            texture = "[InternationalOrganization.GetIcon]"
+                        }
+                        texture_density = 2
+                    }
+                    text_single = {
+                        block "header_text" {
+                            margin = { 10 0 }
+                            raw_text = "幻想乡国际组织"
+                        }
+                    }
+                    expand = {}
+                }
+                blockoverride "bottom_content" {
+                    margin_top = 15
+                    hbox = {
+                        layoutpolicy_horizontal = expanding
+                        spacing = 4
+                        text_single = {
+                            margin = { 20 10 }
+                            text = "th_gensokyo_io_desc"
+                            multiline = yes
+                            autoresize = yes
+                            layoutpolicy_horizontal = expanding
+                        }
+                    }
+                }
+                blockoverride "header_button_onclick" {
+                    onclick = "[GetVariableSystem.Toggle( 'th_gensokyo_io_info' )]"
+                }
+                blockoverride "icon_replace_visible_yes" {
+                    visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
+                }
+                blockoverride "icon_replace_visible_not" {
+                    visible = "[Not(GetVariableSystem.Exists( 'th_gensokyo_io_info' ))]"
+                }
+                blockoverride "bottom_content_onclick" {
+                    visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
+                }
+                margin_bottom = 10
+            }
+        }
+    }
+
+    # === 空状态隐藏 ===
+    blockoverride "scroll_overview_empty_visible" { visible = no }
+
+    # === 主要行动区图标 ===
+    blockoverride "io_main_actions_icon" {
+        texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetIcon]"
+    }
+
+    # === 显示额外主要行动区域 ===
+    blockoverride "organization_main_actions_extra_visible" {
+        visible = yes
+    }
+
+    # === 额外主要行动：请求加入 / 离开IO ===
+    blockoverride "organization_main_actions_extra" {
+        # 请求加入
+        action_button_diamond = {
+            size = { 470 30 }
+            title = "INT_ORG_MEMBERSHIP_TITLE"
+            actor = "[InternationalOrganizationsView.GetPlayer]"
+            text = "ASK_FOR_IO_MEMBERSHIP"
+            parameter = {
+                parameter_name = "recipient"
+                parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization.GetLeaderCountry]"
+            }
+            left_action = {
+                action_name = "ask_to_join_international_organization"
+                action_direction = "request"
+                parameter = {
+                    parameter_name = "international_organization"
+                    parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                }
+            }
+            tooltipwidget = {
+                using = io_join_button_tooltip
+            }
+            visible = "[Not(Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization))]"
+        }
+        # 加入IO
+        action_button_diamond = {
+            size = { 470 30 }
+            title = "INT_ORG_MEMBERSHIP_TITLE"
+            actor = "[InternationalOrganizationsView.GetPlayer]"
+            text = "INT_ORG_MEMBERSHIP_TITLE"
+            left_action = {
+                action_name = "join_international_organization"
+                action_direction = "offer"
+                parameter = {
+                    parameter_name = "recipient"
+                    parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                }
+            }
+            visible = "[Not(Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization))]"
+        }
+        # 离开IO
+        action_button_diamond = {
+            size = { 470 30 }
+            title = "INT_ORG_MEMBERSHIP_TITLE"
+            actor = "[InternationalOrganizationsView.GetPlayer]"
+            left_click_and_hold_action = {
+                action_name = "leave_international_organization"
+                action_direction = "offer"
+                parameter = {
+                    parameter_name = "recipient"
+                    parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                }
+            }
+            tooltipwidget = {
+                using = io_leave_button_tooltip
+            }
+            text = "LEAVE_IO_MEMBERSHIP"
+            visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
+        }
+    }
+}
