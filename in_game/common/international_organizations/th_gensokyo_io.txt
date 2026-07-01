@@ -1,4 +1,4 @@
-### 幻想乡国际组织 — 主定义（参考 ACGV acgv_touhou_gensokyo_empire + basemod hre/lordship 规范写法）
+﻿### 幻想乡国际组织 — 主定义（参考 ACGV acgv_touhou_gensokyo_empire + basemod hre/lordship 规范写法）
 
 th_gensokyo_io = {
     has_target = no

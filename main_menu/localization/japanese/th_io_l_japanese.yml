@@ -66,3 +66,10 @@ l_japanese:
  joint_suppression_policy_desc: "諸国が連合して行動し、集団の力で異変を鎮圧する。"
  diplomatic_mediation_policy: "外交調停"
  diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。"
+
+ ### 診断インタラクション（特殊席状態確認用）
+ th_sages_diagnostic_interaction: "賢者席診断"
+ th_sages_diagnostic_interaction_desc: "このインタラクションは幻想郷IOの「賢者」特殊席を保持する国家のみに表示される。特殊席が正しく割り当てられているかの確認用。"
+ th_sages_diagnostic_interaction_act: "賢者席を確認"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]が幻想郷「賢者」特殊席を保持していることを確認した。"
+ th_sages_diagnostic_success_tt: "§G✓ 診断成功§!：この国家は幻想郷IOの「賢者」特殊席（th_gensokyo_io_sages_special_status）を保持している。"

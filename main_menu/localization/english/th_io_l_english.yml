@@ -66,3 +66,10 @@ l_english:
  joint_suppression_policy_desc: "Nations act in concert, suppressing incidents with collective strength."
  diplomatic_mediation_policy: "Diplomatic Mediation"
  diplomatic_mediation_policy_desc: "Resolve the root causes of incidents through negotiation and mediation."
+
+ ### Diagnostic Interaction (Verify special status assignment)
+ th_sages_diagnostic_interaction: "Sage Status Diagnostic"
+ th_sages_diagnostic_interaction_desc: "This interaction is only visible to countries holding the 'Sage' special status in the Gensokyo IO. Used to verify correct special status assignment."
+ th_sages_diagnostic_interaction_act: "Confirm Sage Status"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName] confirms holding the Gensokyo 'Sage' special status."
+ th_sages_diagnostic_success_tt: "§G✓ Diagnostic Success§!: This country holds the 'Sage' special status (th_gensokyo_io_sages_special_status) in the Gensokyo IO."

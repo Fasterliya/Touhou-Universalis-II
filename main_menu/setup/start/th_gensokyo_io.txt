@@ -25,8 +25,8 @@ international_organization_manager = {
         leader = T25
         
         regions = { th_gensokyo_hakurei_region th_gensokyo_makai_region th_gensokyo_human_village_region th_gensokyo_magic_forest_region
-        th_gensokyo_magic_forest_region th_youkai_mountain_western_foot_region th_youkai_mountain_region
-        th_immortal_realm_region th_moriya_shirine_region th_animal_realm_region th_hell_region 
+        th_youkai_mountain_western_foot_region th_youkai_mountain_region
+        th_immortal_realm_region th_moriya_shirine_region th_animal_realm_region th_hell_region
         th_sunflower_field_region th_makai_region th_old_hell_region
     }
     

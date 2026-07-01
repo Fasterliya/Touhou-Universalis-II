@@ -66,3 +66,10 @@ l_simp_chinese:
  joint_suppression_policy_desc: "诸国联合行动，以集体之力镇压异变。"
  diplomatic_mediation_policy: "外交调解"
  diplomatic_mediation_policy_desc: "以谈判与调解化解异变根源。"
+
+ ### 诊断互动（验证特殊席位状态）
+ th_sages_diagnostic_interaction: "贤者席位诊断"
+ th_sages_diagnostic_interaction_desc: "此互动仅对持有幻想乡IO「贤者」特殊席位的国家可见。用于验证特殊席位是否正确分配。"
+ th_sages_diagnostic_interaction_act: "确认贤者席位"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]确认持有幻想乡「贤者」特殊席位。"
+ th_sages_diagnostic_success_tt: "§G✓ 诊断成功§!：此国家持有幻想乡IO的「贤者」特殊席位（th_gensokyo_io_sages_special_status）。"

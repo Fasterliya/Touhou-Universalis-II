@@ -1,4 +1,4 @@
-### 幻想乡国际组织 — 特殊席位定义
+﻿### 幻想乡国际组织 — 特殊席位定义
 ### 字段顺序: max_countries → priority → can_bestow_trigger → auto_bestowal_trigger → auto_rescind_trigger
 ###           → modifier → leader_modifier → on_bestowed_effect → on_rescinded_effect
 ###           → leader/elector → special_status_power → map_color
@@ -16,10 +16,10 @@ th_gensokyo_io_yama_special_status = {
         is_leader_of_international_organization = scope:recipient
     }
     auto_bestowal_trigger = {
-        
+        always = yes
     }
     auto_rescind_trigger = {
-       
+        NOT = { is_leader_of_international_organization = scope:recipient }
     }
 
     modifier = {
@@ -51,11 +51,16 @@ th_gensokyo_io_guardian_special_status = {
 
     can_bestow_trigger = {
         is_member_of_international_organization = scope:recipient
+        scope:recipient = {
+            NOT = {
+                country_has_special_status = { type = special_status:th_gensokyo_io_guardian_special_status country = root }
+            }
+        }
     }
     auto_bestowal_trigger = {
     }
     auto_rescind_trigger = {
-        
+        NOT = { is_member_of_international_organization = scope:recipient }
     }
 
     modifier = {
@@ -84,12 +89,17 @@ th_gensokyo_io_sages_special_status = {
     priority = 15
 
     can_bestow_trigger = {
-        
+        is_member_of_international_organization = scope:recipient
+        scope:recipient = {
+            NOT = {
+                country_has_special_status = { type = special_status:th_gensokyo_io_sages_special_status country = root }
+            }
+        }
     }
     auto_bestowal_trigger = {
     }
     auto_rescind_trigger = {
-        
+        NOT = { is_member_of_international_organization = scope:recipient }
     }
 
     modifier = {
@@ -118,12 +128,13 @@ th_gensokyo_io_human_village_special_status = {
     priority = 5
 
     can_bestow_trigger = {
+        is_member_of_international_organization = scope:recipient
     }
     auto_bestowal_trigger = {
         is_member_of_international_organization = scope:recipient
     }
     auto_rescind_trigger = {
-        always = no
+        NOT = { is_member_of_international_organization = scope:recipient }
     }
 
     modifier = {
