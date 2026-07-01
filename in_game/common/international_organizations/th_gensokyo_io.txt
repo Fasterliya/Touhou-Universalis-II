@@ -19,8 +19,8 @@ th_gensokyo_io = {
     override_ruler_title = yes
 
     # === 外交地图颜色 ===
-    leader_color = hsv360 { 10 80 80 }
-    member_color = hsv360 { 45 40 60 }
+    # leader_color = hsv360 { 10 80 80 }
+    # member_color = hsv360 { 45 40 60 }
 
     # === 议会 ===
     has_parliament = yes
@@ -46,7 +46,6 @@ th_gensokyo_io = {
     can_declare_war = {
         always = yes
     }
-    gives_military_access_to_all_when_at_war = yes
 
     # === 成员管理 ===
     create_visible_trigger = {

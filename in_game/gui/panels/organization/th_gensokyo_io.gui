@@ -23,6 +23,32 @@ organization_geodiplomatic_theme = {
     # ================================================================
     blockoverride "scroll_overview_empty_visible" { visible = no }
 
+    blockoverride "card_header_button_header_content" { # Remove leave/join/invite IO icon + add member icon
+        margin_left = 18
+        icon = {
+            size = { 30 30 }
+            block "card_header_button_icon_texture" {
+                texture = "gfx/interface/icons/religious_doctrines/catholic/religious_actions.dds"
+            }
+            texture_density = 2
+            glow = {
+                name = "drop_shadow"
+                glow_radius = 3
+                color = {0.0 0.0 0.0 1.0}
+                alpha = 0.3
+            }
+        }
+        block "card_header_button_text_single" {
+            text_single = {
+                margin_left = 7
+                block "card_header_button_raw_text" {
+                    raw_text = "IO or Situation"
+                }
+            }
+        }
+        expand = {}
+    }
+
     # ================================================================
     # 4. 主要行动图标
     # ================================================================
@@ -34,7 +60,7 @@ organization_geodiplomatic_theme = {
     # 5. 额外主要行动区可见
     # ================================================================
     blockoverride "organization_main_actions_extra_visible" {
-        visible = yes
+        visible = yes 
     }
 
     # ================================================================
@@ -51,14 +77,14 @@ organization_geodiplomatic_theme = {
                     icon = {
                         size = { 30 30 }
                         block "common_header_icon_texture" {
-                            texture = "[InternationalOrganization.GetIcon]"
+                              texture = "[GetSpecialStatusIconFromKey('th_gensokyo_io')]"
                         }
                         texture_density = 2
                     }
                     text_single = {
                         block "header_text" {
                             margin = { 10 0 }
-                            text = "th_gensokyo_io"
+                            text = "th_gensokyo_io_title"
                         }
                     }
                     expand = {}
@@ -92,6 +118,22 @@ organization_geodiplomatic_theme = {
                 margin_bottom = 10
             }
         }
+    }
+
+    blockoverride "members_item_content" { #Hide special members in overview panels since there is already character portraits
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            margin = {0 10}
+            dynamicgridbox = {
+                flipdirection = yes
+                datamodel_wrap = 14
+                datamodel = "[MemberTypeItem.GetCountries]"
+                item = {
+                    country_flag_small = {}
+                }
+            }
+        }
+        visible = "[Not(EqualTo_string(MemberTypeItem.GetName, ShowSpecialStatusName('th_gensokyo_io')))]"		
     }
 
     # ================================================================

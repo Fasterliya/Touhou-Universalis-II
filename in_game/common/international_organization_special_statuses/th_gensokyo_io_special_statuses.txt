@@ -10,16 +10,16 @@
 ### ============================================================
 th_gensokyo_io_yama_special_status = {
     max_countries = 1
-    priority = 20
+    priority = 15
 
     can_bestow_trigger = {
         is_leader_of_international_organization = scope:recipient
     }
     auto_bestowal_trigger = {
-        always = yes
+        
     }
     auto_rescind_trigger = {
-        NOT = { is_leader_of_international_organization = scope:recipient }
+       
     }
 
     modifier = {
@@ -38,7 +38,7 @@ th_gensokyo_io_yama_special_status = {
     special_status_power = {
         value = 200
     }
-    map_color = hsv360 { 10 80 80 }
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 }
 
 ### ============================================================
@@ -47,14 +47,15 @@ th_gensokyo_io_yama_special_status = {
 ### ============================================================
 th_gensokyo_io_guardian_special_status = {
     max_countries = 1
-    priority = 18
+    priority = 10
 
     can_bestow_trigger = {
-        is_leader_of_international_organization = scope:recipient
+        is_member_of_international_organization = scope:recipient
     }
     auto_bestowal_trigger = {
     }
     auto_rescind_trigger = {
+        
     }
 
     modifier = {
@@ -71,7 +72,7 @@ th_gensokyo_io_guardian_special_status = {
     special_status_power = {
         value = 180
     }
-    map_color = hsv360 { 200 70 75 }
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
 }
 
 ### ============================================================
@@ -83,11 +84,12 @@ th_gensokyo_io_sages_special_status = {
     priority = 15
 
     can_bestow_trigger = {
-        is_leader_of_international_organization = scope:recipient
+        
     }
     auto_bestowal_trigger = {
     }
     auto_rescind_trigger = {
+        
     }
 
     modifier = {
@@ -104,7 +106,7 @@ th_gensokyo_io_sages_special_status = {
     special_status_power = {
         value = 100
     }
-    map_color = hsv360 { 40 70 80 }
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
 }
 
 ### ============================================================
@@ -118,10 +120,10 @@ th_gensokyo_io_human_village_special_status = {
     can_bestow_trigger = {
     }
     auto_bestowal_trigger = {
-        is_member_of_international_organization = th_human_village_io
+        is_member_of_international_organization = scope:recipient
     }
     auto_rescind_trigger = {
-        NOT = { is_member_of_international_organization = th_human_village_io }
+        always = no
     }
 
     modifier = {
@@ -138,5 +140,5 @@ th_gensokyo_io_human_village_special_status = {
     special_status_power = {
         value = 25
     }
-    map_color = hsv360 { 80 40 75 }
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
 }
