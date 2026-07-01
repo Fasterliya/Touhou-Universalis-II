@@ -23,8 +23,9 @@ l_japanese:
 
  th_gensokyo_io_yama_leader_title: "閻魔"
 
- ### IO変数（エンジンが表示名と円グラフをここから読み取る）
+ ### IO変数（エンジンが表示名＋円グラフ＋月次変化の説明をここから読み取る）
  th_gensokyo_unity_var: "幻想郷団結度"
+ th_gensokyo_unity_var_desc: "幻想郷の諸国の結束力を測る指標。異変解決や平和構築などの積極的行為によって得られ、侵略的拡大や外界からの侵入によって損耗する。"
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
  VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
  TH_GENSOKYO_UNITY_BASE: "基礎維持"

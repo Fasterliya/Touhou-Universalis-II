@@ -23,8 +23,9 @@ l_simp_chinese:
 
  th_gensokyo_io_yama_leader_title: "阎魔"
 
- ### IO变量（引擎读取显示名和饼图）
+ ### IO变量（引擎从 main_menu 读取变量名 + 饼图格式 + 月度变化描述）
  th_gensokyo_unity_var: "幻想乡团结度"
+ th_gensokyo_unity_var_desc: "衡量幻想乡诸国的凝聚力，来源于调停异变、和平建设等正面行为，因侵略扩张与外界入侵而损耗。"
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
  VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
  TH_GENSOKYO_UNITY_BASE: "基础维系"

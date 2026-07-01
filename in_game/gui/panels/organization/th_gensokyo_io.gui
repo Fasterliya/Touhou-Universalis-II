@@ -1,215 +1,144 @@
-# organization_geodiplomatic_theme = {
-    
-#     # === 卡片头部 = 左侧 "IO or Situation" 占位 ===
-#     blockoverride "card_header_button_header_content" {
-#         margin_left = 18
-#         icon = {
-#             size = { 30 30 }
-#             block "card_header_button_icon_texture" {
-#                 texture = "gfx/interface/icons/religious_doctrines/catholic/religious_actions.dds"
-#             }
-#             texture_density = 2
-#             glow = {
-#                 name = "drop_shadow"
-#                 glow_radius = 3
-#                 color = {0.0 0.0 0.0 1.0}
-#                 alpha = 0.3
-#             }
-#         }
-#         block "card_header_button_text_single" {
-#             text_single = {
-#                 margin_left = 7
-#                 block "card_header_button_raw_text" {
-#                     raw_text = "IO or Situation"
-#                 }
-#             }
-#         }
-#         expand = {}
-#     }
-    
-#     # === 概览标签 — 始终可见 ===
-#     blockoverride "organization_overview_tab_visible" {}
-#     blockoverride "organization_panel_overview_visible" {
-#         visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
-#     }
-    
-#     # === 成员标签 — 独立可切换 ===
-#     blockoverride "organization_members_tab_down" {
-#         down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
-#     }
-#     blockoverride "organization_panel_members_visible" {
-#         visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
-#     }
-    
-#     # === 空状态隐藏 ===
-#     blockoverride "scroll_overview_empty_visible" { visible = no }
-    
-#     # === 主要行动图标 ===
-#     blockoverride "io_main_actions_icon" {
-#         texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetIcon]"
-#     }
-    
-#     # === 显示额外主要行动区域 ===
-#     blockoverride "organization_main_actions_extra_visible" {
-#         visible = yes
-#     }
-    
-#     # === 概览顶部：IO 描述信息卡（可折叠）===
-#     blockoverride "organization_overview_list_custom_top_extra" {
-#         vbox = {
-#             margin = { 10 5 }
-#             layoutpolicy_horizontal = expanding
-#             card_expandable = {
-#                 blockoverride "header_content" {
-#                     margin = { 20 0 }
-#                     icon = {
-#                         size = { 30 30 }
-#                         block "common_header_icon_texture" {
-#                             texture = "[InternationalOrganization.GetIcon]"
-#                         }
-#                         texture_density = 2
-#                     }
-#                     text_single = {
-#                         block "header_text" {
-#                             margin = { 10 0 }
-#                             text = "th_gensokyo_io"
-#                         }
-#                     }
-#                     expand = {}
-#                 }
-#                 blockoverride "bottom_content" {
-#                     margin_top = 15
-#                     hbox = {
-#                         layoutpolicy_horizontal = expanding
-#                         spacing = 4
-#                         text_single = {
-#                             margin = { 20 10 }
-#                             text = "th_gensokyo_io_desc"
-#                             multiline = yes
-#                             autoresize = yes
-#                             layoutpolicy_horizontal = expanding
-#                         }
-#                     }
-#                 }
-#                 blockoverride "header_button_onclick" {
-#                     onclick = "[GetVariableSystem.Toggle( 'th_gensokyo_io_info' )]"
-#                 }
-#                 blockoverride "icon_replace_visible_yes" {
-#                     visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
-#                 }
-#                 blockoverride "icon_replace_visible_not" {
-#                     visible = "[Not(GetVariableSystem.Exists( 'th_gensokyo_io_info' ))]"
-#                 }
-#                 blockoverride "bottom_content_onclick" {
-#                     visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
-#                 }
-#                 margin_bottom = 10
-#             }
-#         }
-#     }
-    
-#     # === 概览中隐藏特殊地位成员旗帜（保持概览清爽）===
-#     blockoverride "members_item_content" {
-#         hbox = {
-#             layoutpolicy_horizontal = expanding
-#             margin = {0 10}
-#             dynamicgridbox = {
-#                 flipdirection = yes
-#                 datamodel_wrap = 14
-#                 datamodel = "[MemberTypeItem.GetCountries]"
-#                 item = {
-#                     country_flag_small = {}
-#                 }
-#             }
-#         }
-#         visible = "[Not(EqualTo_string(MemberTypeItem.GetName, ShowSpecialStatusName('th_gensokyo_io_yama_special_status')))]"
-#     }
-    
-#     # === 额外主要行动：加入/离开 IO ===
-#     blockoverride "organization_main_actions_extra" {
-#         # 请求加入
-#         action_button_diamond = {
-#             size = { 470 30 }
-#             title = "INT_ORG_MEMBERSHIP_TITLE"
-#             text = "ASK_FOR_IO_MEMBERSHIP"
-#             actor = "[InternationalOrganizationsView.GetPlayer]"
-#             parameter = {
-#                 parameter_name = "recipient"
-#                 parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization.GetLeaderCountry]"
-#             }
-#             left_action = {
-#                 action_name = "ask_to_join_international_organization"
-#                 action_direction = "request"
-#                 parameter = {
-#                     parameter_name = "international_organization"
-#                     parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
-#                 }
-#             }
-#             tooltipwidget = {
-#                 using = io_join_button_tooltip
-#             }
-#             visible = "[Not(Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization))]"
-#         }
-#         # 离开
-#         action_button_diamond = {
-#             size = { 470 30 }
-#             title = "INT_ORG_MEMBERSHIP_TITLE"
-#             actor = "[InternationalOrganizationsView.GetPlayer]"
-#             left_click_and_hold_action = {
-#                 action_name = "leave_international_organization"
-#                 action_direction = "offer"
-#                 parameter = {
-#                     parameter_name = "recipient"
-#                     parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
-#                 }
-#             }
-#             tooltipwidget = {
-#                 using = io_leave_button_tooltip
-#             }
-#             text = "LEAVE_IO_MEMBERSHIP"
-#         }
-#     }
-    
-#     # === 子头部额外 — IO 变量 piechart 显示（团结度）===
-#     blockoverride "ios_information_header_content_extra_1" {
-#         using = ios_header_content_extra_template
-#         blockoverride "ios_header_content_extra" {
-#             using = layoutpolicy_expanding
-#             datamodel = "[InternationalOrganizationsView.GetInternationalOrganization.GetType.GetVariables]"
-#             item = {
-#                 hbox = {
-#                     using = layoutpolicy_expanding
-#                     spacing = 10
-#                     tooltipwidget = {
-#                         using = IOVariableTooltip
-#                     }
-#                     expand = {}
-#                     text_single = {
-#                         autoresize = yes
-#                         align = right
-#                         text = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableText(InternationalOrganizationTypeVariable.GetTag)]"
-#                     }
-#                     hbox = {
-#                         using = organization_piechart_template
-#                         blockoverride "organization_piechart_size" { size = { 25 25 } }
-#                         blockoverride "organization_piechart_value"
-#                         {
-#                             value = "[Subtract_float(FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.GetVariable(InternationalOrganizationTypeVariable.GetTag)),FixedPointToFloat(InternationalOrganizationTypeVariable.GetMin))]"
-#                         }
-#                         blockoverride "organization_piechart_max_value"
-#                         {
-#                             value = "[Subtract_float(FixedPointToFloat(InternationalOrganizationTypeVariable.GetMax), FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.GetVariable(InternationalOrganizationTypeVariable.GetTag)))]"
-#                         }
-#                         blockoverride "organization_piechart_icon"
-#                         {
-#                             texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon(InternationalOrganizationTypeVariable.GetTag)]"
-#                         }
-#                     }
-#                     expand = {}
-#                     divider_flavor_01 = { size = {9 -1} }
-#                 }
-#             }
-#         }
-#         blockoverride "ios_header_content_divider" {}
-#     }
-# }
+organization_geodiplomatic_theme = {
+
+    # ================================================================
+    # 1. 概览标签 — 始终可见
+    # ================================================================
+    blockoverride "organization_overview_tab_visible" {}
+    blockoverride "organization_panel_overview_visible" {
+        visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+    }
+
+    # ================================================================
+    # 2. 成员标签 — 独立切换
+    # ================================================================
+    blockoverride "organization_members_tab_down" {
+        down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+    }
+    blockoverride "organization_panel_members_visible" {
+        visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+    }
+
+    # ================================================================
+    # 3. 空状态隐藏
+    # ================================================================
+    blockoverride "scroll_overview_empty_visible" { visible = no }
+
+    # ================================================================
+    # 4. 主要行动图标
+    # ================================================================
+    blockoverride "io_main_actions_icon" {
+        texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetIcon]"
+    }
+
+    # ================================================================
+    # 5. 额外主要行动区可见
+    # ================================================================
+    blockoverride "organization_main_actions_extra_visible" {
+        visible = yes
+    }
+
+    # ================================================================
+    # 6. 概览顶部 — 幻想乡IO描述信息卡（可折叠）
+    #    (参考 lordship_of_ireland.gui L50-101 / high_kingship.gui L50-101)
+    # ================================================================
+    blockoverride "organization_overview_list_custom_top_extra" {
+        vbox = {
+            margin = { 10 5 }
+            layoutpolicy_horizontal = expanding
+            card_expandable = {
+                blockoverride "header_content" {
+                    margin = { 20 0 }
+                    icon = {
+                        size = { 30 30 }
+                        block "common_header_icon_texture" {
+                            texture = "[InternationalOrganization.GetIcon]"
+                        }
+                        texture_density = 2
+                    }
+                    text_single = {
+                        block "header_text" {
+                            margin = { 10 0 }
+                            text = "th_gensokyo_io"
+                        }
+                    }
+                    expand = {}
+                }
+                blockoverride "bottom_content" {
+                    margin_top = 15
+                    hbox = {
+                        layoutpolicy_horizontal = expanding
+                        spacing = 4
+                        text_single = {
+                            margin = { 20 10 }
+                            text = "th_gensokyo_io_desc"
+                            multiline = yes
+                            autoresize = yes
+                            layoutpolicy_horizontal = expanding
+                        }
+                    }
+                }
+                blockoverride "header_button_onclick" {
+                    onclick = "[GetVariableSystem.Toggle( 'th_gensokyo_io_info' )]"
+                }
+                blockoverride "icon_replace_visible_yes" {
+                    visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
+                }
+                blockoverride "icon_replace_visible_not" {
+                    visible = "[Not(GetVariableSystem.Exists( 'th_gensokyo_io_info' ))]"
+                }
+                blockoverride "bottom_content_onclick" {
+                    visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
+                }
+                margin_bottom = 10
+            }
+        }
+    }
+
+    # ================================================================
+    # 7. 额外主要行动：请求加入 / 离开 IO
+    #    (参考 lordship_of_ireland.gui L183-246)
+    # ================================================================
+    blockoverride "organization_main_actions_extra" {
+        # 请求加入
+        action_button_diamond = {
+            size = { 470 30 }
+            title = "INT_ORG_MEMBERSHIP_TITLE"
+            text = "ASK_FOR_IO_MEMBERSHIP"
+            actor = "[InternationalOrganizationsView.GetPlayer]"
+            parameter = {
+                parameter_name = "recipient"
+                parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization.GetLeaderCountry]"
+            }
+            left_action = {
+                action_name = "ask_to_join_international_organization"
+                action_direction = "request"
+                parameter = {
+                    parameter_name = "international_organization"
+                    parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                }
+            }
+            tooltipwidget = {
+                using = io_join_button_tooltip
+            }
+            visible = "[Not(Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization))]"
+        }
+        # 离开
+        action_button_diamond = {
+            size = { 470 30 }
+            title = "INT_ORG_MEMBERSHIP_TITLE"
+            actor = "[InternationalOrganizationsView.GetPlayer]"
+            left_click_and_hold_action = {
+                action_name = "leave_international_organization"
+                action_direction = "offer"
+                parameter = {
+                    parameter_name = "recipient"
+                    parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                }
+            }
+            tooltipwidget = {
+                using = io_leave_button_tooltip
+            }
+            text = "LEAVE_IO_MEMBERSHIP"
+        }
+    }
+}

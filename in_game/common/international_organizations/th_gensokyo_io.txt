@@ -101,17 +101,28 @@ th_gensokyo_io = {
     no_cb_price_modifier_for_fellow_member = 0.75
 
     # === 修正 ===
-    member_modifier = {
-        # TODO: 后续人工填写
+    # 成员修正 — 所有幻想乡IO成员国
+    modifier = {
+        # TODO: 后续人工填写全体成员buff
     }
+
+    # 领袖修正 — 阎魔（彼岸T25）
     leader_modifier = {
-        # TODO: 后续人工填写
+        allowed_intervene_in_war = yes
+        allowed_enforce_peace = yes
+        great_power_score_exempt_from_forfeit = 100
+        # TODO: 后续人工填写阎魔特有buff
     }
+
+    # 非领袖修正 — 守护/贤者/人类村落等
     non_leader_modifier = {
-        # TODO: 后续人工填写
+        block_from_change_to_empire_rank = yes
+        # TODO: 后续人工填写非领袖成员buff
     }
+
+    # IO整体修正
     international_organization_modifier = {
-        # TODO: 后续人工填写
+        # TODO: 后续人工填写IO全局buff
     }
 
     # === IO 变量 ===

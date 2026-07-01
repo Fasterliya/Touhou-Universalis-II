@@ -23,8 +23,9 @@ l_english:
 
  th_gensokyo_io_yama_leader_title: "Yama"
 
- ### IO Variables (engine reads display name + piechart from here)
+ ### IO Variables (engine reads display name + piechart + monthly change descriptions from here)
  th_gensokyo_unity_var: "Gensokyo Unity"
+ th_gensokyo_unity_var_desc: "A measure of cohesion among Gensokyo's nations, gained through resolving incidents and peaceful development, and depleted by aggressive expansion and external invasions."
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
  VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
  TH_GENSOKYO_UNITY_BASE: "Base Maintenance"

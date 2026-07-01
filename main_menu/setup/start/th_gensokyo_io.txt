@@ -5,10 +5,10 @@
 international_organization_manager = {
     add_international_organization = {
         type = th_gensokyo_io
-        creation_date = 1337.4.1
-
+        creation_date = 1206.4.1
+        
         map_color = hsv360 { 45 40 60 }
-
+        
         members = {
             T00 T01 T02 T03 T04 T05 T06 T07 T08 T09
             T10 T11 T12 T13 T14 T15 T16 T17 T18 T19
@@ -21,19 +21,29 @@ international_organization_manager = {
             T80 T81 T82 T83 T84 T85 T86 T87 T88 T89
             T90 T91 T92 T93 T94
         }
-
+        
         leader = T25
-
-        th_gensokyo_io_yama_special_status = { T25 }
-        th_gensokyo_io_guardian_special_status = { T04 }
-        th_gensokyo_io_sages_special_status = { T05 T13 T83 }
-        th_gensokyo_io_human_village_special_status = {
-            T03 T32 T33 T34 T36 T49 T52 T75 T77 T78
-            T85 T86 T87 T88 T89 T90 T91 T92 T93 T94
-        }
-
-        variables = {
-            th_gensokyo_unity_var = 50
-        }
+        
+        regions = { th_gensokyo_hakurei_region th_gensokyo_makai_region th_gensokyo_human_village_region th_gensokyo_magic_forest_region
+        th_gensokyo_magic_forest_region th_youkai_mountain_western_foot_region th_youkai_mountain_region
+        th_immortal_realm_region th_moriya_shirine_region th_animal_realm_region th_hell_region 
+        th_sunflower_field_region th_makai_region th_old_hell_region
     }
+    
+    th_gensokyo_io_yama_special_status = { T25 }
+    th_gensokyo_io_guardian_special_status = { T04 }
+    th_gensokyo_io_sages_special_status = { T05 T13 T83 }
+    th_gensokyo_io_human_village_special_status = {
+        T03 T32 T33 T34 T36 T49 T52 T75 T77 T78
+        T85 T86 T87 T88 T89 T90 T91 T92 T93 T94
+    }
+    
+    laws = {
+        
+    }
+    
+    variables = {
+        th_gensokyo_unity_var = 50
+    }
+}
 }
