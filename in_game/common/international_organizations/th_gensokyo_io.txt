@@ -103,6 +103,7 @@ th_gensokyo_io = {
     # 成员修正 — 所有幻想乡IO成员国
     modifier = {
         # TODO: 后续人工填写全体成员buff
+        block_from_change_to_empire_rank = yes
     }
 
     # 领袖修正 — 阎魔（彼岸T25）
@@ -113,11 +114,11 @@ th_gensokyo_io = {
         # TODO: 后续人工填写阎魔特有buff
     }
 
-    # 非领袖修正 — 守护/贤者/人类村落等
-    non_leader_modifier = {
-        block_from_change_to_empire_rank = yes
-        # TODO: 后续人工填写非领袖成员buff
-    }
+    # # 非领袖修正 — 守护/贤者/人类村落等
+    # non_leader_modifier = {
+    #     block_from_change_to_empire_rank = yes
+    #     # TODO: 后续人工填写非领袖成员buff
+    # }
 
     # IO整体修正
     international_organization_modifier = {
