@@ -1,225 +1,228 @@
-### ============================================================
-### 幻想乡IO — 法律体系（占位，后续人工调整数值）
-### ============================================================
+# ### ============================================================
+# ### 幻想乡IO — 法律体系（占位，后续人工调整数值）
+# ### ============================================================
 
-### ----------------------------------------------------------
-### 法律1：幻想乡团结愿景 — 决定团结度的获取方向
-### ----------------------------------------------------------
-th_gensokyo_unity_vision_law = {
-    type = international_organization
-    law_category = administrative
+# ### ----------------------------------------------------------
+# ### 法律1：幻想乡团结愿景 — 决定团结度的获取方向
+# ### ----------------------------------------------------------
+# th_gensokyo_unity_vision_law = {
+#     type = international_organization
+#     law_category = administrative
+#     requires_vote = no
+# 	custom_tags = { forbids_no_policy }
+#     potential = {
+#         international_organization_type = international_organization_type:th_gensokyo_io
+#     }
+#     allow = {
+#         always = yes
+#     }
 
-    potential = {
-        international_organization_type = international_organization_type:th_gensokyo_io
-    }
-    allow = {
-        always = yes
-    }
+#     # ### 政策A：孤立坚守 — 内部和平提供更多团结，防御加成
+#     # isolation_defense_policy = {
+#     #     international_organization_modifier = {
+#     #         global_defensiveness_modifier = 0.05
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             is_leader_of_international_organization = international_organization:th_gensokyo_io
+#     #         }
+#     #         monthly_legitimacy = 0.05
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             has_special_status_in_international_organization = {
+#     #                 type = special_status:th_gensokyo_io_guardian_special_status
+#     #                 organization = international_organization:th_gensokyo_io
+#     #             }
+#     #         }
+#     #         global_defensiveness_modifier = 0.10
+#     #         monthly_prestige = 0.05
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
 
-    ### 政策A：孤立坚守 — 内部和平提供更多团结，防御加成
-    isolation_defense_policy = {
-        international_organization_modifier = {
-            global_defensiveness_modifier = 0.05
-        }
-        country_modifier = {
-            potential_trigger = {
-                is_leader_of_international_organization = scope:recipient
-            }
-            monthly_legitimacy = 0.05
-        }
-        country_modifier = {
-            potential_trigger = {
-                has_special_status_in_international_organization = {
-                    type = special_status:th_gensokyo_io_guardian_special_status
-                    organization = scope:recipient
-                }
-            }
-            global_defensiveness_modifier = 0.10
-            monthly_prestige = 0.05
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
+#     # ### 政策B：平衡之道 — 默认起始政策
+#     # balance_path_policy = {
+#     #     international_organization_modifier = {
+#     #         improve_relation_modifier = 0.10
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             is_leader_of_international_organization = scope:recipient
+#     #         }
+#     #         monthly_legitimacy = 0.03
+#     #         improve_relation_modifier = 0.05
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
 
-    ### 政策B：平衡之道 — 默认起始政策
-    balance_path_policy = {
-        international_organization_modifier = {
-            improve_relation_modifier = 0.10
-        }
-        country_modifier = {
-            potential_trigger = {
-                is_leader_of_international_organization = scope:recipient
-            }
-            monthly_legitimacy = 0.03
-            improve_relation_modifier = 0.05
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
+#     # ### 政策C：开放包容 — 更快传播思潮，更多外交互动
+#     # open_inclusive_policy = {
+#     #     international_organization_modifier = {
+#     #         institution_spread_modifier = 0.10
+#     #         improve_relation_modifier = 0.15
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             is_leader_of_international_organization = scope:recipient
+#     #         }
+#     #         diplomatic_reputation = 1
+#     #         institution_spread_modifier = 0.05
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
+# }
 
-    ### 政策C：开放包容 — 更快传播思潮，更多外交互动
-    open_inclusive_policy = {
-        international_organization_modifier = {
-            institution_spread_modifier = 0.10
-            improve_relation_modifier = 0.15
-        }
-        country_modifier = {
-            potential_trigger = {
-                is_leader_of_international_organization = scope:recipient
-            }
-            diplomatic_reputation = 1
-            institution_spread_modifier = 0.05
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
-}
+# ### ----------------------------------------------------------
+# ### 法律2：大结界政策 — 决定大结界的维护强度
+# ### ----------------------------------------------------------
+# th_gensokyo_barrier_policy_law = {
+#     type = international_organization
+#     law_category = military
+#      requires_vote = no
+# 	custom_tags = { forbids_no_policy }
+#     potential = {
+#         international_organization_type = international_organization_type:th_gensokyo_io
+#     }
+#     allow = {
+#         always = yes
+#     }
 
-### ----------------------------------------------------------
-### 法律2：大结界政策 — 决定大结界的维护强度
-### ----------------------------------------------------------
-th_gensokyo_barrier_policy_law = {
-    type = international_organization
-    law_category = military
+#     # ### 政策A：强化结界 — 防御+人力加成，外交惩罚
+#     # reinforced_barrier_policy = {
+#     #     international_organization_modifier = {
+#     #         global_defensiveness_modifier = 0.10
+#     #         global_manpower_modifier = 0.10
+#     #         diplomatic_reputation = -1
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             has_special_status_in_international_organization = {
+#     #                 type = special_status:th_gensokyo_io_guardian_special_status
+#     #                 organization = scope:recipient
+#     #             }
+#     #         }
+#     #         global_defensiveness_modifier = 0.15
+#     #         global_manpower_modifier = 0.10
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
 
-    potential = {
-        international_organization_type = international_organization_type:th_gensokyo_io
-    }
-    allow = {
-        always = yes
-    }
+#     # ### 政策B：维持结界 — 默认起始政策
+#     # maintained_barrier_policy = {
+#     #     international_organization_modifier = {
+#     #         global_defensiveness_modifier = 0.05
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             has_special_status_in_international_organization = {
+#     #                 type = special_status:th_gensokyo_io_guardian_special_status
+#     #                 organization = scope:recipient
+#     #             }
+#     #         }
+#     #         global_defensiveness_modifier = 0.10
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
 
-    ### 政策A：强化结界 — 防御+人力加成，外交惩罚
-    reinforced_barrier_policy = {
-        international_organization_modifier = {
-            global_defensiveness_modifier = 0.10
-            global_manpower_modifier = 0.10
-            diplomatic_reputation = -1
-        }
-        country_modifier = {
-            potential_trigger = {
-                has_special_status_in_international_organization = {
-                    type = special_status:th_gensokyo_io_guardian_special_status
-                    organization = scope:recipient
-                }
-            }
-            global_defensiveness_modifier = 0.15
-            global_manpower_modifier = 0.10
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
+#     # ### 政策C：宽松结界 — 更快思潮传播，防御惩罚
+#     # relaxed_barrier_policy = {
+#     #     international_organization_modifier = {
+#     #         institution_spread_modifier = 0.15
+#     #         global_defensiveness_modifier = -0.05
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             has_special_status_in_international_organization = {
+#     #                 type = special_status:th_gensokyo_io_guardian_special_status
+#     #                 organization = scope:recipient
+#     #             }
+#     #         }
+#     #         institution_spread_modifier = 0.10
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
+# }
 
-    ### 政策B：维持结界 — 默认起始政策
-    maintained_barrier_policy = {
-        international_organization_modifier = {
-            global_defensiveness_modifier = 0.05
-        }
-        country_modifier = {
-            potential_trigger = {
-                has_special_status_in_international_organization = {
-                    type = special_status:th_gensokyo_io_guardian_special_status
-                    organization = scope:recipient
-                }
-            }
-            global_defensiveness_modifier = 0.10
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
+# ### ----------------------------------------------------------
+# ### 法律3：异变应对法则 — 决定异变发生时的应对策略
+# ### ----------------------------------------------------------
+# th_gensokyo_incident_response_law = {
+#     type = international_organization
+#     law_category = military
+#      requires_vote = no
+# 	custom_tags = { forbids_no_policy }
+#     potential = {
+#        international_organization_type = international_organization_type:th_gensokyo_io
+#     }
+#     allow = {
+#         always = yes
+#     }
 
-    ### 政策C：宽松结界 — 更快思潮传播，防御惩罚
-    relaxed_barrier_policy = {
-        international_organization_modifier = {
-            institution_spread_modifier = 0.15
-            global_defensiveness_modifier = -0.05
-        }
-        country_modifier = {
-            potential_trigger = {
-                has_special_status_in_international_organization = {
-                    type = special_status:th_gensokyo_io_guardian_special_status
-                    organization = scope:recipient
-                }
-            }
-            institution_spread_modifier = 0.10
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
-}
+#     ### 政策A：弹幕决斗规则 — 强调个人决斗解决异变
+#     # duel_resolution_policy = {
+#     #     international_organization_modifier = {
+#     #         monthly_prestige = 0.20
+#     #         global_manpower_modifier = -0.05
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             has_special_status_in_international_organization = {
+#     #                 type = special_status:th_gensokyo_io_sages_special_status
+#     #                 organization = scope:recipient
+#     #             }
+#     #         }
+#     #         monthly_prestige = 0.15
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             has_special_status_in_international_organization = {
+#     #                 type = special_status:th_gensokyo_io_guardian_special_status
+#     #                 organization = scope:recipient
+#     #             }
+#     #         }
+#     #         monthly_prestige = 0.10
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
 
-### ----------------------------------------------------------
-### 法律3：异变应对法则 — 决定异变发生时的应对策略
-### ----------------------------------------------------------
-th_gensokyo_incident_response_law = {
-    type = international_organization
-    law_category = military
+#     # ### 政策B：联合镇压 — 强调集体行动（默认）
+#     # joint_suppression_policy = {
+#     #     international_organization_modifier = {
+#     #         global_manpower_modifier = 0.10
+#     #         monthly_prestige = 0.05
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             is_leader_of_international_organization = scope:recipient
+#     #         }
+#     #         global_manpower_modifier = 0.05
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
 
-    potential = {
-        international_organization_type = international_organization_type:th_gensokyo_io
-    }
-    allow = {
-        always = yes
-    }
-
-    ### 政策A：弹幕决斗规则 — 强调个人决斗解决异变
-    duel_resolution_policy = {
-        international_organization_modifier = {
-            monthly_prestige = 0.20
-            global_manpower_modifier = -0.05
-        }
-        country_modifier = {
-            potential_trigger = {
-                has_special_status_in_international_organization = {
-                    type = special_status:th_gensokyo_io_sages_special_status
-                    organization = scope:recipient
-                }
-            }
-            monthly_prestige = 0.15
-        }
-        country_modifier = {
-            potential_trigger = {
-                has_special_status_in_international_organization = {
-                    type = special_status:th_gensokyo_io_guardian_special_status
-                    organization = scope:recipient
-                }
-            }
-            monthly_prestige = 0.10
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
-
-    ### 政策B：联合镇压 — 强调集体行动（默认）
-    joint_suppression_policy = {
-        international_organization_modifier = {
-            global_manpower_modifier = 0.10
-            monthly_prestige = 0.05
-        }
-        country_modifier = {
-            potential_trigger = {
-                is_leader_of_international_organization = scope:recipient
-            }
-            global_manpower_modifier = 0.05
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
-
-    ### 政策C：外交调解 — 以外交手段化解异变
-    diplomatic_mediation_policy = {
-        international_organization_modifier = {
-            improve_relation_modifier = 0.20
-            diplomatic_reputation = 1
-        }
-        country_modifier = {
-            potential_trigger = {
-                is_leader_of_international_organization = scope:recipient
-            }
-            diplomatic_reputation = 1
-            improve_relation_modifier = 0.10
-        }
-        # TODO: 后续人工填写修正值
-        days = 1
-    }
-}
+#     # ### 政策C：外交调解 — 以外交手段化解异变
+#     # diplomatic_mediation_policy = {
+#     #     international_organization_modifier = {
+#     #         improve_relation_modifier = 0.20
+#     #         diplomatic_reputation = 1
+#     #     }
+#     #     country_modifier = {
+#     #         potential_trigger = {
+#     #             is_leader_of_international_organization = scope:recipient
+#     #         }
+#     #         diplomatic_reputation = 1
+#     #         improve_relation_modifier = 0.10
+#     #     }
+#     #     # TODO: 后续人工填写修正值
+#     #     days = 1
+#     # }
+# }

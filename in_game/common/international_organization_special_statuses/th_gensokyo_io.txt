@@ -15,11 +15,7 @@ th_gensokyo_io_yama_special_status = {
 	can_bestow_trigger = {
 		is_leader_of_international_organization = scope:recipient
 	}
-	auto_bestowal_trigger = {
-		always = yes
-	}
 	auto_rescind_trigger = {
-		NOT = { is_leader_of_international_organization = scope:recipient }
 	}
 	
 	modifier = {
@@ -27,11 +23,6 @@ th_gensokyo_io_yama_special_status = {
 		allowed_enforce_peace = yes
 		monthly_prestige = 0.10
 		# TODO: 后续人工填写阎魔席位修正值
-	}
-	
-	on_bestowed_effect = {
-	}
-	on_rescinded_effect = {
 	}
 	
 	leader = yes
@@ -50,26 +41,15 @@ th_gensokyo_io_guardian_special_status = {
 	priority = 10
 	
 	can_bestow_trigger = {
-		always = yes
+		is_member_of_international_organization = scope:recipient
 	}
-	auto_bestowal_trigger = {
-	}
-	# 永不自定撤销 - 避免 scope:recipient 在MOD IO的 auto_rescind 上下文中解析异常
 	auto_rescind_trigger = {
-		always = no
-	}
-	
+	}	
 	modifier = {
 		global_defensiveness_modifier = 0.10
 		monthly_prestige = 0.05
 		# TODO: 后续人工填写守护席位修正值
 	}
-	
-	on_bestowed_effect = {
-	}
-	on_rescinded_effect = {
-	}
-	
 	special_status_power = {
 		value = 180
 	}
@@ -85,7 +65,7 @@ th_gensokyo_io_sages_special_status = {
 	priority = 10
 	
 	can_bestow_trigger = {
-		always = yes
+		is_member_of_international_organization = scope:recipient
 	}
 	
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
@@ -106,7 +86,7 @@ th_gensokyo_io_human_village_special_status = {
 	priority = 5
 	
 	can_bestow_trigger = {
-		always = yes
+		is_member_of_international_organization = scope:recipient
 	}
 	auto_bestowal_trigger = {
 		

@@ -6,17 +6,19 @@
 th_sages_diagnostic_interaction = {
     type = internationalorganization
 
+    ai_tick = monthly
+	ai_tick_frequency = 1
     automation_tick = never
     automation_tick_frequency = 12
 
     potential = {
         exists = international_organization:th_gensokyo_io
-        scope:actor = {
-            has_special_status_in_international_organization = {
-                type = special_status:th_gensokyo_io_sages_special_status
-                international_organization = international_organization:th_gensokyo_io
-            }
-        }
+        # scope:actor = {
+        #     has_special_status_in_international_organization = {
+        #         type = special_status:th_gensokyo_io_sages_special_status
+        #         international_organization = international_organization:th_gensokyo_io
+        #     }
+        # }
     }
 
     allow = {
@@ -25,7 +27,6 @@ th_sages_diagnostic_interaction = {
 
     select_trigger = {
         looking_for_a = international_organization
-        source = actor
         target_flag = recipient
         name = "th_sages_diagnostic_select_io"
         column = {

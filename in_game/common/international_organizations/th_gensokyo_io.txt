@@ -23,7 +23,7 @@ th_gensokyo_io = {
     # member_color = hsv360 { 45 40 60 }
 
     # === 议会 ===
-    has_parliament = yes
+    has_parliament = no
     parliament_type = th_gensokyo_io_parliament
     resolution_widget = parliament
 
