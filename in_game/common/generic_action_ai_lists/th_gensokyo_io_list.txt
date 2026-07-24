@@ -1,0 +1,10 @@
+﻿acgv_touhou_religion_list = { 
+	potential = {
+		exists = international_organization:th_gensokyo_io
+		is_member_of_international_organization = international_organization:th_gensokyo_io
+	}
+	actions = {
+		th_sages_diagnostic_interaction
+		th_sages_diagnostic_interaction_1
+	} 
+}
