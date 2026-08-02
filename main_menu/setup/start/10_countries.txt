@@ -57711,7 +57711,7 @@ countries = {
          own_control_core = {
             th_margatroid_theater th_margatroid_room th_grimoire_blueprint_study th_doll_atelier_main_hall th_margatroid_atrium th_seven_color_tea_parlor th_margatroid_residence th_runestone_ancient_tree th_living_crystal_cluster th_mana_spring
             th_mana_saturated_forest th_echo_culvert th_discard_heap th_misty_waterway th_oki_gutters th_mist_enshrouded_giant_redwoods th_star_mirror_spring th_tranquil_moon_lake th_foxfire_woodland_trail th_magic_forest
-            th_windwhisper_trail th_miasma_rain_forest th_rot_heart_giant_tree th_seibi_ancient_tree th_cleansing_heart_stream th_seibi_grove
+            th_windwhisper_trail th_miasma_rain_forest th_rot_heart_giant_tree th_cleansing_heart_stream th_seibi_grove
          }
 
          #????
@@ -58768,7 +58768,7 @@ countries = {
             th_river_soul_shallows th_hazbin_hotel th_komachis_hideout th_repent_corridor_sea th_repent_mouth th_repent_forest_door_hell th_hell_town_of_repentance th_pillar_of_tears_islet th_burden_shedding_beach_port th_hell_flayed_coast
             th_hell_stone_plains_island th_hell_blood_cape th_hell_peninsula_main th_penitent_sinners_coast th_waste_ink_pool th_hell_hecate_cape th_hecate_main_hall th_hell_steamer_valley th_hedes_inn th_porphyra_dyehouse
             th_hecatia_temple th_port_of_goddess th_eika_cabin th_yama_terakoya th_village_of_foundling th_miare_office th_niwataris_entry th_hundreds_days_resentment th_wrongfully_killed_dormitory th_regret_location
-            th_tai_palace th_massacre_wildrness th_will_castle th_nine_spirng_pass th_nameless_steles th_horse_head_village th_xiwen_meander th_sunken_ship_graveyard th_offerings_avenue th_start_of_memorie
+            th_tai_palace th_massacre_wildrness th_will_castle th_nine_spirng_pass th_nameless_steles th_horse_head_village th_xiwen_meander th_offerings_avenue th_start_of_memorie
             th_unheard_old_haunt
          }
 
@@ -60341,11 +60341,10 @@ countries = {
          # include = "expl_indian_trade_route"
          # include = "catholic_monarchy"
          # include = "expl_mediterranean"
-         include = "th_gensokyo_monarchy"
-         include = "th_gensokyo_monarchy"
+          include = "th_gensokyo_monarchy"
 
-         accepted_cultures = {
-            th_wild_human_culture th_sennin_culture th_jiangshi_culture
+          accepted_cultures = {
+             th_wild_human_culture th_sennin_culture th_jiangshi_culture
          }
 
          tolerated_cultures = {
@@ -60407,11 +60406,10 @@ countries = {
          # include = "expl_indian_trade_route"
          # include = "catholic_monarchy"
          # include = "expl_mediterranean"
-         include = "th_gensokyo_monarchy"
-         include = "th_gensokyo_monarchy"
+          include = "th_gensokyo_monarchy"
 
-         accepted_cultures = {
-            th_village_human_culture
+          accepted_cultures = {
+             th_village_human_culture
          }
 
          tolerated_cultures = {
@@ -62115,7 +62113,7 @@ countries = {
          own_control_core = {
             th_hecatia_mansion th_atlas_mountain_valley th_lachesis_pass th_atlas_mountain th_nyx_temple th_archipelago_river_of_estuary th_three_worlds_rift_observatory th_pallas_school th_clotho_great_plain th_eye_of_prometheus
             th_gaea_temple th_datura_garden th_yew_forest th_ourea_cliff th_oreadia th_hecate_avenue th_anemoi_valley th_horn_of_lenty th_blessed_three_way_fork th_tethys_port
-            th_clown_port th_archipelago_karmic_fire_cliff th_dream_devouring_maelstrom th_selene_temple th_coeus_port th_astraios_lake th_perses_highland
+            th_archipelago_karmic_fire_cliff th_dream_devouring_maelstrom th_selene_temple th_coeus_port th_astraios_lake th_perses_highland
          }
 
          # include = "expl_mediterranean"
@@ -62711,7 +62709,7 @@ countries = {
 
 
       T93 = {
-         capital = th_synthesizer_avenue
+          capital = th_crossroads_teahouse
          court_language = th_gensokyo_common_dialect
          country_rank = rank_kingdom
          starting_technology_level = 3
