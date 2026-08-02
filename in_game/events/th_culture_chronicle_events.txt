@@ -1,11 +1,5 @@
-namespace = th_culture_chronicle
-
-th_culture_chronicle.1 = {
-	type = country_event
-	outcome = neutral
-	title = empty_text
-	desc = empty_text
-	hidden = yes
+country_event = {
+	id = th_culture_chronicle.1
 
 	trigger = {
 		always = yes
@@ -19,12 +13,8 @@ th_culture_chronicle.1 = {
 	}
 }
 
-th_culture_chronicle.2 = {
-	type = country_event
-	outcome = neutral
-	title = empty_text
-	desc = empty_text
-	hidden = yes
+country_event = {
+	id = th_culture_chronicle.2
 
 	trigger = {
 		always = yes

@@ -1,6 +1,6 @@
 ﻿namespace = thgfx
 
-thgfx.1 = {
+thgfx.0001 = {
 	type = country_event
     title = NONE
     desc = NONE

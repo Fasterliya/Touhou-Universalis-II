@@ -354,7 +354,7 @@ T32 = {
 	color = rgb { 202 177 255 }
 	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_buddhism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -381,7 +381,7 @@ T35 = {
 	color = rgb { 107 206 219 }
 	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -408,7 +408,7 @@ T38 = {
 	color = rgb { 84 94 53 }
 	culture_definition = th_wolf_spirit_culture
 	religion_definition = th_gensokyo_eat_raw
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -435,7 +435,7 @@ T41 = {
 	color = rgb { 221 182 247 }
 	culture_definition = th_mizuko_spirit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -462,7 +462,7 @@ T44 = {
 	color = rgb { 171 80 82 }
 	culture_definition = th_yokai_cat_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -489,7 +489,7 @@ T47 = {
 	color = rgb { 217 161 81 }
 	culture_definition = th_little_people_culture
 	religion_definition = th_gensokyo_tenma_mount
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -516,7 +516,7 @@ T50 = {
 	color = rgb { 153 118 136 }
 	culture_definition = th_vampire_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -525,7 +525,7 @@ T51 = {
 	color = rgb { 227 225 190 }
 	culture_definition = th_sennin_culture
 	religion_definition = th_gensokyo_taoism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -534,7 +534,7 @@ T52 = {
 	color = rgb { 227 112 225 }
 	culture_definition = th_menreiki_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -543,7 +543,7 @@ T53 = {
 	color = rgb { 106 204 62 }
 	culture_definition = th_moon_people_eientei_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -552,7 +552,7 @@ T54 = {
 	color = rgb { 224 119 121 }
 	culture_definition = th_wild_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -561,7 +561,7 @@ T55 = {
 	color = rgb { 209 224 201 }
 	culture_definition = th_yokai_rabbit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -570,7 +570,7 @@ T56 = {
 	color = rgb { 185 224 145 }
 	culture_definition = th_yokai_rabbit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -579,7 +579,7 @@ T57 = {
 	color = rgb { 184 203 224 }
 	culture_definition = th_sennin_culture
 	religion_definition = th_gensokyo_taoism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -588,7 +588,7 @@ T58 = {
 	color = rgb { 224 176 61 }
 	culture_definition = th_makai_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -597,7 +597,7 @@ T59 = {
 	color = rgb { 211 133 224 }
 	culture_definition = th_makai_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -606,7 +606,7 @@ T60 = {
 	color = rgb { 184 68 165 }
 	culture_definition = th_old_gensokyo_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -615,7 +615,7 @@ T61 = {
 	color = rgb { 235 233 128 }
 	culture_definition = th_magician_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -624,7 +624,7 @@ T62 = {
 	color = rgb { 233 235 44 }
 	culture_definition = th_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -633,7 +633,7 @@ T63 = {
 	color = rgb { 233 247 243 }
 	culture_definition = th_doll_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -642,7 +642,7 @@ T64 = {
 	color = rgb { 224 74 245 }
 	culture_definition = th_magician_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -651,7 +651,7 @@ T65 = {
 	color = rgb { 99 75 75 }
 	culture_definition = th_oni_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -660,7 +660,7 @@ T66 = {
 	color = rgb { 7 122 90 }
 	culture_definition = th_evil_spirit_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -669,7 +669,7 @@ T67 = {
 	color = rgb { 168 150 131 }
 	culture_definition = th_old_gensokyo_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -678,7 +678,7 @@ T68 = {
 	color = rgb { 107 120 201 }
 	culture_definition = th_poltergeist_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -687,7 +687,7 @@ T69 = {
 	color = rgb { 201 48 101 }
 	culture_definition = th_outside_world_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -696,7 +696,7 @@ T70 = {
 	color = rgb { 95 156 201 }
 	culture_definition = th_tennin_culture
 	religion_definition = th_gensokyo_taoism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -705,7 +705,7 @@ T71 = {
 	color = rgb { 57 103 201 }
 	culture_definition = th_tennin_culture
 	religion_definition = th_gensokyo_taoism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -714,7 +714,7 @@ T72 = {
 	color = rgb { 227 112 225 }
 	culture_definition = th_moon_people_culture
 	religion_definition = th_gensokyo_lunar_religion
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -723,7 +723,7 @@ T73 = {
 	color = rgb { 201 69 71 }
 	culture_definition = th_vampire_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -732,7 +732,7 @@ T74 = {
 	color = rgb { 227 226 212 }
 	culture_definition = th_demon_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -741,7 +741,7 @@ T75 = {
 	color = rgb { 135 173 140 }
 	culture_definition = th_instrument_yokai_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -750,7 +750,7 @@ T76 = {
 	color = rgb { 106 72 171 }
 	culture_definition = th_jiangshi_culture
 	religion_definition = th_gensokyo_taoism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -759,7 +759,7 @@ T77 = {
 	color = rgb { 219 171 217 }
 	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_buddhism
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -768,7 +768,7 @@ T78 = {
 	color = rgb { 82 173 172 }
 	culture_definition = th_village_human_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -777,7 +777,7 @@ T79 = {
 	color = rgb { 146 186 240 }
 	culture_definition = th_angel_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -786,7 +786,7 @@ T80 = {
 	color = rgb { 240 195 155 }
 	culture_definition = th_purified_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -795,7 +795,7 @@ T81 = {
 	color = rgb { 227 86 145 }
 	culture_definition = th_other_world_people_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -804,7 +804,7 @@ T82 = {
 	color = rgb { 142 92 186 }
 	culture_definition = th_hell_fairy_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
@@ -813,7 +813,7 @@ T83 = {
 	color = rgb { 240 130 219 }
 	culture_definition = th_sennin_culture
 	religion_definition = th_gensokyo_old_hakurei_shinto
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
  
@@ -822,7 +822,7 @@ T84 = {
 	color = rgb { 149 240 152 }
 	culture_definition = th_oni_culture
 	religion_definition = th_gensokyo_eat_raw
-	description_category = administrative
+	description_category = economic
 	difficulty = 1
 }
 
