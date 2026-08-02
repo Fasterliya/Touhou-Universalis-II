@@ -70,11 +70,11 @@ th_common_history_setup_create_ruler_scr_effect = {
 		adm = $adm$ dip = $dip$ mil = $mil$
 		religion = religion:$religion$
 		culture = culture:$culture$
-		estate = clergy_estate	
-		birth_location = location:ROOT.capital
+		estate = estate_type:clergy_estate	
+		birth_location = ROOT.capital
 		age = $age$
 		female = yes
-		ethnicity = ethnicity:$ethnicity$	#遗传组
+		ethnicity = $ethnicity$	#遗传组
 		save_scope_as = new_character
 	}
 	ruler = {	
@@ -128,10 +128,10 @@ th_common_history_setup_character_scr_effect = {
 		religion = religion:$religion$
 		culture = culture:$culture$
 		estate = estate_type:$estate$
-		birth_location = location:ROOT.capital
+		birth_location = ROOT.capital
 		age = $age$
 		female = yes
-		ethnicity = ethnicity:$ethnicity$
+		ethnicity = $ethnicity$
 		save_scope_as = new_character
 	}
 	scope:new_character = {	

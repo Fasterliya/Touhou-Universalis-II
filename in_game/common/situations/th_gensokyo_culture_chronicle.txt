@@ -17,10 +17,7 @@
 	on_start = {
 		every_country = {
 			limit = { is_human = yes }
-			set_variable = { name = th_cc_page value = 0 }
-			set_variable = { name = th_cc_page_start value = 0 }
-			set_variable = { name = th_cc_page_end value = 20 }
-			th_culture_chronicle_refresh_lists = yes
+			trigger_event_silently = th_culture_chronicle.1
 		}
 	}
 }

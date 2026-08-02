@@ -10,6 +10,7 @@ market_manager = {
 	add_market = edinburgh
 	add_market = bruges
 	add_market = dubrovnik
+	add_market = tarnovo
 	add_market = constantinople
 	add_market = paris
 	add_market = barcelona
@@ -20,6 +21,7 @@ market_manager = {
 	add_market = moscow
 	add_market = kaffa
 	add_market = astrakhan
+	add_market = sarai_al_jadid
 	add_market = pest
 	add_market = prague
 	add_market = bordeaux	
@@ -189,41 +191,4 @@ market_manager = {
 	#Siberia
 	add_market = kazan
 	add_market = chimgi_tura
-
-
-	#幻想乡
-	add_market = th_crimson_tide_harbor
-
-	add_market = th_kirisame_residence
-
-	add_market = th_central_plaza
-
-	add_market = th_garden_of_the_sun
-
-	add_market = th_returner_sanatorium
-
-	add_market = th_divine_spirit_mausoleum
-
-	add_market = th_kappa_capital
-
-	add_market = th_tengu_capital
-
-	add_market = th_village_of_white_wolf
-
-	add_market = th_avici_hell
-
-	add_market = th_hall_of_judgment
-
-	add_market = th_former_capital_central_district
-
-	add_market = th_celestial_realm_tong_ming_ge
-
-	add_market = th_palace_of_moon
-
-	add_market = th_hakugyokurou
-
-	add_market = th_solitus_strand
-
-	add_market = th_hakurei_shrine
-
 }
