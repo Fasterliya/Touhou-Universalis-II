@@ -112,3 +112,48 @@ th_gensokyo_io_human_village_special_status = {
 	}
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
 }
+
+### ============================================================
+### 席位5：幻想乡席位（占位验证）th_gensokyo_io_seat_special_status
+### 对标 base game union.txt senior_partner — 政策门控 + 自动授衔
+### 政策 th_gensokyo_seat_unlock_policy 激活 → 解锁自动授予
+### 政策移除 → 自动收回（auto_rescind，无 OR）
+### 授予条件：成员 + 政策激活 + 名额空 + 个人贡献度最高者
+### ============================================================
+th_gensokyo_io_seat_special_status = {
+	max_countries = 1
+	priority = 5
+
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+		scope:recipient = {
+			international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy
+			"num_countries_with_special_status(special_status:th_gensokyo_io_seat_special_status)" < 1
+			NOT = {
+				any_international_organization_member = {
+					this != root
+					var:th_gensokyo_personal_contribution_var > root.var:th_gensokyo_personal_contribution_var
+				}
+			}
+		}
+	}
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	auto_rescind_trigger = {
+		NOT = {
+			scope:recipient = {
+				international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy
+			}
+		}
+	}
+
+	modifier = {
+		monthly_prestige = 0.1
+		# TODO: 占位修正值
+	}
+	special_status_power = {
+		value = 50
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
+}

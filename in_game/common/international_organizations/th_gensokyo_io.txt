@@ -32,6 +32,7 @@ th_gensokyo_io = {
         th_gensokyo_unity_vision_law
         th_gensokyo_barrier_policy_law
         th_gensokyo_incident_response_law
+        th_gensokyo_seat_unlock_law
     }
 
     # === 特殊席位 ===
@@ -40,6 +41,7 @@ th_gensokyo_io = {
         th_gensokyo_io_guardian_special_status
         th_gensokyo_io_sages_special_status
         th_gensokyo_io_human_village_special_status
+        th_gensokyo_io_seat_special_status
     }
 
     # === 外交与战争 ===

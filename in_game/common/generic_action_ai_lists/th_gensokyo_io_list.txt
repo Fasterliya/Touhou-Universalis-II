@@ -5,6 +5,5 @@
 	}
 	actions = {
 		th_sages_diagnostic_interaction
-		th_sages_diagnostic_interaction_1
 	} 
 }
