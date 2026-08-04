@@ -1,0 +1,27 @@
+﻿### 贤者议会 — 特殊席位定义
+### 对标 base game union.txt junior_partner + 席位解锁范式
+### 3 位贤者各 1 席，自动授予全部成员 → 每贤者 1/3 投票权（议会支持度按 special_status_power 均分）
+
+th_sages_council_member_special_status = {
+	max_countries = 3
+	priority = 10
+
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+	}
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	auto_rescind_trigger = {
+		always = no
+	}
+
+	modifier = {
+		monthly_prestige = 0.1
+		# TODO: 后续人工填写贤者议会席位修正值
+	}
+	special_status_power = {
+		value = 100
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
+}

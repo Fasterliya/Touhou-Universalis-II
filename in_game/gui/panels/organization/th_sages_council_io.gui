@@ -282,15 +282,15 @@ organization_panel = {
                                 datacontext = "[GetScriptedGui('th_sages_introduce_institution')]"
                                 text = "th_sages_introduce_institution"
                                 visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
-                                enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End)]"
+                                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End)]"
                                 tooltipwidget = {
                                     ContextualTooltipType = {
                                         blockoverride "title_text" { raw_text = "[Localize('th_sages_introduce_institution')]" }
                                         blockoverride "tooltip_content" {
                                             vbox = {
                                                 spacing = 4
-                                                text_multi = { using = Font_Size_Tiny default_format = "#default" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
+                                                text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
                                                 text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_cost')]" }
                                             }
                                         }

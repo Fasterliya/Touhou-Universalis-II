@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
  th_human_village_io: "Human Village"
  th_human_village_io_desc: "A confederation formed by nations in the Human Village and Myouren Temple regions."
 
@@ -68,8 +68,32 @@ l_english:
  diplomatic_mediation_policy_desc: "Resolve the root causes of incidents through negotiation and mediation."
 
  ### Diagnostic Interaction (Verify special status assignment)
+ th_sages_diagnostic_select_io: "Select the Gensokyo International Organization"
  th_sages_diagnostic_interaction: "Sage Status Diagnostic"
  th_sages_diagnostic_interaction_desc: "This interaction is only visible to countries holding the 'Sage' special status in the Gensokyo IO. Used to verify correct special status assignment."
  th_sages_diagnostic_interaction_act: "Confirm Sage Status"
  th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName] confirms holding the Gensokyo 'Sage' special status."
- th_sages_diagnostic_success_tt: "§G✓ Diagnostic Success§!: This country holds the 'Sage' special status (th_gensokyo_io_sages_special_status) in the Gensokyo IO."
+ th_sages_diagnostic_success_tt: "[G]Diagnostic Success[/G]! This country holds the 'Sage' special status (th_gensokyo_io_sages_special_status) in the Gensokyo IO."
+
+ ### Seat Unlock Law (placeholder verification)
+ th_gensokyo_seat_unlock_law: "Seat Unlock"
+ th_gensokyo_seat_unlock_law_desc: "When enacted, unlocks a seat in Gensokyo, allowing a special status to be bestowed."
+ th_gensokyo_seat_unlock_policy: "Seat Unlock"
+ th_gensokyo_seat_unlock_policy_desc: "When active, enables the Gensokyo seat; the member with the highest contribution automatically receives it."
+ th_gensokyo_io_seat_special_status: "Gensokyo Seat"
+ th_gensokyo_io_seat_special_status_desc: "A special status enabled by the Seat Unlock law, bestowed upon the member with the highest contribution."
+
+ ### Sages' Council — Introduce Institution (debate-based)
+ th_sages_council_member_special_status: "Sage Seat"
+ th_sages_council_member_special_status_desc: "A seat of the Sages' Council, held by the three most ancient sages. Each seat carries equal voting power in Council debates."
+
+ th_sages_council_io_parliament: "Sages' Council Assembly"
+ th_sages_introduce_institution_issue: "Introduce Institution"
+ th_sages_introduce_institution_issue_desc: "A proposal to introduce a new institution to the capitals of all sages."
+
+ th_sages_introduce_institution: "Introduce Institution"
+ th_sages_introduce_institution_desc: "Choose an institution that has appeared in the world but has not yet reached all sages. A debate will be held in the Sages' Council; if at least two sages support it, the institution will appear in every sage's capital."
+ th_sages_introduce_institution_cost: "Costs: [G]500 gold[/G] (initiator) and [G]10 Gensokyo Unity[/G]. Resources are not refunded if the debate fails."
+ th_sages_introduce_institution_notification: "A debate has been convened in the Sages' Council to introduce an institution."
+ th_sages_pending_institution: "Pending Institution"
+ th_sages_introduced_institutions: "Introduced Institutions"

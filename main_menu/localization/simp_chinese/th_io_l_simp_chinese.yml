@@ -1,4 +1,4 @@
-l_simp_chinese:
+﻿l_simp_chinese:
  th_human_village_io: "人间之里"
  th_human_village_io_desc: "人间之里及命连寺区域各国组成的联合组织。"
 
@@ -68,8 +68,32 @@ l_simp_chinese:
  diplomatic_mediation_policy_desc: "以谈判与调解化解异变根源。"
 
  ### 诊断互动（验证特殊席位状态）
+ th_sages_diagnostic_select_io: "选择幻想乡国际组织"
  th_sages_diagnostic_interaction: "贤者席位诊断"
  th_sages_diagnostic_interaction_desc: "此互动仅对持有幻想乡IO「贤者」特殊席位的国家可见。用于验证特殊席位是否正确分配。"
  th_sages_diagnostic_interaction_act: "确认贤者席位"
  th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]确认持有幻想乡「贤者」特殊席位。"
  th_sages_diagnostic_success_tt: "§G✓ 诊断成功§!：此国家持有幻想乡IO的「贤者」特殊席位（th_gensokyo_io_sages_special_status）。"
+
+ ### 席位解锁法律（占位验证）
+ th_gensokyo_seat_unlock_law: "席位解锁"
+ th_gensokyo_seat_unlock_law_desc: "通过后解锁幻想乡的席位，允许授予特殊地位。"
+ th_gensokyo_seat_unlock_policy: "席位解锁"
+ th_gensokyo_seat_unlock_policy_desc: "激活后启用幻想乡席位，贡献度最高的成员将自动获得该席位。"
+ th_gensokyo_io_seat_special_status: "幻想乡席位"
+ th_gensokyo_io_seat_special_status_desc: "由席位解锁法律启用的特殊席位，授予贡献度最高的成员。"
+
+ ### 贤者议会 — 引入思潮（议会辩论）
+ th_sages_council_member_special_status: "贤者席位"
+ th_sages_council_member_special_status_desc: "贤者议会的席位，由三位最古老的贤者各持一席。每席在议会辩论中拥有相等的投票权。"
+
+ th_sages_council_io_parliament: "贤者议会大议事会"
+ th_sages_introduce_institution_issue: "引入思潮"
+ th_sages_introduce_institution_issue_desc: "提议将一种新思潮引入所有贤者的首都。"
+
+ th_sages_introduce_institution: "引入思潮"
+ th_sages_introduce_institution_desc: "选择一个已在世间出现但尚未遍及贤者的思潮。贤者议会将就此展开辩论；若至少两位贤者支持，思潮将在每位贤者的首都出现。"
+ th_sages_introduce_institution_cost: "消耗：[G]500 金[/G]（发起者）与 [G]10 幻想乡团结[/G]。辩论失败不退还。"
+ th_sages_introduce_institution_notification: "贤者议会已就引入思潮召开辩论。"
+ th_sages_pending_institution: "待引入思潮"
+ th_sages_introduced_institutions: "已引入思潮"

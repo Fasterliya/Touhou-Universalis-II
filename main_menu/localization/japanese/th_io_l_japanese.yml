@@ -1,4 +1,4 @@
-l_japanese:
+﻿l_japanese:
  th_human_village_io: "人間の里"
  th_human_village_io_desc: "人間の里及び命蓮寺区域の諸国より成る聯合組織なり。"
 
@@ -68,8 +68,32 @@ l_japanese:
  diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。"
 
  ### 診断インタラクション（特殊席状態確認用）
+ th_sages_diagnostic_select_io: "幻想郷国際組織を選択"
  th_sages_diagnostic_interaction: "賢者席診断"
  th_sages_diagnostic_interaction_desc: "このインタラクションは幻想郷IOの「賢者」特殊席を保持する国家のみに表示される。特殊席が正しく割り当てられているかの確認用。"
  th_sages_diagnostic_interaction_act: "賢者席を確認"
  th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]が幻想郷「賢者」特殊席を保持していることを確認した。"
  th_sages_diagnostic_success_tt: "§G✓ 診断成功§!：この国家は幻想郷IOの「賢者」特殊席（th_gensokyo_io_sages_special_status）を保持している。"
+
+ ### 席アンロック法（仮検証用）
+ th_gensokyo_seat_unlock_law: "席アンロック"
+ th_gensokyo_seat_unlock_law_desc: "制定すると幻想郷の席が解放され、特殊地位の授与が可能になる。"
+ th_gensokyo_seat_unlock_policy: "席アンロック"
+ th_gensokyo_seat_unlock_policy_desc: "発動すると幻想郷席が有効化され、貢献度が最も高い構成国が自動的にその席を獲得する。"
+ th_gensokyo_io_seat_special_status: "幻想郷席"
+ th_gensokyo_io_seat_special_status_desc: "席アンロック法によって有効化される特殊地位。貢献度が最も高い構成国に授与される。"
+
+ ### 賢者議会 — 思潮導入（議会討論）
+ th_sages_council_member_special_status: "賢者席"
+ th_sages_council_member_special_status_desc: "賢者議会の席。三人の最古の賢者が各一席を有し、議会討論において等しい投票権を持つ。"
+
+ th_sages_council_io_parliament: "賢者議会大評議会"
+ th_sages_introduce_institution_issue: "思潮導入"
+ th_sages_introduce_institution_issue_desc: "新たな思潮を全ての賢者の首都に導入する提案。"
+
+ th_sages_introduce_institution: "思潮導入"
+ th_sages_introduce_institution_desc: "世界に出現したが賢者にまだ行き渡っていない思潮を選ぶ。賢者議会で討論が行われ、少なくとも二人の賢者が支持すれば、思潮は各賢者の首都に出現する。"
+ th_sages_introduce_institution_cost: "消耗：[G]500金[/G]（提案者）と [G]幻想郷団結度10[/G]。討論失敗時は返還されない。"
+ th_sages_introduce_institution_notification: "思潮導入を巡り、賢者議会で討論が招集された。"
+ th_sages_pending_institution: "導入予定思潮"
+ th_sages_introduced_institutions: "導入済み思潮"

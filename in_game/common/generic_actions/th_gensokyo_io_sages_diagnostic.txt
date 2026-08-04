@@ -13,52 +13,6 @@ th_sages_diagnostic_interaction = {
 
     potential = {
         exists = international_organization:th_gensokyo_io
-        # scope:actor = {
-        #     has_special_status_in_international_organization = {
-        #         type = special_status:th_gensokyo_io_sages_special_status
-        #         international_organization = international_organization:th_gensokyo_io
-        #     }
-        # }
-    }
-
-    allow = {
-        always = yes
-    }
-
-    select_trigger = {
-        looking_for_a = international_organization
-        target_flag = recipient
-        name = "th_sages_diagnostic_select_io"
-        column = {
-            data = name
-        }
-        visible = {
-            international_organization_type = international_organization_type:th_gensokyo_io
-        }
-    }
-
-    effect = {
-        custom_tooltip = th_sages_diagnostic_success_tt
-        # 如能看到并执行此行动 → 贤者席位已正确分配
-        # 如看不到此行动 → 贤者席位未生效于当前国家
-    }
-
-    ai_will_do = {
-        value = 0
-    }
-}
-
-
-th_sages_diagnostic_interaction_1 = {
-    type = internationalorganization
-
-    ai_tick = monthly
-	ai_tick_frequency = 1
-    automation_tick = never
-    automation_tick_frequency = 12
-
-    potential = {
-        # exists = international_organization:th_gensokyo_io
         scope:actor = {
             has_special_status_in_international_organization = {
                 type = special_status:th_gensokyo_io_sages_special_status

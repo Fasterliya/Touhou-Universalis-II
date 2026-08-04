@@ -226,3 +226,32 @@
 #     #     days = 1
 #     # }
 # }
+
+### ----------------------------------------------------------
+### 法律4：席位解锁 — 单政策开关（占位验证）
+### 政策 th_gensokyo_seat_unlock_policy 激活 → 席位解锁（自动授予）
+### 政策移除 → 席位自动收回
+### 参考 base game 40_personal_unions.txt: union_establish_seniority_policy
+### ----------------------------------------------------------
+th_gensokyo_seat_unlock_law = {
+    type = international_organization
+    law_category = administrative
+    requires_vote = no
+    potential = {
+        international_organization_type = international_organization_type:th_gensokyo_io
+    }
+    allow = {
+        always = yes
+    }
+
+    ### 政策：席位解锁 — 存在即解锁（单政策开关，无 forbids_no_policy）
+    th_gensokyo_seat_unlock_policy = {
+        allow = {
+            always = yes
+        }
+        international_organization_modifier = {
+            monthly_prestige = 0.05
+        }
+        # TODO: 后续人工填写政策修正值
+    }
+}

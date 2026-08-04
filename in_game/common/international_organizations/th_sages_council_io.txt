@@ -9,6 +9,18 @@ th_sages_council_io = {
     has_leader_country = no
     show_on_diplomatic_map = yes
 
+    # === 议会 ===
+    # 三贤者议事：引入思潮等重大决议须经议会辩论投票
+    has_parliament = yes
+    parliament_type = th_sages_council_io_parliament
+    resolution_widget = parliament
+
+    # === 特殊席位 ===
+    # 3 贤者各 1 席 → 议会投票权重均分（各 1/3）
+    special_statuses_implemented = {
+        th_sages_council_member_special_status
+    }
+
     # === 加入 ===
     # 禁止加入（仅开局固定三位）
     create_visible_trigger = {

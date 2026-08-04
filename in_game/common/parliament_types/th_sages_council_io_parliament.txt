@@ -1,0 +1,16 @@
+﻿### 贤者议会 — 议会类型定义
+### 对标 base game union_royal_assembly (parliament_types/01_international_organization.txt:L9-19)
+### 议会支持度按成员 special_status_power 占比累计（3 贤者各 1/3），
+### 通过阈值 = parliament_request_issue_support_needed（默认 0.5）→ 2 票（2/3）通过、1 票（1/3）不通过
+
+th_sages_council_io_parliament = {
+	type = international_organization
+
+	possible_issues = {
+		th_sages_introduce_institution_issue
+	}
+
+	modifier = {
+		has_international_parliament = yes
+	}
+}
