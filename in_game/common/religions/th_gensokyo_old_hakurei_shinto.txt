@@ -11,7 +11,7 @@
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
@@ -55,7 +55,7 @@ th_gensokyo_buddhism = {
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
@@ -99,7 +99,7 @@ th_gensokyo_taoism = {
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
@@ -143,7 +143,7 @@ th_gensokyo_eat_raw = {
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
@@ -183,7 +183,7 @@ th_gensokyo_tenma_mount = {
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
@@ -224,7 +224,7 @@ th_gensokyo_lunar_religion = {
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
@@ -269,7 +269,7 @@ th_gensokyo_theory_of_science = {
 	
 	definition_modifier = {
 		global_max_literacy = 5
-		global_build_buildings_cost = -0.05
+		global_build_buildings_efficiency = 0.1
 		
 		monthly_religious_influence = 0.1
 
