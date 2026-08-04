@@ -435,3 +435,674 @@ th_silver_currency_standard_advance = {
         value = 0
     }
 }
+
+##第三时代：天外之物
+#凝视边界
+th_boundary_gaze_advance = {
+    age = age_3_discovery
+    depth = 0
+    allow_children = yes
+    starting_technology_level = 3
+    
+    cultural_tradition_modifier = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        has_embraced_institution = institution:th_heavenly_artifact_institution
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#外界的传闻
+th_rumors_of_the_outside_advance = {
+    age = age_3_discovery
+    requires = th_boundary_gaze_advance
+    
+    global_institution_growth_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#通途探索
+th_gateway_research_advance = {
+    age = age_3_discovery
+    requires = th_rumors_of_the_outside_advance
+    
+    trade_range = 150
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#初遇外界
+th_outside_contact_advance = {
+    age = age_3_discovery
+    requires = th_gateway_research_advance
+    
+    diplomatic_reputation = 1
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#归还者
+th_return_of_the_sealed_advance = {
+    age = age_3_discovery
+    requires = th_outside_contact_advance
+    
+    global_max_literacy = 5
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#月相之书
+th_lunar_almanac_advance = {
+    age = age_3_discovery
+    requires = th_boundary_gaze_advance
+    
+    research_speed_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#与月对话
+th_moon_dialogue_advance = {
+    age = age_3_discovery
+    requires = th_lunar_almanac_advance
+    
+    improve_relation_impact = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#不死之谈
+th_eternity_rumor_advance = {
+    age = age_3_discovery
+    requires = th_moon_dialogue_advance
+    
+    global_life_expectancy = 3
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#实证之眼
+th_empirical_eye_advance = {
+    age = age_3_discovery
+    requires = th_boundary_gaze_advance
+    
+    embrace_institution_cost_modifier = -0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#常识渗透
+th_common_sense_erosion_advance = {
+    age = age_3_discovery
+    requires = th_empirical_eye_advance
+    
+    tolerance_heretic = 1
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#天外异变
+th_heavenly_incidents_advance = {
+    age = age_3_discovery
+    requires = th_boundary_gaze_advance
+    
+    army_initiative = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+##第四时代：神乐与祭囃
+#信仰的本相
+th_essence_of_faith_advance = {
+    age = age_4_reformation
+    depth = 0
+    allow_children = yes
+    starting_technology_level = 3
+    
+    cultural_influence_modifier = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        has_embraced_institution = institution:th_kagura_and_matsuri_institution
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#信与疑
+th_faith_and_doubt_advance = {
+    age = age_4_reformation
+    requires = th_essence_of_faith_advance
+    
+    research_speed_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#神人同席
+th_god_and_mortal_advance = {
+    age = age_4_reformation
+    requires = th_essence_of_faith_advance
+    
+    improve_relation_impact = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#祭囃之章
+th_sacred_music_advance = {
+    age = age_4_reformation
+    requires = th_essence_of_faith_advance
+    
+    cultural_tradition_modifier = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#祭典仪轨
+th_festival_protocol_advance = {
+    age = age_4_reformation
+    requires = th_sacred_music_advance
+    
+    monthly_prestige = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#信仰的分裂
+th_schism_of_belief_advance = {
+    age = age_4_reformation
+    requires = th_faith_and_doubt_advance
+    
+    global_pop_promotion_speed_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#礼仪改革
+th_reform_of_rites_advance = {
+    age = age_4_reformation
+    requires = th_schism_of_belief_advance
+    
+    global_pop_conversion_speed_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#参道之兴
+th_pilgrimage_roads_advance = {
+    age = age_4_reformation
+    requires = th_god_and_mortal_advance
+    
+    trade_range = 150
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#人之神圣
+th_human_divinity_advance = {
+    age = age_4_reformation
+    requires = th_god_and_mortal_advance
+    
+    global_institution_growth_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#信仰即力
+th_faith_as_power_advance = {
+    age = age_4_reformation
+    requires = th_reform_of_rites_advance
+    
+    global_pop_conversion_speed_modifier = 0.05
+    monthly_prestige = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#神之存续
+th_eternal_question_advance = {
+    age = age_4_reformation
+    requires = th_faith_as_power_advance
+    
+    global_life_expectancy = 3
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+##第五时代：万物一心
+#一体之理
+th_oneness_philosophy_advance = {
+    age = age_5_absolutism
+    depth = 0
+    allow_children = yes
+    starting_technology_level = 3
+    
+    research_speed_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        has_embraced_institution = institution:th_all_things_as_one_institution
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#界限之解
+th_dissolution_of_boundary_advance = {
+    age = age_5_absolutism
+    requires = th_oneness_philosophy_advance
+    
+    tolerance_heretic = 1
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#共同命运
+th_common_destiny_advance = {
+    age = age_5_absolutism
+    requires = th_oneness_philosophy_advance
+    
+    improve_relation_impact = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#万律归一
+th_unity_of_orders_advance = {
+    age = age_5_absolutism
+    requires = th_common_destiny_advance
+    
+    government_reform_slots = 1
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#大同之制
+th_great_unification_advance = {
+    age = age_5_absolutism
+    requires = th_unity_of_orders_advance
+    
+    diplomatic_annexation_efficiency = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#中心与边缘
+th_center_and_periphery_advance = {
+    age = age_5_absolutism
+    requires = th_dissolution_of_boundary_advance
+    
+    global_integration_speed_modifier = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#混沌有序
+th_order_within_chaos_advance = {
+    age = age_5_absolutism
+    requires = th_dissolution_of_boundary_advance
+    
+    monthly_legitimacy = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#共同体认
+th_collective_identity_advance = {
+    age = age_5_absolutism
+    requires = th_center_and_periphery_advance
+    
+    cultural_influence_modifier = 0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#结界与一
+th_barrier_and_oneness_advance = {
+    age = age_5_absolutism
+    requires = th_great_unification_advance
+    
+    global_institution_growth_modifier = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#秩序守望
+th_guardians_of_order_advance = {
+    age = age_5_absolutism
+    requires = th_order_within_chaos_advance
+    
+    monthly_legitimacy = 0.05
+    monthly_prestige = 0.05
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#殊途同归
+th_eternal_diversity_advance = {
+    age = age_5_absolutism
+    requires = th_barrier_and_oneness_advance
+    
+    global_life_expectancy = 3
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}

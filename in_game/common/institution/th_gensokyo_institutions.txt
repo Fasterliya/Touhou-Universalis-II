@@ -39,3 +39,69 @@ th_gensokyo_fantasy_journey_institution = {
 	#秒传
 	spread = 0.5
 }
+
+th_heavenly_artifact_institution = {
+	age = age_3_discovery
+	
+	can_spawn = {
+		has_owner = yes
+		owner ?= {
+			culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+		}
+		this = location:th_kourindou_main_store
+	}
+	
+	promote_chance = {
+		add = {
+			value = num_pop_type:clergy
+			multiply = 100
+		}
+	}
+	
+	#秒传
+	spread = 0.5
+}
+
+th_kagura_and_matsuri_institution = {
+	age = age_4_reformation
+	
+	can_spawn = {
+		has_owner = yes
+		owner ?= {
+			culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+		}
+		this = location:th_moriya_shrine_honden
+	}
+	
+	promote_chance = {
+		add = {
+			value = num_pop_type:clergy
+			multiply = 100
+		}
+	}
+	
+	#秒传
+	spread = 0.5
+}
+
+th_all_things_as_one_institution = {
+	age = age_5_absolutism
+	
+	can_spawn = {
+		has_owner = yes
+		owner ?= {
+			culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+		}
+		this = location:th_myourenji_hondo
+	}
+	
+	promote_chance = {
+		add = {
+			value = num_pop_type:clergy
+			multiply = 100
+		}
+	}
+	
+	#秒传
+	spread = 0.5
+}

@@ -829,6 +829,18 @@ th_gensokyo_theory_of_science_ADJ: "科学论"
  th_gensokyo_fantasy_journey_institution_desc: "在漫长的岁月中，幻想乡的历史始终由先祖与御阿礼之子所书写。人们相信流传下来的故事，相信《幻想乡缘起》中记载的一切，并将未知视为不可触及的神秘。\n\n然而，随着印刷、抄录与文学的兴盛，越来越多的故事开始在人间之里流传。它们不再仅仅是关于神明、妖怪。旅人的见闻、商人的经历、学者的研究，以及无数普通人的幻想，都逐渐成为新的故事。人们第一次意识到，能被记录的并非只有历史，还有「人」的故事。\n\n于是，人们开始离开熟悉的村落，探索森林、山岳与湖泊；开始尝试理解世界运行的规律，而非满足于祖辈留下的解释。神秘依旧存在，但它不再仅是恐惧与禁忌。人与妖怪的交流逐渐增加，商业与旅行日益繁荣，新的思想沿着道路与书本传播至幻想乡各处。\n\n这是一个属于旅人、学者与小说家的时代。从被传颂的故事，到亲身经历的故事；从被记录的历史，到属于众人的时代。"
  STATIC_MODIFIER_NAME_th_gensokyo_fantasy_journey_institution_birth: "$th_gensokyo_fantasy_journey_institution$发源地"
 
+ th_heavenly_artifact_institution: "天外之物"
+ th_heavenly_artifact_institution_desc: "故事传遍了山野与村落，边界也被一次次跨越。当人们抬起头，第一次真正注视那轮悬于幻想乡之上的月亮时，一个念头悄然浮现——幻想的边界之外，是否还存在着另一个世界？外界之物开始越过结界：坠落的器物、迷路的人类、被遗忘的传说，它们自称来自「天外」。贤者们沉默地注视着这些天外之物，既不驱逐，也不接纳。而幻想乡的人们第一次意识到——世界并非只有这一方天地。那些从远方而来、无法归类、也无法忽视的东西，正在叩响大结界之门。"
+ STATIC_MODIFIER_NAME_th_heavenly_artifact_institution_birth: "$th_heavenly_artifact_institution$发源地"
+
+ th_kagura_and_matsuri_institution: "神乐与祭囃"
+ th_kagura_and_matsuri_institution_desc: "天外之物的叩门声尚未平息，幻想乡的信仰却已开始动摇。守矢的神明自远山迁来，带来从未见过的神迹，声称「神可被理解」；博丽的巫女守着日益冷清的香火箱，第一次怀疑神明是否也会被遗忘。神灵庙的圣人乘辇而来，以「理」为刃；命莲寺的尼众合十而立，以「慈悲」为舟。人间之里成了四方信仰交汇的棋盘，每一次祭典，都是一场无声的战争——神与人，妖怪与人类，谁在供奉谁？谁又将被谁记住？"
+ STATIC_MODIFIER_NAME_th_kagura_and_matsuri_institution_birth: "$th_kagura_and_matsuri_institution$发源地"
+
+ th_all_things_as_one_institution: "万物一心"
+ th_all_things_as_one_institution_desc: "信仰的喧嚣终有平息之时。当神明与人类、妖怪与人类在无数次祭典与纷争中彼此看清，一个古老的问题再度浮现——他们本就是同一种存在吗？万物本无分别，人与妖同生于幻想，神与人同立于祭坛之前。守护者以巫女之身立于人与妖的边界，却开始怀疑这条边界是否理应存在。幻想乡第一次听见了「一体」的呼唤——而这呼唤，让最古老的贤者也感到了不安。"
+ STATIC_MODIFIER_NAME_th_all_things_as_one_institution_birth: "$th_all_things_as_one_institution$发源地"
+
 ###特质
  touhou_gensokyo_ruler_traits: "幻想乡君主"
  touhou_gensokyo_ruler_ciruno_traits: "湖之智者"

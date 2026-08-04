@@ -54,6 +54,36 @@ th_sages_introduce_institution = {
                 }
             }
             AND = {
+                institution:th_heavenly_artifact_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_heavenly_artifact_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_heavenly_artifact_institution } }
+                    }
+                }
+            }
+            AND = {
+                institution:th_kagura_and_matsuri_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_kagura_and_matsuri_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_kagura_and_matsuri_institution } }
+                    }
+                }
+            }
+            AND = {
+                institution:th_all_things_as_one_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_all_things_as_one_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_all_things_as_one_institution } }
+                    }
+                }
+            }
+            AND = {
                 institution:feudalism = { has_spawned = yes }
                 NOT = { has_embraced_institution = institution:feudalism }
                 scope:target_io = {
@@ -280,6 +310,93 @@ th_sages_introduce_institution = {
                 }
             }
             institution:th_gensokyo_fantasy_journey_institution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:th_heavenly_artifact_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_heavenly_artifact_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_heavenly_artifact_institution } }
+                    }
+                }
+            }
+            institution:th_heavenly_artifact_institution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:th_kagura_and_matsuri_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_kagura_and_matsuri_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_kagura_and_matsuri_institution } }
+                    }
+                }
+            }
+            institution:th_kagura_and_matsuri_institution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:th_all_things_as_one_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_all_things_as_one_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_all_things_as_one_institution } }
+                    }
+                }
+            }
+            institution:th_all_things_as_one_institution = {
 
                 save_scope_as = th_sages_target
 

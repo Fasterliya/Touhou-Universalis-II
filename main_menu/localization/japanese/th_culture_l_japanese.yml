@@ -829,6 +829,18 @@ th_gensokyo_theory_of_science_ADJ: "科学論"
  th_gensokyo_fantasy_journey_institution_desc: "長き歳月の間、幻想郷の歴史は常に先祖と御阿礼の子によりて書き記されき。人々は伝はり来たる物語を信じ、『幻想郷縁起』に記されし全てを信じ、未知を触れ難き神秘となせり。\n\n然れども、印刷・抄録と文学の興隆に伴ひ、ますます多くの物語が人間の里に伝はり始めぬ。それらは最早、唯だ神や妖怪に就いてのみならず。旅人の見聞、商人の経験、学者の研究、無数の普通の人々の幻想、すべて漸く新たなる物語となりぬ。人々は初めて、記録し得るは歴史のみにあらず、「人」の物語をも有することを悟れり。\n\n是に於いて、人々は慣れ親しみし村を離れ、森林・山岳・湖沼を探り始め、世界の動く理を理解せんと試み始め、祖の遺せし解釈に満足することを止めたり。神秘は尚も在れど、最早唯の恐怖と禁忌にはあらず。人と妖怪の交はりは漸く増え、商業と旅行は日々に栄え、新たなる思想は道と書物に沿ひて幻想郷の各所に伝はりぬ。\n\n是、旅人・学者・小説家の世なり。謡はれし物語より、自ら経験する物語へ。記録されし歴史より、衆人の時代へ。"
  STATIC_MODIFIER_NAME_th_gensokyo_fantasy_journey_institution_birth: "$th_gensokyo_fantasy_journey_institution$発祥の地"
 
+ th_heavenly_artifact_institution: "天外ノ物"
+ th_heavenly_artifact_institution_desc: "物語は山野と村々に伝わり、境界は幾度も越えられたり。人々が顔を上げ、幻想郷の上に懸かりし月を初めて真に見つめし時、一つの想ひが静かに浮かびたり——幻想の果ての彼方に、また別の世界が在るやも知れず。外界の物が結界を越えて来たり：墜ちし器物、迷ひし人々、忘られし伝説——皆、自ら「天外」より来ると称す。賢者たちはこれらの天外ノ物を沈黙して見守り、追はず、迎へもせず。而して幻想郷の人々は初めて悟りたり——世界はこの一つの天地のみに非ず。遠方より来り、分類し得ず、されど無視もなし得ぬものたちが、今まさに大結界の門を叩きつつあり。"
+ STATIC_MODIFIER_NAME_th_heavenly_artifact_institution_birth: "$th_heavenly_artifact_institution$発祥の地"
+
+ th_kagura_and_matsuri_institution: "神楽ト祭囃"
+ th_kagura_and_matsuri_institution_desc: "天外ノ物ノ叩ク音ハ未ダ止マザルニ、幻想郷ノ信仰ハ既ニ揺レ始メタリ。守矢ノ神ハ遠山ヨリ遷リ来リテ、未ダ見ザル神迹ヲ示シ、「神ハ理解シ得ル」ト宣ヘリ。博麗ノ巫女ハ日ニ冷ユル賽銭箱ヲ守リ、初メテ神モ亦忘レラルルコトアルヤト疑ヘリ。神霊廟ノ聖人ハ輿ニ乗リテ来タリ、理ヲ刃トシ、命蓮寺ノ尼衆ハ合掌シテ慈悲ヲ舟トセリ。人間ノ里ハ四方ノ信仰交錯スル碁盤トナリ、凡ベノ祭礼ハ声ナキ戦トナレリ——神ト人、妖怪ト人、誰ガ誰ヲ捧ゲ、誰ガ誰ニ記憶セラレン。"
+ STATIC_MODIFIER_NAME_th_kagura_and_matsuri_institution_birth: "$th_kagura_and_matsuri_institution$発祥の地"
+
+ th_all_things_as_one_institution: "万物一心"
+ th_all_things_as_one_institution_desc: "信仰ノ喧騒モ亦、終ニ静カナリ。神ト人、妖怪ト人、幾度モノ祭礼ト紛争ノ中ニ互イヲ看取セシ時、古キ問ヒ再ビ浮カビタリ——彼等ハ初メヨリ、同一ノ存在ナリシヤ。万物ハ其根ニ於テ無分別、人ト妖ハ同一ノ幻想ヨリ生レ、神ト人ハ同一ノ祭壇ノ前ニ立ツ。人妖ノ境界ニ巫女トシテ立ツ守護者ハ、此ノ境界ガ果タシテ在ルベキカヲ疑ヒ始メタリ。幻想郷ハ初メテ「一体」ノ呼ビ声ヲ聞ケリ——而シテ其ノ呼ビ声ハ、最モ古キ賢者ヲモ不安ナラシメタリ。"
+ STATIC_MODIFIER_NAME_th_all_things_as_one_institution_birth: "$th_all_things_as_one_institution$発祥の地"
+
 ###特质
  touhou_gensokyo_ruler_traits: "幻想郷君主"
  touhou_gensokyo_ruler_ciruno_traits: "湖の智者"

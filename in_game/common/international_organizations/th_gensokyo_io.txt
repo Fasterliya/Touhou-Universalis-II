@@ -104,8 +104,10 @@ th_gensokyo_io = {
     # === 修正 ===
     # 成员修正 — 所有幻想乡IO成员国
     modifier = {
-        # TODO: 后续人工填写全体成员buff
         block_from_change_to_empire_rank = yes
+        # 天外之物时代：探索外界/贸易通途扩展了幻想乡的贸易范围
+        trade_range = 150
+        # TODO: 后续人工填写全体成员buff
     }
 
     # 领袖修正 — 阎魔（彼岸T25）
