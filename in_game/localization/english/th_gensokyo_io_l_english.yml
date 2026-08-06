@@ -131,7 +131,20 @@
  TH_SAGES_ACTIVE_TIERS_LABEL: "Active Sage Prestige Benefits"
  TH_SAGES_NO_ACTIVE_TIER: "Sage Prestige is insufficient; no benefits are currently active."
  TH_SAGES_MAX_PREVIEW_LABEL: "Max Value Preview"
- TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "Global Tax +15%  Monthly Legitimacy +0.20\nImprove Relations +35%  Monthly Prestige +0.30\nGlobal Manpower +15%  Diplomatic Reputation +2\nMonthly Stability +0.05"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "Tax Income Efficiency +15%  Monthly Prestige +0.30\nImprove Relations +35%  Global Manpower +15%\nDiplomatic Reputation +2  Global Defensive +10%\nCan Intervene in Wars  Can Enforce Peace"
+
+### === Notoriety Consequence Auto-Modifiers (design §2.5) ===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "Tarnished Reputation"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "With notoriety at 30 or higher, Gensokyo looks upon this nation with wariness. Diplomatic reputation -1, improve relations -15%."
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "Suspected of Misdeeds"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "With notoriety at 50 or higher, this nation is suspected of repeated wrongdoing. Diplomatic reputation -2, improve relations -30%, stability investment +10%."
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "International Pariah"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "With notoriety at 70 or higher, this nation is shunned by Gensokyo's society. Diplomatic reputation -4, improve relations -50%."
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "Marked for Judgment"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "With notoriety at 80 or higher, the Yama and the sages may declare a punitive war without further deliberation. Diplomatic reputation -6, improve relations -75%."
 
 ### === Introduce Institution Action ===
  th_sages_introduce_institution: "Introduce Institution"

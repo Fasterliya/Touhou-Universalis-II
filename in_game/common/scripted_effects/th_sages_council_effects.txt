@@ -1,4 +1,4 @@
-### ===========================================================
+﻿### ===========================================================
 ### 贤者议会 — 脚本化效果
 ### 贤者威望 th_sages_prestige_var (IO变量, 0——100渐变)
 ### 五阶阈值: 20/40/60/80/100 — 每阶添加IO修正 (叠加生效)
@@ -56,7 +56,7 @@ th_sages_council_apply_prestige_thresholds_effect = {
 	# Tier 20: 威望 ≥ 20
 	if = {
 		limit = {
-			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 20 }
+			var:th_sages_prestige_var >= 20
 		}
 		set_variable = th_sages_prestige_tier_20
 		add_international_organization_modifier = {
@@ -72,7 +72,7 @@ th_sages_council_apply_prestige_thresholds_effect = {
 	# Tier 40: 威望 ≥ 40
 	if = {
 		limit = {
-			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 40 }
+			var:th_sages_prestige_var >= 40
 		}
 		set_variable = th_sages_prestige_tier_40
 		add_international_organization_modifier = {
@@ -88,7 +88,7 @@ th_sages_council_apply_prestige_thresholds_effect = {
 	# Tier 60: 威望 ≥ 60
 	if = {
 		limit = {
-			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 60 }
+			var:th_sages_prestige_var >= 60
 		}
 		set_variable = th_sages_prestige_tier_60
 		add_international_organization_modifier = {
@@ -104,7 +104,7 @@ th_sages_council_apply_prestige_thresholds_effect = {
 	# Tier 80: 威望 ≥ 80
 	if = {
 		limit = {
-			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 80 }
+			var:th_sages_prestige_var >= 80
 		}
 		set_variable = th_sages_prestige_tier_80
 		add_international_organization_modifier = {
@@ -120,7 +120,7 @@ th_sages_council_apply_prestige_thresholds_effect = {
 	# Tier 100: 威望 = 100
 	if = {
 		limit = {
-			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 100 }
+			var:th_sages_prestige_var >= 100
 		}
 		set_variable = th_sages_prestige_tier_100
 		add_international_organization_modifier = {
@@ -142,7 +142,7 @@ th_sages_council_monthly_effect = {
 	th_gensokyo_io = {
 		if = {
 			limit = {
-				check_variable = { name = th_gensokyo_unity_var compare = greater_than_or_equal value = 80 }
+				var:th_gensokyo_unity_var >= 80
 			}
 			th_sages_council_io = {
 				th_sages_council_prestige_add_effect = { value = 2 }
@@ -150,7 +150,7 @@ th_sages_council_monthly_effect = {
 		}
 		else_if = {
 			limit = {
-				check_variable = { name = th_gensokyo_unity_var compare = greater_than_or_equal value = 60 }
+				var:th_gensokyo_unity_var >= 60
 			}
 			th_sages_council_io = {
 				th_sages_council_prestige_add_effect = { value = 1 }
@@ -158,7 +158,7 @@ th_sages_council_monthly_effect = {
 		}
 		else_if = {
 			limit = {
-				check_variable = { name = th_gensokyo_unity_var compare = greater_than_or_equal value = 50 }
+				var:th_gensokyo_unity_var >= 50
 			}
 			th_sages_council_io = {
 				th_sages_council_prestige_add_effect = { value = 0 }

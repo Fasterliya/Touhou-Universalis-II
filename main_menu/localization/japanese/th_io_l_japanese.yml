@@ -97,3 +97,16 @@
  th_sages_introduce_institution_notification: "思潮導入を巡り、賢者議会で討論が招集された。"
  th_sages_pending_institution: "導入予定思潮"
  th_sages_introduced_institutions: "導入済み思潮"
+
+ ### 悪名の結果自動修正（設計§2.5）
+ th_gensokyo_io_notorious_tier1_auto_modifier: "名譽の翳り"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "悪名が30以上となると、幻想郷は此の国を警戒の目で見る。外交評判-1、関係改善-15%。"
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "悪行の累々"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "悪名が50以上となると、此の国は度々の悪事を疑われる。外交評判-2、関係改善-30%、安定投資+10%。"
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "国際的な孤児"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "悪名が70以上となると、此の国は幻想郷の社会から疎まれ排除される。外交評判-4、関係改善-50%。"
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "裁きの待ち人"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "悪名が80以上となると、閻魔と賢者は更なる審議を経ずして懲罰戦争を宣告し得る。外交評判-6、関係改善-75%。"

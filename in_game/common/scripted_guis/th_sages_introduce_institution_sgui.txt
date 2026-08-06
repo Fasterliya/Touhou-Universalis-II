@@ -24,11 +24,7 @@ th_sages_introduce_institution = {
             is_active_parliament = no
         }
         scope:gensokyo_io = {
-            check_variable = {
-                name = th_gensokyo_unity_var
-                compare = greater_than_or_equal
-                value = 10
-            }
+            var:th_gensokyo_unity_var >= 10
         }
         gold >= 500
 

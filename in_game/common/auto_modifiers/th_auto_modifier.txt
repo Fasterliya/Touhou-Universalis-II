@@ -9,3 +9,51 @@
     global_manpower_modifier = 0.02
     diplomatic_reputation = 0.5
 }
+
+### ============================================================
+### 幻想乡IO — 恶名后果自动修正（设计§2.5）
+### 基于个人恶名 var:th_gensokyo_notorious_reputation_var 的阈值动态修正
+### 注意：scripted_modifiers 目录仅用于数学权重，不可用于国家修正；
+###       恶名后果修正的正确载体是 auto_modifiers（country 作用域）。
+### ============================================================
+
+### 恶名≥30 — 国际形象受损：外交声誉-1 / 关系改善-15%
+th_gensokyo_io_notorious_tier1_auto_modifier = {
+    potential_trigger = {
+        var:th_gensokyo_notorious_reputation_var >= 30
+    }
+
+    diplomatic_reputation = -1
+    improve_relation_impact = -0.15
+}
+
+### 恶名≥50 — 关系恶化加剧：外交声誉再-1 / 关系改善再-15% / 稳定投资+10%
+th_gensokyo_io_notorious_tier2_auto_modifier = {
+    potential_trigger = {
+        var:th_gensokyo_notorious_reputation_var >= 50
+    }
+
+    diplomatic_reputation = -1
+    improve_relation_impact = -0.15
+    stability_cost_efficiency = 0.1
+}
+
+### 恶名≥70 — 国际弃民：外交声誉再-2 / 关系改善再-20%
+th_gensokyo_io_notorious_tier3_auto_modifier = {
+    potential_trigger = {
+        var:th_gensokyo_notorious_reputation_var >= 70
+    }
+
+    diplomatic_reputation = -2
+    improve_relation_impact = -0.2
+}
+
+### 恶名≥80 — 彻底失格：贤者可无视敌意宣告惩戒战争（由惩戒CB触发器判断，此处再压外交）
+th_gensokyo_io_notorious_tier4_auto_modifier = {
+    potential_trigger = {
+        var:th_gensokyo_notorious_reputation_var >= 80
+    }
+
+    diplomatic_reputation = -2
+    improve_relation_impact = -0.25
+}

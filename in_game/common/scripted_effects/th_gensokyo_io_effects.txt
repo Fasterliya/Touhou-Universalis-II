@@ -1,24 +1,83 @@
-### ===========================================================
+﻿### ===========================================================
 ### 幻想乡IO — 脚本化效果接口
+### 全部数值变更统一走本文件接口（对齐设计文档 §2.1/§2.3/§2.5）
 ### ===========================================================
 
-### 幻想乡团结度 增加（在IO scope上调用）
+### 幻想乡团结度 增加（在IO scope上调用，设计§2.1）
 th_gensokyo_io_unity_var_add_effect = {
     change_variable = {
         name = th_gensokyo_unity_var
         add = $value$
     }
+    clamp_variable = {
+        name = th_gensokyo_unity_var
+        min = 0
+        max = 100
+    }
 }
 
-### 幻想乡个人贡献度 增加（在国家scope上调用）
+### 幻想乡团结度 减少（在IO scope上调用，设计§2.1 损失表）
+th_gensokyo_io_unity_var_subtract_effect = {
+    change_variable = {
+        name = th_gensokyo_unity_var
+        subtract = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_unity_var
+        min = 0
+        max = 100
+    }
+}
+
+### 幻想乡个人贡献度 增加（在国家scope上调用，设计§2.3）
+### 附带恶名惩罚：恶名≥30 → -30%，≥50 → -50%，≥70 → -70%（设计§2.5）
 th_gensokyo_io_contribution_var_add_effect = {
+    set_variable = {
+        name = th_gensokyo_temp_contribution_gain
+        value = $value$
+    }
+    if = {
+        limit = {
+            var:th_gensokyo_notorious_reputation_var >= 70
+        }
+        change_variable = {
+            name = th_gensokyo_temp_contribution_gain
+            multiply = 0.3
+        }
+    }
+    else_if = {
+        limit = {
+            var:th_gensokyo_notorious_reputation_var >= 50
+        }
+        change_variable = {
+            name = th_gensokyo_temp_contribution_gain
+            multiply = 0.5
+        }
+    }
+    else_if = {
+        limit = {
+            var:th_gensokyo_notorious_reputation_var >= 30
+        }
+        change_variable = {
+            name = th_gensokyo_temp_contribution_gain
+            multiply = 0.7
+        }
+    }
+    change_variable = {
+        name = th_gensokyo_personal_contribution_var
+        add = var:th_gensokyo_temp_contribution_gain
+    }
+}
+
+### 幻想乡个人贡献度 直接结算（无恶名惩罚，供内部换算用；国家scope）
+th_gensokyo_io_contribution_var_raw_add_effect = {
     change_variable = {
         name = th_gensokyo_personal_contribution_var
         add = $value$
     }
 }
 
-### 幻想乡个人影响力 增加（在国家scope上调用）
+### 幻想乡个人影响力 增加（在国家scope上调用，设计§2.4 投资1:1）
 th_gensokyo_io_influence_var_add_effect = {
     change_variable = {
         name = th_gensokyo_personal_influence_var
@@ -26,11 +85,32 @@ th_gensokyo_io_influence_var_add_effect = {
     }
 }
 
-### 幻想乡恶名 增加（在国家scope上调用，自动钳制0-100）
+### 幻想乡个人影响力 减少（在国家scope上调用）
+th_gensokyo_io_influence_var_subtract_effect = {
+    change_variable = {
+        name = th_gensokyo_personal_influence_var
+        subtract = $value$
+    }
+}
+
+### 幻想乡恶名 增加（在国家scope上调用，自动钳制0-100，设计§2.5）
 th_gensokyo_io_notorious_reputation_var_add_effect = {
     change_variable = {
         name = th_gensokyo_notorious_reputation_var
         add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_notorious_reputation_var
+        min = 0
+        max = 100
+    }
+}
+
+### 幻想乡恶名 减少（在国家scope上调用，自动钳制0-100，设计§2.5 宴会等削减）
+th_gensokyo_io_notorious_reputation_var_subtract_effect = {
+    change_variable = {
+        name = th_gensokyo_notorious_reputation_var
+        subtract = $value$
     }
     clamp_variable = {
         name = th_gensokyo_notorious_reputation_var

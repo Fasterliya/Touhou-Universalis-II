@@ -131,7 +131,20 @@
  TH_SAGES_ACTIVE_TIERS_LABEL: "当前生效的贤者威望增益"
  TH_SAGES_NO_ACTIVE_TIER: "贤者威望不足，暂无增益生效。"
  TH_SAGES_MAX_PREVIEW_LABEL: "满值增益预览"
- TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "全局税收+15% 月度正统+0.20\n改善关系+35% 月度威望+0.30\n全局人力+15% 外交声誉+2\n月度稳定度+0.05"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "税收效率+15% 月度威望+0.30\n改善关系+35% 全局人力+15%\n外交声誉+2 全局防御+10%\n可干预战争 可强制执行和平"
+
+### === 恶名后果自动修正（设计§2.5）===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "名声蒙尘"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "恶名达到30后，幻想乡对本国心存警惕。外交声誉-1，改善关系-15%。"
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "劣迹累累"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "恶名达到50后，本国被疑屡行不义。外交声誉-2，改善关系-30%，稳定投资+10%。"
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "国际弃民"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "恶名达到70后，本国为幻想乡社会所不容。外交声誉-4，改善关系-50%。"
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "待审之身"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "恶名达到80后，阎魔与贤者可无需再议直接宣告惩戒战争。外交声誉-6，改善关系-75%。"
 
 ### === 引入思潮行动 ===
  th_sages_introduce_institution: "引入思潮"

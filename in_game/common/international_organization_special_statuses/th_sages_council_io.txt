@@ -20,8 +20,11 @@ th_sages_council_member_special_status = {
 		monthly_prestige = 0.1
 		# TODO: 后续人工填写贤者议会席位修正值
 	}
+	# 投票权重 = 基础 100 + 个人影响力（设计§2.4：影响力投资1:1后加成议会权重）
+	# 保留基础值避免影响力为0时议会支持度归零导致2/3通过机制失效
 	special_status_power = {
 		value = 100
+		add = root.var:th_gensokyo_personal_influence_var
 	}
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
 }
