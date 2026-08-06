@@ -206,6 +206,7 @@
 ## 5. reference_mods/ 社区模组
 
 按 Workshop ID 列出。价值：真实世界的复杂/兼容性范例（INJECT/REPLACE、GUI 整窗覆盖、
+CMF 集成、DDS 图标等）。**优先看加粗模组**。
 
 | ID | 模组名 | 值得借鉴的写法 |
 |---|---|---|
