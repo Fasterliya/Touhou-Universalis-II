@@ -1,4 +1,4 @@
-### ===========================================================
+﻿### ===========================================================
 ### 幻想乡IO — 开局国家变量初始化
 ### IO团结度+领袖+特殊席位已在 start/th_gensokyo_io.txt 中预分配
 ### 此处仅初始化成员国的个人变量（国家scope上的变量）
@@ -7,7 +7,7 @@ th_gensokyo_io_init_setup_scr_effect = {
     # === 初始化所有成员国的个人变量 ===
     every_country = {
         limit = {
-            is_member_of_international_organization = th_gensokyo_io
+            is_member_of_international_organization = international_organization:th_gensokyo_io
         }
 
         # 个人影响力 — 初始为0

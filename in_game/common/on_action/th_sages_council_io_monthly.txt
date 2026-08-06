@@ -23,7 +23,7 @@ th_sages_council_io_monthly_pulse = {
         th_sages_council_monthly_effect = yes
 
         # 威望阈值重新检查（确保修正与当前值同步）
-        th_sages_council_io = {
+        international_organization:th_sages_council_io = {
             th_sages_council_apply_prestige_thresholds_effect = yes
         }
     }

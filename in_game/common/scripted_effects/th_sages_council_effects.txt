@@ -139,12 +139,12 @@ th_sages_council_apply_prestige_thresholds_effect = {
 ### -----------------------------------------------------------
 th_sages_council_monthly_effect = {
 	# 团结度高 (>50) → 威望每月自然增长
-	th_gensokyo_io = {
+	international_organization:th_gensokyo_io = {
 		if = {
 			limit = {
 				var:th_gensokyo_unity_var >= 80
 			}
-			th_sages_council_io = {
+			international_organization:th_sages_council_io = {
 				th_sages_council_prestige_add_effect = { value = 2 }
 			}
 		}
@@ -152,7 +152,7 @@ th_sages_council_monthly_effect = {
 			limit = {
 				var:th_gensokyo_unity_var >= 60
 			}
-			th_sages_council_io = {
+			international_organization:th_sages_council_io = {
 				th_sages_council_prestige_add_effect = { value = 1 }
 			}
 		}
@@ -160,13 +160,13 @@ th_sages_council_monthly_effect = {
 			limit = {
 				var:th_gensokyo_unity_var >= 50
 			}
-			th_sages_council_io = {
+			international_organization:th_sages_council_io = {
 				th_sages_council_prestige_add_effect = { value = 0 }
 			}
 		}
 		else = {
 			# 团结度低 → 威望衰减
-			th_sages_council_io = {
+			international_organization:th_sages_council_io = {
 				th_sages_council_prestige_subtract_effect = { value = 1 }
 			}
 		}

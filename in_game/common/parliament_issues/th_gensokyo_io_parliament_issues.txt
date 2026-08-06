@@ -1,19 +1,23 @@
-### 幻想乡IO — 议会议题（空壳，由后续人工填充具体效果）
+﻿### 幻想乡IO — 议会议题（空壳，由后续人工填充具体效果）
+### 合法字段参照 base game parliament_issues/readme.txt：
+###   type = international_organization / special_status / potential / allow /
+###   selectable_for / chance / on_debate_passed / on_debate_failed / wants_this_parliament_issue_bias
+### 注：幻想乡IO 议会 has_parliament=no 未激活，议题暂不加入任何 parliament_type 的调度
 
 ### 议题1：幻想乡和平决议
 th_gensokyo_parliament_resolution_1 = {
-    issue_type = th_gensokyo_io_parliament
+    type = international_organization
     # TODO: 人工填写 resolution effects, support triggers, ai weights
 }
 
 ### 议题2：异变应对决议
 th_gensokyo_parliament_resolution_2 = {
-    issue_type = th_gensokyo_io_parliament
+    type = international_organization
     # TODO: 人工填写
 }
 
 ### 议题3：外界防御决议
 th_gensokyo_parliament_resolution_3 = {
-    issue_type = th_gensokyo_io_parliament
+    type = international_organization
     # TODO: 人工填写
 }

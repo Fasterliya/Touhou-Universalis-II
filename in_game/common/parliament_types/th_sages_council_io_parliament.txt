@@ -6,10 +6,6 @@
 th_sages_council_io_parliament = {
 	type = international_organization
 
-	possible_issues = {
-		th_sages_introduce_institution_issue
-	}
-
 	modifier = {
 		has_international_parliament = yes
 	}

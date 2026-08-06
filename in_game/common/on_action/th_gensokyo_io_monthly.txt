@@ -12,7 +12,7 @@ monthly_country_pulse = {
 ### ============================================================
 th_gensokyo_io_monthly_country_pulse = {
     trigger = {
-        is_member_of_international_organization = th_gensokyo_io
+        is_member_of_international_organization = international_organization:th_gensokyo_io
     }
     effect = {
         ### 经济实力贡献：每100发展度 +0.05/月（设计§2.3）

@@ -1,8 +1,9 @@
 ﻿### ============================================================
 ### 贤者议会 — 五阶阈值修正定义
-### 作用域: internationalorganization (通过 add_international_organization_modifier 施加于贤者议会IO，
-###         生效于全体成员 = 三贤者国，随威望阈值叠加生效)
+### 作用域: internationalorganization（通过 add_international_organization_modifier 施加于贤者议会IO，
+###         生效于全体成员 = 三贤者国，随威望阈值叠加生效）
 ### 数值对齐设计文档 §2.2，全部采用 EU5 1.3 已验证修饰符名
+### 注意：带值的 modifier 必须放 static_modifiers（modifier_type_definitions 只放类型骨架）
 ### ============================================================
 
 ### Tier 20 — 初显 (威望≥20): 威望自然增长加速 / 贤者国税收+3%

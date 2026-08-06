@@ -15,7 +15,7 @@ th_sages_introduce_institution = {
     saved_scopes = { target_io gensokyo_io }
 
     is_shown = {
-        is_member_of_international_organization = th_sages_council_io
+        is_member_of_international_organization = international_organization:th_sages_council_io
     }
 
     is_valid = {
