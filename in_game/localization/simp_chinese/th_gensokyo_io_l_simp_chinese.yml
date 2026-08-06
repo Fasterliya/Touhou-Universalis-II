@@ -133,6 +133,22 @@
  TH_SAGES_MAX_PREVIEW_LABEL: "满值增益预览"
  TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "税收效率+15% 月度威望+0.30\n改善关系+35% 全局人力+15%\n外交声誉+2 全局防御+10%\n可干预战争 可强制执行和平"
 
+### 静态修正（贤者威望五档）
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "贤者初显"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "贤者的意志初现。税收效率+3%，月度威望+0.05。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "贤者凝聚"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "贤者的号令渐成共识。税收效率+5%，月度威望+0.08，改善关系+15%，外交声誉+1。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "贤者威严"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "贤者的裁决令诸国敬畏。税收效率+8%，月度威望+0.10，改善关系+20%，人力+5%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "贤者崇敬"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "贤者的意志如大结界般不可动摇。税收效率+10%，月度威望+0.20，改善关系+25%，人力+10%，外交声誉+1，稳定投资+10%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "贤者神话"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三贤者的名号化为传说。税收效率+15%，月度威望+0.30，改善关系+35%，人力+15%，外交声誉+2，全局防御+10%。贤者可干预战争并强制执行和平。"
+
 ### === 恶名后果自动修正（设计§2.5）===
  th_gensokyo_io_notorious_tier1_auto_modifier: "名声蒙尘"
  th_gensokyo_io_notorious_tier1_auto_modifier_desc: "恶名达到30后，幻想乡对本国心存警惕。外交声誉-1，改善关系-15%。"
@@ -149,7 +165,16 @@
 ### === 引入思潮行动 ===
  th_sages_introduce_institution: "引入思潮"
  th_sages_introduce_institution_desc: "恳请三位贤者动用大结界之力，从幻想乡诸国中引入一项已存在且本国尚未接纳的先进思想或技术。"
- th_sages_introduce_institution_cost: "消耗：幻想乡团结度 -10"
+ th_sages_introduce_institution_cost: "消耗：幻想乡团结度 -10，金币 -500"
+ th_sages_introduce_institution_notification: "引入思潮"
+
+### 引入思潮 — 条件（精细提示）
+ TH_SAGES_REQ_LABEL: "条件要求"
+ TH_SAGES_REQ_UNITY: "幻想乡团结度至少 10"
+ TH_SAGES_REQ_GOLD: "拥有至少 500 金币"
+ TH_SAGES_REQ_PARLIAMENT: "当前无进行中的议会辩论"
+ TH_SAGES_REQ_CANDIDATE: "存在可引入的思潮"
+ TH_SAGES_REQ_ELIGIBLE: "所有条件均已满足"
  th_sages_introduce_institution_notification: "引入思潮"
 
 ### === 分页标签 ===

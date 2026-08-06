@@ -87,82 +87,82 @@ organization_panel = {
             ### ==============================================
             ios_information_header = {
                 blockoverride "ios_information_header_visible" { visible = yes }
-                # blockoverride "ios_information_header_content_extra_1" {
-                #     using = ios_header_content_extra_template
-                #     blockoverride "ios_header_content_extra" {
-                #         hbox = {
-                #             spacing = 4
-                #             text_single = {
-                #                 margin_right = 4 autoresize = yes align = right fontsize = 13
-                #                 raw_text = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var').GetValue|0]"
-                #             }
-                #             hbox = {
-                #                 using = organization_piechart_template
-                #                 blockoverride "organization_piechart_size" { size = { 25 25 } }
-                #                 blockoverride "organization_piechart_value" {
-                #                     value = "[FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var'))]"
-                #                 }
-                #                 blockoverride "organization_piechart_max_value" {
-                #                     value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var')))]"
-                #                 }
-                #                 blockoverride "organization_piechart_icon" {
-                #                     texture = "gfx/interface/icons/modifier_types/prestige.dds"
-                #                 }
-                #             }
-                #         }
-                #         tooltipwidget = {
-                #             ContextualTooltipType = {
-                #                 blockoverride "title_text" { raw_text = "[Localize('th_sages_prestige_var')]" }
-                #                 blockoverride "concept_link" { text = "[international_organization|e]" }
-                #                 blockoverride "tooltip_content" {
-                #                     vbox = {
-                #                         spacing = 3
-                #                         text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_ACTIVE_TIERS_LABEL')]" margins_bottom = 2 }
-                #                         text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_20')]" }
-                #                         text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_40')]" }
-                #                         text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_60').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_60')]" }
-                #                         text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_80').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_80')]" }
-                #                         text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_100').IsSet]" using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" }
-                #                         text_single = { visible = "[And(Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet),Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet))]" using = Font_Size_Tiny default_format = "#subtle_name" raw_text = "[Localize('TH_SAGES_NO_ACTIVE_TIER')]" }
-                #                         widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
-                #                         hbox = { spacing = 4 margins_bottom = 2 icon = { size = { 16 16 } texture = "gfx/interface/icons/modifiers/_default.dds" texture_density = 2 } text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_MAX_PREVIEW_LABEL')]" } }
-                #                         text_single = { using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" margins_bottom = 1 }
-                #                         text_multi = { using = Font_Size_Tiny default_format = "#subtle_name" max_width = 200 raw_text = "[Localize('th_sages_prestige_tier_100_desc')]" margins_bottom = 2 }
-                #                         text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 200 raw_text = "[Localize('TH_SAGES_TIER_100_MODIFIERS_PREVIEW')]" }
-                #                         widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
-                #                         text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_sages_prestige_var_desc')]" }
-                #                     }
-                #                 }
-                #             }
-                #         }
-                #     }
-                # }
-                # blockoverride "ios_header_content_divider" {}
-                # blockoverride "ios_information_header_content_extra_2" {
-                #     using = ios_header_content_extra_template
-                #     blockoverride "ios_header_content_extra" {
-                #         hbox = {
-                #             spacing = 4
-                #             text_single = {
-                #                 margin_right = 4 autoresize = yes align = right fontsize = 13
-                #                 raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
-                #             }
-                #             hbox = {
-                #                 using = organization_piechart_template
-                #                 blockoverride "organization_piechart_size" { size = { 25 25 } }
-                #                 blockoverride "organization_piechart_value" {
-                #                     value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
-                #                 }
-                #                 blockoverride "organization_piechart_max_value" {
-                #                     value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
-                #                 }
-                #                 blockoverride "organization_piechart_icon" {
-                #                     texture = "gfx/interface/icons/modifier_types/unity.dds"
-                #                 }
-                #             }
-                #         }
-                #     }
-                # }
+                blockoverride "ios_information_header_content_extra_1" {
+                    using = ios_header_content_extra_template
+                    blockoverride "ios_header_content_extra" {
+                        hbox = {
+                            spacing = 4
+                            text_single = {
+                                margin_right = 4 autoresize = yes align = right fontsize = 13
+                                raw_text = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var').GetValue|0]"
+                            }
+                            hbox = {
+                                using = organization_piechart_template
+                                blockoverride "organization_piechart_size" { size = { 25 25 } }
+                                blockoverride "organization_piechart_value" {
+                                    value = "[FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var'))]"
+                                }
+                                blockoverride "organization_piechart_max_value" {
+                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var')))]"
+                                }
+                                blockoverride "organization_piechart_icon" {
+                                    texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon(InternationalOrganizationTypeVariable.GetTag)]"
+                                }
+                            }
+                        }
+                        tooltipwidget = {
+                            ContextualTooltipType = {
+                                blockoverride "title_text" { raw_text = "[Localize('th_sages_prestige_var')]" }
+                                blockoverride "concept_link" { text = "[international_organization|e]" }
+                                blockoverride "tooltip_content" {
+                                    vbox = {
+                                        spacing = 3
+                                        text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_ACTIVE_TIERS_LABEL')]" margins_bottom = 2 }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_20')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_40')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_60').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_60')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_80').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_80')]" }
+                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_100').IsSet]" using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" }
+                                        text_single = { visible = "[And(Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet),Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet))]" using = Font_Size_Tiny default_format = "#subtle_name" raw_text = "[Localize('TH_SAGES_NO_ACTIVE_TIER')]" }
+                                        widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                        hbox = { spacing = 4 margins_bottom = 2 icon = { size = { 16 16 } texture = "gfx/interface/icons/modifiers/_default.dds" texture_density = 2 } text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_MAX_PREVIEW_LABEL')]" } }
+                                        text_single = { using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" margins_bottom = 1 }
+                                        text_multi = { using = Font_Size_Tiny default_format = "#subtle_name" max_width = 200 raw_text = "[Localize('th_sages_prestige_tier_100_desc')]" margins_bottom = 2 }
+                                        text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 200 raw_text = "[Localize('TH_SAGES_TIER_100_MODIFIERS_PREVIEW')]" }
+                                        widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                        text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_sages_prestige_var_desc')]" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                blockoverride "ios_header_content_divider" {}
+                blockoverride "ios_information_header_content_extra_2" {
+                    using = ios_header_content_extra_template
+                    blockoverride "ios_header_content_extra" {
+                        hbox = {
+                            spacing = 4
+                            text_single = {
+                                margin_right = 4 autoresize = yes align = right fontsize = 13
+                                raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
+                            }
+                            hbox = {
+                                using = organization_piechart_template
+                                blockoverride "organization_piechart_size" { size = { 25 25 } }
+                                blockoverride "organization_piechart_value" {
+                                    value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
+                                }
+                                blockoverride "organization_piechart_max_value" {
+                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
+                                }
+                                blockoverride "organization_piechart_icon" {
+                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon(InternationalOrganizationTypeVariable.GetTag)]"
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             ### ==============================================
@@ -292,6 +292,20 @@ organization_panel = {
                                                 spacing = 4
                                                 text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
                                                 text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_cost')]" }
+                                                widget = { size = { -1 1 } margins_top = 2 margins_bottom = 2 divider_horizontal_bg = {} }
+                                                text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_REQ_LABEL')]" margins_bottom = 1 }
+
+                                                ### 团结度 ≥ 10
+                                                text_single = { visible = "[GreaterThan_CFixedPoint(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue, '(CFixedPoint)10')]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('TH_SAGES_REQ_UNITY')]" }
+                                                text_single = { visible = "[Not(GreaterThan_CFixedPoint(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue, '(CFixedPoint)10'))]" using = Font_Size_Tiny default_format = "#color_red" raw_text = "[Localize('TH_SAGES_REQ_UNITY')]" }
+
+                                                ### 金币 ≥ 500
+                                                text_single = { visible = "[GreaterThan_CFixedPoint(GetPlayer.GetCurrencyValue('gold'), '(CFixedPoint)500')]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('TH_SAGES_REQ_GOLD')]" }
+                                                text_single = { visible = "[Not(GreaterThan_CFixedPoint(GetPlayer.GetCurrencyValue('gold'), '(CFixedPoint)500'))]" using = Font_Size_Tiny default_format = "#color_red" raw_text = "[Localize('TH_SAGES_REQ_GOLD')]" }
+
+                                                ### 议会空闲 + 可选思潮 — 由 ScriptedGui.IsValid 综合判断（含 is_active_parliament 等 trigger，GUI 无法逐项读取）
+                                                text_single = { visible = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End)]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('TH_SAGES_REQ_ELIGIBLE')]" }
+                                                text_single = { visible = "[Not(ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End))]" using = Font_Size_Tiny default_format = "#color_red" raw_text = "[Localize('TH_SAGES_REQ_ELIGIBLE')]" }
                                             }
                                         }
                                     }

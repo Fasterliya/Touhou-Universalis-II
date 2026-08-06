@@ -1,4 +1,4 @@
-on_game_start = {
+﻿on_game_start = {
 	on_actions = {
 		th_on_game_start
 	}
@@ -10,5 +10,9 @@ th_on_game_start = {
 		th_gensokyo_fill_province_food_scr_effect = yes
 		th_gensokyo_io_init_setup_scr_effect = yes
 		th_gensokyo_io_assign_special_statuses_effect = yes
+		# 贤者议会威望阈值应用（变量已在 setup 初始化，此处确保五档修正生效）
+		international_organization:th_sages_council_io = {
+			th_sages_council_apply_prestige_thresholds_effect = yes
+		}
 	}
 }

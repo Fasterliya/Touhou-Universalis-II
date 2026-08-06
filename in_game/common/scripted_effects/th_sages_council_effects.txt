@@ -9,16 +9,21 @@
 ### 使用: th_sages_council_prestige_add_effect = { value = 10 }
 ### -----------------------------------------------------------
 th_sages_council_prestige_add_effect = {
-	change_variable = {
-		name = th_sages_prestige_var
-		add = $value$
+	if = {
+		limit = {
+			has_variable = th_sages_prestige_var
+		}
+		change_variable = {
+			name = th_sages_prestige_var
+			add = $value$
+		}
+		clamp_variable = {
+			name = th_sages_prestige_var
+			min = 0
+			max = 100
+		}
+		th_sages_council_apply_prestige_thresholds_effect = yes
 	}
-	clamp_variable = {
-		name = th_sages_prestige_var
-		min = 0
-		max = 100
-	}
-	th_sages_council_apply_prestige_thresholds_effect = yes
 }
 
 ### -----------------------------------------------------------
@@ -26,16 +31,21 @@ th_sages_council_prestige_add_effect = {
 ### 使用: th_sages_council_prestige_subtract_effect = { value = 10 }
 ### -----------------------------------------------------------
 th_sages_council_prestige_subtract_effect = {
-	change_variable = {
-		name = th_sages_prestige_var
-		subtract = $value$
+	if = {
+		limit = {
+			has_variable = th_sages_prestige_var
+		}
+		change_variable = {
+			name = th_sages_prestige_var
+			subtract = $value$
+		}
+		clamp_variable = {
+			name = th_sages_prestige_var
+			min = 0
+			max = 100
+		}
+		th_sages_council_apply_prestige_thresholds_effect = yes
 	}
-	clamp_variable = {
-		name = th_sages_prestige_var
-		min = 0
-		max = 100
-	}
-	th_sages_council_apply_prestige_thresholds_effect = yes
 }
 
 ### -----------------------------------------------------------
@@ -139,9 +149,11 @@ th_sages_council_apply_prestige_thresholds_effect = {
 ### -----------------------------------------------------------
 th_sages_council_monthly_effect = {
 	# 团结度高 (>50) → 威望每月自然增长
+	# 守卫：团结度变量未初始化（旧存档/异常）时跳过，避免 "not being set" 刷屏
 	international_organization:th_gensokyo_io = {
 		if = {
 			limit = {
+				has_variable = th_gensokyo_unity_var
 				var:th_gensokyo_unity_var >= 80
 			}
 			international_organization:th_sages_council_io = {
@@ -150,6 +162,7 @@ th_sages_council_monthly_effect = {
 		}
 		else_if = {
 			limit = {
+				has_variable = th_gensokyo_unity_var
 				var:th_gensokyo_unity_var >= 60
 			}
 			international_organization:th_sages_council_io = {
@@ -158,6 +171,7 @@ th_sages_council_monthly_effect = {
 		}
 		else_if = {
 			limit = {
+				has_variable = th_gensokyo_unity_var
 				var:th_gensokyo_unity_var >= 50
 			}
 			international_organization:th_sages_council_io = {

@@ -98,6 +98,14 @@
  th_sages_pending_institution: "導入予定思潮"
  th_sages_introduced_institutions: "導入済み思潮"
 
+ ### 思潮導入 — 条件（詳細なツールチップ）
+ TH_SAGES_REQ_LABEL: "条件"
+ TH_SAGES_REQ_UNITY: "幻想郷団結度が10以上"
+ TH_SAGES_REQ_GOLD: "金500以上を保有"
+ TH_SAGES_REQ_PARLIAMENT: "進行中の議会討論がない"
+ TH_SAGES_REQ_CANDIDATE: "導入可能な思潮が存在する"
+ TH_SAGES_REQ_ELIGIBLE: "全ての条件を満たしている"
+
  ### 悪名の結果自動修正（設計§2.5）
  th_gensokyo_io_notorious_tier1_auto_modifier: "名譽の翳り"
  th_gensokyo_io_notorious_tier1_auto_modifier_desc: "悪名が30以上となると、幻想郷は此の国を警戒の目で見る。外交評判-1、関係改善-15%。"
@@ -110,3 +118,19 @@
 
  th_gensokyo_io_notorious_tier4_auto_modifier: "裁きの待ち人"
  th_gensokyo_io_notorious_tier4_auto_modifier_desc: "悪名が80以上となると、閻魔と賢者は更なる審議を経ずして懲罰戦争を宣告し得る。外交評判-6、関係改善-75%。"
+
+ ### 静的修正（賢者威信五段）
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "賢者の端緒"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "賢者の意志が兆し始める。税収効率+3%、月間威信+0.05。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "賢者の凝聚"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "賢者の号令が合意となる。税収効率+5%、月間威信+0.08、関係改善+15%、外交評判+1。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "賢者の威厳"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "賢者の裁定は諸国に畏敬を与える。税収効率+8%、月間威信+0.10、関係改善+20%、人的資源+5%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "賢者の崇敬"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "賢者の意志は大結界の如く揺るがぬ。税収効率+10%、月間威信+0.20、関係改善+25%、人的資源+10%、外交評判+1、安定投資+10%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "賢者の神話"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三賢者の名は伝説となる。税収効率+15%、月間威信+0.30、関係改善+35%、人的資源+15%、外交評判+2、全域防御+10%。賢者は戦争への介入と平和の強制を行い得る。"
