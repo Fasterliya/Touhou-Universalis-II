@@ -1,0 +1,185 @@
+﻿l_korean:
+
+### Gensokyo International Organization — Localization
+
+### === IO Name & Description ===
+ th_gensokyo_io: "환상향"
+ th_gensokyo_io_desc: "환상향의 각국 균형을 유지하는 국제 조직으로, 현자와 염마가 함께 대결계의 질서를 수호합니다."
+
+### === Special Statuses ===
+ th_gensokyo_io_sages_special_status: "현자"
+ th_gensokyo_io_sages_special_status_desc: "환상향에서 가장 오래된 세 명의 현자 중 한 명으로, 각자 대결계의 핵심 지점을 수호합니다."
+
+ th_gensokyo_io_yama_special_status: "염마"
+ th_gensokyo_io_yama_special_status_desc: "피안을 주재하는 재판관으로, 환상향 각국의 시비를 판정하고 환상향 의회의 의장을 맡습니다."
+
+ th_gensokyo_io_guardian_special_status: "환상향의 수호자"
+ th_gensokyo_io_guardian_special_status_desc: "하쿠레이 신사의 무녀이자 대결계의 영원한 수호자. 대대손손 전승되는 하쿠레이의 힘은 환상향과 바깥세상의 경계를 지켜옵니다."
+
+ th_gensokyo_io_human_village_special_status: "인간 마을"
+ th_gensokyo_io_human_village_special_status_desc: "인간 마을의 대표로, 환상향의 인간 거주지 이익을 보호합니다."
+
+### === Leader Title ===
+ th_gensokyo_io_yama_leader_title: "염마"
+ th_gensokyo_io_yama_leader_title_desc: "환상향의 재판관이자 의회의 의장."
+
+### === Parliament ===
+ th_gensokyo_io_parliament: "환상향 의회"
+ th_gensokyo_parliament_seat: "환상향 의회 좌석"
+
+### === IO Variable Names ===
+ th_gensokyo_unity_var: "환상향 결속"
+ th_gensokyo_unity_var_desc: "환상향 각국의 결속도를 나타내는 수치로, 이변 해결, 갈등 중재, 평화로운 발전을 통해 얻습니다. 공격적인 팽창과 외부 침입으로 감소합니다."
+
+### === IO Variable Format ===
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+### === IO Variable Monthly Change Descriptions ===
+ TH_GENSOKYO_UNITY_BASE: "기본 유지비"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "내부 평화"
+
+### === Country Variable Names ===
+ th_gensokyo_personal_contribution_var: "개인 공헌도"
+ th_gensokyo_personal_contribution_var_desc: "이 국가가 환상향의 안정에 기여한 실질적 공헌으로, 세수와 탄막 화력에 따라 매달 축적됩니다."
+
+ th_gensokyo_personal_influence_var: "개인 영향력"
+ th_gensokyo_personal_influence_var_desc: "환상향 의회 내에서 이 국가의 정치적 영향력. 50점마다 의회 결정에 투표 가중치 1이 추가됩니다. 각 시대가 끝나면 0으로 초기화됩니다."
+
+ th_gensokyo_notorious_reputation_var: "환상향 악명"
+ th_gensokyo_notorious_reputation_var_desc: "선전포고와 영토 확장으로 얻는 이 국가의 환상향 내 악명(0-100). 악명이 높을수록 개인 영향력 축적이 느려집니다."
+
+### === Variable Hover Display ===
+ th_gensokyo_member_vars_display: "개인 변수 개요"
+ th_gensokyo_member_vars_display_desc: "이 국가의 개인 영향력, 개인 공헌도, 환상향 내 악명을 확인합니다."
+
+### === Parliament Issues ===
+ th_gensokyo_parliament_resolution_1_title: "환상향 평화 결의"
+ th_gensokyo_parliament_resolution_1_desc: "환상향 내 평화 질서를 유지하자는 제안."
+
+ th_gensokyo_parliament_resolution_2_title: "이변 대응 결의"
+ th_gensokyo_parliament_resolution_2_desc: "환상향 내에서 발생하는 이변에 대한 대응을 조율하자는 제안."
+
+ th_gensokyo_parliament_resolution_3_title: "외부 방어 결의"
+ th_gensokyo_parliament_resolution_3_desc: "외부 침입에 대비한 환상향의 방어를 강화하자는 제안."
+
+### === Law: Unity Vision ===
+ th_gensokyo_unity_vision_law: "결속 비전"
+ th_gensokyo_unity_vision_law_desc: "환상향의 결속이 어떻게 길러지고 활용되는지의 방향을 결정합니다."
+
+ isolation_defense_policy: "고립 방어"
+ isolation_defense_policy_desc: "대결계를 굳게 봉쇄하여 내부 평화로 결속을 공고히 합니다. 외부 위협은 침투하기 어렵지만, 새로운 사상도 더디게 들어옵니다."
+
+ balance_path_policy: "균형의 길"
+ balance_path_policy_desc: "대결계를 그동안처럼 공평하고 안정적으로 유지합니다. 결속은 자연스럽게 흐르고, 모든 국가가 자신의 자리를 찾습니다."
+
+ open_inclusive_policy: "개방적 포용"
+ open_inclusive_policy_desc: "대결계의 제한을 완화하여 바깥세상의 새로운 사상을 맞이합니다. 사상 전파가 빨라지고 외교적 지평이 넓어지지만, 결속력은 다소 영향을 받습니다."
+
+### === Law: Great Barrier Policy ===
+ th_gensokyo_barrier_policy_law: "대결계 정책"
+ th_gensokyo_barrier_policy_law_desc: "환상향 대결계의 유지 강도와 개방도를 결정합니다."
+
+ reinforced_barrier_policy: "강화된 결계"
+ reinforced_barrier_policy_desc: "환상향의 모든 힘을 쏟아 대결계를 강화합니다. 방어와 병력이 크게 강화되지만, 외교적 평판이 손상되고 외부 사상이 스며들기 어렵습니다."
+
+ maintained_barrier_policy: "유지되는 결계"
+ maintained_barrier_policy_desc: "확립된 전통에 따라 대결계를 유지합니다. 방어는 안정적으로 유지되며 모든 것이 본래대로입니다."
+
+ relaxed_barrier_policy: "완화된 결계"
+ relaxed_barrier_policy_desc: "교류를 촉진하기 위해 대결계의 제한을 적당히 완화합니다. 사상 전파가 크게 빨라지지만 방어 능력은 다소 감소합니다."
+
+### === Law: Incident Response Doctrine ===
+ th_gensokyo_incident_response_law: "이변 대응 교리"
+ th_gensokyo_incident_response_law_desc: "환상향 내부 이변에 대응하는 전략과 행동 강령을 결정합니다."
+
+ duel_resolution_policy: "탄막 결투 규칙"
+ duel_resolution_policy_desc: "일대일 탄막 결투로 이변을 해결합니다. 승자는 명성을 얻지만, 전투에 능하지 않은 자는 스스로를 지키기 어렵습니다."
+
+ joint_suppression_policy: "공동 진압"
+ joint_suppression_policy_desc: "각국이 함께 힘을 모아 집단적 힘으로 이변을 진압합니다. 병력이 풍부하고 대응이 신속합니다."
+
+ diplomatic_mediation_policy: "외교적 중재"
+ diplomatic_mediation_policy_desc: "협상과 중재를 통해 이변의 근본 원인을 해결합니다. 외교적 평판이 오르지만 군사 대비는 상대적으로 부족합니다."
+
+### ============================================================
+### Sages' Council — Localization
+### ============================================================
+
+ th_sages_council_io: "현자의회"
+ th_sages_council_io_desc: "환상향에서 가장 오래된 세 명의 현자가 결성한 최고의 심의 기구로, 대결계의 균형을 유지하고 환상향의 운명을 이끕니다."
+
+### Sage Prestige
+ th_sages_prestige_var: "현자 위신"
+ th_sages_prestige_var_desc: "환상향 각국 사이에서 세 현자의 위신과 영향력(0-100). 환상향의 결속과 평화 유지를 통해 얻고, 전쟁, 외부 침입, 불법 확장으로 잃습니다. 위신이 높을수록 환상향 전체에 더 강한 혜택을 줍니다."
+
+### Threshold Tiers
+ th_sages_prestige_tier_20: "현자 위신 · 각성"
+ th_sages_prestige_tier_20_desc: "현자의 의지가 각국에 조금씩 느껴지기 시작하여 환상향에 은은한 축복을 내립니다."
+
+ th_sages_prestige_tier_40: "현자 위신 · 결집"
+ th_sages_prestige_tier_40_desc: "현자의 칙령이 점차 하나의 합의가 되어 환상향에 적당한 축복을 내립니다."
+
+ th_sages_prestige_tier_60: "현자 위신 · 권위"
+ th_sages_prestige_tier_60_desc: "현자의 판결이 각국에 경외를 불러일으켜 환상향에 뚜렷한 축복을 내립니다."
+
+ th_sages_prestige_tier_80: "현자 위신 · 숭앙"
+ th_sages_prestige_tier_80_desc: "현자의 의지는 대결계처럼 흔들리지 않아 환상향에 강력한 축복을 내립니다."
+
+ th_sages_prestige_tier_100: "현자 위신 · 전설"
+ th_sages_prestige_tier_100_desc: "세 현자의 이름이 전설이 되었고 모든 생명체가 그 빛을 우러러봅니다. 환상향에 최고의 축복을 내립니다."
+
+ TH_SAGES_ACTIVE_TIERS_LABEL: "활성 현자 위신 혜택"
+ TH_SAGES_NO_ACTIVE_TIER: "현자 위신이 부족하여 현재 활성화된 혜택이 없습니다."
+ TH_SAGES_MAX_PREVIEW_LABEL: "최대치 미리보기"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "세수 효율 +15%  월간 위신 +0.30\n관계 개선 +35%  전국 병력 +15%\n외교적 평판 +2  전국 방어 +10%\n전쟁 개입 가능  강화 평화 가능"
+
+### Static Modifiers (Sage Prestige Tiers)
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "현자의 각성"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "현자의 의지가 처음으로 느껴집니다. 세수 효율 +3%, 월간 위신 +0.05."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "현자의 결집"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "현자의 조언이 합의가 됩니다. 세수 효율 +5%, 월간 위신 +0.08, 관계 개선 +15%, 외교적 평판 +1."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "현자의 권위"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "현자의 판결이 경외를 불러일으킵니다. 세수 효율 +8%, 월간 위신 +0.10, 관계 개선 +20%, 병력 +5%."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "현자의 숭앙"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "현자의 의지가 흔들림 없이 서 있습니다. 세수 효율 +10%, 월간 위신 +0.20, 관계 개선 +25%, 병력 +10%, 외교적 평판 +1, 안정 투자 +10%."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "현자의 전설"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "세 현자가 전설이 되었습니다. 세수 효율 +15%, 월간 위신 +0.30, 관계 개선 +35%, 병력 +15%, 외교적 평판 +2, 전국 방어 +10%. 현자는 전쟁에 개입하고 강화 평화를 강제할 수 있습니다."
+
+### === Notoriety Consequence Auto-Modifiers (design §2.5) ===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "오염된 평판"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "악명이 30 이상이면 환상향이 이 국가를 경계합니다. 외교적 평판 -1, 관계 개선 -15%."
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "의심받는 악행"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "악명이 50 이상이면 이 국가는 반복된 악행을 저지른 것으로 의심받습니다. 외교적 평판 -2, 관계 개선 -30%, 안정 투자 +10%."
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "국제적 배척자"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "악명이 70 이상이면 이 국가는 환상향 사회에서 배척됩니다. 외교적 평판 -4, 관계 개선 -50%."
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "심판 대상 낙인"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "악명이 80 이상이면 염마와 현자는 추가 심의 없이 징벌 전쟁을 선포할 수 있습니다. 외교적 평판 -6, 관계 개선 -75%."
+
+### === Introduce Institution Action ===
+ th_sages_introduce_institution: "사상 도입"
+ th_sages_introduce_institution_desc: "세 현자에게 대결계의 힘을 빌려, 환상향의 국가들 사이에 이미 존재하지만 이 국가가 아직 받아들이지 못한 선진 사상이나 기술을 도입하도록 청원합니다."
+ th_sages_introduce_institution_cost: "비용: 환상향 결속 -10, 금화 -500"
+ th_sages_introduce_institution_notification: "사상 도입"
+
+### Introduce Institution — Requirements (detailed tooltip)
+ TH_SAGES_REQ_LABEL: "요구 조건"
+ TH_SAGES_REQ_UNITY: "환상향 결속이 최소 10 이상"
+ TH_SAGES_REQ_GOLD: "금화가 최소 500 이상"
+ TH_SAGES_REQ_PARLIAMENT: "현재 진행 중인 토론이 없음"
+ TH_SAGES_REQ_CANDIDATE: "적합한 사상이 하나 이상 존재함"
+ TH_SAGES_REQ_ELIGIBLE: "모든 요구 조건 충족"
+
+### === Tab Labels ===
+ TH_SAGES_TAB_OVERVIEW: "개요"
+ TH_SAGES_TAB_DEBATE: "토론"
+ TH_SAGES_ACTIONS_LABEL: "국제 조직 행동"
+ TH_SAGES_MAIN_ACTIONS: "현자의회 행동"
+ TH_SAGES_DEBATE_TITLE: "현자 토론장"
+ TH_SAGES_DEBATE_PLACEHOLDER: "환상향 각국의 의회 토론과 법안 제안이 여기에 표시됩니다.\n다음 업데이트에서 추가됩니다."

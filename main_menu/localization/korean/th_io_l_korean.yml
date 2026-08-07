@@ -1,0 +1,99 @@
+﻿l_korean:
+ th_human_village_io: "인간 마을"
+ th_human_village_io_desc: "인간의 마을과 명련사의 세력권에 속한 여러 나라들로 구성된 국가 간 조직체입니다."
+
+ th_gensokyo_io: "환상향"
+ th_gensokyo_io_desc: "환상향의 균형을 유지하는 국제 조직으로, 현자와 염마가 함께 대결계의 질서를 수호합니다."
+
+ th_sages_council_io: "현자의회"
+ th_sages_council_io_desc: "환상향에서 가장 오래된 세 명의 현자가 결성한 최고의 심의 기구."
+
+ ### Special Statuses
+ th_gensokyo_io_sages_special_status: "현자"
+ th_gensokyo_io_sages_special_status_desc: "환상향에서 가장 오래된 세 명의 현자 중 한 명으로, 대결계의 핵심 지점을 수호합니다."
+
+ th_gensokyo_io_yama_special_status: "염마"
+ th_gensokyo_io_yama_special_status_desc: "피안의 재판관으로, 환상향의 각국에서 시비를 판정하고 환상향 의회의 의장을 맡습니다."
+
+ th_gensokyo_io_guardian_special_status: "환상향의 수호자"
+ th_gensokyo_io_guardian_special_status_desc: "하쿠레이 신사의 무녀이자 대결계의 영원한 수호자. 대대손손 전승되는 하쿠레이의 힘은 환상향과 바깥세상의 경계를 지켜옵니다."
+
+ th_gensokyo_io_human_village_special_status: "인간 마을"
+ th_gensokyo_io_human_village_special_status_desc: "인간 마을의 대표로, 환상향에 거주하는 인간들의 이익을 보호합니다."
+
+ th_gensokyo_io_yama_leader_title: "염마"
+
+ ### IO Variables (engine reads display name + piechart + monthly change descriptions from here)
+ th_gensokyo_unity_var: "환상향 결속"
+ th_gensokyo_unity_var_desc: "환상향 각국 사이의 결속도를 나타내는 수치로, 이변 해결과 평화로운 발전을 통해 얻고, 공격적인 팽창과 외부 침입으로 감소합니다."
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "기본 유지비"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "내부 평화"
+
+ ### Country Variables
+ th_gensokyo_personal_contribution_var: "개인 공헌도"
+ th_gensokyo_personal_influence_var: "개인 영향력"
+ th_gensokyo_notorious_reputation_var: "환상향 악명"
+
+ ### Laws
+ th_gensokyo_unity_vision_law: "결속 비전"
+ th_gensokyo_unity_vision_law_desc: "환상향의 결속이 어떻게 길러지고 활용되는지의 방향을 결정합니다."
+
+ th_gensokyo_barrier_policy_law: "대결계 정책"
+ th_gensokyo_barrier_policy_law_desc: "환상향 대결계의 유지 강도와 개방도를 결정합니다."
+
+ th_gensokyo_incident_response_law: "이변 대응 교리"
+ th_gensokyo_incident_response_law_desc: "환상향 내부 이변에 대응하는 전략과 행동 강령을 결정합니다."
+
+ isolation_defense_policy: "고립 방어"
+ isolation_defense_policy_desc: "대결계를 굳게 봉쇄하여 내부 평화로 결속을 공고히 합니다."
+ balance_path_policy: "균형의 길"
+ balance_path_policy_desc: "대결계를 그동안처럼 공평하고 안정적으로 유지합니다."
+ open_inclusive_policy: "개방적 포용"
+ open_inclusive_policy_desc: "대결계의 제한을 완화하여 바깥세상의 새로운 사상을 받아들입니다."
+
+ reinforced_barrier_policy: "강화된 결계"
+ reinforced_barrier_policy_desc: "환상향의 모든 힘을 쏟아 대결계를 강화합니다."
+ maintained_barrier_policy: "유지되는 결계"
+ maintained_barrier_policy_desc: "확립된 전통에 따라 대결계를 유지합니다."
+ relaxed_barrier_policy: "완화된 결계"
+ relaxed_barrier_policy_desc: "교류를 촉진하기 위해 대결계의 제한을 적당히 완화합니다."
+
+ duel_resolution_policy: "탄막 결투 규칙"
+ duel_resolution_policy_desc: "일대일 탄막 결투로 이변을 해결합니다."
+ joint_suppression_policy: "공동 진압"
+ joint_suppression_policy_desc: "각국이 함께 힘을 모아 이변을 집단적으로 진압합니다."
+ diplomatic_mediation_policy: "외교적 중재"
+ diplomatic_mediation_policy_desc: "협상과 중재를 통해 이변의 근본 원인을 해결합니다."
+
+ ### Diagnostic Interaction (Verify special status assignment)
+ th_sages_diagnostic_select_io: "환상향 국제 조직 선택"
+ th_sages_diagnostic_interaction: "현자 지위 진단"
+ th_sages_diagnostic_interaction_desc: "환상향 IO에서 '현자' 특별 지위를 보유한 국가에게만 보이는 상호작용입니다. 특별 지위 배정이 올바른지 확인하는 데 사용됩니다."
+ th_sages_diagnostic_interaction_act: "현자 지위 확인"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]가 환상향 '현자' 특별 지위를 보유하고 있음을 확인합니다."
+ th_sages_diagnostic_success_tt: "[G]진단 성공[/G]! 이 국가는 환상향 IO에서 '현자' 특별 지위(th_gensokyo_io_sages_special_status)를 보유하고 있습니다."
+
+ ### Seat Unlock Law (placeholder verification)
+ th_gensokyo_seat_unlock_law: "좌석 해금"
+ th_gensokyo_seat_unlock_law_desc: "제정되면 환상향에 좌석이 해금되어 특별 지위를 부여할 수 있게 됩니다."
+ th_gensokyo_seat_unlock_policy: "좌석 해금"
+ th_gensokyo_seat_unlock_policy_desc: "활성화되면 환상향 좌석이 활성화되어, 공헌도가 가장 높은 구성원이 자동으로 부여받습니다."
+ th_gensokyo_io_seat_special_status: "환상향 좌석"
+ th_gensokyo_io_seat_special_status_desc: "좌석 해금 법률로 활성화되는 특별 지위로, 공헌도가 가장 높은 구성원에게 부여됩니다."
+
+ ### Sages' Council — Introduce Institution (debate-based)
+ th_sages_council_member_special_status: "현자 좌석"
+ th_sages_council_member_special_status_desc: "현자회의 좌석으로, 가장 오래된 세 명의 현자가 보유합니다. 각 좌석은 의회 토론에서 동등한 투표권을 가집니다."
+
+ th_sages_council_io_parliament: "현자회의 의회"
+ th_sages_introduce_institution_issue: "사상 도입"
+ th_sages_introduce_institution_issue_desc: "모든 현자의 수도에 새로운 사상을 도입하자는 제안."
+
+ th_sages_introduce_institution: "사상 도입"
+ th_sages_introduce_institution_desc: "세상에 나타났지만 아직 모든 현자에게 전해지지 않은 사상을 선택합니다. 현자회의에서 토론이 열리며, 최소 두 명의 현자가 지지하면 모든 현자의 수도에 그 사상이 나타납니다."
+ th_sages_introduce_institution_cost: "비용: [G]500 금화[/G](발의자)와 [G]환상향 결속 10[/G]. 토론이 실패해도 자원은 반환되지 않습니다."
+ th_sages_introduce_institution_notification: "사상을 도입하기 위해 현자회의에서 토론이 소집되었습니다."
+ th_sages_pending_institution: "심의 중인 사상"
+ th_sages_introduced_institutions: "도입된 사상들"
