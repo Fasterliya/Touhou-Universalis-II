@@ -34,7 +34,7 @@
  ### Country Variables
  th_gensokyo_personal_contribution_var: "개인 공헌도"
  th_gensokyo_personal_influence_var: "개인 영향력"
- th_gensokyo_notorious_reputation_var: "환상향 악명"
+ th_gensokyo_amity_vs_belligerence: "연과 란"
 
  ### Laws
  th_gensokyo_unity_vision_law: "결속 비전"

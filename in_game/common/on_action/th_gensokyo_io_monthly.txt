@@ -25,10 +25,10 @@ th_gensokyo_io_monthly_country_pulse = {
             name = th_gensokyo_temp_contribution
             divide = 1000
         }
-        ### 弃民惩罚系数（链条系统挂载：恶名>=75 贡献x0.4，>=50 贡献x0.7）
+        ### 弃民惩罚系数（链条系统挂载：好战>=+50 贡献x0.4，>=0 贡献x0.7）
         if = {
             limit = {
-                root.var:th_gensokyo_notorious_reputation_var >= th_notorious_outcast_threshold_value
+                societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
             }
             change_variable = {
                 name = th_gensokyo_temp_contribution
@@ -37,7 +37,7 @@ th_gensokyo_io_monthly_country_pulse = {
         }
         else_if = {
             limit = {
-                root.var:th_gensokyo_notorious_reputation_var >= th_notorious_pariah_threshold_value
+                societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_pariah_threshold_value
             }
             change_variable = {
                 name = th_gensokyo_temp_contribution

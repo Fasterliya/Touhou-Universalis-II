@@ -3,23 +3,25 @@
 ### 幻想乡IO 链条系统 本地化（简中）
 ### ============================================================
 
-### 恶名查看行动
- th_gensokyo_notorious_view: "查看声望"
- th_gensokyo_notorious_view_desc: "查看你在幻想乡中的声望：[SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]。此行动仅用于查看。"
+### 价值观（缘 <-> 乱，社会价值观条）
+ th_gensokyo_amity_vs_belligerence: "缘与乱"
+ th_gensokyo_amity_vs_belligerence_desc: "缘者，与众生结缘，和衷共济，护人间之里，守大结界之安；乱者，兴兵作乱，穷兵黩武，逐幻之梦，扰幻想乡之序。此心所向，众生皆见。"
+ th_gensokyo_amity_focus: "缘"
+ th_gensokyo_belligerence_focus: "乱"
 
-### 恶名档位
- th_notorious_tier_clean: "声名尚可"
- th_notorious_tier_pariah: "声名狼藉"
+### 价值观档位
+ th_notorious_tier_clean: "缘结和衷"
+ th_notorious_tier_pariah: "作乱生乱"
  th_notorious_tier_outcast: "幻想乡弃民"
 
 ### 宴会
  th_gensokyo_feast: "举办宴会"
- th_gensokyo_feast_desc: "在幻想乡举办一场盛大的宴会，款待各路妖怪与贤者，缓和自身的恶名。"
+ th_gensokyo_feast_desc: "在幻想乡举办一场盛大的宴会，款待各路妖怪与贤者，收敛乱心，重归缘结之道。"
  PERFORM_th_gensokyo_feast_ACTION: "举办了一场宴会"
  WE_PERFORM_th_gensokyo_feast_ACTION: "我们在幻想乡举办了一场宴会"
  OTHER_PERFORMS_th_gensokyo_feast_ACTION: "在幻想乡举办了一场宴会"
  ACTION_th_gensokyo_feast_PERFORMED_ON_US: "在幻想乡举办了一场宴会"
- TH_FEAST_AI_HIGH_NOTORIETY: "恶名高企，急需缓和"
+ TH_FEAST_AI_HIGH_NOTORIETY: "乱心高企，亟需收敛"
 
 ### 惩戒战争条约
  th_gensokyo_crusade_triumph: "完全胜利（惩戒）"
@@ -111,8 +113,8 @@
  th_gensokyo_expansion_cost_incident_modifier_desc: "在异变中扩张，代价略有增加。"
  th_gensokyo_expansion_cost_unauthorized_modifier: "私自扩张"
  th_gensokyo_expansion_cost_unauthorized_modifier_desc: "未经贤者默许的扩张，代价高昂。"
- th_gensokyo_notorious_pariah_modifier: "恶名昭著"
- th_gensokyo_notorious_pariah_modifier_desc: "此国的声望已跌破弃民线，可能被提案为惩戒战争目标。"
+ th_gensokyo_notorious_pariah_modifier: "作乱失格"
+ th_gensokyo_notorious_pariah_modifier_desc: "此国已堕入乱之道，可能被提案为惩戒战争目标。"
 
 ### 局势面板
  TH_CRUSADE_SUPPORTER_STRENGTH: "幻想乡联军兵力"
@@ -126,7 +128,6 @@
  th_gensokyo_sages_defend_reason: "守护人间之里"
 
 ### 变量
- th_gensokyo_temp_notorious: "恶名增幅"
  th_crusade_supporter_strength: "联军兵力"
  th_crusade_target_strength: "目标兵力"
  th_crusade_temp_strength: "成员兵力"

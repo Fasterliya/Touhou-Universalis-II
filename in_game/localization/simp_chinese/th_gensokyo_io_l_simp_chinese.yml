@@ -45,12 +45,11 @@
  th_gensokyo_personal_influence_var: "个人影响力"
  th_gensokyo_personal_influence_var_desc: "该国家在幻想乡议会中的政治影响力，每50点增加1票议会投票权重。每个时代结束时清零。"
 
- th_gensokyo_notorious_reputation_var: "幻想乡恶名"
- th_gensokyo_notorious_reputation_var_desc: "该国家在幻想乡中的恶名值（0-100），因宣战和扩张领土而增加。恶名越高，个人影响力获取越少。"
+ # 价值观（缘<->乱）已迁移为社会价值观 societal_value:th_gensokyo_amity_vs_belligerence，文案见 th_gensokyo_chain_l_*.yml
 
 ### === 变量悬浮显示 ===
  th_gensokyo_member_vars_display: "个人变量总览"
- th_gensokyo_member_vars_display_desc: "查看本国在幻想乡中的个人影响力、个人贡献度与恶名值。"
+ th_gensokyo_member_vars_display_desc: "查看本国在幻想乡中的个人影响力与个人贡献度。"
 
 ### === 议会提案 ===
  th_gensokyo_parliament_resolution_1_title: "幻想乡和平决议"
@@ -149,18 +148,18 @@
  STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "贤者神话"
  STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三贤者的名号化为传说。税收效率+15%，月度威望+0.30，改善关系+35%，人力+15%，外交声誉+2，全局防御+10%。贤者可干预战争并强制执行和平。"
 
-### === 恶名后果自动修正（设计§2.5）===
- th_gensokyo_io_notorious_tier1_auto_modifier: "名声蒙尘"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc: "恶名达到30后，幻想乡对本国心存警惕。外交声誉-1，改善关系-15%。"
+### === 价值观后果自动修正（设计§2.5）===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "武心初萌"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "乱心初萌，幻想乡对本国心存警惕。外交声誉-1，改善关系-15%。"
 
- th_gensokyo_io_notorious_tier2_auto_modifier: "劣迹累累"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc: "恶名达到50后，本国被疑屡行不义。外交声誉-2，改善关系-30%，稳定投资+10%。"
+ th_gensokyo_io_notorious_tier2_auto_modifier: "乱象昭然"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "乱心昭然若揭，本国被疑屡行不义。外交声誉-2，改善关系-30%，稳定投资+10%。"
 
- th_gensokyo_io_notorious_tier3_auto_modifier: "国际弃民"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc: "恶名达到70后，本国为幻想乡社会所不容。外交声誉-4，改善关系-50%。"
+ th_gensokyo_io_notorious_tier3_auto_modifier: "乱世弃民"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "乱心不可收拾，本国为幻想乡社会所不容。外交声誉-4，改善关系-50%。"
 
  th_gensokyo_io_notorious_tier4_auto_modifier: "待审之身"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc: "恶名达到80后，阎魔与贤者可无需再议直接宣告惩戒战争。外交声誉-6，改善关系-75%。"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "乱心彻底失格，阎魔与贤者可无需再议直接宣告惩戒战争。外交声誉-6，改善关系-75%。"
 
 ### === 引入思潮行动 ===
  th_sages_introduce_institution: "引入思潮"

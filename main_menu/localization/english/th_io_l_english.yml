@@ -34,7 +34,7 @@
  ### Country Variables
  th_gensokyo_personal_contribution_var: "Personal Contribution"
  th_gensokyo_personal_influence_var: "Personal Influence"
- th_gensokyo_notorious_reputation_var: "Gensokyo Infamy"
+ th_gensokyo_amity_vs_belligerence: "En and Ran"
 
  ### Laws
  th_gensokyo_unity_vision_law: "Unity Vision"

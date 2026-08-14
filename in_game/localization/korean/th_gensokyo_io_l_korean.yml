@@ -45,8 +45,12 @@
  th_gensokyo_personal_influence_var: "개인 영향력"
  th_gensokyo_personal_influence_var_desc: "환상향 의회 내에서 이 국가의 정치적 영향력. 50점마다 의회 결정에 투표 가중치 1이 추가됩니다. 각 시대가 끝나면 0으로 초기화됩니다."
 
- th_gensokyo_notorious_reputation_var: "환상향 악명"
- th_gensokyo_notorious_reputation_var_desc: "선전포고와 영토 확장으로 얻는 이 국가의 환상향 내 악명(0-100). 악명이 높을수록 개인 영향력 축적이 느려집니다."
+ ### 가치관 (연 <-> 란, 사회적 가치관 막대)
+th_gensokyo_amity_vs_belligerence: "연과 란"
+th_gensokyo_amity_vs_belligerence_desc: "연을 맺는 자는 만물과 인연을 맺어 화합하고 인간 마을을 지키며 대결계의 평화를 유지합니다. 란을 일으키는 자는 끝없는 전쟁을 벌여 덧없는 꿈을 좇고 환상향의 질서를 어지럽힙니다. 마음의 기울기는 환상향 모두가 지켜봅니다."
+th_gensokyo_amity_focus: "연 (인연)"
+th_gensokyo_belligerence_focus: "란 (혼란)"
+
 
 ### === Variable Hover Display ===
  th_gensokyo_member_vars_display: "개인 변수 개요"

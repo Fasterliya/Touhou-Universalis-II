@@ -1,4 +1,4 @@
-﻿starting_technology_level = 3
+starting_technology_level = 3
 #技术提示-一连串的开局设置，相当于是被打包好的，只能同名调用
 government = {
 	type = monarchy
@@ -12,13 +12,14 @@ government = {
 	aristocracy_vs_plutocracy = -40
 	serfdom_vs_free_subjects = -10
 	mercantilism_vs_free_trade = -10
-	belligerent_vs_conciliatory = 10
+	# belligerent_vs_conciliatory = 10  # 幻想乡IO成员国禁用原版条（见 common/societal_values/th_gensokyo_values.txt allow 覆盖）
 	quality_vs_quantity = 0
 	offensive_vs_defensive = -20
 	land_vs_naval = -30
 	capital_economy_vs_traditional_economy = 40
 	individualism_vs_communalism = 20
 	outward_vs_inward = 20
+	th_gensokyo_amity_vs_belligerence = 0
 	#下面这个是议事会的类型
 	#有需要去in_game/common/parliament_types里写新的东西
 	parliament = {

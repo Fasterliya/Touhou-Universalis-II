@@ -44,12 +44,11 @@
  th_gensokyo_personal_contribution_var_desc:"Осязаемый вклад этой нации в стабильность Генсокё, накапливаемый ежемесячно на основе налоговых поступлений и огневой мощи данмаку."
  th_gensokyo_personal_influence_var:"Личное влияние"
  th_gensokyo_personal_influence_var_desc:"Политическое влияние этой нации в парламенте Генсокё. Каждые 50 очков дают 1 дополнительный вес голоса в парламентских решениях. Сбрасывается до нуля в конце каждой эпохи."
- th_gensokyo_notorious_reputation_var:"Дурная слава Генсокё"
- th_gensokyo_notorious_reputation_var_desc:"Дурная слава этой нации в Генсокё (0-100), получаемая за объявления войны и территориальную экспансию. Более высокая дурная слава замедляет накопление Личного влияния."
+ # Ценности (Добрососедство <-> Воинственность) перенесены в общественные ценности societal_value:th_gensokyo_amity_vs_belligerence; текст в th_gensokyo_chain_l_*.yml
 
 ### === Variable Hover Display ===
  th_gensokyo_member_vars_display:"Обзор личных переменных"
- th_gensokyo_member_vars_display_desc:"Просмотр личного влияния, личного вклада и дурной славы этой нации в Генсокё."
+ th_gensokyo_member_vars_display_desc:"Просмотр личного влияния и личного вклада этой нации в Генсокё."
 
 ### === Parliament Issues ===
  th_gensokyo_parliament_resolution_1_title:"Резолюция о мире в Генсокё"
@@ -147,18 +146,18 @@
  STATIC_MODIFIER_NAME_th_sages_tier_100_modifier:"Легенда мудрецов"
  STATIC_MODIFIER_DESC_th_sages_tier_100_modifier:"Три мудреца стали легендой. Эффективность налогов +15%, ежемесячный престиж +0.30, улучшение отношений +35%, людские ресурсы +15%, дипломатическая репутация +2, глобальная оборона +10%. Мудрецы могут вмешиваться в войны и принуждать к миру."
 
-### === Notoriety Consequence Auto-Modifiers ===
- th_gensokyo_io_notorious_tier1_auto_modifier:"Запятнанная репутация"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc:"При дурной славе 30 и выше Генсокё смотрит на эту нацию с настороженностью. Дипломатическая репутация -1, улучшение отношений -15%."
+### === Values Consequence Auto-Modifiers ===
+ th_gensokyo_io_notorious_tier1_auto_modifier:"Ростки смуты"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc:"Когда смута только пускает корни, Генсокё смотрит на эту нацию с настороженностью. Дипломатическая репутация -1, улучшение отношений -15%."
 
- th_gensokyo_io_notorious_tier2_auto_modifier:"Подозреваемый в злодеяниях"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc:"При дурной славе 50 и выше эта нация подозревается в неоднократных злодеяниях. Дипломатическая репутация -2, улучшение отношений -30%, инвестиции в стабильность +10%."
+ th_gensokyo_io_notorious_tier2_auto_modifier:"Открытая смута"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc:"Смута очевидна, и эта нация подозревается в неоднократных злодеяниях. Дипломатическая репутация -2, улучшение отношений -30%, инвестиции в стабильность +10%."
 
- th_gensokyo_io_notorious_tier3_auto_modifier:"Международный изгой"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc:"При дурной славе 70 и выше эта нация отвергается обществом Генсокё. Дипломатическая репутация -4, улучшение отношений -50%."
+ th_gensokyo_io_notorious_tier3_auto_modifier:"Изгой раздора"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc:"Смута вышла из-под контроля, и эта нация отвергается обществом Генсокё. Дипломатическая репутация -4, улучшение отношений -50%."
 
  th_gensokyo_io_notorious_tier4_auto_modifier:"Отмеченный для суда"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc:"При дурной славе 80 и выше Яма и мудрецы могут объявить карательную войну без дальнейших совещаний. Дипломатическая репутация -6, улучшение отношений -75%."
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc:"Смута непростительна, и Яма и мудрецы могут объявить карательную войну без дальнейших совещаний. Дипломатическая репутация -6, улучшение отношений -75%."
 
 ### === Tab Labels ===
  TH_SAGES_TAB_OVERVIEW:"Обзор"

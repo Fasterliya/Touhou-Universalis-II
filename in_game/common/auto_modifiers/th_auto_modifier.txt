@@ -11,31 +11,32 @@
 }
 
 ### ============================================================
-### 幻想乡IO — 恶名后果自动修正（设计§2.5）
-### 基于个人恶名 var:th_gensokyo_notorious_reputation_var 的阈值动态修正
+### 幻想乡IO — 价值观后果自动修正（设计§2.5）
+### 基于社会价值观 societal_value:th_gensokyo_amity_vs_belligerence 的阈值动态修正
+### 映射：原恶名 30/50/70/80 → societal_value -40/0/+40/+60
 ### 注意：scripted_modifiers 目录仅用于数学权重，不可用于国家修正；
-###       恶名后果修正的正确载体是 auto_modifiers（country 作用域）。
-### 守卫：has_variable 防止非成员国家未初始化变量时求值崩溃
+###       价值观后果修正的正确载体是 auto_modifiers（country 作用域）。
+### 守卫：has_societal_value 防止非成员国家（无此社会价值观）求值崩溃
 ### ============================================================
 
-### 恶名≥30 — 国际形象受损：外交声誉-1 / 关系改善-15%
+### 好战>=-40（原恶名>=30） — 国际形象受损：外交声誉-1 / 关系改善-15%
 th_gensokyo_io_notorious_tier1_auto_modifier = {
     potential_trigger = {
-        has_variable = th_gensokyo_notorious_reputation_var
+        has_societal_value = societal_value_type:th_gensokyo_amity_vs_belligerence
         is_member_of_international_organization = international_organization:th_gensokyo_io
-        var:th_gensokyo_notorious_reputation_var >= 30
+        societal_value:th_gensokyo_amity_vs_belligerence >= -40
     }
 
     diplomatic_reputation = -1
     improve_relation_impact = -0.15
 }
 
-### 恶名≥50 — 关系恶化加剧：外交声誉再-1 / 关系改善再-15% / 稳定投资+10%
+### 好战>=0（原恶名>=50） — 关系恶化加剧：外交声誉再-1 / 关系改善再-15% / 稳定投资+10%
 th_gensokyo_io_notorious_tier2_auto_modifier = {
     potential_trigger = {
-        has_variable = th_gensokyo_notorious_reputation_var
+        has_societal_value = societal_value_type:th_gensokyo_amity_vs_belligerence
         is_member_of_international_organization = international_organization:th_gensokyo_io
-        var:th_gensokyo_notorious_reputation_var >= 50
+        societal_value:th_gensokyo_amity_vs_belligerence >= 0
     }
 
     diplomatic_reputation = -1
@@ -43,24 +44,24 @@ th_gensokyo_io_notorious_tier2_auto_modifier = {
     stability_cost_efficiency = 0.1
 }
 
-### 恶名≥70 — 国际弃民：外交声誉再-2 / 关系改善再-20%
+### 好战>=+40（原恶名>=70） — 国际弃民：外交声誉再-2 / 关系改善再-20%
 th_gensokyo_io_notorious_tier3_auto_modifier = {
     potential_trigger = {
-        has_variable = th_gensokyo_notorious_reputation_var
+        has_societal_value = societal_value_type:th_gensokyo_amity_vs_belligerence
         is_member_of_international_organization = international_organization:th_gensokyo_io
-        var:th_gensokyo_notorious_reputation_var >= 70
+        societal_value:th_gensokyo_amity_vs_belligerence >= 40
     }
 
     diplomatic_reputation = -2
     improve_relation_impact = -0.2
 }
 
-### 恶名≥80 — 彻底失格：贤者可无视敌意宣告惩戒战争（由惩戒CB触发器判断，此处再压外交）
+### 好战>=+60（原恶名>=80） — 彻底失格：贤者可无视敌意宣告惩戒战争（由惩戒CB触发器判断，此处再压外交）
 th_gensokyo_io_notorious_tier4_auto_modifier = {
     potential_trigger = {
-        has_variable = th_gensokyo_notorious_reputation_var
+        has_societal_value = societal_value_type:th_gensokyo_amity_vs_belligerence
         is_member_of_international_organization = international_organization:th_gensokyo_io
-        var:th_gensokyo_notorious_reputation_var >= 80
+        societal_value:th_gensokyo_amity_vs_belligerence >= 60
     }
 
     diplomatic_reputation = -2

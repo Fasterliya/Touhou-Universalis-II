@@ -10,23 +10,25 @@
 
 ### ============================================================
 
-### Notoriety view action
- th_gensokyo_notorious_view:"Просмотреть репутацию"
- th_gensokyo_notorious_view_desc:"Просмотр вашей репутации в Генсокё: [SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]. Действие только для просмотра."
+### Values (En <-> Ran, societal value bar)
+ th_gensokyo_amity_vs_belligerence:"Эн и Ран"
+ th_gensokyo_amity_vs_belligerence_desc:"Эн — узы, связующие всё живое: сердца в согласии, Деревня людей под защитой, покой Великого Барьера. Ран — смута и раздор: бесконечные войны, погоня за призрачными мечтами, нарушение порядка Генсокё. Наклон сердца виден всем."
+ th_gensokyo_amity_focus:"Эн (Узы)"
+ th_gensokyo_belligerence_focus:"Ран (Смута)"
 
-### Notoriety tiers
- th_notorious_tier_clean:"Уважаемый"
- th_notorious_tier_pariah:"С дурной славой"
+### Value tiers
+ th_notorious_tier_clean:"Узы Эн"
+ th_notorious_tier_pariah:"Смута Ран"
  th_notorious_tier_outcast:"Изгой Генсокё"
 
 ### Feast
  th_gensokyo_feast:"Устроить пир"
- th_gensokyo_feast_desc:"Устройте грандиозный пир в Генсокё, развлекая и ёкаев, и мудрецов, чтобы смягчить свою дурную славу."
+ th_gensokyo_feast_desc:"Устройте грандиозный пир в Генсокё, развлекая и ёкаев, и мудрецов, чтобы смягчить своё мятежное сердце и вернуться на путь Эн."
  PERFORM_th_gensokyo_feast_ACTION:"Устроен пир в Генсокё"
  WE_PERFORM_th_gensokyo_feast_ACTION:"Мы устроили пир в Генсокё"
  OTHER_PERFORMS_th_gensokyo_feast_ACTION:"Устроен пир в Генсокё"
  ACTION_th_gensokyo_feast_PERFORMED_ON_US:"Устроен пир в Генсокё"
- TH_FEAST_AI_HIGH_NOTORIETY:"Высокая дурная слава, нуждается в смягчении"
+ TH_FEAST_AI_HIGH_NOTORIETY:"Мятежное сердце на подъёме, нуждается в смягчении"
 
 ### Crusade peace treaty
  th_gensokyo_crusade_triumph:"Полная победа (крестовый поход)"
@@ -118,8 +120,8 @@
  th_gensokyo_expansion_cost_incident_modifier_desc:"Расширение во время инцидента обходится немного дороже."
  th_gensokyo_expansion_cost_unauthorized_modifier:"Несанкционированное расширение"
  th_gensokyo_expansion_cost_unauthorized_modifier_desc:"Расширение без одобрения мудрецов обойдётся дорого."
- th_gensokyo_notorious_pariah_modifier:"Пресловутый"
- th_gensokyo_notorious_pariah_modifier_desc:"Репутация этой страны упала ниже порога изгоя, и она может быть предложена как цель крестового похода."
+ th_gensokyo_notorious_pariah_modifier:"Изгой смуты"
+ th_gensokyo_notorious_pariah_modifier_desc:"Эта страна встала на путь смуты и может быть предложена как цель крестового похода."
 
 ### Situation panel
  TH_CRUSADE_SUPPORTER_STRENGTH:"Сила коалиции Генсокё"
@@ -133,7 +135,6 @@
  th_gensokyo_sages_defend_reason:"Защита Деревни людей"
 
 ### Variables
- th_gensokyo_temp_notorious:"Усилитель дурной славы"
  th_crusade_supporter_strength:"Сила коалиции"
  th_crusade_target_strength:"Сила цели"
  th_crusade_temp_strength:"Сила участника"

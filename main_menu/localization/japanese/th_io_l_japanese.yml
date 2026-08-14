@@ -34,7 +34,11 @@
  ### 国家変数
  th_gensokyo_personal_contribution_var: "個人貢献度"
  th_gensokyo_personal_influence_var: "個人影響力"
- th_gensokyo_notorious_reputation_var: "幻想郷悪名"
+ ### 価値観（縁 <-> 乱、社会的価値観バー）
+th_gensokyo_amity_vs_belligerence: "縁と乱"
+th_gensokyo_amity_vs_belligerence_desc: "縁の者は衆生と縁を結び、和して心を一つにし、人間の里を守り大結界の安寧を保つ。乱の者は兵を興し乱をなし、窮兵黷武、儚き夢を追い、幻想郷の秩序を乱す。心の向かう所、衆生皆これを見る。"
+th_gensokyo_amity_focus: "縁"
+th_gensokyo_belligerence_focus: "乱"
 
  ### 法律
  th_gensokyo_unity_vision_law: "結束の理念"

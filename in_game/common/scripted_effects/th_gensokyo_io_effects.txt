@@ -1,6 +1,8 @@
 ﻿### ===========================================================
 ### 幻想乡IO — 脚本化效果接口
 ### 全部数值变更统一走本文件接口（对齐设计文档 §2.1/§2.3/§2.5）
+### 注：原「恶名」变量已迁移为「价值观」社会价值观
+###     societal_value:th_gensokyo_amity_vs_belligerence（-100亲善 ~ +100好战）
 ### ===========================================================
 
 ### 幻想乡团结度 增加（在IO scope上调用，设计§2.1）
@@ -30,7 +32,8 @@ th_gensokyo_io_unity_var_subtract_effect = {
 }
 
 ### 幻想乡个人贡献度 增加（在国家scope上调用，设计§2.3）
-### 附带恶名惩罚：恶名≥30 → -30%，≥50 → -50%，≥70 → -70%（设计§2.5）
+### 附带价值观（好战）惩罚：好战>=+40 → -70%，>=0 → -50%，>=-40 → -30%（设计§2.5）
+### （原恶名阈值 30/50/70 映射为 societal_value -40/0/+40）
 th_gensokyo_io_contribution_var_add_effect = {
     set_variable = {
         name = th_gensokyo_temp_contribution_gain
@@ -38,7 +41,7 @@ th_gensokyo_io_contribution_var_add_effect = {
     }
     if = {
         limit = {
-            var:th_gensokyo_notorious_reputation_var >= 70
+            societal_value:th_gensokyo_amity_vs_belligerence >= 40
         }
         change_variable = {
             name = th_gensokyo_temp_contribution_gain
@@ -47,7 +50,7 @@ th_gensokyo_io_contribution_var_add_effect = {
     }
     else_if = {
         limit = {
-            var:th_gensokyo_notorious_reputation_var >= 50
+            societal_value:th_gensokyo_amity_vs_belligerence >= 0
         }
         change_variable = {
             name = th_gensokyo_temp_contribution_gain
@@ -56,7 +59,7 @@ th_gensokyo_io_contribution_var_add_effect = {
     }
     else_if = {
         limit = {
-            var:th_gensokyo_notorious_reputation_var >= 30
+            societal_value:th_gensokyo_amity_vs_belligerence >= -40
         }
         change_variable = {
             name = th_gensokyo_temp_contribution_gain
@@ -69,7 +72,7 @@ th_gensokyo_io_contribution_var_add_effect = {
     }
 }
 
-### 幻想乡个人贡献度 直接结算（无恶名惩罚，供内部换算用；国家scope）
+### 幻想乡个人贡献度 直接结算（无价值观惩罚，供内部换算用；国家scope）
 th_gensokyo_io_contribution_var_raw_add_effect = {
     change_variable = {
         name = th_gensokyo_personal_contribution_var
@@ -93,28 +96,12 @@ th_gensokyo_io_influence_var_subtract_effect = {
     }
 }
 
-### 幻想乡恶名 增加（在国家scope上调用，自动钳制0-100，设计§2.5）
-th_gensokyo_io_notorious_reputation_var_add_effect = {
-    change_variable = {
-        name = th_gensokyo_notorious_reputation_var
-        add = $value$
-    }
-    clamp_variable = {
-        name = th_gensokyo_notorious_reputation_var
-        min = 0
-        max = 100
-    }
-}
-
-### 幻想乡恶名 减少（在国家scope上调用，自动钳制0-100，设计§2.5 宴会等削减）
-th_gensokyo_io_notorious_reputation_var_subtract_effect = {
-    change_variable = {
-        name = th_gensokyo_notorious_reputation_var
-        subtract = $value$
-    }
-    clamp_variable = {
-        name = th_gensokyo_notorious_reputation_var
-        min = 0
-        max = 100
+### 价值观 趋向好战（在国家scope上调用，社会价值观尺度，正值=向右/好战）
+### 原 th_gensokyo_io_notorious_reputation_var_add_effect（恶名增加，0-100）
+### 现直接操作 societal_value，引擎自动钳制 -100 ~ +100
+th_gensokyo_values_shift_belligerent_effect = {
+    change_societal_value = {
+        type = th_gensokyo_amity_vs_belligerence
+        value = $value$
     }
 }

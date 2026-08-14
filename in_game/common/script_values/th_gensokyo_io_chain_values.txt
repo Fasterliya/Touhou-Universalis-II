@@ -3,20 +3,22 @@
 ### 数值均为初值，标注待调
 ### ============================================================
 
-### 恶名
-th_notorious_decay_monthly_value = { value = 1.0 }        # 恶名自然衰减/月（待调）
-th_notorious_pariah_threshold_value = { value = 50 }      # 弃民一档阈值（待调）
-th_notorious_outcast_threshold_value = { value = 75 }     # 弃民二档阈值（待调）
+### 价值观（亲善 <-> 好战，社会价值观尺度 -100 ~ +100，左=亲善/负值，右=好战/正值）
+### 原恶名变量（0-100）已迁移：societal_value = 2*恶名 - 100
+th_notorious_decay_monthly_value = { value = -2 }        # 月度自然趋向亲善（原恶名衰减 -1 → -2，待调）
+th_notorious_pariah_threshold_value = { value = 0 }      # 弃民一档阈值（原恶名50 → 0，待调）
+th_notorious_outcast_threshold_value = { value = 50 }    # 弃民二档阈值（原恶名75 → +50，待调）
 th_contribution_pariah_multiplier_value = { value = 0.7 }   # 弃民一档贡献获取系数 x0.7（待调）
 th_contribution_outcast_multiplier_value = { value = 0.4 }  # 弃民二档贡献获取系数 x0.4（待调）
 
 ### 宴会（花费走 common/prices/th_gensokyo_feast_price，CD 写死 12 月）
-th_feast_notorious_reduction_value = { value = 10 }        # 宴会减恶名（待调）
+th_feast_notorious_reduction_value = { value = -20 }        # 宴会趋向亲善（原减恶名 10 → -20，待调）
 
 ### 扩张限制
 th_expansion_quota_limit_value = { value = 4 }             # 合法扩张配额上限 2-4（待调）
-th_expansion_legal_notorious_value = { value = 1 }         # 合法扩张恶名/地块（B6：敌意镜像，量小）
-th_expansion_unlawful_notorious_value = { value = 8 }      # 非法扩张恶名/地块（B6：量更大，待调）
+th_expansion_legal_notorious_value = { value = 2 }         # 合法扩张趋向好战/地块（原恶名+1 → +2，待调）
+th_expansion_unlawful_notorious_value = { value = 16 }     # 非法扩张趋向好战/地块（原恶名+8 → +16，待调）
+th_free_city_annex_values_shift_value = { value = 96 }     # 吞自由市趋向好战（原恶名 8×6=48 → +96，待调）
 th_expansion_unlawful_unity_value = { value = 2 }          # 非法扩张扣团结/地块（待调）
 th_expansion_cost_unauthorized_value = { value = 1.5 }     # 独自议会扩张代价 x1.5（待调）
 th_expansion_cost_incident_value = { value = 1.25 }        # 异变扩张代价 x1.25（待调）

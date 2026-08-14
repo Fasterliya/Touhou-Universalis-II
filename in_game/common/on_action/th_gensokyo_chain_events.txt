@@ -26,12 +26,12 @@ th_gensokyo_unlawful_expansion_check = {
             limit = {
                 th_gensokyo_has_authorized_expansion_trigger
             }
-            ### 合法扩张：消耗配额 1 块 + 少量恶名（B6：敌意镜像，量小）
+            ### 合法扩张：消耗配额 1 块 + 少量趋向好战（B6：敌意镜像，量小）
             change_variable = {
                 name = th_gensokyo_expansion_quota_used
                 add = 1
             }
-            th_gensokyo_io_notorious_reputation_var_add_effect = {
+            th_gensokyo_values_shift_belligerent_effect = {
                 value = th_expansion_legal_notorious_value
             }
         }
@@ -68,19 +68,10 @@ th_gensokyo_free_city_cede_check = {
             target = scope:loser
             modifier = th_antagonism_free_city_annex
         }
-        ### 恶名 x500% 增幅（基础非法恶名 x6，clamp 0-100）
-        set_variable = {
-            name = th_gensokyo_temp_notorious
-            value = th_expansion_unlawful_notorious_value
+        ### 价值观 x500% 增幅（基础非法扩张 x6 → 趋向好战 +96）
+        th_gensokyo_values_shift_belligerent_effect = {
+            value = th_free_city_annex_values_shift_value
         }
-        change_variable = {
-            name = th_gensokyo_temp_notorious
-            multiply = 6
-        }
-        th_gensokyo_io_notorious_reputation_var_add_effect = {
-            value = var:th_gensokyo_temp_notorious
-        }
-        remove_variable = th_gensokyo_temp_notorious
         ### 人间之里被侵占 → 团结扣减
         international_organization:th_gensokyo_io = {
             th_gensokyo_unity_subtract_effect = {
@@ -263,18 +254,9 @@ th_gensokyo_unlawful_annex_check = {
                 target = scope:target
                 modifier = th_antagonism_free_city_annex
             }
-            set_variable = {
-                name = th_gensokyo_temp_notorious
-                value = th_expansion_unlawful_notorious_value
+            th_gensokyo_values_shift_belligerent_effect = {
+                value = th_free_city_annex_values_shift_value
             }
-            change_variable = {
-                name = th_gensokyo_temp_notorious
-                multiply = 6
-            }
-            th_gensokyo_io_notorious_reputation_var_add_effect = {
-                value = var:th_gensokyo_temp_notorious
-            }
-            remove_variable = th_gensokyo_temp_notorious
             international_organization:th_gensokyo_io = {
                 th_gensokyo_unity_subtract_effect = {
                     value = th_unity_free_city_annex_value

@@ -22,10 +22,10 @@ th_gensokyo_io_init_setup_scr_effect = {
             value = 0
         }
 
-        # 恶名 — 初始为0
-        set_variable = {
-            name = th_gensokyo_notorious_reputation_var
-            value = 0
+        # 价值观 — 初始为完全亲善（社会价值观 -100）
+        set_societal_value = {
+            type = th_gensokyo_amity_vs_belligerence
+            value = -100
         }
     }
 }

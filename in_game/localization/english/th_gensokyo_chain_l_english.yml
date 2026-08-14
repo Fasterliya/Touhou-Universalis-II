@@ -3,23 +3,25 @@
 ### Gensokyo IO Chain System Localization (English)
 ### ============================================================
 
-### Notoriety view action
- th_gensokyo_notorious_view: "View Reputation"
- th_gensokyo_notorious_view_desc: "View your reputation in Gensokyo: [SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]. View-only action."
+### Values (En <-> Ran, societal value bar)
+ th_gensokyo_amity_vs_belligerence: "En and Ran"
+ th_gensokyo_amity_vs_belligerence_desc: "Those of En weave bonds with all living things, joining hearts in harmony, guarding the Human Village and keeping the Great Barrier at peace; those of Ran raise arms in discord, waging endless war, chasing fleeting dreams and disturbing Gensokyo's order. The leaning of one's heart is plain for all to see."
+ th_gensokyo_amity_focus: "En (Bond)"
+ th_gensokyo_belligerence_focus: "Ran (Discord)"
 
-### Notoriety tiers
- th_notorious_tier_clean: "Respectable"
- th_notorious_tier_pariah: "Notorious"
+### Value tiers
+ th_notorious_tier_clean: "Bond of En"
+ th_notorious_tier_pariah: "Discord of Ran"
  th_notorious_tier_outcast: "Outcast of Gensokyo"
 
 ### Feast
  th_gensokyo_feast: "Hold a Feast"
- th_gensokyo_feast_desc: "Hold a grand feast in Gensokyo, entertaining yokai and sages alike to ease your own notoriety."
+ th_gensokyo_feast_desc: "Hold a grand feast in Gensokyo, entertaining yokai and sages alike to temper your discordant heart and return to the path of En."
  PERFORM_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
  WE_PERFORM_th_gensokyo_feast_ACTION: "We held a feast in Gensokyo"
  OTHER_PERFORMS_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
  ACTION_th_gensokyo_feast_PERFORMED_ON_US: "Held a feast in Gensokyo"
- TH_FEAST_AI_HIGH_NOTORIETY: "High notoriety, in need of relief"
+ TH_FEAST_AI_HIGH_NOTORIETY: "Discordant heart running high, in need of temperance"
 
 ### Crusade peace treaty
  th_gensokyo_crusade_triumph: "Total Victory (Crusade)"
@@ -111,8 +113,8 @@
  th_gensokyo_expansion_cost_incident_modifier_desc: "Expanding during an incident, at a slightly higher cost."
  th_gensokyo_expansion_cost_unauthorized_modifier: "Unauthorized Expansion"
  th_gensokyo_expansion_cost_unauthorized_modifier_desc: "Expansion without the sages' approval is costly."
- th_gensokyo_notorious_pariah_modifier: "Notorious"
- th_gensokyo_notorious_pariah_modifier_desc: "This country's reputation has fallen below the pariah threshold. It may be proposed as a crusade target."
+ th_gensokyo_notorious_pariah_modifier: "Outcast of Discord"
+ th_gensokyo_notorious_pariah_modifier_desc: "This country has fallen into the way of discord. It may be proposed as a crusade target."
 
 ### Situation panel
  TH_CRUSADE_SUPPORTER_STRENGTH: "Gensokyo Coalition Strength"
@@ -126,7 +128,6 @@
  th_gensokyo_sages_defend_reason: "Defending the Human Village"
 
 ### Variables
- th_gensokyo_temp_notorious: "Notoriety Amplifier"
  th_crusade_supporter_strength: "Coalition Strength"
  th_crusade_target_strength: "Target Strength"
  th_crusade_temp_strength: "Member Strength"
