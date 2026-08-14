@@ -1,4 +1,4 @@
-﻿# th_sages_introduce_institution = {
+# th_sages_introduce_institution = {
 #     type = diplomacy
 #     category = CATEGORY_FRIENDLY_ACTIONS
     

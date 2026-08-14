@@ -1,6 +1,0 @@
-# temp / pip scratch dirs
-.tmp/
-tools/pip_tmp/
-
-# python cache
-__pycache__/

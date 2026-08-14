@@ -1,4 +1,4 @@
-﻿integration_none = {
+integration_none = {
 	game_data = {
 		category = location
 	}

@@ -1,4 +1,4 @@
-﻿T00_start_flag = { 
+T00_start_flag = { 
 	pattern = "pattern_solid.dds"
 	color1 = "white"	#两侧的颜色
 	color2 = "blue_light"

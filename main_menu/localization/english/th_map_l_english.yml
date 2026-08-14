@@ -1257,83 +1257,83 @@ th_crescent_bay_province: "Crescent Moon Bay"
 th_longinus_crater_province: "Longinus Crater"
 th_surreal_lunar_island_province: "Surreal Lunar Island"
   #Locations
-th_purely_plain: "Pure Plain"
-th_sea_of_fertility: "Sea of Fertility"
-th_seventy_two_grape_land: "Land of Seventy-Two Grapes"
-th_pure_village: "Pure Village"
-th_bofeng_tomb: "Bofeng Tomb"
-th_junkos_base: "Junko's Base"
-th_sea_of_nectar: "Sea of Nectar"
-th_tycho_crater: "Tycho Crater"
-th_sea_of_untranquility: "Sea of Untranquility"
-th_ocean_of_storms: "Ocean of Storms"
-th_sea_of_cold: "Sea of Cold"
-th_sea_of_rain: "Sea of Rain"
-th_sea_of_vapours: "Sea of Vapours"
-th_copernicus_crater: "Copernicus Crater"
-th_kepler_crater: "Kepler Crater"
-th_arstarchus_crater: "Aristarchus Crater"
-th_lunar_rabbit_rebel_alliance_castle: "Lunar Rabbit Rebel Alliance Castle"
-th_lunarian_tomb: "Lunarian Tomb"
-th_grave_for_amanosagume: "Amanosagume's Grave"
-th_grave_for_toyotamahime: "Toyotamahime's Grave"
-th_grave_for_tamayorihime: "Tamayorihime's Grave"
-th_clown_village: "Clown Village"
-th_red_nose_forest: "Red Nose Forest"
-th_clown_port: "Clown Port"
-th_lampades_shore: "Lampades Shore"
-th_clownpiece_cabin: "Clownpiece's Cabin"
-th_lunar_yousei_port: "Lunar Fairy Port"
-th_hecate_vulcan: "Hecate's Wrath"
-th_freighter_cemetery: "Liberty Ship Graveyard"
-th_crescent_bay: "Crescent Moon Bay"
-th_full_moon_top: "Full Moon Summit"
-th_waning_moon_peninsula: "Waning Moon Peninsula"
-th_bay_tide_song_lighthouse: "Tide Song Lighthouse"
-th_lunar_eclipse_port: "Lunar Eclipse Port"
-th_sage_deadbody_locker: "Sage Corpse Locker"
-th_kaaba_prototype: "Kaaba Prototype"
-th_port_of_the_slain: "Valhalla Ferry"
-th_olympos_basin: "Olympos Basin"
-th_tanguy_island: "Tanguy Island"
-th_mori_island: "Milo Island"
-th_dali_island: "Dali Island"
-th_isle_non_euclidean_garden: "Non-Euclidean Garden Isle"
-th_lunar_isle_inverted_waterfall: "Inverted Lunar Waterfall"
+th_purely_plain: “Pure Plain”
+th_sea_of_fertility: “Sea of Fertility”
+th_seventy_two_grape_land: “Land of Seventy-Two Grapes”
+th_pure_village: “Pure Village”
+th_bofeng_tomb: “Bofeng Tomb”
+th_junkos_base: “Junko's Base”
+th_sea_of_nectar: “Sea of Nectar”
+th_tycho_crater: “Tycho Crater”
+th_sea_of_untranquility: “Sea of Untranquility”
+th_ocean_of_storms: “Ocean of Storms”
+th_sea_of_cold: “Sea of Cold”
+th_sea_of_rain: “Sea of Rain”
+th_sea_of_vapours: “Sea of Vapours”
+th_copernicus_crater: “Copernicus Crater”
+th_kepler_crater: “Kepler Crater”
+th_arstarchus_crater: “Aristarchus Crater”
+th_lunar_rabbit_rebel_alliance_castle: “Lunar Rabbit Rebel Alliance Castle”
+th_lunarian_tomb: “Lunarian Tomb”
+th_grave_for_amanosagume: “Amanosagume's Grave”
+th_grave_for_toyotamahime: “Toyotamahime's Grave”
+th_grave_for_tamayorihime: “Tamayorihime's Grave”
+th_clown_village: “Clown Village”
+th_red_nose_forest: “Red Nose Forest”
+th_clown_port: “Clown Port”
+th_lampades_shore: “Lampades Shore”
+th_clownpiece_cabin: “Clownpiece's Cabin”
+th_lunar_yousei_port: “Lunar Fairy Port”
+th_hecate_vulcan: “Hecate's Wrath”
+th_freighter_cemetery: “Liberty Ship Graveyard”
+th_crescent_bay: “Crescent Moon Bay”
+th_full_moon_top: “Full Moon Summit”
+th_waning_moon_peninsula: “Waning Moon Peninsula”
+th_bay_tide_song_lighthouse: “Tide Song Lighthouse”
+th_lunar_eclipse_port: “Lunar Eclipse Port”
+th_sage_deadbody_locker: “Sage Corpse Locker”
+th_kaaba_prototype: “Kaaba Prototype”
+th_port_of_the_slain: “Valhalla Ferry”
+th_olympos_basin: “Olympos Basin”
+th_tanguy_island: “Tanguy Island”
+th_mori_island: “Milo Island”
+th_dali_island: “Dali Island”
+th_isle_non_euclidean_garden: “Non-Euclidean Garden Isle”
+th_lunar_isle_inverted_waterfall: “Inverted Lunar Waterfall”
   ##
   ##Provinces
-th_lapislazuli_peninsula_province: "Lapislazuli Peninsula"
-th_hecatia_plateau_province: "Hecatia Plateau"
-th_dream_hell_of_earth_province: "Earth Dream Hell"
-th_dream_hell_of_otherworld_province: "Otherworld Dream Hell"
-th_dream_hell_of_moon_province: "Moon Dream Hell"
+th_lapislazuli_peninsula_province: “Lapislazuli Peninsula”
+th_hecatia_plateau_province: “Hecatia Plateau”
+th_dream_hell_of_earth_province: “Earth Dream Hell”
+th_dream_hell_of_otherworld_province: “Otherworld Dream Hell”
+th_dream_hell_of_moon_province: “Moon Dream Hell”
   #Locations
-th_tethys_port: "Tethys Port"
-th_blessed_three_way_fork: "Blessed Three-Way Fork"
-th_horn_of_lenty: "Horn of Plenty"
-th_anemoi_valley: "Anemoi Valley"
-th_hecate_avenue: "Hecate Avenue"
-th_oreadia: "Oreadia"
-th_ourea_cliff: "Ourea Cliff"
-th_yew_forest: "Yew Forest"
-th_datura_garden: "Datura Garden"
-th_gaea_temple: "Gaea Temple"
-th_eye_of_prometheus: "Eye of Prometheus"
-th_clotho_great_plain: "Clotho Great Plain"
-th_pallas_school: "Pallas School"
-th_three_worlds_rift_observatory: "Three Worlds Rift Observatory"
-th_archipelago_river_of_estuary: "Archipelago River Estuary"
-th_nyx_temple: "Nyx Temple"
-th_hecatia_mansion: "Hecatia Palace"
-th_atlas_mountain: "Mount Atlas"
-th_atlas_mountain_valley: "Atlas Valley"
-th_archipelago_karmic_fire_cliff: "Karmic Fire Cliff"
-th_dream_devouring_maelstrom: "Dream-Devouring Maelstrom"
-th_lachesis_pass: "Lachesis Pass"
-th_selene_temple: "Selene Temple"
-th_coeus_port: "Coeus Port"
-th_astraios_lake: "Astraios Lake"
-th_perses_highland: "Perses Highland"
+th_tethys_port: “Tethys Port”
+th_blessed_three_way_fork: “Blessed Three-Way Fork”
+th_horn_of_lenty: “Horn of Plenty”
+th_anemoi_valley: “Anemoi Valley”
+th_hecate_avenue: “Hecate Avenue”
+th_oreadia: “Oreadia”
+th_ourea_cliff: “Ourea Cliff”
+th_yew_forest: “Yew Forest”
+th_datura_garden: “Datura Garden”
+th_gaea_temple: “Gaea Temple”
+th_eye_of_prometheus: “Eye of Prometheus”
+th_clotho_great_plain: “Clotho Great Plain”
+th_pallas_school: “Pallas School”
+th_three_worlds_rift_observatory: “Three Worlds Rift Observatory”
+th_archipelago_river_of_estuary: “Archipelago River Estuary”
+th_nyx_temple: “Nyx Temple”
+th_hecatia_mansion: “Hecatia Palace”
+th_atlas_mountain: “Mount Atlas”
+th_atlas_mountain_valley: “Atlas Valley”
+th_archipelago_karmic_fire_cliff: “Karmic Fire Cliff”
+th_dream_devouring_maelstrom: “Dream-Devouring Maelstrom”
+th_lachesis_pass: “Lachesis Pass”
+th_selene_temple: “Selene Temple”
+th_coeus_port: “Coeus Port”
+th_astraios_lake: “Astraios Lake”
+th_perses_highland: “Perses Highland”
   ###Foothills Region
 th_youkai_mountain_western_foot_region: "Genbu Marsh"
   ##Areas
@@ -1359,89 +1359,89 @@ th_shining_needle_castle_anteroom_province: "Shining Needle Castle Anteroom"
 th_kobitos_treasure_chanmber_province: "Kobito Treasure Chamber"
 th_shining_path_province: "Shining Path"
   #Locations
-th_cucumenber_garden: "Cucumber Garden"
-th_breeding_base: "Breeding Base"
-th_water_supply_system: "Water Supply System"
-th_cucumenber_port: "Cucumber Port"
-th_nursery_luminous_greenhouse: "Luminous Greenhouse"
-th_kappa_beach: "Kappa Beach"
-th_kappa_port: "Kappa Port"
-th_basalt_rock_beach: "Basalt Rock Beach"
-th_diving_paradise: "Diving Paradise"
-th_craftsman_hall: "Craftsman Hall"
-th_goblin_shop: "Goblin Shop"
-th_area_13: "Area 13"
-th_gear_automatic_port: "Gear Automatic Port"
-th_waterproof_lab: "Waterproof Lab"
-th_under_water_port: "Underwater Port"
-th_mermaid_village: "Mermaid Village"
-th_riverbed_habitat: "Riverbed Habitat"
-th_treasure_bay: "Treasure Bay"
-th_kappa_capital: "Kappa Capital"
-th_smart_first_city: "Smart First City"
-th_sponge_second_city: "Sponge Second City"
-th_nitoris_mansion: "Nitori's Mansion"
-th_river_network_hub: "River Network Hub"
-th_kappa_valley: "Kappa Valley"
-th_flooding_lowland: "Flooding Lowland"
-th_mangroove_swamp: "Mangrove Swamp"
-th_kappas_dam: "Kappa Dam"
-th_kappa_ravine_watermill_workshops: "Watermill Workshop"
-th_ravine_dish_stone_shoal: "Dish Stone Shoal"
-th_genbu_port: "Genbu Port"
-th_genbu_ravine: "Genbu Marsh"
-th_scale_hills: "Scale Hills"
-th_genbu_habitat: "Sacred Turtle Habitat"
-th_wealth_shrine: "Wealth Shrine"
-th_abandoned_workshop: "Abandoned Workshop"
-th_wall_of_veto: "Wall of Veto"
-th_bunker_buster_crater: "Bunker Buster Crater"
-th_implosion_bomb_ruins: "Implosion Bomb Ruins"
-th_acid_river: "Acid River"
-th_invention_exhibition_hall: "Invention Exhibition Hall"
-th_yamawaro_railway: "Yamawaro Railway"
-th_high_tech_developement_zone: "High-Tech Development Zone"
-th_takanes_mansion: "Takane's Mansion"
-th_invention_exhibition_hall_practical: "Practical Equipment Vault"
-th_twin_sunflower_field: "Twin Sunflower Field"
-th_supremium_field: "Supremium Field"
-th_gourmaryllis_field: "Gourmaryllis Field"
-th_withering_hellebore_main: "Withering Hellebore Zone"
-th_kappa_test_fields_river_hub: "Diversion Hub"
-th_top_secret_cucumenber_field: "Top-Secret Cucumber Field"
-th_secret_haven_cliff: "Secret Haven Cliff"
-th_yamawaro_barracks: "Yamawaro Barracks"
-th_cliff_of_dispair: "Cliff of Despair"
-th_wargame_land: "War Game Land"
-th_false_heaven_shelf: "False Heaven Shelf"
-th_mountain_foot_no_go_zone: "Mountain Foothills No-Go Zone"
-th_sannyo_casino: "Sannyo's Casino"
-th_secret_green_cliff: "Secret Green Cliff"
-th_smoke_and_snow_tundra_main: "Smoke and Snow Tundra"
-th_snow_tundra_rime_forest: "Rime Forest"
-th_infected_industry_area: "Infected Industrial Zone"
-th_water_gel_explosive_forest: "Water-Gel Explosive Forest"
-th_break_ridgepole: "Broken Dragon Ridge"
-th_yamawaro_hill_side: "Yamawaro Hillside"
-th_shining_needle_castle_tenshukaku: "Shining Needle Castle Tenshukaku"
-th_private_inner_chamber: "Crow Inner Chamber"
-th_shining_needle_castle_main_bailey: "Shining Needle Castle Main Bailey"
-th_shining_needle_castle_ground_hall: "Shining Needle Castle Grand Hall"
-th_uchide_no_kozuchi_room: "Uchide no Kozuchi Vault"
-th_shining_needle_castle_second_bailey: "Shining Needle Castle Second Bailey"
-th_shining_needle_castle_third_bailey: "Shining Needle Castle Third Bailey"
-th_fusoshin_swamp: "Tsukumogami Swamp"
-th_shining_needle_castle_watch_tower: "Shining Needle Castle Watchtower"
-th_shining_needle_castle_stone_wall: "Shining Needle Castle Stone Wall"
-th_mithril_gate: "Mithril Gate"
-th_useless_divice_room: "Useless Device Room"
-th_dusty_srsenal: "Dusty Arsenal"
-th_empty_chamber: "Empty Vault"
-th_diminutive_treasure_vault_library: "Kobito Library"
-th_shining_path: "Shining Path"
-th_levitation_garden: "Levitation Garden"
-th_magical_thundercloud: "Magical Thundercloud"
-th_shaking_plain: "Shaking Plain"
+th_cucumenber_garden: “Cucumber Garden”
+th_breeding_base: “Breeding Base”
+th_water_supply_system: “Water Supply System”
+th_cucumenber_port: “Cucumber Port”
+th_nursery_luminous_greenhouse: “Luminous Greenhouse”
+th_kappa_beach: “Kappa Beach”
+th_kappa_port: “Kappa Port”
+th_basalt_rock_beach: “Basalt Rock Beach”
+th_diving_paradise: “Diving Paradise”
+th_craftsman_hall: “Craftsman Hall”
+th_goblin_shop: “Goblin Shop”
+th_area_13: “Area 13”
+th_gear_automatic_port: “Gear Automatic Port”
+th_waterproof_lab: “Waterproof Lab”
+th_under_water_port: “Underwater Port”
+th_mermaid_village: “Mermaid Village”
+th_riverbed_habitat: “Riverbed Habitat”
+th_treasure_bay: “Treasure Bay”
+th_kappa_capital: “Kappa Capital”
+th_smart_first_city: “Smart First City”
+th_sponge_second_city: “Sponge Second City”
+th_nitoris_mansion: “Nitori's Mansion”
+th_river_network_hub: “River Network Hub”
+th_kappa_valley: “Kappa Valley”
+th_flooding_lowland: “Flooding Lowland”
+th_mangroove_swamp: “Mangrove Swamp”
+th_kappas_dam: “Kappa Dam”
+th_kappa_ravine_watermill_workshops: “Watermill Workshop”
+th_ravine_dish_stone_shoal: “Dish Stone Shoal”
+th_genbu_port: “Genbu Port”
+th_genbu_ravine: “Genbu Marsh”
+th_scale_hills: “Scale Hills”
+th_genbu_habitat: “Sacred Turtle Habitat”
+th_wealth_shrine: “Wealth Shrine”
+th_abandoned_workshop: “Abandoned Workshop”
+th_wall_of_veto: “Wall of Veto”
+th_bunker_buster_crater: “Bunker Buster Crater”
+th_implosion_bomb_ruins: “Implosion Bomb Ruins”
+th_acid_river: “Acid River”
+th_invention_exhibition_hall: “Invention Exhibition Hall”
+th_yamawaro_railway: “Yamawaro Railway”
+th_high_tech_developement_zone: “High-Tech Development Zone”
+th_takanes_mansion: “Takane's Mansion”
+th_invention_exhibition_hall_practical: “Practical Equipment Vault”
+th_twin_sunflower_field: “Twin Sunflower Field”
+th_supremium_field: “Supremium Field”
+th_gourmaryllis_field: “Gourmaryllis Field”
+th_withering_hellebore_main: “Withering Hellebore Zone”
+th_kappa_test_fields_river_hub: “Diversion Hub”
+th_top_secret_cucumenber_field: “Top-Secret Cucumber Field”
+th_secret_haven_cliff: “Secret Haven Cliff”
+th_yamawaro_barracks: “Yamawaro Barracks”
+th_cliff_of_dispair: “Cliff of Despair”
+th_wargame_land: “War Game Land”
+th_false_heaven_shelf: “False Heaven Shelf”
+th_mountain_foot_no_go_zone: “Mountain Foothills No-Go Zone”
+th_sannyo_casino: “Sannyo's Casino”
+th_secret_green_cliff: “Secret Green Cliff”
+th_smoke_and_snow_tundra_main: “Smoke and Snow Tundra”
+th_snow_tundra_rime_forest: “Rime Forest”
+th_infected_industry_area: “Infected Industrial Zone”
+th_water_gel_explosive_forest: “Water-Gel Explosive Forest”
+th_break_ridgepole: “Broken Dragon Ridge”
+th_yamawaro_hill_side: “Yamawaro Hillside”
+th_shining_needle_castle_tenshukaku: “Shining Needle Castle Tenshukaku”
+th_private_inner_chamber: “Crow Inner Chamber”
+th_shining_needle_castle_main_bailey: “Shining Needle Castle Main Bailey”
+th_shining_needle_castle_ground_hall: “Shining Needle Castle Grand Hall”
+th_uchide_no_kozuchi_room: “Uchide no Kozuchi Vault”
+th_shining_needle_castle_second_bailey: “Shining Needle Castle Second Bailey”
+th_shining_needle_castle_third_bailey: “Shining Needle Castle Third Bailey”
+th_fusoshin_swamp: “Tsukumogami Swamp”
+th_shining_needle_castle_watch_tower: “Shining Needle Castle Watchtower”
+th_shining_needle_castle_stone_wall: “Shining Needle Castle Stone Wall”
+th_mithril_gate: “Mithril Gate”
+th_useless_divice_room: “Useless Device Room”
+th_dusty_srsenal: “Dusty Arsenal”
+th_empty_chamber: “Empty Vault”
+th_diminutive_treasure_vault_library: “Kobito Library”
+th_shining_path: “Shining Path”
+th_levitation_garden: “Levitation Garden”
+th_magical_thundercloud: “Magical Thundercloud”
+th_shaking_plain: “Shaking Plain”
   ###Youkai Mountain Region
 th_youkai_mountain_region: "Youkai Mountain"
   ##Areas
@@ -1912,27 +1912,27 @@ th_western_hell_area: "West Higan"
 th_eastern_hell_area: "East Higan"
 th_southern_hell_area: "South Higan"
   ##Provinces
-th_yama_sentry_province: "Yama Sentry"
-th_judge_backyard_province: "Judge's Backyard"
-th_higanbana_plain_province: "Higanbana Plain"
-th_souls_detention_center_province: "Soul Detention Center"
-th_far_shore_province: "Far Shore"
-th_yamas_palace_province: "Yama's Palace"
-th_port_of_hell_province: "Port of Hell"
-th_miasma_field_province: "Miasma Field"
-th_purgatorium_province: "Purgatorium"
-th_teahouse_at_hell_province: "Oni Chief Headquarters"
-th_death_retreat_province: "Death Retreat"
-th_santu_river_province: "Sanzu River"
-th_dark_flame_forest_province: "Smoldering Forest"
-th_end_of_souls_province: "End of Souls"
-th_pass_of_hell_province: "Gate of Hell"
-th_niwataris_entry_province: "Niwatari's Entry"
-th_tomb_of_memories_province: "Tomb of Memories"
-th_sai_no_kawara_province: "Sai no Kawara"
-th_grand_magi_residence_province: "Grand Magi Residence"
-th_souls_river_province: "River of Souls"
-th_hecatia_temple_province: "Hecatia Temple"
+th_yama_sentry_province: “Yama Sentry”
+th_judge_backyard_province: “Judge's Backyard”
+th_higanbana_plain_province: “Higanbana Plain”
+th_souls_detention_center_province: “Soul Detention Center”
+th_far_shore_province: “Far Shore”
+th_yamas_palace_province: “Yama's Palace”
+th_port_of_hell_province: “Port of Hell”
+th_miasma_field_province: “Miasma Field”
+th_purgatorium_province: “Purgatorium”
+th_teahouse_at_hell_province: “Oni Chief Headquarters”
+th_death_retreat_province: “Death Retreat”
+th_santu_river_province: “Sanzu River”
+th_dark_flame_forest_province: “Smoldering Forest”
+th_end_of_souls_province: “End of Souls”
+th_pass_of_hell_province: “Gate of Hell”
+th_niwataris_entry_province: “Niwatari's Entry”
+th_tomb_of_memories_province: “Tomb of Memories”
+th_sai_no_kawara_province: “Sai no Kawara”
+th_grand_magi_residence_province: “Grand Magi Residence”
+th_souls_river_province: “River of Souls”
+th_hecatia_temple_province: “Hecatia Temple”
   #Locations
 th_yama_sentry: "Yama Sentry"
 th_jizo_maze: "Jizo Maze"

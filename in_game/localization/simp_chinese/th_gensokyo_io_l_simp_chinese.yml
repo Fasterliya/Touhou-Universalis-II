@@ -175,6 +175,7 @@
  TH_SAGES_REQ_PARLIAMENT: "当前无进行中的议会辩论"
  TH_SAGES_REQ_CANDIDATE: "存在可引入的思潮"
  TH_SAGES_REQ_ELIGIBLE: "所有条件均已满足"
+ th_sages_introduce_institution_notification: "引入思潮"
 
 ### === 分页标签 ===
  TH_SAGES_TAB_OVERVIEW: "总览"

@@ -84928,6 +84928,4414 @@ locations = {
    }
    munduyskoye_lake = {
    }
+   th_cannot_entry_mountain1 = {
+   }
+   th_cannot_entry_mountain2 = {
+   }
+   th_cannot_entry_mountain3 = {
+   }
+   th_cannot_entry_mountain4 = {
+   }
+   th_cannot_entry_mountain5 = {
+   }
+   th_cannot_entry_mountain6 = {
+   }
+   th_cannot_entry_mountain7 = {
+   }
+   th_cannot_entry_mountain8 = {
+   }
+   th_cannot_entry_mountain9 = {
+   }
+   th_cannot_entry_mountain10 = {
+   }
+   th_cannot_entry_mountain11 = {
+   }
+   th_cannot_entry_mountain12 = {
+   }
+   th_cannot_entry_mountain13 = {
+   }
+   th_cannot_entry_mountain14 = {
+   }
+   th_cannot_entry_mountain15 = {
+   }
+   th_cannot_entry_mountain16 = {
+   }
+   th_misty_lake = {
+   }
+   th_east_bank_of_misty_lake = {
+   }
+   th_west_bank_of_misty_lake = {
+   }
+   th_norh_bank_of_misty_lake = {
+   }
+   th_mermaid_bay_sea = {
+   }
+   th_mist_channel_sea_north = {
+   }
+   th_mist_channel_sea_south = {
+   }
+   th_fog_channel_stratts_sea = {
+   }
+   th_hakurei_dreamlike_bay_sea = {
+   }
+   th_southern_hakurei_gulf_sea = {
+   }
+   th_mirror_gulf_sea = {
+   }
+   th_first_snow_sea = {
+   }
+   th_hakurei_inland_sea = {
+   }
+   th_first_snow_sea_north = {
+   }
+   th_southern_hakurei_gulf_west_sea = {
+   }
+   th_gap_sea_location = {
+   }
+   th_void_sea_location = {
+   }
+   th_border_whirlpool_sea = {
+   }
+   th_phantom_reef_sea = {
+   }
+   th_tidecall_gulf_sea = {
+   }
+   th_mirage_undercurrent_sea = {
+   }
+   th_soul_sea_location = {
+   }
+   th_nether_cloud_bay_sea = {
+   }
+   th_nether_cloud_sea = {
+   }
+   th_netherworld_sea_location = {
+   }
+   th_ghost_sea_location = {
+   }
+   th_river_of_forgetfulness_strait_sea = {
+   }
+   th_river_of_forgetfulness_strait_sea_north = {
+   }
+   th_lightless_deep_sea = {
+   }
+   th_lightless_deep_sea_north = {
+   }
+   th_sunken_soul_sea = {
+   }
+   th_samsara_current_sea = {
+   }
+   th_dead_silence_reef_sea = {
+   }
+   th_eternal_night_calm_bay_south_sea = {
+   }
+   th_eternal_night_calm_bay_north_sea = {
+   }
+   th_hourai_shoal_sea = {
+   }
+   th_lost_light_strait_sea = {
+   }
+   th_moon_jump_sea = {
+   }
+   th_ete_outdoor_sea = {
+   }
+   th_ete_outdoor_sea_north = {
+   }
+   th_inaba_reef_sea = {
+   }
+   th_boundary_trench_sea = {
+   }
+   th_sea_of_dreams_and_moon_sea = {
+   }
+   th_purification_strait_sea = {
+   }
+   th_nightmare_undercurrent_sea = {
+   }
+   th_sleep_under_moon_sea = {
+   }
+   th_dream_mirror_whirlpool_sea = {
+   }
+   th_ice_milk_sea = {
+   }
+   th_dream_tranquil_sea = {
+   }
+   th_lunar_capital_east_sea = {
+   }
+   th_sage_sea_east_margin_sea = {
+   }
+   th_sage_sea_west_margin_sea = {
+   }
+   th_toyohime_connection_channel_sea = {
+   }
+   th_crescent_moon_bay_sea = {
+   }
+   th_silver_sand_cove_sea = {
+   }
+   th_crescent_bar_sea = {
+   }
+   th_dream_reality_sea1 = {
+   }
+   th_dream_reality_sea2 = {
+   }
+   th_feather_robe_crossing_sea = {
+   }
+   th_waning_corner_sea = {
+   }
+   th_eternal_sleep_sea = {
+   }
+   th_tsukuyomi_dream_throne_sea = {
+   }
+   th_eientei_west_reflection_sea = {
+   }
+   th_lunar_debris_west_zone_sea = {
+   }
+   th_lunar_star_dweller_sea = {
+   }
+   th_waning_full_corner_sea = {
+   }
+   th_earthquake_omen_sea = {
+   }
+   th_rolling_cloud_maelstrom_sea = {
+   }
+   th_rainbow_cloud_current_sea = {
+   }
+   th_chalk_sea_location = {
+   }
+   th_scarlet_cloud_omen_sea = {
+   }
+   th_cloud_whale_migration_sea = {
+   }
+   th_hakurei_border_cloud_sea = {
+   }
+   th_mountain_summit_sea = {
+   }
+   th_auspicious_cloud_sea = {
+   }
+   th_nirvana_west_coast_sea = {
+   }
+   th_heaven_dragon_island_sea = {
+   }
+   th_coiled_dragon_main_reef_sea = {
+   }
+   th_sleeping_dragon_sea = {
+   }
+   th_cloud_dragon_swirl = {
+   }
+   th_dragon_island_inland_sea = {
+   }
+   th_ryujin_festival_sea = {
+   }
+   th_dragon_island_inland_sea_west = {
+   }
+   th_dragon_pearl_reef_sea = {
+   }
+   th_dragon_pearl_reef_sea_south = {
+   }
+   th_heaven_sent_dragon_rain_sea = {
+   }
+   th_heaven_sent_dragon_rain_sea_west = {
+   }
+   th_dragon_scale_strait_sea = {
+   }
+   th_makai_west_sea = {
+   }
+   th_frozen_demon_sea = {
+   }
+   th_hourai_seal_sea = {
+   }
+   th_create_world_sea1 = {
+   }
+   th_create_world_sea2 = {
+   }
+   th_create_world_sea3 = {
+   }
+   th_primordial_sea = {
+   }
+   th_lightdark_divide_sea = {
+   }
+   th_elemental_boiling_sea = {
+   }
+   th_elemental_boiling_sea2 = {
+   }
+   th_causality_start_sea = {
+   }
+   th_fangzhang_golden_sea_west = {
+   }
+   th_fangzhang_golden_sea_west2 = {
+   }
+   th_fangzhang_golden_sea_west3 = {
+   }
+   th_fangzhang_golden_sea_west4 = {
+   }
+   th_forbidden_zone_sea = {
+   }
+   th_forbidden_zone_sea_west = {
+   }
+   th_magic_waste_world_sea = {
+   }
+   th_temporal_axis_turbulence_sea = {
+   }
+   th_mirror_reflection_sea = {
+   }
+   th_divine_mark_reef_sea = {
+   }
+   th_shintoku_bay_sea = {
+   }
+   th_shintoku_bay_sea_east = {
+   }
+   th_cucumber_field_bay = {
+   }
+   th_fuujin_sea = {
+   }
+   th_moriya_front_sea = {
+   }
+   th_moriya_front_sea_input = {
+   }
+   th_genbu_sawa_sea = {
+   }
+   th_keiki_bay_sea = {
+   }
+   th_keiki_bay_sea_west = {
+   }
+   th_western_pure_land_sea = {
+   }
+   th_enma_judgment_bay_sea = {
+   }
+   th_enma_judgment_bay_sea1 = {
+   }
+   th_eternal_night_sea = {
+   }
+   th_mugen_sea_location = {
+   }
+   th_mizuko_sea_location = {
+   }
+   th_shuuen_shizumi_umi_sea = {
+   }
+   th_higan_shore_sea = {
+   }
+   th_higan_shore_sea2 = {
+   }
+   th_higan_shore_sea3 = {
+   }
+   th_higan_shore_sea4 = {
+   }
+   th_inishie_saiban_umi = {
+   }
+   th_danen_umi_sea = {
+   }
+   th_divine_mold_sea = {
+   }
+   th_divine_mold_sea2 = {
+   }
+   th_kego_no_umi_sea = {
+   }
+   th_ka_mei_shallow_sea = {
+   }
+   th_amagoi_sea = {
+   }
+   th_amagoi_sea2 = {
+   }
+   th_suwa_maelstrom_sea = {
+   }
+   th_gokoku_bay_sea = {
+   }
+   th_oni_feast_bay_sea = {
+   }
+   th_oni_feast_bay_sea2 = {
+   }
+   th_oni_feast_bay_sea3 = {
+   }
+   th_hai_goku_reefs_sea = {
+   }
+   th_hai_goku_reefs_sea2 = {
+   }
+   th_s_io_mist_sea = {
+   }
+   th_s_io_mist_sea2 = {
+   }
+   th_jigoku_shindo_trench_sea = {
+   }
+   th_jigoku_shindo_trench_sea2 = {
+   }
+   th_kokujou_kou_kai_sea = {
+   }
+   th_shakunetsu_shiogama_sea = {
+   }
+   th_shakunetsu_shiogama_sea2 = {
+   }
+   th_shakunetsu_shiogama_sea3 = {
+   }
+   th_kyoukan_rekka_sea = {
+   }
+   th_shugou_teppou_umi = {
+   }
+   th_abiki_zankyo_umi_sea = {
+   }
+   th_main_gate_plaza = {
+   }
+   th_scarlet_moonlight_fountain_plaza = {
+   }
+   th_eternal_rose_maze = {
+   }
+   th_midnight_blooming_garden = {
+   }
+   th_crimson_centerpiece_fountain = {
+   }
+   th_guardian_golem_shed = {
+   }
+   th_scarlet_grand_entrance_hall = {
+   }
+   th_scarlet_gaze_balcony = {
+   }
+   th_voile_library_grand_hall = {
+   }
+   th_perfect_maid_armory = {
+   }
+   th_seven_star_summoning_chamber = {
+   }
+   th_underground_wine_cellar = {
+   }
+   th_scarlet_dream_bedchamber = {
+   }
+   th_frandre_scarlet_bedchamber = {
+   }
+   th_gargoyle_sentinel_gallery = {
+   }
+   th_scarlet_moonlight_tea_room = {
+   }
+   th_scarlet_path = {
+   }
+   th_crimson_moon_bridge = {
+   }
+   th_fate_corridor = {
+   }
+   th_vampiric_vine_valley = {
+   }
+   th_flandres_playground = {
+   }
+   th_lake_of_blood_reflections = {
+   }
+   th_scarlet_backup_storage = {
+   }
+   th_path_of_the_crimson_moon = {
+   }
+   th_scarlet_fog_bog = {
+   }
+   th_hidden_garden_of_forbidden_blooms = {
+   }
+   th_mermaid_sanctuary = {
+   }
+   th_tide_song_cavern = {
+   }
+   th_coral_corridor = {
+   }
+   th_moonlit_tidal_pool = {
+   }
+   th_secret_path_to_the_lakeshore = {
+   }
+   th_wakasagihime_manor = {
+   }
+   th_forgotten_royal_court = {
+   }
+   th_sunken_quarter = {
+   }
+   th_lost_city = {
+   }
+   th_clocktower_of_time = {
+   }
+   th_whispering_residential_quarter = {
+   }
+   th_maze_hedge = {
+   }
+   th_eternal_night_orchid_bed = {
+   }
+   th_moonlight_music_pavilion = {
+   }
+   th_black_tea_gazebo = {
+   }
+   th_crimson_creek_bridge = {
+   }
+   th_eternal_dusk_beach = {
+   }
+   th_crimson_tide_harbor = {
+   }
+   th_crimson_mountain = {
+   }
+   th_bloodmoon_peak = {
+   }
+   th_thorny_path = {
+   }
+   th_nightwhisper_spring = {
+   }
+   th_scarlet_training_ground = {
+   }
+   th_scarlet_danmaku_proving_ground = {
+   }
+   th_silver_blade_corridor = {
+   }
+   th_ice_fariy_island = {
+   }
+   th_silent_library = {
+   }
+   th_crimson_vein_mine = {
+   }
+   th_chaos_gravity_grove = {
+   }
+   th_ice_room = {
+   }
+   th_frost_blossom_garden = {
+   }
+   th_eternal_frozen_lake = {
+   }
+   th_crystal_corridor = {
+   }
+   th_great_fairy_treehouse = {
+   }
+   th_treehouse_main_hall = {
+   }
+   th_vine_ladder_slide = {
+   }
+   th_leaf_curtain_balcony = {
+   }
+   th_three_fairies_mansion = {
+   }
+   th_trio_war_council_room = {
+   }
+   th_leaf_view_deck = {
+   }
+   th_luna_room = {
+   }
+   th_sunny_room = {
+   }
+   th_star_room = {
+   }
+   th_fairy_shore = {
+   }
+   th_broken_shell_beach = {
+   }
+   th_driftwood_hut = {
+   }
+   th_tidal_pool_playground = {
+   }
+   th_fairy_shrine = {
+   }
+   th_leaf_wish_rack = {
+   }
+   th_fairy_gathering_ring = {
+   }
+   th_shrine_star_point = {
+   }
+   th_winter_jasmine_trail = {
+   }
+   th_harbinger_bridge = {
+   }
+   th_spring_view_pavilion = {
+   }
+   th_thaw_glade = {
+   }
+   th_golden_belt_corridor = {
+   }
+   th_derelict_mansion = {
+   }
+   th_rusted_gate = {
+   }
+   th_crumbling_hall = {
+   }
+   th_ownerless_study = {
+   }
+   th_eternal_garden = {
+   }
+   th_stagnant_fountain = {
+   }
+   th_endless_rose_corridor = {
+   }
+   th_flower_clock_of_time = {
+   }
+   th_yakumo_mansion = {
+   }
+   th_hakugyokurou = {
+   }
+   th_magic_forest = {
+   }
+   th_foxfire_woodland_trail = {
+   }
+   th_tranquil_moon_lake = {
+   }
+   th_star_mirror_spring = {
+   }
+   th_mist_enshrouded_giant_redwoods = {
+   }
+   th_forest_shore = {
+   }
+   th_driftwood_strand = {
+   }
+   th_reed_shallow_bay = {
+   }
+   th_fisherman_old_stakes = {
+   }
+   th_mist_woodland = {
+   }
+   th_fairy_derelict_temple = {
+   }
+   th_broken_pillar_mountain_gate = {
+   }
+   th_belfry_ruins = {
+   }
+   th_desolate_courtyard = {
+   }
+   th_forest_fringe = {
+   }
+   th_border_marker_trail = {
+   }
+   th_bramble_palisade = {
+   }
+   th_woodcutter_rest = {
+   }
+   th_lost_traveler_fork = {
+   }
+   th_kirisame_residence = {
+   }
+   th_kirisame_room = {
+   }
+   th_overgrown_front_yard = {
+   }
+   th_kirisame_abandoned_library = {
+   }
+   th_kirisame_mansion_genkan = {
+   }
+   th_mushroom_woods = {
+   }
+   th_giant_agaric_cluster = {
+   }
+   th_rotting_totem_poles = {
+   }
+   th_spore_geyser_valle = {
+   }
+   th_mycelium_network_nexus = {
+   }
+   th_kirisame_magic_shop = {
+   }
+   th_cluttered_display_hall = {
+   }
+   th_potion_brewing_bench = {
+   }
+   th_attic_loft_nook = {
+   }
+   th_main_hall_of_chaotic_wonders = {
+   }
+   th_youkai_beast_path = {
+   }
+   th_claw_marked_great_tree = {
+   }
+   th_youkai_air_misty_valley = {
+   }
+   th_nocturnal_stream = {
+   }
+   th_nightfall_shore_grove = {
+   }
+   th_dusk_waters_edge = {
+   }
+   th_night_heron_perch = {
+   }
+   th_firefly_reed_bed = {
+   }
+   th_fungal_lantern_gallery = {
+   }
+   th_shadow_stalkers_path = {
+   }
+   th_seibi_grove = {
+   }
+   th_cleansing_heart_stream = {
+   }
+   th_grove_stone_altar = {
+   }
+   th_seibi_ancient_tree = {
+   }
+   th_windwhisper_trail = {
+   }
+   th_night_sparrow_diner = {
+   }
+   th_diner_main_hall = {
+   }
+   th_open_air_roast_yard = {
+   }
+   th_stage_regulars_corner = {
+   }
+   th_diner_pantry = {
+   }
+   th_miasma_rain_forest = {
+   }
+   th_rot_heart_giant_tree = {
+   }
+   th_toxic_swamp_fringe = {
+   }
+   th_silent_deadwater_pond = {
+   }
+   th_oki_gutters = {
+   }
+   th_misty_waterway = {
+   }
+   th_discard_heap = {
+   }
+   th_echo_culvert = {
+   }
+   th_mana_saturated_forest = {
+   }
+   th_mana_spring = {
+   }
+   th_living_crystal_cluster = {
+   }
+   th_runestone_ancient_tree = {
+   }
+   th_margatroid_residence = {
+   }
+   th_seven_color_tea_parlor = {
+   }
+   th_margatroid_atrium = {
+   }
+   th_doll_atelier_main_hall = {
+   }
+   th_grimoire_blueprint_study = {
+   }
+   th_margatroid_room = {
+   }
+   th_margatroid_theater = {
+   }
+   th_bountiful_shrine = {
+   }
+   th_inari_torii = {
+   }
+   th_aki_main_hall = {
+   }
+   th_aki_chozya = {
+   }
+   th_harvest_altar = {
+   }
+   th_autumn_worship_hall = {
+   }
+   th_ginkgo_courtyard = {
+   }
+   th_stone_lantern = {
+   }
+   th_aki_maple_corridor = {
+   }
+   th_youkai_forest = {
+   }
+   th_body_dumping_place = {
+   }
+   th_calamity_forest = {
+   }
+   th_deep_forest_path_to_holy_land = {
+   }
+   th_fortuna_county = {
+   }
+   th_youkai_coast = {
+   }
+   th_fearness_beach = {
+   }
+   th_hina_port = {
+   }
+   th_etrnal_night_forest = {
+   }
+   th_keikoku_mugen_zandou = {
+   }
+   th_keikoku_bousen_shiryu = {
+   }
+   th_keikoku_kijin_shoukei = {
+   }
+   th_start_of_nagashi_bina = {
+   }
+   th_lightness_boulevard = {
+   }
+   th_fortune_cat_house = {
+   }
+   th_inei_shinrin_yuugen_jukai = {
+   }
+   th_lost_single_path = {
+   }
+   th_misfortune_swamp = {
+   }
+   th_calamity_port = {
+   }
+   th_dark_hills = {
+   }
+   th_miasma_forest = {
+   }
+   th_hina_dolls_workshop = {
+   }
+   th_misfortune_godess_mansion = {
+   }
+   th_locking_misfortune_borders = {
+   }
+   th_hina_dolls_recycle_center = {
+   }
+   th_temple_of_misfortune = {
+   }
+   th_immortal_mansion = {
+   }
+   th_eagle_house = {
+   }
+   th_immortal_dojo = {
+   }
+   th_pets_room = {
+   }
+   th_kasens_room = {
+   }
+   th_border_of_spring_and_fall = {
+   }
+   th_gap_seasons_path = {
+   }
+   th_border_of_summer_and_winter = {
+   }
+   th_chaos_land = {
+   }
+   th_plain_of_seven_stars = {
+   }
+   th_tengu_shirine = {
+   }
+   th_origin_of_ley_lines = {
+   }
+   th_silk_stream = {
+   }
+   th_people_free_noh_drama_stage = {
+   }
+   th_mais_room = {
+   }
+   th_satonos_room = {
+   }
+   th_myoga_ginger_garden = {
+   }
+   th_thin_bamboo_plantation = {
+   }
+   th_memory_modification_center = {
+   }
+   th_common_sense_transformation_center = {
+   }
+   th_personality_reconstruction_center = {
+   }
+   th_body_rebuild_center = {
+   }
+   th_deep_dark = {
+   }
+   th_barrier_nexus = {
+   }
+   th_hakurei_foothills = {
+   }
+   th_hakurei_mansion = {
+   }
+   th_cherry_blossom_grove = {
+   }
+   th_meditation_grounds = {
+   }
+   th_training_grounds = {
+   }
+   th_hakurei_shrine = {
+   }
+   th_main_hall_plaza = {
+   }
+   th_torii_approach = {
+   }
+   th_hakurei_engawa = {
+   }
+   th_the_always_open_back_gate = {
+   }
+   th_hakurei_offering_hall_of_sparse_faith = {
+   }
+   th_spring_colors_trail = {
+   }
+   th_east_wind_trail = {
+   }
+   th_falling_flowers_flowing_water = {
+   }
+   th_echo_of_new_life_ravine = {
+   }
+   th_whispering_willow_grove = {
+   }
+   th_shrine_maiden_residence = {
+   }
+   th_tea_room_corridor = {
+   }
+   th_hakurei_storage_backyard = {
+   }
+   th_austere_sleeping_chamber = {
+   }
+   th_offering_reception_hall = {
+   }
+   th_front_hill_sakura = {
+   }
+   th_ravine_cherry_path = {
+   }
+   th_thousand_petal_path = {
+   }
+   th_blossom_viewing_pavilion = {
+   }
+   th_petal_drift_stream = {
+   }
+   th_canal_port = {
+   }
+   th_boatwright_workshop = {
+   }
+   th_fantasy_canal_harbor = {
+   }
+   th_main_canal = {
+   }
+   th_exorcism_charm_workshop = {
+   }
+   th_hakurei_boundary_marker_wharf = {
+   }
+   th_hakurei_coast = {
+   }
+   th_east_coast_rocks = {
+   }
+   th_sea_view_cliff = {
+   }
+   th_cape_lighthouse = {
+   }
+   th_sacred_torii_beach = {
+   }
+   th_harbor_masters_observatory = {
+   }
+   th_tidal_pool_of_memories = {
+   }
+   th_hakurei_seaside = {
+   }
+   th_white_sand_beach = {
+   }
+   th_seaside_promenade = {
+   }
+   th_tidal_pool = {
+   }
+   th_komainu_coastal_guard_post = {
+   }
+   th_komainu_coastal_guard_room = {
+   }
+   th_main_practice_field = {
+   }
+   th_archery_range = {
+   }
+   th_back_hill_platform = {
+   }
+   th_tranquil_woods = {
+   }
+   th_streamside_rocks = {
+   }
+   th_under_the_old_cherry = {
+   }
+   th_ancient_pine_platform = {
+   }
+   th_mountain_gate_stairs = {
+   }
+   th_kazami_trail = {
+   }
+   th_clear_mirror_still_water = {
+   }
+   th_wine_cellar = {
+   }
+   th_drunken_immortal_brewery = {
+   }
+   th_moonlight_cellar = {
+   }
+   th_suika_brewery_vault = {
+   }
+   th_drunken_boulder_bed = {
+   }
+   th_seafood_drying_field = {
+   }
+   th_peninsula_lighthouse = {
+   }
+   th_windbreak_pine_forest = {
+   }
+   th_vein_of_living_jade = {
+   }
+   th_vein_of_living_jade_port = {
+   }
+   th_honcho_dori = {
+   }
+   th_workshop_yokocho = {
+   }
+   th_kourindou_main_store = {
+   }
+   th_antique_market = {
+   }
+   th_signpost_fork = {
+   }
+   th_south_market = {
+   }
+   th_nagarekawa_bridge_south_ab = {
+   }
+   th_hieda_residence = {
+   }
+   th_hieda_residence_front_street = {
+   }
+   th_gakusha_shukubo_cho = {
+   }
+   th_kamiya_cho = {
+   }
+   th_tsuji_dou = {
+   }
+   th_nishi_kido_guchi = {
+   }
+   th_hori_bata_dori = {
+   }
+   th_suzunaan = {
+   }
+   th_bookstore_yokocho = {
+   }
+   th_kashihon_gura = {
+   }
+   th_mihan_hiroba = {
+   }
+   th_minami_daimon_dori = {
+   }
+   th_nagarekawa_bashi_minamizume_hiroba = {
+   }
+   th_nagaya_nami_higashiguchi = {
+   }
+   th_sagi_no_shoshitsu = {
+   }
+   th_tsuji_shidou = {
+   }
+   th_minami_tsuji_kouban = {
+   }
+   th_wayside_shrine = {
+   }
+   th_ura_nagaya_dori = {
+   }
+   th_mitsuke_ban_goya = {
+   }
+   th_western_village_street = {
+   }
+   th_central_plaza = {
+   }
+   th_village_office = {
+   }
+   th_old_well_mouth = {
+   }
+   th_crossroads_teahouse = {
+   }
+   th_police_outpost = {
+   }
+   th_village_bell_tower = {
+   }
+   th_zaimoku_cho = {
+   }
+   th_higashi_yokocho = {
+   }
+   th_shingiro = {
+   }
+   th_rouzen_dori = {
+   }
+   th_gakuya_yokocho = {
+   }
+   th_kenbutsuse_mae = {
+   }
+   th_noh_stage = {
+   }
+   th_dougu_kata = {
+   }
+   th_men_nagaya = {
+   }
+   th_hashigakari = {
+   }
+   th_streetcorner_well = {
+   }
+   th_nagaya_ura_roji = {
+   }
+   th_mokuzai_tsubo_ba = {
+   }
+   th_nishi_odori = {
+   }
+   th_ryujin_sama_sekizou = {
+   }
+   th_seiran_ya = {
+   }
+   th_suzuko_ya = {
+   }
+   th_nishi_mi_ban = {
+   }
+   th_satoyama_no_mori = {
+   }
+   th_saikumachi_dori = {
+   }
+   th_geodon_tei_main_hall = {
+   }
+   th_yuya = {
+   }
+   th_umaya_mae = {
+   }
+   th_dozou_soko = {
+   }
+   th_nagashidai_mae = {
+   }
+   th_sakagura_dori = {
+   }
+   th_hatago_yokocho = {
+   }
+   th_terakoya_gakudo = {
+   }
+   th_terakoya_mae = {
+   }
+   th_sensei_no_heya = {
+   }
+   th_kyouzai_gura = {
+   }
+   th_kita_odori = {
+   }
+   th_ura_nagaya_dori_2 = {
+   }
+   th_asobi_niwa = {
+   }
+   th_village_outskirts = {
+   }
+   th_west_slope_wheat_field = {
+   }
+   th_east_fence_vegetable_garden = {
+   }
+   th_watermill_mill = {
+   }
+   th_grain_drying_field = {
+   }
+   th_cattle_grazing_slope = {
+   }
+   th_boundary_stone_road = {
+   }
+   th_kogasa_blacksmith = {
+   }
+   th_datie_street = {
+   }
+   th_ironstock_pile = {
+   }
+   th_grindstone_bench = {
+   }
+   th_old_locust_tree = {
+   }
+   th_myorenji_sando = {
+   }
+   th_myouren_sando_ishidan = {
+   }
+   th_myouren_hill_mon = {
+   }
+   th_myourenji_sando_kiyotaki_bashi = {
+   }
+   th_kyuukei_sekidou = {
+   }
+   th_silent_forest = {
+   }
+   th_silent_forest_mufurin = {
+   }
+   th_silent_forest_mokugosha_kyoboku = {
+   }
+   th_silent_forest_jakko_koken = {
+   }
+   th_silent_forest_seichishi_mizuumi = {
+   }
+   th_high_speed_hovercraft_launch_deck = {
+   }
+   th_high_speed_hovercraft_hangar_maintenance_bay = {
+   }
+   th_high_speed_hovercraft_high_speed_taxiway = {
+   }
+   th_high_speed_hovercraft_emergency_landing_zone = {
+   }
+   th_high_speed_hovercraft_weather_observation_post = {
+   }
+   th_sky_ruins = {
+   }
+   th_floating_foundation_stones = {
+   }
+   th_broken_bridge_corridor = {
+   }
+   th_hanging_garden_ruins = {
+   }
+   th_sky_ruins_sea_of_clouds_edge = {
+   }
+   th_myourenji_hondo = {
+   }
+   th_myourenji_kyozo = {
+   }
+   th_myourenji_shugyo_dojo = {
+   }
+   th_myourenji_teien = {
+   }
+   th_myourenji_saidou = {
+   }
+   th_myourenji_sobo = {
+   }
+   th_myourenji_shoro = {
+   }
+   th_bake_danuki_forest = {
+   }
+   th_shape_shifting_avenue = {
+   }
+   th_fude_brush_shrine_gate = {
+   }
+   th_leaf_coin_market = {
+   }
+   th_human_village_backdoor_hill = {
+   }
+   th_tanuki_belly_drum_theater = {
+   }
+   th_one_night_inn_signpost = {
+   }
+   th_myouren_temple_north_district = {
+   }
+   th_lotus_sutra_stone_path = {
+   }
+   th_unzans_nap_rock = {
+   }
+   th_belfry_of_dawn_chant = {
+   }
+   th_abbots_private_meditation_grove = {
+   }
+   th_sutra_transcription_shed = {
+   }
+   th_lantern_lit_memorial_hall = {
+   }
+   th_lotus_bow_deck = {
+   }
+   th_unzans_cloud_berth = {
+   }
+   th_mandala_guest_hall = {
+   }
+   th_monk_quarters_cell_block = {
+   }
+   th_nazrin_s_treasure_hold = {
+   }
+   th_dragon_protector_prow = {
+   }
+   th_muden_daishibyo_shibyo_honden = {
+   }
+   th_muden_daishibyo_chinmin_chi = {
+   }
+   th_muden_daishibyo_musen_no_dan = {
+   }
+   th_muden_daishibyo_seimu_no_kane = {
+   }
+   th_muden_daishibyo_yume_kaeri_sando = {
+   }
+   th_muden_daishibyo_kisen_bunryu = {
+   }
+   th_zansetsu_no_michi = {
+   }
+   th_zansetsu_no_michi_yosetsu = {
+   }
+   th_zansetsu_no_michi_setpi_iwa = {
+   }
+   th_zansetsu_kairo = {
+   }
+   th_harumachi_no_oka = {
+   }
+   th_tora_no_maru_hoshi = {
+   }
+   th_tora_no_maru_hoshi_hoto_rin = {
+   }
+   th_tora_no_maru_hoshi_shiren_no_iwaya = {
+   }
+   th_tora_no_maru_hoshi_kokyo_seki = {
+   }
+   th_tora_no_maru_hoshi_junsan_dou = {
+   }
+   th_yokai_ri_sando = {
+   }
+   th_hyakki_yakou_zaka = {
+   }
+   th_sando_yomu_kairo = {
+   }
+   th_sando_rimon_kekkai = {
+   }
+   th_myourenji_west_mon = {
+   }
+   th_dullahan_path = {
+   }
+   th_toll_gate = {
+   }
+   th_kogasas_house = {
+   }
+   th_house_of_seiran_and_ringo = {
+   }
+   th_house_of_seiran_and_ringo2 = {
+   }
+   th_weeping_willow_promenade = {
+   }
+   th_washwomen_s_steps = {
+   }
+   th_aqueduct = {
+   }
+   th_kagerou_house = {
+   }
+   th_abandoned_werewolf_mansion = {
+   }
+   th_yasumizu_village = {
+   }
+   th_lykaion_mountain = {
+   }
+   th_moon_touched_clearing = {
+   }
+   th_bane_herb_garden = {
+   }
+   th_triangular_prism_plain = {
+   }
+   th_french_horn_meander = {
+   }
+   th_violoncello_embankment = {
+   }
+   th_synthesizer_avenue = {
+   }
+   th_harp_string_valley = {
+   }
+   th_flute_bamboo_grove = {
+   }
+   th_first_performance_stage = {
+   }
+   th_xylophone_hill = {
+   }
+   th_requiem_plain = {
+   }
+   th_piano_throne = {
+   }
+   th_timpani_hillocks = {
+   }
+   th_echo_chamber_cavern = {
+   }
+   th_first_ward = {
+   }
+   th_second_ward = {
+   }
+   th_third_ward = {
+   }
+   th_forth_ward = {
+   }
+   th_asia_port = {
+   }
+   th_europe_port = {
+   }
+   th_africa_port = {
+   }
+   th_north_new_world_port = {
+   }
+   th_south_new_world_port = {
+   }
+   th_chens_room = {
+   }
+   th_rans_room = {
+   }
+   th_yukaris_room = {
+   }
+   th_lost_courtyard = {
+   }
+   th_cats_amusement_park = {
+   }
+   th_orange_clan = {
+   }
+   th_white_clan = {
+   }
+   th_black_clan = {
+   }
+   th_calico_clan = {
+   }
+   th_local_port_authority = {
+   }
+   th_yakumo_beach = {
+   }
+   th_zenki_area = {
+   }
+   th_goki_area = {
+   }
+   th_yakumo_bay_shiun_misaki = {
+   }
+   th_surface_forest = {
+   }
+   th_surface_cave_settlement = {
+   }
+   th_deep_cave_settlement = {
+   }
+   th_hidden_air_pocket = {
+   }
+   th_treasure_chanber = {
+   }
+   th_front_mysterious_cherry_blossom_path = {
+   }
+   th_middle_mysterious_cherry_blossom_path = {
+   }
+   th_back_mysterious_cherry_blossom_path = {
+   }
+   th_yosakura_kaidou_sakura_fubuki_sandou = {
+   }
+   th_yosakura_kaidou_gyaku_ben_gawa = {
+   }
+   th_zashiki_warashi_dormitory = {
+   }
+   th_zashiki_warashi_resources_department = {
+   }
+   th_north_office_building_complex = {
+   }
+   th_south_office_building_complex = {
+   }
+   th_east_office_building_complex = {
+   }
+   th_monitoring_station_of_borders = {
+   }
+   th_magical_power_unit_area = {
+   }
+   th_maintenance_device_area = {
+   }
+   th_booster_device_area = {
+   }
+   th_barrier_of_death = {
+   }
+   th_barrier_of_pride = {
+   }
+   th_barrier_of_warth = {
+   }
+   th_barrier_of_sloth = {
+   }
+   th_barrier_of_gluttony = {
+   }
+   th_sea_of_lycoris = {
+   }
+   th_white_chrysanthemum_bank = {
+   }
+   th_fly_lair = {
+   }
+   th_deadly_stream = {
+   }
+   th_picnic_spot_for_somebody = {
+   }
+   th_ghast_tower = {
+   }
+   th_black_tower = {
+   }
+   th_phantom_arsenal = {
+   }
+   th_deadbody_moonlight = {
+   }
+   th_fake_life_village = {
+   }
+   th_skeleton_castle_tower = {
+   }
+   th_tomb_first_dead = {
+   }
+   th_skull_checkpoint = {
+   }
+   th_barrier_of_life = {
+   }
+   th_barrier_of_humility = {
+   }
+   th_barrier_of_kindness = {
+   }
+   th_barrier_of_deligence = {
+   }
+   th_barrier_of_temperance = {
+   }
+   th_steps_1_to_1600 = {
+   }
+   th_steps_1601_to_3200 = {
+   }
+   th_steps_3201_to_4800 = {
+   }
+   th_steps_4801_to_6400 = {
+   }
+   th_steps_6401_to_8000 = {
+   }
+   th_snow_gloem_factory = {
+   }
+   th_artifical_stream = {
+   }
+   th_strange_rockwork = {
+   }
+   th_zombie_tearoom = {
+   }
+   th_irreversible_entrance = {
+   }
+   th_yuyukos_room = {
+   }
+   th_greater_kitchen = {
+   }
+   th_rock_gardenv = {
+   }
+   th_surrounding_hallway = {
+   }
+   th_north_branch_of_saigyou_ayakashi = {
+   }
+   th_south_branch_of_saigyou_ayakashi = {
+   }
+   th_east_branch_of_saigyou_ayakashi = {
+   }
+   th_west_branch_of_saigyou_ayakashi = {
+   }
+   th_turnk_of_saigyou_ayakashi = {
+   }
+   th_north_aokigahara_forest = {
+   }
+   th_south_aokigahara_forest = {
+   }
+   th_lost_temple = {
+   }
+   th_the_beach = {
+   }
+   th_paper_windmill_garden = {
+   }
+   th_coin_eyes_bridge = {
+   }
+   th_yuanbao_valley = {
+   }
+   th_paper_doll_village = {
+   }
+   th_endless_tea_party = {
+   }
+   th_decay_library = {
+   }
+   th_castel_ruins = {
+   }
+   th_phantom_wonderland = {
+   }
+   th_death_metal_rock_end = {
+   }
+   th_diavolo_crimson_hotel = {
+   }
+   th_kenny_cementry = {
+   }
+   th_24th_graveyard = {
+   }
+   th_tomitake_marsh = {
+   }
+   th_mami_tea_field = {
+   }
+   th_skeleton_pyramaid = {
+   }
+   th_saigyouji_ossuary = {
+   }
+   th_maxxranas = {
+   }
+   th_drown_tomb = {
+   }
+   th_drown_fleet_port = {
+   }
+   th_black_beard_bay = {
+   }
+   th_davy_jones_locker = {
+   }
+   th_deep_sea_lair = {
+   }
+   th_swordplay_dojo = {
+   }
+   th_giant_garden = {
+   }
+   th_konpaku_fosse = {
+   }
+   th_youmus_room = {
+   }
+   th_ghost_village = {
+   }
+   th_youki_monument = {
+   }
+   th_tomb_of_swords = {
+   }
+   th_youki_port = {
+   }
+   th_reed_field = {
+   }
+   th_borei_genya = {
+   }
+   th_borei_genya_mugen_sougen = {
+   }
+   th_borei_genya_yuukon_bakuden = {
+   }
+   th_dankyu_kyuuryou = {
+   }
+   th_outside_of_the_border_of_the_life_and_death = {
+   }
+   th_poltergeists_lounge = {
+   }
+   th_upper_level_of_flower_city = {
+   }
+   th_lower_level_of_flower_city = {
+   }
+   th_unverified_sakura_border = {
+   }
+   th_shelter_for_the_lost = {
+   }
+   th_bamboo_forest_garrison = {
+   }
+   th_hidden_youseis_pool = {
+   }
+   th_marked_exit_1 = {
+   }
+   th_lost_sanctuary_kikan_shourou = {
+   }
+   th_huziwara_mansion = {
+   }
+   th_straw_fence = {
+   }
+   th_huziwara_traning_house = {
+   }
+   th_bamboo_forest_ninja_warehouse = {
+   }
+   th_huziwara_chicken_farm = {
+   }
+   th_huziwara_port = {
+   }
+   th_marked_exit_2 = {
+   }
+   th_mokous_grill = {
+   }
+   th_inextinguishable_lantern_path = {
+   }
+   th_burned_bamboo_forest = {
+   }
+   th_buried_jade_bamboo_forest = {
+   }
+   th_broken_diamon_bamboo_forest = {
+   }
+   th_horai_bamboo_forest = {
+   }
+   th_kaguya_hideout = {
+   }
+   th_keine_hideout = {
+   }
+   th_sumireko_hideout = {
+   }
+   th_secret_path_of_princess = {
+   }
+   th_eirins_warehouse = {
+   }
+   th_lunar_labs = {
+   }
+   th_herbs_cultivation_base = {
+   }
+   th_horai_pharmacy = {
+   }
+   th_shade_loving_herb_beds = {
+   }
+   th_fragrant_herb_arbor = {
+   }
+   th_road_to_village = {
+   }
+   th_marked_entrance_1 = {
+   }
+   th_night_sparrow_house = {
+   }
+   th_sparrow_wine_source = {
+   }
+   th_dense_bamboo_forest = {
+   }
+   th_tewis_rabbit_hole = {
+   }
+   th_rabbit_beauty_salon = {
+   }
+   th_rabbit_trap_school = {
+   }
+   th_cace_of_caerbannog = {
+   }
+   th_endless_corridor = {
+   }
+   th_endless_byobu = {
+   }
+   th_room_of_night_luminous_pear = {
+   }
+   th_fake_kinkakuji = {
+   }
+   th_fake_ginkakuji = {
+   }
+   th_rabbit_farm = {
+   }
+   th_drugged_mochi_factory = {
+   }
+   th_herb_garden = {
+   }
+   th_lunar_rabbit_kolkhoz = {
+   }
+   th_herb_garden_doka_hatake = {
+   }
+   th_rabbit_port = {
+   }
+   th_rabbit_wonderland = {
+   }
+   th_rabbit_assembly_hall = {
+   }
+   th_youkai_rabbit_village = {
+   }
+   th_reisens_house = {
+   }
+   th_kaguyas_room = {
+   }
+   th_game_console_collection = {
+   }
+   th_courtyard_for_product_elixir = {
+   }
+   th_moon_viewing_terrance = {
+   }
+   th_eirins_clinic = {
+   }
+   th_lunar_rabbit_labor_camp = {
+   }
+   th_lunar_rabbit_detention_center = {
+   }
+   th_lunar_rabbit_collective_canteen = {
+   }
+   th_mangengasaki_port = {
+   }
+   th_lunar_port = {
+   }
+   th_panda_habitat = {
+   }
+   th_marked_entrance_2 = {
+   }
+   th_sunflower_outpost = {
+   }
+   th_center_of_heaven = {
+   }
+   th_ping_heaven_door = {
+   }
+   th_celestial_realm_tong_ming_ge = {
+   }
+   th_heart_of_keystone = {
+   }
+   th_floating_isles_zhe_xian_ju = {
+   }
+   th_horn_fragon_village = {
+   }
+   th_flood_dragon_port = {
+   }
+   th_jade_dragon_mountain = {
+   }
+   th_coiled_dragon_mountain = {
+   }
+   th_coiled_dragon_peak_pool = {
+   }
+   th_celestia_village = {
+   }
+   th_first_peach_garden = {
+   }
+   th_rainy_cloud_grassland = {
+   }
+   th_seven_celestial_maiden_avenue = {
+   }
+   th_celestial_isles_yuqing_que = {
+   }
+   th_jade_village_qingxiao = {
+   }
+   th_jade_city = {
+   }
+   th_jade_village = {
+   }
+   th_watari_kairou = {
+   }
+   th_diamond_quarry = {
+   }
+   th_rainbow_factory = {
+   }
+   th_rain_storm_command = {
+   }
+   th_lightning_storm_port = {
+   }
+   th_plain_in_sunshine = {
+   }
+   th_kenten_kyouko = {
+   }
+   th_unhouten = {
+   }
+   th_unlimited_void = {
+   }
+   th_infinite_consciousness_sphere = {
+   }
+   th_nothing_realm = {
+   }
+   th_flower_land = {
+   }
+   th_vulcano_cloud = {
+   }
+   th_nutmeg_land = {
+   }
+   th_parrot_cloud = {
+   }
+   th_hinanawi_mansion = {
+   }
+   th_jade_avenue = {
+   }
+   th_private_peach_garden = {
+   }
+   th_nawi_shrine = {
+   }
+   th_nayori_residence_stone = {
+   }
+   th_elixir_workshop = {
+   }
+   th_peach_garden_for_banquet = {
+   }
+   th_fishing_spot_on_clouds = {
+   }
+   th_celestial_activity_center = {
+   }
+   th_dragon_palace = {
+   }
+   th_grove_jade_shell_beach = {
+   }
+   th_ikus_house = {
+   }
+   th_celestial_dragon_forbidden_place = {
+   }
+   th_sea_world_reflecting_pool = {
+   }
+   th_palace_xuanhai_main_hall = {
+   }
+   th_palace_rain_prayer_altar = {
+   }
+   th_sea_pacifying_stele = {
+   }
+   th_keystone_port = {
+   }
+   th_floating_clouds_seaside = {
+   }
+   th_dense_fog_shore = {
+   }
+   th_eye_of_storm = {
+   }
+   th_jade_capital_terrace_main = {
+   }
+   th_terrace_milky_way_waterfall = {
+   }
+   th_thunder_swimer_neighbourhood = {
+   }
+   th_imperial_dragon_hills = {
+   }
+   th_lightning_fork = {
+   }
+   th_thunder_zone = {
+   }
+   th_dragon_breathe = {
+   }
+   th_tribulation_tempering_field = {
+   }
+   th_hinanawi_meteorological_bureau = {
+   }
+   th_aurora_exhibition = {
+   }
+   th_hermit_home = {
+   }
+   th_isolated_archipelago = {
+   }
+   th_heavrn_high_hall = {
+   }
+   th_high_port = {
+   }
+   th_pure_clean_cloud = {
+   }
+   th_first_celestial = {
+   }
+   th_mirror_jian_xin_yu = {
+   }
+   th_yumemi_okazaki_probability_ship = {
+   }
+   th_quantum_logic_bridge = {
+   }
+   th_internal_transit_tunnels = {
+   }
+   th_specimen_chamber_of_fantasy_beings = {
+   }
+   th_docking_port_for_the_impossible = {
+   }
+   th_main_engineering_bay = {
+   }
+   th_yumemi_molecular_biolab = {
+   }
+   th_genome_of_magic_sequencing_hall = {
+   }
+   th_himera_cultivation_vats = {
+   }
+   th_protein_synthesis_of_spell_casting = {
+   }
+   th_yumemi_arms_factory_hall = {
+   }
+   th_law_breaching_forge = {
+   }
+   th_armor_plating_press = {
+   }
+   th_yumemi_arms_factory_advanced = {
+   }
+   th_yumemi_magical_arsenal = {
+   }
+   th_weaponized_theorem_case_files = {
+   }
+   th_spell_card_analysis_and_replication_lab = {
+   }
+   th_enchantment_assembly_line = {
+   }
+   th_palace_of_moon = {
+   }
+   th_takamagahara = {
+   }
+   th_royal_guard_garrison = {
+   }
+   th_kegare_purify_core = {
+   }
+   th_border_of_lunar_darkside = {
+   }
+   th_imperial_garden = {
+   }
+   th_imperial_palace_moonlight_library = {
+   }
+   th_sea_of_tranquility = {
+   }
+   th_sea_of_serenity = {
+   }
+   th_lunarian_border = {
+   }
+   th_lunar_rabbit_factory = {
+   }
+   th_sea_of_tranquility_port = {
+   }
+   th_morbid_clock_tower = {
+   }
+   th_ruined_library = {
+   }
+   th_doremy_palace = {
+   }
+   th_blue_warp_gate = {
+   }
+   th_dreamworld_weavers_plain = {
+   }
+   th_dreamworld_weavers_island = {
+   }
+   th_apollo_13_wreckage = {
+   }
+   th_star_banners_wasteland = {
+   }
+   th_darkness_of_astronauts = {
+   }
+   th_yutu_rover_dormancy = {
+   }
+   th_plains_flowing_glow_river = {
+   }
+   th_first_kai_an_channel = {
+   }
+   th_second_kai_an_channel = {
+   }
+   th_passage_floating_life_ferry = {
+   }
+   th_an_passage_awakening_crevice = {
+   }
+   th_an_illusory_sea_junction = {
+   }
+   th_dreamwarden_outpost = {
+   }
+   th_armstong_footstep = {
+   }
+   th_broken_apollo_11 = {
+   }
+   th_hangtian_barony = {
+   }
+   th_meridian_monitoring_station = {
+   }
+   th_meridian_fuse_boundary = {
+   }
+   th_lunar_rabbit_barrack = {
+   }
+   th_lunar_peach_forest = {
+   }
+   th_lunar_rabbit_farm = {
+   }
+   th_lunar_rabbit_dormitory_area = {
+   }
+   th_lunar_rabbit_recycle = {
+   }
+   th_change_special_prison = {
+   }
+   th_princess_prison = {
+   }
+   th_insurgent_lunar_rabbits_concentration_camp = {
+   }
+   th_kegare_execution_chamber = {
+   }
+   th_prison_repentance_well = {
+   }
+   th_watatsuki_no_palace = {
+   }
+   th_toyohime_no_peach_forest = {
+   }
+   th_watatsuki_no_tranning_ground = {
+   }
+   th_yorihime_no_tea_room = {
+   }
+   th_sliver_white_port = {
+   }
+   th_sea_of_clouds = {
+   }
+   th_sea_of_moisture = {
+   }
+   th_dark_matter_engine = {
+   }
+   th_purely_plain = {
+   }
+   th_sea_of_fertility = {
+   }
+   th_seventy_two_grape_land = {
+   }
+   th_pure_village = {
+   }
+   th_bofeng_tomb = {
+   }
+   th_junkos_base = {
+   }
+   th_sea_of_nectar = {
+   }
+   th_tycho_crater = {
+   }
+   th_sea_of_untranquility = {
+   }
+   th_ocean_of_storms = {
+   }
+   th_sea_of_cold = {
+   }
+   th_sea_of_rain = {
+   }
+   th_sea_of_vapours = {
+   }
+   th_copernicus_crater = {
+   }
+   th_kepler_crater = {
+   }
+   th_arstarchus_crater = {
+   }
+   th_lunar_rabbit_rebel_alliance_castle = {
+   }
+   th_lunarian_tomb = {
+   }
+   th_grave_for_amanosagume = {
+   }
+   th_grave_for_toyotamahime = {
+   }
+   th_grave_for_tamayorihime = {
+   }
+   th_clown_village = {
+   }
+   th_red_nose_forest = {
+   }
+   th_clown_port = {
+   }
+   th_lampades_shore = {
+   }
+   th_clownpiece_cabin = {
+   }
+   th_lunar_yousei_port = {
+   }
+   th_hecate_vulcan = {
+   }
+   th_freighter_cemetery = {
+   }
+   th_crescent_bay = {
+   }
+   th_full_moon_top = {
+   }
+   th_waning_moon_peninsula = {
+   }
+   th_lunar_eclipse_port = {
+   }
+   th_bay_tide_song_lighthouse = {
+   }
+   th_sage_deadbody_locker = {
+   }
+   th_kaaba_prototype = {
+   }
+   th_port_of_the_slain = {
+   }
+   th_olympos_basin = {
+   }
+   th_tanguy_island = {
+   }
+   th_mori_island = {
+   }
+   th_dali_island = {
+   }
+   th_isle_non_euclidean_garden = {
+   }
+   th_lunar_isle_inverted_waterfall = {
+   }
+   th_dream_devouring_maelstrom = {
+   }
+   th_tethys_port = {
+   }
+   th_blessed_three_way_fork = {
+   }
+   th_horn_of_lenty = {
+   }
+   th_anemoi_valley = {
+   }
+   th_hecate_avenue = {
+   }
+   th_oreadia = {
+   }
+   th_ourea_cliff = {
+   }
+   th_yew_forest = {
+   }
+   th_datura_garden = {
+   }
+   th_gaea_temple = {
+   }
+   th_eye_of_prometheus = {
+   }
+   th_clotho_great_plain = {
+   }
+   th_pallas_school = {
+   }
+   th_three_worlds_rift_observatory = {
+   }
+   th_archipelago_river_of_estuary = {
+   }
+   th_nyx_temple = {
+   }
+   th_hecatia_mansion = {
+   }
+   th_atlas_mountain = {
+   }
+   th_lachesis_pass = {
+   }
+   th_atlas_mountain_valley = {
+   }
+   th_archipelago_karmic_fire_cliff = {
+   }
+   th_selene_temple = {
+   }
+   th_coeus_port = {
+   }
+   th_astraios_lake = {
+   }
+   th_perses_highland = {
+   }
+   th_cucumenber_garden = {
+   }
+   th_breeding_base = {
+   }
+   th_water_supply_system = {
+   }
+   th_cucumenber_port = {
+   }
+   th_nursery_luminous_greenhouse = {
+   }
+   th_kappa_beach = {
+   }
+   th_kappa_port = {
+   }
+   th_basalt_rock_beach = {
+   }
+   th_diving_paradise = {
+   }
+   th_craftsman_hall = {
+   }
+   th_goblin_shop = {
+   }
+   th_area_13 = {
+   }
+   th_gear_automatic_port = {
+   }
+   th_waterproof_lab = {
+   }
+   th_under_water_port = {
+   }
+   th_mermaid_village = {
+   }
+   th_riverbed_habitat = {
+   }
+   th_treasure_bay = {
+   }
+   th_kappa_capital = {
+   }
+   th_smart_first_city = {
+   }
+   th_sponge_second_city = {
+   }
+   th_nitoris_mansion = {
+   }
+   th_river_network_hub = {
+   }
+   th_kappa_valley = {
+   }
+   th_flooding_lowland = {
+   }
+   th_mangroove_swamp = {
+   }
+   th_kappas_dam = {
+   }
+   th_kappa_ravine_watermill_workshops = {
+   }
+   th_ravine_dish_stone_shoal = {
+   }
+   th_genbu_port = {
+   }
+   th_genbu_ravine = {
+   }
+   th_scale_hills = {
+   }
+   th_genbu_habitat = {
+   }
+   th_wealth_shrine = {
+   }
+   th_abandoned_workshop = {
+   }
+   th_wall_of_veto = {
+   }
+   th_bunker_buster_crater = {
+   }
+   th_implosion_bomb_ruins = {
+   }
+   th_acid_river = {
+   }
+   th_invention_exhibition_hall = {
+   }
+   th_yamawaro_railway = {
+   }
+   th_high_tech_developement_zone = {
+   }
+   th_takanes_mansion = {
+   }
+   th_invention_exhibition_hall_practical = {
+   }
+   th_twin_sunflower_field = {
+   }
+   th_supremium_field = {
+   }
+   th_gourmaryllis_field = {
+   }
+   th_top_secret_cucumenber_field = {
+   }
+   th_withering_hellebore_main = {
+   }
+   th_kappa_test_fields_river_hub = {
+   }
+   th_secret_haven_cliff = {
+   }
+   th_yamawaro_barracks = {
+   }
+   th_cliff_of_dispair = {
+   }
+   th_wargame_land = {
+   }
+   th_false_heaven_shelf = {
+   }
+   th_mountain_foot_no_go_zone = {
+   }
+   th_sannyo_casino = {
+   }
+   th_secret_green_cliff = {
+   }
+   th_smoke_and_snow_tundra_main = {
+   }
+   th_snow_tundra_rime_forest = {
+   }
+   th_infected_industry_area = {
+   }
+   th_water_gel_explosive_forest = {
+   }
+   th_break_ridgepole = {
+   }
+   th_yamawaro_hill_side = {
+   }
+   th_shining_needle_castle_tenshukaku = {
+   }
+   th_private_inner_chamber = {
+   }
+   th_shining_needle_castle_main_bailey = {
+   }
+   th_shining_needle_castle_ground_hall = {
+   }
+   th_uchide_no_kozuchi_room = {
+   }
+   th_shining_needle_castle_second_bailey = {
+   }
+   th_shining_needle_castle_third_bailey = {
+   }
+   th_fusoshin_swamp = {
+   }
+   th_shining_needle_castle_watch_tower = {
+   }
+   th_shining_needle_castle_stone_wall = {
+   }
+   th_mithril_gate = {
+   }
+   th_useless_divice_room = {
+   }
+   th_dusty_srsenal = {
+   }
+   th_empty_chamber = {
+   }
+   th_diminutive_treasure_vault_library = {
+   }
+   th_shining_path = {
+   }
+   th_levitation_garden = {
+   }
+   th_magical_thundercloud = {
+   }
+   th_shaking_plain = {
+   }
+   th_houjuus_arrival = {
+   }
+   th_unknown_forbbiden_area = {
+   }
+   th_worship_mountain_path = {
+   }
+   th_temples_blockade_zone = {
+   }
+   th_hidden_place_of_seiga = {
+   }
+   th_evil_immortal_world = {
+   }
+   th_seigas_mansion = {
+   }
+   th_wraith_path = {
+   }
+   th_lonely_grave = {
+   }
+   th_entrance_of_rainbow_dragon_cave = {
+   }
+   th_dragon_balls_mine = {
+   }
+   th_non_oxygen_pass = {
+   }
+   th_momoyos_cave = {
+   }
+   th_end_of_rainbow_dragon_cave = {
+   }
+   th_crow_forest = {
+   }
+   th_no_vacation_editorial_office = {
+   }
+   th_village_of_crow_tengu = {
+   }
+   th_black_feather_secret_way = {
+   }
+   th_iizunamarus_mansion = {
+   }
+   th_iizunamarus_mountain = {
+   }
+   th_high_sky_on_the_top = {
+   }
+   th_moon_rainbow_market = {
+   }
+   th_chimatas_holy_mansion = {
+   }
+   th_rainbow_valley = {
+   }
+   th_tenkyu_avenue = {
+   }
+   th_shiro_mine_main = {
+   }
+   th_izanagi_mine = {
+   }
+   th_rapid_reaction_force_barrision = {
+   }
+   th_zenkoji_temple = {
+   }
+   th_izanagi_mountain = {
+   }
+   th_izanagi_mine_misogi_spring = {
+   }
+   th_tengu_capital = {
+   }
+   th_tenma_hall_main = {
+   }
+   th_tenma_hall_crow_platform = {
+   }
+   th_michigami_shirine = {
+   }
+   th_village_of_high_nose_tengu = {
+   }
+   th_tengu_settlement_onigawara = {
+   }
+   th_tengu_artisan_quarter = {
+   }
+   th_forbbiden_top = {
+   }
+   th_kurama_news_press = {
+   }
+   th_kurama_mountain_main = {
+   }
+   th_kurama_mountain_tengu_grove = {
+   }
+   th_kurama_mountain_ibuki_waterfall = {
+   }
+   th_hatate_news_press = {
+   }
+   th_bunbun_news_press = {
+   }
+   th_mountain_stronghold = {
+   }
+   th_white_wolfs_fortress_complex = {
+   }
+   th_spy_center = {
+   }
+   th_crow_tengu_tea_party = {
+   }
+   th_stargazing_zpot = {
+   }
+   th_snow_covered_mountain_top = {
+   }
+   th_ownerless_market = {
+   }
+   th_youkai_mountain_top = {
+   }
+   th_ayas_mansion = {
+   }
+   th_hatates_mansion = {
+   }
+   th_mountain_summit_approach = {
+   }
+   th_peony_garden = {
+   }
+   th_peony_pool = {
+   }
+   th_throns_trail = {
+   }
+   th_shadow_of_right_arm = {
+   }
+   th_peony_garden_mound = {
+   }
+   th_yamaubes_hut = {
+   }
+   th_ubames_mansion = {
+   }
+   th_chimi_enclosure = {
+   }
+   th_sanctuaries_avenue = {
+   }
+   th_shack_stone_garden = {
+   }
+   th_narekos_pass = {
+   }
+   th_petrochemical_thorns_hole = {
+   }
+   th_orange_warp_gate = {
+   }
+   th_no_deer_hunt_ground = {
+   }
+   th_ninas_room = {
+   }
+   th_four_seasons_hole = {
+   }
+   th_zoltaxian_labyrinth = {
+   }
+   th_iwanaga_shrine = {
+   }
+   th_joue_inverted_pyramid = {
+   }
+   th_waterfall_of_nine_heavens = {
+   }
+   th_white_wolf_barracks = {
+   }
+   th_water_curtain_cave = {
+   }
+   th_kaer_morhen_stone = {
+   }
+   th_atago_san_main = {
+   }
+   th_tengus_fortification = {
+   }
+   th_maple_forest = {
+   }
+   th_orichalcum_mine = {
+   }
+   th_cableway_terminal = {
+   }
+   th_encampment_mountain_range_pass = {
+   }
+   th_village_of_white_wolf = {
+   }
+   th_wild_colosseum = {
+   }
+   th_momiji_room = {
+   }
+   th_doggy_food_street = {
+   }
+   th_wolf_tengu_waterfall = {
+   }
+   th_white_wolf_tengu_dojo = {
+   }
+   th_tengu_outpost = {
+   }
+   th_white_wolf_watch_tower = {
+   }
+   th_mountain_fortress = {
+   }
+   th_hillside_village = {
+   }
+   th_tengu_outpost_plank_road = {
+   }
+   th_tengu_outpost_boundary_stone = {
+   }
+   th_tengu_mirror_pond_main = {
+   }
+   th_kami_pond_abyss = {
+   }
+   th_silent_plankway = {
+   }
+   th_purity_filth_spring = {
+   }
+   th_take_oyama_main = {
+   }
+   th_hikosan_main = {
+   }
+   th_omine_san_main = {
+   }
+   th_southern_second_peak_pass = {
+   }
+   th_weeping_wind_canyon = {
+   }
+   th_omine_san_ancient_path = {
+   }
+   th_omine_san_guardian_forest = {
+   }
+   th_moriya_garrison = {
+   }
+   th_hell_outpost = {
+   }
+   th_wind_goddess_pass = {
+   }
+   th_idol_ferry_crossing = {
+   }
+   th_hell_wind_warrier = {
+   }
+   th_kochiya_port = {
+   }
+   th_moriya_estuary = {
+   }
+   th_land_of_frogs = {
+   }
+   th_short_lived_forest = {
+   }
+   th_moriya_coast_ashi_wara = {
+   }
+   th_moriya_port = {
+   }
+   th_moriya_holy_mansion = {
+   }
+   th_kochiya_mansion = {
+   }
+   th_mountain_goddess_loved_hills = {
+   }
+   th_moriya_divine_sake_cellar = {
+   }
+   th_divine_resonance_pool = {
+   }
+   th_kamikaze_island_main = {
+   }
+   th_big_toad_lake = {
+   }
+   th_kappa_major_bridge = {
+   }
+   th_kappa_station = {
+   }
+   th_frog_port = {
+   }
+   th_great_toad_pond_bog = {
+   }
+   th_moriya_shrine_honden = {
+   }
+   th_moriya_shrine_haiden = {
+   }
+   th_moriya_shrine_shamushu = {
+   }
+   th_moriya_shrine_temizuya = {
+   }
+   th_moriya_shrine_road = {
+   }
+   th_moriya_shrine_station = {
+   }
+   th_eastern_phantom_meadow = {
+   }
+   th_weastern_phantom_meadow = {
+   }
+   th_ghost_horde = {
+   }
+   th_breeze_hills = {
+   }
+   th_still_wasteland = {
+   }
+   th_lake_of_wind_god = {
+   }
+   th_zealot_billage = {
+   }
+   th_hillside_of_qian = {
+   }
+   th_worship_of_onbashira = {
+   }
+   th_miracle_idol_office = {
+   }
+   th_land_of_seven_holy_stones_and_seven_holy_trees = {
+   }
+   th_lake_kamikaze_himorogi = {
+   }
+   th_lake_kamikaze_windwatch = {
+   }
+   th_lake_of_the_winds_senpu = {
+   }
+   th_cableway_start = {
+   }
+   th_cableway_tengu_line = {
+   }
+   th_cableway_kappa_line = {
+   }
+   th_cableway_hell_new_line = {
+   }
+   th_tornado_maple_forest = {
+   }
+   th_cemetery_of_onbashira = {
+   }
+   th_prayer_hills = {
+   }
+   th_gold_pieces_riber_bend = {
+   }
+   th_border_market = {
+   }
+   th_shattered_gold_customs = {
+   }
+   th_shattered_gold_shallows = {
+   }
+   th_prayer_hill_terrace = {
+   }
+   th_valley_of_earth = {
+   }
+   th_wind_castle = {
+   }
+   th_snakes_hole = {
+   }
+   th_border_of_faith = {
+   }
+   th_wind_god_valley_tengu = {
+   }
+   th_god_valley_meditation = {
+   }
+   th_fog_pub = {
+   }
+   th_miracle_cellaring = {
+   }
+   th_terraced_fields = {
+   }
+   th_beautuful_fountainhead = {
+   }
+   th_green_gate = {
+   }
+   th_misty_sake_den_kappa = {
+   }
+   th_holy_wind_valley = {
+   }
+   th_gods_hoad = {
+   }
+   th_red_frogs_tomb = {
+   }
+   th_hill_of_wind_and_rain = {
+   }
+   th_divine_wind_hanging_meadow = {
+   }
+   th_gate_of_inknown = {
+   }
+   th_primate_barrier = {
+   }
+   th_wall_of_hopoless = {
+   }
+   th_hani_depression = {
+   }
+   th_haniwa_doll_sentry_array = {
+   }
+   th_primate_spirit_garden = {
+   }
+   th_haniyasushin_shrine = {
+   }
+   th_hope_altar = {
+   }
+   th_haniwa_port = {
+   }
+   th_haniwa_shaping_palace = {
+   }
+   th_peninsula_spine_avenue = {
+   }
+   th_idol_prayer_steps = {
+   }
+   th_primate_deepwater_port = {
+   }
+   th_human_preserve_idol_realm = {
+   }
+   th_central_processing_terminal = {
+   }
+   th_clay_island = {
+   }
+   th_unfinished_colossus_island = {
+   }
+   th_clay_bay = {
+   }
+   th_village_of_isolate = {
+   }
+   th_human_spirit_village = {
+   }
+   th_withered_field = {
+   }
+   th_silent_fishing_village = {
+   }
+   th_clay_outpost = {
+   }
+   th_tool_graveyard = {
+   }
+   th_beast_downtown = {
+   }
+   th_shimokita = {
+   }
+   th_primate_lower_city = {
+   }
+   th_haniwa_precinct = {
+   }
+   th_arc_light_emitter = {
+   }
+   th_shaping_bureau = {
+   }
+   th_human_doll_citizen_apartments = {
+   }
+   th_otter_spirit_watchtower = {
+   }
+   th_castor_clan = {
+   }
+   th_red_panda_cave = {
+   }
+   th_iron_branch_dam = {
+   }
+   th_kike_secret_way = {
+   }
+   th_pangolin_bunker = {
+   }
+   th_albatross_storm_nest = {
+   }
+   th_primate_spirit_township = {
+   }
+   th_delusion_prosperity = {
+   }
+   th_tenkyuu_branch_office = {
+   }
+   th_primate_meander = {
+   }
+   th_bloody_turbulence = {
+   }
+   th_st_haniwa_mountain = {
+   }
+   th_penguin_ice_outpost = {
+   }
+   th_haniwa_basin = {
+   }
+   th_old_village_of_wolf_spirit = {
+   }
+   th_wolf_spirit_arena = {
+   }
+   th_wild_plain = {
+   }
+   th_limitation_hills = {
+   }
+   th_scab = {
+   }
+   th_lost_souls_shelter = {
+   }
+   th_tagnation_port = {
+   }
+   th_skeleton_plateau = {
+   }
+   th_gaze_westward_hillock = {
+   }
+   th_atonement_lock = {
+   }
+   th_yamato_beach = {
+   }
+   th_marigold_confluence = {
+   }
+   th_pot_of_souls = {
+   }
+   th_prayer_differential_tower = {
+   }
+   th_lepton_resonance_arc_stream = {
+   }
+   th_dark_abyss = {
+   }
+   th_pot_of_greed = {
+   }
+   th_camp_of_artorias = {
+   }
+   th_burl_heart = {
+   }
+   th_greed_black_market = {
+   }
+   th_desire_tidal_flat = {
+   }
+   th_dragon_crystal_main_island = {
+   }
+   th_sloth_lagoon_island = {
+   }
+   th_naihe_bridge = {
+   }
+   th_well_of_frogotten = {
+   }
+   th_last_chance = {
+   }
+   th_baos_post_station = {
+   }
+   th_utopia_reflection = {
+   }
+   th_reincarnation_whirlpool_palace = {
+   }
+   th_dead_swamp = {
+   }
+   th_forest_of_hunt = {
+   }
+   th_idol_bay = {
+   }
+   th_black_sand_beach = {
+   }
+   th_haniwa_factory = {
+   }
+   th_haniwa_barracks = {
+   }
+   th_haniwa_subrbs = {
+   }
+   th_idol_frontier = {
+   }
+   th_dead_zone = {
+   }
+   th_dregs_shantytown = {
+   }
+   th_faith_clay_pool_island = {
+   }
+   th_loyalty_maze_island = {
+   }
+   th_anvil_root_bridge = {
+   }
+   th_screaming_hell = {
+   }
+   th_scorching_hell = {
+   }
+   th_avici_hell = {
+   }
+   th_deer_hunting_hell = {
+   }
+   th_border_of_fake_and_reality = {
+   }
+   th_reviving_hell = {
+   }
+   th_kalasutra_hell = {
+   }
+   th_samghata_hell = {
+   }
+   th_concept_collapse_abyss = {
+   }
+   th_bee_hive_array = {
+   }
    th_throne_of_caelestinus_V = {
+   }
+   th_abandoned_baby_park = {
+   }
+   th_cobble_riverbank = {
+   }
+   th_stone_stacking_ring = {
+   }
+   th_hell_windless_plain = {
+   }
+   th_hell_path_of_confusion = {
+   }
+   th_pass_of_animal_realm = {
+   }
+   th_kike_gang_skyscraper = {
+   }
+   th_yachies_mansion = {
+   }
+   th_gold_brance_wall = {
+   }
+   th_village_of_otters = {
+   }
+   th_underwater_cellar = {
+   }
+   th_crying_cave = {
+   }
+   th_interrogation_house = {
+   }
+   th_betray_blade = {
+   }
+   th_biten_tree_house = {
+   }
+   th_spongilla_fragilis_garden = {
+   }
+   th_no_live_wilderness = {
+   }
+   th_deadly_hillside = {
+   }
+   th_top_of_regression = {
+   }
+   th_strange_mine = {
+   }
+   th_echo_cavern = {
+   }
+   th_false_moon_dark = {
+   }
+   th_beast_king_garden = {
+   }
+   th_unfinished_land = {
+   }
+   th_relie_throne = {
+   }
+   th_nothing = {
+   }
+   th_oni_tavern = {
+   }
+   th_road_of_liminality = {
+   }
+   th_death_commercial_street = {
+   }
+   th_withered_flowers_garden = {
+   }
+   th_pretas_yelling = {
+   }
+   th_road_of_reconsideration = {
+   }
+   th_lycoris_field = {
+   }
+   th_ghost_queue = {
+   }
+   th_regret_echo_bridge = {
+   }
+   th_pain_equivalence_scale = {
+   }
+   th_untamed_horse_grassland = {
+   }
+   th_beast_froniter = {
+   }
+   th_galloping_horese_avenue = {
+   }
+   th_throne_of_reject = {
+   }
+   th_chaos_storm = {
+   }
+   th_fear_of_oni = {
+   }
+   th_blood_wine_of_sinner = {
+   }
+   th_happyness_plantation = {
+   }
+   th_skeleton_ridge = {
+   }
+   th_hills_of_beast_spirit = {
+   }
+   th_haunted_gold_mine = {
+   }
+   th_bloody_factory = {
+   }
+   th_coward_burrow = {
+   }
+   th_lasso_beast_road = {
+   }
+   th_road_of_slavery = {
+   }
+   th_undead_settlement = {
+   }
+   th_ash_barren = {
+   }
+   th_broken_horn_graveyard = {
+   }
+   th_new_city_of_wolf_spirit = {
+   }
+   th_keiga_gang_skyscraper = {
+   }
+   th_saki_mansion = {
+   }
+   th_pegasus_fortress = {
+   }
+   th_sadness_hillock = {
+   }
+   th_sunken_corpse_riverbed = {
+   }
+   th_kaiji_casino = {
+   }
+   th_hidden_corn_field = {
+   }
+   th_tearless_peak = {
+   }
+   th_solid_rain_cliff = {
+   }
+   th_void_of_fate = {
+   }
+   th_void_of_end = {
+   }
+   th_void_of_think = {
+   }
+   th_void_of_nothing = {
+   }
+   th_relic_hill = {
+   }
+   th_valley_of_new_three_artifact = {
+   }
+   th_game_console_dead_end = {
+   }
+   th_oblivon_time = {
+   }
+   th_sentinel_cliff = {
+   }
+   th_blood_pond_hell = {
+   }
+   th_artery_of_petroleum = {
+   }
+   th_toutetsu_cabin = {
+   }
+   th_brain_of_beast = {
+   }
+   th_sea_of_petroleum = {
+   }
+   th_infinite_food = {
+   }
+   th_greedy_gusher = {
+   }
+   th_bottomless_pit = {
+   }
+   th_desire_cracking_plant = {
+   }
+   th_huangquan = {
+   }
+   th_oni_hunting_chain = {
+   }
+   th_mourning_border = {
+   }
+   th_zoo_of_extince_animals = {
+   }
+   th_oniwatari_pass = {
+   }
+   th_straightforward_traffic_sign = {
+   }
+   th_death_door = {
+   }
+   th_oniwatari_shrine = {
+   }
+   th_crossing_black_market = {
+   }
+   th_garden_of_the_sun = {
+   }
+   th_garden_of_the_sun_cottage = {
+   }
+   th_garden_of_the_sun_sundial = {
+   }
+   th_garden_of_the_sun_maze = {
+   }
+   th_garden_of_the_sun_corridor = {
+   }
+   th_sunset_plain_main = {
+   }
+   th_sunset_plain_watchtower = {
+   }
+   th_sunset_plain_lake = {
+   }
+   th_sunset_plain_grass_sea = {
+   }
+   th_sunset_plain_forest = {
+   }
+   th_sunset_port = {
+   }
+   th_sunset_harbor_observatory = {
+   }
+   th_twilight_mist_flower_field = {
+   }
+   th_flower_field_open_air_stage_main = {
+   }
+   th_flower_field_echo_wall = {
+   }
+   th_flower_field_fairy_stands = {
+   }
+   th_flower_field_backstage = {
+   }
+   th_primordial_flower_sea = {
+   }
+   th_flower_tide_wharf = {
+   }
+   th_stardust_flower_cape = {
+   }
+   th_sunbathing_beach_main = {
+   }
+   th_sunbathing_beach_parasol = {
+   }
+   th_nightshade_sea = {
+   }
+   th_sunbathing_beach_nectar_spring = {
+   }
+   th_sunlight_harbor = {
+   }
+   th_bell_gathering_hills_main = {
+   }
+   th_rappaccini_poison_garden = {
+   }
+   th_bell_hills_patchwork_stage = {
+   }
+   th_court_of_oblivion_main = {
+   }
+   th_court_of_oblivion_tailoring_bench = {
+   }
+   th_lily_valley_poison_sea = {
+   }
+   th_suzusuzu_stage_main = {
+   }
+   th_lily_sea_old_path = {
+   }
+   th_lily_sea_finale_theater = {
+   }
+   th_lily_sea_border_hedge = {
+   }
+   th_memory_lily_hill = {
+   }
+   th_eternal_slumber_lily_hill = {
+   }
+   th_dreamland = {
+   }
+   th_dream_world_stardust_plain = {
+   }
+   th_dream_world_gengetsu_lake = {
+   }
+   th_dreamland_border = {
+   }
+   th_dreamland_limbo_spiral = {
+   }
+   th_slumber_coral_reef = {
+   }
+   th_mugenkan_main_hall = {
+   }
+   th_mugenkan_wonderland_garden = {
+   }
+   th_mugenkan_fantasy_wasteland = {
+   }
+   th_yuuka_bedchamber = {
+   }
+   th_mugenkan_sleeping_terror_chamber = {
+   }
+   th_blood_lake_reflection_hall = {
+   }
+   th_yuuka_mansion_balcony = {
+   }
+   th_lake_of_blood = {
+   }
+   th_lake_of_blood_vampire_pier = {
+   }
+   th_blood_phoneme_corridor = {
+   }
+   th_blood_dried_pass = {
+   }
+   th_mugenkan_erosion_beach = {
+   }
+   th_mugenkan_boiler_room = {
+   }
+   th_dream_world_border = {
+   }
+   th_dream_world_crack_observatory = {
+   }
+   th_dream_world_evil_pier = {
+   }
+   th_unnamed_star = {
+   }
+   th_dream_world_silent_garden = {
+   }
+   th_border_dissolution_point = {
+   }
+   th_final_dream_rainbow_bridge = {
+   }
+   th_dream_world_sisters_boudoir = {
+   }
+   th_dreamscape_hall = {
+   }
+   th_dream_world_mirror_hall = {
+   }
+   th_dream_world_inverted_spire = {
+   }
+   th_reversed_border = {
+   }
+   th_sky_abyss_depths = {
+   }
+   th_deep_dream_chamber = {
+   }
+   th_dreamland_kaian_path = {
+   }
+   th_dream_soul_pool = {
+   }
+   th_dream_dweller_market = {
+   }
+   th_eternal_spring_dream_theater = {
+   }
+   th_gemstone_terrace_dreamland = {
+   }
+   th_demon_twins_cloister = {
+   }
+   th_dream_teardrop_spring = {
+   }
+   th_crimson_pact_altar = {
+   }
+   th_gengetsu_solo_stage = {
+   }
+   th_lotus_pathway_dreamland = {
+   }
+   th_nameless_lake_shore = {
+   }
+   th_dreamland_foam_outpost = {
+   }
+   th_phantom_morning_mist_plain = {
+   }
+   th_lotus_shadow_beach = {
+   }
+   th_rika_mansion_hall = {
+   }
+   th_rika_tank_hangar = {
+   }
+   th_nameless_dream_well = {
+   }
+   th_rika_eastern_border_outpost = {
+   }
+   th_rika_turbine_test_stand = {
+   }
+   th_rika_rooms = {
+   }
+   th_phantom_plain = {
+   }
+   th_eternal_night_plain = {
+   }
+   th_border_wilderness = {
+   }
+   th_phantom_foam_hill = {
+   }
+   th_dreamland_border_fault = {
+   }
+   th_phase_folding_square = {
+   }
+   th_rika_tank_factory_hall = {
+   }
+   th_tank_final_assembly = {
+   }
+   th_eastern_country_line_3 = {
+   }
+   th_turbine_test_stand = {
+   }
+   th_engine_development_room = {
+   }
+   th_engine_oil_black_lake = {
+   }
+   th_tank_graveyard = {
+   }
+   th_rika_prototype_grave = {
+   }
+   th_eastern_country_abandoned_line = {
+   }
+   th_rika_shotdown_zone = {
+   }
+   th_turbine_barrow = {
+   }
+   th_anomalous_space_time = {
+   }
+   th_space_time_turbulence_corridor = {
+   }
+   th_resonance_fissure = {
+   }
+   th_dream_realm_path = {
+   }
+   th_evil_eye_gaze_corridor = {
+   }
+   th_dimensional_fold_belt = {
+   }
+   th_apprentice_home = {
+   }
+   th_marisa_apprentice_workshop = {
+   }
+   th_dreamrealm_student_danmaku_field = {
+   }
+   th_magic_resonance_tower = {
+   }
+   th_mima_teaching_chamber = {
+   }
+   th_dreamrealm_reima_den_main_hall = {
+   }
+   th_soul_binding_chamber = {
+   }
+   th_mima_throne_room = {
+   }
+   th_cult_library = {
+   }
+   th_witch_pact_chamber = {
+   }
+   th_dream_realm_gaze_dome = {
+   }
+   th_dream_realm_center = {
+   }
+   th_border_harmony_chamber = {
+   }
+   th_witches_gathering_square = {
+   }
+   th_star_moon_prophecy_tower = {
+   }
+   th_spell_weaving_atelier = {
+   }
+   th_dream_realm_gate = {
+   }
+   th_moonbow_bridge_market = {
+   }
+   th_dream_pet_market = {
+   }
+   th_spellbook_bazaar = {
+   }
+   th_doll_heart_tower = {
+   }
+   th_red_queen_maze = {
+   }
+   th_late_rabbit_hole = {
+   }
+   th_doll_tea_party_garden = {
+   }
+   th_alice_old_room = {
+   }
+   th_makai_wonderland = {
+   }
+   th_stagnant_melody_bay = {
+   }
+   th_golden_ratio_cloister = {
+   }
+   th_makai_barrier = {
+   }
+   th_abyss_gaze_gate = {
+   }
+   th_fallen_angel_shackle_platform = {
+   }
+   th_chaos_core_reactor = {
+   }
+   th_sariel_judgment_old_masion = {
+   }
+   th_rainbow_silence_shoal = {
+   }
+   th_location_refraction_rise = {
+   }
+   th_prismatic_field = {
+   }
+   th_makai_dew_disperse = {
+   }
+   th_makai_monstrosity = {
+   }
+   th_makai_fae_atelier = {
+   }
+   th_makai_eternal_cacophony = {
+   }
+   th_makai_ideal_city_ruin_island = {
+   }
+   th_makai_silken_vault = {
+   }
+   th_brocade_bazaar = {
+   }
+   th_moonshade_grove = {
+   }
+   th_makai_gleam_quay = {
+   }
+   th_mithril_roadstead = {
+   }
+   th_makai_gate_of_myriad_demons = {
+   }
+   th_stellar_laboratory = {
+   }
+   th_grotesque_armory = {
+   }
+   th_silver_key_cloister = {
+   }
+   th_makai_silent_chapel = {
+   }
+   th_silver_key_cloister_workroom = {
+   }
+   th_time_tuning_chamber = {
+   }
+   th_makai_candy_fountain = {
+   }
+   th_phantom_butterfly_valley = {
+   }
+   th_makai_rainbow_dandelion_meadow = {
+   }
+   th_makai_fairy_garden = {
+   }
+   th_upside_down_grove = {
+   }
+   th_fairy_el_dorado_island = {
+   }
+   th_makai_frozen_world_west = {
+   }
+   th_makai_frozen_world_south = {
+   }
+   th_makai_forbidden_magic = {
+   }
+   th_makai_mai_yuki = {
+   }
+   th_judas_mirror_court = {
+   }
+   th_makai_chaos_abyss = {
+   }
+   th_temporal_fissure = {
+   }
+   th_makai_great_scar = {
+   }
+   th_katuganya_makai = {
+   }
+   th_reverse_creation_spiral = {
+   }
+   th_genesis_cloister_hall = {
+   }
+   th_makai_loom_of_forms = {
+   }
+   th_makai_spiral_gene_stairs = {
+   }
+   th_makai_hall_of_mirrors = {
+   }
+   th_makai_concept_incubator_element = {
+   }
+   th_borges_library_branch = {
+   }
+   th_shinki_old_atelier = {
+   }
+   th_cheshire_cat_alley = {
+   }
+   th_upside_down_garden = {
+   }
+   th_mononoke_machi = {
+   }
+   th_makai_world_gate_post = {
+   }
+   th_makai_saras_watch_post = {
+   }
+   th_gate_of_the_forgotten = {
+   }
+   th_mana_nexus_ring_makai = {
+   }
+   th_makai_hole_vertical_street = {
+   }
+   th_makai_barrier_seam = {
+   }
+   th_makai_hidden_realms = {
+   }
+   th_makai_dharma_realm_checkerboard_plain = {
+   }
+   th_diagonal_avenue_street = {
+   }
+   th_romantic_children_cross = {
+   }
+   th_magus_pilgrim_tower = {
+   }
+   th_makai_central_library = {
+   }
+   th_makai_reverse_sewer_network = {
+   }
+   th_makai_hijiri_byakuren_berth = {
+   }
+   th_makai_demon_rose_night_garden = {
+   }
+   th_makai_metropolis_center = {
+   }
+   th_eternal_dusk_theater = {
+   }
+   th_shinki_creation_museum = {
+   }
+   th_makai_crystal_apartment = {
+   }
+   th_makai_genesis_obelisk = {
+   }
+   th_genesis_origin_plaza = {
+   }
+   th_genesis_fresco = {
+   }
+   th_yumeko_manor = {
+   }
+   th_makai_frontier = {
+   }
+   th_makai_mad_hatter_frontier_tea = {
+   }
+   th_makai_frontier_east = {
+   }
+   th_makai_zero_gate = {
+   }
+   th_fractal_plain_makai = {
+   }
+   th_makai_harbor = {
+   }
+   th_dimensional_seawall = {
+   }
+   th_luize_traveler_ground = {
+   }
+   th_wonderland_travel_agency = {
+   }
+   th_returner_sanatorium = {
+   }
+   th_otherworld_souvenir_market = {
+   }
+   th_dharmadhatu_makai = {
+   }
+   th_false_sun = {
+   }
+   th_makai_emptiness_pool = {
+   }
+   th_makai_city_mirage = {
+   }
+   th_ruins_of_vina = {
+   }
+   th_elis_star_rod_tower = {
+   }
+   th_pixel_ruin_plain = {
+   }
+   th_fallen_temple_vestibule_before = {
+   }
+   th_makai_bat_roost = {
+   }
+   th_inverted_cross_corridor = {
+   }
+   th_civilization_of_magic_library = {
+   }
+   th_six_winged_throne_room = {
+   }
+   th_sariel_judgment_masion = {
+   }
+   th_sariel_judgment_room = {
+   }
+   th_frozen_hymn_church = {
+   }
+   th_golden_apple_orchard = {
+   }
+   th_angel_dry_dock = {
+   }
+   th_elysian_cargo_market = {
+   }
+   th_elysion_makai = {
+   }
+   th_old_reimu_old_trace = {
+   }
+   th_old_outer_world_junk_pile = {
+   }
+   th_kana_anaberal_masion_hidden = {
+   }
+   th_hakurei_roofless_honden = {
+   }
+   th_hakurei_old_sando = {
+   }
+   th_cave_to_makai = {
+   }
+   th_elis_smuggle_path = {
+   }
+   th_secret_stream_to_harbor = {
+   }
+   th_wonderland_port_forgotten = {
+   }
+   th_hakurei_abandon_shrine_old = {
+   }
+   th_sariel_waiting_pavilion = {
+   }
+   th_old_hakurei_shrine_torii_labyrinth = {
+   }
+   th_hakurei_old_shrine_garden = {
+   }
+   th_green_landscape_islands = {
+   }
+   th_old_hakurei_asetic_path = {
+   }
+   th_hakurei_back_mountain = {
+   }
+   th_hakurei_former_miko_grave_mound = {
+   }
+   th_hakurei_lake_upper_valley = {
+   }
+   th_old_tree_hakurei_shinbaku = {
+   }
+   th_hakurei_trial_slope = {
+   }
+   th_illusionary_ruins_main = {
+   }
+   th_inception_mirror_layer = {
+   }
+   th_ruins_convergence_point = {
+   }
+   th_dream_diary_corridor = {
+   }
+   th_illusionary_ruins_outdoor = {
+   }
+   th_murasakino_location = {
+   }
+   th_inverted_murasaki_bamboo = {
+   }
+   th_old_cutoff_sanzu_river = {
+   }
+   th_old_prototype_gap_corridor = {
+   }
+   th_old_shigan_port = {
+   }
+   th_old_higanbana_cliff = {
+   }
+   th_fluffy_ellen_magic_shop_main = {
+   }
+   th_fluffy_ellen_magic_masion_main = {
+   }
+   th_fluffy_ellen_magic_shop_room = {
+   }
+   th_socrates_philosophy_bone_room = {
+   }
+   th_ellen_walking_teacup_garden = {
+   }
+   th_meira_dojo_main = {
+   }
+   th_fumairoku_archive_location = {
+   }
+   th_meira_dojo_masion = {
+   }
+   th_cut_bonds_testing_stone = {
+   }
+   th_meira_no_thought_sword_steps = {
+   }
+   th_kana_mansion_main = {
+   }
+   th_kana_maidens_blank_bedroom = {
+   }
+   th_kana_faded_memory_foyer = {
+   }
+   th_kana_sighing_corridor = {
+   }
+   th_phantom_banquet_hall = {
+   }
+   th_abandoned_magic_room = {
+   }
+   th_crystal_computer_array = {
+   }
+   th_asakura_laboratory_room = {
+   }
+   th_me_controller_core = {
+   }
+   th_crystal_growth_chamber = {
+   }
+   th_asakura_laboratory_tech_room = {
+   }
+   th_former_hell_gate = {
+   }
+   th_sin_flame_furnace = {
+   }
+   th_old_grudge_precipitation_pool = {
+   }
+   th_sin_flame_man_room = {
+   }
+   th_astral_approach_main = {
+   }
+   th_astral_approach_konngara_dojo = {
+   }
+   th_masterless_buddha_altar = {
+   }
+   th_child_attendant_cell = {
+   }
+   th_silent_bell_tower = {
+   }
+   th_silent_sanctuary_main = {
+   }
+   th_impure_flame_shrine = {
+   }
+   th_flame_core_abyss_outdoor = {
+   }
+   th_kikuri_abode_main = {
+   }
+   th_flame_festering_lake = {
+   }
+   th_silent_sanctuary_vestibule = {
+   }
+   th_flame_core_abyss = {
+   }
+   th_old_hig_port = {
+   }
+   th_nameless_jizo_shrine = {
+   }
+   th_time_rot_rain_shrine = {
+   }
+   th_hungry_ghost_offering_shrine = {
+   }
+   th_inverted_pillar = {
+   }
+   th_yama_sentry = {
+   }
+   th_jizo_maze = {
+   }
+   th_onimi_barracks = {
+   }
+   th_jiulun_palace = {
+   }
+   th_yama_outpost_harbor = {
+   }
+   th_isle_void_gaze = {
+   }
+   th_taihe_palace = {
+   }
+   th_emperors_mansion = {
+   }
+   th_black_tea_garden = {
+   }
+   th_thousands_purple_sakura_blossom = {
+   }
+   th_isle_rust_shield_island = {
+   }
+   th_hell_low_wall = {
+   }
+   th_hell_pending_cases = {
+   }
+   th_higanbana_plain = {
+   }
+   th_xuanming_palace = {
+   }
+   th_no_vitality_mountain_pass = {
+   }
+   th_yama_plain = {
+   }
+   th_shoreless_field_out = {
+   }
+   th_shoreless_field = {
+   }
+   th_souls_detention_center = {
+   }
+   th_onimi_house = {
+   }
+   th_taigongs_fishing_spot = {
+   }
+   th_pride_of_death = {
+   }
+   th_nameless_steles = {
+   }
+   th_far_shore = {
+   }
+   th_paradise_upstream = {
+   }
+   th_horse_head_village = {
+   }
+   th_pingzhong_terrace = {
+   }
+   th_yesterday_mirror = {
+   }
+   th_soul_return_steles = {
+   }
+   th_yama_palace = {
+   }
+   th_bizhen_palace = {
+   }
+   th_suying_palace = {
+   }
+   th_city_of_feng = {
+   }
+   th_jetavana_ruined_shrine = {
+   }
+   th_jetavana_ruined_shrine_door = {
+   }
+   th_life_death_archive = {
+   }
+   th_hall_of_judgment = {
+   }
+   th_sin_mirror_platform = {
+   }
+   th_hell_punishment_chamber = {
+   }
+   th_hell_reward_pool = {
+   }
+   th_hell_guard_barracks = {
+   }
+   th_hell_port = {
+   }
+   th_windless_col = {
+   }
+   th_outsider_souls_village = {
+   }
+   th_qifei_palace = {
+   }
+   th_yin_yang_customs = {
+   }
+   th_hell_appeal_court = {
+   }
+   th_miasma_field = {
+   }
+   th_hills_of_after_death = {
+   }
+   th_hole_of_the_border = {
+   }
+   th_fossil_coast = {
+   }
+   th_isle_infinite_light = {
+   }
+   th_isle_infinite_light_coast = {
+   }
+   th_purgatory = {
+   }
+   th_wuchang_shore = {
+   }
+   th_depression_of_chaos_qi = {
+   }
+   th_bull_head_village = {
+   }
+   th_jiuji_palace = {
+   }
+   th_purge_ironworks_port = {
+   }
+   th_purgatorial_foundry_port = {
+   }
+   th_purge_ironworks_port_village = {
+   }
+   th_isle_no_self_rock = {
+   }
+   th_isle_emptiness_islands = {
+   }
+   th_forbbiden_zone_of_onimi_head = {
+   }
+   th_little_devil_town = {
+   }
+   th_jizo_palace = {
+   }
+   th_teahouse_at_hell = {
+   }
+   th_scorching_great_forge = {
+   }
+   th_chief_oni_headquarters = {
+   }
+   th_komachis_hideout = {
+   }
+   th_expedition_port = {
+   }
+   th_hazbin_hotel = {
+   }
+   th_alchemy_workhouse = {
+   }
+   th_market_ferryman_tavern = {
+   }
+   th_market_higan_tea = {
+   }
+   th_santu_river_bank = {
+   }
+   th_chenghuang_temple = {
+   }
+   th_xiwen_meander = {
+   }
+   th_separate_souls_ferry = {
+   }
+   th_smoldering_forest = {
+   }
+   th_massacre_wildrness = {
+   }
+   th_will_castle = {
+   }
+   th_nine_spirng_pass = {
+   }
+   th_waste_thousand_year_sea = {
+   }
+   th_withered_chrysanthemum_field = {
+   }
+   th_land_ofcontrition = {
+   }
+   th_atonement_trail = {
+   }
+   th_enlightenment_mine = {
+   }
+   th_end_of_souls = {
+   }
+   th_pass_of_hell = {
+   }
+   th_tai_palace = {
+   }
+   th_regret_location = {
+   }
+   th_mingchen_palace = {
+   }
+   th_waste_return_monument = {
+   }
+   th_gate_mandala_altar = {
+   }
+   th_niwataris_entry = {
+   }
+   th_hundreds_days_resentment = {
+   }
+   th_outside_world_entry = {
+   }
+   th_wrongfully_killed_dormitory = {
+   }
+   th_sai_no_kawara = {
+   }
+   th_village_of_foundling = {
+   }
+   th_eika_cabin = {
+   }
+   th_yama_terakoya = {
+   }
+   th_start_of_memorie = {
+   }
+   th_miare_office = {
+   }
+   th_unheard_old_haunt = {
+   }
+   th_camellia_garden = {
+   }
+   th_riverbed_endless_shore = {
+   }
+   th_grand_magi_residence = {
+   }
+   th_puming_palace = {
+   }
+   th_mortals_annex = {
+   }
+   th_offerings_avenue = {
+   }
+   th_hall_rites_cage = {
+   }
+   th_souls_river = {
+   }
+   th_shenhua_palace = {
+   }
+   th_tongue_pulling_cave = {
+   }
+   th_quarter_sessions = {
+   }
+   th_river_soul_lotus = {
+   }
+   th_river_soul_shallows = {
+   }
+   th_hecatia_temple = {
+   }
+   th_porphyra_dyehouse = {
+   }
+   th_port_of_goddess = {
+   }
+   th_hedes_inn = {
+   }
+   th_hell_hecate_kennels = {
+   }
+   th_hecate_main_hall = {
+   }
+   th_hell_hecate_cape = {
+   }
+   th_waste_ink_pool = {
+   }
+   th_hell_peninsula_main = {
+   }
+   th_hell_flayed_coast = {
+   }
+   th_hell_steamer_valley = {
+   }
+   th_hell_stone_plains_island = {
+   }
+   th_hell_blood_cape = {
+   }
+   th_penitent_sinners_coast = {
+   }
+   th_hell_town_of_repentance = {
+   }
+   th_repent_mouth = {
+   }
+   th_repent_corridor_sea = {
+   }
+   th_repent_forest_door_hell = {
+   }
+   th_pillar_of_tears_islet = {
+   }
+   th_burden_shedding_beach_port = {
+   }
+   th_sunken_main_street = {
+   }
+   th_sunken_lighthouse = {
+   }
+   th_sunken_ship_graveyard = {
+   }
+   th_sunken_shell_wall = {
+   }
+   th_nazrin_outpost = {
+   }
+   th_hell_nazrin_door = {
+   }
+   th_hell_nazrin_workbench = {
+   }
+   th_hell_nazrin_shushushushushuchu = {
+   }
+   th_hell_muenzuka_main = {
+   }
+   th_muenzuka_junk_hill = {
+   }
+   th_hell_muenzuka_lamp = {
+   }
+   th_muezuka_re_hec = {
+   }
+   th_stranded_soul_shoal = {
+   }
+   th_hazy_barrier_hell = {
+   }
+   th_hazy_fading_path = {
+   }
+   th_hazy_memory_fog = {
+   }
+   th_hell_hazy_echo = {
+   }
+   th_shrine_of_death = {
+   }
+   th_shrine_of_death_door = {
+   }
+   th_hell_death_office = {
+   }
+   th_hell_ghost_death_bell = {
+   }
+   th_soul_lantern_forest = {
+   }
+   th_solitus_strand = {
+   }
+   th_hell_solitus_tide = {
+   }
+   th_hell_solitus_shore = {
+   }
+   th_hell_solitus_reef = {
+   }
+   th_monolith_of_silent_witness = {
+   }
+   th_hell_ossuary_field = {
+   }
+   th_hell_ossuary_lair = {
+   }
+   th_hell_ossuary_seepage = {
+   }
+   th_hell_ossuary_stratum = {
+   }
+   th_underground_harbor_east = {
+   }
+   th_harbor_fuel_depot = {
+   }
+   th_harbor_waste_pool = {
+   }
+   th_harbor_magma_wharf = {
+   }
+   th_underground_harbor_west = {
+   }
+   th_steam_bath_hospital = {
+   }
+   th_hidden_site_geothermal = {
+   }
+   th_hidden_cryo_pool = {
+   }
+   th_hidden_rin_cache = {
+   }
+   th_old_hell_hidden_heart = {
+   }
+   th_nuclear_fusion_center = {
+   }
+   th_assisted_enhanced_fusion_reactor = {
+   }
+   th_center_energy_corridors = {
+   }
+   th_center_ruined_reactor = {
+   }
+   th_assisted_enhanced_fusion_reactor_computer = {
+   }
+   th_nuclear_furnace_main = {
+   }
+   th_americium_isotope_plasma_turbine = {
+   }
+   th_tungsten_disulfide_manufacturing_site = {
+   }
+   th_laser_energy_storage_warehouse = {
+   }
+   th_reactor_coolant_circulation_center = {
+   }
+   th_implosion_compressor = {
+   }
+   th_forgotten_hamlet = {
+   }
+   th_village_valley_windless = {
+   }
+   th_village_path_eroded = {
+   }
+   th_village_lane_bone = {
+   }
+   th_submerged_foundation_reef = {
+   }
+   th_blazing_hell_remains = {
+   }
+   th_hell_tribunal = {
+   }
+   th_hell_bloodpool = {
+   }
+   th_hell_pipes_outer = {
+   }
+   th_hell_river_slag = {
+   }
+   th_corpse_stockpile_center = {
+   }
+   th_rin_hell_yard_sorting = {
+   }
+   th_corpse_zone_compost = {
+   }
+   th_corpse_corner_appraise = {
+   }
+   th_hellcats_rest = {
+   }
+   th_rest_post_scratch = {
+   }
+   th_rest_door_catcart = {
+   }
+   th_hellcats_room = {
+   }
+   th_chireiden_entrance_hall = {
+   }
+   th_chireiden_entrance_hall_main = {
+   }
+   th_chireiden_vivarium_pet = {
+   }
+   th_chireiden_room_koishi = {
+   }
+   th_chireiden_room_satori = {
+   }
+   th_chireiden_library_second = {
+   }
+   th_chireiden_archive_of_overheard_secrets = {
+   }
+   th_chireiden_whispering_pipe_organ = {
+   }
+   th_palace_of_the_earth_spirits_second_floor = {
+   }
+   th_chireiden_courtyard_heart = {
+   }
+   th_courtyard_shrubs_crystal = {
+   }
+   th_courtyard_path_pet = {
+   }
+   th_rose_garden_oblivion = {
+   }
+   th_courtyard_swing_koishi = {
+   }
+   th_courtyard_dome_sky = {
+   }
+   th_chireiden_balcony_satori = {
+   }
+   th_balcony_observatory_eye = {
+   }
+   th_balcony_platform_view = {
+   }
+   th_dream_dimension_generator = {
+   }
+   th_underground_great_hollow = {
+   }
+   th_hollow_isles_floating = {
+   }
+   th_hollow_forest_crystal = {
+   }
+   th_basalt_canyon = {
+   }
+   th_hollow_tower_signal = {
+   }
+   th_ceiling_of_false_stars = {
+   }
+   th_weird_fungus_forest = {
+   }
+   th_crimson_fungus_forest = {
+   }
+   th_cave_pool_spore = {
+   }
+   th_cave_forest_crystal = {
+   }
+   th_gate_of_the_depths = {
+   }
+   th_gate_camp_wanderer = {
+   }
+   th_crystal_echo_hollow = {
+   }
+   th_miasma_sunken_depression = {
+   }
+   th_springs_bath_mixed = {
+   }
+   th_springs_vent_steam = {
+   }
+   th_springs_room_tengu = {
+   }
+   th_springs_nest_egg = {
+   }
+   th_springs_recovery_vip = {
+   }
+   th_old_hell_hidden_hill = {
+   }
+   th_hill_den_stray = {
+   }
+   th_hill_bazaar_rust = {
+   }
+   th_hill_den_stray_street = {
+   }
+   th_kazaana_yamame_web = {
+   }
+   th_yamame_bridge_web = {
+   }
+   th_yamame_shaft_vent = {
+   }
+   th_kazaana_hidden_eye = {
+   }
+   th_kazaana_webway = {
+   }
+   th_hamlet_mine_fluorite = {
+   }
+   th_dregs_tunnels_safe = {
+   }
+   th_settlement_labor_market = {
+   }
+   th_hamlet_earth_spirit = {
+   }
+   th_great_stalactite_market = {
+   }
+   th_old_hell_geyser_trail = {
+   }
+   th_trail_marsh_entrance = {
+   }
+   th_trail_pillars_jet = {
+   }
+   th_trail_crystal_sulfur = {
+   }
+   th_trail_fissure = {
+   }
+   th_trail_stones_spring = {
+   }
+   th_onsen_gate_neon = {
+   }
+   th_onsen_pool_hellfish = {
+   }
+   th_onsen_street_market = {
+   }
+   th_onsen_bath_goka = {
+   }
+   th_onsen_pool_seishin = {
+   }
+   th_crystal_hum_sauna_cave = {
+   }
+   th_old_hell_geyser_core = {
+   }
+   th_core_lake_boiling = {
+   }
+   th_core_boiler_abandoned = {
+   }
+   th_core_interface_power = {
+   }
+   th_rarely_trodden_bridge = {
+   }
+   th_hell_bridge_cottage = {
+   }
+   th_bridge_spring_envy = {
+   }
+   th_bridge_bones_nameless = {
+   }
+   th_former_capital_west_avenue = {
+   }
+   th_hyakki_lanterngate = {
+   }
+   th_hells_izakaya = {
+   }
+   th_west_bookstore_strange = {
+   }
+   th_west_shop_tang = {
+   }
+   th_west_stall_mimei_street = {
+   }
+   th_former_capital_central_district = {
+   }
+   th_central_club_hyakki = {
+   }
+   th_central_boulevard_enma = {
+   }
+   th_bustling_feast_gakidou = {
+   }
+   th_central_district_samurai = {
+   }
+   th_sake_laden_wharf = {
+   }
+   th_former_capital_northern_district = {
+   }
+   th_north_camp_ironanvil = {
+   }
+   th_north_zone_dormitory = {
+   }
+   th_oni_north_customs_gate = {
+   }
+   th_oni_quarters_street = {
+   }
+   th_shuten_alley = {
+   }
+   th_suika_old_house = {
+   }
+   th_hoshiguma_bar = {
+   }
+   th_phantom_lantern_alley = {
+   }
+   th_oni_harbor_location = {
+   }
+   th_oni_brewery_core = {
+   }
+   th_fermentation_blood_pool = {
+   }
+   th_giant_gourd_aging_hall = {
+   }
+   th_yeast_wraith_garden = {
+   }
+   th_oni_drunken_sandbank_market = {
+   }
+   th_oni_arena_location = {
+   }
+   th_oni_colosseum_location = {
+   }
+   th_feast_hall_of_victors_and_vanquished = {
+   }
+   th_silent_bet_den = {
+   }
+   th_feral_beast_menagerie = {
+   }
+   th_abyssal_tunnel_network = {
+   }
+   th_bucket_suspension_chasm = {
+   }
+   th_bucket_suspension_room = {
+   }
+   th_tear_stalactite_forest = {
+   }
+   th_geyser_field_surface = {
+   }
+   th_hell_terraced_springs = {
+   }
+   th_geothermal_vein_mine = {
+   }
+   th_dragon_breath_vent = {
+   }
+   th_steam_shroud_atoll = {
+   }
+   th_boiling_tide_channel_port = {
+   }
+   th_cableway_of_divine_spirit_mausoleum = {
+   }
+   th_kappas_shinbutsushugou = {
+   }
+   th_echo_of_yamabiko = {
+   }
+   th_road_of_virtue = {
+   }
+   th_mountains_rivers_scroll = {
+   }
+   th_ascension_pillar_transfer = {
+   }
+   th_gate_of_miyako = {
+   }
+   th_recite_poetry_forest = {
+   }
+   th_wuxings_lawn = {
+   }
+   th_poisonous_deadbody_riverbank = {
+   }
+   th_guardian_shikigami_sentry_post = {
+   }
+   th_mikos_sermon = {
+   }
+   th_pure_heart_pavilion = {
+   }
+   th_wordless_stele_valley = {
+   }
+   th_pass_of_li = {
+   }
+   th_viewing_platform_of_the_true_gate = {
+   }
+   th_echo_of_ten_arguments_pillars = {
+   }
+   th_mikos_sermon_gate = {
+   }
+   th_cup_of_enlightenment_tea_service = {
+   }
+   th_dream_palace = {
+   }
+   th_immortal_ascension_terrace = {
+   }
+   th_time_stop_tower = {
+   }
+   th_mountain_of_dui = {
+   }
+   th_lotus_pool = {
+   }
+   th_laojuns_temple = {
+   }
+   th_jade_pavilion = {
+   }
+   th_yinyang_dormitory = {
+   }
+   th_cauldron_of_chaos_altar = {
+   }
+   th_purple_gold_crucible = {
+   }
+   th_mountain_of_hermits = {
+   }
+   th_borken_axe_forest = {
+   }
+   th_land_of_qian = {
+   }
+   th_wu_ling = {
+   }
+   th_silver_village = {
+   }
+   th_cinnabar_plain = {
+   }
+   th_forest_of_zhen = {
+   }
+   th_lead_power_suburb = {
+   }
+   th_five_metal_shrine = {
+   }
+   th_divine_spirit_mausoleum = {
+   }
+   th_mikos_room = {
+   }
+   th_private_dojo = {
+   }
+   th_outer_world_path = {
+   }
+   th_hall_of_two_sages_hearing = {
+   }
+   th_mikos_meditation_house = {
+   }
+   th_house_of_sanshi = {
+   }
+   th_four_monkey_backyard = {
+   }
+   th_ancient_moon_garden = {
+   }
+   th_development_site_of_alchemical_cauldron = {
+   }
+   th_hill_of_fire = {
+   }
+   th_forest_of_xun = {
+   }
+   th_thousands_souls_prison = {
+   }
+   th_mercury_and_cinnabar_refinery = {
+   }
+   th_cave_of_gen = {
+   }
+   th_buried_bone_buddha_hall = {
+   }
+   th_revive_cave = {
+   }
+   th_broken_soul_calming_door = {
+   }
+   th_thunder_forest = {
+   }
+   th_fidelity_peak = {
+   }
+   th_soga_barrier = {
+   }
+   th_sects_town = {
+   }
+   th_lightning_struck_cedar_grove = {
+   }
+   th_alchemists_venue = {
+   }
+   th_eye_of_desires = {
+   }
+   th_exploitation_workshop = {
+   }
+   th_hover_sword_ridge = {
+   }
+   th_kalpa_pass = {
+   }
+   th_mononobe_scripture_depository = {
+   }
+   th_original_fire_pavilion = {
+   }
+   th_fengshui_steppe = {
+   }
+   th_feng_shui_puppet_rehearsal_stage = {
+   }
+   th_immortal_dojo_main = {
+   }
+   th_river_of_kan = {
+   }
+   th_disciple_village = {
+   }
+   th_deep_forest_of_immortals_realm = {
    }
 }

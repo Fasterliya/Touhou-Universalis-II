@@ -1,4 +1,4 @@
-﻿country_event = {
+country_event = {
 	id = th_culture_chronicle.1
 
 	trigger = {

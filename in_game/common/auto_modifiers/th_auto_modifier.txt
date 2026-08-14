@@ -5,8 +5,7 @@
 
     scales_with = th_gensokyo_accepted_culture_script_value
 
-    trade_land_efficiency = 0.02
-    trade_sea_efficiency = 0.02
+    trade_efficiency = 0.02
     global_manpower_modifier = 0.02
     diplomatic_reputation = 0.5
 }

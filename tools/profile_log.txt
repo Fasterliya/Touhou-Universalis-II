@@ -1,4 +1,0 @@
-load_yaml anti: 0.06 s, patterns: 56
-load_yaml enums: 0.0 s
-load whitelist: 0.01 s, size: 2394
-th_pops.txt: read=0.03s anti=2.56s enums=0.01s gmap=0.49s mod=0.00s
