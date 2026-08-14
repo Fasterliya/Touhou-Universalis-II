@@ -1,0 +1,103 @@
+﻿### ============================================================
+### 弹幕火力值 — 弹幕战竞技层核心数值（M1 / 设计§1 弹幕火力值公式）
+### 作用域: country
+### 公式: base 10 + ruler.mil + 动态修正var + 文化加成(A1) + 科技加成
+### 验证:
+###   Step3 hre.txt:1694  scope:recipient.military_strength > scope:actor.military_strength
+###     —— scope 链式 script value 比较语法
+###   Step3 flavor_ayu.txt:215  ruler.mil >= 70 —— ruler 属性在国家作用域可读
+###   Step3 _script_values.info —— 公式支持 if/else_if/add = scope 链
+### ============================================================
+th_danmaku_firepower_value = {
+    ### 基础值
+    value = 10
+
+    ### 君主军事能力（设计§1：ruler.mil 已验证可读）
+    add = ruler.mil
+
+    ### 动态修正（异变/事件/议会议题 增减此 var；开局初始化为0）
+    add = var:th_danmaku_firepower_modifier_var
+
+    ### ============================================================
+    ### 文化加成（风味A1：按文化差异化，仅取其一）
+    ### 鬼族/力量流 → 基础火力高（近战风格）
+    if = {
+        limit = {
+            has_culture = culture:acgv_touhou_oni_culture
+        }
+        add = 5
+    }
+    ### 天狗/速度流 → 追加攻击/先手修正
+    else_if = {
+        limit = {
+            has_culture = culture:acgv_touhou_tengu_culture
+        }
+        add = 3
+    }
+    ### 月之民 → 灵力流加成
+    else_if = {
+        limit = {
+            has_culture = culture:acgv_touhou_lunar_culture
+        }
+        add = 4
+    }
+    ### 魔法使（魔界）→ 灵力流加成
+    else_if = {
+        limit = {
+            has_culture = culture:acgv_touhou_makai_culture
+        }
+        add = 4
+    }
+    ### 河童 → 机关巧思
+    else_if = {
+        limit = {
+            has_culture = culture:acgv_touhou_kappa_culture
+        }
+        add = 2
+    }
+    ### 人间之里人类 → 意志坚韧
+    else_if = {
+        limit = {
+            has_culture = culture:acgv_touhou_gensokyo_hito_culture
+        }
+        add = 1
+    }
+
+    ### ============================================================
+    ### 科技加成（M1：5条 advance 挂钩，可叠加）
+    ### 符卡规则 — 弹幕战直接相关
+    if = {
+        limit = {
+            has_advance = th_spell_card_rules_advance
+        }
+        add = 5
+    }
+    ### 异变解决 — 实战经验
+    if = {
+        limit = {
+            has_advance = th_incident_resolution_advance
+        }
+        add = 3
+    }
+    ### 无尽幻想 — 想象力即力量
+    if = {
+        limit = {
+            has_advance = th_endless_fantasy_advance
+        }
+        add = 3
+    }
+    ### 万物赞歌 — 自然共鸣
+    if = {
+        limit = {
+            has_advance = th_panegyric_of_all_things_advance
+        }
+        add = 2
+    }
+    ### 人与妖的平衡 — 调和之道
+    if = {
+        limit = {
+            has_advance = th_balance_between_youkai_and_hito_advance
+        }
+        add = 2
+    }
+}

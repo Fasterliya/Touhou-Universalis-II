@@ -1,0 +1,115 @@
+﻿### ============================================================
+### 弹幕战 — 决斗结算脚本化效果（M1）
+### 作用域: country（应战方 root 上调用；挑战者经 var:th_danmaku_challenger_var 跳转）
+### 流程: 挑战者火力→临时变量 → 应战方火力→临时变量 → 比较 → 胜负结算 → 清理
+### 验证:
+###   Step3 prussian_crusade.txt:75 —— set_variable 存 scope:actor（scope 型变量）
+###   Step3 byzantine_succession_crisis.txt:61 —— exists = var:X 读取
+###   Step3 trade_company_buildings.txt:209 —— var:NAME = { ... } scope 跳转
+###   Step3 colonial_policies.txt:130 —— add_country_modifier { modifier months mode }
+###   Step3 civil_war.txt:47 —— add_prestige（国家作用域）
+###   Step3 hre.txt:1694 —— 比较触发器 scope:X.值 > scope:Y.值
+### ============================================================
+
+### 决斗总结算（应战方 root 作用域调用）
+th_danmaku_resolve_duel_effect = {
+    ### 挑战者火力 → 存入 root 的临时变量
+    var:th_danmaku_challenger_var = {
+        root = {
+            set_variable = {
+                name = th_dfp_enemy
+                value = th_danmaku_firepower_value
+            }
+        }
+    }
+    ### 应战方（root）火力
+    set_variable = {
+        name = th_dfp_self
+        value = th_danmaku_firepower_value
+    }
+
+    ### 应战方胜
+    if = {
+        limit = {
+            var:th_dfp_self > var:th_dfp_enemy
+        }
+        th_danmaku_duel_winner_effect = yes
+        var:th_danmaku_challenger_var = {
+            th_danmaku_duel_loser_effect = yes
+        }
+        trigger_event_non_silently = th_danmaku.2
+        var:th_danmaku_challenger_var = {
+            trigger_event_non_silently = th_danmaku.3
+        }
+    }
+    ### 挑战者胜
+    else_if = {
+        limit = {
+            var:th_dfp_enemy > var:th_dfp_self
+        }
+        th_danmaku_duel_loser_effect = yes
+        var:th_danmaku_challenger_var = {
+            th_danmaku_duel_winner_effect = yes
+        }
+        trigger_event_non_silently = th_danmaku.3
+        var:th_danmaku_challenger_var = {
+            trigger_event_non_silently = th_danmaku.2
+        }
+    }
+    ### 平局（火力相等：双方小奖励）
+    else = {
+        th_danmaku_duel_draw_effect = yes
+        var:th_danmaku_challenger_var = {
+            th_danmaku_duel_draw_effect = yes
+        }
+        trigger_event_non_silently = th_danmaku.4
+        var:th_danmaku_challenger_var = {
+            trigger_event_non_silently = th_danmaku.4
+        }
+    }
+
+    ### 清理（先清挑战者侧，再清自身，顺序不可颠倒）
+    var:th_danmaku_challenger_var = {
+        remove_variable = th_danmaku_pending_challenge_target_var
+    }
+    remove_variable = th_danmaku_challenger_var
+    remove_variable = th_dfp_self
+    remove_variable = th_dfp_enemy
+}
+
+### 胜者结算（当前作用域 = 胜利方国家）
+th_danmaku_duel_winner_effect = {
+    ### 贡献度+10 / 影响力+5 / 威望+5 / 彩头50金（路线图§3待确认#4默认：贡献/威望/影响力+冠军buff）
+    th_gensokyo_io_contribution_var_add_effect = {
+        value = 10
+    }
+    th_gensokyo_io_influence_var_add_effect = {
+        value = 5
+    }
+    add_prestige = 5
+    add_gold = 50
+    ### 「弹幕战冠军」短期buff（12个月）
+    add_country_modifier = {
+        modifier = th_danmaku_champion_modifier
+        months = 12
+        mode = add_and_extend
+    }
+}
+
+### 败者结算（当前作用域 = 败方国家；领土无损 — 风味A2）
+th_danmaku_duel_loser_effect = {
+    ### 付贡品100金 / 威望-3 / 参与贡献+2
+    add_gold = -100
+    add_prestige = -3
+    th_gensokyo_io_contribution_var_add_effect = {
+        value = 2
+    }
+}
+
+### 平局结算（当前作用域 = 参与方国家）
+th_danmaku_duel_draw_effect = {
+    th_gensokyo_io_contribution_var_add_effect = {
+        value = 5
+    }
+    add_prestige = 1
+}

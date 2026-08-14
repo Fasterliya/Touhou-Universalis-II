@@ -1,0 +1,87 @@
+﻿### ============================================================
+### 弹幕战事件链（M1）
+### 流程: 挑战互动 → 应战事件(th_danmaku.1: 接受/拒绝)
+###   → 接受: 决斗结算(th_danmaku_resolve_duel_effect)
+###     → 胜负通知(th_danmaku.2 胜 / .3 败 / .4 平)
+###   → 拒绝: 通知挑战者(th_danmaku.5)
+### 规则: 胜负由 th_danmaku_firepower_value 决断；领土无损；事件必含 outcome
+### ============================================================
+namespace = th_danmaku
+
+### 应战事件（被挑战方 root；挑战者存于 root 的 scope 型变量 th_danmaku_challenger_var）
+country_event = {
+    id = th_danmaku.1
+    title = th_danmaku_challenge_title
+    desc = th_danmaku_challenge_desc
+    outcome = neutral
+
+    trigger = {
+        has_variable = th_danmaku_challenger_var
+    }
+
+    option = {
+        name = th_danmaku_challenge_accept
+        effect = {
+            th_danmaku_resolve_duel_effect = yes
+        }
+    }
+    option = {
+        name = th_danmaku_challenge_decline
+        effect = {
+            ### 通知挑战者被拒绝，并清空其待决挑战
+            var:th_danmaku_challenger_var = {
+                trigger_event_non_silently = th_danmaku.5
+                remove_variable = th_danmaku_pending_challenge_target_var
+            }
+            remove_variable = th_danmaku_challenger_var
+        }
+    }
+}
+
+### 胜利通知（generic 文本，root 或挑战者均可）
+country_event = {
+    id = th_danmaku.2
+    title = th_danmaku_win_title
+    desc = th_danmaku_win_desc
+    outcome = positive
+
+    option = {
+        name = th_danmaku_ok
+    }
+}
+
+### 败北通知
+country_event = {
+    id = th_danmaku.3
+    title = th_danmaku_lose_title
+    desc = th_danmaku_lose_desc
+    outcome = negative
+
+    option = {
+        name = th_danmaku_ok
+    }
+}
+
+### 平局通知
+country_event = {
+    id = th_danmaku.4
+    title = th_danmaku_draw_title
+    desc = th_danmaku_draw_desc
+    outcome = neutral
+
+    option = {
+        name = th_danmaku_ok
+    }
+}
+
+### 挑战被拒通知（发给挑战者）
+country_event = {
+    id = th_danmaku.5
+    title = th_danmaku_declined_title
+    desc = th_danmaku_declined_desc
+    outcome = neutral
+
+    option = {
+        name = th_danmaku_ok
+    }
+}

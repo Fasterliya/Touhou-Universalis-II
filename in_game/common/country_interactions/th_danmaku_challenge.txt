@@ -1,0 +1,88 @@
+﻿### ============================================================
+### 弹幕战挑战 — 对幻想乡IO成员发起一对一的弹幕决斗（M1）
+### 参与范围: 仅幻想乡IO成员（路线图§3待确认项#1默认值）
+### 胜负判定: th_danmaku_firepower_value（见 script_values/）
+### 奖励: 贡献度/威望/影响力 + 短期「弹幕战冠军」buff；败者付贡品/名誉损失；
+###       不改变任何领土（风味A2「幻想乡无死斗」）
+### 验证:
+###   Step3 readme.txt(country_interactions) —— type/potential/allow/effect/ai_will_do 字段
+###   Step3 prussian_crusade.txt:75 —— set_variable = { name = X value = scope:actor }
+###     scope 型变量存储；byzantine_succession_crisis.txt:61 exists = var:X
+###   Step3 unique_buildings.txt:4049 —— trigger_event_non_silently = 事件id
+### ============================================================
+th_danmaku_challenge = {
+    type = diplomacy
+    category = CATEGORY_MILITARY_ACTIONS
+
+    potential = {
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        scope:recipient = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    allow = {
+        scope:actor = {
+            at_war = no
+            NOT = { has_variable = th_danmaku_pending_challenge_target_var }
+        }
+        scope:recipient = {
+            at_war = no
+        }
+    }
+
+    effect = {
+        ### 记录发起方待决挑战（防止重复发起；结算时清除）
+        set_variable = {
+            name = th_danmaku_pending_challenge_target_var
+            value = scope:recipient
+        }
+        ### 被挑战方记录挑战者，并弹出应战事件
+        scope:recipient = {
+            set_variable = {
+                name = th_danmaku_challenger_var
+                value = scope:actor
+            }
+            trigger_event_non_silently = th_danmaku.1
+        }
+    }
+
+    ai_will_do = {
+        ### AI 参与弹幕战：偏好挑战火力低于自己的成员
+        add = {
+            value = 8
+        }
+        if = {
+            limit = {
+                scope:recipient = {
+                    NOT = { is_member_of_international_organization = international_organization:th_gensokyo_io }
+                }
+            }
+            add = {
+                value = -100
+            }
+        }
+        if = {
+            limit = {
+                scope:recipient = {
+                    th_danmaku_firepower_value > scope:actor.th_danmaku_firepower_value
+                }
+            }
+            add = {
+                value = -10
+            }
+        }
+        if = {
+            limit = {
+                scope:recipient = {
+                    th_danmaku_firepower_value > 40
+                }
+            }
+            add = {
+                value = -5
+            }
+        }
+    }
+}

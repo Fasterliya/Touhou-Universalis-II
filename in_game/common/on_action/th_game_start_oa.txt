@@ -14,5 +14,12 @@ th_on_game_start = {
 		international_organization:th_sages_council_io = {
 			th_sages_council_apply_prestige_thresholds_effect = yes
 		}
+		# 弹幕火力修正变量初始化（M1：异变/事件可增减；开局为0）
+		every_country = {
+			set_variable = {
+				name = th_danmaku_firepower_modifier_var
+				value = 0
+			}
+		}
 	}
 }

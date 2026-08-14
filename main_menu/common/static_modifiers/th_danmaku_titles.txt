@@ -1,0 +1,52 @@
+﻿### ============================================================
+### 弹幕战 — 冠军 buff 与称号系统（M1，风味A3）
+### 作用域: country（带值 modifier 必须放 static_modifiers）
+### 修饰符名全部已核对 00_modifier_types.txt（与 th_sages_council_modifiers.txt 同源）
+### ============================================================
+
+### 弹幕战冠军（胜者12个月短期buff，路线图§3待确认#4）
+th_danmaku_champion_modifier = {
+    game_data = {
+        category = country
+    }
+    monthly_prestige = 0.10
+    improve_relation_impact = 0.10
+    diplomatic_reputation = 1
+    global_manpower_modifier = 0.05
+}
+
+### 称号：异变解决者（M3 授予点）
+th_title_incident_resolver_modifier = {
+    game_data = {
+        category = country
+    }
+    monthly_prestige = 0.05
+    improve_relation_impact = 0.05
+}
+
+### 称号：宴会之王（M3 授予点）
+th_title_banquet_king_modifier = {
+    game_data = {
+        category = country
+    }
+    improve_relation_impact = 0.10
+    diplomatic_reputation = 1
+}
+
+### 称号：幻想乡最速（M3 授予点）
+th_title_fastest_in_gensokyo_modifier = {
+    game_data = {
+        category = country
+    }
+    global_manpower_modifier = 0.03
+    monthly_prestige = 0.03
+}
+
+### 称号：弹幕女神（M3 授予点）
+th_title_danmaku_goddess_modifier = {
+    game_data = {
+        category = country
+    }
+    monthly_prestige = 0.10
+    diplomatic_reputation = 1
+}
