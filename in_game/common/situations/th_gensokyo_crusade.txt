@@ -1,0 +1,184 @@
+﻿### ============================================================
+### 幻想乡惩戒局势（加强版包围网）
+### 启动: 议会辩论通过（enable_situation_effect 强制）
+### 目标国: 标记法定位（th_gensokyo_crusade_target_mark，常驻至局势结束）
+### 结束: 目标国覆灭/战争全结束 → 反杀则正常结束（特殊行动解锁），否则启动审判局势
+### ============================================================
+
+th_gensokyo_crusade = {
+    monthly_spawn_chance = 0
+
+    can_start = {
+        always = no
+    }
+    can_end = {
+        always = no
+    }
+
+    visible = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+
+    on_start = {
+        ### 定位领袖（阎魔）与目标国
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    is_leader_of_international_organization = international_organization:th_gensokyo_io
+                }
+                save_scope_as = io_leader
+            }
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                save_scope_as = crusade_target
+            }
+        }
+        ### 罪值清零
+        scope:crusade_target = {
+            set_variable = {
+                name = th_gensokyo_sin_var
+                value = 0
+            }
+        }
+        ### 新惩戒开启：重置上一场反杀标记（反攻扩张行动随新惩戒重新锁定）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_countered
+            }
+        }
+        ### 局势变量：目标国引用（GUI 双国头部动态头像读取）+ 罪值显示初值
+        set_variable = {
+            name = th_crusade_target_ref
+            value = scope:crusade_target
+        }
+        set_variable = {
+            name = th_crusade_sin_display
+            value = 0
+        }
+        ### 大规模战争扣团结 暂未启用（B6 决策：扣团结的"大规模战争"指代范围待定）
+        ### 恢复时取消注释并登记交接文档：
+        # international_organization:th_gensokyo_io = {
+        #     th_gensokyo_unity_subtract_effect = {
+        #         value = th_unity_big_war_value
+        #     }
+        # }
+        ### 阎魔立即宣战（决议通过即开战）
+        scope:io_leader = {
+            declare_war_with_cb = {
+                target = scope:crusade_target
+                type = casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+
+    on_monthly = {
+        ### 重新定位目标国（回调段内 scope 不跨段保留）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                save_scope_as = crusade_target
+            }
+        }
+        ### 罪值：战争时长累积（封顶 100）+ 同步到局势变量（GUI 显示）
+        scope:crusade_target = {
+            change_variable = {
+                name = th_gensokyo_sin_var
+                add = th_crusade_sin_monthly_value
+            }
+            clamp_variable = {
+                name = th_gensokyo_sin_var
+                min = 0
+                max = 100
+            }
+        }
+        set_variable = {
+            name = th_crusade_sin_display
+            value = scope:crusade_target.var:th_gensokyo_sin_var
+        }
+        ### 包围网入战由局势行动 th_gensokyo_join_crusade 触发（B2 决策）
+        ### 势力计算（B5：局势面板双方力量对比，situation 变量供 GUI 读取）
+        ### P1-10/P1-13 修复：两个变量统一存在局势 scope（GUI 从 SituationView 读）；
+        ### 取数用 country_strength（current_strength 只是关系权重 key，非实力值）
+        set_variable = {
+            name = th_crusade_supporter_strength
+            value = 0
+        }
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_participant
+                }
+                root = {
+                    change_variable = {
+                        name = th_crusade_supporter_strength
+                        add = prev.country_strength
+                    }
+                }
+            }
+        }
+        set_variable = {
+            name = th_crusade_target_strength
+            value = scope:crusade_target.country_strength
+        }
+        ### 结束判定：目标国覆灭 或 不再处于任何战争
+        scope:crusade_target = {
+            if = {
+                limit = {
+                    OR = {
+                        NOT = {
+                            country_exists = this
+                        }
+                        at_war = no
+                    }
+                }
+                end_situation = situation:th_gensokyo_crusade
+            }
+        }
+    }
+
+    on_ending = {
+        ### 反杀标记不在此清理（P1-04 修复：on_ended 需先检测 countered 再清理，
+        ### 否则反杀结局会被误判为普通结局启动审判）
+        ### countered 标记生命周期：反杀条约打标 → 本局势 on_ended 检测（不清理）→
+        ### 反攻扩张行动持久解锁 → 下一次惩戒局势 on_start 重置
+    }
+
+    on_ended = {
+        ### 非反杀结局 → 惩戒战争平息奖励团结（C2）→ 启动审判局势（target_mark 保留，审判局势 on_start 定位后自行清理）
+        if = {
+            limit = {
+                NOT = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_countered
+                    }
+                }
+            }
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_add_effect = {
+                    value = th_unity_crusade_settled_value
+                }
+            }
+            enable_situation_effect = {
+                type = th_gensokyo_trial
+            }
+        }
+        else = {
+            ### 反杀结局：无审判，清理目标标记（countered 标记保留供反攻扩张行动使用）
+            international_organization:th_gensokyo_io = {
+                every_international_organization_member = {
+                    remove_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+        }
+        ### 清理参战标记（势力计算用）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_participant
+            }
+        }
+    }
+}

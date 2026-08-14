@@ -1,0 +1,134 @@
+﻿l_simp_chinese:
+### ============================================================
+### 幻想乡IO 链条系统 本地化（简中）
+### ============================================================
+
+### 恶名查看行动
+ th_gensokyo_notorious_view: "查看声望"
+ th_gensokyo_notorious_view_desc: "查看你在幻想乡中的声望：[SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]。此行动仅用于查看。"
+
+### 恶名档位
+ th_notorious_tier_clean: "声名尚可"
+ th_notorious_tier_pariah: "声名狼藉"
+ th_notorious_tier_outcast: "幻想乡弃民"
+
+### 宴会
+ th_gensokyo_feast: "举办宴会"
+ th_gensokyo_feast_desc: "在幻想乡举办一场盛大的宴会，款待各路妖怪与贤者，缓和自身的恶名。"
+ PERFORM_th_gensokyo_feast_ACTION: "举办了一场宴会"
+ WE_PERFORM_th_gensokyo_feast_ACTION: "我们在幻想乡举办了一场宴会"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION: "在幻想乡举办了一场宴会"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US: "在幻想乡举办了一场宴会"
+ TH_FEAST_AI_HIGH_NOTORIETY: "恶名高企，急需缓和"
+
+### 惩戒战争条约
+ th_gensokyo_crusade_triumph: "完全胜利（惩戒）"
+ th_gensokyo_crusade_triumph_desc: "惩戒战争中的完全胜利：对方无条件认输，接受幻想乡的一切裁决。"
+ TH_CRUSADE_INITIAL_SUPPORT: "阎魔发起支持"
+ TH_CRUSADE_AI_FOUND_TARGET: "存在敌意达标的惩戒对象"
+
+### 惩戒战争
+ th_gensokyo_crusade_cb: "惩戒战争"
+ th_gensokyo_crusade_cb_desc: "由阎魔与贤者议会裁定发起的惩戒战争，目标为幻想乡秩序的破坏者。"
+ th_gensokyo_crusade: "惩戒局势"
+ th_gensokyo_crusade_desc: "幻想乡全体对惩戒目标形成的包围网。"
+ th_gensokyo_trial: "审判局势"
+ th_gensokyo_trial_desc: "阎魔对惩戒战争落败者的最终审判。"
+ th_gensokyo_propose_crusade: "发起惩戒战争提案"
+ th_gensokyo_propose_crusade_desc: "阎魔向贤者议会提案，对敌意高企的成员发起惩戒战争。"
+ PERFORM_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
+ WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "我们发起了惩戒战争提案"
+ OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
+ ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "发起了惩戒战争提案"
+ th_gensokyo_counter_expansion: "反攻扩张"
+ th_gensokyo_counter_expansion_desc: "你在惩戒战争中反败为胜，获得在幻想乡合法扩张的机会。"
+ PERFORM_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "我们发动了反攻扩张"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "发动了反攻扩张"
+
+### 审判法
+ th_gensokyo_judgment_law: "审判法"
+ th_gensokyo_judgment_law_desc: "阎魔进行审判时遵循的准则。"
+ th_judgment_mercy_policy: "劝善"
+ th_judgment_mercy_policy_desc: "宽大为怀，审判从轻，缩短刑期，减少团结动荡。"
+ th_judgment_order_policy: "有序"
+ th_judgment_order_policy_desc: "依常例而行，不偏不倚。"
+ th_judgment_karma_policy: "因果必尝"
+ th_judgment_karma_policy_desc: "严惩不贷，审判从严，延长刑期，以儆效尤。"
+
+### 监管国
+ th_gensokyo_regulated_state: "彼岸监管国"
+ th_gensokyo_regulated_state_desc: "被阎魔判刑的附属国，完全丧失自主，刑满后释放为独立国家。"
+
+### 审判事件
+ th_gensokyo_trial_events.1.t: "最终审判"
+ th_gensokyo_trial_events.1.d: "惩戒战争已了结。作为阎魔，你需依据目标国的罪行裁定其命运。"
+ th_gensokyo_trial_events.1.a: "轻判：归还非法侵占的领土"
+ th_gensokyo_trial_events.1.b: "中判：归还领土并削弱其国力"
+ th_gensokyo_trial_events.1.c: "重判：使其完全沦为彼岸的监管国（转移财富并课以贡金）"
+
+### 变量
+ th_gensokyo_sin_var: "罪孽"
+ th_gensokyo_expansion_quota: "合法扩张配额"
+ th_gensokyo_expansion_quota_used: "已用配额"
+ th_gensokyo_sentence_tier: "判决档位"
+ th_gensokyo_sentence_months: "刑期（月）"
+ th_gensokyo_effective_sin: "有效罪值"
+ th_gensokyo_temp_sentence_years: "刑期加成（年）"
+ th_gensokyo_temp_gold: "转移金币"
+
+### 目标选择
+ choose_crusade_target: "选择惩戒目标"
+
+### 加入惩戒战争
+ th_gensokyo_join_crusade: "加入惩戒战争"
+ th_gensokyo_join_crusade_desc: "加入对惩戒目标的包围网，共同维护幻想乡的秩序。"
+ PERFORM_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "我们加入了惩戒战争"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "加入了惩戒战争"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM: "对惩戒对象怀有敌意"
+
+### 反杀条约
+ th_gensokyo_crusade_counter: "反杀胜利（惩戒）"
+ th_gensokyo_crusade_counter_desc: "在惩戒战争中反败为胜：幻想乡的包围网被你击溃，你赢得了扩张的权利。"
+
+### 议会议题
+ th_gensokyo_crusade_issue: "惩戒战争提案"
+ th_gensokyo_crusade_issue_desc: "由阎魔发起、贤者投票的惩戒战争提案。两票赞同即通过。"
+
+### 价格
+ th_gensokyo_feast_price: "宴会费用"
+ subject_pays_regulated: "监管国上贡"
+
+### 修正显示
+ th_gensokyo_weakness_modifier: "国力削弱"
+ th_gensokyo_weakness_modifier_desc: "审判判决的惩罚性削弱。"
+ th_gensokyo_expansion_cost_authorized_modifier: "贤者授权扩张"
+ th_gensokyo_expansion_cost_authorized_modifier_desc: "贤者的默许使扩张代价大幅降低。"
+ th_gensokyo_expansion_cost_incident_modifier: "异变扩张"
+ th_gensokyo_expansion_cost_incident_modifier_desc: "在异变中扩张，代价略有增加。"
+ th_gensokyo_expansion_cost_unauthorized_modifier: "私自扩张"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc: "未经贤者默许的扩张，代价高昂。"
+ th_gensokyo_notorious_pariah_modifier: "恶名昭著"
+ th_gensokyo_notorious_pariah_modifier_desc: "此国的声望已跌破弃民线，可能被提案为惩戒战争目标。"
+
+### 局势面板
+ TH_CRUSADE_SUPPORTER_STRENGTH: "幻想乡联军兵力"
+ TH_CRUSADE_TARGET_STRENGTH: "惩戒目标兵力"
+ TH_CRUSADE_SIN_DISPLAY: "目标罪孽"
+
+### 团结度来源
+ TH_GENSOKYO_UNITY_FROM_MEMBERS: "成员规模"
+
+### 贤者保护
+ th_gensokyo_sages_defend_reason: "守护人间之里"
+
+### 变量
+ th_gensokyo_temp_notorious: "恶名增幅"
+ th_crusade_supporter_strength: "联军兵力"
+ th_crusade_target_strength: "目标兵力"
+ th_crusade_temp_strength: "成员兵力"
+ th_crusade_target_ref: "惩戒目标"
+ th_crusade_sin_display: "目标罪孽"

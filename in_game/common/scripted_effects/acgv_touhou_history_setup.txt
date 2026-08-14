@@ -1,0 +1,1336 @@
+﻿th_gensokyo_history_setup_scr_effect = {
+	#技术提示-具体的开局设置
+	
+	# 幻想乡 统治者设定 - 基于 th_gensokyo_countries.txt + 本地化 + 文化
+	
+	c:T00 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_reimilia
+			surname = touhou_scarlet
+			culture = th_vampire_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 78
+			dip = 85
+			mil = 72
+			age = 505
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T01 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_cirno
+			surname = touhou_ice
+			culture = th_elemental_fairy_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 99
+			dip = 99
+			mil = 99
+			age = 68
+			trait = touhou_gensokyo_ruler_ciruno_traits
+		}
+	}
+	c:T02 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_daiyousei
+			surname = touhou_daiyousei_surname
+			culture = th_light_fairy_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 71
+			mil = 52
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T03 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_akyuu
+			surname = touhou_hieda
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 92
+			dip = 78
+			mil = 40
+			age = 25
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T85 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_seiran
+			surname = touhou_seiran_dynasty
+			culture = th_moon_people_human_village_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 60
+			mil = 72
+			age = 35
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T86 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_ringo
+			surname = touhou_ringo_dynasty
+			culture = th_moon_people_human_village_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 60
+			dip = 68
+			mil = 55
+			age = 32
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T87 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_miyoi
+			surname = touhou_miyoi_dynasty
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 58
+			dip = 75
+			mil = 40
+			age = 28
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T88 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kosuzu
+			surname = touhou_motoori
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 55
+			mil = 30
+			age = 20
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T89 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_akyuu
+			surname = touhou_hieda
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 92
+			dip = 78
+			mil = 40
+			age = 25
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T90 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_reading
+			surname = touhou_reading_dynasty
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 70
+			dip = 45
+			mil = 35
+			age = 55
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T91 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_rinnosuke
+			surname = touhou_morichika
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 80
+			dip = 65
+			mil = 45
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T92 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_keine
+			surname = touhou_kamishirasawa
+			culture = th_village_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 62
+			mil = 50
+			age = 45
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T93 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_sumireko
+			surname = touhou_usami
+			culture = th_outside_world_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 65
+			dip = 82
+			mil = 38
+			age = 18
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T94 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_mamizu
+			surname = touhou_hutatsuiwa
+			culture = th_yokai_tanuki_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 75
+			dip = 85
+			mil = 55
+			age = 120
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T04 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_old_reimu
+			surname = touhou_hakurei
+			culture = th_shrine_surrounding_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 75
+			dip = 80
+			mil = 90
+			age = 18
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T05 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yukari
+			surname = touhou_yakumo
+			culture = th_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 96
+			dip = 98
+			mil = 85
+			age = 1200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T06 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_sunny
+			surname = touhou_milk
+			culture = th_light_fairy_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 52
+			dip = 68
+			mil = 55
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T07 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_lily_w
+			surname = touhou_spring
+			culture = th_season_fairy_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 58
+			dip = 75
+			mil = 42
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T08 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_alice
+			surname = touhou_alice_surname
+			culture = th_magician_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 80
+			mil = 65
+			age = 35
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T09 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_marisa
+			surname = touhou_kirisame
+			culture = th_magician_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 65
+			mil = 82
+			age = 20
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T10 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_enoko
+			surname = touhou_mitsugashira
+			culture = th_yokai_dog_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 70
+			dip = 60
+			mil = 78
+			age = 45
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T11 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_lorelei
+			surname = touhou_mystia
+			culture = th_night_sparrow_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 72
+			mil = 48
+			age = 30
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T12 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_wriggle
+			surname = touhou_night
+			culture = th_yokai_insect_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 55
+			mil = 68
+			age = 35
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T13 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_okina
+			surname = touhou_matara
+			culture = th_barrier_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 94
+			dip = 90
+			mil = 88
+			age = 1300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T14 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_sanae
+			surname = touhou_kotiya
+			culture = th_moriya_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 65
+			dip = 74
+			mil = 62
+			age = 18
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T15 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_hina
+			surname = touhou_kagiyama
+			culture = th_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 68
+			mil = 42
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T16 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_rumia
+			surname = touhou_darken
+			culture = th_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 35
+			dip = 42
+			mil = 70
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T17 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_minoriko
+			surname = touhou_aki
+			culture = th_houjou_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 68
+			dip = 80
+			mil = 40
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T18 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_megumu
+			surname = touhou_iizunamaru
+			culture = th_crow_tengu_culture
+			religion = th_gensokyo_tenma_mount
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 85
+			mil = 80
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T19 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_nemuno
+			surname = touhou_sakata
+			culture = th_yamanba_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 60
+			dip = 75
+			mil = 55
+			age = 300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T20 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_satori
+			surname = touhou_komeiji
+			culture = th_satori_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 90
+			dip = 85
+			mil = 45
+			age = 400
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T21 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yamame
+			surname = touhou_kurodani
+			culture = th_tsuchigumo_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 52
+			dip = 58
+			mil = 72
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T22 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_parsee
+			surname = touhou_mizuhashi
+			culture = th_hashihime_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 58
+			dip = 48
+			mil = 55
+			age = 300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T23 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yugi
+			surname = touhou_hoshiguma
+			culture = th_oni_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 82
+			dip = 75
+			mil = 95
+			age = 800
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T24 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_keiki
+			surname = touhou_haniyasushin
+			culture = th_creator_god_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 92
+			dip = 88
+			mil = 78
+			age = 1000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T25 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_shikieiki
+			surname = touhou_yamaxanadu
+			culture = th_yama_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 95
+			dip = 92
+			mil = 85
+			age = 2000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T26 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_nitori
+			surname = touhou_kawasiro
+			culture = th_kappa_culture
+			religion = th_gensokyo_tenma_mount
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 78
+			dip = 72
+			mil = 58
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T27 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_takane
+			surname = touhou_yamashiro
+			culture = th_yamawaro_culture
+			religion = th_gensokyo_tenma_mount
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 62
+			mil = 75
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T28 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_sannyo
+			surname = touhou_komakusa
+			culture = th_yamanba_culture
+			religion = th_gensokyo_tenma_mount
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 68
+			dip = 82
+			mil = 48
+			age = 300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T29 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_larva
+			surname = touhou_eternity
+			culture = th_phenomenon_fairy_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 48
+			dip = 55
+			mil = 62
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T30 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_lunasa
+			surname = touhou_prismriver
+			culture = th_poltergeist_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 65
+			dip = 72
+			mil = 55
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T31 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yuyuko
+			surname = touhou_saigyouji
+			culture = th_ghost_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 85
+			dip = 92
+			mil = 35
+			age = 1000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T32 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_bayakuren
+			surname = touhou_hiziri
+			culture = th_magician_culture
+			religion = th_gensokyo_buddhism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 90
+			mil = 65
+			age = 800
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T33 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_shou
+			surname = touhou_toramaru
+			culture = th_yokai_tiger_culture
+			religion = th_gensokyo_buddhism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 75
+			dip = 72
+			mil = 85
+			age = 600
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T34 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_nazrin
+			surname = touhou_bishamon
+			culture = th_yokai_rat_culture
+			religion = th_gensokyo_buddhism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 68
+			dip = 65
+			mil = 55
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T35 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_wakasagihime
+			surname = touhou_hiderealm
+			culture = th_mermaid_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 52
+			dip = 68
+			mil = 42
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T36 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kogasa
+			surname = touhou_tatara
+			culture = th_umbrella_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 58
+			dip = 62
+			mil = 55
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T37 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yachie
+			surname = touhou_kitcho
+			culture = th_yokai_turtle_culture
+			religion = th_gensokyo_eat_raw
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 85
+			dip = 82
+			mil = 78
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T38 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_saki
+			surname = touhou_kurokoma
+			culture = th_yokai_horse_culture
+			religion = th_gensokyo_eat_raw
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 65
+			mil = 88
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T39 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yuma
+			surname = touhou_toutetsu
+			culture = th_yokai_ox_culture
+			religion = th_gensokyo_eat_raw
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 78
+			dip = 68
+			mil = 92
+			age = 600
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T40 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kutaka
+			surname = touhou_niwatari
+			culture = th_niwatari_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 75
+			mil = 58
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T41 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_eika
+			surname = touhou_ebisu
+			culture = th_mizuko_spirit_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 62
+			mil = 48
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T42 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_urumi
+			surname = touhou_ushizaki
+			culture = th_ushioni_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 58
+			mil = 75
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T43 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_komachi
+			surname = touhou_onozuka
+			culture = th_shinigami_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 68
+			mil = 85
+			age = 800
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T44 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_rin_chi
+			surname = touhou_kaenbyou
+			culture = th_yokai_cat_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 58
+			mil = 72
+			age = 300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T45 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_utuho
+			surname = touhou_reiuji
+			culture = th_yokai_bird_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 42
+			dip = 38
+			mil = 95
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T46 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kisume
+			surname = touhou_bottle
+			culture = th_tsurube_otoshi_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 48
+			dip = 52
+			mil = 45
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T47 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_shinmyoumaru
+			surname = touhou_sukuna
+			culture = th_little_people_culture
+			religion = th_gensokyo_tenma_mount
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 68
+			mil = 58
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T48 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_benben
+			surname = touhou_tsukumo
+			culture = th_instrument_yokai_culture
+			religion = th_gensokyo_tenma_mount
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 65
+			dip = 72
+			mil = 52
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T49 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_sekibanki
+			surname = touhou_willor
+			culture = th_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 58
+			mil = 62
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T50 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kagerou
+			surname = touhou_imaizumi
+			culture = th_yokai_wolf_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 58
+			mil = 75
+			age = 30
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T51 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_miku
+			surname = touhou_toyosatomimi
+			culture = th_shikaisen_culture
+			religion = th_gensokyo_taoism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 95
+			dip = 92
+			mil = 78
+			age = 1400
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T52 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kokoro
+			surname = touhou_hata
+			culture = th_menreiki_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 58
+			dip = 72
+			mil = 55
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T53 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kaguya
+			surname = touhou_houraisan
+			culture = th_moon_people_eientei_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 82
+			dip = 88
+			mil = 42
+			age = 1300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T54 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_mokou
+			surname = touhou_huziwara
+			culture = th_houraijin_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 62
+			dip = 55
+			mil = 88
+			age = 1300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T55 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_tewi
+			surname = touhou_inaba
+			culture = th_yokai_rabbit_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 68
+			dip = 78
+			mil = 52
+			age = 1300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T56 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_reisen
+			surname = touhou_inaba
+			culture = th_moon_rabbit_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 65
+			dip = 72
+			mil = 75
+			age = 40
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T57 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_seiga
+			surname = touhou_kaku
+			culture = th_sennin_culture
+			religion = th_gensokyo_taoism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 78
+			dip = 82
+			mil = 55
+			age = 1400
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T58 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_shinki
+			surname = touhou_makai
+			culture = th_makai_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 92
+			dip = 88
+			mil = 85
+			age = 2000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T59 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_luize
+			surname = touhou_demon
+			culture = th_makai_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 62
+			mil = 58
+			age = 300
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T60 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_meira
+			surname = touhou_old_hakurei
+			culture = th_old_gensokyo_human_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 65
+			mil = 78
+			age = 25
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T61 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_ellen
+			surname = touhou_soft
+			culture = th_magician_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 68
+			mil = 50
+			age = 40
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T62 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yuka
+			surname = touhou_kazami
+			culture = th_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 82
+			mil = 95
+			age = 600
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T63 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_melancholy
+			surname = touhou_medicine
+			culture = th_doll_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 48
+			dip = 58
+			mil = 42
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T64 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_rikako
+			surname = touhou_asakura
+			culture = th_outside_world_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 75
+			mil = 52
+			age = 25
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T65 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_konngara
+			surname = touhou_shizukeza
+			culture = th_oni_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 78
+			dip = 72
+			mil = 88
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T66 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_mima
+			surname = touhou_genmukai
+			culture = th_evil_spirit_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 85
+			dip = 82
+			mil = 78
+			age = 1000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T67 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_rika
+			surname = touhou_sensha
+			culture = th_outside_world_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 65
+			mil = 58
+			age = 25
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T68 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kana
+			surname = touhou_anaberal
+			culture = th_other_world_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 55
+			dip = 68
+			mil = 48
+			age = 30
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T69 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yumemi
+			surname = touhou_okazaki
+			culture = th_outside_world_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 85
+			dip = 78
+			mil = 58
+			age = 30
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T70 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_tenshi
+			surname = touhou_hinanawi
+			culture = th_tennin_culture
+			religion = th_gensokyo_taoism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 45
+			dip = 52
+			mil = 82
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T71 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_iku
+			surname = touhou_nagae
+			culture = th_tennin_culture
+			religion = th_gensokyo_taoism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 78
+			mil = 62
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T72 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_toyohime
+			surname = touhou_watatsuki
+			culture = th_moon_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 85
+			mil = 75
+			age = 1500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T73 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kurumi
+			surname = touhou_scralet_2
+			culture = th_vampire_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 52
+			dip = 55
+			mil = 72
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T74 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_gengetsu
+			surname = touhou_yumie
+			culture = th_dream_dweller_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 82
+			dip = 78
+			mil = 85
+			age = 500
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T75 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_raiko
+			surname = touhou_horikawa
+			culture = th_instrument_yokai_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 72
+			dip = 75
+			mil = 68
+			age = 100
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T76 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_yoshika
+			surname = touhou_miyako
+			culture = th_jiangshi_culture
+			religion = th_gensokyo_taoism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 35
+			dip = 42
+			mil = 78
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T77 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_ichiri
+			surname = touhou_kumoi
+			culture = th_yokai_culture
+			religion = th_gensokyo_buddhism
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 65
+			dip = 72
+			mil = 62
+			age = 200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T78 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kyouko
+			surname = touhou_kasodani
+			culture = th_yamabiko_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 58
+			dip = 68
+			mil = 52
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T79 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_sariel
+			surname = touhou_death
+			culture = th_angel_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 75
+			dip = 72
+			mil = 82
+			age = 2000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T80 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_junko
+			surname = touhou_junko_surname
+			culture = th_purified_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 92
+			dip = 88
+			mil = 90
+			age = 3000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T81 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_hecatia
+			surname = touhou_lapislazuli
+			culture = th_other_world_people_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 85
+			dip = 82
+			mil = 88
+			age = 2000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T82 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_clownpiece
+			surname = touhou_hecatias
+			culture = th_hell_fairy_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 42
+			dip = 48
+			mil = 75
+			age = 60
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T83 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_kasen
+			surname = touhou_ibaraki
+			culture = th_sennin_culture
+			religion = th_gensokyo_old_hakurei_shinto
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 82
+			dip = 85
+			mil = 88
+			age = 1200
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+	c:T84 = {
+		th_common_history_setup_create_ruler_scr_effect = {
+			character = touhou_zanmu
+			surname = touhou_nippaku
+			culture = th_calamity_people_culture
+			religion = th_gensokyo_eat_raw
+			ethnicity = ethnicity:th_gensokyo_ethnicity
+			adm = 88
+			dip = 85
+			mil = 90
+			age = 2000
+			trait = touhou_gensokyo_ruler_traits
+		}
+	}
+}

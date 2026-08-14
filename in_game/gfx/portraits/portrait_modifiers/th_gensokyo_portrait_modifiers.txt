@@ -1,0 +1,4058 @@
+﻿# 所有键值都不能重复！
+# every key should be unique!
+#技术提示-让某个角色保持特定的肖像
+th_gensokyo_portrait = {
+	usage = game
+	priority = 100
+
+	touhou_marisa = {	#这里是某个具体的头像
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_marisa	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				# DONT change this unless you really need override particular character.
+				add = 200
+
+				# 通常使用特质标志纸片人，但你也可以开发自己的机制
+				# 不过不要让一个角色身上有多个纸片人立绘
+				th_portrait_trigger = yes
+				#上述scripted_trigger中有对应ethnicity的内容，从而能造成对应基因组的控制
+				#因为相同的ethnicity会母系传给女性，父系传给男性
+				#所以新建的角色请一定让他们从ethnicity上算是纸片人
+				
+				#我自己之前忘记写的东西，具体的ethnicity判定，确保这个头像组的头像在一个遗传组里
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_marisa
+				#上述的trigger_if是用于检测的，如果有锁定肖像的变量
+				#那么这个变量应该是什么值才会让这个角色取到头像对应的角色
+				#如果没有就无事发生
+				#特别的，对于没做过乔米尼引擎mod的人：?=的意思就是检查是否等于这个值，也就是老版本的=中完全相等那部分职能
+				#其实现在=也能用，不过?=会先行检测前方内容的存在性，而在不存在时不输出报错
+				#不过仅限当不满足时会立刻停止检测的地方，如果并非——比如决议
+				#诸如此类需要继续检测用以满足显示有哪些条件不满足的地方，则先行检测作用域是否存在并使用trigger_if和trigger_else更好
+				#这十分有助于玩家的C盘减小负担，规范代码，从我做起
+			}
+		}
+	}
+
+	touhou_alice = {	#这里是某个具体的头像
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_alice	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				# DONT change this unless you really need override particular character.
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_alice
+			}
+		}
+	}
+
+	touhou_shinki = {	#这里是某个具体的头像
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_shinki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+				
+				var:portrait_locked ?= flag:touhou_shinki
+
+				# trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_shinki }
+			}
+		}
+	}
+
+	touhou_yukari = {	#这里是某个具体的头像
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yukari	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+				
+				var:portrait_locked ?= flag:touhou_yukari
+
+				# trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_yukari }
+			}
+		}
+	}
+
+	#卡娜安娜贝拉尔
+	touhou_kana = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kana	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kana
+			}
+		}
+	}
+	#朝仓
+	touhou_rikako = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_rikako	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_rikako
+			}
+		}
+	}
+	#伊莉斯
+	touhou_elis = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_elis	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_elis
+			}
+		}
+	}
+	#爱莲
+	touhou_ellen = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_ellen	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_ellen
+			}
+		}
+	}
+	#艾莉
+	touhou_elly = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_elly	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_elly
+			}
+		}
+	}
+	#幻月
+	touhou_gengetsu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_gengetsu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_gengetsu
+			}
+		}
+	}
+	#玄爷
+	touhou_genjii = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_genjii	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_genjii
+			}
+		}
+	}
+	#菊理
+	touhou_kiruri = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kiruri	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kiruri
+			}
+		}
+	}
+	#百合
+	touhou_kitashirakawa = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kitashirakawa	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kitashirakawa
+			}
+		}
+	}
+	#
+	touhou_konngara = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_konngara	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_konngara
+			}
+		}
+	}
+	#小兔
+	touhou_kotohime = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kotohime	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kotohime
+			}
+		}
+	}
+	#胡桃
+	touhou_kurumi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kurumi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kurumi
+			}
+		}
+	}
+	#露易兹
+	touhou_luize = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_luize	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_luize
+			}
+		}
+	}
+	#舞
+	touhou_mai = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mai	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mai
+			}
+		}
+	}
+	#明罗
+	touhou_meira = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_meira	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_meira
+			}
+		}
+	}
+	#魅魔
+	touhou_mima = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mima	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mima
+			}
+		}
+	}
+	#梦月
+	touhou_mugetsu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mugetsu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mugetsu
+			}
+		}
+	}
+	#草莓
+	touhou_yumemi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yumemi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yumemi
+			}
+		}
+	}
+	#旧作灵梦
+	touhou_old_reimu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_old_reimu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_old_reimu
+			}
+		}
+	}
+	#奥莲
+	touhou_orange = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_orange	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_orange
+			}
+		}
+	}
+	#理香
+	touhou_rika = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_rika	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_rika
+			}
+		}
+	}
+	#？？？
+	touhou_rin = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_rin	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_rin
+			}
+		}
+	}
+	#萨拉
+	touhou_sara = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sara	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sara
+			}
+		}
+	}
+	#萨利艾尔
+	touhou_sariel = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sariel	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sariel
+			}
+		}
+	}
+	#雪
+	touhou_yuki = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yuki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yuki
+			}
+		}
+	}
+	#梦子
+	touhou_yumeko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yumeko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yumeko
+			}
+		}
+	}
+
+	#琪露诺
+	touhou_cirno = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_cirno	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_cirno
+			}
+		}
+	}
+
+	touhou_daiyousei = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_daiyousei	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_daiyousei
+			}
+		}
+	}
+	#小恶魔
+	touhou_devil = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_devil	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_devil
+			}
+		}
+	}
+	#永林
+	touhou_eirin = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_eirin	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_eirin
+			}
+		}
+	}
+	#弗兰
+	touhou_flandre = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_flandre	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_flandre
+			}
+		}
+	}
+	#女院
+	touhou_jyoon = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_jyoon	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_jyoon
+			}
+		}
+	}
+	#辉夜
+	touhou_kaguya = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kaguya	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kaguya
+			}
+		}
+	}
+	#白泽
+	touhou_keine = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_keine	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_keine
+			}
+		}
+	}
+	#心
+	touhou_kokoro = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kokoro	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kokoro
+			}
+		}
+	}
+	#米斯蒂亚
+	touhou_lorelei = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_lorelei	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_lorelei
+			}
+		}
+	}
+	#美铃
+	touhou_meirin = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_meirin	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_meirin
+			}
+		}
+	}
+	#玫红
+	touhou_mokou = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mokou	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mokou
+			}
+		}
+	}
+	#帕秋莉
+	touhou_patchouli = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_patchouli	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_patchouli
+			}
+		}
+	}
+	#蕾米莉亚
+	touhou_reimilia = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_reimilia	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_reimilia
+			}
+		}
+	}
+	#铃仙
+	touhou_reisen = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_reisen	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_reisen
+			}
+		}
+	}
+	#露米娅
+	touhou_rumia = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_rumia	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_rumia
+			}
+		}
+	}
+	#宵夜
+	touhou_sakuya = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sakuya	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sakuya
+			}
+		}
+	}
+	#紫苑
+	touhou_shion = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_shion	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_shion
+			}
+		}
+	}
+	#堇子
+	touhou_sumireko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sumireko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sumireko
+			}
+		}
+	}
+	#天子
+	touhou_tenshi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_tenshi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_tenshi
+			}
+		}
+	}
+	#帝
+	touhou_tewi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_tewi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_tewi
+			}
+		}
+	}
+	#莉格露
+	touhou_wriggle = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_wriggle	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_wriggle
+			}
+		}
+	}
+	#萃香
+	touhou_suika = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_suika	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_suika
+			}
+		}
+	}
+	#阿求
+	touhou_akyuu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_akyuu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_akyuu
+			}
+		}
+	}
+	#文
+	touhou_aya = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_aya	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_aya
+			}
+		}
+	}
+
+	touhou_chimata = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_chimata	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_chimata
+			}
+		}
+	}
+
+	touhou_hatate = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_hatate	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_hatate
+			}
+		}
+	}
+
+	touhou_hearn = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_hearn	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_hearn
+			}
+		}
+	}
+
+	touhou_hina = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_hina	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_hina
+			}
+		}
+	}
+	#19
+	touhou_iku = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_iku	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_iku
+			}
+		}
+	}
+
+	touhou_kanako = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kanako	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kanako
+			}
+		}
+	}
+
+	touhou_kasen = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kasen	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kasen
+			}
+		}
+	}
+
+	touhou_komachi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_komachi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_komachi
+			}
+		}
+	}
+	#
+	touhou_kosuzu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kosuzu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kosuzu
+			}
+		}
+	}
+	#露娜
+	touhou_lunar = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_lunar	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_lunar
+			}
+		}
+	}
+
+	touhou_megumu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_megumu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_megumu
+			}
+		}
+	}
+	#
+	touhou_melancholy = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_melancholy	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_melancholy
+			}
+		}
+	}
+
+	touhou_mike = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mike	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mike
+			}
+		}
+	}
+
+	touhou_minoriko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_minoriko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_minoriko
+			}
+		}
+	}
+
+	touhou_misumaru = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_misumaru	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_misumaru
+			}
+		}
+	}
+
+	touhou_miyoi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_miyoi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_miyoi
+			}
+		}
+	}
+
+	touhou_mizuchi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mizuchi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mizuchi
+			}
+		}
+	}
+
+	touhou_momizi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_momizi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_momizi
+			}
+		}
+	}
+
+	touhou_momoyo = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_momoyo	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_momoyo
+			}
+		}
+	}
+
+	touhou_nitori = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_nitori	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_nitori
+			}
+		}
+	}
+
+	touhou_reading = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_reading	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_reading
+			}
+		}
+	}
+
+	touhou_renko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_renko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_renko
+			}
+		}
+	}
+
+	touhou_rinnosuke = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_rinnosuke	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_rinnosuke
+			}
+		}
+	}
+
+	touhou_sanae = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sanae	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sanae
+			}
+		}
+	}
+
+	touhou_sannyo = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sannyo	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sannyo
+			}
+		}
+	}
+
+	touhou_shikieiki = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_shikieiki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_shikieiki
+			}
+		}
+	}
+
+	touhou_sizuha = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sizuha	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sizuha
+			}
+		}
+	}
+
+	touhou_star = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_star	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_star
+			}
+		}
+	}
+
+	touhou_sunny = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sunny	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sunny
+			}
+		}
+	}
+
+	touhou_suwako = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_suwako	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_suwako
+			}
+		}
+	}
+
+	touhou_takane = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_takane	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_takane
+			}
+		}
+	}
+
+	touhou_teller = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_teller	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_teller
+			}
+		}
+	}
+
+	touhou_toyohime = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_toyohime	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_toyohime
+			}
+		}
+	}
+
+	touhou_tsukasa = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_tsukasa	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_tsukasa
+			}
+		}
+	}
+
+	touhou_yorihime = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yorihime	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yorihime
+			}
+		}
+	}
+
+	touhou_yuka = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yuka	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yuka
+			}
+		}
+	}
+
+	#############
+	touhou_nemuno = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_nemuno	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_nemuno
+			}
+		}
+	}
+
+	touhou_nue = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_nue	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_nue
+			}
+		}
+	}
+
+	touhou_okina = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_okina	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_okina
+			}
+		}
+	}
+
+	touhou_parsee = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_parsee	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_parsee
+			}
+		}
+	}
+
+	touhou_raiko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_raiko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_raiko
+			}
+		}
+	}
+
+	touhou_rin_chi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_rin_chi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_rin_chi
+			}
+		}
+	}
+
+	touhou_ringo = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_ringo	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_ringo
+			}
+		}
+	}
+
+	touhou_sagume = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sagume	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sagume
+			}
+		}
+	}
+
+	touhou_satono = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_satono	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_satono
+			}
+		}
+	}
+
+	touhou_satori = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_satori	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_satori
+			}
+		}
+	}
+
+	touhou_seiga = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_seiga	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_seiga
+			}
+		}
+	}
+
+	touhou_seiran = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_seiran	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_seiran
+			}
+		}
+	}
+
+	touhou_sejia = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sejia	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sejia
+			}
+		}
+	}
+
+	touhou_sekibanki = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_sekibanki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_sekibanki
+			}
+		}
+	}
+
+	touhou_shinmyoumaru = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_shinmyoumaru	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_shinmyoumaru
+			}
+		}
+	}
+
+	touhou_shou = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_shou	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_shou
+			}
+		}
+	}
+
+	touhou_toziko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_toziko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_toziko
+			}
+		}
+	}
+
+	touhou_utuho = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_utuho	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_utuho
+			}
+		}
+	}
+
+	touhou_wakasagihime = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_wakasagihime	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_wakasagihime
+			}
+		}
+	}
+
+	touhou_yamame = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yamame	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yamame
+			}
+		}
+	}
+
+	touhou_aunn = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_aunn	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_aunn
+			}
+		}
+	}
+
+	touhou_bayakuren = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_bayakuren	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_bayakuren
+			}
+		}
+	}
+
+	touhou_benben = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_benben	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_benben
+			}
+		}
+	}
+
+	touhou_clownpiece = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_clownpiece	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_clownpiece
+			}
+		}
+	}
+
+	touhou_doremy = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_doremy	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_doremy
+			}
+		}
+	}
+
+	touhou_futo = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_futo	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_futo
+			}
+		}
+	}
+
+	touhou_hecatia = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_hecatia	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_hecatia
+			}
+		}
+	}
+
+	touhou_junko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_junko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_junko
+			}
+		}
+	}
+
+	touhou_kagerou = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kagerou	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kagerou
+			}
+		}
+	}
+
+	touhou_kisume = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kisume	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kisume
+			}
+		}
+	}
+
+	touhou_kogasa = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kogasa	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kogasa
+			}
+		}
+	}
+
+	touhou_koishi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_koishi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_koishi
+			}
+		}
+	}
+
+	touhou_kyouko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kyouko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kyouko
+			}
+		}
+	}
+
+	touhou_larva = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_larva	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_larva
+			}
+		}
+	}
+
+	touhou_mai_tian = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mai_tian	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mai_tian
+			}
+		}
+	}
+
+	touhou_mamizu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mamizu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mamizu
+			}
+		}
+	}
+
+	touhou_miku = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_miku	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_miku
+			}
+		}
+	}
+
+	touhou_minamitu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_minamitu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_minamitu
+			}
+		}
+	}
+
+	touhou_narumi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_narumi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_narumi
+			}
+		}
+	}
+
+	touhou_nazrin = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_nazrin	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_nazrin
+			}
+		}
+	}
+
+	touhou_yatsuhashi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yatsuhashi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yatsuhashi
+			}
+		}
+	}
+
+	touhou_yoshika = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yoshika	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yoshika
+			}
+		}
+	}
+
+	touhou_yugi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yugi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yugi
+			}
+		}
+	}
+
+	touhou_ichiri = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_ichiri	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_ichiri
+			}
+		}
+	}
+
+	###########
+	touhou_biten = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_biten	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_biten
+			}
+		}
+	}
+
+	touhou_chen = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_chen	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_chen
+			}
+		}
+	}
+
+	touhou_touhou_chiyariichiri = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_chiyari	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_chiyari
+			}
+		}
+	}
+
+	touhou_eika = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_eika	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_eika
+			}
+		}
+	}
+
+	touhou_enoko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_enoko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_enoko
+			}
+		}
+	}
+
+	touhou_hisami = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_hisami	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_hisami
+			}
+		}
+	}
+
+	touhou_keiki = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_keiki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_keiki
+			}
+		}
+	}
+
+	touhou_kutaka = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_kutaka	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_kutaka
+			}
+		}
+	}
+
+	touhou_letty = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_letty	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_letty
+			}
+		}
+	}
+
+	touhou_lily_b = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_lily_b	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_lily_b
+			}
+		}
+	}
+
+	touhou_lily_w = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_lily_w	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_lily_w
+			}
+		}
+	}
+
+	touhou_lunasa = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_lunasa	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_lunasa
+			}
+		}
+	}
+
+	touhou_lyrica = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_lyrica	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_lyrica
+			}
+		}
+	}
+
+	touhou_mayumi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_mayumi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_mayumi
+			}
+		}
+	}
+
+	touhou_merlin = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_merlin	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_merlin
+			}
+		}
+	}
+
+	touhou_ran = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_ran	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_ran
+			}
+		}
+	}
+
+	touhou_reisen_2 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_reisen_2	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_reisen_2
+			}
+		}
+	}
+
+	touhou_saki = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_saki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_saki
+			}
+		}
+	}
+
+	touhou_urumi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_urumi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_urumi
+			}
+		}
+	}
+
+	touhou_yachie = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yachie	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yachie
+			}
+		}
+	}
+
+	touhou_youmu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_youmu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_youmu
+			}
+		}
+	}
+
+	touhou_yuma = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yuma	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yuma
+			}
+		}
+	}
+
+	touhou_yuyuko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_yuyuko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_yuyuko
+			}
+		}
+	}
+
+	touhou_zanmu = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_zanmu	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_zanmu
+			}
+		}
+	}
+	#########################
+	touhou_ariya = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_ariya	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_ariya
+			}
+		}
+	}
+	touhou_asama = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_asama	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_asama
+			}
+		}
+	}
+	touhou_chimi = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_chimi	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_chimi
+			}
+		}
+	}
+	touhou_dolls1 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_dolls1	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_dolls1
+			}
+		}
+	}
+	touhou_jacket = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_jacket	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_jacket
+			}
+		}
+	}
+	touhou_label = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_label	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_label
+			}
+		}
+	}
+	touhou_layla = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_layla	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_layla
+			}
+		}
+	}
+	touhou_nareko = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_nareko	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_nareko
+			}
+		}
+	}
+	touhou_nina = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_nina	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_nina
+			}
+		}
+	}
+	touhou_ubame = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_ubame	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_ubame
+			}
+		}
+	}
+	touhou_youki = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_youki	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				var:portrait_locked ?= flag:touhou_youki
+			}
+		}
+	} 
+
+	################PASSER
+	touhou_passer1 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer1	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer1 }
+			}
+		}
+	}
+	touhou_passer2 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer2	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer2 }
+			}
+		}
+	}
+	touhou_passer3 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer3	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer3 }
+			}
+		}
+	}
+	touhou_passer4 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer4	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer4 }
+			}
+		}
+	}
+	touhou_passer5 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer5	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer5 }
+			}
+		}
+	}
+	touhou_passer6 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer6	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer6 }
+			}
+		}
+	}
+	touhou_passer7 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer7	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer7 }
+			}
+		}
+	}
+	touhou_passer8 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer8	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer8 }
+			}
+		}
+	}
+	touhou_passer9 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer9	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer9 }
+			}
+		}
+	}
+	touhou_passer10 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer10	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer10 }
+			}
+		}
+	}
+	touhou_passer11 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer11	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer11 }
+			}
+		}
+	}
+	touhou_passer12 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer12	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer12 }
+			}
+		}
+	}
+	touhou_passer13 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer13	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer13 }
+			}
+		}
+	}
+	touhou_passer14 = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = th_gensokyo_portrait_group_1	#在这里和gene里写的对上
+				template = touhou_passer14	#在这里和对应头像对上
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				th_portrait_trigger = yes
+
+				ethnicity ?= ethnicity:th_gensokyo_ethnicity
+
+				trigger_if = { limit = { has_variable = portrait_locked } var:portrait_locked ?= flag:touhou_passer14 }
+			}
+		}
+	}
+}

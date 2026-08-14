@@ -1,0 +1,202 @@
+﻿T00 = {
+	flag_definition = {
+		coa = T00_start_flag
+		priority = 1
+	}
+}
+
+T01 = {
+	flag_definition = {
+		coa = T01_start_flag
+		priority = 1
+	}
+}
+
+T04 = {
+	flag_definition = {
+		coa = T04_start_flag
+		priority = 1
+	}
+}
+
+T05 = {
+	flag_definition = {
+		coa = T05_start_flag
+		priority = 1
+	}
+}
+
+T06 = {
+	flag_definition = {
+		coa = T06_start_flag
+		priority = 1
+	}
+}
+
+T08 = {
+	flag_definition = {
+		coa = T08_start_flag
+		priority = 1
+	}
+}
+
+T09 = {
+	flag_definition = {
+		coa = T09_start_flag
+		priority = 1
+	}
+}
+
+T10 = {
+	flag_definition = {
+		coa = T10_start_flag
+		priority = 1
+	}
+}
+
+T13 = {
+	flag_definition = {
+		coa = T13_start_flag
+		priority = 1
+	}
+}
+
+T14 = {
+	flag_definition = {
+		coa = T14_start_flag
+		priority = 1
+	}
+}
+
+T15 = {
+	flag_definition = {
+		coa = T15_start_flag
+		priority = 1
+	}
+}
+
+T17 = {
+	flag_definition = {
+		coa = T17_start_flag
+		priority = 1
+	}
+}
+
+T18 = {
+	flag_definition = {
+		coa = T18_start_flag
+		priority = 1
+	}
+}
+
+T25 = {
+	flag_definition = {
+		coa = T25_start_flag
+		priority = 1
+	}
+}
+
+T26 = {
+	flag_definition = {
+		coa = T26_start_flag
+		priority = 1
+	}
+}
+
+T29 = {
+	flag_definition = {
+		coa = T29_start_flag
+		priority = 1
+	}
+}
+
+T31 = {
+	flag_definition = {
+		coa = T31_start_flag
+		priority = 1
+	}
+}
+
+T34 = {
+	flag_definition = {
+		coa = T34_start_flag
+		priority = 1
+	}
+}
+
+T37 = {
+	flag_definition = {
+		coa = T37_start_flag
+		priority = 1
+	}
+}
+
+T38 = {
+	flag_definition = {
+		coa = T38_start_flag
+		priority = 1
+	}
+}
+
+T43 = {
+	flag_definition = {
+		coa = T43_start_flag
+		priority = 1
+	}
+}
+
+T51 = {
+	flag_definition = {
+		coa = T51_start_flag
+		priority = 1
+	}
+}
+
+T53 = {
+	flag_definition = {
+		coa = T53_start_flag
+		priority = 1
+	}
+}
+
+T54 = {
+	flag_definition = {
+		coa = T54_start_flag
+		priority = 1
+	}
+}
+
+T60 = {
+	flag_definition = {
+		coa = T60_start_flag
+		priority = 1
+	}
+}
+
+T62 = {
+	flag_definition = {
+		coa = T62_start_flag
+		priority = 1
+	}
+}
+
+T88 = {
+	flag_definition = {
+		coa = T88_start_flag
+		priority = 1
+	}
+}
+
+T89 = {
+	flag_definition = {
+		coa = T89_start_flag
+		priority = 1
+	}
+}
+
+T94 = {
+	flag_definition = {
+		coa = T94_start_flag
+		priority = 1
+	}
+}

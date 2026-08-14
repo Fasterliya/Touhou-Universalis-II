@@ -1,0 +1,47 @@
+﻿### ============================================================
+### 幻想乡IO 恶名查看行动（IO 行动栏原生按钮）
+### 纯显示：effect 为空，恶名数值显示于 tooltip desc
+### desc 使用 [SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]
+### （格式取自 base game favor_heir_ct 先例；v5 修复：customizable_localization 变量比较不可用，弃用 Custom()）
+### ============================================================
+
+th_gensokyo_notorious_view = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 12
+
+    potential = {
+        ### P1-12 修复：potential 顶层 root=empty，is_member 裸挂恒 false → 按钮不显示
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    effect = {
+    }
+
+    ai_will_do = {
+        add = {
+            desc = BASE_VALUE
+            value = 0
+        }
+    }
+}

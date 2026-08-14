@@ -1,0 +1,689 @@
+================================================================================
+    TOUHOU UNIVERSALIS II — AI交接文档 / AI HANDOFF DOCUMENT
+    生成日期: 2026-06-30
+    当前分支: io (活跃开发)
+    项目代号: kasa
+================================================================================
+
+目 录
+  一、项目概述
+  二、全部关键文件路径
+  三、MOD当前开发进度
+  四、Kasa数据索引脚本（开发工具包）详解
+  五、EU5游戏脚本语法速查
+  六、开发工作流与铁律
+  七、当前活跃任务（io分支）
+  八、AI Prompt模板（可直接用于下一步开发）
+  九、常见陷阱与注意事项
+
+================================================================================
+一、项目概述
+================================================================================
+
+Touhou Universalis II 是為 Europa Universalis V（EU5，代号Project Caesar）
+开发的大型完全转换MOD，将游戏世界替换为东方Project的"幻想乡"（Gensokyo）。
+
+- 游戏时间: 1337.4.1 — 1836.12.31
+- 地图: 完全自定义幻想乡大陆 (th_gensokyo_continent)
+- 国家: 95个 (T00-T94)，均为东方角色势力
+- 所有原版欧洲内容已移除，全部替换为东方世界观
+
+底层框架: CMF (Community Mod Framework, Steam Workshop ID 3692202776)
+开发环境: Claude Code + deepseek-v4-pro[1m] (1M上下文窗口)
+版本控制: Git (主分支main, 当前活跃分支io)
+
+================================================================================
+二、全部关键文件路径
+================================================================================
+
+【MOD主目录】
+F:\Paradox Interactive\Europa Universalis V\mod\Touhou Universalis II\
+
+├── in_game/                          # 核心游戏数据（运行时加载）
+│   ├── common/
+│   │   ├── advances/                 # 科技树（两个时代）
+│   │   ├── auto_modifiers/           # 自动修正
+│   │   ├── country_interactions/     # 国家互动 [当前正在修改]
+│   │   ├── culture_groups/           # 文化组（12个组）
+│   │   ├── cultures/                 # 85+种文化
+│   │   ├── ethnicities/              # 种族/基因
+│   │   ├── genes/                    # 基因配饰
+│   │   ├── goods/                    # 商品
+│   │   ├── government_reforms/       # 政府改革
+│   │   ├── institution/              # 思潮（2个自定义）
+│   │   ├── international_organization_special_statuses/
+│   │   ├── international_organizations/ # IO定义（3个）
+│   │   ├── language_families/        # 语系
+│   │   ├── languages/                # 语言
+│   │   ├── modifier_type_definitions/
+│   │   ├── on_action/                # 游戏开始/月度脉冲
+│   │   ├── parliament_issues/        # 议会议题
+│   │   ├── parliament_types/         # 议会类型
+│   │   ├── religion_groups/          # 宗教组
+│   │   ├── religions/                # 7种宗教
+│   │   ├── religious_aspects/        # 宗教流派
+│   │   ├── script_values/            # 脚本数值
+│   │   ├── scripted_effects/         # 脚本化效果（核心逻辑）
+│   │   ├── scripted_guis/            # 脚本化GUI
+│   │   ├── scripted_modifiers/       # 脚本化修正
+│   │   ├── scripted_triggers/        # 脚本化触发器
+│   │   ├── situations/               # 局势（文化编年史）
+│   │   ├── town_setups/              # 城镇设置
+│   │   └── traits/                   # 特质（永生者）
+│   ├── events/                       # 游戏事件
+│   ├── gfx/
+│   │   ├── graphical_culture_types/
+│   │   ├── map/map_objects/          # 地图对象定位器
+│   │   └── models/
+│   │       ├── portraits/            # 3D头像模型
+│   │       └── props/touhou/         # 150+角色立绘DDS
+│   ├── gui/panels/
+│   │   ├── organization/             # IO面板（贤者议会GUI）
+│   │   └── situation/                # 局势面板（文化编年史GUI）
+│   ├── localization/simp_chinese/    # 简体中文本地化
+│   ├── map_data/
+│   │   └── named_locations/          # 地图命名地点
+│   └── setup/countries/              # 国家设置 (T00-T94)
+│
+├── main_menu/                        # 主菜单/设置数据
+│   ├── common/
+│   │   ├── coat_of_arms/coat_of_arms/ # 纹章预定义
+│   │   ├── flag_definitions/         # 旗帜定义
+│   │   └── static_modifiers/         # 静态修正
+│   ├── gfx/
+│   │   ├── coat_of_arms/textured_emblems/ # 30+纹章DDS
+│   │   └── interface/icons/          # 政府改革/宗教图标
+│   ├── localization/
+│   │   ├── english/                  # 英语本地化
+│   │   ├── japanese/                 # 日语本地化
+│   │   └── simp_chinese/             # 简体中文本地化
+│   └── setup/
+│       ├── start/                    # 开局设置（国家/人口/发展度/IO）
+│       └── templates/                # 政府模板
+│
+├── loading_screen/                   # 加载画面
+│   └── common/defines/               # 核心定义覆盖
+│
+├── psd/                              # 源文件（人口规划列表）
+├── todo/                             # 待办（th_new_countries.txt, 4815行）
+└── .claude/                          # Claude Code配置
+
+【Kasa数据索引脚本（开发工具包）】
+F:\Paradox Interactive\Europa Universalis V\mod\kasa\kasa project mod-toolkit\eu5-mod-toolkit\
+
+├── CLAUDE.md                         # 主工作区配置（铁律/Agent规则/路径）
+├── CONTEXT.md                        # 领域术语表
+├── README.md                         # 工具包清单与部署说明
+├── .mcp.json                         # MCP服务器配置
+├── .claude/
+│   ├── settings.json                 # 系统提示词+钩子配置
+│   ├── settings.local.json           # 权限配置
+│   ├── agents/
+│   │   ├── eu5-audit.md              # 7阶段全量MOD审计agent
+│   │   ├── eu5-preflight.md          # 写前维基查询agent（6步）
+│   │   └── eu5-review.md             # 写后代码审查agent（10项检查）
+│   ├── commands/
+│   │   ├── check-mod.md              # /check-mod <file> 单文件审查
+│   │   ├── check-mod-full.md         # /check-mod-full 全量审计
+│   │   ├── new-building.md           # /new-building 建筑脚手架
+│   │   ├── new-event.md              # /new-event 事件脚手架
+│   │   └── sync-mod.md               # /sync-mod 同步到游戏目录
+│   ├── hooks/
+│   │   ├── check-env-paths.sh        # SessionStart: 验证路径
+│   │   ├── check-eu5-encoding.sh     # PostWrite: UTF-8 BOM检查
+│   │   ├── check-bracket-pairing.sh  # PostWrite: 括号配对
+│   │   ├── backup-before-write.sh    # PreWrite: 修改前备份
+│   │   ├── sync-to-game.sh           # PostWrite: 同步到游戏目录
+│   │   ├── log-edit.sh               # PostWrite: 编辑日志
+│   │   └── audit-localization.py     # 本地化审计脚本
+│   └── workflows/
+│       ├── clean_sea_zones.js        # 海域清理工作流
+│       └── gui-full-audit.js         # GUI全量审计工作流（15类别）
+├── eu5-mod-skill/skill.md            # /eu5-mod技能定义
+├── memory/                           # 10个经验教训记忆文件
+│   ├── no_fabrication.md             # 禁止编造
+│   ├── behavior_rules.md             # 行为规则
+│   ├── feedback_file_first.md        # 先读文件再下结论
+│   └── ...（其余见memory/MEMORY.md索引）
+├── wiki-code-library/                # 维基代码库（98篇，7分类，2.1MB）
+│   ├── 维基参考_索引.md              # 主索引
+│   ├── MOD类型_维基文档映射.md        # 29种MOD类型→文档映射
+│   ├── 一_文献资料/ (16篇)            # Effect/Trigger/Scope/Variable等核心系统
+│   ├── 二_剧情内容/ (8篇)             # Event/Situation/Disaster/Mission等
+│   ├── 三_脚本类型/ (41篇)            # 具体游戏对象（国家/文化/宗教/IO/建筑等）
+│   ├── 四_地图与图形/ (3篇)           # Map/Terrain/Flag
+│   ├── 五_GUI与界面/ (13篇)           # GUI系统/12个语法标准
+│   └── 六_MOD管理与调试/ (7篇)        # MOD结构/编码/控制台/兼容性
+└── eu5-official-docs/                # EU5官方文档（71个readme，395KB）
+    └── common/ (64个游戏系统目录，各含readme.txt)
+
+【Base Game参考文件】
+F:\SteamLibrary\steamapps\common\Europa Universalis V\
+├── binaries/                         # 游戏可执行文件
+├── game/
+│   ├── in_game/                      # 核心游戏数据（三层架构之一）
+│   │   ├── common/ (~120个子目录)     # 所有游戏系统定义
+│   │   ├── events/                   # 原版事件
+│   │   ├── gui/ (~200个.gui文件)     # UI面板
+│   │   ├── localization/             # 本地化
+│   │   ├── map_data/                 # 地图数据
+│   │   └── setup/                    # 开局设置
+│   ├── main_menu/                    # 主菜单数据（三层架构之二）
+│   └── loading_screen/               # 加载画面数据（三层架构之三）
+├── game/mod/                         # MOD目录（空）
+└── game/dlc/                         # DLC数据
+
+【创意工坊MOD参考】
+F:\SteamLibrary\steamapps\workshop\content\3450310\
+├── 3692202776/  # CMF社区MOD框架（底层依赖）
+├── 3685363856/  # 萌陆风云V — IO系统/GUI参考
+├── 3618199037/  # Basileia Romaion 1337 — 大型IO/支付系统
+├── 3664996517/  # OEBYZ — CB-和约一对一
+├── 3600272327/  # Sakuya's Cheat Menu Pro — static_modifiers完整参考
+├── 3599977147/  # Formable Nations Reworked — 表单覆盖语法
+└── ...
+
+【错误日志（调试用）】
+C:\Users\HP\Documents\Paradox Interactive\Europa Universalis V\logs\error.log
+C:\Users\HP\Documents\Paradox Interactive\Europa Universalis V\logs\game.log
+
+================================================================================
+三、MOD当前开发进度
+================================================================================
+
+【已完成 ✓】
+✓ 完整的自定义幻想乡地图（18个区域，数百个省份/地点）
+✓ 95个国家（T00-T94），各含首都、文化、宗教、省份、统治者
+✓ 85+种文化，分12个文化组
+✓ 7种独特宗教（旧博丽神道、佛教、道教、生食、天魔山、月之民、科学理论）
+✓ 两个时代的自定义科技树（万物赞歌 → 故事与观察）
+✓ 2个自定义思潮（幻想乡的起源、幻想之旅）+ 10个原版思潮
+✓ 3个国际组织（幻想乡IO、贤者议会、人类村落IO）
+✓ 贤者议会威望系统（0-100，五档阈值修正）
+✓ 统一的政府改革模板（th_gensokyo_government_reform）
+✓ 150+角色立绘DDS纹理
+✓ 30+纹章DDS纹理
+✓ 三种语言本地化（简中/英语/日语）
+✓ 开局脚本化效果（历史设置、人口填充、粮食设置）
+✓ "永生者"基础特质
+✓ 文化编年史局势系统（分页GUI）
+✓ 3D肖像模型（男/女/婴儿，含blend shapes）
+✓ 自定义loading screen
+
+【进行中/WIP ◐】
+◐ 贤者议会引入思潮互动 — country_interactions重写中
+   （旧版已全部注释，新版使用 scope=country/is_shown/is_valid/effect 格式）
+◐ IO GUI面板完善 — 贤者议会面板、占位文本待替换
+◐ IO修正值填写 — 多处标注 # TODO: 后续人工填写
+
+【待开发 ✗】
+✗ 人类村落IO机制（目前仅6行框架）
+✗ 议会/IO GUI完整功能
+✗ 科技树AI权重（当前所有 ai_weight = { value = 0 }）
+✗ 政府改革事件与深度互动
+✗ 更多国家（todo/th_new_countries.txt有规划）
+✗ 事件系统（events/目录为空或极少内容）
+✗ 任务系统（missions）
+✗ 建筑类型定义
+✗ 单位类型定义
+✗ 战争/外交系统东方化
+
+================================================================================
+四、Kasa数据索引脚本（开发工具包）详解
+================================================================================
+
+【工具包设计目的】
+这是一个专为EU5 MOD开发设计的AI辅助开发环境，配合Claude Code使用。
+核心理念：写任何代码之前必须先查维基文档，绝不凭记忆猜测语法。
+
+【开发三阶段质量门禁】
+第一阶段 — eu5-preflight（写前）
+  自动触发：检测MOD类型关键词 → 查阅MOD类型映射表 → 读取对应维基文档
+  → 提取有效字段/已知陷阱/示例 → 将关键语法粘贴进prompt
+
+第二阶段 — eu5-review（写后）
+  每个文件10项检查：编码、括号配对、字段名合法性、铁律对照、
+  作用域链、本地化key、事件ID、CMF集成、覆盖语法、结构完整性
+
+第三阶段 — eu5-audit（最终）
+  7阶段全量扫描：编码 → 本地化 → 事件ID → 修饰符引用 →
+  CMF注册 → 括号配对 → error.log关联
+
+【Agent使用规则（来自CLAUDE.md）】
+1. Agent spawn必须传 "model": "opus"（否则1M上下文不生效）
+2. Agent只用于读操作（探索/研究/审计），写代码由主进程完成
+3. 必须派agent写文件时：任务≤2个文件、所有参考语法贴入prompt、附加防卡死规则
+4. Explore agent最佳用于并行搜索base game/维基
+5. 模型: deepseek-v4-pro[1m]（1M token上下文）
+
+【维基代码库7分类结构】
+一_文献资料: Effect/Trigger/Scope/Variable/OnActions/Localization/ScriptValue/
+             ModifierTypes/GUI语法/交叉验证铁律/Macro/Color/Defines/MTTH
+二_剧情内容: Event/Situation/Disaster/Mission/Action/Setup/Modifier/ScriptedGUI
+三_脚本类型: 41篇涵盖所有游戏对象系统
+四_地图与图形: Map/Terrain/Flag
+五_GUI与界面: 13篇GUI语法标准 + 硬编码边界
+六_MOD管理与调试: MOD结构/编码规范/控制台命令/兼容性/存档编辑
+
+【MOD类型→文档自动映射机制】
+当用户消息包含MOD创建/修改关键词时自动触发：
+1. 读取 MOD类型_维基文档映射.md
+2. 根据MOD类型获取 REQUIRED + OPTIONAL 文档清单
+3. 读完REQUIRED文档的关键语法后开始写代码
+4. Agent spawn时相关文档的关键语法贴入prompt
+
+高频映射示例：
+- buff/修饰符 → Modifier_types + Modifier_modding
+- 事件/event → Event_modding + On_actions
+- 局势/situation → Situation_modding + On_actions
+- 建筑/building → Buildings_modding
+- 国家/country → Country_modding + Country_ranks
+- IO/国际组织 → International_organization_modding
+- GUI/界面 → GUI_script + GUI硬编码边界 + Interface_modding_guide
+
+================================================================================
+五、EU5游戏脚本语法速查
+================================================================================
+
+【基础语法】
+key = value                  # 基本赋值
+nested_block = {             # 嵌套块使用花括号
+    inner_key = 123
+}
+# 以 # 开头为注释
+
+【值类型】
+- 布尔: yes / no
+- 整数: 5, -10, 1000
+- 浮点: 0.5, -0.1
+- 字符串: "text" 或裸标识符 some_text
+- 颜色: rgb { 40 40 40 } 或 hsv360 { 360 100 100 }
+- 日期: 1337.4.1（年.月.日）
+- 作用域引用: c:PAP, government_type:republic, religion:catholic
+- 修饰符引用: modifier:block_from_change_to_empire_rank
+
+【脚本触发器（conditions）】
+定义在 common/scripted_triggers/，可重用条件：
+  my_trigger = {
+      OR = { prestige > 70  total_population > 2000 }
+      is_subject = no
+  }
+带参数: $variable$ 语法
+  my_trigger = { value = 12 }
+
+【脚本效果（effects/commands）】
+定义在 common/scripted_effects/：
+  my_effect = {
+      add_prestige = 10
+      every_owned_location = { add_building = building:marketplace }
+  }
+
+【脚本值（数学计算）】
+定义在 common/script_values/：
+  my_value = {
+      value = 100
+      multiply = 1.5
+      if = { limit = { ... }  multiply = 2.5 }
+      min = 0
+  }
+
+【事件格式】
+  namespace = my_event_set
+  my_event_set.1 = {
+      type = country_event    # 或 location_event/unit_event/age_event
+      title = my_event_set.1.title
+      desc = my_event_set.1.desc
+      trigger = { ... }
+      immediate = { ... }
+      option = {
+          name = my_event_set.1.a
+          ai_will_select = { value = 1000 }
+          # 效果
+      }
+  }
+
+【国际组织（IO）】
+  my_io = {
+      type = international_organization
+      # 四级修正层级:
+      #   modifier          — 所有成员
+      #   non_leader_modifier — 非领袖成员
+      #   leader_modifier   — 领袖
+      #   IO_modifier       — IO本身（用th_gensokyo_io作用域）
+      leader_change_method = vote  # 或 hereditary/score/none
+      parliament = { ... }  # 议会系统（投票权重等）
+  }
+
+【国家互动（country_interaction）— 当前正在修改的系统】
+新版格式（正在迁移中）：
+  my_interaction = {
+      scope = country
+      is_shown = { ... }      # 是否可见
+      is_valid = { ... }      # 是否可执行
+      effect = { ... }        # 执行效果
+      notification_key = ...  # 通知本地化key
+  }
+旧版格式（已注释）：
+  my_interaction = {
+      type = diplomacy
+      category = CATEGORY_FRIENDLY_ACTIONS
+      potential = { ... }
+      allow = { ... }
+      effect = { ... }
+      ai_will_do = { value = 0 }
+  }
+
+【覆盖语法】
+五种模式: REPLACE / INJECT / REPLACE_OR_CREATE / TRY_REPLACE / TRY_INJECT
+
+【编码规则 ★★★ 非常重要】
+- .yml / .txt（游戏数据文件）→ UTF-8 BOM
+- .gui / .csv → 无BOM
+- 本地化文件名格式: xxx_l_simp_chinese.yml
+- 事件ID格式: namespace.integer（integer 1-9999）
+- 本地化key格式: th_<范围>_<键值>_<后缀>（如 th_BA1_dover_fort.title）
+
+【命名约定】
+- 所有幻想乡内容: th_gensokyo_ 或 th_ 前缀
+- 国家标签: T00-T94
+- 地点: th_ 前缀 + snake_case
+- 字体/立绘: touhou_ 前缀（角色名）
+- 文化: th_ 前缀 + 描述性名称
+
+【文件架构：三层上下文系统】
+EU5将数据分为三个上下文层（与EU4完全不同）：
+1. in_game/  — 核心游戏数据
+2. main_menu/ — 主菜单数据（成就/纹章/设置/静态修正）
+3. loading_screen/ — 加载画面数据（定义常量/字体/图形）
+
+MOD必须镜像此结构。
+
+================================================================================
+六、开发工作流与铁律
+================================================================================
+
+【铁律（来自kasa CLAUDE.md）】
+1. EU5 ≠ EU4，语法完全不同，绝对禁止混入EU4代码/字段/结构
+2. 未查维基/文档前禁止写代码——凭记忆写 = 编造
+3. 不确定的字段/语法 → 查维基 → 查官方readme → 查base game → 绝不猜测
+4. 写MOD前必须先读目标系统的readme和base game源文件
+5. 读到引用必须深扒key定义——功能链（引用→定义→实际效果）三步走完
+6. 所有.yml/.txt必须UTF-8 BOM
+7. 事件ID必须 namespace.integer 格式（integer 1-9999）
+8. 使用CMF（Community Mod Framework）作为底层框架
+9. 本地化key需要 th_ 范围前缀避免冲突
+10. 禁止向CLAUDE.md新增技术细节——所有技术知识属于维基代码库
+
+【标准开发流程】
+1. 确认MOD上下文（在哪个MOD上工作？源文件在哪？目标playset？）
+2. 打开维基索引 → 找到目标系统的文档 → 读完
+3. 维基有 → 按文档字段和示例写
+4. 维基没有 → 查官方 common/<系统>/readme.txt
+5. readme也没有 → 查优秀MOD参考中的同类文件
+6. 仍不确定 → 读base game同名文件对照
+7. 绝不猜测字段名
+
+【自动钩子（已在kasa工具包中配置）】
+- SessionStart: 验证环境路径
+- PreWrite: 文件备份（保留最近50个）
+- PostWrite: UTF-8 BOM检查、括号配对检查、同步到游戏目录、编辑日志
+
+【调试】
+- 启动参数: -debug_mode
+- 错误日志: C:\Users\HP\Documents\Paradox Interactive\Europa Universalis V\logs\error.log
+- 游戏日志: logs\game.log
+- 调试对比规则: 跟base game比，不要跟其他MOD比
+
+================================================================================
+七、当前活跃任务（io分支）
+================================================================================
+
+【Git状态】
+分支: io（主分支: main）
+未暂存修改: in_game/common/country_interactions/th_sages_introduce_institution.txt
+最近提交: bc54b83 "guii" — GUI相关工作
+
+【当前核心工作：国际组织系统完善】
+
+1. 贤者议会引入思潮互动 (th_sages_introduce_institution.txt)
+   - 旧版（全注释）: 使用 type=diplomacy, category=CATEGORY_FRIENDLY_ACTIONS
+   - 新版: 迁移到 scope=country, is_shown, is_valid, effect, notification_key 格式
+   - 功能: 消耗10点幻想乡团结度(th_gensokyo_unity_var)，
+           随机获得一个已知但未拥有的思潮
+   - 涉及12个思潮（2个自定义+10个原版）
+
+2. IO GUI面板
+   - gui/panels/organization/ — 贤者议会GUI
+   - 占位文本"待后续版本开放"需要替换
+
+3. IO修正值
+   - 多处标记 # TODO: 后续人工填写
+   - 需要根据游戏平衡填充具体数值
+
+【近期提交涉及的子系统】
+- GUI (guii)
+- IO测试 (iotest)
+- 文化修改（文化组调整）
+- 第二时代科技/思潮
+- 本地化更新
+- 宗教关系修改
+- 纹章配图（Lily.dds等）
+- 地图位置模板更新
+
+================================================================================
+八、AI Prompt模板（可直接用于下一步开发）
+================================================================================
+
+【模板1: 继续开发贤者议会引入思潮互动】
+
+PROMPT:
+---
+我正在开发EU5的Touhou Universalis II MOD（路径：
+F:\Paradox Interactive\Europa Universalis V\mod\Touhou Universalis II\）。
+
+请帮我完成 country_interactions/th_sages_introduce_institution.txt 的重写。
+
+当前文件状态：旧版代码已全部注释（使用type=diplomacy格式），需要替换为新的
+scope=country/is_shown/is_valid/effect/notification_key格式。
+
+功能需求：
+- 只有贤者议会(th_sages_council_io)成员可见此互动
+- 执行条件：幻想乡IO的th_gensokyo_unity_var ≥ 10
+- 目标国家未拥有某个已知国家已拥有的思潮
+- 效果：消耗10点团结度，随机获得一个符合条件的思潮
+- 支持的思潮：th_genesis_of_gensokyo_institution,
+  th_gensokyo_fantasy_journey_institution, institution:professional_soldiers,
+  institution:renaissance, institution:colonialism, institution:printing_press,
+  institution:global_trade, institution:manufactories, institution:enlightenment,
+  institution:industrialization
+
+开发前请先查阅：
+1. F:\Paradox Interactive\Europa Universalis V\mod\kasa\kasa project mod-toolkit\eu5-mod-toolkit\wiki-code-library\三_脚本类型\
+   维基参考_International_organization_modding国际组织.md
+2. F:\Paradox Interactive\Europa Universalis V\mod\kasa\kasa project mod-toolkit\eu5-mod-toolkit\eu5-official-docs\common\country_interactions\readme.txt
+3. Base game中的country_interactions示例：
+   F:\SteamLibrary\steamapps\common\Europa Universalis V\game\in_game\common\country_interactions\
+
+编码要求：
+- 文件编码: UTF-8 BOM
+- 遵循项目命名规范（th_前缀）
+- 使用MOD覆盖语法如需要
+---
+
+【模板2: 填写IO修正值】
+
+PROMPT:
+---
+在 Touhou Universalis II MOD中，多个IO修正块标记了 # TODO: 后续人工填写。
+请帮我根据游戏平衡填写这些修正值。
+
+需要填写的文件：
+- in_game/common/international_organizations/th_gensokyo_io.txt
+- in_game/common/international_organizations/th_sages_council_io.txt
+
+贤者议会威望系统分为五档（0-20/20-40/40-60/60-80/80-100），
+每档应提供不同强度的修正。
+
+请先阅读：
+1. 维基代码库/二_剧情内容/维基参考_Modifier_modding修饰符系统.md
+2. 维基代码库/三_脚本类型/维基参考_International_organization_modding国际组织.md
+3. 参考 MOD: Sakuya's Cheat Menu Pro (3600272327)
+   F:\SteamLibrary\steamapps\workshop\content\3450310\3600272327\
+---
+
+【模板3: 开发人类村落IO机制】
+
+PROMPT:
+---
+在 Touhou Universalis II MOD中，人类村落IO (th_human_village_io)
+目前只有最简框架（6行）。请帮我为其设计并实现完整的IO机制。
+
+人类村落是幻想乡中人类的聚居地，应以贸易/发展度/人口增长为核心机制。
+
+参考已有的幻想乡IO和贤者议会IO的实现模式：
+- in_game/common/international_organizations/th_gensokyo_io.txt
+- in_game/common/international_organizations/th_sages_council_io.txt
+- in_game/common/scripted_effects/th_sages_council_effects.txt
+
+开发前请查阅：
+1. 维基代码库/三_脚本类型/维基参考_International_organization_modding国际组织.md
+2. 官方文档: eu5-official-docs/common/international_organizations/readme.txt
+3. 优秀MOD参考: 萌陆风云V (3685363856) 的IO实现
+---
+
+【模板4: 创建新事件】
+
+PROMPT:
+---
+在 Touhou Universalis II MOD中创建新事件。事件命名空间使用 th_事件描述。
+请先使用 /new-event 脚手架创建，然后填充具体逻辑。
+
+或者直接创建，步骤：
+1. 查阅维基代码库/二_剧情内容/维基参考_Event_modding事件系统.md
+2. 查阅官方文档 eu5-official-docs/events/readme.txt
+3. 在 in_game/events/ 下创建事件文件
+4. 同步更新本地化文件（main_menu/localization/ 和 in_game/localization/）
+
+事件ID格式: th_xxx.N（N为1-9999整数）
+---
+
+【模板5: 添加新国家】
+
+PROMPT:
+---
+在 Touhou Universalis II MOD中添加新国家。
+参考 todo/th_new_countries.txt 中的规划列表。
+
+国家添加需要涉及的文件：
+1. in_game/setup/countries/th_gensokyo_countries.txt — 国家定义
+2. main_menu/setup/start/10_countries.txt — 开局设置
+3. main_menu/localization/ — 三种语言本地化
+4. main_menu/common/coat_of_arms/ — 纹章定义
+5. 可能需要新增纹章纹理到 main_menu/gfx/coat_of_arms/textured_emblems/
+---
+
+【模板6: 全量MOD审计】
+
+PROMPT:
+---
+请对 Touhou Universalis II MOD执行全量质量审计。
+使用 /check-mod-full 命令（或手动执行eu5-audit agent的7阶段流程）。
+
+审计范围：
+- 编码规范（UTF-8 BOM）
+- 本地化完整性（所有key是否有对应翻译）
+- 事件ID命名空间
+- 修饰符引用有效性
+- CMF集成注册
+- 括号配对
+- 与error.log交叉关联
+---
+
+================================================================================
+九、常见陷阱与注意事项
+================================================================================
+
+【凭记忆必错的典型陷阱（来自kasa eu5-mod skill）】
+┌────────────────────┬──────────────────────────────┬──────────────────────────────┐
+│ 陷阱               │ 错误写法                     │ 正确写法                     │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ IO修正层级          │ 只有modifier/leader_modifier │ 四级: modifier /             │
+│                    │                              │ non_leader_modifier /        │
+│                    │                              │ leader_modifier / IO_modifier│
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ 特殊状态撤销字段     │ auto_dismissal_trigger       │ auto_rescind_trigger         │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ 事件文件位置         │ common/events/               │ events/（与common平级）       │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ 事件ID格式          │ 随意格式                     │ namespace.integer (1-9999)   │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ MOD IO GUI包裹      │ organization_geodiplomatic_   │ organization_panel =         │
+│                    │ theme                        │ { blockoverride }            │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ Setup开局          │ 只能setup/start/              │ 社区普遍用on_game_start      │
+│                    │                              │ + on_action                  │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ 表单覆盖            │ 全量替换                      │ REPLACE/INJECT/              │
+│                    │                              │ REPLACE_OR_CREATE            │
+├────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ 禁止#注释           │ .gui文件用#注释              │ .gui文件不能用#注释           │
+└────────────────────┴──────────────────────────────┴──────────────────────────────┘
+
+【当前MOD中已知的问题】
+1. T19国家定义中 "山佬" 是裸中文而非文化key（需修复为 th_mountain_woman_culture）
+2. 许多文化组修正块为空 {}（需填充实际效果）
+3. 科技树所有AI权重为0（需设置合理的AI选择权重）
+4. 人类村落IO仅6行框架（需完整实现）
+5. 部分GUI面板有占位文本（需替换为实际内容）
+6. country_interactions文件正处于重写过渡期（旧代码全注释，新代码待完成）
+
+【文件编码注意事项】
+- 所有游戏数据.txt/.yml文件：UTF-8 BOM
+- .gui文件：无BOM
+- .csv文件：无BOM
+- 中文文件名：UTF-8
+- 如不确定编码，使用 check-eu5-encoding.sh 钩子自动检查
+
+【Git操作注意事项】
+- 当前在io分支工作
+- 提交前确保文件编码正确
+- 定期合并main分支的更新
+- main_menu/ 和 loading_screen/ 的内容也需要纳入版本控制
+
+================================================================================
+附录: 快速参考卡片
+================================================================================
+
+【常用变量名】
+th_gensokyo_unity_var      — 幻想乡团结度 (0-100)
+th_sages_prestige_var      — 贤者议会威望 (0-100)
+
+【IO名称】
+th_gensokyo_io             — 幻想乡国际组织（全体国家）
+th_sages_council_io        — 贤者议会（三位贤者）
+th_human_village_io        — 人类村落IO（待开发）
+
+【关键思潮】
+th_genesis_of_gensokyo_institution       — 幻想乡的起源
+th_gensokyo_fantasy_journey_institution  — 幻想之旅
+
+【关键国家标签（部分）】
+T00 — 红魔馆 (Scarlet Devil Mansion)
+T04 — 博丽神社 (Hakurei Shrine)
+T05 — 八云邸 (Yakumo Mansion)
+T14 — 守矢神社 (Moriya Shrine)
+T18 — 天狗之里 (Tengu Village)
+T20 — 地灵殿 (Chireiden)
+
+【关键文化（部分）】
+th_yokai_culture           — 妖怪
+th_wild_human_culture      — 野外人类
+th_village_human_culture   — 村落人类
+th_magician_culture        — 魔法使
+th_kappa_culture           — 河童
+th_long_nose_tengu_culture — 长鼻天狗
+th_oni_culture             — 鬼
+
+================================================================================
+文档结束 / END OF DOCUMENT
+================================================================================

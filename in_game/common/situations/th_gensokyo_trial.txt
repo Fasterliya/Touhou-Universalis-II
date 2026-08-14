@@ -1,0 +1,88 @@
+﻿### ============================================================
+### 幻想乡审判局势（惩戒战争目标国落败后启动）
+### 裁定: 阎魔是玩家 → 事件手动裁决；阎魔 AI → 按罪值自动裁定
+### ============================================================
+
+th_gensokyo_trial = {
+    monthly_spawn_chance = 0
+
+    can_start = {
+        always = no
+    }
+    can_end = {
+        always = no
+    }
+
+    visible = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+
+    on_start = {
+        ### 定位目标国与阎魔，清除目标标记
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                save_scope_as = crusade_target
+            }
+            every_international_organization_member = {
+                limit = {
+                    is_leader_of_international_organization = international_organization:th_gensokyo_io
+                }
+                save_scope_as = io_leader
+            }
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+        ### 阎魔是玩家 → 弹事件手动裁（目标国打审判标记供事件读取）
+        if = {
+            limit = {
+                scope:io_leader = {
+                    is_ai = no
+                }
+            }
+            scope:crusade_target = {
+                set_variable = th_gensokyo_trial_target_mark
+            }
+            scope:io_leader = {
+                trigger_event_non_silently = {
+                    id = th_gensokyo_trial_events.1
+                    days = 1
+                }
+            }
+        }
+        else = {
+            ### AI 自动裁定
+            th_gensokyo_trial_judge_effect = yes
+            end_situation = this
+        }
+    }
+
+    on_monthly = {
+        ### 玩家裁定完成 → 结束审判局势
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_trial_done
+                }
+            }
+            end_situation = this
+        }
+    }
+
+    on_ended = {
+        ### 清理审判标记
+        every_country = {
+            limit = {
+                OR = {
+                    has_variable = th_gensokyo_trial_done
+                    has_variable = th_gensokyo_trial_target_mark
+                }
+            }
+            remove_variable = th_gensokyo_trial_done
+            remove_variable = th_gensokyo_trial_target_mark
+        }
+    }
+}

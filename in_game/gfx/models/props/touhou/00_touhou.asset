@@ -1,0 +1,3319 @@
+﻿# png is ok, but dds is advised
+# about 256 * 256, with alpha.
+#技术提示-如何添加纸片人肖像，注意，请务必订阅工坊的二向箔mod！
+#作为示范的内容，你应当在复制以后修改所有的hatsune_miku为你自己的内容
+#而且如果要添加其他组的肖像，应当和vocaloid这个文件夹为平行目录
+#并复制本文件（要改名）和hm_prohet.mesh（不要改名）
+#每往对应头像组下面加一个头像，都要复制一次下述内容，截止到下一次出现这句话。
+pdxmesh = {
+	name = "touhou_marisa_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_marisa.dds"
+		texture_specular = "touhou_marisa.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_marisa_entity"
+	pdxmesh = "touhou_marisa_mesh"
+}
+#爱丽丝
+pdxmesh = {
+	name = "touhou_alice_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_alice.dds"
+		texture_specular = "touhou_alice.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_alice_entity"
+	pdxmesh = "touhou_alice_mesh"
+}
+#神绮
+pdxmesh = {
+	name = "touhou_shinki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_shinki.dds"
+		texture_specular = "touhou_shinki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_shinki_entity"
+	pdxmesh = "touhou_shinki_mesh"
+}
+#紫
+pdxmesh = {
+	name = "touhou_yukari_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yukari.dds"
+		texture_specular = "touhou_yukari.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yukari_entity"
+	pdxmesh = "touhou_yukari_mesh"
+}
+#卡娜
+pdxmesh = {
+	name = "touhou_kana_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kana.dds"
+		texture_specular = "touhou_kana.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kana_entity"
+	pdxmesh = "touhou_kana_mesh"
+}
+#朝仓
+pdxmesh = {
+	name = "touhou_rikako_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_rikako.dds"
+		texture_specular = "touhou_rikako.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_rikako_entity"
+	pdxmesh = "touhou_rikako_mesh"
+}
+#伊莉丝
+pdxmesh = {
+	name = "touhou_elis_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_elis.dds"
+		texture_specular = "touhou_elis.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_elis_entity"
+	pdxmesh = "touhou_elis_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_ellen_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_ellen.dds"
+		texture_specular = "touhou_ellen.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_ellen_entity"
+	pdxmesh = "touhou_ellen_mesh"
+}
+#艾莉
+pdxmesh = {
+	name = "touhou_elly_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_elly.dds"
+		texture_specular = "touhou_elly.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_elly_entity"
+	pdxmesh = "touhou_elly_mesh"
+}
+#幻月
+pdxmesh = {
+	name = "touhou_gengetsu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_gengetsu.dds"
+		texture_specular = "touhou_gengetsu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_gengetsu_entity"
+	pdxmesh = "touhou_gengetsu_mesh"
+}
+#玄爷
+pdxmesh = {
+	name = "touhou_genjii_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_genjii.dds"
+		texture_specular = "touhou_genjii.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_genjii_entity"
+	pdxmesh = "touhou_genjii_mesh"
+}
+#菊理
+pdxmesh = {
+	name = "touhou_kiruri_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kiruri.dds"
+		texture_specular = "touhou_kiruri.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kiruri_entity"
+	pdxmesh = "touhou_kiruri_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kitashirakawa_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kitashirakawa.dds"
+		texture_specular = "touhou_kitashirakawa.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kitashirakawa_entity"
+	pdxmesh = "touhou_kitashirakawa_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_konngara_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_konngara.dds"
+		texture_specular = "touhou_konngara.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_konngara_entity"
+	pdxmesh = "touhou_konngara_mesh"
+}
+#小兔子
+pdxmesh = {
+	name = "touhou_kotohime_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kotohime.dds"
+		texture_specular = "touhou_kotohime.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kotohime_entity"
+	pdxmesh = "touhou_kotohime_mesh"
+}
+#胡桃
+pdxmesh = {
+	name = "touhou_kurumi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kurumi.dds"
+		texture_specular = "touhou_kurumi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kurumi_entity"
+	pdxmesh = "touhou_kurumi_mesh"
+}
+#路易兹
+pdxmesh = {
+	name = "touhou_luize_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_luize.dds"
+		texture_specular = "touhou_luize.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_luize_entity"
+	pdxmesh = "touhou_luize_mesh"
+}
+#舞
+pdxmesh = {
+	name = "touhou_mai_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mai.dds"
+		texture_specular = "touhou_mai.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mai_entity"
+	pdxmesh = "touhou_mai_mesh"
+}
+#明罗
+pdxmesh = {
+	name = "touhou_meira_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_meira.dds"
+		texture_specular = "touhou_meira.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_meira_entity"
+	pdxmesh = "touhou_meira_mesh"
+}
+#魅魔
+pdxmesh = {
+	name = "touhou_mima_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mima.dds"
+		texture_specular = "touhou_mima.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mima_entity"
+	pdxmesh = "touhou_mima_mesh"
+}
+#梦月
+pdxmesh = {
+	name = "touhou_mugetsu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mugetsu.dds"
+		texture_specular = "touhou_mugetsu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mugetsu_entity"
+	pdxmesh = "touhou_mugetsu_mesh"
+}
+#草莓
+pdxmesh = {
+	name = "touhou_yumemi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yumemi.dds"
+		texture_specular = "touhou_yumemi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yumemi_entity"
+	pdxmesh = "touhou_yumemi_mesh"
+}
+#旧作灵梦
+pdxmesh = {
+	name = "touhou_old_reimu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_old_reimu.dds"
+		texture_specular = "touhou_old_reimu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_old_reimu_entity"
+	pdxmesh = "touhou_old_reimu_mesh"
+}
+#奥莲
+pdxmesh = {
+	name = "touhou_orange_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_orange.dds"
+		texture_specular = "touhou_orange.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_orange_entity"
+	pdxmesh = "touhou_orange_mesh"
+}
+#里香
+pdxmesh = {
+	name = "touhou_rika_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_rika.dds"
+		texture_specular = "touhou_rika.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_rika_entity"
+	pdxmesh = "touhou_rika_mesh"
+}
+#？？？
+pdxmesh = {
+	name = "touhou_rin_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_rin.dds"
+		texture_specular = "touhou_rin.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_rin_entity"
+	pdxmesh = "touhou_rin_mesh"
+}
+#萨拉
+pdxmesh = {
+	name = "touhou_sara_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sara.dds"
+		texture_specular = "touhou_sara.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sara_entity"
+	pdxmesh = "touhou_sara_mesh"
+}
+#萨利艾尔
+pdxmesh = {
+	name = "touhou_sariel_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sariel.dds"
+		texture_specular = "touhou_sariel.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sariel_entity"
+	pdxmesh = "touhou_sariel_mesh"
+}
+#雪
+pdxmesh = {
+	name = "touhou_yuki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yuki.dds"
+		texture_specular = "touhou_yuki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yuki_entity"
+	pdxmesh = "touhou_yuki_mesh"
+}
+#梦子
+pdxmesh = {
+	name = "touhou_yumeko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yumeko.dds"
+		texture_specular = "touhou_yumeko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yumeko_entity"
+	pdxmesh = "touhou_yumeko_mesh"
+}
+#琪露诺
+pdxmesh = {
+	name = "touhou_cirno_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_cirno.dds"
+		texture_specular = "touhou_cirno.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_cirno_entity"
+	pdxmesh = "touhou_cirno_mesh"
+}
+#
+pdxmesh = {
+	name = "touhou_daiyousei_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_daiyousei.dds"
+		texture_specular = "touhou_daiyousei.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_daiyousei_entity"
+	pdxmesh = "touhou_daiyousei_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_devil_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_devil.dds"
+		texture_specular = "touhou_devil.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_devil_entity"
+	pdxmesh = "touhou_devil_mesh"
+}
+#永林
+pdxmesh = {
+	name = "touhou_eirin_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_eirin.dds"
+		texture_specular = "touhou_eirin.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_eirin_entity"
+	pdxmesh = "touhou_eirin_mesh"
+}
+#弗兰
+pdxmesh = {
+	name = "touhou_flandre_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_flandre.dds"
+		texture_specular = "touhou_flandre.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_flandre_entity"
+	pdxmesh = "touhou_flandre_mesh"
+}
+#女院
+pdxmesh = {
+	name = "touhou_jyoon_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_jyoon.dds"
+		texture_specular = "touhou_jyoon.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_jyoon_entity"
+	pdxmesh = "touhou_jyoon_mesh"
+}
+#辉夜
+pdxmesh = {
+	name = "touhou_kaguya_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kaguya.dds"
+		texture_specular = "touhou_kaguya.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kaguya_entity"
+	pdxmesh = "touhou_kaguya_mesh"
+}
+#慧音
+pdxmesh = {
+	name = "touhou_keine_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_keine.dds"
+		texture_specular = "touhou_keine.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_keine_entity"
+	pdxmesh = "touhou_keine_mesh"
+}
+#心
+pdxmesh = {
+	name = "touhou_kokoro_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kokoro.dds"
+		texture_specular = "touhou_kokoro.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kokoro_entity"
+	pdxmesh = "touhou_kokoro_mesh"
+}
+#米斯蒂亚
+pdxmesh = {
+	name = "touhou_lorelei_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_lorelei.dds"
+		texture_specular = "touhou_lorelei.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_lorelei_entity"
+	pdxmesh = "touhou_lorelei_mesh"
+}
+#美铃
+pdxmesh = {
+	name = "touhou_meirin_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_meirin.dds"
+		texture_specular = "touhou_meirin.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_meirin_entity"
+	pdxmesh = "touhou_meirin_mesh"
+}
+#玫红
+pdxmesh = {
+	name = "touhou_mokou_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mokou.dds"
+		texture_specular = "touhou_mokou.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mokou_entity"
+	pdxmesh = "touhou_mokou_mesh"
+}
+#帕秋莉
+pdxmesh = {
+	name = "touhou_patchouli_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_patchouli.dds"
+		texture_specular = "touhou_patchouli.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_patchouli_entity"
+	pdxmesh = "touhou_patchouli_mesh"
+}
+#蕾米莉亚
+pdxmesh = {
+	name = "touhou_reimilia_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_reimilia.dds"
+		texture_specular = "touhou_reimilia.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_reimilia_entity"
+	pdxmesh = "touhou_reimilia_mesh"
+}
+#铃仙
+pdxmesh = {
+	name = "touhou_reisen_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_reisen.dds"
+		texture_specular = "touhou_reisen.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_reisen_entity"
+	pdxmesh = "touhou_reisen_mesh"
+}
+#露米娅
+pdxmesh = {
+	name = "touhou_rumia_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_rumia.dds"
+		texture_specular = "touhou_rumia.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_rumia_entity"
+	pdxmesh = "touhou_rumia_mesh"
+}
+#宵夜
+pdxmesh = {
+	name = "touhou_sakuya_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sakuya.dds"
+		texture_specular = "touhou_sakuya.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sakuya_entity"
+	pdxmesh = "touhou_sakuya_mesh"
+}
+#紫苑
+pdxmesh = {
+	name = "touhou_shion_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_shion.dds"
+		texture_specular = "touhou_shion.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_shion_entity"
+	pdxmesh = "touhou_shion_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_suika_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_suika.dds"
+		texture_specular = "touhou_suika.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_suika_entity"
+	pdxmesh = "touhou_suika_mesh"
+}
+#堇子
+pdxmesh = {
+	name = "touhou_sumireko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sumireko.dds"
+		texture_specular = "touhou_sumireko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sumireko_entity"
+	pdxmesh = "touhou_sumireko_mesh"
+}
+#天子
+pdxmesh = {
+	name = "touhou_tenshi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_tenshi.dds"
+		texture_specular = "touhou_tenshi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_tenshi_entity"
+	pdxmesh = "touhou_tenshi_mesh"
+}
+#帝
+pdxmesh = {
+	name = "touhou_tewi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_tewi.dds"
+		texture_specular = "touhou_tewi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_tewi_entity"
+	pdxmesh = "touhou_tewi_mesh"
+}
+#莉格露
+pdxmesh = {
+	name = "touhou_wriggle_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_wriggle.dds"
+		texture_specular = "touhou_wriggle.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_wriggle_entity"
+	pdxmesh = "touhou_wriggle_mesh"
+}
+#aqu
+pdxmesh = {
+	name = "touhou_akyuu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_akyuu.dds"
+		texture_specular = "touhou_akyuu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_akyuu_entity"
+	pdxmesh = "touhou_akyuu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_aya_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_aya.dds"
+		texture_specular = "touhou_aya.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_aya_entity"
+	pdxmesh = "touhou_aya_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_chimata_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_chimata.dds"
+		texture_specular = "touhou_chimata.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_chimata_entity"
+	pdxmesh = "touhou_chimata_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_hatate_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_hatate.dds"
+		texture_specular = "touhou_hatate.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_hatate_entity"
+	pdxmesh = "touhou_hatate_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_hearn_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_hearn.dds"
+		texture_specular = "touhou_hearn.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_hearn_entity"
+	pdxmesh = "touhou_hearn_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_hina_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_hina.dds"
+		texture_specular = "touhou_hina.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_hina_entity"
+	pdxmesh = "touhou_hina_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_iku_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_iku.dds"
+		texture_specular = "touhou_iku.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_iku_entity"
+	pdxmesh = "touhou_iku_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kanako_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kanako.dds"
+		texture_specular = "touhou_kanako.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kanako_entity"
+	pdxmesh = "touhou_kanako_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kasen_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kasen.dds"
+		texture_specular = "touhou_kasen.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kasen_entity"
+	pdxmesh = "touhou_kasen_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_komachi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_komachi.dds"
+		texture_specular = "touhou_komachi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_komachi_entity"
+	pdxmesh = "touhou_komachi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kosuzu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kosuzu.dds"
+		texture_specular = "touhou_kosuzu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kosuzu_entity"
+	pdxmesh = "touhou_kosuzu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_lunar_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_lunar.dds"
+		texture_specular = "touhou_lunar.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_lunar_entity"
+	pdxmesh = "touhou_lunar_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_megumu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_megumu.dds"
+		texture_specular = "touhou_megumu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_megumu_entity"
+	pdxmesh = "touhou_megumu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_melancholy_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_melancholy.dds"
+		texture_specular = "touhou_melancholy.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_melancholy_entity"
+	pdxmesh = "touhou_melancholy_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_mike_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mike.dds"
+		texture_specular = "touhou_mike.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mike_entity"
+	pdxmesh = "touhou_mike_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_minoriko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_minoriko.dds"
+		texture_specular = "touhou_minoriko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_minoriko_entity"
+	pdxmesh = "touhou_minoriko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_misumaru_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_misumaru.dds"
+		texture_specular = "touhou_misumaru.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_misumaru_entity"
+	pdxmesh = "touhou_misumaru_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_miyoi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_miyoi.dds"
+		texture_specular = "touhou_miyoi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_miyoi_entity"
+	pdxmesh = "touhou_miyoi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_mizuchi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mizuchi.dds"
+		texture_specular = "touhou_mizuchi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mizuchi_entity"
+	pdxmesh = "touhou_mizuchi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_momizi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_momizi.dds"
+		texture_specular = "touhou_momizi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_momizi_entity"
+	pdxmesh = "touhou_momizi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_momoyo_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_momoyo.dds"
+		texture_specular = "touhou_momoyo.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_momoyo_entity"
+	pdxmesh = "touhou_momoyo_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_nitori_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_nitori.dds"
+		texture_specular = "touhou_nitori.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_nitori_entity"
+	pdxmesh = "touhou_nitori_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_reading_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_reading.dds"
+		texture_specular = "touhou_reading.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_reading_entity"
+	pdxmesh = "touhou_reading_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_renko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_renko.dds"
+		texture_specular = "touhou_renko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_renko_entity"
+	pdxmesh = "touhou_renko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_rinnosuke_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_rinnosuke.dds"
+		texture_specular = "touhou_rinnosuke.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_rinnosuke_entity"
+	pdxmesh = "touhou_rinnosuke_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sanae_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sanae.dds"
+		texture_specular = "touhou_sanae.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sanae_entity"
+	pdxmesh = "touhou_sanae_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sannyo_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sannyo.dds"
+		texture_specular = "touhou_sannyo.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sannyo_entity"
+	pdxmesh = "touhou_sannyo_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_shikieiki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_shikieiki.dds"
+		texture_specular = "touhou_shikieiki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_shikieiki_entity"
+	pdxmesh = "touhou_shikieiki_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sizuha_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sizuha.dds"
+		texture_specular = "touhou_sizuha.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sizuha_entity"
+	pdxmesh = "touhou_sizuha_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_star_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_star.dds"
+		texture_specular = "touhou_star.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_star_entity"
+	pdxmesh = "touhou_star_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sunny_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sunny.dds"
+		texture_specular = "touhou_sunny.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sunny_entity"
+	pdxmesh = "touhou_sunny_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_suwako_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_suwako.dds"
+		texture_specular = "touhou_suwako.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_suwako_entity"
+	pdxmesh = "touhou_suwako_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_takane_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_takane.dds"
+		texture_specular = "touhou_takane.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_takane_entity"
+	pdxmesh = "touhou_takane_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_teller_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_teller.dds"
+		texture_specular = "touhou_teller.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_teller_entity"
+	pdxmesh = "touhou_teller_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_toyohime_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_toyohime.dds"
+		texture_specular = "touhou_toyohime.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_toyohime_entity"
+	pdxmesh = "touhou_toyohime_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_tsukasa_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_tsukasa.dds"
+		texture_specular = "touhou_tsukasa.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_tsukasa_entity"
+	pdxmesh = "touhou_tsukasa_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yorihime_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yorihime.dds"
+		texture_specular = "touhou_yorihime.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yorihime_entity"
+	pdxmesh = "touhou_yorihime_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yuka_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yuka.dds"
+		texture_specular = "touhou_yuka.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yuka_entity"
+	pdxmesh = "touhou_yuka_mesh"
+}
+#######################
+pdxmesh = {
+	name = "touhou_nemuno_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_nemuno.dds"
+		texture_specular = "touhou_nemuno.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_nemuno_entity"
+	pdxmesh = "touhou_nemuno_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_nue_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_nue.dds"
+		texture_specular = "touhou_nue.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_nue_entity"
+	pdxmesh = "touhou_nue_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_okina_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_okina.dds"
+		texture_specular = "touhou_okina.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_okina_entity"
+	pdxmesh = "touhou_okina_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_parsee_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_parsee.dds"
+		texture_specular = "touhou_parsee.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_parsee_entity"
+	pdxmesh = "touhou_parsee_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_raiko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_raiko.dds"
+		texture_specular = "touhou_raiko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_raiko_entity"
+	pdxmesh = "touhou_raiko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_rin_chi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_rin_chi.dds"
+		texture_specular = "touhou_rin_chi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_rin_chi_entity"
+	pdxmesh = "touhou_rin_chi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_ringo_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_ringo.dds"
+		texture_specular = "touhou_ringo.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_ringo_entity"
+	pdxmesh = "touhou_ringo_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sagume_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sagume.dds"
+		texture_specular = "touhou_sagume.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sagume_entity"
+	pdxmesh = "touhou_sagume_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_satono_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_satono.dds"
+		texture_specular = "touhou_satono.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_satono_entity"
+	pdxmesh = "touhou_satono_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_satori_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_satori.dds"
+		texture_specular = "touhou_satori.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_satori_entity"
+	pdxmesh = "touhou_satori_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_seiga_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_seiga.dds"
+		texture_specular = "touhou_seiga.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_seiga_entity"
+	pdxmesh = "touhou_seiga_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_seiran_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_seiran.dds"
+		texture_specular = "touhou_seiran.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_seiran_entity"
+	pdxmesh = "touhou_seiran_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sejia_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sejia.dds"
+		texture_specular = "touhou_sejia.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sejia_entity"
+	pdxmesh = "touhou_sejia_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_sekibanki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_sekibanki.dds"
+		texture_specular = "touhou_sekibanki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_sekibanki_entity"
+	pdxmesh = "touhou_sekibanki_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_shinmyoumaru_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_shinmyoumaru.dds"
+		texture_specular = "touhou_shinmyoumaru.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_shinmyoumaru_entity"
+	pdxmesh = "touhou_shinmyoumaru_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_shou_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_shou.dds"
+		texture_specular = "touhou_shou.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_shou_entity"
+	pdxmesh = "touhou_shou_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_utuho_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_utuho.dds"
+		texture_specular = "touhou_utuho.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_utuho_entity"
+	pdxmesh = "touhou_utuho_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_wakasagihime_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_wakasagihime.dds"
+		texture_specular = "touhou_wakasagihime.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_wakasagihime_entity"
+	pdxmesh = "touhou_wakasagihime_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yamame_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yamame.dds"
+		texture_specular = "touhou_yamame.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yamame_entity"
+	pdxmesh = "touhou_yamame_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_aunn_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_aunn.dds"
+		texture_specular = "touhou_aunn.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_aunn_entity"
+	pdxmesh = "touhou_aunn_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_bayakuren_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_bayakuren.dds"
+		texture_specular = "touhou_bayakuren.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_bayakuren_entity"
+	pdxmesh = "touhou_bayakuren_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_benben_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_benben.dds"
+		texture_specular = "touhou_benben.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_benben_entity"
+	pdxmesh = "touhou_benben_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_clownpiece_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_clownpiece.dds"
+		texture_specular = "touhou_clownpiece.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_clownpiece_entity"
+	pdxmesh = "touhou_clownpiece_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_doremy_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_doremy.dds"
+		texture_specular = "touhou_doremy.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_doremy_entity"
+	pdxmesh = "touhou_doremy_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_futo_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_futo.dds"
+		texture_specular = "touhou_futo.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_futo_entity"
+	pdxmesh = "touhou_futo_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_hecatia_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_hecatia.dds"
+		texture_specular = "touhou_hecatia.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_hecatia_entity"
+	pdxmesh = "touhou_hecatia_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_junko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_junko.dds"
+		texture_specular = "touhou_junko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_junko_entity"
+	pdxmesh = "touhou_junko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kagerou_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kagerou.dds"
+		texture_specular = "touhou_kagerou.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kagerou_entity"
+	pdxmesh = "touhou_kagerou_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kisume_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kisume.dds"
+		texture_specular = "touhou_kisume.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kisume_entity"
+	pdxmesh = "touhou_kisume_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kogasa_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kogasa.dds"
+		texture_specular = "touhou_kogasa.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kogasa_entity"
+	pdxmesh = "touhou_kogasa_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_koishi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_koishi.dds"
+		texture_specular = "touhou_koishi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_koishi_entity"
+	pdxmesh = "touhou_koishi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kyouko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kyouko.dds"
+		texture_specular = "touhou_kyouko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kyouko_entity"
+	pdxmesh = "touhou_kyouko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_larva_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_larva.dds"
+		texture_specular = "touhou_larva.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_larva_entity"
+	pdxmesh = "touhou_larva_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_mai_tian_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mai_tian.dds"
+		texture_specular = "touhou_mai_tian.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mai_tian_entity"
+	pdxmesh = "touhou_mai_tian_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_mamizu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mamizu.dds"
+		texture_specular = "touhou_mamizu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mamizu_entity"
+	pdxmesh = "touhou_mamizu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_miku_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_miku.dds"
+		texture_specular = "touhou_miku.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_miku_entity"
+	pdxmesh = "touhou_miku_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_minamitu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_minamitu.dds"
+		texture_specular = "touhou_minamitu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_minamitu_entity"
+	pdxmesh = "touhou_minamitu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_narumi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_narumi.dds"
+		texture_specular = "touhou_narumi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_narumi_entity"
+	pdxmesh = "touhou_narumi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_nazrin_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_nazrin.dds"
+		texture_specular = "touhou_nazrin.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_nazrin_entity"
+	pdxmesh = "touhou_nazrin_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yatsuhashi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yatsuhashi.dds"
+		texture_specular = "touhou_yatsuhashi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yatsuhashi_entity"
+	pdxmesh = "touhou_yatsuhashi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yoshika_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yoshika.dds"
+		texture_specular = "touhou_yoshika.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yoshika_entity"
+	pdxmesh = "touhou_yoshika_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yugi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yugi.dds"
+		texture_specular = "touhou_yugi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yugi_entity"
+	pdxmesh = "touhou_yugi_mesh"
+}
+#
+pdxmesh = {
+	name = "touhou_ichiri_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_ichiri.dds"
+		texture_specular = "touhou_ichiri.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_ichiri_entity"
+	pdxmesh = "touhou_ichiri_mesh"
+}
+###################################
+pdxmesh = {
+	name = "touhou_biten_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_biten.dds"
+		texture_specular = "touhou_biten.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_biten_entity"
+	pdxmesh = "touhou_biten_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_chen_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_chen.dds"
+		texture_specular = "touhou_chen.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_chen_entity"
+	pdxmesh = "touhou_chen_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_chiyari_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_chiyari.dds"
+		texture_specular = "touhou_chiyari.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_chiyari_entity"
+	pdxmesh = "touhou_chiyari_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_eika_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_eika.dds"
+		texture_specular = "touhou_eika.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_eika_entity"
+	pdxmesh = "touhou_eika_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_enoko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_enoko.dds"
+		texture_specular = "touhou_enoko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_enoko_entity"
+	pdxmesh = "touhou_enoko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_hisami_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_hisami.dds"
+		texture_specular = "touhou_hisami.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_hisami_entity"
+	pdxmesh = "touhou_hisami_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_keiki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_keiki.dds"
+		texture_specular = "touhou_keiki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_keiki_entity"
+	pdxmesh = "touhou_keiki_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_kutaka_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_kutaka.dds"
+		texture_specular = "touhou_kutaka.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_kutaka_entity"
+	pdxmesh = "touhou_kutaka_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_letty_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_letty.dds"
+		texture_specular = "touhou_letty.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_letty_entity"
+	pdxmesh = "touhou_letty_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_lily_b_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_lily_b.dds"
+		texture_specular = "touhou_lily_b.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_lily_b_entity"
+	pdxmesh = "touhou_lily_b_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_lily_w_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_lily_w.dds"
+		texture_specular = "touhou_lily_w.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_lily_w_entity"
+	pdxmesh = "touhou_lily_w_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_lunasa_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_lunasa.dds"
+		texture_specular = "touhou_lunasa.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_lunasa_entity"
+	pdxmesh = "touhou_lunasa_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_lyrica_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_lyrica.dds"
+		texture_specular = "touhou_lyrica.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_lyrica_entity"
+	pdxmesh = "touhou_lyrica_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_mayumi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_mayumi.dds"
+		texture_specular = "touhou_mayumi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_mayumi_entity"
+	pdxmesh = "touhou_mayumi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_merlin_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_merlin.dds"
+		texture_specular = "touhou_merlin.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_merlin_entity"
+	pdxmesh = "touhou_merlin_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_ran_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_ran.dds"
+		texture_specular = "touhou_ran.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_ran_entity"
+	pdxmesh = "touhou_ran_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_reisen_2_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_reisen_2.dds"
+		texture_specular = "touhou_reisen_2.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_reisen_2_entity"
+	pdxmesh = "touhou_reisen_2_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_saki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_saki.dds"
+		texture_specular = "touhou_saki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_saki_entity"
+	pdxmesh = "touhou_saki_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_urumi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_urumi.dds"
+		texture_specular = "touhou_urumi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_urumi_entity"
+	pdxmesh = "touhou_urumi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yachie_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yachie.dds"
+		texture_specular = "touhou_yachie.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yachie_entity"
+	pdxmesh = "touhou_yachie_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_youmu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_youmu.dds"
+		texture_specular = "touhou_youmu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_youmu_entity"
+	pdxmesh = "touhou_youmu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yuma_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yuma.dds"
+		texture_specular = "touhou_yuma.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yuma_entity"
+	pdxmesh = "touhou_yuma_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_yuyuko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_yuyuko.dds"
+		texture_specular = "touhou_yuyuko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_yuyuko_entity"
+	pdxmesh = "touhou_yuyuko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_zanmu_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_zanmu.dds"
+		texture_specular = "touhou_zanmu.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_zanmu_entity"
+	pdxmesh = "touhou_zanmu_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_toziko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_toziko.dds"
+		texture_specular = "touhou_toziko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_toziko_entity"
+	pdxmesh = "touhou_toziko_mesh"
+}
+##########################
+pdxmesh = {
+	name = "touhou_ariya_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_ariya.dds"
+		texture_specular = "touhou_ariya.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_ariya_entity"
+	pdxmesh = "touhou_ariya_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_asama_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_asama.dds"
+		texture_specular = "touhou_asama.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_asama_entity"
+	pdxmesh = "touhou_asama_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_chimi_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_chimi.dds"
+		texture_specular = "touhou_chimi.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_chimi_entity"
+	pdxmesh = "touhou_chimi_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_dolls1_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_dolls1.dds"
+		texture_specular = "touhou_dolls1.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_dolls1_entity"
+	pdxmesh = "touhou_dolls1_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_jacket_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_jacket.dds"
+		texture_specular = "touhou_jacket.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_jacket_entity"
+	pdxmesh = "touhou_jacket_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_label_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_label.dds"
+		texture_specular = "touhou_label.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_label_entity"
+	pdxmesh = "touhou_label_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_layla_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_layla.dds"
+		texture_specular = "touhou_layla.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_layla_entity"
+	pdxmesh = "touhou_layla_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_nareko_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_nareko.dds"
+		texture_specular = "touhou_nareko.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_nareko_entity"
+	pdxmesh = "touhou_nareko_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_nina_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_nina.dds"
+		texture_specular = "touhou_nina.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_nina_entity"
+	pdxmesh = "touhou_nina_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_ubame_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_ubame.dds"
+		texture_specular = "touhou_ubame.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_ubame_entity"
+	pdxmesh = "touhou_ubame_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_youki_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_youki.dds"
+		texture_specular = "touhou_youki.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_youki_entity"
+	pdxmesh = "touhou_youki_mesh"
+}
+
+#路人狸猫
+pdxmesh = {
+	name = "touhou_passer1_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer1.dds"
+		texture_specular = "touhou_passer1.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer1_entity"
+	pdxmesh = "touhou_passer1_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer2_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer2.dds"
+		texture_specular = "touhou_passer2.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer2_entity"
+	pdxmesh = "touhou_passer2_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer3_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer3.dds"
+		texture_specular = "touhou_passer3.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer3_entity"
+	pdxmesh = "touhou_passer3_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer4_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer4.dds"
+		texture_specular = "touhou_passer4.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer4_entity"
+	pdxmesh = "touhou_passer4_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer5_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer5.dds"
+		texture_specular = "touhou_passer5.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer5_entity"
+	pdxmesh = "touhou_passer5_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer6_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer6.dds"
+		texture_specular = "touhou_passer6.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer6_entity"
+	pdxmesh = "touhou_passer6_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer7_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer7.dds"
+		texture_specular = "touhou_passer7.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer7_entity"
+	pdxmesh = "touhou_passer7_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer8_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer8.dds"
+		texture_specular = "touhou_passer8.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer8_entity"
+	pdxmesh = "touhou_passer8_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer9_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer9.dds"
+		texture_specular = "touhou_passer9.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer9_entity"
+	pdxmesh = "touhou_passer9_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer10_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer10.dds"
+		texture_specular = "touhou_passer10.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer10_entity"
+	pdxmesh = "touhou_passer10_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer11_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer11.dds"
+		texture_specular = "touhou_passer11.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer11_entity"
+	pdxmesh = "touhou_passer11_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer12_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer12.dds"
+		texture_specular = "touhou_passer12.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer12_entity"
+	pdxmesh = "touhou_passer12_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer13_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer13.dds"
+		texture_specular = "touhou_passer13.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer13_entity"
+	pdxmesh = "touhou_passer13_mesh"
+}
+
+pdxmesh = {
+	name = "touhou_passer14_mesh"
+	file = "hm_prophet.mesh"
+	scale = 0.8
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "touhou_passer14.dds"
+		texture_specular = "touhou_passer14.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "touhou_passer14_entity"
+	pdxmesh = "touhou_passer14_mesh"
+}

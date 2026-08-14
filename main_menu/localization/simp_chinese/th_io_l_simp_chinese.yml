@@ -1,0 +1,99 @@
+﻿l_simp_chinese:
+ th_human_village_io: "人间之里"
+ th_human_village_io_desc: "人间之里及命连寺区域各国组成的联合组织。"
+
+ th_gensokyo_io: "幻想乡"
+ th_gensokyo_io_desc: "维系幻想乡诸国平衡的国际组织，由贤者与阎魔共同维护大结界秩序。"
+
+ th_sages_council_io: "贤者议会"
+ th_sages_council_io_desc: "由幻想乡最古老的三位贤者组成的最高议事机构。"
+
+ ### 特殊席位
+ th_gensokyo_io_sages_special_status: "贤者"
+ th_gensokyo_io_sages_special_status_desc: "幻想乡最古老的三位贤者，分别镇守大结界的关键节点。"
+
+ th_gensokyo_io_yama_special_status: "阎魔"
+ th_gensokyo_io_yama_special_status_desc: "执掌彼岸的审判者，幻想乡议会的领袖。"
+
+ th_gensokyo_io_guardian_special_status: "幻想乡守护"
+ th_gensokyo_io_guardian_special_status_desc: "博丽神社的巫女，大结界永恒的守护者。"
+
+ th_gensokyo_io_human_village_special_status: "人类村落"
+ th_gensokyo_io_human_village_special_status_desc: "人间之里的代表，守护幻想乡人类聚居地的权益。"
+
+ th_gensokyo_io_yama_leader_title: "阎魔"
+
+ ### IO变量（引擎从 main_menu 读取变量名 + 饼图格式 + 月度变化描述）
+ th_gensokyo_unity_var: "幻想乡团结度"
+ th_gensokyo_unity_var_desc: "衡量幻想乡诸国的凝聚力，来源于调停异变、和平建设等正面行为，因侵略扩张与外界入侵而损耗。"
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "基础维系"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部和平"
+
+ ### 国家变量
+ th_gensokyo_personal_contribution_var: "个人贡献度"
+ th_gensokyo_personal_influence_var: "个人影响力"
+ th_gensokyo_notorious_reputation_var: "幻想乡恶名"
+
+ ### 法律
+ th_gensokyo_unity_vision_law: "团结愿景"
+ th_gensokyo_unity_vision_law_desc: "决定幻想乡团结之力的获取方向与运用之道。"
+
+ th_gensokyo_barrier_policy_law: "大结界政策"
+ th_gensokyo_barrier_policy_law_desc: "决定幻想乡大结界的维护强度与开放程度。"
+
+ th_gensokyo_incident_response_law: "异变应对法则"
+ th_gensokyo_incident_response_law_desc: "决定幻想乡发生异变时的应对策略与行动准则。"
+
+ isolation_defense_policy: "孤立坚守"
+ isolation_defense_policy_desc: "紧闭大结界之门，以内部和平凝聚团结之力。"
+ balance_path_policy: "平衡之道"
+ balance_path_policy_desc: "维持大结界既有之法，不偏不倚。"
+ open_inclusive_policy: "开放包容"
+ open_inclusive_policy_desc: "放宽大结界限制，欢迎外界新思。"
+
+ reinforced_barrier_policy: "强化结界"
+ reinforced_barrier_policy_desc: "倾全乡之力加固大结界。"
+ maintained_barrier_policy: "维持结界"
+ maintained_barrier_policy_desc: "按既有传统维持大结界运转。"
+ relaxed_barrier_policy: "宽松结界"
+ relaxed_barrier_policy_desc: "适度放松大结界限制以利交流。"
+
+ duel_resolution_policy: "弹幕决斗规则"
+ duel_resolution_policy_desc: "以一对一弹幕决斗解决异变。"
+ joint_suppression_policy: "联合镇压"
+ joint_suppression_policy_desc: "诸国联合行动，以集体之力镇压异变。"
+ diplomatic_mediation_policy: "外交调解"
+ diplomatic_mediation_policy_desc: "以谈判与调解化解异变根源。"
+
+ ### 诊断互动（验证特殊席位状态）
+ th_sages_diagnostic_select_io: "选择幻想乡国际组织"
+ th_sages_diagnostic_interaction: "贤者席位诊断"
+ th_sages_diagnostic_interaction_desc: "此互动仅对持有幻想乡IO「贤者」特殊席位的国家可见。用于验证特殊席位是否正确分配。"
+ th_sages_diagnostic_interaction_act: "确认贤者席位"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]确认持有幻想乡「贤者」特殊席位。"
+ th_sages_diagnostic_success_tt: "§G✓ 诊断成功§!：此国家持有幻想乡IO的「贤者」特殊席位（th_gensokyo_io_sages_special_status）。"
+
+ ### 席位解锁法律（占位验证）
+ th_gensokyo_seat_unlock_law: "席位解锁"
+ th_gensokyo_seat_unlock_law_desc: "通过后解锁幻想乡的席位，允许授予特殊地位。"
+ th_gensokyo_seat_unlock_policy: "席位解锁"
+ th_gensokyo_seat_unlock_policy_desc: "激活后启用幻想乡席位，贡献度最高的成员将自动获得该席位。"
+ th_gensokyo_io_seat_special_status: "幻想乡席位"
+ th_gensokyo_io_seat_special_status_desc: "由席位解锁法律启用的特殊席位，授予贡献度最高的成员。"
+
+ ### 贤者议会 — 引入思潮（议会辩论）
+ th_sages_council_member_special_status: "贤者席位"
+ th_sages_council_member_special_status_desc: "贤者议会的席位，由三位最古老的贤者各持一席。每席在议会辩论中拥有相等的投票权。"
+
+ th_sages_council_io_parliament: "贤者议会大议事会"
+ th_sages_introduce_institution_issue: "引入思潮"
+ th_sages_introduce_institution_issue_desc: "提议将一种新思潮引入所有贤者的首都。"
+
+ th_sages_introduce_institution: "引入思潮"
+ th_sages_introduce_institution_desc: "选择一个已在世间出现但尚未遍及贤者的思潮。贤者议会将就此展开辩论；若至少两位贤者支持，思潮将在每位贤者的首都出现。"
+ th_sages_introduce_institution_cost: "消耗：[G]500 金[/G]（发起者）与 [G]10 幻想乡团结[/G]。辩论失败不退还。"
+ th_sages_introduce_institution_notification: "贤者议会已就引入思潮召开辩论。"
+ th_sages_pending_institution: "待引入思潮"
+ th_sages_introduced_institutions: "已引入思潮"

@@ -1,0 +1,514 @@
+================================================================================
+    幻想乡 IO 链条系统（th_gensokyo_chain）— 最详细交接文档
+    版本: v3.0（二轮修正定稿）
+    完成日期: 2026-08-06
+    MOD: Touhou-Universalis-II
+    工作副本: C:\Users\12494\Documents\Paradox Interactive\Europa Universalis V\mod\Touhou-Universalis-II
+    需求源: I:\工作站\模组制作提议集合.xlsx →「国际组织」表
+================================================================================
+
+================================================================================
+一、项目概述与范围
+================================================================================
+
+1.1 目标
+  将 xlsx「国际组织」表中"幻想乡主 IO"的 5 大缺口完整落地：
+  ① 恶名完整链 ② 惩戒战争+阎魔审判 ③ 扩张限制 ④ 自由市保护 ⑤ 团结度链条
+
+1.2 范围外（用户明确不做 / 不归本次）
+  - 守护模块：整体暂不动（第4时代解锁/1-5位/推举/特殊行动全部不做）
+  - 小卖铺：买思潮/求巫女/编史诗/请求合法扩张发放（接口已预留）
+  - 骨架 TODO 填值：3 部法律政策填值、3 空壳决议效果、投票权重接入等
+  - 异变系统（红雾异变）、弹幕战
+  - 贤者会议新功能（赌局/暗中干涉/指定异变解决者/消耗团结）——依赖异变系统
+
+1.3 重要
+  所有数值均为初值（标注"待调"），平衡入口唯一：
+  in_game/common/script_values/th_gensokyo_io_chain_values.txt
+
+================================================================================
+二、系统架构总览
+================================================================================
+
+2.1 恶名链（模块①）
+  非法扩张(8/地块) / 合法扩张(1/地块) / 吞自由市(x6) ──► 恶名(0-100,隐藏)
+      ▲                                                    │
+      │                                            月度自然衰减(-1/月)
+      │                                                    ▼
+  宴会(IO行动,50金,CD12月,-10恶名) ◄──────────── 档位判定(50/75)
+                                                    │
+                                            弃民修正(贡献x0.7/x0.4)
+  查看入口: IO行动栏"查看声望"(effect空, tooltip档位文本)
+
+2.2 惩戒战争+审判（模块②）
+  阎魔提案(行动) → 议会辩论(3贤者2/3票过) → 惩戒局势
+      ├─ 阎魔自动宣战(on_start)
+      ├─ 成员行动加入(join_crusade, +5贡献, 参战标记)
+      ├─ 罪值三源(战斗war_score/时长/拒和)
+      ├─ 势力计算(月度, 面板显示)
+      ├─ 双条约: 阎魔100分胜利 / 目标国100分反杀
+      └─ 结束 → 反杀?(不审判, 反攻扩张行动) / 审判局势(+5团结)
+  审判局势 → 阎魔手动(事件3档)或AI自动(罪值<50/50-75/>=75)
+      ├─ 轻判: 归还三连(取消附庸+归还核心+释放国家)
+      ├─ 中判: +削弱国力(5年)
+      └─ 重判: +财富全转移 + 监管国(40%贡金,刑期20-30年)
+      团结: 扣5/10/15 + 奖10(审判法±2)
+
+2.3 扩张限制（模块③）
+  和约夺地/吞并(成员间) → 有配额? ──是──► 消耗配额 + 合法恶名(+1)
+                          │
+                          └─否──► 惩罚链: 敌意bias + 恶名(+8) + 团结扣(2/地块)
+  配额: th_gensokyo_expansion_quota(发放接口留小卖铺, 上限4)
+  代价修正(互斥挂载): 授权x0.25 / 异变x1.25 / 私自x1.5(敌意修正字段)
+  敌意阈值>=50 → 阎魔可提案(惩戒战争入口)
+
+2.4 自由市保护（模块④）
+  人类村落20席 = 自由市
+  ├─ 和约割让自由市地块: 敌意1250 + 恶名x6 + 团结扣10
+  ├─ 吞并自由市国家: 同上(兜底)
+  ├─ 外界宣战自由市: 三贤者自动参战(防御方, 神罗式)
+  └─ 成员间吞并: 不吃保护(触发豁免), 只吃惩罚链
+
+2.5 团结度链条（模块⑤）
+  月收入: 基础0.1 + 和平0.2 + 成员数x0.002
+  扣: 判决5/10/15 + 非法扩张2/地块 + 吞自由市10 + 外界入侵10
+  奖: 审判完成10(±2审判法) + 刑满释放5 + 战争平息5
+  未启用: 大规模战争扣团结(代码注释)
+
+================================================================================
+三、决策历史（两轮全部决策，含用户授权项）
+================================================================================
+
+第一轮（骨架定稿）：
+  D1 恶名完全隐藏（推翻"可见"，改隐藏 + 互动查看入口）
+  D2 恶名消减 = 自然衰减 + 宴会（双通道，宴会完整实现）
+  D3 宴会形态 = IO generic action（原生 GUI、price、CD）
+  D4 惩戒战争触发 = 阎魔提议案 → 议会辩论（贤者议会同款链）→ 2 票过
+  D5 战争形态 = 双局势（惩戒局势 + 审判局势）
+  D6 罪值 = 三源混合（战斗+时长+拒和）
+  D7 判决 = 组合式 + 阎魔手动裁（玩家事件）/ AI 自动
+  D8 判决固定扣团结（按档位，重判多扣）
+  D9 审判法 = 1 law 3 互斥政策（劝善/有序/因果必尝），阎魔决定不走投票（标注待定）
+  D10 监管国：宗主=阎魔 T25；刑期 20-30 年（罪值定刑）；全约束；刑满释放+团结
+  D11 扩张限制 = A 惩罚链 + C 配额 + D 敌意联动，B 代价修正做框架
+  D12 守护席位 = C 保持现状（整体不动）
+  D13 自由市 = 人类村落 20 席全部套用；保护三件套
+  D14 团结 = 判决扣+奖并存；释放监管国奖；大规模战争扣、外界入侵扣；宴会不加团结
+  D15 议会方案再改：纯贤者 2/3 票制（阎魔 power=0，发起=叙事同意）
+  D16 恶名查看 = IO 行动栏（可点但无效果，B4）
+  D17 反杀判定 = 反杀条约（目标国 100 分提出），双条约互不可见
+  D18 包围网 = 行动制加入（join_crusade）
+
+第二轮（2026-08-06，9 项）：
+  R1(A6) 赔款 = 监管国默认属性：财富全转移 + 40% 贡金（普通附庸 2 倍）
+         判决 3 级模型：轻=归还 / 中=归还+削弱 / 重=监管国（全叠加）
+  R2(B1) 自由市吞并惩罚挂"和约割让"：+500% 敌意（bias 1250）+ 恶名 x500%（x6）
+  R3(B3) 归还领土三连：取消全部附庸 + 归还他国核心领土 + 释放国家
+  R4(B5) 自定义局势面板：双国头部 + 双方势力对比（参考英法百年战争/胡斯战争写法）
+  R5(B6) 恶名 = 敌意镜像：合法扩张也产恶名（量分档）
+  R6(B7) 三贤者自动参战（神罗式）替代贤者 CB
+  R7(C1) 加入惩戒战争即获贡献 +5
+  R8(C2) 惩戒战争平息获团结 +5
+  R9(C4) 成员数团结加成（total_members x 0.002）
+  R10(C5) 审判法影响团结获取量（因果必尝+2/劝善-2）
+  R11(C6) 异变接口保留（暂不实现）
+
+================================================================================
+四、文件清单
+================================================================================
+
+4.1 新建文件（28 个，UTF-8 BOM；GUI 例外无 BOM）
+  [in_game/common/biases/]
+    th_gensokyo_io_biases.txt        自定义敌意偏置 x3（非法扩张50/自由市1250/抵抗25）
+  [in_game/common/script_values/]
+    th_gensokyo_io_chain_values.txt  集中数值（平衡入口，见第六章）
+  [in_game/common/scripted_triggers/]
+    th_gensokyo_io_chain_triggers.txt 共享触发器（恶名档位/自由市/贤者/授权配额/罪值档/审判记录/局势）
+  [in_game/common/scripted_effects/]
+    th_gensokyo_notorious_effects.txt 恶名链（init/月度衰减/左右法律接口）
+    th_gensokyo_expansion_effects.txt 扩张限制（配额发放/惩罚链/代价修正挂载）
+    th_gensokyo_unity_effects.txt     团结统一接口（add/subtract + clamp）
+    th_gensokyo_crusade_effects.txt   判决效果集（有效罪值/档位判定/归还三连/判决核心/刑期）
+  [in_game/common/on_action/]
+    th_gensokyo_chain_start.txt       on_game_start 初始化挂载
+    th_gensokyo_chain_monthly.txt     月度脉冲（恶名衰减/代价修正）
+    th_gensokyo_chain_events.txt      事件钩子（扩张/割让自由市/罪值/入侵/贤者参战/吞并）
+  [in_game/common/customizable_localization/]
+    th_gensokyo_notorious_tier.txt    恶名档位文本（3 档，Custom('...') 调用）
+  [in_game/common/generic_actions/]
+    th_gensokyo_feast.txt             宴会（IO 行动，price 50，CD 12 月，减恶名 10）
+    th_gensokyo_propose_crusade.txt   惩戒战争提案（仅阎魔，select_trigger 选目标）
+    th_gensokyo_join_crusade.txt      加入惩戒战争（situation 行动，+5 贡献+参战标记）
+    th_gensokyo_notorious_view.txt    恶名查看（IO 行动，effect 空，tooltip 档位）
+    th_gensokyo_counter_expansion.txt 反杀扩张（配额+2，CD 12 月）
+  [in_game/common/parliament_issues/]
+    th_gensokyo_crusade_issue.txt     惩戒议题（on_debate_passed → enable 局势）
+  [in_game/common/situations/]
+    th_gensokyo_crusade.txt           惩戒局势（宣战/罪值/势力计算/结束判定）
+    th_gensokyo_trial.txt             审判局势（手动/自动裁定分流）
+  [in_game/common/subject_types/]
+    th_gensokyo_regulated_state.txt   彼岸监管国（40% 贡金，全约束，刑满释放）
+  [in_game/common/laws/]
+    th_gensokyo_judgment_law.txt      审判法（劝善/有序/因果必尝，requires_vote=no）
+  [in_game/common/casus_belli/]
+    th_gensokyo_crusade_cb.txt        惩戒 CB（war_goal_type=superiority，仅脚本授予）
+  [in_game/common/peace_treaties/]
+    th_gensokyo_crusade_triumph.txt   阎魔版 100 分胜利条约（winner=leader）
+    th_gensokyo_crusade_counter.txt   反杀版 100 分胜利条约（winner=目标国）
+  [in_game/common/prices/]
+    th_gensokyo_feast_price.txt       宴会价格（gold 50）
+    th_gensokyo_regulated_pays.txt    监管国贡金（scaled_gold 0.4）
+  [in_game/common/static_modifiers/]
+    th_gensokyo_expansion_cost_modifiers.txt  扩张代价修正 x3 + 削弱国力
+  [in_game/events/]
+    th_gensokyo_trial_events.txt      阎魔手动裁事件（3 档）
+  [in_game/gui/panels/situation/]（无 BOM）
+    th_gensokyo_crusade.gui           惩戒局势面板（双国头部+势力对比+罪值）
+  [in_game/localization/]
+    th_gensokyo_chain_l_simp_chinese.yml / th_gensokyo_chain_l_english.yml
+
+4.2 既有文件最小改动（6 处，均已在文件内标注"链条系统"注释）
+  1. in_game/common/on_action/th_gensokyo_io_monthly.txt
+     弃民系数：恶名>=75 贡献x0.4 / >=50 x0.7（乘 temp_contribution）
+  2. in_game/common/international_organization_special_statuses/th_gensokyo_io.txt
+     贤者席位补 power=200；阎魔/守护/人类村落/占位席位 power 全 0（2/3 贤者票制必需）
+  3. in_game/common/parliament_types/th_gensokyo_io_parliament.txt
+     possible_issues 追加 th_gensokyo_crusade_issue
+  4. in_game/common/international_organizations/th_gensokyo_io.txt
+     unity_var monthly_change 追加成员数加成（total_members x 0.002）
+  5. main_menu/setup/start/th_gensokyo_io.txt
+     laws 块预分配审判法默认"有序"政策（BOM-less 保持）
+  6. in_game/common/on_action/th_gensokyo_chain_events.txt（本次新增）
+
+4.3 已删除
+  in_game/common/country_interactions/th_gensokyo_notorious_view.txt
+  （B4：恶名查看从外交互动改 IO 行动栏）
+
+================================================================================
+五、核心机制详解
+================================================================================
+
+5.1 议会投票（2/3 贤者票制）
+  发起链: 提案行动(effect) → set_parliament_location=scope:actor.capital
+        → set_parliament_active=yes → 全员预投no → set_parliament_issue
+        → 发起人 vote=yes(标记) → call_io_parliament
+  投票权: 3 贤者各 power 200（combined=600，每票 0.333）；
+          阎魔/守护/人类村落/占位 power=0（投票权重恒 0 = 实际无票权）
+  数学:   2 贤者赞成 = 0.667 > 0.5 通过；1 贤者 = 0.333 不过；
+          初始支持度 = 0（阎魔发起=叙事同意，不计票）
+  议题:   th_gensokyo_crusade_issue（selectable_for 限领袖）
+  通过:   on_debate_passed → enable_situation_effect(th_gensokyo_crusade)
+  失败:   on_debate_failed → 清理目标标记
+
+5.2 目标国传递（标记法，全系统唯一机制）
+  th_gensokyo_crusade_target_mark：提案时打标 → 局势 on_start/on_monthly 遍历
+  IO 成员取目标（save_scope_as=crusade_target）→ 审判局势 on_start 定位后清除；
+  反杀结局由惩戒局势 on_ended else 分支清除
+  禁止 scope 引用存 IO 变量（语法风险），全部用标记 + 遍历
+
+5.3 罪值（0-100，三源）
+  ① 战斗: on_battle_won（root=unit）→ owner 持有目标标记 →
+     owner 罪 += scope:war_score（按战果折算；退路=固定值 th_crusade_sin_battle_value）
+  ② 时长: 惩戒局势 on_monthly 目标国罪 += 1/月
+  ③ 拒和: on_enforce_peace_declined（root 或 scope:recipient 持有标记）→ 罪 += 10
+  封顶: clamp 0-100
+
+5.4 审判与判决（3 级模型）
+  有效罪值 = 罪值 + 审判法偏移（因果必尝+10 / 劝善-10）
+  档位（AI 自动或玩家事件手动设定 th_gensokyo_sentence_tier 1/2/3）:
+    轻判(罪值<50): 归还三连
+    中判(50-75):   归还三连 + 削弱国力(5年)
+    重判(>=75):    归还三连 + 削弱 + 财富全转移(阎魔) + 监管国(40%贡金, 刑期20-30年)
+  归还三连: ① every_subject → cancel_subject=prev（取消全部附庸）
+            ② every_owned_location: exists previous_owner + is_core_of=previous_owner
+               + previous_owner!=阎魔 + country_exists → change_location_owner=previous_owner
+            ③ create_country_from_cores_in_our_locations（释放国家）
+  财富转移: set_variable value=gold → set_gold=0 → 阎魔 add_gold=var:temp
+  刑期: 240 月基础 + (罪/10)年 + 审判法±2年（因果必尝+24月/劝善-24月），封顶 360 月
+  团结: 扣 5/10/15（按档）；奖 10±2（审判法：因果必尝+2/劝善-2）
+  审判标记: th_gensokyo_judged（永久，后续接口用）
+
+5.5 监管国（subject_type）
+  贡金: subject_pays=subject_pays_regulated（scaled_gold 0.4 = 收入40% = 普通附庸2倍，
+        持续至刑满，cancel_subject 自动停止）
+  约束: level 0 / can_be_annexed=no / subject_can_cancel=no / overlord_can_cancel=no /
+        has_limited_diplomacy=yes / allow_declaring_wars=no / will_join_independence_wars=no /
+        can_change_rank=no / can_change_heir_selection=no / 全 visible/enabled=no /
+        overlord_modifier 空（宗主无特权）
+  刑满: on_monthly 倒计时归零 → scope:overlord cancel_subject=prev → 团结+5 → 释放独立
+
+5.6 双条约（互不可见）
+  th_gensokyo_crusade_triumph: potential=战争含惩戒CB + winner=阎魔（leader）
+    effect: loser 打 defeated 标记 + winner 威望10 + 贡献10
+  th_gensokyo_crusade_counter: potential=战争含惩戒CB + winner 持目标标记
+    effect: winner 打 countered 标记 + 威望20
+  反杀流程: 目标国100分提出反杀条约 → 战争结束 → 局势检测 is_at_war=no →
+    结束 → on_ended 反杀分支（不审判，清 target_mark）→ 反攻扩张行动解锁
+    （potential= countered 标记 + 局势可见；配额+2，CD 12 月）
+
+5.7 包围网（行动制）
+  阎魔: 局势 on_start 自动宣战（决议通过即开战）
+  成员: 局势面板行动 th_gensokyo_join_crusade（type=situation，potential=IO成员+非目标）
+    effect: 未交战者 declare_war_with_cb（惩戒CB）+ 贡献+5 + 参战标记
+  AI: ai_will_do 对目标敌意>=50 → +100 倾向
+
+5.8 恶名链
+  来源: 非法扩张+8/地块、合法扩张+1/地块、吞自由市 x6（48/次，clamp 100）
+  衰减: 月度 -1（th_notorious_decay_monthly_value）
+  宴会: -10（price 50，CD 12 月）
+  弃民: 恶名>=50 → 贡献 x0.7；>=75 → x0.4（侵入骨架月度公式）
+  查看: IO 行动栏"查看声望"（effect 空，desc=[actor.Custom('th_gensokyo_notorious_tier')]）
+  接口: th_gensokyo_notorious_influence_interface_effect（左右法律，空实现待骨架）
+
+5.9 自由市保护
+  和约割让自由市地块(on_took_location): 敌意bias 1250 + 恶名x6 + 团结扣10
+  吞并自由市国家(on_annex): 同上（兜底）
+  外界宣战自由市(on_war_declared): 三贤者 join_war_as_defender（神罗式，
+    trigger 限宣战者非成员 → 成员间吞并不触发保护）
+  人类村落互相吞并: 只吃惩罚链，不吃贤者参战
+
+5.10 扩张限制
+  配额: th_gensokyo_expansion_quota（总）/ _quota_used（已用），发放接口
+        th_gensokyo_expansion_quota_grant_effect（小卖铺调用，上限 4）
+  合法判定: quota_used < quota（触发器 th_gensokyo_has_authorized_expansion_trigger）
+  和约夺地/吞并成员: 合法→消耗配额+恶名1；非法→惩罚链（敌意bias 50+恶名8+团结2/地块）
+  代价修正（互斥挂载，月度刷新）: 授权 x0.25 / 异变 x1.25 / 私自 x1.5
+    （antagonism_taking_land_giving_modifier 字段）
+  异变豁免接口: th_gensokyo_in_incident_trigger（always no，异变系统实现后替换）
+
+5.11 团结度
+  月收入: 基础 0.1 + 和平 0.2 + 成员数 x0.002（total_members）
+  扣: 判决 5/10/15 + 非法扩张 2/地块 + 吞自由市 10 + 外界入侵 10
+  奖: 审判完成 10（±2 审判法）+ 刑满释放 5 + 战争平息 5
+  未启用: 大规模战争扣团结（B6 指代待定，代码注释）
+  统一入口: th_gensokyo_unity_add_effect / th_gensokyo_unity_subtract_effect（clamp 0-100）
+
+5.12 局势面板（B5）
+  文件: gui/panels/situation/th_gensokyo_crusade.gui（无 BOM）
+  结构: situation_panel + blockoverride
+    situation_panel_image: two_countries_header_template
+      FirstCountryContext = [SituationView...MakeScope.GetVariable('th_crusade_target_ref').GetCountry]
+      SecondCountryContext = [GetUniqueInternationalOrganization('th_gensokyo_io').GetLeaderCountry]
+    situation_header_left: TH_CRUSADE_SUPPORTER_STRENGTH（联军兵力）
+    situation_header_right: TH_CRUSADE_TARGET_STRENGTH（目标兵力）
+    situation_panel_main_content: situation_card_expandable（罪值卡片）
+  数据流: 局势 on_start 存 target_ref（国家引用）+ sin_display；
+          on_monthly 计算 supporter/target strength（current_strength 求和）+
+          同步 sin_display → GUI GetVariable 读取
+  参战标记: th_gensokyo_crusade_participant（join 时打标，局势结束清理）
+
+================================================================================
+六、数值总表（script_values/th_gensokyo_io_chain_values.txt）
+================================================================================
+
+  恶名
+    th_notorious_decay_monthly_value        = 1.0   衰减/月
+    th_notorious_pariah_threshold_value     = 50    弃民一档
+    th_notorious_outcast_threshold_value    = 75    弃民二档
+    th_contribution_pariah_multiplier_value = 0.7   弃民一档贡献系数
+    th_contribution_outcast_multiplier_value= 0.4   弃民二档贡献系数
+  宴会
+    th_feast_notorious_reduction_value      = 10    宴会减恶名
+    （价格 50 在 prices/th_gensokyo_feast_price；CD 12 月写死）
+  扩张
+    th_expansion_quota_limit_value          = 4     配额上限
+    th_expansion_legal_notorious_value      = 1     合法扩张恶名/地块
+    th_expansion_unlawful_notorious_value   = 8     非法扩张恶名/地块
+    th_expansion_unlawful_unity_value       = 2     非法扩张扣团结/地块
+    th_expansion_cost_unauthorized_value    = 1.5   私自扩张代价
+    th_expansion_cost_incident_value        = 1.25  异变扩张代价
+    th_expansion_cost_authorized_value      = 0.25  授权扩张代价
+  惩戒战争
+    th_crusade_antagonism_threshold_value   = 50    提案敌意阈值
+    th_crusade_sin_battle_value             = 5     战斗罪值（备用固定值）
+    th_crusade_sin_monthly_value            = 1     时长罪/月
+    th_crusade_sin_refusal_value            = 10    拒和罪
+    th_sin_tier2_value                      = 50    判决档位阈值（轻<50）
+    th_sin_tier3_value                      = 75    判决档位阈值（重>=75）
+    th_sentence_base_years_value            = 20    监管基础刑期
+    th_sentence_max_years_value             = 30    监管最大刑期
+    th_join_contribution_value              = 5     加入获贡献
+    th_unity_crusade_settled_value          = 5     战争平息团结
+  团结
+    th_unity_sentence_t1_value              = 5     轻判扣
+    th_unity_sentence_t2_value              = 10    中判扣
+    th_unity_sentence_t3_value              = 15    重判扣
+    th_unity_verdict_reward_value           = 10    审判奖（±2 审判法）
+    th_unity_release_reward_value           = 5     刑满释放奖
+    th_unity_free_city_annex_value          = 10    吞自由市扣
+    th_unity_big_war_value                  = 5     大规模战争扣（未启用）
+    th_unity_invasion_value                 = 10    外界入侵扣
+    th_unity_members_multiplier_value       = 0.002 成员数加成系数
+
+  敌意 bias（biases/th_gensokyo_io_biases.txt）
+    th_antagonism_unlawful_expansion        = 50/decay10   非法扩张
+    th_antagonism_free_city_annex           = 1250/decay10  自由市吞并（≈+500%）
+    th_antagonism_crusade_resistance        = 25/decay5    惩戒抵抗（备用）
+
+================================================================================
+七、本地化清单（th_gensokyo_chain_l_*.yml，中英双语）
+================================================================================
+
+  行动: feast/propose_crusade/join_crusade/notorious_view/counter_expansion（各含
+        key/desc/PERFORM_/WE_PERFORM_/OTHER_PERFORMS_/ACTION_PERFORMED_ON_US）
+  条约: crusade_triumph / crusade_counter（key+desc）
+  议题: crusade_issue（key+desc）
+  局势: crusade / trial（key+desc）
+  法律: judgment_law + mercy/order/karma 三政策（key+desc）
+  监管国: regulated_state（key+desc）
+  事件: trial_events.1.t/.d/.a/.b/.c（3 档选项）
+  恶名档位: tier_clean/pariah/outcast
+  面板: TH_CRUSADE_SUPPORTER_STRENGTH / TH_CRUSADE_TARGET_STRENGTH / TH_CRUSADE_SIN_DISPLAY
+  团结: TH_GENSOKYO_UNITY_FROM_MEMBERS
+  贤者: th_gensokyo_sages_defend_reason
+  AI: TH_FEAST_AI_HIGH_NOTORIETY / TH_CRUSADE_AI_FOUND_TARGET / TH_JOIN_CRUSADE_AI_ANTAGONISM
+  目标选择: choose_crusade_target / choose_international_organization(引擎)
+  变量: sin_var/quota/quota_used/sentence_tier/sentence_months/effective_sin/
+        temp_sentence_years/temp_gold/temp_notorious/crusade_supporter_strength/
+        crusade_target_strength/crusade_temp_strength/crusade_target_ref/crusade_sin_display
+  修正: weakness_modifier + expansion_cost 三修正（key+desc）
+
+================================================================================
+八、待引擎实测项（控制台验证清单，20 项）
+================================================================================
+
+  1. 议会 2/3 贤者票制：2 贤者投=0.667 过 / 1 贤者=0.333 不过
+     （控制台 propose + participate_in_parliament 模拟）
+  2. scope:overlord 在 subject on_monthly 中可用性（监管国释放链路）
+  3. 局势 enable→on_start 同步性（target_mark 时序）
+  4. AI 阎魔提案 / 成员 join_crusade 加入行为
+  5. 恶名行动 tooltip [actor.Custom('th_gensokyo_notorious_tier')] 渲染
+     （失败退化为静态文本）
+  6. 双条约视角互斥：阎魔见 triumph 不见 counter；目标国反之
+  7. 反杀条约全流程：目标国 100 分提出 → countered → 不审判 → 反攻扩张
+  8. 罪值折算：on_battle_won（unit root）→ sin_var 按 scope:war_score 增加
+  9. join_crusade 防呆（is_at_war_with 重复点击）
+  10. 3 级判决：档位判定与效果（归还三连/削弱/监管国）
+  11. 40% 贡金：监管国 subject_pays 生效与刑满停止
+  12. 归还三连语法：every_subject+cancel_subject / previous_owner+is_core_of /
+      create_country_from_cores_in_our_locations
+  13. 三贤者自动参战：外界宣战自由市 → join_war_as_defender
+  14. 局势面板：双国头像（MakeScope.GetVariable('th_crusade_target_ref').GetCountry）、
+      双方兵力数值、罪值卡片渲染
+  15. 成员数团结加成：total_members x 0.002 月度生效
+  16. 审判法团结系数：因果必尝 +2 / 劝善 -2
+  17. 恶名镜像：合法扩张 +1 / 非法 +8 / 自由市 x6
+  18. C1/C2：加入获贡献 +5、战争平息团结 +5
+  19. 财富转移：重判后目标国 gold=0、阎魔增加
+  20. 弃民系数：恶名>=50/75 贡献削减生效（侵入骨架公式验证）
+
+================================================================================
+九、交接给骨架负责人事项
+================================================================================
+
+  1. th_gensokyo_io_parliament 现有 3 个空壳议题（resolution_1~3）仍在议题池
+     ——需补 effects 或设 potential=no（玩家可能看到空壳议题）
+  2. 席位 power 被改：贤者 200、阎魔/守护/人类村落/占位 0
+     ——议会权重设计必需，勿改回（改回会破坏 2/3 票数学）
+  3. 恶名"失去左右法律能力"接口：th_gensokyo_notorious_influence_interface_effect
+     （空实现，待"影响力→议会投票权重"落地时接入）
+  4. 贤者地块"不可获取合法宣称"：EU5 无 claim 系统
+     ——需在小卖铺索取宣称互动的 select_trigger 中排除贤者领土
+  5. 异变豁免接口：th_gensokyo_in_incident_trigger（always no）
+     ——异变系统实现后替换为异变判定
+  6. 扩权配额发放接口：th_gensokyo_expansion_quota_grant_effect（小卖铺调用）
+  7. 骨架子文件 power 修改记录：th_gensokyo_io.txt 席位文件已被本系统修改
+     （贤者 200 / 其余 0），如骨架侧再次编辑请勿覆盖
+
+================================================================================
+十、已知风险与退路
+================================================================================
+
+  1. scope:war_score 在 owner 嵌套失效 → 退路固定值（th_crusade_sin_battle_value）
+  2. [actor.Custom(...)] / [MakeScope.GetVariable(...).GetCountry] 渲染失败
+     → 退路静态文本（面板文本已在本地化）
+  3. create_country_from_cores_in_our_locations 调用形式（=yes）无 base game 实例
+     → LSP 已通过；实测失败则查 effects 定义重写
+  4. join_war_as_defender 的 reason 参数 → 已本地化；忽略 reason 也可（实测确认）
+  5. on_battle_won 触发频率（每支获胜军队）→ 罪值可能叠加偏快，clamp 保护；
+     过量则改按 on_winning_war 折算
+  6. 自由市吞并恶名 x6（48/次）→ 数值激进，实测后按 th_expansion_unlawful_notorious_value
+     调整（平衡入口唯一）
+
+  运行时错误签名（2026-08-07 实测发现，LSP 盲区，已修复）：
+  S1. customizable_localization 的 text.trigger 上下文不支持 var: 语法
+      （"Invalid left side during comparison 'var'"）——var: 被当作事件目标链接解析
+      → v3 修复：裸 var: 在 customizable_localization 调用链（含间接经 scripted trigger）全部失效；
+        base game 实证带 scope 前缀形式可用（00_customizable_localization.txt:1077 situation:xxx.var:、
+        character_address.txt:54 prev.var:）→ 所有"比较位置"裸 var: 改 root.var:（chain_triggers 11 处）
+  S2. select_trigger 的 enabled 内嵌套 scope:actor 块时 root 为 null
+      （"antagonism trigger [ Null object! Field: target ]"）——块内 root 不绑定
+      → 修复：敌意判定移入 interaction_source_list 的 limit（effect 上下文，
+        prev=遍历当前成员）；antagonism 语义=root 对 target 的敌意（coalition.txt:116 实证）
+  S3. select_trigger 的 target_flag = target 显式指定时报 "Undefined event target 'target'"
+      （target 为引擎默认名，显式指定不可靠）
+      → 修复：一律用自定义名（th_target_country）
+  S4. （同 S2）ai_will_do 内 any_* 遍历块中 antagonism target=root 失效
+      → 修复：遍历内嵌套 scope:actor 块 + target=prev
+  S5. generic action potential 顶层 root 在面板枚举阶段为 empty scope，
+      has_variable 对 empty scope 报错（"This scope doesn't support variables. Scope: empty"）
+      → 修复：变量触发器用 scope:actor ?= 包裹（join_crusade/counter_expansion 同款）
+  S6. value = -script_value 负号引用解析为空（"Variable not of the 'value' scope type. Type: empty"）
+      → 修复：减法改用 change_variable subtract 参数（feast 宴会减恶名）
+  S7. 修复 v3 后仍刷屏（查看声望）：customizable_localization 的 text.trigger 变量数值比较
+      （裸 var:/root.var: 双形式）在该上下文彻底不支持（base game 该上下文无数值比较先例）
+      → v5 修复：放弃 Custom() 动态档位，desc 改数值显示
+        [SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]
+        （格式取自 base game favor_heir_ct / actions_l_braz_por 先例）；
+        删除 customizable_localization/th_gensokyo_notorious_tier.txt
+  S8. generic action effect 的 scope:actor 嵌套 + script_value 名参数组合不可靠（报 empty，
+      月度衰减 root 直接同写法零报错 → 差异在嵌套组合）
+      → v5 修复：feast subtract / join 贡献 / grant clamp max 全部参数数字化
+        （注释标注与 script_value 联动，改动需同步）
+  S9. generic action ai_will_do 上下文 root=IO（无变量），裸 var: 失效（"no variables in scope"）
+      → v5 修复：scope:actor.var: 前缀（base game rtr_demand_annexation.txt:144 同款）
+      → v6 修正：scope:actor.var: 在 generic action ai_will_do 上下文同样报错 → 移除恶名 if 块
+  S10. 裸 var: 数值比较（> / >= / < / <=）在部分上下文报 "Event target link 'var'"（被解析为事件目标链接）
+      ——已实证炸：customizable_localization 调用链 / scripted effect 的 limit / generic action ai_will_do
+      ——未炸：?= 存在性（骨架 portrait 200+ 实证）/ 参数位置（var: 作为值）/ root.var: 前缀（实证有效）
+      → v6 全线修正：notorious_effects（root.var:）、regulated_state（root.var:）、
+        crusade_effects 7 处（scope:crusade_target.var:——判决被审判局势调用 root=局势无变量，必须显式 scope）
+  S11. 成员变量未初始化（on_game_start init 空转）→ "not being set" / change_variable "Variable not of the
+      'value' scope type. Type: empty"（宴会 effect）
+      → v6 修复：chain_monthly 月度变量兜底（5 组 has_variable 守卫 set 0：
+        恶名/贡献/影响力/配额+已用/罪值——首个月度 tick 自动补变量）
+  修复文件（v6）：scripted_effects/th_gensokyo_notorious_effects.txt、subject_types/th_gensokyo_regulated_state.txt、
+    scripted_effects/th_gensokyo_crusade_effects.txt、on_action/th_gensokyo_chain_monthly.txt（兜底）、
+    generic_actions/th_gensokyo_feast.txt（删 ai_will_do if）
+  骨架风险标注（不归本次，触发即炸）：th_culture_chronicle_effects.txt（100+ 处裸 var: 数值比较）+
+    th_culture_chronicle_sgui.txt:26 —— 文化编年史功能触发时可能报 Event target link，交接给骨架负责人
+  回归方法：Log.ClearErrorLog 清空 → 游戏内 5 分钟（含宴会点击/IO 面板打开/时间推进）→ error.log 零新增
+  修复文件（v3）：scripted_triggers/th_gensokyo_io_chain_triggers.txt（root.var: 11 处）、
+    generic_actions/th_gensokyo_feast.txt（subtract）、generic_actions/th_gensokyo_counter_expansion.txt
+    （potential 包裹）、generic_actions/th_gensokyo_propose_crusade.txt（interaction_source_list+target_flag）、
+    generic_actions/th_gensokyo_join_crusade.txt（ai_will_do prev）、on_action/th_gensokyo_chain_events.txt（B7）
+  回归方法：Log.ClearErrorLog 清空 → 游戏内 5 分钟（含宴会点击/IO 面板打开）→ error.log 零新增
+
+  B7 语义修正（2026-08-07，用户明确）：
+    保护触发对象 = 除人类村落成员和贤者以外的所有国家（含阎魔/IO 普通成员/外界）
+    豁免：贤者攻击自由市 / 人类村落互相吞并
+    th_gensokyo_free_city_protection_check trigger 已改：
+      recipient=自由市 + NOT 贤者 + NOT 自由市
+
+================================================================================
+十一、门禁状态
+================================================================================
+
+  LSP: 全部新增文件 0 error（剩余 warning 均为引擎内置 key / 故意设计）
+  mod_lint: 2 error 全部位于既有骨架文件（thgfx 事件 ID 格式 + 贤者 SGUI bare key）
+            ——非本次产物，未触碰
+  编码: 28 新建文件 BOM 正确（GUI 无 BOM）；start 文件 BOM-less
+  已知可接受 warning: database.duplicate_entry（on_action 合并语义，与骨架同模式）/
+    modifier.unknown_name（LSP 白名单陈旧，字段已在 base game 00_modifier_types.txt 验证）/
+    situation.lifecycle.prefer_on_ending_cleanup（故意设计，on_ended 清理保证标记时序）
+
+================================================================================
+十二、版本历史
+================================================================================
+
+  v1.0 (2026-08-06 首版): 5 大缺口全量落地（26 文件 + 5 处骨架侵入）
+  v2.0 (2026-08-06 一轮修正): 议会 2/3 贤者票制 / 罪值 war_score 折算 / 赔款金币转移 /
+       包围网行动制 / 双条约 / 恶名 IO 行动 / 审判法默认政策 / B6 注释
+  v3.0 (2026-08-06 二轮修正·本版): 3 级判决模型 + 40% 贡金 / 自由市割让惩罚 /
+       归还三连 / 局势面板 / 恶名镜像 / 三贤者参战 / C1/C2/C4/C5 落地
+================================================================================

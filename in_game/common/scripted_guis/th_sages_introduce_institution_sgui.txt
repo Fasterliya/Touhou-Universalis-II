@@ -1,0 +1,865 @@
+﻿### ===========================================================
+### 贤者议会 — 引入思潮
+### if 链枚举全部思潮（自定义 2 + 原版 18），选首个满足:
+###   1. 思潮已出现（any_known_country 有）
+###   2. 任一贤者未接纳
+###   3. 从未被引入过（th_sages_introduced_institutions 变量列表）
+### 消耗: 幻想乡IO团结 10 + 发起者 500 金 → 引发议会辩论（2 贤者通过）
+### 通过: 所有贤者首都灌满思潮进度（=100 出现）+ 写入已引入列表
+### 失败: 无效果，资源不退还
+### ===========================================================
+
+th_sages_introduce_institution = {
+    scope = country
+
+    saved_scopes = { target_io gensokyo_io }
+
+    is_shown = {
+        is_member_of_international_organization = th_sages_council_io
+    }
+
+    is_valid = {
+        ### 议会讨论进行中不可发起新引入（is_active_parliament 实证自 io_parliament.txt:35）
+        scope:target_io = {
+            is_active_parliament = no
+        }
+        scope:gensokyo_io = {
+            check_variable = {
+                name = th_gensokyo_unity_var
+                compare = greater_than_or_equal
+                value = 10
+            }
+        }
+        gold >= 500
+
+        OR = {
+            AND = {
+                institution:th_genesis_of_gensokyo_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_genesis_of_gensokyo_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_genesis_of_gensokyo_institution } }
+                    }
+                }
+            }
+            AND = {
+                institution:th_gensokyo_fantasy_journey_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_gensokyo_fantasy_journey_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_gensokyo_fantasy_journey_institution } }
+                    }
+                }
+            }
+            AND = {
+                institution:feudalism = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:feudalism }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:feudalism } }
+                    }
+                }
+            }
+            AND = {
+                institution:legalism = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:legalism }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:legalism } }
+                    }
+                }
+            }
+            AND = {
+                institution:meritocracy = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:meritocracy }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:meritocracy } }
+                    }
+                }
+            }
+            AND = {
+                institution:renaissance = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:renaissance }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:renaissance } }
+                    }
+                }
+            }
+            AND = {
+                institution:banking = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:banking }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:banking } }
+                    }
+                }
+            }
+            AND = {
+                institution:professional_armies = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:professional_armies }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:professional_armies } }
+                    }
+                }
+            }
+            AND = {
+                institution:new_world = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:new_world }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:new_world } }
+                    }
+                }
+            }
+            AND = {
+                institution:printing_press = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:printing_press }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:printing_press } }
+                    }
+                }
+            }
+            AND = {
+                institution:pike_and_shot = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:pike_and_shot }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:pike_and_shot } }
+                    }
+                }
+            }
+            AND = {
+                institution:confessionalism = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:confessionalism }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:confessionalism } }
+                    }
+                }
+            }
+            AND = {
+                institution:global_trade = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:global_trade }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:global_trade } }
+                    }
+                }
+            }
+            AND = {
+                institution:artillery_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:artillery_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:artillery_institution } }
+                    }
+                }
+            }
+            AND = {
+                institution:manufactories = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:manufactories }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:manufactories } }
+                    }
+                }
+            }
+            AND = {
+                institution:scientific_revolution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:scientific_revolution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:scientific_revolution } }
+                    }
+                }
+            }
+            AND = {
+                institution:military_revolution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:military_revolution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:military_revolution } }
+                    }
+                }
+            }
+            AND = {
+                institution:enlightenment = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:enlightenment }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:enlightenment } }
+                    }
+                }
+            }
+            AND = {
+                institution:industrialization = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:industrialization }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:industrialization } }
+                    }
+                }
+            }
+            AND = {
+                institution:levee_en_masse = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:levee_en_masse }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:levee_en_masse } }
+                    }
+                }
+            }
+        }
+    }
+
+    effect = {
+        ### 1. if 链枚举思潮 — 首个满足「已出现 ∧ 任一贤者未接纳 ∧ 未引入」者入选
+        ### 存入贤者议会 IO 变量 th_sages_pending_institution（scope 变量，供 on_debate_passed 读取）
+        if = {
+            limit = {
+                institution:th_genesis_of_gensokyo_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_genesis_of_gensokyo_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_genesis_of_gensokyo_institution } }
+                    }
+                }
+            }
+            institution:th_genesis_of_gensokyo_institution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:th_gensokyo_fantasy_journey_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:th_gensokyo_fantasy_journey_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:th_gensokyo_fantasy_journey_institution } }
+                    }
+                }
+            }
+            institution:th_gensokyo_fantasy_journey_institution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:feudalism = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:feudalism }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:feudalism } }
+                    }
+                }
+            }
+            institution:feudalism = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:legalism = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:legalism }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:legalism } }
+                    }
+                }
+            }
+            institution:legalism = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:meritocracy = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:meritocracy }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:meritocracy } }
+                    }
+                }
+            }
+            institution:meritocracy = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:renaissance = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:renaissance }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:renaissance } }
+                    }
+                }
+            }
+            institution:renaissance = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:banking = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:banking }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:banking } }
+                    }
+                }
+            }
+            institution:banking = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:professional_armies = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:professional_armies }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:professional_armies } }
+                    }
+                }
+            }
+            institution:professional_armies = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:new_world = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:new_world }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:new_world } }
+                    }
+                }
+            }
+            institution:new_world = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:printing_press = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:printing_press }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:printing_press } }
+                    }
+                }
+            }
+            institution:printing_press = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:pike_and_shot = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:pike_and_shot }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:pike_and_shot } }
+                    }
+                }
+            }
+            institution:pike_and_shot = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:confessionalism = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:confessionalism }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:confessionalism } }
+                    }
+                }
+            }
+            institution:confessionalism = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:global_trade = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:global_trade }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:global_trade } }
+                    }
+                }
+            }
+            institution:global_trade = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:artillery_institution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:artillery_institution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:artillery_institution } }
+                    }
+                }
+            }
+            institution:artillery_institution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:manufactories = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:manufactories }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:manufactories } }
+                    }
+                }
+            }
+            institution:manufactories = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:scientific_revolution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:scientific_revolution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:scientific_revolution } }
+                    }
+                }
+            }
+            institution:scientific_revolution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:military_revolution = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:military_revolution }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:military_revolution } }
+                    }
+                }
+            }
+            institution:military_revolution = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:enlightenment = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:enlightenment }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:enlightenment } }
+                    }
+                }
+            }
+            institution:enlightenment = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:industrialization = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:industrialization }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:industrialization } }
+                    }
+                }
+            }
+            institution:industrialization = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+        else_if = {
+            limit = {
+                institution:levee_en_masse = { has_spawned = yes }
+                NOT = { has_embraced_institution = institution:levee_en_masse }
+                scope:target_io = {
+                    OR = {
+                        NOT = { has_variable_list = th_sages_introduced_institutions }
+                        NOT = { is_target_in_variable_list = { name = th_sages_introduced_institutions target = institution:levee_en_masse } }
+                    }
+                }
+            }
+            institution:levee_en_masse = {
+
+                save_scope_as = th_sages_target
+
+            }
+
+            scope:target_io = {
+
+                set_variable = {
+
+                    name = th_sages_pending_institution
+
+                    value = scope:th_sages_target
+
+                }
+
+            }
+        }
+
+        ### 2. 消耗幻想乡团结 10（scope:gensokyo_io 由 GUI AddScope 传入）
+        scope:gensokyo_io = {
+            change_variable = {
+                name = th_gensokyo_unity_var
+                subtract = 10
+            }
+            clamp_variable = {
+                name = th_gensokyo_unity_var
+                min = 0
+                max = 100
+            }
+        }
+
+        ### 3. 消耗发起者金钱 500
+        add_gold = -500
+
+        ### 4. 引发贤者议会辩论（内联 base game propose_parliament_issue 逻辑）
+        ### root = 玩家（sgui root）；parliament_issue 用类型引用；成员投票用 prev 引用 IO
+        scope:target_io = {
+            set_parliament_location = root.capital
+            set_parliament_active = yes
+            hidden_effect = {
+                every_international_organization_member = {
+                    set_participated_in_parliament = {
+                        international_organization = prev
+                        vote = no
+                    }
+                }
+            }
+            set_parliament_issue = parliament_issue:th_sages_introduce_institution_issue
+            set_parliament_issue_support = {
+                add = {
+                    desc = total_special_status_power_fraction
+                    value = "total_special_status_power_fraction(special_status:th_sages_council_member_special_status)"
+                }
+            }
+        }
+        set_participated_in_parliament = { international_organization = scope:target_io vote = yes }
+        call_io_parliament = { international_organization = scope:target_io }
+    }
+
+    ai_is_valid = { always = no }
+}

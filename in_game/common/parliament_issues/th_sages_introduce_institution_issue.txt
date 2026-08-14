@@ -1,0 +1,46 @@
+﻿### 贤者议会 — 引入思潮议题
+### 链路: sgui 枚举思潮 → 存 IO 变量 th_sages_pending_institution → propose_parliament_issue 引发辩论
+### 通过 (2/3 票): 所有贤者首都灌满思潮进度 + 思潮写入已引入列表（从此枚举剔除）
+### 失败: 无效果（资源已在发起时扣除，不退还）
+
+th_sages_introduce_institution_issue = {
+	type = international_organization
+	special_status = th_sages_council_member_special_status
+
+	potential = {
+		always = yes
+	}
+	allow = {
+	}
+	selectable_for = {
+		is_member_of_international_organization = scope:recipient
+	}
+	chance = 100
+
+	on_debate_passed = {
+		### 读发起时确定的思潮 → 所有贤者首都灌满进度（=100，思潮在首都出现）
+		### 显式 IO scope 包裹（root 语义在不同引擎版本可能不同，显式保证作用在贤者议会）
+		international_organization:th_sages_council_io = {
+			every_international_organization_member = {
+				limit = {
+					exists = capital
+				}
+				capital = {
+					change_institution_progress = {
+						type = root.var:th_sages_pending_institution
+						value = 100
+					}
+				}
+			}
+			### 已引入 → 写入变量列表，从此枚举剔除（防重复引入）
+			add_to_variable_list = {
+				name = th_sages_introduced_institutions
+				target = var:th_sages_pending_institution
+			}
+		}
+	}
+
+	on_debate_failed = {
+		### 资源已在发起时扣除，失败不退还
+	}
+}

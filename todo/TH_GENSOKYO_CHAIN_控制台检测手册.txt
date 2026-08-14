@@ -1,0 +1,496 @@
+================================================================================
+    幻想乡 IO 链条系统 — 控制台检测手册（游戏内实测指南）
+    配套交接文档: TH_GENSOKYO_CHAIN_交接文档.txt（v3.0）
+    适用版本: 二轮修正定稿（2026-08-06）
+================================================================================
+
+════════════════════════════════════════════════════════════════════════
+〇、启动与基建
+════════════════════════════════════════════════════════════════════════
+
+0.1 启动调试模式（必须）
+  Steam: 右键游戏 → 属性 → 启动选项 → 填 `-debug_mode` → 启动
+  非 Steam: eu5.exe 快捷方式目标末尾加 `-debug_mode`
+
+0.2 控制台打开
+  QWERTY 键盘: `` ` ``（Esc 下方）或 Alt+C；也可 Shift+2
+  Tab 自动补全；↑↓ 历史
+
+0.3 核心命令速查（本手册全部检测基于以下）
+  tag <TAG>            切换控制国家（T25=阎魔 T05/T13/T83=三贤者 T00=红魔馆 T03=人类村落）
+  effect <脚本>        在指定 scope 执行效果（核心：effect c:T05 = {...}）
+  trigger <触发器>     测试触发器，输出 yes/no（变量二分验证法）
+  tick_day <N>         推进 N 天（触发月度用 tick_day 30）
+  monthly_situation <key>  对局势执行一次月度 tick（手动触发 on_monthly）
+  situation <key>      强制启动局势（无视 can_start）
+  event <id> [target]  触发事件
+  policy <policy>      添加政策
+  cash/manpower <N>    加资源
+  declarewar <TAG>     宣战
+  YesMan               全员接受模式
+  InstantWar           即时战争
+  switchlanguage simp_chinese  重载本地化（切走再切回）
+  Log.ClearErrorLog    清空 error.log（测试前后对比）
+  gamelog / error      查看日志
+
+0.4 热重载限制（重要）
+  common/ 脚本修改后必须重启游戏才生效（含本 MOD 全部新增文件）
+  本地化 yml 例外: `switchlanguage english` 切走再 `switchlanguage simp_chinese` 切回即可重载
+
+0.5 通用变量查看法（无 print 命令）
+  EU5 无"打印变量值"命令。统一用 trigger 二分法：
+    trigger c:T05 = { var:th_gensokyo_notorious_reputation_var >= 50 }
+    → 输出 yes/no，调整阈值逼近实际值
+  或游戏内 UI：IO 面板（团结度 subheader）/ 恶名查看行动 tooltip / 局势面板
+
+0.6 测试前存档
+  save <文件名>  — 每模块测试前存档，出问题 load 回滚
+
+0.7 运行时错误签名速查（2026-08-07 实测发现，已修复；复测时若再现即回归）
+  S1 "Invalid left side during comparison 'var'"
+     → 裸 var: 在 customizable_localization 调用链（含间接经 scripted trigger）失效
+     → 已修复：chain_triggers 全部比较位置改 root.var:（带前缀形式 base game 实证可用）
+  S2 "antagonism trigger [ Null object! Field: target ]"
+     → select_trigger enabled 嵌套块内 root=null ——已移入 interaction_source_list
+  S3 "Undefined event target 'target'"
+     → target_flag=target 显式指定不可靠 ——已改 th_target_country
+  S4 ai_will_do 遍历内 antagonism target=root 失效 ——已改嵌套 prev
+  S5 "This scope doesn't support variables. Scope: empty"（打开 IO 面板报错）
+     → generic action potential 顶层 root=empty，has_variable 报错
+     → 已修复：potential 变量触发器用 scope:actor ?= 包裹（counter_expansion）
+  S6 "Variable not of the 'value' scope type. Type: empty"（点宴会报错）
+     → value = -script_value 负号引用解析为空 → 已改 subtract
+     → v5 升级：scope:actor 嵌套 + script_value 名参数组合不可靠 → 参数数字化
+  S7 "Invalid left side during comparison 'var'"（查看声望刷屏）
+     → customizable_localization 变量数值比较彻底不支持（含 scripted trigger 间接）
+     → v5 修复：放弃 Custom() 档位，desc 改数值显示 GetVariable（base game 先例格式）
+  S9 "no variables in scope"（时间推进报错）
+     → generic action ai_will_do root=IO 无变量 → 已删恶名 if 块
+  S10 "Event target link 'var' returned an unset scope"（裸 var: 数值比较）
+     → 裸 var: 数值比较（>/>=/</<=）在 scripted effect limit / ai_will_do 报错
+     → 已修：notorious_effects root.var: / regulated_state root.var: /
+       crusade_effects scope:crusade_target.var:（?= 存在性与参数位置安全）
+  S11 "not being set" / change_variable empty（成员变量缺失，新局）
+     → on_game_start init 空转 → 已加月度变量兜底（5 组 has_variable 守卫 set 0）
+  回归: Log.ClearErrorLog → 跑 5 分钟（含点宴会/开 IO 面板/时间推进/新局验证）→ error 复查零新增
+
+0.8 antagonism 方向实测（2026-08-14 用户实测定论）
+  effect c:T25 = { add_antagonism = { target = c:T00 modifier = th_antagonism_unlawful_expansion } }
+  → 实测结论：add_antagonism 语义 = target 对 root 增加敌意（T00 获得对 T25 的敌意），
+    与直觉相反！MOD 三处已按此修正（在扩张者处执行、target=受害方）。
+  trigger 方向二分（尚未定论，影响 join_crusade ai_will_do 的写法）：
+    trigger c:T25 = { antagonism = { target = c:T00 value > 0 } }
+    trigger c:T00 = { antagonism = { target = c:T25 value > 0 } }
+    → 若前者 yes：trigger = root 对 target（与 effect 方向相反，现行 ai_will_do 嵌套 prev 写法正确）
+    → 若后者 yes：trigger = target 对 root（与 effect 同向，ai_will_do 需对调）
+
+0.8.1 惩戒提案资格（2026-08-14 用户决策：恶名≥50 驱动，敌意过滤已废弃）
+  选国列表过滤走"恶名弃民标记修正"镜像（modifier mirror，2026-08-14 刷屏修复后方案）：
+  interaction_source_list 上下文实测不吃 var: 数值比较（签名 "Invalid left side during
+  comparison 'var'" + "Event target link 'root' returned an unset scope"），
+  由月度脉冲落修正标记、选国过滤用 has_country_modifier。
+  测试：effect c:T00 = { set_variable = { name = th_gensokyo_notorious_reputation_var value = 60 } }
+        tick_day 30（等月度脉冲落标记）
+        trigger c:T00 = { has_country_modifier = th_gensokyo_notorious_pariah_modifier } → 期望 yes
+        打开提案选国列表 → T00 应出现；value = 40 时不应出现
+
+0.9 B7 四场景实测（修正后语义：除贤者与自由市外全部触发三贤者参战）
+  ① 普通成员（T00）宣战自由市 → trigger c:T05 = { is_at_war_with = c:T00 } → yes
+  ② 阎魔（T25）宣战自由市 → 贤者参战 → yes
+  ③ 贤者（T05）宣战自由市 → 不参战 → no
+  ④ 自由市互吞（T03 系）→ 不参战 → no
+
+0.9.1 席位分配前置验证（自由市保护/2/3 票数学的前提）
+  trigger c:T03 = { th_gensokyo_is_free_city_trigger }      → 期望 yes
+  trigger c:T05 = { th_gensokyo_is_sage_trigger }           → 期望 yes
+  trigger c:T25 = { has_special_status_in_international_organization = { type = special_status:th_gensokyo_io_yama_special_status international_organization = international_organization:th_gensokyo_io } }  → 期望 yes
+  任一为 no → 双保险分配（th_gensokyo_io_assign_special_statuses_effect）未生效，报告给 AI
+
+0.9.2 审判法加载验证（2026-08-14 laws 键值对格式修复后）
+  重开新局 → error.log 搜索 "law/policy invalid or duplicated" → 期望 0 条
+
+════════════════════════════════════════════════════════════════════════
+一、议会 2/3 贤者票制（最高优先级）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 阎魔提案 → 1 贤者投不过 / 2 贤者投通过 → 惩戒局势启动
+
+步骤:
+  1. tag T25（阎魔）；cash 1000
+  2. 给目标加恶名（提案资格，2026-08-14 改恶名驱动）:
+     effect c:T00 = { set_variable = { name = th_gensokyo_notorious_reputation_var value = 60 } }
+     trigger c:T00 = { root.var:th_gensokyo_notorious_reputation_var >= 50 }   → 期望 yes
+  3. 游戏内: 打开幻想乡 IO 面板 → 点"发起惩戒战争提案" → 选 IO → 选目标 T00
+     观察: 议会辩论启动（IO 面板出现投票栏）
+  4. 验证初始支持度=0（阎魔发起不计票）:
+     trigger international_organization:th_gensokyo_io = { is_active_parliament = yes }  → yes（议会还在=未通过）
+  5. 模拟 1 贤者赞成:
+     effect c:T05 = { participate_in_parliament = { international_organization = th_gensokyo_io vote = yes } }
+     tick_day 1
+     trigger international_organization:th_gensokyo_io = { is_active_parliament = yes }  → 期望 yes（0.333 不过）
+  6. 模拟第 2 贤者赞成:
+     effect c:T13 = { participate_in_parliament = { international_organization = th_gensokyo_io vote = yes } }
+     tick_day 1
+     trigger international_organization:th_gensokyo_io = { is_active_parliament = yes }  → 期望 no（0.667 通过）
+  7. 通过后自动启动惩戒局势:
+     trigger c:T25 = { can_see_situation = situation:th_gensokyo_crusade }  → 期望 yes
+  8. 阎魔自动宣战:
+     trigger c:T25 = { is_at_war_with = c:T00 }  → 期望 yes
+  9. 失败路径（可选）: 重打标重新提案 → 3 贤者全反对 → 议会结束但局势未启动
+
+预期结论: 2 票 0.667 过 / 1 票 0.333 不过；阎魔无投票权（power=0）
+           另验证: tag T00 尝试投票 → effect c:T00 = { participate_in_parliament = {...} } 后支持度不变
+
+════════════════════════════════════════════════════════════════════════
+二、惩戒局势 + 罪值三源
+════════════════════════════════════════════════════════════════════════
+
+验证点: 局势生命周期 / 罪值按 war_score / 时长 / 拒和 / 势力计算
+
+步骤:
+  1. 手动启动（跳过议会）:
+     effect c:T00 = { set_variable = th_gensokyo_crusade_target_mark }
+     situation th_gensokyo_crusade
+     trigger c:T25 = { is_at_war_with = c:T00 }  → yes（阎魔自动宣战）
+  2. 罪值-时长（每月+1）:
+     monthly_situation th_gensokyo_crusade    （×3 次）
+     trigger c:T00 = { var:th_gensokyo_sin_var >= 3 }  → 期望 yes
+  3. 罪值-战斗（按 war_score）:
+     tag T00（目标国）; manpower 100000; InstantWar
+     对 T25 打一场碾压战（选攻击目标/进攻）→ 胜利
+     trigger c:T00 = { var:th_gensokyo_sin_var > 3 }  → 期望 yes（战斗加分）
+     ⚠️ 若战斗后罪值未增 → scope:war_score 在 owner 嵌套失效 → 报告,退路=固定值
+  4. 罪值-拒和（难模拟，验证代码路径即可）:
+     on_enforce_peace_declined 需调停被拒；逻辑已 OR 双保险（root/recipient 任一有标记即加罪）
+     可跳过游戏内模拟，靠代码审查 + error.log 无报错确认
+  5. 势力计算（面板数据）:
+     tag T05; 游戏内局势面板点"加入惩戒战争"（或先验证第九节）
+     monthly_situation th_gensokyo_crusade
+     打开局势面板: 头部两侧显示"幻想乡联军兵力"与"惩戒目标兵力"数字（>0）
+     左侧兵力 > 右侧（单国加入后应大于目标国）
+  6. 结束判定:
+     目标国退出战争（tag T00 → 和平界面 YesMan 快速和约 / 或 declarewar 反打吞并）
+     或 effect c:T00 = { ... } 结束全部战争
+     monthly_situation th_gensokyo_crusade → 局势自动结束 → 进入审判（见第三节）
+
+════════════════════════════════════════════════════════════════════════
+三、审判局势 + 3 级判决
+════════════════════════════════════════════════════════════════════════
+
+验证点: 手动 3 档 / AI 自动档位 / 归还三连 / 削弱 / 监管国+财富+贡金 / 团结结算
+
+步骤:
+  1. 到达审判（继续第二节，或手动）:
+     effect c:T00 = { set_variable = th_gensokyo_crusade_target_mark }
+     situation th_gensokyo_trial
+  2. 玩家手动路径（tag T25 为玩家时弹事件）:
+     tag T25 → 数秒后弹"最终审判"事件 → 依次测试三个选项:
+     测试前存档！每个选项测完 load 回滚再测下一个
+  3. 轻判验证（选项 A）:
+     trigger c:T00 = { is_subject = yes }  → 期望 no（附庸全取消）
+     T00 的附庸数: trigger c:T00 = { num_subjects > 0 }  → no
+     归还核心领土: 割让前记录地块 owner，判决后对照（被 T00 吞并的他国核心应归还原主）
+     释放国家: 若有可释放国家应出现新国家（地图观察）
+     trigger c:T00 = { has_country_modifier = th_gensokyo_weakness_modifier }  → no（轻判不削弱）
+     trigger c:T00 = { has_variable = th_gensokyo_judged }  → yes（审判标记）
+  4. 中判验证（选项 B）:
+     同轻判 + trigger c:T00 = { has_country_modifier = th_gensokyo_weakness_modifier } → yes
+  5. 重判验证（选项 C）:
+     财富转移: 判决前 tag T00 → cash 5000；判决后切回 T00 看财政界面金币≈0；tag T25 财政界面金币增加
+     trigger c:T00 = { is_subject = yes }  → yes（监管国）
+     trigger c:T00 = { is_subject_of = c:T25 }  → yes（宗主=阎魔）
+     trigger c:T00 = { var:th_gensokyo_sentence_months > 0 }  → yes（刑期 240+）
+     贡金: 游戏内 T00 附庸界面/月度 → 收入 40% 流向阎魔（T25 财政每月增加）
+     trigger c:T00 = { has_country_modifier = th_gensokyo_weakness_modifier }  → yes（叠加）
+  6. AI 自动路径:
+     步骤 2 前先 tag T03（脱离阎魔玩家）→ 阎魔变 AI → 事件不弹，自动按罪值判档
+     罪值设置: effect c:T00 = { set_variable = { name = th_gensokyo_sin_var value = 80 } }
+     期望: 自动重判（监管国）→ 验证同步骤 5
+     罪值 30 → 自动轻判；罪值 60 → 自动中判
+  7. 团结结算:
+     判决前后对照 IO 面板 unity_var:
+       扣: 轻5/中10/重15；奖: +10（审判法系数见第八节）
+     预期净变化: 轻判 +5 / 中判 0 / 重判 -5（不含审判法修正）
+  8. 监管国刑满释放:
+     减刑期加速: effect c:T00 = { set_variable = { name = th_gensokyo_sentence_months value = 1 } }
+     tick_day 30 → 下月释放:
+     trigger c:T00 = { is_subject = yes }  → no（释放为独立）
+     IO 面板团结度 +5
+     ⚠️ 若未释放 → scope:overlord 在 subject on_monthly 不可用 → 报告（待验证点 2）
+
+════════════════════════════════════════════════════════════════════════
+四、双条约（阎魔版 / 反杀版互不可见）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 100 分条约出现条件 / 视角互斥 / 反杀全流程
+
+步骤:
+  1. 战争进行中（第二节状态），双方战争分数拉满:
+     tag T25 → 战争界面 → 战斗/占领刷分（InstantWar + InstantSiege 加速）
+     或控制台: effect c:T25 = { add_bonus_warscore = 100 }（若引擎支持；不支持则靠 UI 刷分）
+  2. 阎魔视角（tag T25）: 和约界面应出现"完全胜利（惩戒）"条约（100 分成本）
+     预期: 不应出现"反杀胜利（惩戒）"
+  3. 目标国视角（tag T00）: 和约界面应出现"反杀胜利（惩戒）"
+     预期: 不应出现"完全胜利（惩戒）"（winner 角色互斥）
+  4. 阎魔胜利路径: T25 提出完全胜利条约 → 战争结束 → 目标国 defeated 标记
+     （trigger c:T00 = { has_variable = th_gensokyo_crusade_defeated } 需在局势结束前查）
+     → 局势结束 → 审判启动（第三节）
+  5. 反杀路径（重点）:
+     重新打标启动 → tag T00 → 100 分 → 和约界面提"反杀胜利"条约
+     trigger c:T00 = { has_variable = th_gensokyo_crusade_countered }  → yes（局势结束前）
+     战争结束 → monthly_situation th_gensokyo_crusade（或自动）→ 局势结束
+     预期: 不进入审判（无审判事件/局势）
+     trigger c:T00 = { has_variable = th_gensokyo_crusade_target_mark }  → no（标记清理）
+  6. 反攻扩张行动:
+     tag T00（反杀者）→ IO 面板/局势行动栏出现"反攻扩张"
+     点击 → 验证: trigger c:T00 = { var:th_gensokyo_expansion_quota >= 2 }
+     再点 → 灰显（CD 12 月）
+
+════════════════════════════════════════════════════════════════════════
+五、扩张限制（配额 / 合法非法 / 代价修正）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 非法扩张惩罚 / 合法扩张消耗配额 / 恶名镜像 / 代价修正挂载
+
+步骤:
+  1. 非法扩张（无配额）:
+     tag T00 → declarewar c:T03（自由市）→ YesMan 和约割让 T03 地块 ≥1
+     trigger c:T00 = { var:th_gensokyo_notorious_reputation_var >= 8 }  → yes（非法+8/地块）
+     trigger c:T03 = { antagonism = { target = c:T00 value > 0 } }  → yes（受害方敌意）
+     IO 面板团结度下降（非法扩张扣 2/地块）
+  2. 合法扩张（发放配额）:
+     effect c:T00 = { th_gensokyo_expansion_quota_grant_effect = { value = 4 } }
+     trigger c:T00 = { var:th_gensokyo_expansion_quota >= 4 }  → yes
+     再割让 1 地块 → 恶名只 +1（合法）: 记录恶名前值，差值应=1
+     配额已用: trigger c:T00 = { var:th_gensokyo_expansion_quota_used >= 1 }  → yes
+  3. 配额耗尽 → 回归非法:
+     继续割让至配额用尽 → 下一块触发惩罚链（恶名+8）
+  4. 代价修正（月度挂载）:
+     trigger c:T00 = { has_country_modifier = th_gensokyo_expansion_cost_unauthorized_modifier }  → yes（默认私自 x1.5）
+     发放配额后 tick_day 30 → trigger c:T00 = { has_country_modifier = th_gensokyo_expansion_cost_authorized_modifier }  → yes（互斥切换）
+     trigger c:T00 = { has_country_modifier = th_gensokyo_expansion_cost_unauthorized_modifier }  → no
+  5. 异变豁免接口: 当前 always no（异变未实现）→ 合法/非法判定不受影响，无需测
+
+════════════════════════════════════════════════════════════════════════
+六、自由市保护（割让惩罚 / 贤者参战）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 割让自由市地块重罚 / 三贤者自动参战 / 成员间豁免
+
+步骤:
+  1. 和约割让自由市地块（B1）:
+     tag T00 → declarewar c:T03 → 割让 1 地块
+     trigger c:T00 = { var:th_gensokyo_notorious_reputation_var >= 48 }  → yes（8 x6 增幅）
+     trigger c:T03 = { antagonism = { target = c:T00 value >= 1000 } }  → yes（bias 1250）
+     IO 面板团结度 -10
+  2. 吞并自由市国家（on_annex 兜底）:
+     tag T00 → declarewar c:T03 → 完全吞并（YesMan 和约全割让+吞并）
+     预期: 同样重罚（恶名 x6 / 敌意 1250 / 团结 -10）
+  3. 三贤者自动参战（B7，神罗式）:
+     准备"外界"国家: 幻想乡 95 国全是成员，需临时移出:
+       effect international_organization:th_gensokyo_io = { remove_country_from_international_organization = c:T00 }
+     tag T00（此时为外界）→ declarewar c:T03（自由市）
+     trigger c:T05 = { is_at_war_with = c:T00 }  → yes（贤者被拖入）
+     trigger c:T13 = { is_at_war_with = c:T00 }  → yes
+     trigger c:T83 = { is_at_war_with = c:T00 }  → yes
+     预期: 三贤者自动以防御方参战
+  4. 成员间豁免:
+     把 T00 加回 IO（effect ... add_country_to_international_organization? 若无可 load 回滚）
+     成员宣战自由市 → trigger c:T05 = { is_at_war_with = c:T00 }  → no（不触发贤者参战，只吃惩罚链）
+
+════════════════════════════════════════════════════════════════════════
+七、恶名链（衰减 / 宴会 / 弃民 / 查看）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 衰减 / 宴会减恶名扣钱 CD / 弃民贡献削减 / tooltip 档位
+
+步骤:
+  1. 自然衰减:
+     effect c:T05 = { th_gensokyo_io_notorious_reputation_var_add_effect = { value = 20 } }
+     trigger c:T05 = { var:th_gensokyo_notorious_reputation_var >= 20 }  → yes
+     tick_day 30 → trigger c:T05 = { var:th_gensokyo_notorious_reputation_var <= 19 }  → yes（-1/月）
+  2. 宴会:
+     tag T05 → IO 面板点"举办宴会" → 选 IO
+     验证: 财政界面金币 -50；恶名 -10（trigger 二分）
+     再点 → 灰显（CD 12 月）
+  3. 弃民系数（侵入骨架公式）:
+     effect c:T05 = { th_gensokyo_io_notorious_reputation_var_add_effect = { value = 60 } }（>=50 弃民档）
+     记录当前贡献: trigger c:T05 = { var:th_gensokyo_personal_contribution_var >= X }（二分逼近）
+     tick_day 30 → 月度贡献增长应 x0.7（对比同税基正常成员 T13）
+     提至 80（>=75 档）→ 增长 x0.4
+  4. 恶名查看行动:
+     tag T05 → IO 面板点"查看声望" → tooltip 显示档位文本
+     预期: "声名尚可 / 声名狼藉 / 幻想乡弃民"按当前恶名显示
+     ⚠️ 若显示原始 [actor.Custom(...)] 文本 → 渲染失败，报告（退路=静态文本）
+  5. 恶名档位自定义本地化: 切语言重载后 tooltip 文本随语言切换
+
+════════════════════════════════════════════════════════════════════════
+八、审判法（政策切换 / 从严偏移 / 刑期 / 团结系数）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 政策互斥 / 有效罪值偏移 / 刑期加成 / 团结奖系数
+
+步骤:
+  1. 默认政策（开局）:
+     trigger international_organization:th_gensokyo_io = { international_organization_has_policy = policy:th_judgment_order_policy }  → yes（start 预分配）
+  2. 切换政策（阎魔或控制台）:
+     effect international_organization:th_gensokyo_io = { add_policy_to_international_organization = policy:th_judgment_karma_policy }
+     trigger ...has_policy = policy:th_judgment_karma_policy  → yes（新政策生效）
+     trigger ...has_policy = policy:th_judgment_order_policy  → no（互斥，旧政策自动移除？若仍 yes 报告）
+  3. 从严偏移（有效罪值 +10）:
+     罪值设 60 → AI 自动判 → 有效 70 → 仍中判（<75）？设 70 → 有效 80 → 重判
+     对比有序（无偏移）: 罪值 70 → 中判
+  4. 刑期加成（因果必尝 +2 年）:
+     重判后 trigger c:T00 = { var:th_gensokyo_sentence_months >= 264 }  → yes（240+24+罪值加成）
+  5. 团结奖系数:
+     判决后 IO 面板: 有序 奖 10 / 因果必尝 奖 12 / 劝善 奖 8（对照扣减验证净变化）
+  6. 劝善（-10 偏移 / -2 年 / 奖 8）: 切换后重复步骤 3-5 反向验证
+
+════════════════════════════════════════════════════════════════════════
+九、join_crusade 行动（加入获贡献 / 参战标记 / 势力）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 行动出现条件 / 入战 / +5 贡献 / 参战标记 / 势力计算 / 防呆
+
+步骤:
+  1. 局势激活（第二节状态）
+  2. tag T05（成员，未参战）→ 局势面板点"加入惩戒战争"
+     trigger c:T05 = { is_at_war_with = c:T00 }  → yes（宣战加入）
+     trigger c:T05 = { var:th_gensokyo_personal_contribution_var >= 5 }  → yes（+5 贡献）
+     trigger c:T05 = { has_variable = th_gensokyo_crusade_participant }  → yes（参战标记）
+  3. 防呆: 再点行动 → 应不可用（is_at_war_with 已交战）或点击无重复宣战
+  4. 势力计算: monthly_situation th_gensokyo_crusade → 局势面板左侧兵力增加（T05 加入后）
+  5. 目标国不可加入: tag T00 → 局势面板无"加入"行动（potential 排除目标标记）
+
+════════════════════════════════════════════════════════════════════════
+十、团结度链条（全来源）
+════════════════════════════════════════════════════════════════════════
+
+验证点: 成员数加成 / 各方扣奖
+
+步骤:
+  1. 成员数加成（C4）:
+     IO 面板记录 unity_var → tick_day 30 → 增长 ≈ 0.1+0.2+95x0.002 = 0.49/月
+     战争状态（无和平）→ 增长 ≈ 0.1+0.19 = 0.29/月
+  2. 外界入侵扣（-10）: 外界国家宣战成员 → IO 面板 -10
+  3. 战争平息奖（C2）: 惩戒局势结束（非反杀）→ IO 面板 +5（审判启动前）
+  4. 刑满释放奖: 第三节步骤 8 → +5
+  5. 吞自由市扣: 第六节 → -10
+  6. 非法扩张扣: 第五节 → -2/地块
+  7. 大规模战争扣: 未启用（无验证）
+
+════════════════════════════════════════════════════════════════════════
+十一、日志与回归
+════════════════════════════════════════════════════════════════════════
+
+  1. 每模块测试前后: Log.ClearErrorLog → 跑测试 → gamelog/error 检查
+     期望: 无新增 error；无 "Could not find flag recipient"（generic action 缺 select_trigger 报错）
+  2. 特别关注: AI invalid command（ai.log）、局势/议会相关报错
+  3. 全部测完: 重开一局新游戏（冷启动验证 on_game_start 初始化无报错）
+
+════════════════════════════════════════════════════════════════════════
+十二、快速回归清单（20 项速查）
+════════════════════════════════════════════════════════════════════════
+
+  [ ] 1  议会 2/3 票制（一票不过/两票过）
+  [ ] 2  提案行动仅阎魔可见（tag T05 看不到按钮）
+  [ ] 3  阎魔自动宣战（局势 on_start）
+  [ ] 4  罪值: 时长+战斗（war_score）累积，封顶 100
+  [ ] 5  审判事件 3 档选项（轻/中/重）
+  [ ] 6  AI 自动判决档位（罪值 30/60/80 → 轻/中/重）
+  [ ] 7  归还三连（附庸清空/核心归还/释放国家）
+  [ ] 8  财富全转移（重判）
+  [ ] 9  监管国（40% 贡金/全约束/宗主=阎魔）
+  [ ] 10 刑满释放 + 团结 +5
+  [ ] 11 双条约视角互斥（阎魔/目标国）
+  [ ] 12 反杀条约 → 反攻扩张行动（配额+2）
+  [ ] 13 非法扩张惩罚链（恶名+8/敌意/团结-2）
+  [ ] 14 合法扩张（配额+恶名+1/代价修正切换）
+  [ ] 15 自由市割让（恶名x6/敌意1250/团结-10）
+  [ ] 16 三贤者自动参战（外界宣战自由市）
+  [ ] 17 恶名衰减/宴会/CD/弃民系数
+  [ ] 18 恶名查看行动 tooltip 档位
+  [ ] 19 审判法（政策切换/偏移/刑期/团结系数）
+  [ ] 20 成员数团结加成 + 各方扣奖
+  回归项（v6 修复验证）:
+  [ ] 21 宴会三场景：金币-50/恶名-10/零报错
+  [ ] 22 时间推进 5 分钟：月度衰减零报错（S10/S11）
+  [ ] 23 开 IO 面板：零报错（S5）
+  [ ] 24 新局首月：变量兜底自动补设（S11）；查看声望显示数值（S7）
+
+════════════════════════════════════════════════════════════════════════
+十二·补、2026-08-13 审查修复回归清单（17 项 P1 修复验证）
+  依据: TH_GENSOKYO_CHAIN_审查报告_2026-08-13.md
+════════════════════════════════════════════════════════════════════════
+
+  ★★★ 首测项（用户决策 2026-08-13：保留 = yes 待实测）★★★
+  [ ] 0  归还三连③"释放国家"（create_country_from_cores_in_our_locations = yes）
+      → 轻判后观察目标国核心领土是否自动释放出国家；
+        若 error.log 报错或无效果 → 改硬编码 tag 名单或删除本步骤
+      （base game 30 处先例全带国家参数，= yes 布尔语义未经实证）
+
+  A 组 主链（惩戒→审判）:
+  [ ] 25 局势结束判定: 目标国覆灭或停战 → 惩戒局势结束（at_war 修复）
+  [ ] 26 惩戒局势结束 → 审判局势自动启动（end_situation 修复）
+  [ ] 27 阎魔为玩家 → 审判裁决事件弹出（trigger_event_non_silently 修复）
+  [ ] 28 反杀结局 → 不审判 + 反攻扩张行动解锁（标记时序修复；下一次惩戒重新锁定）
+
+  B 组 效果:
+  [ ] 29 重判财富转移: 目标国 gold=0 且阎魔增加等额（scope 修复）
+  [ ] 30 弃民系数: 恶名≥50/≥75 贡献 x0.7/x0.4 实际生效（multiply 修复）
+  [ ] 31 自由市割让/吞并: 恶名 x6 增幅生效（multiply 修复）
+  [ ] 32 刑期: 罪值每 10 点 +1 年生效（divide/multiply 修复）
+  [ ] 33 扩张代价修正: 授权 x0.25/异变 x1.25/私自 x1.5（antagonism_received_modifier 换字段）
+  [ ] 34 战斗罪值: 目标国赢战斗 → 罪值按 war_score 增加（on_battle_won root 模型修复）
+
+  C 组 显示/交互:
+  [ ] 35 局势面板: 联军兵力/目标兵力显示非零数值（scope+country_strength 修复）
+  [ ] 36 局势面板: 罪值卡片可点击展开（三件套 override 修复）
+  [ ] 37 IO 行动栏: 宴会/查看声望/惩戒提案按钮可见（potential scope:actor 修复）
+
+  D 组 防呆:
+  [ ] 38 反攻扩张行动: 反杀后可见、CD 12 月（移除 can_see_situation 修复）
+  [ ] 39 加入惩戒战争: 已参战成员按钮不可重复点击（防刷贡献）
+  [ ] 40 刑满释放: 监管国到期自动释放 + 团结 +5（overlord ?= 修复）
+  [ ] 41 弃民判定: 月度推进零"Event target link"报错（root.var: 修复）
+  [ ] 42 script_values: 新增 th_sin_tier1_value = 0（悬空引用修复，无行为变化）
+
+════════════════════════════════════════════════════════════════════════
+十二·三、2026-08-14 第二轮修复回归清单（人工实测三发实弹 + 日志排查）
+════════════════════════════════════════════════════════════════════════
+
+  A 组 敌意方向（用户实测定论：add_antagonism = target 对 root 增加敌意）:
+  [ ] 43 非法扩张惩罚链: 扩张者夺取成员地块后，受害方对扩张者敌意 +50:
+       effect c:T00 = { save_scope_as = expansion_victim }（伪）；实际测法:
+       让 T00 夺 T03 地 → trigger c:T03 = { antagonism = { target = c:T00 value >= 50 } } 或
+       trigger c:T00 = { antagonism = { target = c:T03 value >= 50 } }（二选一按 0.8 二分结果）
+  [ ] 44 自由市割让/吞并: 敌意 +1250 方向同上（受害方对扩张者）
+
+  B 组 惩戒战争（恶名驱动）:
+  [ ] 45 提案选国列表: 只含恶名≥50 成员（0.8.1 节步骤）
+  [ ] 46 选国点击全程: error.log 零 "Undefined event target 'target_country'" /
+       零 "Event target link 'scope' returned an unset scope"（选国绑定修复）
+  [ ] 47 提案 → 议会辩论 → 局势启动全流程（第一节步骤，资格已改恶名）
+
+  C 组 自由市保护:
+  [ ] 48 席位前置验证（0.9.1 三连 trigger 全 yes）
+  [ ] 49 T00 宣战 T03 → 三贤者自动加入防御方（0.9 节四场景）
+  [ ] 50 外界（非成员）宣战成员 → 团结 -10（invasion_check scope:actor 修复）
+
+  D 组 日志与法律:
+  [ ] 51 重开新局 error.log: 零 "law/policy invalid or duplicated"
+       （laws 块键值对格式修复 + 审判法登记）
+  [ ] 52 error.log: 零 "Trying to add a location to an IO that doesn't have a land
+       ownership rule"（regions 块注释停用）
+  [ ] 53 打开 IO 面板悬停任意行动（含查看声望）: error.log 零新增、无屏幕刷屏
+       （modifier mirror 修复：interaction_source_list 不再含 var 比较）
+  [ ] 54 弃民标记镜像: 恶名 60 → tick_day 30 → has_country_modifier =
+       th_gensokyo_notorious_pariah_modifier → yes；恶名 40 → 标记移除 → no
+  [ ] 55 开局首月点宴会: 重开新局 → 不推进时间立即
+       trigger c:T25 = { has_variable = th_gensokyo_notorious_reputation_var } → yes
+       → 点宴会 → 零报错（首月空窗修复：init_effect 开局补设 3 变量 + feast 防御守卫）
+       （S6/S8 时代"点宴会报 empty"的数字化修复未治本，真因 = 变量未初始化）
+
+  备注: 0.8 节 antagonism 触发器方向二分（trigger c:T25/c:T00 两条）结果回报后，
+  join_crusade 的 ai_will_do 按结果决定是否对调——测试时顺手跑一下。
+================================================================================

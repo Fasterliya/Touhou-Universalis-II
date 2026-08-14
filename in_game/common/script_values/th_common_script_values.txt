@@ -1,0 +1,6 @@
+﻿th_gensokyo_accepted_culture_script_value = {
+    value = 1
+    every_accepted_culture = {
+        add = 1
+    }
+}

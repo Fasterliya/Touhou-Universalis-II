@@ -1,0 +1,95 @@
+﻿### ============================================================
+### 幻想乡惩戒战争 加入行动（局势面板原生行动栏）
+### 所有 IO 成员可点（目标国除外）：加入对目标国的包围网战争
+### 结构参考 base game black_death.txt hide_from_black_death（type = situation）
+### ============================================================
+
+th_gensokyo_join_crusade = {
+    type = situation
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            ### P1-15 修复：已参战成员不可重复点击（否则可连点刷 +5 贡献）
+            NOT = {
+                has_variable = th_gensokyo_crusade_participant
+            }
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        target_flag = recipient
+        name = "choose_situation"
+        column = {
+            data = name
+        }
+        visible = {
+            situation:th_gensokyo_crusade = this
+            situation_is_active = yes
+        }
+    }
+
+    effect = {
+        ### 目标国定位（标记法）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            save_scope_as = crusade_target
+        }
+        ### 未与目标国交战者宣战加入包围网
+        scope:actor ?= {
+            if = {
+                limit = {
+                    NOT = {
+                        is_at_war_with = scope:crusade_target
+                    }
+                }
+                declare_war_with_cb = {
+                    target = scope:crusade_target
+                    type = casus_belli:th_gensokyo_crusade_cb
+                }
+            }
+        }
+        ### C1：加入即获得贡献（数值与 th_join_contribution_value 联动，scope:actor 嵌套内 script_value 名不可靠故数字化）
+        scope:actor = {
+            th_gensokyo_io_contribution_var_add_effect = {
+                value = 5
+            }
+            ### 参战标记（B5 势力计算用）
+            set_variable = th_gensokyo_crusade_participant
+        }
+    }
+
+    ai_will_do = {
+        ### 运行时修复 2026-08-07：antagonism target=root 在遍历块中失效 → 嵌套 scope:actor 块 + target=prev
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        antagonism = {
+                            target = prev
+                            value >= th_crusade_antagonism_threshold_value
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_JOIN_CRUSADE_AI_ANTAGONISM
+                value = 100
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

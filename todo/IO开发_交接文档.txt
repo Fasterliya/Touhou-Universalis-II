@@ -1,0 +1,243 @@
+﻿================================================================================
+    TOUHOU UNIVERSALIS II — IO 开发交接文档（席位解锁 / 诊断修复 / 知识沉淀）
+    生成日期: 2026-08-03
+    会话主题: IO 迁移 → 席位解锁法律 → 贤者诊断修复 → 知识沉淀
+================================================================================
+
+目 录
+  一、本会话完成的工作
+  二、文件变更清单
+  三、席位解锁机制详解
+  四、控制台测试命令
+  五、已验证的技术知识
+  六、遗留 TODO 与已知问题
+  七、后续开发建议
+
+================================================================================
+一、本会话完成的工作
+================================================================================
+
+1. **IO 系统迁移**：将 GitHub 仓库 Fasterliya/Touhou-Universalis-II 的 io 分支
+   （bd18114）相对 main 的 32 个 IO 文件 + 1 份交接文档（AI_HANDOFF）原样迁入
+   本地 MOD（字节级无损，含 BOM 原样）。
+   - 新增 3 个 IO：th_gensokyo_io（全员）、th_sages_council_io（贤者议会）、
+     th_human_village_io（扩展版 98B→847B）
+   - 配套：IO 法律、特殊席位 ×4、月度脉冲 ×2、scripted_effects ×4、
+     scripted_guis ×2、scripted_modifiers、modifier_type_definitions、
+     议会类型/议题、国家互动（引入思潮）、generic_actions、AI 列表、biases、
+     GUI 面板 ×2、in_game 本地化 ×2、开局设置 ×2、贤者议会插图 dds
+   - 验证：LSP 26 文件 0 error；mod lint 0 新增 error（2 个既有 error 与迁移无关）
+
+2. **席位解锁法律（功能验证）**：创建 th_gensokyo_seat_unlock_law（单政策开关），
+   激活政策 → 解锁占位席位 th_gensokyo_io_seat_special_status（1 席，
+   个人贡献度最高者自动获得）；移除政策 → 席位自动收回。
+   完整链路基于 base game union.txt 官方范式（见第三节）。
+
+3. **贤者席位诊断 Bug 修复**：generic_actions/th_gensokyo_io_sages_diagnostic.txt
+   上游遗留两个 action（主 action 无贤者检查 + _1 有检查）且都注册进 AI list，
+   导致全员可见。修复：主 action 恢复检查、删除 _1、list 只留主 action。
+   已由用户进游戏验证生效。
+
+4. **知识沉淀**：交接文档 + 维基 5 页（含新建 Generic_actions 页）+ skill 更新
+   + _local_notes 官方注解（见第五节）。
+
+================================================================================
+二、文件变更清单
+================================================================================
+
+【IO 迁移 - 新增 28 文件 + 覆盖 4 文件】
+  in_game/common/international_organizations/th_gensokyo_io.txt         (新)
+  in_game/common/international_organizations/th_sages_council_io.txt     (新)
+  in_game/common/international_organizations/th_human_village_io.txt     (覆盖 98B→847B)
+  in_game/common/international_organization_special_statuses/th_gensokyo_io.txt (新)
+  in_game/common/laws/th_gensokyo_io_laws.txt                            (新)
+  in_game/common/on_action/th_gensokyo_io_monthly.txt                    (新)
+  in_game/common/on_action/th_sages_council_io_monthly.txt               (新)
+  in_game/common/on_action/th_game_start_oa.txt                          (覆盖 +2 行 IO init)
+  in_game/common/scripted_effects/th_gensokyo_io_* ×4                    (新)
+  in_game/common/scripted_guis/th_gensokyo_io_member_vars_sgui.txt       (新)
+  in_game/common/scripted_guis/th_sages_introduce_institution_sgui.txt   (新)
+  in_game/common/scripted_modifiers/th_gensokyo_io_scripted_modifiers.txt(新)
+  in_game/common/modifier_type_definitions/th_sages_council_modifiers.txt(新)
+  in_game/common/parliament_types/th_gensokyo_io_parliament.txt          (新)
+  in_game/common/parliament_issues/th_gensokyo_io_parliament_issues.txt  (新)
+  in_game/common/country_interactions/th_sages_introduce_institution.txt (新)
+  in_game/common/generic_actions/th_gensokyo_io_sages_diagnostic.txt     (新)
+  in_game/common/generic_action_ai_lists/th_gensokyo_io_list.txt         (新)
+  in_game/common/biases/th_gensokyo_io_biases.txt                        (新)
+  in_game/gui/panels/organization/th_gensokyo_io.gui                     (新)
+  in_game/gui/panels/organization/th_sages_council_io.gui                (新)
+  in_game/localization/{english,simp_chinese}/th_gensokyo_io_l_*.yml      (新, 无日文)
+  main_menu/localization/{english,japanese,simp_chinese}/th_io_l_*.yml   (覆盖 +73 行)
+  main_menu/setup/start/th_gensokyo_io.txt / th_sages_council_io.txt     (新)
+  main_menu/gfx/interface/illustrations/international_organization_types/th_sages_council_io.dds (新)
+  todo/AI_HANDOFF_交接文档.txt                                           (新, io 分支开发记录)
+
+【席位解锁 - 本会话新增/修改】
+  in_game/common/laws/th_gensokyo_io_laws.txt            (追加 th_gensokyo_seat_unlock_law)
+  in_game/common/international_organization_special_statuses/th_gensokyo_io.txt
+                                                          (追加 th_gensokyo_io_seat_special_status)
+  in_game/common/international_organizations/th_gensokyo_io.txt (laws + special_statuses_implemented 各 +1)
+  main_menu/localization/*/th_io_l_*.yml                  (席位解锁 6 key ×3 语)
+
+【诊断修复 - 本会话修改】
+  in_game/common/generic_actions/th_gensokyo_io_sages_diagnostic.txt (恢复检查 + 删 _1)
+  in_game/common/generic_action_ai_lists/th_gensokyo_io_list.txt     (只留主 action)
+  main_menu/localization/*/th_io_l_*.yml                  (补 th_sages_diagnostic_select_io ×3 语)
+
+================================================================================
+三、席位解锁机制详解
+================================================================================
+
+【设计】法律 th_gensokyo_seat_unlock_law（type = international_organization，
+requires_vote = no，单政策开关）：
+  - 政策 th_gensokyo_seat_unlock_policy 存在 = 席位解锁
+  - 政策移除 = 席位锁定
+  - 无 forbids_no_policy（单政策 + 该标签会导致无法回到锁定态！）
+
+【席位】th_gensokyo_io_seat_special_status（max_countries = 1，占位）：
+  can_bestow_trigger = {
+      is_member_of_international_organization = scope:recipient
+      scope:recipient = {
+          international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy
+          "num_countries_with_special_status(special_status:th_gensokyo_io_seat_special_status)" < 1
+          NOT = { any_international_organization_member = {
+              this != root
+              var:th_gensokyo_personal_contribution_var > root.var:th_gensokyo_personal_contribution_var
+          } }
+      }
+  }
+  auto_bestowal_trigger = { always = yes }      # can_bestow 满足 → 自动授予
+  auto_rescind_trigger = { NOT = { scope:recipient = {
+      international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy } } }  # 政策关→收回
+
+【范式来源】base game union.txt senior_partner：
+  - can_bestow_trigger 内 scope:recipient 引用 international_organization_has_policy
+  - auto_bestowal = always + can_bestow 门控 = "满足条件即自动"
+  - auto_rescind 用政策 NOT 条件（本实现无 OR，规避引擎 OR/NOR 禁令）
+
+【个人贡献度】月度脉冲 th_gensokyo_io_monthly.txt 已实现：
+  th_gensokyo_temp_contribution = 税基/1000 → th_gensokyo_io_contribution_var_add_effect
+  → th_gensokyo_personal_contribution_var（国家变量，每月累加）
+
+================================================================================
+四、控制台测试命令
+================================================================================
+
+进游戏控制台（~）输入，均基于 effect/trigger 命令（选定国家 scope 执行）：
+
+# 1. 解锁政策（激活席位解锁）
+effect international_organization:th_gensokyo_io = { add_policy_to_international_organization = policy:th_gensokyo_seat_unlock_policy }
+
+# 2. 锁定政策（移除 → 席位自动收回，等待月度评估）
+effect international_organization:th_gensokyo_io = { remove_policy_from_international_organization = policy:th_gensokyo_seat_unlock_policy }
+
+# 3. 强制授予席位（country = root 为选中国家；也可 country = c:T25）
+effect international_organization:th_gensokyo_io = { international_organization_add_special_status = { type = special_status:th_gensokyo_io_seat_special_status country = root } }
+
+# 4. 强制撤销席位
+effect international_organization:th_gensokyo_io = { international_organization_remove_special_status = { type = special_status:th_gensokyo_io_seat_special_status country = root } }
+
+# 5. 验证政策状态（输出 yes/no）
+trigger international_organization:th_gensokyo_io = { international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy }
+
+辅助：io_stats 切换 IO 调试统计；help reload 查看 reload 能力。
+
+【热重载限制】common/ 脚本启动时加载，修改必须重启游戏。
+本地化可用 switchlanguage english → switchlanguage simp_chinese 强制重载。
+
+================================================================================
+五、已验证的技术知识（已沉淀维基/skill/_local_notes）
+================================================================================
+
+1. 政策门控特殊地位范式（IO 维基 + 案例库 + _local_notes/io_policy_gated_special_status.md）
+   - 官方证据：international_organizations/readme.txt:171-174（add/remove_policy、
+     add_special_status）；special_statuses/readme.txt:3（can_bestow_trigger scope）
+   - base game 实证：union.txt senior_partner + union_establish_seniority_policy
+2. 单政策开关 + forbids_no_policy 冲突（Law 维基）
+3. generic action 可见性：potential 门控 + AI list 注册；重复注册导致门控失效（新维基页 + 案例库警示）
+4. 控制台 effect/trigger IO scope 测试套路（Console 维基）
+5. auto_bestowal_trigger / auto_rescind_trigger 禁 OR/NOR（已有规则 io.auto_rescind_or_nor_risk，
+   本实现用 NOT 嵌套规避）
+
+================================================================================
+六、遗留 TODO 与已知问题
+================================================================================
+
+1. **悬空法律引用（既有）**：th_gensokyo_io.txt 的 laws = {} 引用
+   th_gensokyo_unity_vision_law / th_gensokyo_barrier_policy_law /
+   th_gensokyo_incident_response_law，但 laws 文件里这 3 个法律全部被注释。
+   游戏可能报错/忽略。后续填值启用或从 laws 列表移除。
+2. **IO 修正值 TODO**：io 分支代码多处 `# TODO: 后续人工填写修正值`
+   （IO 定义、席位、法律政策）。
+3. **GUI 占位文本**：organization 面板有"待后续版本开放"占位。
+4. **danmaku_power 未定义**：月度脉冲注释提到弹幕火力字段待人工定义。
+5. **既有 lint error ×2**（与本次工作无关）：
+   - main_menu/setup/start/th_ai_personalities.txt 缩进过深（country 块须 1 tab）
+   - in_game/events/th_gfx_error_suppress_events.txt 事件 ID 'thgfx.0001'
+     必须是 namespace.integer 1-9999
+6. **in_game/localization 无日文版** th_gensokyo_io_l_japanese.yml（io 分支原样）。
+7. **席位为占位命名**（th_gensokyo_io_seat_special_status），后续可改名/扩展。
+
+================================================================================
+七、后续开发建议
+================================================================================
+
+1. 席位解锁扩展：多席位门控（每个席位一个政策）、解锁后配合 on_bestowed_effect
+   触发事件、席位赋予修正值设计。
+2. 贤者议会引入思潮互动（country_interactions/th_sages_introduce_institution.txt）
+   处于重写过渡期（旧代码注释），可继续开发。
+3. 人类村落 IO 机制完善（io 分支仅 6 行框架 + 月度脉冲）。
+4. 清理 3 个悬空法律引用或恢复定义。
+5. 同步修复内容回 GitHub io 分支（本地已改：席位解锁 + 诊断修复 + 本地化）。
+================================================================================
+5. 同步修复内容回 GitHub io 分支（本地已改：席位解锁 + 诊断修复 + 本地化）。
+
+===============================================================================
+八、追加会话（2026-08-04）：「引入思潮」全链路完成 + 知识沉淀
+===============================================================================
+
+【完成状态】贤者议会「引入思潮」全链路已实现并游戏内验证通过：
+- SGUI 按钮 → if 链枚举 20 思潮（真实名）→ 扣幻想乡IO团结 10 + 500 金
+  → 内联发起议会辩论（3 席均分 1/3 票权，2/3 票通过）
+  → 通过后三贤者首都灌满思潮进度 + add_to_variable_list 永久剔除
+- 判定区：institution:X = { has_spawned = yes }（世界已出现，O(1)）
+  ∧ NOT has_embraced_institution（发起国未接纳）∧ 未引入过
+- 议会进行中按钮禁用（is_active_parliament = no）
+
+【新交付文件】scripted_guis/th_sages_introduce_institution_sgui.txt、
+parliament_issues/th_sages_introduce_institution_issue.txt、
+parliament_types/th_sages_council_io_parliament.txt、
+international_organization_special_statuses/th_sages_council_io.txt
+（修改：th_sages_council_io.txt IO 定义、th_sages_council_io.gui、本地化 ×3 语）
+
+【方法论速查（本次 13 个失误的浓缩）】
+1. scope 归属先行：trigger/effect 的 scope 查 trigger_localization 文件归属
+2. sgui 三定律：裸 IO key 块无效 / saved_scopes 靠 GUI AddScope /
+   save_scope_as 不跨 scripted_effect
+3. GUI enabled 与 onclick 的 AddScope 必须一致
+4. 跨 scope 读变量用 root.var:
+5. 判定三件套：has_spawned（世界出现）/ has_embraced_institution（接纳）/
+   any_owned_location（境内有）
+6. 控制台命令带 scope 前缀（international_organization: / c:）
+7. LSP 0 error ≠ 正确：运行时三类错误（Type:none / target null / Wrong scope）
+   查 error.log 时间线对照点击时刻
+8. 性能：禁全图遍历，优先引擎状态（has_spawned O(1)）
+
+【知识沉淀位置（均已写入）】
+- 维基：新建《IO_parliament_debate_IO议会辩论.md》+ 更新 sgui 语法标准 /
+  Institution / Parliament / Trigger / Variable / Console / error_log 共 8 处
+- 规则：eu5-rules.json 新增 3 条（sgui.no_bare_io_key_block /
+  trigger.institution_has_institution_scope / io.on_debate_passed_root_var），
+  npm test 61 pass，索引已重建
+- Skill：eu5-mod 净化（具体知识全部清出，保留方法论+路线+提问式检查点）
+- MCP：templates.ts 新增 io_parliament_debate 模板（P0）
+- 映射文件：MOD类型_维基文档映射.md IO section 登记新文档
+- 官方注记：EU5官方文档/_local_notes/io_parliament_debate.md
+- 案例库：Workshop_IO案例模式库.md 追加贤者议会案例
+
+【遗留问题（沿用既有）】
+- 悬空法律引用 ×3、IO 修正值 TODO、lint error ×2（交接已知）、
+  country_interactions/th_sages_introduce_institution.txt 死代码（建议删除，
+  机制已由 SGUI 单通道替代）
+===============================================================================

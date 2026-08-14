@@ -1,0 +1,40 @@
+### ===========================================================
+### 幻想乡IO — 脚本化效果接口
+### ===========================================================
+
+### 幻想乡团结度 增加（在IO scope上调用）
+th_gensokyo_io_unity_var_add_effect = {
+    change_variable = {
+        name = th_gensokyo_unity_var
+        add = $value$
+    }
+}
+
+### 幻想乡个人贡献度 增加（在国家scope上调用）
+th_gensokyo_io_contribution_var_add_effect = {
+    change_variable = {
+        name = th_gensokyo_personal_contribution_var
+        add = $value$
+    }
+}
+
+### 幻想乡个人影响力 增加（在国家scope上调用）
+th_gensokyo_io_influence_var_add_effect = {
+    change_variable = {
+        name = th_gensokyo_personal_influence_var
+        add = $value$
+    }
+}
+
+### 幻想乡恶名 增加（在国家scope上调用，自动钳制0-100）
+th_gensokyo_io_notorious_reputation_var_add_effect = {
+    change_variable = {
+        name = th_gensokyo_notorious_reputation_var
+        add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_notorious_reputation_var
+        min = 0
+        max = 100
+    }
+}

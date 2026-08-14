@@ -1,0 +1,17 @@
+﻿th_gensokyo_government_reform = {
+	age = age_1_traditions
+	government = monarchy
+	major = yes
+	potential = {
+		always = yes
+	}
+	allow = {
+		culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+	}
+	
+	country_modifier = {
+		clergy_estate_allowed_leading_military = yes
+		country_cabinet_efficiency = 0.06
+	}
+	years = 2
+}

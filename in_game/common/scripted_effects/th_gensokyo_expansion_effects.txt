@@ -1,0 +1,79 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 — 扩张限制
+### 配额制：th_gensokyo_expansion_quota（总配额）/ th_gensokyo_expansion_quota_used（已用）
+### 合法扩张 = 余额 > 0；非法扩张 = 无余额（惩罚链）
+### ============================================================
+
+### 合法扩张配额发放（小卖铺调用接口）
+### 使用: th_gensokyo_expansion_quota_grant_effect = { value = 4 }
+th_gensokyo_expansion_quota_grant_effect = {
+    change_variable = {
+        name = th_gensokyo_expansion_quota
+        add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_expansion_quota
+        min = 0
+        max = 4        # 与 th_expansion_quota_limit_value 联动（clamp 参数 script_value 名不可靠，数字化）
+    }
+}
+
+### 非法扩张惩罚链（root = 扩张者，scope:expansion_victim = 受害方）
+### value = 恶名量，unity = 团结扣减量
+th_gensokyo_expansion_punish_effect = {    ### 1. 受害方对扩张者的额外敌意
+    ### 方向修复 2026-08-14：add_antagonism 语义 = target 对 root 增加敌意（用户实测），
+    ### 故在扩张者（root）处执行、target=受害方 → 受害方对扩张者敌意 +50
+    add_antagonism = {
+        target = scope:expansion_victim
+        modifier = th_antagonism_unlawful_expansion
+    }
+    ### 2. 恶名（异变中扩张豁免，接口：异变系统实现后替换 th_gensokyo_in_incident_trigger）
+    if = {
+        limit = {
+            NOT = {
+                th_gensokyo_in_incident_trigger
+            }
+        }
+        th_gensokyo_io_notorious_reputation_var_add_effect = {
+            value = $value$
+        }
+    }
+    ### 3. 团结扣减
+    international_organization:th_gensokyo_io = {
+        th_gensokyo_unity_subtract_effect = {
+            value = $unity$
+        }
+    }
+}
+
+### 扩张代价修正 月度互斥挂载（国家 scope 调用）
+### 授权 x0.25 / 异变 x1.25 / 独自议会 x1.5（敌意修正字段，数值待调）
+th_gensokyo_expansion_cost_apply_effect = {
+    remove_country_modifier = th_gensokyo_expansion_cost_authorized_modifier
+    remove_country_modifier = th_gensokyo_expansion_cost_incident_modifier
+    remove_country_modifier = th_gensokyo_expansion_cost_unauthorized_modifier
+    if = {
+        limit = {
+            th_gensokyo_has_authorized_expansion_trigger
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_expansion_cost_authorized_modifier
+            years = -1
+        }
+    }
+    else_if = {
+        limit = {
+            th_gensokyo_in_incident_trigger
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_expansion_cost_incident_modifier
+            years = -1
+        }
+    }
+    else = {
+        add_country_modifier = {
+            modifier = th_gensokyo_expansion_cost_unauthorized_modifier
+            years = -1
+        }
+    }
+}

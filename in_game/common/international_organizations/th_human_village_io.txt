@@ -1,0 +1,41 @@
+﻿th_human_village_io = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    has_leader_country = no
+    has_parliament = no
+    show_on_diplomatic_map = yes
+
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = yes
+    }
+    can_join_trigger = {
+        always = no
+    }
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
+        always = no
+    }
+
+    on_joined = {
+    }
+    on_left = {
+    }
+
+    modifier = {
+        # TODO: 后续人工填写人类村落成员修正值
+    }
+
+    # TODO: 人类村落IO完整机制待开发
+    # - 贸易/发展度/人口增长核心机制
+    # - 可能的特殊席位定义
+    # - 变量系统（村落繁荣度等）
+}
