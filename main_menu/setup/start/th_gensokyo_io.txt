@@ -24,23 +24,31 @@ international_organization_manager = {
 		
 		leader = T25
 		
-		regions = { 
-			th_gensokyo_hakurei_region th_gensokyo_makai_region th_gensokyo_human_village_region th_gensokyo_magic_forest_region
-			th_youkai_mountain_western_foot_region th_youkai_mountain_region
-			th_immortal_realm_region th_moriya_shirine_region th_animal_realm_region th_hell_region
-			th_sunflower_field_region th_makai_region th_old_hell_region
-		}
+		### D1 修复 2026-08-14：本 IO 无 land_ownership_rule，regions 块会刷 1478 次
+		### "Trying to add a location to an IO that doesn't have a land ownership rule"
+		### → 注释停用（骨架如需 IO 持地，先补 land_ownership_rule 再恢复）
+		# regions = { 
+		# 	th_gensokyo_hakurei_region th_gensokyo_makai_region th_gensokyo_human_village_region th_gensokyo_magic_forest_region
+		# 	th_youkai_mountain_western_foot_region th_youkai_mountain_region
+		# 	th_immortal_realm_region th_moriya_shirine_region th_animal_realm_region th_hell_region
+		# 	th_sunflower_field_region th_makai_region th_old_hell_region
+		# }
 		
-		th_gensokyo_io_yama_special_status = { T25 }
-		th_gensokyo_io_guardian_special_status = { T04 }
-		th_gensokyo_io_sages_special_status = { T05 T13 T83 }
-		th_gensokyo_io_human_village_special_status = {
-			T03 T32 T33 T34 T36 T49 T52 T75 T77 T78
-			T85 T86 T87 T88 T89 T90 T91 T92 T93 T94
-		}
+		### C4 修复 2026-08-14：裸键席位预分配语法无 base game 先例（setup 目录 0 处），
+		### 静默无效 → 注释停用；实际席位分配由 on_game_start 双保险
+		### （th_gensokyo_io_assign_special_statuses_effect）程序化完成
+		# th_gensokyo_io_yama_special_status = { T25 }
+		# th_gensokyo_io_guardian_special_status = { T04 }
+		# th_gensokyo_io_sages_special_status = { T05 T13 T83 }
+		# th_gensokyo_io_human_village_special_status = {
+		# 	T03 T32 T33 T34 T36 T49 T52 T75 T77 T78
+		# 	T85 T86 T87 T88 T89 T90 T91 T92 T93 T94
+		# }
 		
 		laws = {
-			
+			### 链条系统挂载：审判法默认激活"有序"政策（law + policy 并列，格式同 base game 15_international_organizations.txt）
+			th_gensokyo_judgment_law
+			th_judgment_order_policy
 		}
 		
 		variables = {

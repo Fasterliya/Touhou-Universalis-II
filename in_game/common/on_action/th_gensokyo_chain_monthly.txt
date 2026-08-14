@@ -1,0 +1,82 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 — 月度脉冲（追加注册，不动现有文件）
+### ============================================================
+
+monthly_country_pulse = {
+    on_actions = {
+        th_gensokyo_chain_monthly_pulse
+    }
+}
+
+th_gensokyo_chain_monthly_pulse = {
+    trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+    effect = {
+        ### 变量兜底（2026-08-07 修复：防 on_game_start init 空转导致成员缺变量
+        ### → 月度衰减 not being set / 宴会 effect empty；has_variable 存在性检查安全，首月自动补设）
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_notorious_reputation_var
+                }
+            }
+            set_variable = {
+                name = th_gensokyo_notorious_reputation_var
+                value = 0
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_personal_contribution_var
+                }
+            }
+            set_variable = {
+                name = th_gensokyo_personal_contribution_var
+                value = 0
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_personal_influence_var
+                }
+            }
+            set_variable = {
+                name = th_gensokyo_personal_influence_var
+                value = 0
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_expansion_quota
+                }
+            }
+            set_variable = {
+                name = th_gensokyo_expansion_quota
+                value = 0
+            }
+            set_variable = {
+                name = th_gensokyo_expansion_quota_used
+                value = 0
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_sin_var
+                }
+            }
+            set_variable = {
+                name = th_gensokyo_sin_var
+                value = 0
+            }
+        }
+        ### 恶名自然衰减 + 档位接口
+        th_gensokyo_notorious_monthly_effect = yes
+        ### 扩张代价修正互斥挂载
+        th_gensokyo_expansion_cost_apply_effect = yes
+    }
+}

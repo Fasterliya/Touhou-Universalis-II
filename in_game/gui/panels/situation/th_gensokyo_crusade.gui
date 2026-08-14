@@ -1,0 +1,110 @@
+situation_panel = {
+
+	##################################### MAIN IMAGE #####################################
+	# 双国头部：FirstCountry = 惩戒目标国（situation 变量动态引用），SecondCountry = 阎魔（IO 领袖）
+	# 写法参考 base game hussite_wars.gui + situation_panel 语法标准（MakeScope.GetVariable('xxx').GetCountry）
+
+	blockoverride "situation_panel_image" {
+		using = two_countries_header_template
+
+		blockoverride "FirstCountryContext" {
+			datacontext = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('th_crusade_target_ref').GetCountry]"
+		}
+
+		blockoverride "SecondCountryContext" {
+			datacontext = "[GetUniqueInternationalOrganization('th_gensokyo_io').GetLeaderCountry]"
+		}
+
+		blockoverride "first_character_portrait_anchor" {
+			parentanchor = bottom|left
+		}
+
+		blockoverride "second_character_portrait_anchor" {
+			parentanchor = bottom|right
+		}
+
+		blockoverride "character_religion_visibility" {
+			visible = no
+		}
+
+		blockoverride "character_name_maximumsize" {
+			maximumsize = { 270 -1 }
+		}
+	}
+
+	##################################### SUBHEADER #####################################
+
+	blockoverride "situation_subheader_content" {}
+
+	##################################### HEADER LEFT / RIGHT：双方势力对比 #####################################
+
+	blockoverride "situation_header_left" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			text_single = {
+				fontsize = 15
+				text = "TH_CRUSADE_SUPPORTER_STRENGTH"
+				default_format = "#subtle_name"
+			}
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				fontsize = 13
+				text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('th_crusade_supporter_strength').GetValue|0]"
+			}
+		}
+		expand = {}
+	}
+
+	blockoverride "situation_header_right" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			text_single = {
+				fontsize = 15
+				text = "TH_CRUSADE_TARGET_STRENGTH"
+				default_format = "#subtle_name"
+			}
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				fontsize = 13
+				text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('th_crusade_target_strength').GetValue|0]"
+			}
+		}
+		expand = {}
+	}
+
+	##################################### MAIN CONTENT：罪值 #####################################
+
+	blockoverride "situation_panel_main_content" {
+		situation_card_expandable = {
+			blockoverride "header_button_onclick" {
+				onclick = "[LateralView.Vars.Toggle( 'requirements_toggled' )]"
+			}
+			blockoverride "header_text" {
+				text = "TH_CRUSADE_SIN_DISPLAY"
+			}
+			blockoverride "header_icon" {
+				texture = "gfx/interface/icons/disasters/end_requirements_green.dds"
+			}
+			blockoverride "bottom_content" {
+				text_single = {
+					layoutpolicy_horizontal = expanding
+					fontsize = 15
+					text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('th_crusade_sin_display').GetValue|0]"
+				}
+			}
+			blockoverride "visible_hint" {}
+			### P1-11 修复：基类正文可见性/图标替换默认绑定 GetVariableSystem['toggled']，
+			### 与 header 按钮的 LateralView.Vars['requirements_toggled'] 不同源 → 正文恒折叠。
+			### 照 sengoku.gui:65-73 补齐三件套，统一绑定同一变量系统同一键
+			blockoverride "bottom_content_onclick" {
+				visible = "[LateralView.Vars.Exists( 'requirements_toggled' )]"
+			}
+			blockoverride "icon_replace_visible_yes" {
+				visible = "[LateralView.Vars.Exists( 'requirements_toggled' )]"
+			}
+			blockoverride "icon_replace_visible_not" {
+				visible = "[Not(LateralView.Vars.Exists( 'requirements_toggled' ))]"
+			}
+		}
+	}
+}

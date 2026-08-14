@@ -1,0 +1,49 @@
+﻿### ============================================================
+### 幻想乡惩戒战争 完全胜利条约（100 分）
+### 仅 th_gensokyo_crusade_cb 战争可用；100 分时可提出 → 战争以完全胜利告终
+### 战败方被打标（th_gensokyo_crusade_defeated，审判/后续接口读取）
+### ============================================================
+
+th_gensokyo_crusade_triumph = {
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+
+    potential = {
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+        }
+        ### 仅阎魔（和约提出方为领袖）可见；反杀方使用 th_gensokyo_crusade_counter（互不可见）
+        scope:winner = {
+            is_leader_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    allow = {
+    }
+
+    effect = {
+        ### 战败方标记
+        scope:loser = {
+            set_variable = th_gensokyo_crusade_defeated
+        }
+        ### 胜利方威望 + 贡献（维护幻想乡和平的报酬）
+        scope:winner = {
+            add_prestige = {
+                value = 10
+            }
+            th_gensokyo_io_contribution_var_add_effect = {
+                value = 10
+            }
+        }
+    }
+
+    ai_desire = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+}

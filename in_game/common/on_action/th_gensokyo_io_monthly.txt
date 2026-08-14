@@ -8,33 +8,54 @@ monthly_country_pulse = {
 }
 
 ### ============================================================
-### 成员国月度脉冲（设计§2.3 贡献度获取公式）
+### 成员国月度脉冲
 ### ============================================================
 th_gensokyo_io_monthly_country_pulse = {
     trigger = {
-        is_member_of_international_organization = international_organization:th_gensokyo_io
+        is_member_of_international_organization = th_gensokyo_io
     }
     effect = {
-        ### 经济实力贡献：每100发展度 +0.05/月（设计§2.3）
+        ### 个人贡献度 = 税基/1000 + 弹幕火力/2000
+        ### TODO: danmaku_power 字段待后续人工定义
         set_variable = {
             name = th_gensokyo_temp_contribution
-            value = root.total_development
+            value = modifier:country_tax_base
         }
         change_variable = {
             name = th_gensokyo_temp_contribution
-            multiply = 0.0005
+            divide = 1000
         }
-        ### 恶名惩罚已在 th_gensokyo_io_contribution_var_add_effect 内自动结算
+        ### 弃民惩罚系数（链条系统挂载：恶名>=75 贡献x0.4，>=50 贡献x0.7）
+        if = {
+            limit = {
+                root.var:th_gensokyo_notorious_reputation_var >= th_notorious_outcast_threshold_value
+            }
+            change_variable = {
+                name = th_gensokyo_temp_contribution
+                multiply = th_contribution_outcast_multiplier_value
+            }
+        }
+        else_if = {
+            limit = {
+                root.var:th_gensokyo_notorious_reputation_var >= th_notorious_pariah_threshold_value
+            }
+            change_variable = {
+                name = th_gensokyo_temp_contribution
+                multiply = th_contribution_pariah_multiplier_value
+            }
+        }
         th_gensokyo_io_contribution_var_add_effect = {
             value = var:th_gensokyo_temp_contribution
         }
 
-        ### 个人影响力受恶名惩罚（已并入贡献度结算，见 effects 文件注释）
-        ### 高恶名国家因国际弃民无法正常积累政治资本
+        ### 个人影响力受恶名惩罚
+        ### 恶名越高 → 影响力获取越少
+        ### TODO: 精确衰减公式由后续人工开发
 
-        ### 为IO贡献团结度（IO自身月度自然变动已在 th_gensokyo_io.txt variables.monthly_change 处理）
+        ### 为IO贡献团结度（受 auto_gain_modifier 影响）
+        ### TODO: 精确公式由后续人工开发
 
-        ### 时代变更时清除个人影响力 — EU5 无 on_age_change 钩子，
-        ### 该机制随守护时代(P5)一并设计，此处暂不实现
+        ### 时代变更时清除个人影响力
+        ### TODO: 由后续人工开发通过 on_age_change 钩子实现
     }
 }

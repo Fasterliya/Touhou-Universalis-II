@@ -1,0 +1,43 @@
+﻿### ============================================================
+### 幻想乡惩戒战争 反杀胜利条约（100 分）
+### 仅目标国（惩戒对象，持 th_gensokyo_crusade_target_mark）作为和约提出方可见
+### 提出 = 反杀成功判定（打 countered 标记 → 局势结束不审判 → 反攻扩张行动解锁）
+### 与 th_gensokyo_crusade_triumph（阎魔版）按 winner 角色互斥，互不可见
+### ============================================================
+
+th_gensokyo_crusade_counter = {
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+
+    potential = {
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+        }
+        scope:winner = {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+    }
+    allow = {
+    }
+
+    effect = {
+        ### 反杀成功标记（局势 on_ended 检测：有标记 → 不启动审判 → 清理目标标记）
+        scope:winner = {
+            set_variable = th_gensokyo_crusade_countered
+            add_prestige = {
+                value = 20
+            }
+        }
+    }
+
+    ai_desire = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+}

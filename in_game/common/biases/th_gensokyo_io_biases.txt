@@ -1,16 +1,22 @@
-### ============================================================
-### 幻想乡IO — 成员国好感度偏差
-### 引擎要求每个IO必须有对应的 opinion bias，否则报错
+﻿### ============================================================
+### 幻想乡IO 自定义敌意偏置（add_antagonism 使用）
+### 模式参考 base game common/biases/05_antagonism_hardcoded.txt
 ### ============================================================
 
-io_opinion_th_gensokyo_io = {
+### 非法扩张敌意 —— 私自扩张（无授权）对受害方施加
+th_antagonism_unlawful_expansion = {
+    value = 50
+    yearly_decay = 10
+}
+
+### 自由市吞并敌意 —— 强制吞并人类村落国（B1：额外 +500% 敌意，值 1250 ≈ 基础 x6，待调）
+th_antagonism_free_city_annex = {
+    value = 1250
+    yearly_decay = 10
+}
+
+### 惩戒战争抵抗敌意 —— 目标国无端抵抗惩戒（罪值联动，备用）
+th_antagonism_crusade_resistance = {
     value = 25
-}
-
-io_opinion_th_sages_council_io = {
-    value = 30
-}
-
-io_opinion_th_human_village_io = {
-    value = 20
+    yearly_decay = 5
 }

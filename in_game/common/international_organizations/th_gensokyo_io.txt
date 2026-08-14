@@ -28,11 +28,14 @@ th_gensokyo_io = {
     resolution_widget = parliament
 
     # === 法律 ===
+    ### B3 修复 2026-08-14：laws 块格式必须是 law = 默认policy 键值对
+    ### （base game defensive_league.txt:16 等 5/5 实锤；裸键列表导致
+    ###  law_to_policy_map.cpp:57 "invalid or duplicated: th_gensokyo_judgment_law"）
+    ### 骨架 3 法律（unity_vision/barrier_policy/incident_response）在骨架 laws 文件
+    ### 中被注释未定义 → 从列表移除待骨架补齐后按对格式加回
     laws = {
-        th_gensokyo_unity_vision_law
-        th_gensokyo_barrier_policy_law
-        th_gensokyo_incident_response_law
-        th_gensokyo_seat_unlock_law
+        th_gensokyo_judgment_law = th_judgment_order_policy
+        th_gensokyo_seat_unlock_law = th_gensokyo_seat_unlock_policy
     }
 
     # === 特殊席位 ===
@@ -104,10 +107,8 @@ th_gensokyo_io = {
     # === 修正 ===
     # 成员修正 — 所有幻想乡IO成员国
     modifier = {
-        block_from_change_to_empire_rank = yes
-        # 天外之物时代：探索外界/贸易通途扩展了幻想乡的贸易范围
-        trade_range = 150
         # TODO: 后续人工填写全体成员buff
+        block_from_change_to_empire_rank = yes
     }
 
     # 领袖修正 — 阎魔（彼岸T25）
@@ -149,6 +150,12 @@ th_gensokyo_io = {
                         }
                         value = 0.2
                     }
+                }
+                ### 成员数加成（C4：参考神罗，按国家总数获得团结度，系数 0.002/成员）
+                add = {
+                    desc = "TH_GENSOKYO_UNITY_FROM_MEMBERS"
+                    value = total_members
+                    multiply = th_unity_members_multiplier_value
                 }
             }
         }

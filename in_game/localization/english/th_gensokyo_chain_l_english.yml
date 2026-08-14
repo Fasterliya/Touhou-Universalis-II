@@ -1,0 +1,134 @@
+﻿l_english:
+### ============================================================
+### Gensokyo IO Chain System Localization (English)
+### ============================================================
+
+### Notoriety view action
+ th_gensokyo_notorious_view: "View Reputation"
+ th_gensokyo_notorious_view_desc: "View your reputation in Gensokyo: [SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]. View-only action."
+
+### Notoriety tiers
+ th_notorious_tier_clean: "Respectable"
+ th_notorious_tier_pariah: "Notorious"
+ th_notorious_tier_outcast: "Outcast of Gensokyo"
+
+### Feast
+ th_gensokyo_feast: "Hold a Feast"
+ th_gensokyo_feast_desc: "Hold a grand feast in Gensokyo, entertaining yokai and sages alike to ease your own notoriety."
+ PERFORM_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
+ WE_PERFORM_th_gensokyo_feast_ACTION: "We held a feast in Gensokyo"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US: "Held a feast in Gensokyo"
+ TH_FEAST_AI_HIGH_NOTORIETY: "High notoriety, in need of relief"
+
+### Crusade peace treaty
+ th_gensokyo_crusade_triumph: "Total Victory (Crusade)"
+ th_gensokyo_crusade_triumph_desc: "Total victory in a punitive crusade: the enemy surrenders unconditionally and accepts all verdicts of Gensokyo."
+ TH_CRUSADE_INITIAL_SUPPORT: "Yama's initial support"
+ TH_CRUSADE_AI_FOUND_TARGET: "A target with sufficient antagonism exists"
+
+### Crusade
+ th_gensokyo_crusade_cb: "Punitive Crusade"
+ th_gensokyo_crusade_cb_desc: "A crusade declared by the Yama and the Sage Council against those who threaten Gensokyo's order."
+ th_gensokyo_crusade: "Crusade Situation"
+ th_gensokyo_crusade_desc: "Gensokyo's encirclement against the crusade target."
+ th_gensokyo_trial: "Trial Situation"
+ th_gensokyo_trial_desc: "The Yama's final judgment upon the defeated crusade target."
+ th_gensokyo_propose_crusade: "Propose Punitive Crusade"
+ th_gensokyo_propose_crusade_desc: "The Yama proposes a punitive crusade against a member with excessive antagonism."
+ PERFORM_th_gensokyo_propose_crusade_ACTION: "Proposed a punitive crusade"
+ WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "We proposed a punitive crusade"
+ OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "Proposed a punitive crusade"
+ ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "Proposed a punitive crusade"
+ th_gensokyo_counter_expansion: "Counter-Expansion"
+ th_gensokyo_counter_expansion_desc: "Having turned the tide of the crusade, you gain the right to expand within Gensokyo."
+ PERFORM_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "We launched a counter-expansion"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "Launched a counter-expansion"
+
+### Judgment law
+ th_gensokyo_judgment_law: "Judgment Law"
+ th_gensokyo_judgment_law_desc: "The principles the Yama follows when passing judgment."
+ th_judgment_mercy_policy: "Mercy"
+ th_judgment_mercy_policy_desc: "Lenient judgment, shorter sentences, less turmoil."
+ th_judgment_order_policy: "Order"
+ th_judgment_order_policy_desc: "Judgment by the book, impartial."
+ th_judgment_karma_policy: "Karma"
+ th_judgment_karma_policy_desc: "Harsh judgment, longer sentences, as a warning to all."
+
+### Regulated state
+ th_gensokyo_regulated_state: "Regulated State of the Underworld"
+ th_gensokyo_regulated_state_desc: "A subject sentenced by the Yama, stripped of all autonomy, released as independent when the sentence ends."
+
+### Trial events
+ th_gensokyo_trial_events.1.t: "The Final Judgment"
+ th_gensokyo_trial_events.1.d: "The punitive crusade has ended. As the Yama, you must decide the fate of the target based on its sins."
+ th_gensokyo_trial_events.1.a: "Light: Return unlawfully seized lands"
+ th_gensokyo_trial_events.1.b: "Medium: Return lands and weaken their power"
+ th_gensokyo_trial_events.1.c: "Utmost: Reduce them to a regulated state of the Underworld (transfer wealth and levy tribute)"
+
+### Variables
+ th_gensokyo_sin_var: "Sin"
+ th_gensokyo_expansion_quota: "Legal Expansion Quota"
+ th_gensokyo_expansion_quota_used: "Quota Used"
+ th_gensokyo_sentence_tier: "Sentence Tier"
+ th_gensokyo_sentence_months: "Sentence (months)"
+ th_gensokyo_effective_sin: "Effective Sin"
+ th_gensokyo_temp_sentence_years: "Sentence Bonus (years)"
+ th_gensokyo_temp_gold: "Transferred Gold"
+
+### Target selection
+ choose_crusade_target: "Choose crusade target"
+
+### Join crusade
+ th_gensokyo_join_crusade: "Join the Punitive Crusade"
+ th_gensokyo_join_crusade_desc: "Join the encirclement against the crusade target to uphold Gensokyo's order."
+ PERFORM_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "We joined the punitive crusade"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "Joined the punitive crusade"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM: "Antagonistic toward the crusade target"
+
+### Counter treaty
+ th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"
+ th_gensokyo_crusade_counter_desc: "Turning the tide of the punitive crusade: you crushed Gensokyo's encirclement and earned the right to expand."
+
+### Parliament issue
+ th_gensokyo_crusade_issue: "Punitive Crusade Proposal"
+ th_gensokyo_crusade_issue_desc: "A proposal by the Yama, voted on by the sages. Two votes in favor pass it."
+
+### Prices
+ th_gensokyo_feast_price: "Feast Cost"
+ subject_pays_regulated: "Regulated State Tribute"
+
+### Modifier display
+ th_gensokyo_weakness_modifier: "Weakened Power"
+ th_gensokyo_weakness_modifier_desc: "Punitive weakening imposed by judgment."
+ th_gensokyo_expansion_cost_authorized_modifier: "Sage-Authorized Expansion"
+ th_gensokyo_expansion_cost_authorized_modifier_desc: "With the sages' approval, expansion is far cheaper."
+ th_gensokyo_expansion_cost_incident_modifier: "Incident Expansion"
+ th_gensokyo_expansion_cost_incident_modifier_desc: "Expanding during an incident, at a slightly higher cost."
+ th_gensokyo_expansion_cost_unauthorized_modifier: "Unauthorized Expansion"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc: "Expansion without the sages' approval is costly."
+ th_gensokyo_notorious_pariah_modifier: "Notorious"
+ th_gensokyo_notorious_pariah_modifier_desc: "This country's reputation has fallen below the pariah threshold. It may be proposed as a crusade target."
+
+### Situation panel
+ TH_CRUSADE_SUPPORTER_STRENGTH: "Gensokyo Coalition Strength"
+ TH_CRUSADE_TARGET_STRENGTH: "Crusade Target Strength"
+ TH_CRUSADE_SIN_DISPLAY: "Target's Sin"
+
+### Unity sources
+ TH_GENSOKYO_UNITY_FROM_MEMBERS: "Member Scale"
+
+### Sage protection
+ th_gensokyo_sages_defend_reason: "Defending the Human Village"
+
+### Variables
+ th_gensokyo_temp_notorious: "Notoriety Amplifier"
+ th_crusade_supporter_strength: "Coalition Strength"
+ th_crusade_target_strength: "Target Strength"
+ th_crusade_temp_strength: "Member Strength"
+ th_crusade_target_ref: "Crusade Target"
+ th_crusade_sin_display: "Target's Sin"

@@ -1,0 +1,73 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 共享触发条件（国家 scope）
+### ============================================================
+
+### 恶名档位：低（<50） / 中（50-75） / 高（>=75）
+th_gensokyo_notorious_low_trigger = {
+    root.var:th_gensokyo_notorious_reputation_var < th_notorious_pariah_threshold_value
+}
+
+th_gensokyo_notorious_mid_trigger = {
+    root.var:th_gensokyo_notorious_reputation_var >= th_notorious_pariah_threshold_value
+    root.var:th_gensokyo_notorious_reputation_var < th_notorious_outcast_threshold_value
+}
+
+th_gensokyo_notorious_high_trigger = {
+    root.var:th_gensokyo_notorious_reputation_var >= th_notorious_outcast_threshold_value
+}
+
+### 自由市判定：持有幻想乡IO人类村落席位
+th_gensokyo_is_free_city_trigger = {
+    has_special_status_in_international_organization = {
+        type = special_status:th_gensokyo_io_human_village_special_status
+        international_organization = international_organization:th_gensokyo_io
+    }
+}
+
+### 贤者判定：T05 迷途之家 / T13 后户之国 / T83 华扇的仙界
+th_gensokyo_is_sage_trigger = {
+    OR = {
+        tag = T05
+        tag = T13
+        tag = T83
+    }
+}
+
+### 合法扩张授权判定（配额余额 > 0，配额由小卖铺发放）
+th_gensokyo_has_authorized_expansion_trigger = {
+    root.var:th_gensokyo_expansion_quota_used < root.var:th_gensokyo_expansion_quota
+}
+
+### 异变进行中（接口：留空由异变系统填充，届时把 always = no 换成异变判定）
+th_gensokyo_in_incident_trigger = {
+    always = no
+}
+
+### 罪值档位
+th_gensokyo_sin_low_trigger = {
+    root.var:th_gensokyo_sin_var < th_sin_tier1_value
+}
+
+th_gensokyo_sin_mid1_trigger = {
+    root.var:th_gensokyo_sin_var >= th_sin_tier1_value
+    root.var:th_gensokyo_sin_var < th_sin_tier2_value
+}
+
+th_gensokyo_sin_mid2_trigger = {
+    root.var:th_gensokyo_sin_var >= th_sin_tier2_value
+    root.var:th_gensokyo_sin_var < th_sin_tier3_value
+}
+
+th_gensokyo_sin_high_trigger = {
+    root.var:th_gensokyo_sin_var >= th_sin_tier3_value
+}
+
+### 已被阎魔审判过（判决执行时打标）
+th_gensokyo_has_been_judged_trigger = {
+    has_variable = th_gensokyo_judged
+}
+
+### 惩戒战争局势存在（焦点判定用，局势 on_monthly 内 root = 局势）
+th_gensokyo_crusade_active_trigger = {
+    can_see_situation = situation:th_gensokyo_crusade
+}
