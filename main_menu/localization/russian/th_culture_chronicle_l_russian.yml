@@ -1,0 +1,20 @@
+﻿l_russian:
+### ============================================================
+### Touhou-Universalis-II Russian Localization
+### Автоматический перевод (машинный) — глоссарий согласован
+### ============================================================
+ th_gensokyo_culture_chronicle:0 "Хроника Генсокё"
+ th_gensokyo_culture_chronicle_desc:0 "Акю, продолжая дело своих предшественников, продолжает составлять Хронику Генсокё — компендиум культур, описывающий каждого ёкая и каждое явление. Культуры, уже ставшие частью этой земли, полностью документированы, тогда как ещё не принятые чужеземные культуры остаются неразгаданной тайной."
+ hint_th_gensokyo_culture_chronicle:0 "Хроника Генсокё"
+ TH_CULTURE_CHRONICLE_TITLE:0 "Хроника Генсокё: Географический справочник"
+ TH_CULTURE_CHRONICLE_ACCEPTED_HEADER:0 "· Принятые культуры ·"
+ TH_CULTURE_CHRONICLE_UNACCEPTED_HEADER:0 "· Неизведанные культуры ·"
+ TH_CULTURE_CHRONICLE_UNKNOWN:0 "？？？"
+ TH_CULTURE_CHRONICLE_REFRESH:0 "Составить"
+ TH_CULTURE_CHRONICLE_PREV_PAGE:0 "◀ Предыдущая"
+ TH_CULTURE_CHRONICLE_NEXT_PAGE:0 "Следующая ▶"
+ TH_CULTURE_CHRONICLE_PAGE_INDICATOR:0 "Компендиум культур"
+ TH_CULTURE_CHRONICLE_OPEN_BTN:0 "Открыть компендиум культур"
+ th_culture_chronicle.1.t:0 "Компендиум культур"
+ th_culture_chronicle.1.d:0 "Открытие Хроники Генсокё: Компендиум культур..."
+ th_culture_chronicle.1.a:0 "Подтвердить"

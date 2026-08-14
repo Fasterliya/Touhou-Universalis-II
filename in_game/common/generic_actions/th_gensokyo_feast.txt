@@ -1,0 +1,81 @@
+﻿### ============================================================
+### 幻想乡IO 宴会 — 恶名消减主要途径
+### 原生 IO 行动栏按钮（InternationalOrganizationsView）
+### ============================================================
+
+th_gensokyo_feast = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        ### P1-12 修复：potential 顶层 root=empty，is_member 裸挂恒 false → 按钮不显示；
+        ### base game 同类行动均 scope:actor 包裹（middle_kingdom.txt:14 等）
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    price = price:th_gensokyo_feast_price
+
+    effect = {
+        ### 2026-08-14 双保险：参数已数字化（2026-08-07 S6/S8），但实测点击仍报
+        ### "Variable not of the 'value' scope type. Type: empty"（13:41:13）——
+        ### 真因是变量未初始化（S11 家族首月空窗），已由 init_effect 开局补设；
+        ### 此处再加 has_variable 防御守卫，任何空窗路径都零报错
+        scope:actor = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_variable = th_gensokyo_notorious_reputation_var
+                    }
+                }
+                set_variable = {
+                    name = th_gensokyo_notorious_reputation_var
+                    value = 0
+                }
+            }
+            change_variable = {
+                name = th_gensokyo_notorious_reputation_var
+                subtract = 10
+            }
+            clamp_variable = {
+                name = th_gensokyo_notorious_reputation_var
+                min = 0
+                max = 100
+            }
+        }
+    }
+
+    cooldown = {
+        type = th_gensokyo_feast
+        months = 12
+    }
+
+    ai_will_do = {
+        ### 运行时修复 2026-08-07：generic action ai_will_do 上下文变量引用（裸 var:/scope:actor.var:）均报错
+        ### → 移除恶名判断（AI 主动缓解恶名留待后续研究）
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

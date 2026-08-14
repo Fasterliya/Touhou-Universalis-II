@@ -1,0 +1,224 @@
+﻿th_gensokyo_gfx_error_suppressor = {	#请注意，加了锁定肖像后往这里加东西
+#技术提示-肖像报错抑制器
+#虽然我不太知道具体机理，但是据院长说这是用来减少肖像锁定的报错的
+	set_variable = { name = portrait_locked value = flag:touhou_marisa }
+	set_variable = { name = portrait_locked value = flag:touhou_alice }
+	set_variable = { name = portrait_locked value = flag:touhou_shinki }
+	set_variable = { name = portrait_locked value = flag:touhou_yukari }
+	set_variable = { name = portrait_locked value = flag:touhou_passer1 }
+
+	set_variable = { name = portrait_locked value = flag:touhou_kana }
+	set_variable = { name = portrait_locked value = flag:touhou_rikako }
+	set_variable = { name = portrait_locked value = flag:touhou_elis }
+	set_variable = { name = portrait_locked value = flag:touhou_ellen }
+	set_variable = { name = portrait_locked value = flag:touhou_elly }
+
+	set_variable = { name = portrait_locked value = flag:touhou_gengetsu }
+	set_variable = { name = portrait_locked value = flag:touhou_genjii }
+	set_variable = { name = portrait_locked value = flag:touhou_kiruri }
+	set_variable = { name = portrait_locked value = flag:touhou_kitashirakawa }
+	set_variable = { name = portrait_locked value = flag:touhou_konngara }
+
+	set_variable = { name = portrait_locked value = flag:touhou_kotohime }
+	set_variable = { name = portrait_locked value = flag:touhou_kurumi }
+	set_variable = { name = portrait_locked value = flag:touhou_luize }
+	set_variable = { name = portrait_locked value = flag:touhou_mai }
+	set_variable = { name = portrait_locked value = flag:touhou_meira }
+
+	set_variable = { name = portrait_locked value = flag:touhou_mima }
+	set_variable = { name = portrait_locked value = flag:touhou_mugetsu }
+	set_variable = { name = portrait_locked value = flag:touhou_yumemi }
+	set_variable = { name = portrait_locked value = flag:touhou_old_reimu }
+	set_variable = { name = portrait_locked value = flag:touhou_orange }
+
+	set_variable = { name = portrait_locked value = flag:touhou_rika }
+	set_variable = { name = portrait_locked value = flag:touhou_rin }
+	set_variable = { name = portrait_locked value = flag:touhou_sara }
+	set_variable = { name = portrait_locked value = flag:touhou_sariel }
+	set_variable = { name = portrait_locked value = flag:touhou_yuki }
+
+	set_variable = { name = portrait_locked value = flag:touhou_yumeko }
+	set_variable = { name = portrait_locked value = flag:touhou_cirno }
+	set_variable = { name = portrait_locked value = flag:touhou_daiyousei }
+	set_variable = { name = portrait_locked value = flag:touhou_devil }
+	set_variable = { name = portrait_locked value = flag:touhou_eirin }
+
+	set_variable = { name = portrait_locked value = flag:touhou_flandre }
+	set_variable = { name = portrait_locked value = flag:touhou_jyoon }
+	set_variable = { name = portrait_locked value = flag:touhou_kaguya }
+	set_variable = { name = portrait_locked value = flag:touhou_keine }
+	set_variable = { name = portrait_locked value = flag:touhou_kokoro }
+
+	set_variable = { name = portrait_locked value = flag:touhou_lorelei }
+	set_variable = { name = portrait_locked value = flag:touhou_meirin }
+	set_variable = { name = portrait_locked value = flag:touhou_mokou }
+	set_variable = { name = portrait_locked value = flag:touhou_patchouli }
+	set_variable = { name = portrait_locked value = flag:touhou_reimilia }
+
+	set_variable = { name = portrait_locked value = flag:touhou_reisen }
+	set_variable = { name = portrait_locked value = flag:touhou_rumia }
+	set_variable = { name = portrait_locked value = flag:touhou_sakuya }
+	set_variable = { name = portrait_locked value = flag:touhou_shion }
+	set_variable = { name = portrait_locked value = flag:touhou_suika }
+
+	set_variable = { name = portrait_locked value = flag:touhou_sumireko }
+	set_variable = { name = portrait_locked value = flag:touhou_tenshi }
+	set_variable = { name = portrait_locked value = flag:touhou_tewi }
+	set_variable = { name = portrait_locked value = flag:touhou_wriggle }
+	set_variable = { name = portrait_locked value = flag:touhou_akyuu }
+
+	set_variable = { name = portrait_locked value = flag:touhou_aya }
+	set_variable = { name = portrait_locked value = flag:touhou_chimata }
+	set_variable = { name = portrait_locked value = flag:touhou_hatate }
+	set_variable = { name = portrait_locked value = flag:touhou_hearn }
+	set_variable = { name = portrait_locked value = flag:touhou_hina }
+
+	set_variable = { name = portrait_locked value = flag:touhou_iku }
+	set_variable = { name = portrait_locked value = flag:touhou_kanako }
+	set_variable = { name = portrait_locked value = flag:touhou_kasen }
+	set_variable = { name = portrait_locked value = flag:touhou_komachi }
+	set_variable = { name = portrait_locked value = flag:touhou_kosuzu }
+
+	set_variable = { name = portrait_locked value = flag:touhou_lunar }
+	set_variable = { name = portrait_locked value = flag:touhou_megumu }
+	set_variable = { name = portrait_locked value = flag:touhou_melancholy }
+	set_variable = { name = portrait_locked value = flag:touhou_mike }
+	set_variable = { name = portrait_locked value = flag:touhou_minoriko }
+
+	set_variable = { name = portrait_locked value = flag:touhou_misumaru }
+	set_variable = { name = portrait_locked value = flag:touhou_miyoi }
+	set_variable = { name = portrait_locked value = flag:touhou_mizuchi }
+	set_variable = { name = portrait_locked value = flag:touhou_momizi }
+	set_variable = { name = portrait_locked value = flag:touhou_momoyo }
+
+	set_variable = { name = portrait_locked value = flag:touhou_nitori }
+	set_variable = { name = portrait_locked value = flag:touhou_reading }
+	set_variable = { name = portrait_locked value = flag:touhou_renko }
+	set_variable = { name = portrait_locked value = flag:touhou_rinnosuke }
+	set_variable = { name = portrait_locked value = flag:touhou_sanae }
+
+	set_variable = { name = portrait_locked value = flag:touhou_sannyo }
+	set_variable = { name = portrait_locked value = flag:touhou_shikieiki }
+	set_variable = { name = portrait_locked value = flag:touhou_sizuha }
+	set_variable = { name = portrait_locked value = flag:touhou_star }
+	set_variable = { name = portrait_locked value = flag:touhou_sunny }
+
+	set_variable = { name = portrait_locked value = flag:touhou_suwako }
+	set_variable = { name = portrait_locked value = flag:touhou_takane }
+	set_variable = { name = portrait_locked value = flag:touhou_teller }
+	set_variable = { name = portrait_locked value = flag:touhou_toyohime }
+	set_variable = { name = portrait_locked value = flag:touhou_tsukasa }
+
+	set_variable = { name = portrait_locked value = flag:touhou_yorihime }
+	set_variable = { name = portrait_locked value = flag:touhou_yuka }
+	set_variable = { name = portrait_locked value = flag:touhou_nemuno }
+	set_variable = { name = portrait_locked value = flag:touhou_nue }
+	set_variable = { name = portrait_locked value = flag:touhou_okina }
+
+	set_variable = { name = portrait_locked value = flag:touhou_parsee }
+	set_variable = { name = portrait_locked value = flag:touhou_raiko }
+	set_variable = { name = portrait_locked value = flag:touhou_rin_chi }
+	set_variable = { name = portrait_locked value = flag:touhou_ringo }
+	set_variable = { name = portrait_locked value = flag:touhou_sagume }
+
+	set_variable = { name = portrait_locked value = flag:touhou_satono }
+	set_variable = { name = portrait_locked value = flag:touhou_satori }
+	set_variable = { name = portrait_locked value = flag:touhou_seiga }
+	set_variable = { name = portrait_locked value = flag:touhou_seiran }
+	set_variable = { name = portrait_locked value = flag:touhou_sejia }
+
+	set_variable = { name = portrait_locked value = flag:touhou_sekibanki }
+	set_variable = { name = portrait_locked value = flag:touhou_shinmyoumaru }
+	set_variable = { name = portrait_locked value = flag:touhou_shou }
+	set_variable = { name = portrait_locked value = flag:touhou_toziko }
+	set_variable = { name = portrait_locked value = flag:touhou_utuho }
+
+	set_variable = { name = portrait_locked value = flag:touhou_wakasagihime }
+	set_variable = { name = portrait_locked value = flag:touhou_yamame }
+	set_variable = { name = portrait_locked value = flag:touhou_aunn }
+	set_variable = { name = portrait_locked value = flag:touhou_bayakuren }
+	set_variable = { name = portrait_locked value = flag:touhou_benben }
+
+	set_variable = { name = portrait_locked value = flag:touhou_clownpiece }
+	set_variable = { name = portrait_locked value = flag:touhou_doremy }
+	set_variable = { name = portrait_locked value = flag:touhou_futo }
+	set_variable = { name = portrait_locked value = flag:touhou_hecatia }
+	set_variable = { name = portrait_locked value = flag:touhou_junko }
+
+	set_variable = { name = portrait_locked value = flag:touhou_kagerou }
+	set_variable = { name = portrait_locked value = flag:touhou_kisume }
+	set_variable = { name = portrait_locked value = flag:touhou_kogasa }
+	set_variable = { name = portrait_locked value = flag:touhou_koishi }
+	set_variable = { name = portrait_locked value = flag:touhou_kyouko }
+
+	set_variable = { name = portrait_locked value = flag:touhou_larva }
+	set_variable = { name = portrait_locked value = flag:touhou_mai_tian }
+	set_variable = { name = portrait_locked value = flag:touhou_mamizu }
+	set_variable = { name = portrait_locked value = flag:touhou_miku }
+	set_variable = { name = portrait_locked value = flag:touhou_minamitu }
+
+	set_variable = { name = portrait_locked value = flag:touhou_narumi }
+	set_variable = { name = portrait_locked value = flag:touhou_nazrin }
+	set_variable = { name = portrait_locked value = flag:touhou_yatsuhashi }
+	set_variable = { name = portrait_locked value = flag:touhou_yoshika }
+	set_variable = { name = portrait_locked value = flag:touhou_yugi }
+	set_variable = { name = portrait_locked value = flag:touhou_ichiri }
+
+	set_variable = { name = portrait_locked value = flag:touhou_biten }
+	set_variable = { name = portrait_locked value = flag:touhou_chen }
+	set_variable = { name = portrait_locked value = flag:touhou_chiyari }
+	set_variable = { name = portrait_locked value = flag:touhou_eika }
+	set_variable = { name = portrait_locked value = flag:touhou_enoko }
+
+	set_variable = { name = portrait_locked value = flag:touhou_hisami }
+	set_variable = { name = portrait_locked value = flag:touhou_keiki }
+	set_variable = { name = portrait_locked value = flag:touhou_kutaka }
+	set_variable = { name = portrait_locked value = flag:touhou_letty }
+	set_variable = { name = portrait_locked value = flag:touhou_lily_b }
+
+	set_variable = { name = portrait_locked value = flag:touhou_lily_w }
+	set_variable = { name = portrait_locked value = flag:touhou_lunasa }
+	set_variable = { name = portrait_locked value = flag:touhou_lyrica }
+	set_variable = { name = portrait_locked value = flag:touhou_mayumi }
+	set_variable = { name = portrait_locked value = flag:touhou_merlin }
+
+	set_variable = { name = portrait_locked value = flag:touhou_ran }
+	set_variable = { name = portrait_locked value = flag:touhou_reisen_2 }
+	set_variable = { name = portrait_locked value = flag:touhou_saki }
+	set_variable = { name = portrait_locked value = flag:touhou_urumi }
+	set_variable = { name = portrait_locked value = flag:touhou_yachie }
+
+	set_variable = { name = portrait_locked value = flag:touhou_youmu }
+	set_variable = { name = portrait_locked value = flag:touhou_yuma }
+	set_variable = { name = portrait_locked value = flag:touhou_yuyuko }
+	set_variable = { name = portrait_locked value = flag:touhou_zanmu }
+	set_variable = { name = portrait_locked value = flag:touhou_ariya }
+
+	set_variable = { name = portrait_locked value = flag:touhou_asama }
+	set_variable = { name = portrait_locked value = flag:touhou_chimi }
+	set_variable = { name = portrait_locked value = flag:touhou_dolls1 }
+	set_variable = { name = portrait_locked value = flag:touhou_jacket }
+	set_variable = { name = portrait_locked value = flag:touhou_label }
+
+	set_variable = { name = portrait_locked value = flag:touhou_layla }
+	set_variable = { name = portrait_locked value = flag:touhou_nareko }
+	set_variable = { name = portrait_locked value = flag:touhou_nina }
+	set_variable = { name = portrait_locked value = flag:touhou_ubame }
+	set_variable = { name = portrait_locked value = flag:touhou_youki }
+
+	set_variable = { name = portrait_locked value = flag:touhou_passer2 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer3 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer4 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer5 }
+
+	set_variable = { name = portrait_locked value = flag:touhou_passer6 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer7 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer8 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer9 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer10 }
+
+	set_variable = { name = portrait_locked value = flag:touhou_passer11 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer12 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer13 }
+	set_variable = { name = portrait_locked value = flag:touhou_passer14 }
+}

@@ -1,0 +1,141 @@
+﻿l_russian:
+### ============================================================
+### Touhou-Universalis-II Russian Localization
+### Автоматический перевод (машинный) — глоссарий согласован
+### ============================================================
+
+### ============================================================
+
+### Gensokyo IO Chain System Localization (English)
+
+### ============================================================
+
+### Notoriety view action
+ th_gensokyo_notorious_view:"Просмотреть репутацию"
+ th_gensokyo_notorious_view_desc:"Просмотр вашей репутации в Генсокё: [SCOPE.sCountry('actor').MakeScope.GetVariable('th_gensokyo_notorious_reputation_var').GetValue]. Действие только для просмотра."
+
+### Notoriety tiers
+ th_notorious_tier_clean:"Уважаемый"
+ th_notorious_tier_pariah:"С дурной славой"
+ th_notorious_tier_outcast:"Изгой Генсокё"
+
+### Feast
+ th_gensokyo_feast:"Устроить пир"
+ th_gensokyo_feast_desc:"Устройте грандиозный пир в Генсокё, развлекая и ёкаев, и мудрецов, чтобы смягчить свою дурную славу."
+ PERFORM_th_gensokyo_feast_ACTION:"Устроен пир в Генсокё"
+ WE_PERFORM_th_gensokyo_feast_ACTION:"Мы устроили пир в Генсокё"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION:"Устроен пир в Генсокё"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US:"Устроен пир в Генсокё"
+ TH_FEAST_AI_HIGH_NOTORIETY:"Высокая дурная слава, нуждается в смягчении"
+
+### Crusade peace treaty
+ th_gensokyo_crusade_triumph:"Полная победа (крестовый поход)"
+ th_gensokyo_crusade_triumph_desc:"Полная победа в карательном походе: враг безоговорочно сдаётся и принимает все приговоры Генсокё."
+ TH_CRUSADE_INITIAL_SUPPORT:"Изначальная поддержка Ямы"
+ TH_CRUSADE_AI_FOUND_TARGET:"Существует цель с достаточной враждебностью"
+
+### Crusade
+ th_gensokyo_crusade_cb:"Карательный поход"
+ th_gensokyo_crusade_cb_desc:"Карательный поход, объявленный Ямой и Советом мудрецов против тех, кто угрожает порядку Генсокё."
+ th_gensokyo_crusade:"Ситуация с походом"
+ th_gensokyo_crusade_desc:"Окружение цели похода силами Генсокё."
+ th_gensokyo_trial:"Ситуация с судом"
+ th_gensokyo_trial_desc:"Окончательный приговор Ямы в отношении поверженной цели похода."
+ th_gensokyo_propose_crusade:"Предложить карательный поход"
+ th_gensokyo_propose_crusade_desc:"Яма предлагает карательный поход против члена с чрезмерной враждебностью."
+ PERFORM_th_gensokyo_propose_crusade_ACTION:"Предложен карательный поход"
+ WE_PERFORM_th_gensokyo_propose_crusade_ACTION:"Мы предложили карательный поход"
+ OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION:"Предложен карательный поход"
+ ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US:"Предложен карательный поход"
+ th_gensokyo_counter_expansion:"Встречная экспансия"
+ th_gensokyo_counter_expansion_desc:"Переломив ход похода, вы получаете право на экспансию в Генсокё."
+ PERFORM_th_gensokyo_counter_expansion_ACTION:"Начата встречная экспансия"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION:"Мы начали встречную экспансию"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION:"Начата встречная экспансия"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US:"Начата встречная экспансия"
+
+### Judgment law
+ th_gensokyo_judgment_law:"Закон суда"
+ th_gensokyo_judgment_law_desc:"Принципы, которым следует Яма при вынесении приговора."
+ th_judgment_mercy_policy:"Милосердие"
+ th_judgment_mercy_policy_desc:"Мягкий приговор, более короткие сроки, меньше потрясений."
+ th_judgment_order_policy:"Порядок"
+ th_judgment_order_policy_desc:"Суд по закону, беспристрастный."
+ th_judgment_karma_policy:"Карма"
+ th_judgment_karma_policy_desc:"Суровый приговор, более длительные сроки, как предупреждение для всех."
+
+### Regulated state
+ th_gensokyo_regulated_state:"Поднадзорное государство Подземного мира"
+ th_gensokyo_regulated_state_desc:"Субъект, приговорённый Ямой, лишённый всякой автономии, вновь обретает независимость по окончании срока."
+
+### Trial events
+ th_gensokyo_trial_events.1.t:"Финальный приговор"
+ th_gensokyo_trial_events.1.d:"Карательный поход завершён. Как Яма, вы должны решить судьбу цели на основе её грехов."
+ th_gensokyo_trial_events.1.a:"Лёгкое: Вернуть незаконно захваченные земли"
+ th_gensokyo_trial_events.1.b:"Среднее: Вернуть земли и ослабить их власть"
+ th_gensokyo_trial_events.1.c:"Максимальное: Привести их в Поднадзорное государство Подземного мира (передать богатства и взимать дань)"
+
+### Variables
+ th_gensokyo_sin_var:"Грех"
+ th_gensokyo_expansion_quota:"Квота легального расширения"
+ th_gensokyo_expansion_quota_used:"Использованная квота"
+ th_gensokyo_sentence_tier:"Уровень приговора"
+ th_gensokyo_sentence_months:"Срок (в месяцах)"
+ th_gensokyo_effective_sin:"Эффективный грех"
+ th_gensokyo_temp_sentence_years:"Бонус к сроку (лет)"
+ th_gensokyo_temp_gold:"Переданное золото"
+
+### Target selection
+ choose_crusade_target:"Выбрать цель похода"
+
+### Join crusade
+ th_gensokyo_join_crusade:"Присоединиться к Карательному походу"
+ th_gensokyo_join_crusade_desc:"Присоединиться к окружению цели карательного похода, чтобы сохранить порядок в Генсокё."
+ PERFORM_th_gensokyo_join_crusade_ACTION:"Присоединился к карательному походу"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION:"Мы присоединились к карательному походу"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION:"Присоединился к карательному походу"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US:"Присоединился к карательному походу"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM:"Враждебен цели карательного похода"
+
+### Counter treaty
+ th_gensokyo_crusade_counter:"Контр-победа (Карательный поход)"
+ th_gensokyo_crusade_counter_desc:"Вы переломили ход карательного похода: сокрушили окружение Генсокё и получили право на расширение."
+
+### Parliament issue
+ th_gensokyo_crusade_issue:"Предложение о карательном походе"
+ th_gensokyo_crusade_issue_desc:"Предложение Ямы, за которое голосуют мудрецы. Для его принятия нужно два голоса за."
+
+### Prices
+ th_gensokyo_feast_price:"Стоимость пира"
+ subject_pays_regulated:"Дань Поднадзорного государства"
+
+### Modifier display
+ th_gensokyo_weakness_modifier:"Ослабленная сила"
+ th_gensokyo_weakness_modifier_desc:"Карательное ослабление, налагаемое судом."
+ th_gensokyo_expansion_cost_authorized_modifier:"Расширение, санкционированное мудрецами"
+ th_gensokyo_expansion_cost_authorized_modifier_desc:"При одобрении мудрецов расширение обходится гораздо дешевле."
+ th_gensokyo_expansion_cost_incident_modifier:"Расширение во время инцидента"
+ th_gensokyo_expansion_cost_incident_modifier_desc:"Расширение во время инцидента обходится немного дороже."
+ th_gensokyo_expansion_cost_unauthorized_modifier:"Несанкционированное расширение"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc:"Расширение без одобрения мудрецов обойдётся дорого."
+ th_gensokyo_notorious_pariah_modifier:"Пресловутый"
+ th_gensokyo_notorious_pariah_modifier_desc:"Репутация этой страны упала ниже порога изгоя, и она может быть предложена как цель крестового похода."
+
+### Situation panel
+ TH_CRUSADE_SUPPORTER_STRENGTH:"Сила коалиции Генсокё"
+ TH_CRUSADE_TARGET_STRENGTH:"Сила цели крестового похода"
+ TH_CRUSADE_SIN_DISPLAY:"Грех цели"
+
+### Unity sources
+ TH_GENSOKYO_UNITY_FROM_MEMBERS:"Масштаб участников"
+
+### Sage protection
+ th_gensokyo_sages_defend_reason:"Защита Деревни людей"
+
+### Variables
+ th_gensokyo_temp_notorious:"Усилитель дурной славы"
+ th_crusade_supporter_strength:"Сила коалиции"
+ th_crusade_target_strength:"Сила цели"
+ th_crusade_temp_strength:"Сила участника"
+ th_crusade_target_ref:"Цель крестового похода"
+ th_crusade_sin_display:"Грех цели"

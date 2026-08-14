@@ -1,0 +1,27 @@
+### ===========================================================
+### 幻想乡IO — 成员国变量悬浮查看
+### 在IO面板中显示个人影响力/个人贡献度/恶名三项国家变量
+### 套用共模，不写panels — 通过scripted GUI渲染为信息按钮
+### ===========================================================
+
+th_gensokyo_view_member_vars = {
+    scope = country
+
+    is_shown = {
+        is_member_of_international_organization = th_gensokyo_io
+    }
+
+    is_valid = {
+        always = yes
+    }
+
+    effect = {
+        # 仅用于信息展示，无实际操作
+        # 变量值通过 notification_key tooltip 展示
+    }
+
+    notification_key = th_gensokyo_member_vars_display
+    ai_is_valid = {
+        always = no
+    }
+}

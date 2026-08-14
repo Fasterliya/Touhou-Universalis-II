@@ -1,0 +1,129 @@
+﻿#幻想乡文化组
+th_gensokyo_culture_group = {
+	country_modifier = {
+		global_pop_assimilation_speed_modifier = -10.0
+		global_nobles_assimilation_blocked = yes
+		global_clergy_assimilation_blocked = yes
+		global_burghers_assimilation_blocked = yes
+		global_peasants_assimilation_blocked = yes
+		global_laborers_assimilation_blocked = yes
+		global_soldiers_assimilation_blocked = yes
+		global_slaves_assimilation_blocked = yes
+		global_tribesmen_assimilation_blocked = yes
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#妖怪文化组
+th_gensokyo_youkai_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#人类文化组
+th_gensokyo_hito_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#神明文化组
+th_gensokyo_kami_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#灵文化组
+th_gensokyo_ghost_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#妖精文化组
+th_gensokyo_fairy_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#月之民文化组
+th_gensokyo_lunarian_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+
+#文化亚组
+
+#恶魔文化组
+th_gensokyo_demon_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#天狗文化组
+th_gensokyo_tengu_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#河童文化组
+th_gensokyo_kappa_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#妖兽文化组
+th_gensokyo_beast_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#付丧神文化组
+th_gensokyo_tsukumogami_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}
+#超人文化组
+th_gensokyo_ultraman_culture_group = {
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+}

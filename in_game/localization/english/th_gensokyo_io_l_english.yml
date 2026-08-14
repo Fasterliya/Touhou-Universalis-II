@@ -1,0 +1,148 @@
+﻿l_english:
+
+### Gensokyo International Organization — Localization
+
+### === IO Name & Description ===
+ th_gensokyo_io: "Gensokyo"
+ th_gensokyo_io_desc: "An international organization maintaining the balance of Gensokyo's nations, with the Sages and Yama jointly upholding the Great Barrier's order."
+
+### === Special Statuses ===
+ th_gensokyo_io_sages_special_status: "Sage"
+ th_gensokyo_io_sages_special_status_desc: "One of Gensokyo's three most ancient sages, each guarding a key node of the Great Barrier."
+
+ th_gensokyo_io_yama_special_status: "Yama"
+ th_gensokyo_io_yama_special_status_desc: "The judge who presides over Higan, arbitrating right and wrong among Gensokyo's nations, and serving as leader of the Gensokyo Parliament."
+
+ th_gensokyo_io_guardian_special_status: "Guardian of Gensokyo"
+ th_gensokyo_io_guardian_special_status_desc: "The shrine maiden of Hakurei Shrine, eternal guardian of the Great Barrier. The Hakurei power passed down through generations maintains the boundary between Gensokyo and the Outside World."
+
+ th_gensokyo_io_human_village_special_status: "Human Village"
+ th_gensokyo_io_human_village_special_status_desc: "Representatives of the Human Village, protecting the interests of Gensokyo's human settlements."
+
+### === Leader Title ===
+ th_gensokyo_io_yama_leader_title: "Yama"
+ th_gensokyo_io_yama_leader_title_desc: "The judge of Gensokyo and leader of its Parliament."
+
+### === Parliament ===
+ th_gensokyo_io_parliament: "Gensokyo Parliament"
+ th_gensokyo_parliament_seat: "Gensokyo Parliament Seat"
+
+### === IO Variable Names ===
+ th_gensokyo_unity_var: "Gensokyo Unity"
+ th_gensokyo_unity_var_desc: "A measure of cohesion among Gensokyo's nations, gained through resolving incidents, mediating conflicts, and peaceful development. It is depleted by aggressive expansion and external invasions."
+
+### === IO Variable Format ===
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+### === IO Variable Monthly Change Descriptions ===
+ TH_GENSOKYO_UNITY_BASE: "Base Maintenance"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "Internal Peace"
+
+### === Country Variable Names ===
+ th_gensokyo_personal_contribution_var: "Personal Contribution"
+ th_gensokyo_personal_contribution_var_desc: "This nation's tangible contributions to Gensokyo's stability, accumulating monthly based on tax revenue and danmaku firepower."
+
+ th_gensokyo_personal_influence_var: "Personal Influence"
+ th_gensokyo_personal_influence_var_desc: "This nation's political influence within the Gensokyo Parliament. Every 50 points grants 1 additional vote weight in parliamentary decisions. Reset to zero at the end of each age."
+
+ th_gensokyo_notorious_reputation_var: "Gensokyo Infamy"
+ th_gensokyo_notorious_reputation_var_desc: "This nation's infamy within Gensokyo (0-100), gained through declarations of war and territorial expansion. Higher infamy slows the accumulation of Personal Influence."
+
+### === Variable Hover Display ===
+ th_gensokyo_member_vars_display: "Personal Variables Overview"
+ th_gensokyo_member_vars_display_desc: "View this nation's Personal Influence, Personal Contribution, and Infamy within Gensokyo."
+
+### === Parliament Issues ===
+ th_gensokyo_parliament_resolution_1_title: "Gensokyo Peace Resolution"
+ th_gensokyo_parliament_resolution_1_desc: "A proposal to maintain peaceful order within Gensokyo."
+
+ th_gensokyo_parliament_resolution_2_title: "Incident Response Resolution"
+ th_gensokyo_parliament_resolution_2_desc: "A proposal to coordinate responses to incidents occurring within Gensokyo."
+
+ th_gensokyo_parliament_resolution_3_title: "External Defense Resolution"
+ th_gensokyo_parliament_resolution_3_desc: "A proposal to strengthen Gensokyo's defenses against external invasions."
+
+### === Law: Unity Vision ===
+ th_gensokyo_unity_vision_law: "Unity Vision"
+ th_gensokyo_unity_vision_law_desc: "Determines the direction through which Gensokyo's unity is cultivated and harnessed."
+
+ isolation_defense_policy: "Isolation Defense"
+ isolation_defense_policy_desc: "Seal the Great Barrier tightly, consolidating unity through internal peace. External threats struggle to penetrate, but new ideas are also slow to flow in."
+
+ balance_path_policy: "Path of Balance"
+ balance_path_policy_desc: "Maintain the Great Barrier as it has always been, impartial and steady. Unity flows naturally, and every nation finds its place."
+
+ open_inclusive_policy: "Open Inclusiveness"
+ open_inclusive_policy_desc: "Relax the Great Barrier's restrictions to welcome new ideas from beyond. Institution spread accelerates and diplomatic horizons expand, though unity cohesion is slightly affected."
+
+### === Law: Great Barrier Policy ===
+ th_gensokyo_barrier_policy_law: "Great Barrier Policy"
+ th_gensokyo_barrier_policy_law_desc: "Determines the maintenance intensity and degree of openness of Gensokyo's Great Barrier."
+
+ reinforced_barrier_policy: "Reinforced Barrier"
+ reinforced_barrier_policy_desc: "Pour the strength of all Gensokyo into reinforcing the Great Barrier. Defense and manpower are greatly enhanced, but diplomatic reputation suffers and external ideas struggle to permeate."
+
+ maintained_barrier_policy: "Maintained Barrier"
+ maintained_barrier_policy_desc: "Maintain the Great Barrier according to established traditions. Defense remains stable, and all is as it should be."
+
+ relaxed_barrier_policy: "Relaxed Barrier"
+ relaxed_barrier_policy_desc: "Moderately relax the Great Barrier's restrictions to facilitate exchange. Institution spread is significantly accelerated, but defensive capabilities are somewhat diminished."
+
+### === Law: Incident Response Doctrine ===
+ th_gensokyo_incident_response_law: "Incident Response Doctrine"
+ th_gensokyo_incident_response_law_desc: "Determines the strategy and code of conduct for responding to incidents within Gensokyo."
+
+ duel_resolution_policy: "Danmaku Duel Rules"
+ duel_resolution_policy_desc: "Resolve incidents through one-on-one danmaku duels. Victors earn prestige, but those unskilled in combat struggle to defend themselves."
+
+ joint_suppression_policy: "Joint Suppression"
+ joint_suppression_policy_desc: "Nations act in concert, suppressing incidents with collective strength. Manpower is abundant and responses are swift."
+
+ diplomatic_mediation_policy: "Diplomatic Mediation"
+ diplomatic_mediation_policy_desc: "Resolve the root causes of incidents through negotiation and mediation. Diplomatic reputation rises, but military preparedness is relatively lacking."
+
+### ============================================================
+### Sages' Council — Localization
+### ============================================================
+
+ th_sages_council_io: "Sages' Council"
+ th_sages_council_io_desc: "The supreme deliberative body formed by Gensokyo's three most ancient sages, maintaining the Great Barrier's balance and guiding Gensokyo's destiny."
+
+### Sage Prestige
+ th_sages_prestige_var: "Sage Prestige"
+ th_sages_prestige_var_desc: "The prestige and influence of the three sages among the nations of Gensokyo (0-100). It is gained through Gensokyo's unity and the maintenance of peace, and lost through war, external invasions, and unlawful expansion. Higher prestige provides stronger global benefits to Gensokyo."
+
+### Threshold Tiers
+ th_sages_prestige_tier_20: "Sage Prestige · Emergence"
+ th_sages_prestige_tier_20_desc: "The will of the sages begins to be felt by the nations, granting Gensokyo a faint blessing."
+
+ th_sages_prestige_tier_40: "Sage Prestige · Coalescence"
+ th_sages_prestige_tier_40_desc: "The edicts of the sages become a growing consensus, granting Gensokyo a modest blessing."
+
+ th_sages_prestige_tier_60: "Sage Prestige · Authority"
+ th_sages_prestige_tier_60_desc: "The judgments of the sages command awe among the nations, granting Gensokyo a notable blessing."
+
+ th_sages_prestige_tier_80: "Sage Prestige · Reverence"
+ th_sages_prestige_tier_80_desc: "The will of the sages is as unshakable as the Great Barrier itself, granting Gensokyo a powerful blessing."
+
+ th_sages_prestige_tier_100: "Sage Prestige · Legend"
+ th_sages_prestige_tier_100_desc: "The names of the three sages have become legend, and all living beings look up to their light, granting Gensokyo the supreme blessing."
+
+ TH_SAGES_ACTIVE_TIERS_LABEL: "Active Sage Prestige Benefits"
+ TH_SAGES_NO_ACTIVE_TIER: "Sage Prestige is insufficient; no benefits are currently active."
+ TH_SAGES_MAX_PREVIEW_LABEL: "Max Value Preview"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "Global Tax +15%  Monthly Legitimacy +0.20\nImprove Relations +35%  Monthly Prestige +0.30\nGlobal Manpower +15%  Diplomatic Reputation +2\nMonthly Stability +0.05"
+
+### === Introduce Institution Action ===
+ th_sages_introduce_institution: "Introduce Institution"
+ th_sages_introduce_institution_desc: "Petition the three sages to wield the power of the Great Barrier to introduce an advanced idea or technology that already exists among Gensokyo's nations but has not yet been embraced by this country."
+ th_sages_introduce_institution_cost: "Cost: Gensokyo Unity -10"
+ th_sages_introduce_institution_notification: "Introduce Institution"
+
+### === Tab Labels ===
+ TH_SAGES_TAB_OVERVIEW: "Overview"
+ TH_SAGES_TAB_DEBATE: "Debate"
+ TH_SAGES_ACTIONS_LABEL: "International Organization Actions"
+ TH_SAGES_MAIN_ACTIONS: "Sages' Council Actions"
+ TH_SAGES_DEBATE_TITLE: "Sages' Debate Hall"
+ TH_SAGES_DEBATE_PLACEHOLDER: "Parliamentary debates and law proposals from the nations of Gensokyo will be displayed here.\nComing in a future update."

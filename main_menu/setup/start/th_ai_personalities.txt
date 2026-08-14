@@ -1,0 +1,54 @@
+countries = {
+	countries = {
+		# ai_aggressive: "侵略"
+		# ai_expansionist: "扩张"
+		# ai_defensive: "防御"
+		# ai_cautious: "谨慎"
+		# ai_opportunistic: "投机"
+		# ai_isolationist: "孤立"
+		# ai_friendly: "友善"
+		T00 = { ai_personality = ai_aggressive }
+		T01 = { ai_personality = ai_aggressive }
+		T02 = { ai_personality = ai_friendly }
+		T03 = { ai_personality = ai_friendly }
+		T85 = { ai_personality = ai_friendly }
+		T86 = { ai_personality = ai_friendly }
+		T87 = { ai_personality = ai_friendly }
+		T88 = { ai_personality = ai_opportunistic }
+		T89 = { ai_personality = ai_isolationist }
+		T90 = { ai_personality = ai_isolationist }
+		T91 = { ai_personality = ai_opportunistic }
+		T92 = { ai_personality = ai_friendly }
+		T93 = { ai_personality = ai_opportunistic }
+		T94 = { ai_personality = ai_opportunistic }
+		T05 = { ai_personality = ai_opportunistic }
+		T08 = { ai_personality = ai_opportunistic }
+		T09 = { ai_personality = ai_opportunistic }
+		T15 = { ai_personality = ai_friendly }
+		T17 = { ai_personality = ai_friendly }
+		T20 = { ai_personality = ai_friendly }
+		T24 = { ai_personality = ai_aggressive }
+		T25 = { ai_personality = ai_isolationist }
+		T26 = { ai_personality = ai_opportunistic }
+		T27 = { ai_personality = ai_opportunistic }
+		T31 = { ai_personality = ai_defensive }
+		T32 = { ai_personality = ai_friendly }
+		T36 = { ai_personality = ai_friendly }
+		T37 = { ai_personality = ai_opportunistic }
+		T38 = { ai_personality = ai_aggressive }
+		T39 = { ai_personality = ai_opportunistic }
+		T40 = { ai_personality = ai_friendly }
+		T43 = { ai_personality = ai_defensive }
+		T53 = { ai_personality = ai_cautious }
+		T54 = { ai_personality = ai_cautious }
+		T58 = { ai_personality = ai_friendly }
+		T62 = { ai_personality = ai_defensive }
+		T63 = { ai_personality = ai_opportunistic }
+		T70 = { ai_personality = ai_aggressive }
+		T71 = { ai_personality = ai_opportunistic }
+		T72 = { ai_personality = ai_isolationist }
+		T80 = { ai_personality = ai_aggressive }
+		T83 = { ai_personality = ai_friendly }
+		T84 = { ai_personality = ai_opportunistic }
+	}
+}

@@ -1,0 +1,80 @@
+﻿### 贤者议会 — 幻想乡最高贤者议事机构
+
+th_sages_council_io = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+
+    # 无单一领袖 — 三位贤者地位平等
+    has_leader_country = no
+    show_on_diplomatic_map = yes
+
+    # === 议会 ===
+    # 三贤者议事：引入思潮等重大决议须经议会辩论投票
+    has_parliament = yes
+    parliament_type = th_sages_council_io_parliament
+    resolution_widget = parliament
+
+    # === 特殊席位 ===
+    # 3 贤者各 1 席 → 议会投票权重均分（各 1/3）
+    special_statuses_implemented = {
+        th_sages_council_member_special_status
+    }
+
+    # === 加入 ===
+    # 禁止加入（仅开局固定三位）
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+    can_join_trigger = {
+        always = no
+    }
+
+    # === 退出 ===
+    # 始终禁止脱离
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
+        always = no
+    }
+
+    # === 加入/退出效果 ===
+    on_joined = {
+    }
+    on_left = {
+    }
+
+    # === IO 层级修正 ===
+    # 成员修正（三贤者获得的修正，由阈值系统动态调整）
+    modifier = {
+        # TODO: 后续人工填写基础修正值
+    }
+
+    # IO 整体修正（贤者威望阈值生成的各类增益）
+    international_organization_modifier = {
+        # TODO: 后续人工动态覆盖
+    }
+
+    # === 变量 ===
+    variables = {
+        th_sages_prestige_var = {
+            format = "TH_SAGES_PRESTIGE_FORMAT"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 0
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "TH_SAGES_PRESTIGE_BASE"
+                    value = 0
+                }
+            }
+        }
+    }
+}

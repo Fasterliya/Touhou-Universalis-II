@@ -1,0 +1,12 @@
+﻿namespace = thgfx
+
+thgfx.0001 = {
+	type = country_event
+    title = NONE
+    desc = NONE
+    hidden = yes
+    orphan = yes
+    immediate = {
+        th_gensokyo_gfx_error_suppressor = yes
+    }
+}

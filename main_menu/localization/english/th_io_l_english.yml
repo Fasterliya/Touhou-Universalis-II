@@ -1,0 +1,99 @@
+﻿l_english:
+ th_human_village_io: "Human Village"
+ th_human_village_io_desc: "A confederation formed by nations in the Human Village and Myouren Temple regions."
+
+ th_gensokyo_io: "Gensokyo"
+ th_gensokyo_io_desc: "An international organization maintaining the balance of Gensokyo, with the Sages and Yama jointly upholding the Great Barrier's order."
+
+ th_sages_council_io: "Sages' Council"
+ th_sages_council_io_desc: "The supreme deliberative body formed by Gensokyo's three most ancient sages."
+
+ ### Special Statuses
+ th_gensokyo_io_sages_special_status: "Sage"
+ th_gensokyo_io_sages_special_status_desc: "One of Gensokyo's three most ancient sages, guarding a key node of the Great Barrier."
+
+ th_gensokyo_io_yama_special_status: "Yama"
+ th_gensokyo_io_yama_special_status_desc: "The judge who presides over Higan, arbitrating right and wrong among Gensokyo's nations, and serving as leader of the Gensokyo Parliament."
+
+ th_gensokyo_io_guardian_special_status: "Guardian of Gensokyo"
+ th_gensokyo_io_guardian_special_status_desc: "The shrine maiden of Hakurei Shrine, eternal guardian of the Great Barrier. The Hakurei power passed down through generations maintains the boundary between Gensokyo and the Outside World."
+
+ th_gensokyo_io_human_village_special_status: "Human Village"
+ th_gensokyo_io_human_village_special_status_desc: "Representatives of the Human Village, protecting the interests of Gensokyo's human settlements."
+
+ th_gensokyo_io_yama_leader_title: "Yama"
+
+ ### IO Variables (engine reads display name + piechart + monthly change descriptions from here)
+ th_gensokyo_unity_var: "Gensokyo Unity"
+ th_gensokyo_unity_var_desc: "A measure of cohesion among Gensokyo's nations, gained through resolving incidents and peaceful development, and depleted by aggressive expansion and external invasions."
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "Base Maintenance"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "Internal Peace"
+
+ ### Country Variables
+ th_gensokyo_personal_contribution_var: "Personal Contribution"
+ th_gensokyo_personal_influence_var: "Personal Influence"
+ th_gensokyo_notorious_reputation_var: "Gensokyo Infamy"
+
+ ### Laws
+ th_gensokyo_unity_vision_law: "Unity Vision"
+ th_gensokyo_unity_vision_law_desc: "Determines the direction through which Gensokyo's unity is cultivated and harnessed."
+
+ th_gensokyo_barrier_policy_law: "Great Barrier Policy"
+ th_gensokyo_barrier_policy_law_desc: "Determines the maintenance intensity and degree of openness of Gensokyo's Great Barrier."
+
+ th_gensokyo_incident_response_law: "Incident Response Doctrine"
+ th_gensokyo_incident_response_law_desc: "Determines the strategy and code of conduct for responding to incidents within Gensokyo."
+
+ isolation_defense_policy: "Isolation Defense"
+ isolation_defense_policy_desc: "Seal the Great Barrier tightly, consolidating unity through internal peace."
+ balance_path_policy: "Path of Balance"
+ balance_path_policy_desc: "Maintain the Great Barrier as it has always been, impartial and steady."
+ open_inclusive_policy: "Open Inclusiveness"
+ open_inclusive_policy_desc: "Relax the Great Barrier's restrictions to welcome new ideas from beyond."
+
+ reinforced_barrier_policy: "Reinforced Barrier"
+ reinforced_barrier_policy_desc: "Pour the strength of all Gensokyo into reinforcing the Great Barrier."
+ maintained_barrier_policy: "Maintained Barrier"
+ maintained_barrier_policy_desc: "Maintain the Great Barrier according to established traditions."
+ relaxed_barrier_policy: "Relaxed Barrier"
+ relaxed_barrier_policy_desc: "Moderately relax the Great Barrier's restrictions to facilitate exchange."
+
+ duel_resolution_policy: "Danmaku Duel Rules"
+ duel_resolution_policy_desc: "Resolve incidents through one-on-one danmaku duels."
+ joint_suppression_policy: "Joint Suppression"
+ joint_suppression_policy_desc: "Nations act in concert, suppressing incidents with collective strength."
+ diplomatic_mediation_policy: "Diplomatic Mediation"
+ diplomatic_mediation_policy_desc: "Resolve the root causes of incidents through negotiation and mediation."
+
+ ### Diagnostic Interaction (Verify special status assignment)
+ th_sages_diagnostic_select_io: "Select the Gensokyo International Organization"
+ th_sages_diagnostic_interaction: "Sage Status Diagnostic"
+ th_sages_diagnostic_interaction_desc: "This interaction is only visible to countries holding the 'Sage' special status in the Gensokyo IO. Used to verify correct special status assignment."
+ th_sages_diagnostic_interaction_act: "Confirm Sage Status"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName] confirms holding the Gensokyo 'Sage' special status."
+ th_sages_diagnostic_success_tt: "[G]Diagnostic Success[/G]! This country holds the 'Sage' special status (th_gensokyo_io_sages_special_status) in the Gensokyo IO."
+
+ ### Seat Unlock Law (placeholder verification)
+ th_gensokyo_seat_unlock_law: "Seat Unlock"
+ th_gensokyo_seat_unlock_law_desc: "When enacted, unlocks a seat in Gensokyo, allowing a special status to be bestowed."
+ th_gensokyo_seat_unlock_policy: "Seat Unlock"
+ th_gensokyo_seat_unlock_policy_desc: "When active, enables the Gensokyo seat; the member with the highest contribution automatically receives it."
+ th_gensokyo_io_seat_special_status: "Gensokyo Seat"
+ th_gensokyo_io_seat_special_status_desc: "A special status enabled by the Seat Unlock law, bestowed upon the member with the highest contribution."
+
+ ### Sages' Council — Introduce Institution (debate-based)
+ th_sages_council_member_special_status: "Sage Seat"
+ th_sages_council_member_special_status_desc: "A seat of the Sages' Council, held by the three most ancient sages. Each seat carries equal voting power in Council debates."
+
+ th_sages_council_io_parliament: "Sages' Council Assembly"
+ th_sages_introduce_institution_issue: "Introduce Institution"
+ th_sages_introduce_institution_issue_desc: "A proposal to introduce a new institution to the capitals of all sages."
+
+ th_sages_introduce_institution: "Introduce Institution"
+ th_sages_introduce_institution_desc: "Choose an institution that has appeared in the world but has not yet reached all sages. A debate will be held in the Sages' Council; if at least two sages support it, the institution will appear in every sage's capital."
+ th_sages_introduce_institution_cost: "Costs: [G]500 gold[/G] (initiator) and [G]10 Gensokyo Unity[/G]. Resources are not refunded if the debate fails."
+ th_sages_introduce_institution_notification: "A debate has been convened in the Sages' Council to introduce an institution."
+ th_sages_pending_institution: "Pending Institution"
+ th_sages_introduced_institutions: "Introduced Institutions"

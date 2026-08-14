@@ -1,0 +1,8 @@
+﻿REPLACE_OR_CREATE:th_portrait_trigger = {
+	#技术提示-如何让人只有纸片
+	exists = this
+	OR = {	#加了新的Ethnicity记得来这里加，把acgv_ethnicity改成你自己的
+		#啊，不是覆盖，是往下面加新的，和我注释里那个一样
+		ethnicity ?= ethnicity:th_gensokyo_ethnicity
+	}
+}

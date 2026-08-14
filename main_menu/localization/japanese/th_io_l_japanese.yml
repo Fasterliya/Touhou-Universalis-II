@@ -1,0 +1,99 @@
+﻿l_japanese:
+ th_human_village_io: "人間の里"
+ th_human_village_io_desc: "人間の里及び命蓮寺区域の諸国より成る聯合組織なり。"
+
+ th_gensokyo_io: "幻想郷"
+ th_gensokyo_io_desc: "幻想郷の諸国の均衡を保つ国際組織。賢者と閻魔が共に大結界の秩序を守護する。"
+
+ th_sages_council_io: "賢者議会"
+ th_sages_council_io_desc: "幻想郷に最も古き三賢者より成る最高議事機関。"
+
+ ### 特殊席位
+ th_gensokyo_io_sages_special_status: "賢者"
+ th_gensokyo_io_sages_special_status_desc: "幻想郷に最も古き三賢者の一人にして、大結界の要衝を守護する者。"
+
+ th_gensokyo_io_yama_special_status: "閻魔"
+ th_gensokyo_io_yama_special_status_desc: "彼岸を司る審判者。幻想郷の諸国の是非善悪を裁き、幻想郷議会の長を務める。"
+
+ th_gensokyo_io_guardian_special_status: "幻想郷の守護"
+ th_gensokyo_io_guardian_special_status_desc: "博麗神社の巫女、大結界の永遠なる守護者。代々受け継がれる博麗の力が幻想郷と外界の境界を保つ。"
+
+ th_gensokyo_io_human_village_special_status: "人間の里"
+ th_gensokyo_io_human_village_special_status_desc: "人間の里の代表として、幻想郷の人間集落の権益を守護する者。"
+
+ th_gensokyo_io_yama_leader_title: "閻魔"
+
+ ### IO変数（エンジンが表示名＋円グラフ＋月次変化の説明をここから読み取る）
+ th_gensokyo_unity_var: "幻想郷団結度"
+ th_gensokyo_unity_var_desc: "幻想郷の諸国の結束力を測る指標。異変解決や平和構築などの積極的行為によって得られ、侵略的拡大や外界からの侵入によって損耗する。"
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "基礎維持"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部平和"
+
+ ### 国家変数
+ th_gensokyo_personal_contribution_var: "個人貢献度"
+ th_gensokyo_personal_influence_var: "個人影響力"
+ th_gensokyo_notorious_reputation_var: "幻想郷悪名"
+
+ ### 法律
+ th_gensokyo_unity_vision_law: "結束の理念"
+ th_gensokyo_unity_vision_law_desc: "幻想郷の結束の力の方向性と運用の道を定める。"
+
+ th_gensokyo_barrier_policy_law: "大結界政策"
+ th_gensokyo_barrier_policy_law_desc: "幻想郷の大結界の維持強度と開放度を定める。"
+
+ th_gensokyo_incident_response_law: "異変対応方針"
+ th_gensokyo_incident_response_law_desc: "幻想郷で異変が発生した際の対応戦略と行動指針を定める。"
+
+ isolation_defense_policy: "孤立堅守"
+ isolation_defense_policy_desc: "大結界の門を固く閉ざし、内部の平和によって結束の力を凝集する。"
+ balance_path_policy: "均衡の道"
+ balance_path_policy_desc: "大結界の既存の法を維持し、偏らず揺るがず。"
+ open_inclusive_policy: "開放包摂"
+ open_inclusive_policy_desc: "大結界の制限を緩和し、外界の新しき思いを歓迎する。"
+
+ reinforced_barrier_policy: "結界強化"
+ reinforced_barrier_policy_desc: "全郷の力を結集して大結界を強化する。"
+ maintained_barrier_policy: "結界維持"
+ maintained_barrier_policy_desc: "既存の伝統に従い大結界の運転を維持する。"
+ relaxed_barrier_policy: "結界緩和"
+ relaxed_barrier_policy_desc: "交流を円滑にするため大結界の制限を適度に緩和する。"
+
+ duel_resolution_policy: "弾幕決闘規則"
+ duel_resolution_policy_desc: "一対一の弾幕決闘によって異変を解決する。"
+ joint_suppression_policy: "連合鎮圧"
+ joint_suppression_policy_desc: "諸国が連合して行動し、集団の力で異変を鎮圧する。"
+ diplomatic_mediation_policy: "外交調停"
+ diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。"
+
+ ### 診断インタラクション（特殊席状態確認用）
+ th_sages_diagnostic_select_io: "幻想郷国際組織を選択"
+ th_sages_diagnostic_interaction: "賢者席診断"
+ th_sages_diagnostic_interaction_desc: "このインタラクションは幻想郷IOの「賢者」特殊席を保持する国家のみに表示される。特殊席が正しく割り当てられているかの確認用。"
+ th_sages_diagnostic_interaction_act: "賢者席を確認"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]が幻想郷「賢者」特殊席を保持していることを確認した。"
+ th_sages_diagnostic_success_tt: "§G✓ 診断成功§!：この国家は幻想郷IOの「賢者」特殊席（th_gensokyo_io_sages_special_status）を保持している。"
+
+ ### 席アンロック法（仮検証用）
+ th_gensokyo_seat_unlock_law: "席アンロック"
+ th_gensokyo_seat_unlock_law_desc: "制定すると幻想郷の席が解放され、特殊地位の授与が可能になる。"
+ th_gensokyo_seat_unlock_policy: "席アンロック"
+ th_gensokyo_seat_unlock_policy_desc: "発動すると幻想郷席が有効化され、貢献度が最も高い構成国が自動的にその席を獲得する。"
+ th_gensokyo_io_seat_special_status: "幻想郷席"
+ th_gensokyo_io_seat_special_status_desc: "席アンロック法によって有効化される特殊地位。貢献度が最も高い構成国に授与される。"
+
+ ### 賢者議会 — 思潮導入（議会討論）
+ th_sages_council_member_special_status: "賢者席"
+ th_sages_council_member_special_status_desc: "賢者議会の席。三人の最古の賢者が各一席を有し、議会討論において等しい投票権を持つ。"
+
+ th_sages_council_io_parliament: "賢者議会大評議会"
+ th_sages_introduce_institution_issue: "思潮導入"
+ th_sages_introduce_institution_issue_desc: "新たな思潮を全ての賢者の首都に導入する提案。"
+
+ th_sages_introduce_institution: "思潮導入"
+ th_sages_introduce_institution_desc: "世界に出現したが賢者にまだ行き渡っていない思潮を選ぶ。賢者議会で討論が行われ、少なくとも二人の賢者が支持すれば、思潮は各賢者の首都に出現する。"
+ th_sages_introduce_institution_cost: "消耗：[G]500金[/G]（提案者）と [G]幻想郷団結度10[/G]。討論失敗時は返還されない。"
+ th_sages_introduce_institution_notification: "思潮導入を巡り、賢者議会で討論が招集された。"
+ th_sages_pending_institution: "導入予定思潮"
+ th_sages_introduced_institutions: "導入済み思潮"

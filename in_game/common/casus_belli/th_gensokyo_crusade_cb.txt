@@ -1,0 +1,25 @@
+﻿### ============================================================
+### 幻想乡惩戒战争 CB（包围网使用，仅脚本授予）
+### war_goal_type = superiority（教训性质，胜负定战争分数）
+### ============================================================
+
+th_gensokyo_crusade_cb = {
+    years = 5
+
+    create_visible = {
+        always = no
+    }
+    create_enabled = {
+        always = no
+    }
+
+    war_goal_type = superiority
+
+    ai_cede_location_desire = {
+        add = {
+            add = -50
+        }
+    }
+
+    additional_war_enthusiasm = 0.1
+}

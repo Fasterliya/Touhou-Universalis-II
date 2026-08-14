@@ -1,0 +1,174 @@
+### ===========================================================
+### 贤者议会 — 脚本化效果
+### 贤者威望 th_sages_prestige_var (IO变量, 0——100渐变)
+### 五阶阈值: 20/40/60/80/100 — 每阶添加IO修正 (叠加生效)
+### ===========================================================
+
+### -----------------------------------------------------------
+### 贤者威望 增加 (在IO scope上调用)
+### 使用: th_sages_council_prestige_add_effect = { value = 10 }
+### -----------------------------------------------------------
+th_sages_council_prestige_add_effect = {
+	change_variable = {
+		name = th_sages_prestige_var
+		add = $value$
+	}
+	clamp_variable = {
+		name = th_sages_prestige_var
+		min = 0
+		max = 100
+	}
+	th_sages_council_apply_prestige_thresholds_effect = yes
+}
+
+### -----------------------------------------------------------
+### 贤者威望 减少 (在IO scope上调用)
+### 使用: th_sages_council_prestige_subtract_effect = { value = 10 }
+### -----------------------------------------------------------
+th_sages_council_prestige_subtract_effect = {
+	change_variable = {
+		name = th_sages_prestige_var
+		subtract = $value$
+	}
+	clamp_variable = {
+		name = th_sages_prestige_var
+		min = 0
+		max = 100
+	}
+	th_sages_council_apply_prestige_thresholds_effect = yes
+}
+
+### -----------------------------------------------------------
+### 贤者威望阈值应用 — 动态加载/卸载五阶IO修正
+### 每次prestige变更后自动调用
+### 所有达到的阈值同时生效 (叠加)
+### -----------------------------------------------------------
+th_sages_council_apply_prestige_thresholds_effect = {
+	# 先清除所有阈值标记变量 (GUI显示用)
+	remove_variable = th_sages_prestige_tier_20
+	remove_variable = th_sages_prestige_tier_40
+	remove_variable = th_sages_prestige_tier_60
+	remove_variable = th_sages_prestige_tier_80
+	remove_variable = th_sages_prestige_tier_100
+
+	# === 判断并应用各阶修正 ===
+
+	# Tier 20: 威望 ≥ 20
+	if = {
+		limit = {
+			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 20 }
+		}
+		set_variable = th_sages_prestige_tier_20
+		add_international_organization_modifier = {
+			modifier = th_sages_tier_20_modifier
+		}
+	}
+	else = {
+		remove_international_organization_modifier = {
+			modifier = th_sages_tier_20_modifier
+		}
+	}
+
+	# Tier 40: 威望 ≥ 40
+	if = {
+		limit = {
+			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 40 }
+		}
+		set_variable = th_sages_prestige_tier_40
+		add_international_organization_modifier = {
+			modifier = th_sages_tier_40_modifier
+		}
+	}
+	else = {
+		remove_international_organization_modifier = {
+			modifier = th_sages_tier_40_modifier
+		}
+	}
+
+	# Tier 60: 威望 ≥ 60
+	if = {
+		limit = {
+			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 60 }
+		}
+		set_variable = th_sages_prestige_tier_60
+		add_international_organization_modifier = {
+			modifier = th_sages_tier_60_modifier
+		}
+	}
+	else = {
+		remove_international_organization_modifier = {
+			modifier = th_sages_tier_60_modifier
+		}
+	}
+
+	# Tier 80: 威望 ≥ 80
+	if = {
+		limit = {
+			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 80 }
+		}
+		set_variable = th_sages_prestige_tier_80
+		add_international_organization_modifier = {
+			modifier = th_sages_tier_80_modifier
+		}
+	}
+	else = {
+		remove_international_organization_modifier = {
+			modifier = th_sages_tier_80_modifier
+		}
+	}
+
+	# Tier 100: 威望 = 100
+	if = {
+		limit = {
+			check_variable = { name = th_sages_prestige_var compare = greater_than_or_equal value = 100 }
+		}
+		set_variable = th_sages_prestige_tier_100
+		add_international_organization_modifier = {
+			modifier = th_sages_tier_100_modifier
+		}
+	}
+	else = {
+		remove_international_organization_modifier = {
+			modifier = th_sages_tier_100_modifier
+		}
+	}
+}
+
+### -----------------------------------------------------------
+### 贤者议会月度脉冲 — 威望自然变动
+### -----------------------------------------------------------
+th_sages_council_monthly_effect = {
+	# 团结度高 (>50) → 威望每月自然增长
+	th_gensokyo_io = {
+		if = {
+			limit = {
+				check_variable = { name = th_gensokyo_unity_var compare = greater_than_or_equal value = 80 }
+			}
+			th_sages_council_io = {
+				th_sages_council_prestige_add_effect = { value = 2 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { name = th_gensokyo_unity_var compare = greater_than_or_equal value = 60 }
+			}
+			th_sages_council_io = {
+				th_sages_council_prestige_add_effect = { value = 1 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { name = th_gensokyo_unity_var compare = greater_than_or_equal value = 50 }
+			}
+			th_sages_council_io = {
+				th_sages_council_prestige_add_effect = { value = 0 }
+			}
+		}
+		else = {
+			# 团结度低 → 威望衰减
+			th_sages_council_io = {
+				th_sages_council_prestige_subtract_effect = { value = 1 }
+			}
+		}
+	}
+}

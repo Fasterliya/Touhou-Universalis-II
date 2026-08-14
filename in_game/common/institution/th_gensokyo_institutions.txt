@@ -1,0 +1,41 @@
+﻿th_genesis_of_gensokyo_institution = {
+	age = age_1_traditions 
+	
+	
+	can_spawn = {
+		has_owner = yes
+		num_pop_type:clergy > 0
+	}
+	
+	promote_chance = {
+		add = {
+			value = num_pop_type:clergy
+			multiply = 100
+		}
+	}
+	
+	#秒传
+	spread = 0.5
+}
+
+th_gensokyo_fantasy_journey_institution = {
+	age = age_2_renaissance
+	
+	can_spawn = {
+		has_owner = yes
+		owner ?= {
+			culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+		}
+		this = location:th_suzunaan
+	}
+	
+	promote_chance = {
+		add = {
+			value = num_pop_type:clergy
+			multiply = 100
+		}
+	}
+	
+	#秒传
+	spread = 0.5
+}

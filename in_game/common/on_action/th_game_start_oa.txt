@@ -1,0 +1,14 @@
+on_game_start = {
+	on_actions = {
+		th_on_game_start
+	}
+}
+
+th_on_game_start = {
+	effect = {
+		th_gensokyo_history_setup_scr_effect = yes
+		th_gensokyo_fill_province_food_scr_effect = yes
+		th_gensokyo_io_init_setup_scr_effect = yes
+		th_gensokyo_io_assign_special_statuses_effect = yes
+	}
+}

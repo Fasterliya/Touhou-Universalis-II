@@ -1,0 +1,98 @@
+situation_panel = {
+	blockoverride "situation_subheader_content" {}
+
+	blockoverride "situation_panel_main_content" {
+		text_single = {
+			using = Font_Type_Headers
+			using = Font_Size_Big
+			default_format = "#header_titles"
+			text = "TH_CULTURE_CHRONICLE_TITLE"
+		}
+
+		hbox = {
+			parentanchor = hcenter
+			spacing = 12
+
+			button_regular = {
+				size = { 120 32 }
+				text_single = {
+					text = "TH_CULTURE_CHRONICLE_PREV_PAGE"
+				}
+				onclick = "[GetScriptedGui('th_cc_prev_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			text_single = {
+				using = Font_Size_Medium
+				default_format = "#subtle_name"
+				text = "TH_CULTURE_CHRONICLE_PAGE_INDICATOR"
+			}
+			button_regular = {
+				size = { 120 32 }
+				text_single = {
+					text = "TH_CULTURE_CHRONICLE_NEXT_PAGE"
+				}
+				onclick = "[GetScriptedGui('th_cc_next_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+		}
+
+		widget = {
+			layoutpolicy_horizontal = expanding
+			size = { -1 4 }
+		}
+
+		scrollarea = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			size = { -1 600 }
+			scrollbarpolicy_horizontal = always_off
+			scrollbar_vertical = {
+				using = Scrollbar_Vertical
+			}
+			scrollwidget = {
+				vbox = {
+					fixedgridbox = {
+						addcolumn = 100%
+						addrow = 28
+						datamodel = "[GetPlayer.MakeScope.GetList('th_cc_accepted_display')]"
+						item = {
+							widget = {
+								size = { 100% 28 }
+								text_single = {
+									text = "[Scope.GetCulture.GetName]"
+								}
+							}
+						}
+					}
+					fixedgridbox = {
+						addcolumn = 100%
+						addrow = 28
+						datamodel = "[GetPlayer.MakeScope.GetList('th_cc_unaccepted_display')]"
+						item = {
+							widget = {
+								size = { 100% 28 }
+								text_single = {
+									text = "TH_CULTURE_CHRONICLE_UNKNOWN"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		widget = {
+			layoutpolicy_horizontal = expanding
+			size = { -1 4 }
+		}
+
+		button_regular = {
+			parentanchor = hcenter
+			size = { 200 40 }
+			text_single = {
+				text = "TH_CULTURE_CHRONICLE_REFRESH"
+			}
+			onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		expand = {}
+	}
+}

@@ -1,0 +1,47 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 集中数值（平衡调整入口）
+### 数值均为初值，标注待调
+### ============================================================
+
+### 恶名
+th_notorious_decay_monthly_value = { value = 1.0 }        # 恶名自然衰减/月（待调）
+th_notorious_pariah_threshold_value = { value = 50 }      # 弃民一档阈值（待调）
+th_notorious_outcast_threshold_value = { value = 75 }     # 弃民二档阈值（待调）
+th_contribution_pariah_multiplier_value = { value = 0.7 }   # 弃民一档贡献获取系数 x0.7（待调）
+th_contribution_outcast_multiplier_value = { value = 0.4 }  # 弃民二档贡献获取系数 x0.4（待调）
+
+### 宴会（花费走 common/prices/th_gensokyo_feast_price，CD 写死 12 月）
+th_feast_notorious_reduction_value = { value = 10 }        # 宴会减恶名（待调）
+
+### 扩张限制
+th_expansion_quota_limit_value = { value = 4 }             # 合法扩张配额上限 2-4（待调）
+th_expansion_legal_notorious_value = { value = 1 }         # 合法扩张恶名/地块（B6：敌意镜像，量小）
+th_expansion_unlawful_notorious_value = { value = 8 }      # 非法扩张恶名/地块（B6：量更大，待调）
+th_expansion_unlawful_unity_value = { value = 2 }          # 非法扩张扣团结/地块（待调）
+th_expansion_cost_unauthorized_value = { value = 1.5 }     # 独自议会扩张代价 x1.5（待调）
+th_expansion_cost_incident_value = { value = 1.25 }        # 异变扩张代价 x1.25（待调）
+th_expansion_cost_authorized_value = { value = 0.25 }      # 贤者授权扩张代价 x0.25（待调）
+
+### 惩戒战争
+th_crusade_antagonism_threshold_value = { value = 50 }     # 提案敌意阈值（待调）
+th_crusade_sin_battle_value = { value = 5 }                # 战斗胜利罪值（备用固定值，现按 war_score 折算）
+th_crusade_sin_monthly_value = { value = 1 }               # 战争时长罪/月（待调）
+th_crusade_sin_refusal_value = { value = 10 }              # 拒绝议和罪（待调）
+th_sin_tier1_value = { value = 0 }                          # 罪值零档边界（sin_low/mid1 触发器引用；P1-17 修复补定义，当前触发器无调用）
+th_sin_tier2_value = { value = 50 }                        # 判决档位阈值：轻判 <50 / 中判 50-75 / 重判 >=75
+th_sin_tier3_value = { value = 75 }                        # 判决档位阈值 3（重判门槛）
+th_sentence_base_years_value = { value = 20 }              # 监管基础刑期（年）
+th_sentence_max_years_value = { value = 30 }               # 监管最大刑期（年）
+th_join_contribution_value = { value = 5 }                 # 加入惩戒战争获贡献（C1）
+th_unity_crusade_settled_value = { value = 5 }             # 惩戒战争平息奖励团结（C2）
+
+### 团结度
+th_unity_sentence_t1_value = { value = 5 }               # 轻判扣团结（待调）
+th_unity_sentence_t2_value = { value = 10 }              # 中判扣团结（待调）
+th_unity_sentence_t3_value = { value = 15 }              # 重判扣团结（待调）
+th_unity_verdict_reward_value = { value = 10 }           # 审判完成奖励团结（C5：有序 10 / 劝善 8 / 因果必尝 12）
+th_unity_release_reward_value = { value = 5 }              # 刑满释放奖励团结（待调）
+th_unity_free_city_annex_value = { value = 10 }            # 吞并自由市扣团结（待调）
+th_unity_big_war_value = { value = 5 }                     # 大规模战争扣团结（未启用 B6，指代范围待定）
+th_unity_invasion_value = { value = 10 }                   # 外界入侵扣团结（待调）
+th_unity_members_multiplier_value = { value = 0.002 }      # 成员数团结加成系数/成员（C4，给低点）

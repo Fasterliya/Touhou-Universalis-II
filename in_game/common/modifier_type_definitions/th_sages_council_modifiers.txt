@@ -1,0 +1,47 @@
+# ### ============================================================
+# ### 贤者议会 — 五阶阈值修正定义
+# ### 作用域: country (通过IO member_modifier施加于三贤者国)
+# ### ============================================================
+
+# ### Tier 20 — 初显 (威望≥20)
+# th_sages_tier_20_modifier = {
+#     global_tax_modifier = 0.03
+#     monthly_legitimacy = 0.05
+# }
+
+# ### Tier 40 — 凝聚 (威望≥40)
+# th_sages_tier_40_modifier = {
+#     global_tax_modifier = 0.05
+#     monthly_legitimacy = 0.08
+#     improve_relation_modifier = 0.15
+# }
+
+# ### Tier 60 — 威严 (威望≥60)
+# th_sages_tier_60_modifier = {
+#     global_tax_modifier = 0.08
+#     monthly_legitimacy = 0.10
+#     improve_relation_modifier = 0.20
+#     monthly_prestige = 0.10
+#     global_manpower_modifier = 0.05
+# }
+
+# ### Tier 80 — 崇敬 (威望≥80)
+# th_sages_tier_80_modifier = {
+#     global_tax_modifier = 0.10
+#     monthly_legitimacy = 0.15
+#     improve_relation_modifier = 0.25
+#     monthly_prestige = 0.20
+#     global_manpower_modifier = 0.10
+#     diplomatic_reputation = 1
+# }
+
+# ### Tier 100 — 神话 (威望=100)
+# th_sages_tier_100_modifier = {
+#     global_tax_modifier = 0.15
+#     monthly_legitimacy = 0.20
+#     improve_relation_modifier = 0.35
+#     monthly_prestige = 0.30
+#     global_manpower_modifier = 0.15
+#     diplomatic_reputation = 2
+#     monthly_stability = 0.05
+# }

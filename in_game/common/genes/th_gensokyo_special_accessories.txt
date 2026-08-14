@@ -1,0 +1,1756 @@
+﻿#技术提示-基因组和肖像
+accessory_genes = {	
+	#请注意-每个肖像组都从1开始，0复制改名就行，最多不要超过255
+	th_gensokyo_portrait_group_1 = {	#这是术力口肖像组，虽然应该不至于
+		#但我还是留了一个_1
+		gene_acgv_touhou_blank_1 = {
+			index = 0
+		}
+
+		touhou_marisa = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 1
+			male = { 1 = touhou_marisa }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_alice = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 2
+			male = { 1 = touhou_alice }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_shinki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 3
+			male = { 1 = touhou_shinki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_yukari = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 4
+			male = { 1 = touhou_yukari }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		#
+		touhou_kana = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 5
+			male = { 1 = touhou_kana }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_rikako = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 6
+			male = { 1 = touhou_rikako }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_elis = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 7
+			male = { 1 = touhou_elis }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_ellen = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 8
+			male = { 1 = touhou_ellen }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_elly = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 9
+			male = { 1 = touhou_elly }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		#
+		touhou_gengetsu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 10
+			male = { 1 = touhou_gengetsu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_genjii = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 11
+			male = { 1 = touhou_genjii }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kiruri = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 12
+			male = { 1 = touhou_kiruri }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kitashirakawa = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 13
+			male = { 1 = touhou_kitashirakawa }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_konngara = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 14
+			male = { 1 = touhou_konngara }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		#
+		touhou_kotohime = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 15
+			male = { 1 = touhou_kotohime }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kiruri = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 16
+			male = { 1 = touhou_kiruri }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_luize = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 17
+			male = { 1 = touhou_luize }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_mai = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 18
+			male = { 1 = touhou_mai }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_meira = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 19
+			male = { 1 = touhou_meira }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		#
+		touhou_mima = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 20
+			male = { 1 = touhou_mima }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_mugetsu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 21
+			male = { 1 = touhou_mugetsu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yumemi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 22
+			male = { 1 = touhou_yumemi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_old_reimu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 23
+			male = { 1 = touhou_old_reimu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_orange = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 24
+			male = { 1 = touhou_orange }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		#
+		touhou_rika = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 25
+			male = { 1 = touhou_rika }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_rin = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 26
+			male = { 1 = touhou_rin }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_sara = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 27
+			male = { 1 = touhou_sara }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_sariel = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 28
+			male = { 1 = touhou_sariel }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_yuki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 29
+			male = { 1 = touhou_yuki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_yumeko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 30
+			male = { 1 = touhou_yumeko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_cirno = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 31
+			male = { 1 = touhou_cirno }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_daiyousei = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 32
+			male = { 1 = touhou_daiyousei }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_devil = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 33
+			male = { 1 = touhou_devil }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_eirin = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 34
+			male = { 1 = touhou_eirin }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_flandre = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 35
+			male = { 1 = touhou_flandre }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_jyoon = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 36
+			male = { 1 = touhou_jyoon }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_kaguya = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 37
+			male = { 1 = touhou_kaguya }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_keine = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 38
+			male = { 1 = touhou_keine }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_kokoro = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 39
+			male = { 1 = touhou_kokoro }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_lorelei = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 40
+			male = { 1 = touhou_lorelei }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_meirin = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 41
+			male = { 1 = touhou_meirin }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_mokou = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 42
+			male = { 1 = touhou_mokou }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_patchouli = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 43
+			male = { 1 = touhou_patchouli }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_reimilia = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 44
+			male = { 1 = touhou_reimilia }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_reisen = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 45
+			male = { 1 = touhou_reisen }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_rumia = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 46
+			male = { 1 = touhou_rumia }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_sakuya = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 47
+			male = { 1 = touhou_sakuya }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_shion = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 48
+			male = { 1 = touhou_shion }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_suika = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 49
+			male = { 1 = touhou_suika }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_sumireko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 50
+			male = { 1 = touhou_sumireko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_tenshi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 51
+			male = { 1 = touhou_tenshi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_tewi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 52
+			male = { 1 = touhou_tewi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_wriggle = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 53
+			male = { 1 = touhou_wriggle }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_akyuu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 54
+			male = { 1 = touhou_akyuu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		
+		touhou_aya = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 55
+			male = { 1 = touhou_aya }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_chimata = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 56
+			male = { 1 = touhou_chimata }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_hatate = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 57
+			male = { 1 = touhou_hatate }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_hearn = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 58
+			male = { 1 = touhou_hearn }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_hina = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 59
+			male = { 1 = touhou_hina }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_iku = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 60
+			male = { 1 = touhou_iku }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_kasen = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 61
+			male = { 1 = touhou_kasen }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_komachi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 62
+			male = { 1 = touhou_komachi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_kosuzu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 63
+			male = { 1 = touhou_kosuzu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_lunar = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 64
+			male = { 1 = touhou_lunar }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_megumu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 65
+			male = { 1 = touhou_megumu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_melancholy = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 66
+			male = { 1 = touhou_melancholy }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_mike = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 67
+			male = { 1 = touhou_mike }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_minoriko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 68
+			male = { 1 = touhou_minoriko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_misumaru = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 69
+			male = { 1 = touhou_misumaru }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_miyoi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 70
+			male = { 1 = touhou_miyoi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_mizuchi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 71
+			male = { 1 = touhou_mizuchi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_momizi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 72
+			male = { 1 = touhou_momizi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_momoyo = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 73
+			male = { 1 = touhou_momoyo }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_nitori = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 74
+			male = { 1 = touhou_nitori }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_reading = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 75
+			male = { 1 = touhou_reading }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_renko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 76
+			male = { 1 = touhou_renko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_rinnosuke = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 77
+			male = { 1 = touhou_rinnosuke }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_sanae = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 78
+			male = { 1 = touhou_sanae }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_sannyo = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 79
+			male = { 1 = touhou_sannyo }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_shikieiki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 80
+			male = { 1 = touhou_shikieiki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_sizuha = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 81
+			male = { 1 = touhou_sizuha }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_star = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 82
+			male = { 1 = touhou_star }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_sunny = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 83
+			male = { 1 = touhou_sunny }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_suwako = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 84
+			male = { 1 = touhou_suwako }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_takane = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 85
+			male = { 1 = touhou_takane }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_teller = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 86
+			male = { 1 = touhou_teller }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_toyohime = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 87
+			male = { 1 = touhou_toyohime }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_tsukasa = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 88
+			male = { 1 = touhou_tsukasa }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_yorihime = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 89
+			male = { 1 = touhou_yorihime }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_yuka = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 90
+			male = { 1 = touhou_yuka }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_kanako = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 91
+			male = { 1 = touhou_kanako }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		#92 -135  +43
+		touhou_nemuno = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 92
+			male = { 1 = touhou_nemuno }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_nue = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 93
+			male = { 1 = touhou_nue }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_okina = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 94
+			male = { 1 = touhou_okina }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_parsee = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 95
+			male = { 1 = touhou_parsee }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_raiko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 96
+			male = { 1 = touhou_raiko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_rin_chi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 97
+			male = { 1 = touhou_rin_chi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_ringo = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 98
+			male = { 1 = touhou_ringo }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_sagume = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 99
+			male = { 1 = touhou_sagume }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_satono = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 100
+			male = { 1 = touhou_satono }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_satori = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 101
+			male = { 1 = touhou_satori }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_seiga = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 102
+			male = { 1 = touhou_seiga }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_seiran = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 103
+			male = { 1 = touhou_seiran }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_sejia = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 104
+			male = { 1 = touhou_sejia }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_sekibanki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 105
+			male = { 1 = touhou_sekibanki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_shinmyoumaru = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 106
+			male = { 1 = touhou_shinmyoumaru }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_shou = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 107
+			male = { 1 = touhou_shou }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_toziko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 108
+			male = { 1 = touhou_toziko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_utuho = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 109
+			male = { 1 = touhou_utuho }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_wakasagihime = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 110
+			male = { 1 = touhou_wakasagihime }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yamame = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 111
+			male = { 1 = touhou_yamame }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_aunn = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 112
+			male = { 1 = touhou_aunn }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_bayakuren = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 113
+			male = { 1 = touhou_bayakuren }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_benben = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 114
+			male = { 1 = touhou_benben }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_clownpiece = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 115
+			male = { 1 = touhou_clownpiece }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_doremy = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 116
+			male = { 1 = touhou_doremy }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_futo = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 117
+			male = { 1 = touhou_futo }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_hecatia = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 118
+			male = { 1 = touhou_hecatia }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_junko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 119
+			male = { 1 = touhou_junko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kagerou = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 120
+			male = { 1 = touhou_kagerou }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kisume = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 121
+			male = { 1 = touhou_kisume }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kogasa = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 122
+			male = { 1 = touhou_kogasa }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_koishi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 123
+			male = { 1 = touhou_koishi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kyouko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 124
+			male = { 1 = touhou_kyouko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_larva = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 125
+			male = { 1 = touhou_larva }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_mai_tian = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 126
+			male = { 1 = touhou_mai_tian }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_mamizu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 127
+			male = { 1 = touhou_mamizu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_miku = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 128
+			male = { 1 = touhou_miku }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_minamitu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 129
+			male = { 1 = touhou_minamitu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_narumi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 130
+			male = { 1 = touhou_narumi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_nazrin = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 131
+			male = { 1 = touhou_nazrin }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yatsuhashi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 132
+			male = { 1 = touhou_yatsuhashi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yoshika = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 133
+			male = { 1 = touhou_yoshika }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yugi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 134
+			male = { 1 = touhou_yugi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_ichiri = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 135
+			male = { 1 = touhou_ichiri }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		touhou_kurumi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 136
+			male = { 1 = touhou_kurumi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		####137
+		touhou_biten = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 137
+			male = { 1 = touhou_biten }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_chen = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 138
+			male = { 1 = touhou_chen }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_chiyari = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 139
+			male = { 1 = touhou_chiyari }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_eika = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 140
+			male = { 1 = touhou_eika }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_enoko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 141
+			male = { 1 = touhou_enoko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_hisami = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 142
+			male = { 1 = touhou_hisami }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_keiki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 143
+			male = { 1 = touhou_keiki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_kutaka = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 144
+			male = { 1 = touhou_kutaka }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_letty = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 145
+			male = { 1 = touhou_letty }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_lily_b = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 146
+			male = { 1 = touhou_lily_b }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_lily_w = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 147
+			male = { 1 = touhou_lily_w }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_lunasa = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 148
+			male = { 1 = touhou_lunasa }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_lyrica = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 149
+			male = { 1 = touhou_lyrica }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_mayumi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 150
+			male = { 1 = touhou_mayumi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_merlin = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 151
+			male = { 1 = touhou_merlin }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_ran = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 152
+			male = { 1 = touhou_ran }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_reisen_2 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 153
+			male = { 1 = touhou_reisen_2 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_saki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 154
+			male = { 1 = touhou_saki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_urumi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 155
+			male = { 1 = touhou_urumi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yachie = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 156
+			male = { 1 = touhou_yachie }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_youmu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 157
+			male = { 1 = touhou_youmu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yuma = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 158
+			male = { 1 = touhou_yuma }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_yuyuko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 159
+			male = { 1 = touhou_yuyuko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_zanmu = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 160
+			male = { 1 = touhou_zanmu }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		####
+		touhou_ariya = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 161
+			male = { 1 = touhou_ariya }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_asama = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 162
+			male = { 1 = touhou_asama }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_chimi = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 163
+			male = { 1 = touhou_chimi }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_dolls1 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 164
+			male = { 1 = touhou_dolls1 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_jacket = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 165
+			male = { 1 = touhou_jacket }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_label = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 166
+			male = { 1 = touhou_label }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_layla = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 167
+			male = { 1 = touhou_layla }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_nareko = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 168
+			male = { 1 = touhou_nareko }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_nina = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 169
+			male = { 1 = touhou_nina }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_ubame = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 170
+			male = { 1 = touhou_ubame }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_youki = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 171
+			male = { 1 = touhou_youki }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+
+		##############
+		##PASSER
+		touhou_passer1 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 200
+			male = { 1 = touhou_passer1 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer2 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 201
+			male = { 1 = touhou_passer2 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer3 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 202
+			male = { 1 = touhou_passer3 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer4 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 203
+			male = { 1 = touhou_passer4 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer5 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 204
+			male = { 1 = touhou_passer5 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer6 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 205
+			male = { 1 = touhou_passer6 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer7 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 206
+			male = { 1 = touhou_passer7 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer8 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 207
+			male = { 1 = touhou_passer8 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer9 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 208
+			male = { 1 = touhou_passer9 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer10 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 209
+			male = { 1 = touhou_passer10 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer11 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 210
+			male = { 1 = touhou_passer11 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer12 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 211
+			male = { 1 = touhou_passer12 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer13 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 212
+			male = { 1 = touhou_passer13 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		touhou_passer14 = {	#比如我想往术力口的肖像组里加人，就是照着这个改
+			index = 213
+			male = { 1 = touhou_passer14 }
+			female = male
+			boy = male
+			girl = male
+			adolescent_boy = male
+			adolescent_girl = male
+		}
+		# dummy_portrait_2 ...
+	}
+}

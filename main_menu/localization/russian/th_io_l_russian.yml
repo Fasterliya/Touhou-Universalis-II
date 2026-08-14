@@ -1,0 +1,90 @@
+﻿l_russian:
+### ============================================================
+### Touhou-Universalis-II Russian Localization
+### Автоматический перевод (машинный) — глоссарий согласован
+### ============================================================
+ th_human_village_io:"Деревня людей"
+ th_human_village_io_desc:"Конфедерация, образованная государствами в регионах Деревни людей и храма Мёдэн."
+ th_gensokyo_io:"Генсокё"
+ th_gensokyo_io_desc:"Международная организация, поддерживающая равновесие Генсокё, в которой мудрецы и Яма совместно поддерживают порядок Великого барьера."
+ th_sages_council_io:"Совет мудрецов"
+ th_sages_council_io_desc:"Высший совещательный орган, сформированный тремя древнейшими мудрецами Генсокё."
+
+### Special Statuses
+ th_gensokyo_io_sages_special_status:"Мудрец"
+ th_gensokyo_io_sages_special_status_desc:"Один из трёх древнейших мудрецов Генсокё, охраняющий ключевой узел Великого барьера."
+ th_gensokyo_io_yama_special_status:"Яма"
+ th_gensokyo_io_yama_special_status_desc:"Судья, вершащий суд в Хигане, разрешающий тяжбы между государствами Генсокё и служащий главой Парламента Генсокё."
+ th_gensokyo_io_guardian_special_status:"Хранительница Генсокё"
+ th_gensokyo_io_guardian_special_status_desc:"Жрица святилища Хакурей, вечная хранительница Великого барьера. Сила Хакурей, передаваемая из поколения в поколение, поддерживает границу между Генсокё и Внешним миром."
+ th_gensokyo_io_human_village_special_status:"Деревня людей"
+ th_gensokyo_io_human_village_special_status_desc:"Представители Деревни людей, защищающие интересы человеческих поселений Генсокё."
+ th_gensokyo_io_yama_leader_title:"Яма"
+
+### IO Variables (engine reads display name + piechart + monthly change descriptions from here)
+ th_gensokyo_unity_var:"Единство Генсокё"
+ th_gensokyo_unity_var_desc:"Показатель сплочённости между странами Генсокё, получаемый за разрешение инцидентов и мирное развитие, и уменьшаемый из-за агрессивной экспансии и внешних вторжений."
+ TH_GENSOKYO_UNITY_FORMAT:"$VAL$"
+ VARIABLE_CHANGE_FORMAT:"$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE:"Содержание базы"
+ TH_GENSOKYO_UNITY_FROM_PEACE:"Внутренний мир"
+
+### Country Variables
+ th_gensokyo_personal_contribution_var:"Личный вклад"
+ th_gensokyo_personal_influence_var:"Личное влияние"
+ th_gensokyo_notorious_reputation_var:"Дурная слава Генсокё"
+
+### Laws
+ th_gensokyo_unity_vision_law:"Видение единства"
+ th_gensokyo_unity_vision_law_desc:"Определяет направление, в котором развивается и применяется единство Генсокё."
+ th_gensokyo_barrier_policy_law:"Политика Великого барьера"
+ th_gensokyo_barrier_policy_law_desc:"Определяет интенсивность поддержания и степень открытости Великого барьера Генсокё."
+ th_gensokyo_incident_response_law:"Доктрина реагирования на инциденты"
+ th_gensokyo_incident_response_law_desc:"Определяет стратегию и кодекс поведения при реагировании на инциденты в Генсокё."
+ isolation_defense_policy:"Оборонительная изоляция"
+ isolation_defense_policy_desc:"Плотно запечатать Великий барьер, укрепляя единство через внутренний мир."
+ balance_path_policy:"Путь равновесия"
+ balance_path_policy_desc:"Поддерживать Великий барьер таким, каким он всегда был — беспристрастным и устойчивым."
+ open_inclusive_policy:"Открытая инклюзивность"
+ open_inclusive_policy_desc:"Ослабить ограничения Великого барьера, чтобы приветствовать новые идеи извне."
+ reinforced_barrier_policy:"Усиленный барьер"
+ reinforced_barrier_policy_desc:"Вложить силы всего Генсокё в усиление Великого барьера."
+ maintained_barrier_policy:"Поддерживаемый барьер"
+ maintained_barrier_policy_desc:"Поддерживать Великий барьер согласно устоявшимся традициям."
+ relaxed_barrier_policy:"Ослабленный барьер"
+ relaxed_barrier_policy_desc:"Умеренно ослабить ограничения Великого барьера, чтобы облегчить обмен."
+ duel_resolution_policy:"Правила дуэлей данмаку"
+ duel_resolution_policy_desc:"Разрешать инциденты в дуэлях данмаку один на один."
+ joint_suppression_policy:"Совместное подавление"
+ joint_suppression_policy_desc:"Страны действуют сообща, подавляя инциденты коллективной силой."
+ diplomatic_mediation_policy:"Дипломатическое посредничество"
+ diplomatic_mediation_policy_desc:"Разрешать коренные причины инцидентов через переговоры и посредничество."
+
+### Diagnostic Interaction (Verify special status assignment)
+ th_sages_diagnostic_select_io:"Выбрать Международную организацию Генсокё."
+ th_sages_diagnostic_interaction:"Диагностика статуса мудреца."
+ th_sages_diagnostic_interaction_desc:"Это взаимодействие видно только странам, обладающим особым статусом «Мудрец» в МО Генсокё. Используется для проверки корректности назначения особого статуса."
+ th_sages_diagnostic_interaction_act:"Подтвердить статус мудреца."
+ th_sages_diagnostic_interaction_effect_text:"[SCOPE.sCountry('actor').GetName] подтверждает наличие особого статуса «Мудрец» в Генсокё."
+ th_sages_diagnostic_success_tt:"[G]Диагностика успешна[/G]! Эта страна обладает особым статусом «Мудрец» (th_gensokyo_io_sages_special_status) в МО Генсокё."
+
+### Seat Unlock Law (placeholder verification)
+ th_gensokyo_seat_unlock_law:"Разблокировка места."
+ th_gensokyo_seat_unlock_law_desc:"При принятии открывает место в Генсокё, позволяя даровать особый статус."
+ th_gensokyo_seat_unlock_policy:"Разблокировка места."
+ th_gensokyo_seat_unlock_policy_desc:"Пока действует, активирует место Генсокё; участник с наибольшим вкладом автоматически получает его."
+ th_gensokyo_io_seat_special_status:"Место Генсокё."
+ th_gensokyo_io_seat_special_status_desc:"Особый статус, активируемый законом «Разблокировка места», присуждаемый участнику с наибольшим вкладом."
+
+### Sages' Council — Introduce Institution (debate-based)
+ th_sages_council_member_special_status:"Место мудреца."
+ th_sages_council_member_special_status_desc:"Место в Совете мудрецов, принадлежащее трём древнейшим мудрецам. Каждое место обладает равным правом голоса в дебатах Совета."
+ th_sages_council_io_parliament:"Заседание Совета мудрецов."
+ th_sages_introduce_institution_issue:"Внедрить институт"
+ th_sages_introduce_institution_issue_desc:"Предложение о введении нового института в столицы всех мудрецов."
+ th_sages_introduce_institution:"Внедрить институт"
+ th_sages_introduce_institution_desc:"Выберите институт, который появился в мире, но ещё не достиг всех мудрецов. В Совете мудрецов состоятся дебаты; если его поддержат как минимум два мудреца, институт появится в столице каждого мудреца."
+ th_sages_introduce_institution_cost:"Стоимость: [G]500 золота[/G] (инициатор) и [G]10 единства Генсокё[/G]. Ресурсы не возвращаются, если дебаты провалятся."
+ th_sages_introduce_institution_notification:"В Совете мудрецов созваны дебаты о введении института."
+ th_sages_pending_institution:"Институт на рассмотрении."
+ th_sages_introduced_institutions:"Введённые институты"

@@ -1,0 +1,8 @@
+﻿th_gensokyo_language_family = {
+	#技术提示-语族定义：这里基本不决定任何东西，只决定地图颜色
+	color = map_romance_language_family
+}
+
+th_lunar_language_family = {
+	color = rgb { 246 247 232 }
+}

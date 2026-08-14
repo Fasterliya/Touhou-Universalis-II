@@ -1,0 +1,61 @@
+﻿### 幻想乡IO — 月度脉冲
+
+### 注册到 monthly_country_pulse
+monthly_country_pulse = {
+    on_actions = {
+        th_gensokyo_io_monthly_country_pulse
+    }
+}
+
+### ============================================================
+### 成员国月度脉冲
+### ============================================================
+th_gensokyo_io_monthly_country_pulse = {
+    trigger = {
+        is_member_of_international_organization = th_gensokyo_io
+    }
+    effect = {
+        ### 个人贡献度 = 税基/1000 + 弹幕火力/2000
+        ### TODO: danmaku_power 字段待后续人工定义
+        set_variable = {
+            name = th_gensokyo_temp_contribution
+            value = modifier:country_tax_base
+        }
+        change_variable = {
+            name = th_gensokyo_temp_contribution
+            divide = 1000
+        }
+        ### 弃民惩罚系数（链条系统挂载：恶名>=75 贡献x0.4，>=50 贡献x0.7）
+        if = {
+            limit = {
+                root.var:th_gensokyo_notorious_reputation_var >= th_notorious_outcast_threshold_value
+            }
+            change_variable = {
+                name = th_gensokyo_temp_contribution
+                multiply = th_contribution_outcast_multiplier_value
+            }
+        }
+        else_if = {
+            limit = {
+                root.var:th_gensokyo_notorious_reputation_var >= th_notorious_pariah_threshold_value
+            }
+            change_variable = {
+                name = th_gensokyo_temp_contribution
+                multiply = th_contribution_pariah_multiplier_value
+            }
+        }
+        th_gensokyo_io_contribution_var_add_effect = {
+            value = var:th_gensokyo_temp_contribution
+        }
+
+        ### 个人影响力受恶名惩罚
+        ### 恶名越高 → 影响力获取越少
+        ### TODO: 精确衰减公式由后续人工开发
+
+        ### 为IO贡献团结度（受 auto_gain_modifier 影响）
+        ### TODO: 精确公式由后续人工开发
+
+        ### 时代变更时清除个人影响力
+        ### TODO: 由后续人工开发通过 on_age_change 钩子实现
+    }
+}

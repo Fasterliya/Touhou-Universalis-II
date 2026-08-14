@@ -1,0 +1,37 @@
+﻿### ============================================================
+### 幻想乡IO 惩戒战争议题
+### 发起: 阎魔（selectable_for 限定）；投票: 阎魔+贤者（power 均分 800，2 票过）
+### 通过: 启动惩戒局势（目标国由标记 th_gensokyo_crusade_target_mark 定位，标记保留至局势结束）
+### ============================================================
+
+th_gensokyo_crusade_issue = {
+    type = international_organization
+    special_status = th_gensokyo_io_yama_special_status
+
+    potential = {
+        always = yes
+    }
+    allow = {
+        always = yes
+    }
+    selectable_for = {
+        is_leader_of_international_organization = scope:recipient
+    }
+    chance = 100
+
+    on_debate_passed = {
+        international_organization:th_gensokyo_io = {
+            enable_situation_effect = {
+                type = th_gensokyo_crusade
+            }
+        }
+    }
+
+    on_debate_failed = {
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+    }
+}

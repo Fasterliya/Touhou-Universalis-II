@@ -1,0 +1,313 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 — 事件钩子
+### 非法扩张检测 / 自由市吞并惩罚 / 罪值累积（4B 追加）
+### ============================================================
+
+### === 和约夺地（root=winner, scope:location/winner/loser） ===
+### 注：反杀判定已改由反杀条约 th_gensokyo_crusade_counter 承担（B3 决策），代理判定已移除
+on_took_location_in_peace_treaty = {
+    on_actions = {
+        th_gensokyo_unlawful_expansion_check
+        th_gensokyo_free_city_cede_check
+    }
+}
+
+th_gensokyo_unlawful_expansion_check = {
+    trigger = {
+        scope:winner = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        scope:loser = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                th_gensokyo_has_authorized_expansion_trigger
+            }
+            ### 合法扩张：消耗配额 1 块 + 少量恶名（B6：敌意镜像，量小）
+            change_variable = {
+                name = th_gensokyo_expansion_quota_used
+                add = 1
+            }
+            th_gensokyo_io_notorious_reputation_var_add_effect = {
+                value = th_expansion_legal_notorious_value
+            }
+        }
+        else = {
+            ### 非法扩张：惩罚链（恶名量更大，B6）
+            scope:loser = {
+                save_scope_as = expansion_victim
+            }
+            th_gensokyo_expansion_punish_effect = {
+                value = th_expansion_unlawful_notorious_value
+                unity = th_expansion_unlawful_unity_value
+            }
+            change_variable = {
+                name = th_gensokyo_expansion_quota_used
+                add = 1
+            }
+        }
+    }
+}
+
+### === 自由市割让（B1：战争条约割让人类国家地块 = 强制吞并） ===
+### 地块本身已有引擎敌意（成员夺地自动），此处追加：额外 +500% 敌意（bias 值体现）+ 恶名获取 x500%（x6 增幅）
+th_gensokyo_free_city_cede_check = {
+    trigger = {
+        scope:loser = {
+            th_gensokyo_is_free_city_trigger
+        }
+    }
+    effect = {
+        ### 巨额敌意（bias 1250 ≈ 基础 x6，体现 500% 增幅，待调）
+        ### 方向修复 2026-08-14：add_antagonism 语义 = target 对 root 增加敌意（用户实测），
+        ### 故在扩张者（root=winner）处执行、target=受害方
+        add_antagonism = {
+            target = scope:loser
+            modifier = th_antagonism_free_city_annex
+        }
+        ### 恶名 x500% 增幅（基础非法恶名 x6，clamp 0-100）
+        set_variable = {
+            name = th_gensokyo_temp_notorious
+            value = th_expansion_unlawful_notorious_value
+        }
+        change_variable = {
+            name = th_gensokyo_temp_notorious
+            multiply = 6
+        }
+        th_gensokyo_io_notorious_reputation_var_add_effect = {
+            value = var:th_gensokyo_temp_notorious
+        }
+        remove_variable = th_gensokyo_temp_notorious
+        ### 人间之里被侵占 → 团结扣减
+        international_organization:th_gensokyo_io = {
+            th_gensokyo_unity_subtract_effect = {
+                value = th_unity_free_city_annex_value
+            }
+        }
+    }
+}
+
+### === 战斗胜利（root = 胜利国，scope:actor = 胜利军队，见 base game _hardcoded.txt:2783） → 罪值累积（目标国赢战斗 = 屠杀联军军队） ===
+### 按战果折算：罪 += scope:war_score（on_battle_won 提供，_hardcoded.txt:2789）
+### 退路：若 scope:war_score 折算异常，改回固定值 th_crusade_sin_battle_value
+### P1-09 修复：root 是胜利国而非军队，直接判定/累加，不再经 owner 链
+on_battle_won = {
+    on_actions = {
+        th_gensokyo_sin_battle_check
+    }
+}
+
+th_gensokyo_sin_battle_check = {
+    trigger = {
+        has_variable = th_gensokyo_crusade_target_mark
+    }
+    effect = {
+        change_variable = {
+            name = th_gensokyo_sin_var
+            add = scope:war_score
+        }
+        clamp_variable = {
+            name = th_gensokyo_sin_var
+            min = 0
+            max = 100
+        }
+    }
+}
+
+### === 拒绝强制和平（调停被拒） → 罪值累积 ===
+on_enforce_peace_declined = {
+    on_actions = {
+        th_gensokyo_sin_refusal_check
+    }
+}
+
+th_gensokyo_sin_refusal_check = {
+    trigger = {
+        OR = {
+            has_variable = th_gensokyo_crusade_target_mark
+            scope:recipient = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            change_variable = {
+                name = th_gensokyo_sin_var
+                add = th_crusade_sin_refusal_value
+            }
+            clamp_variable = {
+                name = th_gensokyo_sin_var
+                min = 0
+                max = 100
+            }
+        }
+        else_if = {
+            limit = {
+                scope:recipient = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+            scope:recipient = {
+                change_variable = {
+                    name = th_gensokyo_sin_var
+                    add = th_crusade_sin_refusal_value
+                }
+                clamp_variable = {
+                    name = th_gensokyo_sin_var
+                    min = 0
+                    max = 100
+                }
+            }
+        }
+    }
+}
+
+### === 反杀检测已移除（B3 决策：反杀唯一判定 = 反杀条约 th_gensokyo_crusade_counter） ===
+
+### === 自由市保护（B7 修正 2026-08-07：除贤者与自由市外全部触发三贤者参战） ===
+### 触发对象 = 除人类村落成员和贤者以外的所有国家（含阎魔/IO 普通成员/外界）
+### 豁免: 贤者攻击自由市 / 人类村落互相吞并（只吃惩罚链，不触发贤者参战）
+on_war_declared = {
+    on_actions = {
+        th_gensokyo_free_city_protection_check
+        th_gensokyo_invasion_check
+    }
+}
+
+th_gensokyo_free_city_protection_check = {
+    trigger = {
+        scope:recipient = {
+            th_gensokyo_is_free_city_trigger
+        }
+        ### C1 修复 2026-08-14：宣战国判定改显式 scope:actor（on_war_declared 的 root 语义未证，
+        ### _hardcoded 注释仅称"root = country"；显式引用消除 root 依赖）
+        scope:actor = {
+            NOT = {
+                th_gensokyo_is_sage_trigger
+            }
+            NOT = {
+                th_gensokyo_is_free_city_trigger
+            }
+        }
+    }
+    effect = {
+        ### 三位贤者以防御方自动加入战争（神罗皇帝同款保护）
+        ### C2 修复 2026-08-14：收敛为 base game 27 处先例公共子集 { war = scope:war }；
+        ### reason(自定义 loc 键)/ignore_rules 在 join_war_as_defender 无先例，实测不触发时移除
+        every_country = {
+            limit = {
+                th_gensokyo_is_sage_trigger
+            }
+            join_war_as_defender = {
+                war = scope:war
+            }
+        }
+    }
+}
+
+### === 外界入侵：非 IO 成员对成员宣战 → 团结扣减 ===
+th_gensokyo_invasion_check = {
+    trigger = {
+        scope:recipient = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### C1 修复：宣战国判定显式 scope:actor
+        scope:actor = {
+            NOT = {
+                is_member_of_international_organization = international_organization:th_gensokyo_io
+            }
+        }
+    }
+    effect = {
+        international_organization:th_gensokyo_io = {
+            th_gensokyo_unity_subtract_effect = {
+                value = th_unity_invasion_value
+            }
+        }
+    }
+}
+
+on_annex = {
+    on_actions = {
+        th_gensokyo_unlawful_annex_check
+    }
+}
+
+th_gensokyo_unlawful_annex_check = {
+    trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+        scope:target = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    effect = {
+        ### 自由市吞并：巨型敌意 + 团结扣 + 恶名 x500% 增幅（x6）
+        if = {
+            limit = {
+                scope:target = {
+                    th_gensokyo_is_free_city_trigger
+                }
+            }
+            scope:target = {
+                save_scope_as = expansion_victim
+            }
+            ### 方向修复 2026-08-14：add_antagonism = target 对 root 增加敌意 → 在吞并者（root）处执行
+            add_antagonism = {
+                target = scope:target
+                modifier = th_antagonism_free_city_annex
+            }
+            set_variable = {
+                name = th_gensokyo_temp_notorious
+                value = th_expansion_unlawful_notorious_value
+            }
+            change_variable = {
+                name = th_gensokyo_temp_notorious
+                multiply = 6
+            }
+            th_gensokyo_io_notorious_reputation_var_add_effect = {
+                value = var:th_gensokyo_temp_notorious
+            }
+            remove_variable = th_gensokyo_temp_notorious
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_free_city_annex_value
+                }
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    NOT = {
+                        th_gensokyo_has_authorized_expansion_trigger
+                    }
+                }
+                ### 常规非法吞并：惩罚链
+                scope:target = {
+                    save_scope_as = expansion_victim
+                }
+                th_gensokyo_expansion_punish_effect = {
+                    value = th_expansion_unlawful_notorious_value
+                    unity = th_expansion_unlawful_unity_value
+                }
+                change_variable = {
+                    name = th_gensokyo_expansion_quota_used
+                    add = 1
+                }
+            }
+            else = {
+                ### 合法吞并：消耗配额
+                change_variable = {
+                    name = th_gensokyo_expansion_quota_used
+                    add = 1
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+institution_manager = {
+	institutions = {
+		th_genesis_of_gensokyo_institution = {
+			active = yes
+			birth_place = th_hieda_residence
+		}
+	}
+}
