@@ -97,3 +97,40 @@
  th_sages_introduce_institution_notification: "A debate has been convened in the Sages' Council to introduce an institution."
  th_sages_pending_institution: "Pending Institution"
  th_sages_introduced_institutions: "Introduced Institutions"
+
+ ### Introduce Institution — Requirements (detailed tooltip)
+ TH_SAGES_REQ_LABEL: "Requirements"
+ TH_SAGES_REQ_UNITY: "Gensokyo Unity at least 10"
+ TH_SAGES_REQ_GOLD: "Have at least 500 gold"
+ TH_SAGES_REQ_PARLIAMENT: "No debate currently in session"
+ TH_SAGES_REQ_CANDIDATE: "An eligible institution is available"
+ TH_SAGES_REQ_ELIGIBLE: "All requirements are satisfied"
+
+ ### Notoriety Consequence Auto-Modifiers
+ th_gensokyo_io_notorious_tier1_auto_modifier: "Tarnished Reputation"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "With notoriety at 30 or higher, Gensokyo looks upon this nation with wariness. Diplomatic reputation -1, improve relations -15%."
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "Suspected of Misdeeds"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "With notoriety at 50 or higher, this nation is suspected of repeated wrongdoing. Diplomatic reputation -2, improve relations -30%, stability investment +10%."
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "International Pariah"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "With notoriety at 70 or higher, this nation is shunned by Gensokyo's society. Diplomatic reputation -4, improve relations -50%."
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "Marked for Judgment"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "With notoriety at 80 or higher, the Yama and the sages may declare a punitive war without further deliberation. Diplomatic reputation -6, improve relations -75%."
+
+ ### Static Modifiers (Sage Prestige Tiers)
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "Sages' Emergence"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "The will of the sages first makes itself felt. Tax income efficiency +3%, monthly prestige +0.05."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "Sages' Coalescence"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "The sages' counsel becomes consensus. Tax income efficiency +5%, monthly prestige +0.08, improve relations +15%, diplomatic reputation +1."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "Sages' Authority"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "The sages' judgments command awe. Tax income efficiency +8%, monthly prestige +0.10, improve relations +20%, manpower +5%."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "Sages' Reverence"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "The sages' will stands unshakable. Tax income efficiency +10%, monthly prestige +0.20, improve relations +25%, manpower +10%, diplomatic reputation +1, stability investment +10%."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "Sages' Legend"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "The three sages have become legend. Tax income efficiency +15%, monthly prestige +0.30, improve relations +35%, manpower +15%, diplomatic reputation +2, global defensive +10%. The sages may intervene in wars and enforce peace."

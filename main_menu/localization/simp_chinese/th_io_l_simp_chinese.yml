@@ -97,3 +97,40 @@
  th_sages_introduce_institution_notification: "贤者议会已就引入思潮召开辩论。"
  th_sages_pending_institution: "待引入思潮"
  th_sages_introduced_institutions: "已引入思潮"
+
+ ### 引入思潮 — 需求（详细提示）
+ TH_SAGES_REQ_LABEL: "条件"
+ TH_SAGES_REQ_UNITY: "幻想乡团结度至少10"
+ TH_SAGES_REQ_GOLD: "拥有至少500金币"
+ TH_SAGES_REQ_PARLIAMENT: "当前没有进行中的议会辩论"
+ TH_SAGES_REQ_CANDIDATE: "存在可引入的思潮"
+ TH_SAGES_REQ_ELIGIBLE: "所有条件均已满足"
+
+ ### 恶名后果自动修正
+ th_gensokyo_io_notorious_tier1_auto_modifier: "名誉之翳"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "恶名达到30以上时，幻想乡以警惕的目光看待该国。外交声誉-1，关系改善-15%。"
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "恶行昭彰"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "恶名达到50以上时，该国被怀疑屡次作恶。外交声誉-2，关系改善-30%，稳定投资+10%。"
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "国际弃民"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "恶名达到70以上时，该国被幻想乡社会排斥。外交声誉-4，关系改善-50%。"
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "待审之身"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "恶名达到80以上时，阎魔与贤者可不再商议直接宣告惩戒战争。外交声誉-6，关系改善-75%。"
+
+ ### 静态修正（贤者威信档位）
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "贤者之端倪"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "贤者的意志初现。税收效率+3%，月度威望+0.05。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "贤者之凝聚"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "贤者的号令成为共识。税收效率+5%，月度威望+0.08，关系改善+15%，外交声誉+1。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "贤者之威严"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "贤者的裁定令人敬畏。税收效率+8%，月度威望+0.10，关系改善+20%，人力+5%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "贤者之崇敬"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "贤者的意志如大结界般不可动摇。税收效率+10%，月度威望+0.20，关系改善+25%，人力+10%，外交声誉+1，稳定投资+10%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "贤者之神话"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三位贤者已成为传说。税收效率+15%，月度威望+0.30，关系改善+35%，人力+15%，外交声誉+2，全域防御+10%。贤者可介入战争并强制和平。"

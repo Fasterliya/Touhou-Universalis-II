@@ -1,0 +1,185 @@
+﻿l_japanese:
+
+### 幻想郷国際組織 — ローカライゼーション
+
+### === IO名称・説明 ===
+ th_gensokyo_io: "幻想郷"
+ th_gensokyo_io_desc: "幻想郷の諸国の均衡を保つ国際組織。賢者と閻魔が共に大結界の秩序を守護する。"
+
+### === 特殊地位 ===
+ th_gensokyo_io_sages_special_status: "賢者"
+ th_gensokyo_io_sages_special_status_desc: "幻想郷に最も古き三賢者の一人にして、大結界の要衝を守護する者。"
+
+ th_gensokyo_io_yama_special_status: "閻魔"
+ th_gensokyo_io_yama_special_status_desc: "彼岸を司る審判者。幻想郷の諸国の是非善悪を裁き、幻想郷議会の長を務める。"
+
+ th_gensokyo_io_guardian_special_status: "幻想郷の守護"
+ th_gensokyo_io_guardian_special_status_desc: "博麗神社の巫女、大結界の永遠なる守護者。代々受け継がれる博麗の力が幻想郷と外界の境界を保つ。"
+
+ th_gensokyo_io_human_village_special_status: "人間の里"
+ th_gensokyo_io_human_village_special_status_desc: "人間の里の代表として、幻想郷の人間集落の権益を守護する者。"
+
+### === 長の称号 ===
+ th_gensokyo_io_yama_leader_title: "閻魔"
+ th_gensokyo_io_yama_leader_title_desc: "幻想郷の審判者にして、その議会の長。"
+
+### === 議会 ===
+ th_gensokyo_io_parliament: "幻想郷議会"
+ th_gensokyo_parliament_seat: "幻想郷議会席"
+
+### === IO変数名 ===
+ th_gensokyo_unity_var: "幻想郷団結度"
+ th_gensokyo_unity_var_desc: "幻想郷の諸国の結束力を測る指標。異変解決、紛争調停、平和的な発展によって得られ、侵略的拡大や外界からの侵入によって損耗する。"
+
+### === IO変数フォーマット ===
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+
+### === IO変数月次変化の説明 ===
+ TH_GENSOKYO_UNITY_BASE: "基礎維持"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部平和"
+
+### === 国家変数名 ===
+ th_gensokyo_personal_contribution_var: "個人貢献度"
+ th_gensokyo_personal_contribution_var_desc: "此の国の幻想郷の安定への具体的貢献。税収と弾幕火力に基づき毎月累積する。"
+
+ th_gensokyo_personal_influence_var: "個人影響力"
+ th_gensokyo_personal_influence_var_desc: "幻想郷議会における此の国の政治的影響力。50ポイント毎に議会決定の投票加重が1増加する。時代の終わりにゼロへリセットされる。"
+
+ th_gensokyo_notorious_reputation_var: "幻想郷悪名"
+ th_gensokyo_notorious_reputation_var_desc: "幻想郷における此の国の悪名（0-100）。宣戦布告や領土拡大によって蓄積する。悪名が高いほど個人影響力の蓄積が遅くなる。"
+
+### === 変数ホバー表示 ===
+ th_gensokyo_member_vars_display: "個人変数概要"
+ th_gensokyo_member_vars_display_desc: "幻想郷内での此の国の個人影響力・個人貢献度・悪名を表示する。"
+
+### === 議会決議 ===
+ th_gensokyo_parliament_resolution_1_title: "幻想郷平和決議"
+ th_gensokyo_parliament_resolution_1_desc: "幻想郷内の平和的秩序を維持する提案。"
+
+ th_gensokyo_parliament_resolution_2_title: "異変対応決議"
+ th_gensokyo_parliament_resolution_2_desc: "幻想郷内で発生する異変への対応を調整する提案。"
+
+ th_gensokyo_parliament_resolution_3_title: "対外防衛決議"
+ th_gensokyo_parliament_resolution_3_desc: "外界からの侵攻に対する幻想郷の防衛を強化する提案。"
+
+### === 法律: 結束の理念 ===
+ th_gensokyo_unity_vision_law: "結束の理念"
+ th_gensokyo_unity_vision_law_desc: "幻想郷の結束を育み活用する方向性を定める。"
+
+ isolation_defense_policy: "孤立堅守"
+ isolation_defense_policy_desc: "大結界の門を固く閉ざし、内部の平和によって結束の力を凝集する。外界の脅威は侵入し難いが、新たな思想も入り難い。"
+
+ balance_path_policy: "均衡の道"
+ balance_path_policy_desc: "大結界を常の如く、偏らず揺るがず維持する。結束は自然に流れ、全ての国が己の居場所を見出す。"
+
+ open_inclusive_policy: "開放包摂"
+ open_inclusive_policy_desc: "大結界の制限を緩和し、外界の新しき思いを歓迎する。思潮の伝播は加速し、外交の地平は広がるが、結束の凝集は僅かに損なわれる。"
+
+### === 法律: 大結界政策 ===
+ th_gensokyo_barrier_policy_law: "大結界政策"
+ th_gensokyo_barrier_policy_law_desc: "幻想郷の大結界の維持強度と開放度を定める。"
+
+ reinforced_barrier_policy: "結界強化"
+ reinforced_barrier_policy_desc: "全郷の力を結集して大結界を強化する。防御と人的資源は大いに高まるが、外交評判は損なわれ外界の思想は浸透し難い。"
+
+ maintained_barrier_policy: "結界維持"
+ maintained_barrier_policy_desc: "既存の伝統に従い大結界の運転を維持する。防御は安定し、全ては然るべくある。"
+
+ relaxed_barrier_policy: "結界緩和"
+ relaxed_barrier_policy_desc: "交流を円滑にするため大結界の制限を適度に緩和する。思潮の伝播は著しく加速するが、防衛力はやや低下する。"
+
+### === 法律: 異変対応方針 ===
+ th_gensokyo_incident_response_law: "異変対応方針"
+ th_gensokyo_incident_response_law_desc: "幻想郷で異変が発生した際の対応戦略と行動指針を定める。"
+
+ duel_resolution_policy: "弾幕決闘規則"
+ duel_resolution_policy_desc: "一対一の弾幕決闘によって異変を解決する。勝者は威信を得るが、戦闘に不慣れな者は身を守るのに苦労する。"
+
+ joint_suppression_policy: "連合鎮圧"
+ joint_suppression_policy_desc: "諸国が連合して行動し、集団の力で異変を鎮圧する。人的資源は豊富で、対応も迅速である。"
+
+ diplomatic_mediation_policy: "外交調停"
+ diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。外交評判は高まるが、軍備は相対的に不足する。"
+
+### ============================================================
+### 賢者議会 — ローカライゼーション
+### ============================================================
+
+ th_sages_council_io: "賢者議会"
+ th_sages_council_io_desc: "幻想郷に最も古き三賢者より成る最高議事機関。大結界の均衡を保ち、幻想郷の行く末を導く。"
+
+### 賢者威信
+ th_sages_prestige_var: "賢者威信"
+ th_sages_prestige_var_desc: "幻想郷の諸国の間における三賢者の威信と影響力（0-100）。幻想郷の結束と平和の維持によって得られ、戦争・外界からの侵攻・不法拡大によって失われる。威信が高いほど幻想郷全体に強力な恩恵をもたらす。"
+
+### 段階閾値
+ th_sages_prestige_tier_20: "賢者威信・端緒"
+ th_sages_prestige_tier_20_desc: "賢者の意志が諸国に感じ取られ始め、幻想郷に淡き祝福がもたらされる。"
+
+ th_sages_prestige_tier_40: "賢者威信・凝聚"
+ th_sages_prestige_tier_40_desc: "賢者の号令が次第に合意となり、幻想郷に相応の祝福がもたらされる。"
+
+ th_sages_prestige_tier_60: "賢者威信・威厳"
+ th_sages_prestige_tier_60_desc: "賢者の裁定が諸国に畏敬を与え、幻想郷に顕著な祝福がもたらされる。"
+
+ th_sages_prestige_tier_80: "賢者威信・崇敬"
+ th_sages_prestige_tier_80_desc: "賢者の意志は大結界の如く揺るぎなく、幻想郷に強力な祝福がもたらされる。"
+
+ th_sages_prestige_tier_100: "賢者威信・神話"
+ th_sages_prestige_tier_100_desc: "三賢者の名は伝説となり、全ての生ける者はその光を仰ぐ。幻想郷に至高の祝福がもたらされる。"
+
+ TH_SAGES_ACTIVE_TIERS_LABEL: "有効な賢者威信特典"
+ TH_SAGES_NO_ACTIVE_TIER: "賢者威信が不足しており、現在有効な特典はない。"
+ TH_SAGES_MAX_PREVIEW_LABEL: "最大値プレビュー"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "税収効率+15% 月間威信+0.30\n関係改善+35% 人的資源+15%\n外交評判+2 全域防御+10%\n戦争介入可 平和強制可"
+
+### 静的修正（賢者威信五段）
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "賢者の端緒"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "賢者の意志が兆し始める。税収効率+3%、月間威信+0.05。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "賢者の凝聚"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "賢者の号令が合意となる。税収効率+5%、月間威信+0.08、関係改善+15%、外交評判+1。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "賢者の威厳"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "賢者の裁定は諸国に畏敬を与える。税収効率+8%、月間威信+0.10、関係改善+20%、人的資源+5%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "賢者の崇敬"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "賢者の意志は大結界の如く揺るがぬ。税収効率+10%、月間威信+0.20、関係改善+25%、人的資源+10%、外交評判+1、安定投資+10%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "賢者の神話"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三賢者の名は伝説となる。税収効率+15%、月間威信+0.30、関係改善+35%、人的資源+15%、外交評判+2、全域防御+10%。賢者は戦争への介入と平和の強制を行い得る。"
+
+### === 悪名の結果自動修正（設計§2.5） ===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "名譽の翳り"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "悪名が30以上となると、幻想郷は此の国を警戒の目で見る。外交評判-1、関係改善-15%。"
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "悪行の累々"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "悪名が50以上となると、此の国は度々の悪事を疑われる。外交評判-2、関係改善-30%、安定投資+10%。"
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "国際的な孤児"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "悪名が70以上となると、此の国は幻想郷の社会から疎まれ排除される。外交評判-4、関係改善-50%。"
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "裁きの待ち人"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "悪名が80以上となると、閻魔と賢者は更なる審議を経ずして懲罰戦争を宣告し得る。外交評判-6、関係改善-75%。"
+
+### === 思潮導入行動 ===
+ th_sages_introduce_institution: "思潮導入"
+ th_sages_introduce_institution_desc: "幻想郷の諸国の間に既に存在しながら未だ此の国に受け入れられていない高度な思想・技術を、賢者に大結界の力で導入させるよう請願する。"
+ th_sages_introduce_institution_cost: "消耗: 幻想郷団結度-10、金-500"
+ th_sages_introduce_institution_notification: "思潮導入"
+
+### 思潮導入 — 条件（詳細なツールチップ）
+ TH_SAGES_REQ_LABEL: "条件"
+ TH_SAGES_REQ_UNITY: "幻想郷団結度が10以上"
+ TH_SAGES_REQ_GOLD: "金500以上を保有"
+ TH_SAGES_REQ_PARLIAMENT: "進行中の議会討論がない"
+ TH_SAGES_REQ_CANDIDATE: "導入可能な思潮が存在する"
+ TH_SAGES_REQ_ELIGIBLE: "全ての条件を満たしている"
+
+### === タブラベル ===
+ TH_SAGES_TAB_OVERVIEW: "概要"
+ TH_SAGES_TAB_DEBATE: "討論"
+ TH_SAGES_ACTIONS_LABEL: "国際組織行動"
+ TH_SAGES_MAIN_ACTIONS: "賢者議会行動"
+ TH_SAGES_DEBATE_TITLE: "賢者議会討論場"
+ TH_SAGES_DEBATE_PLACEHOLDER: "幻想郷の諸国による議会討論と法律提案がここに表示される。\n近日公開予定。"

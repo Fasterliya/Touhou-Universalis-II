@@ -1,4 +1,4 @@
-# 东方风云 MOD 自定义 institution 出生地静态修饰符（1.3 适配）
+﻿# 东方风云 MOD 自定义 institution 出生地静态修饰符（1.3 适配）
 
 th_genesis_of_gensokyo_institution_birth = {
 	game_data = {
