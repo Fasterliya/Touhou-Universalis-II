@@ -1,0 +1,24 @@
+﻿l_english:
+ ### ============================================================
+ ### Gensokyo — Country Rank Names (Gensokyo countries only)
+ ### Empire / Realm / Domain / Boundary
+ ### ============================================================
+ rank_empire_gensokyo: "Empire"
+ rank_empire_gensokyo_ADJ: "Empire"
+ rank_empire_gensokyo_ruler_male: "$rank_empire_ruler_male$"
+ rank_empire_gensokyo_ruler_female: "$rank_empire_ruler_female$"
+
+ rank_kingdom_gensokyo: "Realm"
+ rank_kingdom_gensokyo_ADJ: "Realm"
+ rank_kingdom_gensokyo_ruler_male: "$rank_kingdom_ruler_male$"
+ rank_kingdom_gensokyo_ruler_female: "$rank_kingdom_ruler_female$"
+
+ rank_duchy_gensokyo: "Domain"
+ rank_duchy_gensokyo_ADJ: "Domain"
+ rank_duchy_gensokyo_ruler_male: "$rank_duchy_ruler_male$"
+ rank_duchy_gensokyo_ruler_female: "$rank_duchy_ruler_female$"
+
+ rank_county_gensokyo: "Boundary"
+ rank_county_gensokyo_ADJ: "Boundary"
+ rank_county_gensokyo_ruler_male: "$rank_county_ruler_male$"
+ rank_county_gensokyo_ruler_female: "$rank_county_ruler_female$"

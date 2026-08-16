@@ -1,0 +1,63 @@
+﻿### ============================================================
+### 幻想乡 — 等级专属本地化（特殊 key，只对幻想乡国家生效）
+### 覆盖原版 country_flavor（同名块覆盖，参考社区 MOD 先例）
+### 幻想乡国家 → rank_*_gensokyo；非幻想乡国家 → 通用兜底
+### ============================================================
+
+country_flavor = {
+	type = country
+
+	### 幻想乡专属等级名（仅 IO 成员国 = 全部 95 个幻想乡国家）
+	text = {
+		localization_key = rank_empire_gensokyo
+		trigger = {
+			country_rank_is_empire = yes
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_gensokyo
+		trigger = {
+			country_rank_is_kingdom = yes
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+		}
+	}
+	text = {
+		localization_key = rank_duchy_gensokyo
+		trigger = {
+			country_rank_is_duchy = yes
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+		}
+	}
+	text = {
+		localization_key = rank_county_gensokyo
+		trigger = {
+			country_rank_is_county = yes
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+		}
+	}
+
+	### 通用兜底（非幻想乡国家）
+	text = {
+		localization_key = rank_empire
+		trigger = {
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom
+		trigger = {
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy
+		trigger = {
+			country_rank_is_duchy = yes
+		}
+	}
+	text = {
+		localization_key = rank_county
+		fallback = yes
+	}
+}

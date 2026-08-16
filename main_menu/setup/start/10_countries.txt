@@ -57218,7 +57218,7 @@ countries = {
       T00 = {
          capital = th_scarlet_grand_entrance_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57280,7 +57280,7 @@ countries = {
       T01 = {
          capital = th_ice_room
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57342,7 +57342,7 @@ countries = {
       T02 = {
          capital = th_great_fairy_treehouse
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57454,7 +57454,7 @@ countries = {
       T04 = {
          capital = th_hakurei_shrine
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57586,7 +57586,7 @@ countries = {
       T06 = {
          capital = th_three_fairies_mansion
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57646,7 +57646,7 @@ countries = {
       T07 = {
          capital = th_spring_view_pavilion
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57705,7 +57705,7 @@ countries = {
       T08 = {
          capital = th_margatroid_theater
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57767,7 +57767,7 @@ countries = {
       T09 = {
          capital = th_potion_brewing_bench
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57829,7 +57829,7 @@ countries = {
       T10 = {
          capital = th_belfry_ruins
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57888,7 +57888,7 @@ countries = {
       T11 = {
          capital = th_diner_main_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -57950,7 +57950,7 @@ countries = {
       T12 = {
          capital = th_night_heron_perch
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58066,7 +58066,7 @@ countries = {
       T14 = {
          capital = th_moriya_shrine_honden
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58132,7 +58132,7 @@ countries = {
       T15 = {
          capital = th_youkai_forest
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58192,7 +58192,7 @@ countries = {
       T16 = {
          capital = th_dark_hills
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58251,7 +58251,7 @@ countries = {
       T17 = {
          capital = th_aki_main_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58380,7 +58380,7 @@ countries = {
       T19 = {
          capital = th_ubames_mansion
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58440,7 +58440,7 @@ countries = {
       T20 = {
          capital = th_chireiden_entrance_hall_main
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58505,7 +58505,7 @@ countries = {
       T21 = {
          capital = th_yamame_shaft_vent
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58565,7 +58565,7 @@ countries = {
       T22 = {
          capital = th_bridge_spring_envy
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58625,7 +58625,7 @@ countries = {
       T23 = {
          capital = th_central_district_samurai
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58687,7 +58687,7 @@ countries = {
       T24 = {
          capital = th_haniwa_shaping_palace
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58754,7 +58754,7 @@ countries = {
       T25 = {
          capital = th_yama_palace
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_empire
          starting_technology_level = 3
 
          own_control_core = {
@@ -58824,7 +58824,7 @@ countries = {
       T26 = {
          capital = th_kappa_capital
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58886,7 +58886,7 @@ countries = {
       T27 = {
          capital = th_high_tech_developement_zone
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -58948,7 +58948,7 @@ countries = {
       T28 = {
          capital = th_sannyo_casino
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59008,7 +59008,7 @@ countries = {
       T29 = {
          capital = th_eternal_garden
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59067,7 +59067,7 @@ countries = {
       T30 = {
          capital = th_crumbling_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59126,7 +59126,7 @@ countries = {
       T31 = {
          capital = th_hakugyokurou
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59193,7 +59193,7 @@ countries = {
       T32 = {
          capital = th_myourenji_hondo
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59258,7 +59258,7 @@ countries = {
       T33 = {
          capital = th_tora_no_maru_hoshi
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59321,7 +59321,7 @@ countries = {
       T34 = {
          capital = th_nazrin_s_treasure_hold
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59383,7 +59383,7 @@ countries = {
       T35 = {
          capital = th_mermaid_sanctuary
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59443,7 +59443,7 @@ countries = {
       T36 = {
          capital = th_kogasa_blacksmith
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59504,7 +59504,7 @@ countries = {
       T37 = {
          capital = th_kike_gang_skyscraper
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59561,7 +59561,7 @@ countries = {
       T38 = {
          capital = th_keiga_gang_skyscraper
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59618,7 +59618,7 @@ countries = {
       T39 = {
          capital = th_toutetsu_cabin
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59675,7 +59675,7 @@ countries = {
       T40 = {
          capital = th_solitus_strand
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59735,7 +59735,7 @@ countries = {
       T41 = {
          capital = th_riverbed_endless_shore
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59793,7 +59793,7 @@ countries = {
       T42 = {
          capital = th_sai_no_kawara
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59851,7 +59851,7 @@ countries = {
       T43 = {
          capital = th_market_higan_tea
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59910,7 +59910,7 @@ countries = {
       T44 = {
          capital = th_hellcats_rest
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -59969,7 +59969,7 @@ countries = {
       T45 = {
          capital = th_nuclear_furnace_main
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60029,7 +60029,7 @@ countries = {
       T46 = {
          capital = th_bucket_suspension_chasm
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60087,7 +60087,7 @@ countries = {
       T47 = {
          capital = th_shining_needle_castle_ground_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60146,7 +60146,7 @@ countries = {
       T48 = {
          capital = th_useless_divice_room
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60205,7 +60205,7 @@ countries = {
       T49 = {
          capital = th_weeping_willow_promenade
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60263,7 +60263,7 @@ countries = {
       T50 = {
          capital = th_bane_herb_garden
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60322,7 +60322,7 @@ countries = {
       T51 = {
          capital = th_divine_spirit_mausoleum
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60392,7 +60392,7 @@ countries = {
       T52 = {
          capital = th_shingiro
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60458,7 +60458,7 @@ countries = {
       T53 = {
          capital = th_kaguyas_room
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60519,7 +60519,7 @@ countries = {
       T54 = {
          capital = th_huziwara_mansion
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60581,7 +60581,7 @@ countries = {
       T55 = {
          capital = th_tewis_rabbit_hole
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60640,7 +60640,7 @@ countries = {
       T56 = {
          capital = th_horai_pharmacy
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60699,7 +60699,7 @@ countries = {
       T57 = {
          capital = th_dream_palace
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60821,7 +60821,7 @@ countries = {
       T59 = {
          capital = th_returner_sanatorium
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60880,7 +60880,7 @@ countries = {
       T60 = {
          capital = th_hakurei_roofless_honden
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -60941,7 +60941,7 @@ countries = {
       T61 = {
          capital = th_fluffy_ellen_magic_masion_main
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61000,7 +61000,7 @@ countries = {
       T62 = {
          capital = th_garden_of_the_sun
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61062,7 +61062,7 @@ countries = {
       T63 = {
          capital = th_bell_gathering_hills_main
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61122,7 +61122,7 @@ countries = {
       T64 = {
          capital = th_asakura_laboratory_tech_room
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61180,7 +61180,7 @@ countries = {
       T65 = {
          capital = th_silent_sanctuary_main
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61241,7 +61241,7 @@ countries = {
       T66 = {
          capital = th_dreamrealm_reima_den_main_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61302,7 +61302,7 @@ countries = {
       T67 = {
          capital = th_rika_mansion_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61363,7 +61363,7 @@ countries = {
       T68 = {
          capital = th_kana_mansion_main
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61421,7 +61421,7 @@ countries = {
       T69 = {
          capital = th_main_engineering_bay
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61481,7 +61481,7 @@ countries = {
       T70 = {
          capital = th_hinanawi_mansion
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61543,7 +61543,7 @@ countries = {
       T71 = {
          capital = th_ikus_house
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61603,7 +61603,7 @@ countries = {
       T72 = {
          capital = th_palace_of_moon
          court_language = th_lunarian_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_empire
          starting_technology_level = 3
 
          own_control_core = {
@@ -61645,7 +61645,7 @@ countries = {
       T73 = {
          capital = th_mugenkan_boiler_room
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61703,7 +61703,7 @@ countries = {
       T74 = {
          capital = th_dreamscape_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61765,7 +61765,7 @@ countries = {
       T75 = {
          capital = th_first_performance_stage
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61824,7 +61824,7 @@ countries = {
       T76 = {
          capital = th_gate_of_miyako
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61883,7 +61883,7 @@ countries = {
       T77 = {
          capital = th_sky_ruins
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -61944,7 +61944,7 @@ countries = {
       T78 = {
          capital = th_myorenji_sando
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62005,7 +62005,7 @@ countries = {
       T79 = {
          capital = th_sariel_judgment_masion
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62146,7 +62146,7 @@ countries = {
       T82 = {
          capital = th_clown_village
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62237,7 +62237,7 @@ countries = {
       T84 = {
          capital = th_beast_king_garden
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62295,7 +62295,7 @@ countries = {
       T85 = {
          capital = th_seiran_ya
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62347,7 +62347,7 @@ countries = {
       T86 = {
          capital = th_suzuko_ya
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62399,7 +62399,7 @@ countries = {
       T87 = {
          capital = th_geodon_tei_main_hall
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62451,7 +62451,7 @@ countries = {
       T88 = {
          capital = th_suzunaan
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62503,7 +62503,7 @@ countries = {
       T89 = {
          capital = th_hieda_residence
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62555,7 +62555,7 @@ countries = {
       T90 = {
          capital = th_sagi_no_shoshitsu
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62607,7 +62607,7 @@ countries = {
       T91 = {
          capital = th_kourindou_main_store
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62659,7 +62659,7 @@ countries = {
       T92 = {
          capital = th_terakoya_gakudo
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62711,7 +62711,7 @@ countries = {
       T93 = {
           capital = th_crossroads_teahouse
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
@@ -62763,7 +62763,7 @@ countries = {
       T94 = {
          capital = th_village_outskirts
          court_language = th_gensokyo_common_dialect
-         country_rank = rank_kingdom
+         country_rank = rank_duchy
          starting_technology_level = 3
 
          own_control_core = {
