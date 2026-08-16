@@ -5,20 +5,27 @@
  ### ============================================================
  rank_empire_gensokyo: "제국"
  rank_empire_gensokyo_ADJ: "제국"
- rank_empire_gensokyo_ruler_male: "$rank_empire_ruler_male$"
- rank_empire_gensokyo_ruler_female: "$rank_empire_ruler_female$"
+ rank_empire_gensokyo_ruler_male: "황제"
+ rank_empire_gensokyo_ruler_female: "황제"
 
  rank_kingdom_gensokyo: "국도"
  rank_kingdom_gensokyo_ADJ: "국도"
- rank_kingdom_gensokyo_ruler_male: "$rank_kingdom_ruler_male$"
- rank_kingdom_gensokyo_ruler_female: "$rank_kingdom_ruler_female$"
+ rank_kingdom_gensokyo_ruler_male: "대인"
+ rank_kingdom_gensokyo_ruler_female: "대인"
 
  rank_duchy_gensokyo: "영역"
  rank_duchy_gensokyo_ADJ: "영역"
- rank_duchy_gensokyo_ruler_male: "$rank_duchy_ruler_male$"
- rank_duchy_gensokyo_ruler_female: "$rank_duchy_ruler_female$"
+ rank_duchy_gensokyo_ruler_male: "주인"
+ rank_duchy_gensokyo_ruler_female: "주인"
 
  rank_county_gensokyo: "경계"
  rank_county_gensokyo_ADJ: "경계"
- rank_county_gensokyo_ruler_male: "$rank_county_ruler_male$"
- rank_county_gensokyo_ruler_female: "$rank_county_ruler_female$"
+ rank_county_gensokyo_ruler_male: "주인"
+ rank_county_gensokyo_ruler_female: "주인"
+
+ ### 지도 이름: 등급 접미사 없이 국명만 표시
+ country_name_construction_prefix_rank_of_name_map: "$NAME$"
+ country_name_construction_prefix_name_map: "$NAME$"
+ country_name_construction_prefix_name_rank_map: "$NAME$"
+ country_name_construction_prefix_adjective_rank_map: "$NAME$"
+ country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank_map: "$NAME$"

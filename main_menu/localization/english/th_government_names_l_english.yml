@@ -5,20 +5,27 @@
  ### ============================================================
  rank_empire_gensokyo: "Empire"
  rank_empire_gensokyo_ADJ: "Empire"
- rank_empire_gensokyo_ruler_male: "$rank_empire_ruler_male$"
- rank_empire_gensokyo_ruler_female: "$rank_empire_ruler_female$"
+ rank_empire_gensokyo_ruler_male: "Emperor"
+ rank_empire_gensokyo_ruler_female: "Emperor"
 
  rank_kingdom_gensokyo: "Realm"
  rank_kingdom_gensokyo_ADJ: "Realm"
- rank_kingdom_gensokyo_ruler_male: "$rank_kingdom_ruler_male$"
- rank_kingdom_gensokyo_ruler_female: "$rank_kingdom_ruler_female$"
+ rank_kingdom_gensokyo_ruler_male: "Lord"
+ rank_kingdom_gensokyo_ruler_female: "Lord"
 
  rank_duchy_gensokyo: "Domain"
  rank_duchy_gensokyo_ADJ: "Domain"
- rank_duchy_gensokyo_ruler_male: "$rank_duchy_ruler_male$"
- rank_duchy_gensokyo_ruler_female: "$rank_duchy_ruler_female$"
+ rank_duchy_gensokyo_ruler_male: "Master"
+ rank_duchy_gensokyo_ruler_female: "Master"
 
  rank_county_gensokyo: "Boundary"
  rank_county_gensokyo_ADJ: "Boundary"
- rank_county_gensokyo_ruler_male: "$rank_county_ruler_male$"
- rank_county_gensokyo_ruler_female: "$rank_county_ruler_female$"
+ rank_county_gensokyo_ruler_male: "Master"
+ rank_county_gensokyo_ruler_female: "Master"
+
+ ### Map name: no rank suffix, country name only
+ country_name_construction_prefix_rank_of_name_map: "$NAME$"
+ country_name_construction_prefix_name_map: "$NAME$"
+ country_name_construction_prefix_name_rank_map: "$NAME$"
+ country_name_construction_prefix_adjective_rank_map: "$NAME$"
+ country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank_map: "$NAME$"

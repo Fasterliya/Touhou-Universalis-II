@@ -5,20 +5,28 @@
  ### ============================================================
  rank_empire_gensokyo: "帝国"
  rank_empire_gensokyo_ADJ: "帝国"
- rank_empire_gensokyo_ruler_male: "$rank_empire_ruler_male$"
- rank_empire_gensokyo_ruler_female: "$rank_empire_ruler_female$"
+ rank_empire_gensokyo_ruler_male: "皇帝"
+ rank_empire_gensokyo_ruler_female: "皇帝"
 
  rank_kingdom_gensokyo: "国度"
  rank_kingdom_gensokyo_ADJ: "国度"
- rank_kingdom_gensokyo_ruler_male: "$rank_kingdom_ruler_male$"
- rank_kingdom_gensokyo_ruler_female: "$rank_kingdom_ruler_female$"
+ rank_kingdom_gensokyo_ruler_male: "大人"
+ rank_kingdom_gensokyo_ruler_female: "大人"
 
  rank_duchy_gensokyo: "领域"
  rank_duchy_gensokyo_ADJ: "领域"
- rank_duchy_gensokyo_ruler_male: "$rank_duchy_ruler_male$"
- rank_duchy_gensokyo_ruler_female: "$rank_duchy_ruler_female$"
+ rank_duchy_gensokyo_ruler_male: "主人"
+ rank_duchy_gensokyo_ruler_female: "主人"
 
  rank_county_gensokyo: "境界"
  rank_county_gensokyo_ADJ: "境界"
- rank_county_gensokyo_ruler_male: "$rank_county_ruler_male$"
- rank_county_gensokyo_ruler_female: "$rank_county_ruler_female$"
+ rank_county_gensokyo_ruler_male: "主人"
+ rank_county_gensokyo_ruler_female: "主人"
+
+ ### 地图名：等级后缀不显示，只显示国名本身
+ ### （country_name_construction_map 沿用完整国名选择规则、key 加 _map）
+ country_name_construction_prefix_rank_of_name_map: "$NAME$"
+ country_name_construction_prefix_name_map: "$NAME$"
+ country_name_construction_prefix_name_rank_map: "$NAME$"
+ country_name_construction_prefix_adjective_rank_map: "$NAME$"
+ country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank_map: "$NAME$"

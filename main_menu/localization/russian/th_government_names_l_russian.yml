@@ -5,20 +5,27 @@
  ### ============================================================
  rank_empire_gensokyo: "Империя"
  rank_empire_gensokyo_ADJ: "Империя"
- rank_empire_gensokyo_ruler_male: "$rank_empire_ruler_male$"
- rank_empire_gensokyo_ruler_female: "$rank_empire_ruler_female$"
+ rank_empire_gensokyo_ruler_male: "Император"
+ rank_empire_gensokyo_ruler_female: "Император"
 
  rank_kingdom_gensokyo: "Держава"
  rank_kingdom_gensokyo_ADJ: "Держава"
- rank_kingdom_gensokyo_ruler_male: "$rank_kingdom_ruler_male$"
- rank_kingdom_gensokyo_ruler_female: "$rank_kingdom_ruler_female$"
+ rank_kingdom_gensokyo_ruler_male: "Господин"
+ rank_kingdom_gensokyo_ruler_female: "Господин"
 
  rank_duchy_gensokyo: "Домен"
  rank_duchy_gensokyo_ADJ: "Домен"
- rank_duchy_gensokyo_ruler_male: "$rank_duchy_ruler_male$"
- rank_duchy_gensokyo_ruler_female: "$rank_duchy_ruler_female$"
+ rank_duchy_gensokyo_ruler_male: "Хозяин"
+ rank_duchy_gensokyo_ruler_female: "Хозяин"
 
  rank_county_gensokyo: "Предел"
  rank_county_gensokyo_ADJ: "Предел"
- rank_county_gensokyo_ruler_male: "$rank_county_ruler_male$"
- rank_county_gensokyo_ruler_female: "$rank_county_ruler_female$"
+ rank_county_gensokyo_ruler_male: "Хозяин"
+ rank_county_gensokyo_ruler_female: "Хозяин"
+
+ ### Карта: без суффикса ранга, только имя страны
+ country_name_construction_prefix_rank_of_name_map: "$NAME$"
+ country_name_construction_prefix_name_map: "$NAME$"
+ country_name_construction_prefix_name_rank_map: "$NAME$"
+ country_name_construction_prefix_adjective_rank_map: "$NAME$"
+ country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank_map: "$NAME$"
