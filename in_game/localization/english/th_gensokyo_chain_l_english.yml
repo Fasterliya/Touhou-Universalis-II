@@ -7,7 +7,7 @@
  th_gensokyo_amity_vs_belligerence: "En and Ran"
  th_gensokyo_amity_vs_belligerence_desc: "Those of En weave bonds with all living things, joining hearts in harmony, guarding the Human Village and keeping the Great Barrier at peace; those of Ran raise arms in discord, waging endless war, chasing fleeting dreams and disturbing Gensokyo's order. The leaning of one's heart is plain for all to see."
  th_gensokyo_amity_focus: "En (Bond)"
- th_gensokyo_belligerence_focus: "Ran (Discord)"
+ belligerence_focus: "Ran (Discord)"
 
 ### Value tiers
  th_notorious_tier_clean: "Bond of En"

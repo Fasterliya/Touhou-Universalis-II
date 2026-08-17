@@ -49,7 +49,7 @@
 th_gensokyo_amity_vs_belligerence: "연과 란"
 th_gensokyo_amity_vs_belligerence_desc: "연을 맺는 자는 만물과 인연을 맺어 화합하고 인간 마을을 지키며 대결계의 평화를 유지합니다. 란을 일으키는 자는 끝없는 전쟁을 벌여 덧없는 꿈을 좇고 환상향의 질서를 어지럽힙니다. 마음의 기울기는 환상향 모두가 지켜봅니다."
 th_gensokyo_amity_focus: "연 (인연)"
-th_gensokyo_belligerence_focus: "란 (혼란)"
+belligerence_focus: "란 (혼란)"
 
 
 ### === Variable Hover Display ===

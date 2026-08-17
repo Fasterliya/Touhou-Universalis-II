@@ -47,7 +47,7 @@ th_gensokyo_amity_vs_belligerence = {
 ### 原版 belligerent_vs_conciliatory 覆盖：幻想乡IO成员国禁用
 ### （完整重定义原版块 + allow 排除 IO 成员；非成员行为与 vanilla 完全一致）
 ### ============================================================
-belligerent_vs_conciliatory = {
+REPLACE:belligerent_vs_conciliatory = {
 	allow = {
 		NOT = {
 			is_member_of_international_organization = international_organization:th_gensokyo_io

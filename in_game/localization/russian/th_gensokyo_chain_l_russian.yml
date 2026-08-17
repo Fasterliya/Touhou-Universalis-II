@@ -14,7 +14,7 @@
  th_gensokyo_amity_vs_belligerence:"Эн и Ран"
  th_gensokyo_amity_vs_belligerence_desc:"Эн — узы, связующие всё живое: сердца в согласии, Деревня людей под защитой, покой Великого Барьера. Ран — смута и раздор: бесконечные войны, погоня за призрачными мечтами, нарушение порядка Генсокё. Наклон сердца виден всем."
  th_gensokyo_amity_focus:"Эн (Узы)"
- th_gensokyo_belligerence_focus:"Ран (Смута)"
+ belligerence_focus:"Ран (Смута)"
 
 ### Value tiers
  th_notorious_tier_clean:"Узы Эн"

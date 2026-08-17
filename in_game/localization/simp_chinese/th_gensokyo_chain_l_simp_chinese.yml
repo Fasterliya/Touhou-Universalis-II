@@ -7,7 +7,7 @@
  th_gensokyo_amity_vs_belligerence: "缘与乱"
  th_gensokyo_amity_vs_belligerence_desc: "缘者，与众生结缘，和衷共济，护人间之里，守大结界之安；乱者，兴兵作乱，穷兵黩武，逐幻之梦，扰幻想乡之序。此心所向，众生皆见。"
  th_gensokyo_amity_focus: "缘"
- th_gensokyo_belligerence_focus: "乱"
+ belligerence_focus: "乱"
 
 ### 价值观档位
  th_notorious_tier_clean: "缘结和衷"
