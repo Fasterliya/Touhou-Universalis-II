@@ -2,6 +2,9 @@
 	age = age_1_traditions
 	government = monarchy
 	major = yes
+	locked = {
+		always = yes
+	}
 	potential = {
 		always = yes
 	}
@@ -10,8 +13,9 @@
 	}
 	
 	country_modifier = {
-		clergy_estate_allowed_leading_military = yes
-		country_cabinet_efficiency = 0.06
+		monthly_legitimacy = 0.05
+		country_cabinet_efficiency = 0.05
+		government_reform_slots = 1
 	}
 	years = 2
 }

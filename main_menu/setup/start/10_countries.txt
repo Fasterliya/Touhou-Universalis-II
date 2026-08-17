@@ -57332,7 +57332,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_fairy_politics
             }
 
           }
@@ -57391,7 +57391,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_fairy_politics
             }
 
           }
@@ -57444,7 +57444,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }
@@ -57511,7 +57511,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_shrine_centralization
             }
 
           }
@@ -57576,7 +57576,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_sage_politics
             }
 
           }
@@ -57636,7 +57636,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_fairy_politics
             }
 
           }
@@ -57695,7 +57695,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_fairy_politics
             }
 
           }
@@ -57757,7 +57757,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_magician_politics
             }
 
           }
@@ -57819,7 +57819,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_magician_politics
             }
 
           }
@@ -57878,7 +57878,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_forest_lordship
             }
 
           }
@@ -57940,7 +57940,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_forest_lordship
             }
 
           }
@@ -58000,7 +58000,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_forest_lordship
             }
 
           }
@@ -58056,7 +58056,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_divine_realm
             }
 
           }
@@ -58122,7 +58122,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_shrine_centralization
             }
 
           }
@@ -58370,7 +58370,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_mountain_hierarchy
             }
 
           }
@@ -58495,7 +58495,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_satori_system
             }
 
           }
@@ -58555,7 +58555,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_underground_realm
             }
 
           }
@@ -58615,7 +58615,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_underground_realm
             }
 
           }
@@ -58677,7 +58677,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_underground_realm
             }
 
           }
@@ -58814,7 +58814,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_yama_emperor
             }
 
           }
@@ -58876,7 +58876,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_kappa_state
             }
 
           }
@@ -58938,7 +58938,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_kappa_state
             }
 
           }
@@ -59057,7 +59057,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_fairy_politics
             }
 
           }
@@ -59183,7 +59183,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_undead_monarchy
             }
 
           }
@@ -59248,7 +59248,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_myouren_sangha
             }
 
           }
@@ -59433,7 +59433,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_grassroots_youkai_alliance
             }
 
           }
@@ -59551,7 +59551,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_beast_path
             }
 
           }
@@ -59608,7 +59608,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_beast_path
             }
 
           }
@@ -59665,7 +59665,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_beast_path
             }
 
           }
@@ -59725,7 +59725,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_divine_realm
             }
 
           }
@@ -60077,7 +60077,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_underground_realm
             }
 
           }
@@ -60253,7 +60253,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_grassroots_youkai_alliance
             }
 
           }
@@ -60312,7 +60312,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_grassroots_youkai_alliance
             }
 
           }
@@ -60382,7 +60382,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_holy_virtue_monarchy
             }
 
           }
@@ -60811,7 +60811,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_divine_realm
             }
 
           }
@@ -61471,7 +61471,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_scientific_society
             }
 
           }
@@ -61533,7 +61533,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_heaven_earth_desolation
             }
 
           }
@@ -61593,7 +61593,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_cloud_beyond_sky
             }
 
           }
@@ -61635,7 +61635,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_lunar_sage_council
             }
 
           }
@@ -61755,7 +61755,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_dream_twin
             }
 
           }
@@ -62136,7 +62136,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_divine_realm
             }
 
           }
@@ -62227,7 +62227,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_sage_politics
             }
 
           }
@@ -62493,7 +62493,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }
@@ -62545,7 +62545,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }
@@ -62649,7 +62649,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }
@@ -62701,7 +62701,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }
@@ -62753,7 +62753,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }
@@ -62805,7 +62805,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_human_village
             }
 
           }

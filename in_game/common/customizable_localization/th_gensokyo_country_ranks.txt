@@ -2,12 +2,647 @@
 ### 幻想乡 — 等级专属本地化（特殊 key，只对幻想乡国家生效）
 ### 数据库对象覆盖必须用 REPLACE: 前缀（普通重复定义会被引擎丢弃）
 ### 幻想乡国家 → rank_*_gensokyo；非幻想乡国家 → 通用兜底
+### 势力专属称谓按政府改革触发（优先于通用幻想乡称呼）
 ### ============================================================
 
 REPLACE:country_flavor = {
 	type = country
 
+	### ============================================================
+	### 势力专属称谓（公国 → 王国 → 帝国）
+	### ============================================================
+
+	### 1. 神社集权制（博丽、守矢）
+	text = {
+		localization_key = rank_empire_th_shrine_centralization
+		trigger = {
+			has_reform = government_reform:th_shrine_centralization
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_shrine_centralization
+		trigger = {
+			has_reform = government_reform:th_shrine_centralization
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_shrine_centralization
+		trigger = {
+			has_reform = government_reform:th_shrine_centralization
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 2. 妖精政治（琪露利亚等）
+	text = {
+		localization_key = rank_empire_th_fairy_politics
+		trigger = {
+			has_reform = government_reform:th_fairy_politics
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_fairy_politics
+		trigger = {
+			has_reform = government_reform:th_fairy_politics
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_fairy_politics
+		trigger = {
+			has_reform = government_reform:th_fairy_politics
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 3. 命莲僧伽（命莲寺）
+	text = {
+		localization_key = rank_empire_th_myouren_sangha
+		trigger = {
+			has_reform = government_reform:th_myouren_sangha
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_myouren_sangha
+		trigger = {
+			has_reform = government_reform:th_myouren_sangha
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_myouren_sangha
+		trigger = {
+			has_reform = government_reform:th_myouren_sangha
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 4. 山岳等级制（天狗）
+	text = {
+		localization_key = rank_empire_th_mountain_hierarchy
+		trigger = {
+			has_reform = government_reform:th_mountain_hierarchy
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_mountain_hierarchy
+		trigger = {
+			has_reform = government_reform:th_mountain_hierarchy
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_mountain_hierarchy
+		trigger = {
+			has_reform = government_reform:th_mountain_hierarchy
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 5. 神明领国（魔界等）
+	text = {
+		localization_key = rank_empire_th_divine_realm
+		trigger = {
+			has_reform = government_reform:th_divine_realm
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_divine_realm
+		trigger = {
+			has_reform = government_reform:th_divine_realm
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_divine_realm
+		trigger = {
+			has_reform = government_reform:th_divine_realm
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 6. 阎魔帝君（彼岸）
+	text = {
+		localization_key = rank_empire_th_yama_emperor
+		trigger = {
+			has_reform = government_reform:th_yama_emperor
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_yama_emperor
+		trigger = {
+			has_reform = government_reform:th_yama_emperor
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_yama_emperor
+		trigger = {
+			has_reform = government_reform:th_yama_emperor
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 7. 月之贤者议会（月之都）
+	text = {
+		localization_key = rank_empire_th_lunar_sage_council
+		trigger = {
+			has_reform = government_reform:th_lunar_sage_council
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_lunar_sage_council
+		trigger = {
+			has_reform = government_reform:th_lunar_sage_council
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_lunar_sage_council
+		trigger = {
+			has_reform = government_reform:th_lunar_sage_council
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 8. 科学社会（时空旅人）
+	text = {
+		localization_key = rank_empire_th_scientific_society
+		trigger = {
+			has_reform = government_reform:th_scientific_society
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_scientific_society
+		trigger = {
+			has_reform = government_reform:th_scientific_society
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_scientific_society
+		trigger = {
+			has_reform = government_reform:th_scientific_society
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 9. 畜生之道（鬼杰组等）
+	text = {
+		localization_key = rank_empire_th_beast_path
+		trigger = {
+			has_reform = government_reform:th_beast_path
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_beast_path
+		trigger = {
+			has_reform = government_reform:th_beast_path
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_beast_path
+		trigger = {
+			has_reform = government_reform:th_beast_path
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 10. 贤者政治（迷途之家、华扇的仙界）
+	text = {
+		localization_key = rank_empire_th_sage_politics
+		trigger = {
+			has_reform = government_reform:th_sage_politics
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_sage_politics
+		trigger = {
+			has_reform = government_reform:th_sage_politics
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_sage_politics
+		trigger = {
+			has_reform = government_reform:th_sage_politics
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 11. 幻梦双生（梦幻世界）
+	text = {
+		localization_key = rank_empire_th_dream_twin
+		trigger = {
+			has_reform = government_reform:th_dream_twin
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_dream_twin
+		trigger = {
+			has_reform = government_reform:th_dream_twin
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_dream_twin
+		trigger = {
+			has_reform = government_reform:th_dream_twin
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 12. 人类村落（人间之里诸国）—— 子势力优先
+	### 人间之里（T03）—— 执政官
+	text = {
+		localization_key = rank_empire_th_human_village_village
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T03
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_human_village_village
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T03
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_human_village_village
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T03
+			country_rank_is_duchy = yes
+		}
+	}
+	### 稗田家（T89）—— 御阿礼之子
+	text = {
+		localization_key = rank_empire_th_human_village_hieda
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T89
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_human_village_hieda
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T89
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_human_village_hieda
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T89
+			country_rank_is_duchy = yes
+		}
+	}
+	### 秘封俱乐部（T93）—— 会长
+	text = {
+		localization_key = rank_empire_th_human_village_club
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T93
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_human_village_club
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T93
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_human_village_club
+		trigger = {
+			has_reform = government_reform:th_human_village
+			tag = T93
+			country_rank_is_duchy = yes
+		}
+	}
+	### 其余（香霖堂等）—— 市司（fallback）
+	text = {
+		localization_key = rank_empire_th_human_village
+		trigger = {
+			has_reform = government_reform:th_human_village
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_human_village
+		trigger = {
+			has_reform = government_reform:th_human_village
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_human_village
+		trigger = {
+			has_reform = government_reform:th_human_village
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 13. 圣德君主制（仙界）
+	text = {
+		localization_key = rank_empire_th_holy_virtue_monarchy
+		trigger = {
+			has_reform = government_reform:th_holy_virtue_monarchy
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_holy_virtue_monarchy
+		trigger = {
+			has_reform = government_reform:th_holy_virtue_monarchy
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_holy_virtue_monarchy
+		trigger = {
+			has_reform = government_reform:th_holy_virtue_monarchy
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 14. 云外苍天（龙宫）
+	text = {
+		localization_key = rank_empire_th_cloud_beyond_sky
+		trigger = {
+			has_reform = government_reform:th_cloud_beyond_sky
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_cloud_beyond_sky
+		trigger = {
+			has_reform = government_reform:th_cloud_beyond_sky
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_cloud_beyond_sky
+		trigger = {
+			has_reform = government_reform:th_cloud_beyond_sky
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 15. 天地茫荒（天界）
+	text = {
+		localization_key = rank_empire_th_heaven_earth_desolation
+		trigger = {
+			has_reform = government_reform:th_heaven_earth_desolation
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_heaven_earth_desolation
+		trigger = {
+			has_reform = government_reform:th_heaven_earth_desolation
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_heaven_earth_desolation
+		trigger = {
+			has_reform = government_reform:th_heaven_earth_desolation
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 16. 河童邦国（河童、山童）
+	text = {
+		localization_key = rank_empire_th_kappa_state
+		trigger = {
+			has_reform = government_reform:th_kappa_state
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_kappa_state
+		trigger = {
+			has_reform = government_reform:th_kappa_state
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_kappa_state
+		trigger = {
+			has_reform = government_reform:th_kappa_state
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 17. 亡灵君主制（冥界）
+	text = {
+		localization_key = rank_empire_th_undead_monarchy
+		trigger = {
+			has_reform = government_reform:th_undead_monarchy
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_undead_monarchy
+		trigger = {
+			has_reform = government_reform:th_undead_monarchy
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_undead_monarchy
+		trigger = {
+			has_reform = government_reform:th_undead_monarchy
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 18. 草根妖怪联盟（柳下运河等）
+	text = {
+		localization_key = rank_empire_th_grassroots_youkai_alliance
+		trigger = {
+			has_reform = government_reform:th_grassroots_youkai_alliance
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_grassroots_youkai_alliance
+		trigger = {
+			has_reform = government_reform:th_grassroots_youkai_alliance
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_grassroots_youkai_alliance
+		trigger = {
+			has_reform = government_reform:th_grassroots_youkai_alliance
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 19. 地底（旧都等）
+	text = {
+		localization_key = rank_empire_th_underground_realm
+		trigger = {
+			has_reform = government_reform:th_underground_realm
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_underground_realm
+		trigger = {
+			has_reform = government_reform:th_underground_realm
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_underground_realm
+		trigger = {
+			has_reform = government_reform:th_underground_realm
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 20. 觉妖怪体系（地灵殿）
+	text = {
+		localization_key = rank_empire_th_satori_system
+		trigger = {
+			has_reform = government_reform:th_satori_system
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_satori_system
+		trigger = {
+			has_reform = government_reform:th_satori_system
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_satori_system
+		trigger = {
+			has_reform = government_reform:th_satori_system
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 21. 森林领主制（萤火之森等）
+	text = {
+		localization_key = rank_empire_th_forest_lordship
+		trigger = {
+			has_reform = government_reform:th_forest_lordship
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_forest_lordship
+		trigger = {
+			has_reform = government_reform:th_forest_lordship
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_forest_lordship
+		trigger = {
+			has_reform = government_reform:th_forest_lordship
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 22. 魔法使政治（人偶之森、雾雨之森）
+	text = {
+		localization_key = rank_empire_th_magician_politics
+		trigger = {
+			has_reform = government_reform:th_magician_politics
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_magician_politics
+		trigger = {
+			has_reform = government_reform:th_magician_politics
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_magician_politics
+		trigger = {
+			has_reform = government_reform:th_magician_politics
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 24. 妖怪政权
+	text = {
+		localization_key = rank_empire_th_youkai_polity
+		trigger = {
+			has_reform = government_reform:th_youkai_polity
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_youkai_polity
+		trigger = {
+			has_reform = government_reform:th_youkai_polity
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_youkai_polity
+		trigger = {
+			has_reform = government_reform:th_youkai_polity
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### 25. 灵政权
+	text = {
+		localization_key = rank_empire_th_spirit_polity
+		trigger = {
+			has_reform = government_reform:th_spirit_polity
+			country_rank_is_empire = yes
+		}
+	}
+	text = {
+		localization_key = rank_kingdom_th_spirit_polity
+		trigger = {
+			has_reform = government_reform:th_spirit_polity
+			country_rank_is_kingdom = yes
+		}
+	}
+	text = {
+		localization_key = rank_duchy_th_spirit_polity
+		trigger = {
+			has_reform = government_reform:th_spirit_polity
+			country_rank_is_duchy = yes
+		}
+	}
+
+	### ============================================================
 	### 幻想乡专属等级名（仅 IO 成员国 = 全部 95 个幻想乡国家）
+	### ============================================================
 	text = {
 		localization_key = rank_empire_gensokyo
 		trigger = {

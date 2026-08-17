@@ -1,0 +1,637 @@
+﻿### ============================================================
+### 幻想乡 — 诸势力首要政府改革（君主制）
+### 依据设计文档《政府改革和君主称呼》实装
+### 全部为核心政府改革（major）且锁定无法替换（locked）
+### 全部额外提供 政府改革槽位 +1（government_reform_slots = 1）
+### 图标：main_menu/gfx/interface/icons/government_reforms/illustrations/<key>.dds
+### ============================================================
+
+# 1. 博丽、守矢 — 神社集权制
+th_shrine_centralization = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T04
+			tag = T14
+		}
+	}
+	allow = {
+		OR = {
+			tag = T04
+			tag = T14
+		}
+	}
+	country_modifier = {
+		clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+		monthly_towards_spiritualist = societal_value_monthly_move
+		global_crown_estate_power = 0.05
+		monthly_legitimacy = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 2. 琪露利亚、大利亚、迎春花小径、永恒花园、三月精 — 妖精政治
+th_fairy_politics = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T01
+			tag = T02
+			tag = T07
+			tag = T29
+			tag = T06
+		}
+	}
+	allow = {
+		OR = {
+			tag = T01
+			tag = T02
+			tag = T07
+			tag = T29
+			tag = T06
+		}
+	}
+	country_modifier = {
+		monthly_towards_free_subjects = societal_value_monthly_move
+		global_peasants_estate_power = 0.05
+		stability_decay = -0.00025
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 3. 命莲寺 — 命莲僧伽
+th_myouren_sangha = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T32
+	}
+	allow = {
+		tag = T32
+	}
+	country_modifier = {
+		clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+		monthly_towards_spiritualist = societal_value_monthly_move
+		research_speed_modifier = 0.025
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 4. 天狗 — 山岳等级制
+th_mountain_hierarchy = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T18
+	}
+	allow = {
+		tag = T18
+	}
+	country_modifier = {
+		monthly_towards_defensive = societal_value_monthly_move
+		nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+		levy_combat_efficiency_modifier = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 5. 魔界、后户之国、梦境地狱、孑然岸滨 — 神明领国
+th_divine_realm = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T58
+			tag = T13
+			tag = T81
+			tag = T40
+		}
+	}
+	allow = {
+		OR = {
+			tag = T58
+			tag = T13
+			tag = T81
+			tag = T40
+		}
+	}
+	country_modifier = {
+		monthly_towards_spiritualist = societal_value_monthly_move
+		global_clergy_estate_power = 0.05
+		monthly_religious_influence = 0.1
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 6. 彼岸 — 阎魔帝君
+th_yama_emperor = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T25
+	}
+	allow = {
+		tag = T25
+	}
+	country_modifier = {
+		monthly_towards_centralization = societal_value_monthly_move
+		stability_investment = small_stability_investment
+		country_cabinet_efficiency = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 7. 月之都 — 月之贤者议会
+th_lunar_sage_council = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T72
+	}
+	allow = {
+		tag = T72
+	}
+	country_modifier = {
+		research_speed_modifier = 0.05
+		country_cabinet_efficiency = 0.05
+		monthly_towards_quality = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 8. 时空旅人 — 科学社会
+th_scientific_society = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T69
+	}
+	allow = {
+		tag = T69
+	}
+	country_modifier = {
+		research_speed_modifier = 0.05
+		global_burghers_estate_power = 0.05
+		country_cabinet_efficiency = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 9. 鬼杰组、劲牙组、刚欲同盟 — 畜生之道
+th_beast_path = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T37
+			tag = T38
+			tag = T39
+		}
+	}
+	allow = {
+		OR = {
+			tag = T37
+			tag = T38
+			tag = T39
+		}
+	}
+	country_modifier = {
+		monthly_towards_belligerent = societal_value_monthly_move
+		land_morale_modifier = 0.05
+		nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 10. 迷途之家、华扇的仙界 — 贤者政治
+th_sage_politics = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T05
+			tag = T83
+		}
+	}
+	allow = {
+		OR = {
+			tag = T05
+			tag = T83
+		}
+	}
+	country_modifier = {
+		country_cabinet_efficiency = 0.05
+		monthly_towards_decentralization = societal_value_monthly_move
+		diplomatic_capacity = 0.5
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 11. 梦幻世界 — 幻梦双生
+th_dream_twin = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T74
+	}
+	allow = {
+		tag = T74
+	}
+	country_modifier = {
+		monthly_prestige = 0.1
+		stability_decay = 0.00025
+		monthly_towards_absolutism = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 12. 人间之里诸国 — 人类村落
+th_human_village = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T03
+			tag = T89
+			tag = T91
+			tag = T93
+			tag = T94
+			tag = T88
+			tag = T92
+		}
+	}
+	allow = {
+		OR = {
+			tag = T03
+			tag = T89
+			tag = T91
+			tag = T93
+			tag = T94
+			tag = T88
+			tag = T92
+		}
+	}
+	country_modifier = {
+		tax_income_efficiency = small_tax_income_efficiency_bonus
+		country_cabinet_efficiency = 0.05
+		burghers_estate_target_satisfaction = small_permanent_target_satisfaction
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 13. 仙界 — 圣德君主制
+th_holy_virtue_monarchy = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T51
+	}
+	allow = {
+		tag = T51
+	}
+	country_modifier = {
+		monthly_legitimacy = 0.1
+		clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+		monthly_towards_traditionalist = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 14. 龙宫 — 云外苍天
+th_cloud_beyond_sky = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T71
+	}
+	allow = {
+		tag = T71
+	}
+	country_modifier = {
+		monthly_towards_naval = societal_value_monthly_move
+		navy_maintenance_efficiency = 0.05
+		global_sailors_modifier = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 15. 天界 — 天地茫荒
+th_heaven_earth_desolation = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T70
+	}
+	allow = {
+		tag = T70
+	}
+	country_modifier = {
+		monthly_towards_absolutism = societal_value_monthly_move
+		monthly_towards_naval = societal_value_minor_monthly_move
+		global_crown_estate_power = 0.05
+		monthly_prestige = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 16. 河童、山童 — 河童邦国
+th_kappa_state = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T26
+			tag = T27
+		}
+	}
+	allow = {
+		OR = {
+			tag = T26
+			tag = T27
+		}
+	}
+	country_modifier = {
+		global_build_buildings_efficiency = 0.05
+		global_production_efficiency = small_production_efficiency_bonus
+		burghers_estate_target_satisfaction = small_permanent_target_satisfaction
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 17. 冥界 — 亡灵君主制
+th_undead_monarchy = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T31
+	}
+	allow = {
+		tag = T31
+	}
+	country_modifier = {
+		stability_decay = -0.00025
+		monthly_towards_traditionalist = societal_value_monthly_move
+		clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 18. 柳下运河、狼人之森、秘境 — 草根妖怪联盟
+th_grassroots_youkai_alliance = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T49
+			tag = T50
+			tag = T35
+		}
+	}
+	allow = {
+		OR = {
+			tag = T49
+			tag = T50
+			tag = T35
+		}
+	}
+	country_modifier = {
+		monthly_towards_decentralization = societal_value_monthly_move
+		global_peasants_estate_power = 0.05
+		global_levy_size_modifier = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 19. 旧都、水桥、地底井、幻想风穴 — 地底
+th_underground_realm = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T23
+			tag = T22
+			tag = T46
+			tag = T21
+		}
+	}
+	allow = {
+		OR = {
+			tag = T23
+			tag = T22
+			tag = T46
+			tag = T21
+		}
+	}
+	country_modifier = {
+		global_production_efficiency = small_production_efficiency_bonus
+		monthly_towards_belligerent = societal_value_monthly_move
+		global_crown_estate_power = -0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 20. 地灵殿 — 觉妖怪体系
+th_satori_system = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		tag = T20
+	}
+	allow = {
+		tag = T20
+	}
+	country_modifier = {
+		counter_espionage = 0.1
+		country_cabinet_efficiency = 0.05
+		monthly_towards_quality = societal_value_minor_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 21. 萤火之森、夜雀食堂、三头犬之林 — 森林领主制
+th_forest_lordship = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T12
+			tag = T11
+			tag = T10
+		}
+	}
+	allow = {
+		OR = {
+			tag = T12
+			tag = T11
+			tag = T10
+		}
+	}
+	country_modifier = {
+		global_monthly_food_modifier = 0.05
+		monthly_towards_individualism = societal_value_minor_monthly_move
+		monthly_towards_traditionalist = societal_value_monthly_move
+		peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+# 22. 人偶之森、雾雨之森 — 魔法使政治
+th_magician_politics = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		OR = {
+			tag = T08
+			tag = T09
+		}
+	}
+	allow = {
+		OR = {
+			tag = T08
+			tag = T09
+		}
+	}
+	country_modifier = {
+		research_speed_modifier = 0.05
+		monthly_towards_individualism = societal_value_monthly_move
+		monthly_towards_traditionalist = societal_value_monthly_move
+		global_burghers_estate_power = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+### ============================================================
+### 普遍的妖怪国家 — 妖怪政权
+### ============================================================
+th_youkai_polity = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		culture = { has_culture_group = culture_group:th_gensokyo_youkai_culture_group }
+	}
+	allow = {
+		culture = { has_culture_group = culture_group:th_gensokyo_youkai_culture_group }
+	}
+	country_modifier = {
+		global_nobles_estate_power = 0.05
+		monthly_towards_aristocracy = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+
+### ============================================================
+### 普遍的灵国家 — 灵政权
+### ============================================================
+th_spirit_polity = {
+	government = monarchy
+	major = yes
+	locked = {
+		always = yes
+	}
+	potential = {
+		culture = { has_culture_group = culture_group:th_gensokyo_ghost_culture_group }
+	}
+	allow = {
+		culture = { has_culture_group = culture_group:th_gensokyo_ghost_culture_group }
+	}
+	country_modifier = {
+		monthly_towards_spiritualist = societal_value_monthly_move
+		global_clergy_estate_power = 0.05
+		government_reform_slots = 1
+	}
+	years = 2
+}

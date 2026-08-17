@@ -1,0 +1,79 @@
+﻿l_simp_chinese:
+ ### ============================================================
+ ### 幻想乡 — 诸势力首要政府改革（本地化）
+ ### ============================================================
+ # 通用（幻想乡君主制）
+ th_gensokyo_government_reform: "幻想乡君主制"
+ th_gensokyo_government_reform_desc: "依托大结界与幻想乡议会维系的松散君主制。各国名义上臣服于同一套幻想乡秩序，实际却各凭实力自治。"
+ # 1. 神社集权制
+ th_shrine_centralization: "神社集权制"
+ th_shrine_centralization_desc: "以神社为中心的政体，巫女或神主既是祭祀之长，也是世俗的统治者。神权与君权在此合而为一。"
+ # 2. 妖精政治
+ th_fairy_politics: "妖精政治"
+ th_fairy_politics_desc: "由妖精们凭一时兴致组成的散漫政体。没有严密的官僚，也没有长远的谋划，一切都随天气与心情而定。"
+ # 3. 命莲僧伽
+ th_myouren_sangha: "命莲僧伽"
+ th_myouren_sangha_desc: "以寺院为纽带的僧团政体。修行者与信众依戒律共居，以慈悲与调和为治国之本。"
+ # 4. 山岳等级制
+ th_mountain_hierarchy: "山岳等级制"
+ th_mountain_hierarchy_desc: "天狗社会以严密的等级与功勋排列。从下级到上级，每个人都清楚自己在山中的地位。"
+ # 5. 神明领国
+ th_divine_realm: "神明领国"
+ th_divine_realm_desc: "由神明直接统御的国度。这里的统治者不是凡人，而是受信众供奉的神灵本身。"
+ # 6. 阎魔帝君
+ th_yama_emperor: "阎魔帝君"
+ th_yama_emperor_desc: "以审判与裁决为天职的政体。阎魔执掌是非曲直，国家秩序依判词而立。"
+ # 7. 月之贤者议会
+ th_lunar_sage_council: "月之贤者议会"
+ th_lunar_sage_council_desc: "由月之贤者们合议治理的政体。智慧与远见是这里唯一的权力来源。"
+ # 8. 科学社会
+ th_scientific_society: "科学社会"
+ th_scientific_society_desc: "以理性与实证为最高准则的社会。学者与研究者掌握国家，一切传统都要经得起实验的检验。"
+ # 9. 畜生之道
+ th_beast_path: "畜生之道"
+ th_beast_path_desc: "以力与獠牙立身的兽之政体。首领之位靠实力夺取，弱肉强食是唯一的法则。"
+ # 10. 贤者政治
+ th_sage_politics: "贤者政治"
+ th_sage_politics_desc: "由隐世的贤者幕后执掌的政体。凡俗的纷争之上，自有人以千年的智慧权衡全局。"
+ # 11. 幻梦双生
+ th_dream_twin: "幻梦双生"
+ th_dream_twin_desc: "梦境与现实交织的异质政体。统治者同时存在于两个世界，其意志亦真亦幻，难以捉摸。"
+ # 12. 人类村落
+ th_human_village: "人类村落"
+ th_human_village_desc: "由人类聚落联合而成的政体。以市集、村塾与家系维系秩序，在妖怪环伺中谋求安稳生计。"
+ # 13. 圣德君主制
+ th_holy_virtue_monarchy: "圣德君主制"
+ th_holy_virtue_monarchy_desc: "以德行教化立国的君主制。君主被奉为圣人，以德治而非武力统御臣民。"
+ # 14. 云外苍天
+ th_cloud_beyond_sky: "云外苍天"
+ th_cloud_beyond_sky_desc: "栖于云海之上的龙宫政体。海与天是它的疆域，龙宫使代行苍天之命。"
+ # 15. 天地茫荒
+ th_heaven_earth_desolation: "天地茫荒"
+ th_heaven_earth_desolation_desc: "自比天地至尊的僭越政体。其统治者以僭主自居，觊觎那本不属于凡人的至高之位。"
+ # 16. 河童邦国
+ th_kappa_state: "河童邦国"
+ th_kappa_state_desc: "以河童与山童的工程技艺立国的政体。作坊与工坊取代了宫殿，巧匠即是最受尊敬之人。"
+ # 17. 亡灵君主制
+ th_undead_monarchy: "亡灵君主制"
+ th_undead_monarchy_desc: "由亡灵公主统御的死之政体。生者与死者同处一境，静寂中自有其秩序。"
+ # 18. 草根妖怪联盟
+ th_grassroots_youkai_alliance: "草根妖怪联盟"
+ th_grassroots_youkai_alliance_desc: "由居无定所的小妖怪们结成的松散联盟。没有高贵的血统，只有同舟共济的江湖义气。"
+ # 19. 地底
+ th_underground_realm: "地底"
+ th_underground_realm_desc: "深居地下的旧都政体。黑暗与熔岩之间，被流放者们在不见天日处自立其国。"
+ # 20. 觉妖怪体系
+ th_satori_system: "觉妖怪体系"
+ th_satori_system_desc: "以读心之力维系的地灵殿政体。在能看穿一切心思的觉妖怪面前，无人能藏匿秘密。"
+ # 21. 森林领主制
+ th_forest_lordship: "森林领主制"
+ th_forest_lordship_desc: "以林地为领的领主政体。森林的住民各守其域，妖怪领主庇护着树海中的秩序。"
+ # 22. 魔法使政治
+ th_magician_politics: "魔法使政治"
+ th_magician_politics_desc: "由魔法使们自治的政体。研究与魔法是衡量一切的标准，寻常的权力在此并无分量。"
+ # 24. 妖怪政权
+ th_youkai_polity: "妖怪政权"
+ th_youkai_polity_desc: "普遍的妖怪政体。以强者为尊、以族群为界，妖怪们各据一方，自成其国。"
+ # 25. 灵政权
+ th_spirit_polity: "灵政权"
+ th_spirit_polity_desc: "普遍的灵之政体。幽灵、亡灵与浮游灵等无形之众，以超脱生死的规则共处。"
