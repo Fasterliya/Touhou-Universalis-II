@@ -1,0 +1,253 @@
+﻿### ============================================================
+### 幻想乡 — 法律系统（依据《幻想乡的法律》设计文档实装）
+### 政策写入原版法律组：
+###   feudal_de_jure_law（封建法理法）/ legal_code_law（法典）
+###   education_masses_law（群众教育）/ cultural_traditions_law（文化传统）
+###   administrative_system（行政体系）
+### 修正取较低档（tiny / small 级），与文档一致
+### ============================================================
+
+### 一、封建法理法（原版 feudal_de_jure_law
+feudal_de_jure_law = {
+
+	### 1. 旧章（大结界成型之初的继承旧规）
+	th_old_charter = {
+		potential = {
+			has_advance = th_panegyric_of_all_things_advance
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.05
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			stability_decay = -0.00025
+			monthly_towards_traditionalist = societal_value_monthly_move
+		}
+		years = 2
+	}
+}
+
+### 二、法典（原版 legal_code_law
+legal_code_law = {
+
+	### 1. 旧例法「妖怪」
+	th_old_customary_law = {
+		potential = {
+			NOT = { culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group } }
+		}
+		country_modifier = {
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			stability_decay = -0.00025
+			monthly_towards_traditionalist = societal_value_monthly_move
+			monthly_towards_decentralization = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+
+	### 2. 以和为贵「人类」
+	th_harmony_first_law = {
+		potential = {
+			culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group }
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.05
+			peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+			stability_decay = -0.00025
+			monthly_towards_conciliatory = societal_value_monthly_move
+		}
+		years = 2
+	}
+
+	### 3. 人妖分律
+	th_separate_laws = {
+		potential = {
+			OR = {
+				culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group }
+				culture = { has_culture_group = culture_group:th_gensokyo_youkai_culture_group }
+			}
+		}
+		country_modifier = {
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+			monthly_towards_conciliatory = societal_value_minor_monthly_move
+			monthly_towards_traditionalist = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+
+	### 4. 幻想乡成文法（前置：幻想乡法革新）
+	th_statute_law = {
+		potential = {
+			has_advance = th_gensokyo_law_advance
+		}
+		country_modifier = {
+			country_cabinet_efficiency = 0.05
+			legislative_efficiency = 0.05
+			tax_income_efficiency = small_tax_income_efficiency_bonus
+			monthly_towards_centralization = societal_value_monthly_move
+		}
+		years = 2
+	}
+}
+
+### 三、群众教育（原版 education_masses_law）
+education_masses_law = {
+
+	### 1. 耕读立家「人类」
+	th_farming_and_reading = {
+		potential = {
+			culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group }
+		}
+		country_modifier = {
+			global_production_efficiency = small_production_efficiency_bonus
+			global_monthly_food_modifier = 0.05
+			global_max_literacy = -5
+			monthly_towards_traditionalist = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+
+	### 2. 无教而行「妖怪」
+	th_no_education = {
+		potential = {
+			NOT = { culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group } }
+		}
+		country_modifier = {
+			levy_combat_efficiency_modifier = 0.05
+			research_speed_modifier = -0.025
+			monthly_towards_traditionalist = societal_value_monthly_move
+		}
+		years = 2
+	}
+
+	### 3. 旧学独传（前置：旧学独传革新）
+	th_old_learning_only = {
+		potential = {
+			has_advance = th_old_learning_advance
+		}
+		country_modifier = {
+			cultural_tradition = 0.1
+			clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+			research_speed_modifier = -0.025
+			monthly_towards_traditionalist = societal_value_monthly_move
+		}
+		years = 2
+	}
+
+	### 4. 刊物与报纸的传习（百闻录）
+	th_publications = {
+		potential = {
+			has_advance = th_cartography_of_rumors_advance
+		}
+		country_modifier = {
+			global_max_literacy = 5
+			research_speed_modifier = 0.05
+			spy_network_construction = 0.1
+			monthly_towards_individualism = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+
+	### 5. 寺子屋体系（前置：有教无类革新）
+	th_terakoya_system = {
+		potential = {
+			has_advance = th_education_for_all_advance
+		}
+		country_modifier = {
+			global_max_literacy = 10
+			research_speed_modifier = 0.05
+			burghers_estate_target_satisfaction = small_permanent_target_satisfaction
+			monthly_towards_individualism = societal_value_monthly_move
+		}
+		years = 2
+	}
+
+	### 6. 农教并重（前置：农教并重革新）
+	th_farming_and_education = {
+		potential = {
+			has_advance = th_farming_and_education_advance
+		}
+		country_modifier = {
+			research_speed_modifier = 0.025
+			global_production_efficiency = small_production_efficiency_bonus
+			global_max_literacy = 5
+			peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+			monthly_towards_traditionalist = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+}
+
+### 四、文化传统（原版 cultural_traditions_law）
+cultural_traditions_law = {
+
+	### 1. 百妖夜宴「妖怪」
+	th_hundred_youkai_banquet = {
+		potential = {
+			culture = { has_culture_group = culture_group:th_gensokyo_youkai_culture_group }
+		}
+		country_modifier = {
+			global_monthly_food_modifier = 0.05
+			monthly_prestige = 0.05
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+			monthly_towards_traditionalist = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+
+	### 2. 口口相传「人类」
+	th_word_of_mouth = {
+		potential = {
+			culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group }
+		}
+		country_modifier = {
+			cultural_tradition = 0.1
+			monthly_legitimacy = 0.05
+			monthly_towards_traditionalist = societal_value_tiny_monthly_move
+			monthly_towards_inward = societal_value_tiny_monthly_move
+		}
+		years = 2
+	}
+}
+
+### 五、行政体系（原版 administrative_system）
+administrative_system = {
+
+	### 1. 个人统御「集权—但极大受限」
+	th_personal_rule = {
+		potential = {
+			NOT = { culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group } }
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.1
+			global_crown_estate_power = 0.1
+			country_cabinet_efficiency = -0.05
+			monthly_towards_centralization = societal_value_monthly_move
+		}
+		years = 2
+	}
+
+	### 2. 妖怪自治「分权」
+	th_youkai_autonomy = {
+		potential = {
+			any_pop = { culture = { has_culture_group = culture_group:th_gensokyo_youkai_culture_group } }
+		}
+		country_modifier = {
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_crown_estate_power = -0.05
+			monthly_towards_decentralization = societal_value_monthly_move
+		}
+		years = 2
+	}
+
+	### 3. 宗族社会「人类」「分权」
+	th_clan_society = {
+		potential = {
+			culture = { has_culture_group = culture_group:th_gensokyo_hito_culture_group }
+		}
+		country_modifier = {
+			peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+			stability_decay = -0.00025
+			monthly_legitimacy = 0.05
+			monthly_towards_decentralization = societal_value_monthly_move
+		}
+		years = 2
+	}
+}

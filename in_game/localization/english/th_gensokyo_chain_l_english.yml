@@ -71,6 +71,50 @@
  th_gensokyo_cloud_realm: "Cloud Realm"
  th_gensokyo_cloud_realm_desc: "A Dragon Palace system beyond Heaven's order, its rights of passage held by the Dragon Palace envoy Nagae Iku — even the lofty celestials must show respect before such a presence."
 
+### Gensokyo Law System (law categories)
+ th_feudal_legalism_law: "Feudal Legalism"
+ th_legal_code_law: "Legal Code"
+ th_education_law: "Education"
+ th_cultural_traditions_law: "Cultural Traditions"
+ th_administration_law: "Administration"
+### Feudal Legalism
+ th_old_charter: "Old Charter"
+ th_old_charter_desc: "The succession customs laid down when the Great Barrier was formed, passed down through the generations, unchanging with the times. The legal foundation is set; posterity has only to keep it."
+### Legal Code
+ th_old_customary_law: "Old Customary Law"
+ th_old_customary_law_desc: "Each youkai group follows the old customs handed down in its own land; every clan keeps its own ways, so long as the old precedents remain unbroken."
+ th_harmony_first_law: "Harmony Above All"
+ th_harmony_first_law_desc: "The laws of the human village prize mediation over harsh punishment. When disputes arise, elders of standing step in to settle them."
+ th_separate_laws: "Separate Laws for Man and Youkai"
+ th_separate_laws_desc: "Humans and youkai each follow their own customs and do not meddle in each other's affairs. Human quarrels are settled by law; youkai disputes, by old custom."
+ th_statute_law: "Gensokyo Statute Law"
+ th_statute_law_desc: "As printing spreads, the scattered customs of the land are compiled into clear and orderly legal codes."
+### Education
+ th_farming_and_reading: "Farming and Reading"
+ th_farming_and_reading_desc: "Human villages rest on farming as the foundation of the household; children are taught only husbandry and the seasons, not books."
+ th_no_education: "No Schooling"
+ th_no_education_desc: "Youkai have no schools; strength alone is the rule. No education, no letters — only instinct."
+ th_old_learning_only: "Only the Old Learning"
+ th_old_learning_only_desc: "Teaching treats only ancient texts as orthodox, rejecting foreign doctrines and new learning. New knowledge from outside is not accepted."
+ th_publications: "Gazettes and Newspapers"
+ th_publications_desc: "As printing advances, broadsheets and newspapers spread; tales and news alike are printed, and the people grow well-informed of the realm and beyond."
+ th_terakoya_system: "Terakoya Schools"
+ th_terakoya_system_desc: "Proper private schools in the terakoya style rise across the land. Literacy is no longer the privilege of the few."
+ th_farming_and_education: "Farming and Education in Tandem"
+ th_farming_and_education_desc: "Schooling and tillage go hand in hand: children study in class and work the fields, neither neglected."
+### Cultural Traditions
+ th_hundred_youkai_banquet: "Hundred Youkai Feast"
+ th_hundred_youkai_banquet_desc: "Youkai gather at one table, sharing drink between danmaku duels and cups, keeping the old bonds of Gensokyo."
+ th_word_of_mouth: "Word of Mouth"
+ th_word_of_mouth_desc: "Tales and legends pass down by word of mouth, recorded in the Gensokyo Chronicle. Hearing of the world beyond the village, humans learn fear, and the old days endure."
+### Administration
+ th_personal_rule: "Personal Rule"
+ th_personal_rule_desc: "An administration built on the leader's personal might and prestige, yet greatly limited in efficiency by circumstance."
+ th_youkai_autonomy: "Youkai Autonomy"
+ th_youkai_autonomy_desc: "Youkai govern their own lands; all matters within are decided by the youkai of the territory."
+ th_clan_society: "Clan Society"
+ th_clan_society_desc: "Human villages are governed by clans, each keeping its own house rules. Clan disputes and upbringing are settled within; outsiders may not intrude."
+
 ### Trial events
  th_gensokyo_trial_events.1.t: "The Final Judgment"
  th_gensokyo_trial_events.1.d: "The punitive crusade has ended. As the Yama, you must decide the fate of the target based on its sins."

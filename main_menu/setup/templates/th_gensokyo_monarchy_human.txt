@@ -63,12 +63,11 @@ government = {
 		immigration_law = open_borders_law
 		mining_law = nobles_mining_law
 		coin_laws = silver_coins
-		# 幻想乡法律系统（非人初始）：旧章/旧例法/无教而行/百妖夜宴/个人统御
+		# 幻想乡法律系统（人类初始）：旧章/以和为贵/耕读立家/口口相传/宗族社会
 		feudal_de_jure_law = th_old_charter
-		legal_code_law = th_old_customary_law
-		education_masses_law = th_no_education
-		cultural_traditions_law = th_hundred_youkai_banquet
-		administrative_system = th_personal_rule
+		legal_code_law = th_harmony_first_law
+		education_masses_law = th_farming_and_reading
+		cultural_traditions_law = th_word_of_mouth
+		administrative_system = th_clan_society
 	}
 }
-

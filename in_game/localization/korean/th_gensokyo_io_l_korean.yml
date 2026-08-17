@@ -59,6 +59,50 @@ th_gensokyo_forest_territory_desc: "마법의 숲의 요괴 영주들은 마법�
 th_gensokyo_cloud_realm: "구름 위 영지"
 th_gensokyo_cloud_realm_desc: "천계의 질서 밖에 있는 용궁 체계. 용궁사 나가에 이쿠가 왕래의 권한을 쥐고 있습니다. 높은 하늘의 천인조차 그 존재에게는 한 수 물러서야 합니다."
 
+### 환상향 법률 체계 (법률 그룹)
+th_feudal_legalism_law: "봉건 법리법"
+th_legal_code_law: "법전"
+th_education_law: "교육법"
+th_cultural_traditions_law: "문화 전통"
+th_administration_law: "행정 체계"
+### 봉건 법리법
+th_old_charter: "구장"
+th_old_charter_desc: "대결계가 성립되던 초기에 확립된 계승의 옛 규칙으로, 대대로 이어지며 시대에 따라 바뀌지 않습니다. 법리가 정해졌으니 후인은 그 옛것을 지킬 뿐입니다."
+### 법전
+th_old_customary_law: "구례법"
+th_old_customary_law_desc: "각지의 요괴들은 저마다 오랫동안 지켜온 옛 규칙을 따릅니다. 집단마다 풍습이 다르지만, 대대로 전해지는 구례만은 깨지지 않기를 바랄 뿐입니다."
+th_harmony_first_law: "화목을 으뜸으로"
+th_harmony_first_law_desc: "인간 마을의 율법은 엄한 형벌로 위엄을 세우기보다 분쟁의 중재를 중시하며, 무사태평을 최우선으로 삼습니다. 갈등이 생기면 마을에서 덕망 있는 이가 나서서 중재합니다."
+th_separate_laws: "인요분률"
+th_separate_laws_desc: "인간과 요괴는 각자 자신의 법도와 옛 관례를 따르며 서로의 일에 간섭하지 않습니다. 인간의 분쟁은 율법으로, 요괴의 시비는 옛 풍습으로 처리합니다."
+th_statute_law: "환상향 성문법"
+th_statute_law_desc: "인쇄 기술이 보급되면서 각지에 흩어져 있던 풍속과 규칙이 점차 법전으로 편찬되어, 조리가 분명하고 조목이 명확해집니다."
+### 교육법
+th_farming_and_reading: "경독입가"
+th_farming_and_reading_desc: "인간 마을은 농사를 가업의 근본으로 삼아, 후대에게는 농사·사시·절기만 가르치고 서적과 문장은 숭상하지 않습니다."
+th_no_education: "무교이행"
+th_no_education_desc: "요괴에게는 학교의 교화가 없으며 오직 강약만을 기준으로 합니다. 교육을 두지 않고 서적도 전하지 않으며, 그저 천성대로 행동합니다."
+th_old_learning_only: "구학독전"
+th_old_learning_only_desc: "가르침은 오직 옛 고전만을 정통의 근거로 삼아, 외래 학문과 새로운 학설을 받아들이지 않습니다. 지식의 전수는 옛 이치를 지키고, 외부에서 들어온 새 지식은 채택하지 않습니다."
+th_publications: "간행물과 신문의 전습"
+th_publications_desc: "인쇄 기술의 발전으로 간행물과 신문이 점차 성행하여, 견문과 이야기를 인쇄하여 전할 수 있게 됩니다. 백성들은 이를 통해 박문견식하여 영지 안팎의 각종 정보를 알게 됩니다."
+th_terakoya_system: "테라코야 체계"
+th_terakoya_system_desc: "테라코야 방식을 본뜬 정규 사숙이 점차 일어나 각지의 아이들이 입학하여 배울 수 있게 됩니다. 글 읽기는 더 이상 소수의 특권이 아니며, 일반 백성도 문자와 기초 학식을 익힐 기회를 얻습니다."
+th_farming_and_education: "농교병중"
+th_farming_and_education_desc: "교화와 농경을 병행하는 방식을 추진합니다. 아이들은 사숙에서 이치를 배우는 동시에 농사일에도 참여하여, 학식 수련과 전답 실천을 함께 하며 어느 한쪽도 게을리하지 않습니다."
+### 문화 전통
+th_hundred_youkai_banquet: "백요야연"
+th_hundred_youkai_banquet_desc: "요괴들이 한자리에 모여 술잔을 나누고 탄막 대결과 술잔 사이에서 환상향의 옛 정을 이어갑니다."
+th_word_of_mouth: "입구상전"
+th_word_of_mouth_desc: "각종 기문괴담이 입에서 입으로 대대로 전해지며 《환상향 연기》에 기록됩니다. 인간은 괴담을 들으며 마을 밖 세계에 대한 두려움을 품고, 듣는 이마다 깨달음이 있어 옛일은 오래도록 남습니다."
+### 행정 체계
+th_personal_rule: "개인 통어"
+th_personal_rule_desc: "우리 지도자의 개인적이고 강대한 위망과 능력을 핵심으로 하는 행정 체계입니다. 그러나 현실적 제약으로 인해 행정 전반의 효율은 크게 제한됩니다."
+th_youkai_autonomy: "요괴 자치"
+th_youkai_autonomy_desc: "각지의 요괴들은 지방 자치를 행하며, 영내의 크고 작은 일은 모두 그 땅의 요괴들이 스스로 결정하여 처리합니다."
+th_clan_society: "종족 사회"
+th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 종족은 자체의 가규를 지켜 자치를 행합니다. 족내 분쟁과 가사 교화는 종족 내부에서 처리하며, 다른 세력이 함부로 개입할 수 없습니다."
+
 
 ### === Variable Hover Display ===
  th_gensokyo_member_vars_display: "개인 변수 개요"

@@ -6,6 +6,8 @@ th_panegyric_of_all_things_advance = {
     allow_children = yes
     starting_technology_level = 3
     
+    unlock_law = th_old_charter
+    
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
     }
@@ -102,6 +104,28 @@ th_gensokyo_sages_advance = {
     requires = th_gensokyo_chronicle_advance
     
     replace_cabinet_member_cost_modifier = -0.15
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#旧学独传（解锁法律：旧学独传；前置：贤者守望）
+th_old_learning_advance = {
+    age = age_1_traditions
+    requires = th_gensokyo_sages_advance
+    
+    cultural_tradition = 0.1
+    
+    unlock_law = th_old_learning_only
     
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
@@ -416,6 +440,28 @@ th_emergent_journalism_advance = {
     }
 }
 
+#幻想乡法（解锁法律：幻想乡成文法；前置：印刷术）
+th_gensokyo_law_advance = {
+    age = age_2_renaissance
+    requires = th_printing_press_adoption_advance
+    
+    legislative_efficiency = 0.05
+    
+    unlock_law = th_statute_law
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
 #白银货币
 th_silver_currency_standard_advance = {
     age = age_2_renaissance
@@ -605,6 +651,50 @@ th_empirical_eye_advance = {
     requires = th_boundary_gaze_advance
     
     embrace_institution_cost_modifier = -0.10
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#有教无类（解锁法律：寺子屋体系；前置：实证之眼）
+th_education_for_all_advance = {
+    age = age_3_discovery
+    requires = th_empirical_eye_advance
+    
+    global_max_literacy = 5
+    
+    unlock_law = th_terakoya_system
+    
+    potential = {
+        culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
+    }
+    
+    allow = {
+        
+    }
+    
+    ai_weight = {
+        value = 0
+    }
+}
+
+#农教并重（解锁法律：农教并重；前置：实证之眼）
+th_farming_and_education_advance = {
+    age = age_3_discovery
+    requires = th_empirical_eye_advance
+    
+    global_production_efficiency = small_production_efficiency_bonus
+    
+    unlock_law = th_farming_and_education
     
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }

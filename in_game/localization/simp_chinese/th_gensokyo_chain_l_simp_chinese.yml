@@ -71,6 +71,50 @@
  th_gensokyo_cloud_realm: "云上领"
  th_gensokyo_cloud_realm_desc: "天界秩序之外的龙宫体系，由龙宫使者永江衣玖执掌往来之权——即便高高在上的天人，面对此等存在亦须礼让三分。"
 
+### 幻想乡法律系统（法律组）
+ th_feudal_legalism_law: "封建法理法"
+ th_legal_code_law: "法典"
+ th_education_law: "教育法"
+ th_cultural_traditions_law: "文化传统"
+ th_administration_law: "行政体系"
+### 封建法理法
+ th_old_charter: "旧章"
+ th_old_charter_desc: "大结界成型之初确立的继承旧规，世代相承，不因时势而改。法理既定，后人唯守其旧。"
+### 法典
+ th_old_customary_law: "旧例法"
+ th_old_customary_law_desc: "各地妖怪依照各自沿袭已久的旧规行事，不同族群习俗各有差异，只求世代相传的旧例不被打破。"
+ th_harmony_first_law: "以和为贵"
+ th_harmony_first_law_desc: "人类村落的律法重在调解纷争，不靠严苛刑罚树立威严，将息事宁人放在首位。发生矛盾时，由村中德高望重之人出面居中调停。"
+ th_separate_laws: "人妖分律"
+ th_separate_laws_desc: "人类与妖怪各自遵循自身的法度旧例，互不干预彼此的事务。人类争端适用律法，妖怪纠纷则依照旧俗处置。"
+ th_statute_law: "幻想乡成文法"
+ th_statute_law_desc: "随着印刷技术普及，各地零散的风俗规矩被逐步汇编成律法典籍，条理分明、条目清晰。"
+### 教育法
+ th_farming_and_reading: "耕读立家"
+ th_farming_and_reading_desc: "人类村落以耕作为家业根本，教授后代只授予农事、四时与节气，不尚书卷文辞。"
+ th_no_education: "无教而行"
+ th_no_education_desc: "妖怪既没有学堂教化，只以强弱为准则。不设教育，不传书文，仅仅凭着天性行事。"
+ th_old_learning_only: "旧学独传"
+ th_old_learning_only_desc: "教学只以古旧典籍作为正统依据，不接纳外来学问与新兴学说。知识的传授恪守旧有的义理，外界传来的新知皆不予采纳。"
+ th_publications: "刊物与报纸的传习"
+ th_publications_desc: "印刷技艺发展促使刊物报纸逐步盛行，见闻与物语皆可刊印传播，民众得以借此博闻广见，了解领地内外各类讯息。"
+ th_terakoya_system: "寺子屋体系"
+ th_terakoya_system_desc: "仿照寺子屋模式的正规私塾逐步兴起，各地孩童可入塾就学。读书识字不再是少数人的特权，普通民众也有机会习得文字与基础学识。"
+ th_farming_and_education: "农教并重"
+ th_farming_and_education_desc: "推行教化与农耕并举的模式，孩童在私塾读书明理的同时，也要参与农事劳作。学识修习与田间实践并行，两方面都不荒废。"
+### 文化传统
+ th_hundred_youkai_banquet: "百妖夜宴"
+ th_hundred_youkai_banquet_desc: "妖怪之间同席共饮，在弹幕对决与杯盏往来之间，维系幻想乡的旧有情谊。"
+ th_word_of_mouth: "口口相传"
+ th_word_of_mouth_desc: "各类奇闻怪谈依靠口头讲述代代流传，被记录于《幻想乡缘起》之中。人类听闻怪谈传说，心生对村落之外世界的畏惧，听者各有感悟，旧日往事便得以长久留存。"
+### 行政体系
+ th_personal_rule: "个人统御"
+ th_personal_rule_desc: "以我们领袖个人的强大威望与能力作为核心主导的行政体系，然而受现实条件制约，整体行政效率受到极大限制。"
+ th_youkai_autonomy: "妖怪自治"
+ th_youkai_autonomy_desc: "各地妖怪实行地方自治，领地内部的大小事务，均由辖地内的妖怪自行决断处置。"
+ th_clan_society: "宗族社会"
+ th_clan_society_desc: "人类乡里以宗族为治理单元，各宗族恪守自家族规实行自治。族内纷争、家事教化皆由宗族内部处置，其他势力不可擅自介入宗族内部事务。"
+
 ### 审判事件
  th_gensokyo_trial_events.1.t: "最终审判"
  th_gensokyo_trial_events.1.d: "惩戒战争已了结。作为阎魔，你需依据目标国的罪行裁定其命运。"
