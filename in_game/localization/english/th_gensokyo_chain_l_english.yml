@@ -63,6 +63,14 @@
  th_gensokyo_regulated_state: "Regulated State of the Underworld"
  th_gensokyo_regulated_state_desc: "A subject sentenced by the Yama, stripped of all autonomy, released as independent when the sentence ends."
 
+### Initial special subjects (permanent, cannot be annexed)
+ th_gensokyo_satori_vassal: "Satori Vassal"
+ th_gensokyo_satori_vassal_desc: "A hell-realm subject under the Palace of the Earth Spirits, ruled through satori mind-reading. It can never be annexed."
+ th_gensokyo_forest_territory: "Forest Territory"
+ th_gensokyo_forest_territory_desc: "A woodland domain under the Misty Forest, self-governed by forest lords who pay tribute to the magician. It can never be annexed."
+ th_gensokyo_cloud_realm: "Cloud Realm"
+ th_gensokyo_cloud_realm_desc: "A dragon-palace domain above the clouds under Heaven's dominion, governed by the Dragon Palace envoy. It can never be annexed."
+
 ### Trial events
  th_gensokyo_trial_events.1.t: "The Final Judgment"
  th_gensokyo_trial_events.1.d: "The punitive crusade has ended. As the Yama, you must decide the fate of the target based on its sins."

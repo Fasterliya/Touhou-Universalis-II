@@ -70,6 +70,14 @@
  th_gensokyo_regulated_state:"Поднадзорное государство Подземного мира"
  th_gensokyo_regulated_state_desc:"Субъект, приговорённый Ямой, лишённый всякой автономии, вновь обретает независимость по окончании срока."
 
+### Initial special subjects (permanent, cannot be annexed)
+ th_gensokyo_satori_vassal:"Вассал Сатори"
+ th_gensokyo_satori_vassal_desc:"Адское владение под властью Дворца духов земли, управляемое чтением мыслей сатори. Не может быть аннексировано."
+ th_gensokyo_forest_territory:"Лесная территория"
+ th_gensokyo_forest_territory_desc:"Лесное владение под началом Туманного леса; лесные лорды платят дань магам. Не может быть аннексировано."
+ th_gensokyo_cloud_realm:"Облачный удел"
+ th_gensokyo_cloud_realm_desc:"Драконий дворец над облаками под властью Небес, управляется посланцем Драконьего дворца. Не может быть аннексировано."
+
 ### Trial events
  th_gensokyo_trial_events.1.t:"Финальный приговор"
  th_gensokyo_trial_events.1.d:"Карательный поход завершён. Как Яма, вы должны решить судьбу цели на основе её грехов."

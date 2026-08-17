@@ -1,0 +1,187 @@
+﻿### ============================================================
+### 幻想乡 — 开局特殊附庸（永久附庸，无法吞并）
+### 开局外交关系设定见 on_action\th_game_start_oa.txt
+### 参考 th_gensokyo_regulated_state（隐藏、不可取消、不可吞并）
+### ============================================================
+
+### 地灵殿附庸（涡祸地狱、核热地狱 → 地灵殿）
+### 觉妖怪以读心之力统御群狱，狱属向地灵殿上贡
+th_gensokyo_satori_vassal = {
+	visible = {
+		always = no
+	}
+	enabled = {
+		always = no
+	}
+	creation_visible = {
+		always = no
+	}
+	subject_creation_enabled = {
+		always = no
+	}
+	release_country_enabled = {
+		always = no
+	}
+
+	can_attack = {
+		always = no
+	}
+	can_rival = {
+		always = no
+	}
+	can_marry = {
+		always = no
+	}
+
+	level = 2
+	can_be_annexed = no
+	has_limited_diplomacy = yes
+	subject_can_cancel = no
+	overlord_can_cancel = no
+	will_join_independence_wars = no
+	can_change_rank = no
+	can_change_heir_selection = no
+	allow_declaring_wars = {
+		always = no
+	}
+	subject_pays = subject_pays_vassal
+
+	join_offensive_wars_always = {
+		always = yes
+	}
+	join_defensive_wars_always = {
+		always = yes
+	}
+
+	overlord_modifier = {
+		counter_espionage = 0.1
+		country_cabinet_efficiency = 0.05
+		monthly_towards_centralization = societal_value_tiny_monthly_move
+	}
+	subject_modifier = {
+		global_production_efficiency = small_production_efficiency_bonus
+		stability_decay = -0.00025
+	}
+}
+
+### 森林领地（夜雀食堂、萤火之森、三头犬之林 → 雾雨之森）
+### 魔女统辖林地诸领，森林领主自治并向雾雨之森上贡
+th_gensokyo_forest_territory = {
+	visible = {
+		always = no
+	}
+	enabled = {
+		always = no
+	}
+	creation_visible = {
+		always = no
+	}
+	subject_creation_enabled = {
+		always = no
+	}
+	release_country_enabled = {
+		always = no
+	}
+
+	can_attack = {
+		always = no
+	}
+	can_rival = {
+		always = no
+	}
+	can_marry = {
+		always = no
+	}
+
+	level = 2
+	can_be_annexed = no
+	has_limited_diplomacy = yes
+	subject_can_cancel = no
+	overlord_can_cancel = no
+	will_join_independence_wars = no
+	can_change_rank = no
+	can_change_heir_selection = no
+	allow_declaring_wars = {
+		always = no
+	}
+	subject_pays = subject_pays_vassal
+
+	join_offensive_wars_always = {
+		always = yes
+	}
+	join_defensive_wars_always = {
+		always = yes
+	}
+
+	overlord_modifier = {
+		global_monthly_food_modifier = 0.05
+		global_levy_size_modifier = 0.05
+		monthly_towards_decentralization = societal_value_tiny_monthly_move
+	}
+	subject_modifier = {
+		global_monthly_food_modifier = 0.05
+		peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+		levy_combat_efficiency_modifier = 0.05
+	}
+}
+
+### 云上领（龙宫 → 天界）
+### 天界统御云上龙宫，龙宫使代行治理
+th_gensokyo_cloud_realm = {
+	visible = {
+		always = no
+	}
+	enabled = {
+		always = no
+	}
+	creation_visible = {
+		always = no
+	}
+	subject_creation_enabled = {
+		always = no
+	}
+	release_country_enabled = {
+		always = no
+	}
+
+	can_attack = {
+		always = no
+	}
+	can_rival = {
+		always = no
+	}
+	can_marry = {
+		always = no
+	}
+
+	level = 2
+	can_be_annexed = no
+	has_limited_diplomacy = yes
+	subject_can_cancel = no
+	overlord_can_cancel = no
+	will_join_independence_wars = no
+	can_change_rank = no
+	can_change_heir_selection = no
+	allow_declaring_wars = {
+		always = no
+	}
+	subject_pays = subject_pays_vassal
+
+	join_offensive_wars_always = {
+		always = yes
+	}
+	join_defensive_wars_always = {
+		always = yes
+	}
+
+	overlord_modifier = {
+		monthly_prestige = 0.05
+		global_crown_estate_power = 0.05
+		monthly_towards_absolutism = societal_value_tiny_monthly_move
+	}
+	subject_modifier = {
+		monthly_towards_naval = societal_value_tiny_monthly_move
+		global_sailors_modifier = 0.05
+		navy_maintenance_efficiency = 0.05
+	}
+}

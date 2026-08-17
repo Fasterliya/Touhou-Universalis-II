@@ -40,6 +40,14 @@ th_gensokyo_amity_vs_belligerence_desc: "縁の者は衆生と縁を結び、和
 th_gensokyo_amity_focus: "縁"
 belligerence_focus: "乱"
 
+### 開局特殊属領（永久属領、併合不可）
+th_gensokyo_satori_vassal: "地霊殿の属領"
+th_gensokyo_satori_vassal_desc: "地霊殿に直属する獄の属領。覚妖怪の読心により統御され、併合されることはない。"
+th_gensokyo_forest_territory: "森林領地"
+th_gensokyo_forest_territory_desc: "霧雨の森の配下にある林地の属領。森林の領主が自治し、魔女に貢ぐ。併合されることはない。"
+th_gensokyo_cloud_realm: "雲上領"
+th_gensokyo_cloud_realm_desc: "天界の統治下にある雲上の竜宮の領地。竜宮使いが代行して治める。併合されることはない。"
+
  ### 法律
  th_gensokyo_unity_vision_law: "結束の理念"
  th_gensokyo_unity_vision_law_desc: "幻想郷の結束の力の方向性と運用の道を定める。"

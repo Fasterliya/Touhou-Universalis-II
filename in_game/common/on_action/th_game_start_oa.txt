@@ -14,5 +14,27 @@ th_on_game_start = {
 		international_organization:th_sages_council_io = {
 			th_sages_council_apply_prestige_thresholds_effect = yes
 		}
+		### 初始特殊附庸关系（永久附庸，无法吞并）
+		### 地灵殿附庸：涡祸地狱、核热地狱 → 地灵殿
+		c:T44 = {
+			make_subject_of = { target = c:T20 type = subject_type:th_gensokyo_satori_vassal }
+		}
+		c:T45 = {
+			make_subject_of = { target = c:T20 type = subject_type:th_gensokyo_satori_vassal }
+		}
+		### 森林领地：夜雀食堂、萤火之森、三头犬之林 → 雾雨之森
+		c:T11 = {
+			make_subject_of = { target = c:T09 type = subject_type:th_gensokyo_forest_territory }
+		}
+		c:T12 = {
+			make_subject_of = { target = c:T09 type = subject_type:th_gensokyo_forest_territory }
+		}
+		c:T10 = {
+			make_subject_of = { target = c:T09 type = subject_type:th_gensokyo_forest_territory }
+		}
+		### 云上领：龙宫 → 天界
+		c:T71 = {
+			make_subject_of = { target = c:T70 type = subject_type:th_gensokyo_cloud_realm }
+		}
 	}
 }

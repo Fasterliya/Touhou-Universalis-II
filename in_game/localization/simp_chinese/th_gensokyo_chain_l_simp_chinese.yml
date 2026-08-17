@@ -63,6 +63,14 @@
  th_gensokyo_regulated_state: "彼岸监管国"
  th_gensokyo_regulated_state_desc: "被阎魔判刑的附属国，完全丧失自主，刑满后释放为独立国家。"
 
+### 开局特殊附庸（永久附庸，无法吞并）
+ th_gensokyo_satori_vassal: "地灵殿附庸"
+ th_gensokyo_satori_vassal_desc: "名义上是觉的领地，实则由她的宠物们自行运转。灼热地狱的火海与熔岩，全由她的宠物们一手打理。"
+ th_gensokyo_forest_territory: "森林领地"
+ th_gensokyo_forest_territory_desc: "魔法森林的妖怪领主，与魔法使之间维系着松散的从属关系，而非绝对臣服。"
+ th_gensokyo_cloud_realm: "云上领"
+ th_gensokyo_cloud_realm_desc: "天界秩序之外的龙宫体系，由龙宫使者永江衣玖执掌往来之权——即便高高在上的天人，面对此等存在亦须礼让三分。"
+
 ### 审判事件
  th_gensokyo_trial_events.1.t: "最终审判"
  th_gensokyo_trial_events.1.d: "惩戒战争已了结。作为阎魔，你需依据目标国的罪行裁定其命运。"

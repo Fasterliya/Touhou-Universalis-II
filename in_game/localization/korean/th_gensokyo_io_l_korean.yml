@@ -51,6 +51,14 @@ th_gensokyo_amity_vs_belligerence_desc: "연을 맺는 자는 만물과 인연�
 th_gensokyo_amity_focus: "연 (인연)"
 belligerence_focus: "란 (혼란)"
 
+### 시작 특수 속령 (영구 속령, 병합 불가)
+th_gensokyo_satori_vassal: "지령전 속령"
+th_gensokyo_satori_vassal_desc: "지령전에 직속된 지옥의 속령. 각요괴의 독심술로 통치되며 합병될 수 없습니다."
+th_gensokyo_forest_territory: "숲 영지"
+th_gensokyo_forest_territory_desc: "안개비 숲 휘하의 삼림 속령. 숲의 영주들이 자치하며 마법사에게 공물을 바칩니다. 합병될 수 없습니다."
+th_gensokyo_cloud_realm: "구름 위 영지"
+th_gensokyo_cloud_realm_desc: "천계의 통치 아래 구름 위 용궁의 영지. 용궁사가 대행하여 다스립니다. 합병될 수 없습니다."
+
 
 ### === Variable Hover Display ===
  th_gensokyo_member_vars_display: "개인 변수 개요"
