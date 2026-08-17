@@ -8,7 +8,7 @@
 ### ============================================================
 
 ### 一、封建法理法（原版 feudal_de_jure_law
-feudal_de_jure_law = {
+INJECT:feudal_de_jure_law = {
 
 	### 1. 旧章（大结界成型之初的继承旧规）
 	th_old_charter = {
@@ -26,7 +26,7 @@ feudal_de_jure_law = {
 }
 
 ### 二、法典（原版 legal_code_law
-legal_code_law = {
+INJECT:legal_code_law = {
 
 	### 1. 旧例法「妖怪」
 	th_old_customary_law = {
@@ -88,7 +88,7 @@ legal_code_law = {
 }
 
 ### 三、群众教育（原版 education_masses_law）
-education_masses_law = {
+INJECT:education_masses_law = {
 
 	### 1. 耕读立家「人类」
 	th_farming_and_reading = {
@@ -176,7 +176,7 @@ education_masses_law = {
 }
 
 ### 四、文化传统（原版 cultural_traditions_law）
-cultural_traditions_law = {
+INJECT:cultural_traditions_law = {
 
 	### 1. 百妖夜宴「妖怪」
 	th_hundred_youkai_banquet = {
@@ -208,7 +208,7 @@ cultural_traditions_law = {
 }
 
 ### 五、行政体系（原版 administrative_system）
-administrative_system = {
+INJECT:administrative_system = {
 
 	### 1. 个人统御「集权—但极大受限」
 	th_personal_rule = {
