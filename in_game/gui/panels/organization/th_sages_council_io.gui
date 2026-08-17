@@ -239,14 +239,17 @@ organization_panel = {
 
                     ### ==============================================
                     ### Main Actions 区域
-                    ### 参考: members.gui io_overview_actions + ACGV button_regular_diamond 模式
-                    ### 按钮通过 datacontext → ScriptedGui.Execute 触发
-                    ### 架构: country_interaction (外交面板) ↔ scripted_gui (GUI执行) 镜像同步
+                    ### 参考: members.gui io_overview_actions (InternationalOrganizationsView.GetActions)
+                    ### 行动由 common/generic_actions/ 定义 (type = internationalorganization)，
+                    ### 本卡片通过 dynamicgridbox 自动列出，无需手写按钮/tooltip。
+                    ### 旧架构 (country_interaction ↔ scripted_gui) 已由 generic_action 取代。
                     ### ==============================================
                     vbox = {
                         using = bg_paper_card_situations
                         using = bg_cabinet_card_frame
                         layoutpolicy_horizontal = expanding spacing = 4 margins_top = 2 margins_bottom = 4 margin = { 20 0 }
+                        ### 无可用行动时整卡隐藏（同 members.gui:78 HasActions 门控）
+                        visible = "[InternationalOrganizationsView.HasActions]"
 
                         ### 卡片头部 — 对应 members.gui card_actions header
                         widget = {
@@ -275,37 +278,43 @@ organization_panel = {
                         vbox = {
                             layoutpolicy_horizontal = expanding spacing = 6 margin = { 15 10 }
 
-                            ### ── 引入思潮 ──
-                            button_regular_diamond = {
-                                layoutpolicy_horizontal = expanding
-                                size = { -1 36 }
-                                datacontext = "[GetScriptedGui('th_sages_introduce_institution')]"
-                                text = "th_sages_introduce_institution"
-                                visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
-                                enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End)]"
-                                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End)]"
-                                tooltipwidget = {
-                                    ContextualTooltipType = {
-                                        blockoverride "title_text" { raw_text = "[Localize('th_sages_introduce_institution')]" }
-                                        blockoverride "tooltip_content" {
-                                            vbox = {
-                                                spacing = 4
-                                                text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_desc')]" }
-                                                text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('th_sages_introduce_institution_cost')]" }
-                                                widget = { size = { -1 1 } margins_top = 2 margins_bottom = 2 divider_horizontal_bg = {} }
-                                                text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_REQ_LABEL')]" margins_bottom = 1 }
+                            ### 原版 IO 行动自动列表 (members.gui:103-126 模式)
+                            ### datamodel = InternationalOrganizationsView.GetActions →
+                            ### 列出所有 type = internationalorganization 且 potential/allow/select_trigger 通过的行动
+                            ### (button_regular_diamond + ScriptedGui 手写方案已由 generic_action 取代)
+                            scrollarea = {
+                                maximumsize = { 470 400 }
+                                scrollbarpolicy_horizontal = always_off
+                                autoresizescrollarea = yes
 
-                                                ### 团结度 ≥ 10
-                                                text_single = { visible = "[GreaterThan_CFixedPoint(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue, '(CFixedPoint)10')]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('TH_SAGES_REQ_UNITY')]" }
-                                                text_single = { visible = "[Not(GreaterThan_CFixedPoint(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue, '(CFixedPoint)10'))]" using = Font_Size_Tiny default_format = "#color_red" raw_text = "[Localize('TH_SAGES_REQ_UNITY')]" }
+                                scrollbar_vertical = {
+                                    using = Scrollbar_Vertical
+                                }
 
-                                                ### 金币 ≥ 500
-                                                text_single = { visible = "[GreaterThan_CFixedPoint(GetPlayer.GetCurrencyValue('gold'), '(CFixedPoint)500')]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('TH_SAGES_REQ_GOLD')]" }
-                                                text_single = { visible = "[Not(GreaterThan_CFixedPoint(GetPlayer.GetCurrencyValue('gold'), '(CFixedPoint)500'))]" using = Font_Size_Tiny default_format = "#color_red" raw_text = "[Localize('TH_SAGES_REQ_GOLD')]" }
-
-                                                ### 议会空闲 + 可选思潮 — 由 ScriptedGui.IsValid 综合判断（含 is_active_parliament 等 trigger，GUI 无法逐项读取）
-                                                text_single = { visible = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End)]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('TH_SAGES_REQ_ELIGIBLE')]" }
-                                                text_single = { visible = "[Not(ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_io', InternationalOrganizationsView.GetInternationalOrganization.MakeScope).AddScope('gensokyo_io', GetInternationalOrganization('th_gensokyo_io').MakeScope).End))]" using = Font_Size_Tiny default_format = "#color_red" raw_text = "[Localize('TH_SAGES_REQ_ELIGIBLE')]" }
+                                scrollwidget = {
+                                    dynamicgridbox = {
+                                        datamodel = "[InternationalOrganizationsView.GetActions]"
+                                        item = {
+                                            widget = {
+                                                size = { 470 37 }
+                                                action_button_diamond = {
+                                                    parentanchor = center
+                                                    ### 宝库捐款卡在原版有专门卡片展示，这里过滤掉
+                                                    visible = "[Not(EqualTo_string(GenericAction.GetKey, 'contribute_to_organization_treasury'))]"
+                                                    size = { 470 30 }
+                                                    text = "[GenericAction.GetNameWithNoTooltip]"
+                                                    title = "[GenericAction.GetNameWithNoTooltip]"
+                                                    actor = "[InternationalOrganizationsView.GetPlayer]"
+                                                    parameter = {
+                                                        parameter_name = "recipient"
+                                                        parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                                                    }
+                                                    left_action = { action_name = "[GenericAction.GetKey]" }
+                                                    tooltipwidget = {
+                                                        ### members.gui:995 模板 — 自动渲染 图标/名称/条件/效果
+                                                        using = io_generic_action_button_tooltip
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -313,35 +322,22 @@ organization_panel = {
                             }
 
                             ### ════════════════════════════════════════
-                            ### 预留位: 添加新按钮按以下模板
+                            ### 预留位: 添加新行动按 generic_action 方案
                             ### ════════════════════════════════════════
-                            ### 每添加一个按钮需要 3 个文件:
-                            ###   1. common/country_interactions/<key>.txt  — 外交面板交互定义
-                            ###   2. common/scripted_guis/<key>_sgui.txt    — GUI 执行 (is_shown/is_valid/effect)
-                            ###   3. localization: <key>, <key>_desc, <key>_cost
+                            ### 本列表由 datamodel = InternationalOrganizationsView.GetActions
+                            ### 自动渲染，无需任何 GUI 改动。每添加一个行动只需:
+                            ###   1. common/generic_actions/<key>.txt — type = internationalorganization
+                            ###      potential(scope:actor) / allow(scope:actor) / effect(scope:recipient=IO)
+                            ###      select_trigger 限定 visible = { international_organization_type =
+                            ###      international_organization_type:th_sages_council_io }
+                            ###   2. localization: <key>, <key>_desc
                             ###
-                            ### button_regular_diamond = {
-                            ###     layoutpolicy_horizontal = expanding
-                            ###     size = { -1 36 }
-                            ###     datacontext = "[GetScriptedGui('your_key')]"
-                            ###     text = "your_key"
-                            ###     visible = "[Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization)]"
-                            ###     enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                            ###     onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                            ###     tooltipwidget = {
-                            ###         ContextualTooltipType = {
-                            ###             blockoverride "title_text" { raw_text = "[Localize('your_key')]" }
-                            ###             blockoverride "tooltip_content" {
-                            ###                 vbox = {
-                            ###                     spacing = 4
-                            ###                     text_multi = { using = Font_Size_Tiny default_format = "#default" max_width = 260 raw_text = "[Localize('your_key_desc')]" }
-                            ###                     text_multi = { using = Font_Size_Tiny default_format = "#color_yellow" max_width = 260 raw_text = "[Localize('your_key_cost')]" }
-                            ###                 }
-                            ###             }
-                            ###         }
-                            ###     }
-                            ### }
-                            ###
+                            ### 参考:
+                            ###   - 本模组 th_gensokyo_propose_crusade (generic_actions/ 已有先例)
+                            ###   - 原版 generic_actions/readme.txt (字段全解)
+                            ###   - 原版 members.gui:103-126 + io_generic_action_button_tooltip
+                            ###   - show_in_gui_list = no 可让行动只由自定义按钮触发
+                            ###   - cooldown = {...} / price = price:xxx 可选原生功能
                             ### ════════════════════════════════════════
                         }
                     }
