@@ -93,7 +93,17 @@
 
  th_sages_introduce_institution: "Introduce Institution"
  th_sages_introduce_institution_desc: "Choose an institution that has appeared in the world but has not yet reached all sages. A debate will be held in the Sages' Council; if at least two sages support it, the institution will appear in every sage's capital."
- th_sages_introduce_institution_cost: "Costs: [G]500 gold[/G] (initiator) and [G]10 Gensokyo Unity[/G]. Resources are not refunded if the debate fails."
  th_sages_introduce_institution_notification: "A debate has been convened in the Sages' Council to introduce an institution."
  th_sages_pending_institution: "Pending Institution"
  th_sages_introduced_institutions: "Introduced Institutions"
+
+ th_sages_propose_policy: "Propose Policy"
+ th_sages_propose_policy_desc: "Propose a policy for the Sages' Council to debate. If at least two sages support it, the policy takes effect for the whole council. Costs 300 gold to convene."
+
+ th_sages_barrier_policy_issue: "Reinforce the Great Barrier"
+ th_sages_barrier_policy_issue_desc: "Strengthen the Great Barrier around Gensokyo: +10% defense, -5% stability cost."
+ th_sages_unity_policy_issue: "Charter of Gensokyo Unity"
+ th_sages_unity_policy_issue_desc: "Promote harmony among Gensokyo's nations: +0.1 monthly prestige, +15% improve relations, +1 diplomatic reputation."
+ th_sages_reform_policy_issue: "Reform of the Sages' Council"
+ th_sages_reform_policy_issue_desc: "Modernize the Council's administration: +10% tax income, +10% manpower."
+ th_sages_propose_policy_no_issues: "No policies are available to propose."

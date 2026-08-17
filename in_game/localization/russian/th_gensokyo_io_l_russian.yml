@@ -119,16 +119,11 @@
 ### === Introduce Institution Action ===
  th_sages_introduce_institution:"Внедрить институт"
  th_sages_introduce_institution_desc:"Обратиться к трём мудрецам, чтобы они применили силу Великого барьера и внедрили передовую идею или технологию, которая уже существует в государствах Генсокё, но ещё не принята в этой стране."
- th_sages_introduce_institution_cost:"Стоимость: единство Генсокё -10"
  th_sages_introduce_institution_notification:"Внедрить институт"
 
-### Introduce Institution — Requirements (detailed tooltip)
- TH_SAGES_REQ_LABEL:"Требования"
- TH_SAGES_REQ_UNITY:"Единство Генсокё не менее 10"
- TH_SAGES_REQ_GOLD:"Иметь не менее 500 золота"
- TH_SAGES_REQ_PARLIAMENT:"В настоящее время дебаты не проводятся"
- TH_SAGES_REQ_CANDIDATE:"Доступен подходящий институт"
- TH_SAGES_REQ_ELIGIBLE:"Все требования выполнены"
+ th_sages_propose_policy:"Предложить политику"
+ th_sages_propose_policy_desc:"Предложить политику для обсуждения Советом мудрецов. Если её поддержат хотя бы двое мудрецов, политика вступит в силу для всего совета. Созыв стоит 300 золота."
+
 
 ### Static Modifiers (Sage Prestige Tiers)
  STATIC_MODIFIER_NAME_th_sages_tier_20_modifier:"Пробуждение мудрецов"
@@ -145,6 +140,14 @@
 
  STATIC_MODIFIER_NAME_th_sages_tier_100_modifier:"Легенда мудрецов"
  STATIC_MODIFIER_DESC_th_sages_tier_100_modifier:"Три мудреца стали легендой. Эффективность налогов +15%, ежемесячный престиж +0.30, улучшение отношений +35%, людские ресурсы +15%, дипломатическая репутация +2, глобальная оборона +10%. Мудрецы могут вмешиваться в войны и принуждать к миру."
+
+### === Политики Совета мудрецов ===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier:"Укрепление Великого барьера"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc:"Оборона +10%, стоимость стабильности -5%."
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier:"Хартия единства Генсокё"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc:"Престиж +0.1/мес, улучшение отношений +15%, дипломатическая репутация +1."
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier:"Реформа Совета мудрецов"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc:"Налоговый доход +10%, людские резервы +10%."
 
 ### === Values Consequence Auto-Modifiers ===
  th_gensokyo_io_notorious_tier1_auto_modifier:"Ростки смуты"

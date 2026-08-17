@@ -93,7 +93,17 @@
 
  th_sages_introduce_institution: "引入思潮"
  th_sages_introduce_institution_desc: "选择一个已在世间出现但尚未遍及贤者的思潮。贤者议会将就此展开辩论；若至少两位贤者支持，思潮将在每位贤者的首都出现。"
- th_sages_introduce_institution_cost: "消耗：[G]500 金[/G]（发起者）与 [G]10 幻想乡团结[/G]。辩论失败不退还。"
  th_sages_introduce_institution_notification: "贤者议会已就引入思潮召开辩论。"
  th_sages_pending_institution: "待引入思潮"
  th_sages_introduced_institutions: "已引入思潮"
+
+ th_sages_propose_policy: "提议政策"
+ th_sages_propose_policy_desc: "向贤者议会提出一项政策进行辩论。若有至少两位贤者支持，政策将在整个议会生效。发起需消耗 300 金币。"
+
+ th_sages_barrier_policy_issue: "强化大结界"
+ th_sages_barrier_policy_issue_desc: "强化环绕幻想乡的大结界：防御 +10%，稳定花费 -5%。"
+ th_sages_unity_policy_issue: "幻想乡团结宪章"
+ th_sages_unity_policy_issue_desc: "促进幻想乡诸国和睦：威望 +0.1/月，关系改善 +15%，外交声誉 +1。"
+ th_sages_reform_policy_issue: "贤者会议改革"
+ th_sages_reform_policy_issue_desc: "革新贤者议会的行政：税收 +10%，人力 +10%。"
+ th_sages_propose_policy_no_issues: "当前没有可提议的政策。"

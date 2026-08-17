@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 贤者议会 — 五阶阈值修正定义
 ### 作用域: internationalorganization（通过 add_international_organization_modifier 施加于贤者议会IO，
 ###         生效于全体成员 = 三贤者国，随威望阈值叠加生效）
@@ -63,4 +63,39 @@ th_sages_tier_100_modifier = {
 	global_defensive = 0.10
 	allowed_intervene_in_war = yes
 	allowed_enforce_peace = yes
+}
+
+### ============================================================
+### 贤者议会 — 政策修正定义
+### 由议会政策议题通过后施加 (add_international_organization_modifier, mode = replace)
+### 作用域: internationalorganization（生效于全体成员 = 三贤者国）
+### 数值全部采用 EU5 1.3 已验证修饰符名（同本文件五阶阈值）
+### ============================================================
+
+### 政策：强化大结界 — 防御 +10% / 稳定花费 -5%
+th_sages_barrier_policy_modifier = {
+	game_data = {
+		category = internationalorganization
+	}
+	global_defensive = 0.10
+	stability_cost_efficiency = 0.05
+}
+
+### 政策：幻想乡团结宪章 — 威望 +0.1/月 / 关系改善 +15% / 外交声誉 +1
+th_sages_unity_policy_modifier = {
+	game_data = {
+		category = internationalorganization
+	}
+	monthly_prestige = 0.10
+	improve_relation_impact = 0.15
+	diplomatic_reputation = 1
+}
+
+### 政策：贤者会议改革 — 税收 +10% / 人力 +10%
+th_sages_reform_policy_modifier = {
+	game_data = {
+		category = internationalorganization
+	}
+	tax_income_efficiency = 0.10
+	global_manpower_modifier = 0.10
 }

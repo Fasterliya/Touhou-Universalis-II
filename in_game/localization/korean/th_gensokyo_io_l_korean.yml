@@ -205,6 +205,14 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "현자의 전설"
  STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "세 현자가 전설이 되었습니다. 세수 효율 +15%, 월간 위신 +0.30, 관계 개선 +35%, 병력 +15%, 외교적 평판 +2, 전국 방어 +10%. 현자는 전쟁에 개입하고 강화 평화를 강제할 수 있습니다."
 
+### === 현자 회의 정책 ===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "대결계 강화"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "방어 +10%, 안정 비용 -5%."
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "환상향 결속 헌장"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "월간 위신 +0.1, 관계 개선 +15%, 외교 명성 +1."
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "현자 회의 개혁"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "세입 +10%, 인력 +10%."
+
 ### === Notoriety Consequence Auto-Modifiers (design §2.5) ===
  th_gensokyo_io_notorious_tier1_auto_modifier: "오염된 평판"
  th_gensokyo_io_notorious_tier1_auto_modifier_desc: "악명이 30 이상이면 환상향이 이 국가를 경계합니다. 외교적 평판 -1, 관계 개선 -15%."
@@ -221,16 +229,11 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
 ### === Introduce Institution Action ===
  th_sages_introduce_institution: "사상 도입"
  th_sages_introduce_institution_desc: "세 현자에게 대결계의 힘을 빌려, 환상향의 국가들 사이에 이미 존재하지만 이 국가가 아직 받아들이지 못한 선진 사상이나 기술을 도입하도록 청원합니다."
- th_sages_introduce_institution_cost: "비용: 환상향 결속 -10, 금화 -500"
  th_sages_introduce_institution_notification: "사상 도입"
 
-### Introduce Institution — Requirements (detailed tooltip)
- TH_SAGES_REQ_LABEL: "요구 조건"
- TH_SAGES_REQ_UNITY: "환상향 결속이 최소 10 이상"
- TH_SAGES_REQ_GOLD: "금화가 최소 500 이상"
- TH_SAGES_REQ_PARLIAMENT: "현재 진행 중인 토론이 없음"
- TH_SAGES_REQ_CANDIDATE: "적합한 사상이 하나 이상 존재함"
- TH_SAGES_REQ_ELIGIBLE: "모든 요구 조건 충족"
+ th_sages_propose_policy: "정책 제안"
+ th_sages_propose_policy_desc: "현자 회의에서 토론할 정책을 제안합니다. 세 현자 중 둘 이상이 지지하면 정책이 회의 전체에 적용됩니다. 소집 비용 300 금화."
+
 
 ### === Tab Labels ===
  TH_SAGES_TAB_OVERVIEW: "개요"

@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 贤者议会 — 引入思潮 (原生 IO generic_action)
 ### 链路: IO面板 GetActions 自动列出 → 选 IO(贤者议会) → 内联发起议会辩论
 ### 由原 th_sages_introduce_institution_sgui.txt 迁移:
@@ -822,6 +822,130 @@ th_sages_introduce_institution = {
     }
 
     ### AI 永不执行（原 sgui ai_is_valid = always no）
+    ai_will_do = {
+        value = 0
+    }
+}
+
+### ============================================================
+### 贤者议会 — 提议政策 (原生 IO generic_action)
+### 链路: IO面板 GetActions 自动列出 → 选 IO(贤者议会) → 选政策议题 → 内联发起议会辩论
+### 通过: 议题 on_debate_passed 对贤者议会IO施加对应政策修正 (static_modifier)
+### 消耗: 发起者 300 金
+### 本地化: th_sages_propose_policy / th_sages_propose_policy_desc
+### select_trigger 参照原版 call_organization_parliament (io_parliament.txt:40-114)
+### ============================================================
+
+th_sages_propose_policy = {
+    type = internationalorganization
+
+    force_click_and_confirm_or_hold = yes
+
+    potential = {
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_sages_council_io
+        }
+    }
+
+    allow = {
+        ### 议会讨论进行中不可发起新政策
+        international_organization:th_sages_council_io = {
+            NOT = {
+                is_active_parliament = yes
+            }
+        }
+        ### 金币 ≥ 300
+        scope:actor = {
+            gold >= 300
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_sages_council_io
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = parliament_issue
+        source = recipient
+        interaction_source_list = {
+            scope:recipient = {
+                every_possible_parliament_issue = {
+                    limit = {
+                        OR = {
+                            this = parliament_issue:th_sages_barrier_policy_issue
+                            this = parliament_issue:th_sages_unity_policy_issue
+                            this = parliament_issue:th_sages_reform_policy_issue
+                        }
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        cache_targets = yes
+        target_flag = parliament_issue
+        name = "select_parliament_debate"
+        none_available_msg_key = "th_sages_propose_policy_no_issues"
+        column = {
+            data = name
+        }
+        visible = {
+            is_visible_for_international_organization = scope:recipient
+        }
+        enabled = {
+            is_allowed_for_international_organization = scope:recipient
+            is_selectable_issue_for = {
+                international_organization = scope:recipient
+                actor = scope:actor
+            }
+        }
+    }
+
+    effect = {
+        ### 1. 消耗发起者金钱 300
+        scope:actor = {
+            add_gold = -300
+        }
+
+        ### 2. 引发贤者议会辩论（内联，同 th_sages_introduce_institution 先例）
+        ### 议题 = 玩家在 select_trigger 中选择的政策议题
+        scope:recipient = {
+            set_parliament_location = scope:actor.capital
+            set_parliament_active = yes
+            hidden_effect = {
+                every_international_organization_member = {
+                    set_participated_in_parliament = {
+                        international_organization = prev
+                        vote = no
+                    }
+                }
+            }
+            set_parliament_issue = scope:parliament_issue
+            set_parliament_issue_support = {
+                add = {
+                    desc = total_special_status_power_fraction
+                    value = "total_special_status_power_fraction(special_status:th_sages_council_member_special_status)"
+                }
+            }
+        }
+        set_participated_in_parliament = {
+            international_organization = scope:recipient
+            vote = yes
+        }
+        call_io_parliament = {
+            international_organization = scope:recipient
+        }
+    }
+
+    ### AI 永不执行（政策由玩家主导）
     ai_will_do = {
         value = 0
     }

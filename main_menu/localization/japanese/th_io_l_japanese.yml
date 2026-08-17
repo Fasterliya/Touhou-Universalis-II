@@ -149,18 +149,22 @@ th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族
 
  th_sages_introduce_institution: "思潮導入"
  th_sages_introduce_institution_desc: "世界に出現したが賢者にまだ行き渡っていない思潮を選ぶ。賢者議会で討論が行われ、少なくとも二人の賢者が支持すれば、思潮は各賢者の首都に出現する。"
- th_sages_introduce_institution_cost: "消耗：[G]500金[/G]（提案者）と [G]幻想郷団結度10[/G]。討論失敗時は返還されない。"
  th_sages_introduce_institution_notification: "思潮導入を巡り、賢者議会で討論が招集された。"
  th_sages_pending_institution: "導入予定思潮"
  th_sages_introduced_institutions: "導入済み思潮"
 
+ th_sages_propose_policy: "政策の提案"
+ th_sages_propose_policy_desc: "賢者の議会で審議する政策を提案します。三人の賢者のうち二人以上が支持すれば、政策は議会全体に適用されます。召集には金300が必要です。"
+
+ th_sages_barrier_policy_issue: "大結界の強化"
+ th_sages_barrier_policy_issue_desc: "幻想郷を囲む大結界を強化します: 防御+10%、安定度コスト-5%。"
+ th_sages_unity_policy_issue: "幻想郷団結の憲章"
+ th_sages_unity_policy_issue_desc: "幻想郷諸国の融和を図ります: 威信+0.1/月、関係改善+15%、外交名声+1。"
+ th_sages_reform_policy_issue: "賢者の会議改革"
+ th_sages_reform_policy_issue_desc: "議会の行政を刷新します: 税収+10%、人的資源+10%。"
+ th_sages_propose_policy_no_issues: "提案できる政策がありません。"
+
  ### 思潮導入 — 条件（詳細なツールチップ）
- TH_SAGES_REQ_LABEL: "条件"
- TH_SAGES_REQ_UNITY: "幻想郷団結度が10以上"
- TH_SAGES_REQ_GOLD: "金500以上を保有"
- TH_SAGES_REQ_PARLIAMENT: "進行中の議会討論がない"
- TH_SAGES_REQ_CANDIDATE: "導入可能な思潮が存在する"
- TH_SAGES_REQ_ELIGIBLE: "全ての条件を満たしている"
 
  ### 悪名の結果自動修正（設計§2.5）
  th_gensokyo_io_notorious_tier1_auto_modifier: "名譽の翳り"
@@ -190,3 +194,10 @@ th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族
 
  STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "賢者の神話"
  STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三賢者の名は伝説となる。税収効率+15%、月間威信+0.30、関係改善+35%、人的資源+15%、外交評判+2、全域防御+10%。賢者は戦争への介入と平和の強制を行い得る。"
+### === 賢者の議会の政策 ===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "大結界の強化"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "防御+10%、安定度コスト-5%。"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "幻想郷団結の憲章"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "威信+0.1/月、関係改善+15%、外交名声+1。"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "賢者の会議改革"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "税収+10%、人的資源+10%。"
