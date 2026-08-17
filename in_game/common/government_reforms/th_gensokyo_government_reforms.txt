@@ -126,6 +126,7 @@ th_divine_realm = {
 			tag = T13
 			tag = T81
 			tag = T40
+			tag = T24
 		}
 	}
 	allow = {
@@ -134,6 +135,7 @@ th_divine_realm = {
 			tag = T13
 			tag = T81
 			tag = T40
+			tag = T24
 		}
 	}
 	country_modifier = {
