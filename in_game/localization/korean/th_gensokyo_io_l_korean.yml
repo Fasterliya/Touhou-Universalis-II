@@ -53,11 +53,11 @@ belligerence_focus: "란 (혼란)"
 
 ### 시작 특수 속령 (영구 속령, 병합 불가)
 th_gensokyo_satori_vassal: "지령전 속령"
-th_gensokyo_satori_vassal_desc: "지령전에 직속된 지옥의 속령. 각요괴의 독심술로 통치되며 합병될 수 없습니다."
+th_gensokyo_satori_vassal_desc: "명목상으로는 사토리의 영지이지만, 실질적으로는 그녀의 애완동물들이 알아서 돌립니다. 작열지옥의 불바다와 용암도 모두 그녀의 애완동물들이 관리합니다."
 th_gensokyo_forest_territory: "숲 영지"
-th_gensokyo_forest_territory_desc: "안개비 숲 휘하의 삼림 속령. 숲의 영주들이 자치하며 마법사에게 공물을 바칩니다. 합병될 수 없습니다."
+th_gensokyo_forest_territory_desc: "마법의 숲의 요괴 영주들은 마법사와 절대적인 복종이 아닌 느슨한 종속 관계를 유지합니다."
 th_gensokyo_cloud_realm: "구름 위 영지"
-th_gensokyo_cloud_realm_desc: "천계의 통치 아래 구름 위 용궁의 영지. 용궁사가 대행하여 다스립니다. 합병될 수 없습니다."
+th_gensokyo_cloud_realm_desc: "천계의 질서 밖에 있는 용궁 체계. 용궁사 나가에 이쿠가 왕래의 권한을 쥐고 있습니다. 높은 하늘의 천인조차 그 존재에게는 한 수 물러서야 합니다."
 
 
 ### === Variable Hover Display ===
