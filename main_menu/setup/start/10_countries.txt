@@ -58744,7 +58744,7 @@ countries = {
             ruler = random
 
             reforms = {
-               th_gensokyo_government_reform
+               th_divine_realm
             }
 
           }
