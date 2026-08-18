@@ -24,6 +24,17 @@ T01_start_flag = {
 	}
 }
 
+T03_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T03_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
 T04_start_flag = { 
 	pattern = "pattern_solid.dds"
 	color1 = "white"	#两侧的颜色
@@ -159,6 +170,28 @@ T18_start_flag = {
 	}
 }
 
+T20_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T20_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T24_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T24_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
 T25_start_flag = { 
 	pattern = "pattern_solid.dds"
 	color1 = "white"	#两侧的颜色
@@ -183,6 +216,17 @@ T26_start_flag = {
 	}
 }
 
+T27_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T27_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
 T29_start_flag = { 
 	pattern = "pattern_solid.dds"
 	color1 = "white"	#两侧的颜色
@@ -201,6 +245,17 @@ T31_start_flag = {
 	
 	textured_emblem = {	
 		texture = "T31_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T32_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T32_embleme_1.dds"
 		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
 	}
 }
@@ -234,6 +289,17 @@ T38_start_flag = {
 	
 	textured_emblem = {	
 		texture = "T38_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T39_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T39_embleme_1.dds"
 		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
 	}
 }
@@ -282,6 +348,17 @@ T54_start_flag = {
 	}
 }
 
+T57_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T57_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
 T60_start_flag = { 
 	pattern = "pattern_solid.dds"
 	color1 = "white"	
@@ -300,6 +377,39 @@ T62_start_flag = {
 	
 	textured_emblem = {	
 		texture = "T62_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T70_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T70_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T72_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T72_embleme_1.dds"
+		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+	}
+}
+
+T81_start_flag = { 
+	pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "blue_light"
+	
+	textured_emblem = {	
+		texture = "T81_embleme_1.dds"
 		instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
 	}
 }
