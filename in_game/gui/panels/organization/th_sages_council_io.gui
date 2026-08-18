@@ -106,7 +106,10 @@ organization_panel = {
                                     value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var')))]"
                                 }
                                 blockoverride "organization_piechart_icon" {
-                                    texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon(InternationalOrganizationTypeVariable.GetTag)]"
+                                    ### 修复: GetVariableIcon 参数为变量 tag 字符串。
+                                    ### 原 InternationalOrganizationTypeVariable.GetTag 需 InternationalOrganizationTypeVariable
+                                    ### 数据上下文（原版在 GetVariables datamodel item 内使用），此处改为字面量等价写法
+                                    texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon('th_sages_prestige_var')]"
                                 }
                             }
                         }
@@ -157,7 +160,8 @@ organization_panel = {
                                     value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
                                 }
                                 blockoverride "organization_piechart_icon" {
-                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon(InternationalOrganizationTypeVariable.GetTag)]"
+                                    ### 同上修复: 字面量 tag（接收者为幻想乡IO）
+                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
                                 }
                             }
                         }
