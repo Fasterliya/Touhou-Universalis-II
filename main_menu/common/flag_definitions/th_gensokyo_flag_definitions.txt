@@ -1,4 +1,4 @@
-﻿T00 = {
+T00 = {
 	flag_definition = {
 		coa = T00_start_flag
 		priority = 1
@@ -176,6 +176,13 @@ T60 = {
 T62 = {
 	flag_definition = {
 		coa = T62_start_flag
+		priority = 1
+	}
+}
+
+T83 = {
+	flag_definition = {
+		coa = T83_start_flag
 		priority = 1
 	}
 }
