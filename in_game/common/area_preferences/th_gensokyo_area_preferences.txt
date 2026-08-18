@@ -16,19 +16,25 @@
 
 th_generic_conquer_home_region = {
 	preference_type = conquest
-	modifier = 20
+	modifier = 5
 
 	consider_capital_region = yes
 }
 
 # 设计文档总纲：除特定国家设定幻想乡大陆外偏好时，其余国家均不做殖民偏好。
-# 全局探索抑制基线（on_game_start 时给所有 AI），
-# 有探索需求的国家（月之都、魔界等）再单独 remove 或加正偏好覆盖。
-th_global_no_colonization = {
+# 实现：默认给所有 AI 加"对外部世界（现实世界）殖民欲望 = 0"的回避项，
+#       即 AI 不会主动去外部世界殖民；有对外需求的国家（月之都/魔界/迷途之家/冥界）
+#       再单独 remove_area_preference 解除对应大洲的回避。
+th_avoid_outer_world_colonization = {
 	preference_type = exploration
 	modifier = 0
 
-	continent = th_gensokyo_continent
+	continent = europe
+	continent = asia
+	continent = africa
+	continent = america
+	continent = south_america
+	continent = oceania
 }
 
 ###########################

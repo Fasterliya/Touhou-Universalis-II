@@ -5,14 +5,14 @@
 #   先 every_country 给全体 AI 通用基线，再按 tag 做各国定制
 # ============================================================
 
-### 全局基线：所有 AI 统一先加"征服本地区"与"默认不殖民"
+### 全局基线：所有 AI 统一先加"征服本地区（较弱）"与"默认不殖民外部世界"
 th_apply_generic_area_preferences_effect = {
 	every_country = {
 		limit = {
 			is_ai = yes
 		}
 		add_area_preference = th_generic_conquer_home_region
-		add_area_preference = th_global_no_colonization
+		add_area_preference = th_avoid_outer_world_colonization
 	}
 }
 
@@ -138,20 +138,20 @@ th_assign_national_area_preferences_effect = {
 	}
 
 	# ---- 月球大陆 ----
-	c:T72 = {	# 月之都：征服全世界
+	c:T72 = {	# 月之都：征服全世界 → 解除全部外部世界殖民回避
 		add_area_preference = th_lunar_conquer_world
-		remove_area_preference = th_global_no_colonization
+		remove_area_preference = th_avoid_outer_world_colonization
 	}
 
-	# ---- 有对外殖民/征服需求的国家解除全局殖民抑制 ----
-	c:T31 = {	# 冥界（印尼）
-		remove_area_preference = th_global_no_colonization
+	# ---- 有对外殖民/征服需求的国家解除对应大洲的殖民回避 ----
+	c:T31 = {	# 冥界（印尼 → 亚洲/东南亚）
+		remove_area_preference = th_avoid_outer_world_colonization
 	}
-	c:T05 = {	# 迷途之家（印尼/北美西海岸）
-		remove_area_preference = th_global_no_colonization
+	c:T05 = {	# 迷途之家（印尼/北美西海岸 → 亚洲/美洲）
+		remove_area_preference = th_avoid_outer_world_colonization
 	}
-	c:T58 = {	# 魔界（东北亚/阿拉斯加）
-		remove_area_preference = th_global_no_colonization
+	c:T58 = {	# 魔界（东北亚/阿拉斯加 → 亚洲/美洲）
+		remove_area_preference = th_avoid_outer_world_colonization
 	}
 }
 

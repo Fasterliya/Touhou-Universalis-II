@@ -1,0 +1,71 @@
+l_english:
+### ============================================================
+### Touhou Universalis II · AI area preferences localization
+### Corresponds to: in_game/common/area_preferences/th_gensokyo_area_preferences.txt
+### ============================================================
+
+### Generic baseline
+ th_generic_conquer_home_region: "Unify home region"
+ th_avoid_outer_world_colonization: "No colonization of the outer world"
+
+### Misty Lake area
+ th_red_devil_conquer_misty_lake: "Conquer Misty Lake (Scarlet Devil)"
+ th_red_devil_conquer_eastern_youkai_sea: "Conquer Eastern Youkai Sea (Scarlet Devil)"
+ th_red_devil_conquer_fairy_kingdoms: "Conquer Fairy Kingdoms (Scarlet Devil)"
+ th_red_devil_conquer_hakurei_areas: "Conquer Hakurei coastal areas (Scarlet Devil)"
+ th_hakurei_conquer_misty_lake: "Conquer Misty Lake (Hakurei)"
+ th_hakurei_old_shrine_conquest: "Conquer the three Hakurei areas (Old Hakurei Shrine)"
+
+### Magic Forest area
+ th_kirisame_conquer_magic_forest: "Conquer the Primeval Forest (Kirisame)"
+ th_margatroid_conquer_magic_forest: "Conquer the Primeval Forest (Margatroid)"
+ th_margatroid_conquer_makai: "Conquer Makai (Margatroid)"
+ th_eientei_conquer_bamboo_forest: "Conquer the Lost Bamboo Forest (Eientei)"
+ th_fujiwara_conquer_bamboo_forest: "Conquer the Lost Bamboo Forest (Fujiwara)"
+
+### Netherworld area
+ th_netherworld_conquer_bamboo_forest: "Reach into the Lost Bamboo Forest (Netherworld)"
+ th_netherworld_conquer_indonesia: "Reach into the Indonesian Archipelago (Netherworld)"
+ th_yakumo_conquer_indonesia: "Reach into Indonesia (Yakumo)"
+ th_yakumo_conquer_west_coast: "Reach into the North American West Coast (Yakumo)"
+
+### Animal Realm area
+ th_animal_realm_conquest: "Unify the Animal Realm"
+
+### Higan area
+ th_higan_weak_conquest: "Consolidate Higan (weak)"
+
+### Old Hell area
+ th_old_hell_conquest: "Unify the Old Hell"
+
+### Youkai Mountain area
+ th_tengu_avoid_western_foot: "Avoid Genbu Swamp (Tengu)"
+ th_tengu_avoid_immortal_realm: "Avoid the Immortal Realm (Tengu)"
+ th_tengu_low_youkai_sea: "Low interest in the Youkai Sea (Tengu)"
+
+### Human Village area
+ th_human_village_weak_conquest: "Consolidate the Human Village (weak)"
+
+### Sunflower Field area
+ th_sunflower_field_conquest: "Unify the Sunflower Field"
+
+### Outer World area
+ th_heaven_low_outer_world: "Low interest in the Outer World (Heaven)"
+ th_heaven_low_moon: "Low interest in the Moon (Heaven)"
+
+### Makai area
+ th_makai_conquest: "Unify Makai"
+ th_makai_low_sunflower: "Low interest in the Sunflower Field (Makai)"
+ th_makai_conquer_northeast_asia: "Reach into Northeast Asia and Alaska (Makai)"
+
+### Genbu Swamp area
+ th_kappa_country_conquest: "Contest the Kappa Country (Kappa/Yamawaro)"
+ th_kappa_low_moriya: "Low interest in Moriya (Kappa/Yamawaro)"
+ th_moriya_conquer_youkai_mountain: "Reach into the Youkai Mountain (Moriya)"
+
+### Immortal Realm area
+ th_immortal_realm_conquest: "Unify the Immortal Realm"
+ th_immortal_realm_low_human_village: "Low interest in the Human Village (Immortal Realm)"
+
+### Moon
+ th_lunar_conquer_world: "Conquer the World (Lunar Capital)"

@@ -1,0 +1,72 @@
+l_simp_chinese:
+### ============================================================
+### 东方风云 · AI 地区扩张偏好（area_preferences）本地化
+### 对应：in_game/common/area_preferences/th_gensokyo_area_preferences.txt
+### 这些 key 作为 add_area_preference 的 $NAME$ 参数显示在 effect 提示中
+### ============================================================
+
+### 通用基线
+ th_generic_conquer_home_region: "统一本地区"
+ th_avoid_outer_world_colonization: "不殖民外部世界"
+
+### 雾之湖地区
+ th_red_devil_conquer_misty_lake: "征服雾之湖（红魔馆）"
+ th_red_devil_conquer_eastern_youkai_sea: "征服妖怪的树海东部（红魔馆）"
+ th_red_devil_conquer_fairy_kingdoms: "征服妖精之国（红魔馆）"
+ th_red_devil_conquer_hakurei_areas: "征服博丽沿岸地区（红魔馆）"
+ th_hakurei_conquer_misty_lake: "征服雾之湖（博丽）"
+ th_hakurei_old_shrine_conquest: "征服博丽三地（博丽旧社）"
+
+### 魔法森林地区
+ th_kirisame_conquer_magic_forest: "征服原始森林（雾雨之森）"
+ th_margatroid_conquer_magic_forest: "征服原始森林（人偶之森）"
+ th_margatroid_conquer_makai: "征服魔界（人偶之森）"
+ th_eientei_conquer_bamboo_forest: "征服迷途竹林（永远亭）"
+ th_fujiwara_conquer_bamboo_forest: "征服迷途竹林（藤原氏）"
+
+### 冥界地区
+ th_netherworld_conquer_bamboo_forest: "染指迷途竹林（冥界）"
+ th_netherworld_conquer_indonesia: "染指印度尼西亚群岛（冥界）"
+ th_yakumo_conquer_indonesia: "染指印度尼西亚（迷途之家）"
+ th_yakumo_conquer_west_coast: "染指北美西海岸（迷途之家）"
+
+### 畜生界地区
+ th_animal_realm_conquest: "统一畜生界"
+
+### 彼岸地区
+ th_higan_weak_conquest: "巩固彼岸（弱）"
+
+### 旧地狱地区
+ th_old_hell_conquest: "统一旧地狱"
+
+### 妖怪之山地区
+ th_tengu_avoid_western_foot: "回避玄武之泽（天狗）"
+ th_tengu_avoid_immortal_realm: "回避仙界（天狗）"
+ th_tengu_low_youkai_sea: "对妖怪的树海兴趣较低（天狗）"
+
+### 人间之里地区
+ th_human_village_weak_conquest: "巩固人间之里（弱）"
+
+### 太阳花田地区
+ th_sunflower_field_conquest: "统一太阳花田"
+
+### 外部界域地区
+ th_heaven_low_outer_world: "对外部界域兴趣较低（天界）"
+ th_heaven_low_moon: "对月球兴趣较低（天界）"
+
+### 魔界地区
+ th_makai_conquest: "统一魔界"
+ th_makai_low_sunflower: "对太阳花田兴趣较低（魔界）"
+ th_makai_conquer_northeast_asia: "染指东北亚与阿拉斯加（魔界）"
+
+### 玄武之泽地区
+ th_kappa_country_conquest: "争夺河童之国（河童/山童）"
+ th_kappa_low_moriya: "对守矢兴趣较低（河童/山童）"
+ th_moriya_conquer_youkai_mountain: "染指妖怪之山（守矢）"
+
+### 仙界地区
+ th_immortal_realm_conquest: "统一仙界"
+ th_immortal_realm_low_human_village: "对人间之里兴趣较低（仙界）"
+
+### 月球大陆
+ th_lunar_conquer_world: "征服全世界（月之都）"
