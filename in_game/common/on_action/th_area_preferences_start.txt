@@ -1,0 +1,16 @@
+# ============================================================
+# 东方风云 · 地区偏好 on_game_start 挂载
+# 模式参照同目录 th_game_start_oa.txt：独立 on_action + 追加 on_game_start
+# ============================================================
+
+on_game_start = {
+	on_actions = {
+		th_area_preferences_init
+	}
+}
+
+th_area_preferences_init = {
+	effect = {
+		th_setup_area_preferences_effect = yes
+	}
+}

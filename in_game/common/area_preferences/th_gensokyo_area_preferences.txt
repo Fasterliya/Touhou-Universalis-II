@@ -1,0 +1,339 @@
+# ============================================================
+# 东方风云 · 幻想乡国家地区扩张偏好（area_preferences）
+# 依据设计文档：F:\SITU\东方风云设计理念\幻想乡主要国家的地区偏好\幻想乡国家地区偏好.txt
+# 机制参考：vanilla game/main_menu/../in_game/common/area_preferences/
+#   - conquest_preferences.txt / exploration_preferences.txt
+# 分配方式：on_game_start（th_area_preferences_start.txt）→ th_setup_area_preferences_effect
+# 注意：
+#   - 本文件为纯数据定义，不含国家字段；必须由 add_area_preference 分配才生效
+#   - 区域名与 in_game/map_data/definitions.txt 完全一致，写错会静默失效
+#   - modifier > 1 增欲望 / < 1 减欲望 / 0 回避 / 负值反感
+# ============================================================
+
+###########################
+##### 通用基线（全体 AI）###
+###########################
+
+th_generic_conquer_home_region = {
+	preference_type = conquest
+	modifier = 20
+
+	consider_capital_region = yes
+}
+
+# 设计文档总纲：除特定国家设定幻想乡大陆外偏好时，其余国家均不做殖民偏好。
+# 全局探索抑制基线（on_game_start 时给所有 AI），
+# 有探索需求的国家（月之都、魔界等）再单独 remove 或加正偏好覆盖。
+th_global_no_colonization = {
+	preference_type = exploration
+	modifier = 0
+
+	continent = th_gensokyo_continent
+}
+
+###########################
+##### 幻想乡大陆 · conquest #####
+###########################
+
+# ---- 雾之湖地区 ----
+# 红魔馆 T00：雾之湖region / 妖怪的树海东部area / 妖精之国（南北）area 极大偏好；
+#             博丽岸滨、博丽神社、博丽山麓 area 较高偏好
+th_red_devil_conquer_misty_lake = {
+	preference_type = conquest
+	modifier = 20
+
+	region = th_gensokyo_hakurei_region
+}
+
+th_red_devil_conquer_eastern_youkai_sea = {
+	preference_type = conquest
+	modifier = 10
+
+	area = th_eastern_youkai_sea_area
+}
+
+th_red_devil_conquer_fairy_kingdoms = {
+	preference_type = conquest
+	modifier = 10
+
+	area = th_southern_fariy_kingdom_area
+	area = th_northern_fariy_kingdom_area
+}
+
+th_red_devil_conquer_hakurei_areas = {
+	preference_type = conquest
+	modifier = 6
+
+	area = th_hakurei_coast_area
+	area = th_hakurei_shrine_area
+	area = th_hakurei_foothills_area
+}
+
+# 博丽 T04：雾之湖region 极大偏好
+th_hakurei_conquer_misty_lake = {
+	preference_type = conquest
+	modifier = 20
+
+	region = th_gensokyo_hakurei_region
+}
+
+# ---- 魔法森林地区（原始森林）----
+# 雾雨之森 T09：原始森林region 极高
+th_kirisame_conquer_magic_forest = {
+	preference_type = conquest
+	modifier = 10
+
+	region = th_gensokyo_magic_forest_region
+}
+
+# 人偶之森 T08：原始森林region 极高；魔界region 较高
+th_margatroid_conquer_magic_forest = {
+	preference_type = conquest
+	modifier = 10
+
+	region = th_gensokyo_magic_forest_region
+}
+
+th_margatroid_conquer_makai = {
+	preference_type = conquest
+	modifier = 4
+
+	region = th_makai_region
+}
+
+# 永远亭 T53 / 藤原氏 T54：互相将对方的 area 视为极高偏好
+# （迷途竹林在原始森林地区有三个 area：南/西/东，东=永远亭）
+th_eientei_conquer_bamboo_forest = {
+	preference_type = conquest
+	modifier = 10
+
+	area = th_lost_bamboo_forest_south_area
+	area = th_lost_bamboo_forest_west_area
+	area = th_lost_bamboo_forest_east_area
+}
+
+th_fujiwara_conquer_bamboo_forest = {
+	preference_type = conquest
+	modifier = 10
+
+	area = th_lost_bamboo_forest_south_area
+	area = th_lost_bamboo_forest_west_area
+	area = th_lost_bamboo_forest_east_area
+}
+
+# ---- 冥界地区 ----
+# 冥界 T31：偏好迷途竹林等 area；偏好印度尼西亚群岛那片
+th_netherworld_conquer_bamboo_forest = {
+	preference_type = conquest
+	modifier = 5
+
+	area = th_lost_bamboo_forest_south_area
+	area = th_lost_bamboo_forest_west_area
+	area = th_lost_bamboo_forest_east_area
+}
+
+th_netherworld_conquer_indonesia = {
+	preference_type = conquest
+	modifier = 3
+
+	region = indonesia_region
+}
+
+# 迷途之家 T05：偏好印度尼西亚和北美西海岸部分region
+th_yakumo_conquer_indonesia = {
+	preference_type = conquest
+	modifier = 4
+
+	region = indonesia_region
+}
+
+th_yakumo_conquer_west_coast = {
+	preference_type = conquest
+	modifier = 4
+
+	region = west_coast_region
+}
+
+# ---- 畜生界地区 ----
+# 鬼杰组 T37 / 劲牙组 T38 / 刚欲同盟 T39 / 偶像之境 T24：畜生界region 极高
+th_animal_realm_conquest = {
+	preference_type = conquest
+	modifier = 10
+
+	region = th_animal_realm_region
+}
+
+# ---- 彼岸地区 ----
+# 彼岸 T25：无偏好，彼岸地区弱偏好
+th_higan_weak_conquest = {
+	preference_type = conquest
+	modifier = 1.5
+
+	region = th_hell_region
+}
+
+# 孑然岸滨 T41：无偏好（不分配任何条目）
+
+# ---- 旧地狱地区 ----
+# 地灵殿 T20 / 旧都 T23：旧地狱region 极高
+th_old_hell_conquest = {
+	preference_type = conquest
+	modifier = 10
+
+	region = th_old_hell_region
+}
+
+# ---- 妖怪之山地区 ----
+# 天狗 T18：玄武之泽region 极低、仙界region 极低、妖怪的树海/树海东部较低
+th_tengu_avoid_western_foot = {
+	preference_type = conquest
+	modifier = -2
+
+	region = th_youkai_mountain_western_foot_region
+}
+
+th_tengu_avoid_immortal_realm = {
+	preference_type = conquest
+	modifier = -2
+
+	region = th_immortal_realm_region
+}
+
+th_tengu_low_youkai_sea = {
+	preference_type = conquest
+	modifier = 0.5
+
+	area = th_eastern_youkai_sea_area
+	area = th_western_youkai_forest_area
+}
+
+# ---- 人间之里地区 ----
+# 该地区所有国家对人间之里region 弱偏好（T03 人间之里等，on_game_start 按首都 region 判断）
+th_human_village_weak_conquest = {
+	preference_type = conquest
+	modifier = 1.5
+
+	region = th_gensokyo_human_village_region
+}
+
+# ---- 太阳花田地区 ----
+# 太阳花田 T62 / 梦幻世界 T74：太阳花田region 极高
+th_sunflower_field_conquest = {
+	preference_type = conquest
+	modifier = 10
+
+	region = th_sunflower_field_region
+}
+
+# ---- 外部界域地区 ----
+# 天界 T70：外部界域region 较低、月球较低
+th_heaven_low_outer_world = {
+	preference_type = conquest
+	modifier = 0.5
+
+	sub_continent = th_gensokyo_outer_world_sub_continent
+}
+
+th_heaven_low_moon = {
+	preference_type = conquest
+	modifier = 0.5
+
+	continent = th_moon_continent
+}
+
+# ---- 魔界地区 ----
+# 魔界 T58：魔界region 较高；太阳花田地区较低；东北亚和阿拉斯加地区高
+th_makai_conquest = {
+	preference_type = conquest
+	modifier = 5
+
+	region = th_makai_region
+}
+
+th_makai_low_sunflower = {
+	preference_type = conquest
+	modifier = 0.5
+
+	region = th_sunflower_field_region
+}
+
+th_makai_conquer_northeast_asia = {
+	preference_type = conquest
+	modifier = 7
+
+	region = manchuria_region
+	region = east_china_region
+	region = alaska_region
+}
+
+# 博丽旧社 T60：博丽山路、博丽神社、博丽海岸 area 极高
+th_hakurei_old_shrine_conquest = {
+	preference_type = conquest
+	modifier = 10
+
+	area = th_hakurei_foothills_area
+	area = th_hakurei_shrine_area
+	area = th_hakurei_coast_area
+}
+
+# ---- 玄武之泽地区 ----
+# 河童 T26 / 山童 T27：双方持有的河童之国多个 area 极高；对守矢较低
+th_kappa_country_conquest = {
+	preference_type = conquest
+	modifier = 10
+
+	area = th_kappas_country_area
+	area = th_yamawaros_country_area
+}
+
+th_kappa_low_moriya = {
+	preference_type = conquest
+	modifier = 0.5
+
+	region = th_moriya_shirine_region
+}
+
+# 守矢 T14：对河童山童地区中等、妖怪之山中等
+th_moriya_conquer_youkai_mountain = {
+	preference_type = conquest
+	modifier = 4
+
+	region = th_youkai_mountain_western_foot_region
+	region = th_youkai_mountain_region
+}
+
+# ---- 仙界地区 ----
+# 仙界 T51：仙界region 高；人间之里弱
+th_immortal_realm_conquest = {
+	preference_type = conquest
+	modifier = 7
+
+	region = th_immortal_realm_region
+}
+
+th_immortal_realm_low_human_village = {
+	preference_type = conquest
+	modifier = 1.5
+
+	region = th_gensokyo_human_village_region
+}
+
+###########################
+##### 月球大陆 #####
+###########################
+
+# 月之都 T72：偏好征服全世界
+# 方案：幻想乡大陆 + 月球大陆 + 外部现实世界大陆全列（modifier=10）
+th_lunar_conquer_world = {
+	preference_type = conquest
+	modifier = 10
+
+	continent = th_gensokyo_continent
+	continent = th_moon_continent
+	continent = europe
+	continent = asia
+	continent = africa
+	continent = america
+	continent = south_america
+	continent = oceania
+}

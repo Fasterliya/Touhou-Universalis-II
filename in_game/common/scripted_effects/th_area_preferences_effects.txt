@@ -1,0 +1,162 @@
+# ============================================================
+# 东方风云 · 地区偏好分配效果（scripted_effects）
+# 由 in_game/common/on_action/th_area_preferences_start.txt 在 on_game_start 调用
+# 模式参照 vanilla on_action_effects.txt 的 setup_area_preferences：
+#   先 every_country 给全体 AI 通用基线，再按 tag 做各国定制
+# ============================================================
+
+### 全局基线：所有 AI 统一先加"征服本地区"与"默认不殖民"
+th_apply_generic_area_preferences_effect = {
+	every_country = {
+		limit = {
+			is_ai = yes
+		}
+		add_area_preference = th_generic_conquer_home_region
+		add_area_preference = th_global_no_colonization
+	}
+}
+
+### 各国定制分配（依据设计文档）
+th_assign_national_area_preferences_effect = {
+	# ---- 雾之湖地区 ----
+	c:T00 = {	# 红魔馆
+		add_area_preference = th_red_devil_conquer_misty_lake
+		add_area_preference = th_red_devil_conquer_eastern_youkai_sea
+		add_area_preference = th_red_devil_conquer_fairy_kingdoms
+		add_area_preference = th_red_devil_conquer_hakurei_areas
+	}
+	c:T04 = {	# 博丽
+		add_area_preference = th_hakurei_conquer_misty_lake
+	}
+	c:T60 = {	# 博丽旧社
+		add_area_preference = th_hakurei_old_shrine_conquest
+	}
+
+	# ---- 魔法森林地区 ----
+	c:T09 = {	# 雾雨之森
+		add_area_preference = th_kirisame_conquer_magic_forest
+	}
+	c:T08 = {	# 人偶之森
+		add_area_preference = th_margatroid_conquer_magic_forest
+		add_area_preference = th_margatroid_conquer_makai
+	}
+	c:T53 = {	# 永远亭
+		add_area_preference = th_eientei_conquer_bamboo_forest
+	}
+	c:T54 = {	# 藤原氏
+		add_area_preference = th_fujiwara_conquer_bamboo_forest
+	}
+
+	# ---- 冥界地区 ----
+	c:T31 = {	# 冥界
+		add_area_preference = th_netherworld_conquer_bamboo_forest
+		add_area_preference = th_netherworld_conquer_indonesia
+	}
+	c:T05 = {	# 迷途之家
+		add_area_preference = th_yakumo_conquer_indonesia
+		add_area_preference = th_yakumo_conquer_west_coast
+	}
+
+	# ---- 畜生界地区 ----
+	c:T37 = {	# 鬼杰组
+		add_area_preference = th_animal_realm_conquest
+	}
+	c:T38 = {	# 劲牙组
+		add_area_preference = th_animal_realm_conquest
+	}
+	c:T39 = {	# 刚欲同盟
+		add_area_preference = th_animal_realm_conquest
+	}
+	c:T24 = {	# 偶像之境
+		add_area_preference = th_animal_realm_conquest
+	}
+
+	# ---- 彼岸地区 ----
+	c:T25 = {	# 彼岸：弱偏好
+		add_area_preference = th_higan_weak_conquest
+	}
+	# 孑然岸滨 T41：无偏好（不分配）
+
+	# ---- 旧地狱地区 ----
+	c:T20 = {	# 地灵殿
+		add_area_preference = th_old_hell_conquest
+	}
+	c:T23 = {	# 旧都
+		add_area_preference = th_old_hell_conquest
+	}
+
+	# ---- 妖怪之山地区 ----
+	c:T18 = {	# 天狗
+		add_area_preference = th_tengu_avoid_western_foot
+		add_area_preference = th_tengu_avoid_immortal_realm
+		add_area_preference = th_tengu_low_youkai_sea
+	}
+
+	# ---- 人间之里地区 ----
+	c:T03 = {	# 人间之里：弱偏好
+		add_area_preference = th_human_village_weak_conquest
+	}
+
+	# ---- 太阳花田地区 ----
+	c:T62 = {	# 太阳花田
+		add_area_preference = th_sunflower_field_conquest
+	}
+	c:T74 = {	# 梦幻世界
+		add_area_preference = th_sunflower_field_conquest
+	}
+
+	# ---- 外部界域地区 ----
+	c:T70 = {	# 天界
+		add_area_preference = th_heaven_low_outer_world
+		add_area_preference = th_heaven_low_moon
+	}
+
+	# ---- 魔界地区 ----
+	c:T58 = {	# 魔界
+		add_area_preference = th_makai_conquest
+		add_area_preference = th_makai_low_sunflower
+		add_area_preference = th_makai_conquer_northeast_asia
+	}
+
+	# ---- 玄武之泽地区 ----
+	c:T26 = {	# 河童
+		add_area_preference = th_kappa_country_conquest
+		add_area_preference = th_kappa_low_moriya
+	}
+	c:T27 = {	# 山童
+		add_area_preference = th_kappa_country_conquest
+		add_area_preference = th_kappa_low_moriya
+	}
+	c:T14 = {	# 守矢
+		add_area_preference = th_moriya_conquer_youkai_mountain
+	}
+
+	# ---- 仙界地区 ----
+	c:T51 = {	# 仙界
+		add_area_preference = th_immortal_realm_conquest
+		add_area_preference = th_immortal_realm_low_human_village
+	}
+
+	# ---- 月球大陆 ----
+	c:T72 = {	# 月之都：征服全世界
+		add_area_preference = th_lunar_conquer_world
+		remove_area_preference = th_global_no_colonization
+	}
+
+	# ---- 有对外殖民/征服需求的国家解除全局殖民抑制 ----
+	c:T31 = {	# 冥界（印尼）
+		remove_area_preference = th_global_no_colonization
+	}
+	c:T05 = {	# 迷途之家（印尼/北美西海岸）
+		remove_area_preference = th_global_no_colonization
+	}
+	c:T58 = {	# 魔界（东北亚/阿拉斯加）
+		remove_area_preference = th_global_no_colonization
+	}
+}
+
+### 入口：on_game_start 统一调用
+th_setup_area_preferences_effect = {
+	th_apply_generic_area_preferences_effect = yes
+	th_assign_national_area_preferences_effect = yes
+}
