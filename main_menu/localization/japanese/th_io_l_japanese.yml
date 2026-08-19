@@ -233,7 +233,7 @@ th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族
  th_gensokyo_request_expansion: "幻想郷内拡張を要請"
  th_gensokyo_request_expansion_desc: "賢者に幻想郷内での拡張許可を求める：まず賢者を選び、次に自領に隣接する地点を選ぶ。人間の里と、要請した賢者自身の領土は保護され請求できない。賢者が承認すれば宣戦布告名分を得、拒否すれば乱心の鎮めを得る。"
  th_gensokyo_sage_expansion_cb: "賢者公認の拡張"
- th_gensokyo_sage_expansion_cb_PROV: "賢者公認の拡張（対象地点）"
+ th_gensokyo_sage_expansion_cb_PROV: "賢者公認の拡張（[PROVINCE.GetName]）"
  th_gensokyo_sage_expansion_cb_desc: "賢者の認可を得た拡張戦争：割譲の戦争点数コスト+75%、獲得する敵意-40%。"
  opinion_gensokyo_expansion_approved: "賢者が拡張を認可"
  opinion_gensokyo_expansion_declined: "拡張要請が拒否された"

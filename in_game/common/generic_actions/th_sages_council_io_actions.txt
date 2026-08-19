@@ -31,13 +31,13 @@ th_sages_introduce_institution = {
                 is_active_parliament = yes
             }
         }
-        ### 幻想乡团结 ≥ 10
+        ### 幻想乡团结 ≥ 5（2026-08-19 降低：10 → 5）
         international_organization:th_gensokyo_io = {
-            var:th_gensokyo_unity_var >= 10
+            var:th_gensokyo_unity_var >= 5
         }
-        ### 金币 ≥ 500
+        ### 金币 ≥ 250（2026-08-19 降低：500 → 250）
         scope:actor = {
-            gold >= 500
+            gold >= 250
         }
         ### 至少一项思潮可引入 (已出现 ∧ 发起者未接纳 ∧ 贤者议会未引入过)
         OR = {
@@ -773,11 +773,11 @@ th_sages_introduce_institution = {
                 }
             }
         }
-        ### 2. 消耗幻想乡团结 10（unique IO 全局链接）
+        ### 2. 消耗幻想乡团结 5（2026-08-19 降低：10 → 5）
         international_organization:th_gensokyo_io = {
             change_variable = {
                 name = th_gensokyo_unity_var
-                subtract = 10
+                subtract = 5
             }
             clamp_variable = {
                 name = th_gensokyo_unity_var
@@ -786,9 +786,9 @@ th_sages_introduce_institution = {
             }
         }
 
-        ### 3. 消耗发起者金钱 500
+        ### 3. 消耗发起者金钱 250（2026-08-19 降低：500 → 250）
         scope:actor = {
-            add_gold = -500
+            add_gold = -250
         }
 
         ### 4. 引发贤者议会辩论（内联，同 th_gensokyo_propose_crusade.txt:101-120 先例）

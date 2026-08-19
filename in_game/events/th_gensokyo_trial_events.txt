@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 阎魔审判事件（玩家为阎魔时手动裁决 4 档）
 ### 目标国定位: th_gensokyo_trial_target_mark 标记法
 ### 档位: 事件选项设定 th_gensokyo_sentence_tier（0-3）→ 核心判决
@@ -19,7 +19,7 @@ th_gensokyo_trial_events.1 = {
         is_leader_of_international_organization = international_organization:th_gensokyo_io
     }
 
-    ### 轻判（档1）：归还非法领土（取消附庸 + 归还核心领土 + 释放国家）
+    ### 轻判（档1）：归还非法领土（取消附庸 + 归还核心领土）
     option = {
         name = th_gensokyo_trial_events.1.a
         every_country = {

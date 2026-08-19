@@ -27,7 +27,11 @@ th_gensokyo_request_expansion = {
     }
 
     allow = {
-        always = yes
+        ### 花费门槛（金币 + 威望，支付给对应贤者）
+        scope:actor = {
+            gold >= th_gensokyo_request_expansion_gold_cost
+            prestige >= 10
+        }
     }
 
     select_trigger = {
@@ -120,29 +124,50 @@ th_gensokyo_request_expansion = {
     }
 
     effect = {
-        ### 请求者挂起标记（贤者事件裁决后清理）
-        scope:actor = {
-            set_variable = th_gensokyo_expansion_requester_mark
-        }
-        ### 目标地块标记（= CB 目标依据，保留至 CB 到期/战争结束）
-        ### 目标国标记（贤者事件读取）
-        scope:target_location = {
-            set_variable = th_gensokyo_expansion_request_mark
-            owner = {
-                set_variable = th_gensokyo_expansion_target_owner_mark
+        ### 修复 2026-08-19：exists 守卫（同 propose_crusade B1 修复），
+        ### 防止 tooltip/AI 预评估未选择状态时报 "Undefined event target"
+        if = {
+            limit = {
+                exists = scope:target_sage
+                exists = scope:target_location
             }
-        }
-        ### 向贤者发起裁决事件
-        scope:target_sage = {
-            trigger_event_non_silently = {
-                id = th_gensokyo_expansion_request_events.1
-                days = 1
+            ### 请求者挂起标记（贤者事件裁决后清理）
+            scope:actor = {
+                set_variable = th_gensokyo_expansion_requester_mark
+                ### 花费：金币 + 威望（数值见 chain_values，支付给对应贤者）
+                add_gold = th_gensokyo_request_expansion_gold_penalty
+                add_prestige = {
+                    value = th_gensokyo_request_expansion_prestige_penalty
+                }
+            }
+            ### 目标地块标记（= CB 目标依据，保留至 CB 到期/战争结束）
+            ### 目标国标记（贤者事件读取）
+            scope:target_location = {
+                set_variable = th_gensokyo_expansion_request_mark
+                owner = {
+                    set_variable = th_gensokyo_expansion_target_owner_mark
+                }
+            }
+            ### 花费支付给对应贤者
+            scope:target_sage = {
+                add_gold = th_gensokyo_request_expansion_gold_cost
+                add_prestige = {
+                    value = th_gensokyo_request_expansion_prestige_bonus
+                }
+            }
+            ### 向贤者发起裁决事件
+            scope:target_sage = {
+                trigger_event_non_silently = {
+                    id = th_gensokyo_expansion_request_events.1
+                    days = 1
+                }
             }
         }
     }
-    
-     cooldown = {
-        type = th_gensokyo_feast
+
+    cooldown = {
+        ### 修复 2026-08-19：原误用 th_gensokyo_feast 类型
+        type = th_gensokyo_request_expansion
         months = 24
     }
 

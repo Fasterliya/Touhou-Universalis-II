@@ -1,10 +1,13 @@
 ### ============================================================
-### 贤者授权扩张 — 裁决事件链（WP-D 2026-08-15）
+### 贤者授权扩张 — 裁决事件链（WP-D 2026-08-15 / 重构 2026-08-19）
 ### .1 贤者裁决（同意/拒绝）  .2 请求者通知（同意）  .3 请求者通知（拒绝）
 ### 标记法：th_gensokyo_expansion_requester_mark（请求者，挂起）
 ###         th_gensokyo_expansion_target_owner_mark（目标国）
 ###         th_gensokyo_expansion_request_mark（目标地块，= CB 依据，保留）
-### 格式：EU5 事件需 outcome = ...；option 内效果直接书写（无 effect 包裹）
+### 结构：option 内 save_scope_as → 调用 scripted_effect（th_gensokyo_expansion_effects.txt）
+### 修复 2026-08-19：直接在同 option 引用 save_scope_as 目标报
+###   "Undefined event target"（校验期），改为 scripted effect 内引用（审判事件同款已验证模式）。
+### 格式：EU5 事件（outcome + option 内直写效果）
 ### ============================================================
 
 namespace = th_gensokyo_expansion_request_events
@@ -25,7 +28,7 @@ th_gensokyo_expansion_request_events.1 = {
         }
     }
 
-    ### 同意：授予请求者针对目标国的 CB（目标地块限定）
+    ### 同意：授予请求者针对目标国的 CB（至多 4 地块）
     option = {
         name = th_gensokyo_expansion_request_events.1.a
         ai_chance = {
@@ -43,32 +46,16 @@ th_gensokyo_expansion_request_events.1 = {
             }
             save_scope_as = expansion_target
         }
-        scope:expansion_requester = {
-            add_casus_belli = {
-                target = scope:expansion_target
-                type = casus_belli:th_gensokyo_sage_expansion_cb
-            }
-            ### 通知请求者
-            trigger_event_non_silently = {
-                id = th_gensokyo_expansion_request_events.2
-                days = 1
-            }
-        }
-        add_opinion = {
-            target = scope:expansion_requester
-            modifier = opinion_gensokyo_expansion_approved
-        }
+        th_gensokyo_expansion_grant_cb_effect = yes
         ### 清理挂起/目标国标记（地块标记保留 = CB 依据）
         every_country = {
             limit = {
-                has_variable = th_gensokyo_expansion_requester_mark
+                OR = {
+                    has_variable = th_gensokyo_expansion_requester_mark
+                    has_variable = th_gensokyo_expansion_target_owner_mark
+                }
             }
             remove_variable = th_gensokyo_expansion_requester_mark
-        }
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_expansion_target_owner_mark
-            }
             remove_variable = th_gensokyo_expansion_target_owner_mark
         }
     }
@@ -84,19 +71,8 @@ th_gensokyo_expansion_request_events.1 = {
                 has_variable = th_gensokyo_expansion_requester_mark
             }
             save_scope_as = expansion_requester
-            change_societal_value = {
-                type = th_gensokyo_amity_vs_belligerence
-                value = -5
-            }
-            trigger_event_non_silently = {
-                id = th_gensokyo_expansion_request_events.3
-                days = 1
-            }
         }
-        add_opinion = {
-            target = scope:expansion_requester
-            modifier = opinion_gensokyo_expansion_declined
-        }
+        th_gensokyo_expansion_decline_effect = yes
         ### 清理全部标记（不授予 CB）
         every_country = {
             limit = {

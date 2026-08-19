@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡惩戒局势（加强版包围网）
 ### 启动: 议会辩论通过（enable_situation_effect 强制）
 ### 目标国: 标记法定位（th_gensokyo_crusade_target_mark，常驻至局势结束）
@@ -83,21 +83,33 @@ th_gensokyo_crusade = {
                 save_scope_as = crusade_target
             }
         }
-        ### 罪值：战争时长累积（封顶 100）+ 同步到局势变量（GUI 显示）
-        scope:crusade_target = {
-            change_variable = {
-                name = th_gensokyo_sin_var
-                add = th_crusade_sin_monthly_value
+        ### 修复 2026-08-19：目标国覆灭/被吞并时 save_scope_as 不触发 →
+        ### scope:crusade_target 未设置会报错；先判定目标不存在 → 直接结束局势
+        if = {
+            limit = {
+                NOT = {
+                    exists = scope:crusade_target
+                }
             }
-            clamp_variable = {
-                name = th_gensokyo_sin_var
-                min = 0
-                max = 100
-            }
+            end_situation = situation:th_gensokyo_crusade
         }
-        set_variable = {
-            name = th_crusade_sin_display
-            value = scope:crusade_target.var:th_gensokyo_sin_var
+        else = {
+            ### 罪值：战争时长累积（封顶 100）+ 同步到局势变量（GUI 显示）
+            scope:crusade_target = {
+                change_variable = {
+                    name = th_gensokyo_sin_var
+                    add = th_crusade_sin_monthly_value
+                }
+                clamp_variable = {
+                    name = th_gensokyo_sin_var
+                    min = 0
+                    max = 100
+                }
+            }
+            set_variable = {
+                name = th_crusade_sin_display
+                value = scope:crusade_target.var:th_gensokyo_sin_var
+            }
         }
         ### 包围网入战由局势行动 th_gensokyo_join_crusade 触发（B2 决策）
         ### 势力计算（B5：局势面板双方力量对比，situation 变量供 GUI 读取）
@@ -122,20 +134,24 @@ th_gensokyo_crusade = {
         }
         set_variable = {
             name = th_crusade_target_strength
-            value = scope:crusade_target.country_strength
+            value = 0
         }
-        ### 结束判定：目标国覆灭 或 不再处于任何战争
-        scope:crusade_target = {
-            if = {
-                limit = {
-                    OR = {
-                        NOT = {
-                            country_exists = this
-                        }
+        ### 目标国力量 + 结束判定（非覆灭路径；覆灭已在上面 else 分支外处理）
+        if = {
+            limit = {
+                exists = scope:crusade_target
+            }
+            set_variable = {
+                name = th_crusade_target_strength
+                value = scope:crusade_target.country_strength
+            }
+            scope:crusade_target = {
+                if = {
+                    limit = {
                         at_war = no
                     }
+                    end_situation = situation:th_gensokyo_crusade
                 }
-                end_situation = situation:th_gensokyo_crusade
             }
         }
     }

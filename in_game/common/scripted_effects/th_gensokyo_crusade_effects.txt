@@ -79,7 +79,12 @@ th_gensokyo_trial_tier_effect = {
 
 ### 归还非法领土三连（B3 决策，档1+ 默认惩罚）
 ### ① 取消目标国全部附庸 ② 归还他国核心领土（previous_owner/is_core_of 模式，参考 HRE）
-### ③ 释放所有可释放国家（从核心创建国家）
+### ③ 释放所有可释放国家 —— 2026-08-19 移除：
+###    create_country_from_cores_in_our_locations 需要国家参数（= c:TAG / = scope:x，
+###    vanilla 全 30 处先例无一 = yes），= yes 报
+###    "scope type boolean, expected country" 错误；
+###    "释放全部"无直接等价语义 → 按交接注释指示删除本步骤
+###    （①② 已实现归还领土核心机制）
 th_gensokyo_trial_return_lands_effect = {
     scope:crusade_target = {
         ### ① 取消全部附庸
@@ -96,12 +101,6 @@ th_gensokyo_trial_return_lands_effect = {
             }
             change_location_owner = previous_owner
         }
-        ### ③ 释放所有可释放国家
-        ### ⚠️ P1-06 待实测（用户决策 2026-08-13：保留待实测）：
-        ### 该效果 base game 全部 30 处先例均带国家参数（= c:TAG / = scope:x），
-        ### 无一 = yes；= yes 的"释放全部"布尔语义未经引擎实证，进游戏首测
-        ### （检测手册第 12 章首测项）。若报错/无效 → 改为硬编码 tag 名单或删除本步骤
-        create_country_from_cores_in_our_locations = yes
     }
 }
 

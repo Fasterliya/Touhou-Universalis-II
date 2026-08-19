@@ -31,6 +31,12 @@ th_expansion_cost_authorized_value = { value = 0.25 }      # 贤者授权扩张�
 th_gensokyo_conquest_chaos_per_location_value = { value = 0.5 }   # 征服幻想乡地块 → 乱倾向 +0.5/地块（§5，待调）
 th_gensokyo_cede_antagonism_extra_value = { value = 75 }          # 被割让追加敌意层（§3.0 时代接口；默认由 IO 字段承担，本层待时代系统启用）
 
+### WP-D 2026-08-19：请求扩张花费（发起者支付给对应贤者，§3.1）
+th_gensokyo_request_expansion_gold_cost = { value = 200 }          # 金币花费（待调）
+th_gensokyo_request_expansion_gold_penalty = { value = -200 }      # 发起者金币 -200（带符号，避免 -脚本值 语法风险）
+th_gensokyo_request_expansion_prestige_penalty = { value = -10 }   # 发起者威望 -10（待调）
+th_gensokyo_request_expansion_prestige_bonus = { value = 10 }      # 贤者获得威望 +10（待调）
+
 ### 惩戒战争
 th_crusade_antagonism_threshold_value = { value = 50 }     # 提案敌意阈值（待调）
 th_crusade_sin_battle_value = { value = 5 }                # 战斗胜利罪值（备用固定值，现按 war_score 折算）

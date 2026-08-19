@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 
 ### Gensokyo International Organization — Localization
 
@@ -212,7 +212,7 @@ l_english:
  th_gensokyo_request_expansion: "Request Expansion within Gensokyo"
  th_gensokyo_request_expansion_desc: "Request a sage's permission to expand within Gensokyo: first choose a sage, then a location adjacent to your territory. The Human Village and the chosen sage's own lands are protected and cannot be claimed; if the sage approves you gain a casus belli, if declined your chaotic heart is tempered as compensation."
  th_gensokyo_sage_expansion_cb: "Sage-Approved Expansion"
- th_gensokyo_sage_expansion_cb_PROV: "Sage-Approved Expansion (target location)"
+ th_gensokyo_sage_expansion_cb_PROV: "Sage-Approved Expansion ([PROVINCE.GetName])"
  th_gensokyo_sage_expansion_cb_desc: "A war of expansion sanctioned by a sage: ceding provinces in peace costs +75% war score, and antagonism gained is reduced by 40%."
  opinion_gensokyo_expansion_approved: "Expansion Approved by Sage"
  opinion_gensokyo_expansion_declined: "Expansion Request Refused"
