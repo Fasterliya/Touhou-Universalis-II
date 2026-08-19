@@ -1,4 +1,7 @@
-﻿th_human_village_io = {
+### 人间之里国际组织 — 人类聚居保护组织（WP-C 2026-08-15 补齐）
+### 设计文档《国际组织》§3.0/1：人间之里领土受最高级别保护
+
+th_human_village_io = {
     has_target = no
     unique = yes
     expel_members_who_are_targets_of_other_members = no
@@ -29,6 +32,13 @@
     }
     on_left = {
     }
+
+    # === 敌意 / AE（§3.0/1：被割让额外获得 150% 敌意）===
+    antagonism_modifier_for_taking_land_from_fellow_member = 1.5
+    antagonism_modifier_for_taking_land_from_member_as_outsider = 1.5
+
+    # === 持地规则（被割让战争分数 +50%，同幻想乡IO）===
+    land_ownership_rule = th_human_village_land_ownership
 
     modifier = {
         # TODO: 后续人工填写人类村落成员修正值

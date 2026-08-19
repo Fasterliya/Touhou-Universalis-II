@@ -1,4 +1,4 @@
-﻿### 幻想乡IO — 月度脉冲
+### 幻想乡IO — 月度脉冲
 
 ### 注册到 monthly_country_pulse
 monthly_country_pulse = {
@@ -57,5 +57,25 @@ th_gensokyo_io_monthly_country_pulse = {
 
         ### 时代变更时清除个人影响力
         ### TODO: 由后续人工开发通过 on_age_change 钩子实现
+
+        ### WP-H 2026-08-15（设计§6）：免制裁倒计时（20 年 = 240 月）
+        ### 反杀条约打标 th_gensokyo_sanction_immunity + th_gensokyo_immunity_months，
+        ### 归零后清除 → 可再次成为惩戒目标
+        if = {
+            limit = {
+                has_variable = th_gensokyo_immunity_months
+            }
+            change_variable = {
+                name = th_gensokyo_immunity_months
+                subtract = 1
+            }
+            if = {
+                limit = {
+                    var:th_gensokyo_immunity_months <= 0
+                }
+                remove_variable = th_gensokyo_immunity_months
+                remove_variable = th_gensokyo_sanction_immunity
+            }
+        }
     }
 }

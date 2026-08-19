@@ -1,0 +1,15 @@
+﻿### ============================================================
+### 幻想乡IO 宴会 — 选址本地增益修正（WP-E 2026-08-15）
+### 设计文档《国际组织》§4：获得更多暂时性的本地增益
+### 作用域 location（add_location_modifier 施加，12 个月）
+### ============================================================
+
+th_gensokyo_feast_location_modifier = {
+    game_data = {
+        category = location
+    }
+    local_production_efficiency = 0.10
+    local_population_growth = 0.05
+    local_food_capacity_modifier = 0.05
+    local_unrest = -2
+}

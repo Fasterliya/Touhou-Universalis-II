@@ -3,5 +3,9 @@ international_organization_manager = {
         type = th_human_village_io
         creation_date = 1337.4.1
         members = { T03 T32 T33 T34 T36 T49 T52 T75 T77 T78 T85 T86 T87 T88 T89 T90 T91 T92 T93 T94 }
+        ### WP-C 2026-08-15：人间之里区域归入 IO 持地（§3.0/1 保护范围）
+        regions = {
+            th_gensokyo_human_village_region
+        }
     }
 }

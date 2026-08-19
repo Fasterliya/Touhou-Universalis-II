@@ -1,0 +1,41 @@
+﻿### ============================================================
+### 贤者授权扩张 — 宣战理由（WP-D 2026-08-15）
+### 仅由贤者同意事件 add_casus_belli 授予（create_visible/enabled = no）
+### 目标地块 = 持 th_gensokyo_expansion_request_mark 标记的 location
+### ============================================================
+
+th_gensokyo_sage_expansion_cb = {
+    years = 10
+
+    create_visible = {
+        always = no
+    }
+    create_enabled = {
+        always = no
+    }
+
+    declare_enabled = {
+        scope:target = {
+            any_owned_location = {
+                has_variable = th_gensokyo_expansion_request_mark
+            }
+        }
+    }
+
+    ### root = province（CB 选择目标地块时校验，参照 imperial_ban.txt）
+    province = {
+        any_location_in_province = {
+            has_variable = th_gensokyo_expansion_request_mark
+        }
+    }
+
+    war_goal_type = th_gensokyo_sage_expansion_war_goal
+
+    additional_war_enthusiasm = 0.1
+
+    ai_cede_location_desire = {
+        add = {
+            add = 20
+        }
+    }
+}

@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡惩戒战争 反杀胜利条约（100 分）
 ### 仅目标国（惩戒对象，持 th_gensokyo_crusade_target_mark）作为和约提出方可见
 ### 提出 = 反杀成功判定（打 countered 标记 → 局势结束不审判 → 反攻扩张行动解锁）
@@ -30,6 +30,19 @@ th_gensokyo_crusade_counter = {
             set_variable = th_gensokyo_crusade_countered
             add_prestige = {
                 value = 20
+            }
+            ### WP-H 2026-08-15（设计§6 防御方胜利）：
+            ### 幻想乡所有国家 20 年内无法再对其制裁（240 月倒计时，月度脉冲递减）
+            set_variable = th_gensokyo_sanction_immunity
+            set_variable = {
+                name = th_gensokyo_immunity_months
+                value = 240
+            }
+        }
+        ### WP-H：防御方胜利 → 博丽大结界法律等级直接下降一级（大事件接口，§7）
+        international_organization:th_gensokyo_io = {
+            th_gensokyo_barrier_change_level_effect = {
+                value = -1
             }
         }
     }

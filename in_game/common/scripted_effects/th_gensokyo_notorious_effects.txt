@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 链条系统 — 价值观完整链（亲善 <-> 好战）
 ### 原「恶名变量 th_gensokyo_notorious_reputation_var（0-100，完全隐藏）」已迁移为
 ### 社会价值观 societal_value:th_gensokyo_amity_vs_belligerence（-100亲善 ~ +100好战，可见）
@@ -53,11 +53,14 @@ th_gensokyo_chain_init_effect = {
 ### 国家 scope 调用，仅 IO 成员
 ### 引擎自动钳制社会价值观于 -100 ~ +100，无需额外 clamp
 th_gensokyo_notorious_monthly_effect = {
-    ### 月度自然衰减：change_societal_value 负值 = 向左（亲善）
-    change_societal_value = {
-        type = th_gensokyo_amity_vs_belligerence
-        value = th_notorious_decay_monthly_value
-    }
+    ### WP-B 2026-08-15（设计文档《国际组织》§2）：乱与缘价值观"一般不会变动"，
+    ### 取消月度自然漂移（原 th_notorious_decay_monthly_value = -2/月 趋向缘），
+    ### 价值观仅由事件/行动驱动（征服、宴会、扩张、惩戒等）。
+    ### 如需恢复自动衰减，取消下行注释并在 chain_values 调回数值。
+    # change_societal_value = {
+    #     type = th_gensokyo_amity_vs_belligerence
+    #     value = th_notorious_decay_monthly_value
+    # }
     ### 弃民档标记镜像（2026-08-14 modifier mirror 方案）：
     ### interaction_source_list limit 上下文实测不吃 var: 数值比较，
     ### 此处 on_action 月度上下文 societal_value 为引擎原生触发器（安全），

@@ -1,0 +1,146 @@
+﻿### ============================================================
+### 幻想乡IO 行动 — 请求幻想乡内扩张（WP-D 2026-08-15）
+### 设计文档《国际组织》§3.1：
+###   ① select 任意贤者国家（好感度/结盟等原版外交因素判定）
+###   ② select 自身相邻 location
+###      （人间之里 region 受保护不可索取；被请求贤者自身地块不可索取，
+###        另两位贤者的地块可索取）
+###   → 向贤者触发事件：同意 = 授予 CB（战争分数+75%、敌意-40%）
+###     / 拒绝 = 补偿（乱-5 + 贤者好感变化）
+### 链路: 打标记（请求者/目标地块/目标国）→ 贤者事件裁决
+### ============================================================
+
+th_gensokyo_request_expansion = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 12
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            ### 单次挂起请求限制（标记存留至贤者事件裁决）
+            NOT = {
+                has_variable = th_gensokyo_expansion_requester_mark
+            }
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### ① 选贤者 — 外交因素判定（好感 ≥ 0 或 同盟；可调阈值）
+    select_trigger = {
+        looking_for_a = country
+        source = recipient
+        target_flag = target_sage
+        name = "choose_country"
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        th_gensokyo_is_sage_trigger
+                        NOT = {
+                            this = scope:actor
+                        }
+                        OR = {
+                            opinion = {
+                                target = scope:actor
+                                value >= 0
+                            }
+                            ### is_allied_with 为带参脚本触发器（块形式，见 country_triggers.txt:263）
+                            is_allied_with = {
+                                target = scope:actor
+                            }
+                        }
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    ### ② 选目标 location — 自身相邻；人间之里/所选贤者地块受保护
+    select_trigger = {
+        looking_for_a = location
+        source = actor
+        target_flag = target_location
+        interaction_source_list = {
+            scope:actor = {
+                every_owned_location = {
+                    every_neighbor_location = {
+                        limit = {
+                            NOT = {
+                                owner = scope:actor
+                            }
+                            th_gensokyo_is_gensokyo_location_trigger
+                            NOT = {
+                                region = region:th_gensokyo_human_village_region
+                            }
+                            owner = {
+                                is_member_of_international_organization = international_organization:th_gensokyo_io
+                                NOT = {
+                                    this = scope:target_sage
+                                }
+                            }
+                        }
+                        add_to_list = source
+                    }
+                }
+            }
+        }
+        visible = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    effect = {
+        ### 请求者挂起标记（贤者事件裁决后清理）
+        scope:actor = {
+            set_variable = th_gensokyo_expansion_requester_mark
+        }
+        ### 目标地块标记（= CB 目标依据，保留至 CB 到期/战争结束）
+        ### 目标国标记（贤者事件读取）
+        scope:target_location = {
+            set_variable = th_gensokyo_expansion_request_mark
+            owner = {
+                set_variable = th_gensokyo_expansion_target_owner_mark
+            }
+        }
+        ### 向贤者发起裁决事件
+        scope:target_sage = {
+            trigger_event_non_silently = {
+                id = th_gensokyo_expansion_request_events.1
+                days = 1
+            }
+        }
+    }
+
+    ai_will_do = {
+        ### AI 极少主动请求（玩家主导），保留极低基线
+        value = 1
+    }
+}

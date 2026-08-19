@@ -1,0 +1,52 @@
+﻿### ============================================================
+### 幻想乡IO — 持地规则（WP-C 2026-08-15）
+### 设计文档《国际组织》§3.0：
+###   "被割让额外省份战争分数花费+50%" → remove_war_score_modifier = 0.5
+###   （仅在被割让移出 IO 的和平条约中生效，引擎原生，零性能开销）
+### 参考: base game hre_land_ownership.txt / swiss_conferation_land_ownership.txt
+### ============================================================
+
+th_gensokyo_land_ownership = {
+    ### 应用于 IO 持有地块的修正（此处留空避免与 remove_war_score_modifier 重复叠加；
+    ### 如需常驻地块修正可填入 location 类修饰符，如 local_war_score_efficiency）
+    modifier = {
+    }
+
+    can_add_trigger = {
+        always = yes
+    }
+    can_remove_trigger = {
+        always = yes
+    }
+
+    ### root = location, recipient = international organization
+    can_add_location_trigger = {
+        is_land = yes
+        is_passable = yes
+        owner ?= {
+            is_member_of_international_organization = scope:recipient
+        }
+    }
+
+    ### root = location, recipient = international organization
+    can_remove_location_trigger = {
+        always = yes
+    }
+
+    ### root = location, recipient = international organization
+    on_added = {
+    }
+
+    ### root = location, recipient = international organization
+    on_removed = {
+    }
+
+    ### root = location, recipient = international organization
+    ai_desire_to_add = {
+    }
+
+    ### 仅可通过和平条约从 IO 移出（= "被割让"语义，§3.0）
+    removed_by_peace_treaty = yes
+    ### 被割让移出 IO 时战争分数花费 +50%
+    remove_war_score_modifier = 0.5
+}

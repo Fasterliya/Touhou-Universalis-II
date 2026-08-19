@@ -1,0 +1,23 @@
+﻿### ============================================================
+### 幻想乡社会价值观 — 内阁"改变社会价值观"推动 静态修正
+### 修复 2026-08-19（闪退日志 assertion）：
+###   "Societal value 'th_gensokyo_amity_vs_belligerence' is missing
+###    static modifier 'th_gensokyo_amity_progress_cabinet_efficiency'"
+### 原版对照：main_menu/common/static_modifiers/societal_values.txt 中
+###   belligerent_progress_cabinet_efficiency / conciliatory_progress_cabinet_efficiency
+### 命名规则：<左tag>_progress_cabinet_efficiency / <右tag>_progress_cabinet_efficiency
+### ============================================================
+
+th_gensokyo_amity_progress_cabinet_efficiency = {
+	game_data = {
+		category = country
+	}
+	monthly_towards_th_gensokyo_amity = 1
+}
+
+belligerence_progress_cabinet_efficiency = {
+	game_data = {
+		category = country
+	}
+	monthly_towards_belligerence = 1
+}

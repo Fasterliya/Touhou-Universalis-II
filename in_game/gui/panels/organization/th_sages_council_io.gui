@@ -84,84 +84,87 @@ organization_panel = {
 
             ### ==============================================
             ### IO变量信息栏 (PDS ios_information_header)
+            ### 修复 2026-08-15（WP-A）：消除三槽重复 + 修复不可交互 tooltip
+            ###   原实现：原版左侧 GetType.GetVariables 自动列表(贤者威望) +
+            ###   content_extra_1(威望重复) + content_extra_2(团结度) = 三槽；
+            ###   且 TH_SAGES_PRESTIGE_FORMAT loc 键缺失 → 左槽值渲染为空。
+            ### 修复：
+            ###   1) 不再覆写 content_extra_1 → 威望仅由左侧自动列表显示一次
+            ###      （格式键已补，见本地化 TH_SAGES_PRESTIGE_FORMAT）；
+            ###   2) 覆写 ios_variable_tooltip → 左侧槽 tooltip 换成富文本
+            ###      档位/预览/描述（参考 Glorp UI catholic_church.gui 同款覆写）；
+            ###   3) content_extra_2 保留团结度，tooltipwidget 包裹带尺寸内容
+            ###      保证可悬停交互。
+            ### 注：不做全局类型覆写，避免影响幻想乡IO的原版面板。
             ### ==============================================
             ios_information_header = {
                 blockoverride "ios_information_header_visible" { visible = yes }
-                blockoverride "ios_information_header_content_extra_1" {
-                    using = ios_header_content_extra_template
-                    blockoverride "ios_header_content_extra" {
-                        hbox = {
-                            spacing = 4
-                            text_single = {
-                                margin_right = 4 autoresize = yes align = right fontsize = 13
-                                raw_text = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var').GetValue|0]"
+                blockoverride "ios_variable_tooltip" {
+                    tooltipwidget = {
+                        ContextualTooltipType = {
+                            blockoverride "title_icon_texture" {
+                                texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon('th_sages_prestige_var')]"
                             }
-                            hbox = {
-                                using = organization_piechart_template
-                                blockoverride "organization_piechart_size" { size = { 25 25 } }
-                                blockoverride "organization_piechart_value" {
-                                    value = "[FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var'))]"
-                                }
-                                blockoverride "organization_piechart_max_value" {
-                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_var')))]"
-                                }
-                                blockoverride "organization_piechart_icon" {
-                                    ### 修复: GetVariableIcon 参数为变量 tag 字符串。
-                                    ### 原 InternationalOrganizationTypeVariable.GetTag 需 InternationalOrganizationTypeVariable
-                                    ### 数据上下文（原版在 GetVariables datamodel item 内使用），此处改为字面量等价写法
-                                    texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon('th_sages_prestige_var')]"
-                                }
-                            }
-                        }
-                        tooltipwidget = {
-                            ContextualTooltipType = {
-                                blockoverride "title_text" { raw_text = "[Localize('th_sages_prestige_var')]" }
-                                blockoverride "concept_link" { text = "[international_organization|e]" }
-                                blockoverride "tooltip_content" {
-                                    vbox = {
-                                        spacing = 3
-                                        text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_ACTIVE_TIERS_LABEL')]" margins_bottom = 2 }
-                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_20')]" }
-                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_40')]" }
-                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_60').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_60')]" }
-                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_80').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_80')]" }
-                                        text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_100').IsSet]" using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" }
-                                        text_single = { visible = "[And(Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet),Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet))]" using = Font_Size_Tiny default_format = "#subtle_name" raw_text = "[Localize('TH_SAGES_NO_ACTIVE_TIER')]" }
-                                        widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
-                                        hbox = { spacing = 4 margins_bottom = 2 icon = { size = { 16 16 } texture = "gfx/interface/icons/modifiers/_default.dds" texture_density = 2 } text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_MAX_PREVIEW_LABEL')]" } }
-                                        text_single = { using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" margins_bottom = 1 }
-                                        text_multi = { using = Font_Size_Tiny default_format = "#subtle_name" max_width = 200 raw_text = "[Localize('th_sages_prestige_tier_100_desc')]" margins_bottom = 2 }
-                                        text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 200 raw_text = "[Localize('TH_SAGES_TIER_100_MODIFIERS_PREVIEW')]" }
-                                        widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
-                                        text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_sages_prestige_var_desc')]" }
-                                    }
+                            blockoverride "title_text" { raw_text = "[Localize('th_sages_prestige_var')]" }
+                            blockoverride "concept_link" { text = "[international_organization|e]" }
+                            blockoverride "tooltip_content" {
+                                vbox = {
+                                    spacing = 3
+                                    text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_ACTIVE_TIERS_LABEL')]" margins_bottom = 2 }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_20')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_40')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_60').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_60')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_80').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_80')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_100').IsSet]" using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" }
+                                    text_single = { visible = "[And(Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet),Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet))]" using = Font_Size_Tiny default_format = "#subtle_name" raw_text = "[Localize('TH_SAGES_NO_ACTIVE_TIER')]" }
+                                    widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                    hbox = { spacing = 4 margins_bottom = 2 icon = { size = { 16 16 } texture = "gfx/interface/icons/modifiers/_default.dds" texture_density = 2 } text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_MAX_PREVIEW_LABEL')]" } }
+                                    text_single = { using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" margins_bottom = 1 }
+                                    text_multi = { using = Font_Size_Tiny default_format = "#subtle_name" max_width = 200 raw_text = "[Localize('th_sages_prestige_tier_100_desc')]" margins_bottom = 2 }
+                                    text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 200 raw_text = "[Localize('TH_SAGES_TIER_100_MODIFIERS_PREVIEW')]" }
+                                    widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                    text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_sages_prestige_var_desc')]" }
                                 }
                             }
                         }
                     }
                 }
-                blockoverride "ios_header_content_divider" {}
                 blockoverride "ios_information_header_content_extra_2" {
                     using = ios_header_content_extra_template
                     blockoverride "ios_header_content_extra" {
-                        hbox = {
-                            spacing = 4
-                            text_single = {
-                                margin_right = 4 autoresize = yes align = right fontsize = 13
-                                raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
+                        ### tooltipwidget 包裹带尺寸内容 → 可悬停交互
+                        tooltipwidget = {
+                            ContextualTooltipType = {
+                                blockoverride "title_icon_texture" {
+                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
+                                }
+                                blockoverride "title_text" { raw_text = "[Localize('th_gensokyo_unity_var')]" }
+                                blockoverride "concept_link" { text = "[international_organization|e]" }
+                                blockoverride "tooltip_content" {
+                                    vbox = {
+                                        spacing = 3
+                                        text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_gensokyo_unity_var_desc')]" }
+                                    }
+                                }
                             }
                             hbox = {
-                                using = organization_piechart_template
-                                blockoverride "organization_piechart_size" { size = { 25 25 } }
-                                blockoverride "organization_piechart_value" {
-                                    value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
+                                spacing = 4
+                                text_single = {
+                                    margin_right = 4 autoresize = yes align = right fontsize = 13
+                                    raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
                                 }
-                                blockoverride "organization_piechart_max_value" {
-                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
-                                }
-                                blockoverride "organization_piechart_icon" {
-                                    ### 同上修复: 字面量 tag（接收者为幻想乡IO）
-                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
+                                widget = {
+                                    size = { 25 25 }
+                                    using = organization_piechart_template
+                                    blockoverride "organization_piechart_value" {
+                                        value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
+                                    }
+                                    blockoverride "organization_piechart_max_value" {
+                                        value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
+                                    }
+                                    blockoverride "organization_piechart_icon" {
+                                        texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
+                                    }
                                 }
                             }
                         }

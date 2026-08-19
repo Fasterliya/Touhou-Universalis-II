@@ -1,6 +1,9 @@
-﻿### ============================================================
-### 幻想乡IO 宴会 — 价值观亲善化主要途径
-### 原生 IO 行动栏按钮（InternationalOrganizationsView）
+### ============================================================
+### 幻想乡IO 宴会 — 价值观亲善化途径（WP-E 2026-08-15 重做）
+### 设计文档《国际组织》§4：花费金币、select location 选择开设地点、
+### 降低缘价值观偏向的获取、获得更多暂时性本地增益（location 临时修正）、
+### 可选择相邻国家领土并改善与他们的外交关系。
+### 原实现（仅 50 金 + 价值观 -20，无选址）已替换。
 ### ============================================================
 
 th_gensokyo_feast = {
@@ -34,14 +37,73 @@ th_gensokyo_feast = {
         }
     }
 
+    ### WP-E：选址 — 自身地块 或 相邻 IO 成员地块（§4"可以选择相邻国家的领土"）
+    select_trigger = {
+        looking_for_a = location
+        target_flag = venue_location
+        interaction_source_list = {
+            scope:actor = {
+                ### 自身地块
+                every_owned_location = {
+                    limit = {
+                        is_land = yes
+                    }
+                    add_to_list = source
+                }
+                ### 相邻国家地块（经己方地块邻接展开）
+                every_owned_location = {
+                    every_neighbor_location = {
+                        limit = {
+                            NOT = {
+                                owner = scope:actor
+                            }
+                            owner = {
+                                is_member_of_international_organization = international_organization:th_gensokyo_io
+                            }
+                        }
+                        add_to_list = source
+                    }
+                }
+            }
+        }
+        visible = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
     price = price:th_gensokyo_feast_price
 
     effect = {
-        ### 价值观趋向亲善（原：恶名 -10；现：change_societal_value 负值向左，引擎自动钳制 -100）
+        ### 价值观趋向亲善（削弱版 -10；本地增益/外交改善为补偿，见 chain_values）
         scope:actor = {
             change_societal_value = {
                 type = th_gensokyo_amity_vs_belligerence
                 value = th_feast_notorious_reduction_value
+            }
+        }
+        ### 选址本地增益（12 个月临时修正）
+        scope:venue_location = {
+            add_location_modifier = {
+                modifier = th_gensokyo_feast_location_modifier
+                months = 12
+                mode = add_and_extend
+            }
+            ### 邻国领土 → 改善与邻国关系（好感 +15，见 biases）
+            if = {
+                limit = {
+                    NOT = {
+                        owner = scope:actor
+                    }
+                }
+                owner = {
+                    add_opinion = {
+                        target = scope:actor
+                        modifier = opinion_gensokyo_feast_guest
+                    }
+                }
             }
         }
     }
@@ -53,7 +115,6 @@ th_gensokyo_feast = {
 
     ai_will_do = {
         ### 运行时修复 2026-08-07：generic action ai_will_do 上下文变量引用（裸 var:/scope:actor.var:）均报错
-        ### → 移除恶名判断（AI 主动缓解恶名留待后续研究）
         add = {
             desc = BASE_VALUE
             value = 1

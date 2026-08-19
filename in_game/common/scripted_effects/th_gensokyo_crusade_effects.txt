@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 惩戒审判 — 判决效果
 ### 要求 scope: 调用方需先 save_scope_as = crusade_target（目标国）与 io_leader（阎魔）
 ### 档位机制: th_gensokyo_sentence_tier（1-3）——AI 自动判定或玩家事件手动设定
@@ -105,10 +105,34 @@ th_gensokyo_trial_return_lands_effect = {
     }
 }
 
-### 判决核心（读 th_gensokyo_sentence_tier 1-3）
-### 档1 归还领土 / 档2 +削弱国力 / 档3 +财富全转移 + 彼岸监管国（40% 贡金自动）
+### 判决核心（读 th_gensokyo_sentence_tier 0-3）
+### 档0 仅赔款破产 / 档1 归还领土 / 档2 +削弱国力 / 档3 +财富全转移 + 彼岸监管国（40% 贡金自动）
 th_gensokyo_trial_judge_core_effect = {
     scope:crusade_target = {
+        ### WP-H 2026-08-15（档0）：仅赔款破产 —— 转移半数国库 + 破产 debuff（2 年）
+        if = {
+            limit = {
+                scope:crusade_target.var:th_gensokyo_sentence_tier = 0
+            }
+            set_variable = {
+                name = th_gensokyo_temp_reparations
+                value = gold
+            }
+            change_variable = {
+                name = th_gensokyo_temp_reparations
+                divide = 2
+            }
+            add_gold = -var:th_gensokyo_temp_reparations
+            scope:io_leader = {
+                add_gold = scope:crusade_target.var:th_gensokyo_temp_reparations
+            }
+            remove_variable = th_gensokyo_temp_reparations
+            add_country_modifier = {
+                modifier = th_gensokyo_bankruptcy_modifier
+                years = 2
+            }
+        }
+
         ### 档1+：归还非法领土（默认惩罚）
         if = {
             limit = {
@@ -172,10 +196,21 @@ th_gensokyo_trial_judge_core_effect = {
                 }
             }
         }
-        else = {
+        else_if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 1
+            }
             international_organization:th_gensokyo_io = {
                 th_gensokyo_unity_subtract_effect = {
                     value = th_unity_sentence_t1_value
+                }
+            }
+        }
+        else = {
+            ### WP-H（档0）：仅赔款破产 — 最轻判罚，团结扣减最小
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_sentence_t0_value
                 }
             }
         }

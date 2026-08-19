@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 链条系统 共享触发条件（国家 scope）
 ### ============================================================
 
@@ -41,6 +41,36 @@ th_gensokyo_has_authorized_expansion_trigger = {
 
 ### 异变进行中（接口：留空由异变系统填充，届时把 always = no 换成异变判定）
 th_gensokyo_in_incident_trigger = {
+    always = no
+}
+
+### WP-F 2026-08-15（location scope）：幻想乡本土判定
+### = IO 持地（land_ownership_rule 生效后）或 14 个幻想乡陆地区域白名单（兜底）
+### 供征服挂钩 / 宴会选址 / 请求扩张保护等复用
+th_gensokyo_is_gensokyo_location_trigger = {
+    OR = {
+        is_owned_by_international_organization = international_organization:th_gensokyo_io
+        region = region:th_gensokyo_hakurei_region
+        region = region:th_gensokyo_makai_region
+        region = region:th_gensokyo_human_village_region
+        region = region:th_gensokyo_magic_forest_region
+        region = region:th_youkai_mountain_western_foot_region
+        region = region:th_youkai_mountain_region
+        region = region:th_immortal_realm_region
+        region = region:th_moriya_shirine_region
+        region = region:th_animal_realm_region
+        region = region:th_hell_region
+        region = region:th_sunflower_field_region
+        region = region:th_makai_region
+        region = region:th_old_hell_region
+        region = region:th_heaven_region
+    }
+}
+
+### WP-F 2026-08-15：被割让追加敌意层 时代接口开关
+### 现状 always = no（+75%/+150% 由 IO 字段承担，无重复叠加）；
+### 大结界/时代系统落地后翻转为 yes 并同步调整 th_gensokyo_cede_antagonism_extra_value。
+th_gensokyo_era_antagonism_interface_trigger = {
     always = no
 }
 

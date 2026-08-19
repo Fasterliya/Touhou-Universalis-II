@@ -1,0 +1,29 @@
+﻿### ============================================================
+### 幻想乡社会价值观 — 月度移动 修饰符类型定义
+### 修复 2026-08-19（闪退日志 assertion）：
+###   "Modifier type definition monthly_towards_th_gensokyo_amity must exist in DB"
+### 引擎对自定义社会价值观 th_gensokyo_amity_vs_belligerence 按 _vs_ 拆分左右侧：
+###   左 = th_gensokyo_amity / 右 = belligerence
+### 自动查找的月度移动修饰符类型为：
+###   monthly_towards_th_gensokyo_amity / monthly_towards_belligerence
+### 原版对照：monthly_towards_belligerent / monthly_towards_conciliatory
+### （00_modifier_types.txt:15578 / 15587，含 min=0 + is_societal_value_change=yes）
+### ============================================================
+
+monthly_towards_th_gensokyo_amity = {
+	color = neutral
+	game_data = {
+		category = country
+		min = 0
+		is_societal_value_change = yes
+	}
+}
+
+monthly_towards_belligerence = {
+	color = neutral
+	game_data = {
+		category = country
+		min = 0
+		is_societal_value_change = yes
+	}
+}

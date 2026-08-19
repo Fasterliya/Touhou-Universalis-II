@@ -1,4 +1,4 @@
-﻿l_simp_chinese:
+l_simp_chinese:
 
 ### 幻想乡国际组织 — 本地化
 
@@ -33,6 +33,7 @@
 
 ### === IO变量格式 ===
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ TH_SAGES_PRESTIGE_FORMAT: "$VAL$"
 
 ### === IO变量月度变化描述 ===
  TH_GENSOKYO_UNITY_BASE: "基础维系"
@@ -185,3 +186,57 @@
  TH_SAGES_MAIN_ACTIONS: "贤者议会行动"
  TH_SAGES_DEBATE_TITLE: "贤者辩论厅"
  TH_SAGES_DEBATE_PLACEHOLDER: "此处将展示幻想乡诸国的议会辩论与法律提案。\n待后续版本开放。"
+
+### ============================================================
+### WP-G 2026-08-15：博丽大结界核心法律（§7）
+### ============================================================
+ th_gensokyo_barrier_law: "博丽大结界"
+ th_gensokyo_barrier_law_desc: "维系幻想乡与外世隔绝的至高结界。共分五级，越接近满级结界越加稳固、越发保守。此法律无法通过辩论或领袖修订，仅会随着大事件变动。"
+ th_gensokyo_barrier_fantasy_policy: "结界·幻想（五级）"
+ th_gensokyo_barrier_fantasy_policy_desc: "结界全盛，最保守：防御大增，秩序稳固，思潮与变革缓慢。"
+ th_gensokyo_barrier_profound_policy: "结界·深邃（四级）"
+ th_gensokyo_barrier_profound_policy_desc: "结界稳固：防御与秩序良好。"
+ th_gensokyo_barrier_flourish_policy: "结界·繁英（三级）"
+ th_gensokyo_barrier_flourish_policy_desc: "结界平稳，作为基准。"
+ th_gensokyo_barrier_forgotten_policy: "结界·遗忘（二级）"
+ th_gensokyo_barrier_forgotten_policy_desc: "结界衰微：防御与秩序开始松动。"
+ th_gensokyo_barrier_extinct_policy: "结界·灭尽（一级）"
+ th_gensokyo_barrier_extinct_policy_desc: "结界濒临破碎，秩序动摇，防御荡然无存。"
+ th_gensokyo_barrier_level: "大结界等级"
+ th_gensokyo_barrier_level_desc: "博丽大结界的当前强度（1-5）。等级越高结界越保守稳固；仅大事件可使其变动。"
+ TH_GENSOKYO_BARRIER_LEVEL_FORMAT: "$VAL$"
+ TH_GENSOKYO_BARRIER_BASE: "结界维系"
+
+### ============================================================
+### WP-D 2026-08-15：请求幻想乡内扩张（§3.1）
+### ============================================================
+ th_gensokyo_request_expansion: "请求幻想乡内扩张"
+ th_gensokyo_request_expansion_desc: "向一位贤者请求在幻想乡内扩张的许可：先选择贤者，再选择一块与己相邻的地块。人间之里与贤者自身的地块受到保护，不可索取；贤者同意将授予宣战理由，拒绝则收敛乱心作为补偿。"
+ th_gensokyo_sage_expansion_cb: "贤者授权的扩张"
+ th_gensokyo_sage_expansion_cb_PROV: "贤者授权的扩张（目标地块）"
+ th_gensokyo_sage_expansion_cb_desc: "经贤者认可而发动的扩张战争：双方割让省份战争分数花费 +75%，获取的敌意额外减少 40%。"
+ opinion_gensokyo_expansion_approved: "贤者认可扩张"
+ opinion_gensokyo_expansion_declined: "扩张请求被拒"
+
+### ============================================================
+### WP-E 2026-08-15：宴会选址本地增益（§4）
+### ============================================================
+ th_gensokyo_feast_location_modifier: "宴会余庆"
+ th_gensokyo_feast_location_modifier_desc: "此地刚举办过盛大的宴会，万物欢腾，生产与人心皆受鼓舞。"
+ opinion_gensokyo_feast_guest: "宴请之情"
+
+### ============================================================
+### WP-H 2026-08-15：审判投票与惩戒补完（§6）
+### ============================================================
+ th_gensokyo_trial_vote: "投下审判倾向票"
+ th_gensokyo_trial_vote_desc: "作为参与惩戒战争的成员，表达你对审判裁决的倾向（从宽/适中/从严）。此投票仅表民意，不影响阎魔的最终裁定。"
+ th_gensokyo_bankruptcy_modifier: "破产之罚"
+ th_gensokyo_bankruptcy_modifier_desc: "阎魔判罚的赔款令国库空虚，经济陷入动荡。"
+ th_gensokyo_sanction_immunity: "免制裁期"
+ th_gensokyo_sanction_immunity_desc: "此国在惩戒战争中反败为胜，幻想乡诸国 20 年内不得再对其发起制裁。"
+ TH_TRIAL_PHASE_LABEL: "审判阶段"
+ TH_TRIAL_VOTE_MONTHS_LABEL: "剩余投票月数"
+ TH_TRIAL_VOTE_TALLY_LABEL: "投票统计（民意，不影响裁决）"
+ TH_TRIAL_VOTE_MERCY: "从宽（劝善倾向）"
+ TH_TRIAL_VOTE_ORDER: "适中（有序倾向）"
+ TH_TRIAL_VOTE_KARMA: "从严（因果必尝倾向）"

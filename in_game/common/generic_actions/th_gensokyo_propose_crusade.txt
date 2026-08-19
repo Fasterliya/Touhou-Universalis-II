@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 惩戒战争提案（仅阎魔可见，原生 IO 行动栏）
 ### 链路: 选 IO → 选目标国（恶名≥50 过滤，2026-08-14 用户决策改恶名驱动）→ 内联发起议会辩论 → 阎魔+贤者投票，2 票通过
 ### 目标国传递: 标记法（th_gensokyo_crusade_target_mark 常驻至局势结束）
@@ -65,6 +65,10 @@ th_gensokyo_propose_crusade = {
                             is_leader_of_international_organization = international_organization:th_gensokyo_io
                         }
                         has_country_modifier = th_gensokyo_notorious_pariah_modifier
+                        ### WP-H 2026-08-15（设计§6）：免制裁期（20 年）内不可再被惩戒
+                        NOT = {
+                            has_variable = th_gensokyo_sanction_immunity
+                        }
                     }
                     add_to_list = source
                 }
@@ -135,6 +139,10 @@ th_gensokyo_propose_crusade = {
                         is_leader_of_international_organization = international_organization:th_gensokyo_io
                     }
                     has_country_modifier = th_gensokyo_notorious_pariah_modifier
+                    ### WP-H：免制裁期内不计为可惩戒目标
+                    NOT = {
+                        has_variable = th_gensokyo_sanction_immunity
+                    }
                 }
             }
             add = {

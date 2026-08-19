@@ -1,0 +1,145 @@
+﻿### ============================================================
+### 贤者授权扩张 — 裁决事件链（WP-D 2026-08-15）
+### .1 贤者裁决（同意/拒绝）  .2 请求者通知（同意）  .3 请求者通知（拒绝）
+### 标记法：th_gensokyo_expansion_requester_mark（请求者，挂起）
+###         th_gensokyo_expansion_target_owner_mark（目标国）
+###         th_gensokyo_expansion_request_mark（目标地块，= CB 依据，保留）
+### 格式：EU5 事件需 outcome = ...；option 内效果直接书写（无 effect 包裹）
+### ============================================================
+
+namespace = th_gensokyo_expansion_request_events
+
+### 贤者裁决事件（root = 被请求贤者）
+th_gensokyo_expansion_request_events.1 = {
+    type = country_event
+
+    title = th_gensokyo_expansion_request_events.1.title
+    desc = th_gensokyo_expansion_request_events.1.desc
+    outcome = neutral
+
+    trigger = {
+        th_gensokyo_is_sage_trigger
+        any_country = {
+            has_variable = th_gensokyo_expansion_requester_mark
+        }
+    }
+
+    ### 同意：授予请求者针对目标国的 CB（目标地块限定）
+    option = {
+        name = th_gensokyo_expansion_request_events.1.a
+        ai_chance = {
+            base = 90
+        }
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_expansion_requester_mark
+            }
+            save_scope_as = expansion_requester
+        }
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_expansion_target_owner_mark
+            }
+            save_scope_as = expansion_target
+        }
+        scope:expansion_requester = {
+            add_casus_belli = {
+                target = scope:expansion_target
+                type = casus_belli:th_gensokyo_sage_expansion_cb
+            }
+            ### 通知请求者
+            trigger_event_non_silently = {
+                id = th_gensokyo_expansion_request_events.2
+                days = 1
+            }
+        }
+        add_opinion = {
+            target = scope:expansion_requester
+            modifier = opinion_gensokyo_expansion_approved
+        }
+        ### 清理挂起/目标国标记（地块标记保留 = CB 依据）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_expansion_requester_mark
+            }
+            remove_variable = th_gensokyo_expansion_requester_mark
+        }
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_expansion_target_owner_mark
+            }
+            remove_variable = th_gensokyo_expansion_target_owner_mark
+        }
+    }
+
+    ### 拒绝：不授予 CB，请求者收敛乱倾向（-5）作为补偿
+    option = {
+        name = th_gensokyo_expansion_request_events.1.b
+        ai_chance = {
+            base = 10
+        }
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_expansion_requester_mark
+            }
+            save_scope_as = expansion_requester
+            change_societal_value = {
+                type = th_gensokyo_amity_vs_belligerence
+                value = -5
+            }
+            trigger_event_non_silently = {
+                id = th_gensokyo_expansion_request_events.3
+                days = 1
+            }
+        }
+        add_opinion = {
+            target = scope:expansion_requester
+            modifier = opinion_gensokyo_expansion_declined
+        }
+        ### 清理全部标记（不授予 CB）
+        every_country = {
+            limit = {
+                OR = {
+                    has_variable = th_gensokyo_expansion_requester_mark
+                    has_variable = th_gensokyo_expansion_target_owner_mark
+                }
+            }
+            remove_variable = th_gensokyo_expansion_requester_mark
+            remove_variable = th_gensokyo_expansion_target_owner_mark
+        }
+    }
+}
+
+### 请求者通知（同意）
+th_gensokyo_expansion_request_events.2 = {
+    type = country_event
+
+    title = th_gensokyo_expansion_request_events.2.title
+    desc = th_gensokyo_expansion_request_events.2.desc
+    outcome = neutral
+
+    trigger = {
+        always = yes
+    }
+
+    option = {
+        name = th_gensokyo_expansion_request_events.2.a
+    }
+}
+
+### 请求者通知（拒绝）
+th_gensokyo_expansion_request_events.3 = {
+    type = country_event
+
+    title = th_gensokyo_expansion_request_events.3.title
+    desc = th_gensokyo_expansion_request_events.3.desc
+    outcome = neutral
+
+    trigger = {
+        always = yes
+    }
+
+    option = {
+        name = th_gensokyo_expansion_request_events.3.a
+    }
+}

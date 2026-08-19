@@ -1,4 +1,4 @@
-﻿l_simp_chinese:
+l_simp_chinese:
  th_human_village_io: "人间之里"
  th_human_village_io_desc: "人间之里及命连寺区域各国组成的联合组织。"
 
@@ -35,6 +35,9 @@
  th_gensokyo_personal_contribution_var: "个人贡献度"
  th_gensokyo_personal_influence_var: "个人影响力"
  th_gensokyo_amity_vs_belligerence: "缘与乱"
+ ### 修复 2026-08-19：内阁"改变社会价值观"焦点键需在早期加载阶段可用
+ th_gensokyo_amity_focus: "缘"
+ belligerence_focus: "乱"
 
  ### 法律
  th_gensokyo_unity_vision_law: "团结愿景"

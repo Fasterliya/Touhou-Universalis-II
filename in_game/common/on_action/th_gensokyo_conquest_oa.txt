@@ -1,0 +1,114 @@
+﻿### ============================================================
+### 幻想乡IO — 征服/割让挂钩（WP-F 2026-08-15）
+### 设计文档《国际组织》§3.0 / §3.0/1 / §5：
+###   §5    征服幻想乡地块 → 征服者（IO成员）乱倾向 +0.5/地块
+###   §3.0  被割让追加敌意层（时代接口，默认关闭，见 chain_triggers）
+### 挂钩作用域（_hardcoded.txt 实证）：
+###   root = winner, scope:location = location,
+###   scope:winner = 新主, scope:loser = 旧主
+### 仅和平条约生效的地块转移触发（"被割让"语义精确匹配）。
+### ============================================================
+
+### 注册到原版硬编码钩子（同 monthly_country_pulse 注册模式）
+on_took_location_in_peace_treaty = {
+    on_actions = {
+        th_gensokyo_conquest_chaos_pulse
+    }
+}
+
+th_gensokyo_conquest_chaos_pulse = {
+    trigger = {
+        exists = scope:winner
+        exists = scope:loser
+        ### ?= 为作用域相等比较（原版先例 _hardcoded.txt scope:winner ?= c:BYZ）
+        NOT = {
+            scope:winner ?= scope:loser
+        }
+        scope:location = {
+            th_gensokyo_is_gensokyo_location_trigger
+        }
+    }
+    effect = {
+        ### §5：征服幻想乡地块 → 征服者乱倾向 +0.5/地块
+        ### （社会价值观仅对 IO 成员存在；外界征服者无此价值观，跳过）
+        scope:winner = {
+            if = {
+                limit = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                }
+                change_societal_value = {
+                    type = th_gensokyo_amity_vs_belligerence
+                    value = th_gensokyo_conquest_chaos_per_location_value
+                }
+            }
+        }
+
+        ### WP-C 补全：IO 持地随征服更新（add/remove 均为 IO scope 效果，
+        ### 参照 scripted_effects 中 middle_kingdom 用法）
+        ### 新主为幻想乡成员 → 地块归入幻想乡IO（纳入保护范围）
+        if = {
+            limit = {
+                scope:winner = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                }
+            }
+            international_organization:th_gensokyo_io = {
+                add_location_to_international_organization = scope:location
+            }
+        }
+        ### 新主非幻想乡成员 → 地块移出幻想乡IO（保护撤销）
+        else = {
+            international_organization:th_gensokyo_io = {
+                remove_location_from_international_organization = scope:location
+            }
+        }
+        ### 人间之里持地：新主非人间之里成员 → 移出（§3.0/1 保护撤销）
+        if = {
+            limit = {
+                scope:location = {
+                    is_owned_by_international_organization = international_organization:th_human_village_io
+                }
+                NOT = {
+                    scope:winner = {
+                        is_member_of_international_organization = international_organization:th_human_village_io
+                    }
+                }
+            }
+            international_organization:th_human_village_io = {
+                remove_location_from_international_organization = scope:location
+            }
+        }
+
+        ### §3.0 追加敌意层（时代接口预留，默认关闭）：
+        ### +75%/+150% 现由 IO 字段 antagonism_modifier_for_taking_land_from_*
+        ### 承担（见 international_organizations/th_gensokyo_io.txt 与 th_human_village_io.txt），
+        ### 本层翻转 th_gensokyo_era_antagonism_interface_trigger 后按值追加，
+        ### 供大结界/时代系统在后续版本中动态缩放。
+        if = {
+            limit = {
+                th_gensokyo_era_antagonism_interface_trigger
+            }
+            scope:winner = {
+                if = {
+                    limit = {
+                        scope:location = {
+                            is_owned_by_international_organization = international_organization:th_human_village_io
+                        }
+                    }
+                    ### 人间之里地块：+150 敌意（受害方对征服者）
+                    add_antagonism = {
+                        target = scope:loser
+                        modifier = th_antagonism_ceded_human_village
+                    }
+                }
+                else = {
+                    ### 幻想乡其他地块：+75 敌意（受害方对征服者）
+                    add_antagonism = {
+                        target = scope:loser
+                        modifier = th_antagonism_ceded_protected_land
+                    }
+                }
+            }
+        }
+    }
+}

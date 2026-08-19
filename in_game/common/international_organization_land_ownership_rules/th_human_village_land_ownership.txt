@@ -1,0 +1,41 @@
+﻿### ============================================================
+### 人间之里IO — 持地规则（WP-C 2026-08-15）
+### 设计文档《国际组织》§3.0/1：人间之里领土被割让战争分数 +50%
+### ============================================================
+
+th_human_village_land_ownership = {
+    modifier = {
+    }
+
+    can_add_trigger = {
+        always = yes
+    }
+    can_remove_trigger = {
+        always = yes
+    }
+
+    ### root = location, recipient = international organization
+    can_add_location_trigger = {
+        is_land = yes
+        is_passable = yes
+        owner ?= {
+            is_member_of_international_organization = scope:recipient
+        }
+    }
+
+    ### root = location, recipient = international organization
+    can_remove_location_trigger = {
+        always = yes
+    }
+
+    on_added = {
+    }
+    on_removed = {
+    }
+
+    ai_desire_to_add = {
+    }
+
+    removed_by_peace_treaty = yes
+    remove_war_score_modifier = 0.5
+}

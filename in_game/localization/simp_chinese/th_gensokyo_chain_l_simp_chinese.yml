@@ -1,187 +1,201 @@
 ﻿l_simp_chinese:
 ### ============================================================
-### 幻想乡IO 链条系统 本地化（简中）
+### 骞绘兂涔O 閾炬潯绯荤粺 鏈湴鍖栵紙绠€涓級
 ### ============================================================
 
-### 价值观（缘 <-> 乱，社会价值观条）
- th_gensokyo_amity_vs_belligerence: "缘与乱"
- th_gensokyo_amity_vs_belligerence_desc: "缘者，与众生结缘，和衷共济，护人间之里，守大结界之安；乱者，兴兵作乱，穷兵黩武，逐幻之梦，扰幻想乡之序。此心所向，众生皆见。"
- th_gensokyo_amity_focus: "缘"
- belligerence_focus: "乱"
+### 浠峰€艰锛堢紭 <-> 涔憋紝绀句細浠峰€艰鏉★級
+ th_gensokyo_amity_vs_belligerence: "缂樹笌涔?
+ th_gensokyo_amity_vs_belligerence_desc: "缂樿€咃紝涓庝紬鐢熺粨缂橈紝鍜岃》鍏辨祹锛屾姢浜洪棿涔嬮噷锛屽畧澶х粨鐣屼箣瀹夛紱涔辫€咃紝鍏村叺浣滀贡锛岀┓鍏甸哗姝︼紝閫愬够涔嬫ⅵ锛屾壈骞绘兂涔′箣搴忋€傛蹇冩墍鍚戯紝浼楃敓鐨嗚銆?
+ th_gensokyo_amity_focus: "缂?
+ belligerence_focus: "涔?
 
-### 价值观档位
- th_notorious_tier_clean: "缘结和衷"
- th_notorious_tier_pariah: "作乱生乱"
- th_notorious_tier_outcast: "幻想乡弃民"
+### 浠峰€艰妗ｄ綅
+ th_notorious_tier_clean: "缂樼粨鍜岃》"
+ th_notorious_tier_pariah: "浣滀贡鐢熶贡"
+ th_notorious_tier_outcast: "骞绘兂涔″純姘?
 
-### 宴会
- th_gensokyo_feast: "举办宴会"
- th_gensokyo_feast_desc: "在幻想乡举办一场盛大的宴会，款待各路妖怪与贤者，收敛乱心，重归缘结之道。"
- PERFORM_th_gensokyo_feast_ACTION: "举办了一场宴会"
- WE_PERFORM_th_gensokyo_feast_ACTION: "我们在幻想乡举办了一场宴会"
- OTHER_PERFORMS_th_gensokyo_feast_ACTION: "在幻想乡举办了一场宴会"
- ACTION_th_gensokyo_feast_PERFORMED_ON_US: "在幻想乡举办了一场宴会"
- TH_FEAST_AI_HIGH_NOTORIETY: "乱心高企，亟需收敛"
+### 瀹翠細
+ th_gensokyo_feast: "涓惧姙瀹翠細"
+ th_gensokyo_feast_desc: "鍦ㄥ够鎯充埂涓惧姙涓€鍦虹洓澶х殑瀹翠細锛屾寰呭悇璺鎬笌璐よ€咃紝鏀舵暃涔卞績锛岄噸褰掔紭缁撲箣閬撱€?
+ PERFORM_th_gensokyo_feast_ACTION: "涓惧姙浜嗕竴鍦哄浼?
+ WE_PERFORM_th_gensokyo_feast_ACTION: "鎴戜滑鍦ㄥ够鎯充埂涓惧姙浜嗕竴鍦哄浼?
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION: "鍦ㄥ够鎯充埂涓惧姙浜嗕竴鍦哄浼?
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US: "鍦ㄥ够鎯充埂涓惧姙浜嗕竴鍦哄浼?
+ TH_FEAST_AI_HIGH_NOTORIETY: "涔卞績楂樹紒锛屼簾闇€鏀舵暃"
 
-### 惩戒战争条约
- th_gensokyo_crusade_triumph: "完全胜利（惩戒）"
- th_gensokyo_crusade_triumph_desc: "惩戒战争中的完全胜利：对方无条件认输，接受幻想乡的一切裁决。"
- TH_CRUSADE_INITIAL_SUPPORT: "阎魔发起支持"
- TH_CRUSADE_AI_FOUND_TARGET: "存在敌意达标的惩戒对象"
+### 鎯╂垝鎴樹簤鏉＄害
+ th_gensokyo_crusade_triumph: "瀹屽叏鑳滃埄锛堟儵鎴掞級"
+ th_gensokyo_crusade_triumph_desc: "鎯╂垝鎴樹簤涓殑瀹屽叏鑳滃埄锛氬鏂规棤鏉′欢璁よ緭锛屾帴鍙楀够鎯充埂鐨勪竴鍒囪鍐炽€?
+ TH_CRUSADE_INITIAL_SUPPORT: "闃庨瓟鍙戣捣鏀寔"
+ TH_CRUSADE_AI_FOUND_TARGET: "瀛樺湪鏁屾剰杈炬爣鐨勬儵鎴掑璞?
 
-### 惩戒战争
- th_gensokyo_crusade_cb: "惩戒战争"
- th_gensokyo_crusade_cb_desc: "由阎魔与贤者议会裁定发起的惩戒战争，目标为幻想乡秩序的破坏者。"
- th_gensokyo_crusade: "惩戒局势"
- th_gensokyo_crusade_desc: "幻想乡全体对惩戒目标形成的包围网。"
- th_gensokyo_trial: "审判局势"
- th_gensokyo_trial_desc: "阎魔对惩戒战争落败者的最终审判。"
- th_gensokyo_propose_crusade: "发起惩戒战争提案"
- th_gensokyo_propose_crusade_desc: "阎魔向贤者议会提案，对敌意高企的成员发起惩戒战争。"
- PERFORM_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
- WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "我们发起了惩戒战争提案"
- OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
- ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "发起了惩戒战争提案"
- th_gensokyo_counter_expansion: "反攻扩张"
- th_gensokyo_counter_expansion_desc: "你在惩戒战争中反败为胜，获得在幻想乡合法扩张的机会。"
- PERFORM_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
- WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "我们发动了反攻扩张"
- OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
- ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "发动了反攻扩张"
+### 鎯╂垝鎴樹簤
+ th_gensokyo_crusade_cb: "鎯╂垝鎴樹簤"
+ th_gensokyo_crusade_cb_desc: "鐢遍槑榄斾笌璐よ€呰浼氳瀹氬彂璧风殑鎯╂垝鎴樹簤锛岀洰鏍囦负骞绘兂涔＄З搴忕殑鐮村潖鑰呫€?
+ th_gensokyo_crusade: "鎯╂垝灞€鍔?
+ th_gensokyo_crusade_desc: "骞绘兂涔″叏浣撳鎯╂垝鐩爣褰㈡垚鐨勫寘鍥寸綉銆?
+ th_gensokyo_trial: "瀹″垽灞€鍔?
+ th_gensokyo_trial_desc: "闃庨瓟瀵规儵鎴掓垬浜夎惤璐ヨ€呯殑鏈€缁堝鍒ゃ€?
+ th_gensokyo_propose_crusade: "鍙戣捣鎯╂垝鎴樹簤鎻愭"
+ th_gensokyo_propose_crusade_desc: "闃庨瓟鍚戣搐鑰呰浼氭彁妗堬紝瀵规晫鎰忛珮浼佺殑鎴愬憳鍙戣捣鎯╂垝鎴樹簤銆?
+ PERFORM_th_gensokyo_propose_crusade_ACTION: "鍙戣捣浜嗘儵鎴掓垬浜夋彁妗?
+ WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "鎴戜滑鍙戣捣浜嗘儵鎴掓垬浜夋彁妗?
+ OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "鍙戣捣浜嗘儵鎴掓垬浜夋彁妗?
+ ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "鍙戣捣浜嗘儵鎴掓垬浜夋彁妗?
+ th_gensokyo_counter_expansion: "鍙嶆敾鎵╁紶"
+ th_gensokyo_counter_expansion_desc: "浣犲湪鎯╂垝鎴樹簤涓弽璐ヤ负鑳滐紝鑾峰緱鍦ㄥ够鎯充埂鍚堟硶鎵╁紶鐨勬満浼氥€?
+ PERFORM_th_gensokyo_counter_expansion_ACTION: "鍙戝姩浜嗗弽鏀绘墿寮?
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "鎴戜滑鍙戝姩浜嗗弽鏀绘墿寮?
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "鍙戝姩浜嗗弽鏀绘墿寮?
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "鍙戝姩浜嗗弽鏀绘墿寮?
 
-### 审判法
- th_gensokyo_judgment_law: "审判法"
- th_gensokyo_judgment_law_desc: "阎魔进行审判时遵循的准则。"
- th_judgment_mercy_policy: "劝善"
- th_judgment_mercy_policy_desc: "宽大为怀，审判从轻，缩短刑期，减少团结动荡。"
- th_judgment_order_policy: "有序"
- th_judgment_order_policy_desc: "依常例而行，不偏不倚。"
- th_judgment_karma_policy: "因果必尝"
- th_judgment_karma_policy_desc: "严惩不贷，审判从严，延长刑期，以儆效尤。"
+### 瀹″垽娉? th_gensokyo_judgment_law: "瀹″垽娉?
+ th_gensokyo_judgment_law_desc: "闃庨瓟杩涜瀹″垽鏃堕伒寰殑鍑嗗垯銆?
+ th_judgment_mercy_policy: "鍔濆杽"
+ th_judgment_mercy_policy_desc: "瀹藉ぇ涓烘€€锛屽鍒や粠杞伙紝缂╃煭鍒戞湡锛屽噺灏戝洟缁撳姩鑽°€?
+ th_judgment_order_policy: "鏈夊簭"
+ th_judgment_order_policy_desc: "渚濆父渚嬭€岃锛屼笉鍋忎笉鍊氥€?
+ th_judgment_karma_policy: "鍥犳灉蹇呭皾"
+ th_judgment_karma_policy_desc: "涓ユ儵涓嶈捶锛屽鍒や粠涓ワ紝寤堕暱鍒戞湡锛屼互鍎嗘晥灏ゃ€?
 
-### 监管国
- th_gensokyo_regulated_state: "彼岸监管国"
- th_gensokyo_regulated_state_desc: "被阎魔判刑的附属国，完全丧失自主，刑满后释放为独立国家。"
+### 鐩戠鍥? th_gensokyo_regulated_state: "褰煎哺鐩戠鍥?
+ th_gensokyo_regulated_state_desc: "琚槑榄斿垽鍒戠殑闄勫睘鍥斤紝瀹屽叏涓уけ鑷富锛屽垜婊″悗閲婃斁涓虹嫭绔嬪浗瀹躲€?
 
-### 开局特殊附庸（永久附庸，无法吞并）
- th_gensokyo_satori_vassal: "地灵殿附庸"
- th_gensokyo_satori_vassal_desc: "名义上是觉的领地，实则由她的宠物们自行运转。灼热地狱的火海与熔岩，全由她的宠物们一手打理。"
- th_gensokyo_forest_territory: "森林领地"
- th_gensokyo_forest_territory_desc: "魔法森林的妖怪领主，与魔法使之间维系着松散的从属关系，而非绝对臣服。"
- th_gensokyo_cloud_realm: "云上领"
- th_gensokyo_cloud_realm_desc: "天界秩序之外的龙宫体系，由龙宫使者永江衣玖执掌往来之权——即便高高在上的天人，面对此等存在亦须礼让三分。"
+### 寮€灞€鐗规畩闄勫焊锛堟案涔呴檮搴革紝鏃犳硶鍚炲苟锛? th_gensokyo_satori_vassal: "鍦扮伒娈块檮搴?
+ th_gensokyo_satori_vassal_desc: "鍚嶄箟涓婃槸瑙夌殑棰嗗湴锛屽疄鍒欑敱濂圭殑瀹犵墿浠嚜琛岃繍杞€傜伡鐑湴鐙辩殑鐏捣涓庣啍宀╋紝鍏ㄧ敱濂圭殑瀹犵墿浠竴鎵嬫墦鐞嗐€?
+ th_gensokyo_forest_territory: "妫灄棰嗗湴"
+ th_gensokyo_forest_territory_desc: "榄旀硶妫灄鐨勫鎬涓伙紝涓庨瓟娉曚娇涔嬮棿缁寸郴鐫€鏉炬暎鐨勪粠灞炲叧绯伙紝鑰岄潪缁濆鑷ｆ湇銆?
+ th_gensokyo_cloud_realm: "浜戜笂棰?
+ th_gensokyo_cloud_realm_desc: "澶╃晫绉╁簭涔嬪鐨勯緳瀹綋绯伙紝鐢遍緳瀹娇鑰呮案姹熻。鐜栨墽鎺屽線鏉ヤ箣鏉冣€斺€斿嵆渚块珮楂樺湪涓婄殑澶╀汉锛岄潰瀵规绛夊瓨鍦ㄤ害椤荤ぜ璁╀笁鍒嗐€?
 
-### 幻想乡法律系统（法律组）
- th_feudal_legalism_law: "封建法理法"
- th_legal_code_law: "法典"
- th_education_law: "教育法"
- th_cultural_traditions_law: "文化传统"
- th_administration_law: "行政体系"
-### 封建法理法
- th_old_charter: "旧章"
- th_old_charter_desc: "大结界成型之初确立的继承旧规，世代相承，不因时势而改。法理既定，后人唯守其旧。"
-### 法典
- th_old_customary_law: "旧例法"
- th_old_customary_law_desc: "各地妖怪依照各自沿袭已久的旧规行事，不同族群习俗各有差异，只求世代相传的旧例不被打破。"
- th_harmony_first_law: "以和为贵"
- th_harmony_first_law_desc: "人类村落的律法重在调解纷争，不靠严苛刑罚树立威严，将息事宁人放在首位。发生矛盾时，由村中德高望重之人出面居中调停。"
- th_separate_laws: "人妖分律"
- th_separate_laws_desc: "人类与妖怪各自遵循自身的法度旧例，互不干预彼此的事务。人类争端适用律法，妖怪纠纷则依照旧俗处置。"
- th_statute_law: "幻想乡成文法"
- th_statute_law_desc: "随着印刷技术普及，各地零散的风俗规矩被逐步汇编成律法典籍，条理分明、条目清晰。"
-### 教育法
- th_farming_and_reading: "耕读立家"
- th_farming_and_reading_desc: "人类村落以耕作为家业根本，教授后代只授予农事、四时与节气，不尚书卷文辞。"
- th_no_education: "无教而行"
- th_no_education_desc: "妖怪既没有学堂教化，只以强弱为准则。不设教育，不传书文，仅仅凭着天性行事。"
- th_old_learning_only: "旧学独传"
- th_old_learning_only_desc: "教学只以古旧典籍作为正统依据，不接纳外来学问与新兴学说。知识的传授恪守旧有的义理，外界传来的新知皆不予采纳。"
- th_publications: "刊物与报纸的传习"
- th_publications_desc: "印刷技艺发展促使刊物报纸逐步盛行，见闻与物语皆可刊印传播，民众得以借此博闻广见，了解领地内外各类讯息。"
- th_terakoya_system: "寺子屋体系"
- th_terakoya_system_desc: "仿照寺子屋模式的正规私塾逐步兴起，各地孩童可入塾就学。读书识字不再是少数人的特权，普通民众也有机会习得文字与基础学识。"
- th_farming_and_education: "农教并重"
- th_farming_and_education_desc: "推行教化与农耕并举的模式，孩童在私塾读书明理的同时，也要参与农事劳作。学识修习与田间实践并行，两方面都不荒废。"
-### 文化传统
- th_hundred_youkai_banquet: "百妖夜宴"
- th_hundred_youkai_banquet_desc: "妖怪之间同席共饮，在弹幕对决与杯盏往来之间，维系幻想乡的旧有情谊。"
- th_word_of_mouth: "口口相传"
- th_word_of_mouth_desc: "各类奇闻怪谈依靠口头讲述代代流传，被记录于《幻想乡缘起》之中。人类听闻怪谈传说，心生对村落之外世界的畏惧，听者各有感悟，旧日往事便得以长久留存。"
-### 行政体系
- th_personal_rule: "个人统御"
- th_personal_rule_desc: "以我们领袖个人的强大威望与能力作为核心主导的行政体系，然而受现实条件制约，整体行政效率受到极大限制。"
- th_youkai_autonomy: "妖怪自治"
- th_youkai_autonomy_desc: "各地妖怪实行地方自治，领地内部的大小事务，均由辖地内的妖怪自行决断处置。"
- th_clan_society: "宗族社会"
- th_clan_society_desc: "人类乡里以宗族为治理单元，各宗族恪守自家族规实行自治。族内纷争、家事教化皆由宗族内部处置，其他势力不可擅自介入宗族内部事务。"
+### 骞绘兂涔℃硶寰嬬郴缁燂紙娉曞緥缁勶級
+ th_feudal_legalism_law: "灏佸缓娉曠悊娉?
+ th_legal_code_law: "娉曞吀"
+ th_education_law: "鏁欒偛娉?
+ th_cultural_traditions_law: "鏂囧寲浼犵粺"
+ th_administration_law: "琛屾斂浣撶郴"
+### 灏佸缓娉曠悊娉? th_old_charter: "鏃х珷"
+ th_old_charter_desc: "澶х粨鐣屾垚鍨嬩箣鍒濈‘绔嬬殑缁ф壙鏃ц锛屼笘浠ｇ浉鎵匡紝涓嶅洜鏃跺娍鑰屾敼銆傛硶鐞嗘棦瀹氾紝鍚庝汉鍞畧鍏舵棫銆?
+### 娉曞吀
+ th_old_customary_law: "鏃т緥娉?
+ th_old_customary_law_desc: "鍚勫湴濡栨€緷鐓у悇鑷部琚凡涔呯殑鏃ц琛屼簨锛屼笉鍚屾棌缇や範淇楀悇鏈夊樊寮傦紝鍙眰涓栦唬鐩镐紶鐨勬棫渚嬩笉琚墦鐮淬€?
+ th_harmony_first_law: "浠ュ拰涓鸿吹"
+ th_harmony_first_law_desc: "浜虹被鏉戣惤鐨勫緥娉曢噸鍦ㄨ皟瑙ｇ悍浜夛紝涓嶉潬涓ヨ嫑鍒戠綒鏍戠珛濞佷弗锛屽皢鎭簨瀹佷汉鏀惧湪棣栦綅銆傚彂鐢熺煕鐩炬椂锛岀敱鏉戜腑寰烽珮鏈涢噸涔嬩汉鍑洪潰灞呬腑璋冨仠銆?
+ th_separate_laws: "浜哄鍒嗗緥"
+ th_separate_laws_desc: "浜虹被涓庡鎬悇鑷伒寰嚜韬殑娉曞害鏃т緥锛屼簰涓嶅共棰勫郊姝ょ殑浜嬪姟銆備汉绫讳簤绔€傜敤寰嬫硶锛屽鎬籂绾峰垯渚濈収鏃т織澶勭疆銆?
+ th_statute_law: "骞绘兂涔℃垚鏂囨硶"
+ th_statute_law_desc: "闅忕潃鍗板埛鎶€鏈櫘鍙婏紝鍚勫湴闆舵暎鐨勯淇楄鐭╄閫愭姹囩紪鎴愬緥娉曞吀绫嶏紝鏉＄悊鍒嗘槑銆佹潯鐩竻鏅般€?
+### 鏁欒偛娉? th_farming_and_reading: "鑰曡绔嬪"
+ th_farming_and_reading_desc: "浜虹被鏉戣惤浠ヨ€曚綔涓哄涓氭牴鏈紝鏁欐巿鍚庝唬鍙巿浜堝啘浜嬨€佸洓鏃朵笌鑺傛皵锛屼笉灏氫功鍗锋枃杈炪€?
+ th_no_education: "鏃犳暀鑰岃"
+ th_no_education_desc: "濡栨€棦娌℃湁瀛﹀爞鏁欏寲锛屽彧浠ュ己寮变负鍑嗗垯銆備笉璁炬暀鑲诧紝涓嶄紶涔︽枃锛屼粎浠呭嚟鐫€澶╂€ц浜嬨€?
+ th_old_learning_only: "鏃у鐙紶"
+ th_old_learning_only_desc: "鏁欏鍙互鍙ゆ棫鍏哥睄浣滀负姝ｇ粺渚濇嵁锛屼笉鎺ョ撼澶栨潵瀛﹂棶涓庢柊鍏村璇淬€傜煡璇嗙殑浼犳巿鎭畧鏃ф湁鐨勪箟鐞嗭紝澶栫晫浼犳潵鐨勬柊鐭ョ殕涓嶄簣閲囩撼銆?
+ th_publications: "鍒婄墿涓庢姤绾哥殑浼犱範"
+ th_publications_desc: "鍗板埛鎶€鑹哄彂灞曚績浣垮垔鐗╂姤绾搁€愭鐩涜锛岃闂讳笌鐗╄鐨嗗彲鍒婂嵃浼犳挱锛屾皯浼楀緱浠ュ€熸鍗氶椈骞胯锛屼簡瑙ｉ鍦板唴澶栧悇绫昏鎭€?
+ th_terakoya_system: "瀵哄瓙灞嬩綋绯?
+ th_terakoya_system_desc: "浠跨収瀵哄瓙灞嬫ā寮忕殑姝ｈ绉佸【閫愭鍏磋捣锛屽悇鍦板绔ュ彲鍏ュ【灏卞銆傝涔﹁瘑瀛椾笉鍐嶆槸灏戞暟浜虹殑鐗规潈锛屾櫘閫氭皯浼椾篃鏈夋満浼氫範寰楁枃瀛椾笌鍩虹瀛﹁瘑銆?
+ th_farming_and_education: "鍐滄暀骞堕噸"
+ th_farming_and_education_desc: "鎺ㄨ鏁欏寲涓庡啘鑰曞苟涓剧殑妯″紡锛屽绔ュ湪绉佸【璇讳功鏄庣悊鐨勫悓鏃讹紝涔熻鍙備笌鍐滀簨鍔充綔銆傚璇嗕慨涔犱笌鐢伴棿瀹炶返骞惰锛屼袱鏂归潰閮戒笉鑽掑簾銆?
+### 鏂囧寲浼犵粺
+ th_hundred_youkai_banquet: "鐧惧澶滃"
+ th_hundred_youkai_banquet_desc: "濡栨€箣闂村悓甯叡楗紝鍦ㄥ脊骞曞鍐充笌鏉洀寰€鏉ヤ箣闂达紝缁寸郴骞绘兂涔＄殑鏃ф湁鎯呰皧銆?
+ th_word_of_mouth: "鍙ｅ彛鐩镐紶"
+ th_word_of_mouth_desc: "鍚勭被濂囬椈鎬皥渚濋潬鍙ｅご璁茶堪浠ｄ唬娴佷紶锛岃璁板綍浜庛€婂够鎯充埂缂樿捣銆嬩箣涓€備汉绫诲惉闂绘€皥浼犺锛屽績鐢熷鏉戣惤涔嬪涓栫晫鐨勭晱鎯э紝鍚€呭悇鏈夋劅鎮燂紝鏃ф棩寰€浜嬩究寰椾互闀夸箙鐣欏瓨銆?
+### 琛屾斂浣撶郴
+ th_personal_rule: "涓汉缁熷尽"
+ th_personal_rule_desc: "浠ユ垜浠琚栦釜浜虹殑寮哄ぇ濞佹湜涓庤兘鍔涗綔涓烘牳蹇冧富瀵肩殑琛屾斂浣撶郴锛岀劧鑰屽彈鐜板疄鏉′欢鍒剁害锛屾暣浣撹鏀挎晥鐜囧彈鍒版瀬澶ч檺鍒躲€?
+ th_youkai_autonomy: "濡栨€嚜娌?
+ th_youkai_autonomy_desc: "鍚勫湴濡栨€疄琛屽湴鏂硅嚜娌伙紝棰嗗湴鍐呴儴鐨勫ぇ灏忎簨鍔★紝鍧囩敱杈栧湴鍐呯殑濡栨€嚜琛屽喅鏂缃€?
+ th_clan_society: "瀹楁棌绀句細"
+ th_clan_society_desc: "浜虹被涔￠噷浠ュ畻鏃忎负娌荤悊鍗曞厓锛屽悇瀹楁棌鎭畧鑷鏃忚瀹炶鑷不銆傛棌鍐呯悍浜夈€佸浜嬫暀鍖栫殕鐢卞畻鏃忓唴閮ㄥ缃紝鍏朵粬鍔垮姏涓嶅彲鎿呰嚜浠嬪叆瀹楁棌鍐呴儴浜嬪姟銆?
 
-### 审判事件
- th_gensokyo_trial_events.1.t: "最终审判"
- th_gensokyo_trial_events.1.d: "惩戒战争已了结。作为阎魔，你需依据目标国的罪行裁定其命运。"
- th_gensokyo_trial_events.1.a: "轻判：归还非法侵占的领土"
- th_gensokyo_trial_events.1.b: "中判：归还领土并削弱其国力"
- th_gensokyo_trial_events.1.c: "重判：使其完全沦为彼岸的监管国（转移财富并课以贡金）"
+### 瀹″垽浜嬩欢
+ th_gensokyo_trial_events.1.title: "鏈€缁堝鍒?
+ th_gensokyo_trial_events.1.desc: "鎯╂垝鎴樹簤宸蹭簡缁撱€備綔涓洪槑榄旓紝浣犻渶渚濇嵁鐩爣鍥界殑缃瑁佸畾鍏跺懡杩愩€?
+ th_gensokyo_trial_events.1.a: "杞诲垽锛氬綊杩橀潪娉曚镜鍗犵殑棰嗗湡"
+ th_gensokyo_trial_events.1.b: "涓垽锛氬綊杩橀鍦熷苟鍓婂急鍏跺浗鍔?
+ th_gensokyo_trial_events.1.c: "閲嶅垽锛氫娇鍏跺畬鍏ㄦ拨涓哄郊宀哥殑鐩戠鍥斤紙杞Щ璐㈠瘜骞惰浠ヨ础閲戯級"
 
-### 变量
- th_gensokyo_sin_var: "罪孽"
- th_gensokyo_expansion_quota: "合法扩张配额"
- th_gensokyo_expansion_quota_used: "已用配额"
- th_gensokyo_sentence_tier: "判决档位"
- th_gensokyo_sentence_months: "刑期（月）"
- th_gensokyo_effective_sin: "有效罪值"
- th_gensokyo_temp_sentence_years: "刑期加成（年）"
- th_gensokyo_temp_gold: "转移金币"
+### 鍙橀噺
+ th_gensokyo_sin_var: "缃"
+ th_gensokyo_expansion_quota: "鍚堟硶鎵╁紶閰嶉"
+ th_gensokyo_expansion_quota_used: "宸茬敤閰嶉"
+ th_gensokyo_sentence_tier: "鍒ゅ喅妗ｄ綅"
+ th_gensokyo_sentence_months: "鍒戞湡锛堟湀锛?
+ th_gensokyo_effective_sin: "鏈夋晥缃€?
+ th_gensokyo_temp_sentence_years: "鍒戞湡鍔犳垚锛堝勾锛?
+ th_gensokyo_temp_gold: "杞Щ閲戝竵"
 
-### 目标选择
- choose_crusade_target: "选择惩戒目标"
+### 鐩爣閫夋嫨
+ choose_crusade_target: "閫夋嫨鎯╂垝鐩爣"
 
-### 加入惩戒战争
- th_gensokyo_join_crusade: "加入惩戒战争"
- th_gensokyo_join_crusade_desc: "加入对惩戒目标的包围网，共同维护幻想乡的秩序。"
- PERFORM_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
- WE_PERFORM_th_gensokyo_join_crusade_ACTION: "我们加入了惩戒战争"
- OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
- ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "加入了惩戒战争"
- TH_JOIN_CRUSADE_AI_ANTAGONISM: "对惩戒对象怀有敌意"
+### 鍔犲叆鎯╂垝鎴樹簤
+ th_gensokyo_join_crusade: "鍔犲叆鎯╂垝鎴樹簤"
+ th_gensokyo_join_crusade_desc: "鍔犲叆瀵规儵鎴掔洰鏍囩殑鍖呭洿缃戯紝鍏卞悓缁存姢骞绘兂涔＄殑绉╁簭銆?
+ PERFORM_th_gensokyo_join_crusade_ACTION: "鍔犲叆浜嗘儵鎴掓垬浜?
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "鎴戜滑鍔犲叆浜嗘儵鎴掓垬浜?
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "鍔犲叆浜嗘儵鎴掓垬浜?
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "鍔犲叆浜嗘儵鎴掓垬浜?
+ TH_JOIN_CRUSADE_AI_ANTAGONISM: "瀵规儵鎴掑璞℃€€鏈夋晫鎰?
 
-### 反杀条约
- th_gensokyo_crusade_counter: "反杀胜利（惩戒）"
- th_gensokyo_crusade_counter_desc: "在惩戒战争中反败为胜：幻想乡的包围网被你击溃，你赢得了扩张的权利。"
+### 鍙嶆潃鏉＄害
+ th_gensokyo_crusade_counter: "鍙嶆潃鑳滃埄锛堟儵鎴掞級"
+ th_gensokyo_crusade_counter_desc: "鍦ㄦ儵鎴掓垬浜変腑鍙嶈触涓鸿儨锛氬够鎯充埂鐨勫寘鍥寸綉琚綘鍑绘簝锛屼綘璧㈠緱浜嗘墿寮犵殑鏉冨埄銆?
 
-### 议会议题
- th_gensokyo_crusade_issue: "惩戒战争提案"
- th_gensokyo_crusade_issue_desc: "由阎魔发起、贤者投票的惩戒战争提案。两票赞同即通过。"
+### 璁細璁
+ th_gensokyo_crusade_issue: "鎯╂垝鎴樹簤鎻愭"
+ th_gensokyo_crusade_issue_desc: "鐢遍槑榄斿彂璧枫€佽搐鑰呮姇绁ㄧ殑鎯╂垝鎴樹簤鎻愭銆備袱绁ㄨ禐鍚屽嵆閫氳繃銆?
 
-### 价格
- th_gensokyo_feast_price: "宴会费用"
- subject_pays_regulated: "监管国上贡"
+### 浠锋牸
+ th_gensokyo_feast_price: "瀹翠細璐圭敤"
+ subject_pays_regulated: "鐩戠鍥戒笂璐?
 
-### 修正显示
- th_gensokyo_weakness_modifier: "国力削弱"
- th_gensokyo_weakness_modifier_desc: "审判判决的惩罚性削弱。"
- th_gensokyo_expansion_cost_authorized_modifier: "贤者授权扩张"
- th_gensokyo_expansion_cost_authorized_modifier_desc: "贤者的默许使扩张代价大幅降低。"
- th_gensokyo_expansion_cost_incident_modifier: "异变扩张"
- th_gensokyo_expansion_cost_incident_modifier_desc: "在异变中扩张，代价略有增加。"
- th_gensokyo_expansion_cost_unauthorized_modifier: "私自扩张"
- th_gensokyo_expansion_cost_unauthorized_modifier_desc: "未经贤者默许的扩张，代价高昂。"
- th_gensokyo_notorious_pariah_modifier: "作乱失格"
- th_gensokyo_notorious_pariah_modifier_desc: "此国已堕入乱之道，可能被提案为惩戒战争目标。"
+### 淇鏄剧ず
+ th_gensokyo_weakness_modifier: "鍥藉姏鍓婂急"
+ th_gensokyo_weakness_modifier_desc: "瀹″垽鍒ゅ喅鐨勬儵缃氭€у墛寮便€?
+ th_gensokyo_expansion_cost_authorized_modifier: "璐よ€呮巿鏉冩墿寮?
+ th_gensokyo_expansion_cost_authorized_modifier_desc: "璐よ€呯殑榛樿浣挎墿寮犱唬浠峰ぇ骞呴檷浣庛€?
+ th_gensokyo_expansion_cost_incident_modifier: "寮傚彉鎵╁紶"
+ th_gensokyo_expansion_cost_incident_modifier_desc: "鍦ㄥ紓鍙樹腑鎵╁紶锛屼唬浠风暐鏈夊鍔犮€?
+ th_gensokyo_expansion_cost_unauthorized_modifier: "绉佽嚜鎵╁紶"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc: "鏈粡璐よ€呴粯璁哥殑鎵╁紶锛屼唬浠烽珮鏄傘€?
+ th_gensokyo_notorious_pariah_modifier: "浣滀贡澶辨牸"
+ th_gensokyo_notorious_pariah_modifier_desc: "姝ゅ浗宸插爼鍏ヤ贡涔嬮亾锛屽彲鑳借鎻愭涓烘儵鎴掓垬浜夌洰鏍囥€?
 
-### 局势面板
- TH_CRUSADE_SUPPORTER_STRENGTH: "幻想乡联军兵力"
- TH_CRUSADE_TARGET_STRENGTH: "惩戒目标兵力"
- TH_CRUSADE_SIN_DISPLAY: "目标罪孽"
+### 灞€鍔块潰鏉? TH_CRUSADE_SUPPORTER_STRENGTH: "骞绘兂涔¤仈鍐涘叺鍔?
+ TH_CRUSADE_TARGET_STRENGTH: "鎯╂垝鐩爣鍏靛姏"
+ TH_CRUSADE_SIN_DISPLAY: "鐩爣缃"
 
-### 团结度来源
- TH_GENSOKYO_UNITY_FROM_MEMBERS: "成员规模"
+### 鍥㈢粨搴︽潵婧? TH_GENSOKYO_UNITY_FROM_MEMBERS: "鎴愬憳瑙勬ā"
 
-### 贤者保护
- th_gensokyo_sages_defend_reason: "守护人间之里"
+### 璐よ€呬繚鎶? th_gensokyo_sages_defend_reason: "瀹堟姢浜洪棿涔嬮噷"
 
-### 变量
- th_crusade_supporter_strength: "联军兵力"
- th_crusade_target_strength: "目标兵力"
- th_crusade_temp_strength: "成员兵力"
- th_crusade_target_ref: "惩戒目标"
- th_crusade_sin_display: "目标罪孽"
+### 鍙橀噺
+ th_crusade_supporter_strength: "鑱斿啗鍏靛姏"
+ th_crusade_target_strength: "鐩爣鍏靛姏"
+ th_crusade_temp_strength: "鎴愬憳鍏靛姏"
+ th_crusade_target_ref: "鎯╂垝鐩爣"
+ th_crusade_sin_display: "鐩爣缃"
+
+### ============================================================
+### WP-D 2026-08-15锛氳姹傛墿寮犺鍐充簨浠讹紙搂3.1锛?### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "鎵╁紶璇锋眰"
+ th_gensokyo_expansion_request_events.1.desc: "鏈夊浗瀹惰姹傚湪骞绘兂涔″唴鎵╁紶锛屾伋璇蜂綘杩欎綅璐よ€呬簣浠ヨ鍙€備綘鍙互鍚屾剰鎺堜簣鍏跺鎴樼悊鐢憋紝涔熷彲浠ユ嫆缁濅互绀哄憡璇€?
+ th_gensokyo_expansion_request_events.1.a: "鍚屾剰锛氭巿浜堟墿寮犵殑瀹ｆ垬鐞嗙敱"
+ th_gensokyo_expansion_request_events.1.b: "鎷掔粷锛氫笉浜堣鍙紙璇锋眰鑰呬贡蹇冪◢鏁涳級"
+ th_gensokyo_expansion_request_events.2.title: "璐よ€呰鍙墿寮?
+ th_gensokyo_expansion_request_events.2.desc: "璐よ€呭凡璁ゅ彲浣犵殑鎵╁紶璇锋眰銆備綘鑾峰緱浜嗛拡瀵圭洰鏍囧湴鍧楃殑瀹ｆ垬鐞嗙敱锛氬弻鏂瑰壊璁╃渷浠芥垬浜夊垎鏁拌姳璐?+75%锛岃幏鍙栫殑鏁屾剰棰濆鍑忓皯 40%銆?
+ th_gensokyo_expansion_request_events.2.a: "鏄庣櫧浜?
+ th_gensokyo_expansion_request_events.3.title: "鎵╁紶璇锋眰琚嫆"
+ th_gensokyo_expansion_request_events.3.desc: "璐よ€呮嫆缁濅簡浣犵殑鎵╁紶璇锋眰锛屽苟鍔濅綘鏀舵暃涔卞績銆備綔涓哄憡璇紝浣犵殑涔卞€惧悜鐣ユ湁鍥炶惤锛岃搐鑰呭浣犵殑瑙傛劅鏈夋墍鏀瑰彉銆?
+ th_gensokyo_expansion_request_events.3.a: "璋ㄩ伒鏁欒"
+
+### ============================================================
+### WP-H 2026-08-15锛氬鍒ゆ姇绁ㄤ簨浠?+ 璧旀鐮翠骇閫夐」锛埪?锛?### ============================================================
+ th_gensokyo_trial_vote_events.1.title: "瀹″垽鍊惧悜鎶曠エ"
+ th_gensokyo_trial_vote_events.1.desc: "闃庨瓟姝ｅ湪瀹＄悊鐩爣鍥界殑缃矗銆備綘鍙互琛ㄨ揪瀵硅鍐冲€惧悜鐨勭湅娉曗€斺€旀鎶曠エ浠呰〃姘戞剰锛屼笉褰卞搷闃庨瓟鐨勬渶缁堣瀹氥€?
+ th_gensokyo_trial_vote_events.1.a: "浠庡锛氬姖鍏跺悜鍠?
+ th_gensokyo_trial_vote_events.1.b: "閫備腑锛氫緷搴忚€屾柇"
+ th_gensokyo_trial_vote_events.1.c: "浠庝弗锛氬洜鏋滃繀灏?
+ th_gensokyo_trial_events.1.e: "浠呰禂娆剧牬浜э細杞Щ鍗婃暟鍥藉簱骞惰浠ョ牬浜т箣缃?

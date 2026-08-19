@@ -1,0 +1,59 @@
+﻿### ============================================================
+### 幻想乡审判 — 投票事件（WP-H 2026-08-15）
+### 3 选项：从宽（劝善倾向）/ 适中（有序倾向）/ 从严（因果必尝倾向）
+### 记录 th_gensokyo_trial_vote_choice（1/2/3）→ 局势月度汇总展示
+### 投票与裁决无关（§6）。格式：EU5 事件（outcome + 直写效果）
+### ============================================================
+
+namespace = th_gensokyo_trial_vote_events
+
+th_gensokyo_trial_vote_events.1 = {
+    type = country_event
+
+    title = th_gensokyo_trial_vote_events.1.title
+    desc = th_gensokyo_trial_vote_events.1.desc
+    outcome = neutral
+
+    trigger = {
+        always = yes
+    }
+
+    ### 从宽
+    option = {
+        name = th_gensokyo_trial_vote_events.1.a
+        set_variable = {
+            name = th_gensokyo_trial_vote_choice
+            value = 1
+        }
+        set_variable = th_gensokyo_trial_voted
+        th_gensokyo_io_contribution_var_add_effect = {
+            value = 1
+        }
+    }
+
+    ### 适中
+    option = {
+        name = th_gensokyo_trial_vote_events.1.b
+        set_variable = {
+            name = th_gensokyo_trial_vote_choice
+            value = 2
+        }
+        set_variable = th_gensokyo_trial_voted
+        th_gensokyo_io_contribution_var_add_effect = {
+            value = 1
+        }
+    }
+
+    ### 从严
+    option = {
+        name = th_gensokyo_trial_vote_events.1.c
+        set_variable = {
+            name = th_gensokyo_trial_vote_choice
+            value = 3
+        }
+        set_variable = th_gensokyo_trial_voted
+        th_gensokyo_io_contribution_var_add_effect = {
+            value = 1
+        }
+    }
+}

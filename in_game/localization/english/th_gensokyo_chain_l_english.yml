@@ -69,7 +69,7 @@
  th_gensokyo_forest_territory: "Forest Territory"
  th_gensokyo_forest_territory_desc: "The youkai lords of the Magic Forest keep a loose subordinate bond with the magician, rather than absolute submission."
  th_gensokyo_cloud_realm: "Cloud Realm"
- th_gensokyo_cloud_realm_desc: "A Dragon Palace system beyond Heaven's order, its rights of passage held by the Dragon Palace envoy Nagae Iku — even the lofty celestials must show respect before such a presence."
+ th_gensokyo_cloud_realm_desc: "A Dragon Palace system beyond Heaven's order, its rights of passage held by the Dragon Palace envoy Nagae Iku 鈥?even the lofty celestials must show respect before such a presence."
 
 ### Gensokyo Law System (law categories)
  th_feudal_legalism_law: "Feudal Legalism"
@@ -93,7 +93,7 @@
  th_farming_and_reading: "Farming and Reading"
  th_farming_and_reading_desc: "Human villages rest on farming as the foundation of the household; children are taught only husbandry and the seasons, not books."
  th_no_education: "No Schooling"
- th_no_education_desc: "Youkai have no schools; strength alone is the rule. No education, no letters — only instinct."
+ th_no_education_desc: "Youkai have no schools; strength alone is the rule. No education, no letters 鈥?only instinct."
  th_old_learning_only: "Only the Old Learning"
  th_old_learning_only_desc: "Teaching treats only ancient texts as orthodox, rejecting foreign doctrines and new learning. New knowledge from outside is not accepted."
  th_publications: "Gazettes and Newspapers"
@@ -116,8 +116,8 @@
  th_clan_society_desc: "Human villages are governed by clans, each keeping its own house rules. Clan disputes and upbringing are settled within; outsiders may not intrude."
 
 ### Trial events
- th_gensokyo_trial_events.1.t: "The Final Judgment"
- th_gensokyo_trial_events.1.d: "The punitive crusade has ended. As the Yama, you must decide the fate of the target based on its sins."
+ th_gensokyo_trial_events.1.title: "The Final Judgment"
+ th_gensokyo_trial_events.1.desc: "The punitive crusade has ended. As the Yama, you must decide the fate of the target based on its sins."
  th_gensokyo_trial_events.1.a: "Light: Return unlawfully seized lands"
  th_gensokyo_trial_events.1.b: "Medium: Return lands and weaken their power"
  th_gensokyo_trial_events.1.c: "Utmost: Reduce them to a regulated state of the Underworld (transfer wealth and levy tribute)"
@@ -185,3 +185,27 @@
  th_crusade_temp_strength: "Member Strength"
  th_crusade_target_ref: "Crusade Target"
  th_crusade_sin_display: "Target's Sin"
+
+### ============================================================
+### WP-D 2026-08-15: Expansion request adjudication events (搂3.1)
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "An Expansion Request"
+ th_gensokyo_expansion_request_events.1.desc: "A nation requests permission to expand within Gensokyo and asks for your approval as a sage. You may grant a casus belli, or refuse as a lesson."
+ th_gensokyo_expansion_request_events.1.a: "Approve: grant the casus belli for expansion"
+ th_gensokyo_expansion_request_events.1.b: "Refuse: deny permission (the requester's chaotic heart is somewhat tempered)"
+ th_gensokyo_expansion_request_events.2.title: "Expansion Approved by a Sage"
+ th_gensokyo_expansion_request_events.2.desc: "A sage has approved your expansion request. You have gained a casus belli for the target location: ceding provinces costs +75% war score, and antagonism gained is reduced by 40%."
+ th_gensokyo_expansion_request_events.2.a: "Understood"
+ th_gensokyo_expansion_request_events.3.title: "Expansion Request Refused"
+ th_gensokyo_expansion_request_events.3.desc: "The sage refused your expansion request and admonished you to temper your chaotic heart. Your chaotic leaning recedes slightly, and the sage's opinion of you has changed."
+ th_gensokyo_expansion_request_events.3.a: "I shall heed the lesson"
+
+### ============================================================
+### WP-H 2026-08-15: Trial vote events + reparations verdict (搂6)
+### ============================================================
+ th_gensokyo_trial_vote_events.1.title: "Verdict Preference Vote"
+ th_gensokyo_trial_vote_events.1.desc: "The Yama is weighing the target's sins. You may voice your preference for the verdict 鈥?this vote only reflects opinion and does not affect the final ruling."
+ th_gensokyo_trial_vote_events.1.a: "Lenient: exhort them toward good"
+ th_gensokyo_trial_vote_events.1.b: "Moderate: judge by order"
+ th_gensokyo_trial_vote_events.1.c: "Severe: karma reaped in full"
+ th_gensokyo_trial_events.1.e: "Only reparations: transfer half the treasury and suffer the punishment of bankruptcy"

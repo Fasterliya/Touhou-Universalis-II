@@ -1,4 +1,4 @@
-﻿l_korean:
+l_korean:
  th_human_village_io: "인간 마을"
  th_human_village_io_desc: "인간의 마을과 명련사의 세력권에 속한 여러 나라들로 구성된 국가 간 조직체입니다."
 
@@ -35,6 +35,9 @@
  th_gensokyo_personal_contribution_var: "개인 공헌도"
  th_gensokyo_personal_influence_var: "개인 영향력"
  th_gensokyo_amity_vs_belligerence: "연과 란"
+ ### 수정 2026-08-19: 내각 "사회 가치 변경" 초점 키는 초기 로드 단계에서 사용 가능해야 함
+ th_gensokyo_amity_focus: "연"
+ belligerence_focus: "란"
 
  ### Laws
  th_gensokyo_unity_vision_law: "결속 비전"

@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 自定义敌意偏置（add_antagonism 使用）
 ### 模式参考 base game common/biases/05_antagonism_hardcoded.txt
 ### ============================================================
@@ -19,4 +19,38 @@ th_antagonism_free_city_annex = {
 th_antagonism_crusade_resistance = {
     value = 25
     yearly_decay = 5
+}
+
+### WP-F 2026-08-15（设计文档《国际组织》§3.0）：被割让追加敌意层（时代接口预留）
+### 现状：+75%/+150% 由 IO 字段 antagonism_modifier_for_taking_land_from_* 承担，
+### 本偏置供未来时代/大结界系统启用的 on_took_location_in_peace_treaty 追加层使用
+### （th_gensokyo_era_antagonism_interface_trigger = always no，翻转后生效）。
+th_antagonism_ceded_protected_land = {
+    value = 75
+    yearly_decay = 10
+}
+
+### 人间之里地块被割让追加敌意层（同上前置，值 = 150% 档）
+th_antagonism_ceded_human_village = {
+    value = 150
+    yearly_decay = 10
+}
+
+### WP-D 2026-08-15：请求扩张 — 贤者裁决后的好感变化
+### 贤者同意扩张请求 → 贤者对请求者好感 +20
+opinion_gensokyo_expansion_approved = {
+    value = 20
+    yearly_decay = 1
+}
+
+### 贤者拒绝扩张请求 → 贤者对请求者好感 -10
+opinion_gensokyo_expansion_declined = {
+    value = -10
+    yearly_decay = 1
+}
+
+### WP-E 2026-08-15：宴会开在邻国领土 → 邻国对举办国好感 +15
+opinion_gensokyo_feast_guest = {
+    value = 15
+    yearly_decay = 1
 }

@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  th_human_village_io: "Human Village"
  th_human_village_io_desc: "A confederation formed by nations in the Human Village and Myouren Temple regions."
 
@@ -35,6 +35,9 @@
  th_gensokyo_personal_contribution_var: "Personal Contribution"
  th_gensokyo_personal_influence_var: "Personal Influence"
  th_gensokyo_amity_vs_belligerence: "En and Ran"
+ ### Fixed 2026-08-19: cabinet "Change Societal Values" focus keys must be available at early load
+ th_gensokyo_amity_focus: "En"
+ belligerence_focus: "Ran"
 
  ### Laws
  th_gensokyo_unity_vision_law: "Unity Vision"

@@ -1,4 +1,4 @@
-﻿l_russian:
+l_russian:
 ### ============================================================
 ### Touhou-Universalis-II Russian Localization
 ### Автоматический перевод (машинный) — глоссарий согласован
@@ -33,6 +33,9 @@
  th_gensokyo_personal_contribution_var:"Личный вклад"
  th_gensokyo_personal_influence_var:"Личное влияние"
  th_gensokyo_amity_vs_belligerence:"Эн и Ран"
+ ### Исправлено 2026-08-19: ключи фокуса кабинета "Изменение социальных ценностей" должны быть доступны на раннем этапе загрузки
+ th_gensokyo_amity_focus:"Эн"
+ belligerence_focus:"Ран"
 
 ### Laws
  th_gensokyo_unity_vision_law:"Видение единства"

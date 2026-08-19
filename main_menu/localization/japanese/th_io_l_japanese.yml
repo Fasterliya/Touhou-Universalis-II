@@ -1,203 +1,286 @@
 ﻿l_japanese:
- th_human_village_io: "人間の里"
- th_human_village_io_desc: "人間の里及び命蓮寺区域の諸国より成る聯合組織なり。"
+ th_human_village_io: "浜洪枔銇噷"
+ th_human_village_io_desc: "浜洪枔銇噷鍙娿伋鍛借摦瀵哄尯鍩熴伄璜稿浗銈堛倞鎴愩倠鑱悎绲勭箶銇倞銆?
 
- th_gensokyo_io: "幻想郷"
- th_gensokyo_io_desc: "幻想郷の諸国の均衡を保つ国際組織。賢者と閻魔が共に大結界の秩序を守護する。"
+ th_gensokyo_io: "骞绘兂閮?
+ th_gensokyo_io_desc: "骞绘兂閮枫伄璜稿浗銇潎琛°倰淇濄仱鍥介殯绲勭箶銆傝尝鑰呫仺闁婚瓟銇屽叡銇ぇ绲愮晫銇З搴忋倰瀹堣銇欍倠銆?
 
- th_sages_council_io: "賢者議会"
- th_sages_council_io_desc: "幻想郷に最も古き三賢者より成る最高議事機関。"
+ th_sages_council_io: "璩㈣€呰浼?
+ th_sages_council_io_desc: "骞绘兂閮枫伀鏈€銈傚彜銇嶄笁璩㈣€呫倛銈婃垚銈嬫渶楂樿浜嬫闁€?
 
- ### 特殊席位
- th_gensokyo_io_sages_special_status: "賢者"
- th_gensokyo_io_sages_special_status_desc: "幻想郷に最も古き三賢者の一人にして、大結界の要衝を守護する者。"
+ ### 鐗规畩甯綅
+ th_gensokyo_io_sages_special_status: "璩㈣€?
+ th_gensokyo_io_sages_special_status_desc: "骞绘兂閮枫伀鏈€銈傚彜銇嶄笁璩㈣€呫伄涓€浜恒伀銇椼仸銆佸ぇ绲愮晫銇琛濄倰瀹堣銇欍倠鑰呫€?
 
- th_gensokyo_io_yama_special_status: "閻魔"
- th_gensokyo_io_yama_special_status_desc: "彼岸を司る審判者。幻想郷の諸国の是非善悪を裁き、幻想郷議会の長を務める。"
+ th_gensokyo_io_yama_special_status: "闁婚瓟"
+ th_gensokyo_io_yama_special_status_desc: "褰煎哺銈掑徃銈嬪鍒よ€呫€傚够鎯抽兎銇鍥姐伄鏄潪鍠勬偑銈掕銇嶃€佸够鎯抽兎璀颁細銇暦銈掑嫏銈併倠銆?
 
- th_gensokyo_io_guardian_special_status: "幻想郷の守護"
- th_gensokyo_io_guardian_special_status_desc: "博麗神社の巫女、大結界の永遠なる守護者。代々受け継がれる博麗の力が幻想郷と外界の境界を保つ。"
+ th_gensokyo_io_guardian_special_status: "骞绘兂閮枫伄瀹堣"
+ th_gensokyo_io_guardian_special_status_desc: "鍗氶簵绁炵ぞ銇帆濂炽€佸ぇ绲愮晫銇案閬犮仾銈嬪畧璀疯€呫€備唬銆呭彈銇戠稒銇屻倢銈嬪崥楹椼伄鍔涖亴骞绘兂閮枫仺澶栫晫銇鐣屻倰淇濄仱銆?
 
- th_gensokyo_io_human_village_special_status: "人間の里"
- th_gensokyo_io_human_village_special_status_desc: "人間の里の代表として、幻想郷の人間集落の権益を守護する者。"
+ th_gensokyo_io_human_village_special_status: "浜洪枔銇噷"
+ th_gensokyo_io_human_village_special_status_desc: "浜洪枔銇噷銇唬琛ㄣ仺銇椼仸銆佸够鎯抽兎銇汉闁撻泦钀姐伄妯╃泭銈掑畧璀枫仚銈嬭€呫€?
 
- th_gensokyo_io_yama_leader_title: "閻魔"
+ th_gensokyo_io_yama_leader_title: "闁婚瓟"
 
- ### IO変数（エンジンが表示名＋円グラフ＋月次変化の説明をここから読み取る）
- th_gensokyo_unity_var: "幻想郷団結度"
- th_gensokyo_unity_var_desc: "幻想郷の諸国の結束力を測る指標。異変解決や平和構築などの積極的行為によって得られ、侵略的拡大や外界からの侵入によって損耗する。"
+ ### IO澶夋暟锛堛偍銉炽偢銉炽亴琛ㄧず鍚嶏紜鍐嗐偘銉┿儠锛嬫湀娆″鍖栥伄瑾槑銈掋亾銇撱亱銈夎銇垮彇銈嬶級
+ th_gensokyo_unity_var: "骞绘兂閮峰洠绲愬害"
+ th_gensokyo_unity_var_desc: "骞绘兂閮枫伄璜稿浗銇祼鏉熷姏銈掓脯銈嬫寚妯欍€傜暟澶夎В姹恒倓骞冲拰妲嬬瘔銇仼銇妤电殑琛岀偤銇倛銇ｃ仸寰椼倝銈屻€佷镜鐣ョ殑鎷″ぇ銈勫鐣屻亱銈夈伄渚靛叆銇倛銇ｃ仸鎼嶈€椼仚銈嬨€?
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
  VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
- TH_GENSOKYO_UNITY_BASE: "基礎維持"
- TH_GENSOKYO_UNITY_FROM_PEACE: "内部平和"
+ TH_GENSOKYO_UNITY_BASE: "鍩虹缍寔"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "鍐呴儴骞冲拰"
 
- ### 国家変数
- th_gensokyo_personal_contribution_var: "個人貢献度"
- th_gensokyo_personal_influence_var: "個人影響力"
- ### 価値観（縁 <-> 乱、社会的価値観バー）
-th_gensokyo_amity_vs_belligerence: "縁と乱"
-th_gensokyo_amity_vs_belligerence_desc: "縁の者は衆生と縁を結び、和して心を一つにし、人間の里を守り大結界の安寧を保つ。乱の者は兵を興し乱をなし、窮兵黷武、儚き夢を追い、幻想郷の秩序を乱す。心の向かう所、衆生皆これを見る。"
-th_gensokyo_amity_focus: "縁"
-belligerence_focus: "乱"
+ ### 鍥藉澶夋暟
+ th_gensokyo_personal_contribution_var: "鍊嬩汉璨㈢尞搴?
+ th_gensokyo_personal_influence_var: "鍊嬩汉褰遍熆鍔?
+ ### 渚″€よΤ锛堢竵 <-> 涔便€佺ぞ浼氱殑渚″€よΤ銉愩兗锛?
+th_gensokyo_amity_vs_belligerence: "绺併仺涔?
+th_gensokyo_amity_vs_belligerence_desc: "绺併伄鑰呫伅琛嗙敓銇ㄧ竵銈掔祼銇炽€佸拰銇椼仸蹇冦倰涓€銇ゃ伀銇椼€佷汉闁撱伄閲屻倰瀹堛倞澶х祼鐣屻伄瀹夊銈掍繚銇ゃ€備贡銇€呫伅鍏点倰鑸堛仐涔便倰銇仐銆佺鍏甸环姝︺€佸剼銇嶅あ銈掕拷銇勩€佸够鎯抽兎銇З搴忋倰涔便仚銆傚績銇悜銇嬨亞鎵€銆佽鐢熺殕銇撱倢銈掕銈嬨€?
+th_gensokyo_amity_focus: "绺?
+belligerence_focus: "涔?
 
-### 開局特殊属領（永久属領、併合不可）
-th_gensokyo_satori_vassal: "地霊殿の属領"
-th_gensokyo_satori_vassal_desc: "名目上は覚の領地だが、実質は彼女のペットたちが自ら切り回している。灼熱地獄の火の海と溶岩は、すべて彼女のペットたちが一手に管理している。"
-th_gensokyo_forest_territory: "森林領地"
-th_gensokyo_forest_territory_desc: "魔法の森の妖怪領主たちは、魔女に対して絶対の服従ではなく緩やかな従属関係を保っている。"
-th_gensokyo_cloud_realm: "雲上領"
-th_gensokyo_cloud_realm_desc: "天界の秩序の外にある竜宮の体制。竜宮使い・永江衣玖が往来の権を司る——高みの天人といえども、その存在には一目置かざるを得ない。"
+### 闁嬪眬鐗规畩灞為牁锛堟案涔呭睘闋樸€佷降鍚堜笉鍙級
+th_gensokyo_satori_vassal: "鍦伴湂娈裤伄灞為牁"
+th_gensokyo_satori_vassal_desc: "鍚嶇洰涓娿伅瑕氥伄闋樺湴銇犮亴銆佸疅璩伅褰煎コ銇儦銉冦儓銇熴仭銇岃嚜銈夊垏銈婂洖銇椼仸銇勩倠銆傜伡鐔卞湴鐛勩伄鐏伄娴枫仺婧跺博銇€併仚銇广仸褰煎コ銇儦銉冦儓銇熴仭銇屼竴鎵嬨伀绠＄悊銇椼仸銇勩倠銆?
+th_gensokyo_forest_territory: "妫灄闋樺湴"
+th_gensokyo_forest_territory_desc: "榄旀硶銇．銇鎬牁涓汇仧銇°伅銆侀瓟濂炽伀瀵俱仐銇︾刀瀵俱伄鏈嶅緭銇с伅銇亸绶┿倓銇嬨仾寰撳睘闁總銈掍繚銇ｃ仸銇勩倠銆?
+th_gensokyo_cloud_realm: "闆蹭笂闋?
+th_gensokyo_cloud_realm_desc: "澶╃晫銇З搴忋伄澶栥伀銇傘倠绔滃銇綋鍒躲€傜珳瀹娇銇勩兓姘告睙琛ｇ帠銇屽線鏉ャ伄妯┿倰鍙搞倠鈥斺€旈珮銇裤伄澶╀汉銇ㄣ亜銇堛仼銈傘€併仢銇瓨鍦ㄣ伀銇竴鐩疆銇嬨仏銈嬨倰寰椼仾銇勩€?
 
-### 幻想郷の法律体系（法律グループ）
-th_feudal_legalism_law: "封建法理法"
-th_legal_code_law: "法典"
-th_education_law: "教育法"
-th_cultural_traditions_law: "文化伝統"
-th_administration_law: "行政体系"
-### 封建法理法
-th_old_charter: "旧章"
-th_old_charter_desc: "大結界が成った当初に定められた継承の旧規。代々受け継がれ、時勢によって改まることはない。法理は既に定まり、後人はただその旧を守るのみ。"
-### 法典
-th_old_customary_law: "旧例法"
-th_old_customary_law_desc: "各地の妖怪はそれぞれが長年守ってきた旧規に従って行動する。族群ごとに風習は異なるが、代々伝わる旧例が破られぬことだけを願う。"
-th_harmony_first_law: "和を以て貴しとなす"
-th_harmony_first_law_desc: "人間の里の律法は紛争の調停を重んじ、厳罰によって威厳を示すことはしない。争いが起これば、村で徳のある者が仲立ちとなる。"
-th_separate_laws: "人妖分律"
-th_separate_laws_desc: "人間と妖怪はそれぞれ自らの法度と旧例に従い、互いの事柄に干渉しない。人間の争いは律法で、妖怪の諍いは旧俗で処する。"
-th_statute_law: "幻想郷成文法"
-th_statute_law_desc: "印刷技術の普及に伴い、各地に散在する風俗や決まりが徐々に律法典籍として編纂され、条理分明、条目明晰となる。"
-### 教育法
-th_farming_and_reading: "耕読立家"
-th_farming_and_reading_desc: "人間の里は耕作を家業の根本とし、子孫には農事・四時・節気のみを授け、書巻や文辞を尚ばない。"
-th_no_education: "無教而行"
-th_no_education_desc: "妖怪には学問の教えがない。ただ強弱のみを基準とし、教育を設けず、書文も伝えず、天性のままに行動する。"
-th_old_learning_only: "旧学独伝"
-th_old_learning_only_desc: "教学は古い典籍のみを正統の根拠とし、外来の学問や新しい学説を受け入れない。知識の伝授は旧来の義理を守り、外界の新知は一切採り入れない。"
-th_publications: "刊行物と新聞の伝習"
-th_publications_desc: "印刷技術の発展により刊行物や新聞が次第に盛行し、見聞や物語を刊行して伝えることができる。民は博聞広見となり、領内外の様々な情報を知るようになる。"
-th_terakoya_system: "寺子屋体系"
-th_terakoya_system_desc: "寺子屋の方式を模した正規の私塾が次第に興り、各地の子供が入塾して学べるようになる。読み書きは少数者の特権ではなくなり、一般の民も文字と基礎学識を得る機会を持つ。"
-th_farming_and_education: "農教並重"
-th_farming_and_education_desc: "教化と農耕を並行して推し進める。子供は私塾で道理を学ぶと同時に農事にも携わり、学識の修習と田間の実践を並行して、どちらも怠らない。"
-### 文化伝統
-th_hundred_youkai_banquet: "百妖夜宴"
-th_hundred_youkai_banquet_desc: "妖怪たちが同じ席で酒を交わし、弾幕勝負と杯の往来の間に、幻想郷の旧い絆を保ち続ける。"
-th_word_of_mouth: "口口相伝"
-th_word_of_mouth_desc: "様々な奇聞怪談が口伝えで代々伝わり、『幻想郷縁起』に記録される。人間は怪談を聞いて里の外の世界への畏れを抱き、聞く者それぞれに感悟があり、旧日の往事は長く留まる。"
-### 行政体系
-th_personal_rule: "個人統御"
-th_personal_rule_desc: "我らが指導者の個人の強大な威望と能力を中核とする行政体系。しかし現実の制約により、行政全体の効率は大きく制限される。"
-th_youkai_autonomy: "妖怪自治"
-th_youkai_autonomy_desc: "各地の妖怪は地方自治を行い、領内の大小の事務はすべてその地の妖怪が自ら決断して処理する。"
-th_clan_society: "宗族社会"
-th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族は自らの家規を守って自治を行う。族内の紛争や家事の教化は宗族内部で処理し、他の勢力は勝手に介入できない。"
+### 骞绘兂閮枫伄娉曞緥浣撶郴锛堟硶寰嬨偘銉兗銉楋級
+th_feudal_legalism_law: "灏佸缓娉曠悊娉?
+th_legal_code_law: "娉曞吀"
+th_education_law: "鏁欒偛娉?
+th_cultural_traditions_law: "鏂囧寲浼濈当"
+th_administration_law: "琛屾斂浣撶郴"
+### 灏佸缓娉曠悊娉?
+th_old_charter: "鏃х珷"
+th_old_charter_desc: "澶х祼鐣屻亴鎴愩仯銇熷綋鍒濄伀瀹氥倎銈夈倢銇熺稒鎵裤伄鏃ц銆備唬銆呭彈銇戠稒銇屻倢銆佹檪鍕伀銈堛仯銇︽敼銇俱倠銇撱仺銇仾銇勩€傛硶鐞嗐伅鏃伀瀹氥伨銈娿€佸緦浜恒伅銇熴仩銇濄伄鏃с倰瀹堛倠銇伩銆?
+### 娉曞吀
+th_old_customary_law: "鏃т緥娉?
+th_old_customary_law_desc: "鍚勫湴銇鎬伅銇濄倢銇炪倢銇岄暦骞村畧銇ｃ仸銇嶃仧鏃ц銇緭銇ｃ仸琛屽嫊銇欍倠銆傛棌缇ゃ仈銇ㄣ伀棰ㄧ繏銇暟銇倠銇屻€佷唬銆呬紳銈忋倠鏃т緥銇岀牬銈夈倢銇亾銇ㄣ仩銇戙倰椤樸亞銆?
+th_harmony_first_law: "鍜屻倰浠ャ仸璨淬仐銇ㄣ仾銇?
+th_harmony_first_law_desc: "浜洪枔銇噷銇緥娉曘伅绱涗簤銇鍋溿倰閲嶃倱銇樸€佸幊缃般伀銈堛仯銇﹀▉鍘炽倰绀恒仚銇撱仺銇仐銇亜銆備簤銇勩亴璧枫亾銈屻伆銆佹潙銇у境銇亗銈嬭€呫亴浠茬珛銇°仺銇倠銆?
+th_separate_laws: "浜哄鍒嗗緥"
+th_separate_laws_desc: "浜洪枔銇ㄥ鎬伅銇濄倢銇炪倢鑷倝銇硶搴︺仺鏃т緥銇緭銇勩€佷簰銇勩伄浜嬫焺銇共娓夈仐銇亜銆備汉闁撱伄浜夈亜銇緥娉曘仹銆佸鎬伄璜嶃亜銇棫淇椼仹鍑︺仚銈嬨€?
+th_statute_law: "骞绘兂閮锋垚鏂囨硶"
+th_statute_law_desc: "鍗板埛鎶€琛撱伄鏅強銇即銇勩€佸悇鍦般伀鏁ｅ湪銇欍倠棰ㄤ織銈勬焙銇俱倞銇屽緪銆呫伀寰嬫硶鍏哥睄銇ㄣ仐銇︾法绾傘仌銈屻€佹潯鐞嗗垎鏄庛€佹潯鐩槑鏅般仺銇倠銆?
+### 鏁欒偛娉?
+th_farming_and_reading: "鑰曡绔嬪"
+th_farming_and_reading_desc: "浜洪枔銇噷銇€曚綔銈掑妤伄鏍规湰銇ㄣ仐銆佸瓙瀛伀銇静浜嬨兓鍥涙檪銉荤瘈姘椼伄銇裤倰鎺堛亼銆佹浉宸汇倓鏂囪緸銈掑皻銇般仾銇勩€?
+th_no_education: "鐒℃暀鑰岃"
+th_no_education_desc: "濡栨€伀銇鍟忋伄鏁欍亪銇屻仾銇勩€傘仧銇犲挤寮便伄銇裤倰鍩烘簴銇ㄣ仐銆佹暀鑲层倰瑷亼銇氥€佹浉鏂囥倐浼濄亪銇氥€佸ぉ鎬с伄銇俱伨銇鍕曘仚銈嬨€?
+th_old_learning_only: "鏃у鐙紳"
+th_old_learning_only_desc: "鏁欏銇彜銇勫吀绫嶃伄銇裤倰姝ｇ当銇牴鎷犮仺銇椼€佸鏉ャ伄瀛﹀晱銈勬柊銇椼亜瀛﹁銈掑彈銇戝叆銈屻仾銇勩€傜煡璀樸伄浼濇巿銇棫鏉ャ伄缇╃悊銈掑畧銈娿€佸鐣屻伄鏂扮煡銇竴鍒囨帯銈婂叆銈屻仾銇勩€?
+th_publications: "鍒婅鐗┿仺鏂拌仦銇紳缈?
+th_publications_desc: "鍗板埛鎶€琛撱伄鐧哄睍銇倛銈婂垔琛岀墿銈勬柊鑱炪亴娆＄銇洓琛屻仐銆佽鑱炪倓鐗╄獮銈掑垔琛屻仐銇︿紳銇堛倠銇撱仺銇屻仹銇嶃倠銆傛皯銇崥鑱炲簝瑕嬨仺銇倞銆侀牁鍐呭銇銆呫仾鎯呭牨銈掔煡銈嬨倛銇嗐伀銇倠銆?
+th_terakoya_system: "瀵哄瓙灞嬩綋绯?
+th_terakoya_system_desc: "瀵哄瓙灞嬨伄鏂瑰紡銈掓ā銇椼仧姝ｈ銇濉俱亴娆＄銇垐銈娿€佸悇鍦般伄瀛愪緵銇屽叆濉俱仐銇﹀銇广倠銈堛亞銇仾銈嬨€傝銇挎浉銇嶃伅灏戞暟鑰呫伄鐗规ī銇с伅銇亸銇倞銆佷竴鑸伄姘戙倐鏂囧瓧銇ㄥ熀绀庡璀樸倰寰椼倠姗熶細銈掓寔銇ゃ€?
+th_farming_and_education: "杈叉暀涓﹂噸"
+th_farming_and_education_desc: "鏁欏寲銇ㄨ静鑰曘倰涓﹁銇椼仸鎺ㄣ仐閫层倎銈嬨€傚瓙渚涖伅绉佸【銇ч亾鐞嗐倰瀛︺伓銇ㄥ悓鏅傘伀杈蹭簨銇倐鎼恒倧銈娿€佸璀樸伄淇繏銇ㄧ敯闁撱伄瀹熻返銈掍甫琛屻仐銇︺€併仼銇°倝銈傛€犮倝銇亜銆?
+### 鏂囧寲浼濈当
+th_hundred_youkai_banquet: "鐧惧澶滃"
+th_hundred_youkai_banquet_desc: "濡栨€仧銇°亴鍚屻仒甯仹閰掋倰浜ゃ倧銇椼€佸季骞曞嫕璨犮仺鏉伄寰€鏉ャ伄闁撱伀銆佸够鎯抽兎銇棫銇勭祮銈掍繚銇＄稓銇戙倠銆?
+th_word_of_mouth: "鍙ｅ彛鐩镐紳"
+th_word_of_mouth_desc: "妲樸€呫仾濂囪仦鎬珖銇屽彛浼濄亪銇т唬銆呬紳銈忋倞銆併€庡够鎯抽兎绺佽捣銆忋伀瑷橀尣銇曘倢銈嬨€備汉闁撱伅鎬珖銈掕仦銇勩仸閲屻伄澶栥伄涓栫晫銇搞伄鐣忋倢銈掓姳銇嶃€佽仦銇忚€呫仢銈屻仦銈屻伀鎰熸偀銇屻亗銈娿€佹棫鏃ャ伄寰€浜嬨伅闀枫亸鐣欍伨銈嬨€?
+### 琛屾斂浣撶郴
+th_personal_rule: "鍊嬩汉绲卞尽"
+th_personal_rule_desc: "鎴戙倝銇屾寚灏庤€呫伄鍊嬩汉銇挤澶с仾濞佹湜銇ㄨ兘鍔涖倰涓牳銇ㄣ仚銈嬭鏀夸綋绯汇€傘仐銇嬨仐鐝惧疅銇埗绱勩伀銈堛倞銆佽鏀垮叏浣撱伄鍔圭巼銇ぇ銇嶃亸鍒堕檺銇曘倢銈嬨€?
+th_youkai_autonomy: "濡栨€嚜娌?
+th_youkai_autonomy_desc: "鍚勫湴銇鎬伅鍦版柟鑷不銈掕銇勩€侀牁鍐呫伄澶у皬銇簨鍕欍伅銇欍伖銇︺仢銇湴銇鎬亴鑷倝姹烘柇銇椼仸鍑︾悊銇欍倠銆?
+th_clan_society: "瀹楁棌绀句細"
+th_clan_society_desc: "浜洪枔銇噷銇畻鏃忋倰娌汇倎銈嬪崢浣嶃仺銇椼€佸悇瀹楁棌銇嚜銈夈伄瀹惰銈掑畧銇ｃ仸鑷不銈掕銇嗐€傛棌鍐呫伄绱涗簤銈勫浜嬨伄鏁欏寲銇畻鏃忓唴閮ㄣ仹鍑︾悊銇椼€佷粬銇嫝鍔涖伅鍕濇墜銇粙鍏ャ仹銇嶃仾銇勩€?
 
- ### 法律
- th_gensokyo_unity_vision_law: "結束の理念"
- th_gensokyo_unity_vision_law_desc: "幻想郷の結束の力の方向性と運用の道を定める。"
+ ### 娉曞緥
+ th_gensokyo_unity_vision_law: "绲愭潫銇悊蹇?
+ th_gensokyo_unity_vision_law_desc: "骞绘兂閮枫伄绲愭潫銇姏銇柟鍚戞€с仺閬嬬敤銇亾銈掑畾銈併倠銆?
 
- th_gensokyo_barrier_policy_law: "大結界政策"
- th_gensokyo_barrier_policy_law_desc: "幻想郷の大結界の維持強度と開放度を定める。"
+ th_gensokyo_barrier_policy_law: "澶х祼鐣屾斂绛?
+ th_gensokyo_barrier_policy_law_desc: "骞绘兂閮枫伄澶х祼鐣屻伄缍寔寮峰害銇ㄩ枊鏀惧害銈掑畾銈併倠銆?
 
- th_gensokyo_incident_response_law: "異変対応方針"
- th_gensokyo_incident_response_law_desc: "幻想郷で異変が発生した際の対応戦略と行動指針を定める。"
+ th_gensokyo_incident_response_law: "鐣板瀵惧繙鏂归嚌"
+ th_gensokyo_incident_response_law_desc: "骞绘兂閮枫仹鐣板銇岀櫤鐢熴仐銇熼殯銇蹇滄垿鐣ャ仺琛屽嫊鎸囬嚌銈掑畾銈併倠銆?
 
- isolation_defense_policy: "孤立堅守"
- isolation_defense_policy_desc: "大結界の門を固く閉ざし、内部の平和によって結束の力を凝集する。"
- balance_path_policy: "均衡の道"
- balance_path_policy_desc: "大結界の既存の法を維持し、偏らず揺るがず。"
- open_inclusive_policy: "開放包摂"
- open_inclusive_policy_desc: "大結界の制限を緩和し、外界の新しき思いを歓迎する。"
+ isolation_defense_policy: "瀛ょ珛鍫呭畧"
+ isolation_defense_policy_desc: "澶х祼鐣屻伄闁€銈掑浐銇忛枆銇栥仐銆佸唴閮ㄣ伄骞冲拰銇倛銇ｃ仸绲愭潫銇姏銈掑嚌闆嗐仚銈嬨€?
+ balance_path_policy: "鍧囪　銇亾"
+ balance_path_policy_desc: "澶х祼鐣屻伄鏃㈠瓨銇硶銈掔董鎸併仐銆佸亸銈夈仛鎻恒倠銇屻仛銆?
+ open_inclusive_policy: "闁嬫斁鍖呮憘"
+ open_inclusive_policy_desc: "澶х祼鐣屻伄鍒堕檺銈掔珐鍜屻仐銆佸鐣屻伄鏂般仐銇嶆€濄亜銈掓瓝杩庛仚銈嬨€?
 
- reinforced_barrier_policy: "結界強化"
- reinforced_barrier_policy_desc: "全郷の力を結集して大結界を強化する。"
- maintained_barrier_policy: "結界維持"
- maintained_barrier_policy_desc: "既存の伝統に従い大結界の運転を維持する。"
- relaxed_barrier_policy: "結界緩和"
- relaxed_barrier_policy_desc: "交流を円滑にするため大結界の制限を適度に緩和する。"
+ reinforced_barrier_policy: "绲愮晫寮峰寲"
+ reinforced_barrier_policy_desc: "鍏ㄩ兎銇姏銈掔祼闆嗐仐銇﹀ぇ绲愮晫銈掑挤鍖栥仚銈嬨€?
+ maintained_barrier_policy: "绲愮晫缍寔"
+ maintained_barrier_policy_desc: "鏃㈠瓨銇紳绲便伀寰撱亜澶х祼鐣屻伄閬嬭虎銈掔董鎸併仚銈嬨€?
+ relaxed_barrier_policy: "绲愮晫绶╁拰"
+ relaxed_barrier_policy_desc: "浜ゆ祦銈掑唵婊戙伀銇欍倠銇熴倎澶х祼鐣屻伄鍒堕檺銈掗仼搴︺伀绶╁拰銇欍倠銆?
 
- duel_resolution_policy: "弾幕決闘規則"
- duel_resolution_policy_desc: "一対一の弾幕決闘によって異変を解決する。"
- joint_suppression_policy: "連合鎮圧"
- joint_suppression_policy_desc: "諸国が連合して行動し、集団の力で異変を鎮圧する。"
- diplomatic_mediation_policy: "外交調停"
- diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。"
+ duel_resolution_policy: "寮惧箷姹洪棙瑕忓墖"
+ duel_resolution_policy_desc: "涓€瀵句竴銇季骞曟焙闂樸伀銈堛仯銇︾暟澶夈倰瑙ｆ焙銇欍倠銆?
+ joint_suppression_policy: "閫ｅ悎閹湩"
+ joint_suppression_policy_desc: "璜稿浗銇岄€ｅ悎銇椼仸琛屽嫊銇椼€侀泦鍥ｃ伄鍔涖仹鐣板銈掗幃鍦с仚銈嬨€?
+ diplomatic_mediation_policy: "澶栦氦瑾垮仠"
+ diplomatic_mediation_policy_desc: "浜ゆ笁銇ㄨ鍋溿伀銈堛仯銇︾暟澶夈伄鏍规湰鍘熷洜銈掕В娑堛仚銈嬨€?
 
- ### 診断インタラクション（特殊席状態確認用）
- th_sages_diagnostic_select_io: "幻想郷国際組織を選択"
- th_sages_diagnostic_interaction: "賢者席診断"
- th_sages_diagnostic_interaction_desc: "このインタラクションは幻想郷IOの「賢者」特殊席を保持する国家のみに表示される。特殊席が正しく割り当てられているかの確認用。"
- th_sages_diagnostic_interaction_act: "賢者席を確認"
- th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]が幻想郷「賢者」特殊席を保持していることを確認した。"
- th_sages_diagnostic_success_tt: "§G✓ 診断成功§!：この国家は幻想郷IOの「賢者」特殊席（th_gensokyo_io_sages_special_status）を保持している。"
+ ### 瑷烘柇銈ゃ兂銈裤儵銈偡銉с兂锛堢壒娈婂腑鐘舵厠纰鸿獚鐢級
+ th_sages_diagnostic_select_io: "骞绘兂閮峰浗闅涚祫绻斻倰閬告姙"
+ th_sages_diagnostic_interaction: "璩㈣€呭腑瑷烘柇"
+ th_sages_diagnostic_interaction_desc: "銇撱伄銈ゃ兂銈裤儵銈偡銉с兂銇够鎯抽兎IO銇€岃尝鑰呫€嶇壒娈婂腑銈掍繚鎸併仚銈嬪浗瀹躲伄銇裤伀琛ㄧず銇曘倢銈嬨€傜壒娈婂腑銇屾銇椼亸鍓层倞褰撱仸銈夈倢銇︺亜銈嬨亱銇⒑瑾嶇敤銆?
+ th_sages_diagnostic_interaction_act: "璩㈣€呭腑銈掔⒑瑾?
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]銇屽够鎯抽兎銆岃尝鑰呫€嶇壒娈婂腑銈掍繚鎸併仐銇︺亜銈嬨亾銇ㄣ倰纰鸿獚銇椼仧銆?
+ th_sages_diagnostic_success_tt: "搂G鉁?瑷烘柇鎴愬姛搂!锛氥亾銇浗瀹躲伅骞绘兂閮稩O銇€岃尝鑰呫€嶇壒娈婂腑锛坱h_gensokyo_io_sages_special_status锛夈倰淇濇寔銇椼仸銇勩倠銆?
 
- ### 席アンロック法（仮検証用）
- th_gensokyo_seat_unlock_law: "席アンロック"
- th_gensokyo_seat_unlock_law_desc: "制定すると幻想郷の席が解放され、特殊地位の授与が可能になる。"
- th_gensokyo_seat_unlock_policy: "席アンロック"
- th_gensokyo_seat_unlock_policy_desc: "発動すると幻想郷席が有効化され、貢献度が最も高い構成国が自動的にその席を獲得する。"
- th_gensokyo_io_seat_special_status: "幻想郷席"
- th_gensokyo_io_seat_special_status_desc: "席アンロック法によって有効化される特殊地位。貢献度が最も高い構成国に授与される。"
+ ### 甯偄銉炽儹銉冦偗娉曪紙浠瑷肩敤锛?
+ th_gensokyo_seat_unlock_law: "甯偄銉炽儹銉冦偗"
+ th_gensokyo_seat_unlock_law_desc: "鍒跺畾銇欍倠銇ㄥ够鎯抽兎銇腑銇岃В鏀俱仌銈屻€佺壒娈婂湴浣嶃伄鎺堜笌銇屽彲鑳姐伀銇倠銆?
+ th_gensokyo_seat_unlock_policy: "甯偄銉炽儹銉冦偗"
+ th_gensokyo_seat_unlock_policy_desc: "鐧哄嫊銇欍倠銇ㄥ够鎯抽兎甯亴鏈夊姽鍖栥仌銈屻€佽并鐚害銇屾渶銈傞珮銇勬鎴愬浗銇岃嚜鍕曠殑銇仢銇腑銈掔嵅寰椼仚銈嬨€?
+ th_gensokyo_io_seat_special_status: "骞绘兂閮峰腑"
+ th_gensokyo_io_seat_special_status_desc: "甯偄銉炽儹銉冦偗娉曘伀銈堛仯銇︽湁鍔瑰寲銇曘倢銈嬬壒娈婂湴浣嶃€傝并鐚害銇屾渶銈傞珮銇勬鎴愬浗銇巿涓庛仌銈屻倠銆?
 
- ### 賢者議会 — 思潮導入（議会討論）
- th_sages_council_member_special_status: "賢者席"
- th_sages_council_member_special_status_desc: "賢者議会の席。三人の最古の賢者が各一席を有し、議会討論において等しい投票権を持つ。"
+ ### 璩㈣€呰浼?鈥?鎬濇疆灏庡叆锛堣浼氳◣璜栵級
+ th_sages_council_member_special_status: "璩㈣€呭腑"
+ th_sages_council_member_special_status_desc: "璩㈣€呰浼氥伄甯€備笁浜恒伄鏈€鍙ゃ伄璩㈣€呫亴鍚勪竴甯倰鏈夈仐銆佽浼氳◣璜栥伀銇娿亜銇︾瓑銇椼亜鎶曠エ妯┿倰鎸併仱銆?
 
- th_sages_council_io_parliament: "賢者議会大評議会"
- th_sages_introduce_institution_issue: "思潮導入"
- th_sages_introduce_institution_issue_desc: "新たな思潮を全ての賢者の首都に導入する提案。"
+ th_sages_council_io_parliament: "璩㈣€呰浼氬ぇ瑭曡浼?
+ th_sages_introduce_institution_issue: "鎬濇疆灏庡叆"
+ th_sages_introduce_institution_issue_desc: "鏂般仧銇€濇疆銈掑叏銇︺伄璩㈣€呫伄棣栭兘銇皫鍏ャ仚銈嬫彁妗堛€?
 
- th_sages_introduce_institution: "思潮導入"
- th_sages_introduce_institution_desc: "世界に出現したが賢者にまだ行き渡っていない思潮を選ぶ。賢者議会で討論が行われ、少なくとも二人の賢者が支持すれば、思潮は各賢者の首都に出現する。"
- th_sages_introduce_institution_notification: "思潮導入を巡り、賢者議会で討論が招集された。"
- th_sages_pending_institution: "導入予定思潮"
- th_sages_introduced_institutions: "導入済み思潮"
+ th_sages_introduce_institution: "鎬濇疆灏庡叆"
+ th_sages_introduce_institution_desc: "涓栫晫銇嚭鐝俱仐銇熴亴璩㈣€呫伀銇俱仩琛屻亶娓°仯銇︺亜銇亜鎬濇疆銈掗伕銇躲€傝尝鑰呰浼氥仹瑷庤珫銇岃銈忋倢銆佸皯銇亸銇ㄣ倐浜屼汉銇尝鑰呫亴鏀寔銇欍倢銇般€佹€濇疆銇悇璩㈣€呫伄棣栭兘銇嚭鐝俱仚銈嬨€?
+ th_sages_introduce_institution_notification: "鎬濇疆灏庡叆銈掑贰銈娿€佽尝鑰呰浼氥仹瑷庤珫銇屾嫑闆嗐仌銈屻仧銆?
+ th_sages_pending_institution: "灏庡叆浜堝畾鎬濇疆"
+ th_sages_introduced_institutions: "灏庡叆娓堛伩鎬濇疆"
 
- th_sages_propose_policy: "政策の提案"
- th_sages_propose_policy_desc: "賢者の議会で審議する政策を提案します。三人の賢者のうち二人以上が支持すれば、政策は議会全体に適用されます。召集には金300が必要です。"
+ th_sages_propose_policy: "鏀跨瓥銇彁妗?
+ th_sages_propose_policy_desc: "璩㈣€呫伄璀颁細銇у璀般仚銈嬫斂绛栥倰鎻愭銇椼伨銇欍€備笁浜恒伄璩㈣€呫伄銇嗐仭浜屼汉浠ヤ笂銇屾敮鎸併仚銈屻伆銆佹斂绛栥伅璀颁細鍏ㄤ綋銇仼鐢ㄣ仌銈屻伨銇欍€傚彫闆嗐伀銇噾300銇屽繀瑕併仹銇欍€?
 
- th_sages_barrier_policy_issue: "大結界の強化"
- th_sages_barrier_policy_issue_desc: "幻想郷を囲む大結界を強化します: 防御+10%、安定度コスト-5%。"
- th_sages_unity_policy_issue: "幻想郷団結の憲章"
- th_sages_unity_policy_issue_desc: "幻想郷諸国の融和を図ります: 威信+0.1/月、関係改善+15%、外交名声+1。"
- th_sages_reform_policy_issue: "賢者の会議改革"
- th_sages_reform_policy_issue_desc: "議会の行政を刷新します: 税収+10%、人的資源+10%。"
- th_sages_propose_policy_no_issues: "提案できる政策がありません。"
+ th_sages_barrier_policy_issue: "澶х祼鐣屻伄寮峰寲"
+ th_sages_barrier_policy_issue_desc: "骞绘兂閮枫倰鍥层個澶х祼鐣屻倰寮峰寲銇椼伨銇? 闃插尽+10%銆佸畨瀹氬害銈炽偣銉?5%銆?
+ th_sages_unity_policy_issue: "骞绘兂閮峰洠绲愩伄鎲茬珷"
+ th_sages_unity_policy_issue_desc: "骞绘兂閮疯鍥姐伄铻嶅拰銈掑洺銈娿伨銇? 濞佷俊+0.1/鏈堛€侀枹淇傛敼鍠?15%銆佸浜ゅ悕澹?1銆?
+ th_sages_reform_policy_issue: "璩㈣€呫伄浼氳鏀归潻"
+ th_sages_reform_policy_issue_desc: "璀颁細銇鏀裤倰鍒锋柊銇椼伨銇? 绋庡弾+10%銆佷汉鐨勮硣婧?10%銆?
+ th_sages_propose_policy_no_issues: "鎻愭銇с亶銈嬫斂绛栥亴銇傘倞銇俱仜銈撱€?
 
- ### 思潮導入 — 条件（詳細なツールチップ）
+ ### 鎬濇疆灏庡叆 鈥?鏉′欢锛堣┏绱般仾銉勩兗銉儊銉冦儣锛?
 
- ### 悪名の結果自動修正（設計§2.5）
- th_gensokyo_io_notorious_tier1_auto_modifier: "名譽の翳り"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc: "悪名が30以上となると、幻想郷は此の国を警戒の目で見る。外交評判-1、関係改善-15%。"
+ ### 鎮悕銇祼鏋滆嚜鍕曚慨姝ｏ紙瑷▓搂2.5锛?
+ th_gensokyo_io_notorious_tier1_auto_modifier: "鍚嶈銇砍銈?
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "鎮悕銇?0浠ヤ笂銇ㄣ仾銈嬨仺銆佸够鎯抽兎銇銇浗銈掕鎴掋伄鐩仹瑕嬨倠銆傚浜よ鍒?1銆侀枹淇傛敼鍠?15%銆?
 
- th_gensokyo_io_notorious_tier2_auto_modifier: "悪行の累々"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc: "悪名が50以上となると、此の国は度々の悪事を疑われる。外交評判-2、関係改善-30%、安定投資+10%。"
+ th_gensokyo_io_notorious_tier2_auto_modifier: "鎮銇疮銆?
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "鎮悕銇?0浠ヤ笂銇ㄣ仾銈嬨仺銆佹銇浗銇害銆呫伄鎮簨銈掔枒銈忋倢銈嬨€傚浜よ鍒?2銆侀枹淇傛敼鍠?30%銆佸畨瀹氭姇璩?10%銆?
 
- th_gensokyo_io_notorious_tier3_auto_modifier: "国際的な孤児"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc: "悪名が70以上となると、此の国は幻想郷の社会から疎まれ排除される。外交評判-4、関係改善-50%。"
+ th_gensokyo_io_notorious_tier3_auto_modifier: "鍥介殯鐨勩仾瀛ゅ厫"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "鎮悕銇?0浠ヤ笂銇ㄣ仾銈嬨仺銆佹銇浗銇够鎯抽兎銇ぞ浼氥亱銈夌枎銇俱倢鎺掗櫎銇曘倢銈嬨€傚浜よ鍒?4銆侀枹淇傛敼鍠?50%銆?
 
- th_gensokyo_io_notorious_tier4_auto_modifier: "裁きの待ち人"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc: "悪名が80以上となると、閻魔と賢者は更なる審議を経ずして懲罰戦争を宣告し得る。外交評判-6、関係改善-75%。"
+ th_gensokyo_io_notorious_tier4_auto_modifier: "瑁併亶銇緟銇′汉"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "鎮悕銇?0浠ヤ笂銇ㄣ仾銈嬨仺銆侀柣榄斻仺璩㈣€呫伅鏇淬仾銈嬪璀般倰绲屻仛銇椼仸鎳茬桨鎴︿簤銈掑鍛娿仐寰椼倠銆傚浜よ鍒?6銆侀枹淇傛敼鍠?75%銆?
 
- ### 静的修正（賢者威信五段）
- STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "賢者の端緒"
- STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "賢者の意志が兆し始める。税収効率+3%、月間威信+0.05。"
+ ### 闈欑殑淇锛堣尝鑰呭▉淇′簲娈碉級
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "璩㈣€呫伄绔窉"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "璩㈣€呫伄鎰忓織銇屽厗銇楀銈併倠銆傜◣鍙庡姽鐜?3%銆佹湀闁撳▉淇?0.05銆?
 
- STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "賢者の凝聚"
- STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "賢者の号令が合意となる。税収効率+5%、月間威信+0.08、関係改善+15%、外交評判+1。"
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "璩㈣€呫伄鍑濊仛"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "璩㈣€呫伄鍙蜂护銇屽悎鎰忋仺銇倠銆傜◣鍙庡姽鐜?5%銆佹湀闁撳▉淇?0.08銆侀枹淇傛敼鍠?15%銆佸浜よ鍒?1銆?
 
- STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "賢者の威厳"
- STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "賢者の裁定は諸国に畏敬を与える。税収効率+8%、月間威信+0.10、関係改善+20%、人的資源+5%。"
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "璩㈣€呫伄濞佸幊"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "璩㈣€呫伄瑁佸畾銇鍥姐伀鐣忔暚銈掍笌銇堛倠銆傜◣鍙庡姽鐜?8%銆佹湀闁撳▉淇?0.10銆侀枹淇傛敼鍠?20%銆佷汉鐨勮硣婧?5%銆?
 
- STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "賢者の崇敬"
- STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "賢者の意志は大結界の如く揺るがぬ。税収効率+10%、月間威信+0.20、関係改善+25%、人的資源+10%、外交評判+1、安定投資+10%。"
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "璩㈣€呫伄宕囨暚"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "璩㈣€呫伄鎰忓織銇ぇ绲愮晫銇銇忔徍銈嬨亴銇€傜◣鍙庡姽鐜?10%銆佹湀闁撳▉淇?0.20銆侀枹淇傛敼鍠?25%銆佷汉鐨勮硣婧?10%銆佸浜よ鍒?1銆佸畨瀹氭姇璩?10%銆?
 
- STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "賢者の神話"
- STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三賢者の名は伝説となる。税収効率+15%、月間威信+0.30、関係改善+35%、人的資源+15%、外交評判+2、全域防御+10%。賢者は戦争への介入と平和の強制を行い得る。"
-### === 賢者の議会の政策 ===
- STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "大結界の強化"
- STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "防御+10%、安定度コスト-5%。"
- STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "幻想郷団結の憲章"
- STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "威信+0.1/月、関係改善+15%、外交名声+1。"
- STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "賢者の会議改革"
- STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "税収+10%、人的資源+10%。"
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "璩㈣€呫伄绁炶┍"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "涓夎尝鑰呫伄鍚嶃伅浼濊銇ㄣ仾銈嬨€傜◣鍙庡姽鐜?15%銆佹湀闁撳▉淇?0.30銆侀枹淇傛敼鍠?35%銆佷汉鐨勮硣婧?15%銆佸浜よ鍒?2銆佸叏鍩熼槻寰?10%銆傝尝鑰呫伅鎴︿簤銇搞伄浠嬪叆銇ㄥ钩鍜屻伄寮峰埗銈掕銇勫緱銈嬨€?
+### === 璩㈣€呫伄璀颁細銇斂绛?===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "澶х祼鐣屻伄寮峰寲"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "闃插尽+10%銆佸畨瀹氬害銈炽偣銉?5%銆?
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "骞绘兂閮峰洠绲愩伄鎲茬珷"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "濞佷俊+0.1/鏈堛€侀枹淇傛敼鍠?15%銆佸浜ゅ悕澹?1銆?
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "璩㈣€呫伄浼氳鏀归潻"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "绋庡弾+10%銆佷汉鐨勮硣婧?10%銆?
+
+### ============================================================
+### WP-A 2026-08-15: 璩㈣€呭▉淇°儠銈┿兗銉炪儍銉堬紙娆犺惤銉愩偘淇锛?
+### ============================================================
+ TH_SAGES_PRESTIGE_FORMAT: "$VAL$"
+
+### ============================================================
+### WP-G 2026-08-15: 鍗氶簵澶х祼鐣?涓牳娉曪紙搂7锛?
+### ============================================================
+ th_gensokyo_barrier_law: "鍗氶簵澶х祼鐣?
+ th_gensokyo_barrier_law_desc: "骞绘兂閮枫倰澶栫晫銇嬨倝闅斻仸銈嬭嚦楂樸伄绲愮晫銆傚叏浜旂礆銇傘倞銆佺礆銇岄珮銇勩伝銇╃祼鐣屻伅瀹夊畾銇椾繚瀹堢殑銇仾銈嬨€傘亾銇硶銇◣璀般倓鎸囧皫鑰呫伄鏀瑰畾銇с伅澶夈亪銈夈倢銇氥€佸ぇ浜嬩欢銇伩銇屽嫊銇嬨仚銆?
+ th_gensokyo_barrier_fantasy_policy: "绲愮晫銉诲够鎯筹紙浜旂礆锛?
+ th_gensokyo_barrier_fantasy_policy_desc: "绲愮晫銇叏鐩涖€佹渶銈備繚瀹堢殑锛氶槻寰″ぇ骞呭銆佺З搴忓畨瀹氥€佸闈┿伅閬呫亜銆?
+ th_gensokyo_barrier_profound_policy: "绲愮晫銉绘繁閭冿紙鍥涚礆锛?
+ th_gensokyo_barrier_profound_policy_desc: "鍫呭浐銇祼鐣岋細闃插尽銇ㄧЗ搴忋伅鑹ソ銆?
+ th_gensokyo_barrier_flourish_policy: "绲愮晫銉荤箒鑻憋紙涓夌礆锛?
+ th_gensokyo_barrier_flourish_policy_desc: "瀹夊畾銇椼仧绲愮晫銆佸熀婧栥仺銇倠娈甸殠銆?
+ th_gensokyo_barrier_forgotten_policy: "绲愮晫銉婚伜蹇橈紙浜岀礆锛?
+ th_gensokyo_barrier_forgotten_policy_desc: "琛般亪銈嗐亸绲愮晫锛氶槻寰°仺绉╁簭銇岀珐銇垮銈併倠銆?
+ th_gensokyo_barrier_extinct_policy: "绲愮晫銉绘粎灏斤紙涓€绱氾級"
+ th_gensokyo_barrier_extinct_policy_desc: "绲愮晫銇穿澹婂鍓嶏細绉╁簭銇徍銈夈亷銆侀槻寰°伅澶便倧銈屻倠銆?
+ th_gensokyo_barrier_level: "澶х祼鐣屻伄绛夌礆"
+ th_gensokyo_barrier_level_desc: "鍗氶簵澶х祼鐣屻伄鐝惧湪銇挤搴︼紙1-5锛夈€傜瓑绱氥亴楂樸亜銇汇仼淇濆畧鐨勩仹瀹夊畾銇椼€佸ぇ浜嬩欢銇伩銇屻亾銈屻倰澶夈亪寰椼倠銆?
+ TH_GENSOKYO_BARRIER_LEVEL_FORMAT: "$VAL$"
+ TH_GENSOKYO_BARRIER_BASE: "绲愮晫銇董鎸?
+
+### ============================================================
+### WP-D 2026-08-15: 骞绘兂閮峰唴鎷″嫉銇璜嬶紙搂3.1锛?
+### ============================================================
+ th_gensokyo_request_expansion: "骞绘兂閮峰唴鎷″嫉銈掕璜?
+ th_gensokyo_request_expansion_desc: "璩㈣€呫伀骞绘兂閮峰唴銇с伄鎷″嫉瑷卞彲銈掓眰銈併倠锛氥伨銇氳尝鑰呫倰閬搞伋銆佹銇嚜闋樸伀闅ｆ帴銇欍倠鍦扮偣銈掗伕銇躲€備汉闁撱伄閲屻仺銆佽璜嬨仐銇熻尝鑰呰嚜韬伄闋樺湡銇繚璀枫仌銈岃珛姹傘仹銇嶃仾銇勩€傝尝鑰呫亴鎵胯獚銇欍倢銇板鎴﹀竷鍛婂悕鍒嗐倰寰椼€佹嫆鍚︺仚銈屻伆涔卞績銇幃銈併倰寰椼倠銆?
+ th_gensokyo_sage_expansion_cb: "璩㈣€呭叕瑾嶃伄鎷″嫉"
+ th_gensokyo_sage_expansion_cb_PROV: "璩㈣€呭叕瑾嶃伄鎷″嫉锛堝璞″湴鐐癸級"
+ th_gensokyo_sage_expansion_cb_desc: "璩㈣€呫伄瑾嶅彲銈掑緱銇熸嫛寮垫垿浜夛細鍓茶銇垿浜夌偣鏁般偝銈广儓+75%銆佺嵅寰椼仚銈嬫暤鎰?40%銆?
+ opinion_gensokyo_expansion_approved: "璩㈣€呫亴鎷″嫉銈掕獚鍙?
+ opinion_gensokyo_expansion_declined: "鎷″嫉瑕佽珛銇屾嫆鍚︺仌銈屻仧"
+
+### ============================================================
+### WP-E 2026-08-15: 瀹翠細浼氬牬銇湴鍩熷姽鏋滐紙搂4锛?
+### ============================================================
+ th_gensokyo_feast_location_modifier: "瀹淬伄浣欓熁"
+ th_gensokyo_feast_location_modifier_desc: "銇撱亾銇х洓澶с仾瀹淬亴闁嬨亱銈屻仧銇般亱銈娿€傜敓鐢ｃ倐浜哄績銈傞紦鑸炪仌銈屻仸銇勩倠銆?
+ opinion_gensokyo_feast_guest: "瀹淬伄濂芥剰"
+
+### ============================================================
+### WP-H 2026-08-15: 瀵╁垽鎶曠エ銇ㄦ嚥鎴掋伄瑁滃畬锛埪?锛?
+### ============================================================
+ th_gensokyo_trial_vote: "鍒ゆ焙銇偩鍚戠エ銈掓姇銇樸倠"
+ th_gensokyo_trial_vote_desc: "鎳叉垝鎴︿簤銇弬鍔犮仐銇熶竴鍝°仺銇椼仸鍒ゆ焙銇偩鍚戯紙瀵涘ぇ/涓焊/鍘崇桨锛夈倰琛ㄦ槑銇欍倠銆傘亾銇姇绁ㄣ伅姘戞剰銈掔ず銇欍伄銇裤仹銆侀柣榄斻伄鏈€绲傝瀹氥伀銇奖闊裤仐銇亜銆?
+ th_gensokyo_bankruptcy_modifier: "鐮寸敚銇桨"
+ th_gensokyo_bankruptcy_modifier_desc: "闁婚瓟銇岃銇椼仧璩犲劅銇屽浗搴倰绌恒伀銇椼€佺祵娓堛伅鍕曟徍銇欍倠銆?
+ th_gensokyo_sanction_immunity: "鍒惰鍏嶉櫎鏈熼枔"
+ th_gensokyo_sanction_immunity_desc: "銇撱伄鍥姐伅鎳叉垝鎴︿簤銇€嗚虎鍕濆埄銇椼仧銆傚够鎯抽兎銇鍥姐伅20骞撮枔銇撱倢銈掑埗瑁併仹銇嶃仾銇勩€?
+ TH_TRIAL_PHASE_LABEL: "瀵╁垽娈甸殠"
+ TH_TRIAL_VOTE_MONTHS_LABEL: "娈嬨倞鎶曠エ鏈堟暟"
+ TH_TRIAL_VOTE_TALLY_LABEL: "鎶曠エ闆嗚▓锛堟皯鎰忋伄銇裤€佸垽姹恒伀褰遍熆銇涖仛锛?
+ TH_TRIAL_VOTE_MERCY: "瀵涘ぇ锛堝嫥鍠勫瘎銈婏級"
+ TH_TRIAL_VOTE_ORDER: "涓焊锛堟湁鍙欏瘎銈婏級"
+ TH_TRIAL_VOTE_KARMA: "鍘崇桨锛堝洜鏋滃瘎銈婏級"
+
+### ============================================================
+### WP-D 2026-08-15: 鎷″嫉瑕佽珛銇瀹氥偆銉欍兂銉堬紙搂3.1锛?
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "鎷″嫉銇璜?
+ th_gensokyo_expansion_request_events.1.desc: "銇傘倠鍥姐亴骞绘兂閮峰唴銇с伄鎷″嫉瑷卞彲銈掓眰銈併€佽尝鑰呫仹銇傘倠銇傘仾銇熴伄瑁佸彲銈掕珛銇嗐仸銇勩倠銆傚鎴﹀竷鍛婂悕鍒嗐倰鎺堛亼銈嬨亾銇ㄣ倐銆佹垝銈併仺銇椼仸鎷掋個銇撱仺銈傘仹銇嶃倠銆?
+ th_gensokyo_expansion_request_events.1.a: "瑾嶅彲锛氭嫛寮点伄瀹ｆ垿甯冨憡鍚嶅垎銈掓巿銇戙倠"
+ th_gensokyo_expansion_request_events.1.b: "鎷掑惁锛氳ū鍙仜銇氾紙瑕佽珛鑰呫伄涔卞績銇皯銇楅幃銇俱倠锛?
+ th_gensokyo_expansion_request_events.2.title: "璩㈣€呫亴鎷″嫉銈掕獚鍙?
+ th_gensokyo_expansion_request_events.2.desc: "璩㈣€呫亴鎷″嫉瑕佽珛銈掕獚鍙仐銇熴€傚璞″湴鐐广伕銇鎴﹀竷鍛婂悕鍒嗐倰寰椼仧锛氬壊璀层伄鎴︿簤鐐规暟銈炽偣銉?75%銆佺嵅寰椼仚銈嬫暤鎰?40%銆?
+ th_gensokyo_expansion_request_events.2.a: "鎵跨煡銇椼仧"
+ th_gensokyo_expansion_request_events.3.title: "鎷″嫉瑕佽珛銇屾嫆鍚︺仌銈屻仧"
+ th_gensokyo_expansion_request_events.3.desc: "璩㈣€呫伅鎷″嫉瑕佽珛銈掓嫆鍚︺仐銆佷贡蹇冦倰閹倎銈嬨倛銇嗚銇椼仧銆備贡銇搞伄鍌俱亶銇倓銈勪笅銇屻倞銆佽尝鑰呫伄銇傘仾銇熴伕銇鏂广倐澶夈倧銇ｃ仧銆?
+ th_gensokyo_expansion_request_events.3.a: "鏁欍亪銈掕兏銇埢銈€"
+
+### ============================================================
+### WP-H 2026-08-15: 瀵╁垽鎶曠エ銈ゃ儥銉炽儓 + 璩犲劅鍒ゆ焙锛埪?锛?
+### ============================================================
+ th_gensokyo_trial_vote_events.1.title: "鍒ゆ焙銇偩鍚戞姇绁?
+ th_gensokyo_trial_vote_events.1.desc: "闁婚瓟銇岀洰妯欏浗銇姜銈掗噺銇ｃ仸銇勩倠銆傘亗銇仧銇垽姹恒伄鍌惧悜銈掕〃鏄庛仹銇嶃倠鈥斺€斻亾銇姇绁ㄣ伅姘戞剰銈掔ず銇欍伄銇裤仹銆佹渶绲傝瀹氥伀銇奖闊裤仐銇亜銆?
+ th_gensokyo_trial_vote_events.1.a: "瀵涘ぇ銇細鍠勩伕銇ㄨ銇?
+ th_gensokyo_trial_vote_events.1.b: "涓焊銇細绉╁簭銇緭銇勬柇銇氥倠"
+ th_gensokyo_trial_vote_events.1.c: "鍘崇桨銇細鍥犳灉銆佸繀銇氬繙鍫便仚"
+ th_gensokyo_trial_events.1.e: "璩犲劅銇伩锛氬浗搴伄鍗婂垎銈掔Щ璀层仐鐮寸敚銇桨銈掕銇?

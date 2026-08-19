@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
 
 ### Gensokyo International Organization — Localization
 
@@ -33,6 +33,7 @@
 
 ### === IO Variable Format ===
  TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ TH_SAGES_PRESTIGE_FORMAT: "$VAL$"
 
 ### === IO Variable Monthly Change Descriptions ===
  TH_GENSOKYO_UNITY_BASE: "Base Maintenance"
@@ -184,3 +185,57 @@
  TH_SAGES_MAIN_ACTIONS: "Sages' Council Actions"
  TH_SAGES_DEBATE_TITLE: "Sages' Debate Hall"
  TH_SAGES_DEBATE_PLACEHOLDER: "Parliamentary debates and law proposals from the nations of Gensokyo will be displayed here.\nComing in a future update."
+
+### ============================================================
+### WP-G 2026-08-15: Hakurei Great Barrier core law (§7)
+### ============================================================
+ th_gensokyo_barrier_law: "Hakurei Great Barrier"
+ th_gensokyo_barrier_law_desc: "The supreme barrier that separates Gensokyo from the outside world. It has five levels; the higher the level, the more stable and conservative it becomes. This law cannot be changed through debate or by its leader — only by great events."
+ th_gensokyo_barrier_fantasy_policy: "Barrier · Fantasy (Level 5)"
+ th_gensokyo_barrier_fantasy_policy_desc: "The barrier at its zenith, most conservative: great defense, firm order, slow change."
+ th_gensokyo_barrier_profound_policy: "Barrier · Profound (Level 4)"
+ th_gensokyo_barrier_profound_policy_desc: "A firm barrier: solid defense and order."
+ th_gensokyo_barrier_flourish_policy: "Barrier · Flourish (Level 3)"
+ th_gensokyo_barrier_flourish_policy_desc: "A steady barrier, the baseline."
+ th_gensokyo_barrier_forgotten_policy: "Barrier · Forgotten (Level 2)"
+ th_gensokyo_barrier_forgotten_policy_desc: "A waning barrier: defense and order begin to loosen."
+ th_gensokyo_barrier_extinct_policy: "Barrier · Extinct (Level 1)"
+ th_gensokyo_barrier_extinct_policy_desc: "The barrier teeters on collapse: order wavers and defense is gone."
+ th_gensokyo_barrier_level: "Barrier Level"
+ th_gensokyo_barrier_level_desc: "The current strength of the Hakurei Great Barrier (1-5). The higher the level, the more conservative and stable; only great events may change it."
+ TH_GENSOKYO_BARRIER_LEVEL_FORMAT: "$VAL$"
+ TH_GENSOKYO_BARRIER_BASE: "Barrier Maintenance"
+
+### ============================================================
+### WP-D 2026-08-15: Request expansion within Gensokyo (§3.1)
+### ============================================================
+ th_gensokyo_request_expansion: "Request Expansion within Gensokyo"
+ th_gensokyo_request_expansion_desc: "Request a sage's permission to expand within Gensokyo: first choose a sage, then a location adjacent to your territory. The Human Village and the chosen sage's own lands are protected and cannot be claimed; if the sage approves you gain a casus belli, if declined your chaotic heart is tempered as compensation."
+ th_gensokyo_sage_expansion_cb: "Sage-Approved Expansion"
+ th_gensokyo_sage_expansion_cb_PROV: "Sage-Approved Expansion (target location)"
+ th_gensokyo_sage_expansion_cb_desc: "A war of expansion sanctioned by a sage: ceding provinces in peace costs +75% war score, and antagonism gained is reduced by 40%."
+ opinion_gensokyo_expansion_approved: "Expansion Approved by Sage"
+ opinion_gensokyo_expansion_declined: "Expansion Request Refused"
+
+### ============================================================
+### WP-E 2026-08-15: Feast venue local boon (§4)
+### ============================================================
+ th_gensokyo_feast_location_modifier: "Afterglow of the Feast"
+ th_gensokyo_feast_location_modifier_desc: "A grand feast was recently held here; all things rejoice, and production and spirits are uplifted."
+ opinion_gensokyo_feast_guest: "Favor of the Feast"
+
+### ============================================================
+### WP-H 2026-08-15: Trial voting and crusade completion (§6)
+### ============================================================
+ th_gensokyo_trial_vote: "Cast a Verdict Preference Vote"
+ th_gensokyo_trial_vote_desc: "As a member who took part in the punitive war, voice your preference for the verdict (lenient/moderate/severe). This vote only reflects opinion and does not affect the Yama's final ruling."
+ th_gensokyo_bankruptcy_modifier: "Punishment of Bankruptcy"
+ th_gensokyo_bankruptcy_modifier_desc: "The reparations imposed by the Yama emptied the treasury, casting the economy into turmoil."
+ th_gensokyo_sanction_immunity: "Sanction Immunity"
+ th_gensokyo_sanction_immunity_desc: "This country triumphed against the punitive war; Gensokyo's nations may not sanction it for 20 years."
+ TH_TRIAL_PHASE_LABEL: "Trial Phase"
+ TH_TRIAL_VOTE_MONTHS_LABEL: "Months of Voting Left"
+ TH_TRIAL_VOTE_TALLY_LABEL: "Vote Tally (opinion only, does not affect the verdict)"
+ TH_TRIAL_VOTE_MERCY: "Lenient (Mercy lean)"
+ TH_TRIAL_VOTE_ORDER: "Moderate (Order lean)"
+ TH_TRIAL_VOTE_KARMA: "Severe (Karma lean)"

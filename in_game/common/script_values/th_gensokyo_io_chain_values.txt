@@ -1,18 +1,21 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 链条系统 集中数值（平衡调整入口）
 ### 数值均为初值，标注待调
 ### ============================================================
 
 ### 价值观（亲善 <-> 好战，社会价值观尺度 -100 ~ +100，左=亲善/负值，右=好战/正值）
 ### 原恶名变量（0-100）已迁移：societal_value = 2*恶名 - 100
-th_notorious_decay_monthly_value = { value = -2 }        # 月度自然趋向亲善（原恶名衰减 -1 → -2，待调）
+### WP-B 2026-08-15：月度自然衰减已停用（设计文档：价值观"一般不会变动"），
+### 此值保留供恢复自动衰减时使用（原 -2/月，趋向缘）
+th_notorious_decay_monthly_value = { value = -2 }        # （停用）月度自然趋向亲善（原恶名衰减 -1 → -2，待调）
 th_notorious_pariah_threshold_value = { value = 0 }      # 弃民一档阈值（原恶名50 → 0，待调）
 th_notorious_outcast_threshold_value = { value = 50 }    # 弃民二档阈值（原恶名75 → +50，待调）
 th_contribution_pariah_multiplier_value = { value = 0.7 }   # 弃民一档贡献获取系数 x0.7（待调）
 th_contribution_outcast_multiplier_value = { value = 0.4 }  # 弃民二档贡献获取系数 x0.4（待调）
 
 ### 宴会（花费走 common/prices/th_gensokyo_feast_price，CD 写死 12 月）
-th_feast_notorious_reduction_value = { value = -20 }        # 宴会趋向亲善（原减恶名 10 → -20，待调）
+### WP-E 2026-08-15：-20 → -10（本地增益/外交改善补偿部分缘收益，待调）
+th_feast_notorious_reduction_value = { value = -10 }        # 宴会趋向亲善（原减恶名 10 → -20 → 现 -10，待调）
 
 ### 扩张限制
 th_expansion_quota_limit_value = { value = 4 }             # 合法扩张配额上限 2-4（待调）
@@ -23,6 +26,10 @@ th_expansion_unlawful_unity_value = { value = 2 }          # 非法扩张扣团�
 th_expansion_cost_unauthorized_value = { value = 1.5 }     # 独自议会扩张代价 x1.5（待调）
 th_expansion_cost_incident_value = { value = 1.25 }        # 异变扩张代价 x1.25（待调）
 th_expansion_cost_authorized_value = { value = 0.25 }      # 贤者授权扩张代价 x0.25（待调）
+
+### WP-F 2026-08-15（设计文档《国际组织》§3.0/§5）：征服与割让
+th_gensokyo_conquest_chaos_per_location_value = { value = 0.5 }   # 征服幻想乡地块 → 乱倾向 +0.5/地块（§5，待调）
+th_gensokyo_cede_antagonism_extra_value = { value = 75 }          # 被割让追加敌意层（§3.0 时代接口；默认由 IO 字段承担，本层待时代系统启用）
 
 ### 惩戒战争
 th_crusade_antagonism_threshold_value = { value = 50 }     # 提案敌意阈值（待调）
@@ -38,6 +45,7 @@ th_join_contribution_value = { value = 5 }                 # 加入惩戒战争�
 th_unity_crusade_settled_value = { value = 5 }             # 惩戒战争平息奖励团结（C2）
 
 ### 团结度
+th_unity_sentence_t0_value = { value = 3 }              # 仅赔款破产扣团结（WP-H 档0，待调）
 th_unity_sentence_t1_value = { value = 5 }               # 轻判扣团结（待调）
 th_unity_sentence_t2_value = { value = 10 }              # 中判扣团结（待调）
 th_unity_sentence_t3_value = { value = 15 }              # 重判扣团结（待调）
