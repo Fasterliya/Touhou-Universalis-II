@@ -132,7 +132,30 @@ organization_panel = {
                 blockoverride "ios_information_header_content_extra_2" {
                     using = ios_header_content_extra_template
                     blockoverride "ios_header_content_extra" {
-                        ### tooltipwidget 包裹带尺寸内容 → 可悬停交互
+                        ### 修复 2026-08-19：tooltipwidget 只允许单一子节点（tooltip 类型），
+                        ### 显示内容 hbox 作为兄弟节点（原版/社区模组惯例）。
+                        ### 原实现把 hbox 包进 tooltipwidget 导致
+                        ### "Malformed item desc, item descriptions can only contain a single child"
+                        hbox = {
+                            spacing = 4
+                            text_single = {
+                                margin_right = 4 autoresize = yes align = right fontsize = 13
+                                raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
+                            }
+                            widget = {
+                                size = { 25 25 }
+                                using = organization_piechart_template
+                                blockoverride "organization_piechart_value" {
+                                    value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
+                                }
+                                blockoverride "organization_piechart_max_value" {
+                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
+                                }
+                                blockoverride "organization_piechart_icon" {
+                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
+                                }
+                            }
+                        }
                         tooltipwidget = {
                             ContextualTooltipType = {
                                 blockoverride "title_icon_texture" {
@@ -144,26 +167,6 @@ organization_panel = {
                                     vbox = {
                                         spacing = 3
                                         text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_gensokyo_unity_var_desc')]" }
-                                    }
-                                }
-                            }
-                            hbox = {
-                                spacing = 4
-                                text_single = {
-                                    margin_right = 4 autoresize = yes align = right fontsize = 13
-                                    raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
-                                }
-                                widget = {
-                                    size = { 25 25 }
-                                    using = organization_piechart_template
-                                    blockoverride "organization_piechart_value" {
-                                        value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
-                                    }
-                                    blockoverride "organization_piechart_max_value" {
-                                        value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
-                                    }
-                                    blockoverride "organization_piechart_icon" {
-                                        texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
                                     }
                                 }
                             }
