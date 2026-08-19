@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 贤者授权扩张 — 裁决事件链（WP-D 2026-08-15）
 ### .1 贤者裁决（同意/拒绝）  .2 请求者通知（同意）  .3 请求者通知（拒绝）
 ### 标记法：th_gensokyo_expansion_requester_mark（请求者，挂起）
@@ -18,7 +18,8 @@ th_gensokyo_expansion_request_events.1 = {
     outcome = neutral
 
     trigger = {
-        th_gensokyo_is_sage_trigger
+        ### 裸脚本触发器需 = yes（EU5 1.3 解析要求）
+        th_gensokyo_is_sage_trigger = yes
         any_country = {
             has_variable = th_gensokyo_expansion_requester_mark
         }

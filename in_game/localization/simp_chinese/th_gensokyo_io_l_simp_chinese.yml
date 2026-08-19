@@ -1,4 +1,4 @@
-l_simp_chinese:
+﻿l_simp_chinese:
 
 ### 幻想乡国际组织 — 本地化
 
@@ -211,9 +211,9 @@ l_simp_chinese:
 ### WP-D 2026-08-15：请求幻想乡内扩张（§3.1）
 ### ============================================================
  th_gensokyo_request_expansion: "请求幻想乡内扩张"
- th_gensokyo_request_expansion_desc: "向一位贤者请求在幻想乡内扩张的许可：先选择贤者，再选择一块与己相邻的地块。人间之里与贤者自身的地块受到保护，不可索取；贤者同意将授予宣战理由，拒绝则收敛乱心作为补偿。"
+ th_gensokyo_request_expansion_desc: "向一位贤者请求在幻想乡内扩张的许可"
  th_gensokyo_sage_expansion_cb: "贤者授权的扩张"
- th_gensokyo_sage_expansion_cb_PROV: "贤者授权的扩张（目标地块）"
+ th_gensokyo_sage_expansion_cb_PROV: "选择幻想乡内扩张的目标地点"
  th_gensokyo_sage_expansion_cb_desc: "经贤者认可而发动的扩张战争：双方割让省份战争分数花费 +75%，获取的敌意额外减少 40%。"
  opinion_gensokyo_expansion_approved: "贤者认可扩张"
  opinion_gensokyo_expansion_declined: "扩张请求被拒"

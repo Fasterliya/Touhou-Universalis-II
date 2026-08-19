@@ -54,10 +54,11 @@ th_gensokyo_feast = {
                 every_owned_location = {
                     every_neighbor_location = {
                         limit = {
+                            ### ?= 处理无主地块（owner 空链接防护）
                             NOT = {
-                                owner = scope:actor
+                                owner ?= scope:actor
                             }
-                            owner = {
+                            owner ?= {
                                 is_member_of_international_organization = international_organization:th_gensokyo_io
                             }
                         }

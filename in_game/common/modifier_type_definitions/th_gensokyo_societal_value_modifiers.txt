@@ -1,0 +1,24 @@
+﻿### ============================================================
+### 幻想乡社会价值观 — 月度移动 修饰符类型定义（in_game 副本）
+### 2026-08-19：与 main_menu/common/modifier_type_definitions/ 同名文件内容一致。
+### 双目录注册（参考 MEIOU 3735059838 同款模式），确保 in_game 阶段
+### 静态修正校验（progress_cabinet_efficiency）能解析到类型。
+### ============================================================
+
+monthly_towards_th_gensokyo_amity = {
+	color = neutral
+	game_data = {
+		category = country
+		min = 0
+		is_societal_value_change = yes
+	}
+}
+
+monthly_towards_belligerence = {
+	color = neutral
+	game_data = {
+		category = country
+		min = 0
+		is_societal_value_change = yes
+	}
+}
