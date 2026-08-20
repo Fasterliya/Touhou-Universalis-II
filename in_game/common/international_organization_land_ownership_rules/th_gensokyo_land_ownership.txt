@@ -1,52 +1,41 @@
-﻿### ============================================================
-### 幻想乡IO — 持地规则（WP-C 2026-08-15）
-### 设计文档《国际组织》§3.0：
-###   "被割让额外省份战争分数花费+50%" → remove_war_score_modifier = 0.5
-###   （仅在被割让移出 IO 的和平条约中生效，引擎原生，零性能开销）
-### 参考: base game hre_land_ownership.txt / swiss_conferation_land_ownership.txt
-### ============================================================
-
+﻿### 幻想乡 IO 土地所有权规则 — 2026-08-20 整合（修复包 TH_GENSOKYO_IO_LOCATIONS_2026-08-20）
+### 参照：middle_kingdom_land_ownership（纯锁定）+ lordship_of_ireland_land_ownership（陆地护栏）
+### 设计（用户决策 2026-08-20）：开局由 start/th_gensokyo_io.txt 的 regions 块一次性分配
+### 14 个陆地 region（1,930 地点，不含月面）；领地固定（can_add/remove_trigger = no），
+### 即使被非幻想乡国家占领也不脱离 IO；征服挂钩中的 add/remove 调用已同步移除。
+### 官方 readme：land_ownership_rule 规则文件目录；"Land still owned by countries, but extra stuff applies"
 th_gensokyo_land_ownership = {
-    ### 应用于 IO 持有地块的修正（此处留空避免与 remove_war_score_modifier 重复叠加；
-    ### 如需常驻地块修正可填入 location 类修饰符，如 local_war_score_efficiency）
-    modifier = {
-    }
 
-    can_add_trigger = {
-        always = yes
-    }
-    can_remove_trigger = {
-        always = yes
-    }
+	# IO 拥有地点的修正（留空接口）
+	modifier = {
+	}
 
-    ### root = location, recipient = international organization
-    can_add_location_trigger = {
-        is_land = yes
-        is_passable = yes
-        owner ?= {
-            is_member_of_international_organization = scope:recipient
-        }
-    }
+	# 是否可添加地点（root = IO）——领地固定，仅开局 regions 分配
+	can_add_trigger = {
+		always = no
+	}
 
-    ### root = location, recipient = international organization
-    can_remove_location_trigger = {
-        always = yes
-    }
+	# 是否可移除地点（root = IO）
+	can_remove_trigger = {
+		always = no
+	}
 
-    ### root = location, recipient = international organization
-    on_added = {
-    }
+	# 是否可添加此地点（root = location, recipient = IO）——陆地护栏，防海洋误入
+	can_add_location_trigger = {
+		is_land = yes
+		is_passable = yes
+	}
 
-    ### root = location, recipient = international organization
-    on_removed = {
-    }
+	# root = location, recipient = IO（留空接口）
+	on_added = {
+	}
+	on_removed = {
+	}
 
-    ### root = location, recipient = international organization
-    ai_desire_to_add = {
-    }
+	# AI 加入意愿（留空 = 引擎默认）
+	ai_desire_to_add = {
+	}
 
-    ### 仅可通过和平条约从 IO 移出（= "被割让"语义，§3.0）
-    removed_by_peace_treaty = yes
-    ### 被割让移出 IO 时战争分数花费 +50%
-    remove_war_score_modifier = 0.5
+	# 外交地图 IO 持地条带色（start map_color hsv360 {45 40 60} 的 RGB 近似）
+	owned_location_color = rgb { 153 138 92 }
 }

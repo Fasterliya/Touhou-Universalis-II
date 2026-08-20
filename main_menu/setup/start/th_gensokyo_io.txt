@@ -24,10 +24,15 @@ international_organization_manager = {
 		
 		leader = T25
 		
-		### WP-C 2026-08-15：已补 land_ownership_rule（th_gensokyo_land_ownership），
-		### 恢复 regions 块（此前因无持地规则报 1478 次 "Trying to add a location to
-		### an IO that doesn't have a land ownership rule" 而注释停用）
-		### 2026-08-19：补 th_heaven_region → 14 区域，与 th_gensokyo_is_gensokyo_location_trigger 白名单一致
+		### 2026-08-20 整合（修复包 TH_GENSOKYO_IO_LOCATIONS_2026-08-20）：
+		### 持地规则为锁定式（th_gensokyo_land_ownership：can_add/remove_trigger = no），
+		### 本 regions 块是唯一分配通道；14 个陆地 region（1,930 地点）全部纳入，含天界；
+		### 按设计决策排除 th_moon_region（月面属独立大陆，不属幻想乡）；
+		### 海洋 4 region（th_gensokyo_ocean_*）不列入——IO 持地仅陆地语义
+		### 历史：WP-C 2026-08-15 恢复 regions 块（此前因无持地规则报 1478 次
+		### "Trying to add a location to an IO that doesn't have a land ownership rule"
+		### 而注释停用）；2026-08-19 补 th_heaven_region → 14 区域，
+		### 与 th_gensokyo_is_gensokyo_location_trigger 白名单一致
 		regions = {
 			th_gensokyo_hakurei_region th_gensokyo_makai_region th_gensokyo_human_village_region th_gensokyo_magic_forest_region
 			th_youkai_mountain_western_foot_region th_youkai_mountain_region

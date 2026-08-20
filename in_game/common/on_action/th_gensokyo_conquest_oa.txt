@@ -51,25 +51,10 @@ th_gensokyo_conquest_chaos_pulse = {
             }
         }
         
-        ### WP-C 补全：IO 持地随征服更新（add/remove 均为 IO scope 效果，
-        ### 参照 scripted_effects 中 middle_kingdom 用法）
-        ### 新主为幻想乡成员 → 地块归入幻想乡IO（纳入保护范围）
-        if = {
-            limit = {
-                scope:winner = {
-                    is_member_of_international_organization = international_organization:th_gensokyo_io
-                }
-            }
-            international_organization:th_gensokyo_io = {
-                add_location_to_international_organization = scope:location
-            }
-        }
-        ### 新主非幻想乡成员 → 地块移出幻想乡IO（保护撤销）
-        else = {
-            international_organization:th_gensokyo_io = {
-                remove_location_from_international_organization = scope:location
-            }
-        }
+        ### 2026-08-20 锁定整合（用户决策）：IO 持地规则已改为锁定式
+        ### （th_gensokyo_land_ownership：can_add/remove_trigger = no），开局 regions 块
+        ### 一次性分配后领地固定——即使被非幻想乡国家占领也不脱离 IO；
+        ### 原 WP-C 动态 add/remove 调用已移除（锁定规则下调用会失败）。
         ### 人间之里持地：新主非人间之里成员 → 移出（§3.0/1 保护撤销）
         if = {
             limit = {

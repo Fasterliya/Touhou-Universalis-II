@@ -111,9 +111,10 @@ th_gensokyo_io = {
     antagonism_modifier_for_taking_land_from_member_as_outsider = 0.75
     no_cb_price_modifier_for_fellow_member = 0.75
 
-    # === 持地规则（WP-C 2026-08-15）===
-    # 被割让省份战争分数 +50%（remove_war_score_modifier = 0.5，仅和平条约移出 IO 时生效，
-    # 引擎原生实现，零性能开销）。规则定义见 international_organization_land_ownership_rules/。
+    # === 持地规则 ===
+    # 2026-08-20 整合：锁定式持地（can_add/remove_trigger = no），开局 regions 块
+    # 一次性分配 14 个陆地 region（1,930 地点，不含月面）后领地固定，不随占领变化。
+    # 规则定义见 international_organization_land_ownership_rules/th_gensokyo_land_ownership.txt。
     land_ownership_rule = th_gensokyo_land_ownership
 
     # === 修正 ===
