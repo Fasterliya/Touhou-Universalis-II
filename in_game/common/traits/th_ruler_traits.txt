@@ -6,6 +6,7 @@
 	}
 	modifier = {
 		is_immortal = yes
+		blocked_from_marriage = yes
 	}
 }
 
@@ -17,6 +18,7 @@ touhou_gensokyo_ruler_ciruno_traits = {
 	}
 	modifier = {
 		is_immortal = yes
+		blocked_from_marriage = yes
 		research_speed = 0.05
 	}
 }
