@@ -297,3 +297,6 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  TH_TRIAL_VOTE_MERCY: "관용 (권선 성향)"
  TH_TRIAL_VOTE_ORDER: "적정 (질서 성향)"
  TH_TRIAL_VOTE_KARMA: "엄벌 (인과 성향)"
+
+### === 持地显示（2026-08-21）===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT: "이 지역은 환상향 국제 기구에 속해 있습니다"

@@ -239,3 +239,6 @@
  TH_TRIAL_VOTE_MERCY: "Lenient (Mercy lean)"
  TH_TRIAL_VOTE_ORDER: "Moderate (Order lean)"
  TH_TRIAL_VOTE_KARMA: "Severe (Karma lean)"
+
+### === 持地显示（2026-08-21）===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT: "This location belongs to the Gensokyo International Organization"

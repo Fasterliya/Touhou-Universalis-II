@@ -240,3 +240,6 @@
  TH_TRIAL_VOTE_MERCY: "从宽（劝善倾向）"
  TH_TRIAL_VOTE_ORDER: "适中（有序倾向）"
  TH_TRIAL_VOTE_KARMA: "从严（因果必尝倾向）"
+
+### === 持地显示（2026-08-21）===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT: "此地点属于幻想乡国际组织"
