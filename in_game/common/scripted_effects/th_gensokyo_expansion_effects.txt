@@ -86,10 +86,11 @@ th_gensokyo_expansion_cost_apply_effect = {
 ###  "Undefined event target"，scripted effect 内引用则通过）
 ### ============================================================
 
-### 同意：授予请求者 CB + 标记扩展区域（至多 4 地块，§3.1）
+### 同意：授予请求者 CB（2026-08-19：取消地块 mark 限制与补标逻辑，
+### 割让省份不再受 mark 限定）
 ### 要求 scope:expansion_requester（请求者）与 scope:expansion_target（目标国）
 th_gensokyo_expansion_grant_cb_effect = {
-    ### 1. 授予 CB（针对目标国；可割让地块由 th_gensokyo_expansion_request_mark 限定，至多 4 个）
+    ### 授予 CB（针对目标国；可割让省份不受限）
     scope:expansion_requester = {
         add_casus_belli = {
             target = scope:expansion_target
@@ -101,56 +102,7 @@ th_gensokyo_expansion_grant_cb_effect = {
             days = 1
         }
     }
-    ### 2. 标记扩展区域：目标国与请求者相邻的地块（random 补足至多 3 个，
-    ###    连同 action 已标记的目标地块，总计至多 4 个可割让地块）
-    scope:expansion_target = {
-        random_owned_location = {
-            limit = {
-                NOT = {
-                    has_variable = th_gensokyo_expansion_request_mark
-                }
-                th_gensokyo_is_gensokyo_location_trigger = yes
-                NOT = {
-                    region = region:th_gensokyo_human_village_region
-                }
-                any_neighbor_location = {
-                    owner = scope:expansion_requester
-                }
-            }
-            set_variable = th_gensokyo_expansion_request_mark
-        }
-        random_owned_location = {
-            limit = {
-                NOT = {
-                    has_variable = th_gensokyo_expansion_request_mark
-                }
-                th_gensokyo_is_gensokyo_location_trigger = yes
-                NOT = {
-                    region = region:th_gensokyo_human_village_region
-                }
-                any_neighbor_location = {
-                    owner = scope:expansion_requester
-                }
-            }
-            set_variable = th_gensokyo_expansion_request_mark
-        }
-        random_owned_location = {
-            limit = {
-                NOT = {
-                    has_variable = th_gensokyo_expansion_request_mark
-                }
-                th_gensokyo_is_gensokyo_location_trigger = yes
-                NOT = {
-                    region = region:th_gensokyo_human_village_region
-                }
-                any_neighbor_location = {
-                    owner = scope:expansion_requester
-                }
-            }
-            set_variable = th_gensokyo_expansion_request_mark
-        }
-    }
-    ### 3. 贤者对请求者好感提升
+    ### 贤者对请求者好感提升
     add_opinion = {
         target = scope:expansion_requester
         modifier = opinion_gensokyo_expansion_approved

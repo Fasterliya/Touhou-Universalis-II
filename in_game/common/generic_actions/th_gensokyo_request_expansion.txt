@@ -140,10 +140,9 @@ th_gensokyo_request_expansion = {
                     value = th_gensokyo_request_expansion_prestige_penalty
                 }
             }
-            ### 目标地块标记（= CB 目标依据，保留至 CB 到期/战争结束）
-            ### 目标国标记（贤者事件读取）
+            ### 目标国标记（贤者事件读取；2026-08-19 不再打地块 mark，
+            ### CB 割让限制已取消，地块 mark 无意义且战败不清除易致 bug）
             scope:target_location = {
-                set_variable = th_gensokyo_expansion_request_mark
                 owner = {
                     set_variable = th_gensokyo_expansion_target_owner_mark
                 }

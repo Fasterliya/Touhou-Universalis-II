@@ -57,7 +57,8 @@ th_gensokyo_propose_crusade = {
         ### "Undefined event target"；改用内置 "choose_country"（japanese_shogunate.txt:64 先例），
         ### target_flag 对齐 high_kingship_of_ireland.txt:171 的 target_country
         name = "choose_country"
-        ### 恶名过滤（用户决策 2026-08-14：惩戒由恶名≥50 启动，阈值复用弃民一档）
+        ### 乱价值观过滤（2026-08-19 用户决策：惩戒目标 = 缘与乱偏移 ≥ +50，
+        ### 即弃民二档阈值，用 outcast 标记镜像过滤）
         ### modifier mirror 方案（2026-08-14 实测修复）：interaction_source_list 的 limit
         ### 上下文不吃 var: 数值比较（root.var: 报 "Invalid left side during comparison
         ### 'var'" + "Event target link 'root' returned an unset scope"，1756 次/秒刷屏），
@@ -72,7 +73,7 @@ th_gensokyo_propose_crusade = {
                         NOT = {
                             is_leader_of_international_organization = international_organization:th_gensokyo_io
                         }
-                        has_country_modifier = th_gensokyo_notorious_pariah_modifier
+                        has_country_modifier = th_gensokyo_notorious_outcast_modifier
                         ### WP-H 2026-08-15（设计§6）：免制裁期（20 年）内不可再被惩戒
                         NOT = {
                             has_variable = th_gensokyo_sanction_immunity
@@ -136,7 +137,7 @@ th_gensokyo_propose_crusade = {
     
     ai_will_do = {
         ### B2 修复 2026-08-14：AI 提案倾向同步改恶名驱动（与选国过滤一致，用户决策）：
-        ### 任一成员带弃民标记修正即视为有可惩戒目标（modifier mirror，无 var）
+        ### 任一成员带弃民二档标记即视为有可惩戒目标（modifier mirror，无 var）
         if = {
             limit = {
                 any_international_organization_member = {
@@ -146,7 +147,7 @@ th_gensokyo_propose_crusade = {
                     NOT = {
                         is_leader_of_international_organization = international_organization:th_gensokyo_io
                     }
-                    has_country_modifier = th_gensokyo_notorious_pariah_modifier
+                    has_country_modifier = th_gensokyo_notorious_outcast_modifier
                     ### WP-H：免制裁期内不计为可惩戒目标
                     NOT = {
                         has_variable = th_gensokyo_sanction_immunity

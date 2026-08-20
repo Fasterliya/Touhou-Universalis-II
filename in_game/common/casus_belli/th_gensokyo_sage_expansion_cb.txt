@@ -1,7 +1,9 @@
-﻿### ============================================================
-### 贤者授权扩张 — 宣战理由（WP-D 2026-08-15）
+### ============================================================
+### 贤者授权扩张 — 宣战理由（WP-D 2026-08-15 / 修复 2026-08-19）
 ### 仅由贤者同意事件 add_casus_belli 授予（create_visible/enabled = no）
-### 目标地块 = 持 th_gensokyo_expansion_request_mark 标记的 location
+### 修复 2026-08-19：取消 mark 割让限制——
+###   - declare_enabled = always yes（CB 本身仅由同意事件授予，天然受限）
+###   - 删除 province 触发器（不再限定目标地块；mark 战败不清除易致 bug）
 ### ============================================================
 
 th_gensokyo_sage_expansion_cb = {
@@ -15,18 +17,7 @@ th_gensokyo_sage_expansion_cb = {
     }
 
     declare_enabled = {
-        scope:target = {
-            any_owned_location = {
-                has_variable = th_gensokyo_expansion_request_mark
-            }
-        }
-    }
-
-    ### root = province（CB 选择目标地块时校验，参照 imperial_ban.txt）
-    province = {
-        any_location_in_province = {
-            has_variable = th_gensokyo_expansion_request_mark
-        }
+        always = yes
     }
 
     war_goal_type = th_gensokyo_sage_expansion_war_goal

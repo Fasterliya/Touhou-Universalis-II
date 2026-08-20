@@ -78,6 +78,19 @@ th_gensokyo_notorious_monthly_effect = {
     else = {
         remove_country_modifier = th_gensokyo_notorious_pariah_modifier
     }
+    ### 2026-08-19（问题6）：弃民二档镜像（缘与乱 ≥ +50，惩戒战争目标阈值）
+    if = {
+        limit = {
+            societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_notorious_outcast_modifier
+            years = -1
+        }
+    }
+    else = {
+        remove_country_modifier = th_gensokyo_notorious_outcast_modifier
+    }
     ### 左右法律能力接口
     ### 现状无落点：普通成员无议会投票权（power=0），IO 法律 requires_vote=no
     ### 待骨架实现"个人影响力→议会投票权重"后，在此按价值观档位削减权重

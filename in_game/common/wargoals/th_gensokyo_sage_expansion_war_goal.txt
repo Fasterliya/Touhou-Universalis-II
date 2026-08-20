@@ -1,23 +1,23 @@
-﻿### ============================================================
-### 贤者授权扩张 — 战争目标（WP-D 2026-08-15）
-### 设计文档《国际组织》§3.1：此宣战理由
-###   双方割让省份战争分数花费 +75%（conquer_cost = 1.75）
-###   获取的敌意额外减少 40%（antagonism = 0.6，因子 1.0 为原版标准）
-### 参考: wargoals/00_default.txt fabricated_conquer_province（1.3/1.0）
+### ============================================================
+### 贤者授权扩张 — 战争目标（WP-D 2026-08-15 / 数值修正 2026-08-19）
+### 用户测试确认（2026-08-19）：
+###   - 战争分数花费修正 +150%（conquer_cost = 2.5）
+###   - 敌意影响修正 50%（antagonism = 0.5）
+###   - 防守方与进攻方对等（conquer_cost / antagonism 相同）
+###   - 取消 allowed_locations 的 mark 限制（不再限定可割让地块，
+###     因 mark 战败不清除且可能误伤其他国际标记，改由 CB 层放开）
 ### ============================================================
 
 th_gensokyo_sage_expansion_war_goal = {
     type = take_province
 
     attacker = {
-        conquer_cost = 1.75
-        antagonism = 0.6
-        ### 仅允许索取被标记的目标地块（贤者同意后打标）
-        allowed_locations = {
-            has_variable = th_gensokyo_expansion_request_mark
-        }
+        conquer_cost = 2.5
+        antagonism = 0.5
     }
     defender = {
+        conquer_cost = 2.5
+        antagonism = 0.5
     }
     ticking_war_score = 0.5
 }

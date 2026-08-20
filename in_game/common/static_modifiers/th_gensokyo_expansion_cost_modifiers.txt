@@ -63,3 +63,13 @@ th_gensokyo_notorious_pariah_modifier = {
     }
     monthly_prestige = 0
 }
+
+### 2026-08-19（问题6）：弃民二档标记（缘与乱 ≥ +50，即旧恶名 75）
+### 惩戒战争目标选择改为本标记（societal_value >= th_notorious_outcast_threshold_value）
+### 纯标记修正，无实际数值效果；月度维护见 notorious_effects
+th_gensokyo_notorious_outcast_modifier = {
+    game_data = {
+        category = country
+    }
+    monthly_prestige = 0
+}

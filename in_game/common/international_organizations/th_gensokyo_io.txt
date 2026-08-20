@@ -23,7 +23,9 @@ th_gensokyo_io = {
     # member_color = hsv360 { 45 40 60 }
 
     # === 议会 ===
-    has_parliament = no
+    ### 修复 2026-08-19：has_parliament = yes（原 no 导致 propose_crusade 内联议会
+    ### 创建的议题不被调度；议会类型见 parliament_types/th_gensokyo_io_parliament.txt）
+    has_parliament = yes
     parliament_type = th_gensokyo_io_parliament
     resolution_widget = parliament
 

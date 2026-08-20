@@ -18,7 +18,7 @@ on_took_location_in_peace_treaty = {
 
 th_gensokyo_conquest_chaos_pulse = {
     effect = {
-        ### §5：征服幻想乡地块 → 征服者乱倾向 +0.5/地块
+        ### §5：征服幻想乡地块 → 征服者乱倾向（2026-08-19：+2 正常 / +1 贤者CB战争）
         ### （社会价值观仅对 IO 成员存在；外界征服者无此价值观，跳过）
         scope:winner = {
             if = {
@@ -32,9 +32,21 @@ th_gensokyo_conquest_chaos_pulse = {
                         is_member_of_international_organization = international_organization:th_gensokyo_io
                     }
                 }
-                change_societal_value = {
-                    type = th_gensokyo_amity_vs_belligerence
-                    value = th_gensokyo_conquest_chaos_per_location_value
+                if = {
+                    limit = {
+                        ### 贤者授权扩张CB战争旗标（on_war_declared 打标 / on_ending_war 清除）
+                        has_variable = th_gensokyo_sage_expansion_war_flag
+                    }
+                    change_societal_value = {
+                        type = th_gensokyo_amity_vs_belligerence
+                        value = th_gensokyo_sage_expansion_chaos_per_location_value
+                    }
+                }
+                else = {
+                    change_societal_value = {
+                        type = th_gensokyo_amity_vs_belligerence
+                        value = th_gensokyo_conquest_chaos_per_location_value
+                    }
                 }
             }
         }
@@ -106,6 +118,56 @@ th_gensokyo_conquest_chaos_pulse = {
                     }
                 }
             }
+        }
+    }
+}
+
+### ============================================================
+### 贤者授权扩张CB战争 — 旗标（2026-08-19，问题5）
+### on_took_location_in_peace_treaty 无 scope:war，无法直接识别 CB；
+### 改由宣战/和约钩子打/清旗标（on_war_declared / on_ending_war 均暴露 scope:war）
+### 征服钩子据此给乱进度 +1（贤者CB）而非 +2（正常）
+### ============================================================
+
+### 注册到 on_war_declared（root=宣战国, scope:actor=宣战国, scope:recipient=被宣国, scope:war）
+on_war_declared = {
+    on_actions = {
+        th_gensokyo_sage_cb_war_flag_pulse
+    }
+}
+
+th_gensokyo_sage_cb_war_flag_pulse = {
+    trigger = {
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_sage_expansion_cb
+        }
+    }
+    effect = {
+        scope:actor = {
+            set_variable = th_gensokyo_sage_expansion_war_flag
+        }
+    }
+}
+
+### 注册到 on_ending_war（root=任一方, scope:winner, scope:loser, scope:war）
+on_ending_war = {
+    on_actions = {
+        th_gensokyo_sage_cb_war_flag_clear_pulse
+    }
+}
+
+th_gensokyo_sage_cb_war_flag_clear_pulse = {
+    trigger = {
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_sage_expansion_cb
+        }
+    }
+    effect = {
+        scope:winner = {
+            remove_variable = th_gensokyo_sage_expansion_war_flag
+        }
+        scope:loser = {
+            remove_variable = th_gensokyo_sage_expansion_war_flag
         }
     }
 }
