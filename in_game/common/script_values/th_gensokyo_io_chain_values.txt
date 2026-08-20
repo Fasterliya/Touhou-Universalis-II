@@ -15,7 +15,7 @@ th_contribution_outcast_multiplier_value = { value = 0.4 }  # 弃民二档贡献
 
 ### 宴会（花费走 common/prices/th_gensokyo_feast_price，CD 写死 12 月）
 ### WP-E 2026-08-15：-20 → -10（本地增益/外交改善补偿部分缘收益，待调）
-th_feast_notorious_reduction_value = { value = -10 }        # 宴会趋向亲善（原减恶名 10 → -20 → 现 -10，待调）
+th_feast_notorious_reduction_value = { value = -2 }        # 宴会趋向亲善（原减恶名 10 → -20 → 现 -10，待调）
 
 ### 扩张限制
 th_expansion_quota_limit_value = { value = 4 }             # 合法扩张配额上限 2-4（待调）
@@ -28,7 +28,7 @@ th_expansion_cost_incident_value = { value = 1.25 }        # 异变扩张代价 
 th_expansion_cost_authorized_value = { value = 0.25 }      # 贤者授权扩张代价 x0.25（待调）
 
 ### WP-F 2026-08-15（设计文档《国际组织》§3.0/§5）：征服与割让
-th_gensokyo_conquest_chaos_per_location_value = { value = 0.5 }   # 征服幻想乡地块 → 乱倾向 +0.5/地块（§5，待调）
+th_gensokyo_conquest_chaos_per_location_value = { value = 2 }   # 征服幻想乡地块 → 乱倾向 +0.5/地块（§5，待调）
 th_gensokyo_cede_antagonism_extra_value = { value = 75 }          # 被割让追加敌意层（§3.0 时代接口；默认由 IO 字段承担，本层待时代系统启用）
 
 ### WP-D 2026-08-19：请求扩张花费（发起者支付给对应贤者，§3.1）

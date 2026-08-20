@@ -103,7 +103,7 @@ th_gensokyo_io_human_village_special_status = {
 	
 	modifier = {
 		global_tax_modifier = 0.05
-		global_population_growth = 0.05
+		global_population_capacity_modifier = 0.50
 		# TODO: 后续人工填写人类村落席位修正值
 	}
 	

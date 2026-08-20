@@ -6,28 +6,36 @@
 
 th_gensokyo_propose_crusade = {
     type = internationalorganization
-
+    
     ai_tick = monthly
     ai_tick_frequency = 6
-
+    
     potential = {
         ### P1-12 修复：potential 顶层 root=empty，is_leader 裸挂恒 false → 提案按钮不显示
         scope:actor = {
-            is_leader_of_international_organization = international_organization:th_gensokyo_io
+            OR = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_sages_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+                is_leader_of_international_organization = international_organization:th_gensokyo_io
+            }
         }
     }
-
+    
     allow = {
         international_organization:th_gensokyo_io = {
             NOT = {
                 is_active_parliament = yes
             }
             NOT = {
-                can_see_situation = situation:th_gensokyo_crusade
+                situation:th_gensokyo_crusade = {
+                    situation_is_active = yes
+                }
             }
         }
     }
-
+    
     select_trigger = {
         looking_for_a = international_organization
         source = actor
@@ -40,7 +48,7 @@ th_gensokyo_propose_crusade = {
             international_organization_type = international_organization_type:th_gensokyo_io
         }
     }
-
+    
     select_trigger = {
         looking_for_a = country
         target_flag = target_country
@@ -81,7 +89,7 @@ th_gensokyo_propose_crusade = {
             is_member_of_international_organization = international_organization:th_gensokyo_io
         }
     }
-
+    
     effect = {
         ### 清除旧标记，给目标国打新标记
         scope:recipient = {
@@ -123,9 +131,9 @@ th_gensokyo_propose_crusade = {
             international_organization = scope:recipient
         }
     }
-
+    
     force_click_and_confirm_or_hold = yes
-
+    
     ai_will_do = {
         ### B2 修复 2026-08-14：AI 提案倾向同步改恶名驱动（与选国过滤一致，用户决策）：
         ### 任一成员带弃民标记修正即视为有可惩戒目标（modifier mirror，无 var）

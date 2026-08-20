@@ -14,10 +14,10 @@ th_gensokyo_chain_init_effect = {
         ### 2026-08-14 首月空窗修复：原恶名/贡献/影响力只靠月度兜底补设，
         ### 开局首月点宴会等行动报 S11 家族 "Variable not of the 'value' scope type.
         ### Type: empty"（实测 13:41:13）→ 开局即初始化，月度兜底保留为双保险
-        ### 价值观：开局设定为完全亲善（-100）
+        ### 价值观：开局设定为中立（0）
         set_societal_value = {
             type = th_gensokyo_amity_vs_belligerence
-            value = -100
+            value = 0
         }
         set_variable = {
             name = th_gensokyo_personal_contribution_var
