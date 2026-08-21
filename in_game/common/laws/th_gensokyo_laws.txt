@@ -186,7 +186,7 @@ INJECT:cultural_traditions_law = {
 			culture = { has_culture_group = culture_group:th_gensokyo_youkai_culture_group }
 		}
 		country_modifier = {
-			global_monthly_food_modifier = 0.05
+			cultures_capacity = 1.0
 			monthly_prestige = 0.05
 			global_estate_target_satisfaction = small_permanent_target_satisfaction
 			monthly_towards_traditionalist = societal_value_tiny_monthly_move
