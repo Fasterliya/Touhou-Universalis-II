@@ -111,7 +111,7 @@ th_gensokyo_feast = {
 
     cooldown = {
         type = th_gensokyo_feast
-        months = 12
+        months = 72
     }
 
     ai_will_do = {
