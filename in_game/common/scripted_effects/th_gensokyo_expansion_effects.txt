@@ -114,10 +114,10 @@ th_gensokyo_expansion_grant_cb_effect = {
 th_gensokyo_expansion_decline_effect = {
     scope:expansion_requester = {
         ### 补偿：乱倾向 -5（收敛）
-        change_societal_value = {
-            type = th_gensokyo_amity_vs_belligerence
-            value = -5
-        }
+        # change_societal_value = {
+        #     type = th_gensokyo_amity_vs_belligerence
+        #     value = -5
+        # }
         ### 通知请求者（拒绝）
         trigger_event_non_silently = {
             id = th_gensokyo_expansion_request_events.3

@@ -17,7 +17,7 @@ th_gensokyo_chain_init_effect = {
         ### 价值观：开局设定为中立（0）
         set_societal_value = {
             type = th_gensokyo_amity_vs_belligerence
-            value = 0
+            value = 100
         }
         set_variable = {
             name = th_gensokyo_personal_contribution_var

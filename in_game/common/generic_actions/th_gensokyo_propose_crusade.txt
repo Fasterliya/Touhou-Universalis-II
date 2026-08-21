@@ -73,7 +73,8 @@ th_gensokyo_propose_crusade = {
                         NOT = {
                             is_leader_of_international_organization = international_organization:th_gensokyo_io
                         }
-                        has_country_modifier = th_gensokyo_notorious_outcast_modifier
+                        societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                        # has_country_modifier = th_gensokyo_notorious_outcast_modifier
                         ### WP-H 2026-08-15（设计§6）：免制裁期（20 年）内不可再被惩戒
                         NOT = {
                             has_variable = th_gensokyo_sanction_immunity
