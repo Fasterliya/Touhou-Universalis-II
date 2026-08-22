@@ -10,14 +10,6 @@ th_gensokyo_io = {
     should_show_ruler_history = yes
     show_on_diplomatic_map = yes
 
-    # === 地图直接显示（2026-08-21 修复）===
-    # 参照 base game hre / lordship_of_ireland：IO 持地在常规政治地图上
-    # 以 IO 自身颜色(map_color hsv360{45 40 60}) + 名称叠加显示
-    # （官方类型：show_as_overlord_on_map_trigger，root = member country, scope:recipient = IO）
-    show_as_overlord_on_map_trigger = {
-        always = yes
-    }
-
     # === 领袖 — 彼岸(T25)阎魔席位，start 文件预分配 ===
     has_leader_country = yes
     leader_type = country
@@ -124,17 +116,6 @@ th_gensokyo_io = {
     # 一次性分配 14 个陆地 region（1,930 地点，不含月面）后领地固定，不随占领变化。
     # 规则定义见 international_organization_land_ownership_rules/th_gensokyo_land_ownership.txt。
     land_ownership_rule = th_gensokyo_land_ownership
-
-    # 地点悬停提示（2026-08-21，参照 catholic_church tooltip 字段）：
-    # root = location, scope:recipient = IO；仅 IO 持地时返回一行提示文本
-    tooltip = {
-        if = {
-            limit = {
-                is_owned_by_international_organization = scope:recipient
-            }
-            custom_tooltip = { text = TH_GENSOKYO_IO_OWNED_LOCATION_TT }
-        }
-    }
 
     # === 修正 ===
     # 成员修正 — 所有幻想乡IO成员国
