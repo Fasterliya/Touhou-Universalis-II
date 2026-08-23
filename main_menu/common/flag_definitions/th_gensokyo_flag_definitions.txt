@@ -40,6 +40,13 @@ T06 = {
 	}
 }
 
+T07 = {
+	flag_definition = {
+		coa = T07_start_flag
+		priority = 1
+	}
+}
+
 T08 = {
 	flag_definition = {
 		coa = T08_start_flag
@@ -57,6 +64,13 @@ T09 = {
 T10 = {
 	flag_definition = {
 		coa = T10_start_flag
+		priority = 1
+	}
+}
+
+T11 = {
+	flag_definition = {
+		coa = T11_start_flag
 		priority = 1
 	}
 }
@@ -96,9 +110,23 @@ T18 = {
 	}
 }
 
+T19 = {
+	flag_definition = {
+		coa = T19_start_flag
+		priority = 1
+	}
+}
+
 T20 = {
 	flag_definition = {
 		coa = T20_start_flag
+		priority = 1
+	}
+}
+
+T23 = {
+	flag_definition = {
+		coa = T23_start_flag
 		priority = 1
 	}
 }
@@ -194,6 +222,13 @@ T51 = {
 	}
 }
 
+T52 = {
+	flag_definition = {
+		coa = T52_start_flag
+		priority = 1
+	}
+}
+
 T53 = {
 	flag_definition = {
 		coa = T53_start_flag
@@ -215,6 +250,13 @@ T57 = {
 	}
 }
 
+T58 = {
+	flag_definition = {
+		coa = T58_start_flag
+		priority = 1
+	}
+}
+
 T60 = {
 	flag_definition = {
 		coa = T60_start_flag
@@ -225,6 +267,13 @@ T60 = {
 T62 = {
 	flag_definition = {
 		coa = T62_start_flag
+		priority = 1
+	}
+}
+
+T67 = {
+	flag_definition = {
+		coa = T67_start_flag
 		priority = 1
 	}
 }
@@ -243,6 +292,13 @@ T72 = {
 	}
 }
 
+T74 = {
+	flag_definition = {
+		coa = T74_start_flag
+		priority = 1
+	}
+}
+
 T81 = {
 	flag_definition = {
 		coa = T81_start_flag
@@ -257,6 +313,13 @@ T83 = {
 	}
 }
 
+T87 = {
+	flag_definition = {
+		coa = T87_start_flag
+		priority = 1
+	}
+}
+
 T88 = {
 	flag_definition = {
 		coa = T88_start_flag
@@ -267,6 +330,13 @@ T88 = {
 T89 = {
 	flag_definition = {
 		coa = T89_start_flag
+		priority = 1
+	}
+}
+
+T90 = {
+	flag_definition = {
+		coa = T90_start_flag
 		priority = 1
 	}
 }
