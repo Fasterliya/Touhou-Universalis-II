@@ -1,11 +1,18 @@
 ﻿### ============================================================
 ### 幻想乡 — 等级专属本地化（特殊 key，只对幻想乡国家生效）
-### 数据库对象覆盖必须用 REPLACE: 前缀（普通重复定义会被引擎丢弃）
-### 幻想乡国家 → rank_*_gensokyo；非幻想乡国家 → 通用兜底
+### 2026-08-23 修复（方案 B）：REPLACE: → INJECT:
+###   REPLACE: 会整体替换原版 country_flavor（2741 行 / 200+ 特判块）→
+###   原版苏丹国/贝伊国/汗国/沙皇国等称谓全部退化为普通王国/公国。
+###   INJECT: 仅把本文件 text 块追加到原版对象末尾（原版块全保留）。
+###   ⚠️ 依赖 customizable localization「后定义优先」求值（待实测）：
+###   - 若幻想乡称谓失效（原版无条件兜底先命中）→ 回退方案 A：
+###     以原版 country_ranks.txt 为基底完整复制 + 特判块插入兜底之前。
+### 数据库对象覆盖必须用 REPLACE:/INJECT: 前缀（普通重复定义会被引擎丢弃）
+### 幻想乡国家 → rank_*_gensokyo；非幻想乡国家 → 原版兜底（不再自带）
 ### 势力专属称谓按政府改革触发（优先于通用幻想乡称呼）
 ### ============================================================
 
-REPLACE:country_flavor = {
+INJECT:country_flavor = {
 	type = country
 
 	### ============================================================
@@ -672,27 +679,8 @@ REPLACE:country_flavor = {
 		}
 	}
 
-	### 通用兜底（非幻想乡国家）
-	text = {
-		localization_key = rank_empire
-		trigger = {
-			country_rank_is_empire = yes
-		}
-	}
-	text = {
-		localization_key = rank_kingdom
-		trigger = {
-			country_rank_is_kingdom = yes
-		}
-	}
-	text = {
-		localization_key = rank_duchy
-		trigger = {
-			country_rank_is_duchy = yes
-		}
-	}
-	text = {
-		localization_key = rank_county
-		fallback = yes
-	}
+	### 2026-08-23（方案 B）：通用兜底块已删除——
+	### INJECT 追加在对象末尾，原版无条件兜底（rank_kingdom 等）位于本文件块之前，
+	### mod 自带兜底永不命中（冗余）；非幻想乡国家称谓由原版兜底承担。
+	### 若实测发现引擎「先定义先命中」→ 回退方案 A 时需恢复兜底块。
 }
