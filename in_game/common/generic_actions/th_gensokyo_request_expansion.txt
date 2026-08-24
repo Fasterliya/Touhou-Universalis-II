@@ -57,8 +57,23 @@ th_gensokyo_request_expansion = {
         ### "There is no column to display in this stage of select-interaction-target"
         ### assertion（22:55:05 实证）→ 选国流程失败。
         ### 对齐先例：japanese_shogunate.txt:66-68（choose_country + column）
+        ### 2026-08-23（用户需求）：列 = 旗帜 + 名称 + 人口 + 大国分 + 对 actor 好感度
+        ### （th_country_flag / th_opinion_to_actor 为自定义列，见
+        ###  common/attribute_columns/zz_th_gensokyo.txt；若不支持请回退）
+        column = {
+            data = th_country_flag
+        }
         column = {
             data = name
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = great_power_score
+        }
+        column = {
+            data = th_opinion_to_actor
         }
         interaction_source_list = {
             scope:recipient = {
@@ -92,13 +107,30 @@ th_gensokyo_request_expansion = {
         }
     }
 
-    ### ② 选目标 location — 自身相邻；人间之里/所选贤者地块受保护
+    ### ② 选目标 location — 自身/附属国边境相邻的外国省份（2026-08-23 扩展）
+    ### 2026-08-23（用户需求）：原仅遍历 actor 自身地块的邻居 → 扩展为
+    ### actor 与自身附属国（subjects）的边境共同覆盖的相邻外国省份；
+    ### 人间之里/所选贤者地块仍受保护
+    ### 2026-08-23（用户需求）：列 = 地点名称 + 所有者旗帜 + 人口 + 发展度
     select_trigger = {
         looking_for_a = location
         source = actor
         target_flag = target_location
+        column = {
+            data = name
+        }
+        column = {
+            data = owner_flag
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = development
+        }
         interaction_source_list = {
             scope:actor = {
+                ### 自身边境
                 every_owned_location = {
                     every_neighbor_location = {
                         limit = {
@@ -118,6 +150,37 @@ th_gensokyo_request_expansion = {
                             }
                         }
                         add_to_list = source
+                    }
+                }
+                ### 附属国边境（2026-08-23 扩展：every_subject 内 prev = 附属国，
+                ### every_owned_location 遍历附属国地块，limit 排除 actor 自身地
+                ### 与 actor 附属国地——"外国省份"）
+                every_subject = {
+                    every_owned_location = {
+                        every_neighbor_location = {
+                            limit = {
+                                NOT = {
+                                    owner ?= scope:actor
+                                }
+                                ### 排除附属国自身地块（subject 的邻居含其其它地）
+                                NOT = {
+                                    owner ?= {
+                                        is_subject_of = scope:actor
+                                    }
+                                }
+                                th_gensokyo_is_gensokyo_location_trigger = yes
+                                NOT = {
+                                    region = region:th_gensokyo_human_village_region
+                                }
+                                owner ?= {
+                                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                                    NOT = {
+                                        this = scope:target_sage
+                                    }
+                                }
+                            }
+                            add_to_list = source
+                        }
                     }
                 }
             }
@@ -141,7 +204,9 @@ th_gensokyo_request_expansion = {
             ### 请求者挂起标记（贤者事件裁决后清理）
             scope:actor = {
                 set_variable = th_gensokyo_expansion_requester_mark
-                ### 花费：金币 + 威望（数值见 chain_values，支付给对应贤者）
+                ### 花费：金币 + 威望（2026-08-23 时序调整：发起国先扣——
+                ### 贤者同意后获得（事件 .1 同意 option），拒绝时返还（decline_effect）；
+                ### 数值见 chain_values）
                 add_gold = th_gensokyo_request_expansion_gold_penalty
                 add_prestige = {
                     value = th_gensokyo_request_expansion_prestige_penalty
@@ -154,13 +219,9 @@ th_gensokyo_request_expansion = {
                     set_variable = th_gensokyo_expansion_target_owner_mark
                 }
             }
-            ### 花费支付给对应贤者
-            scope:target_sage = {
-                add_gold = th_gensokyo_request_expansion_gold_cost
-                add_prestige = {
-                    value = th_gensokyo_request_expansion_prestige_bonus
-                }
-            }
+            ### 2026-08-23：花费不再立即支付给贤者——
+            ### 同意 option 内 root（贤者）获得 +200 金 +10 威望；
+            ### 拒绝 option → decline_effect 返还发起国（见 expansion_effects）
             ### 向贤者发起裁决事件
             scope:target_sage = {
                 trigger_event_non_silently = {

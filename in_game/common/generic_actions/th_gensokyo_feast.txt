@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 宴会 — 价值观亲善化途径（WP-E 2026-08-15 重做）
 ### 设计文档《国际组织》§4：花费金币、select location 选择开设地点、
 ### 降低缘价值观偏向的获取、获得更多暂时性本地增益（location 临时修正）、
@@ -38,9 +38,19 @@ th_gensokyo_feast = {
     }
 
     ### WP-E：选址 — 自身地块 或 相邻 IO 成员地块（§4"可以选择相邻国家的领土"）
+    ### 2026-08-23（用户需求）：列 = 地点名称 + 所有者旗帜 + 人口
     select_trigger = {
         looking_for_a = location
         target_flag = venue_location
+        column = {
+            data = name
+        }
+        column = {
+            data = owner_flag
+        }
+        column = {
+            data = population
+        }
         interaction_source_list = {
             scope:actor = {
                 ### 自身地块

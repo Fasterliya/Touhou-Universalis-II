@@ -16,10 +16,8 @@
  th_gensokyo_amity_focus:"Эн (Узы)"
  belligerence_focus:"Ран (Смута)"
 
-### Value tiers
- th_notorious_tier_clean:"Узы Эн"
- th_notorious_tier_pariah:"Смута Ран"
- th_notorious_tier_outcast:"Изгой Генсокё"
+### 2026-08-23: ключи ступенчатой системы модификаторов удалены
+### (th_notorious_tier_clean/pariah/outcast — система удалена вместе с tier auto_modifiers)
 
 ### Feast
  th_gensokyo_feast:"Устроить пир"

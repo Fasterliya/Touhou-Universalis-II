@@ -135,7 +135,10 @@ th_gensokyo_expansion_grant_cb_effect = {
     }
 }
 
-### 拒绝：补偿请求者（乱 -5 + 好感变化），不授予 CB
+### 拒绝：返还费用 + 好感变化，不授予 CB
+### 2026-08-23 时序调整：发起国先扣（action effect），拒绝时全额返还
+### （+200 金 +10 威望 = th_gensokyo_request_expansion_gold_cost /
+###  th_gensokyo_request_expansion_prestige_bonus，带符号正值）
 th_gensokyo_expansion_decline_effect = {
     ### F24：效果内按标记重新定位（root = 裁决贤者）
     every_country = {
@@ -145,11 +148,11 @@ th_gensokyo_expansion_decline_effect = {
         save_scope_as = expansion_requester
     }
     scope:expansion_requester ?= {
-        ### 补偿：乱倾向 -5（收敛）
-        # change_societal_value = {
-        #     type = th_gensokyo_amity_vs_belligerence
-        #     value = -5
-        # }
+        ### 返还费用（拒绝补偿：乱收敛 -5 已废止，改全额退款）
+        add_gold = th_gensokyo_request_expansion_gold_cost
+        add_prestige = {
+            value = th_gensokyo_request_expansion_prestige_bonus
+        }
         ### 通知请求者（拒绝）
         trigger_event_non_silently = {
             id = th_gensokyo_expansion_request_events.3

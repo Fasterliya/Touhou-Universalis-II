@@ -1,0 +1,43 @@
+# ============================================================
+# 幻想乡自定义 attribute column widgets（2026-08-23）
+# 参考 vanilla gui/attribute_columns/country.gui（type country_great_power_score）
+# 与 location.gui（type location_owner_flag = country_flag_small 实例化）
+# 使用方：common/attribute_columns/zz_th_gensokyo.txt（INJECT:country）
+# 注意：column widget 的 datacontext = InteractionTarget（被选对象），
+# 好感度列 GetOpinionOf(GetPlayer) 仅对玩家为 actor 的场景显示正确
+# （AI 场景无 UI 展示，不影响）；排序键在 attribute_columns 内按
+# root.opinion(scope:actor) 计算（对所有 actor 正确）
+# ============================================================
+type th_country_flag = widget {
+	size = { 40 32 }
+
+	sort_by_highlight = {
+		size = { 100% 100% }
+		name = "th_country_flag"
+	}
+	country_flag_small = {
+		parentanchor = center
+		layoutpolicy_vertical = fixed
+		layoutpolicy_horizontal = fixed
+		size = { 35 24 }
+		datacontext = "[InteractionTarget.GetCountry]"
+		blockoverride "hover_leave" {
+			onmousehierarchyleave = "[SelectInteractionTargetGlue.OnMouseLeave(PdxGuiWidget.AccessSelf)]"
+		}
+	}
+}
+
+type th_opinion_to_actor = widget {
+	size = { 70 32 }
+	hbox = {
+		spacing = 5
+		expand = {}
+		margin_right = 10
+		text_single = {
+			align = right|nobaseline
+			size = { 50 28 }
+			autoresize = no
+			text = "[InteractionTarget.GetCountry.GetDiplomacy.GetOpinionOf(GetPlayer)|0]"
+		}
+	}
+}

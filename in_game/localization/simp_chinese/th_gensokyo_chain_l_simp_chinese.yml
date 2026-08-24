@@ -9,10 +9,8 @@
  th_gensokyo_amity_focus: "缘"
  belligerence_focus: "乱"
 
-### 价值观档位
- th_notorious_tier_clean: "缘结和衷"
- th_notorious_tier_pariah: "作乱生乱"
- th_notorious_tier_outcast: "幻想乡弃民"
+### 2026-08-23：阶段性修正系统键已删（th_notorious_tier_clean/pariah/outcast，
+### 随 tier auto_modifiers 一并删除）
 
 ### 宴会
  th_gensokyo_feast: "举办宴会"

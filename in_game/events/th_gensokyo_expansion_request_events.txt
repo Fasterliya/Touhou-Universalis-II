@@ -32,10 +32,16 @@ th_gensokyo_expansion_request_events.1 = {
     }
 
     ### 同意：授予请求者针对目标国的 CB（至多 4 地块）
+    ### 2026-08-23 时序调整：费用在贤者同意时才支付（root = 被请求贤者）
     option = {
         name = th_gensokyo_expansion_request_events.1.a
         ai_chance = {
             base = 90
+        }
+        ### 贤者获得费用（请求发起时已从请求者扣除）
+        add_gold = th_gensokyo_request_expansion_gold_cost
+        add_prestige = {
+            value = th_gensokyo_request_expansion_prestige_bonus
         }
         every_country = {
             limit = {
@@ -63,7 +69,8 @@ th_gensokyo_expansion_request_events.1 = {
         }
     }
 
-    ### 拒绝：不授予 CB，请求者收敛乱倾向（-5）作为补偿
+    ### 拒绝：不授予 CB，费用返还请求者（2026-08-23 时序调整：
+    ### 发起国先扣，拒绝时由 decline_effect 全额返还；不再给予乱收敛补偿）
     option = {
         name = th_gensokyo_expansion_request_events.1.b
         ai_chance = {

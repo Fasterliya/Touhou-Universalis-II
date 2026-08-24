@@ -9,10 +9,8 @@
  th_gensokyo_amity_focus: "En (Bond)"
  belligerence_focus: "Ran (Discord)"
 
-### Value tiers
- th_notorious_tier_clean: "Bond of En"
- th_notorious_tier_pariah: "Discord of Ran"
- th_notorious_tier_outcast: "Outcast of Gensokyo"
+### 2026-08-23: stage-based notorious value modifier keys removed
+### (th_notorious_tier_clean/pariah/outcast — system deleted with tier auto_modifiers)
 
 ### Feast
  th_gensokyo_feast: "Hold a Feast"

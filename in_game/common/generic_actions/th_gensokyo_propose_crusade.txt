@@ -66,8 +66,15 @@ th_gensokyo_propose_crusade = {
         ### 目标/recipient 注入异常 → call_io_parliament "Scope: empty"（16:41:53 实证）。
         ### 对齐先例：japanese_shogunate.txt:66-68（choose_country + column）/
         ### high_kingship_of_ireland.txt:172-175（三列）
+        ### 2026-08-23：补 population / great_power_score 列（国家信息）
         column = {
             data = name
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = great_power_score
         }
         ### 乱价值观过滤（2026-08-19 用户决策：惩戒目标 = 缘与乱偏移 ≥ +50，
         ### 即弃民二档阈值，用 outcast 标记镜像过滤）
