@@ -32,6 +32,7 @@
  TH_CRUSADE_INITIAL_SUPPORT: "Yama's initial support"
  TH_CRUSADE_AI_FOUND_TARGET: "A target with sufficient antagonism exists"
  TH_CRUSADE_AI_ANTAGONISM: "Antagonism towards the crusade target"
+ TH_EXPANSION_AI_TARGET_FOUND: "A sage willing to grant expansion exists"
 
 ### Crusade
  th_gensokyo_crusade_cb: "Punitive Crusade"

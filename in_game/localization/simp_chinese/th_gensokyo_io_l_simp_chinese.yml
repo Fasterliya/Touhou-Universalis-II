@@ -214,6 +214,8 @@
  th_gensokyo_sage_expansion_cb: "贤者授权的扩张"
  th_gensokyo_sage_expansion_cb_PROV: "贤者授权的扩张（[PROVINCE.GetName]）"
  th_gensokyo_sage_expansion_cb_desc: "经贤者认可而发动的扩张战争：双方割让省份战争分数花费 +150%，获取的敌意额外减少 50%。"
+ war_goal_th_gensokyo_sage_expansion_war_goal: "贤者授权扩张"
+ war_goal_th_gensokyo_sage_expansion_war_goal_desc: "经贤者认可而发动的扩张战争：双方割让省份战争分数花费 +150%，获取的敌意额外减少 50%。"
  opinion_gensokyo_expansion_approved: "贤者认可扩张"
  opinion_gensokyo_expansion_declined: "扩张请求被拒"
 

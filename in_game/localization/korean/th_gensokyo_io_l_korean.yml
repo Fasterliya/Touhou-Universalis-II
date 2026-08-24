@@ -270,6 +270,8 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  th_gensokyo_sage_expansion_cb: "현자 승인 확장"
  th_gensokyo_sage_expansion_cb_PROV: "현자 승인 확장 ([PROVINCE.GetName])"
  th_gensokyo_sage_expansion_cb_desc: "현자의 인가를 받은 확장 전쟁: 할양 시 전쟁 점수 비용 +150%, 획득 적대감 -50%."
+ war_goal_th_gensokyo_sage_expansion_war_goal: "현자 승인 확장"
+ war_goal_th_gensokyo_sage_expansion_war_goal_desc: "현자의 인가를 받은 확장 전쟁: 할양 시 전쟁 점수 비용 +150%, 획득 적대감 -50%."
  opinion_gensokyo_expansion_approved: "현자가 확장을 승인함"
  opinion_gensokyo_expansion_declined: "확장 요청 거절됨"
 

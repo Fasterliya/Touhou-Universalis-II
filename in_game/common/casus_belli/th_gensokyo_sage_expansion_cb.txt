@@ -1,9 +1,16 @@
-### ============================================================
-### 贤者授权扩张 — 宣战理由（WP-D 2026-08-15 / 修复 2026-08-19）
+﻿### ============================================================
+### 贤者授权扩张 — 宣战理由（WP-D 2026-08-15 / 修复 2026-08-19 / 修复 2026-08-23）
 ### 仅由贤者同意事件 add_casus_belli 授予（create_visible/enabled = no）
 ### 修复 2026-08-19：取消 mark 割让限制——
 ###   - declare_enabled = always yes（CB 本身仅由同意事件授予，天然受限）
 ###   - 删除 province 触发器（不再限定目标地块；mark 战败不清除易致 bug）
+### 修复 2026-08-23（error.log/game.log 实证）：take_province 类型 CB 必须带
+###   province 过滤器——casus_belli.cpp:234 "th_gensokyo_sage_expansion_cb is a
+###   take_province type of casus belli but doesn't have a province filter" →
+###   CB 无有效省份目标 → 宣战界面不可用（用户实测"无法获得宣战借口"）。
+###   补回放宽版过滤器：目标国（scope:recipient，readme：root=province,
+###   scope:actor=使用者, scope:recipient=目标国）拥有的任意省份即可，
+###   不限定核心/mark（维持 8/19 放开割让限制的设计）。
 ### ============================================================
 
 th_gensokyo_sage_expansion_cb = {
@@ -18,6 +25,15 @@ th_gensokyo_sage_expansion_cb = {
 
     declare_enabled = {
         always = yes
+    }
+
+    ### 2026-08-23：take_province 必需过滤器（放宽版：目标国任意拥有地）
+    ### 先例：parliament_conquest.txt:22 owner = scope:target /
+    ### imperial_ban.txt:34 owner = scope:recipient（两写法等价）
+    province = {
+        any_location_in_province = {
+            owner = scope:recipient
+        }
     }
 
     war_goal_type = th_gensokyo_sage_expansion_war_goal

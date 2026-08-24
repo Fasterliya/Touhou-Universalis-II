@@ -33,6 +33,7 @@
  TH_CRUSADE_INITIAL_SUPPORT: "阎魔发起支持"
  TH_CRUSADE_AI_FOUND_TARGET: "存在敌意达标的惩戒对象"
  TH_CRUSADE_AI_ANTAGONISM: "对惩戒目标的敌意"
+ TH_EXPANSION_AI_TARGET_FOUND: "存在可批准扩张的贤者"
 
 ### 惩戒战争
  th_gensokyo_crusade_cb: "惩戒战争"

@@ -178,7 +178,37 @@ th_gensokyo_request_expansion = {
     }
 
     ai_will_do = {
-        ### AI 极少主动请求（玩家主导），保留极低基线
-        value = 1
+        ### 2026-08-23 修复（用户反馈：AI 几乎不请求扩张，玩家贤者收不到请求）：
+        ### 原 value = 1 极低基线 → AI 从不发起。参照 propose_crusade 条件加权模式：
+        ### 存在可请求贤者（sage 成员、非自己、关系满足 select 过滤同款条件）→ 拉高倾向
+        ### （500 = 温和量级；与 select_trigger interaction_source_list 的 limit 一致，
+        ###  改动需同步：th_gensokyo_is_sage_trigger + opinion>=0 OR is_allied_with）
+        if = {
+            limit = {
+                any_international_organization_member = {
+                    th_gensokyo_is_sage_trigger = yes
+                    NOT = {
+                        this = scope:actor
+                    }
+                    OR = {
+                        opinion = {
+                            target = scope:actor
+                            value >= 0
+                        }
+                        is_allied_with = {
+                            target = scope:actor
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_EXPANSION_AI_TARGET_FOUND
+                value = 500
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
     }
 }

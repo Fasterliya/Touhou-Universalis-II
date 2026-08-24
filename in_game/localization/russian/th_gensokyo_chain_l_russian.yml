@@ -39,6 +39,7 @@
  TH_CRUSADE_INITIAL_SUPPORT:"Изначальная поддержка Ямы"
  TH_CRUSADE_AI_FOUND_TARGET:"Существует цель с достаточной враждебностью"
  TH_CRUSADE_AI_ANTAGONISM:"Враждебность к цели крестового похода"
+ TH_EXPANSION_AI_TARGET_FOUND:"Существует мудрец, готовый одобрить экспансию"
 
 ### Crusade
  th_gensokyo_crusade_cb:"Карательный поход"

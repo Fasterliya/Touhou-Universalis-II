@@ -213,6 +213,8 @@
  th_gensokyo_sage_expansion_cb: "Sage-Approved Expansion"
  th_gensokyo_sage_expansion_cb_PROV: "Sage-Approved Expansion ([PROVINCE.GetName])"
  th_gensokyo_sage_expansion_cb_desc: "A war of expansion sanctioned by a sage: ceding provinces in peace costs +150% war score, and antagonism gained is reduced by 50%."
+ war_goal_th_gensokyo_sage_expansion_war_goal: "Sage-Approved Expansion"
+ war_goal_th_gensokyo_sage_expansion_war_goal_desc: "A war of expansion sanctioned by a sage: ceding provinces in peace costs +150% war score, and antagonism gained is reduced by 50%."
  opinion_gensokyo_expansion_approved: "Expansion Approved by Sage"
  opinion_gensokyo_expansion_declined: "Expansion Request Refused"
 

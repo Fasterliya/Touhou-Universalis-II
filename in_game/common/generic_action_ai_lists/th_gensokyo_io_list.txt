@@ -1,20 +1,36 @@
-﻿acgv_touhou_religion_list = { 
+﻿### ============================================================
+### 幻想乡 AI 行动评估列表（generic_action_ai_lists）
+### generic_actions 的 ai_tick 仅是评估频率，行动必须出现在本列表
+### 才会被 AI 评估（base game 先例：international_organization_list /
+### black_death_list / hussite_wars_list）
+### 2026-08-23 完善（用户反馈"大多数行动未注册"）：
+###   - potential 覆盖两个 IO 的成员（幻想乡 IO + 贤者议会 IO）
+###   - 补注册 th_sages_introduce_institution / th_sages_propose_policy
+###     （贤者议会行动，执行者=贤者，均为幻想乡 IO 成员）
+###   - 补注册 th_gensokyo_trial_vote（ai_will_do=0：AI 不参与风味投票，
+###     注册仅为完整性；若后续要给 AI 投票倾向，改 ai_will_do 即可）
+### 不注册：th_sages_diagnostic_interaction（调试行动 ai_will_do=0，保留注册
+###   以便控制台排查时 AI 评估可见）
+### ============================================================
+acgv_touhou_religion_list = { 
 	potential = {
 		exists = international_organization:th_gensokyo_io
-		is_member_of_international_organization = international_organization:th_gensokyo_io
+		OR = {
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+			is_member_of_international_organization = international_organization:th_sages_council_io
+		}
 	}
 	actions = {
 		th_sages_diagnostic_interaction
-		### 2026-08-21（需求 4）：链条系统 IO 行动全部注册进 AI 评估列表
-		### （generic_actions 的 ai_tick 仅是评估频率，行动必须出现在
-		### generic_action_ai_lists 才会被 AI 评估；base game 先例：
-		### international_organization_list.txt / black_death_list.txt）
+		### 幻想乡 IO 行动
 		th_gensokyo_feast
 		th_gensokyo_propose_crusade
 		th_gensokyo_request_expansion
 		th_gensokyo_counter_expansion
 		th_gensokyo_join_crusade
-		### 注：th_gensokyo_trial_vote（ai_will_do=0，AI 不参与风味投票）与
-		### th_gensokyo_notorious_view（effect 空，纯查看）不注册
+		th_gensokyo_trial_vote
+		### 贤者议会行动（2026-08-23 补注册）
+		th_sages_introduce_institution
+		th_sages_propose_policy
 	} 
 }
