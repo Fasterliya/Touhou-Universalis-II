@@ -26,10 +26,10 @@ th_gensokyo_io_yama_special_status = {
 	}
 	
 	leader = yes
-	### power=0：阎魔作为发起方必定同意（发起动作即代表同意），无需投票权；
-	### 且避免稀释 combined_special_status_power（议会票权仅 3 贤者均分）
+	### 2026-08-21（q2 用户拍板）：阎魔参与投票，权重 = 幻想乡影响力动态公式
+	### （原 power=0 发起不占票已废止；投票权重统一 = 影响力 × (1+缘乱修正)）
 	special_status_power = {
-		value = 0
+		value = th_gensokyo_io_vote_power_value
 	}
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 }
@@ -52,8 +52,9 @@ th_gensokyo_io_guardian_special_status = {
 		monthly_prestige = 0.05
 		# TODO: 后续人工填写守护席位修正值
 	}
+	### 2026-08-21：投票权重统一改幻想乡影响力动态公式（原 0 = 无票权）
 	special_status_power = {
-		value = 0
+		value = th_gensokyo_io_vote_power_value
 	}
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
 }
@@ -77,8 +78,10 @@ th_gensokyo_io_sages_special_status = {
 		improve_relation_modifier = 0.10
 		# TODO: 后续人工填写贤者席位修正值
 	}
+	### 2026-08-21（q3 用户拍板）：贤者与普通成员相同公式（无特权），
+	### 权重 = 幻想乡影响力动态公式（原固定 200 已废止）
 	special_status_power = {
-		value = 200
+		value = th_gensokyo_io_vote_power_value
 	}
 }
 
@@ -112,8 +115,9 @@ th_gensokyo_io_human_village_special_status = {
 	on_rescinded_effect = {
 	}
 	
+	### 2026-08-21：投票权重统一改幻想乡影响力动态公式（原 0 = 无票权）
 	special_status_power = {
-		value = 0
+		value = th_gensokyo_io_vote_power_value
 	}
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
 }
@@ -157,8 +161,45 @@ th_gensokyo_io_seat_special_status = {
 		monthly_prestige = 0.1
 		# TODO: 占位修正值
 	}
+	### 2026-08-21：投票权重统一改幻想乡影响力动态公式（原 0 = 无票权）
 	special_status_power = {
-		value = 0
+		value = th_gensokyo_io_vote_power_value
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
+}
+
+### ============================================================
+### 席位6：幻想乡普通成员 th_gensokyo_io_regular_member_special_status
+### 2026-08-21 新增（bug 1 修复：普通国家无投票权）
+### 根因：95 个成员中仅 26 个有特殊席位（贤者 3/人类村落 20/阎魔 1/守护 1/占位 1），
+###       无席位国家 country_highest_rated_special_status_power = 0 → 议会权重恒 0
+### 本席位 = 全体成员基础席位（auto_bestowal 全员授予），提供动态投票权重
+### 权重公式: th_gensokyo_io_vote_power_value（影响力 × (1+缘乱修正)）
+### 与专属席位并存：country_highest_rated_special_status_power 取最高值，
+### 各席位公式相同 → 无冲突（参考 base game union.txt junior_partner 动态 power 模式）
+### ============================================================
+th_gensokyo_io_regular_member_special_status = {
+	max_countries = 95
+	priority = 4
+
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+	}
+	### 全员自动授予（base game auto_bestowal 先例：hre/union/high_kingship 等 10 文件）
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	### 离开 IO 时收回（IO can_leave = no，实际不触发）
+	auto_rescind_trigger = {
+		NOT = {
+			is_member_of_international_organization = scope:recipient
+		}
+	}
+
+	modifier = {
+	}
+	special_status_power = {
+		value = th_gensokyo_io_vote_power_value
 	}
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
 }

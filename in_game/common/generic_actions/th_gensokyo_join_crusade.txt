@@ -17,8 +17,19 @@ th_gensokyo_join_crusade = {
                 has_variable = th_gensokyo_crusade_target_mark
             }
             ### P1-15 修复：已参战成员不可重复点击（否则可连点刷 +5 贡献）
+            ### = 一场局势一个 TAG 只能按一次加入（2026-08-21 拷问 Q2 确认）
             NOT = {
                 has_variable = th_gensokyo_crusade_participant
+            }
+            ### 2026-08-21（拷问 Q2 用户拍板）：已与目标国交战的 TAG 无法按下本按钮
+            ### （any_country 定位目标国 + scope:actor 嵌套 prev 模式 = ai_will_do antagonism 同款）
+            NOT = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        is_at_war_with = prev
+                    }
+                }
             }
         }
     }
@@ -44,17 +55,97 @@ th_gensokyo_join_crusade = {
             }
             save_scope_as = crusade_target
         }
-        ### 未与目标国交战者宣战加入包围网
-        scope:actor ?= {
+        ### 发起方（阎魔）定位
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    is_leader_of_international_organization = international_organization:th_gensokyo_io
+                }
+                save_scope_as = io_leader
+            }
+        }
+        ### 2026-08-21（问题 3 用户决策）：优先作为战争盟友加入发起方（阎魔）
+        ### 对目标的现有战争（join_war_as_attacker，hussite_wars_actions.txt:751-764
+        ### 完整先例：attacker_leader/defender_leader 判定 + random_current_war + war = prev），
+        ### 而不是每个成员各自开新战争（多战争并存）
+        ### 2026-08-23 实测修复（问题：单独开新战争，error.log DBG_JOIN_ELSE 实证）：
+        ### any_current_war/random_current_war 必须放在目标国 scope 内求值——
+        ### 该遍历枚举「当前 root 参与的战争」；原写在 scope:actor 内枚举的是
+        ### 执行者（尚未参战）的战争 = 恒空 → if 失败 → 走 else 兜底单独宣战。
+        ### 胡斯先例（hussite_wars_actions.txt:747-764）：遍历写在目标国 c:BOH 块内，
+        ### 条件 attacker_leader = 领袖 + defender_leader = 目标，命中后
+        ### scope:actor 嵌套 join_war_as_attacker = { war = prev }。
+        scope:crusade_target ?= {
             if = {
                 limit = {
-                    NOT = {
-                        is_at_war_with = scope:crusade_target
+                    exists = scope:io_leader
+                    ### 防御守卫：已与目标交战的成员跳过战争加入（双重保险；
+                    ### potential 已拦截按钮，此处防 AI 竞态——scope:actor 显式嵌套，
+                    ### 避免 root=目标国 时 is_at_war_with 误判为「目标国对自身」）
+                    scope:actor = {
+                        NOT = {
+                            is_at_war_with = scope:crusade_target
+                        }
+                    }
+                    ### 存在「阎魔进攻目标」的战争，且本国尚未参与（攻防双重排除）——
+                    ### 自由市保护链会把三贤者卷入防御方，若此时再 join_war_as_attacker
+                    ### 同一国家同时处于攻防双方 → 引擎状态异常卡死
+                    ### （is_a_defender/is_an_attacker 实证：estate_emergency_actions.txt:46）
+                    any_current_war = {
+                        attacker_leader = scope:io_leader
+                        defender_leader = scope:crusade_target
+                        NOT = {
+                            is_a_defender = scope:actor
+                        }
+                        NOT = {
+                            is_an_attacker = scope:actor
+                        }
                     }
                 }
-                declare_war_with_cb = {
-                    target = scope:crusade_target
-                    type = casus_belli:th_gensokyo_crusade_cb
+                ### 临时调试标记（2026-08-21 定位 join 分支，定位后删除）
+                error_log = "DBG_JOIN_IF_PASS"
+                random_current_war = {
+                    limit = {
+                        attacker_leader = scope:io_leader
+                        defender_leader = scope:crusade_target
+                        NOT = {
+                            is_a_defender = scope:actor
+                        }
+                        NOT = {
+                            is_an_attacker = scope:actor
+                        }
+                    }
+                    ### 2026-08-21（无数场战争修复）：复刻 hussite_wars_actions.txt:762 结构——
+                    ### war = prev 必须在 scope:actor 嵌套内（prev 才指向当前遍历的战争；
+                    ### 原直接引用时 prev = 外层国家 → join 参数无效）
+                    ### 2026-08-23：补 call_in_subjects = yes（对齐胡斯先例，join 时拉附属国）
+                    scope:actor = {
+                        join_war_as_attacker = {
+                            war = prev
+                            call_in_subjects = yes
+                        }
+                    }
+                    ### 临时调试标记（2026-08-21，定位后删除）
+                    error_log = "DBG_JOIN_AFTER"
+                }
+            }
+            else = {
+                ### 临时调试标记（2026-08-21 定位 join 分支，定位后删除）
+                error_log = "DBG_JOIN_ELSE"
+                ### 兜底：发起方战争不存在（未开成/已结束）→ 宣战开新战争（原逻辑）
+                ### 2026-08-23：declare_war_with_cb 执行者必须是发起国 → 保持 scope:actor 嵌套
+                scope:actor ?= {
+                    if = {
+                        limit = {
+                            NOT = {
+                                is_at_war_with = scope:crusade_target
+                            }
+                        }
+                        declare_war_with_cb = {
+                            target = scope:crusade_target
+                            type = casus_belli:th_gensokyo_crusade_cb
+                        }
+                    }
                 }
             }
         }
@@ -69,7 +160,20 @@ th_gensokyo_join_crusade = {
     }
 
     ai_will_do = {
+        ### 2026-08-21：同意者（议会赞成组，debate_start 打标）→ 极强加入倾向
+        ### （10000 = base game vote_in_organization_parliament "ANY vote" 同款量级；
+        ###  标记生命周期：on_debate_failed 清 / 局势 on_start 重置 / on_ended 收尾清）
+        if = {
+            limit = {
+                has_variable = th_gensokyo_crusade_supporter
+            }
+            add = {
+                desc = TH_JOIN_CRUSADE_SUPPORTER_BIAS
+                value = 10000
+            }
+        }
         ### 运行时修复 2026-08-07：antagonism target=root 在遍历块中失效 → 嵌套 scope:actor 块 + target=prev
+        ### 2026-08-21：敌意加成 100 → 1000（覆盖 bias 敌意动态赞成者，几乎必然加入）
         if = {
             limit = {
                 any_country = {
@@ -84,7 +188,7 @@ th_gensokyo_join_crusade = {
             }
             add = {
                 desc = TH_JOIN_CRUSADE_AI_ANTAGONISM
-                value = 100
+                value = 1000
             }
         }
         add = {

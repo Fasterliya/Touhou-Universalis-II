@@ -1,15 +1,21 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡审判局势（惩戒战争目标国落败后启动）
 ### WP-H 2026-08-15（设计文档《国际组织》§6）两阶段：
 ###   阶段1 投票（4 个月）：所有参战国家风味投票（与裁决无关）
 ###   阶段2 裁决：阎魔是玩家 → 事件手动裁决；阎魔 AI → 按罪值自动裁定
+### 2026-08-21 修复：与惩戒局势同款启动缺陷（can_start = always no 从不检测
+###   enable_situation_effect 设的全局变量 → 审判永不启动）；
+###   改为 has_enabled_situation_trigger + monthly_spawn_chance = 1；
+###   on_start 清全局变量（单次流程防重复启动）
 ### ============================================================
 
 th_gensokyo_trial = {
-    monthly_spawn_chance = 0
+    monthly_spawn_chance = 1
 
     can_start = {
-        always = no
+        has_enabled_situation_trigger = {
+            type = th_gensokyo_trial
+        }
     }
     can_end = {
         always = no
@@ -20,6 +26,18 @@ th_gensokyo_trial = {
     }
 
     on_start = {
+        ### 2026-08-21：清除本局势全局变量（单次流程，防满足条件重复启动）
+        ### 2026-08-23 实测修复：disable_situation_effect 的 tooltip 文本含
+        ### [COUNTRY.GetName]（THIRD_DISABLE_SITUATION_EFFECT）——situation scope
+        ### 渲染失败中断 remove_global_variable → 全局变量残留 → 局势可能自动重启。
+        ### 挪到 leader_country（国家 scope）保证可靠执行
+        international_organization:th_gensokyo_io = {
+            leader_country ?= {
+                disable_situation_effect = {
+                    type = th_gensokyo_trial
+                }
+            }
+        }
         ### 定位目标国与阎魔，目标国打审判标记（事件/月度读取）
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {

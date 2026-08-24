@@ -1,0 +1,211 @@
+﻿l_english:
+### ============================================================
+### Gensokyo IO Chain System Localization (English)
+### ============================================================
+
+### Values (En <-> Ran, societal value bar)
+ th_gensokyo_amity_vs_belligerence: "En and Ran"
+ th_gensokyo_amity_vs_belligerence_desc: "Those of En weave bonds with all living things, joining hearts in harmony, guarding the Human Village and keeping the Great Barrier at peace; those of Ran raise arms in discord, waging endless war, chasing fleeting dreams and disturbing Gensokyo's order. The leaning of one's heart is plain for all to see."
+ th_gensokyo_amity_focus: "En (Bond)"
+ belligerence_focus: "Ran (Discord)"
+
+### Value tiers
+ th_notorious_tier_clean: "Bond of En"
+ th_notorious_tier_pariah: "Discord of Ran"
+ th_notorious_tier_outcast: "Outcast of Gensokyo"
+
+### Feast
+ th_gensokyo_feast: "Hold a Feast"
+ th_gensokyo_feast_desc: "Hold a grand feast in Gensokyo, entertaining yokai and sages alike to temper your discordant heart and return to the path of En."
+ PERFORM_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
+ WE_PERFORM_th_gensokyo_feast_ACTION: "We held a feast in Gensokyo"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US: "Held a feast in Gensokyo"
+ TH_FEAST_AI_HIGH_NOTORIETY: "Discordant heart running high, in need of temperance"
+
+### Crusade peace treaty
+ th_gensokyo_crusade_triumph: "Total Victory (Crusade)"
+ th_gensokyo_crusade_triumph_desc: "Total victory in a punitive crusade: the enemy surrenders unconditionally and accepts all verdicts of Gensokyo."
+ TH_CRUSADE_INITIAL_SUPPORT: "Yama's initial support"
+ TH_CRUSADE_AI_FOUND_TARGET: "A target with sufficient antagonism exists"
+
+### Crusade
+ th_gensokyo_crusade_cb: "Punitive Crusade"
+ th_gensokyo_crusade_cb_desc: "A crusade declared by the Yama and the Sage Council against those who threaten Gensokyo's order."
+ th_gensokyo_crusade: "Crusade Situation"
+ th_gensokyo_crusade_desc: "Gensokyo's encirclement against the crusade target."
+ th_gensokyo_trial: "Trial Situation"
+ th_gensokyo_trial_desc: "The Yama's final judgment upon the defeated crusade target."
+ th_gensokyo_propose_crusade: "Propose Punitive Crusade"
+ th_gensokyo_propose_crusade_desc: "The Yama proposes a punitive crusade against a member with excessive antagonism."
+ PERFORM_th_gensokyo_propose_crusade_ACTION: "Proposed a punitive crusade"
+ WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "We proposed a punitive crusade"
+ OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "Proposed a punitive crusade"
+ ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "Proposed a punitive crusade"
+ th_gensokyo_counter_expansion: "Counter-Expansion"
+ th_gensokyo_counter_expansion_desc: "Having turned the tide of the crusade, you gain the right to expand within Gensokyo."
+ PERFORM_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "We launched a counter-expansion"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "Launched a counter-expansion"
+
+### Judgment law
+ th_gensokyo_judgment_law: "Judgment Law"
+ th_gensokyo_judgment_law_desc: "The principles the Yama follows when passing judgment."
+ th_judgment_mercy_policy: "Mercy"
+ th_judgment_mercy_policy_desc: "Lenient judgment, shorter sentences, less turmoil."
+ th_judgment_order_policy: "Order"
+ th_judgment_order_policy_desc: "Judgment by the book, impartial."
+ th_judgment_karma_policy: "Karma"
+ th_judgment_karma_policy_desc: "Harsh judgment, longer sentences, as a warning to all."
+
+### Regulated state
+ th_gensokyo_regulated_state: "Regulated State of the Underworld"
+ th_gensokyo_regulated_state_desc: "A subject sentenced by the Yama, stripped of all autonomy, released as independent when the sentence ends."
+
+### Initial special subjects (permanent, cannot be annexed)
+ th_gensokyo_satori_vassal: "Satori Vassal"
+ th_gensokyo_satori_vassal_desc: "Nominally the territory of Satori, in truth it is run by her pets on their own. The seas of fire and molten lava of the scorching hell are all managed single-handedly by her pets."
+ th_gensokyo_forest_territory: "Forest Territory"
+ th_gensokyo_forest_territory_desc: "The youkai lords of the Magic Forest keep a loose subordinate bond with the magician, rather than absolute submission."
+ th_gensokyo_cloud_realm: "Cloud Realm"
+ th_gensokyo_cloud_realm_desc: "A Dragon Palace system beyond Heaven's order, its rights of passage held by the Dragon Palace envoy Nagae Iku 鈥?even the lofty celestials must show respect before such a presence."
+
+### Gensokyo Law System (law categories)
+ th_feudal_legalism_law: "Feudal Legalism"
+ th_legal_code_law: "Legal Code"
+ th_education_law: "Education"
+ th_cultural_traditions_law: "Cultural Traditions"
+ th_administration_law: "Administration"
+### Feudal Legalism
+ th_old_charter: "Old Charter"
+ th_old_charter_desc: "The succession customs laid down when the Great Barrier was formed, passed down through the generations, unchanging with the times. The legal foundation is set; posterity has only to keep it."
+### Legal Code
+ th_old_customary_law: "Old Customary Law"
+ th_old_customary_law_desc: "Each youkai group follows the old customs handed down in its own land; every clan keeps its own ways, so long as the old precedents remain unbroken."
+ th_harmony_first_law: "Harmony Above All"
+ th_harmony_first_law_desc: "The laws of the human village prize mediation over harsh punishment. When disputes arise, elders of standing step in to settle them."
+ th_separate_laws: "Separate Laws for Man and Youkai"
+ th_separate_laws_desc: "Humans and youkai each follow their own customs and do not meddle in each other's affairs. Human quarrels are settled by law; youkai disputes, by old custom."
+ th_statute_law: "Gensokyo Statute Law"
+ th_statute_law_desc: "As printing spreads, the scattered customs of the land are compiled into clear and orderly legal codes."
+### Education
+ th_farming_and_reading: "Farming and Reading"
+ th_farming_and_reading_desc: "Human villages rest on farming as the foundation of the household; children are taught only husbandry and the seasons, not books."
+ th_no_education: "No Schooling"
+ th_no_education_desc: "Youkai have no schools; strength alone is the rule. No education, no letters 鈥?only instinct."
+ th_old_learning_only: "Only the Old Learning"
+ th_old_learning_only_desc: "Teaching treats only ancient texts as orthodox, rejecting foreign doctrines and new learning. New knowledge from outside is not accepted."
+ th_publications: "Gazettes and Newspapers"
+ th_publications_desc: "As printing advances, broadsheets and newspapers spread; tales and news alike are printed, and the people grow well-informed of the realm and beyond."
+ th_terakoya_system: "Terakoya Schools"
+ th_terakoya_system_desc: "Proper private schools in the terakoya style rise across the land. Literacy is no longer the privilege of the few."
+ th_farming_and_education: "Farming and Education in Tandem"
+ th_farming_and_education_desc: "Schooling and tillage go hand in hand: children study in class and work the fields, neither neglected."
+### Cultural Traditions
+ th_hundred_youkai_banquet: "Hundred Youkai Feast"
+ th_hundred_youkai_banquet_desc: "Youkai gather at one table, sharing drink between danmaku duels and cups, keeping the old bonds of Gensokyo."
+ th_word_of_mouth: "Word of Mouth"
+ th_word_of_mouth_desc: "Tales and legends pass down by word of mouth, recorded in the Gensokyo Chronicle. Hearing of the world beyond the village, humans learn fear, and the old days endure."
+### Administration
+ th_personal_rule: "Personal Rule"
+ th_personal_rule_desc: "An administration built on the leader's personal might and prestige, yet greatly limited in efficiency by circumstance."
+ th_youkai_autonomy: "Youkai Autonomy"
+ th_youkai_autonomy_desc: "Youkai govern their own lands; all matters within are decided by the youkai of the territory."
+ th_clan_society: "Clan Society"
+ th_clan_society_desc: "Human villages are governed by clans, each keeping its own house rules. Clan disputes and upbringing are settled within; outsiders may not intrude."
+
+### Trial events
+ th_gensokyo_trial_events.1.title: "The Final Judgment"
+ th_gensokyo_trial_events.1.desc: "The punitive crusade has ended. As the Yama, you must decide the fate of the target based on its sins."
+ th_gensokyo_trial_events.1.a: "Light: Return unlawfully seized lands"
+ th_gensokyo_trial_events.1.b: "Medium: Return lands and weaken their power"
+ th_gensokyo_trial_events.1.c: "Utmost: Reduce them to a regulated state of the Underworld (transfer wealth and levy tribute)"
+
+### Variables
+ th_gensokyo_sin_var: "Sin"
+ th_gensokyo_expansion_quota: "Legal Expansion Quota"
+ th_gensokyo_expansion_quota_used: "Quota Used"
+ th_gensokyo_sentence_tier: "Sentence Tier"
+ th_gensokyo_sentence_months: "Sentence (months)"
+ th_gensokyo_effective_sin: "Effective Sin"
+ th_gensokyo_temp_sentence_years: "Sentence Bonus (years)"
+ th_gensokyo_temp_gold: "Transferred Gold"
+
+### Target selection
+ choose_crusade_target: "Choose crusade target"
+
+### Join crusade
+ th_gensokyo_join_crusade: "Join the Punitive Crusade"
+ th_gensokyo_join_crusade_desc: "Join the encirclement against the crusade target to uphold Gensokyo's order."
+ PERFORM_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "We joined the punitive crusade"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "Joined the punitive crusade"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM: "Antagonistic toward the crusade target"
+
+### Counter treaty
+ th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"
+ th_gensokyo_crusade_counter_desc: "Turning the tide of the punitive crusade: you crushed Gensokyo's encirclement and earned the right to expand."
+
+### Parliament issue
+ th_gensokyo_crusade_issue: "Punitive Crusade Proposal"
+ th_gensokyo_crusade_issue_desc: "A proposal by the Yama, voted on by the sages. Two votes in favor pass it."
+
+### Prices
+ th_gensokyo_feast_price: "Feast Cost"
+ subject_pays_regulated: "Regulated State Tribute"
+
+### Modifier display
+ th_gensokyo_weakness_modifier: "Weakened Power"
+ th_gensokyo_weakness_modifier_desc: "Punitive weakening imposed by judgment."
+ th_gensokyo_expansion_cost_authorized_modifier: "Sage-Authorized Expansion"
+ th_gensokyo_expansion_cost_authorized_modifier_desc: "With the sages' approval, expansion is far cheaper."
+ th_gensokyo_expansion_cost_incident_modifier: "Incident Expansion"
+ th_gensokyo_expansion_cost_incident_modifier_desc: "Expanding during an incident, at a slightly higher cost."
+ th_gensokyo_expansion_cost_unauthorized_modifier: "Unauthorized Expansion"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc: "Expansion without the sages' approval is costly."
+ th_gensokyo_notorious_pariah_modifier: "Outcast of Discord"
+ th_gensokyo_notorious_pariah_modifier_desc: "This country has fallen into the way of discord. It may be proposed as a crusade target."
+
+### Situation panel
+ TH_CRUSADE_SUPPORTER_STRENGTH: "Gensokyo Coalition Strength"
+ TH_CRUSADE_TARGET_STRENGTH: "Crusade Target Strength"
+ TH_CRUSADE_SIN_DISPLAY: "Target's Sin"
+
+### Unity sources
+ TH_GENSOKYO_UNITY_FROM_MEMBERS: "Member Scale"
+
+### Sage protection
+ th_gensokyo_sages_defend_reason: "Defending the Human Village"
+
+### Variables
+ th_crusade_supporter_strength: "Coalition Strength"
+ th_crusade_target_strength: "Target Strength"
+ th_crusade_temp_strength: "Member Strength"
+ th_crusade_target_ref: "Crusade Target"
+ th_crusade_sin_display: "Target's Sin"
+
+### ============================================================
+### WP-D 2026-08-15: Expansion request adjudication events (搂3.1)
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "An Expansion Request"
+ th_gensokyo_expansion_request_events.1.desc: "A nation requests permission to expand within Gensokyo and asks for your approval as a sage. You may grant a casus belli, or refuse as a lesson."
+ th_gensokyo_expansion_request_events.1.a: "Approve: grant the casus belli for expansion"
+ th_gensokyo_expansion_request_events.1.b: "Refuse: deny permission (the requester's chaotic heart is somewhat tempered)"
+ th_gensokyo_expansion_request_events.2.title: "Expansion Approved by a Sage"
+ th_gensokyo_expansion_request_events.2.desc: "A sage has approved your expansion request. You have gained a casus belli for the target location: ceding provinces costs +75% war score, and antagonism gained is reduced by 40%."
+ th_gensokyo_expansion_request_events.2.a: "Understood"
+ th_gensokyo_expansion_request_events.3.title: "Expansion Request Refused"
+ th_gensokyo_expansion_request_events.3.desc: "The sage refused your expansion request and admonished you to temper your chaotic heart. Your chaotic leaning recedes slightly, and the sage's opinion of you has changed."
+ th_gensokyo_expansion_request_events.3.a: "I shall heed the lesson"
+
+### ============================================================
+### WP-H 2026-08-15: Trial vote events + reparations verdict (搂6)
+### ============================================================
+ th_gensokyo_trial_vote_events.1.title: "Verdict Preference Vote"
+ th_gensokyo_trial_vote_events.1.desc: "The Yama is weighing the target's sins. You may voice your preference for the verdict 鈥?this vote only reflects opinion and does not affect the final ruling."
+ th_gensokyo_trial_vote_events.1.a: "Lenient: exhort them toward good"
+ th_gensokyo_trial_vote_events.1.b: "Moderate: judge by order"
+ th_gensokyo_trial_vote_events.1.c: "Severe: karma reaped in full"
+ th_gensokyo_trial_events.1.e: "Only reparations: transfer half the treasury and suffer the punishment of bankruptcy"

@@ -169,6 +169,7 @@ on_war_declared = {
     on_actions = {
         th_gensokyo_free_city_protection_check
         th_gensokyo_invasion_check
+        th_gensokyo_regulated_protection
     }
 }
 
@@ -288,6 +289,54 @@ th_gensokyo_unlawful_annex_check = {
                 change_variable = {
                     name = th_gensokyo_expansion_quota_used
                     add = 1
+                }
+            }
+        }
+    }
+}
+
+### ============================================================
+### 惩戒辩论规则自动投票 — 已移至 propose_crusade effect 尾部
+### （2026-08-21 实测结论：crusade_issue.on_debate_start 触发时机早于议会激活，
+###  投票被引擎忽略；on_io_parliament_started 硬编码钩子不触发——两条回调均已移除；
+###  唯一可靠执行点 = generic action effect 内 call_io_parliament 之后）
+### ============================================================
+
+### === 监管国防御保护（2026-08-23：阎魔义务，F14） ===
+### 场景：彼岸监管国被外部宣战 → 阎魔（IO 领袖/宗主）强制加入防御方
+### 结构同 th_gensokyo_free_city_protection_check（贤者参战先例，join_war_as_defender
+### + war = scope:war）；防重：阎魔已与攻击者交战（引擎默认
+### overlord_protects_external = yes 可能已自动拉入）→ 跳过
+th_gensokyo_regulated_protection = {
+    trigger = {
+        ### 被宣战国是彼岸监管国（is_subject_type 实证：维基 Subject_types:471）
+        scope:recipient = {
+            is_subject_type = subject_type:th_gensokyo_regulated_state
+        }
+        ### 2026-08-23 补充：排除惩戒战争——阎魔经局势 on_start 的
+        ### declare_war_with_cb 对监管国发动惩戒战争时（CB = th_gensokyo_crusade_cb），
+        ### 本钩子不应把阎魔拉入防御方（自己打自己）；casus_belli 软取语法同
+        ### peace_treaties 先例
+        scope:war = {
+            NOT = {
+                casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+    effect = {
+        ### 定位阎魔（IO 领袖）
+        international_organization:th_gensokyo_io = {
+            leader_country ?= {
+                if = {
+                    limit = {
+                        NOT = {
+                            is_at_war_with = scope:actor
+                        }
+                    }
+                    join_war_as_defender = {
+                        war = scope:war
+                        call_in_subjects = yes
+                    }
                 }
             }
         }

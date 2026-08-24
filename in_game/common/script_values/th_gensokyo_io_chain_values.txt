@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 链条系统 集中数值（平衡调整入口）
 ### 数值均为初值，标注待调
 ### ============================================================
@@ -8,10 +8,10 @@
 ### WP-B 2026-08-15：月度自然衰减已停用（设计文档：价值观"一般不会变动"），
 ### 此值保留供恢复自动衰减时使用（原 -2/月，趋向缘）
 th_notorious_decay_monthly_value = { value = -2 }        # （停用）月度自然趋向亲善（原恶名衰减 -1 → -2，待调）
-th_notorious_pariah_threshold_value = { value = 0 }      # 弃民一档阈值（原恶名50 → 0，待调）
-th_notorious_outcast_threshold_value = { value = 50 }    # 弃民二档阈值（原恶名75 → +50，待调）
-th_contribution_pariah_multiplier_value = { value = 0.7 }   # 弃民一档贡献获取系数 x0.7（待调）
-th_contribution_outcast_multiplier_value = { value = 0.4 }  # 弃民二档贡献获取系数 x0.4（待调）
+### 2026-08-21（需求 3）：pariah 阈值/贡献系数已删（阶段性修正系统整体移除）；
+### outcast 阈值保留 —— 作者 propose_crusade 过滤行直接引用本键
+### （合并自作者仓库 9d1186c；本键值 50 = 我方 ai_will_do 字面值 50，等价并存）
+th_notorious_outcast_threshold_value = { value = 50 }    # 弃民二档阈值（原恶名75 → +50，惩戒目标门槛；propose 过滤引用）
 
 ### 宴会（花费走 common/prices/th_gensokyo_feast_price，CD 写死 12 月）
 ### WP-E 2026-08-15：-20 → -10（本地增益/外交改善补偿部分缘收益，待调）
@@ -63,3 +63,46 @@ th_unity_free_city_annex_value = { value = 10 }            # 吞并自由市扣�
 th_unity_big_war_value = { value = 5 }                     # 大规模战争扣团结（未启用 B6，指代范围待定）
 th_unity_invasion_value = { value = 10 }                   # 外界入侵扣团结（待调）
 th_unity_members_multiplier_value = { value = 0.002 }      # 成员数团结加成系数/成员（C4，给低点）
+
+### ============================================================
+### 幻想乡影响力（2026-08-21，用户规格：投票权重来源；我方修复，合并保留）
+### 公式 = 经济基础 + 预留异变贡献值 + 人口归一化（分量系数独立可调）
+### 用途: 议会投票权重（special_status_power 动态公式引用）——
+###       th_gensokyo_io_vote_power_value = 影响力 × (1 + 幻想乡影响力修正)
+###       （修正来自价值观条 left/right modifier：缘 +50% / 乱 -50%，渐进式）
+### 数值为初值「待调」：实测权重分布后调系数（人口归一化 100000 与税基权重）
+### 2026-08-21 实测修复：country_tax_base 是引擎硬编码 script value
+###   （base game hre_action_values.txt:6 直接 value = country_tax_base 引用），
+###   不是 modifier 字段——原 modifier: 前缀读取为空 → 影响力恒 0 →
+###   combined_special_status_power = 0 → 议会投票权重 0（投了没票）
+### ============================================================
+th_gensokyo_io_influence_value = {
+    value = country_tax_base                # 经济基础（引擎 script value，裸引用）
+    ### 2026-08-23 实测修复：var: 裸引用在变量未设置时（旧档/后加入成员）
+    ### 导致整个 script value 返回 none 类型 → special_status_power 失效 →
+    ### 议会投票权重异常（game.log "Value of wrong type ... Got value of type
+    ### 'none'" at th_gensokyo_io.txt:31/201 + "Failed to fetch variable" 刷屏实证）。
+    ### 守卫包装（维基 Variable:898 / 反模式 142 同款）：变量存在才加，缺失按 0
+    if = {
+        limit = {
+            has_variable = th_gensokyo_personal_contribution_var
+        }
+        add = var:th_gensokyo_personal_contribution_var   # 预留的异变贡献值（现有变量）
+    }
+    add = {
+        value = total_population             # 人口（total_population 实证：diplomatic_values.txt:132）
+        divide = 100000
+    }
+}
+
+### 投票权重 = 影响力 × (1 + 影响力修正)
+### modifier:th_gensokyo_io_influence_modifier 读取自定义修正字段
+### （modifier: 读取实证：union.txt:110 / hre_action_values.txt:84；字段定义见
+###  modifier_type_definitions/th_gensokyo_societal_value_modifiers.txt 双目录）
+th_gensokyo_io_vote_power_value = {
+    value = th_gensokyo_io_influence_value
+    add = {
+        value = th_gensokyo_io_influence_value
+        multiply = modifier:th_gensokyo_io_influence_modifier
+    }
+}

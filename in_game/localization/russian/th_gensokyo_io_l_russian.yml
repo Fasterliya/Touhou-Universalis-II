@@ -20,6 +20,15 @@
  th_gensokyo_io_human_village_special_status:"Деревня людей"
  th_gensokyo_io_human_village_special_status_desc:"Представители Деревни людей, защищающие интересы человеческих поселений Генсокё."
 
+### 2026-08-21 (исправление бага 1): базовый статус для всех членов (основа веса голоса)
+ th_gensokyo_io_regular_member_special_status:"Член Генсокё"
+ th_gensokyo_io_regular_member_special_status_desc:"Обычный член Генсокё. Все члены имеют право голоса в парламенте, вес которого определяется их влиянием в Генсокё."
+
+### === Модификатор влияния в Генсокё ===
+### 2026-08-21 (спецификация пользователя): социальная ценность даёт ±50% прогрессивно, влияет на вес голоса
+ th_gensokyo_io_influence_modifier:"Модификатор влияния в Генсокё"
+ th_gensokyo_io_influence_modifier_desc:"Модификатор политического влияния этой страны в Генсокё. Склонность к Эн (дружелюбие) повышает вес голоса; склонность к Ран (воинственность) снижает его."
+
 ### === Leader Title ===
  th_gensokyo_io_yama_leader_title:"Яма"
  th_gensokyo_io_yama_leader_title_desc:"Судья Генсокё и глава его парламента."
@@ -150,18 +159,7 @@
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier:"Реформа Совета мудрецов"
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc:"Налоговый доход +10%, людские резервы +10%."
 
-### === Values Consequence Auto-Modifiers ===
- th_gensokyo_io_notorious_tier1_auto_modifier:"Ростки смуты"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc:"Когда смута только пускает корни, Генсокё смотрит на эту нацию с настороженностью. Дипломатическая репутация -1, улучшение отношений -15%."
-
- th_gensokyo_io_notorious_tier2_auto_modifier:"Открытая смута"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc:"Смута очевидна, и эта нация подозревается в неоднократных злодеяниях. Дипломатическая репутация -2, улучшение отношений -30%, инвестиции в стабильность +10%."
-
- th_gensokyo_io_notorious_tier3_auto_modifier:"Изгой раздора"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc:"Смута вышла из-под контроля, и эта нация отвергается обществом Генсокё. Дипломатическая репутация -4, улучшение отношений -50%."
-
- th_gensokyo_io_notorious_tier4_auto_modifier:"Отмеченный для суда"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc:"Смута непростительна, и Яма и мудрецы могут объявить карательную войну без дальнейших совещаний. Дипломатическая репутация -6, улучшение отношений -75%."
+### 2026-08-21 (требование 3): th_gensokyo_io_notorious_tier1~4_auto_modifier(_desc) удалено
 
 ### === Tab Labels ===
  TH_SAGES_TAB_OVERVIEW:"Обзор"
@@ -224,3 +222,6 @@
  TH_TRIAL_VOTE_MERCY:"Снисходительно (склонность к милосердию)"
  TH_TRIAL_VOTE_ORDER:"Умеренно (склонность к порядку)"
  TH_TRIAL_VOTE_KARMA:"Строго (склонность к воздаянию)"
+
+### === Отображение владений (2026-08-21) ===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT:"Это место принадлежит международной организации Генсокё"

@@ -1,0 +1,102 @@
+### ============================================================
+### 幻想乡IO 链条系统 — 价值观完整链（亲善 <-> 好战）
+### 原「恶名变量 th_gensokyo_notorious_reputation_var（0-100，完全隐藏）」已迁移为
+### 社会价值观 societal_value:th_gensokyo_amity_vs_belligerence（-100亲善 ~ +100好战，可见）
+### 映射：societal_value = 2*恶名 - 100
+### ============================================================
+
+### 链条系统开局初始化（on_game_start 调用，仅设本系统新增变量）
+th_gensokyo_chain_init_effect = {
+    every_country = {
+        limit = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### 2026-08-14 首月空窗修复：原恶名/贡献/影响力只靠月度兜底补设，
+        ### 开局首月点宴会等行动报 S11 家族 "Variable not of the 'value' scope type.
+        ### Type: empty"（实测 13:41:13）→ 开局即初始化，月度兜底保留为双保险
+        ### 价值观：开局设定为中立（0）
+        set_societal_value = {
+            type = th_gensokyo_amity_vs_belligerence
+            value = 100
+        }
+        set_variable = {
+            name = th_gensokyo_personal_contribution_var
+            value = 0
+        }
+        set_variable = {
+            name = th_gensokyo_personal_influence_var
+            value = 0
+        }
+        ### 合法扩张配额已用数
+        set_variable = {
+            name = th_gensokyo_expansion_quota_used
+            value = 0
+        }
+        ### 合法扩张总配额（小卖铺发放）
+        set_variable = {
+            name = th_gensokyo_expansion_quota
+            value = 0
+        }
+        ### 罪值（惩戒战争累积）
+        set_variable = {
+            name = th_gensokyo_sin_var
+            value = 0
+        }
+        ### 清除审判标记（防止历史存档残留）
+        remove_variable = th_gensokyo_judged
+        ### 清除合法扩张授权（授权由小卖铺按次发放）
+        remove_variable = th_gensokyo_expansion_authorized
+    }
+}
+
+### 价值观月度：自然趋向亲善（可叠加宴会削减）
+### 国家 scope 调用，仅 IO 成员
+### 引擎自动钳制社会价值观于 -100 ~ +100，无需额外 clamp
+th_gensokyo_notorious_monthly_effect = {
+    ### WP-B 2026-08-15（设计文档《国际组织》§2）：乱与缘价值观"一般不会变动"，
+    ### 取消月度自然漂移（原 th_notorious_decay_monthly_value = -2/月 趋向缘），
+    ### 价值观仅由事件/行动驱动（征服、宴会、扩张、惩戒等）。
+    ### 如需恢复自动衰减，取消下行注释并在 chain_values 调回数值。
+    # change_societal_value = {
+    #     type = th_gensokyo_amity_vs_belligerence
+    #     value = th_notorious_decay_monthly_value
+    # }
+    ### 弃民档标记镜像（2026-08-14 modifier mirror 方案）：
+    ### interaction_source_list limit 上下文实测不吃 var: 数值比较，
+    ### 此处 on_action 月度上下文 societal_value 为引擎原生触发器（安全），
+    ### 比较落成修正标记，供提案选国过滤 / 弃民系数等场景用 has_country_modifier 无 var 过滤
+    ### （价值观变动后最迟下月生效，1 月滞后可接受）
+    if = {
+        limit = {
+            societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_pariah_threshold_value
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_notorious_pariah_modifier
+            years = -1
+        }
+    }
+    else = {
+        remove_country_modifier = th_gensokyo_notorious_pariah_modifier
+    }
+    ### 2026-08-19（问题6）：弃民二档镜像（缘与乱 ≥ +50，惩戒战争目标阈值）
+    if = {
+        limit = {
+            societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_notorious_outcast_modifier
+            years = -1
+        }
+    }
+    else = {
+        remove_country_modifier = th_gensokyo_notorious_outcast_modifier
+    }
+    ### 左右法律能力接口
+    ### 现状无落点：普通成员无议会投票权（power=0），IO 法律 requires_vote=no
+    ### 待骨架实现"个人影响力→议会投票权重"后，在此按价值观档位削减权重
+    th_gensokyo_notorious_influence_interface_effect = yes
+}
+
+### 左右法律能力接口（空实现，见上注释）
+th_gensokyo_notorious_influence_interface_effect = {
+}

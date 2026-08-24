@@ -1,7 +1,12 @@
-### 幻想乡IO — 议会类型定义
+﻿### 幻想乡IO — 议会类型定义
 ### 修复 2026-08-19：补 type = international_organization + modifier
 ### has_international_parliament = yes（对标 th_sages_council_io_parliament /
 ### vanilla union_royal_assembly / hre_court_assembly；缺这两项则议会议题不被调度）
+### 2026-08-23 实测修复：删除 seat_name / possible_issues——
+### base game 全库无此字段（parliament_types 仅 type/potential/allow/locked/modifier，
+### 01_international_organization.txt 实证；16:39 会话 "Unexpected token: seat_name/
+### possible_issues" 解析错误实证）→ 议会类型解析失败 → 议会议题池异常。
+### 议题池 = 引擎自动（potential/selectable_for/chance 满足的议题，union 同款）
 
 th_gensokyo_io_parliament = {
     type = international_organization
@@ -10,19 +15,8 @@ th_gensokyo_io_parliament = {
     ### TODO: vote_weight 字段待后续人工开发接入
     ### 投票权重公式: floor(var:th_gensokyo_personal_influence_var / 50)
 
-    ### 议会席位名称
-    seat_name = th_gensokyo_parliament_seat
-
     modifier = {
         has_international_parliament = yes
-    }
-
-    ### 议会议题列表
-    possible_issues = {
-        th_gensokyo_parliament_resolution_1
-        th_gensokyo_parliament_resolution_2
-        th_gensokyo_parliament_resolution_3
-        th_gensokyo_crusade_issue
     }
 
     ### TODO: accept_chance / agenda_minimum_support 等由后续人工填写

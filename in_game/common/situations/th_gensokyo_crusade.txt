@@ -1,15 +1,24 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡惩戒局势（加强版包围网）
-### 启动: 议会辩论通过（enable_situation_effect 强制）
+### 启动: 议会辩论通过（on_debate_passed → enable_situation_effect 设全局变量
+###       enabled_situation_th_gensokyo_crusade → can_start 检测激活）
+### 修复 2026-08-21：can_start = always no 导致 enable_situation_effect 设的
+###       全局变量从不被检测 → 局势永不启动（用户实测 bug 5）
+###       改为 has_enabled_situation_trigger（rise_of_timur 同款）；
+###       monthly_spawn_chance 0 → 1 保证 can_start 被月度评估；
+###       on_ended 加 disable_situation_effect 清全局变量（防局势结束后
+###       满足条件自动重启——惩戒战争会重复发生，与一次性 rise_of_timur 不同）
 ### 目标国: 标记法定位（th_gensokyo_crusade_target_mark，常驻至局势结束）
 ### 结束: 目标国覆灭/战争全结束 → 反杀则正常结束（特殊行动解锁），否则启动审判局势
 ### ============================================================
 
 th_gensokyo_crusade = {
-    monthly_spawn_chance = 0
+    monthly_spawn_chance = 1
 
     can_start = {
-        always = no
+        has_enabled_situation_trigger = {
+            type = th_gensokyo_crusade
+        }
     }
     can_end = {
         always = no
@@ -43,9 +52,11 @@ th_gensokyo_crusade = {
             }
         }
         ### 新惩戒开启：重置上一场反杀标记（反攻扩张行动随新惩戒重新锁定）
+        ### 2026-08-21：同意者标记一并重置（防上一场残留影响本场加入倾向）
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {
                 remove_variable = th_gensokyo_crusade_countered
+                remove_variable = th_gensokyo_crusade_supporter
             }
         }
         ### 局势变量：目标国引用（GUI 双国头部动态头像读取）+ 罪值显示初值
@@ -164,6 +175,20 @@ th_gensokyo_crusade = {
     }
 
     on_ended = {
+        ### 2026-08-21 修复：清除 enable_situation_effect 设的全局变量
+        ### （disable_situation_effect = remove_global_variable，situation_effects.txt:15），
+        ### 防局势结束后 can_start 仍满足 → 下月自动重启（无需议会通过）
+        ### 2026-08-23 实测修复：disable_situation_effect 的 tooltip 文本含
+        ### [COUNTRY.GetName]（THIRD_DISABLE_SITUATION_EFFECT，与 enable 同源）——
+        ### situation scope 渲染失败会中断 remove_global_variable → 全局变量残留 →
+        ### 局势结束自动重启。挪到 leader_country（国家 scope）保证可靠执行
+        international_organization:th_gensokyo_io = {
+            leader_country ?= {
+                disable_situation_effect = {
+                    type = th_gensokyo_crusade
+                }
+            }
+        }
         ### 非反杀结局 → 惩戒战争平息奖励团结（C2）→ 启动审判局势（target_mark 保留，审判局势 on_start 定位后自行清理）
         if = {
             limit = {
@@ -177,9 +202,17 @@ th_gensokyo_crusade = {
                 th_gensokyo_unity_add_effect = {
                     value = th_unity_crusade_settled_value
                 }
-            }
-            enable_situation_effect = {
-                type = th_gensokyo_trial
+                ### 2026-08-23 实测修复：enable_situation_effect/activate_situation 必须
+                ### 在国家 scope 调用（on_ended root = situation，无 COUNTRY → tooltip
+                ### 渲染失败中断效果，与 on_debate_passed 同源问题）——
+                ### 挪到 leader_country（阎魔国家）scope；审判 on_start 会 disable
+                ### 全局变量（单次流程自洽）
+                leader_country ?= {
+                    enable_situation_effect = {
+                        type = th_gensokyo_trial
+                    }
+                    activate_situation = situation:th_gensokyo_trial
+                }
             }
         }
         else = {
@@ -190,10 +223,12 @@ th_gensokyo_crusade = {
                 }
             }
         }
-        ### 清理参战标记（势力计算用）
+        ### 清理参战标记（势力计算用）+ 同意者标记（2026-08-21：局势收尾即失效，
+        ### 下次辩论重新打标）
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {
                 remove_variable = th_gensokyo_crusade_participant
+                remove_variable = th_gensokyo_crusade_supporter
             }
         }
     }

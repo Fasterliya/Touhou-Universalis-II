@@ -99,4 +99,25 @@ th_gensokyo_io_assign_special_statuses_effect = {
             }
         }
     }
+
+    # === 普通成员席位 — 全体成员（2026-08-21，bug 1 修复：投票权重载体） ===
+    ### auto_bestowal_trigger = always yes 已覆盖全员；此处双保险补漏
+    ### （auto_bestowal 依赖引擎每月评估，on_game_start 直接授予确保开局即生效）
+    every_country = {
+        limit = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_regular_member_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+            }
+        }
+        international_organization:th_gensokyo_io = {
+            international_organization_add_special_status = {
+                type = special_status:th_gensokyo_io_regular_member_special_status
+                country = prev
+            }
+        }
+    }
 }

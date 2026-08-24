@@ -1,0 +1,104 @@
+### ============================================================
+### 幻想乡IO 链条系统 共享触发条件（国家 scope）
+### ============================================================
+
+### 价值观档位：亲善（<0） / 中间（0~+50） / 好战（>=+50）
+### （原恶名档位 低<50 / 中50-75 / 高>=75 → 社会价值观 0 / 0~50 / >=50）
+th_gensokyo_notorious_low_trigger = {
+    societal_value:th_gensokyo_amity_vs_belligerence < th_notorious_pariah_threshold_value
+}
+
+th_gensokyo_notorious_mid_trigger = {
+    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_pariah_threshold_value
+    societal_value:th_gensokyo_amity_vs_belligerence < th_notorious_outcast_threshold_value
+}
+
+th_gensokyo_notorious_high_trigger = {
+    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+}
+
+### 自由市判定：持有幻想乡IO人类村落席位
+th_gensokyo_is_free_city_trigger = {
+    has_special_status_in_international_organization = {
+        type = special_status:th_gensokyo_io_human_village_special_status
+        international_organization = international_organization:th_gensokyo_io
+    }
+}
+
+### 贤者判定：T05 迷途之家 / T13 后户之国 / T83 华扇的仙界
+th_gensokyo_is_sage_trigger = {
+    OR = {
+        tag = T05
+        tag = T13
+        tag = T83
+    }
+}
+
+### 合法扩张授权判定（配额余额 > 0，配额由小卖铺发放）
+th_gensokyo_has_authorized_expansion_trigger = {
+    root.var:th_gensokyo_expansion_quota_used < root.var:th_gensokyo_expansion_quota
+}
+
+### 异变进行中（接口：留空由异变系统填充，届时把 always = no 换成异变判定）
+th_gensokyo_in_incident_trigger = {
+    always = no
+}
+
+### WP-F 2026-08-15（location scope）：幻想乡本土判定
+### = IO 持地（land_ownership_rule 生效后）或 14 个幻想乡陆地区域白名单（兜底）
+### 供征服挂钩 / 宴会选址 / 请求扩张保护等复用
+th_gensokyo_is_gensokyo_location_trigger = {
+    OR = {
+        is_owned_by_international_organization = international_organization:th_gensokyo_io
+        region = region:th_gensokyo_hakurei_region
+        region = region:th_gensokyo_makai_region
+        region = region:th_gensokyo_human_village_region
+        region = region:th_gensokyo_magic_forest_region
+        region = region:th_youkai_mountain_western_foot_region
+        region = region:th_youkai_mountain_region
+        region = region:th_immortal_realm_region
+        region = region:th_moriya_shirine_region
+        region = region:th_animal_realm_region
+        region = region:th_hell_region
+        region = region:th_sunflower_field_region
+        region = region:th_makai_region
+        region = region:th_old_hell_region
+        region = region:th_heaven_region
+    }
+}
+
+### WP-F 2026-08-15：被割让追加敌意层 时代接口开关
+### 现状 always = no（+75%/+150% 由 IO 字段承担，无重复叠加）；
+### 大结界/时代系统落地后翻转为 yes 并同步调整 th_gensokyo_cede_antagonism_extra_value。
+th_gensokyo_era_antagonism_interface_trigger = {
+    always = no
+}
+
+### 罪值档位
+th_gensokyo_sin_low_trigger = {
+    root.var:th_gensokyo_sin_var < th_sin_tier1_value
+}
+
+th_gensokyo_sin_mid1_trigger = {
+    root.var:th_gensokyo_sin_var >= th_sin_tier1_value
+    root.var:th_gensokyo_sin_var < th_sin_tier2_value
+}
+
+th_gensokyo_sin_mid2_trigger = {
+    root.var:th_gensokyo_sin_var >= th_sin_tier2_value
+    root.var:th_gensokyo_sin_var < th_sin_tier3_value
+}
+
+th_gensokyo_sin_high_trigger = {
+    root.var:th_gensokyo_sin_var >= th_sin_tier3_value
+}
+
+### 已被阎魔审判过（判决执行时打标）
+th_gensokyo_has_been_judged_trigger = {
+    has_variable = th_gensokyo_judged
+}
+
+### 惩戒战争局势存在（焦点判定用，局势 on_monthly 内 root = 局势）
+th_gensokyo_crusade_active_trigger = {
+    can_see_situation = situation:th_gensokyo_crusade
+}

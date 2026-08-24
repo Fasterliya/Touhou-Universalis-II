@@ -1,0 +1,168 @@
+### ============================================================
+### 幻想乡IO 惩戒战争提案（仅阎魔可见，原生 IO 行动栏）
+### 链路: 选 IO → 选目标国（恶名≥50 过滤，2026-08-14 用户决策改恶名驱动）→ 内联发起议会辩论 → 阎魔+贤者投票，2 票通过
+### 目标国传递: 标记法（th_gensokyo_crusade_target_mark 常驻至局势结束）
+### ============================================================
+
+th_gensokyo_propose_crusade = {
+    type = internationalorganization
+    
+    ai_tick = monthly
+    ai_tick_frequency = 6
+    
+    potential = {
+        ### P1-12 修复：potential 顶层 root=empty，is_leader 裸挂恒 false → 提案按钮不显示
+        scope:actor = {
+            OR = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_sages_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+                is_leader_of_international_organization = international_organization:th_gensokyo_io
+            }
+        }
+    }
+    
+    allow = {
+        international_organization:th_gensokyo_io = {
+            NOT = {
+                is_active_parliament = yes
+            }
+            NOT = {
+                situation:th_gensokyo_crusade = {
+                    situation_is_active = yes
+                }
+            }
+        }
+    }
+    
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+    
+    select_trigger = {
+        looking_for_a = country
+        target_flag = target_country
+        ### B1 修复 2026-08-14：name 是引擎内置选择器模板 ID（base game 无任何行动用自造名），
+        ### "choose_crusade_target" 导致选国 UI 不绑定 target_flag → 1179 次
+        ### "Undefined event target"；改用内置 "choose_country"（japanese_shogunate.txt:64 先例），
+        ### target_flag 对齐 high_kingship_of_ireland.txt:171 的 target_country
+        name = "choose_country"
+        ### 乱价值观过滤（2026-08-19 用户决策：惩戒目标 = 缘与乱偏移 ≥ +50，
+        ### 即弃民二档阈值，用 outcast 标记镜像过滤）
+        ### modifier mirror 方案（2026-08-14 实测修复）：interaction_source_list 的 limit
+        ### 上下文不吃 var: 数值比较（root.var: 报 "Invalid left side during comparison
+        ### 'var'" + "Event target link 'root' returned an unset scope"，1756 次/秒刷屏），
+        ### 改用月度脉冲落好的标记修正过滤（普通触发器，无 var）
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        NOT = {
+                            this = scope:actor
+                        }
+                        NOT = {
+                            is_leader_of_international_organization = international_organization:th_gensokyo_io
+                        }
+                        societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                        # has_country_modifier = th_gensokyo_notorious_outcast_modifier
+                        ### WP-H 2026-08-15（设计§6）：免制裁期（20 年）内不可再被惩戒
+                        NOT = {
+                            has_variable = th_gensokyo_sanction_immunity
+                        }
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    
+    effect = {
+        ### 清除旧标记，给目标国打新标记
+        scope:recipient = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+        ### B1 修复：target_flag 改名 target_country + exists 守卫（防未选择时误执行）
+        if = {
+            limit = {
+                exists = scope:target_country
+            }
+            scope:target_country = {
+                set_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+        ### 内联发起议会辩论（贤者议会同款，root = 执行国）
+        ### 初始支持度 = 0：阎魔作为发起方必定同意（发起动作即代表同意，不计票）
+        ### 投票数学：3 贤者各 power 200（combined 600）→ 每票 0.333
+        ###          2 票赞成 0.667 > 0.5 通过 / 1 票 0.333 不过
+        scope:recipient = {
+            set_parliament_location = scope:actor.capital
+            set_parliament_active = yes
+            hidden_effect = {
+                every_international_organization_member = {
+                    set_participated_in_parliament = {
+                        international_organization = prev
+                        vote = no
+                    }
+                }
+            }
+            set_parliament_issue = parliament_issue:th_gensokyo_crusade_issue
+        }
+        set_participated_in_parliament = {
+            international_organization = scope:recipient
+            vote = yes
+        }
+        call_io_parliament = {
+            international_organization = scope:recipient
+        }
+    }
+    
+    force_click_and_confirm_or_hold = yes
+    
+    ai_will_do = {
+        ### B2 修复 2026-08-14：AI 提案倾向同步改恶名驱动（与选国过滤一致，用户决策）：
+        ### 任一成员带弃民二档标记即视为有可惩戒目标（modifier mirror，无 var）
+        if = {
+            limit = {
+                any_international_organization_member = {
+                    NOT = {
+                        this = scope:actor
+                    }
+                    NOT = {
+                        is_leader_of_international_organization = international_organization:th_gensokyo_io
+                    }
+                    has_country_modifier = th_gensokyo_notorious_outcast_modifier
+                    ### WP-H：免制裁期内不计为可惩戒目标
+                    NOT = {
+                        has_variable = th_gensokyo_sanction_immunity
+                    }
+                }
+            }
+            add = {
+                desc = TH_CRUSADE_AI_FOUND_TARGET
+                value = 100
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

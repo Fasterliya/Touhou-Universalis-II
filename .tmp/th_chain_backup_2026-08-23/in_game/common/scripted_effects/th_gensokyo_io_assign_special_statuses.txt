@@ -1,0 +1,102 @@
+﻿### ===========================================================
+### 幻想乡IO — 开局特殊席位程序化分配（双保险）
+###
+### setup/th_gensokyo_io.txt 中已有声明式预分配：
+###   th_gensokyo_io_yama_special_status = { T25 } 等
+### 但由于某些自定义MOD IO中setup预分配可能不完全生效，
+### 此处参照 workshop mod 3659311464 (Anno 1644) 的 on_game_start 模式，
+### 通过 international_organization_add_special_status 效果再次确保分配。
+###
+### 模式来源：3659311464/in_game/common/on_action/zzz_1644_start.txt
+###   every_country → is_member → IO scope → add_special_status(country = prev)
+### ===========================================================
+th_gensokyo_io_assign_special_statuses_effect = {
+    # === 阎魔席位 — T25 彼岸 ===
+    every_country = {
+        limit = {
+            tag = T25
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_yama_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+            }
+        }
+        international_organization:th_gensokyo_io = {
+            international_organization_add_special_status = {
+                type = special_status:th_gensokyo_io_yama_special_status
+                country = prev
+            }
+        }
+    }
+
+    # === 守护席位 — T04 博丽神社 ===
+    every_country = {
+        limit = {
+            tag = T04
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_guardian_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+            }
+        }
+        international_organization:th_gensokyo_io = {
+            international_organization_add_special_status = {
+                type = special_status:th_gensokyo_io_guardian_special_status
+                country = prev
+            }
+        }
+    }
+
+    # === 贤者席位 — T05(迷途之家) T13(后户之国) T83(华扇的仙界) ===
+    every_country = {
+        limit = {
+            OR = {
+                tag = T05
+                tag = T13
+                tag = T83
+            }
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_sages_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+            }
+        }
+        international_organization:th_gensokyo_io = {
+            international_organization_add_special_status = {
+                type = special_status:th_gensokyo_io_sages_special_status
+                country = prev
+            }
+        }
+    }
+
+    # === 人类村落席位 — 20个人类聚居地 ===
+    every_country = {
+        limit = {
+            OR = {
+                tag = T03 tag = T32 tag = T33 tag = T34 tag = T36
+                tag = T49 tag = T52 tag = T75 tag = T77 tag = T78
+                tag = T85 tag = T86 tag = T87 tag = T88 tag = T89
+                tag = T90 tag = T91 tag = T92 tag = T93 tag = T94
+            }
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_human_village_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+            }
+        }
+        international_organization:th_gensokyo_io = {
+            international_organization_add_special_status = {
+                type = special_status:th_gensokyo_io_human_village_special_status
+                country = prev
+            }
+        }
+    }
+}

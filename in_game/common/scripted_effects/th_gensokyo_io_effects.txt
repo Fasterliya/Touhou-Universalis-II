@@ -32,43 +32,13 @@ th_gensokyo_io_unity_var_subtract_effect = {
 }
 
 ### 幻想乡个人贡献度 增加（在国家scope上调用，设计§2.3）
-### 附带价值观（好战）惩罚：好战>=+40 → -70%，>=0 → -50%，>=-40 → -30%（设计§2.5）
-### （原恶名阈值 30/50/70 映射为 societal_value -40/0/+40）
+### 2026-08-21（q5 确认 + 需求 3）：删除按价值观档位打折段
+### （好战≥40 → ×0.3 等三档 —— 阶段性修正系统，与 auto_modifier/
+### 弃民系数同批删除；价值观后果由价值观条渐进式修正承担）
 th_gensokyo_io_contribution_var_add_effect = {
-    set_variable = {
-        name = th_gensokyo_temp_contribution_gain
-        value = $value$
-    }
-    if = {
-        limit = {
-            societal_value:th_gensokyo_amity_vs_belligerence >= 40
-        }
-        change_variable = {
-            name = th_gensokyo_temp_contribution_gain
-            multiply = 0.3
-        }
-    }
-    else_if = {
-        limit = {
-            societal_value:th_gensokyo_amity_vs_belligerence >= 0
-        }
-        change_variable = {
-            name = th_gensokyo_temp_contribution_gain
-            multiply = 0.5
-        }
-    }
-    else_if = {
-        limit = {
-            societal_value:th_gensokyo_amity_vs_belligerence >= -40
-        }
-        change_variable = {
-            name = th_gensokyo_temp_contribution_gain
-            multiply = 0.7
-        }
-    }
     change_variable = {
         name = th_gensokyo_personal_contribution_var
-        add = var:th_gensokyo_temp_contribution_gain
+        add = $value$
     }
 }
 

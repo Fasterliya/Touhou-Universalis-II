@@ -1,0 +1,241 @@
+﻿l_english:
+
+### Gensokyo International Organization — Localization
+
+### === IO Name & Description ===
+ th_gensokyo_io: "Gensokyo"
+ th_gensokyo_io_desc: "An international organization maintaining the balance of Gensokyo's nations, with the Sages and Yama jointly upholding the Great Barrier's order."
+
+### === Special Statuses ===
+ th_gensokyo_io_sages_special_status: "Sage"
+ th_gensokyo_io_sages_special_status_desc: "One of Gensokyo's three most ancient sages, each guarding a key node of the Great Barrier."
+
+ th_gensokyo_io_yama_special_status: "Yama"
+ th_gensokyo_io_yama_special_status_desc: "The judge who presides over Higan, arbitrating right and wrong among Gensokyo's nations, and serving as leader of the Gensokyo Parliament."
+
+ th_gensokyo_io_guardian_special_status: "Guardian of Gensokyo"
+ th_gensokyo_io_guardian_special_status_desc: "The shrine maiden of Hakurei Shrine, eternal guardian of the Great Barrier. The Hakurei power passed down through generations maintains the boundary between Gensokyo and the Outside World."
+
+ th_gensokyo_io_human_village_special_status: "Human Village"
+ th_gensokyo_io_human_village_special_status_desc: "Representatives of the Human Village, protecting the interests of Gensokyo's human settlements."
+
+### === Leader Title ===
+ th_gensokyo_io_yama_leader_title: "Yama"
+ th_gensokyo_io_yama_leader_title_desc: "The judge of Gensokyo and leader of its Parliament."
+
+### === Parliament ===
+ th_gensokyo_io_parliament: "Gensokyo Parliament"
+ th_gensokyo_parliament_seat: "Gensokyo Parliament Seat"
+
+### === IO Variable Names ===
+ th_gensokyo_unity_var: "Gensokyo Unity"
+ th_gensokyo_unity_var_desc: "A measure of cohesion among Gensokyo's nations, gained through resolving incidents, mediating conflicts, and peaceful development. It is depleted by aggressive expansion and external invasions."
+
+### === IO Variable Format ===
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ TH_SAGES_PRESTIGE_FORMAT: "$VAL$"
+
+### === IO Variable Monthly Change Descriptions ===
+ TH_GENSOKYO_UNITY_BASE: "Base Maintenance"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "Internal Peace"
+
+### === Country Variable Names ===
+ th_gensokyo_personal_contribution_var: "Personal Contribution"
+ th_gensokyo_personal_contribution_var_desc: "This nation's tangible contributions to Gensokyo's stability, accumulating monthly based on tax revenue and danmaku firepower."
+
+ th_gensokyo_personal_influence_var: "Personal Influence"
+ th_gensokyo_personal_influence_var_desc: "This nation's political influence within the Gensokyo Parliament. Every 50 points grants 1 additional vote weight in parliamentary decisions. Reset to zero at the end of each age."
+
+ # Values (Amity <-> Belligerence) migrated to societal value societal_value:th_gensokyo_amity_vs_belligerence; text in th_gensokyo_chain_l_*.yml
+
+### === Variable Hover Display ===
+ th_gensokyo_member_vars_display: "Personal Variables Overview"
+ th_gensokyo_member_vars_display_desc: "View this nation's Personal Influence and Personal Contribution within Gensokyo."
+
+### === Parliament Issues ===
+ th_gensokyo_parliament_resolution_1_title: "Gensokyo Peace Resolution"
+ th_gensokyo_parliament_resolution_1_desc: "A proposal to maintain peaceful order within Gensokyo."
+
+ th_gensokyo_parliament_resolution_2_title: "Incident Response Resolution"
+ th_gensokyo_parliament_resolution_2_desc: "A proposal to coordinate responses to incidents occurring within Gensokyo."
+
+ th_gensokyo_parliament_resolution_3_title: "External Defense Resolution"
+ th_gensokyo_parliament_resolution_3_desc: "A proposal to strengthen Gensokyo's defenses against external invasions."
+
+### === Law: Unity Vision ===
+ th_gensokyo_unity_vision_law: "Unity Vision"
+ th_gensokyo_unity_vision_law_desc: "Determines the direction through which Gensokyo's unity is cultivated and harnessed."
+
+ isolation_defense_policy: "Isolation Defense"
+ isolation_defense_policy_desc: "Seal the Great Barrier tightly, consolidating unity through internal peace. External threats struggle to penetrate, but new ideas are also slow to flow in."
+
+ balance_path_policy: "Path of Balance"
+ balance_path_policy_desc: "Maintain the Great Barrier as it has always been, impartial and steady. Unity flows naturally, and every nation finds its place."
+
+ open_inclusive_policy: "Open Inclusiveness"
+ open_inclusive_policy_desc: "Relax the Great Barrier's restrictions to welcome new ideas from beyond. Institution spread accelerates and diplomatic horizons expand, though unity cohesion is slightly affected."
+
+### === Law: Great Barrier Policy ===
+ th_gensokyo_barrier_policy_law: "Great Barrier Policy"
+ th_gensokyo_barrier_policy_law_desc: "Determines the maintenance intensity and degree of openness of Gensokyo's Great Barrier."
+
+ reinforced_barrier_policy: "Reinforced Barrier"
+ reinforced_barrier_policy_desc: "Pour the strength of all Gensokyo into reinforcing the Great Barrier. Defense and manpower are greatly enhanced, but diplomatic reputation suffers and external ideas struggle to permeate."
+
+ maintained_barrier_policy: "Maintained Barrier"
+ maintained_barrier_policy_desc: "Maintain the Great Barrier according to established traditions. Defense remains stable, and all is as it should be."
+
+ relaxed_barrier_policy: "Relaxed Barrier"
+ relaxed_barrier_policy_desc: "Moderately relax the Great Barrier's restrictions to facilitate exchange. Institution spread is significantly accelerated, but defensive capabilities are somewhat diminished."
+
+### === Law: Incident Response Doctrine ===
+ th_gensokyo_incident_response_law: "Incident Response Doctrine"
+ th_gensokyo_incident_response_law_desc: "Determines the strategy and code of conduct for responding to incidents within Gensokyo."
+
+ duel_resolution_policy: "Danmaku Duel Rules"
+ duel_resolution_policy_desc: "Resolve incidents through one-on-one danmaku duels. Victors earn prestige, but those unskilled in combat struggle to defend themselves."
+
+ joint_suppression_policy: "Joint Suppression"
+ joint_suppression_policy_desc: "Nations act in concert, suppressing incidents with collective strength. Manpower is abundant and responses are swift."
+
+ diplomatic_mediation_policy: "Diplomatic Mediation"
+ diplomatic_mediation_policy_desc: "Resolve the root causes of incidents through negotiation and mediation. Diplomatic reputation rises, but military preparedness is relatively lacking."
+
+### ============================================================
+### Sages' Council — Localization
+### ============================================================
+
+ th_sages_council_io: "Sages' Council"
+ th_sages_council_io_desc: "The supreme deliberative body formed by Gensokyo's three most ancient sages, maintaining the Great Barrier's balance and guiding Gensokyo's destiny."
+
+### Sage Prestige
+ th_sages_prestige_var: "Sage Prestige"
+ th_sages_prestige_var_desc: "The prestige and influence of the three sages among the nations of Gensokyo (0-100). It is gained through Gensokyo's unity and the maintenance of peace, and lost through war, external invasions, and unlawful expansion. Higher prestige provides stronger global benefits to Gensokyo."
+
+### Threshold Tiers
+ th_sages_prestige_tier_20: "Sage Prestige · Emergence"
+ th_sages_prestige_tier_20_desc: "The will of the sages begins to be felt by the nations, granting Gensokyo a faint blessing."
+
+ th_sages_prestige_tier_40: "Sage Prestige · Coalescence"
+ th_sages_prestige_tier_40_desc: "The edicts of the sages become a growing consensus, granting Gensokyo a modest blessing."
+
+ th_sages_prestige_tier_60: "Sage Prestige · Authority"
+ th_sages_prestige_tier_60_desc: "The judgments of the sages command awe among the nations, granting Gensokyo a notable blessing."
+
+ th_sages_prestige_tier_80: "Sage Prestige · Reverence"
+ th_sages_prestige_tier_80_desc: "The will of the sages is as unshakable as the Great Barrier itself, granting Gensokyo a powerful blessing."
+
+ th_sages_prestige_tier_100: "Sage Prestige · Legend"
+ th_sages_prestige_tier_100_desc: "The names of the three sages have become legend, and all living beings look up to their light, granting Gensokyo the supreme blessing."
+
+ TH_SAGES_ACTIVE_TIERS_LABEL: "Active Sage Prestige Benefits"
+ TH_SAGES_NO_ACTIVE_TIER: "Sage Prestige is insufficient; no benefits are currently active."
+ TH_SAGES_MAX_PREVIEW_LABEL: "Max Value Preview"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "Tax Income Efficiency +15%  Monthly Prestige +0.30\nImprove Relations +35%  Global Manpower +15%\nDiplomatic Reputation +2  Global Defensive +10%\nCan Intervene in Wars  Can Enforce Peace"
+
+### Static Modifiers (Sage Prestige Tiers)
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "Sages' Emergence"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "The will of the sages first makes itself felt. Tax income efficiency +3%, monthly prestige +0.05."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "Sages' Coalescence"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "The sages' counsel becomes consensus. Tax income efficiency +5%, monthly prestige +0.08, improve relations +15%, diplomatic reputation +1."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "Sages' Authority"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "The sages' judgments command awe. Tax income efficiency +8%, monthly prestige +0.10, improve relations +20%, manpower +5%."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "Sages' Reverence"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "The sages' will stands unshakable. Tax income efficiency +10%, monthly prestige +0.20, improve relations +25%, manpower +10%, diplomatic reputation +1, stability investment +10%."
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "Sages' Legend"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "The three sages have become legend. Tax income efficiency +15%, monthly prestige +0.30, improve relations +35%, manpower +15%, diplomatic reputation +2, global defensive +10%. The sages may intervene in wars and enforce peace."
+### === Sages' Council Policies ===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "Great Barrier Reinforcement"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "+10% defense, -5% stability cost."
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "Charter of Gensokyo Unity"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "+0.1 monthly prestige, +15% improve relations, +1 diplomatic reputation."
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "Reform of the Sages' Council"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "+10% tax income, +10% manpower."
+
+### === Values Consequence Auto-Modifiers (design §2.5) ===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "Budding Discord"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "As discord first takes root, Gensokyo looks upon this nation with wariness. Diplomatic reputation -1, improve relations -15%."
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "Open Discord"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "With discord plain to see, this nation is suspected of repeated wrongdoing. Diplomatic reputation -2, improve relations -30%, stability investment +10%."
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "Pariah of Discord"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "With discord beyond restraint, this nation is shunned by Gensokyo's society. Diplomatic reputation -4, improve relations -50%."
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "Marked for Judgment"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "With discord beyond redemption, the Yama and the sages may declare a punitive war without further deliberation. Diplomatic reputation -6, improve relations -75%."
+
+### === Introduce Institution Action ===
+ th_sages_introduce_institution: "Introduce Institution"
+ th_sages_introduce_institution_desc: "Petition the three sages to wield the power of the Great Barrier to introduce an advanced idea or technology that already exists among Gensokyo's nations but has not yet been embraced by this country."
+ th_sages_introduce_institution_notification: "Introduce Institution"
+
+ th_sages_propose_policy: "Propose Policy"
+ th_sages_propose_policy_desc: "Propose a policy for the Sages' Council to debate. If at least two sages support it, the policy takes effect for the whole council. Costs 300 gold to convene."
+
+
+### === Tab Labels ===
+ TH_SAGES_TAB_OVERVIEW: "Overview"
+ TH_SAGES_TAB_DEBATE: "Debate"
+ TH_SAGES_ACTIONS_LABEL: "International Organization Actions"
+ TH_SAGES_MAIN_ACTIONS: "Sages' Council Actions"
+ TH_SAGES_DEBATE_TITLE: "Sages' Debate Hall"
+ TH_SAGES_DEBATE_PLACEHOLDER: "Parliamentary debates and law proposals from the nations of Gensokyo will be displayed here.\nComing in a future update."
+
+### ============================================================
+### WP-G 2026-08-15: Hakurei Great Barrier core law (§7)
+### ============================================================
+ th_gensokyo_barrier_law: "Hakurei Great Barrier"
+ th_gensokyo_barrier_law_desc: "The supreme barrier that separates Gensokyo from the outside world. It has five levels; the higher the level, the more stable and conservative it becomes. This law cannot be changed through debate or by its leader — only by great events."
+ th_gensokyo_barrier_fantasy_policy: "Barrier · Fantasy (Level 5)"
+ th_gensokyo_barrier_fantasy_policy_desc: "The barrier at its zenith, most conservative: great defense, firm order, slow change."
+ th_gensokyo_barrier_profound_policy: "Barrier · Profound (Level 4)"
+ th_gensokyo_barrier_profound_policy_desc: "A firm barrier: solid defense and order."
+ th_gensokyo_barrier_flourish_policy: "Barrier · Flourish (Level 3)"
+ th_gensokyo_barrier_flourish_policy_desc: "A steady barrier, the baseline."
+ th_gensokyo_barrier_forgotten_policy: "Barrier · Forgotten (Level 2)"
+ th_gensokyo_barrier_forgotten_policy_desc: "A waning barrier: defense and order begin to loosen."
+ th_gensokyo_barrier_extinct_policy: "Barrier · Extinct (Level 1)"
+ th_gensokyo_barrier_extinct_policy_desc: "The barrier teeters on collapse: order wavers and defense is gone."
+ th_gensokyo_barrier_level: "Barrier Level"
+ th_gensokyo_barrier_level_desc: "The current strength of the Hakurei Great Barrier (1-5). The higher the level, the more conservative and stable; only great events may change it."
+ TH_GENSOKYO_BARRIER_LEVEL_FORMAT: "$VAL$"
+ TH_GENSOKYO_BARRIER_BASE: "Barrier Maintenance"
+
+### ============================================================
+### WP-D 2026-08-15: Request expansion within Gensokyo (§3.1)
+### ============================================================
+ th_gensokyo_request_expansion: "Request Expansion within Gensokyo"
+ th_gensokyo_request_expansion_desc: "Request a sage's permission to expand within Gensokyo: first choose a sage, then a location adjacent to your territory. The Human Village and the chosen sage's own lands are protected and cannot be claimed; if the sage approves you gain a casus belli, if declined your chaotic heart is tempered as compensation."
+ th_gensokyo_sage_expansion_cb: "Sage-Approved Expansion"
+ th_gensokyo_sage_expansion_cb_PROV: "Sage-Approved Expansion ([PROVINCE.GetName])"
+ th_gensokyo_sage_expansion_cb_desc: "A war of expansion sanctioned by a sage: ceding provinces in peace costs +150% war score, and antagonism gained is reduced by 50%."
+ opinion_gensokyo_expansion_approved: "Expansion Approved by Sage"
+ opinion_gensokyo_expansion_declined: "Expansion Request Refused"
+
+### ============================================================
+### WP-E 2026-08-15: Feast venue local boon (§4)
+### ============================================================
+ th_gensokyo_feast_location_modifier: "Afterglow of the Feast"
+ th_gensokyo_feast_location_modifier_desc: "A grand feast was recently held here; all things rejoice, and production and spirits are uplifted."
+ opinion_gensokyo_feast_guest: "Favor of the Feast"
+
+### ============================================================
+### WP-H 2026-08-15: Trial voting and crusade completion (§6)
+### ============================================================
+ th_gensokyo_trial_vote: "Cast a Verdict Preference Vote"
+ th_gensokyo_trial_vote_desc: "As a member who took part in the punitive war, voice your preference for the verdict (lenient/moderate/severe). This vote only reflects opinion and does not affect the Yama's final ruling."
+ th_gensokyo_bankruptcy_modifier: "Punishment of Bankruptcy"
+ th_gensokyo_bankruptcy_modifier_desc: "The reparations imposed by the Yama emptied the treasury, casting the economy into turmoil."
+ th_gensokyo_sanction_immunity: "Sanction Immunity"
+ th_gensokyo_sanction_immunity_desc: "This country triumphed against the punitive war; Gensokyo's nations may not sanction it for 20 years."
+ TH_TRIAL_PHASE_LABEL: "Trial Phase"
+ TH_TRIAL_VOTE_MONTHS_LABEL: "Months of Voting Left"
+ TH_TRIAL_VOTE_TALLY_LABEL: "Vote Tally (opinion only, does not affect the verdict)"
+ TH_TRIAL_VOTE_MERCY: "Lenient (Mercy lean)"
+ TH_TRIAL_VOTE_ORDER: "Moderate (Order lean)"
+ TH_TRIAL_VOTE_KARMA: "Severe (Karma lean)"

@@ -1,0 +1,211 @@
+﻿l_simp_chinese:
+### ============================================================
+### 幻想乡IO 链条系统 本地化（简中）
+### ============================================================
+
+### 价值观（缘 <-> 乱，社会价值观条）
+ th_gensokyo_amity_vs_belligerence: "缘与乱"
+ th_gensokyo_amity_vs_belligerence_desc: "缘者，与众生结缘，和衷共济，护人间之里，守大结界之安；乱者，兴兵作乱，穷兵黩武，逐幻之梦，扰幻想乡之序。此心所向，众生皆见。"
+ th_gensokyo_amity_focus: "缘"
+ belligerence_focus: "乱"
+
+### 价值观档位
+ th_notorious_tier_clean: "缘结和衷"
+ th_notorious_tier_pariah: "作乱生乱"
+ th_notorious_tier_outcast: "幻想乡弃民"
+
+### 宴会
+ th_gensokyo_feast: "举办宴会"
+ th_gensokyo_feast_desc: "在幻想乡举办一场盛大的宴会，款待各路妖怪与贤者，收敛乱心，重归缘结之道。"
+ PERFORM_th_gensokyo_feast_ACTION: "举办了一场宴会"
+ WE_PERFORM_th_gensokyo_feast_ACTION: "我们在幻想乡举办了一场宴会"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION: "在幻想乡举办了一场宴会"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US: "在幻想乡举办了一场宴会"
+ TH_FEAST_AI_HIGH_NOTORIETY: "乱心高企，亟需收敛"
+
+### 惩戒战争条约
+ th_gensokyo_crusade_triumph: "完全胜利（惩戒）"
+ th_gensokyo_crusade_triumph_desc: "惩戒战争中的完全胜利：对方无条件认输，接受幻想乡的一切裁决。"
+ TH_CRUSADE_INITIAL_SUPPORT: "阎魔发起支持"
+ TH_CRUSADE_AI_FOUND_TARGET: "存在敌意达标的惩戒对象"
+
+### 惩戒战争
+ th_gensokyo_crusade_cb: "惩戒战争"
+ th_gensokyo_crusade_cb_desc: "由阎魔与贤者议会裁定发起的惩戒战争，目标为幻想乡秩序的破坏者。"
+ th_gensokyo_crusade: "惩戒局势"
+ th_gensokyo_crusade_desc: "幻想乡全体对惩戒目标形成的包围网。"
+ th_gensokyo_trial: "审判局势"
+ th_gensokyo_trial_desc: "阎魔对惩戒战争落败者的最终审判。"
+ th_gensokyo_propose_crusade: "发起惩戒战争提案"
+ th_gensokyo_propose_crusade_desc: "阎魔向贤者议会提案，对敌意高企的成员发起惩戒战争。"
+ PERFORM_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
+ WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "我们发起了惩戒战争提案"
+ OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
+ ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "发起了惩戒战争提案"
+ th_gensokyo_counter_expansion: "反攻扩张"
+ th_gensokyo_counter_expansion_desc: "你在惩戒战争中反败为胜，获得在幻想乡合法扩张的机会。"
+ PERFORM_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "我们发动了反攻扩张"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "发动了反攻扩张"
+
+### 审判法
+ th_gensokyo_judgment_law: "审判法"
+ th_gensokyo_judgment_law_desc: "阎魔进行审判时遵循的准则。"
+ th_judgment_mercy_policy: "劝善"
+ th_judgment_mercy_policy_desc: "宽大为怀，审判从轻，缩短刑期，减少团结动荡。"
+ th_judgment_order_policy: "有序"
+ th_judgment_order_policy_desc: "依常例而行，不偏不倚。"
+ th_judgment_karma_policy: "因果必尝"
+ th_judgment_karma_policy_desc: "严惩不贷，审判从严，延长刑期，以儆效尤。"
+
+### 监管国
+ th_gensokyo_regulated_state: "彼岸监管国"
+ th_gensokyo_regulated_state_desc: "被阎魔判刑的附属国，完全丧失自主，刑满后释放为独立国家。"
+
+### 开局特殊附庸（永久附庸，无法吞并）
+ th_gensokyo_satori_vassal: "地灵殿附庸"
+ th_gensokyo_satori_vassal_desc: "名义上是觉的领地，实则由她的宠物们自行运转。灼热地狱的火海与熔岩，全由她的宠物们一手打理。"
+ th_gensokyo_forest_territory: "森林领地"
+ th_gensokyo_forest_territory_desc: "魔法森林的妖怪领主，与魔法使之间维系着松散的从属关系，而非绝对臣服。"
+ th_gensokyo_cloud_realm: "云上领"
+ th_gensokyo_cloud_realm_desc: "天界秩序之外的龙宫体系，由龙宫使者永江衣玖执掌往来之权——即便高高在上的天人，面对此等存在亦须礼让三分。"
+
+### 幻想乡法律系统（法律组）
+ th_feudal_legalism_law: "封建法理法"
+ th_legal_code_law: "法典"
+ th_education_law: "教育法"
+ th_cultural_traditions_law: "文化传统"
+ th_administration_law: "行政体系"
+### 封建法理法
+ th_old_charter: "旧章"
+ th_old_charter_desc: "大结界成型之初确立的继承旧规，世代相承，不因时势而改。法理既定，后人唯守其旧。"
+### 法典
+ th_old_customary_law: "旧例法"
+ th_old_customary_law_desc: "各地妖怪依照各自沿袭已久的旧规行事，不同族群习俗各有差异，只求世代相传的旧例不被打破。"
+ th_harmony_first_law: "以和为贵"
+ th_harmony_first_law_desc: "人类村落的律法重在调解纷争，不靠严苛刑罚树立威严，将息事宁人放在首位。发生矛盾时，由村中德高望重之人出面居中调停。"
+ th_separate_laws: "人妖分律"
+ th_separate_laws_desc: "人类与妖怪各自遵循自身的法度旧例，互不干预彼此的事务。人类争端适用律法，妖怪纠纷则依照旧俗处置。"
+ th_statute_law: "幻想乡成文法"
+ th_statute_law_desc: "随着印刷技术普及，各地零散的风俗规矩被逐步汇编成律法典籍，条理分明、条目清晰。"
+### 教育法
+ th_farming_and_reading: "耕读立家"
+ th_farming_and_reading_desc: "人类村落以耕作为家业根本，教授后代只授予农事、四时与节气，不尚书卷文辞。"
+ th_no_education: "无教而行"
+ th_no_education_desc: "妖怪既没有学堂教化，只以强弱为准则。不设教育，不传书文，仅仅凭着天性行事。"
+ th_old_learning_only: "旧学独传"
+ th_old_learning_only_desc: "教学只以古旧典籍作为正统依据，不接纳外来学问与新兴学说。知识的传授恪守旧有的义理，外界传来的新知皆不予采纳。"
+ th_publications: "刊物与报纸的传习"
+ th_publications_desc: "印刷技艺发展促使刊物报纸逐步盛行，见闻与物语皆可刊印传播，民众得以借此博闻广见，了解领地内外各类讯息。"
+ th_terakoya_system: "寺子屋体系"
+ th_terakoya_system_desc: "仿照寺子屋模式的正规私塾逐步兴起，各地孩童可入塾就学。读书识字不再是少数人的特权，普通民众也有机会习得文字与基础学识。"
+ th_farming_and_education: "农教并重"
+ th_farming_and_education_desc: "推行教化与农耕并举的模式，孩童在私塾读书明理的同时，也要参与农事劳作。学识修习与田间实践并行，两方面都不荒废。"
+### 文化传统
+ th_hundred_youkai_banquet: "百妖夜宴"
+ th_hundred_youkai_banquet_desc: "妖怪之间同席共饮，在弹幕对决与杯盏往来之间，维系幻想乡的旧有情谊。"
+ th_word_of_mouth: "口口相传"
+ th_word_of_mouth_desc: "各类奇闻怪谈依靠口头讲述代代流传，被记录于《幻想乡缘起》之中。人类听闻怪谈传说，心生对村落之外世界的畏惧，听者各有感悟，旧日往事便得以长久留存。"
+### 行政体系
+ th_personal_rule: "个人统御"
+ th_personal_rule_desc: "以我们领袖个人的强大威望与能力作为核心主导的行政体系，然而受现实条件制约，整体行政效率受到极大限制。"
+ th_youkai_autonomy: "妖怪自治"
+ th_youkai_autonomy_desc: "各地妖怪实行地方自治，领地内部的大小事务，均由辖地内的妖怪自行决断处置。"
+ th_clan_society: "宗族社会"
+ th_clan_society_desc: "人类乡里以宗族为治理单元，各宗族恪守自家族规实行自治。族内纷争、家事教化皆由宗族内部处置，其他势力不可擅自介入宗族内部事务。"
+
+### 审判事件
+ th_gensokyo_trial_events.1.title: "最终审判"
+ th_gensokyo_trial_events.1.desc: "惩戒战争已了结。作为阎魔，你需依据目标国的罪行裁定其命运。"
+ th_gensokyo_trial_events.1.a: "轻判：归还非法侵占的领土"
+ th_gensokyo_trial_events.1.b: "中判：归还领土并削弱其国力"
+ th_gensokyo_trial_events.1.c: "重判：使其完全沦为彼岸的监管国（转移财富并课以贡金）"
+
+### ============================================================
+### WP-D 2026-08-15：请求扩张裁决事件（§3.1）
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "扩张请求"
+ th_gensokyo_expansion_request_events.1.desc: "有国家请求在幻想乡内扩张，恳请你这位贤者予以许可。你可以同意授予其宣战理由，也可以拒绝以示告诫。"
+ th_gensokyo_expansion_request_events.1.a: "同意：授予扩张的宣战理由"
+ th_gensokyo_expansion_request_events.1.b: "拒绝：不予许可（请求者乱心稍敛）"
+ th_gensokyo_expansion_request_events.2.title: "贤者认可扩张"
+ th_gensokyo_expansion_request_events.2.desc: "贤者已认可你的扩张请求。你获得了针对目标地块的宣战理由：双方割让省份战争分数花费 +75%，获取的敌意额外减少 40%。"
+ th_gensokyo_expansion_request_events.2.a: "明白了"
+ th_gensokyo_expansion_request_events.3.title: "扩张请求被拒"
+ th_gensokyo_expansion_request_events.3.desc: "贤者拒绝了你的扩张请求，并劝你收敛乱心。作为告诫，你的乱倾向略有回落，贤者对你的观感有所改变。"
+ th_gensokyo_expansion_request_events.3.a: "谨遵教诲"
+
+### ============================================================
+### WP-H 2026-08-15：审判投票事件 + 赔款破产选项（§6）
+### ============================================================
+ th_gensokyo_trial_vote_events.1.title: "审判倾向投票"
+ th_gensokyo_trial_vote_events.1.desc: "阎魔正在审理目标国的罪责。你可以表达对裁决倾向的看法——此投票仅表民意，不影响阎魔的最终裁定。"
+ th_gensokyo_trial_vote_events.1.a: "从宽：劝其向善"
+ th_gensokyo_trial_vote_events.1.b: "适中：依序而断"
+ th_gensokyo_trial_vote_events.1.c: "从严：因果必尝"
+ th_gensokyo_trial_events.1.e: "仅赔款破产：转移半数国库并课以破产之罚"
+
+### 变量
+ th_gensokyo_sin_var: "罪孽"
+ th_gensokyo_expansion_quota: "合法扩张配额"
+ th_gensokyo_expansion_quota_used: "已用配额"
+ th_gensokyo_sentence_tier: "判决档位"
+ th_gensokyo_sentence_months: "刑期（月）"
+ th_gensokyo_effective_sin: "有效罪值"
+ th_gensokyo_temp_sentence_years: "刑期加成（年）"
+ th_gensokyo_temp_gold: "转移金币"
+
+### 目标选择
+ choose_crusade_target: "选择惩戒目标"
+
+### 加入惩戒战争
+ th_gensokyo_join_crusade: "加入惩戒战争"
+ th_gensokyo_join_crusade_desc: "加入对惩戒目标的包围网，共同维护幻想乡的秩序。"
+ PERFORM_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "我们加入了惩戒战争"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "加入了惩戒战争"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM: "对惩戒对象怀有敌意"
+
+### 反杀条约
+ th_gensokyo_crusade_counter: "反杀胜利（惩戒）"
+ th_gensokyo_crusade_counter_desc: "在惩戒战争中反败为胜：幻想乡的包围网被你击溃，你赢得了扩张的权利。"
+
+### 议会议题
+ th_gensokyo_crusade_issue: "惩戒战争提案"
+ th_gensokyo_crusade_issue_desc: "由阎魔发起、贤者投票的惩戒战争提案。两票赞同即通过。"
+
+### 价格
+ th_gensokyo_feast_price: "宴会费用"
+ subject_pays_regulated: "监管国上贡"
+
+### 修正显示
+ th_gensokyo_weakness_modifier: "国力削弱"
+ th_gensokyo_weakness_modifier_desc: "审判判决的惩罚性削弱。"
+ th_gensokyo_expansion_cost_authorized_modifier: "贤者授权扩张"
+ th_gensokyo_expansion_cost_authorized_modifier_desc: "贤者的默许使扩张代价大幅降低。"
+ th_gensokyo_expansion_cost_incident_modifier: "异变扩张"
+ th_gensokyo_expansion_cost_incident_modifier_desc: "在异变中扩张，代价略有增加。"
+ th_gensokyo_expansion_cost_unauthorized_modifier: "私自扩张"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc: "未经贤者默许的扩张，代价高昂。"
+ th_gensokyo_notorious_pariah_modifier: "作乱失格"
+ th_gensokyo_notorious_pariah_modifier_desc: "此国已堕入乱之道，可能被提案为惩戒战争目标。"
+
+### 局势面板
+ TH_CRUSADE_SUPPORTER_STRENGTH: "幻想乡联军兵力"
+ TH_CRUSADE_TARGET_STRENGTH: "惩戒目标兵力"
+ TH_CRUSADE_SIN_DISPLAY: "目标罪孽"
+
+### 团结度来源
+ TH_GENSOKYO_UNITY_FROM_MEMBERS: "成员规模"
+
+### 贤者保护
+ th_gensokyo_sages_defend_reason: "守护人间之里"
+
+### 变量
+ th_crusade_supporter_strength: "联军兵力"
+ th_crusade_target_strength: "目标兵力"
+ th_crusade_temp_strength: "成员兵力"
+ th_crusade_target_ref: "惩戒目标"
+ th_crusade_sin_display: "目标罪孽"

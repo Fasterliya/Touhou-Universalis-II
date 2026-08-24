@@ -19,6 +19,15 @@
  th_gensokyo_io_human_village_special_status: "Human Village"
  th_gensokyo_io_human_village_special_status_desc: "Representatives of the Human Village, protecting the interests of Gensokyo's human settlements."
 
+### 2026-08-21 (bug 1 fix): base membership status for all members (vote weight carrier)
+ th_gensokyo_io_regular_member_special_status: "Gensokyo Member"
+ th_gensokyo_io_regular_member_special_status_desc: "A regular member of Gensokyo. All members have a vote in the parliament, weighted by their influence within Gensokyo."
+
+### === Gensokyo Influence Modifier ===
+### 2026-08-21 (user spec): societal value grants ±50% progressively, affects parliament vote weight
+ th_gensokyo_io_influence_modifier: "Gensokyo Influence Modifier"
+ th_gensokyo_io_influence_modifier_desc: "This country's political influence modifier within Gensokyo. En-leaning (amity) raises vote weight; Ran-leaning (belligerence) cuts vote weight."
+
 ### === Leader Title ===
  th_gensokyo_io_yama_leader_title: "Yama"
  th_gensokyo_io_yama_leader_title_desc: "The judge of Gensokyo and leader of its Parliament."
@@ -156,18 +165,8 @@
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "Reform of the Sages' Council"
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "+10% tax income, +10% manpower."
 
-### === Values Consequence Auto-Modifiers (design §2.5) ===
- th_gensokyo_io_notorious_tier1_auto_modifier: "Budding Discord"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc: "As discord first takes root, Gensokyo looks upon this nation with wariness. Diplomatic reputation -1, improve relations -15%."
-
- th_gensokyo_io_notorious_tier2_auto_modifier: "Open Discord"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc: "With discord plain to see, this nation is suspected of repeated wrongdoing. Diplomatic reputation -2, improve relations -30%, stability investment +10%."
-
- th_gensokyo_io_notorious_tier3_auto_modifier: "Pariah of Discord"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc: "With discord beyond restraint, this nation is shunned by Gensokyo's society. Diplomatic reputation -4, improve relations -50%."
-
- th_gensokyo_io_notorious_tier4_auto_modifier: "Marked for Judgment"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc: "With discord beyond redemption, the Yama and the sages may declare a punitive war without further deliberation. Diplomatic reputation -6, improve relations -75%."
+### 2026-08-21 (requirement 3): th_gensokyo_io_notorious_tier1~4_auto_modifier(_desc)
+### removed (stage-based modifier system removed entirely)
 
 ### === Introduce Institution Action ===
  th_sages_introduce_institution: "Introduce Institution"
@@ -239,3 +238,6 @@
  TH_TRIAL_VOTE_MERCY: "Lenient (Mercy lean)"
  TH_TRIAL_VOTE_ORDER: "Moderate (Order lean)"
  TH_TRIAL_VOTE_KARMA: "Severe (Karma lean)"
+
+### === 持地显示（2026-08-21）===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT: "This location belongs to the Gensokyo International Organization"

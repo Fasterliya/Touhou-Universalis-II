@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 行动 — 请求幻想乡内扩张（WP-D 2026-08-15）
 ### 设计文档《国际组织》§3.1：
 ###   ① select 任意贤者国家（好感度/结盟等原版外交因素判定）
@@ -53,6 +53,13 @@ th_gensokyo_request_expansion = {
         source = recipient
         target_flag = target_sage
         name = "choose_country"
+        ### 2026-08-23 error.log 修复：补 column——原缺 column 导致
+        ### "There is no column to display in this stage of select-interaction-target"
+        ### assertion（22:55:05 实证）→ 选国流程失败。
+        ### 对齐先例：japanese_shogunate.txt:66-68（choose_country + column）
+        column = {
+            data = name
+        }
         interaction_source_list = {
             scope:recipient = {
                 every_international_organization_member = {

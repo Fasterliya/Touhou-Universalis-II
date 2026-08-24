@@ -1,0 +1,300 @@
+================================================================================
+    幻想乡 IO 链条系统（th_gensokyo_chain）— 交接文档 v5.1（增量）
+    2026-08-23 两会话修复记录（覆盖 v5.0 之后全部工作）
+    完成日期: 2026-08-23（代码修复完成，实测验证待续）
+    MOD: Touhou-Universalis-II
+    工作副本: C:\Users\12494\Documents\Paradox Interactive\Europa Universalis V\mod\Touhou-Universalis-II
+    前置版本: TH_GENSOKYO_CHAIN_交接文档_v5.0_2026-08-21.txt（规格锚点）
+================================================================================
+
+================================================================================
+第 0 章：本会话总览（2026-08-23）
+================================================================================
+
+  用户实测两个 bug（v5.0 之后）：
+  ① 议会通过后无法拉起惩戒战争局势，T25 不对 T31 宣战
+  ② 惩戒战争局势中其他 TAG 点「加入战争」是单独开新战争，而非加入
+     T25 对 T31 的现有战争（用户点名对照 base game 胡斯战争主要行动）
+
+  本会话完成：
+  ① 两个 bug 根因定位（base game 对照 + error.log 实证）
+  ② 7 项代码修复（含顺带发现的 2 个同款/隐藏根因）
+  ③ 全 MOD lint 前置排查（180 文件，无新增问题）
+  ④ 维基知识修正（局势激活策略——enable ≠ activate，实测实证）
+  ⑤ P0-3 开局价值观矛盾消除（用户已拍板 100）
+
+  当前状态：代码修复全部完成且静态验证通过（LSP 0 错误），
+  等待用户重启游戏实测（游戏需重启加载新脚本；旧档可测 ①②，
+  新档可测开局价值观 100）。
+
+================================================================================
+第 1 章：本次实测根因库（新增，最高价值）
+================================================================================
+
+  1.11 enable_situation_effect ≠ 激活局势（局势不启动根因）
+      - enable_situation_effect 只 set_global_variable enabled_situation_$type$
+        （situation_effects.txt:5-14 实证），不直接激活局势
+      - 激活依赖月度 spawn 检查；实测 monthly_spawn_chance = 1 +
+        can_start = has_enabled_situation_trigger 时局势不自动启动
+      - base game 完整模式 = 双调用（flavor_tim.txt:628+653）：
+        enable_situation_effect（设全局变量）+ activate_situation（立即激活）
+      - activate_situation 需 can_start=true（维基）→ enable 必须先行
+      - 波及：惩戒局势（议会通过后）+ 审判局势（惩戒 on_ended 后）——同款 bug
+
+  1.12 any_current_war 遍历 scope = 当前 root 参与的战争（join 单独开战根因）
+      - any_current_war/random_current_war 枚举「当前 root 参与的战争」
+      - 原写法在 scope:actor 内 → 枚举执行者（尚未参战）的战争 = 恒空 →
+        if 失败 → 走 else 兜底 declare_war_with_cb → 每国单独开战
+      - error.log 实证：DBG_JOIN_ELSE（th_gensokyo_join_crusade.txt:124）多次出现
+      - 胡斯先例（hussite_wars_actions.txt:747-764）：遍历写在目标国 c:BOH 块内，
+        条件 attacker_leader = 领袖 + defender_leader = 目标
+      - 已复刻：scope:crusade_target ?= { if { any_current_war {...} }
+        random_current_war { scope:actor = { join_war_as_attacker = { war = prev
+        call_in_subjects = yes } } } }
+      - 注意：else 兜底宣战必须保持 scope:actor 嵌套（declare 执行者 = 发起国）
+
+  1.13 script value 引用缺失变量 → 整个公式返回 none（投票权重隐藏根因）
+      - var:th_gensokyo_personal_contribution_var 未设置（旧档/后加入成员）→
+        "Failed to fetch variable" + 公式返回 none 类型 →
+        special_status_power 失效（game.log "Value of wrong type ... Got value of
+        type 'none'" at th_gensokyo_io.txt:31/201）→ 议会投票权重异常
+      - 修复：script value if 守卫包装（维基 Variable:898 / 反模式 142 同款）：
+        if = { limit = { has_variable = X } add = var:X }——缺失按 0 计
+
+  1.14 on_action trigger 裸 key 被当 event target link 解析失败
+      - is_member_of_international_organization = th_gensokyo_io（裸 key）→
+        "Failed to find a valid event target link 'th_gensokyo_io'"
+        （game.log:4107 实证）→ trigger 恒 false → 月度脉冲 effect 永不执行
+        → 免制裁倒计时/贡献度累计全失效
+      - 修复：加前缀 international_organization:th_gensokyo_io
+      - 另：th_gensokyo_io_monthly.txt:22 有 modifier:country_tax_base
+        （Non-existent modifier type，v5.0 根因 1.7 同款陷阱漏修一处）→ 裸引用
+
+  1.15 开局价值观矛盾消除（P0-3）
+      - 三方设置：政府模板 0 / io_init_setup -100 / chain_init 100
+      - on_game_start 内 -100 与 100 并存，执行顺序不确定 → 最终值不可靠
+      - 用户已拍板 100（v5.0 第 3 章「开局价值观 100 采纳」）→
+        删除 io_init_setup 的 -100 → 最终确定性 = 100（chain_init 唯一负责）
+
+  1.16 situation effect 的 tooltip 文本含 [COUNTRY.GetName]——scope 渲染失败族（新）
+      - THIRD_ENABLE_SITUATION_EFFECT / THIRD_DISABLE_SITUATION_EFFECT 的本地化
+        文本均含 [COUNTRY.GetName]（scripted_effects_l_*.yml:818/824 实证）；
+        THIRD_ACTIVATE_SITUATION_EFFECT / THIRD_END_SITUATION_EFFECT 只含
+        [SITUATION.GetName]（安全）
+      - 在 IO/situation scope 调用 enable/disable_situation_effect → tooltip 渲染
+        失败（error.log "Data error in loc string 'THIRD_ENABLE_SITUATION_EFFECT'" +
+        "Promote 'COUNTRY' returned nullptr" 刷屏实证）→ custom_description 内
+        set/remove_global_variable 执行中断 → 全局变量未设/未清
+      - 后果链（议会重复开会根因）：enable 中断 → 全局变量未设 → activate 的
+        can_start 不满足 → 局势不启动 → propose allow 不挡 → 再次提案 → 重复开会、
+        议题一样（议题池只有惩戒议题有效，3 空壳无 special_status 引擎不调度）
+      - disable 中断 → 全局变量残留 → 局势结束后下月自动重启（无需议会）
+      - 修复：enable/disable_situation_effect 全部挪到 leader_country（国家 scope）
+        调用（F8/F9/F12）；activate/end_situation 任何 scope 安全
+      - 教训：base game effect 的 tooltip 数据函数依赖调用 scope——非国家 scope
+        调用前必查 effect_localization 文本
+
+  1.17 监管国过月变普通附庸（真正根因：subject on_monthly 引擎不可靠）
+      - 【初判】enabled = always no → 改 yes（F10）——实测无效，排除
+      - 【真根因】subject_type 的 on_monthly 回调在 EU5 引擎中不可靠：
+        readme:23 文档化 root=subject，但 base game 18 个类型全部零实现；
+        运行时实证 root 解析为无效空国家（error.log "Scoped object of type
+        'country' is not valid (国家"国家"（---）)" at :86/:98，单会话 4480 行）→
+        每月报错 → 引擎 subject 月度维护异常 → 类型被重置为普通附庸
+      - 【修复】F15：删除 regulated_state on_monthly（消除报错源，on_enable 保留——
+        base game 9 类型有 on_enable 实现，可靠）
+        F16：刑期倒计时/释放迁移至 th_gensokyo_io_monthly_country_pulse
+        （country on_action pulse，root=国家 可靠；监管国保持 IO 成员）
+      - 【教训】subject 的 on_monthly 与 on_io_parliament_started 同族：
+        readme/定义存在但引擎行为不可靠——非国家 scope 的官方回调先用 base game
+        使用量验证（0 实例 = 高危信号）
+
+  1.18 刑满释放原为静默操作（无事件）
+      - regulated_state on_monthly 归零直接 cancel_subject，玩家无感知
+      - 修复：新建「脱离彼岸」事件 th_gensokyo_trial_events.2（root=被监管国，
+        事件内 cancel_subject + 团结奖励 + 清变量），on_monthly 归零改为
+        trigger_event_non_silently；控制台触发：event th_gensokyo_trial_events.2 [c:TAG]
+
+  1.19 宗主保护附庸的机制（阎魔保护义务，F13/F14）
+      - subject_types/readme.txt:65：overlord_protects_external（宗主是否保护附庸
+        免受外部攻击，默认 yes——base game 18 类型无一显式设置，依赖引擎默认）
+      - subject_types/readme.txt:34：join_defensive_wars_always（"does one country
+        automatically join defensive wars with the other"——关系双向自动加入防御战；
+        学园自治区同款先例：隐藏类型 + always = yes，维基 Subject_types:303）
+      - on_war_declared 钩子（_hardcoded.txt:2054）：root=country, scope:actor=宣战国,
+        scope:recipient=被宣战国, scope:war=战争——文件内自由市保护先例
+        （贤者 join_war_as_defender = { war = scope:war }）同构
+      - F13：监管国加 overlord_protects_external = yes + join_defensive_wars_always
+      - F14：on_war_declared 追加 th_gensokyo_regulated_protection——监管国被宣战
+        → 阎魔（leader_country）强制 join_war_as_defender（is_at_war_with 防重 +
+        惩戒 CB 排除防自己打自己）
+
+================================================================================
+第 2 章：本次改动全清单（文件级，12 项）
+================================================================================
+
+  F1 in_game/common/parliament_issues/th_gensokyo_crusade_issue.txt
+     - on_debate_passed：enable_situation_effect 后补
+       activate_situation = situation:th_gensokyo_crusade（问题①根因修复）
+  F2 in_game/common/generic_actions/th_gensokyo_join_crusade.txt
+     - any_current_war/random_current_war 挪到 scope:crusade_target 块
+       （胡斯同款；问题②根因修复）
+     - join_war_as_attacker 补 call_in_subjects = yes（对齐胡斯先例）
+     - else 兜底宣战保持 scope:actor 嵌套
+     - potential 的 is_at_war_with any-trigger tooltip 警告（既有，P2）
+  F3 in_game/common/on_action/th_gensokyo_io_monthly.txt
+     - trigger 裸 key 加前缀 international_organization:（1.14）
+     - modifier:country_tax_base → 裸 country_tax_base（1.14）
+     - effect 开头补 personal_contribution_var 兜底初始化（旧档兼容）
+  F4 in_game/common/situations/th_gensokyo_crusade.txt
+     - on_ended（非反杀分支）：enable_situation_effect 后补
+       activate_situation = situation:th_gensokyo_trial（审判局势同款 bug）
+  F5 in_game/common/script_values/th_gensokyo_io_chain_values.txt
+     - 影响力公式 var: 引用加 if 守卫包装（1.13，投票权重治本）
+  F6 in_game/common/situations/th_gensokyo_trial.txt
+     - BOM 补全（situations/ 引擎要求 UTF-8 BOM）
+  F7 in_game/common/scripted_effects/th_gensokyo_io_init_setup.txt
+     - 删除 set_societal_value = -100 段（1.15，开局价值观确定性 100）
+
+  --- 第二轮（2026-08-23 下午，三问题修复）---
+  F8 in_game/common/parliament_issues/th_gensokyo_crusade_issue.txt
+     - on_debate_passed：enable+activate 挪到 leader_country scope
+       （1.16 tooltip 渲染失败 → 局势不启动 → 议会重复开会根因修复）
+  F9 in_game/common/situations/th_gensokyo_crusade.txt
+     - on_ended：审判 enable+activate 挪到 leader_country scope（1.16 同源）
+  F10 in_game/common/subject_types/th_gensokyo_regulated_state.txt
+     - enabled = always no → always yes（1.17，监管国过月变普通附庸根因）
+     - on_enable 兜底初始化刑期变量（防判决路径遗漏首月即释放）
+  F11 in_game/events/th_gensokyo_trial_events.txt + 本地化 ×4
+     - 新建「脱离彼岸」事件 th_gensokyo_trial_events.2（1.18）
+     - regulated_state on_monthly 归零改为触发事件（不再静默释放）
+     - 本地化：simp_chinese/english/russian chain 文件 + korean io 文件
+  F12 in_game/common/situations/th_gensokyo_crusade.txt +
+      in_game/common/situations/th_gensokyo_trial.txt
+     - disable_situation_effect 挪到 leader_country scope（1.16 同源：
+       disable 渲染失败 → 全局变量残留 → 局势结束自动重启）
+
+  --- 第三轮（2026-08-23，阎魔保护义务）---
+  F13 in_game/common/subject_types/th_gensokyo_regulated_state.txt
+     - overlord_protects_external = yes + join_defensive_wars_always = always yes
+       （1.19：宗主保护附庸机制显式化）
+  F14 in_game/common/on_action/th_gensokyo_chain_events.txt
+     - on_war_declared 追加 th_gensokyo_regulated_protection：
+       监管国被宣战 → 阎魔强制 join_war_as_defender（1.19）
+     - is_at_war_with 防重（引擎默认保护已拉入则跳过）
+     - 惩戒 CB 排除（阎魔对监管国发动惩戒战争时不当防御方）
+
+  --- 第四轮（2026-08-23，监管国降级真根因）---
+  F15 in_game/common/subject_types/th_gensokyo_regulated_state.txt
+     - 删除 on_monthly 块（1.17 真根因：引擎 root 解析不可靠 → 每月报错 →
+       类型重置；on_enable 兜底保留）
+  F16 in_game/common/on_action/th_gensokyo_io_monthly.txt
+     - pulse 追加监管国刑期倒计时 + 归零触发「脱离彼岸」事件
+       （country scope 可靠路径，迁移自 subject on_monthly）
+
+================================================================================
+第 3 章：验证状态（2026-08-23 末）
+================================================================================
+
+  代码层（已完成）：
+  ✓ 全部 7 项修改 LSP 诊断 0 错误（含 companion 文件）
+  ✓ 全 MOD lint 180 文件：1 error + 57 warnings 全部为既有债务
+    （thgfx.0001 事件 ID / 40 个 BOM 缺失历史累积 / 14 个本地化缺失 /
+    2 个 modifier 白名单 / on_ending 偏好），本次修改零引入
+  ✓ 修改文件 BOM 全部恢复（edit 工具剥 BOM 已补回，pwsh 逐文件验证）
+  ✓ 维基 03 架构「激活策略」段已修正（1.11 知识入库）
+
+  实测层（待用户验证，游戏需重启加载新脚本）：
+  ⏳ ① 议会通过 → 局势立即启动 + T25 宣战 T31（原完全不触发）
+  ⏳ ② 加入战争 → 加入同一场战争（error.log 查 DBG_JOIN_IF_PASS/AFTER，
+        不应再有 DBG_JOIN_ELSE）
+  ⏳ ③ 审判局势（惩戒平息后自动启动）
+  ⏳ ④ 投票权重正常（error.log 不再有 "Value of wrong type" /
+        "Failed to fetch variable 'th_gensokyo_personal_contribution_var'"）
+  ⏳ ⑤ 月度脉冲（无 "Non-existent modifier type 'country_tax_base'" /
+        "event target link 'th_gensokyo_io'"）
+  ⏳ ⑥ 新档开局价值观 = 100（trigger c:X = { societal_value:
+        th_gensokyo_amity_vs_belligerence >= 50 }）
+
+================================================================================
+第 4 章：测试命令全集（控制台，v5.1 修订）
+================================================================================
+
+  【原生开会路径（权威）】tag T25 → IO 面板 → 发起惩戒战争提案 → 选目标
+  【T31 好战 100（满足提案需求）】effect c:T31 = { set_societal_value = {
+        type = th_gensokyo_amity_vs_belligerence value = 100 } }
+  【验证议会激活】trigger international_organization:th_gensokyo_io = {
+        is_active_parliament = yes }
+  【验证局势启动（①）】trigger situation:th_gensokyo_crusade = {
+        situation_is_active = yes }
+  【验证宣战（①）】trigger c:T31 = { is_at_war_with = c:T25 }
+  【验证加入同一战争（②）】trigger c:T13 = { is_at_war_with = c:T31 }
+  【验证审判局势（③）】trigger situation:th_gensokyo_trial = {
+        situation_is_active = yes }
+  【验证开局价值观（⑥）】trigger c:T31 = {
+        societal_value:th_gensokyo_amity_vs_belligerence >= 50 }
+  【DBG 检查】error.log 搜 DBG_JOIN_IF_PASS / DBG_JOIN_AFTER / DBG_JOIN_ELSE
+  【残留清理】effect international_organization:th_gensokyo_io = {
+        every_international_organization_member = {
+        remove_variable = th_gensokyo_crusade_target_mark
+        remove_variable = th_gensokyo_crusade_vote_locked
+        remove_variable = th_gensokyo_crusade_supporter
+        remove_variable = th_gensokyo_crusade_participant } }
+
+================================================================================
+第 5 章：待办清单（按优先级）
+================================================================================
+
+  P0：
+  1. 游戏内实测 6 项（第 3 章 ⏳ ①-⑥），重点 ①②
+  2. 实测通过后删除 3 处 DBG_JOIN_* 标记（skill 纪律：诊断后必删），
+     再跑 LSP + eu5_mod_lint 最终门禁
+  3. 交接文档 v5.2 定稿（实测结果回填本文件 ⏳ 项）
+  P1：
+  4. 全员投票实测回归（手册 100-102）+ 支持度通过率
+  5. 影响力权重分布实测（调参：人口归一化 100000、税基权重）
+  6. 条约本地化确认（和约界面中文名）
+  7. 反杀链路实测（countered → 反攻扩张 → 免制裁 20 年——免制裁倒计时
+     依赖月度脉冲，本次 F3 已修复 trigger，旧档需注意 on_action 合并
+     不生效的引擎问题，建议新档验证）
+  P2：
+  8. 全 MOD 40 个文件缺 BOM 批量修复（lint 债务；situations/ 与
+     本地化优先——引擎严格要求）
+  9. thgfx.0001 事件 ID 格式修复（lint 唯一 error）
+  10. join_crusade potential:27 any-trigger tooltip 警告（error.log 刷屏）
+  11. 韩文 chain 本地化（整体缺失）
+  12. 骨架交接：3 空壳议题 / laws 注释项 / 文化编年史 100+ 裸 var
+  13. 本次修复知识复盘沉淀（eu5-review：1.11-1.15 入库 + 索引重建）
+
+================================================================================
+第 6 章：文档资产索引
+================================================================================
+
+  I:\工作站\交接文档\
+  ├── TH_GENSOKYO_CHAIN_交接文档_v5.0_2026-08-21.txt  规格锚点（v5.0）
+  ├── TH_GENSOKYO_CHAIN_交接文档_v5.1_2026-08-23.txt  本文件（增量）
+  ├── TH_GENSOKYO_CHAIN_现状报告_2026-08-14.md     现状总览
+  ├── TH_GENSOKYO_CHAIN_控制台检测手册.txt         回归清单
+  └── TH_GENSOKYO_C盘快照_2026-08-21_五轮修复版\    合并前备份
+
+  维基更新：_专题研究/局势模块/03_局势架构模式全解.md「激活策略」段
+  （1.11 实测修正，2026-08-23）
+
+================================================================================
+第 7 章：风险与注意事项
+================================================================================
+
+  1. 游戏需重启加载新脚本（MOD 脚本改动不热加载）；当前 7 项修复
+     需完整重启后才生效
+  2. 旧档测试：personal_contribution_var 缺失由 F3 兜底 + F5 守卫双保险；
+     但 on_action 合并不生效的引擎问题（读档后）可能使月度脉冲不跑——
+     月度相关验证建议新档
+  3. DBG_JOIN_* 标记在 F2 内 3 处，实测通过后必删（skill 纪律）
+  4. activate_situation 需要 can_start=true：F1/F4 中 enable 必须先行
+     （顺序已保证）；若实测发现 activate 检查失败，回退检查
+     has_enabled_situation_trigger 的 custom_description 求值
+  5. 开局价值观 = 100（F7 后确定性）：全员开局满好战、立即可被惩戒——
+     若用户后续改回亲善设计，需同步 chain_init（notorious_effects:19-22）
+  6. 多语言：韩文 chain 缺失；新增键需补 4 语言（按惯例）
+  7. 编码：本次修改 7 文件 BOM 已恢复；后续 edit 后必查 BOM
+================================================================================

@@ -26,8 +26,13 @@
 ### 惩戒战争条约
  th_gensokyo_crusade_triumph: "完全胜利（惩戒）"
  th_gensokyo_crusade_triumph_desc: "惩戒战争中的完全胜利：对方无条件认输，接受幻想乡的一切裁决。"
+ ### 2026-08-21（问题 4）：和约界面条目名键（offer_peace 同款 _entry/_entry_short 模式，
+ ### 原缺失导致和约面板显示裸 key）
+ th_gensokyo_crusade_triumph_entry: "$th_gensokyo_crusade_triumph$"
+ th_gensokyo_crusade_triumph_entry_short: "$th_gensokyo_crusade_triumph$"
  TH_CRUSADE_INITIAL_SUPPORT: "阎魔发起支持"
  TH_CRUSADE_AI_FOUND_TARGET: "存在敌意达标的惩戒对象"
+ TH_CRUSADE_AI_ANTAGONISM: "对惩戒目标的敌意"
 
 ### 惩戒战争
  th_gensokyo_crusade_cb: "惩戒战争"
@@ -62,6 +67,8 @@
 ### 监管国
  th_gensokyo_regulated_state: "彼岸监管国"
  th_gensokyo_regulated_state_desc: "被阎魔判刑的附属国，完全丧失自主，刑满后释放为独立国家。"
+ LEAD_th_gensokyo_regulated_state: "$LIST$是[SUBJECT_TYPE.GetName]"
+ AM_th_gensokyo_regulated_state: "$LIST$的[SUBJECT_TYPE.GetName]。"
 
 ### 开局特殊附庸（永久附庸，无法吞并）
  th_gensokyo_satori_vassal: "地灵殿附庸"
@@ -121,6 +128,9 @@
  th_gensokyo_trial_events.1.a: "轻判：归还非法侵占的领土"
  th_gensokyo_trial_events.1.b: "中判：归还领土并削弱其国力"
  th_gensokyo_trial_events.1.c: "重判：使其完全沦为彼岸的监管国（转移财富并课以贡金）"
+ th_gensokyo_trial_events.2.title: "脱离彼岸"
+ th_gensokyo_trial_events.2.desc: "刑期已满。你从彼岸的监管中获释，重获独立。"
+ th_gensokyo_trial_events.2.a: "自由了"
 
 ### ============================================================
 ### WP-D 2026-08-15：请求扩张裁决事件（§3.1）
@@ -167,10 +177,14 @@
  OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
  ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "加入了惩戒战争"
  TH_JOIN_CRUSADE_AI_ANTAGONISM: "对惩戒对象怀有敌意"
+ TH_JOIN_CRUSADE_SUPPORTER_BIAS: "议会中赞成惩戒战争"
 
 ### 反杀条约
  th_gensokyo_crusade_counter: "反杀胜利（惩戒）"
  th_gensokyo_crusade_counter_desc: "在惩戒战争中反败为胜：幻想乡的包围网被你击溃，你赢得了扩张的权利。"
+ ### 2026-08-21（问题 4）：和约界面条目名键
+ th_gensokyo_crusade_counter_entry: "$th_gensokyo_crusade_counter$"
+ th_gensokyo_crusade_counter_entry_short: "$th_gensokyo_crusade_counter$"
 
 ### 议会议题
  th_gensokyo_crusade_issue: "惩戒战争提案"
@@ -189,8 +203,8 @@
  th_gensokyo_expansion_cost_incident_modifier_desc: "在异变中扩张，代价略有增加。"
  th_gensokyo_expansion_cost_unauthorized_modifier: "私自扩张"
  th_gensokyo_expansion_cost_unauthorized_modifier_desc: "未经贤者默许的扩张，代价高昂。"
- th_gensokyo_notorious_pariah_modifier: "作乱失格"
- th_gensokyo_notorious_pariah_modifier_desc: "此国已堕入乱之道，可能被提案为惩戒战争目标。"
+ ### 2026-08-21（需求 3）：th_gensokyo_notorious_pariah_modifier(_desc) 已删
+ ### （阶段性修正系统，随 pariah 标记修正一并移除）
 
 ### 局势面板
  TH_CRUSADE_SUPPORTER_STRENGTH: "幻想乡联军兵力"

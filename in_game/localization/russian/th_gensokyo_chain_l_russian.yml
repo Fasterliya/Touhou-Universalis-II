@@ -33,8 +33,12 @@
 ### Crusade peace treaty
  th_gensokyo_crusade_triumph:"Полная победа (крестовый поход)"
  th_gensokyo_crusade_triumph_desc:"Полная победа в карательном походе: враг безоговорочно сдаётся и принимает все приговоры Генсокё."
+ ### 2026-08-21 (проблема 4): ключи пунктов мирного договора
+ th_gensokyo_crusade_triumph_entry:"$th_gensokyo_crusade_triumph$"
+ th_gensokyo_crusade_triumph_entry_short:"$th_gensokyo_crusade_triumph$"
  TH_CRUSADE_INITIAL_SUPPORT:"Изначальная поддержка Ямы"
  TH_CRUSADE_AI_FOUND_TARGET:"Существует цель с достаточной враждебностью"
+ TH_CRUSADE_AI_ANTAGONISM:"Враждебность к цели крестового похода"
 
 ### Crusade
  th_gensokyo_crusade_cb:"Карательный поход"
@@ -69,6 +73,8 @@
 ### Regulated state
  th_gensokyo_regulated_state:"Поднадзорное государство Подземного мира"
  th_gensokyo_regulated_state_desc:"Субъект, приговорённый Ямой, лишённый всякой автономии, вновь обретает независимость по окончании срока."
+ LEAD_th_gensokyo_regulated_state:"$LIST$ — [SUBJECT_TYPE.GetName|l]"
+ AM_th_gensokyo_regulated_state:"[SUBJECT_TYPE.GetName] державы $LIST$."
 
 ### Initial special subjects (permanent, cannot be annexed)
  th_gensokyo_satori_vassal:"Вассал Сатори"
@@ -128,6 +134,9 @@
  th_gensokyo_trial_events.1.a:"Лёгкое: Вернуть незаконно захваченные земли"
  th_gensokyo_trial_events.1.b:"Среднее: Вернуть земли и ослабить их власть"
  th_gensokyo_trial_events.1.c:"Максимальное: Привести их в Поднадзорное государство Подземного мира (передать богатства и взимать дань)"
+ th_gensokyo_trial_events.2.title:"Освобождение из Подземного мира"
+ th_gensokyo_trial_events.2.desc:"Срок наказания истёк. Вы освобождены из-под надзора Подземного мира и вновь обретаете независимость."
+ th_gensokyo_trial_events.2.a:"Свобода"
 
 ### ============================================================
 ### WP-D 2026-08-15: События решения о расширении (§3.1)
@@ -174,10 +183,14 @@
  OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION:"Присоединился к карательному походу"
  ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US:"Присоединился к карательному походу"
  TH_JOIN_CRUSADE_AI_ANTAGONISM:"Враждебен цели карательного похода"
+ TH_JOIN_CRUSADE_SUPPORTER_BIAS:"Поддержал карательный поход в парламенте"
 
 ### Counter treaty
  th_gensokyo_crusade_counter:"Контр-победа (Карательный поход)"
  th_gensokyo_crusade_counter_desc:"Вы переломили ход карательного похода: сокрушили окружение Генсокё и получили право на расширение."
+ ### 2026-08-21 (проблема 4): ключи пунктов мирного договора
+ th_gensokyo_crusade_counter_entry:"$th_gensokyo_crusade_counter$"
+ th_gensokyo_crusade_counter_entry_short:"$th_gensokyo_crusade_counter$"
 
 ### Parliament issue
  th_gensokyo_crusade_issue:"Предложение о карательном походе"
@@ -196,8 +209,7 @@
  th_gensokyo_expansion_cost_incident_modifier_desc:"Расширение во время инцидента обходится немного дороже."
  th_gensokyo_expansion_cost_unauthorized_modifier:"Несанкционированное расширение"
  th_gensokyo_expansion_cost_unauthorized_modifier_desc:"Расширение без одобрения мудрецов обойдётся дорого."
- th_gensokyo_notorious_pariah_modifier:"Изгой смуты"
- th_gensokyo_notorious_pariah_modifier_desc:"Эта страна встала на путь смуты и может быть предложена как цель крестового похода."
+ ### 2026-08-21 (требование 3): th_gensokyo_notorious_pariah_modifier(_desc) удалено
 
 ### Situation panel
  TH_CRUSADE_SUPPORTER_STRENGTH:"Сила коалиции Генсокё"

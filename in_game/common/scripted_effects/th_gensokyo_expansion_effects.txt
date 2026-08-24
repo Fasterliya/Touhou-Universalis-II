@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 链条系统 — 扩张限制
 ### 配额制：th_gensokyo_expansion_quota（总配额）/ th_gensokyo_expansion_quota_used（已用）
 ### 合法扩张 = 余额 > 0；非法扩张 = 无余额（惩罚链）
@@ -79,22 +79,43 @@ th_gensokyo_expansion_cost_apply_effect = {
 }
 
 ### ============================================================
-### 请求扩张 — 裁决执行效果（WP-D 2026-08-19 重构）
-### 镜像审判事件（th_gensokyo_trial_judge_core_effect）的已验证模式：
-###   事件保存 scope → 调用本文件效果 → 效果内读取 scope:xxx
-### （直接在同 option 内引用 save_scope_as 的目标会在校验时报
-###  "Undefined event target"，scripted effect 内引用则通过）
+### 请求扩张 — 裁决执行效果（WP-D 2026-08-19 重构 / F24 2026-08-23 修复）
+### 2026-08-23 error.log 实测修复：save_scope_as 跨 scripted_effect 不可靠——
+### 事件 option 内 save_scope_as 的 scope 在 scripted effect 内解析为
+### "Undefined event target 'expansion_requester'" + "Event target link 'scope'
+### returned an unset scope"（38+38 次）+ add_casus_belli target none（19 次，
+### CB 从未授予）；连带 THIRD_TRIGGER_EVENT_EFFECT 的 [COUNTRY.GetName] 渲染失败。
+### 修复（对齐 v5.2 交接文档 F24）：定位移入 effect 内按标记重新 save——
+### th_gensokyo_expansion_requester_mark / th_gensokyo_expansion_target_owner_mark
+### （事件调用时标记仍挂起，option 内清理发生在 effect 调用之后）
 ### ============================================================
 
 ### 同意：授予请求者 CB（2026-08-19：取消地块 mark 限制与补标逻辑，
 ### 割让省份不再受 mark 限定）
-### 要求 scope:expansion_requester（请求者）与 scope:expansion_target（目标国）
 th_gensokyo_expansion_grant_cb_effect = {
+    ### F24：效果内按标记重新定位（root = 裁决贤者；标记法同审判局势）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_expansion_requester_mark
+        }
+        save_scope_as = expansion_requester
+    }
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_expansion_target_owner_mark
+        }
+        save_scope_as = expansion_target
+    }
     ### 授予 CB（针对目标国；可割让省份不受限）
-    scope:expansion_requester = {
-        add_casus_belli = {
-            target = scope:expansion_target
-            type = casus_belli:th_gensokyo_sage_expansion_cb
+    scope:expansion_requester ?= {
+        if = {
+            limit = {
+                exists = scope:expansion_target
+            }
+            add_casus_belli = {
+                target = scope:expansion_target
+                type = casus_belli:th_gensokyo_sage_expansion_cb
+            }
         }
         ### 通知请求者（同意）
         trigger_event_non_silently = {
@@ -103,16 +124,27 @@ th_gensokyo_expansion_grant_cb_effect = {
         }
     }
     ### 贤者对请求者好感提升
-    add_opinion = {
-        target = scope:expansion_requester
-        modifier = opinion_gensokyo_expansion_approved
+    if = {
+        limit = {
+            exists = scope:expansion_requester
+        }
+        add_opinion = {
+            target = scope:expansion_requester
+            modifier = opinion_gensokyo_expansion_approved
+        }
     }
 }
 
 ### 拒绝：补偿请求者（乱 -5 + 好感变化），不授予 CB
-### 要求 scope:expansion_requester（请求者）
 th_gensokyo_expansion_decline_effect = {
-    scope:expansion_requester = {
+    ### F24：效果内按标记重新定位（root = 裁决贤者）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_expansion_requester_mark
+        }
+        save_scope_as = expansion_requester
+    }
+    scope:expansion_requester ?= {
         ### 补偿：乱倾向 -5（收敛）
         # change_societal_value = {
         #     type = th_gensokyo_amity_vs_belligerence
@@ -124,8 +156,13 @@ th_gensokyo_expansion_decline_effect = {
             days = 1
         }
     }
-    add_opinion = {
-        target = scope:expansion_requester
-        modifier = opinion_gensokyo_expansion_declined
+    if = {
+        limit = {
+            exists = scope:expansion_requester
+        }
+        add_opinion = {
+            target = scope:expansion_requester
+            modifier = opinion_gensokyo_expansion_declined
+        }
     }
 }

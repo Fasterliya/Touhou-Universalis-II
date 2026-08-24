@@ -14,6 +14,9 @@ th_gensokyo_amity_vs_belligerence = {
 	}
 
 	left_modifier = { ### 亲善（镜像原版 conciliatory）
+		### 2026-08-21（用户规格）：缘侧 +50% 幻想乡影响力修正（渐进式给予，
+		### 影响议会投票权重 th_gensokyo_io_vote_power_value）
+		th_gensokyo_io_influence_modifier = 0.5
 		diplomatic_reputation = diplomatic_reputation_severe_bonus
 		country_cabinet_efficiency = 0.10
 		casus_belli_creation_speed_modifier = -0.33
@@ -28,6 +31,9 @@ th_gensokyo_amity_vs_belligerence = {
 		antagonism_declared_war_no_cb_giving_modifier = 0.3
 	}
 	right_modifier = { ### 好战（镜像原版 belligerent）
+		### 2026-08-21（用户规格）：乱侧 -50% 幻想乡影响力修正（渐进式给予，
+		### 影响议会投票权重 th_gensokyo_io_vote_power_value）
+		th_gensokyo_io_influence_modifier = -0.5
 		global_war_score_efficiency = 0.25
 		spy_network_construction = 0.1
 		casus_belli_creation_speed_modifier = 0.33

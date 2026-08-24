@@ -1,0 +1,209 @@
+### ============================================================
+### 幻想乡审判局势（惩戒战争目标国落败后启动）
+### WP-H 2026-08-15（设计文档《国际组织》§6）两阶段：
+###   阶段1 投票（4 个月）：所有参战国家风味投票（与裁决无关）
+###   阶段2 裁决：阎魔是玩家 → 事件手动裁决；阎魔 AI → 按罪值自动裁定
+### ============================================================
+
+th_gensokyo_trial = {
+    monthly_spawn_chance = 0
+
+    can_start = {
+        always = no
+    }
+    can_end = {
+        always = no
+    }
+
+    visible = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+
+    on_start = {
+        ### 定位目标国与阎魔，目标国打审判标记（事件/月度读取）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                save_scope_as = crusade_target
+                set_variable = th_gensokyo_trial_target_mark
+            }
+            every_international_organization_member = {
+                limit = {
+                    is_leader_of_international_organization = international_organization:th_gensokyo_io
+                }
+                save_scope_as = io_leader
+            }
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+        ### WP-H：阶段变量（1 = 投票，2 = 裁决）+ 投票统计（风味，不影响裁决）
+        set_variable = {
+            name = th_gensokyo_trial_phase
+            value = 1
+        }
+        set_variable = {
+            name = th_gensokyo_trial_vote_months
+            value = 4
+        }
+        set_variable = {
+            name = th_gensokyo_trial_vote_mercy
+            value = 0
+        }
+        set_variable = {
+            name = th_gensokyo_trial_vote_order
+            value = 0
+        }
+        set_variable = {
+            name = th_gensokyo_trial_vote_karma
+            value = 0
+        }
+        ### 局势变量：目标国引用（GUI 双国头部动态头像读取，同惩戒局势模式）
+        set_variable = {
+            name = th_gensokyo_trial_target_ref
+            value = scope:crusade_target
+        }
+        ### 清除历史投票标记（防止旧存档残留）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_trial_voted
+                remove_variable = th_gensokyo_trial_vote_choice
+                remove_variable = th_gensokyo_trial_vote_tallied
+            }
+        }
+    }
+
+    on_monthly = {
+        ### 重新定位（回调段内 scope 不跨段保留）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_trial_target_mark
+                }
+                save_scope_as = crusade_target
+            }
+            every_international_organization_member = {
+                limit = {
+                    is_leader_of_international_organization = international_organization:th_gensokyo_io
+                }
+                save_scope_as = io_leader
+            }
+        }
+        ### WP-H：投票汇总（成员投票变量 → 局势票数变量，供 GUI 展示）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_trial_vote_choice
+                    NOT = {
+                        has_variable = th_gensokyo_trial_vote_tallied
+                    }
+                }
+                if = {
+                    limit = {
+                        var:th_gensokyo_trial_vote_choice = 1
+                    }
+                    root = {
+                        change_variable = {
+                            name = th_gensokyo_trial_vote_mercy
+                            add = 1
+                        }
+                    }
+                }
+                else_if = {
+                    limit = {
+                        var:th_gensokyo_trial_vote_choice = 2
+                    }
+                    root = {
+                        change_variable = {
+                            name = th_gensokyo_trial_vote_order
+                            add = 1
+                        }
+                    }
+                }
+                else = {
+                    root = {
+                        change_variable = {
+                            name = th_gensokyo_trial_vote_karma
+                            add = 1
+                        }
+                    }
+                }
+                set_variable = th_gensokyo_trial_vote_tallied
+            }
+        }
+        ### WP-H：阶段1 → 阶段2（投票 4 个月后裁决）
+        if = {
+            limit = {
+                var:th_gensokyo_trial_phase = 1
+            }
+            change_variable = {
+                name = th_gensokyo_trial_vote_months
+                subtract = 1
+            }
+            if = {
+                limit = {
+                    var:th_gensokyo_trial_vote_months <= 0
+                }
+                set_variable = {
+                    name = th_gensokyo_trial_phase
+                    value = 2
+                }
+                ### 阎魔是玩家 → 弹事件手动裁（§6：与投票无关，阎魔主观裁定）
+                if = {
+                    limit = {
+                        scope:io_leader = {
+                            is_ai = no
+                        }
+                    }
+                    scope:io_leader = {
+                        trigger_event_non_silently = {
+                            id = th_gensokyo_trial_events.1
+                            days = 1
+                        }
+                    }
+                }
+                else = {
+                    ### AI 自动裁定（防御性守卫：目标国不存在则直接结束）
+                    if = {
+                        limit = {
+                            exists = scope:crusade_target
+                        }
+                        th_gensokyo_trial_judge_effect = yes
+                    }
+                    end_situation = this
+                }
+            }
+        }
+        ### 玩家裁决完成 → 结束审判局势
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_trial_done
+                }
+            }
+            end_situation = this
+        }
+    }
+
+    on_ended = {
+        ### 清理审判/投票标记
+        every_country = {
+            limit = {
+                OR = {
+                    has_variable = th_gensokyo_trial_done
+                    has_variable = th_gensokyo_trial_target_mark
+                    has_variable = th_gensokyo_trial_voted
+                    has_variable = th_gensokyo_trial_vote_choice
+                    has_variable = th_gensokyo_trial_vote_tallied
+                }
+            }
+            remove_variable = th_gensokyo_trial_done
+            remove_variable = th_gensokyo_trial_target_mark
+            remove_variable = th_gensokyo_trial_voted
+            remove_variable = th_gensokyo_trial_vote_choice
+            remove_variable = th_gensokyo_trial_vote_tallied
+        }
+    }
+}

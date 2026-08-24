@@ -19,6 +19,15 @@
  th_gensokyo_io_human_village_special_status: "人类村落"
  th_gensokyo_io_human_village_special_status_desc: "人间之里的代表，守护幻想乡人类聚居地的权益。"
 
+### 2026-08-21（bug 1 修复）：普通成员基础席位（全体成员自动授予，投票权重载体）
+ th_gensokyo_io_regular_member_special_status: "幻想乡成员"
+ th_gensokyo_io_regular_member_special_status_desc: "幻想乡的普通成员。所有成员均享有议会投票权，权重取决于本国在幻想乡中的影响力。"
+
+### === 幻想乡影响力修正 ===
+### 2026-08-21（用户规格）：价值观条渐进给予 ±50%，影响议会投票权重
+ th_gensokyo_io_influence_modifier: "幻想乡影响力修正"
+ th_gensokyo_io_influence_modifier_desc: "本国在幻想乡中的政治影响力修正。缘之倾向（亲善）提升投票权重，乱之倾向（好战）削减投票权重。"
+
 ### === 领袖头衔 ===
  th_gensokyo_io_yama_leader_title: "阎魔"
  th_gensokyo_io_yama_leader_title_desc: "幻想乡的审判者与议会领袖。"
@@ -157,18 +166,8 @@
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "贤者会议改革"
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "税收 +10%，人力 +10%。"
 
-### === 价值观后果自动修正（设计§2.5）===
- th_gensokyo_io_notorious_tier1_auto_modifier: "武心初萌"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc: "乱心初萌，幻想乡对本国心存警惕。外交声誉-1，改善关系-15%。"
-
- th_gensokyo_io_notorious_tier2_auto_modifier: "乱象昭然"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc: "乱心昭然若揭，本国被疑屡行不义。外交声誉-2，改善关系-30%，稳定投资+10%。"
-
- th_gensokyo_io_notorious_tier3_auto_modifier: "乱世弃民"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc: "乱心不可收拾，本国为幻想乡社会所不容。外交声誉-4，改善关系-50%。"
-
- th_gensokyo_io_notorious_tier4_auto_modifier: "待审之身"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc: "乱心彻底失格，阎魔与贤者可无需再议直接宣告惩戒战争。外交声誉-6，改善关系-75%。"
+### 2026-08-21（需求 3）：th_gensokyo_io_notorious_tier1~4_auto_modifier(_desc)
+### 已删（阶段性修正系统整体移除，价值观后果由价值观条渐进式修正承担）
 
 ### === 引入思潮行动 ===
  th_sages_introduce_institution: "引入思潮"
@@ -240,3 +239,6 @@
  TH_TRIAL_VOTE_MERCY: "从宽（劝善倾向）"
  TH_TRIAL_VOTE_ORDER: "适中（有序倾向）"
  TH_TRIAL_VOTE_KARMA: "从严（因果必尝倾向）"
+
+### === 持地显示（2026-08-21）===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT: "此地点属于幻想乡国际组织"

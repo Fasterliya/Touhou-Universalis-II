@@ -1,4 +1,4 @@
-### 幻想乡IO — 月度脉冲
+﻿### 幻想乡IO — 月度脉冲
 
 ### 注册到 monthly_country_pulse
 monthly_country_pulse = {
@@ -12,38 +12,44 @@ monthly_country_pulse = {
 ### ============================================================
 th_gensokyo_io_monthly_country_pulse = {
     trigger = {
-        is_member_of_international_organization = th_gensokyo_io
+        ### 2026-08-23 实测修复：裸 key 被引擎当作 event target link 解析失败
+        ### （game.log "Failed to find a valid event target link 'th_gensokyo_io'"）→
+        ### trigger 恒 false → 本脉冲 effect 永不执行 → 免制裁倒计时/贡献度累计全失效
+        is_member_of_international_organization = international_organization:th_gensokyo_io
     }
     effect = {
+        ### 2026-08-23 兜底初始化：旧档/后加入成员可能无个人变量
+        ### （game.log "Failed to fetch variable 'th_gensokyo_personal_contribution_var'
+        ###  due to not being set" 刷屏，影响力公式引用缺失变量报错）
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_personal_contribution_var
+                }
+            }
+            set_variable = {
+                name = th_gensokyo_personal_contribution_var
+                value = 0
+            }
+        }
         ### 个人贡献度 = 税基/1000 + 弹幕火力/2000
         ### TODO: danmaku_power 字段待后续人工定义
         set_variable = {
             name = th_gensokyo_temp_contribution
-            value = modifier:country_tax_base
+            ### 2026-08-23 实测修复：country_tax_base 是引擎硬编码 script value
+            ### （非 modifier 字段）——modifier: 前缀报 "Non-existent modifier type"
+            ### （game.log:6367）；script_values 公式已裸引用（交接文档 1.7），
+            ### 此处为漏修的同款陷阱
+            value = country_tax_base
         }
         change_variable = {
             name = th_gensokyo_temp_contribution
             divide = 1000
         }
-        ### 弃民惩罚系数（链条系统挂载：好战>=+50 贡献x0.4，>=0 贡献x0.7）
-        if = {
-            limit = {
-                societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
-            }
-            change_variable = {
-                name = th_gensokyo_temp_contribution
-                multiply = th_contribution_outcast_multiplier_value
-            }
-        }
-        else_if = {
-            limit = {
-                societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_pariah_threshold_value
-            }
-            change_variable = {
-                name = th_gensokyo_temp_contribution
-                multiply = th_contribution_pariah_multiplier_value
-            }
-        }
+        ### 2026-08-21（需求 2/3 用户决策）：删除弃民惩罚系数段
+        ### （原按 societal_value 档位给贡献 ×0.4/0.7 —— 阶段性修正系统，
+        ### 价值观体系已渐进式给予修正；同批删除 auto_modifier tier1-4 /
+        ### pariah-outcast 镜像 / contribution 三档打折）
         th_gensokyo_io_contribution_var_add_effect = {
             value = var:th_gensokyo_temp_contribution
         }
@@ -76,6 +82,27 @@ th_gensokyo_io_monthly_country_pulse = {
                 remove_variable = th_gensokyo_immunity_months
                 remove_variable = th_gensokyo_sanction_immunity
             }
+        }
+
+        ### 2026-08-23 监管国刑期倒计时（从 subject on_monthly 迁移——
+        ### 引擎对 subject on_monthly 的 root 解析不可靠，运行时实证报错并致
+        ### 类型重置为普通附庸；country pulse root=国家 可靠；监管国保持 IO 成员）
+        if = {
+            limit = {
+                has_variable = th_gensokyo_sentence_months
+            }
+            change_variable = {
+                name = th_gensokyo_sentence_months
+                subtract = 1
+            }
+        }
+        ### 刑满 → 触发「脱离彼岸」事件（事件内释放：cancel_subject + 团结奖励 + 清变量）
+        if = {
+            limit = {
+                has_variable = th_gensokyo_sentence_months
+                var:th_gensokyo_sentence_months <= 0
+            }
+            trigger_event_non_silently = th_gensokyo_trial_events.2
         }
     }
 }

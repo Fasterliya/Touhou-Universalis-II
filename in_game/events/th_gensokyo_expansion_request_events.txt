@@ -1,12 +1,15 @@
-### ============================================================
+﻿### ============================================================
 ### 贤者授权扩张 — 裁决事件链（WP-D 2026-08-15 / 重构 2026-08-19）
 ### .1 贤者裁决（同意/拒绝）  .2 请求者通知（同意）  .3 请求者通知（拒绝）
 ### 标记法：th_gensokyo_expansion_requester_mark（请求者，挂起）
 ###         th_gensokyo_expansion_target_owner_mark（目标国）
 ###         th_gensokyo_expansion_request_mark（目标地块，= CB 依据，保留）
 ### 结构：option 内 save_scope_as → 调用 scripted_effect（th_gensokyo_expansion_effects.txt）
-### 修复 2026-08-19：直接在同 option 引用 save_scope_as 目标报
-###   "Undefined event target"（校验期），改为 scripted effect 内引用（审判事件同款已验证模式）。
+### 2026-08-23 error.log 实测纠正：save_scope_as 跨 scripted_effect 运行时
+###   不可靠（"Undefined event target 'expansion_requester'" + scope unset +
+###   add_casus_belli target none）——效果已改为 effect 内按标记重新 save
+###   （F24，见 th_gensokyo_expansion_effects.txt 头注释）；本文件 save_scope_as
+###   保留（无害，事件内其他效果可用）。
 ### 格式：EU5 事件（outcome + option 内直写效果）
 ### ============================================================
 

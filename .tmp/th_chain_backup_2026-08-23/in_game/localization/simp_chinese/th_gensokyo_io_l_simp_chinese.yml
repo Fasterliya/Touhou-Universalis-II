@@ -1,0 +1,242 @@
+﻿l_simp_chinese:
+
+### 幻想乡国际组织 — 本地化
+
+### === IO名称与描述 ===
+ th_gensokyo_io: "幻想乡"
+ th_gensokyo_io_desc: "维系幻想乡诸国平衡的国际组织，由贤者与阎魔共同维护大结界秩序。"
+
+### === 特殊席位 ===
+ th_gensokyo_io_sages_special_status: "贤者"
+ th_gensokyo_io_sages_special_status_desc: "幻想乡最古老的三位贤者，分别镇守大结界的关键节点。"
+
+ th_gensokyo_io_yama_special_status: "阎魔"
+ th_gensokyo_io_yama_special_status_desc: "执掌彼岸的审判者，裁决幻想乡诸国的是非善恶，担任幻想乡议会的领袖。"
+
+ th_gensokyo_io_guardian_special_status: "幻想乡守护"
+ th_gensokyo_io_guardian_special_status_desc: "博丽神社的巫女，大结界永恒的守护者。代代相传的博丽之力维系着幻想乡与外界的边界。"
+
+ th_gensokyo_io_human_village_special_status: "人类村落"
+ th_gensokyo_io_human_village_special_status_desc: "人间之里的代表，守护幻想乡人类聚居地的权益。"
+
+### === 领袖头衔 ===
+ th_gensokyo_io_yama_leader_title: "阎魔"
+ th_gensokyo_io_yama_leader_title_desc: "幻想乡的审判者与议会领袖。"
+
+### === 议会 ===
+ th_gensokyo_io_parliament: "幻想乡议会"
+ th_gensokyo_parliament_seat: "幻想乡议会席位"
+
+### === IO变量名称 ===
+ th_gensokyo_unity_var: "幻想乡团结度"
+ th_gensokyo_unity_var_desc: "衡量幻想乡诸国的凝聚力，来源于调停异变、解决异变、和平建设等正面行为，因侵略扩张与外界入侵而损耗。"
+
+### === IO变量格式 ===
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ TH_SAGES_PRESTIGE_FORMAT: "$VAL$"
+
+### === IO变量月度变化描述 ===
+ TH_GENSOKYO_UNITY_BASE: "基础维系"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部和平"
+
+### === 国家变量名称 ===
+ th_gensokyo_personal_contribution_var: "个人贡献度"
+ th_gensokyo_personal_contribution_var_desc: "该国家为幻想乡稳定所做的贡献，基于税基与弹幕火力按月累积。"
+
+ th_gensokyo_personal_influence_var: "个人影响力"
+ th_gensokyo_personal_influence_var_desc: "该国家在幻想乡议会中的政治影响力，每50点增加1票议会投票权重。每个时代结束时清零。"
+
+ # 价值观（缘<->乱）已迁移为社会价值观 societal_value:th_gensokyo_amity_vs_belligerence，文案见 th_gensokyo_chain_l_*.yml
+
+### === 变量悬浮显示 ===
+ th_gensokyo_member_vars_display: "个人变量总览"
+ th_gensokyo_member_vars_display_desc: "查看本国在幻想乡中的个人影响力与个人贡献度。"
+
+### === 议会提案 ===
+ th_gensokyo_parliament_resolution_1_title: "幻想乡和平决议"
+ th_gensokyo_parliament_resolution_1_desc: "提案维持幻想乡内部的和平秩序。"
+
+ th_gensokyo_parliament_resolution_2_title: "异变应对决议"
+ th_gensokyo_parliament_resolution_2_desc: "提案统一应对幻想乡内发生的异变。"
+
+ th_gensokyo_parliament_resolution_3_title: "外界防御决议"
+ th_gensokyo_parliament_resolution_3_desc: "提案增强幻想乡对外界入侵的防御能力。"
+
+### === 法律：团结愿景 ===
+ th_gensokyo_unity_vision_law: "团结愿景"
+ th_gensokyo_unity_vision_law_desc: "决定幻想乡团结之力的获取方向与运用之道。"
+
+ isolation_defense_policy: "孤立坚守"
+ isolation_defense_policy_desc: "紧闭大结界之门，以内部和平凝聚团结之力。外部威胁难以侵入，但新思潮亦难流入。"
+
+ balance_path_policy: "平衡之道"
+ balance_path_policy_desc: "维持大结界既有之法，不偏不倚。团结之力自然流转，诸国各得其所。"
+
+ open_inclusive_policy: "开放包容"
+ open_inclusive_policy_desc: "放宽大结界限制，欢迎外界新思。思潮传播加速，外交空间扩大，但团结凝聚略受影响。"
+
+### === 法律：大结界政策 ===
+ th_gensokyo_barrier_policy_law: "大结界政策"
+ th_gensokyo_barrier_policy_law_desc: "决定幻想乡大结界的维护强度与开放程度。"
+
+ reinforced_barrier_policy: "强化结界"
+ reinforced_barrier_policy_desc: "倾全乡之力加固大结界。防御与人力大幅提升，但外交声誉受损，外来思潮难以渗透。"
+
+ maintained_barrier_policy: "维持结界"
+ maintained_barrier_policy_desc: "按既有传统维持大结界运转。防御稳定，诸事如常。"
+
+ relaxed_barrier_policy: "宽松结界"
+ relaxed_barrier_policy_desc: "适度放松大结界限制以利交流。思潮传播显著加快，但防御能力有所削弱。"
+
+### === 法律：异变应对法则 ===
+ th_gensokyo_incident_response_law: "异变应对法则"
+ th_gensokyo_incident_response_law_desc: "决定幻想乡发生异变时的应对策略与行动准则。"
+
+ duel_resolution_policy: "弹幕决斗规则"
+ duel_resolution_policy_desc: "以一对一弹幕决斗解决异变。胜者赢得声望，但不擅战斗者难以自保。"
+
+ joint_suppression_policy: "联合镇压"
+ joint_suppression_policy_desc: "诸国联合行动，以集体之力镇压异变。人力充沛，应对迅速。"
+
+ diplomatic_mediation_policy: "外交调解"
+ diplomatic_mediation_policy_desc: "以谈判与调解化解异变根源。外交声誉提升，但军事准备相对不足。"
+
+### ============================================================
+### 贤者议会 — 本地化
+### ============================================================
+
+ th_sages_council_io: "贤者议会"
+ th_sages_council_io_desc: "由幻想乡最古老的三位贤者组成的最高议事机构，维护大结界的平衡，引导幻想乡的命运。"
+
+### 贤者威望
+ th_sages_prestige_var: "贤者威望"
+ th_sages_prestige_var_desc: "三位贤者在幻想乡众国中的威望与影响力（0——100）。来源于幻想乡团结与和平秩序的维持，因战争、外界入侵与非法扩张而受损。威望越高，为幻想乡提供的全局增益越强。"
+
+### 阈值等级
+ th_sages_prestige_tier_20: "贤者威望·初显"
+ th_sages_prestige_tier_20_desc: "贤者的意志开始被诸国感知，幻想乡获得微弱增益。"
+
+ th_sages_prestige_tier_40: "贤者威望·凝聚"
+ th_sages_prestige_tier_40_desc: "贤者的号令渐成共识，幻想乡获得适度增益。"
+
+ th_sages_prestige_tier_60: "贤者威望·威严"
+ th_sages_prestige_tier_60_desc: "贤者的裁决令诸国敬畏，幻想乡获得显著增益。"
+
+ th_sages_prestige_tier_80: "贤者威望·崇敬"
+ th_sages_prestige_tier_80_desc: "贤者的意志如大结界般不可动摇，幻想乡获得强大增益。"
+
+ th_sages_prestige_tier_100: "贤者威望·神话"
+ th_sages_prestige_tier_100_desc: "三贤者的名号化为传说，众生皆仰其光，幻想乡获得至高增益。"
+
+ TH_SAGES_ACTIVE_TIERS_LABEL: "当前生效的贤者威望增益"
+ TH_SAGES_NO_ACTIVE_TIER: "贤者威望不足，暂无增益生效。"
+ TH_SAGES_MAX_PREVIEW_LABEL: "满值增益预览"
+ TH_SAGES_TIER_100_MODIFIERS_PREVIEW: "税收效率+15% 月度威望+0.30\n改善关系+35% 全局人力+15%\n外交声誉+2 全局防御+10%\n可干预战争 可强制执行和平"
+
+### 静态修正（贤者威望五档）
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "贤者初显"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "贤者的意志初现。税收效率+3%，月度威望+0.05。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "贤者凝聚"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "贤者的号令渐成共识。税收效率+5%，月度威望+0.08，改善关系+15%，外交声誉+1。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "贤者威严"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "贤者的裁决令诸国敬畏。税收效率+8%，月度威望+0.10，改善关系+20%，人力+5%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "贤者崇敬"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "贤者的意志如大结界般不可动摇。税收效率+10%，月度威望+0.20，改善关系+25%，人力+10%，外交声誉+1，稳定投资+10%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "贤者神话"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三贤者的名号化为传说。税收效率+15%，月度威望+0.30，改善关系+35%，人力+15%，外交声誉+2，全局防御+10%。贤者可干预战争并强制执行和平。"
+
+### === 贤者议会政策 ===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "大结界强化"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "防御 +10%，稳定花费 -5%。"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "幻想乡团结宪章"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "威望 +0.1/月，关系改善 +15%，外交声誉 +1。"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "贤者会议改革"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "税收 +10%，人力 +10%。"
+
+### === 价值观后果自动修正（设计§2.5）===
+ th_gensokyo_io_notorious_tier1_auto_modifier: "武心初萌"
+ th_gensokyo_io_notorious_tier1_auto_modifier_desc: "乱心初萌，幻想乡对本国心存警惕。外交声誉-1，改善关系-15%。"
+
+ th_gensokyo_io_notorious_tier2_auto_modifier: "乱象昭然"
+ th_gensokyo_io_notorious_tier2_auto_modifier_desc: "乱心昭然若揭，本国被疑屡行不义。外交声誉-2，改善关系-30%，稳定投资+10%。"
+
+ th_gensokyo_io_notorious_tier3_auto_modifier: "乱世弃民"
+ th_gensokyo_io_notorious_tier3_auto_modifier_desc: "乱心不可收拾，本国为幻想乡社会所不容。外交声誉-4，改善关系-50%。"
+
+ th_gensokyo_io_notorious_tier4_auto_modifier: "待审之身"
+ th_gensokyo_io_notorious_tier4_auto_modifier_desc: "乱心彻底失格，阎魔与贤者可无需再议直接宣告惩戒战争。外交声誉-6，改善关系-75%。"
+
+### === 引入思潮行动 ===
+ th_sages_introduce_institution: "引入思潮"
+ th_sages_introduce_institution_desc: "恳请三位贤者动用大结界之力，从幻想乡诸国中引入一项已存在且本国尚未接纳的先进思想或技术。"
+ th_sages_introduce_institution_notification: "引入思潮"
+
+ th_sages_propose_policy: "提议政策"
+ th_sages_propose_policy_desc: "向贤者议会提出一项政策进行辩论。若有至少两位贤者支持，政策将在整个议会生效。发起需消耗 300 金币。"
+
+
+### === 分页标签 ===
+ TH_SAGES_TAB_OVERVIEW: "总览"
+ TH_SAGES_TAB_DEBATE: "辩论"
+ TH_SAGES_ACTIONS_LABEL: "国际组织行动"
+ TH_SAGES_MAIN_ACTIONS: "贤者议会行动"
+ TH_SAGES_DEBATE_TITLE: "贤者辩论厅"
+ TH_SAGES_DEBATE_PLACEHOLDER: "此处将展示幻想乡诸国的议会辩论与法律提案。\n待后续版本开放。"
+
+### ============================================================
+### WP-G 2026-08-15：博丽大结界核心法律（§7）
+### ============================================================
+ th_gensokyo_barrier_law: "博丽大结界"
+ th_gensokyo_barrier_law_desc: "维系幻想乡与外世隔绝的至高结界。共分五级，越接近满级结界越加稳固、越发保守。此法律无法通过辩论或领袖修订，仅会随着大事件变动。"
+ th_gensokyo_barrier_fantasy_policy: "结界·幻想（五级）"
+ th_gensokyo_barrier_fantasy_policy_desc: "结界全盛，最保守：防御大增，秩序稳固，思潮与变革缓慢。"
+ th_gensokyo_barrier_profound_policy: "结界·深邃（四级）"
+ th_gensokyo_barrier_profound_policy_desc: "结界稳固：防御与秩序良好。"
+ th_gensokyo_barrier_flourish_policy: "结界·繁英（三级）"
+ th_gensokyo_barrier_flourish_policy_desc: "结界平稳，作为基准。"
+ th_gensokyo_barrier_forgotten_policy: "结界·遗忘（二级）"
+ th_gensokyo_barrier_forgotten_policy_desc: "结界衰微：防御与秩序开始松动。"
+ th_gensokyo_barrier_extinct_policy: "结界·灭尽（一级）"
+ th_gensokyo_barrier_extinct_policy_desc: "结界濒临破碎，秩序动摇，防御荡然无存。"
+ th_gensokyo_barrier_level: "大结界等级"
+ th_gensokyo_barrier_level_desc: "博丽大结界的当前强度（1-5）。等级越高结界越保守稳固；仅大事件可使其变动。"
+ TH_GENSOKYO_BARRIER_LEVEL_FORMAT: "$VAL$"
+ TH_GENSOKYO_BARRIER_BASE: "结界维系"
+
+### ============================================================
+### WP-D 2026-08-15：请求幻想乡内扩张（§3.1）
+### ============================================================
+ th_gensokyo_request_expansion: "请求幻想乡内扩张"
+ th_gensokyo_request_expansion_desc: "向一位贤者请求在幻想乡内扩张的许可"
+ th_gensokyo_sage_expansion_cb: "贤者授权的扩张"
+ th_gensokyo_sage_expansion_cb_PROV: "贤者授权的扩张（[PROVINCE.GetName]）"
+ th_gensokyo_sage_expansion_cb_desc: "经贤者认可而发动的扩张战争：双方割让省份战争分数花费 +150%，获取的敌意额外减少 50%。"
+ opinion_gensokyo_expansion_approved: "贤者认可扩张"
+ opinion_gensokyo_expansion_declined: "扩张请求被拒"
+
+### ============================================================
+### WP-E 2026-08-15：宴会选址本地增益（§4）
+### ============================================================
+ th_gensokyo_feast_location_modifier: "宴会余庆"
+ th_gensokyo_feast_location_modifier_desc: "此地刚举办过盛大的宴会，万物欢腾，生产与人心皆受鼓舞。"
+ opinion_gensokyo_feast_guest: "宴请之情"
+
+### ============================================================
+### WP-H 2026-08-15：审判投票与惩戒补完（§6）
+### ============================================================
+ th_gensokyo_trial_vote: "投下审判倾向票"
+ th_gensokyo_trial_vote_desc: "作为参与惩戒战争的成员，表达你对审判裁决的倾向（从宽/适中/从严）。此投票仅表民意，不影响阎魔的最终裁定。"
+ th_gensokyo_bankruptcy_modifier: "破产之罚"
+ th_gensokyo_bankruptcy_modifier_desc: "阎魔判罚的赔款令国库空虚，经济陷入动荡。"
+ th_gensokyo_sanction_immunity: "免制裁期"
+ th_gensokyo_sanction_immunity_desc: "此国在惩戒战争中反败为胜，幻想乡诸国 20 年内不得再对其发起制裁。"
+ TH_TRIAL_PHASE_LABEL: "审判阶段"
+ TH_TRIAL_VOTE_MONTHS_LABEL: "剩余投票月数"
+ TH_TRIAL_VOTE_TALLY_LABEL: "投票统计（民意，不影响裁决）"
+ TH_TRIAL_VOTE_MERCY: "从宽（劝善倾向）"
+ TH_TRIAL_VOTE_ORDER: "适中（有序倾向）"
+ TH_TRIAL_VOTE_KARMA: "从严（因果必尝倾向）"

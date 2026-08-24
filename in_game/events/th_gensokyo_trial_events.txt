@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 阎魔审判事件（玩家为阎魔时手动裁决 4 档）
 ### 目标国定位: th_gensokyo_trial_target_mark 标记法
 ### 档位: 事件选项设定 th_gensokyo_sentence_tier（0-3）→ 核心判决
@@ -110,5 +110,38 @@ th_gensokyo_trial_events.1 = {
         }
         th_gensokyo_trial_judge_core_effect = yes
         set_variable = th_gensokyo_trial_done
+    }
+}
+
+### ============================================================
+### 被监管国脱离彼岸（刑满释放，2026-08-23 新增）
+### 触发: 监管国 subject on_monthly 刑期归零 → trigger_event_non_silently
+### root = 被监管国（subject）；overlord = 宗主（阎魔 T25）
+### 原静默 cancel_subject 逻辑移入本事件（玩家可见通知）
+### ============================================================
+th_gensokyo_trial_events.2 = {
+    type = country_event
+
+    title = th_gensokyo_trial_events.2.title
+    desc = th_gensokyo_trial_events.2.desc
+    outcome = neutral
+
+    trigger = {
+        always = yes
+    }
+
+    option = {
+        name = th_gensokyo_trial_events.2.a
+        ### 脱离彼岸：取消监管关系（P1-16 先例：overlord 直接链接，100+ 用法）
+        overlord ?= {
+            cancel_subject = prev
+        }
+        ### 团结奖励（原 on_monthly 逻辑移入）
+        international_organization:th_gensokyo_io = {
+            th_gensokyo_unity_add_effect = {
+                value = th_unity_release_reward_value
+            }
+        }
+        remove_variable = th_gensokyo_sentence_months
     }
 }

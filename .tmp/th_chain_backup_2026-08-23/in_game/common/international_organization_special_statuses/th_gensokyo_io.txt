@@ -1,0 +1,164 @@
+﻿### 幻想乡国际组织 — 特殊席位定义
+### 字段顺序: max_countries → priority → can_bestow_trigger → auto_bestowal_trigger → auto_rescind_trigger
+###           → modifier → leader_modifier → on_bestowed_effect → on_rescinded_effect
+###           → leader/elector → special_status_power → map_color
+### 参考: base game hre.txt lordship_of_ireland.txt high_kingship.txt japanese_shogunate.txt
+
+### ============================================================
+### 席位1：阎魔（IO领袖）th_gensokyo_io_yama_special_status
+### 对标 HRE emperor (hre.txt:L1-39) + high_king (high_kingship.txt:L1-21)
+### ============================================================
+th_gensokyo_io_yama_special_status = {
+	max_countries = 1
+	priority = 15
+	
+	can_bestow_trigger = {
+		is_leader_of_international_organization = scope:recipient
+	}
+	auto_rescind_trigger = {
+	}
+	
+	modifier = {
+		allowed_intervene_in_war = yes
+		allowed_enforce_peace = yes
+		monthly_prestige = 0.10
+		# TODO: 后续人工填写阎魔席位修正值
+	}
+	
+	leader = yes
+	### power=0：阎魔作为发起方必定同意（发起动作即代表同意），无需投票权；
+	### 且避免稀释 combined_special_status_power（议会票权仅 3 贤者均分）
+	special_status_power = {
+		value = 0
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+}
+
+### ============================================================
+### 席位2：幻想乡守护 th_gensokyo_io_guardian_special_status
+### 对标 HRE elector (hre.txt:L40-115) — 仅手动+开局预分配，永不自动
+### ============================================================
+th_gensokyo_io_guardian_special_status = {
+	max_countries = 1
+	priority = 10
+	
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+	}
+	auto_rescind_trigger = {
+	}	
+	modifier = {
+		global_defensiveness_modifier = 0.10
+		monthly_prestige = 0.05
+		# TODO: 后续人工填写守护席位修正值
+	}
+	special_status_power = {
+		value = 0
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
+}
+
+### ============================================================
+### 席位3：贤者 th_gensokyo_io_sages_special_status
+### 对标 HRE elector (hre.txt:L40-115) — 仅手动+开局预分配，永不自动
+### ============================================================
+th_gensokyo_io_sages_special_status = {
+	max_countries = 3
+	priority = 10
+	
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+	}
+	
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
+	
+	modifier = {
+		monthly_prestige = 1.0
+		improve_relation_modifier = 0.10
+		# TODO: 后续人工填写贤者席位修正值
+	}
+	special_status_power = {
+		value = 200
+	}
+}
+
+### ============================================================
+### 席位4：人类村落 th_gensokyo_io_human_village_special_status
+### 对标 HRE imperial_prince (hre.txt:L477-560)
+### ============================================================
+th_gensokyo_io_human_village_special_status = {
+	max_countries = 20
+	priority = 5
+	
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+	}
+	auto_bestowal_trigger = {
+		
+	}
+	# 永不自定撤销 - 成员无法退出IO
+	auto_rescind_trigger = {
+		always = no
+	}
+	
+	modifier = {
+		global_tax_modifier = 0.05
+		global_population_capacity_modifier = 0.50
+		# TODO: 后续人工填写人类村落席位修正值
+	}
+	
+	on_bestowed_effect = {
+	}
+	on_rescinded_effect = {
+	}
+	
+	special_status_power = {
+		value = 0
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
+}
+
+### ============================================================
+### 席位5：幻想乡席位（占位验证）th_gensokyo_io_seat_special_status
+### 对标 base game union.txt senior_partner — 政策门控 + 自动授衔
+### 政策 th_gensokyo_seat_unlock_policy 激活 → 解锁自动授予
+### 政策移除 → 自动收回（auto_rescind，无 OR）
+### 授予条件：成员 + 政策激活 + 名额空 + 个人贡献度最高者
+### ============================================================
+th_gensokyo_io_seat_special_status = {
+	max_countries = 1
+	priority = 5
+
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+		scope:recipient = {
+			international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy
+			"num_countries_with_special_status(special_status:th_gensokyo_io_seat_special_status)" < 1
+			NOT = {
+				any_international_organization_member = {
+					this != root
+					var:th_gensokyo_personal_contribution_var > root.var:th_gensokyo_personal_contribution_var
+				}
+			}
+		}
+	}
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	auto_rescind_trigger = {
+		NOT = {
+			scope:recipient = {
+				international_organization_has_policy = policy:th_gensokyo_seat_unlock_policy
+			}
+		}
+	}
+
+	modifier = {
+		monthly_prestige = 0.1
+		# TODO: 占位修正值
+	}
+	special_status_power = {
+		value = 0
+	}
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER3_COLOR
+}

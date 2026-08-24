@@ -1,0 +1,29 @@
+### 幻想乡IO — 议会类型定义
+### 修复 2026-08-19：补 type = international_organization + modifier
+### has_international_parliament = yes（对标 th_sages_council_io_parliament /
+### vanilla union_royal_assembly / hre_court_assembly；缺这两项则议会议题不被调度）
+
+th_gensokyo_io_parliament = {
+    type = international_organization
+
+    ### 议会辩论投票权重 = 个人影响力 / 50
+    ### TODO: vote_weight 字段待后续人工开发接入
+    ### 投票权重公式: floor(var:th_gensokyo_personal_influence_var / 50)
+
+    ### 议会席位名称
+    seat_name = th_gensokyo_parliament_seat
+
+    modifier = {
+        has_international_parliament = yes
+    }
+
+    ### 议会议题列表
+    possible_issues = {
+        th_gensokyo_parliament_resolution_1
+        th_gensokyo_parliament_resolution_2
+        th_gensokyo_parliament_resolution_3
+        th_gensokyo_crusade_issue
+    }
+
+    ### TODO: accept_chance / agenda_minimum_support 等由后续人工填写
+}

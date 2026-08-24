@@ -22,3 +22,20 @@ monthly_towards_belligerence = {
 		is_societal_value_change = yes
 	}
 }
+
+### ============================================================
+### 幻想乡影响力修正（2026-08-21，用户规格）— in_game 副本同步
+### 2026-08-23 error.log 修复：原仅 main_menu 副本有定义 → in_game 阶段
+###   "Non-existent modifier type 'th_gensokyo_io_influence_modifier'"
+###   （script_values:106，951 次刷屏）+ 特殊席位 special_status_power
+###   （th_gensokyo_io.txt:31/56/83/119/201）全返回 none → 议会投票权重失效。
+### 双目录注册（MEIOU 3735059838 同款模式，见本文件头注释）必须与
+### main_menu 副本保持同步；由价值观条 left/right modifier 渐进式给予
+### （缘 +50% / 乱 -50%），script_value 经 modifier: 链接乘入投票权重。
+### ============================================================
+th_gensokyo_io_influence_modifier = {
+	color = neutral
+	game_data = {
+		category = country
+	}
+}

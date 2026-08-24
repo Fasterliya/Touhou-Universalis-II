@@ -1,0 +1,210 @@
+### 幻想乡国际组织 — 主定义（参考 ACGV acgv_touhou_gensokyo_empire + basemod hre/lordship 规范写法）
+
+th_gensokyo_io = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+    show_leave_message = no
+    use_laws_as_join_reason = no
+    should_show_ruler_history = yes
+    show_on_diplomatic_map = yes
+
+    # === 领袖 — 彼岸(T25)阎魔席位，start 文件预分配 ===
+    has_leader_country = yes
+    leader_type = country
+    leader_title_key = "th_gensokyo_io_yama_leader_title"
+    leader_change_trigger_type = none
+    leader_change_method = none
+    override_ruler_title = yes
+
+    # === 外交地图颜色 ===
+    # leader_color = hsv360 { 10 80 80 }
+    # member_color = hsv360 { 45 40 60 }
+
+    # === 议会 ===
+    ### 修复 2026-08-19：has_parliament = yes（原 no 导致 propose_crusade 内联议会
+    ### 创建的议题不被调度；议会类型见 parliament_types/th_gensokyo_io_parliament.txt）
+    has_parliament = yes
+    parliament_type = th_gensokyo_io_parliament
+    resolution_widget = parliament
+
+    # === 法律 ===
+    ### B3 修复 2026-08-14：laws 块格式必须是 law = 默认policy 键值对
+    ### （base game defensive_league.txt:16 等 5/5 实锤；裸键列表导致
+    ###  law_to_policy_map.cpp:57 "invalid or duplicated: th_gensokyo_judgment_law"）
+    ### 骨架 3 法律（unity_vision/barrier_policy/incident_response）在骨架 laws 文件
+    ### 中被注释未定义 → 从列表移除待骨架补齐后按对格式加回
+    laws = {
+        th_gensokyo_judgment_law = th_judgment_order_policy
+        th_gensokyo_seat_unlock_law = th_gensokyo_seat_unlock_policy
+        ### WP-G 2026-08-15：博丽大结界核心法律（默认 5 级·幻想）
+        th_gensokyo_barrier_law = th_gensokyo_barrier_fantasy_policy
+    }
+
+    # === 特殊席位 ===
+    special_statuses_implemented = {
+        th_gensokyo_io_yama_special_status
+        th_gensokyo_io_guardian_special_status
+        th_gensokyo_io_sages_special_status
+        th_gensokyo_io_human_village_special_status
+        th_gensokyo_io_seat_special_status
+    }
+
+    # === 外交与战争 ===
+    can_declare_war = {
+        always = yes
+    }
+
+    # === 成员管理 ===
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = yes
+    }
+
+    can_join_trigger = {
+        capital = {
+            continent = continent:th_gensokyo_continent
+        }
+        is_rebel_country = no
+    }
+    join_visible_trigger = {
+        capital = {
+            continent = continent:th_gensokyo_continent
+        }
+    }
+
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
+        always = no
+    }
+
+    # === 加入/创建效果 ===
+    on_joined = {
+    }
+    on_left = {
+    }
+    monthly_effect = {
+    }
+
+    # === 政策投票 ===
+    can_initiate_policy_votes = {
+        is_leader_of_international_organization = scope:recipient
+    }
+    can_vote_in_parliament = {
+        is_member_of_international_organization = scope:recipient
+    }
+
+    # === 敌意 / AE ===
+    ### WP-C 2026-08-15（设计文档《国际组织》§3.0）：被割让额外获得 75% 敌意
+    ### 字段语义 = 于 IO 领土内夺地所获敌意的加成系数（0.75 = +75%）
+    ### 时代接口：追加层见 on_action/th_gensokyo_conquest_oa.txt（默认关闭，防叠加）
+    antagonism_towards_leader_modifier = 0.1
+    antagonism_modifier_for_taking_land_from_fellow_member = 0.75
+    antagonism_modifier_for_taking_land_from_member_as_outsider = 0.75
+    no_cb_price_modifier_for_fellow_member = 0.75
+
+    # === 持地规则 ===
+    # 2026-08-20 整合：锁定式持地（can_add/remove_trigger = no），开局 regions 块
+    # 一次性分配 14 个陆地 region（1,930 地点，不含月面）后领地固定，不随占领变化。
+    # 规则定义见 international_organization_land_ownership_rules/th_gensokyo_land_ownership.txt。
+    land_ownership_rule = th_gensokyo_land_ownership
+
+    # === 修正 ===
+    # 成员修正 — 所有幻想乡IO成员国
+    modifier = {
+        # TODO: 后续人工填写全体成员buff
+        block_from_change_to_empire_rank = yes
+    }
+
+    # 领袖修正 — 阎魔（彼岸T25）
+    leader_modifier = {
+        allowed_intervene_in_war = yes
+        allowed_enforce_peace = yes
+        great_power_score_exempt_from_forfeit = 100
+        # TODO: 后续人工填写阎魔特有buff
+    }
+
+    # # 非领袖修正 — 守护/贤者/人类村落等
+    # non_leader_modifier = {
+    #     block_from_change_to_empire_rank = yes
+    #     # TODO: 后续人工填写非领袖成员buff
+    # }
+
+    # IO整体修正
+    international_organization_modifier = {
+        # TODO: 后续人工填写IO全局buff
+    }
+
+    # === IO 变量 ===
+    variables = {
+        th_gensokyo_unity_var = {
+            format = "TH_GENSOKYO_UNITY_FORMAT"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 0
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "TH_GENSOKYO_UNITY_BASE"
+                    value = 0.1
+                }
+                add = {
+                    desc = "TH_GENSOKYO_UNITY_FROM_PEACE"
+                    if = {
+                        limit = {
+                            international_organization_has_internal_peace = yes
+                        }
+                        value = 0.2
+                    }
+                }
+                ### 成员数加成（C4：参考神罗，按国家总数获得团结度，系数 0.002/成员）
+                add = {
+                    desc = "TH_GENSOKYO_UNITY_FROM_MEMBERS"
+                    value = total_members
+                    multiply = th_unity_members_multiplier_value
+                }
+            }
+        }
+        ### WP-G 2026-08-15：博丽大结界等级（1-5，仅大事件经
+        ### th_gensokyo_barrier_change_level_effect 改动）
+        th_gensokyo_barrier_level = {
+            format = "TH_GENSOKYO_BARRIER_LEVEL_FORMAT"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 1
+            max = 5
+            monthly_change = {
+                add = {
+                    desc = "TH_GENSOKYO_BARRIER_BASE"
+                    value = 0
+                }
+            }
+        }
+    }
+
+    # === AI ===
+    ai_desire_to_join = {
+        add = {
+            desc = "BASE_VALUE"
+            value = 50
+        }
+    }
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
+    }
+    ai_issue_voting_bias = {
+        add = {
+            desc = "INERTIA"
+            value = -1
+        }
+    }
+}

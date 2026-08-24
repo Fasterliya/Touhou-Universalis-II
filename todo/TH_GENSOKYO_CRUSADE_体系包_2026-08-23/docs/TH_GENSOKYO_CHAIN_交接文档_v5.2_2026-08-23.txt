@@ -1,0 +1,160 @@
+================================================================================
+    幻想乡 IO 链条系统（th_gensokyo_chain）— 交接文档 v5.2（更新版）
+    2026-08-23 全会话（v5.1 基线 + 附庸修复 + 体系打包）
+    完成日期: 2026-08-23（代码完成 + 静态验证全绿 + 附庸 BUG 用户实测修复）
+    MOD: Touhou-Universalis-II
+    工作副本: C:\Users\12494\Documents\Paradox Interactive\Europa Universalis V\mod\Touhou-Universalis-II
+    基线: TH_GENSOKYO_CHAIN_交接文档_v5.1_2026-08-23.txt（根因库 1.11-1.19 + F1-F20）
+    体系包: TH_GENSOKYO_CRUSADE_体系包_2026-08-23.zip（53 文件全链路部署）
+================================================================================
+
+================================================================================
+第 0 章：v5.2 更新总览（v5.1 之后）
+================================================================================
+
+  ① 特殊附庸降级 BUG 定位并修复（用户实测通过——重点成果）
+  ② 会议/惩戒战争体系完整打包（53 文件 + README + docs）
+  ③ 模板沉淀：subject_type 模板重写（精华知识）+ io_parliament_debate 更新
+  ④ 维基沉淀：Subject_types 精华知识专章 / 复盘报告_特殊附庸
+  ⑤ 16:41 会话日志分析：F15 生效实证（regulated_state 错误归零）+ 新暴露
+     4 问题（select column / parliament_types 字段 / bias / expansion scope）全部修复
+
+================================================================================
+第 1 章：特殊附庸降级 BUG——最终结论（v5.2 新增，最高价值）
+================================================================================
+
+  现象：make_subject_of 创建的监管国跨月被引擎重置为普通 vassal。
+  历程：enabled 假设（F10，无效）→ on_monthly 假设（F15/F16，错误归零但降级
+        依旧——报错只是噪音非根因）→ 参考实现 yky_shinju_guard 逐字段对比 →
+        三件套对齐 → 用户实测修复。
+
+  修复组合（对照参考 yky_shinju_guard 神树护卫国）：
+  ① 隐藏写法：visible_through_diplomacy/treaty + enabled_through_diplomacy/treaty
+     = no 系列（参考无顶层 visible/enabled；顶层字段被牵涉进重置）
+  ② level = 3（原 0 = "名义附庸"；注意 tributary 也是 0 且合法——
+     level=0 单独不必然导致降级，单一因子未隔离）
+  ③ annullment_favours_required = 20（外交废除所需人情，base game 17 类型全带）
+
+  字段正名：can_be_annexed（非 can_annex）/ monthly_favor_gain（非 loyalty_modifier）
+  / subject_pays（非 tribute）——旧模板用了错误字段名，已修正。
+
+  详见: 维基代码库\_分析报告\复盘报告_特殊附庸_2026-08-23.md（K-S1~K-S5）
+
+================================================================================
+第 2 章：16:41 会话新暴露问题修复（v5.2 新增，F21-F24）
+================================================================================
+
+  F21 in_game/common/generic_actions/th_gensokyo_propose_crusade.txt
+     - select_trigger 2（选国）补 column = { data = name }
+       （"There is no column to display in select-interaction-target" assertion →
+       选择流程失败 → call_io_parliament "Scope: empty" 连锁）
+  F22 in_game/common/parliament_types/th_gensokyo_io_parliament.txt
+     - 删 seat_name / possible_issues（base game 全库无此字段——
+       "Unexpected token" 解析错误实证；议题池 = 引擎自动）
+  F23 in_game/common/parliament_issues/th_gensokyo_crusade_issue.txt
+     - wants_this_parliament_issue_bias 重写（scripted maths 上下文禁 effect，
+       save_scope_as 非法；改 trigger 级 any_country + root 嵌套定位）
+  F24 in_game/common/scripted_effects/th_gensokyo_expansion_effects.txt +
+      in_game/events/th_gensokyo_expansion_request_events.txt
+     - save_scope_as 跨 scripted_effect 不可靠（"Undefined event target
+       'expansion_requester'"）——定位移入 effect 内按标记重新 save
+
+================================================================================
+第 3 章：体系全景（53 文件，见体系包 README 二节）
+================================================================================
+
+  开会（IO 议会）→ 惩戒战争 → 结算条约 → 审判 → 监管国（刑期/释放/保护）
+  关键链路与修复映射：
+  - 提案开会: propose_crusade + crusade_issue + io_parliament + IO 定义 has_parliament
+  - 规则投票: debate_start_effect（预投 no + 翻转 yes——EU5 不能直接投反对票）
+  - 通过激活: on_debate_passed → leader_country 内 enable+activate（tooltip 铁律）
+  - 宣战: 局势 on_start declare_war_with_cb
+  - 加入: join_crusade（any_current_war 目标国 scope + war=prev 嵌套）
+  - 结算: triumph/counter 条约 + 免制裁
+  - 审判: trial 局势 + 4 档判决（judge_core_effect）
+  - 监管国: regulated_state（level=3/through_* 隐藏/annullment）+ pulse 倒计时
+    + 脱离彼岸事件 + 阎魔保护（overlord_protects_external + on_war_declared 兜底）
+
+================================================================================
+第 4 章：当前状态（2026-08-23 末）
+================================================================================
+
+  已解决（用户确认）：
+  ✓ 特殊附庸降级 BUG（三件套对齐参考实现）
+  ✓ 全员投票生效 / 闪退卡死 / 条约本地化（v5.0 基线）
+  ✓ 16:41 会话 4 新问题（F21-F24 静态修复完成，待实测）
+  ✓ 全 MOD lint error 级清零（thgfx 修复后）
+
+  待验证（游戏内实测）：
+  ⏳ 议会通过 → 局势立即启动（F8 链路 16:41 已证无 THIRD_ENABLE 刷屏，完整链路待测）
+  ⏳ join 同一战争（DBG_JOIN_IF_PASS/AFTER 预期）
+  ⏳ 审判 4 档判决链 / 监管国跨月稳定 / 脱离彼岸事件 / 阎魔保护
+  ⏳ AI 投票倾向（bias 重写后）
+
+================================================================================
+第 5 章：测试命令全集（控制台，v5.2）
+================================================================================
+
+  【原生开会】tag T25 → IO 面板 → 发起惩戒战争提案 → 选目标（好战≥50）
+  【强制激活局势】effect international_organization:th_gensokyo_io = {
+        leader_country ?= { enable_situation_effect = { type = th_gensokyo_crusade }
+        activate_situation = situation:th_gensokyo_crusade } }
+  【直接变监管国（跳过审判）】effect c:T31 = {
+        set_variable = { name = th_gensokyo_sentence_months value = 240 }
+        make_subject_of = { target = c:T25 type = subject_type:th_gensokyo_regulated_state } }
+  【刑期加速】effect c:T31 = { set_variable = { name = th_gensokyo_sentence_months value = 1 } }
+  【触发脱离彼岸】event th_gensokyo_trial_events.2 [c:T31]
+  【外部宣监管国测保护】tag 外部国 → declarewar c:T31 → trigger c:T25 = { is_at_war_with = c:外部 }
+  【验证】trigger situation:th_gensokyo_crusade = { situation_is_active = yes }
+        trigger c:T31 = { is_subject_type = subject_type:th_gensokyo_regulated_state }
+  【DBG】error.log 搜 DBG_JOIN_IF_PASS / DBG_JOIN_AFTER / DBG_JOIN_ELSE
+
+================================================================================
+第 6 章：待办清单（按优先级）
+================================================================================
+
+  P0：
+  1. 游戏内全链路实测（第 4 章 ⏳ 全部）
+  2. 实测通过后删除 DBG_JOIN_* 标记（join_crusade 3 处）
+  3. 开局特殊附庸批量排查（satori_vassal/forest_territory/cloud_realm 同用旧顶层
+     visible=no 写法——若降级则批量对齐 through_* 系列）
+  P1：
+  4. 单因子验证附庸降级根因（level=0 vs through_* vs annullment）
+  5. bias 敌意动态项恢复方案（需目标 scope——P1 调参）
+  6. 影响力权重分布实测调参
+  P2：
+  7. 全 MOD 40 文件 BOM 批量修复 / 3 空壳议题 / 韩文 chain / law-policy 重复
+  8. 交接文档 v5.2 后实测结果回填（v5.3 定稿）
+  9. 模板重启会话后自验（eu5_template_generate subject_type / io_parliament_debate）
+
+================================================================================
+第 7 章：文档资产索引
+================================================================================
+
+  I:\工作站\交接文档\
+  ├── TH_GENSOKYO_CHAIN_交接文档_v5.1_2026-08-23.txt   基线（根因库/F1-F20）
+  ├── TH_GENSOKYO_CHAIN_交接文档_v5.2_2026-08-23.txt   本文件（更新版）
+  ├── TH_GENSOKYO_CRUSADE_体系包_2026-08-23.zip        53 文件全链路部署包
+  └── TH_GENSOKYO_CHAIN_修复包_2026-08-23.zip          （19 文件修复增量）
+
+  I:\工作站\MOD开发\欧陆风云5_EU5\维基代码库\
+  ├── _分析报告\复盘报告_2026-08-23.md                 全会话复盘
+  ├── _分析报告\复盘报告_特殊附庸_2026-08-23.md         附庸 BUG 专项复盘（K-S1~K-S5）
+  ├── 三_脚本类型\维基参考_Subject_types_modding附庸类型.md   ⭐ 精华知识专章
+  ├── 三_脚本类型\维基参考_IO_parliament_debate_IO议会辩论.md  §1.2 修正 + §7 新增
+  └── 六_MOD管理与调试\维基参考_error_log脚本追踪调试.md      错误表新增行
+
+  eu5-mcp 模板：io_parliament_debate（更新）/ subject_type（重写，待重启生效）
+
+================================================================================
+第 8 章：风险与注意事项（v5.2 追加）
+================================================================================
+
+  1. 附庸降级为组合修复，单因子未隔离——后续单因子验证若发现仅某字段为根因，
+     其余字段可回退（记录于复盘报告遗留）
+  2. 开局特殊附庸（satori 等）未验证——若降级需批量对齐
+  3. F21-F24 尚未游戏内实测（静态验证通过）
+  4. 模板更新需重启 opencode 会话生效
+  5. 监管国须保持 IO 成员（pulse 倒计时依赖）
+  6. 旧档 on_action 合并不生效（引擎问题）——月度相关验证用新档
+================================================================================

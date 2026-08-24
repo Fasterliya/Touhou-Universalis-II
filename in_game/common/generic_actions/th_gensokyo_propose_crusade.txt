@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 惩戒战争提案（仅阎魔可见，原生 IO 行动栏）
 ### 链路: 选 IO → 选目标国（恶名≥50 过滤，2026-08-14 用户决策改恶名驱动）→ 内联发起议会辩论 → 阎魔+贤者投票，2 票通过
 ### 目标国传递: 标记法（th_gensokyo_crusade_target_mark 常驻至局势结束）
@@ -34,6 +34,10 @@ th_gensokyo_propose_crusade = {
                 }
             }
         }
+        ### 2026-08-21（q7 决策）：辩论失败后领袖 12 月冷却（on_debate_failed 打标）
+        NOT = {
+            has_cooldown = th_gensokyo_propose_crusade
+        }
     }
     
     select_trigger = {
@@ -57,6 +61,14 @@ th_gensokyo_propose_crusade = {
         ### "Undefined event target"；改用内置 "choose_country"（japanese_shogunate.txt:64 先例），
         ### target_flag 对齐 high_kingship_of_ireland.txt:171 的 target_country
         name = "choose_country"
+        ### 2026-08-23 实测修复：补 column——原缺 column 导致 select-interaction-target
+        ### "There is no column to display" assertion（16:41:52 实证）→ 选择流程失败 →
+        ### 目标/recipient 注入异常 → call_io_parliament "Scope: empty"（16:41:53 实证）。
+        ### 对齐先例：japanese_shogunate.txt:66-68（choose_country + column）/
+        ### high_kingship_of_ireland.txt:172-175（三列）
+        column = {
+            data = name
+        }
         ### 乱价值观过滤（2026-08-19 用户决策：惩戒目标 = 缘与乱偏移 ≥ +50，
         ### 即弃民二档阈值，用 outcast 标记镜像过滤）
         ### modifier mirror 方案（2026-08-14 实测修复）：interaction_source_list 的 limit
@@ -109,36 +121,37 @@ th_gensokyo_propose_crusade = {
             }
         }
         ### 内联发起议会辩论（贤者议会同款，root = 执行国）
-        ### 初始支持度 = 0：阎魔作为发起方必定同意（发起动作即代表同意，不计票）
-        ### 投票数学：3 贤者各 power 200（combined 600）→ 每票 0.333
-        ###          2 票赞成 0.667 > 0.5 通过 / 1 票 0.333 不过
+        ### 2026-08-21（bug 2 用户拍板）：议会开始时所有国家（含发起人阎魔）均尚未投票，
+        ### 不再全员预投 no、发起人也不再自动 vote=yes；
+        ### 初始支持度 = 0，票由规则自动投票 + 成员手动/AI 投票产生
+        ### 投票权重 = 幻想乡影响力（special_status_power 动态公式，见席位文件）
         scope:recipient = {
             set_parliament_location = scope:actor.capital
             set_parliament_active = yes
-            hidden_effect = {
-                every_international_organization_member = {
-                    set_participated_in_parliament = {
-                        international_organization = prev
-                        vote = no
-                    }
-                }
-            }
             set_parliament_issue = parliament_issue:th_gensokyo_crusade_issue
-        }
-        set_participated_in_parliament = {
-            international_organization = scope:recipient
-            vote = yes
         }
         call_io_parliament = {
             international_organization = scope:recipient
+        }
+        ### 2026-08-21（实测修复）：规则自动投票必须在议会激活后执行——
+        ### on_debate_start 回调触发时机早于 call_io_parliament（议会未激活），
+        ### participate_in_parliament 被引擎忽略（三贤者 UI 仍"尚未投票"）；
+        ### on_io_parliament_started 钩子不触发（base game 0 实例）。
+        ### 本处 effect 顺序执行：call_io_parliament 返回后议会已激活，立即规则投票
+        scope:recipient = {
+            th_gensokyo_crusade_debate_start_effect = yes
         }
     }
     
     force_click_and_confirm_or_hold = yes
     
     ai_will_do = {
-        ### B2 修复 2026-08-14：AI 提案倾向同步改恶名驱动（与选国过滤一致，用户决策）：
-        ### 任一成员带弃民二档标记即视为有可惩戒目标（modifier mirror，无 var）
+        ### B2 修复 2026-08-14：AI 提案倾向同步改恶名驱动（与选国过滤一致，用户决策）
+        ### 2026-08-21（需求3）：弃民标记已删（outcast modifier 定义已移除），
+        ### 改直接 societal_value 检测（字面值 50；阈值与过滤行
+        ### th_notorious_outcast_threshold_value 一致，改动需同步）
+        ### 2026-08-21（问题 2 用户决策）：有可惩戒目标时倾向拉满（+10000，
+        ### base game "ANY vote" 同款量级）→ AI 阎魔有目标即提案
         if = {
             limit = {
                 any_international_organization_member = {
@@ -148,7 +161,7 @@ th_gensokyo_propose_crusade = {
                     NOT = {
                         is_leader_of_international_organization = international_organization:th_gensokyo_io
                     }
-                    has_country_modifier = th_gensokyo_notorious_outcast_modifier
+                    societal_value:th_gensokyo_amity_vs_belligerence >= 50
                     ### WP-H：免制裁期内不计为可惩戒目标
                     NOT = {
                         has_variable = th_gensokyo_sanction_immunity
@@ -157,7 +170,7 @@ th_gensokyo_propose_crusade = {
             }
             add = {
                 desc = TH_CRUSADE_AI_FOUND_TARGET
-                value = 100
+                value = 10000
             }
         }
         add = {

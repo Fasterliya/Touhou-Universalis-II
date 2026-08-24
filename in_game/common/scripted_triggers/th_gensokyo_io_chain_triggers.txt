@@ -1,21 +1,10 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 链条系统 共享触发条件（国家 scope）
 ### ============================================================
 
-### 价值观档位：亲善（<0） / 中间（0~+50） / 好战（>=+50）
-### （原恶名档位 低<50 / 中50-75 / 高>=75 → 社会价值观 0 / 0~50 / >=50）
-th_gensokyo_notorious_low_trigger = {
-    societal_value:th_gensokyo_amity_vs_belligerence < th_notorious_pariah_threshold_value
-}
-
-th_gensokyo_notorious_mid_trigger = {
-    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_pariah_threshold_value
-    societal_value:th_gensokyo_amity_vs_belligerence < th_notorious_outcast_threshold_value
-}
-
-th_gensokyo_notorious_high_trigger = {
-    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
-}
+### 2026-08-21（需求 3）：删除 notorious_low/mid/high 档位触发器
+### （原恶名档位 → 社会价值观档位的阶段性修正系统；无引用，
+### 提案过滤已改直接 societal_value 检测，阈值 50 字面值于 propose_crusade）
 
 ### 自由市判定：持有幻想乡IO人类村落席位
 th_gensokyo_is_free_city_trigger = {

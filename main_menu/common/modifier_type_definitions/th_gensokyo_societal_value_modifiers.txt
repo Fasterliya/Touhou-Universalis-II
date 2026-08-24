@@ -27,3 +27,17 @@ monthly_towards_belligerence = {
 		is_societal_value_change = yes
 	}
 }
+
+### ============================================================
+### 幻想乡影响力修正（2026-08-21，用户规格）
+### 自定义国家修正字段：由价值观条 left_modifier（缘 +50%）/ right_modifier
+### （乱 -50%）渐进式给予；script_value 经 modifier:th_gensokyo_io_influence_modifier
+### 读取，乘入议会投票权重（th_gensokyo_io_vote_power_value）
+### 参考：union_integration_level（00_modifier_types.txt:15244 同模式自定义字段）
+### ============================================================
+th_gensokyo_io_influence_modifier = {
+	color = neutral
+	game_data = {
+		category = country
+	}
+}

@@ -19,6 +19,15 @@
  th_gensokyo_io_human_village_special_status: "인간 마을"
  th_gensokyo_io_human_village_special_status_desc: "인간 마을의 대표로, 환상향의 인간 거주지 이익을 보호합니다."
 
+### 2026-08-21 (버그 1 수정): 전 회원 기본 지위 (투표 가중치의 근거)
+ th_gensokyo_io_regular_member_special_status: "환상향 구성원"
+ th_gensokyo_io_regular_member_special_status_desc: "환상향의 일반 구성원. 모든 구성원은 의회에서 투표권을 가지며, 가중치는 환상향 내 영향력에 따라 결정됩니다."
+
+### === 환상향 영향력 수정 ===
+### 2026-08-21 (사용자 사양): 사회 가치관이 ±50% 점진 부여, 의회 투표 가중치에 영향
+ th_gensokyo_io_influence_modifier: "환상향 영향력 수정"
+ th_gensokyo_io_influence_modifier_desc: "환상향 내에서 이 국가의 정치적 영향력 수정. 인연 성향(친선)은 투표 가중치를 높이고, 난 성향(호전)은 투표 가중치를 낮춥니다."
+
 ### === Leader Title ===
  th_gensokyo_io_yama_leader_title: "염마"
  th_gensokyo_io_yama_leader_title_desc: "환상향의 재판관이자 의회의 의장."
@@ -214,18 +223,7 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "현자 회의 개혁"
  STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "세입 +10%, 인력 +10%."
 
-### === Notoriety Consequence Auto-Modifiers (design §2.5) ===
- th_gensokyo_io_notorious_tier1_auto_modifier: "오염된 평판"
- th_gensokyo_io_notorious_tier1_auto_modifier_desc: "악명이 30 이상이면 환상향이 이 국가를 경계합니다. 외교적 평판 -1, 관계 개선 -15%."
-
- th_gensokyo_io_notorious_tier2_auto_modifier: "의심받는 악행"
- th_gensokyo_io_notorious_tier2_auto_modifier_desc: "악명이 50 이상이면 이 국가는 반복된 악행을 저지른 것으로 의심받습니다. 외교적 평판 -2, 관계 개선 -30%, 안정 투자 +10%."
-
- th_gensokyo_io_notorious_tier3_auto_modifier: "국제적 배척자"
- th_gensokyo_io_notorious_tier3_auto_modifier_desc: "악명이 70 이상이면 이 국가는 환상향 사회에서 배척됩니다. 외교적 평판 -4, 관계 개선 -50%."
-
- th_gensokyo_io_notorious_tier4_auto_modifier: "심판 대상 낙인"
- th_gensokyo_io_notorious_tier4_auto_modifier_desc: "악명이 80 이상이면 염마와 현자는 추가 심의 없이 징벌 전쟁을 선포할 수 있습니다. 외교적 평판 -6, 관계 개선 -75%."
+### 2026-08-21 (요구사항 3): th_gensokyo_io_notorious_tier1~4_auto_modifier(_desc) 삭제됨
 
 ### === Introduce Institution Action ===
  th_sages_introduce_institution: "사상 도입"
@@ -297,3 +295,18 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  TH_TRIAL_VOTE_MERCY: "관용 (권선 성향)"
  TH_TRIAL_VOTE_ORDER: "적정 (질서 성향)"
  TH_TRIAL_VOTE_KARMA: "엄벌 (인과 성향)"
+
+### === 持地显示（2026-08-21）===
+ TH_GENSOKYO_IO_OWNED_LOCATION_TT: "이 지역은 환상향 국제 기구에 속해 있습니다"
+
+### === 심판 감독국 석방 이벤트（2026-08-23）===
+ th_gensokyo_trial_events.2.title: "피안으로부터의 해방"
+ th_gensokyo_trial_events.2.desc: "형기가 만료되었습니다. 당신은 피안의 감독에서 풀려나 독립을 되찾았습니다."
+ th_gensokyo_trial_events.2.a: "자유다"
+
+### === 감독국 속국 타입（2026-08-23）===
+ th_gensokyo_regulated_state: "피안 감독국"
+ th_gensokyo_regulated_state_desc: "염마에게 형벌로 부여된 속국입니다. 모든 자주권을 상실하며, 형기 만료 시 독립국으로 해방됩니다."
+ LEAD_th_gensokyo_regulated_state: "$LIST$(이)가 [SUBJECT_TYPE.GetName]임"
+ AM_th_gensokyo_regulated_state: "$LIST$의 [SUBJECT_TYPE.GetName]입니다."
+ subject_pays_regulated: "감독국 조공"

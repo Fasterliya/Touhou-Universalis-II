@@ -26,8 +26,12 @@
 ### Crusade peace treaty
  th_gensokyo_crusade_triumph: "Total Victory (Crusade)"
  th_gensokyo_crusade_triumph_desc: "Total victory in a punitive crusade: the enemy surrenders unconditionally and accepts all verdicts of Gensokyo."
+ ### 2026-08-21 (issue 4): peace deal entry keys (offer_peace _entry/_entry_short pattern)
+ th_gensokyo_crusade_triumph_entry: "$th_gensokyo_crusade_triumph$"
+ th_gensokyo_crusade_triumph_entry_short: "$th_gensokyo_crusade_triumph$"
  TH_CRUSADE_INITIAL_SUPPORT: "Yama's initial support"
  TH_CRUSADE_AI_FOUND_TARGET: "A target with sufficient antagonism exists"
+ TH_CRUSADE_AI_ANTAGONISM: "Antagonism towards the crusade target"
 
 ### Crusade
  th_gensokyo_crusade_cb: "Punitive Crusade"
@@ -62,6 +66,8 @@
 ### Regulated state
  th_gensokyo_regulated_state: "Regulated State of the Underworld"
  th_gensokyo_regulated_state_desc: "A subject sentenced by the Yama, stripped of all autonomy, released as independent when the sentence ends."
+ LEAD_th_gensokyo_regulated_state: "$LIST$ is a [SUBJECT_TYPE.GetName]"
+ AM_th_gensokyo_regulated_state: "[SUBJECT_TYPE.GetName] of $LIST$."
 
 ### Initial special subjects (permanent, cannot be annexed)
  th_gensokyo_satori_vassal: "Satori Vassal"
@@ -121,6 +127,9 @@
  th_gensokyo_trial_events.1.a: "Light: Return unlawfully seized lands"
  th_gensokyo_trial_events.1.b: "Medium: Return lands and weaken their power"
  th_gensokyo_trial_events.1.c: "Utmost: Reduce them to a regulated state of the Underworld (transfer wealth and levy tribute)"
+ th_gensokyo_trial_events.2.title: "Released from the Underworld"
+ th_gensokyo_trial_events.2.desc: "Your sentence has been served. You are released from the Underworld's supervision and regain independence."
+ th_gensokyo_trial_events.2.a: "Freedom at last"
 
 ### Variables
  th_gensokyo_sin_var: "Sin"
@@ -143,10 +152,14 @@
  OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
  ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "Joined the punitive crusade"
  TH_JOIN_CRUSADE_AI_ANTAGONISM: "Antagonistic toward the crusade target"
+ TH_JOIN_CRUSADE_SUPPORTER_BIAS: "Supported the crusade in parliament"
 
 ### Counter treaty
  th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"
  th_gensokyo_crusade_counter_desc: "Turning the tide of the punitive crusade: you crushed Gensokyo's encirclement and earned the right to expand."
+ ### 2026-08-21 (issue 4): peace deal entry keys
+ th_gensokyo_crusade_counter_entry: "$th_gensokyo_crusade_counter$"
+ th_gensokyo_crusade_counter_entry_short: "$th_gensokyo_crusade_counter$"
 
 ### Parliament issue
  th_gensokyo_crusade_issue: "Punitive Crusade Proposal"
@@ -165,8 +178,8 @@
  th_gensokyo_expansion_cost_incident_modifier_desc: "Expanding during an incident, at a slightly higher cost."
  th_gensokyo_expansion_cost_unauthorized_modifier: "Unauthorized Expansion"
  th_gensokyo_expansion_cost_unauthorized_modifier_desc: "Expansion without the sages' approval is costly."
- th_gensokyo_notorious_pariah_modifier: "Outcast of Discord"
- th_gensokyo_notorious_pariah_modifier_desc: "This country has fallen into the way of discord. It may be proposed as a crusade target."
+ ### 2026-08-21 (requirement 3): th_gensokyo_notorious_pariah_modifier(_desc) removed
+ ### (stage-based modifier system, removed together with the pariah marker)
 
 ### Situation panel
  TH_CRUSADE_SUPPORTER_STRENGTH: "Gensokyo Coalition Strength"

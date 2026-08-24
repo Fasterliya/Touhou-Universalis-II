@@ -1,4 +1,4 @@
-### 幻想乡国际组织 — 主定义（参考 ACGV acgv_touhou_gensokyo_empire + basemod hre/lordship 规范写法）
+﻿### 幻想乡国际组织 — 主定义（参考 ACGV acgv_touhou_gensokyo_empire + basemod hre/lordship 规范写法）
 
 th_gensokyo_io = {
     has_target = no
@@ -9,6 +9,14 @@ th_gensokyo_io = {
     use_laws_as_join_reason = no
     should_show_ruler_history = yes
     show_on_diplomatic_map = yes
+
+    # === 地图直接显示（2026-08-21 修复）===
+    # 参照 base game hre / lordship_of_ireland：IO 持地在常规政治地图上
+    # 以 IO 自身颜色(map_color hsv360{45 40 60}) + 名称叠加显示
+    # （官方类型：show_as_overlord_on_map_trigger，root = member country, scope:recipient = IO）
+    show_as_overlord_on_map_trigger = {
+        always = yes
+    }
 
     # === 领袖 — 彼岸(T25)阎魔席位，start 文件预分配 ===
     has_leader_country = yes
@@ -49,6 +57,8 @@ th_gensokyo_io = {
         th_gensokyo_io_sages_special_status
         th_gensokyo_io_human_village_special_status
         th_gensokyo_io_seat_special_status
+        ### 2026-08-21：普通成员基础席位（全员 auto_bestowal，提供投票权重）
+        th_gensokyo_io_regular_member_special_status
     }
 
     # === 外交与战争 ===
@@ -100,6 +110,11 @@ th_gensokyo_io = {
     }
     can_vote_in_parliament = {
         is_member_of_international_organization = scope:recipient
+        ### 2026-08-21（bug 3/4 确定性）：辩论开始自动投票的锁定国不可再投，
+        ### 防 base game vote_in_organization_parliament（AI 每月自动投票）覆盖规则票
+        NOT = {
+            has_variable = th_gensokyo_crusade_vote_locked
+        }
     }
 
     # === 敌意 / AE ===
@@ -116,6 +131,17 @@ th_gensokyo_io = {
     # 一次性分配 14 个陆地 region（1,930 地点，不含月面）后领地固定，不随占领变化。
     # 规则定义见 international_organization_land_ownership_rules/th_gensokyo_land_ownership.txt。
     land_ownership_rule = th_gensokyo_land_ownership
+
+    # 地点悬停提示（2026-08-21，参照 catholic_church tooltip 字段）：
+    # root = location, scope:recipient = IO；仅 IO 持地时返回一行提示文本
+    tooltip = {
+        if = {
+            limit = {
+                is_owned_by_international_organization = scope:recipient
+            }
+            custom_tooltip = { text = TH_GENSOKYO_IO_OWNED_LOCATION_TT }
+        }
+    }
 
     # === 修正 ===
     # 成员修正 — 所有幻想乡IO成员国

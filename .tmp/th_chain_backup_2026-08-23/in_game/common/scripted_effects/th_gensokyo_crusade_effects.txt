@@ -1,0 +1,316 @@
+### ============================================================
+### 幻想乡IO 惩戒审判 — 判决效果
+### 要求 scope: 调用方需先 save_scope_as = crusade_target（目标国）与 io_leader（阎魔）
+### 档位机制: th_gensokyo_sentence_tier（1-3）——AI 自动判定或玩家事件手动设定
+### 3 级模型（A6 决策）：轻=归还领土 / 中=归还+削弱 / 重=监管国（财富转移+40%贡金+归还+削弱）
+### ============================================================
+
+### 有效罪值计算（罪值 + 审判法偏移，0-100，存 th_gensokyo_effective_sin）
+th_gensokyo_trial_effective_sin_effect = {
+    scope:crusade_target = {
+        set_variable = {
+            name = th_gensokyo_effective_sin
+            value = var:th_gensokyo_sin_var
+        }
+        international_organization:th_gensokyo_io = {
+            if = {
+                limit = {
+                    international_organization_has_policy = policy:th_judgment_karma_policy
+                }
+                scope:crusade_target = {
+                    change_variable = {
+                        name = th_gensokyo_effective_sin
+                        add = 10
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    international_organization_has_policy = policy:th_judgment_mercy_policy
+                }
+                scope:crusade_target = {
+                    change_variable = {
+                        name = th_gensokyo_effective_sin
+                        subtract = 10
+                    }
+                }
+            }
+        }
+        clamp_variable = {
+            name = th_gensokyo_effective_sin
+            min = 0
+            max = 100
+        }
+    }
+}
+
+### AI 档位判定：有效罪值 → th_gensokyo_sentence_tier（1-3）
+### 轻判 <50 / 中判 50-75 / 重判 >=75
+th_gensokyo_trial_tier_effect = {
+    th_gensokyo_trial_effective_sin_effect = yes
+    scope:crusade_target = {
+        if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_effective_sin >= th_sin_tier3_value
+            }
+            set_variable = {
+                name = th_gensokyo_sentence_tier
+                value = 3
+            }
+        }
+        else_if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_effective_sin >= th_sin_tier2_value
+            }
+            set_variable = {
+                name = th_gensokyo_sentence_tier
+                value = 2
+            }
+        }
+        else = {
+            set_variable = {
+                name = th_gensokyo_sentence_tier
+                value = 1
+            }
+        }
+        remove_variable = th_gensokyo_effective_sin
+    }
+}
+
+### 归还非法领土三连（B3 决策，档1+ 默认惩罚）
+### ① 取消目标国全部附庸 ② 归还他国核心领土（previous_owner/is_core_of 模式，参考 HRE）
+### ③ 释放所有可释放国家 —— 2026-08-19 移除：
+###    create_country_from_cores_in_our_locations 需要国家参数（= c:TAG / = scope:x，
+###    vanilla 全 30 处先例无一 = yes），= yes 报
+###    "scope type boolean, expected country" 错误；
+###    "释放全部"无直接等价语义 → 按交接注释指示删除本步骤
+###    （①② 已实现归还领土核心机制）
+th_gensokyo_trial_return_lands_effect = {
+    scope:crusade_target = {
+        ### ① 取消全部附庸
+        every_subject = {
+            cancel_subject = prev
+        }
+        ### ② 归还他国核心领土（原主存在且地块为其核心 → 归还）
+        every_owned_location = {
+            limit = {
+                exists = previous_owner
+                is_core_of = previous_owner
+                previous_owner != scope:io_leader
+                country_exists = previous_owner
+            }
+            change_location_owner = previous_owner
+        }
+    }
+}
+
+### 判决核心（读 th_gensokyo_sentence_tier 0-3）
+### 档0 仅赔款破产 / 档1 归还领土 / 档2 +削弱国力 / 档3 +财富全转移 + 彼岸监管国（40% 贡金自动）
+th_gensokyo_trial_judge_core_effect = {
+    scope:crusade_target = {
+        ### WP-H 2026-08-15（档0）：仅赔款破产 —— 转移半数国库 + 破产 debuff（2 年）
+        if = {
+            limit = {
+                scope:crusade_target.var:th_gensokyo_sentence_tier = 0
+            }
+            set_variable = {
+                name = th_gensokyo_temp_reparations
+                value = gold
+            }
+            change_variable = {
+                name = th_gensokyo_temp_reparations
+                divide = 2
+            }
+            add_gold = -var:th_gensokyo_temp_reparations
+            scope:io_leader = {
+                add_gold = scope:crusade_target.var:th_gensokyo_temp_reparations
+            }
+            remove_variable = th_gensokyo_temp_reparations
+            add_country_modifier = {
+                modifier = th_gensokyo_bankruptcy_modifier
+                years = 2
+            }
+        }
+
+        ### 档1+：归还非法领土（默认惩罚）
+        if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 1
+            }
+            th_gensokyo_trial_return_lands_effect = yes
+        }
+
+        ### 档2+：削弱国力（5 年）
+        if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 2
+            }
+            add_country_modifier = {
+                modifier = th_gensokyo_weakness_modifier
+                years = 5
+            }
+        }
+
+        ### 档3：财富全转移给阎魔 + 完全沦为彼岸监管国（40% 贡金持续至刑满）
+        if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 3
+            }
+            set_variable = {
+                name = th_gensokyo_temp_gold
+                value = gold
+            }
+            set_gold = 0
+            scope:io_leader = {
+                add_gold = scope:crusade_target.var:th_gensokyo_temp_gold
+            }
+            remove_variable = th_gensokyo_temp_gold
+            th_gensokyo_sentence_duration_effect = yes
+            make_subject_of = {
+                target = scope:io_leader
+                type = subject_type:th_gensokyo_regulated_state
+            }
+        }
+    }
+
+    ### 团结扣减（按档位，重判多扣）
+    scope:crusade_target = {
+        if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 3
+            }
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_sentence_t3_value
+                }
+            }
+        }
+        else_if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 2
+            }
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_sentence_t2_value
+                }
+            }
+        }
+        else_if = {
+            limit = {
+    scope:crusade_target.var:th_gensokyo_sentence_tier >= 1
+            }
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_sentence_t1_value
+                }
+            }
+        }
+        else = {
+            ### WP-H（档0）：仅赔款破产 — 最轻判罚，团结扣减最小
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_sentence_t0_value
+                }
+            }
+        }
+        ### 审判标记（永久）+ 档位清理
+        set_variable = th_gensokyo_judged
+        remove_variable = th_gensokyo_sentence_tier
+    }
+
+    ### 审判完成必获团结（C5：审判法影响获取量——因果必尝 +2 / 劝善 -2）
+    international_organization:th_gensokyo_io = {
+        change_variable = {
+            name = th_gensokyo_unity_var
+            add = th_unity_verdict_reward_value
+        }
+        if = {
+            limit = {
+                international_organization_has_policy = policy:th_judgment_karma_policy
+            }
+            change_variable = {
+                name = th_gensokyo_unity_var
+                add = 2
+            }
+        }
+        else_if = {
+            limit = {
+                international_organization_has_policy = policy:th_judgment_mercy_policy
+            }
+            change_variable = {
+                name = th_gensokyo_unity_var
+                subtract = 2
+            }
+        }
+        clamp_variable = {
+            name = th_gensokyo_unity_var
+            min = 0
+            max = 100
+        }
+    }
+}
+
+### AI 自动判决完整流程（局势 AI 分支调用）
+th_gensokyo_trial_judge_effect = {
+    th_gensokyo_trial_tier_effect = yes
+    th_gensokyo_trial_judge_core_effect = yes
+}
+
+### 刑期计算（月）：基础 20 年 + 罪值加成（罪 100 → +10 年）+ 审判法修正（因果必尝 +2 / 劝善 -2）
+### 封顶 30 年（360 月），存 th_gensokyo_sentence_months
+th_gensokyo_sentence_duration_effect = {
+    scope:crusade_target = {
+        set_variable = {
+            name = th_gensokyo_sentence_months
+            value = 240
+        }
+        ### 罪值加成（每 10 罪 +1 年，转月）
+        set_variable = {
+            name = th_gensokyo_temp_sentence_years
+            value = var:th_gensokyo_sin_var
+        }
+        change_variable = {
+            name = th_gensokyo_temp_sentence_years
+            divide = 10
+        }
+        change_variable = {
+            name = th_gensokyo_temp_sentence_years
+            multiply = 12
+        }
+        change_variable = {
+            name = th_gensokyo_sentence_months
+            add = var:th_gensokyo_temp_sentence_years
+        }
+        remove_variable = th_gensokyo_temp_sentence_years
+        ### 审判法修正
+        international_organization:th_gensokyo_io = {
+            if = {
+                limit = {
+                    international_organization_has_policy = policy:th_judgment_karma_policy
+                }
+                scope:crusade_target = {
+                    change_variable = {
+                        name = th_gensokyo_sentence_months
+                        add = 24
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    international_organization_has_policy = policy:th_judgment_mercy_policy
+                }
+                scope:crusade_target = {
+                    change_variable = {
+                        name = th_gensokyo_sentence_months
+                        subtract = 24
+                    }
+                }
+            }
+        }
+        clamp_variable = {
+            name = th_gensokyo_sentence_months
+            min = 0
+            max = 360
+        }
+    }
+}

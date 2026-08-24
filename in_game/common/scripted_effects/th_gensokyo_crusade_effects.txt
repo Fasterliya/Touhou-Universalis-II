@@ -1,12 +1,27 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 惩戒审判 — 判决效果
-### 要求 scope: 调用方需先 save_scope_as = crusade_target（目标国）与 io_leader（阎魔）
 ### 档位机制: th_gensokyo_sentence_tier（1-3）——AI 自动判定或玩家事件手动设定
 ### 3 级模型（A6 决策）：轻=归还领土 / 中=归还+削弱 / 重=监管国（财富转移+40%贡金+归还+削弱）
+### 2026-08-23 error.log 实测修复（F24 同款）：save_scope_as 跨 scripted_effect
+###   不可靠（expansion 链 "Undefined event target 'expansion_requester'" 实证）——
+###   本文件全部效果改为【效果内按标记重新定位】：
+###   目标国 = th_gensokyo_trial_target_mark（审判局势 on_start 打标，on_ended 清），
+###   阎魔 = IO leader（is_leader_of_international_organization 定位）
 ### ============================================================
+
+### 效果内重定位（目标国 + 阎魔）——各效果开头内联使用（跨效果不可复用）
+### 用法：把本块粘贴到引用 scope:crusade_target / scope:io_leader 的效果开头
+### 目标国标记法同审判局势 on_start（th_gensokyo_trial_target_mark 常驻至局势结束）
 
 ### 有效罪值计算（罪值 + 审判法偏移，0-100，存 th_gensokyo_effective_sin）
 th_gensokyo_trial_effective_sin_effect = {
+    ### F24 同款：效果内按标记重新定位目标国
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_trial_target_mark
+        }
+        save_scope_as = crusade_target
+    }
     scope:crusade_target = {
         set_variable = {
             name = th_gensokyo_effective_sin
@@ -48,6 +63,13 @@ th_gensokyo_trial_effective_sin_effect = {
 ### 轻判 <50 / 中判 50-75 / 重判 >=75
 th_gensokyo_trial_tier_effect = {
     th_gensokyo_trial_effective_sin_effect = yes
+    ### F24 同款：效果内按标记重新定位目标国（effective_sin 已由上一效果设置）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_trial_target_mark
+        }
+        save_scope_as = crusade_target
+    }
     scope:crusade_target = {
         if = {
             limit = {
@@ -86,6 +108,21 @@ th_gensokyo_trial_tier_effect = {
 ###    "释放全部"无直接等价语义 → 按交接注释指示删除本步骤
 ###    （①② 已实现归还领土核心机制）
 th_gensokyo_trial_return_lands_effect = {
+    ### F24 同款：效果内按标记重新定位目标国 + 阎魔
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_trial_target_mark
+        }
+        save_scope_as = crusade_target
+    }
+    international_organization:th_gensokyo_io = {
+        every_international_organization_member = {
+            limit = {
+                is_leader_of_international_organization = international_organization:th_gensokyo_io
+            }
+            save_scope_as = io_leader
+        }
+    }
     scope:crusade_target = {
         ### ① 取消全部附庸
         every_subject = {
@@ -107,6 +144,23 @@ th_gensokyo_trial_return_lands_effect = {
 ### 判决核心（读 th_gensokyo_sentence_tier 0-3）
 ### 档0 仅赔款破产 / 档1 归还领土 / 档2 +削弱国力 / 档3 +财富全转移 + 彼岸监管国（40% 贡金自动）
 th_gensokyo_trial_judge_core_effect = {
+    ### F24 同款：效果内按标记重新定位目标国 + 阎魔
+    ### （调用方 = 审判事件 option（玩家路径）/ th_gensokyo_trial_judge_effect（AI 路径），
+    ###  save_scope_as 跨 scripted_effect 均不可靠，一律效果内重定位）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_trial_target_mark
+        }
+        save_scope_as = crusade_target
+    }
+    international_organization:th_gensokyo_io = {
+        every_international_organization_member = {
+            limit = {
+                is_leader_of_international_organization = international_organization:th_gensokyo_io
+            }
+            save_scope_as = io_leader
+        }
+    }
     scope:crusade_target = {
         ### WP-H 2026-08-15（档0）：仅赔款破产 —— 转移半数国库 + 破产 debuff（2 年）
         if = {
@@ -259,6 +313,14 @@ th_gensokyo_trial_judge_effect = {
 ### 刑期计算（月）：基础 20 年 + 罪值加成（罪 100 → +10 年）+ 审判法修正（因果必尝 +2 / 劝善 -2）
 ### 封顶 30 年（360 月），存 th_gensokyo_sentence_months
 th_gensokyo_sentence_duration_effect = {
+    ### F24 同款：效果内按标记重新定位目标国（本效果由 judge_core_effect 嵌套调用，
+    ### 跨 scripted_effect 的 scope 一律不可靠）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_trial_target_mark
+        }
+        save_scope_as = crusade_target
+    }
     scope:crusade_target = {
         set_variable = {
             name = th_gensokyo_sentence_months
@@ -312,5 +374,165 @@ th_gensokyo_sentence_duration_effect = {
             min = 0
             max = 360
         }
+    }
+}
+
+### ============================================================
+### 辩论开始规则自动投票 v3（2026-08-21，用户拍板：所有人都会投票 + 规则组锁定其余动态）
+### 调用: propose_crusade effect 尾部（call_io_parliament 之后、议会已激活——
+###       2026-08-21 实测：on_debate_start 回调时机早于议会激活，投票被引擎忽略，已移除）
+### 机制（base game 标准两步：不能直接投反对票，participate no 仅对已投赞成者有效）：
+###   ① 全员预投反对 set_participated_in_parliament vote = no
+###      （不改变支持度；UI 全员"已投票"，无人"尚未投票"）
+###   ② 赞成组翻转为赞成 participate_in_parliament vote = yes（预投 no 后翻转条件满足）
+### 规则（每国一次，投后打 th_gensokyo_crusade_vote_locked 锁定；
+###       can_vote_in_parliament 拒绝锁定国再投票 → 「必定支持/必定反对」确定性成立）：
+###   赞成组（participate yes + supporter + locked）:
+###     ① 目标国敌人/宿敌 ② 针对目标的原版 coalition 成员（IO 内）
+###     ③ 贤者 ④ 领袖（发起人阎魔） ⑤ 与目标敌意≥50（用户拍板）
+###   反对组（仅 locked，保持预投 no = 反对）: 目标国盟友/附属国
+###   其余成员: 保持预投 no，不锁定——AI 按 wants_this_parliament_issue_bias 动态改票、
+###     玩家可手动投（v3 用户拍板：不是锁定，而是动态变化）
+### 锁定标记清理: on_debate_passed/failed（辩论结束即失效）
+### 同意者标记 th_gensokyo_crusade_supporter（2026-08-21 追加）：
+###   赞成组额外打标 = 「同意的人」，供 join_crusade ai_will_do 极强加入倾向使用；
+###   生命周期与 vote_locked 分离 —— 跨辩论存续到局势结束
+###   （on_debate_failed 清 / 局势 on_start 重置 / on_ended 收尾清；on_debate_passed 不清）
+### ============================================================
+th_gensokyo_crusade_debate_start_effect = {
+    ### 定位目标国（标记法）
+    every_international_organization_member = {
+        limit = {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+        save_scope_as = crusade_target
+    }
+    if = {
+        limit = {
+            exists = scope:crusade_target
+        }
+        ### ① 全员预投反对（v3：所有人都会投票，无人"尚未投票"）
+        ### set_participated_in_parliament 不改变支持度（base game propose 同款）
+        every_international_organization_member = {
+            set_participated_in_parliament = {
+                international_organization = international_organization:th_gensokyo_io
+                vote = no
+            }
+        }
+        ### === 赞成组 ===
+        ### ② 目标国敌人/宿敌（succession_crisis_actions.txt:143 触发器实证）
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_crusade_vote_locked
+                }
+                OR = {
+                    is_rival_of = scope:crusade_target
+                    is_enemy_of = scope:crusade_target
+                }
+            }
+            participate_in_parliament = {
+                international_organization = international_organization:th_gensokyo_io
+                vote = yes
+            }
+            set_variable = th_gensokyo_crusade_vote_locked
+            ### 同意者标记（加入倾向）
+            set_variable = th_gensokyo_crusade_supporter
+        }
+        ### ③ 针对目标国的原版 coalition（包围网）成员（q1 决策：
+        ###    「判定是否有针对开会目标的包围网，把他们全部加入赞同」）
+        ###    仅限 IO 成员有投票权；非 IO 成员无票（议会为 IO 内政）
+        every_international_organization = {
+            limit = {
+                international_organization_type = international_organization_type:coalition
+                international_organization_target ?= scope:crusade_target
+            }
+            every_international_organization_member = {
+                limit = {
+                    NOT = {
+                        has_variable = th_gensokyo_crusade_vote_locked
+                    }
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                }
+                participate_in_parliament = {
+                    international_organization = international_organization:th_gensokyo_io
+                    vote = yes
+                }
+                set_variable = th_gensokyo_crusade_vote_locked
+                ### 同意者标记（加入倾向）
+                set_variable = th_gensokyo_crusade_supporter
+            }
+        }
+        ### ④ 贤者
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_crusade_vote_locked
+                }
+                th_gensokyo_is_sage_trigger = yes
+            }
+            participate_in_parliament = {
+                international_organization = international_organization:th_gensokyo_io
+                vote = yes
+            }
+            set_variable = th_gensokyo_crusade_vote_locked
+            ### 同意者标记（加入倾向）
+            set_variable = th_gensokyo_crusade_supporter
+        }
+        ### ⑤ 领袖（发起人阎魔）——发起人必赞成（v3 追加）
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_crusade_vote_locked
+                }
+                is_leader_of_international_organization = international_organization:th_gensokyo_io
+            }
+            participate_in_parliament = {
+                international_organization = international_organization:th_gensokyo_io
+                vote = yes
+            }
+            set_variable = th_gensokyo_crusade_vote_locked
+            ### 同意者标记（加入倾向）
+            set_variable = th_gensokyo_crusade_supporter
+        }
+        ### ⑥ 与目标敌意≥50（v3 用户拍板：敌意高者自动赞成；
+        ###    阈值复用 th_crusade_antagonism_threshold_value = 50，
+        ###    与提案门槛/join ai_will_do 一致）
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_crusade_vote_locked
+                }
+                antagonism = {
+                    target = scope:crusade_target
+                    value >= th_crusade_antagonism_threshold_value
+                }
+            }
+            participate_in_parliament = {
+                international_organization = international_organization:th_gensokyo_io
+                vote = yes
+            }
+            set_variable = th_gensokyo_crusade_vote_locked
+            ### 同意者标记（加入倾向）
+            set_variable = th_gensokyo_crusade_supporter
+        }
+        ### === 反对组 ===（仅锁定，保持预投 no = 反对）
+        ### 目标国盟友/附属国
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    has_variable = th_gensokyo_crusade_vote_locked
+                }
+                OR = {
+                    is_allied_with = {
+                        target = scope:crusade_target
+                    }
+                    is_subject_of = scope:crusade_target
+                }
+            }
+            set_variable = th_gensokyo_crusade_vote_locked
+        }
+        ### === 其余成员 === 保持预投 no，不锁定（v3：动态变化——
+        ### AI 按 wants_this_parliament_issue_bias 每月评估翻转 / 玩家手动投）
     }
 }

@@ -1,0 +1,41 @@
+﻿### 幻想乡 IO 土地所有权规则 — 2026-08-20 整合（修复包 TH_GENSOKYO_IO_LOCATIONS_2026-08-20）
+### 参照：middle_kingdom_land_ownership（纯锁定）+ lordship_of_ireland_land_ownership（陆地护栏）
+### 设计（用户决策 2026-08-20）：开局由 start/th_gensokyo_io.txt 的 regions 块一次性分配
+### 14 个陆地 region（1,930 地点，不含月面）；领地固定（can_add/remove_trigger = no），
+### 即使被非幻想乡国家占领也不脱离 IO；征服挂钩中的 add/remove 调用已同步移除。
+### 官方 readme：land_ownership_rule 规则文件目录；"Land still owned by countries, but extra stuff applies"
+th_gensokyo_land_ownership = {
+
+	# IO 拥有地点的修正（留空接口）
+	modifier = {
+	}
+
+	# 是否可添加地点（root = IO）——领地固定，仅开局 regions 分配
+	can_add_trigger = {
+		always = no
+	}
+
+	# 是否可移除地点（root = IO）
+	can_remove_trigger = {
+		always = no
+	}
+
+	# 是否可添加此地点（root = location, recipient = IO）——陆地护栏，防海洋误入
+	can_add_location_trigger = {
+		is_land = yes
+		is_passable = yes
+	}
+
+	# root = location, recipient = IO（留空接口）
+	on_added = {
+	}
+	on_removed = {
+	}
+
+	# AI 加入意愿（留空 = 引擎默认）
+	ai_desire_to_add = {
+	}
+
+	# 外交地图 IO 持地条带色（start map_color hsv360 {45 40 60} 的 RGB 近似）
+	owned_location_color = rgb { 153 138 92 }
+}

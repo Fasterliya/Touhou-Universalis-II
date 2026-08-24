@@ -28,6 +28,14 @@ th_gensokyo_crusade_triumph = {
         ### 战败方标记
         scope:loser = {
             set_variable = th_gensokyo_crusade_defeated
+            ### 2026-08-21（拷问 Q3 用户拍板）：战败方价值观归中（缘=0）
+            ### 远离 +50 惩戒门槛（th_notorious_outcast_threshold_value），避免被连续惩戒/审判
+            ### （th_gensokyo_judged 不在提案过滤中，靠本方案根治；
+            ###  归中不给满额亲善 buff——用户拍板 0 而非 -100）
+            set_societal_value = {
+                type = th_gensokyo_amity_vs_belligerence
+                value = 0
+            }
         }
         ### 胜利方威望 + 贡献（维护幻想乡和平的报酬）
         scope:winner = {

@@ -22,10 +22,11 @@ th_gensokyo_io_init_setup_scr_effect = {
             value = 0
         }
 
-        # 价值观 — 初始为完全亲善（社会价值观 -100）
-        set_societal_value = {
-            type = th_gensokyo_amity_vs_belligerence
-            value = -100
-        }
+        ### 2026-08-23 矛盾消除：开局价值观统一由 chain_init_effect 负责
+        ### （th_gensokyo_notorious_effects.txt:19-22，set_societal_value = 100，
+        ### 用户 2026-08-21 拍板「开局满好战，立即可被惩戒」）——
+        ### 本处原 set_societal_value = -100 与 chain_init 的 100 并存，
+        ### on_game_start 内两 effect 执行顺序不确定 → 最终值不可靠
+        ### （交接文档 P0-3 矛盾项；模板开局 0 亦被 on_game_start 覆盖）
     }
 }

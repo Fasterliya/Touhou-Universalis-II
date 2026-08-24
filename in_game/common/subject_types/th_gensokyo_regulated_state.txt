@@ -2,14 +2,27 @@
 ### 彼岸监管国（判刑附属）
 ### 宗主无特权（无上贡/无征召），监管国无法独立处理任何事物
 ### 刑期: th_gensokyo_sentence_months（判决脚本设定，20-30 年）
-### 刑满: on_monthly 倒计时归零 → 释放为独立国家 + 团结奖励
+### 刑满: country pulse 倒计时归零 → 触发「脱离彼岸」事件释放
+### 2026-08-23 对齐参考实现 yky_shinju_guard（神树护卫国，可正常工作）：
+###   - 隐藏用 visible_through_diplomacy/treaty + enabled_through_* 系列，
+###     不用顶层 visible/enabled（参考实现无顶层两字段）
+###   - level = 3（原 0 = "名义附庸"，维基 Subject_types:145——嫌疑根因：
+###     名义附庸可能被引擎当非真附庸 → 过月重置为默认 vassal）
+###   - 补 annullment_favours_required = 20（废除附庸关系所需好感，参考同款）
 ### ============================================================
 
 th_gensokyo_regulated_state = {
-    visible = {
+    ### 隐藏/创建控制（对齐 yky_shinju_guard：细粒度 through_* 系列）
+    visible_through_diplomacy = {
         always = no
     }
-    enabled = {
+    visible_through_treaty = {
+        always = no
+    }
+    enabled_through_diplomacy = {
+        always = no
+    }
+    enabled_through_treaty = {
         always = no
     }
     creation_visible = {
@@ -32,7 +45,11 @@ th_gensokyo_regulated_state = {
         always = no
     }
 
-    level = 0
+    ### 2026-08-23：level 0 → 3（对齐参考；0 = 名义附庸嫌疑根因）
+    level = 3
+    ### 2026-08-23：补废除关系好感要求（对齐参考，防引擎默认解除/变更行为）
+    annullment_favours_required = 20
+    color = subject_dominion
     can_be_annexed = no
     has_limited_diplomacy = yes
     subject_can_cancel = no
@@ -45,42 +62,42 @@ th_gensokyo_regulated_state = {
     }
     subject_pays = subject_pays_regulated
 
+    ### 2026-08-23：阎魔保护义务（设计需求）——
+    ### overlord_protects_external：宗主保护附庸免受外部攻击（readme:65 默认 yes，显式化）
+    ### join_defensive_wars_always：关系双向自动加入防御战争（readme:34 "does one
+    ### country automatically join defensive wars with the other"；学园自治区同款
+    ### 先例，维基 Subject_types:303）
+    overlord_protects_external = yes
+    join_defensive_wars_always = {
+        always = yes
+    }
+
     overlord_modifier = {
     }
     subject_modifier = {
     }
 
     on_enable = {
-    }
-
-    on_monthly = {
-        ### 刑期倒计时（root = subject）
+        ### 2026-08-23 兜底：刑期变量缺失时初始化（防判决路径遗漏 → 首月即释放；
+        ### judge_core_effect 正常流程已在 make_subject_of 前设置 240+ 月）
         if = {
             limit = {
-                has_variable = th_gensokyo_sentence_months
-            }
-            change_variable = {
-                name = th_gensokyo_sentence_months
-                subtract = 1
-            }
-        }
-        ### 刑满释放 + 团结奖励（root.var: 修复 2026-08-07：裸 var: 数值比较报 Event target link）
-        if = {
-            limit = {
-                has_variable = th_gensokyo_sentence_months
-                root.var:th_gensokyo_sentence_months <= 0
-            }
-            ### P1-16 修复：subject_types readme 未给 on_monthly 文档化 scope:overlord；
-            ### base game 从附庸 root 取宗主的标准写法是直接链接 overlord（100+ 先例）
-            overlord ?= {
-                cancel_subject = prev
-            }
-            international_organization:th_gensokyo_io = {
-                th_gensokyo_unity_add_effect = {
-                    value = th_unity_release_reward_value
+                NOT = {
+                    has_variable = th_gensokyo_sentence_months
                 }
             }
-            remove_variable = th_gensokyo_sentence_months
+            set_variable = {
+                name = th_gensokyo_sentence_months
+                value = 240
+            }
         }
     }
+
+    ### 2026-08-23 实测根因：subject_type 的 on_monthly 回调在 EU5 引擎中不可靠——
+    ### readme:23 文档化 root=subject，但 base game 18 个类型全部零实现；
+    ### 运行时实证 root 解析为无效空国家（error.log "Scoped object of type 'country'
+    ### is not valid (国家"国家"（---）)" at :86/:98，4480 行刷屏）→ 每月报错 →
+    ### 引擎 subject 月度维护异常 → 类型被重置为普通附庸（用户实测"过月变普通附庸"）。
+    ### 刑期倒计时/释放逻辑已迁移至 th_gensokyo_io_monthly_country_pulse
+    ### （country on_action pulse，root=国家 可靠；监管国保持 IO 成员身份）。
 }

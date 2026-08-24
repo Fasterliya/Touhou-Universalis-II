@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 幻想乡IO 链条系统 — 静态修正（国家级）
 ### 扩张代价修正（互斥挂载，月度刷新）
 ### P1-08 修复：antagonism_taking_land_giving_modifier 语义是"本国对他人夺地的敌意反应量"
@@ -46,30 +46,4 @@ th_gensokyo_bankruptcy_modifier = {
     tax_income_efficiency = -0.30
     global_manpower_modifier = -0.10
     monthly_prestige = -0.05
-}
-
-### ============================================================
-### 恶名弃民档标记修正（2026-08-14 新增：modifier mirror 方案）
-### 用途：interaction_source_list 的 limit 上下文不吃 var: 数值比较
-### （实测签名 "Invalid left side during comparison 'var'" +
-###  "Event target link 'root' returned an unset scope"，1756 次/秒），
-### 故由月度脉冲在【已验证安全的 on_action 上下文】做比较并落成本标记，
-### 提案选国过滤改用 has_country_modifier（普通触发器，无 var）
-### 纯标记修正，无实际数值效果；月度维护见 notorious_effects
-### ============================================================
-th_gensokyo_notorious_pariah_modifier = {
-    game_data = {
-        category = country
-    }
-    monthly_prestige = 0
-}
-
-### 2026-08-19（问题6）：弃民二档标记（缘与乱 ≥ +50，即旧恶名 75）
-### 惩戒战争目标选择改为本标记（societal_value >= th_notorious_outcast_threshold_value）
-### 纯标记修正，无实际数值效果；月度维护见 notorious_effects
-th_gensokyo_notorious_outcast_modifier = {
-    game_data = {
-        category = country
-    }
-    monthly_prestige = 0
 }

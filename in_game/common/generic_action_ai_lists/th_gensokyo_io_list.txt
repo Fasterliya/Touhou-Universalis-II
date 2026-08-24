@@ -5,5 +5,16 @@
 	}
 	actions = {
 		th_sages_diagnostic_interaction
+		### 2026-08-21（需求 4）：链条系统 IO 行动全部注册进 AI 评估列表
+		### （generic_actions 的 ai_tick 仅是评估频率，行动必须出现在
+		### generic_action_ai_lists 才会被 AI 评估；base game 先例：
+		### international_organization_list.txt / black_death_list.txt）
+		th_gensokyo_feast
+		th_gensokyo_propose_crusade
+		th_gensokyo_request_expansion
+		th_gensokyo_counter_expansion
+		th_gensokyo_join_crusade
+		### 注：th_gensokyo_trial_vote（ai_will_do=0，AI 不参与风味投票）与
+		### th_gensokyo_notorious_view（effect 空，纯查看）不注册
 	} 
 }
