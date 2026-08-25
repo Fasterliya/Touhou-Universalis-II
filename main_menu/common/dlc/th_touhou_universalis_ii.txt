@@ -1,0 +1,28 @@
+﻿### ============================================================
+### 东方风云 II — DLC 定义（2026-08-23，参照 ACGV 姐妹 mod 写法）
+### 结构（ACGV 实证）：
+###   - 根目录 dlc/D946_the_touhou_universalis_ii/ ：
+###     D946_the_touhou_universalis_ii.dlc.json（启动器元数据）
+###     thumbnail.dds（DLC 图标，复用幻想乡文化编年史插图 1080x440）
+###   - 本文件：游戏内 DLC 定义（名称/描述/分类/推荐国家/颜色）
+###   - 本地化键：main_menu/localization/*/th_dlc_l_*.yml
+###     （the_touhou_universalis_ii_key / the_touhou_universalis_ii_dlc_desc）
+### show_tags_in_ui = 开始界面 DLC 弹窗的「推荐国家」（ACGV acgv.txt:8 同款）
+### ============================================================
+the_touhou_universalis_ii = {
+    id = "D946_the_touhou_universalis_ii/D946_the_touhou_universalis_ii.dlc.json"
+    name = "the_touhou_universalis_ii_key"
+    desc = "the_touhou_universalis_ii_dlc_desc"
+    category = "架空类模组"
+    review_steam_id = ""
+    steam_id = ""
+    ### 推荐国家（幻想乡代表性势力）：
+    ### T25 彼岸（阎魔·IO 领袖）/ T04 博丽（灵梦）/ T14 守矢（早苗）
+    ### T05 迷途之家（八云紫·贤者）/ T03 人间之里 / T89 稗田家
+    ### T00 红魔馆（蕾米莉亚）/ T20 地灵殿（古明地觉）
+    show_tags_in_ui = { "T25" "T04" "T14" "T05" "T03" "T89" "T00" "T20" }
+    type = content
+    color = rgb { 210 50 80 }
+    desc_id = "D946_the_touhou_universalis_ii"
+    order = 7
+}

@@ -1,0 +1,22 @@
+﻿{
+	"name":	"d946_the_touhou_universalis_ii",
+	"localizable_name":	"the_touhou_universalis_ii_key",
+	"path":	"dlc/D946_the_touhou_universalis_ii",
+	"picture":	"thumbnail.dds",
+	"checksum":	"",
+	"description":	"",
+	"supported_version":	"1.3.*",
+	"dependencies":	[],
+	"replace_path":	[],
+	"tags":	["东方Project", "Touhou", "Fantasy", "New World"],
+	"pops_id":	"d946_the_touhou_universalis_ii",
+	"msgr_id":	"",
+	"steam_id":	0,
+	"review_steam_id":	0,
+	"affects_save_compatibility":	true,
+	"mp_synced":	true,
+	"third_party_content":	false,
+	"enabled":	true,
+	"hidden":	false,
+	"verify":	true
+}
