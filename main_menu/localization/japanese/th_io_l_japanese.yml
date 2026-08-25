@@ -239,8 +239,6 @@ th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族
 ### ============================================================
 ### WP-H 2026-08-15: 審判投票と懲戒の補完（§6）
 ### ============================================================
- th_gensokyo_trial_vote: "判決の傾向票を投じる"
- th_gensokyo_trial_vote_desc: "懲戒戦争に参加した一員として判決の傾向（寛大/中庸/厳罰）を表明する。この投票は民意を示すのみで、閻魔の最終裁定には影響しない。"
  th_gensokyo_bankruptcy_modifier: "破産の罰"
  th_gensokyo_bankruptcy_modifier_desc: "閻魔が課した賠償が国庫を空にし、経済は動揺する。"
  th_gensokyo_sanction_immunity: "制裁免除期間"
@@ -269,9 +267,4 @@ th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族
 ### ============================================================
 ### WP-H 2026-08-15: 審判投票イベント + 賠償判決（§6）
 ### ============================================================
- th_gensokyo_trial_vote_events.1.title: "判決の傾向投票"
- th_gensokyo_trial_vote_events.1.desc: "閻魔が目標国の罪を量っている。あなたは判決の傾向を表明できる——この投票は民意を示すのみで、最終裁定には影響しない。"
- th_gensokyo_trial_vote_events.1.a: "寛大に：善へと諭す"
- th_gensokyo_trial_vote_events.1.b: "中庸に：秩序に従い断ずる"
- th_gensokyo_trial_vote_events.1.c: "厳罰に：因果、必ず応報す"
  th_gensokyo_trial_events.1.e: "賠償のみ：国庫の半分を移譲し破産の罰を課す"

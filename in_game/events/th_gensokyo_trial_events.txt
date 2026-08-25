@@ -1,123 +1,17 @@
 ﻿### ============================================================
-### 阎魔审判事件（玩家为阎魔时手动裁决 4 档）
-### 目标国定位: th_gensokyo_trial_target_mark 标记法
-### 档位: 事件选项设定 th_gensokyo_sentence_tier（0-3）→ 核心判决
-### 档0 仅赔款破产 / 档1 归还领土 / 档2 +削弱国力 / 档3 +监管国（财富转移+40%贡金+归还+削弱）
-### 格式修复 2026-08-19：EU5 事件需 outcome = ...；option 内效果直写（无 effect 包裹）
+### 审判事件（2026-08-23 重构）
+### 手动裁决事件 .1 已删除——审判改为幻想乡 IO 议会辩论
+### （th_gensokyo_trial_issue：通过=从重 / 失败=从轻，站队投票），
+### 判决由 on_debate_passed/failed 直接执行 th_gensokyo_trial_judge_core_effect。
+### 本文件仅保留 .2（被监管国刑满释放）
 ### ============================================================
 
 namespace = th_gensokyo_trial_events
 
-th_gensokyo_trial_events.1 = {
-    type = country_event
-
-    title = th_gensokyo_trial_events.1.title
-    desc = th_gensokyo_trial_events.1.desc
-    outcome = neutral
-
-    trigger = {
-        is_leader_of_international_organization = international_organization:th_gensokyo_io
-    }
-
-    ### 轻判（档1）：归还非法领土（取消附庸 + 归还核心领土）
-    option = {
-        name = th_gensokyo_trial_events.1.a
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_trial_target_mark
-            }
-            save_scope_as = crusade_target
-            set_variable = {
-                name = th_gensokyo_sentence_tier
-                value = 1
-            }
-        }
-        every_country = {
-            limit = {
-                is_leader_of_international_organization = international_organization:th_gensokyo_io
-            }
-            save_scope_as = io_leader
-        }
-        th_gensokyo_trial_judge_core_effect = yes
-        set_variable = th_gensokyo_trial_done
-    }
-
-    ### 中判（档2）：归还 + 削弱国力
-    option = {
-        name = th_gensokyo_trial_events.1.b
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_trial_target_mark
-            }
-            save_scope_as = crusade_target
-            set_variable = {
-                name = th_gensokyo_sentence_tier
-                value = 2
-            }
-        }
-        every_country = {
-            limit = {
-                is_leader_of_international_organization = international_organization:th_gensokyo_io
-            }
-            save_scope_as = io_leader
-        }
-        th_gensokyo_trial_judge_core_effect = yes
-        set_variable = th_gensokyo_trial_done
-    }
-
-    ### 重判（档3）：监管国 —— 财富全转移 + 40% 贡金 + 归还 + 削弱
-    option = {
-        name = th_gensokyo_trial_events.1.c
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_trial_target_mark
-            }
-            save_scope_as = crusade_target
-            set_variable = {
-                name = th_gensokyo_sentence_tier
-                value = 3
-            }
-        }
-        every_country = {
-            limit = {
-                is_leader_of_international_organization = international_organization:th_gensokyo_io
-            }
-            save_scope_as = io_leader
-        }
-        th_gensokyo_trial_judge_core_effect = yes
-        set_variable = th_gensokyo_trial_done
-    }
-
-    ### WP-H 2026-08-15（档0）：仅赔款破产 —— 转移半数国库 + 破产 debuff（2 年），不归还领土
-    ### 注：选项键从 .e 起（.d 已被旧 desc 惯例占用；现 desc 为 .desc）
-    option = {
-        name = th_gensokyo_trial_events.1.e
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_trial_target_mark
-            }
-            save_scope_as = crusade_target
-            set_variable = {
-                name = th_gensokyo_sentence_tier
-                value = 0
-            }
-        }
-        every_country = {
-            limit = {
-                is_leader_of_international_organization = international_organization:th_gensokyo_io
-            }
-            save_scope_as = io_leader
-        }
-        th_gensokyo_trial_judge_core_effect = yes
-        set_variable = th_gensokyo_trial_done
-    }
-}
-
 ### ============================================================
 ### 被监管国脱离彼岸（刑满释放，2026-08-23 新增）
-### 触发: 监管国 subject on_monthly 刑期归零 → trigger_event_non_silently
+### 触发: 月度脉冲（th_gensokyo_io_monthly）刑期归零 → trigger_event_non_silently
 ### root = 被监管国（subject）；overlord = 宗主（阎魔 T25）
-### 原静默 cancel_subject 逻辑移入本事件（玩家可见通知）
 ### ============================================================
 th_gensokyo_trial_events.2 = {
     type = country_event
@@ -136,7 +30,7 @@ th_gensokyo_trial_events.2 = {
         overlord ?= {
             cancel_subject = prev
         }
-        ### 团结奖励（原 on_monthly 逻辑移入）
+        ### 团结奖励
         international_organization:th_gensokyo_io = {
             th_gensokyo_unity_add_effect = {
                 value = th_unity_release_reward_value

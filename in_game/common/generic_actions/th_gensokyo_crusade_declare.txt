@@ -1,0 +1,147 @@
+﻿### ============================================================
+### 审判庭 — 宣战行动（2026-08-23 重构，替代旧提案-辩论链路）
+### 链路：阎魔/贤者 → 选目标国（好战≥50 过滤）→ 创建审判庭
+###       （th_gensokyo_tribunal，unique 临时 IO，target = 目标国）→
+###       发起者立即宣战 → on_war_declared 钩子激活局势（战争界面）
+### AI 判定：有可惩戒目标 + 实力对比（relative_strength ≥ 0.5 才宣战）
+### ⚠️ create_international_organization 的 target 参数为验证点：
+###   若引擎不识别（报错）→ 移除 target 行，目标改由
+###   th_gensokyo_crusade_target_mark 标记定位（降级方案，见计划）
+### ============================================================
+
+th_gensokyo_crusade_declare = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        ### P1-12 修复：potential 顶层 root=empty，须显式 scope:actor
+        scope:actor = {
+            OR = {
+                has_special_status_in_international_organization = {
+                    type = special_status:th_gensokyo_io_sages_special_status
+                    international_organization = international_organization:th_gensokyo_io
+                }
+                is_leader_of_international_organization = international_organization:th_gensokyo_io
+            }
+            ### 审判庭已存在（unique 全局唯一）时不可再发起
+            NOT = {
+                exists = international_organization:th_gensokyo_tribunal
+            }
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = country
+        source = actor
+        target_flag = target_country
+        name = "choose_country"
+        ### 2026-08-23：column 补全（选择器必备，防 assertion）
+        column = {
+            data = name
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = great_power_score
+        }
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        NOT = {
+                            this = scope:actor
+                        }
+                        NOT = {
+                            is_leader_of_international_organization = international_organization:th_gensokyo_io
+                        }
+                        ### 好战≥50（惩戒门槛，与审判庭 can_target_trigger 一致）
+                        societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                        ### 免制裁期（反杀后 20 年）内不可再被惩戒
+                        NOT = {
+                            has_variable = th_gensokyo_sanction_immunity
+                        }
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    effect = {
+        ### 清理旧目标标记，打新标记（审判/局势/降级方案引用）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            remove_variable = th_gensokyo_crusade_target_mark
+        }
+        scope:target_country = {
+            set_variable = th_gensokyo_crusade_target_mark
+        }
+        ### 创建审判庭（unique 全局唯一；target 参数 = 验证点）
+        create_international_organization = {
+            type = international_organization_type:th_gensokyo_tribunal
+            creator = scope:actor
+            target = scope:target_country
+            add_country_to_international_organization = prev
+            set_leader_country = prev
+            save_scope_as = tribunal
+        }
+        ### 发起者立即宣战（局势由 on_war_declared 钩子激活——
+        ### 任何审判庭成员对目标的宣战都会激活，AI 后续宣战同路径）
+        scope:actor = {
+            declare_war_with_cb = {
+                target = scope:target_country
+                type = casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+
+    ai_will_do = {
+        ### 有可惩戒目标（好战≥50）且 actor 不弱于目标 → 发起审判庭
+        ### （实力对比：relative_strength 0.5 = 势均力敌，≥0.5 才宣战）
+        if = {
+            limit = {
+                any_international_organization_member = {
+                    NOT = {
+                        this = scope:actor
+                    }
+                    NOT = {
+                        is_leader_of_international_organization = international_organization:th_gensokyo_io
+                    }
+                    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                    NOT = {
+                        has_variable = th_gensokyo_sanction_immunity
+                    }
+                    scope:actor = {
+                        relative_strength = {
+                            target = prev
+                            value >= 0.5
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_TARGET_FOUND
+                value = 10000
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

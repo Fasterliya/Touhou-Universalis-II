@@ -5,6 +5,9 @@
 ### === IO名称与描述 ===
  th_gensokyo_io: "幻想乡"
  th_gensokyo_io_desc: "维系幻想乡诸国平衡的国际组织，由贤者与阎魔共同维护大结界秩序。"
+### === 审判庭（2026-08-23：临时包围网 IO） ===
+ th_gensokyo_tribunal: "审判庭"
+ th_gensokyo_tribunal_desc: "由阎魔或贤者针对好战成员建立的临时国际组织。成员共同惩戒目标；战争结束后由幻想乡议会审判。"
 
 ### === 特殊席位 ===
  th_gensokyo_io_sages_special_status: "贤者"
@@ -229,8 +232,6 @@
 ### ============================================================
 ### WP-H 2026-08-15：审判投票与惩戒补完（§6）
 ### ============================================================
- th_gensokyo_trial_vote: "投下审判倾向票"
- th_gensokyo_trial_vote_desc: "作为参与惩戒战争的成员，表达你对审判裁决的倾向（从宽/适中/从严）。此投票仅表民意，不影响阎魔的最终裁定。"
  th_gensokyo_bankruptcy_modifier: "破产之罚"
  th_gensokyo_bankruptcy_modifier_desc: "阎魔判罚的赔款令国库空虚，经济陷入动荡。"
  th_gensokyo_sanction_immunity: "免制裁期"

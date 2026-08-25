@@ -5,6 +5,9 @@
 ### === IO Name & Description ===
  th_gensokyo_io: "환상향"
  th_gensokyo_io_desc: "환상향의 각국 균형을 유지하는 국제 조직으로, 현자와 염마가 함께 대결계의 질서를 수호합니다."
+### === 심판정 (2026-08-23: 임시 포위망 IO) ===
+ th_gensokyo_tribunal: "심판정"
+ th_gensokyo_tribunal_desc: "염마 또는 현자가 호전적인 구성원을 상대로 설립한 임시 국제 조직. 구성원이 함께 목표를 징벌하며, 전쟁 종료 후 환상향 의회가 심판합니다."
 
 ### === Special Statuses ===
  th_gensokyo_io_sages_special_status: "현자"
@@ -285,8 +288,6 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
 ### ============================================================
 ### WP-H 2026-08-15: 심판 투표와 징벌 보완 (§6)
 ### ============================================================
- th_gensokyo_trial_vote: "심판 성향 투표"
- th_gensokyo_trial_vote_desc: "징벌 전쟁에 참여한 일원으로서 심판 성향(관용/적정/엄벌)을 표명합니다. 이 투표는 여론일 뿐, 염마의 최종 판결에는 영향을 주지 않습니다."
  th_gensokyo_bankruptcy_modifier: "파산의 벌"
  th_gensokyo_bankruptcy_modifier_desc: "염마가 부과한 배상금이 국고를 비우고 경제를 혼란에 빠뜨립니다."
  th_gensokyo_sanction_immunity: "제재 면제기"

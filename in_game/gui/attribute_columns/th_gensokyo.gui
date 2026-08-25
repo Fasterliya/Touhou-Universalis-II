@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # 幻想乡自定义 attribute column widgets（2026-08-23）
 # 参考 vanilla gui/attribute_columns/country.gui（type country_great_power_score）
 # 与 location.gui（type location_owner_flag = country_flag_small 实例化）

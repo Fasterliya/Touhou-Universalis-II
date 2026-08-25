@@ -44,14 +44,18 @@
  th_gensokyo_crusade_cb_desc:"Карательный поход, объявленный Ямой и Советом мудрецов против тех, кто угрожает порядку Генсокё."
  th_gensokyo_crusade:"Ситуация с походом"
  th_gensokyo_crusade_desc:"Окружение цели похода силами Генсокё."
- th_gensokyo_trial:"Ситуация с судом"
- th_gensokyo_trial_desc:"Окончательный приговор Ямы в отношении поверженной цели похода."
- th_gensokyo_propose_crusade:"Предложить карательный поход"
- th_gensokyo_propose_crusade_desc:"Яма предлагает карательный поход против члена с чрезмерной враждебностью."
- PERFORM_th_gensokyo_propose_crusade_ACTION:"Предложен карательный поход"
- WE_PERFORM_th_gensokyo_propose_crusade_ACTION:"Мы предложили карательный поход"
- OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION:"Предложен карательный поход"
- ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US:"Предложен карательный поход"
+ th_gensokyo_crusade_declare:"Объявить карательный поход"
+ th_gensokyo_crusade_declare_desc:"Яма или мудрец выбирает воинственного члена и учреждает Трибунал — временную международную организацию против цели. Ситуация начинается после объявления войны."
+ PERFORM_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
+ WE_PERFORM_th_gensokyo_crusade_declare_ACTION:"Мы учредили Трибунал"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
+ ACTION_th_gensokyo_crusade_declare_PERFORMED_ON_US:"Учреждён Трибунал"
+ th_gensokyo_crusade_leave:"Покинуть Трибунал"
+ th_gensokyo_crusade_leave_desc:"Покинуть Трибунал против цели. Ваш повод к войне будет снят."
+ PERFORM_th_gensokyo_crusade_leave_ACTION:"Покинул Трибунал"
+ WE_PERFORM_th_gensokyo_crusade_leave_ACTION:"Мы покинули Трибунал"
+ OTHER_PERFORMS_th_gensokyo_crusade_leave_ACTION:"Покинул Трибунал"
+ ACTION_th_gensokyo_crusade_leave_PERFORMED_ON_US:"Покинул Трибунал"
  th_gensokyo_counter_expansion:"Встречная экспансия"
  th_gensokyo_counter_expansion_desc:"Переломив ход похода, вы получаете право на экспансию в Генсокё."
  PERFORM_th_gensokyo_counter_expansion_ACTION:"Начата встречная экспансия"
@@ -127,12 +131,8 @@
  th_clan_society:"Родовое общество"
  th_clan_society_desc:"Людские деревни управляются родами, каждый держится своих правил. Родовые распри и воспитание решаются внутри; чужакам вход воспрещён."
 
-### Trial events
- th_gensokyo_trial_events.1.title:"Финальный приговор"
- th_gensokyo_trial_events.1.desc:"Карательный поход завершён. Как Яма, вы должны решить судьбу цели на основе её грехов."
- th_gensokyo_trial_events.1.a:"Лёгкое: Вернуть незаконно захваченные земли"
- th_gensokyo_trial_events.1.b:"Среднее: Вернуть земли и ослабить их власть"
- th_gensokyo_trial_events.1.c:"Максимальное: Привести их в Поднадзорное государство Подземного мира (передать богатства и взимать дань)"
+### 2026-08-23: ручной приговор (trial_events.1) удалён — суд переведён в
+### парламентские дебаты (th_gensokyo_trial_issue)
  th_gensokyo_trial_events.2.title:"Освобождение из Подземного мира"
  th_gensokyo_trial_events.2.desc:"Срок наказания истёк. Вы освобождены из-под надзора Подземного мира и вновь обретаете независимость."
  th_gensokyo_trial_events.2.a:"Свобода"
@@ -151,15 +151,8 @@
  th_gensokyo_expansion_request_events.3.desc:"Мудрец отказал вам в экспансии и призвал утихомирить хаотичное сердце. Ваша склонность к смуте слегка снизилась, а мнение мудреца о вас изменилось."
  th_gensokyo_expansion_request_events.3.a:"Внемлю наставлению"
 
-### ============================================================
-### WP-H 2026-08-15: Голосование суда + приговор о репарациях (§6)
-### ============================================================
- th_gensokyo_trial_vote_events.1.title:"Голос о склонности приговора"
- th_gensokyo_trial_vote_events.1.desc:"Яма взвешивает грехи цели. Вы можете выразить предпочтение приговора — этот голос лишь отражает мнение и не влияет на окончательное решение."
- th_gensokyo_trial_vote_events.1.a:"Снисходительно: призвать к добру"
- th_gensokyo_trial_vote_events.1.b:"Умеренно: судить по порядку"
- th_gensokyo_trial_vote_events.1.c:"Строго: воздаяние в полной мере"
- th_gensokyo_trial_events.1.e:"Только репарации: передать половину казны и понести наказание банкротством"
+### 2026-08-23: голосование суда (trial_vote_events) удалено —
+### суд переведён в парламентские дебаты (th_gensokyo_trial_issue)
 
 ### Variables
  th_gensokyo_sin_var:"Грех"
@@ -174,15 +167,18 @@
 ### Target selection
  choose_crusade_target:"Выбрать цель похода"
 
-### Join crusade
- th_gensokyo_join_crusade:"Присоединиться к Карательному походу"
- th_gensokyo_join_crusade_desc:"Присоединиться к окружению цели карательного похода, чтобы сохранить порядок в Генсокё."
- PERFORM_th_gensokyo_join_crusade_ACTION:"Присоединился к карательному походу"
- WE_PERFORM_th_gensokyo_join_crusade_ACTION:"Мы присоединились к карательному походу"
- OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION:"Присоединился к карательному походу"
- ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US:"Присоединился к карательному походу"
+### Join tribunal
+ th_gensokyo_join_crusade:"Присоединиться к Трибуналу"
+ th_gensokyo_join_crusade_desc:"Присоединиться к Трибуналу против цели. Вы получаете повод к войне и автоматически вступаете в войну окружения."
+ PERFORM_th_gensokyo_join_crusade_ACTION:"Присоединился к Трибуналу"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION:"Мы присоединились к Трибуналу"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION:"Присоединился к Трибуналу"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US:"Присоединился к Трибуналу"
  TH_JOIN_CRUSADE_AI_ANTAGONISM:"Враждебен цели карательного похода"
- TH_JOIN_CRUSADE_SUPPORTER_BIAS:"Поддержал карательный поход в парламенте"
+ TH_JOIN_CRUSADE_AI_ALLIED_TARGET:"Союзник или подданный цели похода"
+ TH_TRIBUNAL_AI_RIVAL:"Соперник или враг цели похода"
+ TH_TRIBUNAL_AI_STRENGTH:"Достаточно силён против цели похода"
+ TH_TRIBUNAL_AI_TARGET_FOUND:"Существует воинственная цель, достойная Трибунала"
 
 ### Counter treaty
  th_gensokyo_crusade_counter:"Контр-победа (Карательный поход)"
@@ -191,9 +187,12 @@
  th_gensokyo_crusade_counter_entry:"$th_gensokyo_crusade_counter$"
  th_gensokyo_crusade_counter_entry_short:"$th_gensokyo_crusade_counter$"
 
-### Parliament issue
- th_gensokyo_crusade_issue:"Предложение о карательном походе"
- th_gensokyo_crusade_issue_desc:"Предложение Ямы, за которое голосуют мудрецы. Для его принятия нужно два голоса за."
+### Trial parliament issue (2026-08-23: дебаты = суд)
+ th_gensokyo_trial_issue:"Суд: наказать строго?"
+ th_gensokyo_trial_issue_desc:"После похода парламент Генсокё судит поверженную цель. Принятие = строгое наказание, отклонение = мягкое решение."
+ TH_TRIAL_BIAS_PARTICIPANT:"Участвовал в походе — за строгость"
+ TH_TRIAL_BIAS_AT_WAR:"Воюет с целью — за строгость"
+ TH_TRIAL_BIAS_TARGET_SIDE:"Союзник или подданный цели — за мягкость"
 
 ### Prices
  th_gensokyo_feast_price:"Стоимость пира"

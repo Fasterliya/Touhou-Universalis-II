@@ -110,11 +110,8 @@ th_gensokyo_io = {
     }
     can_vote_in_parliament = {
         is_member_of_international_organization = scope:recipient
-        ### 2026-08-21（bug 3/4 确定性）：辩论开始自动投票的锁定国不可再投，
-        ### 防 base game vote_in_organization_parliament（AI 每月自动投票）覆盖规则票
-        NOT = {
-            has_variable = th_gensokyo_crusade_vote_locked
-        }
+        ### 2026-08-23 重构：辩论投票锁定机制（vote_locked）已随提案-辩论链路
+        ### 一并删除（审判议题 = 站队 bias 投票，无需锁定）
     }
 
     # === 敌意 / AE ===

@@ -1,0 +1,161 @@
+﻿### ============================================================
+### 审判议题（2026-08-23 重构：辩论 = 审判）
+### 链路：惩戒战争结束（crusade situation on_ended）→ 幻想乡 IO 议会
+###       call_io_parliament 发起本议题 → 全员投票（站队 bias）→
+###       通过 = 从重惩罚（罪值≥75 档3 监管国 / 否则档2 削弱）
+###       失败 = 从轻处理（罪值≥50 档1 归还 / 否则档0 赔款破产）
+### 站队（wants_this_parliament_issue_bias，二分不写复杂倾向）：
+###   参战成员/与目标交战 → +（从重）
+###   目标盟友/附属 → -（从轻）
+### 判决复用 th_gensokyo_trial_judge_core_effect（档 0-3 已实现），
+### 效果内重定位依赖 th_gensokyo_trial_target_mark —— 本议题回调开头
+### 从 th_gensokyo_crusade_target_mark 转换打标。
+### ============================================================
+
+th_gensokyo_trial_issue = {
+    type = international_organization
+    special_status = th_gensokyo_io_yama_special_status
+
+    potential = {
+        always = yes
+    }
+    allow = {
+        always = yes
+    }
+    selectable_for = {
+        is_leader_of_international_organization = scope:recipient
+    }
+    chance = 100
+
+    on_debate_passed = {
+        ### ============ 从重惩罚（通过 = 多数支持从重） ============
+        ### 目标标记转换（judge_core_effect 效果内重定位用 trial_target_mark）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            set_variable = th_gensokyo_trial_target_mark
+        }
+        ### 档位：罪值 ≥75 → 档3（监管国）/ 否则 → 档2（归还+削弱）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_trial_target_mark
+            }
+            if = {
+                limit = {
+                    var:th_gensokyo_sin_var >= th_sin_tier3_value
+                }
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 3
+                }
+            }
+            else = {
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 2
+                }
+            }
+        }
+        ### 执行判决（效果内重定位目标+阎魔；root = 幻想乡 IO）
+        th_gensokyo_trial_judge_core_effect = yes
+        th_gensokyo_trial_cleanup_effect = yes
+    }
+
+    on_debate_failed = {
+        ### ============ 从轻处理（失败 = 从重未获多数） ============
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            set_variable = th_gensokyo_trial_target_mark
+        }
+        ### 档位：罪值 ≥50 → 档1（归还）/ 否则 → 档0（赔款破产）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_trial_target_mark
+            }
+            if = {
+                limit = {
+                    var:th_gensokyo_sin_var >= th_sin_tier2_value
+                }
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 1
+                }
+            }
+            else = {
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 0
+                }
+            }
+        }
+        th_gensokyo_trial_judge_core_effect = yes
+        th_gensokyo_trial_cleanup_effect = yes
+    }
+
+    ### AI 投票倾向（站队二分；root = 投票国，scope:recipient = 幻想乡 IO）
+    ### 2026-08-23：审判无复杂倾向（用户决策：倾向不好写，放弃精细模型），
+    ### 只按站队二分——参战/交战者从重，目标方从轻，其余中立按基础值
+    wants_this_parliament_issue_bias = {
+        ### 参战成员（审判庭成员/participant 标记）→ 从重
+        if = {
+            limit = {
+                OR = {
+                    has_variable = th_gensokyo_crusade_participant
+                    is_member_of_international_organization = international_organization:th_gensokyo_tribunal
+                }
+            }
+            add = {
+                desc = TH_TRIAL_BIAS_PARTICIPANT
+                value = 500
+            }
+        }
+        ### 与目标交战 → 从重
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    root = {
+                        is_at_war_with = prev
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIAL_BIAS_AT_WAR
+                value = 300
+            }
+        }
+        ### 目标盟友/附属 → 从轻
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    OR = {
+                        root = {
+                            is_allied_with = {
+                                target = prev
+                            }
+                        }
+                        root = {
+                            is_subject_of = prev
+                        }
+                        prev = {
+                            is_subject_of = root
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIAL_BIAS_TARGET_SIDE
+                value = -500
+            }
+        }
+        ### 基础值：略偏从轻（默认宽容，参战方推动才从重）
+        add = {
+            desc = "VOTE_BASE_VALUE"
+            value = -20
+        }
+    }
+}

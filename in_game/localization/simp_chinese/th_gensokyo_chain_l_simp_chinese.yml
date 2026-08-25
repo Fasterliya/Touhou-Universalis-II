@@ -38,14 +38,18 @@
  th_gensokyo_crusade_cb_desc: "由阎魔与贤者议会裁定发起的惩戒战争，目标为幻想乡秩序的破坏者。"
  th_gensokyo_crusade: "惩戒局势"
  th_gensokyo_crusade_desc: "幻想乡全体对惩戒目标形成的包围网。"
- th_gensokyo_trial: "审判局势"
- th_gensokyo_trial_desc: "阎魔对惩戒战争落败者的最终审判。"
- th_gensokyo_propose_crusade: "发起惩戒战争提案"
- th_gensokyo_propose_crusade_desc: "阎魔向贤者议会提案，对敌意高企的成员发起惩戒战争。"
- PERFORM_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
- WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "我们发起了惩戒战争提案"
- OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "发起了惩戒战争提案"
- ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "发起了惩戒战争提案"
+ th_gensokyo_crusade_declare: "宣告惩戒战争"
+ th_gensokyo_crusade_declare_desc: "阎魔或贤者选定一名好战成员，建立针对目标的临时国际组织「审判庭」。对目标宣战后，战争局势随即展开。"
+ PERFORM_th_gensokyo_crusade_declare_ACTION: "建立了审判庭"
+ WE_PERFORM_th_gensokyo_crusade_declare_ACTION: "我们建立了审判庭"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION: "建立了审判庭"
+ ACTION_th_gensokyo_crusade_declare_PERFORMED_ON_US: "建立了审判庭"
+ th_gensokyo_crusade_leave: "退出审判庭"
+ th_gensokyo_crusade_leave_desc: "退出针对目标的审判庭，你将失去惩戒宣战借口。"
+ PERFORM_th_gensokyo_crusade_leave_ACTION: "退出了审判庭"
+ WE_PERFORM_th_gensokyo_crusade_leave_ACTION: "我们退出了审判庭"
+ OTHER_PERFORMS_th_gensokyo_crusade_leave_ACTION: "退出了审判庭"
+ ACTION_th_gensokyo_crusade_leave_PERFORMED_ON_US: "退出了审判庭"
  th_gensokyo_counter_expansion: "反攻扩张"
  th_gensokyo_counter_expansion_desc: "你在惩戒战争中反败为胜，获得在幻想乡合法扩张的机会。"
  PERFORM_th_gensokyo_counter_expansion_ACTION: "发动了反攻扩张"
@@ -146,14 +150,9 @@
  th_gensokyo_expansion_request_events.3.a: "谨遵教诲"
 
 ### ============================================================
-### WP-H 2026-08-15：审判投票事件 + 赔款破产选项（§6）
+### 2026-08-23 重构：审判改议会辩论（th_gensokyo_trial_issue）——
+### trial_vote_events / trial_events.1（手动裁决）键已删除
 ### ============================================================
- th_gensokyo_trial_vote_events.1.title: "审判倾向投票"
- th_gensokyo_trial_vote_events.1.desc: "阎魔正在审理目标国的罪责。你可以表达对裁决倾向的看法——此投票仅表民意，不影响阎魔的最终裁定。"
- th_gensokyo_trial_vote_events.1.a: "从宽：劝其向善"
- th_gensokyo_trial_vote_events.1.b: "适中：依序而断"
- th_gensokyo_trial_vote_events.1.c: "从严：因果必尝"
- th_gensokyo_trial_events.1.e: "仅赔款破产：转移半数国库并课以破产之罚"
 
 ### 变量
  th_gensokyo_sin_var: "罪孽"
@@ -168,15 +167,18 @@
 ### 目标选择
  choose_crusade_target: "选择惩戒目标"
 
-### 加入惩戒战争
- th_gensokyo_join_crusade: "加入惩戒战争"
- th_gensokyo_join_crusade_desc: "加入对惩戒目标的包围网，共同维护幻想乡的秩序。"
- PERFORM_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
- WE_PERFORM_th_gensokyo_join_crusade_ACTION: "我们加入了惩戒战争"
- OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "加入了惩戒战争"
- ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "加入了惩戒战争"
+### 加入审判庭
+ th_gensokyo_join_crusade: "加入审判庭"
+ th_gensokyo_join_crusade_desc: "加入针对惩戒目标的审判庭。你将获得惩戒宣战借口，并自动加入对目标的包围网战争。"
+ PERFORM_th_gensokyo_join_crusade_ACTION: "加入了审判庭"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "我们加入了审判庭"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "加入了审判庭"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "加入了审判庭"
  TH_JOIN_CRUSADE_AI_ANTAGONISM: "对惩戒对象怀有敌意"
- TH_JOIN_CRUSADE_SUPPORTER_BIAS: "议会中赞成惩戒战争"
+ TH_JOIN_CRUSADE_AI_ALLIED_TARGET: "是惩戒对象的盟友或附属"
+ TH_TRIBUNAL_AI_RIVAL: "是惩戒对象的宿敌或敌人"
+ TH_TRIBUNAL_AI_STRENGTH: "实力足以对抗惩戒对象"
+ TH_TRIBUNAL_AI_TARGET_FOUND: "存在值得审判庭惩戒的好战目标"
 
 ### 反杀条约
  th_gensokyo_crusade_counter: "反杀胜利（惩戒）"
@@ -185,9 +187,12 @@
  th_gensokyo_crusade_counter_entry: "$th_gensokyo_crusade_counter$"
  th_gensokyo_crusade_counter_entry_short: "$th_gensokyo_crusade_counter$"
 
-### 议会议题
- th_gensokyo_crusade_issue: "惩戒战争提案"
- th_gensokyo_crusade_issue_desc: "由阎魔发起、贤者投票的惩戒战争提案。两票赞同即通过。"
+### 审判议会议题（2026-08-23：辩论即审判）
+ th_gensokyo_trial_issue: "审判：是否从重惩罚？"
+ th_gensokyo_trial_issue_desc: "惩戒战争结束后，幻想乡议会审判落败的目标。通过 = 从重惩罚，失败 = 从轻发落。"
+ TH_TRIAL_BIAS_PARTICIPANT: "参战者——倾向从重"
+ TH_TRIAL_BIAS_AT_WAR: "与目标交战——倾向从重"
+ TH_TRIAL_BIAS_TARGET_SIDE: "目标的盟友或附属——倾向从轻"
 
 ### 价格
  th_gensokyo_feast_price: "宴会费用"

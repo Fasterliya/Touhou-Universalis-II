@@ -1,15 +1,12 @@
 ﻿### ============================================================
-### 幻想乡惩戒局势（加强版包围网）
-### 启动: 议会辩论通过（on_debate_passed → enable_situation_effect 设全局变量
-###       enabled_situation_th_gensokyo_crusade → can_start 检测激活）
-### 修复 2026-08-21：can_start = always no 导致 enable_situation_effect 设的
-###       全局变量从不被检测 → 局势永不启动（用户实测 bug 5）
-###       改为 has_enabled_situation_trigger（rise_of_timur 同款）；
-###       monthly_spawn_chance 0 → 1 保证 can_start 被月度评估；
-###       on_ended 加 disable_situation_effect 清全局变量（防局势结束后
-###       满足条件自动重启——惩戒战争会重复发生，与一次性 rise_of_timur 不同）
-### 目标国: 标记法定位（th_gensokyo_crusade_target_mark，常驻至局势结束）
-### 结束: 目标国覆灭/战争全结束 → 反杀则正常结束（特殊行动解锁），否则启动审判局势
+### 幻想乡惩戒局势（审判庭战争界面，2026-08-23 重构）
+### 启动: 审判庭成员对目标宣战 → on_war_declared 钩子
+###       （th_gensokyo_tribunal_war_activate）enable + activate——
+###       用户决定：局势在宣战之后弹出（战争界面）
+### 目标国: 审判庭 target（th_gensokyo_tribunal）+ 标记法兜底
+###       （th_gensokyo_crusade_target_mark）
+### 结束: 目标国覆灭/战争全结束 → 反杀则正常结束（免制裁），
+###       否则启动审判（幻想乡 IO 议会辩论：是否从重）
 ### ============================================================
 
 th_gensokyo_crusade = {
@@ -29,7 +26,7 @@ th_gensokyo_crusade = {
     }
 
     on_start = {
-        ### 定位领袖（阎魔）与目标国
+        ### 定位领袖（阎魔）与目标国（审判庭 target 优先 + 标记兜底）
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {
                 limit = {
@@ -44,6 +41,12 @@ th_gensokyo_crusade = {
                 save_scope_as = crusade_target
             }
         }
+        ### 审判庭 target 兜底（declare 同时打标记，此处双保险）
+        international_organization:th_gensokyo_tribunal = {
+            target ?= {
+                save_scope_as = crusade_target
+            }
+        }
         ### 罪值清零
         scope:crusade_target = {
             set_variable = {
@@ -51,12 +54,10 @@ th_gensokyo_crusade = {
                 value = 0
             }
         }
-        ### 新惩戒开启：重置上一场反杀标记（反攻扩张行动随新惩戒重新锁定）
-        ### 2026-08-21：同意者标记一并重置（防上一场残留影响本场加入倾向）
+        ### 新惩戒开启：重置上一场反杀标记
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {
                 remove_variable = th_gensokyo_crusade_countered
-                remove_variable = th_gensokyo_crusade_supporter
             }
         }
         ### 局势变量：目标国引用（GUI 双国头部动态头像读取）+ 罪值显示初值
@@ -68,20 +69,8 @@ th_gensokyo_crusade = {
             name = th_crusade_sin_display
             value = 0
         }
-        ### 大规模战争扣团结 暂未启用（B6 决策：扣团结的"大规模战争"指代范围待定）
-        ### 恢复时取消注释并登记交接文档：
-        # international_organization:th_gensokyo_io = {
-        #     th_gensokyo_unity_subtract_effect = {
-        #         value = th_unity_big_war_value
-        #     }
-        # }
-        ### 阎魔立即宣战（决议通过即开战）
-        scope:io_leader = {
-            declare_war_with_cb = {
-                target = scope:crusade_target
-                type = casus_belli:th_gensokyo_crusade_cb
-            }
-        }
+        ### 2026-08-23：宣战已由 declare 行动完成（on_war_declared 钩子激活本局势），
+        ### 原 on_start 内 declare_war_with_cb 段已移除
     }
 
     on_monthly = {
@@ -189,7 +178,7 @@ th_gensokyo_crusade = {
                 }
             }
         }
-        ### 非反杀结局 → 惩戒战争平息奖励团结（C2）→ 启动审判局势（target_mark 保留，审判局势 on_start 定位后自行清理）
+        ### 非反杀结局 → 惩戒战争平息奖励团结（C2）→ 启动审判（议会辩论）
         if = {
             limit = {
                 NOT = {
@@ -202,33 +191,38 @@ th_gensokyo_crusade = {
                 th_gensokyo_unity_add_effect = {
                     value = th_unity_crusade_settled_value
                 }
-                ### 2026-08-23 实测修复：enable_situation_effect/activate_situation 必须
-                ### 在国家 scope 调用（on_ended root = situation，无 COUNTRY → tooltip
-                ### 渲染失败中断效果，与 on_debate_passed 同源问题）——
-                ### 挪到 leader_country（阎魔国家）scope；审判 on_start 会 disable
-                ### 全局变量（单次流程自洽）
+                ### 2026-08-23 重构：审判 = 幻想乡 IO 议会辩论（审判议题
+                ### th_gensokyo_trial_issue：是否从重惩罚），成员按站队投票；
+                ### 不再启用 trial 局势。全部在 leader_country（国家 scope）调用
+                ### （tooltip 铁律同 F8/F9；call_io_parliament 旧链路实证可用）
                 leader_country ?= {
-                    enable_situation_effect = {
-                        type = th_gensokyo_trial
+                    set_parliament_location = this.capital
+                    set_parliament_active = yes
+                    set_parliament_issue = parliament_issue:th_gensokyo_trial_issue
+                    call_io_parliament = {
+                        international_organization = international_organization:th_gensokyo_io
                     }
-                    activate_situation = situation:th_gensokyo_trial
                 }
             }
         }
         else = {
             ### 反杀结局：无审判，清理目标标记（countered 标记保留供反攻扩张行动使用）
+            ### 审判庭解散（免制裁期由反杀条约打标）
             international_organization:th_gensokyo_io = {
                 every_international_organization_member = {
                     remove_variable = th_gensokyo_crusade_target_mark
                 }
             }
+            international_organization:th_gensokyo_tribunal = {
+                destroy_international_organization = {
+                    target = this
+                }
+            }
         }
-        ### 清理参战标记（势力计算用）+ 同意者标记（2026-08-21：局势收尾即失效，
-        ### 下次辩论重新打标）
+        ### 清理参战标记（势力计算/审判站队用；审判完成后清理 target_mark）
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {
                 remove_variable = th_gensokyo_crusade_participant
-                remove_variable = th_gensokyo_crusade_supporter
             }
         }
     }

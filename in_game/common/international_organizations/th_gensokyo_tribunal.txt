@@ -1,0 +1,245 @@
+﻿### ============================================================
+### 审判庭（th_gensokyo_tribunal）— 临时包围网型国际组织（2026-08-23 重构）
+### 参考：base game international_organizations/coalition.txt（完整机制实证）
+### 定位：阎魔/贤者选目标后动态创建（create_international_organization，
+###       unique = yes 全局唯一，战后台审判议会结束后 destroy）
+### 功能：
+###   - has_target = yes：目标国 = 惩戒对象（create 时 target 参数设定）
+###   - declare_war_on_target_casus_belli：IO 面板对目标宣战按钮
+###   - show_strength_comparison_with_target：引擎原生双方兵力对比 UI
+###   - join_offensive_wars_always：对目标战争成员自动加入
+###   - on_joined 授予 CB / on_left 移除（加入即获宣战借口）
+###   - ai_desire_to_join：好感/敌意/盟友敌人/实力/距离 → AI 加入判定
+###   - auto_leave / auto_disband：和平/敌意降低/目标消失自动清理
+### ⚠️ 验证点：create 的 target 参数无 vanilla 先例（on_creation 注释
+###   "target = target (optional)" 暗示支持）；若实测失败 → 降级方案：
+###   目标用 th_gensokyo_crusade_target_mark 标记定位（见重构计划五-1）
+### ============================================================
+
+th_gensokyo_tribunal = {
+    has_target = yes
+    unique = yes
+    show_on_diplomatic_map = yes
+    expel_members_who_are_targets_of_other_members = yes
+    expel_members_who_are_attackers_at_war_with_other_members = yes
+    expel_members_who_are_defenders_at_war_with_other_members = yes
+    has_leader_country = yes
+    leader_type = country
+    show_strength_comparison_with_target = yes
+    declare_war_on_target_casus_belli = th_gensokyo_crusade_cb
+    promote_strongest_member_to_war_leader = yes
+
+    gives_food_access_to_members = yes
+
+    ### 仅脚本创建（宣战行动），外交界面不可见
+    create_visible_trigger = {
+        always = no
+    }
+    create_enabled_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+
+    ### 加入：幻想乡 IO 成员（非目标国、非免制裁期）
+    can_join_trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+        NOT = {
+            this = scope:target
+        }
+        NOT = {
+            has_variable = th_gensokyo_sanction_immunity
+        }
+    }
+    join_visible_trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+
+    ### 退出：随时可退
+    can_leave_trigger = {
+        always = yes
+    }
+
+    ### 自动退出：与目标和平且敌意消退 / 停战 / 免制裁期
+    auto_leave_trigger = {
+        trigger_if = {
+            limit = {
+                exists = scope:target
+            }
+            OR = {
+                NOT = {
+                    is_at_war_with = scope:target
+                }
+                has_variable = th_gensokyo_sanction_immunity
+            }
+            OR = {
+                has_truce_with = scope:target
+                antagonism = {
+                    target = scope:target
+                    value < 30
+                }
+                has_variable = th_gensokyo_sanction_immunity
+            }
+        }
+        trigger_else = {
+            always = yes
+        }
+    }
+
+    ### 解散：无成员 / 目标消失（战后审判完由脚本 destroy）
+    auto_disband_trigger = {
+        OR = {
+            total_members < 1
+            NOT = {
+                country_exists = scope:target
+            }
+        }
+    }
+
+    ### 对目标的战争自动加入（包围网联合作战）
+    join_defensive_wars_always = {
+        scope:target ?= {
+            this = root.international_organization_target
+        }
+    }
+    join_offensive_wars_always = {
+        scope:target ?= {
+            this = root.international_organization_target
+        }
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    modifier = {
+    }
+    target_modifier = {
+        monthly_complacency = -0.05
+    }
+
+    ### 目标门槛：好战 ≥ 50（与 declare 行动 select 过滤一致）
+    can_target_trigger = {
+        societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+    }
+
+    ### 成员纪律
+    on_joined = {
+        ### 加入即获得对目标的宣战借口
+        scope:target ?= {
+            add_casus_belli = {
+                target = prev
+                type = casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+    on_left = {
+        scope:target ?= {
+            remove_casus_belli = {
+                target = prev
+                type = casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+
+    on_creation = {
+        ### 创建时记录发起者（宣战/审判引用）
+        ### scope:target = 目标国（create 的 target 参数，验证点）
+    }
+    on_disband = {
+    }
+
+    ### AI 加入判定（vanilla coalition ai_desire_to_join 同款公式 + 盟友敌人项）
+    ### root = 潜在加入者，scope:target = 目标国
+    ai_desire_to_join = {
+        ### 与目标交战 → 加入
+        add = {
+            desc = "AT_WAR_TRIGGER"
+            if = {
+                limit = {
+                    is_at_war_with = scope:target
+                }
+                value = 20
+            }
+        }
+        ### 对目标敌意 → 加入（敌意越高越想加入）
+        add = {
+            desc = "game_concept_antagonism"
+            scope:target = {
+                value = prev_antagonism_towards_this
+            }
+        }
+        ### 目标盟友 → 绝不加入（user 需求：盟友关系判定）
+        if = {
+            limit = {
+                is_allied_with = {
+                    target = scope:target
+                }
+            }
+            add = {
+                desc = "OPINION"
+                value = -1000
+            }
+        }
+        ### 目标敌人/宿敌 → 强烈加入（user 需求：敌人关系判定）
+        if = {
+            limit = {
+                OR = {
+                    is_rival_of = scope:target
+                    is_enemy_of = scope:target
+                }
+            }
+            add = {
+                desc = "TH_TRIBUNAL_AI_RIVAL"
+                value = 500
+            }
+        }
+        ### 实力对比：组织相对目标越强越想加入（recipient = 已有审判庭时）
+        if = {
+            limit = {
+                exists = scope:recipient
+            }
+            scope:recipient ?= {
+                add = {
+                    desc = "CURRENT_SIZE_COMPARED_TO_TARGET"
+                    value = "organization_strength_relative_to_country(scope:target|yes)"
+                    add = -5
+                    multiply = -25
+                }
+            }
+        }
+        ### 新建时：个体相对目标越弱越想加入（0.5 = 势均力敌）
+        if = {
+            limit = {
+                NOT = {
+                    exists = scope:recipient
+                }
+            }
+            add = {
+                desc = "CURRENT_SIZE_COMPARED_TO_TARGET"
+                value = "relative_strength(scope:target)"
+                add = -0.5
+                multiply = 40
+            }
+        }
+        ### 对目标好感 → 抵消（好感高不加入）
+        add = {
+            desc = "OPINION"
+            value = "opinion(scope:target)"
+            multiply = -0.5
+            max = 0
+        }
+        add = {
+            desc = "BASE_VALUE"
+            value = -20
+        }
+    }
+
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
+    }
+}

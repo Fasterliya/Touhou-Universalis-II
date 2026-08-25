@@ -5,6 +5,9 @@
 ### === IO Name & Description ===
  th_gensokyo_io: "Gensokyo"
  th_gensokyo_io_desc: "An international organization maintaining the balance of Gensokyo's nations, with the Sages and Yama jointly upholding the Great Barrier's order."
+### === Tribunal (2026-08-23: temporary encirclement IO) ===
+ th_gensokyo_tribunal: "Tribunal"
+ th_gensokyo_tribunal_desc: "A temporary international organization established by the Yama or a sage against a belligerent member. Members jointly punish the target; the parliament holds judgment once the war ends."
 
 ### === Special Statuses ===
  th_gensokyo_io_sages_special_status: "Sage"
@@ -228,8 +231,6 @@
 ### ============================================================
 ### WP-H 2026-08-15: Trial voting and crusade completion (§6)
 ### ============================================================
- th_gensokyo_trial_vote: "Cast a Verdict Preference Vote"
- th_gensokyo_trial_vote_desc: "As a member who took part in the punitive war, voice your preference for the verdict (lenient/moderate/severe). This vote only reflects opinion and does not affect the Yama's final ruling."
  th_gensokyo_bankruptcy_modifier: "Punishment of Bankruptcy"
  th_gensokyo_bankruptcy_modifier_desc: "The reparations imposed by the Yama emptied the treasury, casting the economy into turmoil."
  th_gensokyo_sanction_immunity: "Sanction Immunity"

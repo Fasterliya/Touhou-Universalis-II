@@ -37,14 +37,18 @@
  th_gensokyo_crusade_cb_desc: "A crusade declared by the Yama and the Sage Council against those who threaten Gensokyo's order."
  th_gensokyo_crusade: "Crusade Situation"
  th_gensokyo_crusade_desc: "Gensokyo's encirclement against the crusade target."
- th_gensokyo_trial: "Trial Situation"
- th_gensokyo_trial_desc: "The Yama's final judgment upon the defeated crusade target."
- th_gensokyo_propose_crusade: "Propose Punitive Crusade"
- th_gensokyo_propose_crusade_desc: "The Yama proposes a punitive crusade against a member with excessive antagonism."
- PERFORM_th_gensokyo_propose_crusade_ACTION: "Proposed a punitive crusade"
- WE_PERFORM_th_gensokyo_propose_crusade_ACTION: "We proposed a punitive crusade"
- OTHER_PERFORMS_th_gensokyo_propose_crusade_ACTION: "Proposed a punitive crusade"
- ACTION_th_gensokyo_propose_crusade_PERFORMED_ON_US: "Proposed a punitive crusade"
+ th_gensokyo_crusade_declare: "Declare Punitive Crusade"
+ th_gensokyo_crusade_declare_desc: "The Yama or a sage selects a belligerent member and establishes the Tribunal — a temporary international organization against the target. The war situation begins once war is declared."
+ PERFORM_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
+ WE_PERFORM_th_gensokyo_crusade_declare_ACTION: "We established the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
+ ACTION_th_gensokyo_crusade_declare_PERFORMED_ON_US: "Established the Tribunal"
+ th_gensokyo_crusade_leave: "Leave the Tribunal"
+ th_gensokyo_crusade_leave_desc: "Leave the Tribunal against the target. Your casus belli is revoked."
+ PERFORM_th_gensokyo_crusade_leave_ACTION: "Left the Tribunal"
+ WE_PERFORM_th_gensokyo_crusade_leave_ACTION: "We left the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_crusade_leave_ACTION: "Left the Tribunal"
+ ACTION_th_gensokyo_crusade_leave_PERFORMED_ON_US: "Left the Tribunal"
  th_gensokyo_counter_expansion: "Counter-Expansion"
  th_gensokyo_counter_expansion_desc: "Having turned the tide of the crusade, you gain the right to expand within Gensokyo."
  PERFORM_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
@@ -145,13 +149,16 @@
 
 ### Join crusade
  th_gensokyo_join_crusade: "Join the Punitive Crusade"
- th_gensokyo_join_crusade_desc: "Join the encirclement against the crusade target to uphold Gensokyo's order."
- PERFORM_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
- WE_PERFORM_th_gensokyo_join_crusade_ACTION: "We joined the punitive crusade"
- OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "Joined the punitive crusade"
- ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "Joined the punitive crusade"
+ th_gensokyo_join_crusade_desc: "Join the Tribunal against the crusade target. You gain a casus belli and join the encirclement war."
+ PERFORM_th_gensokyo_join_crusade_ACTION: "Joined the Tribunal"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "We joined the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "Joined the Tribunal"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "Joined the Tribunal"
  TH_JOIN_CRUSADE_AI_ANTAGONISM: "Antagonistic toward the crusade target"
- TH_JOIN_CRUSADE_SUPPORTER_BIAS: "Supported the crusade in parliament"
+ TH_JOIN_CRUSADE_AI_ALLIED_TARGET: "Allied or subject of the crusade target"
+ TH_TRIBUNAL_AI_RIVAL: "Rival or enemy of the crusade target"
+ TH_TRIBUNAL_AI_STRENGTH: "Strong enough against the crusade target"
+ TH_TRIBUNAL_AI_TARGET_FOUND: "A belligerent target worthy of the Tribunal exists"
 
 ### Counter treaty
  th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"
@@ -160,9 +167,12 @@
  th_gensokyo_crusade_counter_entry: "$th_gensokyo_crusade_counter$"
  th_gensokyo_crusade_counter_entry_short: "$th_gensokyo_crusade_counter$"
 
-### Parliament issue
- th_gensokyo_crusade_issue: "Punitive Crusade Proposal"
- th_gensokyo_crusade_issue_desc: "A proposal by the Yama, voted on by the sages. Two votes in favor pass it."
+### Trial parliament issue (2026-08-23: debate = judgment)
+ th_gensokyo_trial_issue: "Judgment: Punish Severely?"
+ th_gensokyo_trial_issue_desc: "After the crusade, the IO parliament judges the defeated target. Passing means severe punishment; failing means lenient treatment."
+ TH_TRIAL_BIAS_PARTICIPANT: "Fought in the crusade — favors severity"
+ TH_TRIAL_BIAS_AT_WAR: "At war with the target — favors severity"
+ TH_TRIAL_BIAS_TARGET_SIDE: "Ally or subject of the target — favors leniency"
 
 ### Prices
  th_gensokyo_feast_price: "Feast Cost"
@@ -213,11 +223,6 @@
  th_gensokyo_expansion_request_events.3.a: "I shall heed the lesson"
 
 ### ============================================================
-### WP-H 2026-08-15: Trial vote events + reparations verdict (搂6)
+### 2026-08-23 重构：审判改议会辩论（th_gensokyo_trial_issue）——
+### trial_vote_events / trial_events.1（手动裁决）键已删除
 ### ============================================================
- th_gensokyo_trial_vote_events.1.title: "Verdict Preference Vote"
- th_gensokyo_trial_vote_events.1.desc: "The Yama is weighing the target's sins. You may voice your preference for the verdict 鈥?this vote only reflects opinion and does not affect the final ruling."
- th_gensokyo_trial_vote_events.1.a: "Lenient: exhort them toward good"
- th_gensokyo_trial_vote_events.1.b: "Moderate: judge by order"
- th_gensokyo_trial_vote_events.1.c: "Severe: karma reaped in full"
- th_gensokyo_trial_events.1.e: "Only reparations: transfer half the treasury and suffer the punishment of bankruptcy"
