@@ -180,6 +180,12 @@
  TH_TRIBUNAL_AI_STRENGTH: "实力足以对抗惩戒对象"
  TH_TRIBUNAL_AI_TARGET_FOUND: "存在值得审判庭惩戒的好战目标"
  TH_TRIBUNAL_CB_STRENGTH: "实力足以对目标宣战"
+ th_gensokyo_crusade_declare_war: "向审判庭目标宣战"
+ th_gensokyo_crusade_declare_war_desc: "以惩戒宣战借口对审判庭的惩戒目标宣战。"
+ PERFORM_th_gensokyo_crusade_declare_war_ACTION: "向审判庭目标宣战"
+ WE_PERFORM_th_gensokyo_crusade_declare_war_ACTION: "我们向审判庭目标宣战"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_war_ACTION: "向审判庭目标宣战"
+ ACTION_th_gensokyo_crusade_declare_war_PERFORMED_ON_US: "向审判庭目标宣战"
 
 ### 反杀条约
  th_gensokyo_crusade_counter: "反杀胜利（惩戒）"

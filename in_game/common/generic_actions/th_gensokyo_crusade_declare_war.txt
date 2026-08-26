@@ -1,0 +1,97 @@
+﻿### ============================================================
+### 审判庭 — 宣战行动（2026-08-26 新增）
+### 链路：审判庭成员（阎魔/贤者/加入者）→ 选审判庭 →
+###       对目标（th_gensokyo_crusade_target_mark 标记国）宣战
+### 替代原 IO 面板 declare_war_on_target_casus_belli 按钮
+### （引擎 target 机制脚本不可控，2026-08-26 实证）
+### AI 判定：实力对比（relative_strength ≥ 0.5 才宣战）
+### 宣战后 on_war_declared 钩子激活局势（战争界面）
+### ============================================================
+
+th_gensokyo_crusade_declare_war = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_tribunal
+            ### 目标国不可宣战自己
+            NOT = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+    }
+
+    allow = {
+        ### 目标标记存在（审判庭有惩戒对象）
+        any_country = {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+        ### 尚未与目标交战（防重复宣战）
+        NOT = {
+            any_country = {
+                has_variable = th_gensokyo_crusade_target_mark
+                scope:actor = {
+                    is_at_war_with = prev
+                }
+            }
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_tribunal
+        }
+    }
+
+    effect = {
+        ### 目标定位（标记法）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            save_scope_as = crusade_target
+        }
+        ### 宣战（惩戒 CB；局势由 on_war_declared 钩子激活）
+        scope:actor = {
+            declare_war_with_cb = {
+                target = scope:crusade_target
+                type = casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+
+    ai_will_do = {
+        ### 实力对比：actor 不弱于目标才宣战（0.5 = 势均力敌）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        relative_strength = {
+                            target = prev
+                            value >= 0.5
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_CB_STRENGTH
+                value = 500
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 10
+        }
+    }
+}

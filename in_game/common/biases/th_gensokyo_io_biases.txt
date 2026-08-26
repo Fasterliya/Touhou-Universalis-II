@@ -54,3 +54,9 @@ opinion_gensokyo_feast_guest = {
     value = 15
     yearly_decay = 1
 }
+### 2026-08-26：审判庭成员互信（照 coalition io_opinion_coalition value=20；
+### 缺失时 game.log 报 "International Organization Type needs an opinion of
+### other members" 警告）
+io_opinion_th_gensokyo_tribunal = {
+    value = 20
+}

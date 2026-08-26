@@ -1,7 +1,7 @@
 ﻿### ============================================================
-### 审判议题（2026-08-23 重构：辩论 = 审判）
-### 链路：惩戒战争结束（crusade situation on_ended）→ 幻想乡 IO 议会
-###       call_io_parliament 发起本议题 → 全员投票（站队 bias）→
+### 审判议题（2026-08-23 重构：辩论 = 审判 / 2026-08-26 迁入审判庭议会）
+### 链路：惩戒战争结束（crusade situation on_ended）→ 审判庭议会
+###       call_io_parliament 发起本议题 → 审判庭成员投票（站队 bias）→
 ###       通过 = 从重惩罚（罪值≥75 档3 监管国 / 否则档2 削弱）
 ###       失败 = 从轻处理（罪值≥50 档1 归还 / 否则档0 赔款破产）
 ### 站队（wants_this_parliament_issue_bias，二分不写复杂倾向）：
@@ -10,11 +10,12 @@
 ### 判决复用 th_gensokyo_trial_judge_core_effect（档 0-3 已实现），
 ### 效果内重定位依赖 th_gensokyo_trial_target_mark —— 本议题回调开头
 ### 从 th_gensokyo_crusade_target_mark 转换打标。
+### 2026-08-26：审判庭无阎魔席位 → 移除 special_status；
+### 发起者 = 审判庭领袖（阎魔或贤者，declare 时 set_leader_country）
 ### ============================================================
 
 th_gensokyo_trial_issue = {
     type = international_organization
-    special_status = th_gensokyo_io_yama_special_status
 
     potential = {
         always = yes

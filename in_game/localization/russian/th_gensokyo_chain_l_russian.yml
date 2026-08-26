@@ -180,6 +180,12 @@
  TH_TRIBUNAL_AI_STRENGTH:"Достаточно силён против цели похода"
  TH_TRIBUNAL_AI_TARGET_FOUND:"Существует воинственная цель, достойная Трибунала"
  TH_TRIBUNAL_CB_STRENGTH:"Достаточно силён, чтобы объявить войну цели"
+ th_gensokyo_crusade_declare_war:"Объявить войну цели Трибунала"
+ th_gensokyo_crusade_declare_war_desc:"Объявить карательную войну против цели Трибунала с поводом к войне."
+ PERFORM_th_gensokyo_crusade_declare_war_ACTION:"Объявил войну цели Трибунала"
+ WE_PERFORM_th_gensokyo_crusade_declare_war_ACTION:"Мы объявили войну цели Трибунала"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_war_ACTION:"Объявил войну цели Трибунала"
+ ACTION_th_gensokyo_crusade_declare_war_PERFORMED_ON_US:"Объявил войну цели Трибунала"
 
 ### Counter treaty
  th_gensokyo_crusade_counter:"Контр-победа (Карательный поход)"

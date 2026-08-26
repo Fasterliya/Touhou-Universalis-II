@@ -246,7 +246,11 @@ th_gensokyo_request_expansion = {
         ###  改动需同步：th_gensokyo_is_sage_trigger + opinion>=0 OR is_allied_with）
         if = {
             limit = {
-                any_international_organization_member = {
+                ### 2026-08-26：any_international_organization_member 在 ai_will_do
+                ### 上下文 scope 不匹配（"Inconsistent trigger scopes" 实证）→
+                ### 改 any_country + is_member 显式判定（同 declare 行动修复）
+                any_country = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
                     th_gensokyo_is_sage_trigger = yes
                     NOT = {
                         this = scope:actor

@@ -27,6 +27,7 @@ acgv_touhou_religion_list = {
 		th_gensokyo_counter_expansion
 		th_gensokyo_join_crusade
 		th_gensokyo_crusade_leave
+		th_gensokyo_crusade_declare_war
 		### 贤者议会行动
 		th_sages_introduce_institution
 		th_sages_propose_policy

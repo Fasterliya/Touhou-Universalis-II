@@ -1,15 +1,20 @@
 ﻿### ============================================================
 ### 审判庭 — 宣告行动（2026-08-23 重构，替代旧提案-辩论链路）
-### 链路：阎魔/贤者 → 选目标国（好战≥50 过滤）→ 创建审判庭
-###       （th_gensokyo_tribunal，unique 临时 IO，target = 目标国）
-### 宣战不由本行动执行（2026-08-23 用户修正）：
+### 链路：阎魔/贤者（用户确认：三贤者与阎魔均有权限）→
+###       ① 选幻想乡 IO → ② 选目标国（好战≥50 过滤）→
+###       创建审判庭（th_gensokyo_tribunal，unique 临时 IO）
+### 宣战不由本行动执行（用户修正）：
 ###   - 各国先加入审判庭（AI 按 ai_desire_to_join / 玩家手动）
-###   - 宣战 = 审判庭 IO 面板按钮（declare_war_on_target_casus_belli）
-###     或成员用惩戒 CB 宣战（AI 按 CB ai_will_do 实力对比判定）
+###   - 宣战 = 自定义行动 th_gensokyo_crusade_declare_war
+###     （审判庭成员对标记目标宣战，AI 按实力对比判定）
 ###   - 宣战后 on_war_declared 钩子激活局势（战争界面）
-### ⚠️ create_international_organization 的 target 参数为验证点：
-###   若引擎不识别（报错）→ 移除 target 行，目标改由
-###   th_gensokyo_crusade_target_mark 标记定位（降级方案，见计划）
+### 2026-08-26 修复（日志实证）：
+###   - 补回 select_trigger ①（选 IO，target_flag = recipient）——
+###     原缺失导致 interaction_source_list 的 scope:recipient 恒空
+###     （"Undefined event target 'recipient'" 刷屏）→ 目标列表空
+###   - create 删 target/creator 参数（引擎不识别，"Field: target ...
+###     Type: none" 实证）→ 照 italian_wars 官方写法，显式 scope:actor
+###   - 目标 = th_gensokyo_crusade_target_mark 标记法（无引擎 target 途径）
 ### ============================================================
 
 th_gensokyo_crusade_declare = {
@@ -22,15 +27,22 @@ th_gensokyo_crusade_declare = {
         ### P1-12 修复：potential 顶层 root=empty，须显式 scope:actor
         scope:actor = {
             OR = {
+                ### 三贤者（T05/T13/T83）均有权限（用户确认）
                 has_special_status_in_international_organization = {
                     type = special_status:th_gensokyo_io_sages_special_status
                     international_organization = international_organization:th_gensokyo_io
                 }
+                ### 阎魔（幻想乡 IO 领袖）
                 is_leader_of_international_organization = international_organization:th_gensokyo_io
             }
-            ### 审判庭已存在（unique 全局唯一）时不可再发起
+            ### 审判庭已存在时不可再组建（2026-08-26 用户需求：唯一审判庭）
+            ### 2026-08-26：exists 链接对 unique 动态 IO 不可靠 → 改
+            ### any_international_organization 遍历判定（vanilla 实证触发器；
+            ### destroy 后遍历自然失效）
             NOT = {
-                exists = international_organization:th_gensokyo_tribunal
+                any_international_organization = {
+                    international_organization_type = international_organization_type:th_gensokyo_tribunal
+                }
             }
         }
     }
@@ -39,6 +51,21 @@ th_gensokyo_crusade_declare = {
         always = yes
     }
 
+    ### ① 选 IO（recipient 注入，供 ② 的 interaction_source_list 使用）
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### ② 选目标国（好战≥50，非领袖，免制裁排除）
     select_trigger = {
         looking_for_a = country
         source = actor
@@ -64,7 +91,7 @@ th_gensokyo_crusade_declare = {
                         NOT = {
                             is_leader_of_international_organization = international_organization:th_gensokyo_io
                         }
-                        ### 好战≥50（惩戒门槛，与审判庭 can_target_trigger 一致）
+                        ### 好战≥50（惩戒门槛）
                         societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
                         ### 免制裁期（反杀后 20 年）内不可再被惩戒
                         NOT = {
@@ -84,7 +111,7 @@ th_gensokyo_crusade_declare = {
     }
 
     effect = {
-        ### 清理旧目标标记，打新标记（审判/局势/降级方案引用）
+        ### 清理旧目标标记，打新标记（审判/局势/宣战行动引用）
         every_country = {
             limit = {
                 has_variable = th_gensokyo_crusade_target_mark
@@ -94,28 +121,28 @@ th_gensokyo_crusade_declare = {
         scope:target_country = {
             set_variable = th_gensokyo_crusade_target_mark
         }
-        ### 创建审判庭（unique 全局唯一；target 参数 = 验证点）
+        ### 创建审判庭（unique 全局唯一；2026-08-26 照 italian_wars 官方写法：
+        ### 无 target/creator 参数——引擎不识别；显式 scope:actor 加入并设领袖）
         create_international_organization = {
             type = international_organization_type:th_gensokyo_tribunal
-            creator = scope:actor
-            target = scope:target_country
-            add_country_to_international_organization = prev
-            set_leader_country = prev
+            add_country_to_international_organization = scope:actor
+            set_leader_country = scope:actor
             save_scope_as = tribunal
         }
         ### 2026-08-23（用户修正）：不在本行动宣战——
-        ### 等待各国加入审判庭后，由审判庭对目标宣战
-        ### （IO 面板 declare_war_on_target_casus_belli 按钮 / 成员用 CB 宣战，
-        ###  AI 宣战判定见 th_gensokyo_crusade_cb 的 ai_will_do 实力对比）；
+        ### 等待各国加入审判庭后，用 th_gensokyo_crusade_declare_war 行动宣战；
         ### 宣战后 on_war_declared 钩子激活局势
     }
 
     ai_will_do = {
         ### 有可惩戒目标（好战≥50）且 actor 不弱于目标 → 发起审判庭
-        ### （实力对比：relative_strength 0.5 = 势均力敌，≥0.5 才宣战）
+        ### 2026-08-26：any_international_organization_member 在 ai_will_do 上下文
+        ### scope 不匹配（"Inconsistent trigger scopes" 实证）→ 改
+        ### any_country + is_member 显式判定（同 join_crusade 已验证写法）
         if = {
             limit = {
-                any_international_organization_member = {
+                any_country = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
                     NOT = {
                         this = scope:actor
                     }

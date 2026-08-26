@@ -160,6 +160,12 @@
  TH_TRIBUNAL_AI_STRENGTH: "Strong enough against the crusade target"
  TH_TRIBUNAL_AI_TARGET_FOUND: "A belligerent target worthy of the Tribunal exists"
  TH_TRIBUNAL_CB_STRENGTH: "Strong enough to declare war on the target"
+ th_gensokyo_crusade_declare_war: "Declare War on the Tribunal Target"
+ th_gensokyo_crusade_declare_war_desc: "Declare a punitive war against the Tribunal's target with the punishment casus belli."
+ PERFORM_th_gensokyo_crusade_declare_war_ACTION: "Declared war on the Tribunal target"
+ WE_PERFORM_th_gensokyo_crusade_declare_war_ACTION: "We declared war on the Tribunal target"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_war_ACTION: "Declared war on the Tribunal target"
+ ACTION_th_gensokyo_crusade_declare_war_PERFORMED_ON_US: "Declared war on the Tribunal target"
 
 ### Counter treaty
  th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"

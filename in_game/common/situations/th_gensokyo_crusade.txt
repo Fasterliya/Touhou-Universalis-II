@@ -41,12 +41,8 @@ th_gensokyo_crusade = {
                 save_scope_as = crusade_target
             }
         }
-        ### 审判庭 target 兜底（declare 同时打标记，此处双保险）
-        international_organization:th_gensokyo_tribunal = {
-            target ?= {
-                save_scope_as = crusade_target
-            }
-        }
+        ### 2026-08-26：引擎 target 机制弃用，目标统一走标记法（上方已定位）；
+        ### 原 tribunal target 软取兜底段已删除
         ### 罪值清零
         scope:crusade_target = {
             set_variable = {
@@ -191,16 +187,19 @@ th_gensokyo_crusade = {
                 th_gensokyo_unity_add_effect = {
                     value = th_unity_crusade_settled_value
                 }
-                ### 2026-08-23 重构：审判 = 幻想乡 IO 议会辩论（审判议题
-                ### th_gensokyo_trial_issue：是否从重惩罚），成员按站队投票；
-                ### 不再启用 trial 局势。全部在 leader_country（国家 scope）调用
-                ### （tooltip 铁律同 F8/F9；call_io_parliament 旧链路实证可用）
-                leader_country ?= {
-                    set_parliament_location = this.capital
-                    set_parliament_active = yes
-                    set_parliament_issue = parliament_issue:th_gensokyo_trial_issue
-                    call_io_parliament = {
-                        international_organization = international_organization:th_gensokyo_io
+                ### 2026-08-23 重构：审判 = 议会辩论（审判议题 th_gensokyo_trial_issue：
+                ### 是否从重惩罚），成员按站队投票；不再启用 trial 局势。
+                ### 2026-08-26（用户需求）：议会迁入审判庭自身（th_gensokyo_tribunal
+                ### has_parliament）——参战成员在审判庭内投票更自然；
+                ### 团结奖励仍由幻想乡 IO 发放
+                international_organization:th_gensokyo_tribunal = {
+                    leader_country ?= {
+                        set_parliament_location = this.capital
+                        set_parliament_active = yes
+                        set_parliament_issue = parliament_issue:th_gensokyo_trial_issue
+                        call_io_parliament = {
+                            international_organization = international_organization:th_gensokyo_tribunal
+                        }
                     }
                 }
             }

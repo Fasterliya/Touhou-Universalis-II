@@ -8,6 +8,10 @@
 ### === 심판정 (2026-08-23: 임시 포위망 IO) ===
  th_gensokyo_tribunal: "심판정"
  th_gensokyo_tribunal_desc: "염마 또는 현자가 호전적인 구성원을 상대로 설립한 임시 국제 조직. 구성원이 함께 목표를 징벌하며, 전쟁 종료 후 환상향 의회가 심판합니다."
+ diplomatic_status_th_gensokyo_tribunal_name: "심판정"
+ diplomatic_status_th_gensokyo_tribunal_tooltip: "호전적인 구성원을 상대로 설립된 임시 조직."
+ th_gensokyo_tribunal_list_who_tt: "심판정 구성원"
+ th_gensokyo_tribunal_parliament: "심판정 의회"
 
 ### === Special Statuses ===
  th_gensokyo_io_sages_special_status: "현자"

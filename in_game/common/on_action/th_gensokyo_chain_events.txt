@@ -177,16 +177,18 @@ on_war_declared = {
 ### === 审判庭宣战 → 激活惩戒局势（2026-08-23 重构） ===
 ### 用户决定：局势（战争界面）在审判庭对目标国宣战之后弹出——
 ### 任何审判庭成员用惩戒 CB 对目标宣战都会激活局势（玩家发起与 AI 后续宣战同路径）
-### 结构参考 F8/F9 铁律：enable/activate 在国家 scope 调用（leader_country）
+### 2026-08-26：target 机制弃用 → 目标判定改 th_gensokyo_crusade_target_mark 标记
+### （原 international_organization:th_gensokyo_tribunal = { target ?= scope:recipient }
+###  在 target 恒空时钩子恒 false → 局势永不激活）
 th_gensokyo_tribunal_war_activate = {
     trigger = {
         ### 宣战国是审判庭成员
         scope:actor = {
             is_member_of_international_organization = international_organization:th_gensokyo_tribunal
         }
-        ### 被宣战国是审判庭目标（软取防未设置报错）
-        international_organization:th_gensokyo_tribunal = {
-            target ?= scope:recipient
+        ### 被宣战国是惩戒目标（标记法）
+        scope:recipient = {
+            has_variable = th_gensokyo_crusade_target_mark
         }
         ### 惩戒 CB 战争（其它战争不激活）
         scope:war = {

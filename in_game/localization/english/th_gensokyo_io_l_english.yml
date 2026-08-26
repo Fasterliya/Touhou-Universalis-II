@@ -8,6 +8,10 @@
 ### === Tribunal (2026-08-23: temporary encirclement IO) ===
  th_gensokyo_tribunal: "Tribunal"
  th_gensokyo_tribunal_desc: "A temporary international organization established by the Yama or a sage against a belligerent member. Members jointly punish the target; the parliament holds judgment once the war ends."
+ diplomatic_status_th_gensokyo_tribunal_name: "Tribunal"
+ diplomatic_status_th_gensokyo_tribunal_tooltip: "A temporary organization established against a belligerent member."
+ th_gensokyo_tribunal_list_who_tt: "Tribunal members"
+ th_gensokyo_tribunal_parliament: "Tribunal Parliament"
 
 ### === Special Statuses ===
  th_gensokyo_io_sages_special_status: "Sage"

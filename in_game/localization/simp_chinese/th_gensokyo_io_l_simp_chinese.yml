@@ -8,6 +8,10 @@
 ### === 审判庭（2026-08-23：临时包围网 IO） ===
  th_gensokyo_tribunal: "审判庭"
  th_gensokyo_tribunal_desc: "由阎魔或贤者针对好战成员建立的临时国际组织。成员共同惩戒目标；战争结束后由幻想乡议会审判。"
+ diplomatic_status_th_gensokyo_tribunal_name: "审判庭"
+ diplomatic_status_th_gensokyo_tribunal_tooltip: "针对好战成员建立的临时国际组织。"
+ th_gensokyo_tribunal_list_who_tt: "审判庭成员"
+ th_gensokyo_tribunal_parliament: "审判庭议会"
 
 ### === 特殊席位 ===
  th_gensokyo_io_sages_special_status: "贤者"

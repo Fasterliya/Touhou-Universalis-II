@@ -1,0 +1,15 @@
+﻿### ============================================================
+### 审判庭 — 议会类型（2026-08-26 新增）
+### 参照 th_gensokyo_io_parliament / vanilla union_royal_assembly：
+### type = international_organization + has_international_parliament 修正
+### 用途：战后审判（th_gensokyo_trial_issue）在审判庭内部进行，
+###       参战成员投票（站队 bias：参战/交战从重，目标方从轻）
+### ============================================================
+
+th_gensokyo_tribunal_parliament = {
+    type = international_organization
+
+    modifier = {
+        has_international_parliament = yes
+    }
+}
