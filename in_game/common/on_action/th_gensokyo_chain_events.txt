@@ -1,4 +1,5 @@
-﻿### ============================================================
+﻿
+### ============================================================
 ### 幻想乡IO 链条系统 — 事件钩子
 ### 非法扩张检测 / 自由市吞并惩罚 / 罪值累积（4B 追加）
 ### ============================================================
@@ -11,6 +12,48 @@ on_took_location_in_peace_treaty = {
         th_gensokyo_free_city_cede_check
     }
 }
+
+
+### === 战斗胜利（root = 胜利国，scope:actor = 胜利军队，见 base game _hardcoded.txt:2783） → 罪值累积（目标国赢战斗 = 屠杀联军军队） ===
+### 按战果折算：罪 += scope:war_score（on_battle_won 提供，_hardcoded.txt:2789）
+### 退路：若 scope:war_score 折算异常，改回固定值 th_crusade_sin_battle_value
+### P1-09 修复：root 是胜利国而非军队，直接判定/累加，不再经 owner 链
+on_battle_won = {
+    on_actions = {
+        th_gensokyo_sin_battle_check
+    }
+}
+
+
+### === 拒绝强制和平（调停被拒） → 罪值累积 ===
+on_enforce_peace_declined = {
+    on_actions = {
+        th_gensokyo_sin_refusal_check
+    }
+}
+
+
+### === 反杀检测已移除（B3 决策：反杀唯一判定 = 反杀条约 th_gensokyo_crusade_counter） ===
+
+### === 自由市保护（B7 修正 2026-08-07：除贤者与自由市外全部触发三贤者参战） ===
+### 触发对象 = 除人类村落成员和贤者以外的所有国家（含阎魔/IO 普通成员/外界）
+### 豁免: 贤者攻击自由市 / 人类村落互相吞并（只吃惩罚链，不触发贤者参战）
+on_war_declared = {
+    on_actions = {
+        th_gensokyo_free_city_protection_check
+        th_gensokyo_invasion_check
+        th_gensokyo_regulated_protection
+        th_gensokyo_tribunal_war_activate
+    }
+}
+
+
+on_annex = {
+    on_actions = {
+        th_gensokyo_unlawful_annex_check
+    }
+}
+
 
 th_gensokyo_unlawful_expansion_check = {
     trigger = {
@@ -52,6 +95,7 @@ th_gensokyo_unlawful_expansion_check = {
     }
 }
 
+
 ### === 自由市割让（B1：战争条约割让人类国家地块 = 强制吞并） ===
 ### 地块本身已有引擎敌意（成员夺地自动），此处追加：额外 +500% 敌意（bias 值体现）+ 恶名获取 x500%（x6 增幅）
 th_gensokyo_free_city_cede_check = {
@@ -81,15 +125,6 @@ th_gensokyo_free_city_cede_check = {
     }
 }
 
-### === 战斗胜利（root = 胜利国，scope:actor = 胜利军队，见 base game _hardcoded.txt:2783） → 罪值累积（目标国赢战斗 = 屠杀联军军队） ===
-### 按战果折算：罪 += scope:war_score（on_battle_won 提供，_hardcoded.txt:2789）
-### 退路：若 scope:war_score 折算异常，改回固定值 th_crusade_sin_battle_value
-### P1-09 修复：root 是胜利国而非军队，直接判定/累加，不再经 owner 链
-on_battle_won = {
-    on_actions = {
-        th_gensokyo_sin_battle_check
-    }
-}
 
 th_gensokyo_sin_battle_check = {
     trigger = {
@@ -108,12 +143,6 @@ th_gensokyo_sin_battle_check = {
     }
 }
 
-### === 拒绝强制和平（调停被拒） → 罪值累积 ===
-on_enforce_peace_declined = {
-    on_actions = {
-        th_gensokyo_sin_refusal_check
-    }
-}
 
 th_gensokyo_sin_refusal_check = {
     trigger = {
@@ -160,19 +189,6 @@ th_gensokyo_sin_refusal_check = {
     }
 }
 
-### === 反杀检测已移除（B3 决策：反杀唯一判定 = 反杀条约 th_gensokyo_crusade_counter） ===
-
-### === 自由市保护（B7 修正 2026-08-07：除贤者与自由市外全部触发三贤者参战） ===
-### 触发对象 = 除人类村落成员和贤者以外的所有国家（含阎魔/IO 普通成员/外界）
-### 豁免: 贤者攻击自由市 / 人类村落互相吞并（只吃惩罚链，不触发贤者参战）
-on_war_declared = {
-    on_actions = {
-        th_gensokyo_free_city_protection_check
-        th_gensokyo_invasion_check
-        th_gensokyo_regulated_protection
-        th_gensokyo_tribunal_war_activate
-    }
-}
 
 ### === 审判庭宣战 → 激活惩戒局势（2026-08-23 重构） ===
 ### 用户决定：局势（战争界面）在审判庭对目标国宣战之后弹出——
@@ -202,6 +218,24 @@ th_gensokyo_tribunal_war_activate = {
         }
     }
     effect = {
+        ### 2026-08-26（用户补充）：宣战后召唤审判庭全体成员加入对目标战争
+        ### （join_offensive_wars_always 引擎层双保险；scope:war 实证可用）
+        international_organization:th_gensokyo_tribunal = {
+            every_international_organization_member = {
+                limit = {
+                    NOT = {
+                        this = scope:actor
+                    }
+                    NOT = {
+                        is_at_war_with = scope:recipient
+                    }
+                }
+                join_war_as_attacker = {
+                    war = scope:war
+                    call_in_subjects = yes
+                }
+            }
+        }
         international_organization:th_gensokyo_tribunal = {
             leader_country ?= {
                 enable_situation_effect = {
@@ -212,6 +246,7 @@ th_gensokyo_tribunal_war_activate = {
         }
     }
 }
+
 
 th_gensokyo_free_city_protection_check = {
     trigger = {
@@ -244,6 +279,7 @@ th_gensokyo_free_city_protection_check = {
     }
 }
 
+
 ### === 外界入侵：非 IO 成员对成员宣战 → 团结扣减 ===
 th_gensokyo_invasion_check = {
     trigger = {
@@ -266,11 +302,6 @@ th_gensokyo_invasion_check = {
     }
 }
 
-on_annex = {
-    on_actions = {
-        th_gensokyo_unlawful_annex_check
-    }
-}
 
 th_gensokyo_unlawful_annex_check = {
     trigger = {
@@ -335,6 +366,7 @@ th_gensokyo_unlawful_annex_check = {
     }
 }
 
+
 ### ============================================================
 ### 惩戒辩论规则自动投票 — 已移至 propose_crusade effect 尾部
 ### （2026-08-21 实测结论：crusade_issue.on_debate_start 触发时机早于议会激活，
@@ -382,3 +414,4 @@ th_gensokyo_regulated_protection = {
         }
     }
 }
+

@@ -1,3 +1,4 @@
+﻿
 ### ============================================================
 ### 幻想乡IO — 征服/割让挂钩（WP-F 2026-08-15）
 ### 设计文档《国际组织》§3.0 / §3.0/1 / §5：
@@ -15,6 +16,30 @@ on_took_location_in_peace_treaty = {
         th_gensokyo_conquest_chaos_pulse
     }
 }
+
+
+### ============================================================
+### 贤者授权扩张CB战争 — 旗标（2026-08-19，问题5）
+### on_took_location_in_peace_treaty 无 scope:war，无法直接识别 CB；
+### 改由宣战/和约钩子打/清旗标（on_war_declared / on_ending_war 均暴露 scope:war）
+### 征服钩子据此给乱进度 +1（贤者CB）而非 +2（正常）
+### ============================================================
+
+### 注册到 on_war_declared（root=宣战国, scope:actor=宣战国, scope:recipient=被宣国, scope:war）
+on_war_declared = {
+    on_actions = {
+        th_gensokyo_sage_cb_war_flag_pulse
+    }
+}
+
+
+### 注册到 on_ending_war（root=任一方, scope:winner, scope:loser, scope:war）
+on_ending_war = {
+    on_actions = {
+        th_gensokyo_sage_cb_war_flag_clear_pulse
+    }
+}
+
 
 th_gensokyo_conquest_chaos_pulse = {
     effect = {
@@ -107,19 +132,6 @@ th_gensokyo_conquest_chaos_pulse = {
     }
 }
 
-### ============================================================
-### 贤者授权扩张CB战争 — 旗标（2026-08-19，问题5）
-### on_took_location_in_peace_treaty 无 scope:war，无法直接识别 CB；
-### 改由宣战/和约钩子打/清旗标（on_war_declared / on_ending_war 均暴露 scope:war）
-### 征服钩子据此给乱进度 +1（贤者CB）而非 +2（正常）
-### ============================================================
-
-### 注册到 on_war_declared（root=宣战国, scope:actor=宣战国, scope:recipient=被宣国, scope:war）
-on_war_declared = {
-    on_actions = {
-        th_gensokyo_sage_cb_war_flag_pulse
-    }
-}
 
 th_gensokyo_sage_cb_war_flag_pulse = {
     trigger = {
@@ -134,12 +146,6 @@ th_gensokyo_sage_cb_war_flag_pulse = {
     }
 }
 
-### 注册到 on_ending_war（root=任一方, scope:winner, scope:loser, scope:war）
-on_ending_war = {
-    on_actions = {
-        th_gensokyo_sage_cb_war_flag_clear_pulse
-    }
-}
 
 th_gensokyo_sage_cb_war_flag_clear_pulse = {
     trigger = {
@@ -156,3 +162,4 @@ th_gensokyo_sage_cb_war_flag_clear_pulse = {
         }
     }
 }
+

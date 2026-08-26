@@ -212,9 +212,13 @@ th_gensokyo_crusade = {
                     remove_variable = th_gensokyo_crusade_target_mark
                 }
             }
+            ### 2026-08-26 修复：destroy 需 country scope（"Inconsistent effect scopes"
+            ### 实证）——经 leader_country 调用，target 参数 = IO 链接（vanilla 语法）
             international_organization:th_gensokyo_tribunal = {
-                destroy_international_organization = {
-                    target = this
+                leader_country ?= {
+                    destroy_international_organization = {
+                        target = international_organization:th_gensokyo_tribunal
+                    }
                 }
             }
         }

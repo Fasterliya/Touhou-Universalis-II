@@ -397,9 +397,14 @@ th_gensokyo_trial_cleanup_effect = {
         remove_variable = th_gensokyo_crusade_participant
     }
     ### 解散审判庭（若仍存在；auto_disband 为兜底）
+    ### 2026-08-26 修复：destroy 需 country scope 调用（"Inconsistent effect scopes
+    ### international_organization vs country" 实证）——经 leader_country 调用，
+    ### target 参数 = IO 链接（vanilla 99_nd_ilk.txt:47 语法实证）
     international_organization:th_gensokyo_tribunal = {
-        destroy_international_organization = {
-            target = this
+        leader_country ?= {
+            destroy_international_organization = {
+                target = international_organization:th_gensokyo_tribunal
+            }
         }
     }
 }

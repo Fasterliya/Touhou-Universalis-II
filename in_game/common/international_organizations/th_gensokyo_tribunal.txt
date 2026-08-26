@@ -103,29 +103,14 @@ th_gensokyo_tribunal = {
     modifier = {
     }
 
-    ### 成员纪律（目标 = 标记国，F24 效果内重定位模式）
+    ### 成员纪律（2026-08-26 用户修正：取消 CB 自动授予——
+    ### 惩戒 CB 不再随加入自动解锁；宣战唯一入口 = 审判庭宣战按钮
+    ### （th_gensokyo_crusade_declare_war，declare_war_with_cb 直接开战），
+    ### CB 持有与否不再影响宣战；triumph/counter 条约的 CB 类型判定
+    ### 为战争级检查，与持有无关）
     on_joined = {
-        ### 加入即获得对目标的宣战借口
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_crusade_target_mark
-            }
-            add_casus_belli = {
-                target = prev
-                type = casus_belli:th_gensokyo_crusade_cb
-            }
-        }
     }
     on_left = {
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_crusade_target_mark
-            }
-            remove_casus_belli = {
-                target = prev
-                type = casus_belli:th_gensokyo_crusade_cb
-            }
-        }
     }
 
     on_creation = {
@@ -150,7 +135,8 @@ th_gensokyo_tribunal = {
                 value = 20
             }
         }
-        ### 对目标敌意 ≥50 → 加入（2026-08-26 用户：AI 主动加入倾向保留敌意判定）
+        ### 对目标敌意 ≥50 → 加入（2026-08-26 用户：AI 主动加入倾向保留敌意判定；
+        ### 补充：敌意 ≥50 → +10000 压倒性加入意愿）
         if = {
             limit = {
                 any_country = {
@@ -163,7 +149,7 @@ th_gensokyo_tribunal = {
             }
             add = {
                 desc = "game_concept_antagonism"
-                value = 300
+                value = 10000
             }
         }
         ### 目标好战价值观 ≥50 → 加入；≥75 → 再追加（2026-08-26 用户：

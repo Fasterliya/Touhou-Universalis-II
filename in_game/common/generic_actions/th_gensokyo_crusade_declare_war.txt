@@ -70,6 +70,13 @@ th_gensokyo_crusade_declare_war = {
         }
     }
 
+    ### 2026-08-26（用户补充）：宣战后按钮冷却变灰，防止重复点击
+    ### （与 allow 的 is_at_war_with 判定双保险）
+    cooldown = {
+        type = th_gensokyo_crusade_declare_war
+        months = 12
+    }
+
     ai_will_do = {
         ### 实力对比：actor 不弱于目标才宣战（0.5 = 势均力敌）
         if = {
