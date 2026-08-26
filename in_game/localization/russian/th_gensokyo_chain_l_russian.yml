@@ -45,7 +45,7 @@
  th_gensokyo_crusade:"Ситуация с походом"
  th_gensokyo_crusade_desc:"Окружение цели похода силами Генсокё."
  th_gensokyo_crusade_declare:"Объявить карательный поход"
- th_gensokyo_crusade_declare_desc:"Яма или мудрец выбирает воинственного члена и учреждает Трибунал — временную международную организацию против цели. Ситуация начинается после объявления войны."
+ th_gensokyo_crusade_declare_desc:"Яма или мудрец выбирает воинственного члена и учреждает Трибунал — временную международную организацию против цели. Члены присоединяются, затем Трибунал объявляет войну цели; ситуация начинается после объявления войны."
  PERFORM_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
  WE_PERFORM_th_gensokyo_crusade_declare_ACTION:"Мы учредили Трибунал"
  OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
@@ -179,6 +179,7 @@
  TH_TRIBUNAL_AI_RIVAL:"Соперник или враг цели похода"
  TH_TRIBUNAL_AI_STRENGTH:"Достаточно силён против цели похода"
  TH_TRIBUNAL_AI_TARGET_FOUND:"Существует воинственная цель, достойная Трибунала"
+ TH_TRIBUNAL_CB_STRENGTH:"Достаточно силён, чтобы объявить войну цели"
 
 ### Counter treaty
  th_gensokyo_crusade_counter:"Контр-победа (Карательный поход)"

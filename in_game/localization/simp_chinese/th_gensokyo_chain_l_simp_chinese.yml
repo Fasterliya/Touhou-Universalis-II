@@ -39,7 +39,7 @@
  th_gensokyo_crusade: "惩戒局势"
  th_gensokyo_crusade_desc: "幻想乡全体对惩戒目标形成的包围网。"
  th_gensokyo_crusade_declare: "宣告惩戒战争"
- th_gensokyo_crusade_declare_desc: "阎魔或贤者选定一名好战成员，建立针对目标的临时国际组织「审判庭」。对目标宣战后，战争局势随即展开。"
+ th_gensokyo_crusade_declare_desc: "阎魔或贤者选定一名好战成员，建立针对目标的临时国际组织「审判庭」。各国加入审判庭后，由审判庭对目标宣战，战争局势随即展开。"
  PERFORM_th_gensokyo_crusade_declare_ACTION: "建立了审判庭"
  WE_PERFORM_th_gensokyo_crusade_declare_ACTION: "我们建立了审判庭"
  OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION: "建立了审判庭"
@@ -179,6 +179,7 @@
  TH_TRIBUNAL_AI_RIVAL: "是惩戒对象的宿敌或敌人"
  TH_TRIBUNAL_AI_STRENGTH: "实力足以对抗惩戒对象"
  TH_TRIBUNAL_AI_TARGET_FOUND: "存在值得审判庭惩戒的好战目标"
+ TH_TRIBUNAL_CB_STRENGTH: "实力足以对目标宣战"
 
 ### 反杀条约
  th_gensokyo_crusade_counter: "反杀胜利（惩戒）"

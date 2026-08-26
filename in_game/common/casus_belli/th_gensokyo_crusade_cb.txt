@@ -1,6 +1,9 @@
 ﻿### ============================================================
-### 幻想乡惩戒战争 CB（包围网使用，仅脚本授予）
+### 幻想乡惩戒战争 CB（审判庭包围网使用，仅脚本授予）
 ### war_goal_type = superiority（教训性质，胜负定战争分数）
+### 2026-08-23（用户修正）：AI 宣战判定 = 实力对比——
+### 审判庭成员用本 CB 对目标宣战（IO 面板按钮 / AI 自动），
+### relative_strength 0.5 = 势均力敌；强于目标才倾向宣战
 ### ============================================================
 
 th_gensokyo_crusade_cb = {
@@ -22,4 +25,18 @@ th_gensokyo_crusade_cb = {
     }
 
     additional_war_enthusiasm = 0.1
+
+    ### AI 宣战判定（root = 持 CB 成员，scope:target = 目标国，readme 实证）
+    ai_will_do = {
+        add = {
+            desc = TH_TRIBUNAL_CB_STRENGTH
+            value = "relative_strength(scope:target)"
+            add = -0.5
+            multiply = 100
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 10
+        }
+    }
 }

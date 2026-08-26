@@ -38,7 +38,7 @@
  th_gensokyo_crusade: "Crusade Situation"
  th_gensokyo_crusade_desc: "Gensokyo's encirclement against the crusade target."
  th_gensokyo_crusade_declare: "Declare Punitive Crusade"
- th_gensokyo_crusade_declare_desc: "The Yama or a sage selects a belligerent member and establishes the Tribunal — a temporary international organization against the target. The war situation begins once war is declared."
+ th_gensokyo_crusade_declare_desc: "The Yama or a sage selects a belligerent member and establishes the Tribunal — a temporary international organization against the target. Members join, then the Tribunal declares war on the target; the war situation begins once war is declared."
  PERFORM_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
  WE_PERFORM_th_gensokyo_crusade_declare_ACTION: "We established the Tribunal"
  OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
@@ -159,6 +159,7 @@
  TH_TRIBUNAL_AI_RIVAL: "Rival or enemy of the crusade target"
  TH_TRIBUNAL_AI_STRENGTH: "Strong enough against the crusade target"
  TH_TRIBUNAL_AI_TARGET_FOUND: "A belligerent target worthy of the Tribunal exists"
+ TH_TRIBUNAL_CB_STRENGTH: "Strong enough to declare war on the target"
 
 ### Counter treaty
  th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"

@@ -1,9 +1,12 @@
 ﻿### ============================================================
-### 审判庭 — 宣战行动（2026-08-23 重构，替代旧提案-辩论链路）
+### 审判庭 — 宣告行动（2026-08-23 重构，替代旧提案-辩论链路）
 ### 链路：阎魔/贤者 → 选目标国（好战≥50 过滤）→ 创建审判庭
-###       （th_gensokyo_tribunal，unique 临时 IO，target = 目标国）→
-###       发起者立即宣战 → on_war_declared 钩子激活局势（战争界面）
-### AI 判定：有可惩戒目标 + 实力对比（relative_strength ≥ 0.5 才宣战）
+###       （th_gensokyo_tribunal，unique 临时 IO，target = 目标国）
+### 宣战不由本行动执行（2026-08-23 用户修正）：
+###   - 各国先加入审判庭（AI 按 ai_desire_to_join / 玩家手动）
+###   - 宣战 = 审判庭 IO 面板按钮（declare_war_on_target_casus_belli）
+###     或成员用惩戒 CB 宣战（AI 按 CB ai_will_do 实力对比判定）
+###   - 宣战后 on_war_declared 钩子激活局势（战争界面）
 ### ⚠️ create_international_organization 的 target 参数为验证点：
 ###   若引擎不识别（报错）→ 移除 target 行，目标改由
 ###   th_gensokyo_crusade_target_mark 标记定位（降级方案，见计划）
@@ -100,14 +103,11 @@ th_gensokyo_crusade_declare = {
             set_leader_country = prev
             save_scope_as = tribunal
         }
-        ### 发起者立即宣战（局势由 on_war_declared 钩子激活——
-        ### 任何审判庭成员对目标的宣战都会激活，AI 后续宣战同路径）
-        scope:actor = {
-            declare_war_with_cb = {
-                target = scope:target_country
-                type = casus_belli:th_gensokyo_crusade_cb
-            }
-        }
+        ### 2026-08-23（用户修正）：不在本行动宣战——
+        ### 等待各国加入审判庭后，由审判庭对目标宣战
+        ### （IO 面板 declare_war_on_target_casus_belli 按钮 / 成员用 CB 宣战，
+        ###  AI 宣战判定见 th_gensokyo_crusade_cb 的 ai_will_do 实力对比）；
+        ### 宣战后 on_war_declared 钩子激活局势
     }
 
     ai_will_do = {
