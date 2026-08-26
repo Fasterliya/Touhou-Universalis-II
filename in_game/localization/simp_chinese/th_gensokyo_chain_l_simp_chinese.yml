@@ -28,16 +28,12 @@
  ### 原缺失导致和约面板显示裸 key）
  th_gensokyo_crusade_triumph_entry: "$th_gensokyo_crusade_triumph$"
  th_gensokyo_crusade_triumph_entry_short: "$th_gensokyo_crusade_triumph$"
- TH_CRUSADE_INITIAL_SUPPORT: "阎魔发起支持"
- TH_CRUSADE_AI_FOUND_TARGET: "存在敌意达标的惩戒对象"
- TH_CRUSADE_AI_ANTAGONISM: "对惩戒目标的敌意"
  TH_EXPANSION_AI_TARGET_FOUND: "存在可批准扩张的贤者"
 
 ### 惩戒战争
  th_gensokyo_crusade_cb: "惩戒战争"
  th_gensokyo_crusade_cb_desc: "由阎魔与贤者议会裁定发起的惩戒战争，目标为幻想乡秩序的破坏者。"
- th_gensokyo_crusade: "惩戒局势"
- th_gensokyo_crusade_desc: "幻想乡全体对惩戒目标形成的包围网。"
+ ### 2026-08-26：惩戒局势已删除（改 IO 驱动）——th_gensokyo_crusade(_desc) 随删
  th_gensokyo_crusade_declare: "宣告惩戒战争"
  th_gensokyo_crusade_declare_desc: "阎魔或贤者选定一名好战成员，建立针对目标的临时国际组织「审判庭」。各国加入审判庭后，由审判庭对目标宣战，战争局势随即展开。"
  PERFORM_th_gensokyo_crusade_declare_ACTION: "建立了审判庭"
@@ -180,6 +176,7 @@
  TH_TRIBUNAL_AI_STRENGTH: "实力足以对抗惩戒对象"
  TH_TRIBUNAL_AI_TARGET_FOUND: "存在值得审判庭惩戒的好战目标"
  TH_TRIBUNAL_CB_STRENGTH: "实力足以对目标宣战"
+ TH_TRIBUNAL_ALREADY_AT_WAR_TT: "尚未与审判庭目标交战"
  th_gensokyo_crusade_declare_war: "向审判庭目标宣战"
  th_gensokyo_crusade_declare_war_desc: "以惩戒宣战借口对审判庭的惩戒目标宣战。"
  PERFORM_th_gensokyo_crusade_declare_war_ACTION: "向审判庭目标宣战"
@@ -217,20 +214,14 @@
  ### 2026-08-21（需求 3）：th_gensokyo_notorious_pariah_modifier(_desc) 已删
  ### （阶段性修正系统，随 pariah 标记修正一并移除）
 
-### 局势面板
- TH_CRUSADE_SUPPORTER_STRENGTH: "幻想乡联军兵力"
- TH_CRUSADE_TARGET_STRENGTH: "惩戒目标兵力"
- TH_CRUSADE_SIN_DISPLAY: "目标罪孽"
+### 2026-08-26：局势面板/局势变量键随惩戒局势删除
+### （TH_CRUSADE_SUPPORTER_STRENGTH / TH_CRUSADE_TARGET_STRENGTH /
+###  TH_CRUSADE_SIN_DISPLAY / th_crusade_supporter_strength /
+###  th_crusade_target_strength / th_crusade_temp_strength /
+###  th_crusade_target_ref / th_crusade_sin_display）
 
 ### 团结度来源
  TH_GENSOKYO_UNITY_FROM_MEMBERS: "成员规模"
 
 ### 贤者保护
  th_gensokyo_sages_defend_reason: "守护人间之里"
-
-### 变量
- th_crusade_supporter_strength: "联军兵力"
- th_crusade_target_strength: "目标兵力"
- th_crusade_temp_strength: "成员兵力"
- th_crusade_target_ref: "惩戒目标"
- th_crusade_sin_display: "目标罪孽"

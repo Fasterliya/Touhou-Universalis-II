@@ -240,12 +240,7 @@
  th_gensokyo_bankruptcy_modifier_desc: "阎魔判罚的赔款令国库空虚，经济陷入动荡。"
  th_gensokyo_sanction_immunity: "免制裁期"
  th_gensokyo_sanction_immunity_desc: "此国在惩戒战争中反败为胜，幻想乡诸国 20 年内不得再对其发起制裁。"
- TH_TRIAL_PHASE_LABEL: "审判阶段"
- TH_TRIAL_VOTE_MONTHS_LABEL: "剩余投票月数"
- TH_TRIAL_VOTE_TALLY_LABEL: "投票统计（民意，不影响裁决）"
- TH_TRIAL_VOTE_MERCY: "从宽（劝善倾向）"
- TH_TRIAL_VOTE_ORDER: "适中（有序倾向）"
- TH_TRIAL_VOTE_KARMA: "从严（因果必尝倾向）"
+ ### 2026-08-26：旧审判 GUI 残留键已删（TH_TRIAL_PHASE_LABEL / TH_TRIAL_VOTE_*）
 
 ### === 持地显示（2026-08-21）===
  TH_GENSOKYO_IO_OWNED_LOCATION_TT: "此地点属于幻想乡国际组织"

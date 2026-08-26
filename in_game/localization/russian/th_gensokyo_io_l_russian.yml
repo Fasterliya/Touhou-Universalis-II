@@ -1,4 +1,4 @@
-﻿l_russian:
+l_russian:
 ### ============================================================
 ### Touhou-Universalis-II Russian Localization
 ### Автоматический перевод (машинный) — глоссарий согласован
@@ -223,12 +223,7 @@
  th_gensokyo_bankruptcy_modifier_desc:"Репарации, наложенные Ямой, опустошили казну и повергли экономику в хаос."
  th_gensokyo_sanction_immunity:"Иммунитет от санкций"
  th_gensokyo_sanction_immunity_desc:"Эта страна одержала верх в карательной войне; государства Генсокё не могут санкционировать её 20 лет."
- TH_TRIAL_PHASE_LABEL:"Фаза суда"
- TH_TRIAL_VOTE_MONTHS_LABEL:"Месяцев голосования осталось"
- TH_TRIAL_VOTE_TALLY_LABEL:"Подсчёт голосов (мнение, не влияет на приговор)"
- TH_TRIAL_VOTE_MERCY:"Снисходительно (склонность к милосердию)"
- TH_TRIAL_VOTE_ORDER:"Умеренно (склонность к порядку)"
- TH_TRIAL_VOTE_KARMA:"Строго (склонность к воздаянию)"
+ ### 2026-08-26: устаревшие ключи старого GUI суда удалены (TH_TRIAL_PHASE_LABEL / TH_TRIAL_VOTE_*)
 
 ### === Отображение владений (2026-08-21) ===
  TH_GENSOKYO_IO_OWNED_LOCATION_TT:"Это место принадлежит международной организации Генсокё"

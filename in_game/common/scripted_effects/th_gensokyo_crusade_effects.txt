@@ -1,11 +1,12 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 惩戒审判 — 判决效果
 ### 档位机制: th_gensokyo_sentence_tier（1-3）——AI 自动判定或玩家事件手动设定
 ### 3 级模型（A6 决策）：轻=归还领土 / 中=归还+削弱 / 重=监管国（财富转移+40%贡金+归还+削弱）
 ### 2026-08-23 error.log 实测修复（F24 同款）：save_scope_as 跨 scripted_effect
 ###   不可靠（expansion 链 "Undefined event target 'expansion_requester'" 实证）——
 ###   本文件全部效果改为【效果内按标记重新定位】：
-###   目标国 = th_gensokyo_trial_target_mark（审判局势 on_start 打标，on_ended 清），
+###   目标国 = th_gensokyo_trial_target_mark（审判议题回调开头从
+###   th_gensokyo_crusade_target_mark 转换打标，审判完成后 cleanup 清理），
 ###   阎魔 = IO leader（is_leader_of_international_organization 定位）
 ### ============================================================
 
@@ -267,8 +268,8 @@ th_gensokyo_trial_judge_core_effect = {
                 }
             }
         }
-        ### 审判标记（永久）+ 档位清理
-        set_variable = th_gensokyo_judged
+        ### 档位清理（2026-08-26：th_gensokyo_judged 永久审判标记已删——
+        ### 全库零读取，防再制裁已由 triumph 条约价值观归中方案承担）
         remove_variable = th_gensokyo_sentence_tier
     }
 

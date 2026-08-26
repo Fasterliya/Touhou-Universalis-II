@@ -10,7 +10,7 @@ situation_panel = {
 		}
 
 		hbox = {
-			parentanchor = hcenter
+			layoutpolicy_horizontal = expanding
 			spacing = 12
 
 			button_regular = {
@@ -85,7 +85,7 @@ situation_panel = {
 		}
 
 		button_regular = {
-			parentanchor = hcenter
+			layoutpolicy_horizontal = expanding
 			size = { 200 40 }
 			text_single = {
 				text = "TH_CULTURE_CHRONICLE_REFRESH"

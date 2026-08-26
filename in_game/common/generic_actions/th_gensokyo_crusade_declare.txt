@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 审判庭 — 宣告行动（2026-08-23 重构，替代旧提案-辩论链路）
 ### 链路：阎魔/贤者（用户确认：三贤者与阎魔均有权限）→
 ###       ① 选幻想乡 IO → ② 选目标国（好战≥50 过滤）→
@@ -15,6 +15,11 @@
 ###   - create 删 target/creator 参数（引擎不识别，"Field: target ...
 ###     Type: none" 实证）→ 照 italian_wars 官方写法，显式 scope:actor
 ###   - 目标 = th_gensokyo_crusade_target_mark 标记法（无引擎 target 途径）
+### 2026-08-26 第二次修复（game.log 取证）：
+###   - effect 顶层 scope:target_country 无条件引用 → 引擎 tooltip 预演时
+###     未设置 → "Undefined event target 'target_country'" 刷屏 1026 次
+###     → 照 vanilla lordship_of_ireland.txt:193-216 先例加 exists 守卫
+###   - 创建审判庭后创建者全部附庸自动加入（2026-08-26 用户需求）
 ### ============================================================
 
 th_gensokyo_crusade_declare = {
@@ -118,8 +123,16 @@ th_gensokyo_crusade_declare = {
             }
             remove_variable = th_gensokyo_crusade_target_mark
         }
-        scope:target_country = {
-            set_variable = th_gensokyo_crusade_target_mark
+        ### 2026-08-26 修复：exists 守卫防 tooltip 预演/选择器异常时报错
+        ### （vanilla lordship_of_ireland.txt:193-216 先例；标记设置失败时
+        ### 不再刷屏，create 照常执行）
+        if = {
+            limit = {
+                exists = scope:target_country
+            }
+            scope:target_country = {
+                set_variable = th_gensokyo_crusade_target_mark
+            }
         }
         ### 创建审判庭（unique 全局唯一；2026-08-26 照 italian_wars 官方写法：
         ### 无 target/creator 参数——引擎不识别；显式 scope:actor 加入并设领袖）
@@ -129,9 +142,24 @@ th_gensokyo_crusade_declare = {
             set_leader_country = scope:actor
             save_scope_as = tribunal
         }
+        ### 2026-08-26（用户需求）：创建者自身附庸自动加入审判庭
+        ### （add_country_to_international_organization = IO scope 效果，
+        ### readme.txt:165；目标国标记已先打上，排除目标本身）
+        scope:actor = {
+            every_subject = {
+                limit = {
+                    NOT = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                    }
+                }
+                scope:tribunal = {
+                    add_country_to_international_organization = prev
+                }
+            }
+        }
         ### 2026-08-23（用户修正）：不在本行动宣战——
         ### 等待各国加入审判庭后，用 th_gensokyo_crusade_declare_war 行动宣战；
-        ### 宣战后 on_war_declared 钩子激活局势
+        ### 宣战后 on_war_declared 钩子召唤全体成员入战（局势已删除）
     }
 
     ai_will_do = {

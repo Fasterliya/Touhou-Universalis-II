@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡IO 链条系统 — 价值观完整链（亲善 <-> 好战）
 ### 原「恶名变量 th_gensokyo_notorious_reputation_var（0-100，完全隐藏）」已迁移为
 ### 社会价值观 societal_value:th_gensokyo_amity_vs_belligerence（-100亲善 ~ +100好战，可见）
@@ -43,8 +43,7 @@ th_gensokyo_chain_init_effect = {
             name = th_gensokyo_sin_var
             value = 0
         }
-        ### 清除审判标记（防止历史存档残留）
-        remove_variable = th_gensokyo_judged
+        ### 2026-08-26：th_gensokyo_judged 清理已删（旧审判标记，全库零读取）
         ### 清除合法扩张授权（授权由小卖铺按次发放）
         remove_variable = th_gensokyo_expansion_authorized
     }

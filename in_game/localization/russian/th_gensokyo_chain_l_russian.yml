@@ -1,4 +1,4 @@
-﻿l_russian:
+l_russian:
 ### ============================================================
 ### Touhou-Universalis-II Russian Localization
 ### Автоматический перевод (машинный) — глоссарий согласован
@@ -34,16 +34,12 @@
  ### 2026-08-21 (проблема 4): ключи пунктов мирного договора
  th_gensokyo_crusade_triumph_entry:"$th_gensokyo_crusade_triumph$"
  th_gensokyo_crusade_triumph_entry_short:"$th_gensokyo_crusade_triumph$"
- TH_CRUSADE_INITIAL_SUPPORT:"Изначальная поддержка Ямы"
- TH_CRUSADE_AI_FOUND_TARGET:"Существует цель с достаточной враждебностью"
- TH_CRUSADE_AI_ANTAGONISM:"Враждебность к цели крестового похода"
  TH_EXPANSION_AI_TARGET_FOUND:"Существует мудрец, готовый одобрить экспансию"
 
 ### Crusade
  th_gensokyo_crusade_cb:"Карательный поход"
  th_gensokyo_crusade_cb_desc:"Карательный поход, объявленный Ямой и Советом мудрецов против тех, кто угрожает порядку Генсокё."
- th_gensokyo_crusade:"Ситуация с походом"
- th_gensokyo_crusade_desc:"Окружение цели похода силами Генсокё."
+ ### 2026-08-26: ситуация похода удалена (IO-driven) — th_gensokyo_crusade(_desc) удалены
  th_gensokyo_crusade_declare:"Объявить карательный поход"
  th_gensokyo_crusade_declare_desc:"Яма или мудрец выбирает воинственного члена и учреждает Трибунал — временную международную организацию против цели. Члены присоединяются, затем Трибунал объявляет войну цели; ситуация начинается после объявления войны."
  PERFORM_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
@@ -180,6 +176,7 @@
  TH_TRIBUNAL_AI_STRENGTH:"Достаточно силён против цели похода"
  TH_TRIBUNAL_AI_TARGET_FOUND:"Существует воинственная цель, достойная Трибунала"
  TH_TRIBUNAL_CB_STRENGTH:"Достаточно силён, чтобы объявить войну цели"
+ TH_TRIBUNAL_ALREADY_AT_WAR_TT:"Уже не воюет с целью Трибунала"
  th_gensokyo_crusade_declare_war:"Объявить войну цели Трибунала"
  th_gensokyo_crusade_declare_war_desc:"Объявить карательную войну против цели Трибунала с поводом к войне."
  PERFORM_th_gensokyo_crusade_declare_war_ACTION:"Объявил войну цели Трибунала"
@@ -216,20 +213,14 @@
  th_gensokyo_expansion_cost_unauthorized_modifier_desc:"Расширение без одобрения мудрецов обойдётся дорого."
  ### 2026-08-21 (требование 3): th_gensokyo_notorious_pariah_modifier(_desc) удалено
 
-### Situation panel
- TH_CRUSADE_SUPPORTER_STRENGTH:"Сила коалиции Генсокё"
- TH_CRUSADE_TARGET_STRENGTH:"Сила цели крестового похода"
- TH_CRUSADE_SIN_DISPLAY:"Грех цели"
+### 2026-08-26: ключи панели/переменных ситуации удалены вместе с ситуацией
+### (TH_CRUSADE_SUPPORTER_STRENGTH / TH_CRUSADE_TARGET_STRENGTH /
+###  TH_CRUSADE_SIN_DISPLAY / th_crusade_supporter_strength /
+###  th_crusade_target_strength / th_crusade_temp_strength /
+###  th_crusade_target_ref / th_crusade_sin_display)
 
 ### Unity sources
  TH_GENSOKYO_UNITY_FROM_MEMBERS:"Масштаб участников"
 
 ### Sage protection
  th_gensokyo_sages_defend_reason:"Защита Деревни людей"
-
-### Variables
- th_crusade_supporter_strength:"Сила коалиции"
- th_crusade_target_strength:"Сила цели"
- th_crusade_temp_strength:"Сила участника"
- th_crusade_target_ref:"Цель крестового похода"
- th_crusade_sin_display:"Грех цели"

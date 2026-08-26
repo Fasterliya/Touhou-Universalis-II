@@ -1,4 +1,4 @@
-﻿l_korean:
+l_korean:
 
 ### Gensokyo International Organization — Localization
 
@@ -296,12 +296,7 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  th_gensokyo_bankruptcy_modifier_desc: "염마가 부과한 배상금이 국고를 비우고 경제를 혼란에 빠뜨립니다."
  th_gensokyo_sanction_immunity: "제재 면제기"
  th_gensokyo_sanction_immunity_desc: "이 나라는 징벌 전쟁에서 역전승했습니다. 환상향 제국은 20년간 이 나라를 제재할 수 없습니다."
- TH_TRIAL_PHASE_LABEL: "심판 단계"
- TH_TRIAL_VOTE_MONTHS_LABEL: "남은 투표 개월"
- TH_TRIAL_VOTE_TALLY_LABEL: "투표 집계 (여론, 판결에 영향 없음)"
- TH_TRIAL_VOTE_MERCY: "관용 (권선 성향)"
- TH_TRIAL_VOTE_ORDER: "적정 (질서 성향)"
- TH_TRIAL_VOTE_KARMA: "엄벌 (인과 성향)"
+ ### 2026-08-26: 구 심판 GUI 잔여 키 제거됨 (TH_TRIAL_PHASE_LABEL / TH_TRIAL_VOTE_*)
 
 ### === 持地显示（2026-08-21）===
  TH_GENSOKYO_IO_OWNED_LOCATION_TT: "이 지역은 환상향 국제 기구에 속해 있습니다"

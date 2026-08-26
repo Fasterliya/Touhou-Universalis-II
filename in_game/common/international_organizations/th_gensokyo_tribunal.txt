@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 审判庭（th_gensokyo_tribunal）— 临时包围网型国际组织（2026-08-23 重构）
 ### 参考：base game international_organizations/coalition.txt（结构逐字段对照）
 ### 定位：阎魔/贤者宣告后动态创建（create_international_organization，
@@ -13,6 +13,15 @@
 ###   show_strength_comparison_with_target / can_target_trigger /
 ###   potential_target_trigger / target_modifier
 ###   （兵力对比 = 局势 GUI 现有 strength 变量；宣战 = 自定义行动）
+### 2026-08-26 第二次修复（game.log 取证）：
+###   - join_defensive/offensive_wars_always 原用 scope:recipient 判定敌国 →
+###     "Undefined event target 'recipient'" 每帧刷屏且判定恒 false（成员永不
+###     自动入战）。IO readme.txt:94-99：scope:actor = caller、scope:recipient =
+###     被召唤成员、scope:target = against who（敌国）→ 改 scope:target 标记判定
+###     （照 vanilla coalition.txt:38-53 结构，引擎 target 链接换标记法）
+###   - 局势删除（2026-08-26 用户决策）→ 罪值累积迁入 monthly_effect、
+###     初始化（罪值清零/反杀标记重置）迁入 on_creation、战后审判迁入
+###     on_ending_war 钩子（th_gensokyo_chain_events.txt）
 ### ============================================================
 
 th_gensokyo_tribunal = {
@@ -83,15 +92,16 @@ th_gensokyo_tribunal = {
     }
 
     ### 对目标的战争自动加入（包围网联合作战；目标 = 标记国）
-    ### 2026-08-26：coalition 的 scope:target 判定 → scope:recipient（被宣战国）
-    ### 是否有目标标记（readme：root = IO, scope:actor = caller, scope:recipient = callee）
+    ### 2026-08-26 修复：scope:recipient（被召唤成员）→ scope:target（敌国）
+    ### 标记判定（IO readme.txt:94-99 语义 + vanilla coalition.txt:38-53 结构；
+    ### 原 scope:recipient 写法实测 "Undefined event target 'recipient'" 刷屏）
     join_defensive_wars_always = {
-        scope:recipient = {
+        scope:target ?= {
             has_variable = th_gensokyo_crusade_target_mark
         }
     }
     join_offensive_wars_always = {
-        scope:recipient = {
+        scope:target ?= {
             has_variable = th_gensokyo_crusade_target_mark
         }
     }
@@ -114,8 +124,45 @@ th_gensokyo_tribunal = {
     }
 
     on_creation = {
+        ### 2026-08-26（局势删除后迁移，原 situation on_start 职责）：
+        ### 新惩戒开启：目标罪值清零 + 重置上一场反杀标记
+        ### （on_creation root = IO，readme.txt:63；目标经 th_gensokyo_io
+        ### 成员遍历 + 标记定位，与局势 on_start 同款已验证写法）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                set_variable = {
+                    name = th_gensokyo_sin_var
+                    value = 0
+                }
+                remove_variable = th_gensokyo_crusade_countered
+            }
+        }
     }
     on_disband = {
+    }
+
+    ### 月度罪值累积（2026-08-26：局势删除后迁移，原 situation on_monthly 职责；
+    ### readme.txt:67 monthly_effect root = IO）
+    monthly_effect = {
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                change_variable = {
+                    name = th_gensokyo_sin_var
+                    add = th_crusade_sin_monthly_value
+                }
+                clamp_variable = {
+                    name = th_gensokyo_sin_var
+                    min = 0
+                    max = 100
+                }
+            }
+        }
     }
 
     ### AI 加入判定（coalition ai_desire_to_join 同款结构；scope:target

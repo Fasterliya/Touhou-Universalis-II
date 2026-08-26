@@ -1,7 +1,8 @@
-﻿### ============================================================
+### ============================================================
 ### 幻想乡惩戒战争 完全胜利条约（100 分）
 ### 仅 th_gensokyo_crusade_cb 战争可用；100 分时可提出 → 战争以完全胜利告终
-### 战败方被打标（th_gensokyo_crusade_defeated，审判/后续接口读取）
+### 2026-08-26：th_gensokyo_crusade_defeated 标记删除（加载日志实证
+### "is set but is never used"——审判走议会辩论，不再读取该标记）
 ### ============================================================
 
 th_gensokyo_crusade_triumph = {
@@ -25,13 +26,12 @@ th_gensokyo_crusade_triumph = {
     }
 
     effect = {
-        ### 战败方标记
+        ### 战败方价值观归中（缘=0，2026-08-21 拷问 Q3 用户拍板）：
+        ### 远离 +50 惩戒门槛（th_notorious_outcast_threshold_value），
+        ### 避免被连续惩戒/审判（防再制裁唯一机制；2026-08-26 起
+        ### th_gensokyo_judged 标记已删——全库零读取，归中方案为唯一根治；
+        ### 归中不给满额亲善 buff——用户拍板 0 而非 -100）
         scope:loser = {
-            set_variable = th_gensokyo_crusade_defeated
-            ### 2026-08-21（拷问 Q3 用户拍板）：战败方价值观归中（缘=0）
-            ### 远离 +50 惩戒门槛（th_notorious_outcast_threshold_value），避免被连续惩戒/审判
-            ### （th_gensokyo_judged 不在提案过滤中，靠本方案根治；
-            ###  归中不给满额亲善 buff——用户拍板 0 而非 -100）
             set_societal_value = {
                 type = th_gensokyo_amity_vs_belligerence
                 value = 0

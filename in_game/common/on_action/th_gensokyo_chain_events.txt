@@ -1,4 +1,4 @@
-﻿
+
 ### ============================================================
 ### 幻想乡IO 链条系统 — 事件钩子
 ### 非法扩张检测 / 自由市吞并惩罚 / 罪值累积（4B 追加）
@@ -190,12 +190,15 @@ th_gensokyo_sin_refusal_check = {
 }
 
 
-### === 审判庭宣战 → 激活惩戒局势（2026-08-23 重构） ===
-### 用户决定：局势（战争界面）在审判庭对目标国宣战之后弹出——
-### 任何审判庭成员用惩戒 CB 对目标宣战都会激活局势（玩家发起与 AI 后续宣战同路径）
-### 2026-08-26：target 机制弃用 → 目标判定改 th_gensokyo_crusade_target_mark 标记
-### （原 international_organization:th_gensokyo_tribunal = { target ?= scope:recipient }
-###  在 target 恒空时钩子恒 false → 局势永不激活）
+### === 审判庭宣战 → 召唤全体成员入战（2026-08-23 重构 / 2026-08-26 再修） ===
+### 用户决定：局势（战争界面）已删除（2026-08-26）——系统由审判庭 IO 全权驱动：
+###   - 全员自动入战 = IO join_*_wars_always 引擎触发器（scope:target 标记判定，
+###     见 th_gensokyo_tribunal.txt）+ 本钩子 join_war_as_attacker 双保险
+###   - 罪值累积 = IO monthly_effect；战后审判 = on_ending_war 钩子（本文件尾部）
+### 2026-08-26 修复：
+###   - 原 target 机制判定改标记法（target 恒空 → 钩子恒 false，局势永不激活）
+###   - 删除 situation_is_active 防重判定与 casus_belli 判定（标记已唯一标识
+###     惩戒战争，触发器越简单越不易失效）
 th_gensokyo_tribunal_war_activate = {
     trigger = {
         ### 宣战国是审判庭成员
@@ -206,20 +209,10 @@ th_gensokyo_tribunal_war_activate = {
         scope:recipient = {
             has_variable = th_gensokyo_crusade_target_mark
         }
-        ### 惩戒 CB 战争（其它战争不激活）
-        scope:war = {
-            casus_belli ?= casus_belli:th_gensokyo_crusade_cb
-        }
-        ### 局势未激活时再激活（防重复调用刷屏）
-        NOT = {
-            situation:th_gensokyo_crusade = {
-                situation_is_active = yes
-            }
-        }
     }
     effect = {
-        ### 2026-08-26（用户补充）：宣战后召唤审判庭全体成员加入对目标战争
-        ### （join_offensive_wars_always 引擎层双保险；scope:war 实证可用）
+        ### 召唤审判庭全体成员加入对目标战争（join_offensive_wars_always
+        ### 引擎层双保险；scope:war 实证可用）
         international_organization:th_gensokyo_tribunal = {
             every_international_organization_member = {
                 limit = {
@@ -234,14 +227,6 @@ th_gensokyo_tribunal_war_activate = {
                     war = scope:war
                     call_in_subjects = yes
                 }
-            }
-        }
-        international_organization:th_gensokyo_tribunal = {
-            leader_country ?= {
-                enable_situation_effect = {
-                    type = th_gensokyo_crusade
-                }
-                activate_situation = situation:th_gensokyo_crusade
             }
         }
     }
@@ -410,6 +395,123 @@ th_gensokyo_regulated_protection = {
                         call_in_subjects = yes
                     }
                 }
+            }
+        }
+    }
+}
+
+
+### === 惩戒战争结束 → 审判（2026-08-26：局势删除后迁移，原 situation on_ended 职责） ===
+### on_ending_war 文档（_hardcoded.txt:1777-1778）：root = country（双方各触发一次），
+### scope:winner = country, scope:loser = country, scope:war = war
+### 去重：仅攻击方领袖（attacker_leader，审判庭成员）执行一次；
+### 审判议会发起 → 审判议题投票 → 判决/清理（th_gensokyo_trial_issue 回调）
+on_ending_war = {
+    on_actions = {
+        th_gensokyo_tribunal_war_end_check
+    }
+}
+
+th_gensokyo_tribunal_war_end_check = {
+    trigger = {
+        ### 惩戒战争结束（其它战争不触发）
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+        }
+        ### 去重：仅攻击方领袖执行（attacker_leader 用法照 crusade.txt:207）
+        scope:war = {
+            attacker_leader = root
+        }
+    }
+    effect = {
+        ### 目标国仍存在才进入审判流程（覆灭/被吞并 → 直接清理解散；
+        ### 替代原 situation on_monthly 的"目标不存在 → 结束"守卫）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+            ### 非反杀结局 → 惩戒战争平息奖励团结（C2）→ 启动审判（议会辩论）
+            if = {
+                limit = {
+                    NOT = {
+                        any_country = {
+                            has_variable = th_gensokyo_crusade_countered
+                        }
+                    }
+                }
+                international_organization:th_gensokyo_io = {
+                    th_gensokyo_unity_add_effect = {
+                        value = th_unity_crusade_settled_value
+                    }
+                    ### 审判 = 审判庭议会辩论（th_gensokyo_trial_issue：
+                    ### 是否从重惩罚），参战成员在审判庭内投票；
+                    ### 团结奖励仍由幻想乡 IO 发放
+                    international_organization:th_gensokyo_tribunal = {
+                        if = {
+                            limit = {
+                                exists = leader_country
+                            }
+                            leader_country = {
+                                set_parliament_location = this.capital
+                                set_parliament_active = yes
+                                set_parliament_issue = parliament_issue:th_gensokyo_trial_issue
+                                call_io_parliament = {
+                                    international_organization = international_organization:th_gensokyo_tribunal
+                                }
+                            }
+                        }
+                        else = {
+                            ### 无领袖（全体已自动退出）→ 审判无法发起：
+                            ### 直接清理解散，防 unique 审判庭残留阻塞下次宣告
+                            ### （标记清除后 auto_disband 兜底销毁）
+                            every_international_organization_member = {
+                                remove_variable = th_gensokyo_crusade_target_mark
+                            }
+                        }
+                    }
+                }
+            }
+            else = {
+                ### 反杀结局：无审判，清理目标标记（countered 标记保留供
+                ### 反攻扩张行动使用）；审判庭解散（免制裁期由反杀条约打标）
+                international_organization:th_gensokyo_io = {
+                    every_international_organization_member = {
+                        remove_variable = th_gensokyo_crusade_target_mark
+                    }
+                }
+                ### destroy 需 country scope（"Inconsistent effect scopes"
+                ### 实证）——经 leader_country 调用，target 参数 = IO 链接
+                international_organization:th_gensokyo_tribunal = {
+                    leader_country ?= {
+                        destroy_international_organization = {
+                            target = international_organization:th_gensokyo_tribunal
+                        }
+                    }
+                }
+            }
+        }
+        else = {
+            ### 目标已覆灭：无审判，清理标记 + 解散（auto_disband 为兜底）
+            international_organization:th_gensokyo_io = {
+                every_international_organization_member = {
+                    remove_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+            international_organization:th_gensokyo_tribunal = {
+                leader_country ?= {
+                    destroy_international_organization = {
+                        target = international_organization:th_gensokyo_tribunal
+                    }
+                }
+            }
+        }
+        ### 清理参战标记（势力计算/审判站队用；审判完成后由
+        ### th_gensokyo_trial_cleanup_effect 清理 target_mark）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_participant
             }
         }
     }

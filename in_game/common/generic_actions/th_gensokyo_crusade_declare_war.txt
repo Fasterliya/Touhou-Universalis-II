@@ -1,11 +1,18 @@
-﻿### ============================================================
+### ============================================================
 ### 审判庭 — 宣战行动（2026-08-26 新增）
 ### 链路：审判庭成员（阎魔/贤者/加入者）→ 选审判庭 →
 ###       对目标（th_gensokyo_crusade_target_mark 标记国）宣战
 ### 替代原 IO 面板 declare_war_on_target_casus_belli 按钮
 ### （引擎 target 机制脚本不可控，2026-08-26 实证）
 ### AI 判定：实力对比（relative_strength ≥ 0.5 才宣战）
-### 宣战后 on_war_declared 钩子激活局势（战争界面）
+### 宣战后 on_war_declared 钩子召唤全体成员入战（战争界面已随局势删除，
+### 2026-08-26 用户决策：系统由审判庭 IO 全权驱动）
+### 2026-08-26 修复（error.log 取证）：
+###   - allow 内 any_country + is_at_war_with 触发 tooltip 描述帧报错
+###     （jomini_trigger_description.cpp:205 刷屏）→ 照 vanilla
+###     coup_attempt_actions.txt:8-21 先例，用 custom_tooltip 包住防重复判定
+###   - effect 顶层 scope:crusade_target 无条件引用 → 引擎 tooltip 预演时
+###     未设置会报错 → 照 lordship_of_ireland.txt:193-216 先例加 exists 守卫
 ### ============================================================
 
 th_gensokyo_crusade_declare_war = {
@@ -30,11 +37,17 @@ th_gensokyo_crusade_declare_war = {
             has_variable = th_gensokyo_crusade_target_mark
         }
         ### 尚未与目标交战（防重复宣战）
-        NOT = {
-            any_country = {
-                has_variable = th_gensokyo_crusade_target_mark
-                scope:actor = {
-                    is_at_war_with = prev
+        ### 2026-08-26 修复：any 触发器内的 scope 依赖值会让引擎无法生成
+        ### tooltip 描述（jomini_trigger_description.cpp:205 每帧报错）→
+        ### 照 vanilla 先例用 custom_tooltip 显式提供描述文本
+        custom_tooltip = {
+            text = TH_TRIBUNAL_ALREADY_AT_WAR_TT
+            NOT = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        is_at_war_with = prev
+                    }
                 }
             }
         }
@@ -61,11 +74,18 @@ th_gensokyo_crusade_declare_war = {
             }
             save_scope_as = crusade_target
         }
-        ### 宣战（惩戒 CB；局势由 on_war_declared 钩子激活）
-        scope:actor = {
-            declare_war_with_cb = {
-                target = scope:crusade_target
-                type = casus_belli:th_gensokyo_crusade_cb
+        ### 宣战（惩戒 CB；入战由 IO join 触发器 + on_war_declared 钩子驱动）
+        ### 2026-08-26 修复：exists 守卫防 tooltip 预演/标记缺失时报错
+        ### （vanilla lordship_of_ireland.txt:193-216 先例）
+        if = {
+            limit = {
+                exists = scope:crusade_target
+            }
+            scope:actor = {
+                declare_war_with_cb = {
+                    target = scope:crusade_target
+                    type = casus_belli:th_gensokyo_crusade_cb
+                }
             }
         }
     }

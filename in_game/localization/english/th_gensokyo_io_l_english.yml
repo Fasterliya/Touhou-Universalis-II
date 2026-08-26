@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
 
 ### Gensokyo International Organization — Localization
 
@@ -239,12 +239,7 @@
  th_gensokyo_bankruptcy_modifier_desc: "The reparations imposed by the Yama emptied the treasury, casting the economy into turmoil."
  th_gensokyo_sanction_immunity: "Sanction Immunity"
  th_gensokyo_sanction_immunity_desc: "This country triumphed against the punitive war; Gensokyo's nations may not sanction it for 20 years."
- TH_TRIAL_PHASE_LABEL: "Trial Phase"
- TH_TRIAL_VOTE_MONTHS_LABEL: "Months of Voting Left"
- TH_TRIAL_VOTE_TALLY_LABEL: "Vote Tally (opinion only, does not affect the verdict)"
- TH_TRIAL_VOTE_MERCY: "Lenient (Mercy lean)"
- TH_TRIAL_VOTE_ORDER: "Moderate (Order lean)"
- TH_TRIAL_VOTE_KARMA: "Severe (Karma lean)"
+ ### 2026-08-26: legacy trial-GUI loc keys removed (TH_TRIAL_PHASE_LABEL / TH_TRIAL_VOTE_*)
 
 ### === 持地显示（2026-08-21）===
  TH_GENSOKYO_IO_OWNED_LOCATION_TT: "This location belongs to the Gensokyo International Organization"

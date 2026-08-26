@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
 ### ============================================================
 ### Gensokyo IO Chain System Localization (English)
 ### ============================================================
@@ -27,16 +27,12 @@
  ### 2026-08-21 (issue 4): peace deal entry keys (offer_peace _entry/_entry_short pattern)
  th_gensokyo_crusade_triumph_entry: "$th_gensokyo_crusade_triumph$"
  th_gensokyo_crusade_triumph_entry_short: "$th_gensokyo_crusade_triumph$"
- TH_CRUSADE_INITIAL_SUPPORT: "Yama's initial support"
- TH_CRUSADE_AI_FOUND_TARGET: "A target with sufficient antagonism exists"
- TH_CRUSADE_AI_ANTAGONISM: "Antagonism towards the crusade target"
  TH_EXPANSION_AI_TARGET_FOUND: "A sage willing to grant expansion exists"
 
 ### Crusade
  th_gensokyo_crusade_cb: "Punitive Crusade"
  th_gensokyo_crusade_cb_desc: "A crusade declared by the Yama and the Sage Council against those who threaten Gensokyo's order."
- th_gensokyo_crusade: "Crusade Situation"
- th_gensokyo_crusade_desc: "Gensokyo's encirclement against the crusade target."
+ ### 2026-08-26: crusade situation removed (IO-driven redesign) — th_gensokyo_crusade(_desc) deleted
  th_gensokyo_crusade_declare: "Declare Punitive Crusade"
  th_gensokyo_crusade_declare_desc: "The Yama or a sage selects a belligerent member and establishes the Tribunal — a temporary international organization against the target. Members join, then the Tribunal declares war on the target; the war situation begins once war is declared."
  PERFORM_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
@@ -160,6 +156,7 @@
  TH_TRIBUNAL_AI_STRENGTH: "Strong enough against the crusade target"
  TH_TRIBUNAL_AI_TARGET_FOUND: "A belligerent target worthy of the Tribunal exists"
  TH_TRIBUNAL_CB_STRENGTH: "Strong enough to declare war on the target"
+ TH_TRIBUNAL_ALREADY_AT_WAR_TT: "Not already at war with the Tribunal's target"
  th_gensokyo_crusade_declare_war: "Declare War on the Tribunal Target"
  th_gensokyo_crusade_declare_war_desc: "Declare a punitive war against the Tribunal's target with the punishment casus belli."
  PERFORM_th_gensokyo_crusade_declare_war_ACTION: "Declared war on the Tribunal target"
@@ -197,23 +194,16 @@
  ### 2026-08-21 (requirement 3): th_gensokyo_notorious_pariah_modifier(_desc) removed
  ### (stage-based modifier system, removed together with the pariah marker)
 
-### Situation panel
- TH_CRUSADE_SUPPORTER_STRENGTH: "Gensokyo Coalition Strength"
- TH_CRUSADE_TARGET_STRENGTH: "Crusade Target Strength"
- TH_CRUSADE_SIN_DISPLAY: "Target's Sin"
+### 2026-08-26: situation panel + situation variable loc keys removed with the
+### deleted crusade situation (TH_CRUSADE_SUPPORTER_STRENGTH / TH_CRUSADE_TARGET_STRENGTH /
+### TH_CRUSADE_SIN_DISPLAY / th_crusade_supporter_strength / th_crusade_target_strength /
+### th_crusade_temp_strength / th_crusade_target_ref / th_crusade_sin_display)
 
 ### Unity sources
  TH_GENSOKYO_UNITY_FROM_MEMBERS: "Member Scale"
 
 ### Sage protection
  th_gensokyo_sages_defend_reason: "Defending the Human Village"
-
-### Variables
- th_crusade_supporter_strength: "Coalition Strength"
- th_crusade_target_strength: "Target Strength"
- th_crusade_temp_strength: "Member Strength"
- th_crusade_target_ref: "Crusade Target"
- th_crusade_sin_display: "Target's Sin"
 
 ### ============================================================
 ### WP-D 2026-08-15: Expansion request adjudication events (搂3.1)
