@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
 ### 文化组
  th_gensokyo_culture_group: "Gensokyo Culture Group"
  th_gensokyo_youkai_culture_group: "Youkai Culture Group"
@@ -153,8 +153,6 @@ th_makai_dialect: "Makai Language"
 th_gensokyo_religion_group: "Gensokyo Religion Group"
 th_gensokyo_old_hakurei_shinto: "Hakurei Folk Belief"
 th_gensokyo_old_hakurei_shinto_ADJ: "Hakurei Folk Belief"
-th_old_hakurei_shinki_aspect: "Shinki"
-th_old_hakurei_mima_aspect: "Mima"
 th_gensokyo_buddhism: "Eastern Buddhism"
 th_gensokyo_buddhism_ADJ: "Eastern Buddhism"
 th_gensokyo_taoism: "Eastern Taoism"

@@ -1,0 +1,191 @@
+﻿### ============================================================
+### 博丽风俗 信条切换行动（宗教窗口 Actions 区）
+### 基于原版 change_religious_aspect 模板（general_religion.txt）：
+### 选旧信条 → 选新信条 → 原子 remove+add；价格走自定义影响力价格；自带冷却。
+### 选择器过滤说明（引擎无「信条分类」触发器，只能借信条自身 visible/enabled 块）：
+###   - 更换侧神像：用 can_see_religious_aspect（= 信条 visible 块）过滤 → 持神明时
+###     神明不可见、分神可见 → 列表干净（仅 6 分神）。
+###   - 更换神明神像：持神明时其他神像被自身 visible 隐藏，故改用「未持有」过滤 →
+###     列表会同时列出其余神像与分神；误选分神会进入「仅分神」态，但分神可见条件
+###     要求持有神明，「+」重新补选神像即可自愈，不破坏任何槽位约束。
+### ============================================================
+
+### ---------------- 更换神明神像（第 1 槽，25 年冷却） ----------------
+th_hakurei_change_statue = {
+	icon = add_religious_aspect
+	type = owncountry
+
+	sound = UI_action_religion_aspect_change
+
+	ai_tick = never
+	automation_tick = never
+	player_automated_category = religiousdoctrines
+
+	potential = {
+		scope:actor = {
+			religion = religion:th_gensokyo_old_hakurei_shinto
+		}
+	}
+
+	allow = {
+		scope:actor = {
+			th_hakurei_has_deity_aspect_trigger = yes
+		}
+	}
+
+	price = price:th_hakurei_change_statue_price
+
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = religious_aspect
+		source = actor
+		target_flag = existing_aspect
+		name = "th_hakurei_change_statue_select_existing"
+		none_available_msg_key = "th_hakurei_change_aspect_no_existing"
+		column = {
+			data = name
+		}
+		column = {
+			data = effect
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = religious_aspect
+		source_object = scope:actor.religion
+		target_flag = new_aspect
+		name = "th_hakurei_change_statue_select_new"
+		none_available_msg_key = "th_hakurei_change_aspect_no_new"
+		column = {
+			data = name
+		}
+		column = {
+			data = effect
+		}
+		visible = {
+			NOT = { scope:actor = { has_religious_aspect = prev } }
+		}
+		enabled = {
+			NOT = { scope:actor = { has_religious_aspect = prev } }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				exists = scope:existing_aspect
+				exists = scope:new_aspect
+			}
+			scope:actor = {
+				remove_religious_aspect = scope:existing_aspect
+				add_religious_aspect = scope:new_aspect
+			}
+		}
+	}
+
+	cooldown = {
+		type = th_hakurei_change_statue
+		months = 300
+	}
+}
+
+### ---------------- 更换侧神像分神（第 2 槽，快速更改） ----------------
+th_hakurei_change_minor_aspect = {
+	icon = add_religious_aspect
+	type = owncountry
+
+	sound = UI_action_religion_aspect_change
+
+	ai_tick = never
+	automation_tick = never
+	player_automated_category = religiousdoctrines
+
+	potential = {
+		scope:actor = {
+			religion = religion:th_gensokyo_old_hakurei_shinto
+		}
+	}
+
+	### 需已持有分神且已持有神明（防止「仅分神」边角态下使用；该态需先经「+」补选神像）
+	allow = {
+		scope:actor = {
+			th_hakurei_has_minor_aspect_trigger = yes
+			th_hakurei_has_deity_aspect_trigger = yes
+		}
+	}
+
+	price = price:th_hakurei_change_minor_aspect_price
+
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = religious_aspect
+		source = actor
+		target_flag = existing_aspect
+		name = "th_hakurei_change_minor_aspect_select_existing"
+		none_available_msg_key = "th_hakurei_change_aspect_no_existing"
+		column = {
+			data = name
+		}
+		column = {
+			data = effect
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = religious_aspect
+		source_object = scope:actor.religion
+		target_flag = new_aspect
+		name = "th_hakurei_change_minor_aspect_select_new"
+		none_available_msg_key = "th_hakurei_change_aspect_no_new"
+		column = {
+			data = name
+		}
+		column = {
+			data = effect
+		}
+		visible = {
+			scope:actor = { can_see_religious_aspect = prev }
+			NOT = { scope:actor = { has_religious_aspect = prev } }
+		}
+		enabled = {
+			scope:actor = { can_see_religious_aspect = prev }
+			NOT = { scope:actor = { has_religious_aspect = prev } }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				exists = scope:existing_aspect
+				exists = scope:new_aspect
+			}
+			scope:actor = {
+				remove_religious_aspect = scope:existing_aspect
+				add_religious_aspect = scope:new_aspect
+			}
+		}
+	}
+
+	cooldown = {
+		type = th_hakurei_change_minor_aspect
+		months = 12
+	}
+}

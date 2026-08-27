@@ -1,10 +1,11 @@
-﻿th_gensokyo_old_hakurei_shinto = { 
+th_gensokyo_old_hakurei_shinto = { 
 	color = rgb { 211 121 232 }
 	group = th_gensokyo_religion_group
 	
 	enable = 1.1.1 
 	
-	religious_aspects = 1
+	# 2 槽：第 1 槽 = 神明（主）信条（10 尊神像，互斥），第 2 槽 = 次要信条（摩多罗侧神像 6 位分神，互斥）
+	religious_aspects = 2
 	has_religious_influence = yes
 
 	ai_wants_convert = yes

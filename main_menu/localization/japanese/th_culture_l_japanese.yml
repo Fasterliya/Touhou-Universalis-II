@@ -1,4 +1,4 @@
-﻿l_japanese:
+l_japanese:
 ### 文化组
  th_gensokyo_culture_group: "幻想郷文化組"
  th_gensokyo_youkai_culture_group: "妖怪文化組"
@@ -153,8 +153,6 @@ th_makai_dialect: "魔界語"
 th_gensokyo_religion_group; "幻想郷宗教組"
 th_gensokyo_old_hakurei_shinto: "博麗風俗"
 th_gensokyo_old_hakurei_shinto_ADJ: "博麗風俗"
-th_old_hakurei_shinki_aspect: "神綺"
-th_old_hakurei_mima_aspect: "魅魔"
 th_gensokyo_buddhism: "東乗仏教"
 th_gensokyo_buddhism_ADJ: "東乗仏教"
 th_gensokyo_taoism: "東派道教"

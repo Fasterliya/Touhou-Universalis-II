@@ -1,4 +1,4 @@
-﻿l_korean:
+l_korean:
  th_gensokyo_culture_group: "환상향"
  th_gensokyo_youkai_culture_group: "요괴"
  th_gensokyo_hito_culture_group: "인간"
@@ -144,8 +144,6 @@
  th_makai_dialect: "마계어"
  th_gensokyo_old_hakurei_shinto: "전통 하쿠레이"
  th_gensokyo_old_hakurei_shinto_ADJ: "전통 하쿠레이"
- th_old_hakurei_shinki_aspect: "신키"
- th_old_hakurei_mima_aspect: "미마"
  th_gensokyo_buddhism: "동방 불교"
  th_gensokyo_buddhism_ADJ: "동방 불교"
  th_gensokyo_taoism: "동방 도교"

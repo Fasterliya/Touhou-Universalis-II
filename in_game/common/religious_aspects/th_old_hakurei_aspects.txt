@@ -1,32 +1,283 @@
-﻿th_old_hakurei_shinki_aspect = {
+﻿### ============================================================
+### 博丽风俗（th_gensokyo_old_hakurei_shinto）信条 —— 2 槽体系
+### 设计文档：F:\SITU\东方风云设计理念\幻想乡神道「博丽风俗」神像.txt
+### 第 1 槽（神明/主）：10 尊神像，互斥（最多 1 尊）
+### 第 2 槽（次要/侧神像）：摩多罗侧神像 6 位分神，互斥；仅当已选任一神明时可见
+### 可视条件说明：
+###   - 「未持有所有神明信条」按字面恒真（最多持 1 尊），故实现为「未持有任一神明信条」
+###   - 次要信条可见条件 = 「任一神明信条已持有」（用户原话「枚举，任一已经选择，即可选择次要信条」）
+### 修正严格按文档：每尊神像恰 2 项、不接价值观倾向、数值为 0.xxxx 或原版原始量纲
+### ============================================================
+
+### ---------------- 第 1 槽：神明（主）信条 ----------------
+
+th_old_hakurei_hakurei_god_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
+	# 互斥：未持有任一神明信条时可见/可选（枚举见 th_hakurei_aspect_triggers.txt）
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
 	enabled = {
-		is_ai = no
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
+	# 博丽神：要塞防守与要塞维护费减少
 	modifier = {
-		pop_leave_rebels_threshold = -0.05
-		monthly_towards_communalism = societal_value_monthly_move
+		global_defensive = 0.05
+		fort_maintenance_efficiency = 0.25
+	}
+}
+
+th_old_hakurei_shinki_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
-	opinions = {
-		adamite_services = 10
+	# 神绮：发展度增长与建造花费减少
+	modifier = {
+		global_monthly_development = 0.0025
+		global_build_buildings_efficiency = 0.15
+	}
+}
+
+th_old_hakurei_yuka_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 幽香：镇压叛军
+	modifier = {
+		monthly_rebel_growth = -0.05
+		pop_join_rebel_threshold = -0.10
+	}
+}
+
+th_old_hakurei_sariel_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 萨丽艾尔：训练度与征召兵
+	modifier = {
+		discipline = 0.05
+		global_levy_size_modifier = 0.15
 	}
 }
 
 th_old_hakurei_mima_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
-	modifier = {
-		clergy_estate_target_satisfaction = medium_permanent_target_satisfaction
-		stability_cost_efficiency = 0.2
-		monthly_towards_spiritualist = societal_value_monthly_move
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
-	opinions = {
-		punishment_of_sin = 10
+	# 魅魔：敌意获取减少与外交方面
+	modifier = {
+		antagonism_received_modifier = -0.10
+		diplomatic_capacity = 1.0
+	}
+}
 
-		organized_through_bishops = -5
-		crown_as_head_of_faith = -5
+th_old_hakurei_kutaka_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 庭渡久侘歌：减少厌战度与阶层
+	modifier = {
+		monthly_war_exhaustion = -0.10
+		global_estate_target_satisfaction = 0.05
+	}
+}
+
+th_old_hakurei_hecatia_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 赫卡提亚：税收
+	modifier = {
+		tax_income_efficiency = 0.10
+		global_estate_max_tax = 0.10
+	}
+}
+
+th_old_hakurei_matara_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 摩多罗：贸易方面（第一神像相对较弱）
+	modifier = {
+		trade_income = 0.10
+		trade_range = 100
+	}
+}
+
+th_old_hakurei_kasen_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 华扇：文化容量与控制维稳
+	modifier = {
+		cultures_capacity_modifier = 0.25
+		stability_cost_efficiency = 0.15
+	}
+}
+
+th_old_hakurei_yukari_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+
+	# 紫：外交方面（极强 buff）
+	modifier = {
+		diplomatic_reputation = 2
+		monthly_diplomats = 0.33
+	}
+}
+
+### ---------------- 第 2 槽：次要信条（摩多罗侧神像 6 位分神） ----------------
+### 可见条件：已持有任一神明信条（枚举见 th_hakurei_aspect_triggers.txt）
+### 互斥：未持有任一其他次要信条（enabled 双保险；槽位上限亦由 religious_aspects = 2 兜底）
+
+th_old_hakurei_earth_mother_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_has_deity_aspect_trigger = yes
+	}
+	enabled = {
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 地母神：加工生产产出
+	modifier = {
+		global_raw_material_output = 0.05
+	}
+}
+
+th_old_hakurei_silkworm_god_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_has_deity_aspect_trigger = yes
+	}
+	enabled = {
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 养蚕之神：丝绸产出
+	modifier = {
+		global_silk_output_modifier = 0.10
+	}
+}
+
+th_old_hakurei_star_god_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_has_deity_aspect_trigger = yes
+	}
+	enabled = {
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 星宿之神：每月繁荣度
+	modifier = {
+		global_monthly_prosperity = 0.005
+	}
+}
+
+th_old_hakurei_noh_god_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_has_deity_aspect_trigger = yes
+	}
+	enabled = {
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 能乐之神：文化传统
+	modifier = {
+		cultural_tradition = 0.1
+	}
+}
+
+th_old_hakurei_obstacle_god_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_has_deity_aspect_trigger = yes
+	}
+	enabled = {
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 障碍之神：要塞上限
+	modifier = {
+		fort_limit_modifier = 1
+	}
+}
+
+th_old_hakurei_discriminated_god_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_has_deity_aspect_trigger = yes
+	}
+	enabled = {
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 被差别民之神：人口皈依速度
+	modifier = {
+		global_pop_assimilation_speed_modifier = 0.1
 	}
 }
