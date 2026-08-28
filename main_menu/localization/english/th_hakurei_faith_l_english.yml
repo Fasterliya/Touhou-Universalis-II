@@ -1,6 +1,6 @@
 ﻿l_english:
-### Hakurei Folk Belief (old_hakurei) aspects & switch actions — design doc: 幻想乡神道「博丽风俗」神像.txt
-### Deity (slot 1) aspects
+### Hakurei Folk Belief (old_hakurei) aspects & switch actions — design doc: 幻想乡神道「博丽风俗」神像.txt (with extensions)
+### Deity (slot 1) aspects: 10 regular
  th_old_hakurei_hakurei_god_aspect: "The Hakurei God"
  th_old_hakurei_hakurei_god_aspect_desc: "The Hakurei Shrine enshrines 'the God of Hakurei,' yet even the shrine maidens who pass down the tradition generation after generation do not know its true identity."
  th_old_hakurei_shinki_aspect: "Shinki"
@@ -21,24 +21,36 @@
  th_old_hakurei_kasen_aspect_desc: "Though not a god and of oni descent, as a righteous sage she stands with humanity to protect Gensokyo, upholding peace and order with goodwill, and is deeply respected."
  th_old_hakurei_yukari_aspect: "Yukari"
  th_old_hakurei_yukari_aspect_desc: "Though not truly a god, as the founder of the Great Hakurei Barrier and a sage guardian of Gensokyo, she is equally revered."
-### Minor (slot 2) aspects: Matara's side statue, six sub-gods
- th_old_hakurei_earth_mother_aspect: "Earth Mother"
- th_old_hakurei_earth_mother_aspect_desc: "One of Matara's secondary statues. The great mother of the earth, blessing cultivation and harvest, increasing raw material output."
- th_old_hakurei_silkworm_god_aspect: "God of Sericulture"
- th_old_hakurei_silkworm_god_aspect_desc: "One of Matara's secondary statues. Protector of silkworms and weaving, increasing silk output."
- th_old_hakurei_star_god_aspect: "God of the Stars"
- th_old_hakurei_star_god_aspect_desc: "One of Matara's secondary statues. Ruling stars and fate, increasing monthly prosperity."
- th_old_hakurei_noh_god_aspect: "God of Noh"
- th_old_hakurei_noh_god_aspect_desc: "One of Matara's secondary statues. Guardian of arts and noh, increasing cultural tradition."
- th_old_hakurei_obstacle_god_aspect: "God of Obstacles"
- th_old_hakurei_obstacle_god_aspect_desc: "One of Matara's secondary statues. Ruling obstacles and trials, increasing the fort limit."
- th_old_hakurei_discriminated_god_aspect: "God of the Discriminated"
- th_old_hakurei_discriminated_god_aspect_desc: "One of Matara's secondary statues. Protector of the discriminated, increasing pop assimilation speed."
+### Deity (slot 1) aspects: 5 exclusive (only visible to their country)
+ th_old_hakurei_kanako_aspect: "Kanako"
+ th_old_hakurei_kanako_aspect_desc: "The enshrined deity of the Moriya Shrine, incarnation of mountains and lakes. As the wind goddess who commands faith, she brings prosperity and vigorous belief to Moriya."
+ th_old_hakurei_kaguya_aspect: "Kaguya"
+ th_old_hakurei_kaguya_aspect_desc: "Mistress of Eientei, princess of the Lunar Capital. With the wisdom and mystery of the moon people, she navigates Gensokyo's diplomatic stage with ease."
+ th_old_hakurei_aki_sisters_aspect: "Aki Sisters"
+ th_old_hakurei_aki_sisters_aspect_desc: "Enshrined deities of the Houjou Shrine. Sister gods of the autumn harvest, bringing abundance and development to the land."
+ th_old_hakurei_hina_aspect: "Hina"
+ th_old_hakurei_hina_aspect_desc: "The misfortune goddess of the Youkai Forest. A guardian who gathers misfortune and preserves peace, granting stability and prestige to her faithful."
+ th_old_hakurei_keiki_aspect: "Keiki"
+ th_old_hakurei_keiki_aspect_desc: "The clay-molding god of the Idol Realm. Creating idols with the power of creation, blessing population growth and prestige."
+### Minor (slot 2) aspects: powers of the four seasons (only visible when worshipping Matara)
+ th_old_hakurei_spring_power_aspect: "Power of Spring"
+ th_old_hakurei_spring_power_aspect_desc: "Power of Matara's side statue. Spring returns, all things revive, population grows."
+ th_old_hakurei_summer_power_aspect: "Power of Summer"
+ th_old_hakurei_summer_power_aspect_desc: "Power of Matara's side statue. High summer abundance, raw material output increased."
+ th_old_hakurei_autumn_power_aspect: "Power of Autumn"
+ th_old_hakurei_autumn_power_aspect_desc: "Power of Matara's side statue. Golden autumn harvest, tax efficiency increased."
+ th_old_hakurei_winter_power_aspect: "Power of Winter"
+ th_old_hakurei_winter_power_aspect_desc: "Power of Matara's side statue. Bitter winter, strong defense, fort defense increased."
+### Minor (slot 2) aspects: Abundant Fruit / Withering (exclusive after choosing the Aki Sisters)
+ th_old_hakurei_bounty_aspect: "Abundant Fruit"
+ th_old_hakurei_bounty_aspect_desc: "An exclusive side-statue power selectable after choosing the Aki Sisters. Autumn bears abundant fruit, food output increased."
+ th_old_hakurei_wither_aspect: "Withering"
+ th_old_hakurei_wither_aspect_desc: "An exclusive side-statue power selectable after choosing the Aki Sisters. The bleak autumn wind withers enemies in your lands, hostile attrition increased."
 ### Switch actions
  th_hakurei_change_statue: "Change Deity Statue"
  th_hakurei_change_statue_desc: "Spend religious influence to change the enshrined deity statue. Switching statues has a cooldown of 25 years."
  th_hakurei_change_minor_aspect: "Change Side Statue Aspect"
- th_hakurei_change_minor_aspect_desc: "Spend a little religious influence to quickly change the aspect of Matara's side statue (Earth Mother, God of Sericulture, God of the Stars, God of Noh, God of Obstacles, God of the Discriminated)."
+ th_hakurei_change_minor_aspect_desc: "Spend a little religious influence to quickly change the side-statue power (seasonal powers when worshipping Matara; Abundant Fruit or Withering after choosing the Aki Sisters)."
  th_hakurei_change_statue_select_existing: "Select the statue to replace"
  th_hakurei_change_statue_select_new: "Select the new statue"
  th_hakurei_change_minor_aspect_select_existing: "Select the aspect to replace"

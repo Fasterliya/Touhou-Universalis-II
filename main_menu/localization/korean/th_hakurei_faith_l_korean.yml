@@ -1,6 +1,6 @@
 ﻿l_korean:
-### 전통 하쿠레이(old_hakurei) 신조 및 교체 행동 —— 설계 문서: 환상향 신도「보쿠레이 풍속」신상.txt
-### 신명(1번째 칸) 신조
+### 전통 하쿠레이(old_hakurei) 신조 및 교체 행동 —— 설계 문서: 환상향 신도「보쿠레이 풍속」신상.txt (후속 확장 포함)
+### 신명(1번째 칸) 신조: 10 일반
  th_old_hakurei_hakurei_god_aspect: "하쿠레이신"
  th_old_hakurei_hakurei_god_aspect_desc: "하쿠레이 신사가 모시는 '하쿠레이의 신'. 대대손손 이어져 온 하쿠레이 무녀조차 그 정체를 알지 못한다."
  th_old_hakurei_shinki_aspect: "신키"
@@ -21,24 +21,36 @@
  th_old_hakurei_kasen_aspect_desc: "신도 아니고 도깨비 출신이지만, 정도를 지키는 현자로서 늘 인간의 편에 서서 환상향을 지키며 선의로 안녕과 질서를 유지해 깊은 존경을 받는다."
  th_old_hakurei_yukari_aspect: "유카리"
  th_old_hakurei_yukari_aspect_desc: "실제로는 신이 아니지만, 하쿠레이 대결계의 창시자이자 환상향을 지키는 현자로서 똑같이 숭앙받는다."
-### 부차(2번째 칸) 신조: 마타라 측신상의 여섯 분신
- th_old_hakurei_earth_mother_aspect: "지모신"
- th_old_hakurei_earth_mother_aspect_desc: "마타라 측신상 중 하나. 대지의 어머니로 경작과 수확을 축복하며 가공 생산 산출을 높인다."
- th_old_hakurei_silkworm_god_aspect: "양잠의 신"
- th_old_hakurei_silkworm_god_aspect_desc: "마타라 측신상 중 하나. 양잠과 직조를 수호하며 비단 산출을 높인다."
- th_old_hakurei_star_god_aspect: "성수의 신"
- th_old_hakurei_star_god_aspect_desc: "마타라 측신상 중 하나. 별과 운명을 관장하며 월간 번영도를 높인다."
- th_old_hakurei_noh_god_aspect: "노가쿠의 신"
- th_old_hakurei_noh_god_aspect_desc: "마타라 측신상 중 하나. 예능과 노가쿠의 수호자로 문화 전통을 높인다."
- th_old_hakurei_obstacle_god_aspect: "장애의 신"
- th_old_hakurei_obstacle_god_aspect_desc: "마타라 측신상 중 하나. 장애와 시련을 관장하며 요새 상한을 높인다."
- th_old_hakurei_discriminated_god_aspect: "차별받는 백성의 신"
- th_old_hakurei_discriminated_god_aspect_desc: "마타라 측신상 중 하나. 차별받는 백성의 수호신으로 인구 개종 속도를 높인다."
+### 신명(1번째 칸) 신조: 5 전용 (해당 국가만 선택 가능)
+ th_old_hakurei_kanako_aspect: "카나코"
+ th_old_hakurei_kanako_aspect_desc: "모리야 신사의 제신, 산과 호수의 권화. 신앙을 관장하는 풍신으로서 모리야에 번영과 왕성한 신앙을 가져온다."
+ th_old_hakurei_kaguya_aspect: "카구야"
+ th_old_hakurei_kaguya_aspect_desc: "에이엔테이의 주인, 달의 도성의 공주. 달의 백성의 지혜와 신비로 환상향의 외교 무대를 능숙하게 누빈다."
+ th_old_hakurei_aki_sisters_aspect: "아키 자매"
+ th_old_hakurei_aki_sisters_aspect_desc: "풍요의 사당의 제신. 가을의 풍요를 관장하는 자매 신으로 대지에 풍요와 발전을 가져온다."
+ th_old_hakurei_hina_aspect: "히나"
+ th_old_hakurei_hina_aspect_desc: "요괴의 숲의 재앙신. 재앙을 거두고 평안을 지키는 요괴의 숲의 수호자로, 신앙하는 국가에 안정과 명성을 준다."
+ th_old_hakurei_keiki_aspect: "케이키"
+ th_old_hakurei_keiki_aspect_desc: "우상의 경지의 점토신. 창조의 힘으로 우상을 만들어 인구의 번성과 명성을 축복한다."
+### 부차(2번째 칸) 신조: 사계절의 힘 (마타라를 신앙할 때만 보임)
+ th_old_hakurei_spring_power_aspect: "봄의 힘"
+ th_old_hakurei_spring_power_aspect_desc: "마타라 측신상의 힘. 봄이 돌아와 만물이 소생하고 인구가 늘어난다."
+ th_old_hakurei_summer_power_aspect: "여름의 힘"
+ th_old_hakurei_summer_power_aspect_desc: "마타라 측신상의 힘. 한여름의 풍요로 가공 생산 산출이 높아진다."
+ th_old_hakurei_autumn_power_aspect: "가을의 힘"
+ th_old_hakurei_autumn_power_aspect_desc: "마타라 측신상의 힘. 황금빛 가을의 수확으로 세금 효율이 높아진다."
+ th_old_hakurei_winter_power_aspect: "겨울의 힘"
+ th_old_hakurei_winter_power_aspect_desc: "마타라 측신상의 힘. 혹독한 겨울은 방어를 굳건히 하여 요새 방어를 높인다."
+### 부차(2번째 칸) 신조: 풍성한 열매/시들음 (아키 자매 선택 후 고를 수 있는 전용)
+ th_old_hakurei_bounty_aspect: "풍성한 열매"
+ th_old_hakurei_bounty_aspect_desc: "아키 자매를 선택한 뒤 고를 수 있는 전용 측신상의 힘. 가을의 풍성한 결실로 식량 산출이 높아진다."
+ th_old_hakurei_wither_aspect: "시들음"
+ th_old_hakurei_wither_aspect_desc: "아키 자매를 선택한 뒤 고를 수 있는 전용 측신상의 힘. 가을바람이 적군을 시들게 하여 적의 손실을 높인다."
 ### 교체 행동
  th_hakurei_change_statue: "신상 교체"
  th_hakurei_change_statue_desc: "종교 영향력을 소모하여 모시는 신명 신상을 교체한다. 신상 교체 쿨다운은 25년."
  th_hakurei_change_minor_aspect: "측신상 분신 교체"
- th_hakurei_change_minor_aspect_desc: "약간의 종교 영향력으로 마타라 측신상의 분신(지모신, 양잠의 신, 성수의 신, 노가쿠의 신, 장애의 신, 차별받는 백성의 신)을 빠르게 교체한다."
+ th_hakurei_change_minor_aspect_desc: "약간의 종교 영향력으로 측신상의 힘을 빠르게 교체한다 (마타라 신앙 시 사계절의 힘, 아키 자매 선택 후 풍성한 열매/시들음)."
  th_hakurei_change_statue_select_existing: "교체할 신상을 선택"
  th_hakurei_change_statue_select_new: "새로운 신상을 선택"
  th_hakurei_change_minor_aspect_select_existing: "교체할 분신을 선택"

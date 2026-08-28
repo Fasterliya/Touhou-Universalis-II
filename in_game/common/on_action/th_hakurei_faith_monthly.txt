@@ -1,0 +1,58 @@
+﻿### ============================================================
+### 博丽风俗 次要信条孤儿清理 — 月度兜底脉冲
+### 当主神（摩多罗/秋姐妹）被移除（原版右键移除、改宗等一切路径）后，
+### 其依赖的次要信条（4 季之力 / 硕果·凋零）失去前置条件，逐月自动移除。
+### 切换行动（th_hakurei_faith_actions.txt）内已做即时清理，本脉冲兜底其余路径。
+### on_action 跨文件合并：本文件追加注册 monthly_country_pulse，不动原版。
+### ============================================================
+
+monthly_country_pulse = {
+    on_actions = {
+        th_hakurei_orphan_minor_cleanup_pulse
+    }
+}
+
+th_hakurei_orphan_minor_cleanup_pulse = {
+    trigger = {
+        religion = religion:th_gensokyo_old_hakurei_shinto
+        th_hakurei_has_minor_aspect_trigger = yes
+    }
+    effect = {
+        ### 未信仰摩多罗 → 移除 4 季之力（逐项守卫，未持有为安全 no-op）
+        if = {
+            limit = {
+                NOT = { th_hakurei_worships_matara_trigger = yes }
+            }
+            if = {
+                limit = { has_religious_aspect = religious_aspect:th_old_hakurei_spring_power_aspect }
+                remove_religious_aspect = religious_aspect:th_old_hakurei_spring_power_aspect
+            }
+            if = {
+                limit = { has_religious_aspect = religious_aspect:th_old_hakurei_summer_power_aspect }
+                remove_religious_aspect = religious_aspect:th_old_hakurei_summer_power_aspect
+            }
+            if = {
+                limit = { has_religious_aspect = religious_aspect:th_old_hakurei_autumn_power_aspect }
+                remove_religious_aspect = religious_aspect:th_old_hakurei_autumn_power_aspect
+            }
+            if = {
+                limit = { has_religious_aspect = religious_aspect:th_old_hakurei_winter_power_aspect }
+                remove_religious_aspect = religious_aspect:th_old_hakurei_winter_power_aspect
+            }
+        }
+        ### 未选择秋姐妹 → 移除硕果/凋零
+        if = {
+            limit = {
+                NOT = { th_hakurei_worships_aki_sisters_trigger = yes }
+            }
+            if = {
+                limit = { has_religious_aspect = religious_aspect:th_old_hakurei_bounty_aspect }
+                remove_religious_aspect = religious_aspect:th_old_hakurei_bounty_aspect
+            }
+            if = {
+                limit = { has_religious_aspect = religious_aspect:th_old_hakurei_wither_aspect }
+                remove_religious_aspect = religious_aspect:th_old_hakurei_wither_aspect
+            }
+        }
+    }
+}

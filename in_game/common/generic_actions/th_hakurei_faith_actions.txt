@@ -3,11 +3,13 @@
 ### 基于原版 change_religious_aspect 模板（general_religion.txt）：
 ### 选旧信条 → 选新信条 → 原子 remove+add；价格走自定义影响力价格；自带冷却。
 ### 选择器过滤说明（引擎无「信条分类」触发器，只能借信条自身 visible/enabled 块）：
-###   - 更换侧神像：用 can_see_religious_aspect（= 信条 visible 块）过滤 → 持神明时
-###     神明不可见、分神可见 → 列表干净（仅 6 分神）。
-###   - 更换神明神像：持神明时其他神像被自身 visible 隐藏，故改用「未持有」过滤 →
-###     列表会同时列出其余神像与分神；误选分神会进入「仅分神」态，但分神可见条件
-###     要求持有神明，「+」重新补选神像即可自愈，不破坏任何槽位约束。
+###   - 更换侧神像：用 can_see_religious_aspect（= 信条 visible 块）过滤 → 列表只含
+###     当前信仰对应的次要信条（信仰摩多罗 → 4 季之力；选择秋姐妹 → 硕果/凋零）。
+###   - 更换神明神像：用 is_religious_aspect_enabled（= 信条 enabled 块）过滤 →
+###     常规神像无 enabled 块恒可换、专属神像经 enabled=tag 仅对应国家可换、
+###     次要信条经 enabled=主神门控只对摩多罗/秋姐妹信徒出现；主神切走后其依赖的
+###     次要信条在 effect 中即时清理（月度脉冲兜底见 th_hakurei_faith_monthly.txt）。
+### 注：行动内「选择宗教」一步为用户保留内容（选择结果未被效果使用）。
 ### ============================================================
 
 ### ---------------- 更换神明神像（第 1 槽，25 年冷却） ----------------
@@ -18,7 +20,10 @@ th_hakurei_change_statue = {
 	sound = UI_action_religion_aspect_change
 
 	ai_tick = never
-	automation_tick = never
+	### 宗教窗口 Actions 区列出 automation 启用的 religiousdoctrines 类行动；
+	### 用极大频率 + 负 ai_will_do 保证绝不会被自动执行
+	automation_tick = monthly
+	automation_tick_frequency = 720
 	player_automated_category = religiousdoctrines
 
 	potential = {
@@ -73,21 +78,58 @@ th_hakurei_change_statue = {
 		}
 		visible = {
 			NOT = { scope:actor = { has_religious_aspect = prev } }
+			scope:actor = { is_religious_aspect_enabled = prev }
 		}
 		enabled = {
 			NOT = { scope:actor = { has_religious_aspect = prev } }
+			scope:actor = { is_religious_aspect_enabled = prev }
 		}
 	}
 
 	effect = {
-		if = {
-			limit = {
-				exists = scope:existing_aspect
-				exists = scope:new_aspect
-			}
-			scope:actor = {
+		scope:actor = {
+			if = {
+				limit = {
+					exists = scope:existing_aspect
+					exists = scope:new_aspect
+				}
 				remove_religious_aspect = scope:existing_aspect
 				add_religious_aspect = scope:new_aspect
+			}
+			### 主神更换后即时清理失去前置主神的次要信条（月度脉冲兜底见 th_hakurei_faith_monthly.txt）
+			if = {
+				limit = {
+					NOT = { th_hakurei_worships_matara_trigger = yes }
+				}
+				if = {
+					limit = { has_religious_aspect = religious_aspect:th_old_hakurei_spring_power_aspect }
+					remove_religious_aspect = religious_aspect:th_old_hakurei_spring_power_aspect
+				}
+				if = {
+					limit = { has_religious_aspect = religious_aspect:th_old_hakurei_summer_power_aspect }
+					remove_religious_aspect = religious_aspect:th_old_hakurei_summer_power_aspect
+				}
+				if = {
+					limit = { has_religious_aspect = religious_aspect:th_old_hakurei_autumn_power_aspect }
+					remove_religious_aspect = religious_aspect:th_old_hakurei_autumn_power_aspect
+				}
+				if = {
+					limit = { has_religious_aspect = religious_aspect:th_old_hakurei_winter_power_aspect }
+					remove_religious_aspect = religious_aspect:th_old_hakurei_winter_power_aspect
+				}
+			}
+			if = {
+				limit = {
+					NOT = { th_hakurei_worships_aki_sisters_trigger = yes }
+				}
+				if = {
+					limit = { has_religious_aspect = religious_aspect:th_old_hakurei_bounty_aspect }
+					remove_religious_aspect = religious_aspect:th_old_hakurei_bounty_aspect
+				}
+				if = {
+					limit = { has_religious_aspect = religious_aspect:th_old_hakurei_wither_aspect }
+					remove_religious_aspect = religious_aspect:th_old_hakurei_wither_aspect
+				}
 			}
 		}
 	}
@@ -95,6 +137,14 @@ th_hakurei_change_statue = {
 	cooldown = {
 		type = th_hakurei_change_statue
 		months = 300
+	}
+
+	### AI/自动化永不执行（automation 开启仅用于宗教窗口列表可见）
+	ai_will_do = {
+		add = {
+			desc = BASE_VALUE
+			value = -1
+		}
 	}
 }
 
@@ -106,7 +156,10 @@ th_hakurei_change_minor_aspect = {
 	sound = UI_action_religion_aspect_change
 
 	ai_tick = never
-	automation_tick = never
+	### 宗教窗口 Actions 区列出 automation 启用的 religiousdoctrines 类行动；
+	### 用极大频率 + 负 ai_will_do 保证绝不会被自动执行
+	automation_tick = monthly
+	automation_tick_frequency = 720
 	player_automated_category = religiousdoctrines
 
 	potential = {
@@ -187,5 +240,13 @@ th_hakurei_change_minor_aspect = {
 	cooldown = {
 		type = th_hakurei_change_minor_aspect
 		months = 12
+	}
+
+	### AI/自动化永不执行（automation 开启仅用于宗教窗口列表可见）
+	ai_will_do = {
+		add = {
+			desc = BASE_VALUE
+			value = -1
+		}
 	}
 }

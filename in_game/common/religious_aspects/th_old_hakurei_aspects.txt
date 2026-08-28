@@ -1,24 +1,28 @@
 ﻿### ============================================================
-### 博丽风俗（th_gensokyo_old_hakurei_shinto）信条 —— 2 槽体系
-### 设计文档：F:\SITU\东方风云设计理念\幻想乡神道「博丽风俗」神像.txt
-### 第 1 槽（神明/主）：10 尊神像，互斥（最多 1 尊）
-### 第 2 槽（次要/侧神像）：摩多罗侧神像 6 位分神，互斥；仅当已选任一神明时可见
-### 可视条件说明：
-###   - 「未持有所有神明信条」按字面恒真（最多持 1 尊），故实现为「未持有任一神明信条」
-###   - 次要信条可见条件 = 「任一神明信条已持有」（用户原话「枚举，任一已经选择，即可选择次要信条」）
-### 修正严格按文档：每尊神像恰 2 项、不接价值观倾向、数值为 0.xxxx 或原版原始量纲
+### 博丽风俗（th_gensokyo_old_hakurei_shinto）信条 —— 2 槽体系 v3
+### 设计文档：F:\SITU\东方风云设计理念\幻想乡神道「博丽风俗」神像.txt（含后续扩展）
+### 第 1 槽（神明/主）：
+###   10 常规神像（所有人可见）+ 5 专属神像（神奈子=守矢 T14、辉夜=永远亭 T53、
+###   秋姐妹=丰穰之祠 T17、雏=妖怪之森 T15、袿姬=偶像之境 T24，仅对应国家可见）
+### 第 2 槽（次要）：
+###   春夏秋冬之力 4 个（仅信仰摩多罗时可见）；硕果/凋零 2 个（仅选择秋姐妹后可见）
+### 互斥与门控写法（v3）：
+###   - 常规神像互斥在 visible（NOT 持有任一神明）→ 已持神像后添加界面隐藏其余神像；
+###     不写 enabled → is_religious_aspect_enabled 恒真 → 「更换神像」行动仍可换。
+###   - 专属神像：visible = tag + NOT 持有任一神明（添加界面隐藏/仅本国可见）；
+###     enabled = tag（切换选择器经 is_religious_aspect_enabled 过滤 → 他国不可见/不可选）。
+###   - 次要信条：visible 与 enabled 都带主神门控（摩多罗/秋姐妹）+ 次要互斥，
+###     无主神时既不可见也不可选；主神被取消后由行动效果与月度脉冲清理（th_hakurei_faith_monthly.txt）。
+### 修正严格按文档/用户指定；数值为 0.xxxx 或原版原始量纲。
 ### ============================================================
 
-### ---------------- 第 1 槽：神明（主）信条 ----------------
+### ---------------- 第 1 槽：神明（主）信条（10 常规） ----------------
 
 th_old_hakurei_hakurei_god_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
-	# 互斥：未持有任一神明信条时可见/可选（枚举见 th_hakurei_aspect_triggers.txt）
+	# 互斥：未持有任一神明信条时可见（枚举见 th_hakurei_aspect_triggers.txt）
 	visible = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
-	enabled = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
@@ -35,9 +39,6 @@ th_old_hakurei_shinki_aspect = {
 	visible = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
-	enabled = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
 
 	# 神绮：发展度增长与建造花费减少
 	modifier = {
@@ -50,9 +51,6 @@ th_old_hakurei_yuka_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
-	enabled = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
@@ -69,9 +67,6 @@ th_old_hakurei_sariel_aspect = {
 	visible = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
-	enabled = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
 
 	# 萨丽艾尔：训练度与征召兵
 	modifier = {
@@ -84,9 +79,6 @@ th_old_hakurei_mima_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
-	enabled = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
@@ -103,9 +95,6 @@ th_old_hakurei_kutaka_aspect = {
 	visible = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
-	enabled = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
 
 	# 庭渡久侘歌：减少厌战度与阶层
 	modifier = {
@@ -118,9 +107,6 @@ th_old_hakurei_hecatia_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
-	enabled = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
@@ -137,9 +123,6 @@ th_old_hakurei_matara_aspect = {
 	visible = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
-	enabled = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
 
 	# 摩多罗：贸易方面（第一神像相对较弱）
 	modifier = {
@@ -152,9 +135,6 @@ th_old_hakurei_kasen_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
-	enabled = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
 
@@ -171,9 +151,6 @@ th_old_hakurei_yukari_aspect = {
 	visible = {
 		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
 	}
-	enabled = {
-		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
-	}
 
 	# 紫：外交方面（极强 buff）
 	modifier = {
@@ -182,102 +159,205 @@ th_old_hakurei_yukari_aspect = {
 	}
 }
 
-### ---------------- 第 2 槽：次要信条（摩多罗侧神像 6 位分神） ----------------
-### 可见条件：已持有任一神明信条（枚举见 th_hakurei_aspect_triggers.txt）
-### 互斥：未持有任一其他次要信条（enabled 双保险；槽位上限亦由 religious_aspects = 2 兜底）
+### ---------------- 第 1 槽：神明（主）信条（5 专属，仅对应国家可见可选） ----------------
 
-th_old_hakurei_earth_mother_aspect = {
+th_old_hakurei_kanako_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	# 守矢（T14）专属：添加界面仅本国可见；切换界面经 enabled=tag 过滤（他国不可见/不可选）
+	visible = {
+		tag = T14
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		tag = T14
+	}
+
+	# 神奈子：繁荣与信仰（山与湖的权化）
+	modifier = {
+		global_monthly_prosperity = 0.005
+		monthly_religious_influence = 0.1
+	}
+}
+
+th_old_hakurei_kaguya_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	# 永远亭（T53）专属
+	visible = {
+		tag = T53
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		tag = T53
+	}
+
+	# 辉夜：敌意获取减少与外交方面
+	modifier = {
+		antagonism_received_modifier = -0.10
+		diplomatic_capacity = 1.0
+	}
+}
+
+th_old_hakurei_aki_sisters_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	# 丰穰之祠（T17）专属
+	visible = {
+		tag = T17
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		tag = T17
+	}
+
+	# 秋姐妹：发展度增长与建造花费减少
+	modifier = {
+		global_monthly_development = 0.0025
+		global_build_buildings_efficiency = 0.15
+	}
+}
+
+th_old_hakurei_hina_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	# 妖怪之森（T15）专属
+	visible = {
+		tag = T15
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		tag = T15
+	}
+
+	# 雏：每月稳定度与每月威望（稳定度用 stability_decay 负值近似，见文件头说明）
+	modifier = {
+		stability_decay = -0.05
+		monthly_prestige = 0.10
+	}
+}
+
+th_old_hakurei_keiki_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	# 偶像之境（T24）专属
+	visible = {
+		tag = T24
+		NOT = { th_hakurei_has_deity_aspect_trigger = yes }
+	}
+	enabled = {
+		tag = T24
+	}
+
+	# 袿姬：人口容量与声望
+	modifier = {
+		global_population_capacity_modifier = 0.10
+		monthly_prestige = 0.05
+	}
+}
+
+### ---------------- 第 2 槽：次要信条（4 季之力，仅信仰摩多罗时可见可选） ----------------
+
+th_old_hakurei_spring_power_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		th_hakurei_has_deity_aspect_trigger = yes
+		th_hakurei_worships_matara_trigger = yes
 	}
 	enabled = {
+		th_hakurei_worships_matara_trigger = yes
 		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
 	}
 
-	# 地母神：加工生产产出
+	# 春之力：万物复苏，人口增长
+	modifier = {
+		global_population_growth = 0.0001
+	}
+}
+
+th_old_hakurei_summer_power_aspect = {
+	religion = th_gensokyo_old_hakurei_shinto
+
+	visible = {
+		th_hakurei_worships_matara_trigger = yes
+	}
+	enabled = {
+		th_hakurei_worships_matara_trigger = yes
+		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
+	}
+
+	# 夏之力：盛夏繁茂，物产丰盈
 	modifier = {
 		global_raw_material_output = 0.05
 	}
 }
 
-th_old_hakurei_silkworm_god_aspect = {
+th_old_hakurei_autumn_power_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		th_hakurei_has_deity_aspect_trigger = yes
+		th_hakurei_worships_matara_trigger = yes
 	}
 	enabled = {
+		th_hakurei_worships_matara_trigger = yes
 		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
 	}
 
-	# 养蚕之神：丝绸产出
+	# 秋之力：金秋丰收，税收提升
 	modifier = {
-		global_silk_output_modifier = 0.10
+		tax_income_efficiency = 0.10
 	}
 }
 
-th_old_hakurei_star_god_aspect = {
+th_old_hakurei_winter_power_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		th_hakurei_has_deity_aspect_trigger = yes
+		th_hakurei_worships_matara_trigger = yes
 	}
 	enabled = {
+		th_hakurei_worships_matara_trigger = yes
 		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
 	}
 
-	# 星宿之神：每月繁荣度
+	# 冬之力：严冬凛冽，守御坚固
 	modifier = {
-		global_monthly_prosperity = 0.005
+		global_defensive = 0.10
 	}
 }
 
-th_old_hakurei_noh_god_aspect = {
+### ---------------- 第 2 槽：次要信条（硕果/凋零，仅选择秋姐妹后可见可选） ----------------
+
+th_old_hakurei_bounty_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		th_hakurei_has_deity_aspect_trigger = yes
+		th_hakurei_worships_aki_sisters_trigger = yes
 	}
 	enabled = {
+		th_hakurei_worships_aki_sisters_trigger = yes
 		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
 	}
 
-	# 能乐之神：文化传统
+	# 硕果：秋日硕果累累，食物产出提升
 	modifier = {
-		cultural_tradition = 0.1
+		global_monthly_food_modifier = 0.1
 	}
 }
 
-th_old_hakurei_obstacle_god_aspect = {
+th_old_hakurei_wither_aspect = {
 	religion = th_gensokyo_old_hakurei_shinto
 
 	visible = {
-		th_hakurei_has_deity_aspect_trigger = yes
+		th_hakurei_worships_aki_sisters_trigger = yes
 	}
 	enabled = {
+		th_hakurei_worships_aki_sisters_trigger = yes
 		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
 	}
 
-	# 障碍之神：要塞上限
+	# 凋零：秋风萧瑟，敌军损耗提升
 	modifier = {
-		fort_limit_modifier = 1
-	}
-}
-
-th_old_hakurei_discriminated_god_aspect = {
-	religion = th_gensokyo_old_hakurei_shinto
-
-	visible = {
-		th_hakurei_has_deity_aspect_trigger = yes
-	}
-	enabled = {
-		NOT = { th_hakurei_has_minor_aspect_trigger = yes }
-	}
-
-	# 被差别民之神：人口皈依速度
-	modifier = {
-		global_pop_assimilation_speed_modifier = 0.1
+		global_hostile_attrition = 0.25
 	}
 }

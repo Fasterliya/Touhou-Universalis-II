@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
-### 博丽风俗（old_hakurei）信条与切换行动 —— 设计文档《幻想乡神道「博丽风俗」神像.txt》
-### 神明（第 1 槽）信条
+### 博丽风俗（old_hakurei）信条与切换行动 —— 设计文档《幻想乡神道「博丽风俗」神像.txt》（含后续扩展）
+### 神明（第 1 槽）信条：10 常规
  th_old_hakurei_hakurei_god_aspect: "博丽神"
  th_old_hakurei_hakurei_god_aspect_desc: "博丽神社供奉着「博丽的神」，但即便是代代传承的博丽巫女，也不知晓祂的真身究竟是谁。"
  th_old_hakurei_shinki_aspect: "神绮"
@@ -21,24 +21,36 @@
  th_old_hakurei_kasen_aspect_desc: "尽管她并非神明，且出身鬼族，但作为恪守正道的贤者，她始终站在人类一侧守护幻想乡，以善意维系着此地的安稳与秩序，因而备受敬重。"
  th_old_hakurei_yukari_aspect: "紫"
  th_old_hakurei_yukari_aspect_desc: "尽管她事实上并非神明，但作为博丽大结界的建立者与守护幻想乡的贤者，她在幻想乡同样备受尊崇。"
-### 次要（第 2 槽）信条：摩多罗侧神像 6 位分神
- th_old_hakurei_earth_mother_aspect: "地母神"
- th_old_hakurei_earth_mother_aspect_desc: "摩多罗侧神像之一。大地之母，庇佑耕作与收成，提升加工生产产出。"
- th_old_hakurei_silkworm_god_aspect: "养蚕之神"
- th_old_hakurei_silkworm_god_aspect_desc: "摩多罗侧神像之一。护佑养蚕与丝织，提升丝绸产出。"
- th_old_hakurei_star_god_aspect: "星宿之神"
- th_old_hakurei_star_god_aspect_desc: "摩多罗侧神像之一。司掌星辰与命运，提升每月繁荣度。"
- th_old_hakurei_noh_god_aspect: "能乐之神"
- th_old_hakurei_noh_god_aspect_desc: "摩多罗侧神像之一。艺术与能乐的守护者，提升文化传统。"
- th_old_hakurei_obstacle_god_aspect: "障碍之神"
- th_old_hakurei_obstacle_god_aspect_desc: "摩多罗侧神像之一。司掌障碍与试炼，提升要塞上限。"
- th_old_hakurei_discriminated_god_aspect: "被差别民之神"
- th_old_hakurei_discriminated_god_aspect_desc: "摩多罗侧神像之一。被差别民众的守护神，提升人口皈依速度。"
+### 神明（第 1 槽）信条：5 专属（仅对应国家可见可选）
+ th_old_hakurei_kanako_aspect: "神奈子"
+ th_old_hakurei_kanako_aspect_desc: "守矢神社的祭神，山与湖的权化。身为掌管信仰的风神，她为守矢带来繁荣与旺盛的信仰。"
+ th_old_hakurei_kaguya_aspect: "辉夜"
+ th_old_hakurei_kaguya_aspect_desc: "永远亭的主人，月之都的公主。以月之民的睿智与神秘，在幻想乡的外交舞台上游刃有余。"
+ th_old_hakurei_aki_sisters_aspect: "秋姐妹"
+ th_old_hakurei_aki_sisters_aspect_desc: "丰穰之祠的祭神。掌管秋日丰收的姐妹神明，为大地带来丰饶与发展。"
+ th_old_hakurei_hina_aspect: "雏"
+ th_old_hakurei_hina_aspect_desc: "妖怪之森的厄神。收集灾厄、维系安宁的妖怪之森守护者，为信仰她的国度带来稳定与声望。"
+ th_old_hakurei_keiki_aspect: "袿姬"
+ th_old_hakurei_keiki_aspect_desc: "偶像之境的埴安神。以造物之力创造偶像，庇佑人口繁盛与声望。"
+### 次要（第 2 槽）信条：4 季之力（仅信仰摩多罗时可见）
+ th_old_hakurei_spring_power_aspect: "春之力"
+ th_old_hakurei_spring_power_aspect_desc: "摩多罗侧神像之力。春回大地，万物复苏，人口增长。"
+ th_old_hakurei_summer_power_aspect: "夏之力"
+ th_old_hakurei_summer_power_aspect_desc: "摩多罗侧神像之力。盛夏繁茂，物产丰盈，加工生产产出提升。"
+ th_old_hakurei_autumn_power_aspect: "秋之力"
+ th_old_hakurei_autumn_power_aspect_desc: "摩多罗侧神像之力。金秋丰收，税收效率提升。"
+ th_old_hakurei_winter_power_aspect: "冬之力"
+ th_old_hakurei_winter_power_aspect_desc: "摩多罗侧神像之力。严冬凛冽，守御坚固，要塞防御提升。"
+### 次要（第 2 槽）信条：硕果/凋零（选择秋姐妹后可选的专属）
+ th_old_hakurei_bounty_aspect: "硕果"
+ th_old_hakurei_bounty_aspect_desc: "选择秋姐妹后可选择的专属侧神像之力。秋日硕果累累，食物产出提升。"
+ th_old_hakurei_wither_aspect: "凋零"
+ th_old_hakurei_wither_aspect_desc: "选择秋姐妹后可选择的专属侧神像之力。秋风萧瑟，敌军在己方领地凋零败退，敌方损耗提升。"
 ### 切换行动
  th_hakurei_change_statue: "更换神明神像"
  th_hakurei_change_statue_desc: "花费宗教影响力，更换供奉的神明神像。神像切换冷却时间为 25 年。"
  th_hakurei_change_minor_aspect: "更换侧神像分神"
- th_hakurei_change_minor_aspect_desc: "花费少量宗教影响力，快速更换摩多罗侧神像的分神（地母神、养蚕之神、星宿之神、能乐之神、障碍之神与被差别民之神）。"
+ th_hakurei_change_minor_aspect_desc: "花费少量宗教影响力，快速更换侧神像的季之力（信仰摩多罗）或硕果/凋零（选择秋姐妹）。"
  th_hakurei_change_statue_select_existing: "选择要更换的神像"
  th_hakurei_change_statue_select_new: "选择新的神像"
  th_hakurei_change_minor_aspect_select_existing: "选择要更换的分神"

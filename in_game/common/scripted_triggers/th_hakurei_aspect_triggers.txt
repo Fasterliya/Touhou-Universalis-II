@@ -1,8 +1,10 @@
 ### ============================================================
 ### 博丽风俗 信条分类触发器（国家 scope）
-### 设计文档：幻想乡神道「博丽风俗」神像.txt
-### th_hakurei_has_deity_aspect_trigger：已持有任意神明（第 1 槽主）信条 —— 10 尊神像枚举
-### th_hakurei_has_minor_aspect_trigger：已持有任意次要（第 2 槽侧神像分神）信条 —— 6 位分神枚举
+### 设计文档：幻想乡神道「博丽风俗」神像.txt（含后续扩展）
+### th_hakurei_has_deity_aspect_trigger：已持有任意神明（第 1 槽主）信条 —— 10 常规 + 5 专属 = 15 枚举
+### th_hakurei_has_minor_aspect_trigger：已持有任意次要（第 2 槽）信条 —— 4 季之力 + 硕果/凋零 = 6 枚举
+### th_hakurei_worships_matara_trigger：信仰摩多罗（4 季之力门控）
+### th_hakurei_worships_aki_sisters_trigger：信仰秋姐妹（硕果/凋零门控）
 ### 改动任一信条 id 时必须同步本文件（以及 th_old_hakurei_aspects.txt）
 ### ============================================================
 
@@ -18,16 +20,29 @@ th_hakurei_has_deity_aspect_trigger = {
 		has_religious_aspect = religious_aspect:th_old_hakurei_matara_aspect
 		has_religious_aspect = religious_aspect:th_old_hakurei_kasen_aspect
 		has_religious_aspect = religious_aspect:th_old_hakurei_yukari_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_kanako_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_kaguya_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_aki_sisters_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_hina_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_keiki_aspect
 	}
 }
 
 th_hakurei_has_minor_aspect_trigger = {
 	OR = {
-		has_religious_aspect = religious_aspect:th_old_hakurei_earth_mother_aspect
-		has_religious_aspect = religious_aspect:th_old_hakurei_silkworm_god_aspect
-		has_religious_aspect = religious_aspect:th_old_hakurei_star_god_aspect
-		has_religious_aspect = religious_aspect:th_old_hakurei_noh_god_aspect
-		has_religious_aspect = religious_aspect:th_old_hakurei_obstacle_god_aspect
-		has_religious_aspect = religious_aspect:th_old_hakurei_discriminated_god_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_spring_power_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_summer_power_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_autumn_power_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_winter_power_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_bounty_aspect
+		has_religious_aspect = religious_aspect:th_old_hakurei_wither_aspect
 	}
+}
+
+th_hakurei_worships_matara_trigger = {
+	has_religious_aspect = religious_aspect:th_old_hakurei_matara_aspect
+}
+
+th_hakurei_worships_aki_sisters_trigger = {
+	has_religious_aspect = religious_aspect:th_old_hakurei_aki_sisters_aspect
 }
