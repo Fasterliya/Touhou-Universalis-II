@@ -8,9 +8,9 @@
 ### 全局基线：所有 AI 统一先加"征服本地区（较弱）"与"默认不殖民外部世界"
 th_apply_generic_area_preferences_effect = {
 	every_country = {
-		limit = {
-			is_ai = yes
-		}
+		# limit = {
+		# 	is_ai = yes
+		# }
 		add_area_preference = th_generic_conquer_home_region
 		add_area_preference = th_avoid_outer_world_colonization
 	}
