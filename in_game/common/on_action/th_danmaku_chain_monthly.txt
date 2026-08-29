@@ -23,7 +23,9 @@ th_danmaku_monthly_pulse = {
             ### 供文档/未来改造为脚本值权重）
             random = {
                 chance = 2
-                th_danmaku_encounter_trigger_effect = yes
+                th_danmaku_encounter_trigger_effect = {
+                    enemy_fp = th_danmaku_youkai_firepower_value
+                }
             }
         }
         ### 妖兽爆发（仅玩家，月度 2%；与随机遭遇独立判定）

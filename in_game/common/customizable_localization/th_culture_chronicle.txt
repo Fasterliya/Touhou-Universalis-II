@@ -1,0 +1,1371 @@
+﻿th_cc_desc = {
+	type = culture
+	text = {
+		localization_key = th_cc_desc_th_goblin_culture
+		trigger = {
+			this = culture:th_goblin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yama_culture
+		trigger = {
+			this = culture:th_yama_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_itsuna_culture
+		trigger = {
+			this = culture:th_itsuna_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_fox_culture
+		trigger = {
+			this = culture:th_yokai_fox_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_culture
+		trigger = {
+			this = culture:th_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_vampire_culture
+		trigger = {
+			this = culture:th_vampire_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_maid_fairy_culture
+		trigger = {
+			this = culture:th_maid_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_hell_fairy_culture
+		trigger = {
+			this = culture:th_hell_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_light_fairy_culture
+		trigger = {
+			this = culture:th_light_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_flower_fairy_culture
+		trigger = {
+			this = culture:th_flower_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_season_fairy_culture
+		trigger = {
+			this = culture:th_season_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_zombie_fairy_culture
+		trigger = {
+			this = culture:th_zombie_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_phenomenon_fairy_culture
+		trigger = {
+			this = culture:th_phenomenon_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_elemental_fairy_culture
+		trigger = {
+			this = culture:th_elemental_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_half_human_half_phantom_culture
+		trigger = {
+			this = culture:th_half_human_half_phantom_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_mermaid_culture
+		trigger = {
+			this = culture:th_mermaid_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_beastman_culture
+		trigger = {
+			this = culture:th_beastman_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_demon_culture
+		trigger = {
+			this = culture:th_demon_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_angel_culture
+		trigger = {
+			this = culture:th_angel_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_korobori_culture
+		trigger = {
+			this = culture:th_korobori_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_mirror_tsukumogami_culture
+		trigger = {
+			this = culture:th_mirror_tsukumogami_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_instrument_yokai_culture
+		trigger = {
+			this = culture:th_instrument_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_suzuhime_culture
+		trigger = {
+			this = culture:th_suzuhime_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_menreiki_culture
+		trigger = {
+			this = culture:th_menreiki_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_umbrella_yokai_culture
+		trigger = {
+			this = culture:th_umbrella_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_fuguruma_culture
+		trigger = {
+			this = culture:th_fuguruma_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_zashiki_warashi_culture
+		trigger = {
+			this = culture:th_zashiki_warashi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_oni_culture
+		trigger = {
+			this = culture:th_oni_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_ushioni_culture
+		trigger = {
+			this = culture:th_ushioni_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_human_oni_culture
+		trigger = {
+			this = culture:th_human_oni_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_kappa_culture
+		trigger = {
+			this = culture:th_kappa_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yamawaro_culture
+		trigger = {
+			this = culture:th_yamawaro_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_white_wolf_tengu_culture
+		trigger = {
+			this = culture:th_white_wolf_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_long_nose_tengu_culture
+		trigger = {
+			this = culture:th_long_nose_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_leaf_tengu_culture
+		trigger = {
+			this = culture:th_leaf_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yamabushi_tengu_culture
+		trigger = {
+			this = culture:th_yamabushi_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_crow_tengu_culture
+		trigger = {
+			this = culture:th_crow_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_shell_yokai_culture
+		trigger = {
+			this = culture:th_shell_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_chimi_culture
+		trigger = {
+			this = culture:th_chimi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_monster_culture
+		trigger = {
+			this = culture:th_monster_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yamabiko_culture
+		trigger = {
+			this = culture:th_yamabiko_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_heavenly_dragon_culture
+		trigger = {
+			this = culture:th_heavenly_dragon_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_tsuchigumo_culture
+		trigger = {
+			this = culture:th_tsuchigumo_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_insect_culture
+		trigger = {
+			this = culture:th_yokai_insect_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_dog_culture
+		trigger = {
+			this = culture:th_yokai_dog_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_turtle_culture
+		trigger = {
+			this = culture:th_yokai_turtle_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_tanuki_culture
+		trigger = {
+			this = culture:th_yokai_tanuki_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_monkey_culture
+		trigger = {
+			this = culture:th_yokai_monkey_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_tiger_culture
+		trigger = {
+			this = culture:th_yokai_tiger_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_cat_culture
+		trigger = {
+			this = culture:th_yokai_cat_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_bird_culture
+		trigger = {
+			this = culture:th_yokai_bird_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_ox_culture
+		trigger = {
+			this = culture:th_yokai_ox_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_snake_culture
+		trigger = {
+			this = culture:th_yokai_snake_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_rat_culture
+		trigger = {
+			this = culture:th_yokai_rat_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yokai_rabbit_culture
+		trigger = {
+			this = culture:th_yokai_rabbit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_night_sparrow_culture
+		trigger = {
+			this = culture:th_night_sparrow_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_komainu_culture
+		trigger = {
+			this = culture:th_komainu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_unnamable_culture
+		trigger = {
+			this = culture:th_unnamable_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_jizo_culture
+		trigger = {
+			this = culture:th_jizo_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yomi_woman_culture
+		trigger = {
+			this = culture:th_yomi_woman_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_jiangshi_culture
+		trigger = {
+			this = culture:th_jiangshi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_satori_yokai_culture
+		trigger = {
+			this = culture:th_satori_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_yamanba_culture
+		trigger = {
+			this = culture:th_yamanba_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_mountain_woman_culture
+		trigger = {
+			this = culture:th_mountain_woman_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_bone_tour_yokai_culture
+		trigger = {
+			this = culture:th_bone_tour_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_creator_god_culture
+		trigger = {
+			this = culture:th_creator_god_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_moon_rabbit_culture
+		trigger = {
+			this = culture:th_moon_rabbit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_houraijin_culture
+		trigger = {
+			this = culture:th_houraijin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_shikaisen_culture
+		trigger = {
+			this = culture:th_shikaisen_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_tennin_culture
+		trigger = {
+			this = culture:th_tennin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_sennin_culture
+		trigger = {
+			this = culture:th_sennin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_makai_people_culture
+		trigger = {
+			this = culture:th_makai_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_magician_culture
+		trigger = {
+			this = culture:th_magician_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_purified_people_culture
+		trigger = {
+			this = culture:th_purified_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_village_human_culture
+		trigger = {
+			this = culture:th_village_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_wild_human_culture
+		trigger = {
+			this = culture:th_wild_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_niwatari_people_culture
+		trigger = {
+			this = culture:th_niwatari_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_houjou_people_culture
+		trigger = {
+			this = culture:th_houjou_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_old_gensokyo_human_culture
+		trigger = {
+			this = culture:th_old_gensokyo_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_dream_dweller_culture
+		trigger = {
+			this = culture:th_dream_dweller_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_mountain_settlement_human_culture
+		trigger = {
+			this = culture:th_mountain_settlement_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_shrine_surrounding_human_culture
+		trigger = {
+			this = culture:th_shrine_surrounding_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_moriya_people_culture
+		trigger = {
+			this = culture:th_moriya_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_outside_world_people_culture
+		trigger = {
+			this = culture:th_outside_world_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_little_people_culture
+		trigger = {
+			this = culture:th_little_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_other_world_people_culture
+		trigger = {
+			this = culture:th_other_world_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_barrier_people_culture
+		trigger = {
+			this = culture:th_barrier_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_moon_people_human_village_culture
+		trigger = {
+			this = culture:th_moon_people_human_village_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_moon_people_eientei_culture
+		trigger = {
+			this = culture:th_moon_people_eientei_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_moon_people_culture
+		trigger = {
+			this = culture:th_moon_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_great_eagle_spirit_culture
+		trigger = {
+			this = culture:th_great_eagle_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_primate_spirit_culture
+		trigger = {
+			this = culture:th_primate_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_otter_spirit_culture
+		trigger = {
+			this = culture:th_otter_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_wolf_spirit_culture
+		trigger = {
+			this = culture:th_wolf_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_mizuko_spirit_culture
+		trigger = {
+			this = culture:th_mizuko_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_undead_spirit_culture
+		trigger = {
+			this = culture:th_undead_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_ship_ghost_culture
+		trigger = {
+			this = culture:th_ship_ghost_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_earthbound_spirit_culture
+		trigger = {
+			this = culture:th_earthbound_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_earth_spirit_culture
+		trigger = {
+			this = culture:th_earth_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_evil_spirit_culture
+		trigger = {
+			this = culture:th_evil_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_floating_spirit_culture
+		trigger = {
+			this = culture:th_floating_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_poltergeist_culture
+		trigger = {
+			this = culture:th_poltergeist_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_living_spirit_culture
+		trigger = {
+			this = culture:th_living_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_vengeful_spirit_culture
+		trigger = {
+			this = culture:th_vengeful_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_ghost_culture
+		trigger = {
+			this = culture:th_ghost_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_tsurube_otoshi_culture
+		trigger = {
+			this = culture:th_tsurube_otoshi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_calamity_people_culture
+		trigger = {
+			this = culture:th_calamity_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_hashihime_culture
+		trigger = {
+			this = culture:th_hashihime_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_doll_culture
+		trigger = {
+			this = culture:th_doll_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_shinigami_culture
+		trigger = {
+			this = culture:th_shinigami_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_amanjaku_culture
+		trigger = {
+			this = culture:th_amanjaku_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_ancient_god_person_culture
+		trigger = {
+			this = culture:th_ancient_god_person_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_th_sky_fire_person_culture
+		trigger = {
+			this = culture:th_sky_fire_person_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_desc_unknown
+		fallback = yes
+	}
+}
+
+th_cc_portrait = {
+	type = culture
+	text = {
+		localization_key = th_cc_portrait_th_goblin_culture
+		trigger = {
+			this = culture:th_goblin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yama_culture
+		trigger = {
+			this = culture:th_yama_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_itsuna_culture
+		trigger = {
+			this = culture:th_itsuna_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_fox_culture
+		trigger = {
+			this = culture:th_yokai_fox_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_culture
+		trigger = {
+			this = culture:th_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_vampire_culture
+		trigger = {
+			this = culture:th_vampire_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_maid_fairy_culture
+		trigger = {
+			this = culture:th_maid_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_hell_fairy_culture
+		trigger = {
+			this = culture:th_hell_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_light_fairy_culture
+		trigger = {
+			this = culture:th_light_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_flower_fairy_culture
+		trigger = {
+			this = culture:th_flower_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_season_fairy_culture
+		trigger = {
+			this = culture:th_season_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_zombie_fairy_culture
+		trigger = {
+			this = culture:th_zombie_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_phenomenon_fairy_culture
+		trigger = {
+			this = culture:th_phenomenon_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_elemental_fairy_culture
+		trigger = {
+			this = culture:th_elemental_fairy_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_half_human_half_phantom_culture
+		trigger = {
+			this = culture:th_half_human_half_phantom_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_mermaid_culture
+		trigger = {
+			this = culture:th_mermaid_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_beastman_culture
+		trigger = {
+			this = culture:th_beastman_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_demon_culture
+		trigger = {
+			this = culture:th_demon_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_angel_culture
+		trigger = {
+			this = culture:th_angel_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_korobori_culture
+		trigger = {
+			this = culture:th_korobori_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_mirror_tsukumogami_culture
+		trigger = {
+			this = culture:th_mirror_tsukumogami_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_instrument_yokai_culture
+		trigger = {
+			this = culture:th_instrument_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_suzuhime_culture
+		trigger = {
+			this = culture:th_suzuhime_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_menreiki_culture
+		trigger = {
+			this = culture:th_menreiki_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_umbrella_yokai_culture
+		trigger = {
+			this = culture:th_umbrella_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_fuguruma_culture
+		trigger = {
+			this = culture:th_fuguruma_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_zashiki_warashi_culture
+		trigger = {
+			this = culture:th_zashiki_warashi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_oni_culture
+		trigger = {
+			this = culture:th_oni_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_ushioni_culture
+		trigger = {
+			this = culture:th_ushioni_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_human_oni_culture
+		trigger = {
+			this = culture:th_human_oni_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_kappa_culture
+		trigger = {
+			this = culture:th_kappa_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yamawaro_culture
+		trigger = {
+			this = culture:th_yamawaro_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_white_wolf_tengu_culture
+		trigger = {
+			this = culture:th_white_wolf_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_long_nose_tengu_culture
+		trigger = {
+			this = culture:th_long_nose_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_leaf_tengu_culture
+		trigger = {
+			this = culture:th_leaf_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yamabushi_tengu_culture
+		trigger = {
+			this = culture:th_yamabushi_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_crow_tengu_culture
+		trigger = {
+			this = culture:th_crow_tengu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_shell_yokai_culture
+		trigger = {
+			this = culture:th_shell_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_chimi_culture
+		trigger = {
+			this = culture:th_chimi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_monster_culture
+		trigger = {
+			this = culture:th_monster_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yamabiko_culture
+		trigger = {
+			this = culture:th_yamabiko_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_heavenly_dragon_culture
+		trigger = {
+			this = culture:th_heavenly_dragon_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_tsuchigumo_culture
+		trigger = {
+			this = culture:th_tsuchigumo_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_insect_culture
+		trigger = {
+			this = culture:th_yokai_insect_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_dog_culture
+		trigger = {
+			this = culture:th_yokai_dog_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_turtle_culture
+		trigger = {
+			this = culture:th_yokai_turtle_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_tanuki_culture
+		trigger = {
+			this = culture:th_yokai_tanuki_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_monkey_culture
+		trigger = {
+			this = culture:th_yokai_monkey_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_tiger_culture
+		trigger = {
+			this = culture:th_yokai_tiger_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_cat_culture
+		trigger = {
+			this = culture:th_yokai_cat_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_bird_culture
+		trigger = {
+			this = culture:th_yokai_bird_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_ox_culture
+		trigger = {
+			this = culture:th_yokai_ox_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_snake_culture
+		trigger = {
+			this = culture:th_yokai_snake_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_rat_culture
+		trigger = {
+			this = culture:th_yokai_rat_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yokai_rabbit_culture
+		trigger = {
+			this = culture:th_yokai_rabbit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_night_sparrow_culture
+		trigger = {
+			this = culture:th_night_sparrow_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_komainu_culture
+		trigger = {
+			this = culture:th_komainu_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_unnamable_culture
+		trigger = {
+			this = culture:th_unnamable_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_jizo_culture
+		trigger = {
+			this = culture:th_jizo_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yomi_woman_culture
+		trigger = {
+			this = culture:th_yomi_woman_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_jiangshi_culture
+		trigger = {
+			this = culture:th_jiangshi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_satori_yokai_culture
+		trigger = {
+			this = culture:th_satori_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_yamanba_culture
+		trigger = {
+			this = culture:th_yamanba_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_mountain_woman_culture
+		trigger = {
+			this = culture:th_mountain_woman_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_bone_tour_yokai_culture
+		trigger = {
+			this = culture:th_bone_tour_yokai_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_creator_god_culture
+		trigger = {
+			this = culture:th_creator_god_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_moon_rabbit_culture
+		trigger = {
+			this = culture:th_moon_rabbit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_houraijin_culture
+		trigger = {
+			this = culture:th_houraijin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_shikaisen_culture
+		trigger = {
+			this = culture:th_shikaisen_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_tennin_culture
+		trigger = {
+			this = culture:th_tennin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_sennin_culture
+		trigger = {
+			this = culture:th_sennin_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_makai_people_culture
+		trigger = {
+			this = culture:th_makai_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_magician_culture
+		trigger = {
+			this = culture:th_magician_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_purified_people_culture
+		trigger = {
+			this = culture:th_purified_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_village_human_culture
+		trigger = {
+			this = culture:th_village_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_wild_human_culture
+		trigger = {
+			this = culture:th_wild_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_niwatari_people_culture
+		trigger = {
+			this = culture:th_niwatari_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_houjou_people_culture
+		trigger = {
+			this = culture:th_houjou_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_old_gensokyo_human_culture
+		trigger = {
+			this = culture:th_old_gensokyo_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_dream_dweller_culture
+		trigger = {
+			this = culture:th_dream_dweller_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_mountain_settlement_human_culture
+		trigger = {
+			this = culture:th_mountain_settlement_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_shrine_surrounding_human_culture
+		trigger = {
+			this = culture:th_shrine_surrounding_human_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_moriya_people_culture
+		trigger = {
+			this = culture:th_moriya_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_outside_world_people_culture
+		trigger = {
+			this = culture:th_outside_world_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_little_people_culture
+		trigger = {
+			this = culture:th_little_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_other_world_people_culture
+		trigger = {
+			this = culture:th_other_world_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_barrier_people_culture
+		trigger = {
+			this = culture:th_barrier_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_moon_people_human_village_culture
+		trigger = {
+			this = culture:th_moon_people_human_village_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_moon_people_eientei_culture
+		trigger = {
+			this = culture:th_moon_people_eientei_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_moon_people_culture
+		trigger = {
+			this = culture:th_moon_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_great_eagle_spirit_culture
+		trigger = {
+			this = culture:th_great_eagle_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_primate_spirit_culture
+		trigger = {
+			this = culture:th_primate_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_otter_spirit_culture
+		trigger = {
+			this = culture:th_otter_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_wolf_spirit_culture
+		trigger = {
+			this = culture:th_wolf_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_mizuko_spirit_culture
+		trigger = {
+			this = culture:th_mizuko_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_undead_spirit_culture
+		trigger = {
+			this = culture:th_undead_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_ship_ghost_culture
+		trigger = {
+			this = culture:th_ship_ghost_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_earthbound_spirit_culture
+		trigger = {
+			this = culture:th_earthbound_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_earth_spirit_culture
+		trigger = {
+			this = culture:th_earth_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_evil_spirit_culture
+		trigger = {
+			this = culture:th_evil_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_floating_spirit_culture
+		trigger = {
+			this = culture:th_floating_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_poltergeist_culture
+		trigger = {
+			this = culture:th_poltergeist_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_living_spirit_culture
+		trigger = {
+			this = culture:th_living_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_vengeful_spirit_culture
+		trigger = {
+			this = culture:th_vengeful_spirit_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_ghost_culture
+		trigger = {
+			this = culture:th_ghost_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_tsurube_otoshi_culture
+		trigger = {
+			this = culture:th_tsurube_otoshi_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_calamity_people_culture
+		trigger = {
+			this = culture:th_calamity_people_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_hashihime_culture
+		trigger = {
+			this = culture:th_hashihime_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_doll_culture
+		trigger = {
+			this = culture:th_doll_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_shinigami_culture
+		trigger = {
+			this = culture:th_shinigami_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_amanjaku_culture
+		trigger = {
+			this = culture:th_amanjaku_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_ancient_god_person_culture
+		trigger = {
+			this = culture:th_ancient_god_person_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_th_sky_fire_person_culture
+		trigger = {
+			this = culture:th_sky_fire_person_culture
+		}
+	}
+	text = {
+		localization_key = th_cc_portrait_unknown
+		fallback = yes
+	}
+}

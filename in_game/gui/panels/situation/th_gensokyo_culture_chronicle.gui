@@ -2,97 +2,169 @@ situation_panel = {
 	blockoverride "situation_subheader_content" {}
 
 	blockoverride "situation_panel_main_content" {
-		text_single = {
-			using = Font_Type_Headers
-			using = Font_Size_Big
-			default_format = "#header_titles"
-			text = "TH_CULTURE_CHRONICLE_TITLE"
-		}
-
-		hbox = {
-			layoutpolicy_horizontal = expanding
-			spacing = 12
-
-			button_regular = {
-				size = { 120 32 }
-				text_single = {
-					text = "TH_CULTURE_CHRONICLE_PREV_PAGE"
-				}
-				onclick = "[GetScriptedGui('th_cc_prev_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-			}
-			text_single = {
-				using = Font_Size_Medium
-				default_format = "#subtle_name"
-				text = "TH_CULTURE_CHRONICLE_PAGE_INDICATOR"
-			}
-			button_regular = {
-				size = { 120 32 }
-				text_single = {
-					text = "TH_CULTURE_CHRONICLE_NEXT_PAGE"
-				}
-				onclick = "[GetScriptedGui('th_cc_next_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-			}
-		}
-
 		widget = {
-			layoutpolicy_horizontal = expanding
-			size = { -1 4 }
-		}
-
-		scrollarea = {
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding
-			size = { -1 600 }
-			scrollbarpolicy_horizontal = always_off
-			scrollbar_vertical = {
-				using = Scrollbar_Vertical
+
+			# 背景图槽位：gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds
+			# 推荐比例 3:4（570 x 760 @1x / 1140 x 1520 @2x），用户替换该 dds 即可
+			background = {
+				texture = "gfx/interface/illustrations/situation/chronicle_bg.dds"
+				spriteType = stretched
 			}
-			scrollwidget = {
-				vbox = {
-					fixedgridbox = {
-						addcolumn = 100%
-						addrow = 28
-						datamodel = "[GetPlayer.MakeScope.GetList('th_cc_accepted_display')]"
-						item = {
-							widget = {
-								size = { 100% 28 }
-								text_single = {
-									text = "[Scope.GetCulture.GetName]"
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				text_single = {
+					using = Font_Type_Headers
+					using = Font_Size_Big
+					default_format = "#header_titles"
+					text = "TH_CULTURE_CHRONICLE_TITLE"
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					spacing = 12
+
+					button_regular = {
+						size = { 120 32 }
+						text_single = {
+							text = "TH_CULTURE_CHRONICLE_PREV_PAGE"
+						}
+						onclick = "[GetScriptedGui('th_cc_prev_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+					text_single = {
+						using = Font_Size_Medium
+						default_format = "#subtle_name"
+						text = "TH_CULTURE_CHRONICLE_PAGE_INDICATOR"
+					}
+					text_single = {
+						using = Font_Size_Medium
+						default_format = "#subtle_name"
+						raw_text = "[FixedPointToInt(GetPlayer.MakeScope.GetVariable('th_cc_page_display').GetValue)]/[FixedPointToInt(GetPlayer.MakeScope.GetVariable('th_cc_total_pages').GetValue)]"
+					}
+					button_regular = {
+						size = { 120 32 }
+						text_single = {
+							text = "TH_CULTURE_CHRONICLE_NEXT_PAGE"
+						}
+						onclick = "[GetScriptedGui('th_cc_next_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+				}
+
+				widget = {
+					layoutpolicy_horizontal = expanding
+					size = { -1 4 }
+				}
+
+				scrollarea = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					size = { -1 600 }
+					scrollbarpolicy_horizontal = always_off
+					scrollbar_vertical = {
+						using = Scrollbar_Vertical
+					}
+					scrollwidget = {
+						vbox = {
+							# 已接纳文化：真名 + 真介绍 + 对应立绘（2:3）
+							fixedgridbox = {
+								addcolumn = 100%
+								addrow = 192
+								datamodel = "[GetPlayer.MakeScope.GetList('th_cc_accepted_display')]"
+								item = {
+									widget = {
+										size = { 100% 192 }
+										margin = { 4 6 }
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 10
+											icon = {
+												size = { 120 180 }
+												texture = "gfx/interface/illustrations/situation/chronicle/[Scope.GetKey].dds"
+											}
+											vbox = {
+												layoutpolicy_horizontal = expanding
+												text_single = {
+													using = Font_Size_Medium
+													text = "[Scope.GetName]"
+												}
+												widget = {
+													size = { -1 4 }
+												}
+												text_single = {
+													using = Font_Size_Small
+													layoutpolicy_horizontal = expanding
+													align = left|nobaseline
+													autoresize = no
+													size = { -1 100 }
+													text = "[Scope.Custom('th_cc_desc')]"
+												}
+											}
+										}
+									}
 								}
 							}
-						}
-					}
-					fixedgridbox = {
-						addcolumn = 100%
-						addrow = 28
-						datamodel = "[GetPlayer.MakeScope.GetList('th_cc_unaccepted_display')]"
-						item = {
-							widget = {
-								size = { 100% 28 }
-								text_single = {
-									text = "TH_CULTURE_CHRONICLE_UNKNOWN"
+							# 未探明文化：占位剪影 + ？？？
+							fixedgridbox = {
+								addcolumn = 100%
+								addrow = 192
+								datamodel = "[GetPlayer.MakeScope.GetList('th_cc_unaccepted_display')]"
+								item = {
+									widget = {
+										size = { 100% 192 }
+										margin = { 4 6 }
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 10
+											icon = {
+												size = { 120 180 }
+												texture = "gfx/interface/illustrations/situation/chronicle/unknown.dds"
+											}
+											vbox = {
+												layoutpolicy_horizontal = expanding
+												text_single = {
+													using = Font_Size_Medium
+													text = "TH_CULTURE_CHRONICLE_UNKNOWN"
+												}
+												widget = {
+													size = { -1 4 }
+												}
+												text_single = {
+													using = Font_Size_Small
+													layoutpolicy_horizontal = expanding
+													align = left|nobaseline
+													autoresize = no
+													size = { -1 100 }
+													text = "TH_CULTURE_CHRONICLE_UNKNOWN"
+												}
+											}
+										}
+									}
 								}
 							}
 						}
 					}
 				}
+
+				widget = {
+					layoutpolicy_horizontal = expanding
+					size = { -1 4 }
+				}
+
+				button_regular = {
+					layoutpolicy_horizontal = expanding
+					size = { 200 40 }
+					text_single = {
+						text = "TH_CULTURE_CHRONICLE_REFRESH"
+					}
+					onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+
+				expand = {}
 			}
 		}
-
-		widget = {
-			layoutpolicy_horizontal = expanding
-			size = { -1 4 }
-		}
-
-		button_regular = {
-			layoutpolicy_horizontal = expanding
-			size = { 200 40 }
-			text_single = {
-				text = "TH_CULTURE_CHRONICLE_REFRESH"
-			}
-			onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-		}
-
-		expand = {}
 	}
 }

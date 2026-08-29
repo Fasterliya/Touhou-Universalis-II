@@ -1,4 +1,4 @@
-﻿th_culture_chronicle_refresh_lists = {
+th_culture_chronicle_refresh_lists = {
 	clear_global_variable_list = th_culture_chronicle_accepted
 	clear_global_variable_list = th_culture_chronicle_unaccepted
 
@@ -3759,4 +3759,12 @@ th_cc_refresh_display = {
 	else = {
 		set_variable = { name = th_cc_has_next_page value = 0 }
 	}
+
+	# page display: current page (1-based) / total pages = ceil(total cultures / 5 per page)
+	set_variable = { name = th_cc_total_cultures value = var:th_cc_idx }
+	set_variable = { name = th_cc_page_display value = var:th_cc_page }
+	change_variable = { name = th_cc_page_display add = 1 }
+	set_variable = { name = th_cc_total_pages value = var:th_cc_idx }
+	change_variable = { name = th_cc_total_pages add = 4 }
+	change_variable = { name = th_cc_total_pages divide = 5 }
 }

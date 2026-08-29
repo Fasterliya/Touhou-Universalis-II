@@ -23,19 +23,23 @@ th_danmaku_firepower_snapshot_effect = {
 ### 遭遇战
 ### ============================================================
 
-### 遭遇战触发接口（国家 scope）：掷无名妖怪火力 → 触发遭遇事件
+### 遭遇战触发接口（国家 scope；对手火力可任意赋值）
+### 用法: th_danmaku_encounter_trigger_effect = { enemy_fp = <脚本值/数值> }
+###       enemy_fp 传 th_danmaku_youkai_firepower_value（随机 500~1000）即默认随机；
+###       传任意脚本值/数值即指定对手火力（2026-08-28 接口化）
 th_danmaku_encounter_trigger_effect = {
     th_danmaku_firepower_snapshot_effect = yes
     set_variable = {
         name = th_danmaku_encounter_youkai_fp_var
-        value = th_danmaku_youkai_firepower_value
+        value = $enemy_fp$
     }
     trigger_event_non_silently = th_danmaku_events.1
 }
 
-### 遭遇战四结局结算（需 th_danmaku_firepower_self_var /
+### 遭遇战五结局结算（需 th_danmaku_firepower_self_var /
 ### th_danmaku_encounter_youkai_fp_var 就位；国家 scope）
-### 算法：火力比（我方×100÷妖怪，整数%）分五档，每档给四结局权重 random_list
+### 算法：火力比（我方×100÷妖怪，整数%）分五档，每档五结局权重 random_list
+### 结局事件：.2 大胜 / .3 胜利 / .6 平手 / .4 败北 / .5 大败
 th_danmaku_encounter_resolve_effect = {
     set_variable = {
         name = th_danmaku_encounter_ratio_pct_var
@@ -53,41 +57,77 @@ th_danmaku_encounter_resolve_effect = {
     }
     if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 160 }
-        th_danmaku_encounter_outcome_roll_effect = { great_v = 45 victory = 40 defeat = 12 great_defeat = 3 }
+        random_list = {
+            35 = { trigger_event_non_silently = th_danmaku_events.2 }
+            35 = { trigger_event_non_silently = th_danmaku_events.3 }
+            20 = { trigger_event_non_silently = th_danmaku_events.6 }
+            8 = { trigger_event_non_silently = th_danmaku_events.4 }
+            2 = { trigger_event_non_silently = th_danmaku_events.5 }
+        }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 120 }
-        th_danmaku_encounter_outcome_roll_effect = { great_v = 35 victory = 40 defeat = 20 great_defeat = 5 }
+        random_list = {
+            25 = { trigger_event_non_silently = th_danmaku_events.2 }
+            35 = { trigger_event_non_silently = th_danmaku_events.3 }
+            25 = { trigger_event_non_silently = th_danmaku_events.6 }
+            12 = { trigger_event_non_silently = th_danmaku_events.4 }
+            3 = { trigger_event_non_silently = th_danmaku_events.5 }
+        }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 90 }
-        th_danmaku_encounter_outcome_roll_effect = { great_v = 20 victory = 35 defeat = 30 great_defeat = 15 }
+        random_list = {
+            15 = { trigger_event_non_silently = th_danmaku_events.2 }
+            30 = { trigger_event_non_silently = th_danmaku_events.3 }
+            30 = { trigger_event_non_silently = th_danmaku_events.6 }
+            18 = { trigger_event_non_silently = th_danmaku_events.4 }
+            7 = { trigger_event_non_silently = th_danmaku_events.5 }
+        }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 60 }
-        th_danmaku_encounter_outcome_roll_effect = { great_v = 10 victory = 25 defeat = 35 great_defeat = 30 }
+        random_list = {
+            8 = { trigger_event_non_silently = th_danmaku_events.2 }
+            20 = { trigger_event_non_silently = th_danmaku_events.3 }
+            32 = { trigger_event_non_silently = th_danmaku_events.6 }
+            28 = { trigger_event_non_silently = th_danmaku_events.4 }
+            12 = { trigger_event_non_silently = th_danmaku_events.5 }
+        }
     }
     else = {
-        th_danmaku_encounter_outcome_roll_effect = { great_v = 5 victory = 15 defeat = 35 great_defeat = 45 }
+        random_list = {
+            3 = { trigger_event_non_silently = th_danmaku_events.2 }
+            12 = { trigger_event_non_silently = th_danmaku_events.3 }
+            25 = { trigger_event_non_silently = th_danmaku_events.6 }
+            35 = { trigger_event_non_silently = th_danmaku_events.4 }
+            25 = { trigger_event_non_silently = th_danmaku_events.5 }
+        }
     }
 }
 
-### 遭遇战结局权重掷点（四个参数为对应结局权重，必须全部提供）
-### 用法: th_danmaku_encounter_outcome_roll_effect = { great_v = 45 victory = 40 defeat = 12 great_defeat = 3 }
-th_danmaku_encounter_outcome_roll_effect = {
-    random_list = {
-        $great_v$ = { trigger_event_non_silently = th_danmaku_events.2 }     # 大胜
-        $victory$ = { trigger_event_non_silently = th_danmaku_events.3 }     # 胜利
-        $defeat$ = { trigger_event_non_silently = th_danmaku_events.4 }      # 败北
-        $great_defeat$ = { trigger_event_non_silently = th_danmaku_events.5 }  # 大败
-    }
-}
-
-### 遭遇战奖惩入账（国家 scope；金币/威望直接入账，异变调查进度走预留接口）
-### 用法: th_danmaku_encounter_reward_effect = { gold = <脚本值/数值> prestige = <脚本值/数值> investigation = <脚本值/数值> }
-th_danmaku_encounter_reward_effect = {
+### ============================================================
+### 结局奖励统一封装（2026-08-28）
+### 用法: th_danmaku_battle_reward_effect = {
+###   type = <战斗类型：duel|encounter|beast> tier = <结局档：great_victory|victory|draw|defeat|rout>
+###   gold = <值> prestige = <值> research = <值> stability = <值>
+###   contribution = <值> influence = <值> investigation = <值> }
+### type/tier 为语义参数（供文档与调用点选档，便于不同战斗/场景给不同奖励）；
+### 数值参数实际入账；分档数值集中在 th_danmaku_values.txt
+### ============================================================
+th_danmaku_battle_reward_effect = {
     add_gold = $gold$
     add_prestige = $prestige$
+    add_research_progress = {
+        value = $research$
+    }
+    add_stability = $stability$
+    th_gensokyo_io_contribution_var_add_effect = {
+        value = $contribution$
+    }
+    th_gensokyo_io_influence_var_add_effect = {
+        value = $influence$
+    }
     if = {
         limit = {
             th_gensokyo_in_incident_trigger = yes
@@ -99,12 +139,13 @@ th_danmaku_encounter_reward_effect = {
 }
 
 ### 遭遇战变量清理（国家 scope；结局事件选项内调用）
-### 2026-08-28：追加清理概率公示变量（th_danmaku_encounter_prob_preview_effect 写入）
+### 2026-08-28：追加清理概率公示变量（th_danmaku_encounter_prob_preview_effect 写入，含平手）
 th_danmaku_encounter_cleanup_effect = {
     remove_variable = th_danmaku_encounter_youkai_fp_var
     remove_variable = th_danmaku_encounter_ratio_pct_var
     remove_variable = th_danmaku_great_v_prob_var
     remove_variable = th_danmaku_victory_prob_var
+    remove_variable = th_danmaku_draw_prob_var
     remove_variable = th_danmaku_defeat_prob_var
     remove_variable = th_danmaku_great_defeat_prob_var
     remove_variable = th_danmaku_firepower_self_var
@@ -193,7 +234,7 @@ th_danmaku_duel_trigger_effect = {
 ###   发起方/对手操作全部放进显式 $challenger$/$target$ 块，跨国家读变量用
 ###   $target$.var:X / $challenger$.var:X（替换后即 scope:target.var:X，参考库已验证），
 ###   不使用 prev / 保存作用域（模组 F24 教训：跨块保存作用域不可靠）。
-### 流程：发起方持全部状态（self FP / 对手 FP 拷回 / goal / 分数 / 回合 / 挑衅）
+### 流程：发起方持全部状态（self FP / 对手 FP 拷回 / goal / 分数 / 回合）
 ###   → 对手持 mark + 双方火力副本 → 触发 .10 第 1 轮（发起方确认）
 th_danmaku_duel_start_effect = {
     if = {
@@ -247,14 +288,13 @@ th_danmaku_duel_start_effect = {
             set_variable = { name = th_danmaku_duel_player_score_var value = 0 }
             set_variable = { name = th_danmaku_duel_enemy_score_var value = 0 }
             set_variable = { name = th_danmaku_duel_round_var value = 1 }
-            set_variable = { name = th_danmaku_duel_provoke_var value = 0 }
             set_variable = { name = th_danmaku_duel_last_player_gain_var value = 0 }
             set_variable = { name = th_danmaku_duel_last_enemy_gain_var value = 0 }
             set_variable = {
                 name = th_danmaku_duel_deadline_months_var
                 value = th_danmaku_duel_stale_months_value
             }
-            ### 第 1 轮：发起方确认事件（礼貌请教 / 挑衅），TT 预览双方火力
+            ### 第 1 轮：发起方确认事件（确认挑战 / 怯战），TT 预览双方火力
             trigger_event_non_silently = th_danmaku_events.10
         }
     }
@@ -264,52 +304,141 @@ th_danmaku_duel_start_effect = {
 ### 对决战 — 回合掷分
 ### ============================================================
 
-### 我方回合掷分（战术 1 守势布阵：稳定 2~8，无落空）
+### 我方回合掷分（战术 1 守势布阵：命中 6~10 / 未命中 2~4，命中率最高）
+### 命中率 = th_danmaku_tactic_1_hit_chance_value（基础 + 火力领先 + 战术修正，钳 10~90）
+### 骰子法：掷 1~100，≤ 命中率 → 命中（高分区间）；否则未命中（低分区间，落空≠0）
 th_danmaku_duel_player_round_t1_effect = {
     set_variable = {
-        name = th_danmaku_duel_roll_var
-        value = th_danmaku_tactic_1_roll_value
+        name = th_danmaku_duel_tactic_hit_var
+        value = th_danmaku_tactic_1_hit_chance_value
+    }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
+    }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_1_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_1_low_value
+        }
     }
     th_danmaku_duel_add_player_score_effect = yes
     th_danmaku_duel_dispatch_after_player_effect = yes
 }
 
-### 我方回合掷分（战术 2 稳健进攻：4~16，10% 落空）
+### 我方回合掷分（战术 2 稳健进攻：命中 8~14 / 未命中 3~6）
 th_danmaku_duel_player_round_t2_effect = {
     set_variable = {
-        name = th_danmaku_duel_roll_var
-        value = th_danmaku_tactic_2_roll_value
+        name = th_danmaku_duel_tactic_hit_var
+        value = th_danmaku_tactic_2_hit_chance_value
     }
-    random_list = {
-        90 = { th_danmaku_duel_add_player_score_effect = yes }
-        10 = { }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
     }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_2_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_2_low_value
+        }
+    }
+    th_danmaku_duel_add_player_score_effect = yes
     th_danmaku_duel_dispatch_after_player_effect = yes
 }
 
-### 我方回合掷分（战术 3 全力弹幕：0~26，30% 落空）
+### 我方回合掷分（战术 3 全力弹幕：命中 10~20 / 未命中 4~8）
 th_danmaku_duel_player_round_t3_effect = {
     set_variable = {
-        name = th_danmaku_duel_roll_var
-        value = th_danmaku_tactic_3_roll_value
+        name = th_danmaku_duel_tactic_hit_var
+        value = th_danmaku_tactic_3_hit_chance_value
     }
-    random_list = {
-        70 = { th_danmaku_duel_add_player_score_effect = yes }
-        30 = { }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
     }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_3_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_3_low_value
+        }
+    }
+    th_danmaku_duel_add_player_score_effect = yes
     th_danmaku_duel_dispatch_after_player_effect = yes
 }
 
-### 我方回合掷分（战术 4 搏命一击：0~42，50% 落空）
+### 我方回合掷分（战术 4 搏命一击：命中 12~26 / 未命中 5~10，命中率最低但上限最高）
 th_danmaku_duel_player_round_t4_effect = {
     set_variable = {
-        name = th_danmaku_duel_roll_var
-        value = th_danmaku_tactic_4_roll_value
+        name = th_danmaku_duel_tactic_hit_var
+        value = th_danmaku_tactic_4_hit_chance_value
     }
-    random_list = {
-        50 = { th_danmaku_duel_add_player_score_effect = yes }
-        50 = { }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
     }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_4_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_4_low_value
+        }
+    }
+    th_danmaku_duel_add_player_score_effect = yes
     th_danmaku_duel_dispatch_after_player_effect = yes
 }
 
@@ -331,6 +460,7 @@ th_danmaku_duel_dispatch_after_player_effect = {
 
 ### 对手回合掷分（AI 本地模拟，由开局捕获的对手火力驱动）
 ### 强者求稳（战术 1/2），弱者搏冷门（战术 2/3/4）——弱方亦可能翻盘
+### 命中率 = 基础 + 对手领先（对手火力 − 我方火力）+ 战术修正，骰子法同玩家
 ### 终局 → 结果事件；否则回合数 +1 并进入下一轮我方回合（.20，非静默）
 th_danmaku_duel_enemy_round_effect = {
     if = {
@@ -338,30 +468,15 @@ th_danmaku_duel_enemy_round_effect = {
             th_danmaku_duel_enemy_confident_trigger = yes
         }
         random_list = {
-            60 = {
-                set_variable = { name = th_danmaku_duel_roll_var value = th_danmaku_tactic_2_roll_value }
-                th_danmaku_duel_add_enemy_score_effect = yes
-            }
-            40 = {
-                set_variable = { name = th_danmaku_duel_roll_var value = th_danmaku_tactic_1_roll_value }
-                th_danmaku_duel_add_enemy_score_effect = yes
-            }
+            60 = { th_danmaku_duel_enemy_round_t2_effect = yes }
+            40 = { th_danmaku_duel_enemy_round_t1_effect = yes }
         }
     }
     else = {
         random_list = {
-            35 = {
-                set_variable = { name = th_danmaku_duel_roll_var value = th_danmaku_tactic_3_roll_value }
-                th_danmaku_duel_add_enemy_score_effect = yes
-            }
-            35 = {
-                set_variable = { name = th_danmaku_duel_roll_var value = th_danmaku_tactic_4_roll_value }
-                th_danmaku_duel_add_enemy_score_effect = yes
-            }
-            30 = {
-                set_variable = { name = th_danmaku_duel_roll_var value = th_danmaku_tactic_2_roll_value }
-                th_danmaku_duel_add_enemy_score_effect = yes
-            }
+            35 = { th_danmaku_duel_enemy_round_t3_effect = yes }
+            35 = { th_danmaku_duel_enemy_round_t4_effect = yes }
+            30 = { th_danmaku_duel_enemy_round_t2_effect = yes }
         }
     }
     if = {
@@ -380,6 +495,192 @@ th_danmaku_duel_enemy_round_effect = {
             days = 1
         }
     }
+}
+
+### 对手回合掷分辅助（AI 视角命中率 = 基础 + 对手领先 + 战术修正，钳 10~90）
+### 命中 → 高分区间；未命中 → 低分区间（落空≠0）
+th_danmaku_duel_enemy_round_t1_effect = {
+    set_variable = {
+        name = th_danmaku_duel_tactic_hit_var
+        value = {
+            value = th_danmaku_duel_hit_base_value
+            add = {
+                value = {
+                    value = var:th_danmaku_duel_enemy_fp_var
+                    subtract = var:th_danmaku_firepower_self_var
+                }
+                multiply = 100
+                divide = var:th_danmaku_firepower_self_var
+                multiply = th_danmaku_duel_hit_coef_value
+            }
+            add = th_danmaku_tactic_1_hit_adj_value
+            min = th_danmaku_duel_hit_min_value
+            max = th_danmaku_duel_hit_max_value
+        }
+    }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
+    }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_1_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_1_low_value
+        }
+    }
+    th_danmaku_duel_add_enemy_score_effect = yes
+}
+
+th_danmaku_duel_enemy_round_t2_effect = {
+    set_variable = {
+        name = th_danmaku_duel_tactic_hit_var
+        value = {
+            value = th_danmaku_duel_hit_base_value
+            add = {
+                value = {
+                    value = var:th_danmaku_duel_enemy_fp_var
+                    subtract = var:th_danmaku_firepower_self_var
+                }
+                multiply = 100
+                divide = var:th_danmaku_firepower_self_var
+                multiply = th_danmaku_duel_hit_coef_value
+            }
+            add = th_danmaku_tactic_2_hit_adj_value
+            min = th_danmaku_duel_hit_min_value
+            max = th_danmaku_duel_hit_max_value
+        }
+    }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
+    }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_2_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_2_low_value
+        }
+    }
+    th_danmaku_duel_add_enemy_score_effect = yes
+}
+
+th_danmaku_duel_enemy_round_t3_effect = {
+    set_variable = {
+        name = th_danmaku_duel_tactic_hit_var
+        value = {
+            value = th_danmaku_duel_hit_base_value
+            add = {
+                value = {
+                    value = var:th_danmaku_duel_enemy_fp_var
+                    subtract = var:th_danmaku_firepower_self_var
+                }
+                multiply = 100
+                divide = var:th_danmaku_firepower_self_var
+                multiply = th_danmaku_duel_hit_coef_value
+            }
+            add = th_danmaku_tactic_3_hit_adj_value
+            min = th_danmaku_duel_hit_min_value
+            max = th_danmaku_duel_hit_max_value
+        }
+    }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
+    }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_3_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_3_low_value
+        }
+    }
+    th_danmaku_duel_add_enemy_score_effect = yes
+}
+
+th_danmaku_duel_enemy_round_t4_effect = {
+    set_variable = {
+        name = th_danmaku_duel_tactic_hit_var
+        value = {
+            value = th_danmaku_duel_hit_base_value
+            add = {
+                value = {
+                    value = var:th_danmaku_duel_enemy_fp_var
+                    subtract = var:th_danmaku_firepower_self_var
+                }
+                multiply = 100
+                divide = var:th_danmaku_firepower_self_var
+                multiply = th_danmaku_duel_hit_coef_value
+            }
+            add = th_danmaku_tactic_4_hit_adj_value
+            min = th_danmaku_duel_hit_min_value
+            max = th_danmaku_duel_hit_max_value
+        }
+    }
+    set_variable = {
+        name = th_danmaku_duel_dice_var
+        value = {
+            integer_range = {
+                min = 1
+                max = 100
+            }
+        }
+    }
+    if = {
+        limit = {
+            var:th_danmaku_duel_dice_var <= var:th_danmaku_duel_tactic_hit_var
+        }
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_4_high_value
+        }
+    }
+    else = {
+        set_variable = {
+            name = th_danmaku_duel_roll_var
+            value = th_danmaku_tactic_4_low_value
+        }
+    }
+    th_danmaku_duel_add_enemy_score_effect = yes
 }
 
 ### 我方得分入账（记录本回合得分供下一回合事件反馈）
@@ -407,162 +708,145 @@ th_danmaku_duel_add_enemy_score_effect = {
 }
 
 ### ============================================================
-### 对决战 — 终局结算
+### 对决战 — 终局结算（分差五档）
 ### ============================================================
 
+### 分差%（带符号）= (我方分数 − 对方分数) × 100 ÷ 终点；负数 = 我方落后
+### 分档阈值：th_danmaku_duel_draw_gap_value（5%）= 平手；th_danmaku_duel_rout_gap_value（35%）= 大胜/满目疮痍
+th_danmaku_duel_gap_pct_value = {
+    value = var:th_danmaku_duel_player_score_var
+    subtract = var:th_danmaku_duel_enemy_score_var
+    multiply = 100
+    divide = th_danmaku_duel_goal_value
+}
+
 ### 终局结算（国家 scope；在结果事件 .22 的 immediate 调用）
-### 胜负按最终分数对比；挑衅（th_danmaku_duel_provoke_var >= 1）放大奖惩并附加状态
-### 注意：清理由 .22 选项内 th_danmaku_duel_cleanup_effect 负责（选项 trigger 需读分数变量）
+### 分差五档：平手(≤5%) / 胜利(5~35%) / 大胜(>35%) / 败北(−35%~−5%) / 满目疮痍(<−35%)
+### 奖励统一走 th_danmaku_battle_reward_effect（数值集中在 th_danmaku_values.txt）
+### 注意：清理由 .22 选项内 th_danmaku_duel_cleanup_effect 负责（选项 trigger 需读分数/分差变量）
 th_danmaku_duel_finish_effect = {
+    ### 分差快照（供 .22 选项 trigger 与 TT）
+    set_variable = {
+        name = th_danmaku_duel_gap_pct_var
+        value = th_danmaku_duel_gap_pct_value
+    }
     if = {
         limit = {
-            var:th_danmaku_duel_player_score_var >= var:th_danmaku_duel_enemy_score_var
+            var:th_danmaku_duel_gap_pct_var >= -5
+            var:th_danmaku_duel_gap_pct_var <= 5
+        }
+        ### 平手
+        set_variable = { name = th_danmaku_duel_final_gold_var value = th_danmaku_duel_draw_gold_value }
+        set_variable = { name = th_danmaku_duel_final_prestige_var value = th_danmaku_duel_draw_prestige_value }
+        th_danmaku_battle_reward_effect = {
+            type = duel tier = draw
+            gold = th_danmaku_duel_draw_gold_value
+            prestige = th_danmaku_duel_draw_prestige_value
+            research = th_danmaku_duel_draw_research_value
+            stability = th_danmaku_duel_draw_stability_value
+            contribution = th_danmaku_duel_draw_contribution_value
+            influence = th_danmaku_duel_draw_influence_value
+            investigation = 0
+        }
+    }
+    else_if = {
+        limit = {
+            var:th_danmaku_duel_player_score_var > var:th_danmaku_duel_enemy_score_var
+            var:th_danmaku_duel_gap_pct_var <= 35
         }
         ### 胜利
-        if = {
-            limit = {
-                var:th_danmaku_duel_provoke_var >= 1
-            }
-            th_danmaku_duel_victory_reward_effect = {
-                multiplier = th_danmaku_provoke_multiplier_value
-            }
-            add_country_modifier = {
-                modifier = th_danmaku_provoke_buff_modifier
-                years = th_danmaku_duel_buff_years_value
-                mode = add_and_extend
-            }
-        }
-        else = {
-            th_danmaku_duel_victory_reward_effect = {
-                multiplier = 1
-            }
+        set_variable = { name = th_danmaku_duel_final_gold_var value = th_danmaku_duel_victory_gold_value }
+        set_variable = { name = th_danmaku_duel_final_prestige_var value = th_danmaku_duel_victory_prestige_value }
+        th_danmaku_battle_reward_effect = {
+            type = duel tier = victory
+            gold = th_danmaku_duel_victory_gold_value
+            prestige = th_danmaku_duel_victory_prestige_value
+            research = th_danmaku_duel_victory_research_value
+            stability = th_danmaku_duel_victory_stability_value
+            contribution = th_danmaku_duel_victory_contribution_value
+            influence = th_danmaku_duel_victory_influence_value
+            investigation = th_danmaku_duel_victory_investigation_value
         }
         add_country_modifier = {
             modifier = th_danmaku_champion_modifier
             years = th_danmaku_duel_buff_years_value
             mode = add_and_extend
         }
-        ### 异变调查进度（胜利时，M3 落地后生效）
-        if = {
-            limit = {
-                th_gensokyo_in_incident_trigger = yes
-            }
-            th_gensokyo_incident_add_investigation_effect = {
-                value = th_danmaku_duel_victory_investigation_value
-            }
+    }
+    else_if = {
+        limit = {
+            var:th_danmaku_duel_player_score_var > var:th_danmaku_duel_enemy_score_var
+            var:th_danmaku_duel_gap_pct_var > 35
+        }
+        ### 大胜
+        set_variable = { name = th_danmaku_duel_final_gold_var value = th_danmaku_duel_great_victory_gold_value }
+        set_variable = { name = th_danmaku_duel_final_prestige_var value = th_danmaku_duel_great_victory_prestige_value }
+        th_danmaku_battle_reward_effect = {
+            type = duel tier = great_victory
+            gold = th_danmaku_duel_great_victory_gold_value
+            prestige = th_danmaku_duel_great_victory_prestige_value
+            research = th_danmaku_duel_great_victory_research_value
+            stability = th_danmaku_duel_great_victory_stability_value
+            contribution = th_danmaku_duel_great_victory_contribution_value
+            influence = th_danmaku_duel_great_victory_influence_value
+            investigation = th_danmaku_duel_victory_investigation_value
+        }
+        add_country_modifier = {
+            modifier = th_danmaku_champion_modifier
+            years = th_danmaku_duel_buff_years_value
+            mode = add_and_extend
+        }
+    }
+    else_if = {
+        limit = {
+            var:th_danmaku_duel_player_score_var < var:th_danmaku_duel_enemy_score_var
+            var:th_danmaku_duel_gap_pct_var >= -35
+        }
+        ### 败北
+        set_variable = { name = th_danmaku_duel_final_gold_var value = th_danmaku_duel_defeat_gold_value }
+        set_variable = { name = th_danmaku_duel_final_prestige_var value = th_danmaku_duel_defeat_prestige_value }
+        th_danmaku_battle_reward_effect = {
+            type = duel tier = defeat
+            gold = th_danmaku_duel_defeat_gold_value
+            prestige = th_danmaku_duel_defeat_prestige_value
+            research = th_danmaku_duel_defeat_research_value
+            stability = th_danmaku_duel_defeat_stability_value
+            contribution = 0
+            influence = 0
+            investigation = 0
         }
     }
     else = {
-        ### 败北
-        if = {
-            limit = {
-                var:th_danmaku_duel_provoke_var >= 1
-            }
-            th_danmaku_duel_defeat_penalty_effect = {
-                multiplier = th_danmaku_provoke_multiplier_value
-            }
-            add_country_modifier = {
-                modifier = th_danmaku_provoke_penalty_modifier
-                years = th_danmaku_duel_buff_years_value
-                mode = add_and_extend
-            }
+        ### 满目疮痍
+        set_variable = { name = th_danmaku_duel_final_gold_var value = th_danmaku_duel_rout_gold_value }
+        set_variable = { name = th_danmaku_duel_final_prestige_var value = th_danmaku_duel_rout_prestige_value }
+        th_danmaku_battle_reward_effect = {
+            type = duel tier = rout
+            gold = th_danmaku_duel_rout_gold_value
+            prestige = th_danmaku_duel_rout_prestige_value
+            research = th_danmaku_duel_rout_research_value
+            stability = th_danmaku_duel_rout_stability_value
+            contribution = 0
+            influence = 0
+            investigation = 0
         }
-        else = {
-            th_danmaku_duel_defeat_penalty_effect = {
-                multiplier = 1
-            }
-        }
-    }
-}
-
-### 对决胜利奖励（multiplier：1 = 礼貌请教，2 = 挑衅）
-### 同时写入最终结算显示变量（结果事件 TT 动态取实际入账金额）
-### 2026-08-28：研究点数 +15 / 稳定度 +5 为固定奖励，挑衅不翻倍
-th_danmaku_duel_victory_reward_effect = {
-    set_variable = {
-        name = th_danmaku_duel_final_gold_var
-        value = {
-            value = th_danmaku_duel_victory_gold_value
-            multiply = $multiplier$
-        }
-    }
-    set_variable = {
-        name = th_danmaku_duel_final_prestige_var
-        value = {
-            value = th_danmaku_duel_victory_prestige_value
-            multiply = $multiplier$
-        }
-    }
-    add_gold = {
-        value = th_danmaku_duel_victory_gold_value
-        multiply = $multiplier$
-    }
-    add_prestige = {
-        value = th_danmaku_duel_victory_prestige_value
-        multiply = $multiplier$
-    }
-    th_gensokyo_io_contribution_var_add_effect = {
-        value = {
-            value = th_danmaku_duel_victory_contribution_value
-            multiply = $multiplier$
-        }
-    }
-    th_gensokyo_io_influence_var_add_effect = {
-        value = {
-            value = th_danmaku_duel_victory_influence_value
-            multiply = $multiplier$
-        }
-    }
-    ### 固定奖励（挑衅不翻倍）：研究点数 +15、稳定度 +5
-    add_research_progress = {
-        value = th_danmaku_duel_victory_research_value
-    }
-    add_stability = th_danmaku_duel_victory_stability_value
-}
-
-### 对决败北惩罚（multiplier：1 = 礼貌请教，2 = 挑衅）
-### 同时写入最终结算显示变量（结果事件 TT 动态取实际扣除金额）
-### 2026-08-28：败者固定获得研究点数 +5（挑衅不翻倍）；稳定度不扣
-th_danmaku_duel_defeat_penalty_effect = {
-    set_variable = {
-        name = th_danmaku_duel_final_gold_var
-        value = {
-            value = th_danmaku_duel_defeat_gold_value
-            multiply = $multiplier$
-        }
-    }
-    set_variable = {
-        name = th_danmaku_duel_final_prestige_var
-        value = {
-            value = th_danmaku_duel_defeat_prestige_value
-            multiply = $multiplier$
-        }
-    }
-    add_gold = {
-        value = th_danmaku_duel_defeat_gold_value
-        multiply = $multiplier$
-    }
-    add_prestige = {
-        value = th_danmaku_duel_defeat_prestige_value
-        multiply = $multiplier$
-    }
-    ### 固定获得（挑衅不翻倍）：研究点数 +5
-    add_research_progress = {
-        value = th_danmaku_duel_defeat_research_value
     }
 }
 
 ### 对决状态清理（国家 scope；结果事件选项 / 中断事件 / 月度断链清理 调用）
-### 2026-08-28：补清两段确认引入的发起方标记/双方火力副本
+### 2026-08-28：补清两段确认引入的发起方标记/双方火力副本；删挑衅变量；
+### 清骰子/命中率/分差快照变量
 th_danmaku_duel_cleanup_effect = {
     remove_variable = th_danmaku_duel_enemy_fp_var
     remove_variable = th_danmaku_duel_goal_var
     remove_variable = th_danmaku_duel_player_score_var
     remove_variable = th_danmaku_duel_enemy_score_var
     remove_variable = th_danmaku_duel_round_var
-    remove_variable = th_danmaku_duel_provoke_var
     remove_variable = th_danmaku_duel_deadline_months_var
     remove_variable = th_danmaku_duel_roll_var
+    remove_variable = th_danmaku_duel_dice_var
+    remove_variable = th_danmaku_duel_tactic_hit_var
+    remove_variable = th_danmaku_duel_gap_pct_var
     remove_variable = th_danmaku_duel_last_player_gain_var
     remove_variable = th_danmaku_duel_last_enemy_gain_var
     remove_variable = th_danmaku_duel_final_gold_var
@@ -683,6 +967,9 @@ th_danmaku_beast_trigger_effect = {
 }
 
 ### 妖兽战斗结算（国家 scope；与遭遇战同五档火力比算法，触发妖兽结局事件）
+### 五档权重表与遭遇战完全一致（≥160: 35/35/20/8/2，≥120: 25/35/25/12/3，
+### ≥90: 15/30/30/18/7，≥60: 8/20/32/28/12，否则 3/12/25/35/25），
+### 平手档触发 .6（与 th_danmaku_encounter_prob_preview_effect 公示一致）
 th_danmaku_beast_resolve_effect = {
     set_variable = {
         name = th_danmaku_encounter_ratio_pct_var
@@ -701,52 +988,58 @@ th_danmaku_beast_resolve_effect = {
     if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 160 }
         random_list = {
-            45 = { trigger_event_non_silently = th_danmaku_events.31 }
-            40 = { trigger_event_non_silently = th_danmaku_events.32 }
-            12 = { trigger_event_non_silently = th_danmaku_events.33 }
-            3 = { trigger_event_non_silently = th_danmaku_events.34 }
+            35 = { trigger_event_non_silently = th_danmaku_events.31 }
+            35 = { trigger_event_non_silently = th_danmaku_events.32 }
+            20 = { trigger_event_non_silently = th_danmaku_events.6 }
+            8 = { trigger_event_non_silently = th_danmaku_events.33 }
+            2 = { trigger_event_non_silently = th_danmaku_events.34 }
         }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 120 }
         random_list = {
-            35 = { trigger_event_non_silently = th_danmaku_events.31 }
-            40 = { trigger_event_non_silently = th_danmaku_events.32 }
-            20 = { trigger_event_non_silently = th_danmaku_events.33 }
-            5 = { trigger_event_non_silently = th_danmaku_events.34 }
+            25 = { trigger_event_non_silently = th_danmaku_events.31 }
+            35 = { trigger_event_non_silently = th_danmaku_events.32 }
+            25 = { trigger_event_non_silently = th_danmaku_events.6 }
+            12 = { trigger_event_non_silently = th_danmaku_events.33 }
+            3 = { trigger_event_non_silently = th_danmaku_events.34 }
         }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 90 }
         random_list = {
-            20 = { trigger_event_non_silently = th_danmaku_events.31 }
-            35 = { trigger_event_non_silently = th_danmaku_events.32 }
-            30 = { trigger_event_non_silently = th_danmaku_events.33 }
-            15 = { trigger_event_non_silently = th_danmaku_events.34 }
+            15 = { trigger_event_non_silently = th_danmaku_events.31 }
+            30 = { trigger_event_non_silently = th_danmaku_events.32 }
+            30 = { trigger_event_non_silently = th_danmaku_events.6 }
+            18 = { trigger_event_non_silently = th_danmaku_events.33 }
+            7 = { trigger_event_non_silently = th_danmaku_events.34 }
         }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 60 }
         random_list = {
-            10 = { trigger_event_non_silently = th_danmaku_events.31 }
-            25 = { trigger_event_non_silently = th_danmaku_events.32 }
-            35 = { trigger_event_non_silently = th_danmaku_events.33 }
-            30 = { trigger_event_non_silently = th_danmaku_events.34 }
+            8 = { trigger_event_non_silently = th_danmaku_events.31 }
+            20 = { trigger_event_non_silently = th_danmaku_events.32 }
+            32 = { trigger_event_non_silently = th_danmaku_events.6 }
+            28 = { trigger_event_non_silently = th_danmaku_events.33 }
+            12 = { trigger_event_non_silently = th_danmaku_events.34 }
         }
     }
     else = {
         random_list = {
-            5 = { trigger_event_non_silently = th_danmaku_events.31 }
-            15 = { trigger_event_non_silently = th_danmaku_events.32 }
+            3 = { trigger_event_non_silently = th_danmaku_events.31 }
+            12 = { trigger_event_non_silently = th_danmaku_events.32 }
+            25 = { trigger_event_non_silently = th_danmaku_events.6 }
             35 = { trigger_event_non_silently = th_danmaku_events.33 }
-            45 = { trigger_event_non_silently = th_danmaku_events.34 }
+            25 = { trigger_event_non_silently = th_danmaku_events.34 }
         }
     }
 }
 
 ### 妖兽退治成功（国家 scope）：移除标记地点的妖兽作乱修正 + 奖励入账 + 清变量
-### 用法: th_danmaku_beast_victory_effect = { gold = <脚本值> research = <脚本值> investigation = <脚本值> }
-### 2026-08-28：奖励 = 500 金 + 5 研究点数（大胜/胜利同值），不再给威望
+### 用法: th_danmaku_beast_victory_effect = { investigation = <值> }
+### 2026-08-28：奖励统一走 th_danmaku_battle_reward_effect；
+### 金/研究用固定常量（500 金 + 5 研究点数，大胜/胜利同值），不再给威望
 th_danmaku_beast_victory_effect = {
     every_owned_location = {
         limit = {
@@ -755,23 +1048,23 @@ th_danmaku_beast_victory_effect = {
         remove_location_modifier = th_beast_rampage_modifier
         remove_variable = th_danmaku_beast_location_mark
     }
-    add_gold = $gold$
-    add_research_progress = {
-        value = $research$
-    }
-    if = {
-        limit = {
-            th_gensokyo_in_incident_trigger = yes
-        }
-        th_gensokyo_incident_add_investigation_effect = {
-            value = $investigation$
-        }
+    th_danmaku_battle_reward_effect = {
+        type = beast
+        tier = victory
+        gold = th_danmaku_beast_victory_gold_value
+        prestige = 0
+        research = th_danmaku_beast_victory_research_value
+        stability = 0
+        contribution = 0
+        influence = 0
+        investigation = $investigation$
     }
     th_danmaku_encounter_cleanup_effect = yes
 }
 
 ### 妖兽退治失败（国家 scope）：惩罚入账 + 清变量（修正保留，可再次退治）
 ### 用法: th_danmaku_beast_defeat_effect = { gold = <脚本值> prestige = <脚本值> }
+### 2026-08-28：奖励统一走 th_danmaku_battle_reward_effect（研究/稳定/贡献/影响为 0）
 th_danmaku_beast_defeat_effect = {
     every_owned_location = {
         limit = {
@@ -779,9 +1072,15 @@ th_danmaku_beast_defeat_effect = {
         }
         remove_variable = th_danmaku_beast_location_mark
     }
-    th_danmaku_encounter_reward_effect = {
+    th_danmaku_battle_reward_effect = {
+        type = beast
+        tier = defeat
         gold = $gold$
         prestige = $prestige$
+        research = 0
+        stability = 0
+        contribution = 0
+        influence = 0
         investigation = 0
     }
     th_danmaku_encounter_cleanup_effect = yes
@@ -789,9 +1088,9 @@ th_danmaku_beast_defeat_effect = {
 
 ### ============================================================
 ### 遭遇/妖兽 战斗前结局概率公示（事件 immediate 调用）
-### 复用 th_danmaku_encounter_ratio_pct_value 计算火力比 → 按五档写入 4 个显示变量，
-### 供事件选项 TT 公示「大胜/胜利/败北/大败」概率（与 th_danmaku_encounter_resolve_effect
-### / th_danmaku_beast_resolve_effect 的权重完全一致）
+### 复用 th_danmaku_encounter_ratio_pct_value 计算火力比 → 按五档写入 5 个显示变量，
+### 供事件选项 TT 公示「大胜/胜利/平手/败北/大败」概率（与
+### th_danmaku_encounter_resolve_effect / th_danmaku_beast_resolve_effect 权重完全一致）
 ### ============================================================
 th_danmaku_encounter_prob_preview_effect = {
     set_variable = {
@@ -810,36 +1109,41 @@ th_danmaku_encounter_prob_preview_effect = {
     }
     if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 160 }
-        set_variable = { name = th_danmaku_great_v_prob_var value = 45 }
-        set_variable = { name = th_danmaku_victory_prob_var value = 40 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 35 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 35 }
+        set_variable = { name = th_danmaku_draw_prob_var value = 20 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 8 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 2 }
+    }
+    else_if = {
+        limit = { var:th_danmaku_encounter_ratio_pct_var >= 120 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 25 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 35 }
+        set_variable = { name = th_danmaku_draw_prob_var value = 25 }
         set_variable = { name = th_danmaku_defeat_prob_var value = 12 }
         set_variable = { name = th_danmaku_great_defeat_prob_var value = 3 }
     }
     else_if = {
-        limit = { var:th_danmaku_encounter_ratio_pct_var >= 120 }
-        set_variable = { name = th_danmaku_great_v_prob_var value = 35 }
-        set_variable = { name = th_danmaku_victory_prob_var value = 40 }
-        set_variable = { name = th_danmaku_defeat_prob_var value = 20 }
-        set_variable = { name = th_danmaku_great_defeat_prob_var value = 5 }
-    }
-    else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 90 }
-        set_variable = { name = th_danmaku_great_v_prob_var value = 20 }
-        set_variable = { name = th_danmaku_victory_prob_var value = 35 }
-        set_variable = { name = th_danmaku_defeat_prob_var value = 30 }
-        set_variable = { name = th_danmaku_great_defeat_prob_var value = 15 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 15 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 30 }
+        set_variable = { name = th_danmaku_draw_prob_var value = 30 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 18 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 7 }
     }
     else_if = {
         limit = { var:th_danmaku_encounter_ratio_pct_var >= 60 }
-        set_variable = { name = th_danmaku_great_v_prob_var value = 10 }
-        set_variable = { name = th_danmaku_victory_prob_var value = 25 }
-        set_variable = { name = th_danmaku_defeat_prob_var value = 35 }
-        set_variable = { name = th_danmaku_great_defeat_prob_var value = 30 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 8 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 20 }
+        set_variable = { name = th_danmaku_draw_prob_var value = 32 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 28 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 12 }
     }
     else = {
-        set_variable = { name = th_danmaku_great_v_prob_var value = 5 }
-        set_variable = { name = th_danmaku_victory_prob_var value = 15 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 3 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 12 }
+        set_variable = { name = th_danmaku_draw_prob_var value = 25 }
         set_variable = { name = th_danmaku_defeat_prob_var value = 35 }
-        set_variable = { name = th_danmaku_great_defeat_prob_var value = 45 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 25 }
     }
 }

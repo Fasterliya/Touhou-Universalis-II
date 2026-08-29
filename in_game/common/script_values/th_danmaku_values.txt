@@ -1,9 +1,8 @@
 ﻿### ============================================================
 ### 弹幕战系统 — 集中数值（平衡调整入口）
 ### 弹幕火力水平（th_danmaku_firepower_value）=
-###   基础 10 + 统治者军事能力×10（1 军事 = 10 火力，100 军事 ≈ 1000）
-###   + 弹幕火力值（平加修正） + 正统信仰容忍度
-###   × (1 + 弹幕火力值修正%)
+###   基础 10 + 统治者军事×10 + 正统信仰容忍×100 + 稳定度×2
+###   + 弹幕火力值（平加修正） × (1 + 弹幕火力值修正%)
 ### 全部数值为初值，标注待调；遭遇战/对决战 事件与效果均引用本文件键
 ### ============================================================
 
@@ -11,18 +10,25 @@
 ### 弹幕火力水平（核心公式，国家 scope 读取）
 ### 分量已验证：ruler_or_regent.mil（flavor_BYZ.txt:2454）、
 ###   modifier:tolerance_own（00_modifier_types.txt:6976 country 类）、
+###   stability（脚本值裸引用，red_turban_rebellions.txt:3433 先例，范围约 -100~100）、
 ###   modifier:th_danmaku_firepower_*（本模组自定义，见 modifier_type_definitions）
-### 嵌套数学块已验证（_script_values.info："you can even inline them in the mathematical operators"）
-### 2026-08-28：军事能力 ×10（1 军事 = 10 火力）——100 军事 → 约 1000 火力
+### 2026-08-28 定案：军事×10（100 军事 ≈ 1000）、容忍×100、稳定×2
 ### ------------------------------------------------------------
 th_danmaku_firepower_value = {
-    value = 10                                  # 基础值（相对千级可忽略，待调）
+    value = 10                                  # 基础值（待调）
     add = {
         value = ruler_or_regent.mil
         multiply = 10                           # 每 1 军事能力 = 10 火力
     }
+    add = {
+        value = modifier:tolerance_own
+        multiply = 100                          # 每 1 正统信仰容忍 = 100 火力
+    }
+    add = {
+        value = stability
+        multiply = 2                            # 每 1 稳定度 = 2 火力
+    }
     add = modifier:th_danmaku_firepower_base_modifier   # 弹幕火力值（平加；advance/事件/异变累加）
-    add = modifier:tolerance_own                # 正统信仰容忍度
     multiply = {
         value = 1
         add = modifier:th_danmaku_firepower_modifier    # 弹幕火力值修正（百分比）
@@ -34,23 +40,17 @@ th_danmaku_firepower_value = {
 ### ============================================================
 
 ### 月度随机遭遇概率（%）：on_action 用字面量 random = { chance = 2 }，
-### 本键供文档/未来改为脚本值权重时使用（待调）
+### 本键供文档/未来改造为脚本值权重时使用（待调）
 th_danmaku_encounter_monthly_chance_value = { value = 2 }
 
-### 无名妖怪火力 = 我方火力 × 50%~130%（随机百分比，整数域）
-th_danmaku_youkai_firepower_pct_min_value = { value = 50 }
-th_danmaku_youkai_firepower_pct_max_value = { value = 130 }
+### 无名妖怪火力 = 系统随机 500~1000（2026-08-28 定案；替代原 我方×50%~130%）
+th_danmaku_youkai_firepower_min_value = { value = 500 }
+th_danmaku_youkai_firepower_max_value = { value = 1000 }
 
 th_danmaku_youkai_firepower_value = {
-    value = th_danmaku_firepower_value
-    multiply = {
-        value = {
-            integer_range = {
-                min = th_danmaku_youkai_firepower_pct_min_value
-                max = th_danmaku_youkai_firepower_pct_max_value
-            }
-        }
-        divide = 100
+    integer_range = {
+        min = th_danmaku_youkai_firepower_min_value
+        max = th_danmaku_youkai_firepower_max_value
     }
 }
 
@@ -61,13 +61,15 @@ th_danmaku_encounter_ratio_pct_value = {
     divide = var:th_danmaku_encounter_youkai_fp_var
 }
 
-### 遭遇战四结局 金币/威望奖惩（待调）
+### 遭遇战五结局 金币/威望奖惩（待调；大胜/胜利/平手/败北/大败）
 th_danmaku_encounter_great_victory_gold_value = { value = 30 }
 th_danmaku_encounter_victory_gold_value = { value = 15 }
+th_danmaku_encounter_draw_gold_value = { value = 0 }
 th_danmaku_encounter_defeat_gold_value = { value = -10 }
 th_danmaku_encounter_great_defeat_gold_value = { value = -25 }
 th_danmaku_encounter_great_victory_prestige_value = { value = 5 }
 th_danmaku_encounter_victory_prestige_value = { value = 2 }
+th_danmaku_encounter_draw_prestige_value = { value = 0 }
 th_danmaku_encounter_defeat_prestige_value = { value = -2 }
 th_danmaku_encounter_great_defeat_prestige_value = { value = -5 }
 
@@ -79,41 +81,109 @@ th_danmaku_encounter_great_victory_investigation_value = { value = 4 }
 ### 对决战 平衡数值
 ### ============================================================
 
-### 对决胜负终点（隐藏，玩家不可见）= 固定 100（2026-08-28 定案）
-### 回合预估（平均单回合 12~15 分，含落空）：常规混合 7~9 轮、全保守 8~12 轮、全激进 4~5 轮
-### 唯一平衡入口：改本键即可调整对决时长；不再依赖双方火力（火力只影响
-### 遭遇战结局概率带 / AI 对手战术倾向 / 展示值）
+### 对决胜负终点（隐藏，玩家不可见）= 固定 100
+### 回合预估（平均单回合 8~14 分）：常规混合 8~12 轮
 th_danmaku_duel_goal_value = { value = 100 }
 
-### 四战术单回合得分区间（保守 → 激进；激进方差大、上限高）
-### 落空概率（一无所有）由事件内 random_list 承担：战术2=10% / 战术3=30% / 战术4=50%，战术1=0%
-th_danmaku_tactic_1_roll_value = { integer_range = { min = 2 max = 8 } }     # 守势布阵：稳定
-th_danmaku_tactic_2_roll_value = { integer_range = { min = 4 max = 16 } }    # 稳健进攻：中庸
-th_danmaku_tactic_3_roll_value = { integer_range = { min = 0 max = 26 } }    # 全力弹幕：激进
-th_danmaku_tactic_4_roll_value = { integer_range = { min = 0 max = 42 } }    # 搏命一击：高风险高回报
+### 结果分档阈值（分差% = |分差| ÷ 终点 × 100）
+th_danmaku_duel_draw_gap_value = { value = 5 }        # ≤5% → 平手
+th_danmaku_duel_rout_gap_value = { value = 35 }       # >35% → 大胜 / 满目疮痍
 
-### 挑衅倍数（礼貌请教 ×1 / 挑衅 ×2）
-th_danmaku_provoke_multiplier_value = { value = 2 }
+### 战术命中率 = clamp(50 + 领先%×0.25 + 战术修正, 10, 90)
+### 领先% = (我方火力 − 对方火力) × 100 ÷ 对方火力（劣势方命中率可低至 ~13%）
+th_danmaku_duel_hit_base_value = { value = 50 }
+th_danmaku_duel_hit_coef_value = { value = 0.25 }
+th_danmaku_duel_hit_min_value = { value = 10 }
+th_danmaku_duel_hit_max_value = { value = 90 }
+th_danmaku_tactic_1_hit_adj_value = { value = 10 }    # 守势布阵：+10% 命中
+th_danmaku_tactic_2_hit_adj_value = { value = 5 }     # 稳健进攻：+5%
+th_danmaku_tactic_3_hit_adj_value = { value = -5 }    # 全力弹幕：-5%
+th_danmaku_tactic_4_hit_adj_value = { value = -15 }   # 搏命一击：-15%（高方差高风险）
 
-### 对决战 胜负奖惩（待调；金/威望/贡献/影响力 挑衅时 ×倍数）
+### 命中率（基础 + 火力领先；国家 scope，依赖 th_danmaku_firepower_self_var / th_danmaku_duel_enemy_fp_var）
+th_danmaku_duel_hit_chance_value = {
+    value = th_danmaku_duel_hit_base_value
+    add = {
+        value = {
+            value = var:th_danmaku_firepower_self_var
+            subtract = var:th_danmaku_duel_enemy_fp_var
+        }
+        multiply = 100
+        divide = var:th_danmaku_duel_enemy_fp_var
+        multiply = th_danmaku_duel_hit_coef_value
+    }
+    min = th_danmaku_duel_hit_min_value
+    max = th_danmaku_duel_hit_max_value
+}
+
+### 四战术命中率（含战术修正，重新钳制）
+th_danmaku_tactic_1_hit_chance_value = { value = th_danmaku_duel_hit_chance_value add = th_danmaku_tactic_1_hit_adj_value min = th_danmaku_duel_hit_min_value max = th_danmaku_duel_hit_max_value }
+th_danmaku_tactic_2_hit_chance_value = { value = th_danmaku_duel_hit_chance_value add = th_danmaku_tactic_2_hit_adj_value min = th_danmaku_duel_hit_min_value max = th_danmaku_duel_hit_max_value }
+th_danmaku_tactic_3_hit_chance_value = { value = th_danmaku_duel_hit_chance_value add = th_danmaku_tactic_3_hit_adj_value min = th_danmaku_duel_hit_min_value max = th_danmaku_duel_hit_max_value }
+th_danmaku_tactic_4_hit_chance_value = { value = th_danmaku_duel_hit_chance_value add = th_danmaku_tactic_4_hit_adj_value min = th_danmaku_duel_hit_min_value max = th_danmaku_duel_hit_max_value }
+
+### 四战术 单回合得分区间（命中高分 / 未命中低分；落空≠0，区间缩小）
+th_danmaku_tactic_1_high_value = { integer_range = { min = 6 max = 10 } }    # 守势布阵 命中
+th_danmaku_tactic_1_low_value  = { integer_range = { min = 2 max = 4 } }     # 守势布阵 未命中
+th_danmaku_tactic_2_high_value = { integer_range = { min = 8 max = 14 } }    # 稳健进攻 命中
+th_danmaku_tactic_2_low_value  = { integer_range = { min = 3 max = 6 } }     # 稳健进攻 未命中
+th_danmaku_tactic_3_high_value = { integer_range = { min = 10 max = 20 } }   # 全力弹幕 命中
+th_danmaku_tactic_3_low_value  = { integer_range = { min = 4 max = 8 } }     # 全力弹幕 未命中
+th_danmaku_tactic_4_high_value = { integer_range = { min = 12 max = 26 } }   # 搏命一击 命中
+th_danmaku_tactic_4_low_value  = { integer_range = { min = 5 max = 10 } }    # 搏命一击 未命中
+
+### 对决战五档奖励（按分差：大胜/胜利/平手/败北/满目疮痍）
+### 金/威望/贡献/影响力；研究/稳定度
+th_danmaku_duel_great_victory_gold_value = { value = 80 }
+th_danmaku_duel_great_victory_prestige_value = { value = 16 }
+th_danmaku_duel_great_victory_research_value = { value = 20 }
+th_danmaku_duel_great_victory_stability_value = { value = 10 }
+th_danmaku_duel_great_victory_contribution_value = { value = 20 }
+th_danmaku_duel_great_victory_influence_value = { value = 10 }
+
 th_danmaku_duel_victory_gold_value = { value = 40 }
-th_danmaku_duel_defeat_gold_value = { value = -15 }
 th_danmaku_duel_victory_prestige_value = { value = 8 }
+th_danmaku_duel_victory_research_value = { value = 15 }
+th_danmaku_duel_victory_stability_value = { value = 5 }
+th_danmaku_duel_victory_contribution_value = { value = 10 }
+th_danmaku_duel_victory_influence_value = { value = 5 }
+
+th_danmaku_duel_draw_gold_value = { value = 0 }
+th_danmaku_duel_draw_prestige_value = { value = 0 }
+th_danmaku_duel_draw_research_value = { value = 10 }
+th_danmaku_duel_draw_stability_value = { value = 0 }
+th_danmaku_duel_draw_contribution_value = { value = 5 }
+th_danmaku_duel_draw_influence_value = { value = 0 }
+
+th_danmaku_duel_defeat_gold_value = { value = -15 }
 th_danmaku_duel_defeat_prestige_value = { value = -6 }
-th_danmaku_duel_victory_contribution_value = { value = 10 }   # 走 th_gensokyo_io_contribution_var_add_effect
-th_danmaku_duel_victory_influence_value = { value = 5 }       # 走 th_gensokyo_io_influence_var_add_effect
-th_danmaku_duel_victory_investigation_value = { value = 5 }   # 异变调查进度（M3 落地后生效）
+th_danmaku_duel_defeat_research_value = { value = 5 }
+th_danmaku_duel_defeat_stability_value = { value = 0 }
+th_danmaku_duel_defeat_contribution_value = { value = 0 }
+th_danmaku_duel_defeat_influence_value = { value = 0 }
 
-### 对决战 研究点数/稳定度（2026-08-28 定案；挑衅不翻倍）
-th_danmaku_duel_victory_research_value = { value = 15 }       # 胜 +15 研究点数（add_research_progress）
-th_danmaku_duel_defeat_research_value = { value = 5 }         # 负 +5 研究点数（败者亦有收获）
-th_danmaku_duel_victory_stability_value = { value = 5 }       # 胜 +5 稳定度（add_stability）；负不扣
+th_danmaku_duel_rout_gold_value = { value = -40 }
+th_danmaku_duel_rout_prestige_value = { value = -14 }
+th_danmaku_duel_rout_research_value = { value = 5 }
+th_danmaku_duel_rout_stability_value = { value = -5 }
+th_danmaku_duel_rout_contribution_value = { value = 0 }
+th_danmaku_duel_rout_influence_value = { value = 0 }
 
-### 冠军/挑衅修正时长（年，add_country_modifier years = N）
+### 对决战 异变调查进度（胜利档通用，M3 落地后生效）
+th_danmaku_duel_victory_investigation_value = { value = 5 }
+
+### 冠军修正时长（年，add_country_modifier years = N）
 th_danmaku_duel_buff_years_value = { value = 1 }
 
 ### 对决断链强清阈值（月）：月度脉冲倒计时，归零则 th_danmaku_duel_cleanup_effect
 th_danmaku_duel_stale_months_value = { value = 12 }
+
+### ============================================================
+### 共通 平衡数值
+### ============================================================
+
+### 怯战 / 回避战斗 / 投降 威望惩罚（逃避与认输行为，2026-08-28 定案）
+th_danmaku_cowardice_prestige_value = { value = -5 }
 
 ### ============================================================
 ### 妖兽作乱 / 退治妖兽 平衡数值
@@ -126,7 +196,7 @@ th_danmaku_beast_rampage_years_value = { value = 10 }
 ### 本键供文档/未来改造为脚本值权重时使用（待调）
 th_danmaku_beast_monthly_chance_value = { value = 2 }
 
-### 妖兽战斗力复用 th_danmaku_youkai_firepower_value（我方 ×50%~130% 随机）
+### 妖兽战斗力统一走 th_danmaku_youkai_firepower_value（500~1000 随机）
 
 ### 妖兽退治胜利奖励（2026-08-28 定案：500 金 + 5 研究点数；大胜/胜利同值）
 th_danmaku_beast_victory_gold_value = { value = 500 }
