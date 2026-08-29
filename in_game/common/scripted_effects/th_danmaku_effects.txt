@@ -99,9 +99,14 @@ th_danmaku_encounter_reward_effect = {
 }
 
 ### 遭遇战变量清理（国家 scope；结局事件选项内调用）
+### 2026-08-28：追加清理概率公示变量（th_danmaku_encounter_prob_preview_effect 写入）
 th_danmaku_encounter_cleanup_effect = {
     remove_variable = th_danmaku_encounter_youkai_fp_var
     remove_variable = th_danmaku_encounter_ratio_pct_var
+    remove_variable = th_danmaku_great_v_prob_var
+    remove_variable = th_danmaku_victory_prob_var
+    remove_variable = th_danmaku_defeat_prob_var
+    remove_variable = th_danmaku_great_defeat_prob_var
     remove_variable = th_danmaku_firepower_self_var
 }
 
@@ -472,6 +477,7 @@ th_danmaku_duel_finish_effect = {
 
 ### 对决胜利奖励（multiplier：1 = 礼貌请教，2 = 挑衅）
 ### 同时写入最终结算显示变量（结果事件 TT 动态取实际入账金额）
+### 2026-08-28：研究点数 +15 / 稳定度 +5 为固定奖励，挑衅不翻倍
 th_danmaku_duel_victory_reward_effect = {
     set_variable = {
         name = th_danmaku_duel_final_gold_var
@@ -507,10 +513,16 @@ th_danmaku_duel_victory_reward_effect = {
             multiply = $multiplier$
         }
     }
+    ### 固定奖励（挑衅不翻倍）：研究点数 +15、稳定度 +5
+    add_research_progress = {
+        value = th_danmaku_duel_victory_research_value
+    }
+    add_stability = th_danmaku_duel_victory_stability_value
 }
 
 ### 对决败北惩罚（multiplier：1 = 礼貌请教，2 = 挑衅）
 ### 同时写入最终结算显示变量（结果事件 TT 动态取实际扣除金额）
+### 2026-08-28：败者固定获得研究点数 +5（挑衅不翻倍）；稳定度不扣
 th_danmaku_duel_defeat_penalty_effect = {
     set_variable = {
         name = th_danmaku_duel_final_gold_var
@@ -533,6 +545,10 @@ th_danmaku_duel_defeat_penalty_effect = {
     add_prestige = {
         value = th_danmaku_duel_defeat_prestige_value
         multiply = $multiplier$
+    }
+    ### 固定获得（挑衅不翻倍）：研究点数 +5
+    add_research_progress = {
+        value = th_danmaku_duel_defeat_research_value
     }
 }
 
@@ -729,7 +745,8 @@ th_danmaku_beast_resolve_effect = {
 }
 
 ### 妖兽退治成功（国家 scope）：移除标记地点的妖兽作乱修正 + 奖励入账 + 清变量
-### 用法: th_danmaku_beast_victory_effect = { gold = <脚本值> prestige = <脚本值> investigation = <脚本值> }
+### 用法: th_danmaku_beast_victory_effect = { gold = <脚本值> research = <脚本值> investigation = <脚本值> }
+### 2026-08-28：奖励 = 500 金 + 5 研究点数（大胜/胜利同值），不再给威望
 th_danmaku_beast_victory_effect = {
     every_owned_location = {
         limit = {
@@ -738,10 +755,17 @@ th_danmaku_beast_victory_effect = {
         remove_location_modifier = th_beast_rampage_modifier
         remove_variable = th_danmaku_beast_location_mark
     }
-    th_danmaku_encounter_reward_effect = {
-        gold = $gold$
-        prestige = $prestige$
-        investigation = $investigation$
+    add_gold = $gold$
+    add_research_progress = {
+        value = $research$
+    }
+    if = {
+        limit = {
+            th_gensokyo_in_incident_trigger = yes
+        }
+        th_gensokyo_incident_add_investigation_effect = {
+            value = $investigation$
+        }
     }
     th_danmaku_encounter_cleanup_effect = yes
 }
@@ -761,4 +785,61 @@ th_danmaku_beast_defeat_effect = {
         investigation = 0
     }
     th_danmaku_encounter_cleanup_effect = yes
+}
+
+### ============================================================
+### 遭遇/妖兽 战斗前结局概率公示（事件 immediate 调用）
+### 复用 th_danmaku_encounter_ratio_pct_value 计算火力比 → 按五档写入 4 个显示变量，
+### 供事件选项 TT 公示「大胜/胜利/败北/大败」概率（与 th_danmaku_encounter_resolve_effect
+### / th_danmaku_beast_resolve_effect 的权重完全一致）
+### ============================================================
+th_danmaku_encounter_prob_preview_effect = {
+    set_variable = {
+        name = th_danmaku_encounter_ratio_pct_var
+        value = th_danmaku_encounter_ratio_pct_value
+    }
+    ### 除零/极低火力兜底
+    if = {
+        limit = {
+            var:th_danmaku_encounter_youkai_fp_var <= 0
+        }
+        set_variable = {
+            name = th_danmaku_encounter_ratio_pct_var
+            value = 200
+        }
+    }
+    if = {
+        limit = { var:th_danmaku_encounter_ratio_pct_var >= 160 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 45 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 40 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 12 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 3 }
+    }
+    else_if = {
+        limit = { var:th_danmaku_encounter_ratio_pct_var >= 120 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 35 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 40 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 20 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 5 }
+    }
+    else_if = {
+        limit = { var:th_danmaku_encounter_ratio_pct_var >= 90 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 20 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 35 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 30 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 15 }
+    }
+    else_if = {
+        limit = { var:th_danmaku_encounter_ratio_pct_var >= 60 }
+        set_variable = { name = th_danmaku_great_v_prob_var value = 10 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 25 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 35 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 30 }
+    }
+    else = {
+        set_variable = { name = th_danmaku_great_v_prob_var value = 5 }
+        set_variable = { name = th_danmaku_victory_prob_var value = 15 }
+        set_variable = { name = th_danmaku_defeat_prob_var value = 35 }
+        set_variable = { name = th_danmaku_great_defeat_prob_var value = 45 }
+    }
 }

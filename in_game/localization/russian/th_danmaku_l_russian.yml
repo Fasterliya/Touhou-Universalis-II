@@ -10,12 +10,12 @@
  MODIFIER_TYPE_NAME_th_danmaku_firepower_modifier_desc: "Масштабирует данмаку-мощь в процентах."
 
 ### === Временные модификаторы дуэли ===
- th_danmaku_champion_modifier: "Чемпион данмаку"
- th_danmaku_champion_modifier_desc: "Доказал себя в данмаку-дуэли один на один. +0.10 престижа в месяц, +3 данмаку-мощи."
- th_danmaku_provoke_buff_modifier: "Пламя провокации"
- th_danmaku_provoke_buff_modifier_desc: "Выиграл дуэль с провокацией и пребывает на подъёме. +0.10 престижа в месяц, +5 данмаку-мощи, +5% боевого духа армии."
- th_danmaku_provoke_penalty_modifier: "Позор провокации"
- th_danmaku_provoke_penalty_modifier_desc: "Спровоцировал и проиграл, потеряв лицо. -0.10 престижа в месяц, -1 дипломатическая репутация, +0.05 военной усталости в месяц."
+ STATIC_MODIFIER_NAME_th_danmaku_champion_modifier: "Чемпион данмаку"
+ STATIC_MODIFIER_DESC_th_danmaku_champion_modifier: "Доказал себя в данмаку-дуэли один на один. +0.10 престижа в месяц, +3 данмаку-мощи."
+ STATIC_MODIFIER_NAME_th_danmaku_provoke_buff_modifier: "Пламя провокации"
+ STATIC_MODIFIER_DESC_th_danmaku_provoke_buff_modifier: "Выиграл дуэль с провокацией и пребывает на подъёме. +0.10 престижа в месяц, +5 данмаку-мощи, +5% боевого духа армии."
+ STATIC_MODIFIER_NAME_th_danmaku_provoke_penalty_modifier: "Позор провокации"
+ STATIC_MODIFIER_DESC_th_danmaku_provoke_penalty_modifier: "Спровоцировал и проиграл, потеряв лицо. -0.10 престижа в месяц, -1 дипломатическая репутация, +0.05 военной усталости в месяц."
 
 ### === Действие «Вызов» ===
  th_danmaku_challenge: "Вызов на картах заклинаний"
@@ -32,7 +32,7 @@
  th_danmaku_events.1.title: "Встреча с безымянным ёкаем"
  th_danmaku_events.1.desc: "На границе Генсокё путь преграждает безымянный ёкай. Его намерения неясны, но он уже принял данмаку-стойку — стычки, похоже, не избежать."
  th_danmaku_events.1.a: "В бой!"
- th_danmaku_events.1.a.tt: "Наша мощь: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nМощь ёкая: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!"
+ th_danmaku_events.1.a.tt: "Наша мощь: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nМощь ёкая: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\nШанс сокрушительной победы: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\nШанс победы: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\nШанс поражения: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\nШанс разгрома: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
 
  th_danmaku_events.2.title: "Сокрушительная победа: данмаку сметает всё"
  th_danmaku_events.2.desc: "Данмаку обрушивается ливнем, и оборона ёкая рушится в одно мгновение. Он бежит в ночь и больше не смеет возвращаться."
@@ -96,9 +96,9 @@
  th_danmaku_events.22.title: "Данмаку-дуэль · Итог"
  th_danmaku_events.22.desc: "Последняя вспышка данмаку гаснет в ночи.\nНаш счёт: [actor.MakeScope.GetVariable('th_danmaku_duel_player_score_var').GetValue]\nСчёт противника: [actor.MakeScope.GetVariable('th_danmaku_duel_enemy_score_var').GetValue]"
  th_danmaku_events.22.a: "Слава победы"
- th_danmaku_events.22.a.tt: "Получено #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! золота и #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! престижа, а также вклад и влияние. Если это была дуэль с провокацией, награды уже удвоены."
+ th_danmaku_events.22.a.tt: "Получено #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! золота и #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! престижа, а также вклад и влияние. Если это была дуэль с провокацией, награды уже удвоены.\nОчки исследований #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_victory_research_value')]#!, стабильность #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_victory_stability_value')]#! (не удваивается провокацией)"
  th_danmaku_events.22.b: "Горечь поражения"
- th_danmaku_events.22.b.tt: "Потеряно #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! золота и #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! престижа. Если это была дуэль с провокацией, штрафы уже удвоены."
+ th_danmaku_events.22.b.tt: "Потеряно #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! золота и #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! престижа. Если это была дуэль с провокацией, штрафы уже удвоены.\nОчки исследований #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_defeat_research_value')]#! (не удваивается провокацией)"
  th_danmaku_events.22.c: "...Прибрать за собой."
  th_danmaku_events.22.c.tt: "Состояние дуэли нарушено; она завершилась преждевременно."
 
@@ -109,8 +109,8 @@
 ### ============================================================
 ### Зверобеснование / Усмирение зверя
 ### ============================================================
- th_beast_rampage_modifier: "Зверобеснование"
- th_beast_rampage_modifier_desc: "Бешеный зверь бесчинствует на этой земле: эффективность налога (производства) #R -10%#!. Можно изгнать действием «Усмирение зверя»."
+ STATIC_MODIFIER_NAME_th_beast_rampage_modifier: "Зверобеснование"
+ STATIC_MODIFIER_DESC_th_beast_rampage_modifier: "Бешеный зверь бесчинствует на этой земле: эффективность налога (производства) #R -10%#!. Можно изгнать действием «Усмирение зверя»."
  th_danmaku_subjugate_beast: "Усмирение зверя"
  th_danmaku_subjugate_beast_desc: "Отправиться к месту зверобеснования и решить всё данмаку-боем. Победа изгонит зверя и восстановит сбор налогов."
  th_danmaku_subjugate_beast_none_available: "В наших владениях нет мест зверобеснования"
@@ -122,16 +122,16 @@
  th_danmaku_events.30.title: "Встреча со зверем"
  th_danmaku_events.30.desc: "В [SCOPE.sLocation('th_danmaku_beast_loc').GetName] бешеный зверь топчет поля и устрашает людей. Он учуял ваш запах и принял данмаку-стойку — только победа вернёт этому краю покой."
  th_danmaku_events.30.a: "В бой!"
- th_danmaku_events.30.a.tt: "Наша мощь: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nМощь зверя: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!"
+ th_danmaku_events.30.a.tt: "Наша мощь: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nМощь зверя: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\nШанс сокрушительной победы: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\nШанс победы: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\nШанс поражения: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\nШанс разгрома: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
 
  th_danmaku_events.31.title: "Усмирение зверя · Сокрушительная победа"
  th_danmaku_events.31.desc: "Данмаку поглощает зверя, словно прилив, и он, взвыв, рассыпается на светящиеся искры. Тень беснования мгновенно рассеялась."
  th_danmaku_events.31.a: "Покой вернулся на эту землю."
- th_danmaku_events.31.a.tt: "Зверобеснование изгнано. Получено #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! золота и #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! престижа."
+ th_danmaku_events.31.a.tt: "Зверобеснование изгнано. Получено #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_gold_value')]#! золота и #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_research_value')]#! очков исследований."
  th_danmaku_events.32.title: "Усмирение зверя · Победа"
  th_danmaku_events.32.desc: "После долгой схватки зверь наконец выдыхается и бежит в глубь гор, не смея вернуться."
  th_danmaku_events.32.a: "Славно потрудились."
- th_danmaku_events.32.a.tt: "Зверобеснование изгнано. Получено #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! золота и #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! престижа."
+ th_danmaku_events.32.a.tt: "Зверобеснование изгнано. Получено #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_gold_value')]#! золота и #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_research_value')]#! очков исследований."
  th_danmaku_events.33.title: "Усмирение зверя · Поражение"
  th_danmaku_events.33.desc: "Данмаку зверя свиреп, и вы вынуждены покинуть поле боя. Он по-прежнему бесчинствует здесь; нужно искать новую возможность."
  th_danmaku_events.33.a: "Будет и другой день."

@@ -95,7 +95,7 @@ th_danmaku_tactic_4_roll_value = { integer_range = { min = 0 max = 42 } }    # �
 ### 挑衅倍数（礼貌请教 ×1 / 挑衅 ×2）
 th_danmaku_provoke_multiplier_value = { value = 2 }
 
-### 对决战 胜负奖惩（待调；挑衅时 ×倍数）
+### 对决战 胜负奖惩（待调；金/威望/贡献/影响力 挑衅时 ×倍数）
 th_danmaku_duel_victory_gold_value = { value = 40 }
 th_danmaku_duel_defeat_gold_value = { value = -15 }
 th_danmaku_duel_victory_prestige_value = { value = 8 }
@@ -103,6 +103,11 @@ th_danmaku_duel_defeat_prestige_value = { value = -6 }
 th_danmaku_duel_victory_contribution_value = { value = 10 }   # 走 th_gensokyo_io_contribution_var_add_effect
 th_danmaku_duel_victory_influence_value = { value = 5 }       # 走 th_gensokyo_io_influence_var_add_effect
 th_danmaku_duel_victory_investigation_value = { value = 5 }   # 异变调查进度（M3 落地后生效）
+
+### 对决战 研究点数/稳定度（2026-08-28 定案；挑衅不翻倍）
+th_danmaku_duel_victory_research_value = { value = 15 }       # 胜 +15 研究点数（add_research_progress）
+th_danmaku_duel_defeat_research_value = { value = 5 }         # 负 +5 研究点数（败者亦有收获）
+th_danmaku_duel_victory_stability_value = { value = 5 }       # 胜 +5 稳定度（add_stability）；负不扣
 
 ### 冠军/挑衅修正时长（年，add_country_modifier years = N）
 th_danmaku_duel_buff_years_value = { value = 1 }
@@ -122,3 +127,7 @@ th_danmaku_beast_rampage_years_value = { value = 10 }
 th_danmaku_beast_monthly_chance_value = { value = 2 }
 
 ### 妖兽战斗力复用 th_danmaku_youkai_firepower_value（我方 ×50%~130% 随机）
+
+### 妖兽退治胜利奖励（2026-08-28 定案：500 金 + 5 研究点数；大胜/胜利同值）
+th_danmaku_beast_victory_gold_value = { value = 500 }
+th_danmaku_beast_victory_research_value = { value = 5 }       # add_research_progress

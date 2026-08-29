@@ -22,6 +22,10 @@ th_danmaku_events.1 = {
     trigger = {
         th_danmaku_encounter_available_trigger = yes
     }
+    immediate = {
+        ### 2026-08-28：战斗前结局概率公示（TT 读取 4 个概率变量）
+        th_danmaku_encounter_prob_preview_effect = yes
+    }
     option = {
         name = th_danmaku_events.1.a
         custom_tooltip = {
@@ -477,6 +481,8 @@ th_danmaku_events.30 = {
             }
             save_scope_as = th_danmaku_beast_loc
         }
+        ### 2026-08-28：战斗前结局概率公示（TT 读取 4 个概率变量）
+        th_danmaku_encounter_prob_preview_effect = yes
     }
     option = {
         name = th_danmaku_events.30.a
@@ -489,7 +495,7 @@ th_danmaku_events.30 = {
     }
 }
 
-### 妖兽退治·大胜（移除修正 + 奖励）
+### 妖兽退治·大胜（移除修正 + 奖励：500 金 + 5 研究点数）
 th_danmaku_events.31 = {
     type = country_event
     title = th_danmaku_events.31.title
@@ -500,8 +506,8 @@ th_danmaku_events.31 = {
     }
     immediate = {
         th_danmaku_beast_victory_effect = {
-            gold = th_danmaku_encounter_great_victory_gold_value
-            prestige = th_danmaku_encounter_great_victory_prestige_value
+            gold = th_danmaku_beast_victory_gold_value
+            research = th_danmaku_beast_victory_research_value
             investigation = th_danmaku_encounter_great_victory_investigation_value
         }
     }
@@ -513,7 +519,7 @@ th_danmaku_events.31 = {
     }
 }
 
-### 妖兽退治·胜利（移除修正 + 奖励）
+### 妖兽退治·胜利（移除修正 + 奖励：500 金 + 5 研究点数）
 th_danmaku_events.32 = {
     type = country_event
     title = th_danmaku_events.32.title
@@ -524,8 +530,8 @@ th_danmaku_events.32 = {
     }
     immediate = {
         th_danmaku_beast_victory_effect = {
-            gold = th_danmaku_encounter_victory_gold_value
-            prestige = th_danmaku_encounter_victory_prestige_value
+            gold = th_danmaku_beast_victory_gold_value
+            research = th_danmaku_beast_victory_research_value
             investigation = th_danmaku_encounter_victory_investigation_value
         }
     }

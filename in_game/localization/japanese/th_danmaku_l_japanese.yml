@@ -10,12 +10,12 @@
  MODIFIER_TYPE_NAME_th_danmaku_firepower_modifier_desc: "弾幕火力水準をパーセントで増幅する。"
 
 ### === 決闘の一時修正 ===
- th_danmaku_champion_modifier: "弾幕戦チャンピオン"
- th_danmaku_champion_modifier_desc: "一対一の弾幕戦で実力を証明した。毎月の威信 +0.10、弾幕火力値 +3。"
- th_danmaku_provoke_buff_modifier: "挑発の炎"
- th_danmaku_provoke_buff_modifier_desc: "挑発の姿勢で決闘に勝ち、勢いに乗っている。毎月の威信 +0.10、弾幕火力値 +5、陸軍士気 +5%。"
- th_danmaku_provoke_penalty_modifier: "挑発の恥"
- th_danmaku_provoke_penalty_modifier_desc: "挑発して敗北し、面目を失った。毎月の威信 -0.10、外交評価 -1、毎月の戦争疲弊 +0.05。"
+ STATIC_MODIFIER_NAME_th_danmaku_champion_modifier: "弾幕戦チャンピオン"
+ STATIC_MODIFIER_DESC_th_danmaku_champion_modifier: "一対一の弾幕戦で実力を証明した。毎月の威信 +0.10、弾幕火力値 +3。"
+ STATIC_MODIFIER_NAME_th_danmaku_provoke_buff_modifier: "挑発の炎"
+ STATIC_MODIFIER_DESC_th_danmaku_provoke_buff_modifier: "挑発の姿勢で決闘に勝ち、勢いに乗っている。毎月の威信 +0.10、弾幕火力値 +5、陸軍士気 +5%。"
+ STATIC_MODIFIER_NAME_th_danmaku_provoke_penalty_modifier: "挑発の恥"
+ STATIC_MODIFIER_DESC_th_danmaku_provoke_penalty_modifier: "挑発して敗北し、面目を失った。毎月の威信 -0.10、外交評価 -1、毎月の戦争疲弊 +0.05。"
 
 ### === 挑戦アクション ===
  th_danmaku_challenge: "スペルカード挑戦"
@@ -32,7 +32,7 @@
  th_danmaku_events.1.title: "無名の妖怪と遭遇"
  th_danmaku_events.1.desc: "幻想郷の辺境で、無名の妖怪が行く手を阻む。その意図は不明だが、すでに弾幕の構えを見せている——遭遇戦は避けられそうにない。"
  th_danmaku_events.1.a: "応戦する！"
- th_danmaku_events.1.a.tt: "こちら火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\n妖怪火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!"
+ th_danmaku_events.1.a.tt: "こちら火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\n妖怪火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\n大勝確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\n勝利確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\n敗北確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\n大敗確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
 
  th_danmaku_events.2.title: "大勝：弾幕が圧倒"
  th_danmaku_events.2.desc: "弾幕が豪雨のように降り注ぎ、妖怪の守りは瞬く間に崩れた。妖怪は夜闇に逃げ去り、二度と近づこうとしない。"
@@ -96,9 +96,9 @@
  th_danmaku_events.22.title: "弾幕決闘・決着"
  th_danmaku_events.22.desc: "最後の弾幕が夜闇に消える。\nこちらの得点：[actor.MakeScope.GetVariable('th_danmaku_duel_player_score_var').GetValue]\n相手の得点：[actor.MakeScope.GetVariable('th_danmaku_duel_enemy_score_var').GetValue]"
  th_danmaku_events.22.a: "勝利の栄光"
- th_danmaku_events.22.a.tt: "金 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! と威信 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! を獲得し、さらに貢献度と影響力を得る。挑発決闘の場合、報酬はすでに倍増されている。"
+ th_danmaku_events.22.a.tt: "金 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! と威信 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! を獲得し、さらに貢献度と影響力を得る。挑発決闘の場合、報酬はすでに倍増されている。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_victory_research_value')]#!、安定度 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_victory_stability_value')]#!（挑発では倍増しない）"
  th_danmaku_events.22.b: "敗北の苦渋"
- th_danmaku_events.22.b.tt: "金 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! と威信 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! を失う。挑発決闘の場合、ペナルティはすでに倍増されている。"
+ th_danmaku_events.22.b.tt: "金 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! と威信 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! を失う。挑発決闘の場合、ペナルティはすでに倍増されている。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_defeat_research_value')]#!（挑発では倍増しない）"
  th_danmaku_events.22.c: "……後始末を。"
  th_danmaku_events.22.c.tt: "決闘の状態が異常なため、中途半端に終わった。"
 
@@ -109,8 +109,8 @@
 ### ============================================================
 ### 獣の乱 / 獣退治
 ### ============================================================
- th_beast_rampage_modifier: "獣の乱"
- th_beast_rampage_modifier_desc: "狂暴な獣がこの地を荒らしている。税収（生産）効率 #R -10%#!。「獣退治」アクションで駆除できる。"
+ STATIC_MODIFIER_NAME_th_beast_rampage_modifier: "獣の乱"
+ STATIC_MODIFIER_DESC_th_beast_rampage_modifier: "狂暴な獣がこの地を荒らしている。税収（生産）効率 #R -10%#!。「獣退治」アクションで駆除できる。"
  th_danmaku_subjugate_beast: "獣退治"
  th_danmaku_subjugate_beast_desc: "獣の乱に悩む地点へ赴き、弾幕で雌雄を決する。勝利すれば獣を追い払い、税収を回復できる。"
  th_danmaku_subjugate_beast_none_available: "治下に獣の乱の地点がない"
@@ -122,16 +122,16 @@
  th_danmaku_events.30.title: "獣との遭遇"
  th_danmaku_events.30.desc: "[SCOPE.sLocation('th_danmaku_beast_loc').GetName]で、狂暴な獣が田畑を踏み荒らし、人々を怯えさせている。獣はあなたの気配を嗅ぎつけ、弾幕の構えを取った——勝つことだけがこの地に平穏をもたらす。"
  th_danmaku_events.30.a: "応戦する！"
- th_danmaku_events.30.a.tt: "こちら火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\n獣の火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!"
+ th_danmaku_events.30.a.tt: "こちら火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\n獣火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\n大勝確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\n勝利確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\n敗北確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\n大敗確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
 
  th_danmaku_events.31.title: "獣退治・大勝"
  th_danmaku_events.31.desc: "弾幕が津波のように獣を飲み込み、獣は悲鳴とともに光の粒へと消えた。乱の翳は一瞬で晴れた。"
  th_danmaku_events.31.a: "この地に平穏が戻った。"
- th_danmaku_events.31.a.tt: "獣の乱は駆除された。金 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! と威信 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! を獲得。"
+ th_danmaku_events.31.a.tt: "獣の乱は駆除された。金 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_gold_value')]#! と研究点数 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_research_value')]#! を獲得。"
  th_danmaku_events.32.title: "獣退治・勝利"
  th_danmaku_events.32.desc: "長い攻防の末、獣は力尽きて散り、山の奥へ逃げ去った。二度と戻ってこないだろう。"
  th_danmaku_events.32.a: "ご苦労だった。"
- th_danmaku_events.32.a.tt: "獣の乱は駆除された。金 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! と威信 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! を獲得。"
+ th_danmaku_events.32.a.tt: "獣の乱は駆除された。金 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_gold_value')]#! と研究点数 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_research_value')]#! を獲得。"
  th_danmaku_events.33.title: "獣退治・敗北"
  th_danmaku_events.33.desc: "獣の弾幕は凄まじく、あなたは戦場から退くことを余儀なくされた。獣はなおこの地を荒らしており、次の機会をうかがうしかない。"
  th_danmaku_events.33.a: "またの機会に。"

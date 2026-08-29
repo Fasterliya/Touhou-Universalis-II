@@ -198,7 +198,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 - 失败：金币/威望惩罚 **×2** + `th_danmaku_provoke_penalty_modifier`（1 年）。
 - 无论胜负：胜利额外获得 `th_danmaku_champion_modifier`（弹幕战冠军，1 年）。
 
-### 4.5 胜负奖惩（礼貌请教 ×1 / 挑衅 ×2）
+### 4.5 胜负奖惩（礼貌请教 ×1 / 挑衅 ×2；研究点数/稳定度**不随挑衅翻倍**）
 
 | 项 | 胜 | 负 |
 |---|---|---|
@@ -207,6 +207,8 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 | 贡献度 | +10 | 0 |
 | 影响力 | +5 | 0 |
 | 异变调查进度（异变中） | +5 | 0 |
+| **研究点数** | **+15（挑衅不翻倍）** | **+5（挑衅不翻倍）** |
+| **稳定度** | **+5（挑衅不翻倍）** | **0（不扣）** |
 
 ---
 
@@ -236,6 +238,10 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 | `th_danmaku_provoke_multiplier_value` | 2 | 挑衅倍数 |
 | `th_danmaku_duel_{victory,defeat}_{gold,prestige}_value` | 见 §4.5 | 对决奖惩 |
 | `th_danmaku_duel_victory_{contribution,influence,investigation}_value` | 10 / 5 / 5 | 对决附加收益 |
+| `th_danmaku_duel_victory_research_value` | 15 | 胜 +15 研究点数（挑衅不翻倍） |
+| `th_danmaku_duel_defeat_research_value` | 5 | 负 +5 研究点数（挑衅不翻倍） |
+| `th_danmaku_duel_victory_stability_value` | 5 | 胜 +5 稳定度（挑衅不翻倍；负不扣） |
+| `th_danmaku_beast_victory_{gold,research}_value` | 500 / 5 | 退治妖兽胜：500 金 + 5 研究点数（大胜/胜利同值） |
 | `th_danmaku_duel_buff_years_value` | 1 | 冠军/挑衅修正时长（年） |
 | `th_danmaku_duel_stale_months_value` | 12 | 对决断链强清阈值（月） |
 
@@ -291,7 +297,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
   .30 选项「应战」→ th_danmaku_beast_resolve_effect（与遭遇战同五档算法）
     → .31 大胜 / .32 胜利 / .33 败北 / .34 大败
   .31/.32 immediate: th_danmaku_beast_victory_effect
-    → 移除标记地点「妖兽作乱」修正 + 金/威望奖励（复用遭遇战常数）+ 异变调查钩子 + 清变量
+    → 移除标记地点「妖兽作乱」修正 + 奖励（500 金 + 5 研究点数，大胜/胜利同值）+ 异变调查钩子 + 清变量
   .33/.34 immediate: th_danmaku_beast_defeat_effect
     → 金/威望惩罚 + 清变量（修正保留，可再次退治）
 ```
@@ -303,7 +309,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 | `th_danmaku_beast_outbreak_effect` | 国家 scope | 治下随机陆地地点 +「妖兽作乱」修正 10 年（.40 选项1 与调试共用） |
 | `th_danmaku_beast_trigger_effect` | `{ country = <退治国> location = <地点 scope> }` | 开始妖兽战斗（标记地点 + 掷火力 + 触发 .30）；行动内 `country = scope:actor`，事件内 `country = ROOT` |
 | `th_danmaku_beast_resolve_effect` | 国家 scope | 五档火力比 → 触发妖兽结局事件 |
-| `th_danmaku_beast_victory_effect` | `{ gold = X prestige = Y investigation = Z }` | 移除标记地点修正 + 奖励 + 清变量 |
+| `th_danmaku_beast_victory_effect` | `{ gold = X research = N investigation = Z }` | 移除标记地点修正 + 奖励（金 + 研究点数）+ 清变量 |
 | `th_danmaku_beast_defeat_effect` | `{ gold = X prestige = Y }` | 惩罚 + 清变量（修正保留） |
 
 调试方法：
