@@ -612,11 +612,11 @@ th_danmaku_events.40 = {
         }
         th_danmaku_beast_outbreak_effect = yes
     }
-    ### 选项2：暂不理会
-    option = {
-        name = th_danmaku_events.40.b
-        ai_chance = {
-            base = 15
-        }
-    }
+    # ### 选项2：暂不理会
+    # option = {
+    #     name = th_danmaku_events.40.b
+    #     ai_chance = {
+    #         base = 15
+    #     }
+    # }
 }

@@ -47,5 +47,5 @@ th_beast_rampage_modifier = {
 	game_data = {
 		category = location
 	}
-	local_production_efficiency = -0.10
+	local_production_efficiency = -0.05
 }
