@@ -15,7 +15,8 @@
 ### ---------------- 更换神明神像（第 1 槽，25 年冷却） ----------------
 th_hakurei_change_statue = {
 	icon = add_religious_aspect
-	type = owncountry
+	##ACTION的type要设置为religious才能在宗教界面显示
+	type = religious
 
 	sound = UI_action_religion_aspect_change
 
@@ -151,7 +152,7 @@ th_hakurei_change_statue = {
 ### ---------------- 更换侧神像分神（第 2 槽，快速更改） ----------------
 th_hakurei_change_minor_aspect = {
 	icon = add_religious_aspect
-	type = owncountry
+	type = religious
 
 	sound = UI_action_religion_aspect_change
 

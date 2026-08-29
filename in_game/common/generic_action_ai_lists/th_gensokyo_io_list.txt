@@ -33,3 +33,14 @@ acgv_touhou_religion_list = {
 		th_sages_propose_policy
 	} 
 }
+th_gensokyo_religion_old_hakurei_action_list = {
+	potential = {
+		OR = { 
+			religion ?= religion:th_gensokyo_old_hakurei_shinto
+		}
+	}
+	actions = {
+		th_hakurei_change_statue
+		th_hakurei_change_minor_aspect
+	}
+}

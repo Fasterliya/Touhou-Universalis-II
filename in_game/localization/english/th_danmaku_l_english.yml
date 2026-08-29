@@ -1,0 +1,151 @@
+﻿l_english:
+### ============================================================
+### Danmaku Battle System — Localization (English)
+### ============================================================
+
+### === Danmaku Firepower Modifier Types ===
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_base_modifier: "Danmaku Firepower"
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_base_modifier_desc: "The flat component of danmaku firepower, granted by Spell Card Rules, Spell Card Reformation, and other technologies, events, and incident modifiers."
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_modifier: "Danmaku Firepower Modifier"
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_modifier_desc: "Scales danmaku firepower by a percentage."
+
+### === Duel Temporary Modifiers ===
+ th_danmaku_champion_modifier: "Danmaku Champion"
+ th_danmaku_champion_modifier_desc: "Proven in one-on-one danmaku combat. +0.10 monthly prestige, +3 danmaku firepower."
+ th_danmaku_provoke_buff_modifier: "Flames of Provocation"
+ th_danmaku_provoke_buff_modifier_desc: "Won a duel through provocation, riding high on momentum. +0.10 monthly prestige, +5 danmaku firepower, +5% land morale."
+ th_danmaku_provoke_penalty_modifier: "Shame of Provocation"
+ th_danmaku_provoke_penalty_modifier_desc: "Provoked and lost, losing face. -0.10 monthly prestige, -1 diplomatic reputation, +0.05 monthly war exhaustion."
+
+### === Challenge Action ===
+ th_danmaku_challenge: "Spell Card Challenge"
+ th_danmaku_challenge_desc: "Challenge a member of Gensokyo to a one-on-one danmaku duel. The victor earns prestige and renown; the loser pays the price."
+ th_danmaku_challenge_none_available: "No valid duel targets"
+ PERFORM_th_danmaku_challenge_ACTION: "Challenged to a danmaku duel"
+ WE_PERFORM_th_danmaku_challenge_ACTION: "We challenged to a danmaku duel"
+ OTHER_PERFORMS_th_danmaku_challenge_ACTION: "Challenged to a danmaku duel"
+ ACTION_th_danmaku_challenge_PERFORMED_ON_US: "Challenged to a danmaku duel"
+
+### ============================================================
+### Encounter Battle Events
+### ============================================================
+ th_danmaku_events.1.title: "An Encounter with a Nameless Youkai"
+ th_danmaku_events.1.desc: "On the borderlands of Gensokyo, a nameless youkai blocks the path. Its intentions are unclear, but it has already taken a danmaku stance — a skirmish seems unavoidable."
+ th_danmaku_events.1.a: "Engage!"
+ th_danmaku_events.1.a.tt: "Our firepower: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nYoukai firepower: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!"
+
+ th_danmaku_events.2.title: "Crushing Victory: Danmaku Overwhelms"
+ th_danmaku_events.2.desc: "Danmaku pours down like a storm, and the youkai's defense collapses in an instant. It flees into the night, never daring to return."
+ th_danmaku_events.2.a: "Hmph. Presumptuous."
+ th_danmaku_events.2.a.tt: "Gain #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! gold and #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! prestige."
+ th_danmaku_events.2.b: "Advance the investigation"
+ th_danmaku_events.2.b.tt: "Incident investigation progress #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_investigation_value')]#!"
+
+ th_danmaku_events.3.title: "Victory: Foe Repelled"
+ th_danmaku_events.3.desc: "After a fierce exchange of danmaku, the youkai gradually falters and retreats into the mountains. You have won the skirmish."
+ th_danmaku_events.3.a: "Take the spoils."
+ th_danmaku_events.3.a.tt: "Gain #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! gold and #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! prestige."
+ th_danmaku_events.3.b: "Advance the investigation"
+ th_danmaku_events.3.b.tt: "Incident investigation progress #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_investigation_value')]#!"
+
+ th_danmaku_events.4.title: "Defeat: A Fighting Retreat"
+ th_danmaku_events.4.desc: "The youkai's danmaku proves unexpectedly fierce, and you are forced to retreat while fighting. Not a fatal blow, but a blow to your pride nonetheless."
+ th_danmaku_events.4.a: "A lesson learned."
+ th_danmaku_events.4.a.tt: "Lose #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! gold and #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! prestige."
+
+ th_danmaku_events.5.title: "Rout: A Humiliating Flight"
+ th_danmaku_events.5.desc: "Your danmaku collapses entirely, and you flee the battlefield in disgrace. That this nameless youkai possessed such strength is beyond your expectations."
+ th_danmaku_events.5.a: "...There is always another day."
+ th_danmaku_events.5.a.tt: "Lose #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! gold and #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! prestige."
+
+### ============================================================
+### Duel Events
+### ============================================================
+ th_danmaku_events.10.title: "Danmaku Duel"
+ th_danmaku_events.10.desc: "The ruler of [target.GetName] stands across from you, spell cards already in hand. This is a one-on-one spell card duel; its outcome will decide where prestige and renown belong."
+ th_danmaku_events.10.a: "Ask politely"
+ th_danmaku_events.10.a.tt: "Fight courteously and fairly.\nOur firepower: #T [actor.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nTheir firepower: #T [target.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!"
+ th_danmaku_events.10.b: "Provoke"
+ th_danmaku_events.10.b.tt: "Taunt your opponent and intensify the duel.\nOur firepower: #T [actor.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nTheir firepower: #T [target.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nRewards and boons are doubled on victory, but penalties are doubled on defeat!"
+
+ th_danmaku_events.11.title: "Danmaku Duel · Acceptance"
+ th_danmaku_events.11.desc: "The ruler of [actor.GetName] has issued a spell card challenge. Will you accept this one-on-one danmaku duel?"
+ th_danmaku_events.11.a: "Accept the duel"
+ th_danmaku_events.11.a.tt: "Fight courteously.\nOur firepower: #T [target.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nTheir firepower: #T [actor.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!"
+ th_danmaku_events.11.b: "Decline the duel"
+ th_danmaku_events.11.b.tt: "Refuse this challenge."
+ th_danmaku_events.12.title: "Duel Called Off"
+ th_danmaku_events.12.desc: "[target.GetName] declined your spell card challenge; the duel never begins."
+ th_danmaku_events.12.a: "Very well."
+
+ th_danmaku_events.20.title: "Danmaku Duel · Round [actor.MakeScope.GetVariable('th_danmaku_duel_round_var').GetValue]"
+ th_danmaku_events.20.desc: "Danmaku crisscrosses as rain of light falls.\nOur score: #T [actor.MakeScope.GetVariable('th_danmaku_duel_player_score_var').GetValue]#!\nTheir score: #T [actor.MakeScope.GetVariable('th_danmaku_duel_enemy_score_var').GetValue]#!\nLast round: us +[actor.MakeScope.GetVariable('th_danmaku_duel_last_player_gain_var').GetValue], them +[actor.MakeScope.GetVariable('th_danmaku_duel_last_enemy_gain_var').GetValue]\nChoose this round's tactic:"
+ th_danmaku_events.20.a: "Defensive Formation"
+ th_danmaku_events.20.a.tt: "Steady and cautious.\nScore range #G 2~8#!, never whiffs."
+ th_danmaku_events.20.b: "Steady Offense"
+ th_danmaku_events.20.b.tt: "Balanced attack and defense.\nScore range #G 4~16#!, 10% chance of nothing."
+ th_danmaku_events.20.c: "Full-Power Danmaku"
+ th_danmaku_events.20.c.tt: "Unleash everything for a high score.\nScore range #G 0~26#!, 30% chance of nothing."
+ th_danmaku_events.20.d: "All-In Gambit"
+ th_danmaku_events.20.d.tt: "Bet everything on one shot!\nScore range #G 0~42#!, 50% chance of nothing."
+
+ th_danmaku_events.21.title: "Opponent's Turn"
+ th_danmaku_events.21.desc: "Your opponent is preparing the next barrage."
+ th_danmaku_events.21.a: "Continue"
+
+ th_danmaku_events.22.title: "Danmaku Duel · Settled"
+ th_danmaku_events.22.desc: "The last wisp of danmaku fades into the night.\nOur score: [actor.MakeScope.GetVariable('th_danmaku_duel_player_score_var').GetValue]\nTheir score: [actor.MakeScope.GetVariable('th_danmaku_duel_enemy_score_var').GetValue]"
+ th_danmaku_events.22.a: "Glory of Victory"
+ th_danmaku_events.22.a.tt: "Gain #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! gold and #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! prestige, plus contribution and influence. If provoked, rewards have already been doubled."
+ th_danmaku_events.22.b: "Bitter Defeat"
+ th_danmaku_events.22.b.tt: "Lose #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! gold and #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! prestige. If provoked, penalties have already been doubled."
+ th_danmaku_events.22.c: "...Clean up the mess."
+ th_danmaku_events.22.c.tt: "The duel state is abnormal; it ends abruptly."
+
+ th_danmaku_events.23.title: "A Duel That Never Was"
+ th_danmaku_events.23.desc: "Your opponent never shows up, and the danmaku duel falls apart."
+ th_danmaku_events.23.a: "Very well."
+
+### ============================================================
+### Beast Rampage / Beast Subjugation
+### ============================================================
+ th_beast_rampage_modifier: "Beast Rampage"
+ th_beast_rampage_modifier_desc: "A rabid beast wreaks havoc here, -10% tax (output) efficiency. It can be driven off with the Subjugate Beast action."
+ th_danmaku_subjugate_beast: "Subjugate Beast"
+ th_danmaku_subjugate_beast_desc: "Travel to a location plagued by a rampaging beast and settle it with a danmaku battle. Victory drives the beast off and restores local taxation."
+ th_danmaku_subjugate_beast_none_available: "No rampage locations in our realm"
+ PERFORM_th_danmaku_subjugate_beast_ACTION: "Set out to subjugate a beast"
+ WE_PERFORM_th_danmaku_subjugate_beast_ACTION: "We set out to subjugate a beast"
+ OTHER_PERFORMS_th_danmaku_subjugate_beast_ACTION: "Set out to subjugate a beast"
+ ACTION_th_danmaku_subjugate_beast_PERFORMED_ON_US: "A beast-ravaged location was subjugated"
+
+ th_danmaku_events.30.title: "Beast Encounter"
+ th_danmaku_events.30.desc: "In [SCOPE.sLocation('th_danmaku_beast_loc').GetName], a rabid beast tramples the fields and terrorizes the people. It catches your scent and rears up in a danmaku stance — only victory will restore peace to this land."
+ th_danmaku_events.30.a: "Engage!"
+ th_danmaku_events.30.a.tt: "Our firepower: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')]#!\nBeast firepower: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!"
+
+ th_danmaku_events.31.title: "Beast Subjugated · Crushing Victory"
+ th_danmaku_events.31.desc: "Danmaku engulfs the beast like a tidal wave; with a howl it dissolves into specks of light. The shadow of the rampage lifts at once."
+ th_danmaku_events.31.a: "Peace returns to this land."
+ th_danmaku_events.31.a.tt: "The beast rampage has been driven off. Gain #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! gold and #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! prestige."
+
+ th_danmaku_events.32.title: "Beast Subjugated · Victory"
+ th_danmaku_events.32.desc: "After a long struggle, the beast finally exhausts itself and scatters, fleeing deep into the mountains, never daring to return."
+ th_danmaku_events.32.a: "Well done."
+ th_danmaku_events.32.a.tt: "The beast rampage has been driven off. Gain #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! gold and #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! prestige."
+
+ th_danmaku_events.33.title: "Beast Subjugation · Defeat"
+ th_danmaku_events.33.desc: "The beast's danmaku is ferocious, and you are forced off the battlefield. It still wreaks havoc here; you must seek another opportunity."
+ th_danmaku_events.33.a: "We will fight another day."
+ th_danmaku_events.33.a.tt: "The beast still rampages. Lose #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! gold and #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! prestige."
+
+ th_danmaku_events.34.title: "Beast Subjugation · Rout"
+ th_danmaku_events.34.desc: "Your danmaku collapses entirely and you retreat in disgrace. The beast's roar echoes behind you long after; the scourge here has only worsened."
+ th_danmaku_events.34.a: "...We will return after rest."
+ th_danmaku_events.34.a.tt: "The beast still rampages. Lose #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! gold and #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! prestige."
+
+ th_danmaku_events.40.title: "Rampaging Beast"
+ th_danmaku_events.40.desc: "A restless yoki energy stirs across Gensokyo, and rumors speak of a rabid beast prowling near the border. Left unchecked, the people will suffer and the tax base will wither."
+ th_danmaku_events.40.a: "The beast appears and wreaks havoc"
+ th_danmaku_events.40.a.tt: "A random owned location will gain 'Beast Rampage': tax (output) efficiency #R -10%#! for #T 10#! years. It can be driven off with the Subjugate Beast action."
+ th_danmaku_events.40.b: "A false alarm — the beast wanders off"

@@ -1,0 +1,37 @@
+﻿### ============================================================
+### 弹幕战系统 — 共享触发条件（国家 scope）
+### ============================================================
+
+### 对决进行中（国家 scope）：以隐藏终点变量是否存在为标志
+th_danmaku_duel_in_progress_trigger = {
+    has_variable = th_danmaku_duel_goal_var
+}
+
+### 遭遇战可用：幻想乡 IO 成员 + 非对决中
+th_danmaku_encounter_available_trigger = {
+    is_member_of_international_organization = international_organization:th_gensokyo_io
+    NOT = {
+        th_danmaku_duel_in_progress_trigger = yes
+    }
+}
+
+### 对决战终局判定：任一方分数达到隐藏终点
+th_danmaku_duel_finished_trigger = {
+    has_variable = th_danmaku_duel_goal_var
+    OR = {
+        var:th_danmaku_duel_player_score_var >= var:th_danmaku_duel_goal_var
+        var:th_danmaku_duel_enemy_score_var >= var:th_danmaku_duel_goal_var
+    }
+}
+
+### 对手战术倾向：对手火力 ≥ 我方火力 → 对手偏保守（强者求稳）；
+### 反之对手偏激进（弱者搏冷门，弱方可胜强）
+th_danmaku_duel_enemy_confident_trigger = {
+    var:th_danmaku_duel_enemy_fp_var >= var:th_danmaku_firepower_self_var
+}
+
+### 异变退治者判定（预留接口：异变系统落地后打标
+### th_gensokyo_incident_resolver_mark 并把 always = no 换成判定）
+th_gensokyo_is_incident_resolver_trigger = {
+    always = no
+}

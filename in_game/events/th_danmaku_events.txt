@@ -1,0 +1,616 @@
+﻿### ============================================================
+### 弹幕战系统 — 事件链
+### 遭遇战：.1 遭遇无名妖怪 → .2 大胜 / .3 胜利 / .4 败北 / .5 大败
+### 对决战：.10 开始（礼貌请教/挑衅） → .20 我方回合（4 战术） ↺ .21 对手回合（静默）
+###          → .22 对决结果 ｜ .23 对决中断（断链兜底）
+### 触发入口：th_danmaku_encounter_trigger_effect / th_danmaku_duel_trigger_effect /
+###           th_danmaku_duel_start_effect（见 scripted_effects/th_danmaku_effects.txt）
+### ============================================================
+
+namespace = th_danmaku_events
+
+### ============================================================
+### 遭遇战
+### ============================================================
+
+### 遭遇无名妖怪（root = 我方；妖怪火力已由触发接口写入变量）
+th_danmaku_events.1 = {
+    type = country_event
+    title = th_danmaku_events.1.title
+    desc = th_danmaku_events.1.desc
+    outcome = neutral
+    trigger = {
+        th_danmaku_encounter_available_trigger = yes
+    }
+    option = {
+        name = th_danmaku_events.1.a
+        custom_tooltip = {
+            text = th_danmaku_events.1.a.tt
+        }
+        hidden_effect = {
+            th_danmaku_encounter_resolve_effect = yes
+        }
+    }
+}
+
+### 大胜（结算走 immediate，选项为确认 + 预览）
+th_danmaku_events.2 = {
+    type = country_event
+    title = th_danmaku_events.2.title
+    desc = th_danmaku_events.2.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_encounter_reward_effect = {
+            gold = th_danmaku_encounter_great_victory_gold_value
+            prestige = th_danmaku_encounter_great_victory_prestige_value
+            investigation = th_danmaku_encounter_great_victory_investigation_value
+        }
+        th_danmaku_encounter_cleanup_effect = yes
+    }
+    option = {
+        name = th_danmaku_events.2.a
+        custom_tooltip = {
+            text = th_danmaku_events.2.a.tt
+        }
+    }
+    option = {
+        name = th_danmaku_events.2.b
+        trigger = {
+            th_gensokyo_in_incident_trigger = yes
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.2.b.tt
+        }
+    }
+}
+
+### 胜利
+th_danmaku_events.3 = {
+    type = country_event
+    title = th_danmaku_events.3.title
+    desc = th_danmaku_events.3.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_encounter_reward_effect = {
+            gold = th_danmaku_encounter_victory_gold_value
+            prestige = th_danmaku_encounter_victory_prestige_value
+            investigation = th_danmaku_encounter_victory_investigation_value
+        }
+        th_danmaku_encounter_cleanup_effect = yes
+    }
+    option = {
+        name = th_danmaku_events.3.a
+        custom_tooltip = {
+            text = th_danmaku_events.3.a.tt
+        }
+    }
+    option = {
+        name = th_danmaku_events.3.b
+        trigger = {
+            th_gensokyo_in_incident_trigger = yes
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.3.b.tt
+        }
+    }
+}
+
+### 败北
+th_danmaku_events.4 = {
+    type = country_event
+    title = th_danmaku_events.4.title
+    desc = th_danmaku_events.4.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_encounter_reward_effect = {
+            gold = th_danmaku_encounter_defeat_gold_value
+            prestige = th_danmaku_encounter_defeat_prestige_value
+            investigation = 0
+        }
+        th_danmaku_encounter_cleanup_effect = yes
+    }
+    option = {
+        name = th_danmaku_events.4.a
+        custom_tooltip = {
+            text = th_danmaku_events.4.a.tt
+        }
+    }
+}
+
+### 大败
+th_danmaku_events.5 = {
+    type = country_event
+    title = th_danmaku_events.5.title
+    desc = th_danmaku_events.5.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_encounter_reward_effect = {
+            gold = th_danmaku_encounter_great_defeat_gold_value
+            prestige = th_danmaku_encounter_great_defeat_prestige_value
+            investigation = 0
+        }
+        th_danmaku_encounter_cleanup_effect = yes
+    }
+    option = {
+        name = th_danmaku_events.5.a
+        custom_tooltip = {
+            text = th_danmaku_events.5.a.tt
+        }
+    }
+}
+
+### ============================================================
+### 对决战
+### ============================================================
+
+### 第 1 轮：对决开始·发起方确认（root = 发起方；双方火力/隐藏终点已由
+### th_danmaku_duel_start_effect 就位；2026-08-28 改为确认后进入第 2 轮对方确认）
+th_danmaku_events.10 = {
+    type = country_event
+    title = th_danmaku_events.10.title
+    desc = th_danmaku_events.10.desc
+    outcome = neutral
+    trigger = {
+        th_danmaku_duel_in_progress_trigger = yes
+    }
+    immediate = {
+        ### 找回对手 scope（标记法，供 desc 取对手名与触发第 2 轮）
+        every_country = {
+            limit = {
+                has_variable = th_danmaku_duel_opponent_mark
+            }
+            save_scope_as = th_danmaku_duel_opponent
+        }
+    }
+    ### 礼貌请教：正常倍率 → 第 2 轮对方确认
+    option = {
+        name = th_danmaku_events.10.a
+        ai_chance = {
+            base = 60
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.10.a.tt
+        }
+        set_variable = {
+            name = th_danmaku_duel_provoke_var
+            value = 0
+        }
+        if = {
+            limit = {
+                exists = scope:th_danmaku_duel_opponent
+            }
+            scope:th_danmaku_duel_opponent = {
+                trigger_event_non_silently = th_danmaku_events.11
+            }
+        }
+        else = {
+            ### 对手缺失兜底（国家被灭等）：直接取消
+            trigger_event_non_silently = th_danmaku_events.12
+        }
+    }
+    ### 挑衅：双倍奖励 / 更严厉惩罚 → 第 2 轮对方确认
+    option = {
+        name = th_danmaku_events.10.b
+        ai_chance = {
+            base = 40
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.10.b.tt
+        }
+        set_variable = {
+            name = th_danmaku_duel_provoke_var
+            value = 1
+        }
+        if = {
+            limit = {
+                exists = scope:th_danmaku_duel_opponent
+            }
+            scope:th_danmaku_duel_opponent = {
+                trigger_event_non_silently = th_danmaku_events.11
+            }
+        }
+        else = {
+            trigger_event_non_silently = th_danmaku_events.12
+        }
+    }
+}
+
+### 第 2 轮：对方应战确认（root = 对方；发起方标记/双方火力副本已由 start_effect 就位）
+### 接受 → 进入回合循环（.20 ↔ .21）；婉拒 → 发起方收到取消（.12）
+th_danmaku_events.11 = {
+    type = country_event
+    title = th_danmaku_events.11.title
+    desc = th_danmaku_events.11.desc
+    outcome = neutral
+    trigger = {
+        has_variable = th_danmaku_duel_opponent_mark
+        any_country = {
+            has_variable = th_danmaku_duel_challenger_mark
+        }
+    }
+    immediate = {
+        ### 找回发起方 scope（供 desc 取名与触发回跳）
+        every_country = {
+            limit = {
+                has_variable = th_danmaku_duel_challenger_mark
+            }
+            save_scope_as = th_danmaku_duel_challenger
+        }
+    }
+    ### 接受对决 → 第 3 轮起回合循环（root = 发起方）
+    option = {
+        name = th_danmaku_events.11.a
+        ai_chance = {
+            base = 95
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.11.a.tt
+        }
+        if = {
+            limit = {
+                exists = scope:th_danmaku_duel_challenger
+            }
+            scope:th_danmaku_duel_challenger = {
+                trigger_event_non_silently = th_danmaku_events.20
+            }
+        }
+    }
+    ### 婉拒对决 → 发起方收到取消通知
+    option = {
+        name = th_danmaku_events.11.b
+        ai_chance = {
+            base = 5
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.11.b.tt
+        }
+        if = {
+            limit = {
+                exists = scope:th_danmaku_duel_challenger
+            }
+            scope:th_danmaku_duel_challenger = {
+                trigger_event_non_silently = th_danmaku_events.12
+            }
+        }
+    }
+}
+
+### 对决取消（root = 发起方；对方婉拒或对手缺失兜底触发；清理对决状态）
+th_danmaku_events.12 = {
+    type = country_event
+    title = th_danmaku_events.12.title
+    desc = th_danmaku_events.12.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    option = {
+        name = th_danmaku_events.12.a
+        th_danmaku_duel_cleanup_effect = yes
+    }
+}
+
+### 我方回合（root = 我方；4 战术选项，保守 → 激进）
+### desc 内嵌动态记分板（终点隐藏，玩家不可见目标分数）
+th_danmaku_events.20 = {
+    type = country_event
+    title = th_danmaku_events.20.title
+    desc = th_danmaku_events.20.desc
+    outcome = neutral
+    trigger = {
+        th_danmaku_duel_in_progress_trigger = yes
+    }
+    immediate = {
+        every_country = {
+            limit = {
+                has_variable = th_danmaku_duel_opponent_mark
+            }
+            save_scope_as = th_danmaku_duel_opponent
+        }
+    }
+    ### 守势布阵：稳定 2~8，不会落空
+    option = {
+        name = th_danmaku_events.20.a
+        custom_tooltip = {
+            text = th_danmaku_events.20.a.tt
+        }
+        hidden_effect = {
+            th_danmaku_duel_player_round_t1_effect = yes
+        }
+    }
+    ### 稳健进攻：4~16，10% 落空
+    option = {
+        name = th_danmaku_events.20.b
+        custom_tooltip = {
+            text = th_danmaku_events.20.b.tt
+        }
+        hidden_effect = {
+            th_danmaku_duel_player_round_t2_effect = yes
+        }
+    }
+    ### 全力弹幕：0~26，30% 落空
+    option = {
+        name = th_danmaku_events.20.c
+        custom_tooltip = {
+            text = th_danmaku_events.20.c.tt
+        }
+        hidden_effect = {
+            th_danmaku_duel_player_round_t3_effect = yes
+        }
+    }
+    ### 搏命一击：0~42，50% 落空
+    option = {
+        name = th_danmaku_events.20.d
+        custom_tooltip = {
+            text = th_danmaku_events.20.d.tt
+        }
+        hidden_effect = {
+            th_danmaku_duel_player_round_t4_effect = yes
+        }
+    }
+}
+
+### 对手回合（静默事件，root = 我方；AI 对手由开局捕获火力本地模拟）
+th_danmaku_events.21 = {
+    type = country_event
+    title = th_danmaku_events.21.title
+    desc = th_danmaku_events.21.desc
+    outcome = neutral
+    trigger = {
+        th_danmaku_duel_in_progress_trigger = yes
+    }
+    immediate = {
+        th_danmaku_duel_enemy_round_effect = yes
+    }
+    option = {
+        name = th_danmaku_events.21.a
+    }
+}
+
+### 对决结果（root = 我方；结算走 immediate，选项按胜负分流确认）
+th_danmaku_events.22 = {
+    type = country_event
+    title = th_danmaku_events.22.title
+    desc = th_danmaku_events.22.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        every_country = {
+            limit = {
+                has_variable = th_danmaku_duel_opponent_mark
+            }
+            save_scope_as = th_danmaku_duel_opponent
+        }
+        th_danmaku_duel_finish_effect = yes
+    }
+    ### 胜利结算（含挑衅双倍）
+    option = {
+        name = th_danmaku_events.22.a
+        trigger = {
+            has_variable = th_danmaku_duel_player_score_var
+            var:th_danmaku_duel_player_score_var >= var:th_danmaku_duel_enemy_score_var
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.22.a.tt
+        }
+        th_danmaku_duel_cleanup_effect = yes
+    }
+    ### 败北结算（含挑衅双倍）
+    option = {
+        name = th_danmaku_events.22.b
+        trigger = {
+            has_variable = th_danmaku_duel_player_score_var
+            var:th_danmaku_duel_player_score_var < var:th_danmaku_duel_enemy_score_var
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.22.b.tt
+        }
+        th_danmaku_duel_cleanup_effect = yes
+    }
+    ### 兜底（仅对决状态异常缺失时可见，防事件无可选项卡死）
+    option = {
+        name = th_danmaku_events.22.c
+        trigger = {
+            NOT = {
+                has_variable = th_danmaku_duel_player_score_var
+            }
+        }
+        th_danmaku_duel_cleanup_effect = yes
+    }
+}
+
+### 对决中断（月度断链清理兜底：对决状态超期未续 → 不了了之）
+th_danmaku_events.23 = {
+    type = country_event
+    title = th_danmaku_events.23.title
+    desc = th_danmaku_events.23.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    option = {
+        name = th_danmaku_events.23.a
+        th_danmaku_duel_cleanup_effect = yes
+    }
+}
+
+### ============================================================
+### 妖兽作乱 / 退治妖兽
+### .30 妖兽遭遇 → .31 大胜 / .32 胜利 / .33 败北 / .34 大败
+### .40 妖兽爆发（月度 2%，选项1 为治下随机地点添加修正）
+### ============================================================
+
+### 妖兽遭遇（root = 我方；地点标记/双方火力已由 th_danmaku_beast_trigger_effect 就位）
+th_danmaku_events.30 = {
+    type = country_event
+    title = th_danmaku_events.30.title
+    desc = th_danmaku_events.30.desc
+    outcome = neutral
+    trigger = {
+        NOT = {
+            th_danmaku_duel_in_progress_trigger = yes
+        }
+        any_owned_location = {
+            has_variable = th_danmaku_beast_location_mark
+            has_location_modifier = th_beast_rampage_modifier
+        }
+    }
+    immediate = {
+        ### 找回标记地点（供 desc 取地点名）
+        every_owned_location = {
+            limit = {
+                has_variable = th_danmaku_beast_location_mark
+            }
+            save_scope_as = th_danmaku_beast_loc
+        }
+    }
+    option = {
+        name = th_danmaku_events.30.a
+        custom_tooltip = {
+            text = th_danmaku_events.30.a.tt
+        }
+        hidden_effect = {
+            th_danmaku_beast_resolve_effect = yes
+        }
+    }
+}
+
+### 妖兽退治·大胜（移除修正 + 奖励）
+th_danmaku_events.31 = {
+    type = country_event
+    title = th_danmaku_events.31.title
+    desc = th_danmaku_events.31.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_beast_victory_effect = {
+            gold = th_danmaku_encounter_great_victory_gold_value
+            prestige = th_danmaku_encounter_great_victory_prestige_value
+            investigation = th_danmaku_encounter_great_victory_investigation_value
+        }
+    }
+    option = {
+        name = th_danmaku_events.31.a
+        custom_tooltip = {
+            text = th_danmaku_events.31.a.tt
+        }
+    }
+}
+
+### 妖兽退治·胜利（移除修正 + 奖励）
+th_danmaku_events.32 = {
+    type = country_event
+    title = th_danmaku_events.32.title
+    desc = th_danmaku_events.32.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_beast_victory_effect = {
+            gold = th_danmaku_encounter_victory_gold_value
+            prestige = th_danmaku_encounter_victory_prestige_value
+            investigation = th_danmaku_encounter_victory_investigation_value
+        }
+    }
+    option = {
+        name = th_danmaku_events.32.a
+        custom_tooltip = {
+            text = th_danmaku_events.32.a.tt
+        }
+    }
+}
+
+### 妖兽退治·败北（惩罚；修正保留，可再次退治）
+th_danmaku_events.33 = {
+    type = country_event
+    title = th_danmaku_events.33.title
+    desc = th_danmaku_events.33.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_beast_defeat_effect = {
+            gold = th_danmaku_encounter_defeat_gold_value
+            prestige = th_danmaku_encounter_defeat_prestige_value
+        }
+    }
+    option = {
+        name = th_danmaku_events.33.a
+        custom_tooltip = {
+            text = th_danmaku_events.33.a.tt
+        }
+    }
+}
+
+### 妖兽退治·大败（惩罚；修正保留，可再次退治）
+th_danmaku_events.34 = {
+    type = country_event
+    title = th_danmaku_events.34.title
+    desc = th_danmaku_events.34.desc
+    outcome = neutral
+    trigger = {
+        always = yes
+    }
+    immediate = {
+        th_danmaku_beast_defeat_effect = {
+            gold = th_danmaku_encounter_great_defeat_gold_value
+            prestige = th_danmaku_encounter_great_defeat_prestige_value
+        }
+    }
+    option = {
+        name = th_danmaku_events.34.a
+        custom_tooltip = {
+            text = th_danmaku_events.34.a.tt
+        }
+    }
+}
+
+### 妖兽爆发（月度 2% 随机触发；选项1 = 治下随机地点添加妖兽作乱修正）
+th_danmaku_events.40 = {
+    type = country_event
+    title = th_danmaku_events.40.title
+    desc = th_danmaku_events.40.desc
+    outcome = neutral
+    trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+        any_owned_location = {
+            is_land = yes
+        }
+    }
+    ### 选项1：妖兽作乱（为治下随机地点添加修正，10 年）
+    option = {
+        name = th_danmaku_events.40.a
+        ai_chance = {
+            base = 85
+        }
+        custom_tooltip = {
+            text = th_danmaku_events.40.a.tt
+        }
+        th_danmaku_beast_outbreak_effect = yes
+    }
+    ### 选项2：暂不理会
+    option = {
+        name = th_danmaku_events.40.b
+        ai_chance = {
+            base = 15
+        }
+    }
+}

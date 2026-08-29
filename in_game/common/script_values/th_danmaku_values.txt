@@ -1,0 +1,127 @@
+﻿### ============================================================
+### 弹幕战系统 — 集中数值（平衡调整入口）
+### 弹幕火力水平（th_danmaku_firepower_value）=
+###   基础 10 + 统治者军事能力 + 弹幕火力值（平加修正） + 正统信仰容忍度
+###   × (1 + 弹幕火力值修正%)
+### 全部数值为初值，标注待调；遭遇战/对决战 事件与效果均引用本文件键
+### ============================================================
+
+### ------------------------------------------------------------
+### 弹幕火力水平（核心公式，国家 scope 读取）
+### 分量已验证：ruler_or_regent.mil（flavor_BYZ.txt:2454）、
+###   modifier:tolerance_own（00_modifier_types.txt:6976 country 类）、
+###   modifier:th_danmaku_firepower_*（本模组自定义，见 modifier_type_definitions）
+### 嵌套数学块已验证（_script_values.info："you can even inline them in the mathematical operators"）
+### ------------------------------------------------------------
+th_danmaku_firepower_value = {
+    value = 10                                  # 基础值（待调）
+    add = ruler_or_regent.mil                   # 统治者军事能力
+    add = modifier:th_danmaku_firepower_base_modifier   # 弹幕火力值（平加；advance/事件/异变累加）
+    add = modifier:tolerance_own                # 正统信仰容忍度
+    multiply = {
+        value = 1
+        add = modifier:th_danmaku_firepower_modifier    # 弹幕火力值修正（百分比）
+    }
+}
+
+### ============================================================
+### 遭遇战 平衡数值
+### ============================================================
+
+### 月度随机遭遇概率（%）：on_action 用字面量 random = { chance = 2 }，
+### 本键供文档/未来改为脚本值权重时使用（待调）
+th_danmaku_encounter_monthly_chance_value = { value = 2 }
+
+### 无名妖怪火力 = 我方火力 × 50%~130%（随机百分比，整数域）
+th_danmaku_youkai_firepower_pct_min_value = { value = 50 }
+th_danmaku_youkai_firepower_pct_max_value = { value = 130 }
+
+th_danmaku_youkai_firepower_value = {
+    value = th_danmaku_firepower_value
+    multiply = {
+        value = {
+            integer_range = {
+                min = th_danmaku_youkai_firepower_pct_min_value
+                max = th_danmaku_youkai_firepower_pct_max_value
+            }
+        }
+        divide = 100
+    }
+}
+
+### 遭遇战火力比（整数百分比 = 我方×100÷妖怪，供五档结局判定）
+th_danmaku_encounter_ratio_pct_value = {
+    value = var:th_danmaku_firepower_self_var
+    multiply = 100
+    divide = var:th_danmaku_encounter_youkai_fp_var
+}
+
+### 遭遇战四结局 金币/威望奖惩（待调）
+th_danmaku_encounter_great_victory_gold_value = { value = 30 }
+th_danmaku_encounter_victory_gold_value = { value = 15 }
+th_danmaku_encounter_defeat_gold_value = { value = -10 }
+th_danmaku_encounter_great_defeat_gold_value = { value = -25 }
+th_danmaku_encounter_great_victory_prestige_value = { value = 5 }
+th_danmaku_encounter_victory_prestige_value = { value = 2 }
+th_danmaku_encounter_defeat_prestige_value = { value = -2 }
+th_danmaku_encounter_great_defeat_prestige_value = { value = -5 }
+
+### 遭遇战 异变调查进度（异变系统 M3 落地后经 th_gensokyo_incident_add_investigation_effect 生效）
+th_danmaku_encounter_victory_investigation_value = { value = 2 }
+th_danmaku_encounter_great_victory_investigation_value = { value = 4 }
+
+### ============================================================
+### 对决战 平衡数值
+### ============================================================
+
+### 隐藏终点 = (我方火力 + 对手火力) × 系数，钳制 [min, max]
+### 目标：保证 4~10 轮（平均单回合得分 10~15）
+th_danmaku_duel_goal_multiplier_value = { value = 0.75 }     # 待调
+th_danmaku_duel_goal_min_value = { value = 60 }              # 待调
+th_danmaku_duel_goal_max_value = { value = 180 }             # 待调
+
+th_danmaku_duel_goal_value = {
+    value = th_danmaku_firepower_value
+    add = var:th_danmaku_duel_enemy_fp_var
+    multiply = th_danmaku_duel_goal_multiplier_value
+    min = th_danmaku_duel_goal_min_value
+    max = th_danmaku_duel_goal_max_value
+}
+
+### 四战术单回合得分区间（保守 → 激进；激进方差大、上限高）
+### 落空概率（一无所有）由事件内 random_list 承担：战术2=10% / 战术3=30% / 战术4=50%，战术1=0%
+th_danmaku_tactic_1_roll_value = { integer_range = { min = 2 max = 8 } }     # 守势布阵：稳定
+th_danmaku_tactic_2_roll_value = { integer_range = { min = 4 max = 16 } }    # 稳健进攻：中庸
+th_danmaku_tactic_3_roll_value = { integer_range = { min = 0 max = 26 } }    # 全力弹幕：激进
+th_danmaku_tactic_4_roll_value = { integer_range = { min = 0 max = 42 } }    # 搏命一击：高风险高回报
+
+### 挑衅倍数（礼貌请教 ×1 / 挑衅 ×2）
+th_danmaku_provoke_multiplier_value = { value = 2 }
+
+### 对决战 胜负奖惩（待调；挑衅时 ×倍数）
+th_danmaku_duel_victory_gold_value = { value = 40 }
+th_danmaku_duel_defeat_gold_value = { value = -15 }
+th_danmaku_duel_victory_prestige_value = { value = 8 }
+th_danmaku_duel_defeat_prestige_value = { value = -6 }
+th_danmaku_duel_victory_contribution_value = { value = 10 }   # 走 th_gensokyo_io_contribution_var_add_effect
+th_danmaku_duel_victory_influence_value = { value = 5 }       # 走 th_gensokyo_io_influence_var_add_effect
+th_danmaku_duel_victory_investigation_value = { value = 5 }   # 异变调查进度（M3 落地后生效）
+
+### 冠军/挑衅修正时长（年，add_country_modifier years = N）
+th_danmaku_duel_buff_years_value = { value = 1 }
+
+### 对决断链强清阈值（月）：月度脉冲倒计时，归零则 th_danmaku_duel_cleanup_effect
+th_danmaku_duel_stale_months_value = { value = 12 }
+
+### ============================================================
+### 妖兽作乱 / 退治妖兽 平衡数值
+### ============================================================
+
+### 妖兽作乱修正时长（年；th_danmaku_beast_outbreak_effect 内用字面量 10 并注释引用本键）
+th_danmaku_beast_rampage_years_value = { value = 10 }
+
+### 妖兽爆发月度概率（%）：on_action 用字面量 random = { chance = 2 }，
+### 本键供文档/未来改造为脚本值权重时使用（待调）
+th_danmaku_beast_monthly_chance_value = { value = 2 }
+
+### 妖兽战斗力复用 th_danmaku_youkai_firepower_value（我方 ×50%~130% 随机）

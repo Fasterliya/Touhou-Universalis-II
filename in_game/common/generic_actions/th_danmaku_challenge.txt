@@ -1,0 +1,76 @@
+﻿### ============================================================
+### 弹幕战系统 — 主动挑战（玩家入口；对决战亦可由事件/接口触发）
+### 入口: th_danmaku_duel_start_effect = { challenger = scope:actor target = scope:target }
+### 对齐 th_gensokyo_feast 行动模式（type = internationalorganization）
+### ============================================================
+
+th_danmaku_challenge = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                th_danmaku_duel_in_progress_trigger = yes
+            }
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = country
+        target_flag = target
+        name = "choose_country"
+        none_available_msg_key = "th_danmaku_challenge_none_available"
+        column = {
+            data = name
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                th_danmaku_duel_in_progress_trigger = yes
+            }
+        }
+        enabled = {
+            NOT = { this = scope:actor }
+        }
+    }
+
+    effect = {
+        ### 2026-08-26 同款守卫：AI 预评估/tooltip 未选 target 时直接引用报
+        ### "Undefined event target"（error.log 实证教训，同 request_expansion B1 修复）
+        if = {
+            limit = {
+                exists = scope:target
+            }
+            ### 2026-08-28 修复：行动 effect 顶层隐式 scope 为空（P1-12 教训），
+            ### 效果内一律不使用隐式 ROOT —— 显式传发起方 challenger = scope:actor
+            ### （玩家用行动时即 player），对手 target = scope:target（select_trigger 保存，
+            ### 在 effect 顶层解析最可靠）。select_trigger 作用域与 scope:actor 均在顶层求值后
+            ### 文本替换进 th_danmaku_duel_start_effect，不再依赖任何隐式/嵌套作用域。
+            th_danmaku_duel_start_effect = {
+                challenger = scope:actor
+                target = scope:target
+            }
+        }
+    }
+
+    cooldown = {
+        type = th_danmaku_challenge
+        months = 12
+    }
+
+    ai_will_do = {
+        ### AI 不主动使用本行动（AI 对决由事件/异变接口驱动）
+        add = {
+            desc = BASE_VALUE
+            value = 0
+        }
+    }
+}

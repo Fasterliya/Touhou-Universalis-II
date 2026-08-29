@@ -1,0 +1,85 @@
+﻿### ============================================================
+### 弹幕战系统 — 退治妖兽（调试用玩家入口）
+### 流程: 月度妖兽爆发事件（.40 选项1 加修正）→ 本行动选地点
+###       → th_danmaku_beast_trigger_effect → .30 妖兽遭遇 → 胜负
+### 对齐 th_gensokyo_feast 行动模式（type = internationalorganization）
+### ============================================================
+
+th_danmaku_subjugate_beast = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            NOT = {
+                th_danmaku_duel_in_progress_trigger = yes
+            }
+        }
+    }
+
+    allow = {
+        scope:actor = {
+            any_owned_location = {
+                has_location_modifier = th_beast_rampage_modifier
+            }
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = location
+        target_flag = beast_location
+        none_available_msg_key = "th_danmaku_subjugate_beast_none_available"
+        column = {
+            data = name
+        }
+        column = {
+            data = owner_flag
+        }
+        interaction_source_list = {
+            scope:actor = {
+                every_owned_location = {
+                    limit = {
+                        has_location_modifier = th_beast_rampage_modifier
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            has_location_modifier = th_beast_rampage_modifier
+        }
+    }
+
+    effect = {
+        ### 2026-08-26 同款守卫：AI 预评估/tooltip 未选 beast_location 时直接引用报
+        ### "Undefined event target"（error.log 实证教训，同 request_expansion B1 修复）
+        ### 2026-08-28：行动 effect 顶层隐式 scope 为空（P1-12 教训）——
+        ### 显式传 country = scope:actor（退治国），location = scope:beast_location（选择器目标）
+        if = {
+            limit = {
+                exists = scope:beast_location
+            }
+            th_danmaku_beast_trigger_effect = {
+                country = scope:actor
+                location = scope:beast_location
+            }
+        }
+    }
+
+    cooldown = {
+        type = th_danmaku_subjugate_beast
+        ### 调试期短 CD（1 月）防连点刷屏；正式版可调大
+        months = 1
+    }
+
+    ai_will_do = {
+        ### AI 不主动退治（调试功能，玩家向）
+        add = {
+            desc = BASE_VALUE
+            value = 0
+        }
+    }
+}

@@ -1,0 +1,70 @@
+﻿### ============================================================
+### 弹幕战系统 — 月度脉冲（追加注册，不动现有文件）
+### ============================================================
+
+monthly_country_pulse = {
+    on_actions = {
+        th_danmaku_monthly_pulse
+    }
+}
+
+th_danmaku_monthly_pulse = {
+    trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+    effect = {
+        ### 随机遭遇（仅玩家，防 AI 弹窗轰炸；遭遇战亦可由事件/接口触发）
+        if = {
+            limit = {
+                is_human = yes
+                th_danmaku_encounter_available_trigger = yes
+            }
+            ### 月度 2%（字面量，待调；常数 th_danmaku_encounter_monthly_chance_value
+            ### 供文档/未来改造为脚本值权重）
+            random = {
+                chance = 2
+                th_danmaku_encounter_trigger_effect = yes
+            }
+        }
+        ### 妖兽爆发（仅玩家，月度 2%；与随机遭遇独立判定）
+        ### 常数 th_danmaku_beast_monthly_chance_value 供文档/未来改造
+        if = {
+            limit = {
+                is_human = yes
+                any_owned_location = {
+                    is_land = yes
+                }
+            }
+            random = {
+                chance = 2
+                trigger_event_non_silently = th_danmaku_events.40
+            }
+        }
+        ### 妖兽战斗标记孤儿清理（玩家弃置 .30 不点 / 事件链断 → 清标记兜底）
+        every_owned_location = {
+            limit = {
+                has_variable = th_danmaku_beast_location_mark
+                NOT = {
+                    has_location_modifier = th_beast_rampage_modifier
+                }
+            }
+            remove_variable = th_danmaku_beast_location_mark
+        }
+        ### 对决断链清理（事件链被覆盖/存档中断时防变量残留卡死）
+        if = {
+            limit = {
+                th_danmaku_duel_in_progress_trigger = yes
+            }
+            change_variable = {
+                name = th_danmaku_duel_deadline_months_var
+                subtract = 1
+            }
+            if = {
+                limit = {
+                    var:th_danmaku_duel_deadline_months_var <= 0
+                }
+                trigger_event_non_silently = th_danmaku_events.23
+            }
+        }
+    }
+}
