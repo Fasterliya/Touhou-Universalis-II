@@ -15,20 +15,20 @@
 ```
 th_danmaku_firepower_value（脚本值，国家 scope 读取）=
     基础 10
-  + 统治者军事能力（ruler_or_regent.mil）
+  + 统治者军事能力 ×10（ruler_or_regent.mil × 10；1 军事 = 10 火力，100 军事 ≈ 1000）
   + 弹幕火力值（th_danmaku_firepower_base_modifier，平加修正字段）
   + 正统信仰容忍度（modifier:tolerance_own）
   × (1 + 弹幕火力值修正 th_danmaku_firepower_modifier%)
 ```
 
 类比：**弹幕火力值 ≈ CK3 勇武值**。全库事件/行动/接口统一读 `th_danmaku_firepower_value`，
-不要在别处重复实现公式。
+不要在别处重复实现公式。平加来源（科技/增益）按同一口径 ×10 缩放以保持占比。
 
 ### 1.2 两个新修正
 
 | 修正 | 类型 | 显示名 | 来源示例 |
 |---|---|---|---|
-| `th_danmaku_firepower_base_modifier` | country，平加 | 弹幕火力值 | 科技：符卡规则 +3 / 符卡改革 +5 / 妖妖之梦 +3；事件/异变 `add_country_modifier` |
+| `th_danmaku_firepower_base_modifier` | country，平加 | 弹幕火力值 | 科技：符卡规则 +30 / 符卡改革 +50 / 妖妖之梦 +30；事件/异变 `add_country_modifier` |
 | `th_danmaku_firepower_modifier` | country，percent | 弹幕火力值修正 | 科技：异变新叙事 +10% |
 
 类型定义双目录注册（内容必须一致）：
@@ -172,13 +172,16 @@ th_danmaku_duel_trigger_effect / th_danmaku_duel_start_effect
 - 跨国家拷回用 `scope:X.var:Y` / `prev.var:Y`（参考库已验证语法），**不要再把对手火力只存在对手身上**（曾导致 goal 公式读空变量 → 决斗永不结束 + loc ERROR）。
 - 清理 `th_danmaku_duel_cleanup_effect` 覆盖双方全部残留（含 mark 与火力副本）。
 
-### 4.2 隐藏终点（玩家不可见）
+### 4.2 胜负终点（隐藏，玩家不可见）
 
 ```
-th_danmaku_duel_goal_var = (我方火力 + 对手火力) × 0.75，钳制 [60, 180]
+th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 定案）
 ```
-保证 4~10 轮（平均单回合得分 10~15），弱方可凭激进战术翻盘。
+回合预估（平均单回合 12~15 分，含落空）：常规混合 7~9 轮、全保守 8~12 轮、全激进 4~5 轮。
+弱方可凭激进战术翻盘（AI 弱者倾向搏冷门）。**终点不再依赖双方火力**——火力只影响
+遭遇战结局概率带 / AI 对手战术倾向 / 展示值。
 终局判定 `th_danmaku_duel_finished_trigger`：任一方分数 ≥ 终点；双方同轮达标时分数高者胜。
+修改入口：`th_danmaku_values.txt` 的 `th_danmaku_duel_goal_value`（改本键即调整对决时长）。
 
 ### 4.3 四战术（保守 → 激进）
 
@@ -223,12 +226,12 @@ th_danmaku_duel_goal_var = (我方火力 + 对手火力) × 0.75，钳制 [60, 1
 
 | 键 | 初值 | 说明 |
 |---|---|---|
-| `th_danmaku_firepower_value` | — | 火力公式（§1.1） |
+| `th_danmaku_firepower_value` | — | 火力公式（§1.1；军事 ×10） |
 | `th_danmaku_encounter_monthly_chance_value` | 2 | 遭遇月度概率%（当前 on_action 用字面量） |
 | `th_danmaku_youkai_firepower_pct_min/max_value` | 50 / 130 | 妖怪火力 = 我方 × 50%~130% |
 | `th_danmaku_encounter_{great_victory,victory,defeat,great_defeat}_{gold,prestige}_value` | 见 §3.3 | 遭遇奖惩 |
 | `th_danmaku_encounter_{victory,great_victory}_investigation_value` | 2 / 4 | 异变调查进度 |
-| `th_danmaku_duel_goal_multiplier/min/max_value` | 0.75 / 60 / 180 | 隐藏终点参数 |
+| `th_danmaku_duel_goal_value` | 100 | 胜负终点（固定；改本键即调整对决时长） |
 | `th_danmaku_tactic_{1,2,3,4}_roll_value` | 见 §4.3 | 战术得分区间 |
 | `th_danmaku_provoke_multiplier_value` | 2 | 挑衅倍数 |
 | `th_danmaku_duel_{victory,defeat}_{gold,prestige}_value` | 见 §4.5 | 对决奖惩 |

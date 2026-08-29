@@ -10,7 +10,8 @@ th_danmaku_champion_modifier = {
 		category = country
 	}
 	monthly_prestige = 0.10
-	th_danmaku_firepower_base_modifier = 3
+	### 1 军事=10 火力口径：冠军火力 +30
+	th_danmaku_firepower_base_modifier = 30
 }
 
 ### 挑衅胜利增益（挑衅后获胜，12 个月）
@@ -20,7 +21,8 @@ th_danmaku_provoke_buff_modifier = {
 		category = country
 	}
 	monthly_prestige = 0.10
-	th_danmaku_firepower_base_modifier = 5
+	### 1 军事=10 火力口径：挑衅胜利火力 +50
+	th_danmaku_firepower_base_modifier = 50
 	land_morale_modifier = 0.05
 }
 
