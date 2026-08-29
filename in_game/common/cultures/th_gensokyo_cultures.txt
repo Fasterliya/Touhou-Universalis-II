@@ -1,4 +1,4 @@
-﻿#技术提示-文化和文化的语言定义在这里
+#技术提示-文化和文化的语言定义在这里
 
 #地精
 th_goblin_culture = {
@@ -70,7 +70,7 @@ th_yokai_culture = {
 th_vampire_culture = { 
         language = th_gensokyo_western_dialect
         color = rgb {255 128 0}
-        tags = { th_gensokyo_gfx }
+        tags = { th_vampire_gfx th_gensokyo_gfx }
         opinions = {
         }
         culture_groups = {
@@ -1516,5 +1516,18 @@ th_sky_fire_person_culture = {
         culture_groups = {
                 th_gensokyo_culture_group
                 th_gensokyo_youkai_culture_group
+        }
+}
+
+#文化图鉴-未探明占位文化
+#仅由文化图鉴列表引用（未接纳文化替换为此占位），不分配任何国家/省份
+th_chronicle_unknown = {
+        language = th_gensokyo_eastern_dialect
+        color = rgb {30 25 45}
+        tags = { th_gensokyo_gfx }
+        opinions = {
+        }
+        culture_groups = {
+                th_gensokyo_culture_group
         }
 }

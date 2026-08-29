@@ -19,7 +19,7 @@ th_gensokyo_culture_chronicle = {
 			limit = { is_human = yes }
 			set_variable = { name = th_cc_page value = 0 }
 			set_variable = { name = th_cc_page_start value = 0 }
-			set_variable = { name = th_cc_page_end value = 5 }
+			set_variable = { name = th_cc_page_end value = 7 }
 			th_culture_chronicle_refresh_lists = yes
 		}
 	}

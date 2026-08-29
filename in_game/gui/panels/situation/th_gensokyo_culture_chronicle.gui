@@ -9,7 +9,7 @@ situation_panel = {
 			# 背景图槽位：gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds
 			# 推荐比例 3:4（570 x 760 @1x / 1140 x 1520 @2x），用户替换该 dds 即可
 			background = {
-				texture = "gfx/interface/illustrations/situation/chronicle_bg.dds"
+				texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
 				spriteType = stretched
 			}
 
@@ -61,35 +61,35 @@ situation_panel = {
 
 				scrollarea = {
 					layoutpolicy_horizontal = expanding
-					layoutpolicy_vertical = expanding
-					size = { -1 600 }
+					size = { -1 480 }
 					scrollbarpolicy_horizontal = always_off
 					scrollbar_vertical = {
 						using = Scrollbar_Vertical
 					}
 					scrollwidget = {
 						vbox = {
-							# 已接纳文化：真名 + 真介绍 + 对应立绘（2:3）
+							# 图鉴卡片：按主序列固定顺序，每页 7 行
+							# 行内文化 = 已接纳真文化 / 未接纳占位文化 th_chronicle_unknown
+							# 立绘：GetGraphicalCultureTexture('portrait') 按行内文化图形文化取图
 							fixedgridbox = {
 								addcolumn = 100%
 								addrow = 192
-								datamodel = "[GetPlayer.MakeScope.GetList('th_cc_accepted_display')]"
+								datamodel = "[GetPlayer.MakeScope.GetList('th_cc_display')]"
 								item = {
 									widget = {
 										size = { 100% 192 }
-										margin = { 4 6 }
 										hbox = {
 											layoutpolicy_horizontal = expanding
 											spacing = 10
 											icon = {
 												size = { 120 180 }
-												texture = "gfx/interface/illustrations/situation/chronicle/[Scope.GetKey].dds"
+												texture = "[GetGraphicalCultureTexture('portrait')]"
 											}
 											vbox = {
 												layoutpolicy_horizontal = expanding
 												text_single = {
 													using = Font_Size_Medium
-													text = "[Scope.GetName]"
+													text = "[Scope.GetCulture.GetName]"
 												}
 												widget = {
 													size = { -1 4 }
@@ -100,45 +100,7 @@ situation_panel = {
 													align = left|nobaseline
 													autoresize = no
 													size = { -1 100 }
-													text = "[Scope.Custom('th_cc_desc')]"
-												}
-											}
-										}
-									}
-								}
-							}
-							# 未探明文化：占位剪影 + ？？？
-							fixedgridbox = {
-								addcolumn = 100%
-								addrow = 192
-								datamodel = "[GetPlayer.MakeScope.GetList('th_cc_unaccepted_display')]"
-								item = {
-									widget = {
-										size = { 100% 192 }
-										margin = { 4 6 }
-										hbox = {
-											layoutpolicy_horizontal = expanding
-											spacing = 10
-											icon = {
-												size = { 120 180 }
-												texture = "gfx/interface/illustrations/situation/chronicle/unknown.dds"
-											}
-											vbox = {
-												layoutpolicy_horizontal = expanding
-												text_single = {
-													using = Font_Size_Medium
-													text = "TH_CULTURE_CHRONICLE_UNKNOWN"
-												}
-												widget = {
-													size = { -1 4 }
-												}
-												text_single = {
-													using = Font_Size_Small
-													layoutpolicy_horizontal = expanding
-													align = left|nobaseline
-													autoresize = no
-													size = { -1 100 }
-													text = "TH_CULTURE_CHRONICLE_UNKNOWN"
+													text = "[Scope.GetCulture.Custom('th_cc_desc')]"
 												}
 											}
 										}
@@ -148,23 +110,19 @@ situation_panel = {
 						}
 					}
 				}
-
-				widget = {
-					layoutpolicy_horizontal = expanding
-					size = { -1 4 }
-				}
-
-				button_regular = {
-					layoutpolicy_horizontal = expanding
-					size = { 200 40 }
-					text_single = {
-						text = "TH_CULTURE_CHRONICLE_REFRESH"
-					}
-					onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				}
-
-				expand = {}
 			}
+		}
+	}
+
+	# 编纂按钮：位于 vanilla 滚动区之外的固定底部栏，始终可见
+	blockoverride "situation_main_content_extra" {
+		button_regular = {
+			layoutpolicy_horizontal = expanding
+			size = { 200 40 }
+			text_single = {
+				text = "TH_CULTURE_CHRONICLE_REFRESH"
+			}
+			onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 		}
 	}
 }

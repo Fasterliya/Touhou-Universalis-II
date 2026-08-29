@@ -9,7 +9,7 @@ th_culture_chronicle_refresh = {
 	effect = {
 		set_variable = { name = th_cc_page value = 0 }
 		set_variable = { name = th_cc_page_start value = 0 }
-		set_variable = { name = th_cc_page_end value = 5 }
+		set_variable = { name = th_cc_page_end value = 7 }
 		th_culture_chronicle_refresh_lists = yes
 	}
 	ai_is_valid = {
@@ -27,8 +27,8 @@ th_cc_prev_page = {
 	}
 	effect = {
 		change_variable = { name = th_cc_page subtract = 1 }
-		change_variable = { name = th_cc_page_start subtract = 5 }
-		change_variable = { name = th_cc_page_end subtract = 5 }
+		change_variable = { name = th_cc_page_start subtract = 7 }
+		change_variable = { name = th_cc_page_end subtract = 7 }
 		th_cc_refresh_display = yes
 	}
 	ai_is_valid = {
@@ -46,8 +46,8 @@ th_cc_next_page = {
 	}
 	effect = {
 		change_variable = { name = th_cc_page add = 1 }
-		change_variable = { name = th_cc_page_start add = 5 }
-		change_variable = { name = th_cc_page_end add = 5 }
+		change_variable = { name = th_cc_page_start add = 7 }
+		change_variable = { name = th_cc_page_end add = 7 }
 		th_cc_refresh_display = yes
 	}
 	ai_is_valid = {
@@ -66,7 +66,7 @@ th_culture_chronicle_open_sgui = {
 	effect = {
 		set_variable = { name = th_cc_page value = 0 }
 		set_variable = { name = th_cc_page_start value = 0 }
-		set_variable = { name = th_cc_page_end value = 5 }
+		set_variable = { name = th_cc_page_end value = 7 }
 		th_culture_chronicle_refresh_lists = yes
 	}
 	ai_is_valid = {
