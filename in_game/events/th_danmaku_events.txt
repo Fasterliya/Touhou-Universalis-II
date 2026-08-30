@@ -388,7 +388,7 @@ th_danmaku_events.20 = {
             save_scope_as = th_danmaku_duel_opponent
         }
     }
-    ### 守势布阵：稳定 2~8，不会落空
+    ### 守势布阵：命中率最高（+10%），命中 6~10 / 未命中 2~4
     option = {
         name = th_danmaku_events.20.a
         custom_tooltip = {
@@ -398,7 +398,7 @@ th_danmaku_events.20 = {
             th_danmaku_duel_player_round_t1_effect = yes
         }
     }
-    ### 稳健进攻：4~16，10% 落空
+    ### 稳健进攻：+5% 命中，命中 8~14 / 未命中 3~6
     option = {
         name = th_danmaku_events.20.b
         custom_tooltip = {
@@ -408,7 +408,7 @@ th_danmaku_events.20 = {
             th_danmaku_duel_player_round_t2_effect = yes
         }
     }
-    ### 全力弹幕：0~26，30% 落空
+    ### 全力弹幕：−5% 命中，命中 10~20 / 未命中 4~8
     option = {
         name = th_danmaku_events.20.c
         custom_tooltip = {
@@ -418,7 +418,7 @@ th_danmaku_events.20 = {
             th_danmaku_duel_player_round_t3_effect = yes
         }
     }
-    ### 搏命一击：0~42，50% 落空
+    ### 搏命一击：−15% 命中（高方差高风险），命中 12~26 / 未命中 5~10
     option = {
         name = th_danmaku_events.20.d
         custom_tooltip = {

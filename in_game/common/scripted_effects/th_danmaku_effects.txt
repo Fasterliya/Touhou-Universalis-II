@@ -711,14 +711,8 @@ th_danmaku_duel_add_enemy_score_effect = {
 ### 对决战 — 终局结算（分差五档）
 ### ============================================================
 
-### 分差%（带符号）= (我方分数 − 对方分数) × 100 ÷ 终点；负数 = 我方落后
+### 分差%脚本值（th_danmaku_duel_gap_pct_value）定义见 th_danmaku_values.txt
 ### 分档阈值：th_danmaku_duel_draw_gap_value（5%）= 平手；th_danmaku_duel_rout_gap_value（35%）= 大胜/满目疮痍
-th_danmaku_duel_gap_pct_value = {
-    value = var:th_danmaku_duel_player_score_var
-    subtract = var:th_danmaku_duel_enemy_score_var
-    multiply = 100
-    divide = th_danmaku_duel_goal_value
-}
 
 ### 终局结算（国家 scope；在结果事件 .22 的 immediate 调用）
 ### 分差五档：平手(≤5%) / 胜利(5~35%) / 大胜(>35%) / 败北(−35%~−5%) / 满目疮痍(<−35%)

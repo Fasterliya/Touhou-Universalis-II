@@ -114,6 +114,7 @@ th_danmaku_duel_start_effect = { challenger = ROOT target = scope:some_country }
 - **禁用 `[ROOT.MakeScope.GetVariable(...)]` / `[ROOT.MakeScope.ScriptValue(...)]`**——全库无先例，事件 loc 中解析不到值（ERROR 实证）。
 - **行动上下文事件（对决链 .10/.11/.12/.20/.21/.22）**：用 `[actor.MakeScope.GetVariable('x').GetValue]` / `[actor.MakeScope.ScriptValue('x')]` / `[target.MakeScope.ScriptValue('x')]` / `[actor.GetName]` / `[target.GetName]`（settle_the_frontier / ACGV 弹幕战先例；actor=发起方，target=对手，贯穿事件链）。
 - **非行动上下文事件（遭遇 .1-.6 / 妖兽 .30-.34、.40）**：用 `[ROOT.GetCountry.MakeScope.ScriptValue('x')]` / `[ROOT.GetCountry.MakeScope.GetVariable('x').GetValue]`（vanilla hook_and_cod_wars 同款）。
+- **数值显示精度（2026-08-29）**：loc 命令支持 `|N` 管道后缀控制小数位——`[X.MakeScope.ScriptValue('x')|1]` = 1 位小数、`|0` = 四舍五入整数、`|0-` = 向下取整、`|2+` = 向上取整 2 位（ACGV `acgv_silk_work_total_amount|2+` 与 vanilla `iw_tension.GetValue|2` 实证）。命中率/弹幕火力显示用 `|1`；整数量（妖兽火力、概率%、分数、金币）不加管道，避免显示 "512.0"。
 
 ### 2.5 玩家主动入口
 
@@ -300,6 +301,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 |---|---|---|
 | `th_danmaku_duel_goal_value` | 100 | 胜负终点（固定；改本键即调整对决时长） |
 | `th_danmaku_duel_draw_gap_value` / `rout_gap_value` | 5 / 35 | 分档阈值（≤5% 平手，>35% 大胜/满目疮痍） |
+| `th_danmaku_duel_gap_pct_value` | — | 分差%脚本值（(我方−对方)×100÷终点；供 .22 分档；定义于本文件） |
 | `th_danmaku_duel_hit_base/coef/min/max_value` | 50 / 0.25 / 10 / 90 | 命中率公式常数 |
 | `th_danmaku_tactic_{1..4}_hit_adj_value` | +10 / +5 / −5 / −15 | 四战术命中修正 |
 | `th_danmaku_tactic_{1..4}_{high,low}_value` | 见 §4.3 | 命中/未命中得分区间 |

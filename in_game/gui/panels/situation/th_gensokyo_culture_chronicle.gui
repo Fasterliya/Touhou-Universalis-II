@@ -1,4 +1,4 @@
-situation_panel = {
+﻿situation_panel = {
 	blockoverride "situation_subheader_content" {}
 
 	blockoverride "situation_panel_main_content" {
@@ -11,6 +11,7 @@ situation_panel = {
 			background = {
 				texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
 				spriteType = stretched
+				size = { -1 570 }
 			}
 
 			vbox = {
@@ -6513,7 +6514,7 @@ situation_panel = {
 	blockoverride "situation_main_content_extra" {
 		button_regular = {
 			layoutpolicy_horizontal = expanding
-			size = { 200 40 }
+			size = { -1 40 }
 			# text 属性走 button_regular 模板自带居中 buttonText（align = center）
 			text = "TH_CULTURE_CHRONICLE_REFRESH"
 			onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"

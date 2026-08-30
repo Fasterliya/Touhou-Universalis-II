@@ -89,6 +89,16 @@ th_danmaku_duel_goal_value = { value = 100 }
 th_danmaku_duel_draw_gap_value = { value = 5 }        # ≤5% → 平手
 th_danmaku_duel_rout_gap_value = { value = 35 }       # >35% → 大胜 / 满目疮痍
 
+### 分差%（带符号）= (我方分数 − 对方分数) × 100 ÷ 终点；负数 = 我方落后
+### 供 .22 结果事件分档 trigger 与 TT 使用（2026-08-29 从 scripted_effects 迁入：
+### 脚本值必须定义在 common/script_values/，定义在效果文件里会解析为非法效果）
+th_danmaku_duel_gap_pct_value = {
+    value = var:th_danmaku_duel_player_score_var
+    subtract = var:th_danmaku_duel_enemy_score_var
+    multiply = 100
+    divide = th_danmaku_duel_goal_value
+}
+
 ### 战术命中率 = clamp(50 + 领先%×0.25 + 战术修正, 10, 90)
 ### 领先% = (我方火力 − 对方火力) × 100 ÷ 对方火力（劣势方命中率可低至 ~13%）
 th_danmaku_duel_hit_base_value = { value = 50 }
