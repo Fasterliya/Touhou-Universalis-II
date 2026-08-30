@@ -119,7 +119,7 @@ th_danmaku_duel_start_effect = { challenger = ROOT target = scope:some_country }
 ### 2.5 玩家主动入口
 
 `th_danmaku_challenge`（generic action，`type = internationalorganization`）：
-幻想乡 IO 面板内选目标 → 走 2.3（`challenger = scope:actor target = scope:target`）。CD 12 个月；AI 权重 0（AI 对决走事件/异变接口）。
+幻想乡 IO 面板内选目标 → 走 2.3（`challenger = scope:actor target = scope:target`）。CD 5 年（60 个月）；AI 权重 0（AI 对决走事件/异变接口）。
 
 ### 2.6 封装接口教程（2026-08-28 新增）
 
@@ -363,7 +363,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
     → 治下随机陆地地点 + 地点修正「妖兽作乱」（th_beast_rampage_modifier，
       税收/产出效率 -10%，10 年；EU5 无地点税收字段，用 local_production_efficiency）
   .40 选项2 → 无事发生
-→ 治下出现带修正地点 → 行动 th_danmaku_subjugate_beast（退治妖兽）可见可用
+→ 治下出现带修正地点 → 行动 th_danmaku_subjugate_beast（退治妖兽）可见可用（CD 12 个月，失败后可再战）
 行动 → select_trigger 选带修正的治下地点（interaction_source_list 过滤）
   → th_danmaku_beast_trigger_effect = { country = scope:actor location = scope:beast_location }
     守卫（地点存在+带修正+非对决中）→ 清旧标记 → 标本次地点（th_danmaku_beast_location_mark）

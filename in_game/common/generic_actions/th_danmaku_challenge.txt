@@ -63,7 +63,8 @@ th_danmaku_challenge = {
 
     cooldown = {
         type = th_danmaku_challenge
-        months = 12
+        ### 弹幕挑战冷却：5 年（60 个月）
+        months = 60
     }
 
     ai_will_do = {

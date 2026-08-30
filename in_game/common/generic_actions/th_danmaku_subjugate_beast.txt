@@ -71,8 +71,8 @@ th_danmaku_subjugate_beast = {
 
     cooldown = {
         type = th_danmaku_subjugate_beast
-        ### 调试期短 CD（1 月）防连点刷屏；正式版可调大
-        months = 1
+        ### 退治冷却：12 个月（失败后妖兽作乱修正保留、可再战，防连点刷屏）
+        months = 12
     }
 
     ai_will_do = {
