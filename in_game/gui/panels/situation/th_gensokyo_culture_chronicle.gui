@@ -8,11 +8,11 @@
 
 			# 背景图槽位：gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds
 			# 推荐比例 3:4（570 x 760 @1x / 1140 x 1520 @2x），用户替换该 dds 即可
-			background = {
-				texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
-				spriteType = stretched
-				size = { -1 570 }
-			}
+			# background = {
+			# 	texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+			# 	spriteType = stretched
+			# 	size = { -1 570 }
+			# }
 
 			vbox = {
 				layoutpolicy_horizontal = expanding
