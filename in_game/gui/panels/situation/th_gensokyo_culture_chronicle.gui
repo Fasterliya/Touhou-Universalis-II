@@ -1,4 +1,4 @@
-﻿situation_panel = {
+situation_panel = {
 	blockoverride "situation_subheader_content" {}
 
 	blockoverride "situation_panel_main_content" {
@@ -98,7 +98,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_goblin_culture"
+											text = "[GetCultureByKey('th_goblin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -154,7 +154,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yama_culture"
+											text = "[GetCultureByKey('th_yama_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -210,7 +210,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_itsuna_culture"
+											text = "[GetCultureByKey('th_itsuna_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -266,7 +266,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_fox_culture"
+											text = "[GetCultureByKey('th_yokai_fox_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -322,7 +322,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_culture"
+											text = "[GetCultureByKey('th_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -378,7 +378,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_vampire_culture"
+											text = "[GetCultureByKey('th_vampire_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -434,7 +434,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_maid_fairy_culture"
+											text = "[GetCultureByKey('th_maid_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -496,7 +496,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_hell_fairy_culture"
+											text = "[GetCultureByKey('th_hell_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -552,7 +552,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_light_fairy_culture"
+											text = "[GetCultureByKey('th_light_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -608,7 +608,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_flower_fairy_culture"
+											text = "[GetCultureByKey('th_flower_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -664,7 +664,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_season_fairy_culture"
+											text = "[GetCultureByKey('th_season_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -720,7 +720,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_zombie_fairy_culture"
+											text = "[GetCultureByKey('th_zombie_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -776,7 +776,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_phenomenon_fairy_culture"
+											text = "[GetCultureByKey('th_phenomenon_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -832,7 +832,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_elemental_fairy_culture"
+											text = "[GetCultureByKey('th_elemental_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -894,7 +894,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_half_human_half_phantom_culture"
+											text = "[GetCultureByKey('th_half_human_half_phantom_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -950,7 +950,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_mermaid_culture"
+											text = "[GetCultureByKey('th_mermaid_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1006,7 +1006,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_beastman_culture"
+											text = "[GetCultureByKey('th_beastman_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1062,7 +1062,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_demon_culture"
+											text = "[GetCultureByKey('th_demon_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1118,7 +1118,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_angel_culture"
+											text = "[GetCultureByKey('th_angel_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1174,7 +1174,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_korobori_culture"
+											text = "[GetCultureByKey('th_korobori_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1230,7 +1230,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_mirror_tsukumogami_culture"
+											text = "[GetCultureByKey('th_mirror_tsukumogami_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1292,7 +1292,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_instrument_yokai_culture"
+											text = "[GetCultureByKey('th_instrument_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1348,7 +1348,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_suzuhime_culture"
+											text = "[GetCultureByKey('th_suzuhime_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1404,7 +1404,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_menreiki_culture"
+											text = "[GetCultureByKey('th_menreiki_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1460,7 +1460,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_umbrella_yokai_culture"
+											text = "[GetCultureByKey('th_umbrella_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1516,7 +1516,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_fuguruma_culture"
+											text = "[GetCultureByKey('th_fuguruma_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1572,7 +1572,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_zashiki_warashi_culture"
+											text = "[GetCultureByKey('th_zashiki_warashi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1628,7 +1628,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_oni_culture"
+											text = "[GetCultureByKey('th_oni_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1690,7 +1690,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_ushioni_culture"
+											text = "[GetCultureByKey('th_ushioni_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1746,7 +1746,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_human_oni_culture"
+											text = "[GetCultureByKey('th_human_oni_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1802,7 +1802,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_kappa_culture"
+											text = "[GetCultureByKey('th_kappa_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1858,7 +1858,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yamawaro_culture"
+											text = "[GetCultureByKey('th_yamawaro_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1914,7 +1914,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_white_wolf_tengu_culture"
+											text = "[GetCultureByKey('th_white_wolf_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -1970,7 +1970,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_long_nose_tengu_culture"
+											text = "[GetCultureByKey('th_long_nose_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2026,7 +2026,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_leaf_tengu_culture"
+											text = "[GetCultureByKey('th_leaf_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2088,7 +2088,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yamabushi_tengu_culture"
+											text = "[GetCultureByKey('th_yamabushi_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2144,7 +2144,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_crow_tengu_culture"
+											text = "[GetCultureByKey('th_crow_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2200,7 +2200,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_shell_yokai_culture"
+											text = "[GetCultureByKey('th_shell_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2256,7 +2256,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_chimi_culture"
+											text = "[GetCultureByKey('th_chimi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2312,7 +2312,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_monster_culture"
+											text = "[GetCultureByKey('th_monster_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2368,7 +2368,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yamabiko_culture"
+											text = "[GetCultureByKey('th_yamabiko_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2424,7 +2424,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_heavenly_dragon_culture"
+											text = "[GetCultureByKey('th_heavenly_dragon_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2486,7 +2486,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_tsuchigumo_culture"
+											text = "[GetCultureByKey('th_tsuchigumo_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2542,7 +2542,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_insect_culture"
+											text = "[GetCultureByKey('th_yokai_insect_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2598,7 +2598,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_dog_culture"
+											text = "[GetCultureByKey('th_yokai_dog_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2654,7 +2654,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_turtle_culture"
+											text = "[GetCultureByKey('th_yokai_turtle_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2710,7 +2710,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_tanuki_culture"
+											text = "[GetCultureByKey('th_yokai_tanuki_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2766,7 +2766,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_monkey_culture"
+											text = "[GetCultureByKey('th_yokai_monkey_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2822,7 +2822,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_tiger_culture"
+											text = "[GetCultureByKey('th_yokai_tiger_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2884,7 +2884,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_cat_culture"
+											text = "[GetCultureByKey('th_yokai_cat_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2940,7 +2940,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_bird_culture"
+											text = "[GetCultureByKey('th_yokai_bird_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -2996,7 +2996,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_ox_culture"
+											text = "[GetCultureByKey('th_yokai_ox_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3052,7 +3052,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_snake_culture"
+											text = "[GetCultureByKey('th_yokai_snake_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3108,7 +3108,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_rat_culture"
+											text = "[GetCultureByKey('th_yokai_rat_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3164,7 +3164,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yokai_rabbit_culture"
+											text = "[GetCultureByKey('th_yokai_rabbit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3220,7 +3220,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_night_sparrow_culture"
+											text = "[GetCultureByKey('th_night_sparrow_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3282,7 +3282,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_komainu_culture"
+											text = "[GetCultureByKey('th_komainu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3338,7 +3338,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_unnamable_culture"
+											text = "[GetCultureByKey('th_unnamable_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3394,7 +3394,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_jizo_culture"
+											text = "[GetCultureByKey('th_jizo_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3450,7 +3450,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yomi_woman_culture"
+											text = "[GetCultureByKey('th_yomi_woman_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3506,7 +3506,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_jiangshi_culture"
+											text = "[GetCultureByKey('th_jiangshi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3562,7 +3562,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_satori_yokai_culture"
+											text = "[GetCultureByKey('th_satori_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3618,7 +3618,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_yamanba_culture"
+											text = "[GetCultureByKey('th_yamanba_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3680,7 +3680,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_mountain_woman_culture"
+											text = "[GetCultureByKey('th_mountain_woman_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3736,7 +3736,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_bone_tour_yokai_culture"
+											text = "[GetCultureByKey('th_bone_tour_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3792,7 +3792,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_creator_god_culture"
+											text = "[GetCultureByKey('th_creator_god_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3848,7 +3848,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_moon_rabbit_culture"
+											text = "[GetCultureByKey('th_moon_rabbit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3904,7 +3904,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_houraijin_culture"
+											text = "[GetCultureByKey('th_houraijin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -3960,7 +3960,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_shikaisen_culture"
+											text = "[GetCultureByKey('th_shikaisen_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4016,7 +4016,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_tennin_culture"
+											text = "[GetCultureByKey('th_tennin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4078,7 +4078,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_sennin_culture"
+											text = "[GetCultureByKey('th_sennin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4134,7 +4134,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_makai_people_culture"
+											text = "[GetCultureByKey('th_makai_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4190,7 +4190,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_magician_culture"
+											text = "[GetCultureByKey('th_magician_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4246,7 +4246,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_purified_people_culture"
+											text = "[GetCultureByKey('th_purified_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4302,7 +4302,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_village_human_culture"
+											text = "[GetCultureByKey('th_village_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4358,7 +4358,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_wild_human_culture"
+											text = "[GetCultureByKey('th_wild_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4414,7 +4414,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_niwatari_people_culture"
+											text = "[GetCultureByKey('th_niwatari_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4476,7 +4476,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_houjou_people_culture"
+											text = "[GetCultureByKey('th_houjou_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4532,7 +4532,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_old_gensokyo_human_culture"
+											text = "[GetCultureByKey('th_old_gensokyo_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4588,7 +4588,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_dream_dweller_culture"
+											text = "[GetCultureByKey('th_dream_dweller_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4644,7 +4644,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_mountain_settlement_human_culture"
+											text = "[GetCultureByKey('th_mountain_settlement_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4700,7 +4700,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_shrine_surrounding_human_culture"
+											text = "[GetCultureByKey('th_shrine_surrounding_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4756,7 +4756,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_moriya_people_culture"
+											text = "[GetCultureByKey('th_moriya_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4812,7 +4812,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_outside_world_people_culture"
+											text = "[GetCultureByKey('th_outside_world_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4874,7 +4874,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_little_people_culture"
+											text = "[GetCultureByKey('th_little_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4930,7 +4930,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_other_world_people_culture"
+											text = "[GetCultureByKey('th_other_world_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -4986,7 +4986,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_barrier_people_culture"
+											text = "[GetCultureByKey('th_barrier_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5042,7 +5042,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_moon_people_human_village_culture"
+											text = "[GetCultureByKey('th_moon_people_human_village_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5098,7 +5098,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_moon_people_eientei_culture"
+											text = "[GetCultureByKey('th_moon_people_eientei_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5154,7 +5154,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_moon_people_culture"
+											text = "[GetCultureByKey('th_moon_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5210,7 +5210,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_great_eagle_spirit_culture"
+											text = "[GetCultureByKey('th_great_eagle_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5272,7 +5272,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_primate_spirit_culture"
+											text = "[GetCultureByKey('th_primate_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5328,7 +5328,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_otter_spirit_culture"
+											text = "[GetCultureByKey('th_otter_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5384,7 +5384,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_wolf_spirit_culture"
+											text = "[GetCultureByKey('th_wolf_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5440,7 +5440,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_mizuko_spirit_culture"
+											text = "[GetCultureByKey('th_mizuko_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5496,7 +5496,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_undead_spirit_culture"
+											text = "[GetCultureByKey('th_undead_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5552,7 +5552,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_ship_ghost_culture"
+											text = "[GetCultureByKey('th_ship_ghost_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5608,7 +5608,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_earthbound_spirit_culture"
+											text = "[GetCultureByKey('th_earthbound_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5670,7 +5670,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_earth_spirit_culture"
+											text = "[GetCultureByKey('th_earth_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5726,7 +5726,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_evil_spirit_culture"
+											text = "[GetCultureByKey('th_evil_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5782,7 +5782,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_floating_spirit_culture"
+											text = "[GetCultureByKey('th_floating_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5838,7 +5838,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_poltergeist_culture"
+											text = "[GetCultureByKey('th_poltergeist_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5894,7 +5894,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_living_spirit_culture"
+											text = "[GetCultureByKey('th_living_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -5950,7 +5950,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_vengeful_spirit_culture"
+											text = "[GetCultureByKey('th_vengeful_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6006,7 +6006,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_ghost_culture"
+											text = "[GetCultureByKey('th_ghost_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6068,7 +6068,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_tsurube_otoshi_culture"
+											text = "[GetCultureByKey('th_tsurube_otoshi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6124,7 +6124,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_calamity_people_culture"
+											text = "[GetCultureByKey('th_calamity_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6180,7 +6180,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_hashihime_culture"
+											text = "[GetCultureByKey('th_hashihime_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6236,7 +6236,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_doll_culture"
+											text = "[GetCultureByKey('th_doll_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6292,7 +6292,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_shinigami_culture"
+											text = "[GetCultureByKey('th_shinigami_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6348,7 +6348,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_amanjaku_culture"
+											text = "[GetCultureByKey('th_amanjaku_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6404,7 +6404,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_ancient_god_person_culture"
+											text = "[GetCultureByKey('th_ancient_god_person_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6466,7 +6466,7 @@
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											using = Font_Size_Medium
-											text = "th_sky_fire_person_culture"
+											text = "[GetCultureByKey('th_sky_fire_person_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
@@ -6514,9 +6514,8 @@
 		button_regular = {
 			layoutpolicy_horizontal = expanding
 			size = { 200 40 }
-			text_single = {
-				text = "TH_CULTURE_CHRONICLE_REFRESH"
-			}
+			# text 属性走 button_regular 模板自带居中 buttonText（align = center）
+			text = "TH_CULTURE_CHRONICLE_REFRESH"
 			onclick = "[GetScriptedGui('th_culture_chronicle_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 		}
 	}
