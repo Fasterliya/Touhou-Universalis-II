@@ -8,13 +8,10 @@
 ### 触发入口：th_danmaku_encounter_trigger_effect / th_danmaku_duel_trigger_effect /
 ###           th_danmaku_duel_start_effect（见 scripted_effects/th_danmaku_effects.txt）
 ### ============================================================
-
 namespace = th_danmaku_events
-
 ### ============================================================
 ### 遭遇战
 ### ============================================================
-
 ### 遭遇无名妖怪（root = 我方；妖怪火力已由触发接口写入变量）
 th_danmaku_events.1 = {
     type = country_event
@@ -56,7 +53,6 @@ th_danmaku_events.1 = {
         }
     }
 }
-
 ### 大胜（结算走 immediate，选项为确认 + 预览）
 th_danmaku_events.2 = {
     type = country_event
@@ -68,8 +64,6 @@ th_danmaku_events.2 = {
     }
     immediate = {
         th_danmaku_battle_reward_effect = {
-            type = encounter
-            tier = great_victory
             gold = th_danmaku_encounter_great_victory_gold_value
             prestige = th_danmaku_encounter_great_victory_prestige_value
             research = 0
@@ -96,7 +90,6 @@ th_danmaku_events.2 = {
         }
     }
 }
-
 ### 胜利
 th_danmaku_events.3 = {
     type = country_event
@@ -108,8 +101,6 @@ th_danmaku_events.3 = {
     }
     immediate = {
         th_danmaku_battle_reward_effect = {
-            type = encounter
-            tier = victory
             gold = th_danmaku_encounter_victory_gold_value
             prestige = th_danmaku_encounter_victory_prestige_value
             research = 0
@@ -136,7 +127,6 @@ th_danmaku_events.3 = {
         }
     }
 }
-
 ### 败北
 th_danmaku_events.4 = {
     type = country_event
@@ -148,8 +138,6 @@ th_danmaku_events.4 = {
     }
     immediate = {
         th_danmaku_battle_reward_effect = {
-            type = encounter
-            tier = defeat
             gold = th_danmaku_encounter_defeat_gold_value
             prestige = th_danmaku_encounter_defeat_prestige_value
             research = 0
@@ -167,7 +155,6 @@ th_danmaku_events.4 = {
         }
     }
 }
-
 ### 大败
 th_danmaku_events.5 = {
     type = country_event
@@ -179,8 +166,6 @@ th_danmaku_events.5 = {
     }
     immediate = {
         th_danmaku_battle_reward_effect = {
-            type = encounter
-            tier = great_defeat
             gold = th_danmaku_encounter_great_defeat_gold_value
             prestige = th_danmaku_encounter_great_defeat_prestige_value
             research = 0
@@ -198,7 +183,6 @@ th_danmaku_events.5 = {
         }
     }
 }
-
 ### 平手（遭遇战/妖兽战共用；无奖惩，仅确认）
 th_danmaku_events.6 = {
     type = country_event
@@ -210,8 +194,6 @@ th_danmaku_events.6 = {
     }
     immediate = {
         th_danmaku_battle_reward_effect = {
-            type = encounter
-            tier = draw
             gold = th_danmaku_encounter_draw_gold_value
             prestige = th_danmaku_encounter_draw_prestige_value
             research = 0
@@ -229,11 +211,9 @@ th_danmaku_events.6 = {
         }
     }
 }
-
 ### ============================================================
 ### 对决战
 ### ============================================================
-
 ### 第 1 轮：对决开始·发起方确认（root = 发起方；双方火力/隐藏终点已由
 ### th_danmaku_duel_start_effect 就位；确认后进入第 2 轮对方确认，怯战扣威望并取消）
 th_danmaku_events.10 = {
@@ -290,7 +270,6 @@ th_danmaku_events.10 = {
         }
     }
 }
-
 ### 第 2 轮：对方应战确认（root = 对方；发起方标记/双方火力副本已由 start_effect 就位）
 ### 接受 → 进入回合循环（.20 ↔ .21）；投降 → 扣威望，发起方收到取消（.12）
 th_danmaku_events.11 = {
@@ -354,7 +333,6 @@ th_danmaku_events.11 = {
         }
     }
 }
-
 ### 对决取消（root = 发起方；对方投降或对手缺失兜底触发；清理对决状态）
 th_danmaku_events.12 = {
     type = country_event
@@ -369,7 +347,6 @@ th_danmaku_events.12 = {
         th_danmaku_duel_cleanup_effect = yes
     }
 }
-
 ### 我方回合（root = 我方；4 战术选项，保守 → 激进）
 ### desc 内嵌动态记分板（终点隐藏，玩家不可见目标分数）
 th_danmaku_events.20 = {
@@ -429,7 +406,6 @@ th_danmaku_events.20 = {
         }
     }
 }
-
 ### 对手回合（静默事件，root = 我方；AI 对手由开局捕获火力本地模拟）
 th_danmaku_events.21 = {
     type = country_event
@@ -446,7 +422,6 @@ th_danmaku_events.21 = {
         name = th_danmaku_events.21.a
     }
 }
-
 ### 对决结果（root = 我方；结算走 immediate，选项按五档分流确认）
 ### 分档依据 th_danmaku_duel_gap_pct_var（有符号分差% = (我方−对方)×100÷终点）：
 ### >35 大胜 / 5<..≤35 胜利 / |..|≤5 平手 / -35≤..<-5 败北 / <-35 满目疮痍
@@ -541,7 +516,6 @@ th_danmaku_events.22 = {
         th_danmaku_duel_cleanup_effect = yes
     }
 }
-
 ### 对决中断（月度断链清理兜底：对决状态超期未续 → 不了了之）
 th_danmaku_events.23 = {
     type = country_event
@@ -556,13 +530,11 @@ th_danmaku_events.23 = {
         th_danmaku_duel_cleanup_effect = yes
     }
 }
-
 ### ============================================================
 ### 妖兽作乱 / 退治妖兽
 ### .30 妖兽遭遇 → .31 大胜 / .32 胜利 / .6 平手 / .33 败北 / .34 大败
 ### .40 妖兽爆发（月度 2%，选项1 为治下随机地点添加修正）
 ### ============================================================
-
 ### 妖兽遭遇（root = 我方；地点标记/双方火力已由 th_danmaku_beast_trigger_effect 就位）
 th_danmaku_events.30 = {
     type = country_event
@@ -599,7 +571,6 @@ th_danmaku_events.30 = {
         }
     }
 }
-
 ### 妖兽退治·大胜（移除修正 + 奖励：500 金 + 5 研究点数）
 th_danmaku_events.31 = {
     type = country_event
@@ -621,7 +592,6 @@ th_danmaku_events.31 = {
         }
     }
 }
-
 ### 妖兽退治·胜利（移除修正 + 奖励：500 金 + 5 研究点数）
 th_danmaku_events.32 = {
     type = country_event
@@ -643,7 +613,6 @@ th_danmaku_events.32 = {
         }
     }
 }
-
 ### 妖兽退治·败北（惩罚；修正保留，可再次退治）
 th_danmaku_events.33 = {
     type = country_event
@@ -666,7 +635,6 @@ th_danmaku_events.33 = {
         }
     }
 }
-
 ### 妖兽退治·大败（惩罚；修正保留，可再次退治）
 th_danmaku_events.34 = {
     type = country_event
@@ -689,7 +657,6 @@ th_danmaku_events.34 = {
         }
     }
 }
-
 ### 妖兽爆发（月度 2% 随机触发；选项1 = 治下随机地点添加妖兽作乱修正）
 th_danmaku_events.40 = {
     type = country_event

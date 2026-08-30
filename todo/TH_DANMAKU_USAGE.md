@@ -121,7 +121,7 @@ th_danmaku_duel_start_effect = { challenger = ROOT target = scope:some_country }
 `th_danmaku_challenge`（generic action，`type = internationalorganization`）：
 幻想乡 IO 面板内两步选择（第 1 步选幻想乡 IO → 第 2 步选对手成员，列表 = IO 成员、自己与对决中者不出现）→ 走 2.3（`challenger = scope:actor target = scope:target`）。CD 5 年（60 个月）；AI 权重 0（AI 对决走事件/异变接口）。
 
-### 2.6 封装接口教程（2026-08-28 新增）
+### 2.6 封装接口教程（2026-08-28 新增；2026-08-30 移除 type/tier 语义参数）
 
 战斗奖励统一走一个封装效果，**不要在事件里散写 `add_gold` / `add_prestige`**。
 分档数值集中在 `th_danmaku_values.txt`，事件/效果不硬编码数值。
@@ -130,18 +130,16 @@ th_danmaku_duel_start_effect = { challenger = ROOT target = scope:some_country }
 ### 结局奖励统一封装（国家 scope）
 ### 用法:
 th_danmaku_battle_reward_effect = {
-    type = <战斗类型：duel|encounter|beast>          # 语义参数（供文档/调用点选档）
-    tier = <结局档：great_victory|victory|draw|defeat|rout>
     gold = <值>        prestige = <值>    research = <值>
     stability = <值>   contribution = <值> influence = <值>    investigation = <值>
 }
 ```
-- `type` / `tier` 只作语义标注（不同战斗/场景可给不同奖励），实际入账的是数值参数。
+- **警告：勿传未使用的参数**——脚本效果调用含未使用参数会令整个调用失败（2026-08-30 实证：曾传 `type`/`tier` 语义参数，全部结算分文未发）。
 - 入账项：金币 / 威望 / 研究点数 / 稳定度 / 幻想乡 IO 贡献度 / 影响力；异变中额外累加调查进度（`investigation`）。
 - 惯例示例（取自本系统实现）：
-  - 遭遇战大胜：`type = encounter tier = great_victory`，数值传 `th_danmaku_encounter_great_victory_*_value`（研究/稳定/贡献/影响为 0）。
-  - 对决大胜：`type = duel tier = great_victory`，数值传 `th_danmaku_duel_great_victory_*_value`；胜利档额外 `add_country_modifier` 冠军增益（在 `th_danmaku_duel_finish_effect` 内，勿在外部重复）。
-  - 妖兽胜利：`type = beast tier = victory`，金/研究用固定常量（500/5），`investigation` 由调用方传入。
+  - 遭遇战大胜：数值传 `th_danmaku_encounter_great_victory_*_value`（研究/稳定/贡献/影响为 0）。
+  - 对决大胜：数值传 `th_danmaku_duel_great_victory_*_value`；胜利档额外 `add_country_modifier` 冠军增益（在 `th_danmaku_duel_finish_effect` 内，勿在外部重复）。
+  - 妖兽胜利：金/研究用固定常量（500/5），`investigation` 由调用方传入。
 
 三大入口接口速查：
 
@@ -149,7 +147,7 @@ th_danmaku_battle_reward_effect = {
 |---|---|---|
 | `th_danmaku_encounter_trigger_effect` | `{ enemy_fp = <脚本值/数值> }` | 触发一场遭遇战；`enemy_fp = th_danmaku_youkai_firepower_value` 为默认随机 |
 | `th_danmaku_duel_start_effect` | `{ challenger = <发起方> target = <对手> }` | 指定双方开始对决（行动内 `scope:actor`/`scope:target`，事件内 `ROOT`） |
-| `th_danmaku_battle_reward_effect` | `{ type tier + 7 个数值参数 }` | 结局奖励统一入账（见上） |
+| `th_danmaku_battle_reward_effect` | `{ 7 个数值参数 }` | 结局奖励统一入账（见上；仅传实际入账参数） |
 
 ---
 
