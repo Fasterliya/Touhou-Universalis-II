@@ -1,4 +1,4 @@
-situation_panel = {
+﻿situation_panel = {
 	blockoverride "situation_subheader_content" {}
 
 	blockoverride "situation_panel_main_content" {
@@ -67,12 +67,14 @@ situation_panel = {
 						using = Scrollbar_Vertical
 					}
 									scrollwidget = {
-					vbox = {
+					vbox = {
+
 						layoutpolicy_horizontal = expanding
 					# 图鉴卡片：静态枚举（主序列固定顺序，每页 7 行，共 17 页），纹理与文本全部写死
 					# 页面可见性 = th_cc_page 变量比较；行内真文化版/占位版 = th_cc_row_<N>_adopted 变量切换（EqualTo_CFixedPoint 为原版 situation 同款写法）
 						# ===== 第 1 页（行 0 - 6，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)0')]"
 							# 行 0（主序列 #0）：th_goblin_culture
@@ -469,7 +471,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 2 页（行 7 - 13，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)1')]"
 							# 行 0（主序列 #7）：th_hell_fairy_culture
@@ -866,7 +869,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 3 页（行 14 - 20，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)2')]"
 							# 行 0（主序列 #14）：th_half_human_half_phantom_culture
@@ -1263,7 +1267,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 4 页（行 21 - 27，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)3')]"
 							# 行 0（主序列 #21）：th_instrument_yokai_culture
@@ -1660,7 +1665,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 5 页（行 28 - 34，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)4')]"
 							# 行 0（主序列 #28）：th_ushioni_culture
@@ -2057,7 +2063,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 6 页（行 35 - 41，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)5')]"
 							# 行 0（主序列 #35）：th_yamabushi_tengu_culture
@@ -2454,7 +2461,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 7 页（行 42 - 48，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)6')]"
 							# 行 0（主序列 #42）：th_tsuchigumo_culture
@@ -2851,7 +2859,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 8 页（行 49 - 55，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)7')]"
 							# 行 0（主序列 #49）：th_yokai_cat_culture
@@ -3248,7 +3257,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 9 页（行 56 - 62，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)8')]"
 							# 行 0（主序列 #56）：th_komainu_culture
@@ -3645,7 +3655,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 10 页（行 63 - 69，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)9')]"
 							# 行 0（主序列 #63）：th_mountain_woman_culture
@@ -4042,7 +4053,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 11 页（行 70 - 76，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)10')]"
 							# 行 0（主序列 #70）：th_sennin_culture
@@ -4439,7 +4451,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 12 页（行 77 - 83，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)11')]"
 							# 行 0（主序列 #77）：th_houjou_people_culture
@@ -4836,7 +4849,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 13 页（行 84 - 90，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)12')]"
 							# 行 0（主序列 #84）：th_little_people_culture
@@ -5233,7 +5247,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 14 页（行 91 - 97，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)13')]"
 							# 行 0（主序列 #91）：th_primate_spirit_culture
@@ -5630,7 +5645,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 15 页（行 98 - 104，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)14')]"
 							# 行 0（主序列 #98）：th_earth_spirit_culture
@@ -6027,7 +6043,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 16 页（行 105 - 111，共 7 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)15')]"
 							# 行 0（主序列 #105）：th_tsurube_otoshi_culture
@@ -6424,7 +6441,8 @@ situation_panel = {
 							}
 						}
 						# ===== 第 17 页（行 112 - 112，共 1 行） =====
-						vbox = {
+						vbox = {
+
 							layoutpolicy_horizontal = expanding
 							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)16')]"
 							# 行 0（主序列 #112）：th_sky_fire_person_culture
