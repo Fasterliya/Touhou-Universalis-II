@@ -114,7 +114,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_goblin_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -133,7 +133,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -175,7 +175,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yama_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -194,7 +194,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -236,7 +236,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_itsuna_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -255,7 +255,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -297,7 +297,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_fox_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -316,7 +316,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -358,7 +358,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -377,7 +377,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -419,7 +419,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_vampire_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -438,7 +438,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -480,7 +480,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_maid_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -499,7 +499,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -552,7 +552,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_hell_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -571,7 +571,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -613,7 +613,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_light_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -632,7 +632,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -674,7 +674,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_flower_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -693,7 +693,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -735,7 +735,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_season_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -754,7 +754,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -796,7 +796,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_zombie_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -815,7 +815,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -857,7 +857,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_phenomenon_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -876,7 +876,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -918,7 +918,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_elemental_fairy_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -937,7 +937,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -990,7 +990,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_half_human_half_phantom_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1009,7 +1009,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1051,7 +1051,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_mermaid_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1070,7 +1070,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1112,7 +1112,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_beastman_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1131,7 +1131,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1173,7 +1173,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_demon_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1192,7 +1192,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1234,7 +1234,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_angel_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1253,7 +1253,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1295,7 +1295,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_korobori_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1314,7 +1314,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1356,7 +1356,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_mirror_tsukumogami_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1375,7 +1375,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1428,7 +1428,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_instrument_yokai_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1447,7 +1447,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1489,7 +1489,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_suzuhime_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1508,7 +1508,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1550,7 +1550,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_menreiki_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1569,7 +1569,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1611,7 +1611,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_umbrella_yokai_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1630,7 +1630,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1672,7 +1672,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_fuguruma_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1691,7 +1691,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1733,7 +1733,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_zashiki_warashi_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1752,7 +1752,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1794,7 +1794,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_oni_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1813,7 +1813,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1866,7 +1866,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_ushioni_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1885,7 +1885,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1927,7 +1927,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_human_oni_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -1946,7 +1946,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -1988,7 +1988,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_kappa_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2007,7 +2007,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2049,7 +2049,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yamawaro_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2068,7 +2068,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2110,7 +2110,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_white_wolf_tengu_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2129,7 +2129,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2171,7 +2171,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_long_nose_tengu_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2190,7 +2190,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2232,7 +2232,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_leaf_tengu_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2251,7 +2251,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2304,7 +2304,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yamabushi_tengu_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2323,7 +2323,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2365,7 +2365,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_crow_tengu_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2384,7 +2384,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2426,7 +2426,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_shell_yokai_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2445,7 +2445,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2487,7 +2487,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_chimi_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2506,7 +2506,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2548,7 +2548,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_monster_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2567,7 +2567,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2609,7 +2609,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yamabiko_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2628,7 +2628,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2670,7 +2670,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_heavenly_dragon_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2689,7 +2689,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2742,7 +2742,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_tsuchigumo_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2761,7 +2761,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2803,7 +2803,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_insect_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2822,7 +2822,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2864,7 +2864,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_dog_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2883,7 +2883,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2925,7 +2925,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_turtle_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -2944,7 +2944,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -2986,7 +2986,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_tanuki_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3005,7 +3005,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3047,7 +3047,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_monkey_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3066,7 +3066,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3108,7 +3108,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_tiger_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3127,7 +3127,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3180,7 +3180,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_cat_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3199,7 +3199,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3241,7 +3241,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_bird_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3260,7 +3260,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3302,7 +3302,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_ox_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3321,7 +3321,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3363,7 +3363,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_snake_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3382,7 +3382,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3424,7 +3424,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_rat_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3443,7 +3443,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3485,7 +3485,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yokai_rabbit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3504,7 +3504,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3546,7 +3546,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_night_sparrow_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3565,7 +3565,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3618,7 +3618,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_komainu_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3637,7 +3637,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3679,7 +3679,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_unnamable_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3698,7 +3698,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3740,7 +3740,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_jizo_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3759,7 +3759,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3801,7 +3801,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yomi_woman_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3820,7 +3820,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3862,7 +3862,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_jiangshi_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3881,7 +3881,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3923,7 +3923,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_satori_yokai_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -3942,7 +3942,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -3984,7 +3984,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_yamanba_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4003,7 +4003,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4056,7 +4056,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_mountain_woman_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4075,7 +4075,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4117,7 +4117,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_bone_tour_yokai_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4136,7 +4136,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4178,7 +4178,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_creator_god_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4197,7 +4197,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4239,7 +4239,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_moon_rabbit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4258,7 +4258,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4300,7 +4300,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_houraijin_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4319,7 +4319,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4361,7 +4361,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_shikaisen_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4380,7 +4380,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4422,7 +4422,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_tennin_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4441,7 +4441,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4494,7 +4494,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_sennin_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4513,7 +4513,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4555,7 +4555,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_makai_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4574,7 +4574,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4616,7 +4616,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_magician_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4635,7 +4635,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4677,7 +4677,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_purified_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4696,7 +4696,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4738,7 +4738,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_village_human_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4757,7 +4757,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4799,7 +4799,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_wild_human_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4818,7 +4818,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4860,7 +4860,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_niwatari_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4879,7 +4879,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4932,7 +4932,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_houjou_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -4951,7 +4951,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -4993,7 +4993,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_old_gensokyo_human_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5012,7 +5012,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5054,7 +5054,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_dream_dweller_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5073,7 +5073,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5115,7 +5115,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_mountain_settlement_human_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5134,7 +5134,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5176,7 +5176,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_shrine_surrounding_human_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5195,7 +5195,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5237,7 +5237,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_moriya_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5256,7 +5256,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5298,7 +5298,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_outside_world_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5317,7 +5317,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5370,7 +5370,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_little_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5389,7 +5389,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5431,7 +5431,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_other_world_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5450,7 +5450,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5492,7 +5492,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_barrier_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5511,7 +5511,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5553,7 +5553,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_moon_people_human_village_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5572,7 +5572,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5614,7 +5614,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_moon_people_eientei_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5633,7 +5633,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5675,7 +5675,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_moon_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5694,7 +5694,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5736,7 +5736,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_great_eagle_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5755,7 +5755,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5808,7 +5808,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_primate_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5827,7 +5827,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5869,7 +5869,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_otter_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5888,7 +5888,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5930,7 +5930,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_wolf_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -5949,7 +5949,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -5991,7 +5991,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_mizuko_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6010,7 +6010,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6052,7 +6052,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_undead_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6071,7 +6071,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6113,7 +6113,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_ship_ghost_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6132,7 +6132,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6174,7 +6174,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_earthbound_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6193,7 +6193,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6246,7 +6246,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_earth_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6265,7 +6265,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6307,7 +6307,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_evil_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6326,7 +6326,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6368,7 +6368,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_floating_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6387,7 +6387,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6429,7 +6429,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_poltergeist_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6448,7 +6448,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6490,7 +6490,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_living_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6509,7 +6509,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6551,7 +6551,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_vengeful_spirit_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6570,7 +6570,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6612,7 +6612,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_ghost_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6631,7 +6631,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6684,7 +6684,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_tsurube_otoshi_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6703,7 +6703,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6745,7 +6745,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_calamity_people_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6764,7 +6764,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6806,7 +6806,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_hashihime_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6825,7 +6825,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6867,7 +6867,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_doll_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6886,7 +6886,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6928,7 +6928,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_shinigami_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -6947,7 +6947,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -6989,7 +6989,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_amanjaku_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -7008,7 +7008,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -7050,7 +7050,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_ancient_god_person_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -7069,7 +7069,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
 										}
@@ -7122,7 +7122,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_th_sky_fire_person_culture"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
@@ -7141,7 +7141,7 @@ situation_panel = {
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
 											autoresize = no
-											size = { -1 100 }
+											size = { -1 155 }
 											text = "th_cc_desc_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
 										}
