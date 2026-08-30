@@ -23,38 +23,12 @@
  ACTION_th_danmaku_challenge_PERFORMED_ON_US: "Брошен вызов на данмаку-дуэль"
 
 ### ============================================================
-### События стычки
+### События стычки (отменено 2026-08-30; остаётся только ничья .6, общая для боёв со зверем)
 ### ============================================================
- th_danmaku_events.1.title: "Встреча с безымянным ёкаем"
- th_danmaku_events.1.desc: "На границе Генсокё путь преграждает безымянный ёкай. Его намерения неясны, но он уже принял данмаку-стойку — стычки, похоже, не избежать."
- th_danmaku_events.1.a: "В бой!"
- th_danmaku_events.1.a.tt: "Наша мощь: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\nМощь ёкая: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\nШанс сокрушительной победы: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\nШанс победы: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\nШанс ничьей: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_draw_prob_var').GetValue]#!%\nШанс поражения: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\nШанс разгрома: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
- th_danmaku_events.1.b: "Уклониться от боя"
- th_danmaku_events.1.b.tt: "Избежать столкновения и не связываться с безымянным ёкаем.\nПрестиж #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!"
 
- th_danmaku_events.2.title: "Сокрушительная победа: данмаку сметает всё"
- th_danmaku_events.2.desc: "Данмаку обрушивается ливнем, и оборона ёкая рушится в одно мгновение. Он бежит в ночь и больше не смеет возвращаться."
- th_danmaku_events.2.a: "Хм. Самонадеянно."
- th_danmaku_events.2.a.tt: "Получено #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! золота и #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! престижа."
- th_danmaku_events.2.b: "Продвинуть расследование"
- th_danmaku_events.2.b.tt: "Прогресс расследования инцидента #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_investigation_value')]#!"
 
- th_danmaku_events.3.title: "Победа: враг отброшен"
- th_danmaku_events.3.desc: "После яростной перестрелки данмаку ёкай постепенно слабеет и отступает в горы. Вы выиграли стычку."
- th_danmaku_events.3.a: "Забрать трофеи."
- th_danmaku_events.3.a.tt: "Получено #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! золота и #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! престижа."
- th_danmaku_events.3.b: "Продвинуть расследование"
- th_danmaku_events.3.b.tt: "Прогресс расследования инцидента #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_investigation_value')]#!"
 
- th_danmaku_events.4.title: "Поражение: боевое отступление"
- th_danmaku_events.4.desc: "Данмаку ёкая оказывается неожиданно яростным, и вы вынуждены отступать, отбиваясь. Не смертельно, но по самолюбию ощутимо."
- th_danmaku_events.4.a: "Урок усвоен."
- th_danmaku_events.4.a.tt: "Потеряно #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! золота и #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! престижа."
 
- th_danmaku_events.5.title: "Разгром: позорное бегство"
- th_danmaku_events.5.desc: "Ваш данмаку полностью рушится, и вы позорно бежите с поля боя. Что у безымянного ёкая оказалась такая сила — полная неожиданность."
- th_danmaku_events.5.a: "...Будет и другой день."
- th_danmaku_events.5.a.tt: "Потеряно #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! золота и #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! престижа."
 
  th_danmaku_events.6.title: "Ничья: силы равны"
  th_danmaku_events.6.desc: "Последний залп гаснет с обеих сторон одновременно; никому не удалось взять верх. Противник нехотя уходит, и вы отступаете без потерь."

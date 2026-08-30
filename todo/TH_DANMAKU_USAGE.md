@@ -53,26 +53,12 @@ th_danmaku_firepower_value（脚本值，国家 scope 读取）=
 
 ## 2. 外部调用接口（随时可调）
 
-### 2.1 触发遭遇战
+### 2.1 ~~触发遭遇战~~（2026-08-30 已取消）
 
-```
-th_danmaku_encounter_trigger_effect = { enemy_fp = <脚本值/数值> }
-```
-- 国家 scope 调用；`enemy_fp` 传 `th_danmaku_youkai_firepower_value`（**随机 500~1000**）即默认随机，
-  传任意脚本值/数值即指定对手火力（2026-08-28 接口化，事件/异变可注入特定敌人）。
-- 作用：快照我方火力 → 写 `var:th_danmaku_encounter_youkai_fp_var` → 触发 `th_danmaku_events.1`。
-
-调用示例：
-```
-# 在某事件/行动中（国家 scope）
-th_danmaku_encounter_trigger_effect = {
-    enemy_fp = th_danmaku_youkai_firepower_value
-}
-# 指定强敌（例如异变 BOSS）
-th_danmaku_encounter_trigger_effect = {
-    enemy_fp = 1200
-}
-```
+**无名妖怪遭遇战已整体取消**：`th_danmaku_encounter_trigger_effect`、`th_danmaku_encounter_resolve_effect`、
+`th_danmaku_encounter_available_trigger`、事件 `.1-.5`、`th_danmaku_encounter_monthly_chance_value` 及对应 loc 已删除；
+月度脉冲不再触发随机遭遇。妖兽战（§9）继续复用遭遇战底层机制（火力比 `th_danmaku_encounter_ratio_pct_value`、
+概率公示 `th_danmaku_encounter_prob_preview_effect`、变量清理 `th_danmaku_encounter_cleanup_effect`、事件 `.6` 平手）。
 
 ### 2.2 随机选对手并开始对决
 
@@ -137,55 +123,27 @@ th_danmaku_battle_reward_effect = {
 - **警告：勿传未使用的参数**——脚本效果调用含未使用参数会令整个调用失败（2026-08-30 实证：曾传 `type`/`tier` 语义参数，全部结算分文未发）。
 - 入账项：金币 / 威望 / 研究点数 / 稳定度 / 幻想乡 IO 贡献度 / 影响力；异变中额外累加调查进度（`investigation`）。
 - 惯例示例（取自本系统实现）：
-  - 遭遇战大胜：数值传 `th_danmaku_encounter_great_victory_*_value`（研究/稳定/贡献/影响为 0）。
+  - 妖兽战大胜：数值传 `th_danmaku_encounter_great_victory_*_value`（研究/稳定/贡献/影响为 0；键名沿用原遭遇战）。
   - 对决大胜：数值传 `th_danmaku_duel_great_victory_*_value`；胜利档额外 `add_country_modifier` 冠军增益（在 `th_danmaku_duel_finish_effect` 内，勿在外部重复）。
   - 妖兽胜利：金/研究用固定常量（500/5），`investigation` 由调用方传入。
 
-三大入口接口速查：
+入口接口速查：
 
 | 接口 | 签名 | 何时用 |
 |---|---|---|
-| `th_danmaku_encounter_trigger_effect` | `{ enemy_fp = <脚本值/数值> }` | 触发一场遭遇战；`enemy_fp = th_danmaku_youkai_firepower_value` 为默认随机 |
 | `th_danmaku_duel_start_effect` | `{ challenger = <发起方> target = <对手> }` | 指定双方开始对决（行动内 `scope:actor`/`scope:target`，事件内 `ROOT`） |
+| `th_danmaku_beast_trigger_effect` | `{ country = <退治国> location = <地点 scope> }` | 开始妖兽战斗（标记地点 + 掷火力 + 触发 .30）；行动内 `country = scope:actor`，事件内 `country = ROOT` |
 | `th_danmaku_battle_reward_effect` | `{ 7 个数值参数 }` | 结局奖励统一入账（见上；仅传实际入账参数） |
 
 ---
 
-## 3. 遭遇战（无名妖怪）
+## 3. ~~遭遇战（无名妖怪）~~（2026-08-30 已取消）
 
-### 3.1 触发方式
-
-1. 月度随机：`in_game/common/on_action/th_danmaku_chain_monthly.txt`
-   仅 `is_human` + 非对决中，`random = { chance = 2 }`（2%/月，字面量；常数
-   `th_danmaku_encounter_monthly_chance_value` 供未来改造），调用
-   `th_danmaku_encounter_trigger_effect = { enemy_fp = th_danmaku_youkai_firepower_value }`。
-2. 脚本接口：2.1 随时调用（可指定敌人火力）。
-
-`.1` 选项：**战斗**（TT 公示五结局概率）/ **回避**（威望 -5，`th_danmaku_cowardice_prestige_value`，可调）。
-
-### 3.2 结算算法
-
-火力比（我方×100÷妖怪，整数%）五档 → 五结局权重 `random_list`（与概率公示完全一致）：
-
-| 比值带 | 大胜 | 胜利 | 平手 | 败北 | 大败 |
-|---|---|---|---|---|---|
-| ≥160 | 35 | 35 | 20 | 8 | 2 |
-| ≥120 | 25 | 35 | 25 | 12 | 3 |
-| ≥90 | 15 | 30 | 30 | 18 | 7 |
-| ≥60 | 8 | 20 | 32 | 28 | 12 |
-| <60 | 3 | 12 | 25 | 35 | 25 |
-
-### 3.3 奖惩（结局事件 .2/.3/.6/.4/.5 immediate 经 `th_danmaku_battle_reward_effect` 结算）
-
-| 结局 | 金币 | 威望 | 异变调查进度（异变中） |
-|---|---|---|---|
-| 大胜 | +30 | +5 | +4 |
-| 胜利 | +15 | +2 | +2 |
-| 平手 | 0 | 0 | 0 |
-| 败北 | −10 | −2 | 0 |
-| 大败 | −25 | −5 | 0 |
-
-数值键见 §6。异变中时大胜/胜利事件额外显示"调查进度推进"选项（.b，仅异变中可见）。
+无名妖怪遭遇战整体取消：事件 `.1`（遭遇入口）与 `.2/.3/.4/.5`（结局）、`th_danmaku_encounter_trigger_effect` /
+`th_danmaku_encounter_resolve_effect` / `th_danmaku_encounter_available_trigger`、
+`th_danmaku_encounter_monthly_chance_value`、月度随机触发（on_action）及对应 loc 均已删除。
+`th_danmaku_encounter_*` 底层机制（火力比 / 概率公示 / 变量清理）保留，专供妖兽战使用（见 §9）；`.6` 平手事件为妖兽战共用。
+本节原五档权重表与奖惩表内容移至 §9.4 妖兽战结算参考。
 
 ---
 
@@ -284,13 +242,13 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 |---|---|---|
 | `th_danmaku_firepower_value` | — | 火力公式（§1.1；军事×10、容忍×100、稳定×2） |
 
-### 遭遇战
+### 妖兽战（键名沿用原遭遇战；无名妖怪遭遇战已于 2026-08-30 取消）
 
 | 键 | 初值 | 说明 |
 |---|---|---|
-| `th_danmaku_encounter_monthly_chance_value` | 2 | 遭遇月度概率%（当前 on_action 用字面量） |
-| `th_danmaku_youkai_firepower_min/max_value` | 500 / 1000 | 无名妖怪火力 = 随机 500~1000（接口默认） |
-| `th_danmaku_encounter_{great_victory,victory,draw,defeat,great_defeat}_{gold,prestige}_value` | 见 §3.3 | 遭遇五档奖惩 |
+| `th_danmaku_youkai_firepower_min/max_value` | 500 / 1000 | 妖兽火力 = 随机 500~1000 |
+| `th_danmaku_encounter_ratio_pct_value` | — | 妖兽战火力比（我方×100÷妖兽，五档判定） |
+| `th_danmaku_encounter_{great_victory,victory,draw,defeat,great_defeat}_{gold,prestige}_value` | 见 §9.4 | 妖兽战五档奖惩 |
 | `th_danmaku_encounter_{victory,great_victory}_investigation_value` | 2 / 4 | 异变调查进度 |
 
 ### 对决战
@@ -312,10 +270,10 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 
 | 键 | 初值 | 说明 |
 |---|---|---|
-| `th_danmaku_cowardice_prestige_value` | −5 | 怯战/投降/回避 威望惩罚（可调） |
+| `th_danmaku_cowardice_prestige_value` | −5 | 怯战/投降 威望惩罚（可调；遭遇战"回避"选项已随遭遇战取消） |
 | `th_danmaku_beast_victory_{gold,research}_value` | 500 / 5 | 退治妖兽胜：500 金 + 5 研究点数（大胜/胜利同值） |
 | `th_danmaku_beast_rampage_years_value` | 10 | 妖兽作乱修正时长（年；效果内用字面量 10） |
-| `th_danmaku_beast_monthly_chance_value` | 2 | 妖兽爆发月度概率%（on_action 用字面量 2） |
+| `th_danmaku_beast_monthly_chance_value` | 0.5 | 妖兽爆发月度概率%（on_action 用字面量 0.5；**1476 年起不再触发**，current_date 守卫） |
 
 ---
 
@@ -330,7 +288,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 | `in_game/common/scripted_triggers/th_danmaku_triggers.txt` | 共享触发条件 |
 | `in_game/common/scripted_effects/th_danmaku_effects.txt` | 全部接口实现（§2–§5） |
 | `in_game/events/th_danmaku_events.txt` | 事件链（namespace `th_danmaku_events`） |
-| `in_game/common/on_action/th_danmaku_chain_monthly.txt` | 随机遭遇 + 妖兽爆发 + 断链清理 |
+| `in_game/common/on_action/th_danmaku_chain_monthly.txt` | 妖兽爆发（0.5%/月，1476 年前）+ 断链清理（随机遭遇已随遭遇战取消） |
 | `in_game/common/generic_actions/th_danmaku_challenge.txt` | 玩家主动挑战 |
 | `in_game/common/advances/th_gensokyo_common_advances.txt` | 追加 4 条科技火力挂钩 |
 | `in_game/localization/{simp_chinese,english,japanese,korean,russian}/th_danmaku_l_*.yml` | 5 语言本地化 |
@@ -356,7 +314,8 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 ### 9.1 流程
 
 ```
-月度脉冲（仅玩家）random 2% → .40 妖兽爆发
+月度脉冲（仅玩家，1476 年前）random 0.5% → .40 妖兽爆发（.40 自身 trigger 亦含
+  current_date < 1476.1.1 双保险：1476 年起任何触发路径都不再触发）
   .40 选项1 → th_danmaku_beast_outbreak_effect
     → 治下随机陆地地点 + 地点修正「妖兽作乱」（th_beast_rampage_modifier，
       税收/产出效率 -10%，10 年；EU5 无地点税收字段，用 local_production_efficiency）
@@ -367,7 +326,7 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
     守卫（地点存在+带修正+非对决中）→ 清旧标记 → 标本次地点（th_danmaku_beast_location_mark）
     → 快照我方火力 → 掷妖兽火力（th_danmaku_youkai_firepower_value，随机 500~1000）
     → 触发 .30 妖兽遭遇
-  .30 选项「应战」→ th_danmaku_beast_resolve_effect（与遭遇战同五档算法）
+  .30 选项「应战」→ th_danmaku_beast_resolve_effect（五档算法）
     → .31 大胜 / .32 胜利 / .6 平手 / .33 败北 / .34 大败
   .31/.32 immediate: th_danmaku_beast_victory_effect = { investigation = Z }
     → 移除标记地点「妖兽作乱」修正 + 奖励（500 金 + 5 研究点数，大胜/胜利同值）+ 异变调查钩子 + 清变量
@@ -375,6 +334,30 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
   .33/.34 immediate: th_danmaku_beast_defeat_effect = { gold = X prestige = Y }
     → 金/威望惩罚 + 清变量（修正保留，可再次退治）
 ```
+
+### 9.4 妖兽战五档权重与奖惩（沿用原遭遇战表，供参考）
+
+火力比（我方×100÷妖兽，整数%）五档权重（与 .30 概率公示一致）：
+
+| 比值带 | 大胜 | 胜利 | 平手 | 败北 | 大败 |
+|---|---|---|---|---|---|
+| ≥160 | 35 | 35 | 20 | 8 | 2 |
+| ≥120 | 25 | 35 | 25 | 12 | 3 |
+| ≥90 | 15 | 30 | 30 | 18 | 7 |
+| ≥60 | 8 | 20 | 32 | 28 | 12 |
+| <60 | 3 | 12 | 25 | 35 | 25 |
+
+奖惩（.31/.32/.6/.33/.34 immediate 经 `th_danmaku_battle_reward_effect` 结算；键名沿用原遭遇战）：
+
+| 结局 | 金币 | 威望 | 异变调查进度（异变中） |
+|---|---|---|---|
+| 大胜 | +30 | +5 | +4 |
+| 胜利 | +15 | +2 | +2 |
+| 平手 | 0 | 0 | 0 |
+| 败北 | −10 | −2 | 0 |
+| 大败 | −25 | −5 | 0 |
+
+（退治胜利另有固定 500 金 + 5 研究点数，见 §9.1。）
 
 ### 9.2 接口
 
@@ -387,12 +370,13 @@ th_danmaku_duel_goal_var = 固定 100（th_danmaku_duel_goal_value，2026-08-28 
 | `th_danmaku_beast_defeat_effect` | `{ gold = X prestige = Y }` | 惩罚 + 清变量（修正保留） |
 
 调试方法：
-- 随时触发妖兽爆发：任意事件/控制台调用 `th_danmaku_beast_outbreak_effect = yes`（或直接 `trigger_event_non_silently = th_danmaku_events.40`）。
-- 临时提高频率：把 `th_danmaku_chain_monthly.txt` 中妖兽爆发的 `random = { chance = 2 }` 改为 `50`。
+- 随时触发妖兽爆发：任意事件/控制台调用 `th_danmaku_beast_outbreak_effect = yes`（或直接 `trigger_event_non_silently = th_danmaku_events.40`；注意 1476 年后 .40 自身 trigger 会拦截）。
+- 临时提高频率：把 `th_danmaku_chain_monthly.txt` 中妖兽爆发的 `random = { chance = 0.5 }` 改为 `50`。
 - 直接开战：`th_danmaku_beast_trigger_effect = { location = <某带修正地点> }`。
 
 ### 9.3 边界
 
+- 1476 年起 `.40` 不再触发（on_action limit 与 .40 trigger 双重 current_date 守卫）；已存在的妖兽作乱地点仍可退治（.30 链无日期限制，存量可清、不再新增）。
 - 无治下陆地 → `.40` 事件 trigger 守卫不触发；outbreak 效果空转安全。
 - 对决进行中 → `th_danmaku_subjugate_beast` 行动 potential 反守卫（不显示）；`th_danmaku_beast_trigger_effect` 再守卫一次。
 - 玩家弃置 `.30` 不点 → 月度孤儿标记清理（标记存在但修正已消失时清除）。

@@ -1,4 +1,4 @@
-﻿### ============================================================
+### ============================================================
 ### 弹幕战系统 — 月度脉冲（追加注册，不动现有文件）
 ### ============================================================
 
@@ -13,32 +13,19 @@ th_danmaku_monthly_pulse = {
         is_member_of_international_organization = international_organization:th_gensokyo_io
     }
     effect = {
-        ### 随机遭遇（仅玩家，防 AI 弹窗轰炸；遭遇战亦可由事件/接口触发）
+        ### 妖兽爆发（仅玩家，月度 0.5%；1476 年起不再触发——当前日期触发
+        ### 用 current_date < 1476.1.1，earthquake_events.txt:5344 同款语法）
+        ### 常数 th_danmaku_beast_monthly_chance_value 供文档/未来改造（当前用字面量 0.5）
         if = {
             limit = {
                 is_human = yes
-                th_danmaku_encounter_available_trigger = yes
-            }
-            ### 月度 2%（字面量，待调；常数 th_danmaku_encounter_monthly_chance_value
-            ### 供文档/未来改造为脚本值权重）
-            random = {
-                chance = 2
-                th_danmaku_encounter_trigger_effect = {
-                    enemy_fp = th_danmaku_youkai_firepower_value
-                }
-            }
-        }
-        ### 妖兽爆发（仅玩家，月度 2%；与随机遭遇独立判定）
-        ### 常数 th_danmaku_beast_monthly_chance_value 供文档/未来改造
-        if = {
-            limit = {
-                is_human = yes
+                current_date < 1476.1.1
                 any_owned_location = {
                     is_land = yes
                 }
             }
             random = {
-                chance = 2
+                chance = 0.5
                 trigger_event_non_silently = th_danmaku_events.40
             }
         }

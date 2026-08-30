@@ -1,9 +1,11 @@
 ﻿### ============================================================
 ### 弹幕战系统 — 脚本化效果接口
 ### 外部调用入口（任意事件/行动随时可调）：
-###   th_danmaku_encounter_trigger_effect                  —— 触发一次遭遇战
 ###   th_danmaku_duel_trigger_effect                       —— 随机选对手并开始对决
 ###   th_danmaku_duel_start_effect = { challenger = <发起方> target = <对手> } —— 指定双方开始对决
+###   th_danmaku_beast_trigger_effect = { country = <退治国> location = <地点> } —— 开始妖兽战斗
+### 无名妖怪遭遇战（th_danmaku_encounter_trigger_effect 等）已于 2026-08-30 取消；
+### 妖兽战继续复用遭遇战底层机制（火力比/概率公示/变量清理）
 ### 异变预留接口（M3 异变系统落地前安全 no-op）：
 ###   th_gensokyo_incident_add_investigation_effect = { value = X }
 ### ============================================================
@@ -15,90 +17,6 @@ th_danmaku_firepower_snapshot_effect = {
     set_variable = {
         name = th_danmaku_firepower_self_var
         value = th_danmaku_firepower_value
-    }
-}
-### ============================================================
-### 遭遇战
-### ============================================================
-### 遭遇战触发接口（国家 scope；对手火力可任意赋值）
-### 用法: th_danmaku_encounter_trigger_effect = { enemy_fp = <脚本值/数值> }
-###       enemy_fp 传 th_danmaku_youkai_firepower_value（随机 500~1000）即默认随机；
-###       传任意脚本值/数值即指定对手火力（2026-08-28 接口化）
-th_danmaku_encounter_trigger_effect = {
-    th_danmaku_firepower_snapshot_effect = yes
-    set_variable = {
-        name = th_danmaku_encounter_youkai_fp_var
-        value = $enemy_fp$
-    }
-    trigger_event_non_silently = th_danmaku_events.1
-}
-### 遭遇战五结局结算（需 th_danmaku_firepower_self_var /
-### th_danmaku_encounter_youkai_fp_var 就位；国家 scope）
-### 算法：火力比（我方×100÷妖怪，整数%）分五档，每档五结局权重 random_list
-### 结局事件：.2 大胜 / .3 胜利 / .6 平手 / .4 败北 / .5 大败
-th_danmaku_encounter_resolve_effect = {
-    set_variable = {
-        name = th_danmaku_encounter_ratio_pct_var
-        value = th_danmaku_encounter_ratio_pct_value
-    }
-    ### 除零/极低妖怪火力兜底（妖怪火力必有下限，此处防御）
-    if = {
-        limit = {
-            var:th_danmaku_encounter_youkai_fp_var <= 0
-        }
-        set_variable = {
-            name = th_danmaku_encounter_ratio_pct_var
-            value = 200
-        }
-    }
-    if = {
-        limit = { var:th_danmaku_encounter_ratio_pct_var >= 160 }
-        random_list = {
-            35 = { trigger_event_non_silently = th_danmaku_events.2 }
-            35 = { trigger_event_non_silently = th_danmaku_events.3 }
-            20 = { trigger_event_non_silently = th_danmaku_events.6 }
-            8 = { trigger_event_non_silently = th_danmaku_events.4 }
-            2 = { trigger_event_non_silently = th_danmaku_events.5 }
-        }
-    }
-    else_if = {
-        limit = { var:th_danmaku_encounter_ratio_pct_var >= 120 }
-        random_list = {
-            25 = { trigger_event_non_silently = th_danmaku_events.2 }
-            35 = { trigger_event_non_silently = th_danmaku_events.3 }
-            25 = { trigger_event_non_silently = th_danmaku_events.6 }
-            12 = { trigger_event_non_silently = th_danmaku_events.4 }
-            3 = { trigger_event_non_silently = th_danmaku_events.5 }
-        }
-    }
-    else_if = {
-        limit = { var:th_danmaku_encounter_ratio_pct_var >= 90 }
-        random_list = {
-            15 = { trigger_event_non_silently = th_danmaku_events.2 }
-            30 = { trigger_event_non_silently = th_danmaku_events.3 }
-            30 = { trigger_event_non_silently = th_danmaku_events.6 }
-            18 = { trigger_event_non_silently = th_danmaku_events.4 }
-            7 = { trigger_event_non_silently = th_danmaku_events.5 }
-        }
-    }
-    else_if = {
-        limit = { var:th_danmaku_encounter_ratio_pct_var >= 60 }
-        random_list = {
-            8 = { trigger_event_non_silently = th_danmaku_events.2 }
-            20 = { trigger_event_non_silently = th_danmaku_events.3 }
-            32 = { trigger_event_non_silently = th_danmaku_events.6 }
-            28 = { trigger_event_non_silently = th_danmaku_events.4 }
-            12 = { trigger_event_non_silently = th_danmaku_events.5 }
-        }
-    }
-    else = {
-        random_list = {
-            3 = { trigger_event_non_silently = th_danmaku_events.2 }
-            12 = { trigger_event_non_silently = th_danmaku_events.3 }
-            25 = { trigger_event_non_silently = th_danmaku_events.6 }
-            35 = { trigger_event_non_silently = th_danmaku_events.4 }
-            25 = { trigger_event_non_silently = th_danmaku_events.5 }
-        }
     }
 }
 ### ============================================================
@@ -132,7 +50,7 @@ th_danmaku_battle_reward_effect = {
         }
     }
 }
-### 遭遇战变量清理（国家 scope；结局事件选项内调用）
+### 妖兽战变量清理（国家 scope；结局事件选项内调用）
 ### 2026-08-28：追加清理概率公示变量（th_danmaku_encounter_prob_preview_effect 写入，含平手）
 th_danmaku_encounter_cleanup_effect = {
     remove_variable = th_danmaku_encounter_youkai_fp_var
@@ -924,8 +842,8 @@ th_danmaku_beast_trigger_effect = {
         }
     }
 }
-### 妖兽战斗结算（国家 scope；与遭遇战同五档火力比算法，触发妖兽结局事件）
-### 五档权重表与遭遇战完全一致（≥160: 35/35/20/8/2，≥120: 25/35/25/12/3，
+### 妖兽战斗结算（国家 scope；五档火力比算法，触发妖兽结局事件）
+### 五档权重表（≥160: 35/35/20/8/2，≥120: 25/35/25/12/3，
 ### ≥90: 15/30/30/18/7，≥60: 8/20/32/28/12，否则 3/12/25/35/25），
 ### 平手档触发 .6（与 th_danmaku_encounter_prob_preview_effect 公示一致）
 th_danmaku_beast_resolve_effect = {
@@ -1038,10 +956,10 @@ th_danmaku_beast_defeat_effect = {
     th_danmaku_encounter_cleanup_effect = yes
 }
 ### ============================================================
-### 遭遇/妖兽 战斗前结局概率公示（事件 immediate 调用）
+### 妖兽战 战斗前结局概率公示（事件 immediate 调用）
 ### 复用 th_danmaku_encounter_ratio_pct_value 计算火力比 → 按五档写入 5 个显示变量，
 ### 供事件选项 TT 公示「大胜/胜利/平手/败北/大败」概率（与
-### th_danmaku_encounter_resolve_effect / th_danmaku_beast_resolve_effect 权重完全一致）
+### th_danmaku_beast_resolve_effect 权重完全一致）
 ### ============================================================
 th_danmaku_encounter_prob_preview_effect = {
     set_variable = {

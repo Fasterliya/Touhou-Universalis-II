@@ -23,38 +23,12 @@
  ACTION_th_danmaku_challenge_PERFORMED_ON_US: "탄막 결투를 신청받았다"
 
 ### ============================================================
-### 조우전 사건
+### 조우전 사건（2026-08-30 폐지；.6 무승부는 요괴전과 공용으로 유지）
 ### ============================================================
- th_danmaku_events.1.title: "이름 없는 요괴와 조우"
- th_danmaku_events.1.desc: "환상향의 변경에서 이름 없는 요괴가 길을 막는다. 의도는 불분명하지만 이미 탄막 자세를 취하고 있다——조우전은 피할 수 없어 보인다."
- th_danmaku_events.1.a: "응전한다!"
- th_danmaku_events.1.a.tt: "우리 화력 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n요괴 화력 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\n대승 확률：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\n승리 확률：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\n무승부 확률：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_draw_prob_var').GetValue]#!%\n패배 확률：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\n대패 확률：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
- th_danmaku_events.1.b: "회피한다"
- th_danmaku_events.1.b.tt: "화를 피해 이름 없는 요괴와 얽히지 않는다.\n위신 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!"
 
- th_danmaku_events.2.title: "대승: 탄막이 압도"
- th_danmaku_events.2.desc: "탄막이 폭우처럼 쏟아져 요괴의 방어선이 순식간에 무너졌다. 요괴는 밤 속으로 도망쳐 다시는 감히 오지 않는다."
- th_danmaku_events.2.a: "흥, 분수 모르는 놈."
- th_danmaku_events.2.a.tt: "금 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! 과 위신 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! 을 획득."
- th_danmaku_events.2.b: "조사 진행"
- th_danmaku_events.2.b.tt: "이변 조사 진행도 #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_investigation_value')]#!"
 
- th_danmaku_events.3.title: "승리: 적 격퇴"
- th_danmaku_events.3.desc: "격렬한 탄막 교전 끝에 요괴는 서서히 밀려 산 속으로 퇴각했다. 당신은 조우전에서 승리했다."
- th_danmaku_events.3.a: "전리품을 챙긴다."
- th_danmaku_events.3.a.tt: "금 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! 과 위신 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! 을 획득."
- th_danmaku_events.3.b: "조사 진행"
- th_danmaku_events.3.b.tt: "이변 조사 진행도 #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_investigation_value')]#!"
 
- th_danmaku_events.4.title: "패배: 싸우며 퇴각"
- th_danmaku_events.4.desc: "요괴의 탄막은 예상외로 날카로웠고, 당신은 싸우면서 물러날 수밖에 없었다. 치명적이진 않지만 체면은 상했다."
- th_danmaku_events.4.a: "이 교훈을 기억한다."
- th_danmaku_events.4.a.tt: "금 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! 과 위신 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! 을 잃는다."
 
- th_danmaku_events.5.title: "대패: 초라한 도주"
- th_danmaku_events.5.desc: "탄막이 완전히 무너져 당신은 초라하게 전장에서 도망쳤다. 이름 없는 요괴에게 이토록 강한 실력이 있을 줄은 예상 밖이었다."
- th_danmaku_events.5.a: "……기회는 또 온다."
- th_danmaku_events.5.a.tt: "금 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! 과 위신 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! 을 잃는다."
 
  th_danmaku_events.6.title: "무승부: 호각"
  th_danmaku_events.6.desc: "마지막 탄막이 양쪽에서 동시에 사라졌다. 어느 쪽도 상대를 압도하지 못했다. 상대는 시무룩하게 물러나고, 당신도 무사히 돌아왔다."

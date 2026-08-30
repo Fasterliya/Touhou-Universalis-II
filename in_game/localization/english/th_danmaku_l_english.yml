@@ -23,38 +23,12 @@
  ACTION_th_danmaku_challenge_PERFORMED_ON_US: "Challenged to a danmaku duel"
 
 ### ============================================================
-### Encounter Battle Events
+### Encounter Battle Events (cancelled 2026-08-30; only .6 draw remains, shared with beast battles)
 ### ============================================================
- th_danmaku_events.1.title: "An Encounter with a Nameless Youkai"
- th_danmaku_events.1.desc: "On the borderlands of Gensokyo, a nameless youkai blocks the path. Its intentions are unclear, but it has already taken a danmaku stance — a skirmish seems unavoidable."
- th_danmaku_events.1.a: "Engage!"
- th_danmaku_events.1.a.tt: "Our firepower: #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\nYoukai firepower: #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\nCrushing victory chance: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\nVictory chance: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\nDraw chance: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_draw_prob_var').GetValue]#!%\nDefeat chance: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\nRout chance: #G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
- th_danmaku_events.1.b: "Avoid the fight"
- th_danmaku_events.1.b.tt: "Steer clear and refuse to tangle with the nameless youkai.\nPrestige #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!"
 
- th_danmaku_events.2.title: "Crushing Victory: Danmaku Overwhelms"
- th_danmaku_events.2.desc: "Danmaku pours down like a storm, and the youkai's defense collapses in an instant. It flees into the night, never daring to return."
- th_danmaku_events.2.a: "Hmph. Presumptuous."
- th_danmaku_events.2.a.tt: "Gain #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! gold and #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! prestige."
- th_danmaku_events.2.b: "Advance the investigation"
- th_danmaku_events.2.b.tt: "Incident investigation progress #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_investigation_value')]#!"
 
- th_danmaku_events.3.title: "Victory: Foe Repelled"
- th_danmaku_events.3.desc: "After a fierce exchange of danmaku, the youkai gradually falters and retreats into the mountains. You have won the skirmish."
- th_danmaku_events.3.a: "Take the spoils."
- th_danmaku_events.3.a.tt: "Gain #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! gold and #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! prestige."
- th_danmaku_events.3.b: "Advance the investigation"
- th_danmaku_events.3.b.tt: "Incident investigation progress #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_investigation_value')]#!"
 
- th_danmaku_events.4.title: "Defeat: A Fighting Retreat"
- th_danmaku_events.4.desc: "The youkai's danmaku proves unexpectedly fierce, and you are forced to retreat while fighting. Not a fatal blow, but a blow to your pride nonetheless."
- th_danmaku_events.4.a: "A lesson learned."
- th_danmaku_events.4.a.tt: "Lose #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! gold and #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! prestige."
 
- th_danmaku_events.5.title: "Rout: A Humiliating Flight"
- th_danmaku_events.5.desc: "Your danmaku collapses entirely, and you flee the battlefield in disgrace. That this nameless youkai possessed such strength is beyond your expectations."
- th_danmaku_events.5.a: "...There is always another day."
- th_danmaku_events.5.a.tt: "Lose #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! gold and #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! prestige."
 
  th_danmaku_events.6.title: "Draw: Dead Even"
  th_danmaku_events.6.desc: "The final barrage fades on both sides at once; neither could overwhelm the other. The foe slinks away, and you withdraw unscathed."

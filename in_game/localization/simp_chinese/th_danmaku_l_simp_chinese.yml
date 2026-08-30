@@ -23,38 +23,12 @@
  ACTION_th_danmaku_challenge_PERFORMED_ON_US: "发起了弹幕对决"
 
 ### ============================================================
-### 遭遇战事件
+### 遭遇战事件（2026-08-30 取消；仅保留 .6 平手供妖兽战共用）
 ### ============================================================
- th_danmaku_events.1.title: "遭遇无名妖怪"
- th_danmaku_events.1.desc: "在幻想乡的边境地带，一只无名妖怪挡住了去路。它来意不明，却已摆出弹幕架势——看来一场遭遇战在所难免。"
- th_danmaku_events.1.a: "应战！"
- th_danmaku_events.1.a.tt: "我方火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n妖怪火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\n大胜概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\n胜利概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\n平手概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_draw_prob_var').GetValue]#!%\n败北概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\n大败概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
- th_danmaku_events.1.b: "回避"
- th_danmaku_events.1.b.tt: "暂避锋芒，不与无名妖怪纠缠。\n威望 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!"
 
- th_danmaku_events.2.title: "大胜：弹幕碾碎"
- th_danmaku_events.2.desc: "弹幕如暴雨倾泻，妖怪的防线在顷刻间崩溃。它狼狈遁入夜色，再不敢来犯。"
- th_danmaku_events.2.a: "哼，不自量力。"
- th_danmaku_events.2.a.tt: "获得 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! 金币与 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! 威望。"
- th_danmaku_events.2.b: "异变调查进度推进"
- th_danmaku_events.2.b.tt: "异变调查进度 #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_investigation_value')]#!"
 
- th_danmaku_events.3.title: "胜利：击退来敌"
- th_danmaku_events.3.desc: "一番激烈的弹幕交锋后，妖怪渐渐不支，最终退入山林。你赢得了这场遭遇战。"
- th_danmaku_events.3.a: "收好战利品。"
- th_danmaku_events.3.a.tt: "获得 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! 金币与 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! 威望。"
- th_danmaku_events.3.b: "异变调查进度推进"
- th_danmaku_events.3.b.tt: "异变调查进度 #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_investigation_value')]#!"
 
- th_danmaku_events.4.title: "败北：且战且退"
- th_danmaku_events.4.desc: "妖怪的弹幕出乎意料地凌厉，你被迫且战且退。虽未伤及根本，却也折损了颜面。"
- th_danmaku_events.4.a: "记住这次教训。"
- th_danmaku_events.4.a.tt: "损失 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! 金币与 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! 威望。"
 
- th_danmaku_events.5.title: "大败：狼狈逃窜"
- th_danmaku_events.5.desc: "弹幕全面溃败，你狼狈逃离战场。无名妖怪竟有如此实力，令你始料未及。"
- th_danmaku_events.5.a: "……来日方长。"
- th_danmaku_events.5.a.tt: "损失 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! 金币与 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! 威望。"
 
  th_danmaku_events.6.title: "平手：势均力敌"
  th_danmaku_events.6.desc: "最后一轮弹幕同时消散，双方皆未能压倒对方。对方悻悻退去，你亦全身而退。"

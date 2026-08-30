@@ -36,14 +36,11 @@ th_danmaku_firepower_value = {
 }
 
 ### ============================================================
-### 遭遇战 平衡数值
+### 妖兽战 平衡数值（无名妖怪遭遇战已于 2026-08-30 取消，
+### 原"遭遇战"机制键名保留，现仅供妖兽战使用）
 ### ============================================================
 
-### 月度随机遭遇概率（%）：on_action 用字面量 random = { chance = 2 }，
-### 本键供文档/未来改造为脚本值权重时使用（待调）
-th_danmaku_encounter_monthly_chance_value = { value = 2 }
-
-### 无名妖怪火力 = 系统随机 500~1000（2026-08-28 定案；替代原 我方×50%~130%）
+### 妖兽火力 = 系统随机 500~1000（2026-08-28 定案；替代原 我方×50%~130%）
 th_danmaku_youkai_firepower_min_value = { value = 500 }
 th_danmaku_youkai_firepower_max_value = { value = 1000 }
 
@@ -54,14 +51,14 @@ th_danmaku_youkai_firepower_value = {
     }
 }
 
-### 遭遇战火力比（整数百分比 = 我方×100÷妖怪，供五档结局判定）
+### 妖兽战火力比（整数百分比 = 我方×100÷妖兽，供五档结局判定）
 th_danmaku_encounter_ratio_pct_value = {
     value = var:th_danmaku_firepower_self_var
     multiply = 100
     divide = var:th_danmaku_encounter_youkai_fp_var
 }
 
-### 遭遇战五结局 金币/威望奖惩（待调；大胜/胜利/平手/败北/大败）
+### 妖兽战五结局 金币/威望奖惩（待调；大胜/胜利/平手/败北/大败；键名沿用原遭遇战）
 th_danmaku_encounter_great_victory_gold_value = { value = 30 }
 th_danmaku_encounter_victory_gold_value = { value = 15 }
 th_danmaku_encounter_draw_gold_value = { value = 0 }
@@ -73,7 +70,7 @@ th_danmaku_encounter_draw_prestige_value = { value = 0 }
 th_danmaku_encounter_defeat_prestige_value = { value = -2 }
 th_danmaku_encounter_great_defeat_prestige_value = { value = -5 }
 
-### 遭遇战 异变调查进度（异变系统 M3 落地后经 th_gensokyo_incident_add_investigation_effect 生效）
+### 妖兽战 异变调查进度（异变系统 M3 落地后经 th_gensokyo_incident_add_investigation_effect 生效）
 th_danmaku_encounter_victory_investigation_value = { value = 2 }
 th_danmaku_encounter_great_victory_investigation_value = { value = 4 }
 
@@ -192,7 +189,8 @@ th_danmaku_duel_stale_months_value = { value = 12 }
 ### 共通 平衡数值
 ### ============================================================
 
-### 怯战 / 回避战斗 / 投降 威望惩罚（逃避与认输行为，2026-08-28 定案）
+### 怯战 / 投降 威望惩罚（逃避与认输行为，2026-08-28 定案；
+### 遭遇战"回避"选项随遭遇战取消，2026-08-30）
 th_danmaku_cowardice_prestige_value = { value = -5 }
 
 ### ============================================================
@@ -202,9 +200,9 @@ th_danmaku_cowardice_prestige_value = { value = -5 }
 ### 妖兽作乱修正时长（年；th_danmaku_beast_outbreak_effect 内用字面量 10 并注释引用本键）
 th_danmaku_beast_rampage_years_value = { value = 10 }
 
-### 妖兽爆发月度概率（%）：on_action 用字面量 random = { chance = 2 }，
-### 本键供文档/未来改造为脚本值权重时使用（待调）
-th_danmaku_beast_monthly_chance_value = { value = 2 }
+### 妖兽爆发月度概率（%）：on_action 用字面量 random = { chance = 0.5 }，
+### 1476 年起不再触发（current_date 守卫）；本键供文档/未来改造为脚本值权重时使用（待调）
+th_danmaku_beast_monthly_chance_value = { value = 0.5 }
 
 ### 妖兽战斗力统一走 th_danmaku_youkai_firepower_value（500~1000 随机）
 

@@ -23,38 +23,12 @@
  ACTION_th_danmaku_challenge_PERFORMED_ON_US: "弾幕決闘を申し込まれた"
 
 ### ============================================================
-### 遭遇戦イベント
+### 遭遇戦イベント（2026-08-30 廃止；.6 引き分けは獣戦と共用のため残置）
 ### ============================================================
- th_danmaku_events.1.title: "無名の妖怪と遭遇"
- th_danmaku_events.1.desc: "幻想郷の辺境で、無名の妖怪が行く手を阻む。その意図は不明だが、すでに弾幕の構えを見せている——遭遇戦は避けられそうにない。"
- th_danmaku_events.1.a: "応戦する！"
- th_danmaku_events.1.a.tt: "こちら火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n妖怪火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\n大勝確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\n勝利確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\n引き分け確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_draw_prob_var').GetValue]#!%\n敗北確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\n大敗確率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
- th_danmaku_events.1.b: "回避する"
- th_danmaku_events.1.b.tt: "危険を避け、無名の妖怪と関わらない。\n威信 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!"
 
- th_danmaku_events.2.title: "大勝：弾幕が圧倒"
- th_danmaku_events.2.desc: "弾幕が豪雨のように降り注ぎ、妖怪の守りは瞬く間に崩れた。妖怪は夜闇に逃げ去り、二度と近づこうとしない。"
- th_danmaku_events.2.a: "ふん、身の程知らず。"
- th_danmaku_events.2.a.tt: "金 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_gold_value')]#! と威信 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_prestige_value')]#! を獲得。"
- th_danmaku_events.2.b: "調査を進める"
- th_danmaku_events.2.b.tt: "異変調査の進行度 #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_victory_investigation_value')]#!"
 
- th_danmaku_events.3.title: "勝利：敵を撃退"
- th_danmaku_events.3.desc: "激しい弾幕の応酬の末、妖怪は徐々に劣勢となり山へ退いていった。あなたは遭遇戦に勝利した。"
- th_danmaku_events.3.a: "戦利品を回収。"
- th_danmaku_events.3.a.tt: "金 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_gold_value')]#! と威信 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_prestige_value')]#! を獲得。"
- th_danmaku_events.3.b: "調査を進める"
- th_danmaku_events.3.b.tt: "異変調査の進行度 #G +[ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_victory_investigation_value')]#!"
 
- th_danmaku_events.4.title: "敗北：退きながら戦う"
- th_danmaku_events.4.desc: "妖怪の弾幕は予想外に鋭く、あなたは戦いながら退くことを余儀なくされた。致命傷ではないが、面目は傷ついた。"
- th_danmaku_events.4.a: "この教訓を忘れない。"
- th_danmaku_events.4.a.tt: "金 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! と威信 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! を失う。"
 
- th_danmaku_events.5.title: "大敗：逃亡"
- th_danmaku_events.5.desc: "弾幕は完全に崩壊し、あなたは無様に戦場から逃げ出した。無名の妖怪にこれほどの実力があるとは、まったく予想外だった。"
- th_danmaku_events.5.a: "……またの機会がある。"
- th_danmaku_events.5.a.tt: "金 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! と威信 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! を失う。"
 
  th_danmaku_events.6.title: "引き分け：互角"
  th_danmaku_events.6.desc: "最後の弾幕が双方同時に消え、どちらも相手を圧倒できなかった。相手は悔しげに去り、あなたも無傷で引き上げた。"
