@@ -1,7 +1,8 @@
 ﻿### ============================================================
 ### 弹幕战系统 — 主动挑战（玩家入口；对决战亦可由事件/接口触发）
 ### 入口: th_danmaku_duel_start_effect = { challenger = scope:actor target = scope:target }
-### 对齐 th_gensokyo_feast 行动模式（type = internationalorganization）
+### 选择流：第 1 步选幻想乡 IO → 第 2 步选对手成员（interaction_source_list 过滤：
+### 自己与对决中者不出现；对齐 th_gensokyo_request_expansion 两步选择模式）
 ### ============================================================
 
 th_danmaku_challenge = {
@@ -23,22 +24,52 @@ th_danmaku_challenge = {
         always = yes
     }
 
+    ### 第 1 步：选幻想乡 IO（对齐 th_gensokyo_request_expansion 模式；
+    ### visible 按 IO 类型过滤，玩家仅可见/可选幻想乡 IO）
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### 第 2 步：选对手成员（interaction_source_list = 幻想乡 IO 全部成员，
+    ### limit 排除自己与对决中者；列 = 国名）
     select_trigger = {
         looking_for_a = country
+        source = recipient
         target_flag = target
         name = "choose_country"
         none_available_msg_key = "th_danmaku_challenge_none_available"
         column = {
             data = name
         }
-        visible = {
-            is_member_of_international_organization = international_organization:th_gensokyo_io
-            NOT = {
-                th_danmaku_duel_in_progress_trigger = yes
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        NOT = {
+                            this = scope:actor
+                        }
+                        NOT = {
+                            th_danmaku_duel_in_progress_trigger = yes
+                        }
+                    }
+                    add_to_list = source
+                }
             }
         }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
         enabled = {
-            NOT = { this = scope:actor }
+            is_member_of_international_organization = international_organization:th_gensokyo_io
         }
     }
 

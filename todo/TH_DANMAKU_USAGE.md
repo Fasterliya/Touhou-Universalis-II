@@ -119,7 +119,7 @@ th_danmaku_duel_start_effect = { challenger = ROOT target = scope:some_country }
 ### 2.5 玩家主动入口
 
 `th_danmaku_challenge`（generic action，`type = internationalorganization`）：
-幻想乡 IO 面板内选目标 → 走 2.3（`challenger = scope:actor target = scope:target`）。CD 5 年（60 个月）；AI 权重 0（AI 对决走事件/异变接口）。
+幻想乡 IO 面板内两步选择（第 1 步选幻想乡 IO → 第 2 步选对手成员，列表 = IO 成员、自己与对决中者不出现）→ 走 2.3（`challenger = scope:actor target = scope:target`）。CD 5 年（60 个月）；AI 权重 0（AI 对决走事件/异变接口）。
 
 ### 2.6 封装接口教程（2026-08-28 新增）
 
