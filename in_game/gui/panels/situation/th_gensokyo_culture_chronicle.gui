@@ -1,4 +1,4 @@
-﻿situation_panel = {
+situation_panel = {
 	blockoverride "situation_subheader_content" {}
 
 	blockoverride "situation_panel_main_content" {
@@ -8,11 +8,11 @@
 
 			# 背景图槽位：gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds
 			# 推荐比例 3:4（570 x 760 @1x / 1140 x 1520 @2x），用户替换该 dds 即可
-			# background = {
-			# 	texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
-			# 	spriteType = stretched
-			# 	size = { -1 570 }
-			# }
+			background = {
+				texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+				spriteType = stretched
+				size = { -1 570 }
+			}
 
 			vbox = {
 				layoutpolicy_horizontal = expanding
@@ -21,7 +21,7 @@
 				text_single = {
 					using = Font_Type_Headers
 					using = Font_Size_Big
-					default_format = "#header_titles"
+					default_format = "#black"
 					text = "TH_CULTURE_CHRONICLE_TITLE"
 				}
 
@@ -31,26 +31,22 @@
 
 					button_regular = {
 						size = { 120 32 }
-						text_single = {
-							text = "TH_CULTURE_CHRONICLE_PREV_PAGE"
-						}
+						text = "TH_CULTURE_CHRONICLE_PREV_PAGE"
 						onclick = "[GetScriptedGui('th_cc_prev_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					}
 					text_single = {
 						using = Font_Size_Medium
-						default_format = "#subtle_name"
+						default_format = "#black"
 						text = "TH_CULTURE_CHRONICLE_PAGE_INDICATOR"
 					}
 					text_single = {
 						using = Font_Size_Medium
-						default_format = "#subtle_name"
+						default_format = "#black"
 						raw_text = "[FixedPointToInt(GetPlayer.MakeScope.GetVariable('th_cc_page_display').GetValue)]/[FixedPointToInt(GetPlayer.MakeScope.GetVariable('th_cc_total_pages').GetValue)]"
 					}
 					button_regular = {
 						size = { 120 32 }
-						text_single = {
-							text = "TH_CULTURE_CHRONICLE_NEXT_PAGE"
-						}
+						text = "TH_CULTURE_CHRONICLE_NEXT_PAGE"
 						onclick = "[GetScriptedGui('th_cc_next_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					}
 				}
@@ -77,7 +73,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)0')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)0')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #0）：th_goblin_culture
 							widget = {
 								size = { 100% 192 }
@@ -98,14 +99,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_goblin_culture').GetName]"
+											text = "[GetCultureByKey('th_goblin_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_goblin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -115,6 +119,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -123,6 +128,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -154,14 +160,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yama_culture').GetName]"
+											text = "[GetCultureByKey('th_yama_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yama_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -171,6 +180,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -179,6 +189,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -210,14 +221,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_itsuna_culture').GetName]"
+											text = "[GetCultureByKey('th_itsuna_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_itsuna_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -227,6 +241,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -235,6 +250,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -266,14 +282,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_fox_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_fox_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_fox_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -283,6 +302,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -291,6 +311,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -322,14 +343,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -339,6 +363,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -347,6 +372,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -378,14 +404,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_vampire_culture').GetName]"
+											text = "[GetCultureByKey('th_vampire_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_vampire_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -395,6 +424,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -403,6 +433,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -434,14 +465,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_maid_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_maid_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_maid_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -451,6 +485,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -459,6 +494,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -475,7 +511,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)1')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)1')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #7）：th_hell_fairy_culture
 							widget = {
 								size = { 100% 192 }
@@ -496,14 +537,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_hell_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_hell_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_hell_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -513,6 +557,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -521,6 +566,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -552,14 +598,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_light_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_light_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_light_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -569,6 +618,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -577,6 +627,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -608,14 +659,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_flower_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_flower_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_flower_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -625,6 +679,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -633,6 +688,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -664,14 +720,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_season_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_season_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_season_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -681,6 +740,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -689,6 +749,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -720,14 +781,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_zombie_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_zombie_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_zombie_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -737,6 +801,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -745,6 +810,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -776,14 +842,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_phenomenon_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_phenomenon_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_phenomenon_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -793,6 +862,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -801,6 +871,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -832,14 +903,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_elemental_fairy_culture').GetName]"
+											text = "[GetCultureByKey('th_elemental_fairy_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_elemental_fairy_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -849,6 +923,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -857,6 +932,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -873,7 +949,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)2')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)2')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #14）：th_half_human_half_phantom_culture
 							widget = {
 								size = { 100% 192 }
@@ -894,14 +975,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_half_human_half_phantom_culture').GetName]"
+											text = "[GetCultureByKey('th_half_human_half_phantom_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_half_human_half_phantom_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -911,6 +995,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -919,6 +1004,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -950,14 +1036,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_mermaid_culture').GetName]"
+											text = "[GetCultureByKey('th_mermaid_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_mermaid_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -967,6 +1056,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -975,6 +1065,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1006,14 +1097,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_beastman_culture').GetName]"
+											text = "[GetCultureByKey('th_beastman_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_beastman_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1023,6 +1117,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1031,6 +1126,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1062,14 +1158,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_demon_culture').GetName]"
+											text = "[GetCultureByKey('th_demon_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_demon_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1079,6 +1178,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1087,6 +1187,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1118,14 +1219,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_angel_culture').GetName]"
+											text = "[GetCultureByKey('th_angel_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_angel_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1135,6 +1239,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1143,6 +1248,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1174,14 +1280,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_korobori_culture').GetName]"
+											text = "[GetCultureByKey('th_korobori_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_korobori_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1191,6 +1300,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1199,6 +1309,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1230,14 +1341,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_mirror_tsukumogami_culture').GetName]"
+											text = "[GetCultureByKey('th_mirror_tsukumogami_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_mirror_tsukumogami_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1247,6 +1361,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1255,6 +1370,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1271,7 +1387,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)3')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)3')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #21）：th_instrument_yokai_culture
 							widget = {
 								size = { 100% 192 }
@@ -1292,14 +1413,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_instrument_yokai_culture').GetName]"
+											text = "[GetCultureByKey('th_instrument_yokai_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_instrument_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1309,6 +1433,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1317,6 +1442,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1348,14 +1474,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_suzuhime_culture').GetName]"
+											text = "[GetCultureByKey('th_suzuhime_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_suzuhime_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1365,6 +1494,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1373,6 +1503,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1404,14 +1535,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_menreiki_culture').GetName]"
+											text = "[GetCultureByKey('th_menreiki_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_menreiki_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1421,6 +1555,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1429,6 +1564,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1460,14 +1596,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_umbrella_yokai_culture').GetName]"
+											text = "[GetCultureByKey('th_umbrella_yokai_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_umbrella_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1477,6 +1616,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1485,6 +1625,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1516,14 +1657,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_fuguruma_culture').GetName]"
+											text = "[GetCultureByKey('th_fuguruma_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_fuguruma_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1533,6 +1677,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1541,6 +1686,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1572,14 +1718,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_zashiki_warashi_culture').GetName]"
+											text = "[GetCultureByKey('th_zashiki_warashi_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_zashiki_warashi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1589,6 +1738,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1597,6 +1747,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1628,14 +1779,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_oni_culture').GetName]"
+											text = "[GetCultureByKey('th_oni_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_oni_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1645,6 +1799,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1653,6 +1808,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1669,7 +1825,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)4')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)4')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #28）：th_ushioni_culture
 							widget = {
 								size = { 100% 192 }
@@ -1690,14 +1851,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_ushioni_culture').GetName]"
+											text = "[GetCultureByKey('th_ushioni_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_ushioni_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1707,6 +1871,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1715,6 +1880,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1746,14 +1912,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_human_oni_culture').GetName]"
+											text = "[GetCultureByKey('th_human_oni_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_human_oni_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1763,6 +1932,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1771,6 +1941,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1802,14 +1973,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_kappa_culture').GetName]"
+											text = "[GetCultureByKey('th_kappa_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_kappa_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1819,6 +1993,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1827,6 +2002,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1858,14 +2034,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yamawaro_culture').GetName]"
+											text = "[GetCultureByKey('th_yamawaro_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yamawaro_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1875,6 +2054,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1883,6 +2063,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1914,14 +2095,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_white_wolf_tengu_culture').GetName]"
+											text = "[GetCultureByKey('th_white_wolf_tengu_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_white_wolf_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1931,6 +2115,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1939,6 +2124,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1970,14 +2156,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_long_nose_tengu_culture').GetName]"
+											text = "[GetCultureByKey('th_long_nose_tengu_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_long_nose_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -1987,6 +2176,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -1995,6 +2185,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2026,14 +2217,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_leaf_tengu_culture').GetName]"
+											text = "[GetCultureByKey('th_leaf_tengu_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_leaf_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2043,6 +2237,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2051,6 +2246,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2067,7 +2263,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)5')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)5')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #35）：th_yamabushi_tengu_culture
 							widget = {
 								size = { 100% 192 }
@@ -2088,14 +2289,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yamabushi_tengu_culture').GetName]"
+											text = "[GetCultureByKey('th_yamabushi_tengu_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yamabushi_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2105,6 +2309,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2113,6 +2318,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2144,14 +2350,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_crow_tengu_culture').GetName]"
+											text = "[GetCultureByKey('th_crow_tengu_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_crow_tengu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2161,6 +2370,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2169,6 +2379,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2200,14 +2411,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_shell_yokai_culture').GetName]"
+											text = "[GetCultureByKey('th_shell_yokai_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_shell_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2217,6 +2431,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2225,6 +2440,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2256,14 +2472,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_chimi_culture').GetName]"
+											text = "[GetCultureByKey('th_chimi_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_chimi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2273,6 +2492,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2281,6 +2501,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2312,14 +2533,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_monster_culture').GetName]"
+											text = "[GetCultureByKey('th_monster_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_monster_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2329,6 +2553,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2337,6 +2562,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2368,14 +2594,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yamabiko_culture').GetName]"
+											text = "[GetCultureByKey('th_yamabiko_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yamabiko_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2385,6 +2614,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2393,6 +2623,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2424,14 +2655,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_heavenly_dragon_culture').GetName]"
+											text = "[GetCultureByKey('th_heavenly_dragon_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_heavenly_dragon_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2441,6 +2675,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2449,6 +2684,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2465,7 +2701,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)6')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)6')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #42）：th_tsuchigumo_culture
 							widget = {
 								size = { 100% 192 }
@@ -2486,14 +2727,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_tsuchigumo_culture').GetName]"
+											text = "[GetCultureByKey('th_tsuchigumo_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_tsuchigumo_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2503,6 +2747,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2511,6 +2756,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2542,14 +2788,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_insect_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_insect_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_insect_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2559,6 +2808,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2567,6 +2817,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2598,14 +2849,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_dog_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_dog_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_dog_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2615,6 +2869,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2623,6 +2878,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2654,14 +2910,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_turtle_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_turtle_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_turtle_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2671,6 +2930,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2679,6 +2939,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2710,14 +2971,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_tanuki_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_tanuki_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_tanuki_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2727,6 +2991,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2735,6 +3000,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2766,14 +3032,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_monkey_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_monkey_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_monkey_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2783,6 +3052,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2791,6 +3061,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2822,14 +3093,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_tiger_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_tiger_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_tiger_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2839,6 +3113,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2847,6 +3122,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2863,7 +3139,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)7')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)7')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #49）：th_yokai_cat_culture
 							widget = {
 								size = { 100% 192 }
@@ -2884,14 +3165,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_cat_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_cat_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_cat_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2901,6 +3185,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2909,6 +3194,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2940,14 +3226,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_bird_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_bird_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_bird_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2957,6 +3246,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -2965,6 +3255,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -2996,14 +3287,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_ox_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_ox_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_ox_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3013,6 +3307,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3021,6 +3316,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3052,14 +3348,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_snake_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_snake_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_snake_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3069,6 +3368,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3077,6 +3377,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3108,14 +3409,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_rat_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_rat_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_rat_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3125,6 +3429,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3133,6 +3438,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3164,14 +3470,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yokai_rabbit_culture').GetName]"
+											text = "[GetCultureByKey('th_yokai_rabbit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yokai_rabbit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3181,6 +3490,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3189,6 +3499,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3220,14 +3531,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_night_sparrow_culture').GetName]"
+											text = "[GetCultureByKey('th_night_sparrow_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_night_sparrow_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3237,6 +3551,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3245,6 +3560,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3261,7 +3577,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)8')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)8')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #56）：th_komainu_culture
 							widget = {
 								size = { 100% 192 }
@@ -3282,14 +3603,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_komainu_culture').GetName]"
+											text = "[GetCultureByKey('th_komainu_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_komainu_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3299,6 +3623,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3307,6 +3632,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3338,14 +3664,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_unnamable_culture').GetName]"
+											text = "[GetCultureByKey('th_unnamable_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_unnamable_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3355,6 +3684,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3363,6 +3693,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3394,14 +3725,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_jizo_culture').GetName]"
+											text = "[GetCultureByKey('th_jizo_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_jizo_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3411,6 +3745,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3419,6 +3754,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3450,14 +3786,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yomi_woman_culture').GetName]"
+											text = "[GetCultureByKey('th_yomi_woman_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yomi_woman_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3467,6 +3806,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3475,6 +3815,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3506,14 +3847,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_jiangshi_culture').GetName]"
+											text = "[GetCultureByKey('th_jiangshi_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_jiangshi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3523,6 +3867,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3531,6 +3876,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3562,14 +3908,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_satori_yokai_culture').GetName]"
+											text = "[GetCultureByKey('th_satori_yokai_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_satori_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3579,6 +3928,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3587,6 +3937,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3618,14 +3969,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_yamanba_culture').GetName]"
+											text = "[GetCultureByKey('th_yamanba_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_yamanba_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3635,6 +3989,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3643,6 +3998,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3659,7 +4015,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)9')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)9')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #63）：th_mountain_woman_culture
 							widget = {
 								size = { 100% 192 }
@@ -3680,14 +4041,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_mountain_woman_culture').GetName]"
+											text = "[GetCultureByKey('th_mountain_woman_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_mountain_woman_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3697,6 +4061,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3705,6 +4070,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3736,14 +4102,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_bone_tour_yokai_culture').GetName]"
+											text = "[GetCultureByKey('th_bone_tour_yokai_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_bone_tour_yokai_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3753,6 +4122,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3761,6 +4131,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3792,14 +4163,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_creator_god_culture').GetName]"
+											text = "[GetCultureByKey('th_creator_god_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_creator_god_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3809,6 +4183,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3817,6 +4192,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3848,14 +4224,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_moon_rabbit_culture').GetName]"
+											text = "[GetCultureByKey('th_moon_rabbit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_moon_rabbit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3865,6 +4244,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3873,6 +4253,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3904,14 +4285,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_houraijin_culture').GetName]"
+											text = "[GetCultureByKey('th_houraijin_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_houraijin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3921,6 +4305,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3929,6 +4314,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3960,14 +4346,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_shikaisen_culture').GetName]"
+											text = "[GetCultureByKey('th_shikaisen_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_shikaisen_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -3977,6 +4366,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -3985,6 +4375,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4016,14 +4407,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_tennin_culture').GetName]"
+											text = "[GetCultureByKey('th_tennin_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_tennin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4033,6 +4427,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4041,6 +4436,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4057,7 +4453,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)10')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)10')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #70）：th_sennin_culture
 							widget = {
 								size = { 100% 192 }
@@ -4078,14 +4479,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_sennin_culture').GetName]"
+											text = "[GetCultureByKey('th_sennin_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_sennin_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4095,6 +4499,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4103,6 +4508,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4134,14 +4540,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_makai_people_culture').GetName]"
+											text = "[GetCultureByKey('th_makai_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_makai_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4151,6 +4560,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4159,6 +4569,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4190,14 +4601,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_magician_culture').GetName]"
+											text = "[GetCultureByKey('th_magician_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_magician_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4207,6 +4621,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4215,6 +4630,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4246,14 +4662,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_purified_people_culture').GetName]"
+											text = "[GetCultureByKey('th_purified_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_purified_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4263,6 +4682,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4271,6 +4691,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4302,14 +4723,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_village_human_culture').GetName]"
+											text = "[GetCultureByKey('th_village_human_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_village_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4319,6 +4743,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4327,6 +4752,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4358,14 +4784,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_wild_human_culture').GetName]"
+											text = "[GetCultureByKey('th_wild_human_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_wild_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4375,6 +4804,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4383,6 +4813,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4414,14 +4845,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_niwatari_people_culture').GetName]"
+											text = "[GetCultureByKey('th_niwatari_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_niwatari_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4431,6 +4865,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4439,6 +4874,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4455,7 +4891,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)11')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)11')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #77）：th_houjou_people_culture
 							widget = {
 								size = { 100% 192 }
@@ -4476,14 +4917,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_houjou_people_culture').GetName]"
+											text = "[GetCultureByKey('th_houjou_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_houjou_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4493,6 +4937,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4501,6 +4946,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4532,14 +4978,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_old_gensokyo_human_culture').GetName]"
+											text = "[GetCultureByKey('th_old_gensokyo_human_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_old_gensokyo_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4549,6 +4998,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4557,6 +5007,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4588,14 +5039,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_dream_dweller_culture').GetName]"
+											text = "[GetCultureByKey('th_dream_dweller_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_dream_dweller_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4605,6 +5059,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4613,6 +5068,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4644,14 +5100,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_mountain_settlement_human_culture').GetName]"
+											text = "[GetCultureByKey('th_mountain_settlement_human_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_mountain_settlement_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4661,6 +5120,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4669,6 +5129,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4700,14 +5161,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_shrine_surrounding_human_culture').GetName]"
+											text = "[GetCultureByKey('th_shrine_surrounding_human_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_shrine_surrounding_human_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4717,6 +5181,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4725,6 +5190,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4756,14 +5222,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_moriya_people_culture').GetName]"
+											text = "[GetCultureByKey('th_moriya_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_moriya_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4773,6 +5242,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4781,6 +5251,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4812,14 +5283,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_outside_world_people_culture').GetName]"
+											text = "[GetCultureByKey('th_outside_world_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_outside_world_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4829,6 +5303,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4837,6 +5312,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4853,7 +5329,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)12')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)12')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #84）：th_little_people_culture
 							widget = {
 								size = { 100% 192 }
@@ -4874,14 +5355,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_little_people_culture').GetName]"
+											text = "[GetCultureByKey('th_little_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_little_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4891,6 +5375,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4899,6 +5384,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4930,14 +5416,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_other_world_people_culture').GetName]"
+											text = "[GetCultureByKey('th_other_world_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_other_world_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4947,6 +5436,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -4955,6 +5445,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -4986,14 +5477,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_barrier_people_culture').GetName]"
+											text = "[GetCultureByKey('th_barrier_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_barrier_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5003,6 +5497,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5011,6 +5506,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5042,14 +5538,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_moon_people_human_village_culture').GetName]"
+											text = "[GetCultureByKey('th_moon_people_human_village_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_moon_people_human_village_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5059,6 +5558,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5067,6 +5567,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5098,14 +5599,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_moon_people_eientei_culture').GetName]"
+											text = "[GetCultureByKey('th_moon_people_eientei_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_moon_people_eientei_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5115,6 +5619,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5123,6 +5628,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5154,14 +5660,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_moon_people_culture').GetName]"
+											text = "[GetCultureByKey('th_moon_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_moon_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5171,6 +5680,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5179,6 +5689,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5210,14 +5721,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_great_eagle_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_great_eagle_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_great_eagle_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5227,6 +5741,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5235,6 +5750,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5251,7 +5767,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)13')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)13')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #91）：th_primate_spirit_culture
 							widget = {
 								size = { 100% 192 }
@@ -5272,14 +5793,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_primate_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_primate_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_primate_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5289,6 +5813,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5297,6 +5822,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5328,14 +5854,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_otter_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_otter_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_otter_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5345,6 +5874,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5353,6 +5883,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5384,14 +5915,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_wolf_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_wolf_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_wolf_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5401,6 +5935,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5409,6 +5944,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5440,14 +5976,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_mizuko_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_mizuko_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_mizuko_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5457,6 +5996,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5465,6 +6005,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5496,14 +6037,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_undead_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_undead_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_undead_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5513,6 +6057,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5521,6 +6066,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5552,14 +6098,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_ship_ghost_culture').GetName]"
+											text = "[GetCultureByKey('th_ship_ghost_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_ship_ghost_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5569,6 +6118,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5577,6 +6127,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5608,14 +6159,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_earthbound_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_earthbound_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_earthbound_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5625,6 +6179,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5633,6 +6188,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5649,7 +6205,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)14')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)14')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #98）：th_earth_spirit_culture
 							widget = {
 								size = { 100% 192 }
@@ -5670,14 +6231,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_earth_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_earth_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_earth_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5687,6 +6251,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5695,6 +6260,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5726,14 +6292,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_evil_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_evil_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_evil_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5743,6 +6312,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5751,6 +6321,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5782,14 +6353,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_floating_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_floating_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_floating_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5799,6 +6373,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5807,6 +6382,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5838,14 +6414,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_poltergeist_culture').GetName]"
+											text = "[GetCultureByKey('th_poltergeist_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_poltergeist_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5855,6 +6434,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5863,6 +6443,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5894,14 +6475,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_living_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_living_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_living_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5911,6 +6495,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5919,6 +6504,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5950,14 +6536,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_vengeful_spirit_culture').GetName]"
+											text = "[GetCultureByKey('th_vengeful_spirit_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_vengeful_spirit_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -5967,6 +6556,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -5975,6 +6565,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6006,14 +6597,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_ghost_culture').GetName]"
+											text = "[GetCultureByKey('th_ghost_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_ghost_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6023,6 +6617,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6031,6 +6626,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6047,7 +6643,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)15')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)15')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #105）：th_tsurube_otoshi_culture
 							widget = {
 								size = { 100% 192 }
@@ -6068,14 +6669,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_tsurube_otoshi_culture').GetName]"
+											text = "[GetCultureByKey('th_tsurube_otoshi_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_tsurube_otoshi_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6085,6 +6689,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6093,6 +6698,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6124,14 +6730,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_calamity_people_culture').GetName]"
+											text = "[GetCultureByKey('th_calamity_people_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_calamity_people_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6141,6 +6750,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_1_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6149,6 +6759,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6180,14 +6791,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_hashihime_culture').GetName]"
+											text = "[GetCultureByKey('th_hashihime_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_hashihime_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6197,6 +6811,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_2_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6205,6 +6820,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6236,14 +6852,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_doll_culture').GetName]"
+											text = "[GetCultureByKey('th_doll_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_doll_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6253,6 +6872,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_3_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6261,6 +6881,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6292,14 +6913,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_shinigami_culture').GetName]"
+											text = "[GetCultureByKey('th_shinigami_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_shinigami_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6309,6 +6933,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_4_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6317,6 +6942,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6348,14 +6974,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_amanjaku_culture').GetName]"
+											text = "[GetCultureByKey('th_amanjaku_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_amanjaku_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6365,6 +6994,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_5_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6373,6 +7003,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6404,14 +7035,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_ancient_god_person_culture').GetName]"
+											text = "[GetCultureByKey('th_ancient_god_person_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_ancient_god_person_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6421,6 +7055,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_6_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6429,6 +7064,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6445,7 +7081,12 @@
 						vbox = {
 
 							layoutpolicy_horizontal = expanding
-							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)16')]"
+							visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_page').GetValue, '(CFixedPoint)16')]"
+							background = {
+								texture = "gfx/interface/illustrations/situation/chronicle/chronicle_bg.dds"
+								spriteType = stretched
+								size = { 100% 100% }
+							}
 							# 行 0（主序列 #112）：th_sky_fire_person_culture
 							widget = {
 								size = { 100% 192 }
@@ -6466,14 +7107,17 @@
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
-											text = "[GetCultureByKey('th_sky_fire_person_culture').GetName]"
+											text = "[GetCultureByKey('th_sky_fire_person_culture').GetNameWithNoTooltip]"
+											tooltip = "[GetCultureByKey('th_sky_fire_person_culture').GetName]"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										widget = {
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
@@ -6483,6 +7127,7 @@
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)1')]"
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Medium
 											text = "th_chronicle_unknown"
 											visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.GetVariable('th_cc_row_0_adopted').GetValue, '(CFixedPoint)0')]"
@@ -6491,6 +7136,7 @@
 											size = { -1 4 }
 										}
 										text_single = {
+											default_format = "#black"
 											using = Font_Size_Small
 											layoutpolicy_horizontal = expanding
 											align = left|nobaseline
