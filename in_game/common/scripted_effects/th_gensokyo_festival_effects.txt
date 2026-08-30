@@ -1,0 +1,92 @@
+﻿### ============================================================
+### 幻想乡大祭典 — scripted effects（初始化 / 清理 / 分档奖励 / 收尾）
+### every_market_present_in_country 出处：generic_actions/black_death.txt:535
+### clear_global_variable_list 出处：red_turban_rebellions.txt:44
+### ============================================================
+
+### 参与者初始化：本国所有市场挂祭典临时需求（5 倍基础酒需求，调参点）
+th_gf_setup_participant_effect = {
+	every_market_present_in_country = {
+		limit = {
+			NOT = { has_temporary_demand = demand:th_gensokyo_grand_festival_wine }
+		}
+		add_temporary_demand = {
+			type = demand:th_gensokyo_grand_festival_wine
+			scale_with_pop = 0.002
+			years = -1
+		}
+	}
+}
+
+### 幂等清理：摘临时需求、清参与变量（if/limit 守卫防报错）
+th_gf_cleanup_effect = {
+	every_market_present_in_country = {
+		limit = { has_temporary_demand = demand:th_gensokyo_grand_festival_wine }
+		remove_temporary_demand = demand:th_gensokyo_grand_festival_wine
+	}
+	if = {
+		limit = { has_variable = th_gf_score }
+		remove_variable = th_gf_score
+	}
+	if = {
+		limit = { has_variable = th_gf_ev1_fired }
+		remove_variable = th_gf_ev1_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev2_fired }
+		remove_variable = th_gf_ev2_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev3_fired }
+		remove_variable = th_gf_ev3_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev4_fired }
+		remove_variable = th_gf_ev4_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev5_fired }
+		remove_variable = th_gf_ev5_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev6_fired }
+		remove_variable = th_gf_ev6_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev7_fired }
+		remove_variable = th_gf_ev7_fired
+	}
+	if = {
+		limit = { has_variable = th_gf_ev8_fired }
+		remove_variable = th_gf_ev8_fired
+	}
+}
+
+### 分档奖励（声望/稳定/亲善价值观）
+### 数值出处：default_values.txt:26-35（prestige_*）与 :10-21（stability_*）
+### 价值观移动复用模组 th_gensokyo_feast.txt:100 同构写法
+th_gf_reward_effect = {
+	if = {
+		limit = { var:th_gf_score >= 70 }
+		add_prestige = prestige_severe_bonus
+		add_stability = stability_mild_bonus
+		change_societal_value = {
+			type = th_gensokyo_amity_vs_belligerence
+			value = th_feast_notorious_reduction_value
+		}
+	}
+	else_if = {
+		limit = { var:th_gf_score >= 40 }
+		add_prestige = prestige_mild_bonus
+		add_stability = stability_mild_bonus
+	}
+	else_if = {
+		limit = { var:th_gf_score >= 20 }
+		add_stability = stability_weak_bonus
+	}
+}
+
+### 收尾：清空参与者全局列表（列表为本模组私有，整体清空安全）
+th_gf_finalize_effect = {
+	clear_global_variable_list = th_gf_participants
+}

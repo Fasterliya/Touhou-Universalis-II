@@ -1,0 +1,92 @@
+﻿### ============================================================
+### 幻想乡大祭典 — 事件
+### .99 调试启动 / .98 调试提前结束 / .1 事件样板（鬼王醉酒闹市）
+### 事件结构出处：events/situations/black_death.txt（category = situation_event 同构）
+### 扣金币写法出处：earthquake_events.txt:101 add_gold = { value = -25 }
+### ============================================================
+
+namespace = th_gensokyo_grand_festival
+
+### ------------------------------------------------------------
+### 调试：启动大祭典（console: event th_gensokyo_grand_festival.99）
+### 设置全局变量 th_gf_debug_start → 下月局势 can_start 通过
+### ------------------------------------------------------------
+th_gensokyo_grand_festival.99 = {
+	type = country_event
+	title = th_gensokyo_grand_festival.99.t
+	desc = th_gensokyo_grand_festival.99.d
+	hidden = yes
+	outcome = neutral
+
+	option = {
+		name = th_gensokyo_grand_festival.99.a
+		set_global_variable = {
+			name = th_gf_debug_start
+			value = yes
+		}
+	}
+}
+
+### ------------------------------------------------------------
+### 调试：提前结束大祭典（console: event th_gensokyo_grand_festival.98）
+### end_situation 出处：nanbokuchou.txt:646 / flavor_ENG.txt:291
+### ------------------------------------------------------------
+th_gensokyo_grand_festival.98 = {
+	type = country_event
+	title = th_gensokyo_grand_festival.98.t
+	desc = th_gensokyo_grand_festival.98.d
+	hidden = yes
+	outcome = neutral
+
+	option = {
+		name = th_gensokyo_grand_festival.98.a
+		end_situation = situation:th_gensokyo_grand_festival
+	}
+}
+
+### ------------------------------------------------------------
+### 事件 1：鬼王醉酒闹市（事件样板，其余 7 个事件同构待填充）
+### 触发：on_monthly random_list 分支 20 权重 + 冷却变量门控
+### 机制全放 hidden_effect，玩家只见 custom_tooltip 预览（acgv 规范）
+### ------------------------------------------------------------
+th_gensokyo_grand_festival.1 = {
+	type = country_event
+	category = situation_event
+
+	title = th_gensokyo_grand_festival.1.t
+	desc = th_gensokyo_grand_festival.1.d
+	outcome = neutral
+
+	trigger = {
+		NOT = { has_variable = th_gf_ev1_fired }
+	}
+
+	immediate = {
+		set_variable = {
+			name = th_gf_ev1_fired
+			months = 6
+		}
+	}
+
+	option = { ### 花钱安抚：破财消灾，保住分数
+		name = th_gensokyo_grand_festival.1.a
+		hidden_effect = {
+			add_gold = {
+				value = -100
+			}
+		}
+		custom_tooltip = th_gensokyo_grand_festival.1.a.tt
+	}
+
+	option = { ### 放任不管：分数 -5、稳定小降
+		name = th_gensokyo_grand_festival.1.b
+		hidden_effect = {
+			change_variable = {
+				name = th_gf_score
+				add = -5
+			}
+			add_stability = stability_weak_penalty
+		}
+		custom_tooltip = th_gensokyo_grand_festival.1.b.tt
+	}
+}

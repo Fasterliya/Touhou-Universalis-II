@@ -1,0 +1,42 @@
+﻿l_simp_chinese:
+
+### 幻想乡大祭典 — 本地化（调试启动版 2026）
+
+### === 局势 ===
+ th_gensokyo_grand_festival: "幻想乡大祭典"
+ th_gensokyo_grand_festival_desc: "博丽神社中心市场张灯结彩，人类与妖怪齐聚参道。祭典期间，葡萄酒的需求急剧攀升——宴席、摊位与酒馆都在争夺每一桶佳酿。"
+ hint_th_gensokyo_grand_festival: "幻想乡大祭典"
+ hint_th_gensokyo_grand_festival_hint_text: "祭典期间，本国的葡萄酒需求将大幅上升，酒价随之走高。\n\n#T 推荐行动：#!\n@arrow_bonus_tier_2! 在局势面板出资购酒，为祭典提供佳酿，积累祭典分数。\n@arrow_bonus_tier_2! 趁酒价高涨，向主办市场捐酒，赚取金币与声望。\n@arrow_bonus_tier_1! 关注酒价，价格过高时留意「酒价暴涨」风波。"
+
+### === 需求类型 ===
+ th_gensokyo_grand_festival_wine: "祭典宴席需求"
+ th_gensokyo_grand_festival_wine_desc: "祭典期间，市场每月为满足宴席与摊位而持续购入葡萄酒。"
+ th_gensokyo_grand_festival_wine_tt: "祭典宴席需求：市场每月按人口规模购入葡萄酒，直至祭典结束。"
+
+### === 行动组（局势面板卡片标题） ===
+ th_gf_buy_wine_actions: "祭典购酒"
+ th_gf_donate_wine_actions: "祭典捐酒"
+
+### === 行动 ===
+ th_gf_buy_wine: "为祭典购酒"
+ th_gf_buy_wine_desc: "花费金币从本国市场购入葡萄酒供祭典使用，葡萄酒将离开市场、被祭典消耗。"
+ th_gf_buy_wine_tt: "#T 为祭典购酒#!\n花费 #G 150#! 金币，购入并消耗 #G 20#! 单位葡萄酒（市场酒库存下降、酒价上涨）。\n$BULLET$ 祭典分数 #G +8#!"
+ th_gf_donate_wine: "向主办市场捐酒"
+ th_gf_donate_wine_desc: "将葡萄酒卖进博丽神社中心市场，为祭典宴席供酒，并按市价获得金币。"
+ th_gf_donate_wine_tt: "#T 向主办市场捐酒#!\n$BULLET$ 将 #G 20#! 单位葡萄酒按市价卖入主办市场（酒价越高越赚）\n$BULLET$ 祭典分数 #G +10#!"
+
+### === 调试事件 ===
+ th_gensokyo_grand_festival.99.t: "调试：启动大祭典"
+ th_gensokyo_grand_festival.99.d: "设置调试全局变量，下月启动幻想乡大祭典局势。"
+ th_gensokyo_grand_festival.99.a: "启动"
+ th_gensokyo_grand_festival.98.t: "调试：提前结束大祭典"
+ th_gensokyo_grand_festival.98.d: "立即结束幻想乡大祭典局势。"
+ th_gensokyo_grand_festival.98.a: "结束"
+
+### === 事件 1：鬼王醉酒闹市 ===
+ th_gensokyo_grand_festival.1.t: "鬼王醉酒闹市"
+ th_gensokyo_grand_festival.1.d: "祭典的酒香飘进了旧都。星熊勇仪带着一帮鬼族挤进市场，扬言要把「宴会的酒全喝光」。摊位老板们敢怒不敢言，只能看着酒桶被一个个搬走。"
+ th_gensokyo_grand_festival.1.a: "奉上美酒，请鬼王尽兴（#G -100#! 金币）"
+ th_gensokyo_grand_festival.1.a.tt: "花费 #G 100#! 金币购买酒水安抚鬼族。\n$BULLET$ 祭典分数不变，鬼族满意离去。"
+ th_gensokyo_grand_festival.1.b: "驱赶鬼族，维护秩序"
+ th_gensokyo_grand_festival.1.b.tt: "$BULLET$ 祭典分数 #R -5#!\n$BULLET$ 稳定度 #R -2.5#!（秩序混乱）"

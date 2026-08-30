@@ -1,0 +1,16 @@
+﻿### ============================================================
+### 幻想乡大祭典 — 临时需求类型（局势耗酒核心）
+### 出处：原版 goods_demand/from_events.txt:440（procure_remedies 同构）
+### 语义：局势期间挂到市场作用域 add_temporary_demand，
+### 市场每月持续购酒满足该需求 = 引擎级"祭典喝葡萄酒"。
+### 数值：wine = 1.0 为配方系数，与 add_temporary_demand 的
+### scale_with_pop 相乘得每人口酒需求（见 situations 文件注释）。
+### ============================================================
+
+th_gensokyo_grand_festival_wine = {
+	wine = 1.0
+	beer = 0.25
+	fruit = 0.25
+	hidden = no
+	category = special_demands
+}

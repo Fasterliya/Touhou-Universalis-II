@@ -1,0 +1,42 @@
+﻿l_english:
+
+### Touhou Universalis II — Gensokyo Grand Festival (debug-start build 2026)
+
+### === Situation ===
+ th_gensokyo_grand_festival: "Gensokyo Grand Festival"
+ th_gensokyo_grand_festival_desc: "The central market of the Hakurei Shrine is decked out in lanterns as humans and youkai alike flood the approach. During the festival, demand for wine surges — every banquet, stall and tavern is fighting over each cask of vintage."
+ hint_th_gensokyo_grand_festival: "Gensokyo Grand Festival"
+ hint_th_gensokyo_grand_festival_hint_text: "While the festival lasts, your country's demand for wine will rise sharply, pushing up its price.\n\n#T Recommended actions:#!\n@arrow_bonus_tier_2! Use the situation panel to buy wine for the festival and accumulate festival score.\n@arrow_bonus_tier_2! When prices run high, sell wine to the host market for gold and prestige.\n@arrow_bonus_tier_1! Watch the wine price — when it gets too high, watch out for the 'Price Surge' incident."
+
+### === Demand type ===
+ th_gensokyo_grand_festival_wine: "Festival Banquet Demand"
+ th_gensokyo_grand_festival_wine_desc: "During the festival, the market continuously buys wine each month to supply banquets and stalls."
+ th_gensokyo_grand_festival_wine_tt: "Festival Banquet Demand: the market buys wine scaled by population every month until the festival ends."
+
+### === Action groups (situation panel card titles) ===
+ th_gf_buy_wine_actions: "Buy Wine"
+ th_gf_donate_wine_actions: "Donate Wine"
+
+### === Actions ===
+ th_gf_buy_wine: "Buy Wine for the Festival"
+ th_gf_buy_wine_desc: "Spend gold to buy wine from your market for the festival. The wine leaves the market and is consumed."
+ th_gf_buy_wine_tt: "#T Buy Wine for the Festival#!\nSpend #G 150#! gold to buy and consume #G 20#! units of wine (market stockpile falls, price rises).\n$BULLET$ Festival score #G +8#!"
+ th_gf_donate_wine: "Donate Wine to the Host Market"
+ th_gf_donate_wine_desc: "Sell wine into the central market of the Hakurei Shrine to supply the festival banquets, gaining gold at market price."
+ th_gf_donate_wine_tt: "#T Donate Wine to the Host Market#!\n$BULLET$ Sell #G 20#! units of wine into the host market at market price (the higher the price, the more you earn)\n$BULLET$ Festival score #G +10#!"
+
+### === Debug events ===
+ th_gensokyo_grand_festival.99.t: "Debug: Start the Grand Festival"
+ th_gensokyo_grand_festival.99.d: "Sets the debug global variable; the Gensokyo Grand Festival situation will start next month."
+ th_gensokyo_grand_festival.99.a: "Start"
+ th_gensokyo_grand_festival.98.t: "Debug: End the Grand Festival"
+ th_gensokyo_grand_festival.98.d: "Immediately ends the Gensokyo Grand Festival situation."
+ th_gensokyo_grand_festival.98.a: "End"
+
+### === Event 1: Oni Drinking Rampage ===
+ th_gensokyo_grand_festival.1.t: "An Oni Drinking Rampage"
+ th_gensokyo_grand_festival.1.d: "The scent of festival wine drifts into Old Hell. Suika's kin have squeezed into the market, vowing to 'drink every last drop of the banquet'. Stallkeepers can only watch as the casks are hauled away."
+ th_gensokyo_grand_festival.1.a: "Offer fine wine to the oni (#G -100#! gold)"
+ th_gensokyo_grand_festival.1.a.tt: "Spend #G 100#! gold on wine to appease the oni.\n$BULLET$ Festival score unchanged; the oni leave satisfied."
+ th_gensokyo_grand_festival.1.b: "Drive the oni away and keep order"
+ th_gensokyo_grand_festival.1.b.tt: "$BULLET$ Festival score #R -5#!\n$BULLET$ Stability #R -2.5#! (public disorder)"

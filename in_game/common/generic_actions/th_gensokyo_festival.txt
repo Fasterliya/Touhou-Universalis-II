@@ -1,0 +1,164 @@
+﻿### ============================================================
+### 幻想乡大祭典 — 行动（buy / sell 葡萄酒）
+### 面板渲染：type = situation 的行动由局势面板自动显示
+### （出处：gui/panels/situation/common.gui:366 situations_actions 模板）
+### 选目标块出处：generic_actions/black_death.txt（choose_situation 同构）
+### ============================================================
+
+### ------------------------------------------------------------
+### 为祭典购酒（buy）— 花 150 金从首都市场购入 20 单位葡萄酒
+### 引擎语义（已验证）：buy_goods_from_market = 付钱、酒从市场消失（被祭典消耗）
+### 出处：black_death.txt:539 buy_goods_from_market 同构
+### 玩法：与自家 pop 竞价买酒；酒被买走 → 市场供给↓ → 酒价↑
+### ------------------------------------------------------------
+th_gf_buy_wine = {
+	type = situation
+
+	### 行动组：局势面板按 exclusive_group 分组渲染行动按钮
+	### （SituationView.GetActionGroups / cards.gui situation_card_actions）
+	### 出处：generic_actions/great_pestilence.txt:7 同构
+	exclusive_group = th_gf_buy_wine_actions
+
+	ai_tick = monthly
+	ai_tick_frequency = 3
+	automation_tick = monthly
+	automation_tick_frequency = 7
+
+	potential = {
+		scope:actor ?= {
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+		}
+	}
+
+	### 市场库存不足 20 酒时按钮置灰
+	### stockpile_in_market 函数形式出处：black_death.txt
+	### "stockpile_in_market(goods:medicaments)" > market_goods_mild_gain
+	allow = {
+		scope:actor ?= {
+			capital.market ?= {
+				"stockpile_in_market(goods:wine)" >= 20
+			}
+		}
+	}
+
+	price = price:th_gf_buy_wine_price
+
+	select_trigger = {
+		looking_for_a = situation
+		target_flag = recipient
+		name = "choose_situation"
+		column = {
+			data = name
+		}
+		visible = {
+			situation:th_gensokyo_grand_festival = this
+			situation_is_active = yes
+		}
+	}
+
+	### 机制包进 custom_tooltip：玩家只见预览文本，不暴露内部变量（acgv 规范）
+	effect = {
+		scope:actor ?= {
+			custom_tooltip = {
+				text = th_gf_buy_wine_tt
+				change_variable = {
+					name = th_gf_score
+					add = 8
+				}
+				buy_goods_from_market = {
+					market = capital.market
+					goods = goods:wine
+					amount = 20
+				}
+			}
+		}
+	}
+
+	cooldown = {
+		type = th_gf_buy_wine
+		months = 2
+	}
+
+	ai_will_do = {
+		add = {
+			desc = BASE_VALUE
+			value = 5
+		}
+	}
+}
+
+### ------------------------------------------------------------
+### 向主办市场捐酒（sell）— 20 单位葡萄酒卖进博丽神社中心市场（T04 首都市场）
+### 引擎语义（已验证）：sell_goods_to_market = 酒进市场供给、国家按市价得金
+### 出处：effect_localization/market_effects.txt:85
+### 玩法：祭典需求把酒价推高时捐酒最赚（投机）；酒喂给主办市场
+### 3 倍规模临时需求，维持酒价不崩。刷钱风险：20 酒 × 2~6 金/次、
+### 2 个月冷却；若实测过强，对策 = 加 price（象征性运费）或冷却提至 6 个月。
+### ------------------------------------------------------------
+th_gf_donate_wine = {
+	type = situation
+
+	### 行动组：购酒/捐酒分属两组，避免 exclusive_group 互斥语义互相锁死
+	exclusive_group = th_gf_donate_wine_actions
+
+	ai_tick = monthly
+	ai_tick_frequency = 3
+	automation_tick = monthly
+	automation_tick_frequency = 7
+
+	potential = {
+		scope:actor ?= {
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+		}
+	}
+
+	allow = {
+		always = yes
+	}
+
+	select_trigger = {
+		looking_for_a = situation
+		target_flag = recipient
+		name = "choose_situation"
+		column = {
+			data = name
+		}
+		visible = {
+			situation:th_gensokyo_grand_festival = this
+			situation_is_active = yes
+		}
+	}
+
+	### 机制包进 custom_tooltip：玩家只见预览文本（acgv 规范）
+	effect = {
+		scope:actor ?= {
+			custom_tooltip = {
+				text = th_gf_donate_wine_tt
+				change_variable = {
+					name = th_gf_score
+					add = 10
+				}
+			}
+		}
+		### T04 不存在则捐酒失败（?= 守卫，不出错）
+		c:T04 ?= {
+			sell_goods_to_market = {
+				market = capital.market
+				goods = goods:wine
+				amount = 20
+			}
+		}
+	}
+
+	cooldown = {
+		type = th_gf_donate_wine
+		months = 2
+	}
+
+	ai_will_do = {
+		add = {
+			desc = BASE_VALUE
+			value = 5
+		}
+	}
+}

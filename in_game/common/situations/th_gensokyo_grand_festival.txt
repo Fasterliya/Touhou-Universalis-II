@@ -1,0 +1,129 @@
+﻿### ============================================================
+### 幻想乡大祭典 — 局势定义（调试启动版）
+### 启动：console 运行 event th_gensokyo_grand_festival.99
+###       （设置全局变量 th_gf_debug_start）→ 下月局势自动 start
+### 提前结束：console 运行 event th_gensokyo_grand_festival.98
+### 局势不对玩家自动启用：can_start 仅由调试 flag 门控。
+### 骨架出处：sengoku.txt（IO 成员可见/全局列表登记/on_monthly 事件）
+###           black_death.txt（on_ended 清理范式）
+### ============================================================
+
+th_gensokyo_grand_festival = {
+	monthly_spawn_chance = 1
+	hint_tag = hint_th_gensokyo_grand_festival
+
+	### 调试 flag 门控：未设置 flag 局势永不开始
+	can_start = {
+		has_global_variable = th_gf_debug_start
+		exists = international_organization:th_gensokyo_io
+	}
+
+	### 14 个月后自动结束（on_monthly 递增局势变量 th_gf_months）
+	can_end = {
+		has_variable = th_gf_months
+		var:th_gf_months >= 14
+	}
+
+	### 只有幻想乡 IO 成员能看到并参与（出处：sengoku visible 同构）
+	visible = {
+		is_member_of_international_organization = international_organization:th_gensokyo_io
+	}
+
+	on_start = {
+		set_variable = {
+			name = th_gf_months
+			value = 0
+		}
+		### 全体 IO 成员登记为参与者（全局列表，供 on_monthly/on_ended 遍历）
+		international_organization:th_gensokyo_io = {
+			every_international_organization_member = {
+				add_to_global_variable_list = {
+					name = th_gf_participants
+					target = this
+				}
+				th_gf_setup_participant_effect = yes
+			}
+		}
+		### 主办市场（博丽神社 T04 首都市场）挂 3 倍规模需求；
+		### T04 不存在则 ?= 守卫跳过（主办市场缺失不阻塞局势）
+		c:T04 ?= {
+			capital.market ?= {
+				add_temporary_demand = {
+					type = demand:th_gensokyo_grand_festival_wine
+					scale_with_pop = 0.006
+					years = -1
+				}
+			}
+		}
+	}
+
+	on_monthly = {
+		change_variable = {
+			name = th_gf_months
+			add = 1
+		}
+		### 每位参与者每月掷随机事件（出处：sengoku on_monthly random_list 同构）
+		### 事件冷却：事件 immediate 内 set_variable th_gf_evN_fired (months=6)
+		every_in_global_list = {
+			variable = th_gf_participants
+			random_list = {
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev1_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.1
+				}
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev2_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.2
+				}
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev3_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.3
+				}
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev4_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.4
+				}
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev5_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.5
+				}
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev6_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.6
+				}
+				20 = {
+					trigger = { NOT = { has_variable = th_gf_ev7_fired } }
+					trigger_event_non_silently = th_gensokyo_grand_festival.7
+				}
+				### 酒价暴涨事件：首都市场酒价 > 4.5（基准价 2 的 2.25 倍）才触发
+				### 出处：situation_triggers.txt:1011 price_in_market 同构
+				20 = {
+					trigger = {
+						NOT = { has_variable = th_gf_ev8_fired }
+						goods:wine = {
+							price_in_market = {
+								market = capital.market
+								value > 4.5
+							}
+						}
+					}
+					trigger_event_non_silently = th_gensokyo_grand_festival.8
+				}
+				500 = {
+				}
+			}
+		}
+	}
+
+	on_ended = {
+		### 移除调试 flag（下次需重新跑 .99）
+		remove_global_variable = th_gf_debug_start
+		### 全员清理 + 按分数分档发奖（effect 内自带 if/limit 守卫）
+		every_in_global_list = {
+			variable = th_gf_participants
+			th_gf_cleanup_effect = yes
+			th_gf_reward_effect = yes
+		}
+		th_gf_finalize_effect = yes
+	}
+}
