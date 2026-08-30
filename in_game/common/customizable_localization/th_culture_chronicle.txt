@@ -1,4 +1,4 @@
-﻿th_cc_desc = {
+th_cc_desc = {
 	type = culture
 	text = {
 		localization_key = th_cc_desc_th_goblin_culture
@@ -684,3 +684,4 @@
 	}
 }
 
+
