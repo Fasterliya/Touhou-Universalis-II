@@ -1,4 +1,4 @@
-﻿# gensokyo = { topography = flatland vegetation = woods climate = cold_arid religion = catholic culture = shua_culture raw_material = clay }
+# gensokyo = { topography = flatland vegetation = woods climate = cold_arid religion = catholic culture = shua_culture raw_material = clay }
 # #雾之湖
 #雾之湖
 th_misty_lake = { topography = inland_sea climate = oceanic }
@@ -2251,7 +2251,7 @@ th_eternal_slumber_lily_hill = { topography = flatland vegetation = woods climat
 #梦幻之地
 th_dreamland = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = wheat }
 th_dream_world_stardust_plain = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = livestock }
-th_dream_world_gengetsu_lake = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = wheat }
+th_dream_world_gengetsu_lake = { topography = inland_sea climate = oceanic }
 th_dreamland_border = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = shua_culture raw_material = rice }
 th_dreamland_limbo_spiral = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = wheat }
 th_slumber_coral_reef = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = shua_culture raw_material = wheat }

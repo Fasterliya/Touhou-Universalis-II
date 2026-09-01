@@ -58333,7 +58333,7 @@ countries = {
             th_flower_field_echo_wall th_flower_field_fairy_stands th_flower_field_backstage th_twilight_mist_flower_field th_sunset_harbor_observatory th_sunset_plain_main th_primordial_flower_sea th_stardust_flower_cape
             th_flower_field_open_air_stage_main th_garden_of_the_sun_corridor th_garden_of_the_sun_maze th_garden_of_the_sun_sundial th_garden_of_the_sun_cottage th_yuuka_mansion_balcony th_blood_lake_reflection_hall
             th_mugenkan_sleeping_terror_chamber th_yuuka_bedchamber th_mugenkan_main_hall th_mugenkan_wonderland_garden th_mugenkan_fantasy_wasteland th_suzusuzu_stage_main th_lily_sea_border_hedge th_nightshade_sea th_slumber_coral_reef
-            th_dreamland_limbo_spiral th_dreamland_border th_dream_world_gengetsu_lake th_dream_world_stardust_plain th_dreamland
+            th_dreamland_limbo_spiral th_dreamland_border th_dream_world_stardust_plain th_dreamland
          }
 
          # include = "expl_mediterranean"
