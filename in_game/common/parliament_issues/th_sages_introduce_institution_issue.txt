@@ -1,4 +1,4 @@
-﻿### 贤者议会 — 引入思潮议题
+### 贤者议会 — 引入思潮议题
 ### 链路: sgui 枚举思潮 → 存 IO 变量 th_sages_pending_institution → propose_parliament_issue 引发辩论
 ### 通过 (2/3 票): 所有贤者首都灌满思潮进度 + 思潮写入已引入列表（从此枚举剔除）
 ### 失败: 无效果（资源已在发起时扣除，不退还）
@@ -16,6 +16,16 @@ th_sages_introduce_institution_issue = {
 		is_member_of_international_organization = scope:recipient
 	}
 	chance = 100
+
+	### AI 投票倾向（2026-09-01）：引入思潮惠及全体贤者首都 → AI 成员一致赞成，
+	### 保证 2/3 门槛可靠通过（root = 投票国，scope:recipient = 贤者议会；
+	### 格式参照 th_gensokyo_trial_issue.txt:102 先例）
+	wants_this_parliament_issue_bias = {
+		add = {
+			desc = TH_SAGES_INTRODUCE_INSTITUTION_VOTE_BIAS
+			value = 1000
+		}
+	}
 
 	on_debate_passed = {
 		### 读发起时确定的思潮 → 所有贤者首都灌满进度（=100，思潮在首都出现）

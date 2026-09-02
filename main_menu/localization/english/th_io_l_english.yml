@@ -110,3 +110,7 @@ l_english:
  th_sages_reform_policy_issue: "Reform of the Sages' Council"
  th_sages_reform_policy_issue_desc: "Modernize the Council's administration: +10% tax income, +10% manpower."
  th_sages_propose_policy_no_issues: "No policies are available to propose."
+
+ ### Punishment war (wargoals/th_gensokyo_crusade_war_goal peace-screen hints)
+ TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT: "Land cannot be taken in this punishment war; only releasing nations may be demanded."
+ TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT: "Countries cannot be subjugated in this punishment war; only releasing nations may be demanded."

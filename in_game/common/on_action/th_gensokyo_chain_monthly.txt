@@ -15,7 +15,8 @@ th_gensokyo_chain_monthly_pulse = {
     effect = {
         ### 变量兜底（2026-08-07 修复：防 on_game_start init 空转导致成员缺变量
         ### → 月度衰减 not being set / 宴会 effect empty；has_variable 存在性检查安全，首月自动补设）
-        ### 价值观为社会价值观（引擎常驻，无需变量兜底；开局由 init 设为亲善 -100）
+        ### 价值观为社会价值观（引擎常驻，无需变量兜底；开局由 init 设为中立 0，
+        ### 2026-09 用户拍板：缘与乱初始正中，不偏向任意一方）
         if = {
             limit = {
                 NOT = {

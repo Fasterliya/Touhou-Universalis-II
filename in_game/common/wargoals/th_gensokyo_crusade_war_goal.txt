@@ -1,0 +1,52 @@
+### ============================================================
+### 幻想乡惩戒战争 — 战争目标（审判庭包围网专用，仅 th_gensokyo_crusade_cb 使用）
+### 2026-09（用户需求）：惩戒战争不能割地、不能奴役——和平诉求只能释放国家
+### 引擎机制实证（原版 common/wargoals/00_default.txt）：
+###   - allowed_locations = { trigger }：通用割地诉求的引擎级开关，
+###     always = no 即完全禁割地（先例 superiority_coalition_scaliger_war:276-305，
+###     配 custom_tooltip 向玩家展示原因）
+###   - allowed_subjugation = { trigger }：奴役诉求开关，always = no 即禁奴役
+###     （先例 take_capital_enforce_hegemon_demands:197-208）
+###   - 释放国家为通用引擎诉求（原版 cb_cut_down_in_size 用基础 superiority
+###     无 release_cost 仍可释放），不受上述限制影响
+### 攻守双方都禁：审判庭（攻方）胜利走 triumph 条约、目标国（守方）反杀走
+### counter 条约，均以效果结算（cost 100），不依赖本战目标，不受影响；
+### 加入方单独议和同样受战目标级限制
+### ============================================================
+
+th_gensokyo_crusade_war_goal = {
+	type = superiority
+
+	attacker = {
+		### 不可割地（通用割地诉求禁用；脚本条约 triumph/counter 仍可收尾）
+		allowed_locations = {
+			custom_tooltip = {
+				text = TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT
+				always = no
+			}
+		}
+		### 不可奴役（惩戒对象战后是否沦为监管国由审判议会决定，不由战争诉求）
+		allowed_subjugation = {
+			custom_tooltip = {
+				text = TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT
+				always = no
+			}
+		}
+	}
+	defender = {
+		### 反杀方同样不可割地/奴役（反杀成功 = 免制裁 20 年 + 结界降级，非领土收益）
+		allowed_locations = {
+			custom_tooltip = {
+				text = TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT
+				always = no
+			}
+		}
+		allowed_subjugation = {
+			custom_tooltip = {
+				text = TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT
+				always = no
+			}
+		}
+	}
+	ticking_war_score = 0.5
+}

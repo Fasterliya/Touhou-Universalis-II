@@ -1,6 +1,10 @@
 ﻿### ============================================================
 ### 幻想乡惩戒战争 CB（审判庭包围网使用，仅脚本授予）
-### war_goal_type = superiority（教训性质，胜负定战争分数）
+### war_goal_type = th_gensokyo_crusade_war_goal（教训性质，胜负定战争分数）
+### 2026-09（用户需求）：惩戒战争不能割地、不能奴役——和平诉求只能释放国家。
+### 限制在战目标层实现（common/wargoals/th_gensokyo_crusade_war_goal.txt 的
+### allowed_locations / allowed_subjugation = always no），对玩家与 AI、
+### 双方与加入方单独议和均生效；战争仍由脚本条约（triumph/counter）收尾
 ### 2026-08-23（用户修正）：AI 宣战判定 = 实力对比——
 ### 审判庭成员用本 CB 对目标宣战（IO 面板按钮 / AI 自动），
 ### relative_strength 0.5 = 势均力敌；强于目标才倾向宣战
@@ -16,7 +20,7 @@ th_gensokyo_crusade_cb = {
         always = no
     }
 
-    war_goal_type = superiority
+    war_goal_type = th_gensokyo_crusade_war_goal
 
     ai_cede_location_desire = {
         add = {

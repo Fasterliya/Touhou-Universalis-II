@@ -180,6 +180,11 @@ l_english:
  th_sages_introduce_institution_desc: "Petition the three sages to wield the power of the Great Barrier to introduce an advanced idea or technology that already exists among Gensokyo's nations but has not yet been embraced by this country."
  th_sages_introduce_institution_notification: "Introduce Institution"
 
+### AI weight reasons (2026-09-01: AI weights enabled)
+ TH_SAGES_INTRODUCE_INSTITUTION_AI: "The Sages' Council deems introducing institutions beneficial to Gensokyo"
+ TH_SAGES_INTRODUCE_INSTITUTION_VOTE_BIAS: "The institution benefits every sage's capital"
+ TH_SAGES_PROPOSE_POLICY_AI_RICH: "The treasury is well-funded and can afford a policy debate"
+
  th_sages_propose_policy: "Propose Policy"
  th_sages_propose_policy_desc: "Propose a policy for the Sages' Council to debate. If at least two sages support it, the policy takes effect for the whole council. Costs 300 gold to convene."
 

@@ -1,3 +1,15 @@
+### ============================================================
+### 幻想乡缘起（文化图鉴）局势
+### 2026-09（用户修复）：多人游戏开局禁用 is_human / is_ai 检测——
+### 开局初始日期评估时玩家尚未分配到国家，局势 visible/on_start 里
+### 检测玩家会导致多人游戏卡死在初始时间无法推进（EU5 wiki:
+### Situation modding / Trigger is_ai；原版在局势代码中对 is_human
+### 一律加 is_multiplayer_session = no 防护，且原版局势 visible
+### 从不使用 is_human/is_ai）。
+### 图鉴面板只读取玩家本国变量（GUI GetPlayer.MakeScope），
+### 局势对 AI 可见无副作用（无投票/决议/参与机制，can_end = always no）
+### ============================================================
+
 th_gensokyo_culture_chronicle = {
 	monthly_spawn_chance = 1
 	hint_tag = hint_th_gensokyo_culture_chronicle
@@ -10,13 +22,17 @@ th_gensokyo_culture_chronicle = {
 		always = no
 	}
 
+	### MP 安全：visible 禁止 is_human/is_ai（开局评估时玩家归属未定会卡死）。
+	### always = yes —— 对 AI 可见无副作用；面板数据按玩家本国变量自取
 	visible = {
-		is_human = yes
+		always = yes
 	}
 
 	on_start = {
+		### 不再用 is_human 过滤：开局瞬间玩家归属未定，过滤会漏初始化
+		### （且 MP 开局评估 is_human 会卡死）。变量对 AI 国家无害
+		### （AI 不打开图鉴面板），面板另有"编纂"刷新按钮兜底
 		every_country = {
-			limit = { is_human = yes }
 			set_variable = { name = th_cc_page value = 0 }
 			set_variable = { name = th_cc_page_start value = 0 }
 			set_variable = { name = th_cc_page_end value = 7 }

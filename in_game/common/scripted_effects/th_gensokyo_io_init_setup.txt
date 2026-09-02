@@ -23,10 +23,11 @@ th_gensokyo_io_init_setup_scr_effect = {
         }
 
         ### 2026-08-23 矛盾消除：开局价值观统一由 chain_init_effect 负责
-        ### （th_gensokyo_notorious_effects.txt:19-22，set_societal_value = 100，
-        ### 用户 2026-08-21 拍板「开局满好战，立即可被惩戒」）——
-        ### 本处原 set_societal_value = -100 与 chain_init 的 100 并存，
-        ### on_game_start 内两 effect 执行顺序不确定 → 最终值不可靠
-        ### （交接文档 P0-3 矛盾项；模板开局 0 亦被 on_game_start 覆盖）
+        ### （th_gensokyo_notorious_effects.txt:19-22，set_societal_value = 0，
+        ### 用户 2026-09 拍板「初始缘与乱正中 0，不偏向任意一方」；
+        ### 早前 2026-08-21 的「开局满好战（100）」决策已撤销）——
+        ### 本处不再 set_societal_value（旧 -100 段已删），避免与 chain_init 并存
+        ### 冲突（on_game_start 内两 effect 执行顺序不确定 → 最终值不可靠；
+        ### 交接文档 P0-3 矛盾项；模板开局 0 与 chain_init 现一致，无覆盖问题）
     }
 }

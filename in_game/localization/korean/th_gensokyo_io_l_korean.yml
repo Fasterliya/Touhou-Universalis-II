@@ -237,6 +237,11 @@ th_clan_society_desc: "인간 마을은 종족을 통치 단위로 삼고, 각 �
  th_sages_introduce_institution_desc: "세 현자에게 대결계의 힘을 빌려, 환상향의 국가들 사이에 이미 존재하지만 이 국가가 아직 받아들이지 못한 선진 사상이나 기술을 도입하도록 청원합니다."
  th_sages_introduce_institution_notification: "사상 도입"
 
+### AI 가중치 사유 (2026-09-01: AI 가중치 활성화)
+ TH_SAGES_INTRODUCE_INSTITUTION_AI: "현자의회는 사상 도입이 환상향에 이롭다고 판단합니다"
+ TH_SAGES_INTRODUCE_INSTITUTION_VOTE_BIAS: "사상 도입은 모든 현자의 수도를 이롭게 합니다"
+ TH_SAGES_PROPOSE_POLICY_AI_RICH: "국고가 넉넉하여 정책 토론을 소집할 여유가 있습니다"
+
  th_sages_propose_policy: "정책 제안"
  th_sages_propose_policy_desc: "현자 회의에서 토론할 정책을 제안합니다. 세 현자 중 둘 이상이 지지하면 정책이 회의 전체에 적용됩니다. 소집 비용 300 금화."
 

@@ -1,4 +1,4 @@
-﻿l_simp_chinese:
+l_simp_chinese:
 
 ### 幻想乡国际组织 — 本地化
 
@@ -180,6 +180,11 @@
  th_sages_introduce_institution: "引入思潮"
  th_sages_introduce_institution_desc: "恳请三位贤者动用大结界之力，从幻想乡诸国中引入一项已存在且本国尚未接纳的先进思想或技术。"
  th_sages_introduce_institution_notification: "引入思潮"
+
+### AI 权重理由（2026-09-01：AI 权重全开）
+ TH_SAGES_INTRODUCE_INSTITUTION_AI: "贤者议会认为引入思潮有益于幻想乡"
+ TH_SAGES_INTRODUCE_INSTITUTION_VOTE_BIAS: "思潮引入惠及全体贤者"
+ TH_SAGES_PROPOSE_POLICY_AI_RICH: "国库充裕，有余力召开政策辩论"
 
  th_sages_propose_policy: "提议政策"
  th_sages_propose_policy_desc: "向贤者议会提出一项政策进行辩论。若有至少两位贤者支持，政策将在整个议会生效。发起需消耗 300 金币。"

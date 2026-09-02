@@ -110,3 +110,7 @@ l_simp_chinese:
  th_sages_reform_policy_issue: "贤者会议改革"
  th_sages_reform_policy_issue_desc: "革新贤者议会的行政：税收 +10%，人力 +10%。"
  th_sages_propose_policy_no_issues: "当前没有可提议的政策。"
+
+ ### 惩戒战争（wargoals/th_gensokyo_crusade_war_goal 的和平界面提示）
+ TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT: "此惩戒战争不可割让土地，仅可要求释放国家。"
+ TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT: "此惩戒战争不可奴役他国，仅可要求释放国家。"

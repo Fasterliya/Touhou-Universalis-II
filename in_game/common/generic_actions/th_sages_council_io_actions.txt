@@ -5,7 +5,7 @@
 ###   is_shown  → potential
 ###   is_valid  → allow (scope:actor=执行国, scope:recipient=贤者议会)
 ###   effect    → effect (scope:recipient = 贤者议会, 全局链接 th_gensokyo_io)
-### 消耗: 幻想乡IO团结 10 + 发起者 500 金 → 引发议会辩论 (2 贤者通过)
+### 消耗: 幻想乡IO团结 5 + 发起者 200 金 → 引发议会辩论 (2 贤者通过)
 ### 通过: 所有贤者首都灌满思潮进度 (=100 出现) + 写入已引入列表
 ### 失败: 无效果，资源不退还
 ### 本地化: th_sages_introduce_institution / th_sages_introduce_institution_desc (已有)
@@ -16,6 +16,11 @@ th_sages_introduce_institution = {
 
     ### 消耗资源的 IO 行动 → 原生确认弹窗 (readme.txt:76 推荐做法)
     force_click_and_confirm_or_hold = yes
+
+    ### 2026-09-01：AI 评估节拍（频率 1 = 每月检查一次，配合 ai_will_do 高权重
+    ### 实现"有钱必定开启引入辩论"；allow 已门控金币≥200/团结≥5/议会空闲/思潮可引入）
+    ai_tick = monthly
+    ai_tick_frequency = 1
 
     potential = {
         ### P1-12 修复先例 (th_gensokyo_propose_crusade.txt:14): potential 顶层 root=empty，须显式 scope:actor
@@ -35,9 +40,9 @@ th_sages_introduce_institution = {
         international_organization:th_gensokyo_io = {
             var:th_gensokyo_unity_var >= 5
         }
-        ### 金币 ≥ 250（2026-08-19 降低：500 → 250）
+        ### 金币 ≥ 200（2026-09-01 降低：250 → 200；2026-08-19 降低：500 → 250）
         scope:actor = {
-            gold >= 250
+            gold >= 200
         }
         ### 至少一项思潮可引入 (已出现 ∧ 发起者未接纳 ∧ 贤者议会未引入过)
         OR = {
@@ -786,9 +791,9 @@ th_sages_introduce_institution = {
             }
         }
 
-        ### 3. 消耗发起者金钱 250（2026-08-19 降低：500 → 250）
+        ### 3. 消耗发起者金钱 200（2026-09-01 降低：250 → 200；2026-08-19 降低：500 → 250）
         scope:actor = {
-            add_gold = -250
+            add_gold = -200
         }
 
         ### 4. 引发贤者议会辩论（内联，同 th_gensokyo_propose_crusade.txt:101-120 先例）
@@ -821,9 +826,16 @@ th_sages_introduce_institution = {
         }
     }
 
-    ### AI 永不执行（原 sgui ai_is_valid = always no）
+    ### 2026-09-01：AI 权重全开 —— AI 有钱必定开启引入辩论
+    ### allow 已门控（金币≥200 / 团结≥5 / 议会空闲 / 至少一项思潮可引入），
+    ### 10000 为 vanilla "必做"量级（先例：vote_in_organization_parliament 的 10000）；
+    ### ai_tick_frequency = 1 → 每月检查，条件满足即发起，不满足（缺钱/无思潮/议会中）自动跳过
+    ### 每项思潮仅引入一次（引入后写入已引入列表），全部引入完 allow 恒假，行动自然退出评估
     ai_will_do = {
-        value = 0
+        add = {
+            desc = TH_SAGES_INTRODUCE_INSTITUTION_AI
+            value = 10000
+        }
     }
 }
 
@@ -840,6 +852,10 @@ th_sages_propose_policy = {
     type = internationalorganization
 
     force_click_and_confirm_or_hold = yes
+
+    ### 2026-09-01：AI 评估节拍（频率 6 = 每半年检查一次；政策权重中等，避免 AI 破产式刷政策）
+    ai_tick = monthly
+    ai_tick_frequency = 6
 
     potential = {
         scope:actor = {
@@ -945,8 +961,24 @@ th_sages_propose_policy = {
         }
     }
 
-    ### AI 永不执行（政策由玩家主导）
+    ### 2026-09-01：AI 权重全开（革新/政策由 AI 适度发起）
+    ### 中等权重：国库充裕（≥3000 金）时明显提高倾向；allow 已门控金币≥300/议会空闲
+    ### 政策通过后以 static_modifier (mode = replace) 覆盖，重复发起仅耗钱不叠加
     ai_will_do = {
-        value = 0
+        if = {
+            limit = {
+                scope:actor = {
+                    gold >= 3000
+                }
+            }
+            add = {
+                desc = TH_SAGES_PROPOSE_POLICY_AI_RICH
+                value = 500
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 50
+        }
     }
 }
