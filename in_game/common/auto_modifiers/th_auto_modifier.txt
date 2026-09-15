@@ -21,3 +21,45 @@
 ### 相关残留清理：main_menu japanese loc 的 tier 键 /
 ### chain loc 的 th_notorious_tier_clean/pariah/outcast 键已删。
 ### ============================================================
+
+### ============================================================
+### 2026-08-17：「在歌颂一切之物的时代」革新的两项动态缩放效果
+### 机制约束：advance 本身不支持 scales_with，只能做门控；
+### 动态缩放必须由 auto_modifier 的 potential_trigger + scales_with 承担。
+### 缩放语义：scales_with 是**乘数**——实际值 = 本块取值 × scales_with 结果。
+### ============================================================
+
+### ① 每接纳一个文化 → 文化容量 +0.25
+### 缩放基 th_gensokyo_accepted_culture_count_value 只数"已接纳文化"（不含主流文化）
+th_gensokyo_accepted_culture_capacity_modifier = {
+    potential_trigger = {
+        has_advance = th_panegyric_of_all_things_advance
+    }
+
+    scales_with = th_gensokyo_accepted_culture_count_value
+
+    cultures_capacity = 0.25
+}
+
+### ② 本国省份总数每 30 个 → 地方总督 +1
+### 步进取整由 scales_with 内联公式末尾的 floor = yes 保证
+### （语法 _script_values.info:34；实机用例 scripted_effects/location_effects.txt:353-357）
+### 29 省 = 0，30 省 = 1，59 省 = 1，60 省 = 2
+### 【2026-09-15 接入修正】修复包原文依赖 num_local_governors 的 decimals=0「自动向下取整」，
+### 但 decimals 是修饰符类型的显示属性（00_modifier_types.txt:1-16 头注释），不能保证实际值取整；
+### 而总督建造门禁是 `<` 比较（building_types/capital_buildings.txt:627-630），
+### 小数缩放值会在满 30 省之前就放行 1 个总督。故本处显式追加 floor = yes。
+th_gensokyo_province_governor_modifier = {
+    potential_trigger = {
+        has_advance = th_panegyric_of_all_things_advance
+    }
+
+    scales_with = {
+        value = num_provinces
+        divide = 30
+        floor = yes
+    }
+
+    num_local_governors = 1
+}
+

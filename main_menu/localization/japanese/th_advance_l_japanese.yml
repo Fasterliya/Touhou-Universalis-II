@@ -126,3 +126,10 @@
  th_guardians_of_order_advance_desc: "誰ニ「一」ヲ定義スル権有ルヤ。賢者ト守護者ハ統一ノ時代ニ於テ改メテ問ハレタリ。巫女ハ最早唯ノ分隔者ニ非ズ、賢者モ最早唯ノ傍観者ニ非ズ——彼等ハ共ニ、己レガ護リシモノガ果タシテ何ナルカヲ答ヘザルベカラザルニ至レリ。"
  th_eternal_diversity_advance: "殊途同帰"
  th_eternal_diversity_advance_desc: "時代ノ終章ノ洞見——真ノ「一」ハ差異ヲ消スヲ要セズ。万物各々己ノ道ヲ歩ム：妖ハ山ニ、人ハ里ニ、神ハ祠ニ——而シテ皆、同一ノ幻想ニ帰ル。殊ナル道、而シテ終ニ一ノ帰趨ナリ。"
+
+# 2026-08-17 追加：歌颂一切之物革新的两个 auto_modifier 显示名（本行由打包流程第2步添加）
+#auto_modifier — 「凡百ノ物ヲ謳歌セシ時代」の動的スケーリング
+ AUTO_MODIFIER_NAME_th_gensokyo_accepted_culture_capacity_modifier: "凡百ノ物ヲ謳歌：文化容量"
+ AUTO_MODIFIER_DESC_th_gensokyo_accepted_culture_capacity_modifier: "受容文化一つにつき、文化容量 +0.25。"
+ AUTO_MODIFIER_NAME_th_gensokyo_province_governor_modifier: "凡百ノ物ヲ謳歌：地方総督"
+ AUTO_MODIFIER_DESC_th_gensokyo_province_governor_modifier: "州県 30 ごとに、地方総督 +1。"

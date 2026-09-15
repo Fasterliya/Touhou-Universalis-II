@@ -126,3 +126,9 @@
  th_guardians_of_order_advance_desc: "谁有权定义「一」？贤者与守护者在统一时代被重新拷问。巫女不再只是分隔者，贤者也不再只是旁观者——他们都必须回答：自己守护的，究竟是什么。"
  th_eternal_diversity_advance: "殊途同归"
  th_eternal_diversity_advance_desc: "时代终章的洞见——真正的「一」不必消灭差异。万物各有其道，妖怪归山，人类归里，神明归祠，却都归于同一片幻想。殊途，终是同归。"
+# 2026-08-17 追加：歌颂一切之物革新的两个 auto_modifier 显示名（本行由打包流程第2步添加）
+#auto_modifier —— 「在歌颂一切之物的时代」革新的动态缩放效果
+ AUTO_MODIFIER_NAME_th_gensokyo_accepted_culture_capacity_modifier: "歌颂一切之物：文化容量"
+ AUTO_MODIFIER_DESC_th_gensokyo_accepted_culture_capacity_modifier: "每接纳一个文化，文化容量 +0.25。"
+ AUTO_MODIFIER_NAME_th_gensokyo_province_governor_modifier: "歌颂一切之物：地方总督"
+ AUTO_MODIFIER_DESC_th_gensokyo_province_governor_modifier: "每 30 个省份，地方总督 +1。"

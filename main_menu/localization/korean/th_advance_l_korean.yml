@@ -120,3 +120,9 @@
  th_guardians_of_order_advance_desc: "'하나'를 정의할 권리는 누구에게 있는가? 현자와 수호자들은 통일의 시대에 새롭게 질문을 받았습니다. 무녀는 더 이상 단순한 경계자도, 현자는 단순한 관찰자도 아니었습니다. 둘 다 자신이 진정 무엇을 지키고 있는지 답해야 했습니다."
  th_eternal_diversity_advance: "여러 길, 하나의 귀환"
  th_eternal_diversity_advance_desc: "시대의 끝에 도달한 깨달음, 진정한 '하나'는 차이를 지울 필요가 없습니다. 모든 것은 저마다의 길을 가집니다. 요괴는 산으로, 인간은 마을로, 신은 신전으로, 그럼에도 모두 같은 환상으로 돌아옵니다. 여러 길, 그리고 마지막에는 하나의 귀환."
+# 2026-08-17 追加：歌颂一切之物革新的两个 auto_modifier 显示名（本行由打包流程第2步添加）
+#auto_modifier — 「모든 것을 찬미하던 시대」의 동적 스케일링
+ AUTO_MODIFIER_NAME_th_gensokyo_accepted_culture_capacity_modifier: "모든 것을 찬미: 문화 수용력"
+ AUTO_MODIFIER_DESC_th_gensokyo_accepted_culture_capacity_modifier: "수용 문화 하나당 문화 수용력 +0.25."
+ AUTO_MODIFIER_NAME_th_gensokyo_province_governor_modifier: "모든 것을 찬미: 지방 총독"
+ AUTO_MODIFIER_DESC_th_gensokyo_province_governor_modifier: "주 30개마다 지방 총독 +1."

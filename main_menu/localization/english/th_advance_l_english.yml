@@ -126,3 +126,10 @@
  th_guardians_of_order_advance_desc: "Who has the right to define \"the one\"? The sages and the guardians were questioned anew in the age of unification. The shrine maiden was no longer merely a divider, nor the sages mere observers—both had to answer what it was they truly guarded."
  th_eternal_diversity_advance: "Many Paths, One Return"
  th_eternal_diversity_advance_desc: "The insight of the age's end—the true \"one\" need not erase difference. All things have their own paths: youkai to the mountains, humans to the villages, gods to their shrines—yet all return to the same fantasy. Many paths, and in the end, one return."
+
+# 2026-08-17 追加：歌颂一切之物革新的两个 auto_modifier 显示名（本行由打包流程第2步添加）
+#auto_modifier — dynamic scaling granted by "In the Age of Praising All Things"
+ AUTO_MODIFIER_NAME_th_gensokyo_accepted_culture_capacity_modifier: "Praising All Things: Culture Capacity"
+ AUTO_MODIFIER_DESC_th_gensokyo_accepted_culture_capacity_modifier: "+0.25 culture capacity for each accepted culture."
+ AUTO_MODIFIER_NAME_th_gensokyo_province_governor_modifier: "Praising All Things: Local Governors"
+ AUTO_MODIFIER_DESC_th_gensokyo_province_governor_modifier: "+1 local governor for every 30 provinces."
