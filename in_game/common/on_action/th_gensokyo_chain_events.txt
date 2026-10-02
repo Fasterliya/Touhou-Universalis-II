@@ -633,11 +633,15 @@ th_gensokyo_crime_nocb_check = {
 ### === 惩戒战争结束 → 审判（2026-08-26：局势删除后迁移，原 situation on_ended 职责） ===
 ### on_ending_war 文档（_hardcoded.txt:1777-1778）：root = country（双方各触发一次），
 ### scope:winner = country, scope:loser = country, scope:war = war
-### 去重：仅攻击方领袖（attacker_leader，审判庭成员）执行一次；
-### 审判议会发起 → 审判议题投票 → 【2026-10-04 T2-5】投票只产生诸国意向，
-### 定谳由阎魔的四个宣判行动完成（generic_actions/th_gensokyo_verdict.txt），
-### 超时未宣判则由 th_gensokyo_tribunal_overdue_pulse 自动按意向判
-### （本 action 在这一刻算基准档 + 起超时倒计时：见 effect 内的 T2-5 追加段）
+### ★ 2026-10-04 精确判定：仅当 **进攻方领袖 = 本案代理人（或代理人缺失时的三贤者）**
+###   且 **防守方领袖 = 本案在册罪人** 时执行一次（见下方 trigger 两条新判定）。
+###   引擎无"和平"专属钩子（on_peace / on_peace_made / on_war_end 全库 0 命中），
+###   一切战争收尾都只能在这个 on_ending_war 里判。
+### 审判议会发起 → 审判议题投票（只产生诸国意向）→ **辩论结束由彼岸跳裁决事件**
+###   （events/th_gensokyo_tribunal_events.txt 的 .4；
+###    原 generic_actions/th_gensokyo_verdict.txt 四个宣判行动已于 2026-10-04 删除）
+###   超时未裁决则由 th_gensokyo_tribunal_overdue_pulse 自动按意向判
+###   （本 action 在这一刻算基准档 + 起超时倒计时：见 effect 内的 T2-5 追加段）
 on_ending_war = {
     on_actions = {
         th_gensokyo_tribunal_war_end_check
@@ -653,6 +657,33 @@ th_gensokyo_tribunal_war_end_check = {
         ### 去重：仅攻击方领袖执行（attacker_leader 用法照 crusade.txt:207）
         scope:war = {
             attacker_leader = root
+        }
+        ### ============================================================
+        ### 2026-10-04 闭环改造⑤：把"战争结束"精确到 **代理人 ↔ 罪人** 这一对
+        ###   用户指出原判定的缺口：只认"本 CB + 我是进攻方领袖"，
+        ###   既没校验对面是谁，也没校验我方身份 ⇒ 任何持本 CB 者打罪人都会开辩。
+        ###   attacker_leader / defender_leader 是合法的**战争作用域**判定
+        ###   （vanilla 205 处在用：hre.txt:1560-1561 /
+        ###    guelphs_and_ghibellines.txt:365-386 / hundred_years_war.txt:111-119）。
+        ### ============================================================
+        ### ② 对面（防守方领袖）必须就是本案在册的罪人
+        scope:war = {
+            defender_leader = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+        ### ③ 我方（进攻方领袖）必须是本案的执行者：
+        ###     代理人；代理人缺失时三贤者兜底（与宣战权口径完全一致）
+        scope:war = {
+            attacker_leader = {
+                OR = {
+                    has_variable = th_gensokyo_tribunal_agent_mark
+                    has_special_status_in_international_organization = {
+                        type = special_status:th_gensokyo_io_sages_special_status
+                        international_organization = international_organization:th_gensokyo_io
+                    }
+                }
+            }
         }
     }
     effect = {
