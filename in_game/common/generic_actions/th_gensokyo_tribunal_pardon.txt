@@ -1,0 +1,130 @@
+﻿### ============================================================
+### 审判庭 — 赦免（T2-2b 新增，2026-10-01）
+### 规格：《脚本规格》§4.3、《设计定案》§5.3 撤销段
+###   契约："阎魔可独断赦免（不需要表决）。权力结构由此成立 ——
+###          阎魔管宽赦，世俗管加刑。"
+###
+### 语义：一次性撤销全部档位与全部案件记录，等于"结案重来"。
+###   与"悔改结案"共用同一个共享效果
+###   （scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###    th_gensokyo_tribunal_case_close_effect），差别只在于：
+###   本行动**不看**悔改条件，是阎魔的裁量权。
+###
+### 无 cooldown：§4.3 明写"无（阎魔独断权，随时可用）"。
+###   potential 不随案件状态收窄（“结案后自然无可赦之人”——
+###   allow 一旦为假就点不动），所以不需要冷却也不需要标记门控。
+### ============================================================
+
+th_gensokyo_tribunal_pardon = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        scope:actor ?= {
+            is_leader_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    allow = {
+        ### 铁律 3：custom_tooltip 包住 any_country（tooltip 文案写"阻塞状态"、
+        ### 内层写正向条件；蓝本 generic_actions/th_gensokyo_crusade_declare_war.txt:34-54）
+        custom_tooltip = {
+            text = TH_TRIBUNAL_NO_ACCUSED_TT
+            any_country = {
+                has_variable = th_gensokyo_tarnish_mark
+            }
+        }
+    }
+
+    ### ① 选幻想乡 IO（recipient 注入，供 ② 的 interaction_source_list 使用）
+    ### 逐字照 generic_actions/th_gensokyo_tribunal_indict.txt:65-77
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### ② 选被诉国：幻想乡 IO 成员中持「祟」者
+    select_trigger = {
+        looking_for_a = country
+        source = actor
+        target_flag = target_country
+        name = "choose_country"
+        column = {
+            data = name
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = great_power_score
+        }
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        has_variable = th_gensokyo_tarnish_mark
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    effect = {
+        ### exists 守卫（铁律 2；蓝本 indict:156-159）
+        if = {
+            limit = {
+                exists = scope:target_country
+            }
+            ### 结案 effect 自我定位被诉国（按 th_gensokyo_tarnish_mark），
+            ### 内部按铁律顺序撤载体：tier_1_remove → tier_3_remove →
+            ### tier_4_remove → case_markers_clear → 价值观归中
+            ### → 清受害国 / 物证列表 / 罪名账本 → 团结度奖励
+            ### （《脚本规格》§4.3 的五项全部落在这一步之内；
+            ###  价值观归中写法蓝本 peace_treaties/th_gensokyo_crusade_triumph.txt:34-39）
+            th_gensokyo_tribunal_case_close_effect = yes
+        }
+    }
+
+    ai_will_do = {
+        ### §4.3："低基线；仅在'被诉国已履约但忘了撤销'这类情形给权重（用标记判定）"
+        ### 现实约束：T2-3 的履约行动尚未落地，本窗唯一可用的"已开始履约"信号
+        ### 就是 th_gensokyo_confess_paid（T2-3 写入）。读前守卫（铁律 5 v1.8 / 铁律 11）。
+        if = {
+            limit = {
+                any_country = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                    has_variable = th_gensokyo_tarnish_mark
+                    has_variable = th_gensokyo_confess_paid
+                    ### 交战中不谈赦免
+                    NOT = { is_at_war_with = scope:actor }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_PARDON_READY
+                value = 200
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

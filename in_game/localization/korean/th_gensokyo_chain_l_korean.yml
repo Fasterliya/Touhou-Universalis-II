@@ -1,0 +1,272 @@
+﻿l_korean:
+
+### ============================================================
+### 환상향 연쇄 시스템 — 한국어
+### (이 파일은 심판정 패널 키부터 시작합니다. 나머지 연쇄 시스템 키는
+###  아직 한국어 미번역이며, 추후 이 파일에 이어서 채우면 됩니다.)
+### ============================================================
+
+### ============================================================
+### 심판정 패널 (T1) — 2026-10-01 추가
+### 개요 탭 관계도 / 수행 깃발 / 탭 / 빈 상태 / 심리 탭 예상 등급
+### ============================================================
+
+### 개요 탭 · 관계도 3단 (피안 -> 세속 대리인 -> 죄인 국가)
+ TH_TRIBUNAL_HIGAN: "피안"
+ TH_TRIBUNAL_YAMA_COURT: "시비곡직청"
+ TH_TRIBUNAL_AGENT: "세속 대리인"
+ TH_TRIBUNAL_AGENT_LEAD: "인접 강국 · 대표"
+ TH_TRIBUNAL_SINNER: "죄인 국가"
+
+### 개요 탭 · 수행 깃발
+ TH_TRIBUNAL_RETINUE: "수행"
+ TH_TRIBUNAL_RETINUE_UNIT: "국"
+
+### 탭 및 빈 상태
+ TH_TRIBUNAL_TAB_DEBATE: "심리"
+ TH_TRIBUNAL_NOT_OPENED: "본 심판정은 아직 개정하지 않았습니다"
+
+### 심리 탭 · 예상 등급
+ TH_TRIAL_EXPECTED_TIER: "예상 등급:"
+ TH_TRIBUNAL_VERDICT_T2: "2. 약화"
+ TH_TRIBUNAL_VERDICT_T3: "3. 감독국"
+
+### ============================================================
+### 심판정 행동군 (T2-4) — 2026-10-01 추가
+### 13개 행동 x 6종 키 (행동명 / 설명 / 일반 메시지 / 우리 / 타국 / 우리 대상)
+### 참고: th_gensokyo_verdict_t0 / _t1 은 패널 예약값("0. 배상금·파산" / "1. 반환")이었으나,
+###       이제 판결 4행동의 행동명으로 쓰입니다. 대문자 키
+###       TH_TRIBUNAL_VERDICT_T2 / _T3 는 패널의 "예상 등급" 줄 전용이며
+###       소문자 행동명과 의도적으로 공존합니다.
+### ============================================================
+
+### 기소
+ th_gensokyo_tribunal_indict: "기소"
+ th_gensokyo_tribunal_indict_desc: "염마가 죄목 장부를 낭독하고 사건을 개시합니다. 피고국은 「저주」를 지니며, 제재는 1단계 「규탄」부터 시작되고 6개월의 관찰기가 이어집니다."
+ PERFORM_th_gensokyo_tribunal_indict_ACTION: "심판정에서 기소했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_indict_ACTION: "우리는 심판정에서 기소했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_indict_ACTION: "심판정에서 기소했습니다"
+ ACTION_th_gensokyo_tribunal_indict_PERFORMED_ON_US: "심판정에서 기소했습니다"
+
+### 등급 상향
+ th_gensokyo_tribunal_escalate: "등급 상향"
+ th_gensokyo_tribunal_escalate_desc: "관찰기가 끝났는데도 피고국이 뉘우치지 않으면, 염마가 가장 가까운 강국을 대표로 지명하고 제재를 한 단계 높입니다."
+ PERFORM_th_gensokyo_tribunal_escalate_ACTION: "제재를 한 단계 높였습니다"
+ WE_PERFORM_th_gensokyo_tribunal_escalate_ACTION: "우리는 제재를 한 단계 높였습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_escalate_ACTION: "제재를 한 단계 높였습니다"
+ ACTION_th_gensokyo_tribunal_escalate_PERFORMED_ON_US: "제재를 한 단계 높였습니다"
+
+### 사면
+ th_gensokyo_tribunal_pardon: "사면"
+ th_gensokyo_tribunal_pardon_desc: "염마가 단독으로 모든 제재를 철회합니다. 피고국의 가치관은 중립으로 돌아가고 사건은 종결됩니다."
+ PERFORM_th_gensokyo_tribunal_pardon_ACTION: "사면하여 모든 제재를 철회했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_pardon_ACTION: "우리는 사면하여 모든 제재를 철회했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_pardon_ACTION: "사면하여 모든 제재를 철회했습니다"
+ ACTION_th_gensokyo_tribunal_pardon_PERFORMED_ON_US: "사면하여 모든 제재를 철회했습니다"
+
+### 대표직 거부
+ th_gensokyo_tribunal_agent_refuse: "대표직 거부"
+ th_gensokyo_tribunal_agent_refuse_desc: "지명된 세속 대리인이 명을 거부합니다. 대표 자격이 해제되고 위신과 기여도에 불이익을 받습니다."
+ PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION: "대표직을 거부했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION: "우리는 대표직을 거부했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_agent_refuse_ACTION: "대표직을 거부했습니다"
+ ACTION_th_gensokyo_tribunal_agent_refuse_PERFORMED_ON_US: "대표직을 거부했습니다"
+
+### 자기 변론
+ th_gensokyo_tribunal_defend: "자기 변론"
+ th_gensokyo_tribunal_defend_desc: "피고국이 개인 영향력을 소모해 죄목을 하나씩 반박합니다. 반박이 성립한 죄목은 절반으로 줄고, 전부 뒤집으면 제재가 철회되고 사건이 종결됩니다."
+ PERFORM_th_gensokyo_tribunal_defend_ACTION: "자기 변론을 펼쳤습니다"
+ WE_PERFORM_th_gensokyo_tribunal_defend_ACTION: "우리는 자기 변론을 펼쳤습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_defend_ACTION: "자기 변론을 펼쳤습니다"
+ ACTION_th_gensokyo_tribunal_defend_PERFORMED_ON_US: "자기 변론을 펼쳤습니다"
+
+### 자백과 속죄
+ th_gensokyo_tribunal_confess: "자백과 속죄"
+ th_gensokyo_tribunal_confess_desc: "피고국이 자백금을 지불합니다. 금액은 이미 부과된 단계마다 늘어납니다. 지불 후 가치관은 중립으로 돌아가고 모든 제재가 철회되며, 보호관찰기에 들어갑니다."
+ PERFORM_th_gensokyo_tribunal_confess_ACTION: "자백하고 속죄했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_confess_ACTION: "우리는 자백하고 속죄했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_confess_ACTION: "자백하고 속죄했습니다"
+ ACTION_th_gensokyo_tribunal_confess_PERFORMED_ON_US: "자백하고 속죄했습니다"
+
+### 평화 요청
+ th_gensokyo_tribunal_settle: "평화 요청"
+ th_gensokyo_tribunal_settle_desc: "징벌 전쟁 중에 처벌을 받아들이고 평화를 요청합니다. 화친 대가를 지불하면 가치관이 내려가고, 심판정은 정당성을 잃어 해산됩니다."
+ PERFORM_th_gensokyo_tribunal_settle_ACTION: "평화를 요청했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_settle_ACTION: "우리는 평화를 요청했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_settle_ACTION: "평화를 요청했습니다"
+ ACTION_th_gensokyo_tribunal_settle_PERFORMED_ON_US: "평화를 요청했습니다"
+
+### 이행: 영지 반환
+ th_gensokyo_tribunal_fulfill_land: "이행: 영지 반환"
+ th_gensokyo_tribunal_fulfill_land_desc: "피고국이 문제된 영지 하나를 피해국에 반환합니다. 이행 항목 중 하나로, 관찰기가 끝날 때 영지가 반환되어 있으면 뉘우친 것으로 판정됩니다."
+ PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION: "문제된 영지 하나를 반환했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION: "우리는 문제된 영지 하나를 반환했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_land_ACTION: "문제된 영지 하나를 반환했습니다"
+ ACTION_th_gensokyo_tribunal_fulfill_land_PERFORMED_ON_US: "문제된 영지 하나를 반환했습니다"
+
+### 이행: 배상금 지불
+ th_gensokyo_tribunal_fulfill_pay: "이행: 배상금 지불"
+ th_gensokyo_tribunal_fulfill_pay_desc: "피고국이 배상금을 분할로 지불하며, 금액은 환상향 금고로 들어갑니다. 이행 항목 중 하나로, 누적 금액이 기준에 도달하면 완료된 것으로 봅니다."
+ PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION: "배상금 일부를 지불했습니다"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION: "우리는 배상금 일부를 지불했습니다"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_pay_ACTION: "배상금 일부를 지불했습니다"
+ ACTION_th_gensokyo_tribunal_fulfill_pay_PERFORMED_ON_US: "배상금 일부를 지불했습니다"
+
+### 판결: 배상금·파산 (패널 예약값 "0. 배상금·파산"을 행동명으로 전환)
+ th_gensokyo_verdict_t0: "판결: 배상금·파산"
+ th_gensokyo_verdict_t0_desc: "판결: 대상국 국고의 절반이 환상향 금고로 넘어가고, 2년간 파산 상태가 됩니다."
+ PERFORM_th_gensokyo_verdict_t0_ACTION: "판결했습니다: 배상금·파산"
+ WE_PERFORM_th_gensokyo_verdict_t0_ACTION: "우리는 판결했습니다: 배상금·파산"
+ OTHER_PERFORMS_th_gensokyo_verdict_t0_ACTION: "판결했습니다: 배상금·파산"
+ ACTION_th_gensokyo_verdict_t0_PERFORMED_ON_US: "판결했습니다: 배상금·파산"
+
+### 판결: 반환 (패널 예약값 "1. 반환"을 행동명으로 전환)
+ th_gensokyo_verdict_t1: "판결: 반환"
+ th_gensokyo_verdict_t1_desc: "판결: 대상국이 부당하게 차지한 영토를 모두 반환합니다."
+ PERFORM_th_gensokyo_verdict_t1_ACTION: "판결했습니다: 반환"
+ WE_PERFORM_th_gensokyo_verdict_t1_ACTION: "우리는 판결했습니다: 반환"
+ OTHER_PERFORMS_th_gensokyo_verdict_t1_ACTION: "판결했습니다: 반환"
+ ACTION_th_gensokyo_verdict_t1_PERFORMED_ON_US: "판결했습니다: 반환"
+
+### 판결: 약화
+ th_gensokyo_verdict_t2: "판결: 약화"
+ th_gensokyo_verdict_t2_desc: "판결: 대상국의 국력이 5년간 약화됩니다."
+ PERFORM_th_gensokyo_verdict_t2_ACTION: "판결했습니다: 약화"
+ WE_PERFORM_th_gensokyo_verdict_t2_ACTION: "우리는 판결했습니다: 약화"
+ OTHER_PERFORMS_th_gensokyo_verdict_t2_ACTION: "판결했습니다: 약화"
+ ACTION_th_gensokyo_verdict_t2_PERFORMED_ON_US: "판결했습니다: 약화"
+
+### 판결: 감독국
+ th_gensokyo_verdict_t3: "판결: 감독국"
+ th_gensokyo_verdict_t3_desc: "판결: 대상국의 국고가 비워지고 피안의 감독국이 됩니다. 형기는 20년(최대 30년)입니다."
+ PERFORM_th_gensokyo_verdict_t3_ACTION: "판결했습니다: 감독국"
+ WE_PERFORM_th_gensokyo_verdict_t3_ACTION: "우리는 판결했습니다: 감독국"
+ OTHER_PERFORMS_th_gensokyo_verdict_t3_ACTION: "판결했습니다: 감독국"
+ ACTION_th_gensokyo_verdict_t3_PERFORMED_ON_US: "판결했습니다: 감독국"
+
+### 가격 및 성향 이름 (이번 묶음에서 추가된 5개 키)
+ th_gensokyo_tribunal_confess_price: "자백금"
+ th_gensokyo_tribunal_reparations_price: "배상금"
+ th_gensokyo_tribunal_settle_price: "화친 대가"
+ th_antagonism_sanction_condemn: "제재 규탄 (적대감)"
+ th_opinion_sanction_condemn: "제재 규탄 (호감도)"
+
+### ============================================================
+### 심판정 · 현지화 묶음 L2
+### 행동 차단 안내 / AI 가중치 사유 / 대리인 이벤트 /
+### 표식과 변수 / 인간 마을 IO
+### 참고: 인간 마을 IO 두 키는 결정에 따라 이 파일에 둡니다
+###       (같은 언어 안에서 loc 키는 전역이므로 th_gensokyo_io_l_*.yml 로
+###        돌아갈 필요가 없습니다). 문구는 main_menu 의 같은 이름 키와
+###        글자 그대로 일치합니다.
+### ============================================================
+
+### 행동 · 차단 상태 (allow)
+ TH_TRIBUNAL_NO_SUSPECT_TT: "현재 기소할 만한 혐의국이 없습니다"
+ TH_TRIBUNAL_NO_ESCALATION_TT: "관찰기가 끝났는데도 뉘우치지 않은 피고국이 없습니다"
+ TH_TRIBUNAL_NO_ACCUSED_TT: "현재 피고국이 없습니다"
+ TH_TRIBUNAL_DEFEND_NO_GROUND_TT: "반박할 수 있는 죄목이 없습니다"
+ TH_TRIBUNAL_CONFESS_CANNOT_AFFORD_TT: "국고로 자백금을 지불할 수 없습니다"
+ TH_TRIBUNAL_SETTLE_NOT_AT_WAR_TT: "현재 징벌 전쟁 중이 아닙니다"
+ TH_TRIBUNAL_FULFILL_LAND_NO_TARGET_TT: "반환할 수 있는 문제된 영지가 없습니다"
+ TH_TRIBUNAL_FULFILL_PAY_CANNOT_AFFORD_TT: "국고로 이 배상금을 지불할 수 없습니다"
+ TH_TRIBUNAL_VERDICT_RANGE_T0_TT: "「배상금·파산」은 이 사건의 재량 범위를 벗어납니다. 판결은 법에 따른 기준에서 위아래 한 단계까지만 가능합니다"
+ TH_TRIBUNAL_VERDICT_RANGE_T1_TT: "「반환」은 이 사건의 재량 범위를 벗어납니다. 판결은 법에 따른 기준에서 위아래 한 단계까지만 가능합니다"
+ TH_TRIBUNAL_VERDICT_RANGE_T2_TT: "「약화」는 이 사건의 재량 범위를 벗어납니다. 판결은 법에 따른 기준에서 위아래 한 단계까지만 가능합니다"
+ TH_TRIBUNAL_VERDICT_RANGE_T3_TT: "「감독국」은 이 사건의 재량 범위를 벗어납니다. 판결은 법에 따른 기준에서 위아래 한 단계까지만 가능합니다"
+
+### 행동 · AI 가중치 사유 (ai_will_do)
+ TH_TRIBUNAL_AI_SUSPECT_FOUND: "기소할 만한 혐의국이 있습니다"
+ TH_TRIBUNAL_AI_ESCALATE_READY: "관찰기가 끝났는데도 피고국이 뉘우치지 않았습니다"
+ TH_TRIBUNAL_AI_PARDON_READY: "피고국이 이행을 마쳤고, 제재 철회만 남았습니다"
+ TH_TRIBUNAL_AI_REFUSE_WEAK: "대표를 맡을 만한 실력이 부족합니다"
+ TH_TRIBUNAL_AI_DEFEND_READY: "반박할 죄목이 있고 영향력도 충분합니다"
+ TH_TRIBUNAL_AI_CONFESS_READY: "국고로 자백금을 지불할 수 있어, 이를 통해 사건을 끝내려 합니다"
+ TH_TRIBUNAL_AI_SETTLE_READY: "전황이 불리하여 처벌을 받아들이고 화친하려 합니다"
+ TH_TRIBUNAL_AI_FULFILL_READY: "아직 완료되지 않은 이행 항목이 있습니다"
+ TH_TRIBUNAL_AI_VERDICT_WITH_INTENT: "판결이 여러 나라의 의향과 일치합니다"
+ TH_TRIBUNAL_AI_VERDICT_BASELINE: "따를 의향이 없어 법에 따른 기준으로 판결합니다"
+ TH_TRIBUNAL_CONFESS_PRICE_TIER: "자백금은 이미 부과된 제재 단계마다 늘어납니다"
+
+### 이벤트 · 대리인 동의 연쇄 (namespace = th_gensokyo_tribunal_events)
+ th_gensokyo_tribunal_events.1.title: "대표 지명 요청"
+ th_gensokyo_tribunal_events.1.desc: "시비곡직청은 제재를 세속의 손으로 집행해야 한다고 판정했습니다. 염마가 그대를 대표로 지명합니다. 응하면 피고국에 대한 제재가 한 단계 오르고 관찰기가 다시 시작되며, 거부하면 원래 단계가 유지되고 염마가 다른 나라를 지명합니다."
+ th_gensokyo_tribunal_events.1.a: "대표를 맡는다"
+ th_gensokyo_tribunal_events.1.b: "대표직을 거부한다"
+ th_gensokyo_tribunal_events.2.title: "대표 지명 거부"
+ th_gensokyo_tribunal_events.2.desc: "지명된 나라가 대표를 거부했습니다. 사건의 원래 단계는 유지되고 관찰기는 초기화되지 않습니다. 시비곡직청은 다른 나라를 지명해 주기를 청합니다."
+ th_gensokyo_tribunal_events.2.a: "알겠습니다"
+ th_gensokyo_tribunal_events.3.title: "관찰기 만료"
+ th_gensokyo_tribunal_events.3.desc: "피고국의 관찰기가 끝났으나 이행도, 뉘우침도 없습니다. 사건을 한 단계 올릴 수 있습니다. 가장 가까운 강국이 대표를 맡고 제재가 한 단계 오르며, 관찰기가 다시 시작됩니다."
+ th_gensokyo_tribunal_events.3.a: "알겠습니다"
+ th_gensokyo_tribunal_events.4.title: "최종 판결"
+ th_gensokyo_tribunal_events.4.desc: "변론이 끝나고 사건이 피안으로 올라왔습니다.\n[th_verdict_accused.GetName]의 죄과가 확정되었고, 법에 따른 기준은 #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!단계입니다.\n법을 따르거나 구성원의 뜻을 따르거나 독단할 수 있습니다. 다만 뜻을 벗어난 만큼, 재량을 넘은 만큼이 환상향 결속에 기록됩니다."
+ th_gensokyo_tribunal_events.4.a.tt: "#T0. 배상금·파산#!\n$BULLET$결과: 피고국 국고의 절반이 징수되어 파산하고, 배상금은 환상향 국고로 들어갑니다\n$BULLET$법에 따른 기준: #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!단계, 재량 범위는 기준 위아래 한 단계입니다\n$BULLET$구성원의 뜻을 벗어난 경우: 한 단계마다 환상향 결속 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!이 차감됩니다\n$BULLET$재량을 넘은 경우: 같은 양의 결속이 #R추가로#! 차감됩니다\n$BULLET$마무리: 판결이 확정되고 심판정이 해산되며, 사건은 형기 단계로 넘어갑니다"
+ th_gensokyo_tribunal_events.4.b.tt: "#T1. 반환#!\n$BULLET$결과: 피고국이 부당하게 얻은 영지를 반환합니다\n$BULLET$법에 따른 기준: #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!단계, 재량 범위는 기준 위아래 한 단계입니다\n$BULLET$구성원의 뜻을 벗어난 경우: 한 단계마다 환상향 결속 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!이 차감됩니다\n$BULLET$재량을 넘은 경우: 같은 양의 결속이 #R추가로#! 차감됩니다\n$BULLET$마무리: 판결이 확정되고 심판정이 해산되며, 사건은 형기 단계로 넘어갑니다"
+ th_gensokyo_tribunal_events.4.c.tt: "#T2. 약화#!\n$BULLET$결과: 영지를 반환하고 수년간 국력이 약화됩니다\n$BULLET$법에 따른 기준: #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!단계, 재량 범위는 기준 위아래 한 단계입니다\n$BULLET$구성원의 뜻을 벗어난 경우: 한 단계마다 환상향 결속 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!이 차감됩니다\n$BULLET$재량을 넘은 경우: 같은 양의 결속이 #R추가로#! 차감됩니다\n$BULLET$마무리: 판결이 확정되고 심판정이 해산되며, 사건은 형기 단계로 넘어갑니다"
+ th_gensokyo_tribunal_events.4.d.tt: "#T3. 감독국#!\n$BULLET$결과: 국고가 비워지고 피고국이 형기가 끝날 때까지 피안의 감독국으로 내려갑니다\n$BULLET$법에 따른 기준: #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!단계, 재량 범위는 기준 위아래 한 단계입니다\n$BULLET$구성원의 뜻을 벗어난 경우: 한 단계마다 환상향 결속 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!이 차감됩니다\n$BULLET$재량을 넘은 경우: 같은 양의 결속이 #R추가로#! 차감됩니다\n$BULLET$마무리: 판결이 확정되고 심판정이 해산되며, 사건은 형기 단계로 넘어갑니다"
+
+### 표식과 변수 (설계상 UI 에 노출)
+ th_gensokyo_tarnish_mark: "저주"
+ th_gensokyo_tarnish_mark_desc: "심판정에 기소된 나라가 지니는 표식입니다.\n$BULLET$환상향의 모든 구성원이 더 적대하고 덜 호의적으로 대합니다\n$BULLET$심리가 진행되는 동안 현자들의 보호를 받지 못합니다\n$BULLET$제재는 단계마다 가중됩니다. 2단계부터 환상향 의회의 표결권이 0이 됩니다\n$BULLET$영지를 반환하거나 배상금을 지불하거나 전쟁을 멈추거나 자백하면 표식이 풀립니다"
+ th_gensokyo_suspect_mark: "혐의"
+ th_gensokyo_suspect_mark_desc: "호전성의 선을 넘은 나라가 지니는 표식입니다.\n$BULLET$호전 성향이 환상향의 용인선을 넘었습니다\n$BULLET$염마가 기소할 수 있는 대상이 되었으나, 아직 사건은 열리지 않았습니다\n$BULLET$제재 면제기에는 이 표식이 붙지 않습니다"
+ th_gensokyo_observation_months: "관찰기 (남은 개월)"
+ th_gensokyo_tier_1_mark: "규탄"
+ th_gensokyo_tier_1_mark_desc: "제재 1단계.\n$BULLET$환상향의 모든 구성원이 더 적대하고 덜 호의적으로 대합니다\n$BULLET$외교적으로 고립되지만 군사와 재정에는 영향이 없습니다\n$BULLET$제재를 철회하면 그 적대감과 호감도도 함께 사라집니다"
+ th_gensokyo_tier_2_mark: "의결권 박탈"
+ th_gensokyo_tier_2_mark_desc: "제재 2단계.\n$BULLET$환상향 의회의 표결권이 0이 됩니다\n$BULLET$그 나라의 기여와 영향력이 환상향에 반영되지 않습니다\n$BULLET$심판정의 의향 표결에서 의견은 보이지만 무게는 없습니다"
+ th_gensokyo_tier_3_mark: "통상 금지"
+ th_gensokyo_tier_3_mark_desc: "제재 3단계.\n$BULLET$환상향의 모든 구성원이 통상 금지를 시행하여 교역이 끊깁니다\n$BULLET$통상 금지는 제재가 철회될 때까지 이어집니다\n$BULLET$이 단계부터 제재는 명예 문제가 아닙니다"
+ th_gensokyo_tier_4_mark: "확장 억제"
+ th_gensokyo_tier_4_mark_desc: "제재 4단계이자 마지막 단계.\n$BULLET$환상향에서의 확장이 훨씬 큰 국제적 반발을 부릅니다\n$BULLET$확장으로 얻는 것은 그대로이나 치르는 대가가 무거워집니다\n$BULLET$이 단계에서도 뉘우치지 않으면 염마가 개정하여 판결을 내립니다"
+
+### 징벌 전쟁 · 전쟁 목표 안내 (전쟁 목표 파일에서 참조)
+ TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT: "징벌 전쟁은 영토 할양을 요구하지 않습니다"
+ TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT: "징벌 전쟁은 예속을 요구하지 않습니다"
+
+### 인간 마을 IO (R1 부채: in_game 네 파일 모두 누락, 문구는 main_menu 의
+### 같은 이름 키와 글자 그대로 일치)
+ th_human_village_io: "인간 마을"
+ th_human_village_io_desc: "인간의 마을과 명련사의 세력권에 속한 여러 나라들로 구성된 국가 간 조직체입니다."
+
+### ============================================================
+### 심판정 L3 (2026-10-05)
+### 1 문서철 탭 UI (T2-5a; th_gensokyo_io.gui)
+### 2 새 정적 수정 두 종의 로컬라이제이션 (T2-5b). 두 가지 키 형태를 모두
+###   적은 것은 의도적입니다. 프로젝트의 기존 수정은 맨키를 쓰고,
+###   탄막 / 현자 계열 수정은 vanilla 의 STATIC_MODIFIER_NAME_ / _DESC_
+###   접두사를 쓰며, 엔진이 어느 쪽을 읽는지는 검증되지 않았습니다.
+### ============================================================
+
+### 문서철 탭 UI (T2-5a)
+ TH_TRIBUNAL_TAB_DOSSIER: "문서철"
+ TH_TRIBUNAL_TAB_DOSSIER_TT_TEXT: "염라대왕의 책상. 환상향 전역의 호전적 용의자, 시행 중인 제재, 종결된 사건이 기록됩니다."
+ TH_TRIBUNAL_DOSSIER_TITLE: "심판정 문서철"
+ TH_TRIBUNAL_DOSSIER_LEAD: "염라대왕의 책상"
+ TH_TRIBUNAL_GROUP_SUSPECT: "용의자"
+ TH_TRIBUNAL_GROUP_INDICTED: "입건 · 제재 중"
+ TH_TRIBUNAL_GROUP_SERVING: "형 집행 중"
+ TH_TRIBUNAL_GROUP_CLOSED: "종결된 사건"
+ TH_TRIBUNAL_BADGE_INDICTED: "입건"
+ TH_TRIBUNAL_BADGE_SERVING: "복역 중"
+ TH_TRIBUNAL_BADGE_CLOSED: "종결"
+ TH_TRIBUNAL_TIER_LABEL: "제재"
+ TH_TRIBUNAL_OBSERVATION_LEFT: "관찰기 남은"
+ TH_TRIBUNAL_MONTHS: "개월"
+ TH_TRIBUNAL_ATTITUDE: "태도"
+ TH_TRIBUNAL_CONFESS_PAID: "배상금 지불액"
+ TH_TRIBUNAL_CLOSED_NOTE: "사건 기록 보관됨"
+
+### 죄업 변수 (참조: th_gensokyo_io.gui / th_gensokyo_tribunal.gui — 한국어만 누락)
+ th_gensokyo_sin_var: "죄업"
+
+### 정적 수정: 대의 / 저주 (T2-5b)
+ th_gensokyo_grand_cause_modifier: "대의"
+ th_gensokyo_grand_cause_modifier_desc: "징벌 전쟁 참가자들이 한마음으로 뭉쳐 사기와 인력, 위신이 올라갑니다."
+ STATIC_MODIFIER_NAME_th_gensokyo_grand_cause_modifier: "대의"
+ STATIC_MODIFIER_DESC_th_gensokyo_grand_cause_modifier: "징벌 전쟁 참가자들이 한마음으로 뭉쳐 사기와 인력, 위신이 올라갑니다."
+ th_gensokyo_tarnish_modifier: "저주"
+ th_gensokyo_tarnish_modifier_desc: "심판정에 기소된 나라가 지니는 표식입니다."
+ STATIC_MODIFIER_NAME_th_gensokyo_tarnish_modifier: "저주"
+ STATIC_MODIFIER_DESC_th_gensokyo_tarnish_modifier: "심판정에 기소된 나라가 지니는 표식입니다."

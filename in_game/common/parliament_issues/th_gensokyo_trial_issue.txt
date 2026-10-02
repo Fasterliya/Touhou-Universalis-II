@@ -1,15 +1,36 @@
 ### ============================================================
 ### 审判议题（2026-08-23 重构：辩论 = 审判 / 2026-08-26 迁入审判庭议会）
 ### 链路：惩戒战争结束（on_ending_war 钩子，2026-08-26 局势删除后迁移）
-###       → 审判庭议会 call_io_parliament 发起本议题 → 审判庭成员投票（站队 bias）→
-###       通过 = 从重惩罚（罪值≥75 档3 监管国 / 否则档2 削弱）
-###       失败 = 从轻处理（罪值≥50 档1 归还 / 否则档0 赔款破产）
-### 站队（wants_this_parliament_issue_bias，二分不写复杂倾向）：
+###       → 审判庭议会 call_io_parliament 发起本议题 → 审判庭成员投票（站队 bias）
+###
+### 【2026-10-04 T2-5 降级：辩论只产生【诸国意向】，不再决定档位、不再判决】
+###   依据《设计定案》§5.5（判决权归阎魔：独判 + 偏离意向有代价）、
+###        《脚本规格》§10.3（本议题改造表）
+###   通过 = 从重意向 / 失败 = 从轻意向，意向有两个载体：
+###     ① 国家标记 th_gensokyo_intent_harsh（从重）/ th_gensokyo_intent_soft（从轻）
+###        —— 打在**被诉国**（持 th_gensokyo_crusade_target_mark 者）身上；
+###        这是给宣判四行动的 ai_will_do 读的（ai_will_do 读不了变量值，
+###        只能读 has_variable 标记：铁律 5 v1.8 修订版）
+###     ② 审判庭 IO 变量 th_gensokyo_verdict_intent（+1 / −1）
+###        —— 供 T2-5 案卷区"诸国意向"条显示（《脚本规格》§10.1 指定审判庭 IO）
+###   定谳 = 阎魔点【宣判 t0-t3】四行动之一
+###        （generic_actions/th_gensokyo_verdict.txt）
+###   基准档 = 战争结束那一刻已由 th_gensokyo_judgment_baseline_effect 算好
+###        （罪 + 态度 + 审判法倾向，阈值 50 / 75）—— 本议题**只读不写**
+###   偏离意向的代价 = 宣判路径按偏离量扣幻想乡团结度
+###        （th_gensokyo_verdict_apply_effect ③ 步）
+###
+### 【改造删掉了什么（最重要的一条）】
+###   旧实现的四步 —— 目标标记转换（crusade_target_mark →
+###   trial_target_mark）+ 查表定档（罪≥75 取 3 否则 2 / 罪≥50 取 1 否则 0）
+###   + 调 th_gensokyo_trial_judge_core_effect + 调
+###   th_gensokyo_trial_cleanup_effect —— **整段删除**。
+###   其中【标记转换点】由宣判路径接管（th_gensokyo_verdict_apply_effect ① 步）：
+###   判决效果一律按 th_gensokyo_trial_target_mark 自定位，转换不接管则判决静默失效。
+###
+### 站队（wants_this_parliament_issue_bias，二分不写复杂倾向）：**保持不变**
 ###   参战成员/与目标交战 → +（从重）
 ###   目标盟友/附属 → -（从轻）
-### 判决复用 th_gensokyo_trial_judge_core_effect（档 0-3 已实现），
-### 效果内重定位依赖 th_gensokyo_trial_target_mark —— 本议题回调开头
-### 从 th_gensokyo_crusade_target_mark 转换打标。
 ### 2026-08-26：审判庭无阎魔席位 → 移除 special_status；
 ### 发起者 = 审判庭领袖（阎魔或贤者，declare 时 set_leader_country）
 ### ============================================================
@@ -29,71 +50,79 @@ th_gensokyo_trial_issue = {
     chance = 100
 
     on_debate_passed = {
-        ### ============ 从重惩罚（通过 = 多数支持从重） ============
-        ### 目标标记转换（judge_core_effect 效果内重定位用 trial_target_mark）
+        ### ============ 从重意向（通过 = 多数支持从重）============
+        ### 只写意向，**不再判**。IO 变量 +1（审判庭此刻必然存在 ——
+        ### 本议题就是它的议会发起的）。
+        ### 写法：IO scope 块 set_variable + 负数字面量，蓝本
+        ###   VANILLA\common\scripted_effects\situation_effects.txt:618
+        ###   （set_variable = { name = … value = -1 }）
+        ###   IO 块形式跳转蓝本：international_organization_effects.txt:1033
+        international_organization:th_gensokyo_tribunal = {
+            set_variable = {
+                name = th_gensokyo_verdict_intent
+                value = 1
+            }
+        }
+        ### 国家标记：从重（两意向标记互斥，本次辩论只可能是其中之一；
+        ### 仍显式摘掉另一个，防上一案残留 —— 与宣判路径的清法一致）
         every_country = {
             limit = {
                 has_variable = th_gensokyo_crusade_target_mark
             }
-            set_variable = th_gensokyo_trial_target_mark
-        }
-        ### 档位：罪值 ≥75 → 档3（监管国）/ 否则 → 档2（归还+削弱）
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_trial_target_mark
-            }
+            set_variable = th_gensokyo_intent_harsh
             if = {
-                limit = {
-                    var:th_gensokyo_sin_var >= th_sin_tier3_value
-                }
-                set_variable = {
-                    name = th_gensokyo_sentence_tier
-                    value = 3
-                }
+                limit = { has_variable = th_gensokyo_intent_soft }
+                remove_variable = th_gensokyo_intent_soft
             }
-            else = {
-                set_variable = {
-                    name = th_gensokyo_sentence_tier
-                    value = 2
+        }
+        ### ============================================================
+        ### 2026-10-04 闭环改造④：辩论结束 ⇒ 彼岸（审判庭领袖）跳裁决事件
+        ###   scope 链 IO → 领袖国：项目内既有用法
+        ###     on_action\th_gensokyo_chain_events.txt:719-722
+        ###       （international_organization:… = { leader_country = { … } }）
+        ###   触发 effect 蓝本（★ EU5 **没有** trigger_event，只有 silently/non_silently）：
+        ###     VANILLA\events\character\court_flavor_events.txt:112
+        ###       trigger_event_non_silently = { id = court_flavor_events.3 days = 15 }
+        ###   语义：辩论一出结果就把裁决权交到阎魔手上，不必再等阎魔去点面板
+        ###   超时兜底保留（th_gensokyo_verdict_overdue）：阎魔不点则按意向自动落档
+        ### ============================================================
+        international_organization:th_gensokyo_tribunal = {
+            leader_country ?= {
+                trigger_event_non_silently = {
+                    id = th_gensokyo_tribunal_events.4
+                    days = 1
                 }
             }
         }
-        ### 执行判决（效果内重定位目标+阎魔；root = 幻想乡 IO）
-        th_gensokyo_trial_judge_core_effect = yes
-        th_gensokyo_trial_cleanup_effect = yes
     }
 
     on_debate_failed = {
-        ### ============ 从轻处理（失败 = 从重未获多数） ============
+        ### ============ 从轻意向（失败 = 从重未获多数）============
+        international_organization:th_gensokyo_tribunal = {
+            set_variable = {
+                name = th_gensokyo_verdict_intent
+                value = -1
+            }
+        }
         every_country = {
             limit = {
                 has_variable = th_gensokyo_crusade_target_mark
             }
-            set_variable = th_gensokyo_trial_target_mark
-        }
-        ### 档位：罪值 ≥50 → 档1（归还）/ 否则 → 档0（赔款破产）
-        every_country = {
-            limit = {
-                has_variable = th_gensokyo_trial_target_mark
-            }
+            set_variable = th_gensokyo_intent_soft
             if = {
-                limit = {
-                    var:th_gensokyo_sin_var >= th_sin_tier2_value
-                }
-                set_variable = {
-                    name = th_gensokyo_sentence_tier
-                    value = 1
-                }
+                limit = { has_variable = th_gensokyo_intent_harsh }
+                remove_variable = th_gensokyo_intent_harsh
             }
-            else = {
-                set_variable = {
-                    name = th_gensokyo_sentence_tier
-                    value = 0
+        }
+        ### 2026-10-04 闭环改造④：辩论否决（= 从轻意向）同样立即交裁决权（注释见 on_debate_passed）
+        international_organization:th_gensokyo_tribunal = {
+            leader_country ?= {
+                trigger_event_non_silently = {
+                    id = th_gensokyo_tribunal_events.4
+                    days = 1
                 }
             }
         }
-        th_gensokyo_trial_judge_core_effect = yes
-        th_gensokyo_trial_cleanup_effect = yes
     }
 
     ### AI 投票倾向（站队二分；root = 投票国，scope:recipient = 幻想乡 IO）

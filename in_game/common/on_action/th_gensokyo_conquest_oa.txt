@@ -73,6 +73,19 @@ th_gensokyo_conquest_chaos_pulse = {
                         value = th_gensokyo_conquest_chaos_per_location_value
                     }
                 }
+                ### 2026-10-01 T2-1 罪名账本：征服割地 +1 次 / 地块
+                ### 挂载点 = 征服类 values_shift 的落点（th_gensokyo_conquest_chaos_per_location_value
+                ### 的调用处）。当前 scope 已是 scope:winner（征服者），
+                ### 绝不给 scope:loser 记账；外层 limit 已限定 winner 与 loser 都是
+                ### 幻想乡 IO 成员 → 记账点天然限定在幻想乡相关国家。
+                ### 增量固定 +1，地块数由本钩子调用频率自然累计（系数见
+                ### script_values 的 th_crime_conquest_weight，立案时由 T2-2 合计）。
+                ### 注：同一场和约割地若属未授权扩张，还会经 unlawful_expansion_check
+                ### → punish effect 记一次「非法扩张」——两条罪名是账本上并列的两行，
+                ### 不是同一件事被数了两次。
+                th_gensokyo_crime_record_effect = {
+                    crime = th_gensokyo_crime_conquest_var
+                }
             }
         }
         

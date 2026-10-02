@@ -1,0 +1,183 @@
+﻿### ============================================================
+### 审判庭 — 战时求和（T2-3 新增，2026-10-03）
+### 规格：《脚本规格》§4.6；设计：《设计定案》§6（被诉方三出路）
+###
+### 语义：被诉国在**惩戒战争进行中**主动认罚，换取战争立即失去正当性。
+###   这是"把现有那条几乎不可能触发的死代码救活"的那一步：
+###     审判庭 IO 定义里有两个已有但难以自然满足的触发器
+###     （in_game/common/international_organizations/th_gensokyo_tribunal.txt）：
+###       :77-82 auto_leave_trigger = 目标国好战价值观 < th_notorious_outcast_threshold_value
+###       :86-92 auto_disband_trigger = 已无任何国家持 th_gensokyo_crusade_target_mark
+###   本行动只做两件"驱动条件"的事（价值观压到 0 + 摘 target 标记），
+###   两个触发器由引擎自动评估 ⇒ 成员自动退出、审判庭自动解散。
+###   **本窗不改 th_gensokyo_tribunal.txt**（不在白名单），
+###   它现有的两个 trigger 正好被本行动驱动 —— 这正是设计要的"救活死代码"。
+###
+### 收款去向：罚金入公库（《设计定案》§5.7），与认罪/赔款同一口径。
+### ============================================================
+
+th_gensokyo_tribunal_settle = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        ### 蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:29-45
+        scope:actor ?= {
+            ### 被诉方（惩戒目标）独有
+            has_variable = th_gensokyo_crusade_target_mark
+            ### 且审判庭存在（《脚本规格》§4.6 的两个前置）
+            ### 判定写法逐字照 generic_actions/th_gensokyo_tribunal_indict.txt:39-43
+            ### （exists 链接对 unique 动态 IO 不可靠 → 用 any_international_organization 遍历）
+            any_international_organization = {
+                international_organization_type = international_organization_type:th_gensokyo_tribunal
+            }
+        }
+    }
+
+    allow = {
+        ### 铁律 3：custom_tooltip 文案写"阻塞状态"、内层写**正向**条件
+        ### 正向条件 = 正与攻击方交战（《脚本规格》§4.6："与攻击方处于战争中"）
+        ###
+        ### 方向判定写法逐字照 VANILLA\common\generic_actions\
+        ###   red_turban_rebellions.txt:222-238：
+        ###     scope:actor = { at_war = yes
+        ###         any_current_war = { OR = { AND = {
+        ###             any_attacker = { ... }
+        ###             any_defender = { this = scope:actor } } ... } } }
+        ### 同款：guelphs_and_ghibellines.txt:406-407
+        ###
+        ### "攻击方"的界定用**静态 IO 成员身份**（幻想乡 IO），不引用动态的
+        ### 审判庭 IO scope —— 因为审判庭是 unique 动态创建/解散的，
+        ### 在 allow 里裸引用 international_organization:th_gensokyo_tribunal
+        ### 有"不存在时报错"的风险（potential 里的 any_international_organization
+        ### 遍历就是为了绕开这一点）。
+        ### 语义：惩戒战争是幻想乡共同体发动的 ⇒ 攻击方中必有幻想乡 IO 成员。
+        ### 被诉国自己也是幻想乡 IO 成员，但它在本次战争中是 **defender**，
+        ### 故不会被 any_attacker 命中。
+        scope:actor ?= {
+            custom_tooltip = {
+                text = TH_TRIBUNAL_SETTLE_NOT_AT_WAR_TT
+                any_current_war = {
+                    any_defender = {
+                        this = scope:actor
+                    }
+                    any_attacker = {
+                        is_member_of_international_organization = international_organization:th_gensokyo_io
+                    }
+                }
+            }
+        }
+    }
+
+    ### 价格对象：一次性战时代价（与 script_values 的 th_settle_cost_value 同值，
+    ### 见 common/prices/th_gensokyo_tribunal_prices.txt 的"金额同步铁律"）
+    ### should_execute_price = no 的理由同认罪赎罪（收款方是公库，不是"无人"）
+    price = price:th_gensokyo_tribunal_settle_price
+    should_execute_price = no
+
+    effect = {
+        ### 铁律 2：exists 守卫防 tooltip 预演报错
+        if = {
+            limit = { exists = scope:actor }
+            scope:actor = {
+                ### ============================================================
+                ### ① 支付战时代价（扣款 + 入公库，两步；说明同
+                ###    generic_actions/th_gensokyo_tribunal_confess.txt 的 effect ①）
+                ### 量级定位（《设计定案》只说"介于提前认罪与战败判决之间"）：
+                ###   th_settle_cost_value = 1200（初值【待调】）
+                ###   > 认罪基础价 500；< 战败判决的"半数国库 / 全库转移"
+                ###     （scripted_effects/th_gensokyo_crusade_effects.txt:180-182 / :219-221）
+                ### ============================================================
+                donate_gold_to_international_organization = {
+                    international_organization = international_organization:th_gensokyo_io
+                    value = th_settle_cost_value
+                }
+                international_organization:th_gensokyo_io = {
+                    add_gold = th_settle_cost_value
+                }
+
+                ### ============================================================
+                ### ② 把好战价值观压到门槛以下（**本行动的引擎驱动点之一**）
+                ###    审判庭 auto_leave_trigger
+                ###    （international_organizations/th_gensokyo_tribunal.txt:77-82）
+                ###    要求：目标国 societal_value:th_gensokyo_amity_vs_belligerence
+                ###          < th_notorious_outcast_threshold_value（= 50）
+                ###    ⇒ 直接归中（0），与三条结案路径的归中口径一致
+                ###      （蓝本 peace_treaties/th_gensokyo_crusade_triumph.txt:34-39；
+                ###       scripted_effects/th_gensokyo_tribunal_effects.txt 的结案段）
+                ###    ⚠️ 这里**显式写一次**而不依赖 ④ 的结案效果代劳：
+                ###      结案效果按 th_gensokyo_tarnish_mark 自我定位，
+                ###      若案件已被别的路径结掉（tarnish 已摘），它就整个不执行，
+                ###      价值观就不会归中 ⇒ auto_leave 永不触发。
+                ###      本处显式归中保证"只要点了求和，价值观一定达标"。
+                ### ============================================================
+                set_societal_value = {
+                    type = th_gensokyo_amity_vs_belligerence
+                    value = 0
+                }
+
+                ### ============================================================
+                ### ③ 摘 th_gensokyo_crusade_target_mark
+                ###    （**本行动的引擎驱动点之二**）
+                ###    审判庭 auto_disband_trigger
+                ###    （international_organizations/th_gensokyo_tribunal.txt:86-92）
+                ###    要求：NOT = { any_country = { has_variable =
+                ###                              th_gensokyo_crusade_target_mark } }
+                ###    ⇒ 摘掉本标记后审判庭自动解散（on_disband 目前为空，无副作用）
+                ###    读前守卫（铁律 11 同款纪律；remove 缺失变量虽无害，
+                ###    但本项目一律先 has_variable，见 case_markers_clear_effect 全篇）
+                ### ============================================================
+                if = {
+                    limit = { has_variable = th_gensokyo_crusade_target_mark }
+                    remove_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+
+            ### ============================================================
+            ### ④ 结案 —— 复用 T2-2b 的结案总入口
+            ###   覆盖《脚本规格》§4.6 的 ③（清 tarnish / 全部档标记 / 观察期）
+            ###   与 ⑤（团结度奖励，th_unity_verdict_reward_value 经
+            ###    th_gensokyo_unity_add_effect 发放）。
+            ###   ⚠️ 顺序铁律：该效果按 th_gensokyo_tarnish_mark 自我定位，
+            ###      必须在摘 tarnish 之前调用；本行动不动 tarnish，
+            ###      由结案效果自己摘（放在最后即满足）。
+            ###   ⚠️ 已知边界（登记）：若求和时案件已被别的路径结掉
+            ###      （tarnish 已不存在），结案效果整体不执行 ⇒ 本行动
+            ###      没有团结度奖励。这是"无案可结"的正常情形，不是缺口。
+            ### ============================================================
+            th_gensokyo_tribunal_case_close_effect = yes
+        }
+    }
+
+    ### 无 cooldown：potential 依赖 th_gensokyo_crusade_target_mark，
+    ### 本行动自己会摘掉它 ⇒ 执行一次后 potential 自然失效
+    ### （同《脚本规格》§4.5 对认罪行动的"无冷却"论证口径）
+
+    ai_will_do = {
+        ### 铁律 5 的 v1.8 修订版：ai_will_do 可用 has_variable / var:
+        ### 被诉 AI 的求和倾向：付得起 + 已在惩戒战争里 ⇒ 给权重
+        ### （AI 认罚止损；比继续挨档位制裁划算）
+        ### societal_value 判定在 ai_will_do 里的用法有本项目先例
+        ### （generic_actions/th_gensokyo_tribunal_indict.txt:238）
+        if = {
+            limit = {
+                scope:actor ?= {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    gold >= th_settle_cost_value
+                    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_SETTLE_READY
+                value = 300
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

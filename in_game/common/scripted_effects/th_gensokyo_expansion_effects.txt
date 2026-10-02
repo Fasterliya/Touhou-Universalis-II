@@ -44,6 +44,16 @@ th_gensokyo_expansion_punish_effect = {    ### 1. 受害方对扩张者的额外
             value = $unity$
         }
     }
+    ### 4. 罪名账本（2026-10-01 T2-1）：非法扩张 +1 次
+    ### root = 扩张者。本 effect 是非法扩张的唯一咽喉，两个调用点都在
+    ### chain_events：unlawful_expansion_check（和约割地，trigger 已保证双方都是
+    ### 幻想乡 IO 成员）与 unlawful_annex_check 的非法分支（同款双成员 trigger）
+    ### → 记账点天然限定在幻想乡相关国家，无需再套成员判定。
+    ### 增量固定 +1（地块数由调用频率自然累计，数值系数见 script_values
+    ### th_crime_unlawful_weight，立案时由 T2-2 合计）
+    th_gensokyo_crime_record_effect = {
+        crime = th_gensokyo_crime_unlawful_var
+    }
 }
 
 ### 扩张代价修正 月度互斥挂载（国家 scope 调用）

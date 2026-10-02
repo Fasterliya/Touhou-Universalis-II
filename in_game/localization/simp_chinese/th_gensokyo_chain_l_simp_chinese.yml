@@ -122,11 +122,6 @@
  th_clan_society_desc: "人类乡里以宗族为治理单元，各宗族恪守自家族规实行自治。族内纷争、家事教化皆由宗族内部处置，其他势力不可擅自介入宗族内部事务。"
 
 ### 审判事件
- th_gensokyo_trial_events.1.title: "最终审判"
- th_gensokyo_trial_events.1.desc: "惩戒战争已了结。作为阎魔，你需依据目标国的罪行裁定其命运。"
- th_gensokyo_trial_events.1.a: "轻判：归还非法侵占的领土"
- th_gensokyo_trial_events.1.b: "中判：归还领土并削弱其国力"
- th_gensokyo_trial_events.1.c: "重判：使其完全沦为彼岸的监管国（转移财富并课以贡金）"
  th_gensokyo_trial_events.2.title: "脱离彼岸"
  th_gensokyo_trial_events.2.desc: "刑期已满。你从彼岸的监管中获释，重获独立。"
  th_gensokyo_trial_events.2.a: "自由了"
@@ -225,3 +220,259 @@
 
 ### 贤者保护
  th_gensokyo_sages_defend_reason: "守护人间之里"
+
+### ============================================================
+### 审判庭面板（T1）— 2026-10-01 新增
+### 概览 tab 关系图 / 随征旗排 / 分页 / 空状态 / 辩论 tab 预计档位
+### ============================================================
+
+### 概览 tab · 关系图三段（彼岸 → 世俗代理人 → 罪人国家）
+ TH_TRIBUNAL_HIGAN: "彼岸"
+ TH_TRIBUNAL_YAMA_COURT: "是非曲直厅"
+ TH_TRIBUNAL_AGENT: "世俗代理人"
+ TH_TRIBUNAL_AGENT_LEAD: "最近强国 · 领衔"
+ TH_TRIBUNAL_SINNER: "罪人国家"
+
+### 概览 tab · 随征旗排
+ TH_TRIBUNAL_RETINUE: "随征"
+ TH_TRIBUNAL_RETINUE_UNIT: "国"
+
+### 分页标签与空状态
+ TH_TRIBUNAL_TAB_DEBATE: "辩论"
+ TH_TRIBUNAL_NOT_OPENED: "本庭尚未开庭"
+
+### 辩论 tab · 预计档位
+ TH_TRIAL_EXPECTED_TIER: "预计档位："
+ TH_TRIBUNAL_VERDICT_T2: "2.削弱"
+ TH_TRIBUNAL_VERDICT_T3: "3.监管国"
+
+### ============================================================
+### 审判庭行动组（T2-4）— 2026-10-01 新增
+### 13 个行动 × 6 件套（行动名 / 描述 / 通用消息 / 我方执行 / 他国执行 / 对我执行）
+### 注：th_gensokyo_verdict_t0 / _t1 原为面板预留值（"0.赔款破产" / "1.归还"），
+###     现改作「宣判组」四行动的行动名；大写键 TH_TRIBUNAL_VERDICT_T2 / _T3
+###     是面板「预计档位」行的独立键，与本组小写行动名刻意共存。
+### ============================================================
+
+### 纠弹立案
+ th_gensokyo_tribunal_indict: "纠弹立案"
+ th_gensokyo_tribunal_indict_desc: "阎魔宣读罪名账本，正式立案：被诉国背负「祟」，制裁自第 1 档「谴责」起算，随后进入 6 个月观察期。"
+ PERFORM_th_gensokyo_tribunal_indict_ACTION: "在审判庭纠弹立案"
+ WE_PERFORM_th_gensokyo_tribunal_indict_ACTION: "我们在审判庭纠弹立案"
+ OTHER_PERFORMS_th_gensokyo_tribunal_indict_ACTION: "在审判庭纠弹立案"
+ ACTION_th_gensokyo_tribunal_indict_PERFORMED_ON_US: "在审判庭纠弹立案"
+
+### 升档
+ th_gensokyo_tribunal_escalate: "升档"
+ th_gensokyo_tribunal_escalate_desc: "观察期届满而目标仍未悔改，阎魔点名最近强国领衔，将制裁提升一档。"
+ PERFORM_th_gensokyo_tribunal_escalate_ACTION: "将制裁升档"
+ WE_PERFORM_th_gensokyo_tribunal_escalate_ACTION: "我们将制裁升档"
+ OTHER_PERFORMS_th_gensokyo_tribunal_escalate_ACTION: "将制裁升档"
+ ACTION_th_gensokyo_tribunal_escalate_PERFORMED_ON_US: "将制裁升档"
+
+### 赦免
+ th_gensokyo_tribunal_pardon: "赦免"
+ th_gensokyo_tribunal_pardon_desc: "阎魔独断撤销全部制裁，被诉国价值观归中，本案结案。"
+ PERFORM_th_gensokyo_tribunal_pardon_ACTION: "予以赦免，撤销全部制裁"
+ WE_PERFORM_th_gensokyo_tribunal_pardon_ACTION: "我们予以赦免，撤销全部制裁"
+ OTHER_PERFORMS_th_gensokyo_tribunal_pardon_ACTION: "予以赦免，撤销全部制裁"
+ ACTION_th_gensokyo_tribunal_pardon_PERFORMED_ON_US: "予以赦免，撤销全部制裁"
+
+### 拒绝领衔
+ th_gensokyo_tribunal_agent_refuse: "拒绝领衔"
+ th_gensokyo_tribunal_agent_refuse_desc: "受命领衔的世俗代理人抗命不遵：领衔资格被清除，并承受威望与贡献上的惩罚。"
+ PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION: "拒绝领衔"
+ WE_PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION: "我们拒绝领衔"
+ OTHER_PERFORMS_th_gensokyo_tribunal_agent_refuse_ACTION: "拒绝领衔"
+ ACTION_th_gensokyo_tribunal_agent_refuse_PERFORMED_ON_US: "拒绝领衔"
+
+### 自辩
+ th_gensokyo_tribunal_defend: "自辩"
+ th_gensokyo_tribunal_defend_desc: "被诉国消耗个人影响力逐条反驳罪名。反驳成立的罪名减半；若全部推翻，则撤销制裁、本案结案。"
+ PERFORM_th_gensokyo_tribunal_defend_ACTION: "提出自辩"
+ WE_PERFORM_th_gensokyo_tribunal_defend_ACTION: "我们提出自辩"
+ OTHER_PERFORMS_th_gensokyo_tribunal_defend_ACTION: "提出自辩"
+ ACTION_th_gensokyo_tribunal_defend_PERFORMED_ON_US: "提出自辩"
+
+### 认罪赎罪
+ th_gensokyo_tribunal_confess: "认罪赎罪"
+ th_gensokyo_tribunal_confess_desc: "被诉国支付认罪金，金额随已施加的档位递增。付款后价值观归中、全部制裁撤销，并进入考察期。"
+ PERFORM_th_gensokyo_tribunal_confess_ACTION: "认罪赎罪，结清代价"
+ WE_PERFORM_th_gensokyo_tribunal_confess_ACTION: "我们认罪赎罪，结清代价"
+ OTHER_PERFORMS_th_gensokyo_tribunal_confess_ACTION: "认罪赎罪，结清代价"
+ ACTION_th_gensokyo_tribunal_confess_PERFORMED_ON_US: "认罪赎罪，结清代价"
+
+### 战时求和
+ th_gensokyo_tribunal_settle: "战时求和"
+ th_gensokyo_tribunal_settle_desc: "圣战期间认罚求和：支付求和代价，价值观回落，审判庭随之失去正当性而解散。"
+ PERFORM_th_gensokyo_tribunal_settle_ACTION: "认罚求和"
+ WE_PERFORM_th_gensokyo_tribunal_settle_ACTION: "我们认罚求和"
+ OTHER_PERFORMS_th_gensokyo_tribunal_settle_ACTION: "认罚求和"
+ ACTION_th_gensokyo_tribunal_settle_PERFORMED_ON_US: "认罚求和"
+
+### 履约·交还领地
+ th_gensokyo_tribunal_fulfill_land: "履约·交还领地"
+ th_gensokyo_tribunal_fulfill_land_desc: "被诉国将一块涉案领地归还受害国。履约事项之一：观察期届满时涉案领地已归还，即判定为悔改。"
+ PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION: "交还了一块涉案领地"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION: "我们交还了一块涉案领地"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_land_ACTION: "交还了一块涉案领地"
+ ACTION_th_gensokyo_tribunal_fulfill_land_PERFORMED_ON_US: "交还了一块涉案领地"
+
+### 履约·支付赔款
+ th_gensokyo_tribunal_fulfill_pay: "履约·支付赔款"
+ th_gensokyo_tribunal_fulfill_pay_desc: "被诉国分期支付赔款，款项入幻想乡公库。履约事项之一：累计金额达标即视为完成。"
+ PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION: "支付了一笔赔款"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION: "我们支付了一笔赔款"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_pay_ACTION: "支付了一笔赔款"
+ ACTION_th_gensokyo_tribunal_fulfill_pay_PERFORMED_ON_US: "支付了一笔赔款"
+
+### 宣判·赔款破产（原面板预留键 "0.赔款破产" 改写为行动名）
+ th_gensokyo_verdict_t0: "宣判·赔款破产"
+ th_gensokyo_verdict_t0_desc: "判罚：目标半数国库转入幻想乡公库，并蒙受破产 2 年。"
+ PERFORM_th_gensokyo_verdict_t0_ACTION: "作出判决：赔款破产"
+ WE_PERFORM_th_gensokyo_verdict_t0_ACTION: "我们作出判决：赔款破产"
+ OTHER_PERFORMS_th_gensokyo_verdict_t0_ACTION: "作出判决：赔款破产"
+ ACTION_th_gensokyo_verdict_t0_PERFORMED_ON_US: "作出判决：赔款破产"
+
+### 宣判·归还（原面板预留键 "1.归还" 改写为行动名）
+ th_gensokyo_verdict_t1: "宣判·归还"
+ th_gensokyo_verdict_t1_desc: "判罚：目标归还非法所得的全部领土。"
+ PERFORM_th_gensokyo_verdict_t1_ACTION: "作出判决：归还"
+ WE_PERFORM_th_gensokyo_verdict_t1_ACTION: "我们作出判决：归还"
+ OTHER_PERFORMS_th_gensokyo_verdict_t1_ACTION: "作出判决：归还"
+ ACTION_th_gensokyo_verdict_t1_PERFORMED_ON_US: "作出判决：归还"
+
+### 宣判·削弱
+ th_gensokyo_verdict_t2: "宣判·削弱"
+ th_gensokyo_verdict_t2_desc: "判罚：目标国力削弱，持续 5 年。"
+ PERFORM_th_gensokyo_verdict_t2_ACTION: "作出判决：削弱"
+ WE_PERFORM_th_gensokyo_verdict_t2_ACTION: "我们作出判决：削弱"
+ OTHER_PERFORMS_th_gensokyo_verdict_t2_ACTION: "作出判决：削弱"
+ ACTION_th_gensokyo_verdict_t2_PERFORMED_ON_US: "作出判决：削弱"
+
+### 宣判·监管国
+ th_gensokyo_verdict_t3: "宣判·监管国"
+ th_gensokyo_verdict_t3_desc: "判罚：目标国库清零，并沦为彼岸的监管国，刑期 20 年（上限 30 年）。"
+ PERFORM_th_gensokyo_verdict_t3_ACTION: "作出判决：监管国"
+ WE_PERFORM_th_gensokyo_verdict_t3_ACTION: "我们作出判决：监管国"
+ OTHER_PERFORMS_th_gensokyo_verdict_t3_ACTION: "作出判决：监管国"
+ ACTION_th_gensokyo_verdict_t3_PERFORMED_ON_US: "作出判决：监管国"
+
+### 价格对象与倾向名（随本批补的 5 键）
+ th_gensokyo_tribunal_confess_price: "认罪金"
+ th_gensokyo_tribunal_reparations_price: "赔款"
+ th_gensokyo_tribunal_settle_price: "求和代价"
+ th_antagonism_sanction_condemn: "制裁谴责（敌意）"
+ th_opinion_sanction_condemn: "制裁谴责（好感）"
+
+### ============================================================
+### 审判庭 · 本地化批 L2
+### 行动阻断提示 / AI 权重理由 / 代理人事件 / 标记与变量 / 人间之里 IO
+### 说明：人间之里 IO 两键按定案落在本文件（同语言下键全局生效，
+###       不必回到 th_gensokyo_io_l_*.yml）；文案与 main_menu 同名键逐字一致。
+### ============================================================
+
+### 行动 · 阻断状态（allow）
+ TH_TRIBUNAL_NO_SUSPECT_TT: "当前没有够格被纠弹的嫌疑国"
+ TH_TRIBUNAL_NO_ESCALATION_TT: "没有观察期已满而仍未悔改的被诉国"
+ TH_TRIBUNAL_NO_ACCUSED_TT: "当前没有被诉国"
+ TH_TRIBUNAL_DEFEND_NO_GROUND_TT: "没有可反驳的罪名"
+ TH_TRIBUNAL_CONFESS_CANNOT_AFFORD_TT: "国库不足以支付认罪金"
+ TH_TRIBUNAL_SETTLE_NOT_AT_WAR_TT: "当前并未处于圣战之中"
+ TH_TRIBUNAL_FULFILL_LAND_NO_TARGET_TT: "手上没有可归还的涉案领地"
+ TH_TRIBUNAL_FULFILL_PAY_CANNOT_AFFORD_TT: "国库不足以支付这笔赔款"
+ TH_TRIBUNAL_VERDICT_RANGE_T0_TT: "「赔款破产」超出本案的裁量范围：判决只能落在依律基准的上下各一档之内"
+ TH_TRIBUNAL_VERDICT_RANGE_T1_TT: "「归还」超出本案的裁量范围：判决只能落在依律基准的上下各一档之内"
+ TH_TRIBUNAL_VERDICT_RANGE_T2_TT: "「削弱」超出本案的裁量范围：判决只能落在依律基准的上下各一档之内"
+ TH_TRIBUNAL_VERDICT_RANGE_T3_TT: "「监管国」超出本案的裁量范围：判决只能落在依律基准的上下各一档之内"
+
+### 行动 · AI 权重理由（ai_will_do）
+ TH_TRIBUNAL_AI_SUSPECT_FOUND: "存在够格被纠弹的嫌疑国"
+ TH_TRIBUNAL_AI_ESCALATE_READY: "被诉国观察期已满而仍未悔改"
+ TH_TRIBUNAL_AI_PARDON_READY: "被诉国已履约，只差撤销制裁"
+ TH_TRIBUNAL_AI_REFUSE_WEAK: "自身实力不足以领衔"
+ TH_TRIBUNAL_AI_DEFEND_READY: "尚有罪名可反驳，且影响力充足"
+ TH_TRIBUNAL_AI_CONFESS_READY: "国库足以支付认罪金，愿以此结案"
+ TH_TRIBUNAL_AI_SETTLE_READY: "战事不利，愿认罚求和"
+ TH_TRIBUNAL_AI_FULFILL_READY: "尚有未完成的履约事项"
+ TH_TRIBUNAL_AI_VERDICT_WITH_INTENT: "判决与诸国意向一致"
+ TH_TRIBUNAL_AI_VERDICT_BASELINE: "无意向可依，按依律基准判决"
+ TH_TRIBUNAL_CONFESS_PRICE_TIER: "认罪金随已施加的制裁档位递增"
+
+### 事件 · 代理人同意链（namespace = th_gensokyo_tribunal_events）
+ th_gensokyo_tribunal_events.1.title: "领衔征询"
+ th_gensokyo_tribunal_events.1.desc: "是非曲直厅已裁定，制裁须由世俗之手领衔执行。阎魔指名由你领衔：应允则对被诉国的制裁提升一档，观察期重新起算；拒绝则原档位保留，阎魔另选他人。"
+ th_gensokyo_tribunal_events.1.a: "接受领衔"
+ th_gensokyo_tribunal_events.1.b: "拒绝领衔"
+ th_gensokyo_tribunal_events.2.title: "领衔被拒"
+ th_gensokyo_tribunal_events.2.desc: "被指名的国家拒绝领衔。本案原档位保留，观察期不予重置。是非曲直厅请你另行择定领衔之国。"
+ th_gensokyo_tribunal_events.2.a: "明白了"
+ th_gensokyo_tribunal_events.3.title: "观察期届满"
+ th_gensokyo_tribunal_events.3.desc: "被诉国的观察期已届满，既未履约，亦无悔改之举。本案可以升档：由最近强国领衔，制裁再进一档，观察期重新起算。"
+ th_gensokyo_tribunal_events.3.a: "明白了"
+ th_gensokyo_tribunal_events.4.title: "终审 · 裁决"
+ th_gensokyo_tribunal_events.4.desc: "辩论已毕，案卷呈至彼岸。\n被诉国 [th_verdict_accused.GetName] 的罪业已定，依律基准 #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#! 档。\n你可以依律、顺民意，也可以独断——但每一次偏离民意、每一次越出裁量范围，都记在幻想乡的团结度上。"
+ th_gensokyo_tribunal_events.4.a.tt: "#T0. 赔款破产#!\n$BULLET$本档后果：被诉国国库半数转出并陷入破产，罚金入幻想乡公库\n$BULLET$依律基准：#T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#! 档；裁量范围 = 基准上下各一档\n$BULLET$偏离诸国意向：每偏一档，幻想乡团结度扣除 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!\n$BULLET$越出裁量范围：额外再扣 #R同额#! 团结度\n$BULLET$收尾：判决落地、审判庭解散，本案转入服刑"
+ th_gensokyo_tribunal_events.4.b.tt: "#T1. 归还#!\n$BULLET$本档后果：被诉国交还非法所得的领地\n$BULLET$依律基准：#T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#! 档；裁量范围 = 基准上下各一档\n$BULLET$偏离诸国意向：每偏一档，幻想乡团结度扣除 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!\n$BULLET$越出裁量范围：额外再扣 #R同额#! 团结度\n$BULLET$收尾：判决落地、审判庭解散，本案转入服刑"
+ th_gensokyo_tribunal_events.4.c.tt: "#T2. 削弱#!\n$BULLET$本档后果：交还领地，且国力被削弱若干年\n$BULLET$依律基准：#T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#! 档；裁量范围 = 基准上下各一档\n$BULLET$偏离诸国意向：每偏一档，幻想乡团结度扣除 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!\n$BULLET$越出裁量范围：额外再扣 #R同额#! 团结度\n$BULLET$收尾：判决落地、审判庭解散，本案转入服刑"
+ th_gensokyo_tribunal_events.4.d.tt: "#T3. 监管国#!\n$BULLET$本档后果：被诉国国库清零，降为彼岸的监管国，刑满方可释放\n$BULLET$依律基准：#T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#! 档；裁量范围 = 基准上下各一档\n$BULLET$偏离诸国意向：每偏一档，幻想乡团结度扣除 #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#!\n$BULLET$越出裁量范围：额外再扣 #R同额#! 团结度\n$BULLET$收尾：判决落地、审判庭解散，本案转入服刑"
+
+### 标记与变量（定案要求进 UI）
+ th_gensokyo_tarnish_mark: "祟"
+ th_gensokyo_tarnish_mark_desc: "被审判庭立案的国家所背负的标记。\n$BULLET$幻想乡全体成员对其敌意上升、好感下降\n$BULLET$在审期间，不再受贤者保护义务的庇护\n$BULLET$制裁逐档加码：自第 2 档起，其在幻想乡议会的投票权归零\n$BULLET$交还领地、支付赔款、停止战争或认罪，均可解除"
+ th_gensokyo_suspect_mark: "嫌疑"
+ th_gensokyo_suspect_mark_desc: "好战越线的国家所背负的标记。\n$BULLET$好战倾向已越过幻想乡的容忍线\n$BULLET$已够格被阎魔纠弹立案，但尚未立案\n$BULLET$处于免制裁期者不会被记为嫌疑"
+ th_gensokyo_observation_months: "观察期（剩余月数）"
+ th_gensokyo_tier_1_mark: "谴责"
+ th_gensokyo_tier_1_mark_desc: "制裁第 1 档。\n$BULLET$幻想乡全体成员对其敌意上升、好感下降\n$BULLET$外交上被孤立，但不影响其军事与财政\n$BULLET$制裁撤销时，这些敌意与好感一并移除"
+ th_gensokyo_tier_2_mark: "夺权"
+ th_gensokyo_tier_2_mark_desc: "制裁第 2 档。\n$BULLET$在幻想乡议会的投票权归零\n$BULLET$其贡献与影响力不再计入幻想乡\n$BULLET$在审判庭的意向表决中，其意见仍可见，但已无分量"
+ th_gensokyo_tier_3_mark: "禁运"
+ th_gensokyo_tier_3_mark_desc: "制裁第 3 档。\n$BULLET$幻想乡全体成员对其禁运，贸易往来中断\n$BULLET$禁运持续至制裁撤销\n$BULLET$自此档起，制裁不再只是名誉问题"
+ th_gensokyo_tier_4_mark: "限张"
+ th_gensokyo_tier_4_mark_desc: "制裁第 4 档，阶梯顶点。\n$BULLET$其在幻想乡的扩张会招致更大的国际反弹\n$BULLET$扩张所得不变，代价变重\n$BULLET$此档之后仍不悔改，阎魔即开庭宣判"
+
+### 惩戒战争 · 战争目标提示（战争目标文件引用）
+ TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT: "惩戒战争不得割地"
+ TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT: "惩戒战争不得奴役"
+
+### 人间之里 IO（R1 欠账：in_game 四语全缺；文案与 main_menu 同名键逐字一致）
+ th_human_village_io: "人间之里"
+ th_human_village_io_desc: "人间之里及命连寺区域各国组成的联合组织。"
+
+### ============================================================
+### 审判庭 L3（2026-10-05）
+### 1 案卷区 UI（T2-5a；th_gensokyo_io.gui 案卷页签）
+### 2 两个新静态修正的 loc（T2-5b）。两套键名都写：本项目既有修正用裸键，
+###   弹幕 / 贤者系修正用 vanilla 的 STATIC_MODIFIER_NAME_ / _DESC_ 前缀，
+###   引擎读哪一套未经证实，故并列。
+### ============================================================
+
+### 案卷区 UI（T2-5a）
+ TH_TRIBUNAL_TAB_DOSSIER: "案卷"
+ TH_TRIBUNAL_TAB_DOSSIER_TT_TEXT: "阎魔的办公桌。此处登记幻想乡全境的好战嫌疑、在案制裁与已结案件。"
+ TH_TRIBUNAL_DOSSIER_TITLE: "审判庭案卷"
+ TH_TRIBUNAL_DOSSIER_LEAD: "阎魔的办公桌"
+ TH_TRIBUNAL_GROUP_SUSPECT: "嫌疑"
+ TH_TRIBUNAL_GROUP_INDICTED: "已立案 · 制裁中"
+ TH_TRIBUNAL_GROUP_SERVING: "服刑中"
+ TH_TRIBUNAL_GROUP_CLOSED: "已结案"
+ TH_TRIBUNAL_BADGE_INDICTED: "已立案"
+ TH_TRIBUNAL_BADGE_SERVING: "服刑中"
+ TH_TRIBUNAL_BADGE_CLOSED: "已结案"
+ TH_TRIBUNAL_TIER_LABEL: "制裁"
+ TH_TRIBUNAL_OBSERVATION_LEFT: "观察期剩"
+ TH_TRIBUNAL_MONTHS: "月"
+ TH_TRIBUNAL_ATTITUDE: "态度"
+ TH_TRIBUNAL_CONFESS_PAID: "已付赔款"
+ TH_TRIBUNAL_CLOSED_NOTE: "本案卷已封存"
+
+### 静态修正：大义 / 祟（T2-5b）
+ th_gensokyo_grand_cause_modifier: "大义"
+ th_gensokyo_grand_cause_modifier_desc: "圣战参与者同仇敌忾，士气、人力与威望获得提升。"
+ STATIC_MODIFIER_NAME_th_gensokyo_grand_cause_modifier: "大义"
+ STATIC_MODIFIER_DESC_th_gensokyo_grand_cause_modifier: "圣战参与者同仇敌忾，士气、人力与威望获得提升。"
+ th_gensokyo_tarnish_modifier: "祟"
+ th_gensokyo_tarnish_modifier_desc: "被审判庭立案的国家所背负的标记。"
+ STATIC_MODIFIER_NAME_th_gensokyo_tarnish_modifier: "祟"
+ STATIC_MODIFIER_DESC_th_gensokyo_tarnish_modifier: "被审判庭立案的国家所背负的标记。"

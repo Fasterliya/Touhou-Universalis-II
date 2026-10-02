@@ -65,6 +65,81 @@ th_gensokyo_chain_monthly_pulse = {
                 value = 0
             }
         }
+        ### 2026-10-01 T2-1：罪名账本 + 战时态度的"缺失即补 0"兜底（同上 sin_var 语义）
+        ### 防旧档 / 中途入伙成员缺变量 → 记账与判决裸读报
+        ### "Value of wrong type 'none'"（铁律 11）。紧凑写法照 vanilla
+        ### castilian_civil_war.txt:171（set_variable = { name = ccw_timer value = yes days = 365 }）
+        ### 注：th_gensokyo_crime_last_date 不在兜底之列 —— 时间戳补 0 无意义，
+        ###     由 th_gensokyo_crime_record_effect 在首次记账时写入
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_crime_unlawful_var } }
+            set_variable = { name = th_gensokyo_crime_unlawful_var value = 0 }
+        }
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_crime_freecity_var } }
+            set_variable = { name = th_gensokyo_crime_freecity_var value = 0 }
+        }
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_crime_conquest_var } }
+            set_variable = { name = th_gensokyo_crime_conquest_var value = 0 }
+        }
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_crime_legal_var } }
+            set_variable = { name = th_gensokyo_crime_legal_var value = 0 }
+        }
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_crime_regulated_var } }
+            set_variable = { name = th_gensokyo_crime_regulated_var value = 0 }
+        }
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_crime_nocb_var } }
+            set_variable = { name = th_gensokyo_crime_nocb_var value = 0 }
+        }
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_attitude_var } }
+            set_variable = { name = th_gensokyo_attitude_var value = 0 }
+        }
+        ### 2026-10-01 T2-2：观察期数值兜底（本窗唯一新增数值变量）。
+        ### 【重要接口】补 0 后它**恒存在** ⇒ 它本身不是"是否有案"的判据；
+        ### 案件判据恒为 has_variable = th_gensokyo_tarnish_mark。
+        ### T2-2b 的观察期倒计时段必须用 tarnish 标记门控，不能用本变量门控。
+        if = {
+            limit = { NOT = { has_variable = th_gensokyo_observation_months } }
+            set_variable = { name = th_gensokyo_observation_months value = 0 }
+        }
+        ### ============================================================
+        ### 2026-10-01 T2-2 阶段 0「越线」检测（《设计定案》§5.1、《脚本规格》§3）
+        ### 触发：好战价值观 societal_value:th_gensokyo_amity_vs_belligerence
+        ###       >= th_notorious_outcast_threshold_value（50）
+        ### 结果：打「嫌疑」标记 th_gensokyo_suspect_mark —— **不自动立案**，
+        ###       立案是阎魔的选择（本窗新增行动 th_gensokyo_tribunal_indict）
+        ### 成员限定天然成立：本 on_action 的 trigger 已是
+        ###   is_member_of_international_organization = international_organization:th_gensokyo_io
+        ###   （on_action 的 trigger 为假则整个 on_action 不执行，
+        ###    官方明文 VANILLA\common\on_action\on_actions.info:2）
+        ### 排除阎魔自己（法是彼岸给的，动手的是世俗国家）与免制裁期
+        ### 幂等写法：整块只在"尚未持有嫌疑标记"时进入 ⇒ 每月不做无谓写入、
+        ###   不刷日志（脉冲本身就是月度频率，不需要去抖计时器）。
+        ### 判据本身对同一国家是单调的（价值观只由事件/行动驱动，自然衰减已停用，
+        ###   见 th_gensokyo_notorious_effects.txt 的 WP-B 注释），
+        ###   故不会出现"打了又摘"的抖动。
+        ### 通知：**本窗改用"标记 + UI"手段**。项目的通知载体是
+        ###   trigger_event_non_silently（scripted_effects/th_gensokyo_expansion_effects.txt:131/167 等），
+        ###   但事件必须有定义文件（in_game/events/），而 events/ 不在本窗白名单内
+        ###   → 需新事件的"通知阎魔 / 三贤者 / 受害国"列为 FAILED（见报告 §8），
+        ###     后续窗在 events/ 补一个 th_gensokyo_tribunal_events.<id> 即可，
+        ###     本处预留挂点：后续窗把这一块换成"打标记 + trigger_event_non_silently"
+        ###     即可，判定条件本身不用改。
+        ### ============================================================
+        if = {
+            limit = {
+                NOT = { has_variable = th_gensokyo_suspect_mark }
+                societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                NOT = { is_leader_of_international_organization = international_organization:th_gensokyo_io }
+                NOT = { has_variable = th_gensokyo_sanction_immunity }
+            }
+            set_variable = th_gensokyo_suspect_mark
+        }
         ### 恶名自然衰减 + 档位接口
         th_gensokyo_notorious_monthly_effect = yes
         ### 扩张代价修正互斥挂载

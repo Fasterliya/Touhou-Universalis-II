@@ -5,16 +5,30 @@
 ### 2026-08-23 error.log 实测修复（F24 同款）：save_scope_as 跨 scripted_effect
 ###   不可靠（expansion 链 "Undefined event target 'expansion_requester'" 实证）——
 ###   本文件全部效果改为【效果内按标记重新定位】：
-###   目标国 = th_gensokyo_trial_target_mark（审判议题回调开头从
-###   th_gensokyo_crusade_target_mark 转换打标，审判完成后 cleanup 清理），
+###   目标国 = th_gensokyo_trial_target_mark
+###   **【2026-10-04 T2-5 更新】该标记的转换点已从"审判议题回调开头"
+###   迁到【宣判路径】**（scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###   th_gensokyo_verdict_apply_effect ① 步：crusade_target_mark →
+###   trial_target_mark）。原因：议会议题已降级为"只写诸国意向"、不再执行判决，
+###   若转换仍留在议题里，本文件的判决效果会因找不到目标而静默失效。
+###   审判完成后由 cleanup 清理两个标记。
 ###   阎魔 = IO leader（is_leader_of_international_organization 定位）
 ### ============================================================
 
 ### 效果内重定位（目标国 + 阎魔）——各效果开头内联使用（跨效果不可复用）
 ### 用法：把本块粘贴到引用 scope:crusade_target / scope:io_leader 的效果开头
-### 目标国标记法同审判局势 on_start（th_gensokyo_trial_target_mark 常驻至局势结束）
+### 目标国标记法同旧审判局势 on_start 的写法（th_gensokyo_trial_target_mark
+### 从宣判那一刻起常驻，直到 cleanup 清理；旧"局势"已于 2026-08-26 删除）
 
-### 有效罪值计算（罪值 + 审判法偏移，0-100，存 th_gensokyo_effective_sin）
+### 有效罪值计算（**T2-5 起 = 判决分**：罪 + 态度 + 审判法倾向，0-100，
+### 存 th_gensokyo_effective_sin）
+### 【2026-10-04 T2-5 改造】原来此处内联"罪值 + 审判法 ±10"两段，与
+###   parliament_issues 里的查表各算一份 ⇒ 公式分叉。现统一读
+###   script_values/th_gensokyo_io_chain_values.txt 的
+###   th_gensokyo_judgment_score_value（罪 + 态度 + 倾向，三政策互斥取一支），
+###   本效果只负责"取值 + 钳制 + 落变量"。
+###   该脚本值对被诉国的 var: 读取自带 has_variable 守卫（铁律 11），
+###   故本处不再出现裸读 sin / attitude。
 th_gensokyo_trial_effective_sin_effect = {
     ### F24 同款：效果内按标记重新定位目标国
     every_country = {
@@ -26,32 +40,11 @@ th_gensokyo_trial_effective_sin_effect = {
     scope:crusade_target = {
         set_variable = {
             name = th_gensokyo_effective_sin
-            value = var:th_gensokyo_sin_var
+            value = th_gensokyo_judgment_score_value
         }
-        international_organization:th_gensokyo_io = {
-            if = {
-                limit = {
-                    international_organization_has_policy = policy:th_judgment_karma_policy
-                }
-                scope:crusade_target = {
-                    change_variable = {
-                        name = th_gensokyo_effective_sin
-                        add = 10
-                    }
-                }
-            }
-            else_if = {
-                limit = {
-                    international_organization_has_policy = policy:th_judgment_mercy_policy
-                }
-                scope:crusade_target = {
-                    change_variable = {
-                        name = th_gensokyo_effective_sin
-                        subtract = 10
-                    }
-                }
-            }
-        }
+        ### 钳制参数保持数字字面量（clamp_variable 的 min/max 在 base game 全库
+        ### 7 处全部是数字，无脚本值名先例 —— 见本文件既有注释与
+        ### scripted_effects/th_gensokyo_tribunal_effects.txt:105-108）
         clamp_variable = {
             name = th_gensokyo_effective_sin
             min = 0
@@ -138,6 +131,27 @@ th_gensokyo_trial_return_lands_effect = {
                 country_exists = previous_owner
             }
             change_location_owner = previous_owner
+            ### 【2026-10-04 T2-5 补齐】change_location_owner 之后地块的
+            ### integration_level **不会自动变**，会带着"被征服"整合度回到原主。
+            ### 逐字照 VANILLA\common\country_interactions\hre.txt:2093-2099
+            ###   （change_location_owner = previous_owner
+            ###    hidden_effect = { if = { limit = { integration_level = conquered }
+            ###                       change_integration_level = integrated } }；
+            ###    同款重复出现在 :2123-2129）
+            ### 本项目同款可复制件：T2-3 的
+            ###   generic_actions/th_gensokyo_tribunal_fulfill_land.txt:163-169。
+            ### 该缺陷由 T2-3 登记（见 fulfillment 文件 :159-161 的注释），
+            ### T2-5 在本文件补掉。
+            ### change_integration_level 是 **location scope** 效果
+            ### （VANILLA\common\effect_localization\location_effects.txt:214-219），
+            ### 取值枚举 core / integrated；integration_level 是 location 触发器
+            ### （trigger_localization/location_triggers.txt:233）
+            hidden_effect = {
+                if = {
+                    limit = { integration_level = conquered }
+                    change_integration_level = integrated
+                }
+            }
         }
     }
 }
@@ -177,7 +191,20 @@ th_gensokyo_trial_judge_core_effect = {
                 divide = 2
             }
             add_gold = -var:th_gensokyo_temp_reparations
-            scope:io_leader = {
+            ### 【2026-10-04 T2-5 罚金入公库】接收方：阎魔个人 → 幻想乡 IO 宝库
+            ### （《设计定案》§5.7"归属：幻想乡 IO，不是审判庭"）
+            ### **被告侧扣款不变**（上一行 add_gold = -… 就是扣款，本步只换接收方）；
+            ### 因此**不能**再叠加 donate_gold_to_international_organization ——
+            ### 它是 vanilla 的 scripted_effect（VANILLA\common\scripted_effects\
+            ### country_effects.txt:2594-2647），末段 :2643-2646
+            ### `add_gold = { value = $value$ multiply = -1 }` 会**再扣一次**，
+            ### 而它自己不往 IO 里放钱（§10.7 v1.9 纠错）。这里的写法正是纠错后的
+            ### "真正入库"那一步：IO scope 的 add_gold。
+            ### 蓝本：VANILLA\common\generic_actions\international_organizations.txt:286-288
+            ###   （scope:recipient = { add_gold = scope:target_value }，scope:recipient 即 IO）
+            ###   IO 能收 add_gold 的前提 = IO 定义有 gold = yes
+            ###   （international_organizations/th_gensokyo_io.txt:19，T1 已加）
+            international_organization:th_gensokyo_io = {
                 add_gold = scope:crusade_target.var:th_gensokyo_temp_reparations
             }
             remove_variable = th_gensokyo_temp_reparations
@@ -206,7 +233,7 @@ th_gensokyo_trial_judge_core_effect = {
             }
         }
 
-        ### 档3：财富全转移给阎魔 + 完全沦为彼岸监管国（40% 贡金持续至刑满）
+        ### 档3：财富全转移**入幻想乡公库** + 完全沦为彼岸监管国（40% 贡金持续至刑满）
         if = {
             limit = {
     scope:crusade_target.var:th_gensokyo_sentence_tier >= 3
@@ -215,8 +242,13 @@ th_gensokyo_trial_judge_core_effect = {
                 name = th_gensokyo_temp_gold
                 value = gold
             }
+            ### 被告侧扣款不变（清零即扣全额）
             set_gold = 0
-            scope:io_leader = {
+            ### 【2026-10-04 T2-5 罚金入公库】接收方：阎魔个人 → 幻想乡 IO 宝库
+            ### 与档 0 同一处置、同一理由（见上方档 0 的详细注释：
+            ### donate_gold_to_international_organization 只扣款不入库，
+            ### 故此处只写"真正入库"这一步，避免双重扣款）
+            international_organization:th_gensokyo_io = {
                 add_gold = scope:crusade_target.var:th_gensokyo_temp_gold
             }
             remove_variable = th_gensokyo_temp_gold
@@ -328,9 +360,24 @@ th_gensokyo_sentence_duration_effect = {
             value = 240
         }
         ### 罪值加成（每 10 罪 +1 年，转月）
-        set_variable = {
-            name = th_gensokyo_temp_sentence_years
-            value = var:th_gensokyo_sin_var
+        ### 【2026-10-04 T2-5】读 var: 前补 has_variable 守卫（铁律 11）——
+        ### 原实现是无守卫裸读（旧档 / 未立案路径下会报 "Value of wrong type"）。
+        ### **语义保持"只按【罪】加成"不变**：态度（战时抗命）与审判法倾向只进
+        ### 判决分与档位，不再重复进刑期（《设计定案》§5.6 明写服刑沿用、
+        ### 基础 20 / 上限 30 年；刑期的审判法修正另有 ±24 月，见下方分支）。
+        ### 缺变量 ⇒ 加成 0（不改变"基础 240 月"的既有语义）
+        if = {
+            limit = { has_variable = th_gensokyo_sin_var }
+            set_variable = {
+                name = th_gensokyo_temp_sentence_years
+                value = var:th_gensokyo_sin_var
+            }
+        }
+        else = {
+            set_variable = {
+                name = th_gensokyo_temp_sentence_years
+                value = 0
+            }
         }
         change_variable = {
             name = th_gensokyo_temp_sentence_years
@@ -380,8 +427,12 @@ th_gensokyo_sentence_duration_effect = {
 
 ### ============================================================
 ### 审判完成清理（2026-08-23 重构）
-### 调用：th_gensokyo_trial_issue on_debate_passed/failed 尾部
-### 清理：目标/参战标记（target_mark / trial_target_mark / participant）
+### 调用：【2026-10-04 T2-5 更新】宣判路径 ——
+###   scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###   th_gensokyo_verdict_apply_effect ⑤ 步（四个宣判行动 + 超时兜底共用）。
+###   **改造前**由 parliament_issues/th_gensokyo_trial_issue 的回调尾部调用，
+###   该议题已降级为"只写意向"，不再调用本效果。
+### 清理：目标/参战标记（crusade_target_mark / trial_target_mark / participant）
 ###       + 解散审判庭（unique 临时 IO，战后使命结束）
 ### ============================================================
 th_gensokyo_trial_cleanup_effect = {

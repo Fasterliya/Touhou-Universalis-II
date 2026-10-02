@@ -1,8 +1,8 @@
 ﻿### ============================================================
 ### 弹幕战系统 — 退治妖兽（调试用玩家入口）
-### 流程: 月度妖兽爆发事件（.40 选项1 加修正）→ 本行动选地点
+### 流程: 月度妖兽爆发事件（.40 选项1 加修正）→ 本行动「选幻想乡 IO → 选地点」
 ###       → th_danmaku_beast_trigger_effect → .30 妖兽遭遇 → 胜负
-### 对齐 th_gensokyo_feast 行动模式（type = internationalorganization）
+### 对齐 th_danmaku_challenge / th_gensokyo_feast 两步选择模式（type = internationalorganization）
 ### ============================================================
 
 th_danmaku_subjugate_beast = {
@@ -28,6 +28,26 @@ th_danmaku_subjugate_beast = {
         }
     }
 
+    ### 第 1 步：选幻想乡 IO（2026-09-30 修复：原缺此级 → 按钮出现在所有 IO 面板）
+    ### 依据：IO 面板 members.gui:104-118 以 parameter recipient = 当前展示 IO 注入动作，
+    ### 故动作必须以「选 IO」级开头并用 visible 按 IO 类型过滤，否则引擎无从判定归属；
+    ### 原版 39 个 type = internationalorganization 动作全部含此级
+    ### （unlockable_io_actions.txt:14-29、italian_wars.txt:1188-1204、middle_kingdom.txt:41），
+    ### 本 mod 同款：th_danmaku_challenge.txt:29-40、th_gensokyo_feast.txt:27-38。
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### 第 2 步：选妖兽作乱地点（治下带修正地块；interaction_source_list 现造候选）
     select_trigger = {
         looking_for_a = location
         target_flag = beast_location

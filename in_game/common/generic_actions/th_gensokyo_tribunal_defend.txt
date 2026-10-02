@@ -1,0 +1,431 @@
+﻿### ============================================================
+### 审判庭 — 自辩（T2-3 新增，2026-10-03）
+### 规格：《脚本规格》§4.4；设计：《设计定案》§6（被诉方三出路）
+###
+### 语义：被诉国在制裁期内**举证反驳**已记账的罪名条目。
+###   - 每条被驳倒的罪名 ⇒ 该罪名变量减半（divide = 2）＝ **部分收益**
+###   - 全部"仍有罪的条目"都被驳倒 ⇒ 撤销制裁、结案（等价轻量赦免）＝ **全胜**
+###   两层的关系在 effect 头部的【结案判据】段写清（本窗 §7.1 要求）
+###   - 每条成功反驳消耗个人影响力
+###     （th_gensokyo_io_influence_var_subtract_effect，
+###      scripted_effects/th_gensokyo_io_effects.txt:62-67）
+###
+### 自辩便宜的原因：四条反驳证据全部复用**现有写法**，不新建判定系统。
+###
+### 无 select_trigger：逐条自动判定（§4.4 明写"避免为'罪名'造选择器"）
+###
+### 【T2-3 报告登记的一处 FAILED（必须知道）】
+###   《脚本规格》§4.4 证据表第 1 行要求复用
+###   `th_gensokyo_has_authorized_expansion_trigger`
+###   （scripted_triggers/th_gensokyo_io_chain_triggers.txt:27-29）。
+###   该触发器体内写的是 **`root.var:...`**，而 generic_action 的顶层 root
+###   在项目里已有实证为**空**（P1-12：potential 顶层 root 为空，
+###   见本行动姊妹文件 th_gensokyo_tribunal_indict.txt:30-31 的注释）；
+###   vanilla 的 generic_action 里也**找不到一处在 potential/allow/effect
+###   内使用裸 root 的先例**（全库唯 4 处 root 用法都在 select_trigger 的
+###   visible 内，那里 root = 被测试的候选对象，语义不同）。
+###   ⇒ 直接调用它会有读到空 root 而刷 "Value of wrong type 'none'" 的风险。
+###   **等价替换（有先例）**：把同一判定**内联到 scope:actor 上**
+###   （判据逐字对应 `quota_used < quota`），并把结果存进局部变量
+###   `th_defend_authorized_flag` 供 OR 使用。
+### ============================================================
+
+th_gensokyo_tribunal_defend = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        ### 蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:29-45
+        ### 被诉国独有（案件判据恒为 th_gensokyo_tarnish_mark，
+        ### 不是 th_gensokyo_observation_months —— 后者被 init/月度兜底补成 0 后恒存在）
+        scope:actor ?= {
+            has_variable = th_gensokyo_tarnish_mark
+        }
+    }
+
+    allow = {
+        ### 铁律 3：custom_tooltip 文案写"阻塞状态"、内层写**正向**条件
+        ### 蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:47-61
+        ###
+        ### 正向条件 = 至少有可反驳的罪名账本条目。
+        ### 【口径说明】此处只判"罪名变量**存在**"，"值 > 0"的精确判定放在
+        ###   effect 内 —— 因为铁律 11 要求 var: 读取前有 has_variable 守卫，
+        ###   而 allow 是触发器块、无法用"两个 limit 块"的嵌套守卫；
+        ###   `AND = { has_variable = X  var:X > 0 }` 依赖同块内求值短路，
+        ###   项目 T2-2b 已明文不依赖该短路
+        ###   （scripted_effects/th_gensokyo_tribunal_effects.txt:574-577）。
+        ###   代价可控：账本存在但全为 0 时按钮可点、点了没有收益，
+        ###   不会产生错误状态（effect 内每条目都有 > 0 的嵌套守卫）。
+        scope:actor ?= {
+            custom_tooltip = {
+                text = TH_TRIBUNAL_DEFEND_NO_GROUND_TT
+                OR = {
+                    has_variable = th_gensokyo_crime_unlawful_var
+                    has_variable = th_gensokyo_crime_freecity_var
+                    has_variable = th_gensokyo_crime_conquest_var
+                    has_variable = th_gensokyo_crime_regulated_var
+                    has_variable = th_gensokyo_crime_nocb_var
+                }
+            }
+        }
+    }
+
+    effect = {
+        ### 铁律 2：exists 守卫防 tooltip 预演报错
+        ### （蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:156-159）
+        if = {
+            limit = { exists = scope:actor }
+            scope:actor = {
+                ### ============================================================
+                ### 【结案判据 —— 两层关系（本窗 §7.1 要求写清）】
+                ###   第一层（逐条 · 部分收益）：每条**被驳倒**的罪名 ⇒
+                ###     该罪名变量 `divide = 2`（减半）。哪怕只驳倒一条，
+                ###     也立刻降低后续量刑读到的罪值
+                ###     （罪值由 th_gensokyo_tribunal_sin_total_effect 重算，
+                ###      T2-4 的判决公式读 th_gensokyo_sin_var）。
+                ###   第二层（全胜 · 结案）：只有**所有"仍有罪的条目"都被驳倒**，
+                ###     才撤销制裁、结案（等价轻量赦免）。
+                ###   ⇒ **部分成立 ≠ 结案；部分成立 = 罪名变轻。**
+                ###
+                ###   两层的载体故意分开：
+                ###     - "减半"写在罪名变量上（持久，可被判决读到）
+                ###     - "是否全胜"写在**局部变量**计数器上（本次调用用完即弃，
+                ###       末尾 remove_local_variable 收尾）
+                ###
+                ### 【"条目"的定义（本窗拍板，见报告 §9 待确认）】
+                ###   条目 = **当前值 > 0 的罪名**（值为 0 的条目无需反驳）。
+                ###   由此得到两条硬约束：
+                ###     ① 至少要有 1 条被成功驳倒才可能结案
+                ###        —— 防"零罪案件白嫖结案"：立案时罪值 = 罪名账本快照，
+                ###        若账本全 0（仅因价值观越线被立案），
+                ###        不做这个下限就是"点一下自辩即结案"。
+                ###     ② 第 5 条罪名（对成员无 CB 宣战 th_gensokyo_crime_nocb_var）
+                ###        **《脚本规格》§4.4 的证据表没有给它可反驳证据**
+                ###        ⇒ 它恒算"未被驳倒"，会把结案挡住。
+                ###        这是**有意**的保守取舍（"无 CB 宣战没有借口"），
+                ###        已登记待主代理确认。
+                ### ============================================================
+
+                set_local_variable = {
+                    name = th_defend_refuted_count
+                    value = 0
+                }
+                set_local_variable = {
+                    name = th_defend_unrefuted_count
+                    value = 0
+                }
+
+                ### ------------------------------------------------------------
+                ### 证据标志 (a) · 贤者授权（等价替换版，见文件头 FAILED 说明）
+                ### 判据逐字对应 th_gensokyo_has_authorized_expansion_trigger 的
+                ### `root.var:th_gensokyo_expansion_quota_used
+                ###    < root.var:th_gensokyo_expansion_quota`
+                ### （scripted_triggers/th_gensokyo_io_chain_triggers.txt:27-29），
+                ### 只是把 root 换成**可寻址的 scope:actor**，
+                ### 并用嵌套 limit 落实铁律 11 的"读变量前守卫"。
+                ### ------------------------------------------------------------
+                set_local_variable = {
+                    name = th_defend_authorized_flag
+                    value = 0
+                }
+                if = {
+                    limit = { has_variable = th_gensokyo_expansion_quota_used }
+                    if = {
+                        limit = { has_variable = th_gensokyo_expansion_quota }
+                        if = {
+                            limit = {
+                                var:th_gensokyo_expansion_quota_used < var:th_gensokyo_expansion_quota
+                            }
+                            set_local_variable = {
+                                name = th_defend_authorized_flag
+                                value = 1
+                            }
+                        }
+                    }
+                }
+
+                ### ------------------------------------------------------------
+                ### 条目 1 · 非法扩张（th_gensokyo_crime_unlawful_var）
+                ### 证据（OR）：
+                ###   (a) 贤者授权（见上，标志 th_defend_authorized_flag）
+                ###   (b) 异变期间豁免：th_gensokyo_in_incident_trigger
+                ###       （scripted_triggers/th_gensokyo_io_chain_triggers.txt:32-34，
+                ###        当前是 always = no 的接口桩；**纯触发器、不依赖 root**，
+                ###        可直接复用）
+                ### 驳倒 ⇒ 罪名减半 + 消耗影响力；未驳倒 ⇒ 只记"未驳倒"计数
+                ### ------------------------------------------------------------
+                if = {
+                    limit = { has_variable = th_gensokyo_crime_unlawful_var }
+                    if = {
+                        limit = { var:th_gensokyo_crime_unlawful_var > 0 }
+                        if = {
+                            limit = {
+                                OR = {
+                                    th_gensokyo_in_incident_trigger
+                                    local_var:th_defend_authorized_flag > 0
+                                }
+                            }
+                            change_variable = {
+                                name = th_gensokyo_crime_unlawful_var
+                                divide = 2
+                            }
+                            change_local_variable = {
+                                name = th_defend_refuted_count
+                                add = 1
+                            }
+                            th_gensokyo_io_influence_var_subtract_effect = {
+                                value = th_defend_influence_cost_value
+                            }
+                        }
+                        else = {
+                            change_local_variable = {
+                                name = th_defend_unrefuted_count
+                                add = 1
+                            }
+                        }
+                    }
+                }
+
+                ### ------------------------------------------------------------
+                ### 条目 2 · 征服割地（th_gensokyo_crime_conquest_var）
+                ### 证据：《脚本规格》§4.4 表第 2 行 = 异变期间豁免
+                ###   （th_gensokyo_in_incident_trigger）
+                ### ------------------------------------------------------------
+                if = {
+                    limit = { has_variable = th_gensokyo_crime_conquest_var }
+                    if = {
+                        limit = { var:th_gensokyo_crime_conquest_var > 0 }
+                        if = {
+                            limit = { th_gensokyo_in_incident_trigger }
+                            change_variable = {
+                                name = th_gensokyo_crime_conquest_var
+                                divide = 2
+                            }
+                            change_local_variable = {
+                                name = th_defend_refuted_count
+                                add = 1
+                            }
+                            th_gensokyo_io_influence_var_subtract_effect = {
+                                value = th_defend_influence_cost_value
+                            }
+                        }
+                        else = {
+                            change_local_variable = {
+                                name = th_defend_unrefuted_count
+                                add = 1
+                            }
+                        }
+                    }
+                }
+
+                ### ------------------------------------------------------------
+                ### 条目 3 · 吞人类村落属领（th_gensokyo_crime_freecity_var）
+                ### 证据：《脚本规格》§4.4 表第 3 行 —— "受害方是否**先**对本国动武"
+                ###
+                ### 实现 = 战争方向判定："受害国是攻击方，本国是防守方"。
+                ### 没有"谁先宣战"这种历史触发器（trigger_localization 的
+                ### country_triggers.txt 全表无 attacker/defender 类国家触发器），
+                ### 唯一可核验的方向语义就是当前战争阵营 == 引擎的
+                ### attacker / defender 两侧。
+                ### 写法逐字照 VANILLA\common\generic_actions\
+                ###   red_turban_rebellions.txt:227-238：
+                ###     scope:actor = { at_war = yes
+                ###         any_current_war = { OR = { AND = {
+                ###             any_attacker = { ... }
+                ###             any_defender = { this = scope:actor } } ... } } }
+                ### 同款：guelphs_and_ghibellines.txt:406-407
+                ###   （scope:<war> = { any_attacker = { this = root } }）
+                ### any_current_war / any_attacker / any_defender 是引擎的战争
+                ### scope 迭代器（不在 trigger_localization 里，属引擎列表，
+                ### 与 every_owned_location 同类）。
+                ### 【方向】"受害国是攻击方" = 受害国先动手 ⇒ 本国的属领行为
+                ### 属反击，不构成可诉罪名。
+                ### 【保守取舍】只在**当前仍处于该战争**时可自辩；
+                ### 战争结束（和约后）该证据消失 —— 与"举证需在案"的叙事一致，
+                ### 但也意味着"先被打、后吞并、战争已结束"的情形无法自辩。
+                ### 登记为待确认（报告 §9）。
+                ### ------------------------------------------------------------
+                if = {
+                    limit = { has_variable = th_gensokyo_crime_freecity_var }
+                    if = {
+                        limit = { var:th_gensokyo_crime_freecity_var > 0 }
+                        if = {
+                            limit = {
+                                any_current_war = {
+                                    any_attacker = {
+                                        has_variable = th_gensokyo_victim_mark
+                                    }
+                                    any_defender = {
+                                        this = scope:actor
+                                    }
+                                }
+                            }
+                            change_variable = {
+                                name = th_gensokyo_crime_freecity_var
+                                divide = 2
+                            }
+                            change_local_variable = {
+                                name = th_defend_refuted_count
+                                add = 1
+                            }
+                            th_gensokyo_io_influence_var_subtract_effect = {
+                                value = th_defend_influence_cost_value
+                            }
+                        }
+                        else = {
+                            change_local_variable = {
+                                name = th_defend_unrefuted_count
+                                add = 1
+                            }
+                        }
+                    }
+                }
+
+                ### ------------------------------------------------------------
+                ### 条目 4 · 攻击彼岸监管国（th_gensokyo_crime_regulated_var）
+                ### 证据（OR，两条都对应《脚本规格》§4.4 表第 4 行的
+                ###       "该国是否在免制裁期 / 是否先被其攻击"）：
+                ###   (a) 本国持 th_gensokyo_sanction_immunity ——
+                ###       该标记的语义正是"本国是反杀方 / 受害者，20 年内不受制裁"
+                ###       （《脚本规格》§2.2："免制裁期（反杀后 20 年）"）
+                ###   (b) 彼岸监管国先对本国动武 —— 与条目 3 同款方向判定，
+                ###       把攻击方换成持 th_gensokyo_regulated_state 附属类型的国家。
+                ###       附属类型判定用**裸键**（不带 subject_type: 前缀），
+                ###       照本项目既有写法 generic_actions/th_gensokyo_tribunal_escalate.txt:168
+                ###       （该处注释已核实：全库 258 处裸键 / 0 处前缀）
+                ### 【保守取舍】th_gensokyo_sanction_immunity 是"当前是否持有"，
+                ### 不是"记账当时是否持有"（无历史快照载体）—— 登记待确认。
+                ### ------------------------------------------------------------
+                if = {
+                    limit = { has_variable = th_gensokyo_crime_regulated_var }
+                    if = {
+                        limit = { var:th_gensokyo_crime_regulated_var > 0 }
+                        if = {
+                            limit = {
+                                OR = {
+                                    has_variable = th_gensokyo_sanction_immunity
+                                    any_current_war = {
+                                        any_attacker = {
+                                            is_subject_type = th_gensokyo_regulated_state
+                                        }
+                                        any_defender = {
+                                            this = scope:actor
+                                        }
+                                    }
+                                }
+                            }
+                            change_variable = {
+                                name = th_gensokyo_crime_regulated_var
+                                divide = 2
+                            }
+                            change_local_variable = {
+                                name = th_defend_refuted_count
+                                add = 1
+                            }
+                            th_gensokyo_io_influence_var_subtract_effect = {
+                                value = th_defend_influence_cost_value
+                            }
+                        }
+                        else = {
+                            change_local_variable = {
+                                name = th_defend_unrefuted_count
+                                add = 1
+                            }
+                        }
+                    }
+                }
+
+                ### ------------------------------------------------------------
+                ### 条目 5 · 对成员无 CB 宣战（th_gensokyo_crime_nocb_var）
+                ### **无反驳证据**（《脚本规格》§4.4 的证据表只有 4 行，
+                ###   没有给这一条任何借口）⇒ 只记"未驳倒"，恒挡住结案。
+                ### 这一条同时是"至少一条被驳倒才结案"下限之外的第二道锁：
+                ### 打过无 CB 战争的国家无法靠自辩结案，只能走认罪（付钱）
+                ### 或履约悔改。
+                ### ------------------------------------------------------------
+                if = {
+                    limit = { has_variable = th_gensokyo_crime_nocb_var }
+                    if = {
+                        limit = { var:th_gensokyo_crime_nocb_var > 0 }
+                        change_local_variable = {
+                            name = th_defend_unrefuted_count
+                            add = 1
+                        }
+                    }
+                }
+
+                ### ------------------------------------------------------------
+                ### ① 重算罪值 —— th_gensokyo_tribunal_sin_total_effect 是
+                ###    th_gensokyo_sin_var 的**唯一合法写入点**
+                ###    （见该效果头部注释；它自我定位被诉国，不依赖调用方 scope）
+                ### ------------------------------------------------------------
+                th_gensokyo_tribunal_sin_total_effect = yes
+
+                ### ------------------------------------------------------------
+                ### ② 全胜 ⇒ 结案（结案效果的撤载体顺序铁律在其自身内部，
+                ###    本处只需保证**在 tarnish 仍存在时**调用 —— 它是按
+                ###    th_gensokyo_tarnish_mark 自我定位的）
+                ### ------------------------------------------------------------
+                if = {
+                    limit = {
+                        local_var:th_defend_refuted_count > 0
+                        NOT = { local_var:th_defend_unrefuted_count > 0 }
+                    }
+                    th_gensokyo_tribunal_case_close_effect = yes
+                }
+
+                ### ------------------------------------------------------------
+                ### ③ 收尾：局部变量全部移除
+                ###    （项目纪律：local 变量用完要 remove_local_variable；
+                ###     蓝本 VANILLA\common\scripted_effects\
+                ###     international_organization_effects.txt:719 set / :756 remove）
+                ### ------------------------------------------------------------
+                remove_local_variable = th_defend_refuted_count
+                remove_local_variable = th_defend_unrefuted_count
+                remove_local_variable = th_defend_authorized_flag
+            }
+        }
+    }
+
+    ### 铁律 12：冷却写法 = { type = <key> months = N }
+    ### 《脚本规格》§4.4："{ type = th_gensokyo_tribunal_defend months = 6 }（每档一次）"
+    cooldown = {
+        type = th_gensokyo_tribunal_defend
+        months = 6
+    }
+
+    ai_will_do = {
+        ### 铁律 5 的 v1.8 修订版：ai_will_do **可以**用 has_variable / var:
+        ### （前提：变量先存在；正证 VANILLA\common\generic_actions\
+        ###  io_parliament_bribes.txt:235/251/253）
+        ### 铁律 6：不用 any_international_organization_member（scope 不匹配）
+        ### 《脚本规格》§4.4："被诉 AI 在'影响力充裕 + 有可反驳条目'时使用"
+        ###   "有可反驳条目"的 AI 可读代理 = 罪名账本条目存在
+        ###   （ai_will_do 读 `var: > 0` 需额外守卫，本处不必精确到数值 ——
+        ###    精确判定已在 effect 内，AI 判断"值不值得点"用存在性足够）
+        if = {
+            limit = {
+                scope:actor ?= {
+                    has_variable = th_gensokyo_tarnish_mark
+                    OR = {
+                        has_variable = th_gensokyo_crime_unlawful_var
+                        has_variable = th_gensokyo_crime_freecity_var
+                        has_variable = th_gensokyo_crime_conquest_var
+                        has_variable = th_gensokyo_crime_regulated_var
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_DEFEND_READY
+                value = 200
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

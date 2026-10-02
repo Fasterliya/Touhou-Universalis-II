@@ -1,0 +1,1528 @@
+### ============================================================
+### 审判庭 T2-2 / T2-2b — 共享效果
+###   2026-10-01 T2-2 建立：① 案件标记清理 ② 罪值合计 ③ 四档制裁施加 / 撤销
+###   2026-10-01 T2-2b 追加：④ 观察期脉冲体 ⑤ 悔改判定（地块回溯版）
+###                        ⑥ 未悔改处理 ⑦ 案件结案 ⑧ 升档落地
+###                        ⑨ 代理人接受 ⑩ 拒绝领衔（惩罚 + 两处调用点共用）
+###   2026-10-01 T2-5b 追加：⑮ 圣战「大义」施加 / 移除（含"参与者"口径）
+###                        ⑯ 「祟」可见载体的施加 / 移除（空字段纯展示修正）
+###                        ＋① 内挂祟修正撤销、⑦ 内挂大义移除
+###
+### 定位纪律：除 ④（由 on_action 的 trigger 保证当前 scope = 被诉国）、
+###   ⑩（作用于调用方指定的国家）、
+###   ⑮/⑯（**2026-10-01 T2-5b 新增的例外**：大义的移除是"全局扫 modifier"、
+###          祟的施加/移除是"当前 scope = 被诉国"，逐条理由见 ⑮/⑯ 段头注释）
+###   之外，其余效果一律
+###   以 th_gensokyo_tarnish_mark「自我定位被诉国」——
+###   不依赖 root、不依赖调用方传入 scope。照本项目审判庭既有惯例
+###   （scripted_effects/th_gensokyo_crusade_effects.txt:147-165 的
+###    th_gensokyo_trial_judge_core_effect 亦在效果内按标记重定位；
+###    R3 §R3-2(e) 已核实 save_scope_as 跨 scripted_effect 不可靠）。
+###   ⇒ 调用前置条件：被诉国身上已有 th_gensokyo_tarnish_mark。
+###   ⇒ 相关推论：**任何要撤档位载体的效果都必须在摘掉 tarnish 之前调用**
+###     （见 ⑦ 案件结案的顺序铁律）。
+###
+### 四档载体（《脚本规格》§7.3 v1.8 已核实；逐档注释见各段）：
+###   1 谴责 = 逐成员 effect（add_antagonism / add_opinion，方向 root → target）
+###   2 夺权 = script value（th_gensokyo_io_vote_power_value 公式内归零）
+###   3 禁运 = scripted_relation（relation_type:embargo_nation）
+###   4 限张 = 静态修正（th_gensokyo_sanction_expansion_modifier）
+### ============================================================
+
+### ============================================================
+### ① 案件位置标记清理（country scope：在每个候选国体内调用）
+### 调用点：立案行动 effect 第一步（每一国都跑一次，等价于"清旧案"）
+### 逐条 has_variable 守卫（铁律 11：不保证缺失变量上 remove 无错）
+###
+### **故意不清理 th_gensokyo_victim_mark 与 th_gensokyo_stolen_location_list**：
+###   这两者是本案物证，由 on_took_location_in_peace_treaty 钩子
+###   （on_action/th_gensokyo_chain_events.txt 的 th_gensokyo_unlawful_expansion_check）
+###   在立案之前就写入。立案时清掉 = 当场销毁起诉书（详见 T2-2 报告 §5）。
+###   物证的清理责任在结案路径（T2-2b 赦免 / T2-3 认罪与履约完毕）与开局 init。
+### ============================================================
+th_gensokyo_tribunal_case_markers_clear_effect = {
+    ### ============================================================
+    ### 2026-10-01 T2-5b：「祟」修正的**撤销点**（《设计定案》§3.1）
+    ### 位置 = 本效果第一步，先于任何标记摘除。理由：
+    ###   ① 本效果是"案卷清理"的唯一总入口，四条结案出口全部经过它 ——
+    ###      赦免（generic_actions/th_gensokyo_tribunal_pardon.txt:102）、
+    ###      悔改结案（本文件 ⑤ th_gensokyo_tribunal_repentance_check_effect）、
+    ###      认罪（..._tribunal_confess.txt:190）、
+    ###      求和（..._tribunal_settle.txt:151）
+    ###      —— 四者都挂 th_gensokyo_tribunal_case_close_effect（本文件 ⑦）
+    ###      ⇒ 一处挂载即四条出口全覆盖。
+    ###   ② 与「祟」标记同步撤销：修正与标记同生共死，不会留下"无标记的祟"。
+    ###   ③ 本效果的当前 scope = 被诉国（由上述调用点保证），
+    ###      故 ⑯ 的撤销效果用 scope 内直撤（不做全局重定位）。
+    ###   ④ **故意不放进 tier_1_apply/remove_effect**：升档会摘掉第 1 档标记，
+    ###      若祟挂在档级载体上，升档会把祟一起摘掉 —— 祟是**案级**、不是档级。
+    ### ============================================================
+    th_gensokyo_tribunal_tarnish_modifier_remove_effect = yes
+    if = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        remove_variable = th_gensokyo_tarnish_mark
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_tier_1_mark }
+        remove_variable = th_gensokyo_tier_1_mark
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_tier_2_mark }
+        remove_variable = th_gensokyo_tier_2_mark
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_tier_3_mark }
+        remove_variable = th_gensokyo_tier_3_mark
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_tier_4_mark }
+        remove_variable = th_gensokyo_tier_4_mark
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_observation_months }
+        remove_variable = th_gensokyo_observation_months
+    }
+    ### observation_done / agent_refused 属 T2-2b 的字段，此处一并清（缺失即跳过），
+    ### 保证"上一案的残留"不会让下一案一开局就满足升档条件
+    if = {
+        limit = { has_variable = th_gensokyo_observation_done }
+        remove_variable = th_gensokyo_observation_done
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_tribunal_agent_mark }
+        remove_variable = th_gensokyo_tribunal_agent_mark
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_agent_refused }
+        remove_variable = th_gensokyo_agent_refused
+    }
+    ### 2026-10-01 T2-2b：「代理人同意」的暂挂标记（提名未裁决）。
+    ### 结案 / 撤案时必须一并摘掉，否则被提名国会永久带着一个悬空的提名
+    if = {
+        limit = { has_variable = th_gensokyo_tribunal_agent_nominee_mark }
+        remove_variable = th_gensokyo_tribunal_agent_nominee_mark
+    }
+    ### ============================================================
+    ### 2026-10-04 闭环改造②：复位「本庭已宣战」锁（th_gensokyo_crusade_declared）
+    ###   本效果的调用点只有两处 —— 立案清旧案（indict.txt:150）与结案（effects:716）
+    ###   ⇒ 结案或开新案时解锁，下一案可再宣战一次；案中不会中途解锁
+    ### ============================================================
+    if = {
+        limit = { has_variable = th_gensokyo_crusade_declared }
+        remove_variable = th_gensokyo_crusade_declared
+    }
+    ### 第 4 档载体（静态修正）随案件清理一并撤销
+    remove_country_modifier = th_gensokyo_sanction_expansion_modifier
+}
+
+### ============================================================
+### ② 罪值合计（country scope：被诉国）
+### 罪 = unlawful×16 + freecity×96 + conquest×3 + regulated×30 + nocb×15
+###   合法扩张（th_gensokyo_crime_legal_var）**不计入**，仅供自辩举证
+### 组合写法与蓝本：
+###   - set_variable 的 value = 绝对赋零（value= 只属 set_variable，
+###     见 KB anti_patterns:239-246 记录的引擎报错
+###     "change_variable effect [ No operation specified ]"）
+###   - change_variable 的 add 吃**内联脚本数学块**
+###     （KB anti_patterns `change_variable_value_op_invalid` 的 notes 明列合法形
+###      "change_variable = { name = X add = { value = Y multiply = Z } }"；
+###      本文件 :85 起的历史记录同源）
+###   - 块内**裸脚本值名**作操作数：VANILLA\common\laws\io_alliances_law.txt:83
+###     （add = io_members_and_potential_members_opinion_value，自定义 script value）、
+###     VANILLA\common\generic_actions\ilkhanate_actions.txt:73（add = num_locations）、
+###     VANILLA\common\common… 同族见 situations/sengoku.txt:63（multiply = country_rank_level）；
+###     本项目既有先例 on_action/th_gensokyo_chain_events.txt:200
+###     （add = th_crusade_sin_refusal_value）
+###   - 系数全部走 script_values（《脚本规格》§7.2），不写死在 effect 里
+###   - 上限 clamp 用**数字 60**：clamp_variable 的 min/max 在 base game 全库
+###     7 处**全部是数字字面量**（VANILLA\common\scripted_effects\situation_effects.txt:1096-1100、
+###     generic_actions/treaty_of_tordesillas.txt:909 等），**无脚本值名先例**
+###     → 不冒"传名字失败"的风险（同项目 expansion_effects.txt:17 既有注释口径）
+### 每个读变量前 has_variable 守卫（铁律 11）
+### ============================================================
+th_gensokyo_tribunal_sin_total_effect = {
+    set_variable = {
+        name = th_gensokyo_sin_var
+        value = 0
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_unlawful_var }
+        change_variable = {
+            name = th_gensokyo_sin_var
+            add = {
+                value = var:th_gensokyo_crime_unlawful_var
+                multiply = th_crime_unlawful_weight
+            }
+        }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_freecity_var }
+        change_variable = {
+            name = th_gensokyo_sin_var
+            add = {
+                value = var:th_gensokyo_crime_freecity_var
+                multiply = th_crime_freecity_weight
+            }
+        }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_conquest_var }
+        change_variable = {
+            name = th_gensokyo_sin_var
+            add = {
+                value = var:th_gensokyo_crime_conquest_var
+                multiply = th_crime_conquest_weight
+            }
+        }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_regulated_var }
+        change_variable = {
+            name = th_gensokyo_sin_var
+            add = {
+                value = var:th_gensokyo_crime_regulated_var
+                multiply = th_crime_regulated_weight
+            }
+        }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_nocb_var }
+        change_variable = {
+            name = th_gensokyo_sin_var
+            add = {
+                value = var:th_gensokyo_crime_nocb_var
+                multiply = th_crime_nocb_weight
+            }
+        }
+    }
+    clamp_variable = {
+        name = th_gensokyo_sin_var
+        min = 0
+        max = 60
+    }
+}
+
+### ============================================================
+### ③ 四档制裁 —— 施加 / 撤销
+### 每档成对：*_apply_effect（打档位标记 + 落地载体）/ *_remove_effect（撤载体 + 摘标记）
+### 档位标记互斥：apply 前请先用 case_markers_clear_effect（或对应的 tier_N_remove）
+### 清掉别的档，本窗口的立案只用第 1 档（升档属 T2-2b）
+### ============================================================
+
+### ------------------------------------------------------------
+### 第 1 档 · 谴责（carrier = 逐成员 effect，**无 modifier 字段**）
+### 语义：全体幻想乡 IO 成员对**被诉国**产生敌意 + 好感惩罚（外交孤立）
+### EU5 没有"被所有人讨厌"的聚合字段（R2 §R2-1(a)：全表 13 个 antagonism_* 字段
+### 逐对国家、有方向）→ 必须逐成员施加，方向 = root → target
+###   （方向实锤三处：VANILLA\common\on_action\country_yearly.txt:931-933 注释 +
+###    :947-950；country_interactions/break_others_alliance.txt:80-91；
+###    on_action/_hardcoded.txt:4313-4321）
+### 【一次性 vs 每月】**一次性施加**：base game 全部 4 处脚本
+###   add_antagonism 用法（country_yearly.txt:947、_hardcoded.txt:4317、
+###   break_others_alliance.txt:81/87、destroy_autocephalous_patriarchate.txt:61）
+###   **均不写时长字段**，衰减由 bias 自身的 yearly_decay 承担
+###   （VANILLA\common\biases\05_antagonism_hardcoded.txt:5-8：
+###    value = 1 / yearly_decay = 2）。另有 add_antagonism_no_duration 存在
+###   （effect_localization/country_effects.txt:926）但 base game 0 处使用
+###   → 本档按"一次性 + 自然衰减"实现，**不每月重刷**
+### bias 键：**T2-2b 已换成专用键**（本档专属，见
+### common/biases/th_gensokyo_tribunal_biases.txt）：
+###   敌意 th_antagonism_sanction_condemn（value 50 / yearly_decay 10）
+###   好感 th_opinion_sanction_condemn（value -50 / yearly_decay 10）
+### 换键的两个理由（T2-2a 留下的缺陷，登记在新 static_modifiers 文件尾部）：
+###   ① 原复用键语义不符；② 原复用键不能精准撤销（remove_* 按键整体移除）。
+### 换键后，本档撤销可在 *_remove_effect 里逐成员精准 remove_antagonism /
+### remove_opinion（见下方第 1 档撤销段）。
+### ------------------------------------------------------------
+th_gensokyo_tribunal_tier_1_apply_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        set_variable = th_gensokyo_tier_1_mark
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    NOT = { this = scope:th_tribunal_accused }
+                }
+                ### 【T2-2b 已换专用键】th_antagonism_sanction_condemn
+                ### 定义落盘于 common/biases/th_gensokyo_tribunal_biases.txt；
+                ### 数值 50 = script_values/th_gensokyo_io_chain_values.txt:153
+                ### 的 th_condemn_antagonism_value（biases 的 value 只吃字面量，
+                ### 全库 0 处脚本值引用，故写死并由 bias 文件注释登记联动关系）
+                add_antagonism = {
+                    target = scope:th_tribunal_accused
+                    modifier = th_antagonism_sanction_condemn
+                }
+                ### 【T2-2b 已换专用键】th_opinion_sanction_condemn
+                ### add_opinion 方向与 add_antagonism 一致（root 持有好感，target 是被评价方）：
+                ### VANILLA\common\country_interactions\force_embargo.txt:84-89
+                ### （bias 名 opinion_forced_embargo_**on_me**）
+                add_opinion = {
+                    target = scope:th_tribunal_accused
+                    modifier = th_opinion_sanction_condemn
+                }
+            }
+        }
+    }
+}
+
+### 第 1 档撤销：**T2-2b 起逐成员精准撤销**
+### 原理：remove_antagonism / remove_opinion 是**按 bias 键整体移除**——
+###   蓝本 VANILLA\common\peace_treaties\scaligeri_peace_treaties.txt:36-39
+###   （`remove_antagonism = { target = scope:winner modifier = <bias> }`，
+###    在 every_known_country 体内执行 ⇒ 每个国家移除自己对 winner 的该键敌意）
+### 为什么现在能撤：T2-2b 已把第 1 档换成**专用键**
+###   th_antagonism_sanction_condemn / th_opinion_sanction_condemn，
+###   整体移除只会命中本法施加的那一层，不会误伤别的合法敌意记录
+###   （这正是 T2-2a 当初"只摘标记、靠自然衰减"的原因，现已解除）
+### 方向：与 add_* 一致（当前 scope 的成员 → target = 被诉国）
+### effect_localization 存在性：remove_antagonism
+###   VANILLA\common\effect_localization\country_effects.txt:942、
+###   remove_opinion 同文件 :850
+### remove_opinion 用法蓝本另有 events/situations/italian_wars.txt:1444-1445
+###   （双向成对移除）
+th_gensokyo_tribunal_tier_1_remove_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        ### 须在摘 tarnish 之前调用（本效果靠 tarnish 自我定位被诉国）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    NOT = { this = scope:th_tribunal_accused }
+                }
+                remove_antagonism = {
+                    target = scope:th_tribunal_accused
+                    modifier = th_antagonism_sanction_condemn
+                }
+                remove_opinion = {
+                    target = scope:th_tribunal_accused
+                    modifier = th_opinion_sanction_condemn
+                }
+            }
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_tier_1_mark }
+            remove_variable = th_gensokyo_tier_1_mark
+        }
+    }
+}
+
+### ------------------------------------------------------------
+### 第 2 档 · 夺权（carrier = script value，**无 modifier 字段**）
+### 全表搜 special_status_power|vote|voting|elector|election 共 21 命中，
+### 无一为"投票权重"字段（R2 §R2-1 第 2 档表）⇒ 唯一咽喉是
+### th_gensokyo_io_vote_power_value（本项目 6 个席位的 special_status_power 全指向它）
+### ⇒ apply/remove 只需维护档位标记，真正生效在
+###   script_values/th_gensokyo_io_chain_values.txt 的公式分支里
+### ------------------------------------------------------------
+th_gensokyo_tribunal_tier_2_apply_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        if = {
+            limit = { has_variable = th_gensokyo_tier_1_mark }
+            remove_variable = th_gensokyo_tier_1_mark
+        }
+        set_variable = th_gensokyo_tier_2_mark
+    }
+}
+
+th_gensokyo_tribunal_tier_2_remove_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        if = {
+            limit = { has_variable = th_gensokyo_tier_2_mark }
+            remove_variable = th_gensokyo_tier_2_mark
+        }
+    }
+}
+
+### ------------------------------------------------------------
+### 第 3 档 · 禁运（carrier = scripted_relation，**无 modifier 字段**）
+### 真禁运 = VANILLA\common\scripted_relations\embargo_nation.txt:1-12
+###   （type = diplomacy / relation_type = oneway / embargo = yes）
+### 施加 = create_relation（effect_localization/country_effects.txt:1050 存在）
+###   字段形：first / second / type / years
+###   —— first = 禁运发起方、second = 被禁运方
+###     （方向蓝本 VANILLA\common\country_interactions\force_embargo.txt:77-82：
+###      first = scope:recipient「被强制去禁运的国家」、second = scope:target「被禁运者」；
+###      另 events/situations/red_turban_rebellions.txt:1981-1985 给出
+###      create_relation = { first = this second = c:MNG type = relation_type:alliance }
+###      的"first = this"写法先例）
+###   本档语义 = 全体成员对目标禁运 ⇒ first = 每个成员（this）、second = 被诉国
+### 撤销 = remove_relation（country_effects.txt:1484；字段形
+###   { first / second / type }，蓝本 scripted_relations/alliance.txt:90-94）
+### 【实机验证项（沿用 R2 §R2-2 的残留不确定）】create_relation 能否绕过
+###   embargo_nation 的 offer_enabled 前置，未证实；若静默失败，
+###   退路 = 挂 trade_isolation(boolean) / trade_* 负修正，或贡金近似
+### ------------------------------------------------------------
+th_gensokyo_tribunal_tier_3_apply_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        if = {
+            limit = { has_variable = th_gensokyo_tier_2_mark }
+            remove_variable = th_gensokyo_tier_2_mark
+        }
+        set_variable = th_gensokyo_tier_3_mark
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    NOT = { this = scope:th_tribunal_accused }
+                }
+                create_relation = {
+                    first = this
+                    second = scope:th_tribunal_accused
+                    type = relation_type:embargo_nation
+                    years = 10
+                }
+            }
+        }
+    }
+}
+
+th_gensokyo_tribunal_tier_3_remove_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    NOT = { this = scope:th_tribunal_accused }
+                }
+                remove_relation = {
+                    first = this
+                    second = scope:th_tribunal_accused
+                    type = relation_type:embargo_nation
+                }
+            }
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_tier_3_mark }
+            remove_variable = th_gensokyo_tier_3_mark
+        }
+    }
+}
+
+### ------------------------------------------------------------
+### 第 4 档 · 「扩张招致更大国际反弹」（carrier = 静态修正）
+### 正名依据：EU5 **不存在**"领土扩张花费"字段（expand* 仅 6 个 RGO/水渠字段，
+###   GAMEROOT\main_menu\common\modifier_type_definitions\00_modifier_types.txt:2476-2524）
+###   ⇒ 沿用 antagonism_received_modifier（percent，缩放持有者**承受**的敌意总量，
+###     同上 :6207），与现有三档扩张修正同字段同挂法
+###   （static_modifiers/th_gensokyo_expansion_cost_modifiers.txt:11-30、
+###    挂载 scripted_effects/th_gensokyo_expansion_effects.txt:61-89）
+### 挂载：add_country_modifier + years = -1（永久，直到显式 remove）
+### ------------------------------------------------------------
+th_gensokyo_tribunal_tier_4_apply_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        if = {
+            limit = { has_variable = th_gensokyo_tier_3_mark }
+            remove_variable = th_gensokyo_tier_3_mark
+        }
+        set_variable = th_gensokyo_tier_4_mark
+        add_country_modifier = {
+            modifier = th_gensokyo_sanction_expansion_modifier
+            years = -1
+        }
+    }
+}
+
+th_gensokyo_tribunal_tier_4_remove_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_accused
+    }
+    scope:th_tribunal_accused ?= {
+        remove_country_modifier = th_gensokyo_sanction_expansion_modifier
+        if = {
+            limit = { has_variable = th_gensokyo_tier_4_mark }
+            remove_variable = th_gensokyo_tier_4_mark
+        }
+    }
+}
+
+### ============================================================
+### ④ 观察期脉冲体（T2-2b 新增，2026-10-01）
+### 调用点：on_action/th_gensokyo_tribunal_pulse.txt 的
+###   th_gensokyo_tribunal_observation_pulse（**唯一调用点**）
+### 前置（由该 on_action 的 trigger 保证，故此处不再全局自定位）：
+###   当前 scope = 被诉国，且 has_variable = th_gensokyo_tarnish_mark
+###   与 has_variable = th_gensokyo_observation_months 均为真
+###
+### 【载体选择：**每月减法**，不用 timed variable】
+### 理由（本窗 §3.2 的二选一）：
+###   timed variable（set_variable = { name = X months = N }）虽然能省掉每月减法，
+###   但它的 value 在存续期内**恒定不变**（只能存一个初始值，不会递减），
+###   ⇒ UI 侧"观察期剩余月数"倒计时会一直显示 N，等于没有倒计时。
+###   本项目案卷区（T2-5）明确要显示剩余月数（《脚本规格》§2.1 表的
+###   "th_gensokyo_observation_months ... 读取点：悔改判定、**UI 倒计时**"），
+###   故必须保留一个**活的数值**。
+### 代价可控：门控是最廉价的两个 has_variable（见 on_action 的 trigger），
+###   全世界绝大多数国家一次哈希查空即返回，真正执行减法的只有
+###   持「祟」的极少数国家（同一时刻最多一案一国）。
+###
+### 幂等性：归零当月调用一次悔改判定后，
+###   ① 悔改成立 → 案件结案（tarnish 被摘）⇒ 次月 on_action trigger 即为假；
+###   ② 未悔改   → 打 th_gensokyo_observation_done，
+###                此后 var > 0 恒假 ⇒ 不再重复判定，直到升档把观察期重置为 6。
+### ============================================================
+th_gensokyo_tribunal_observation_pulse_effect = {
+    if = {
+        limit = { var:th_gensokyo_observation_months > 0 }
+        ### 照 R3 §R3-4(d) 的"每月减法计数器"惯用法
+        ### （VANILLA\common\scripted_effects\situation_effects.txt:591 紧凑写法）
+        change_variable = {
+            name = th_gensokyo_observation_months
+            subtract = 1
+        }
+        ### 减到 0 的**当月**立即判定
+        ### （用 NOT { > 0 } 而非 = 0：数值相等的比较式无蓝本先例，不等式有）
+        if = {
+            limit = {
+                NOT = { var:th_gensokyo_observation_months > 0 }
+            }
+            th_gensokyo_tribunal_repentance_check_effect = yes
+        }
+    }
+}
+
+### ============================================================
+### ⑤ 悔改判定（T2-2b 新增，2026-10-01）—— **地块回溯版**
+### 调用点：① th_gensokyo_tribunal_observation_pulse_effect（观察期归零当月）
+###         ② 【T2-3 新增】履约·交还领地 th_gensokyo_tribunal_fulfill_land
+###            （归还一块地后立即探测："中途悔改"路径）
+###         ③ 【T2-3 新增】履约·支付赔款 th_gensokyo_tribunal_fulfill_pay
+###            （累付达 th_repent_paid_threshold_value 后立即探测）
+### 定位：自我定位被诉国（按 th_gensokyo_tarnish_mark），不依赖 root
+###
+### 【T2-3 关键补充：中途探测不产生副作用】
+###   ② ③ 两个新调用点都发生在**观察期未满**时。本效果"未悔改"出口调用的
+###   th_gensokyo_tribunal_not_repented_effect 已加守卫：只有
+###   th_gensokyo_observation_months 确实已归零时才打 th_gensokyo_observation_done
+###   并通知阎魔；否则静默。故中途探测 = "条件够就结案，不够就什么都不发生"。
+###   （详见该效果 ⑥ 段注释。）
+###
+### 【本窗拍板：三条履约条目必须**全部**成立（AND）；条目 4「自请监管」独立短路】
+### 依据（《脚本规格》§6.2 + 《设计定案》§5.3 / §6.1）：
+###   (1) 「全部」而非「任一」：条目 3「已停止对受害国的战争」在非法扩张的
+###       常见时序下**天然为真**——非法扩张的割地正是发生在和约签订时，即
+###       战争已经结束。若按"任一条即悔改"，该条几乎恒真 ⇒ 6 个月一到就
+###       自动悔改 ⇒ 四档阶梯当场退化。这与《设计定案》§5.3 的立论
+###       （"悔改判定必须走履约行为，不能走数值"，否则阶梯退化）是同一类退化。
+###       《设计定案》§5.3 "履约 = 分期，逐条做到，逐步满足悔改条件"
+###       ——"逐条"= 每一条都要做到。
+###   (2) 条目 4 必须**独立短路**，不能塞进 AND：条目 4 的判定是
+###       `is_subject_type = th_gensokyo_regulated_state`（已经是彼岸监管国）。
+###       若它也在 AND 里，则只有"已自请监管"的国家才能悔改结案——
+###       而自请监管本身就是最重的处罚，逻辑自相矛盾、且正常案件永远无法悔改。
+###       两处文档都明写它单独成立即可：《脚本规格》§6.2 条目 4 备注
+###       "重罚即结案"、《设计定案》§5.3 条目 5 备注"重罚选项，直接结案"。
+###       【待主代理确认】条目 4 的"重罚落地"（真正把被诉国判为监管国）
+###       属 T2-4 的判决效果；本窗只做"结案"，若要求走重罚路径，
+###       把下方第一条短路分支换成 T2-4 的判决效果调用即可（单点改动）。
+###
+### 【条目 1 的物证列表跨案问题】
+### T2-2a 警告：th_gensokyo_stolen_location_list 是**单条全局列表**，
+###   由 on_took_location_in_peace_treaty 钩子在上游写入，
+###   可能跨案累积（旧案未清、新案又割地）。
+### 规格 §6.2 给的"放宽写法"（count = all + owner 持受害国标记）**不够用**：
+###   任何一条陈年条目（旧案的地、旧案的受害国标记已清）都会让
+###   `count = all` 恒假 ⇒ **悔改永远不可能成立**（硬失效，不是精度问题）。
+### 替代（本窗采用）= OR 三条（与下方代码的 (a)(b)(c) 标号一一对应）：
+###   (a) 没有物证列表 ⇒ 无所得可还（列表被 init 清空且本案尚无割地时的常态）；
+###   (b) 严格版（规格原文）：列表中每一块地都已在持受害国标记的国家手里；
+###   (c) 按被告过滤版（跨案累积免疫）：列表中**没有任何一块地仍归被诉国所有**。
+###   旧案条目归旧被告所有 ⇒ 不会阻塞本被告；(c) 单独即可覆盖正常案件。
+###   已知残留漏洞（**标为待主代理确认**）：被诉国把地转手给第三方时
+###   (c) 会误判为"已归还"。要根治需要"地块 → 取得者"的逐案快照，
+###   而写入端（chain_events 钩子）不在本窗白名单内。
+###   取舍说明：若只留 (b) 严格版，任何一条陈年条目都会让悔改**永远无法成立**
+###   （硬失效）；(c) 的代价只是把"转手第三方"这一种边缘情形算作已归还。
+###   两害相权取"系统不失效"，并标注待确认。
+###
+### 【列表缺失守卫】用 trigger_if / has_global_variable_list 包住两条列表读取，
+###   保证列表不存在时不去读它（铁律 11 的同类纪律：读前守卫），
+###   并把"无物证列表"视为条目 1 成立（无所得可还）。
+###   trigger_if 蓝本：VANILLA\common\country_interactions\hre.txt:2063-2069
+### ============================================================
+th_gensokyo_tribunal_repentance_check_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_repenting_case
+    }
+    scope:th_tribunal_repenting_case ?= {
+        ### ---------------- 条目 4「自请监管」：独立短路，直接结案 ----------------
+        if = {
+            limit = { is_subject_type = th_gensokyo_regulated_state }
+            th_gensokyo_tribunal_case_close_effect = yes
+        }
+        else = {
+            ### ---------------- 条目 1 + 条目 3（同为纯触发器，放同一 limit）----
+            if = {
+                limit = {
+                    ### 条目 1「已归还非法所得」
+                    OR = {
+                        ### (a) 没有物证列表 ⇒ 无非法所得可还
+                        NOT = { has_global_variable_list = th_gensokyo_stolen_location_list }
+                        ### (b)(c) 只在列表存在时读取
+                        trigger_if = {
+                            limit = { has_global_variable_list = th_gensokyo_stolen_location_list }
+                            OR = {
+                                ### (b) 严格版：每一块地都已在受害国手里
+                                any_in_global_list = {
+                                    variable = th_gensokyo_stolen_location_list
+                                    count = all
+                                    owner ?= { has_variable = th_gensokyo_victim_mark }
+                                }
+                                ### (c) 按被告过滤版：被诉国手里已无任何物证地块
+                                NOT = {
+                                    any_in_global_list = {
+                                        variable = th_gensokyo_stolen_location_list
+                                        owner ?= scope:th_tribunal_repenting_case
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ### 条目 3「已停止对受害国的战争」：遍历持受害国标记者
+                    ### （受害国可能不止一个；this = 受害国，故用 scope: 指定被诉国）
+                    NOT = {
+                        any_country = {
+                            has_variable = th_gensokyo_victim_mark
+                            is_at_war_with = scope:th_tribunal_repenting_case
+                        }
+                    }
+                }
+                ### ---------------- 条目 2「已付赔款」----------------
+                ### T2-3 才写 th_gensokyo_confess_paid ⇒ 读前必须独立 limit 守卫
+                ### （铁律 11：变量读取前加 has_variable，且守卫与读取分属两个
+                ###  limit 块，避免依赖同块内的求值短路）
+                ### 【门槛键 —— T2-3 已落地（2026-10-03）】
+                ### T2-2b 因当窗白名单不含 script_values/ 而**临时复用**
+                ### th_confess_base_cost_value（=500，认罪基础价），并在原注释里
+                ### 留了"建议后续窗新增 th_repent_paid_threshold_value 专用键
+                ### 并替换此行"。T2-3 已新增该键（script_values/
+                ### th_gensokyo_io_chain_values.txt 的 T2-3 追加段，现值同为 500）
+                ### 并把本行改为读它 —— **语义与数值都不变**，只是不再让
+                ### "已付赔款门槛"与"认罪基础价"共用一个键（便于独立调参）。
+                if = {
+                    limit = { has_variable = th_gensokyo_confess_paid }
+                    if = {
+                        limit = { var:th_gensokyo_confess_paid >= th_repent_paid_threshold_value }
+                        th_gensokyo_tribunal_case_close_effect = yes
+                    }
+                    else = {
+                        th_gensokyo_tribunal_not_repented_effect = yes
+                    }
+                }
+                else = {
+                    th_gensokyo_tribunal_not_repented_effect = yes
+                }
+            }
+            else = {
+                th_gensokyo_tribunal_not_repented_effect = yes
+            }
+        }
+    }
+}
+
+### ============================================================
+### ⑥ 未悔改：打"观察期已了结"标记 + 通知阎魔（T2-2b 新增）
+### 该标记是 th_gensokyo_tribunal_escalate 的 allow 依据（允许升档）
+### 通知手段 = trigger_event_non_silently（项目既有通知手段，见
+###   scripted_effects/th_gensokyo_expansion_effects.txt:131/167、
+###   generic_actions/th_gensokyo_request_expansion.txt:227-231；
+###   阎魔定位用 IO 的 leader_country link + ?= 空链接守卫，
+###   蓝本 R3 §R3-5(c) 与 VANILLA\events\situations\hussite_wars.txt:58）
+### ============================================================
+th_gensokyo_tribunal_not_repented_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_stubborn_case
+    }
+    scope:th_tribunal_stubborn_case ?= {
+        ### ============================================================
+        ### 【T2-3 微调（2026-10-03）：把副作用限定在"观察期确实已归零"】
+        ###
+        ### 背景：T2-3 的履约行动（交还领地 / 支付赔款达门槛）要在**观察期
+        ###   未满**时也能"中途悔改"——它们在 effect 里调用
+        ###   th_gensokyo_tribunal_repentance_check_effect。而该效果的
+        ###   "未悔改"出口（本效果）原本无条件打 th_gensokyo_observation_done
+        ###   并通知阎魔 ⇒ 中途探测会**提前**把"可升档"的闸门打开，
+        ###   6 个月观察期当场作废（被诉国点一下履约即可催阎魔升档）。
+        ###
+        ### 修法：本效果只在"观察期已归零"时才产生副作用。
+        ###   在**原有唯一调用点**（月度脉冲 th_gensokyo_tribunal_observation_
+        ###   pulse_effect：先把 observation_months 减到 0、再调悔改判定）
+        ###   上，观察期恒为 0 ⇒ 本守卫恒真 ⇒ **行为与 T2-2b 完全一致**。
+        ###   中途探测时观察期 > 0 ⇒ 本效果静默（不改状态、不发事件）。
+        ###
+        ### 为什么用 trigger_if 而不是 OR = { NOT = { has_variable = ... }
+        ###   NOT = { var:... > 0 } }：后者依赖同一块内的求值短路，
+        ###   而项目 T2-2b 已明文不依赖短路（本文件 :574-577 的注释）。
+        ###   trigger_if 的语义 = "limit 为假时整体为真，为真则取体内结果"
+        ###   ⇒ 字段缺失 ⇒ 整体为真（按"已归零"处理，保持 T2-2b 原行为）；
+        ###     字段存在 ⇒ 等价于 NOT = { var:... > 0 }。
+        ###   trigger_if 蓝本：VANILLA\common\country_interactions\hre.txt:2083-2088、
+        ###   generic_actions\culture.txt:239-244
+        ### ============================================================
+        if = {
+            limit = {
+                trigger_if = {
+                    limit = { has_variable = th_gensokyo_observation_months }
+                    NOT = { var:th_gensokyo_observation_months > 0 }
+                }
+            }
+            set_variable = th_gensokyo_observation_done
+            ### 通知阎魔（观察期届满未悔改 → 可升档）
+            international_organization:th_gensokyo_io = {
+                leader_country ?= {
+                    trigger_event_non_silently = {
+                        id = th_gensokyo_tribunal_events.3
+                        days = 1
+                    }
+                }
+            }
+        }
+    }
+}
+
+### ============================================================
+### ⑦ 案件结案（T2-2b 新增）
+### 调用点：① 悔改成立（th_gensokyo_tribunal_repentance_check_effect）
+###         ② 赦免行动 th_gensokyo_tribunal_pardon
+###         ③ 【T2-3 新增】自辩全胜 th_gensokyo_tribunal_defend
+###         ④ 【T2-3 新增】认罪赎罪 th_gensokyo_tribunal_confess
+###         ⑤ 【T2-3 新增】战时求和 th_gensokyo_tribunal_settle
+### 语义：撤全部档位载体 + 清全部案件标记 + 清受害国/物证/账本
+###       + 价值观归中 + 团结度奖励
+###
+### 【顺序铁律】第 1/3/4 档的**载体撤销**都靠 th_gensokyo_tarnish_mark
+###   自我定位 ⇒ 必须在 case_markers_clear_effect 摘掉 tarnish **之前**调用。
+###   顺序 = tier_1_remove（撤敌意/好感）→ tier_3_remove（撤禁运关系）
+###          → tier_4_remove（撤静态修正）→ case_markers_clear（摘全部标记）
+###
+### 【价值观归中】三条结案路径统一归中（= 0 中立），口径同
+###   scripted_effects/th_gensokyo_notorious_effects.txt:28-31（开局 init）
+###   与 peace_treaties/th_gensokyo_crusade_triumph.txt:34-39（战败归中）。
+###   必要性：本系统已停用价值观自然衰减（同上 :123-131），
+###   不归中则被诉国仍 ≥ 门槛（th_notorious_outcast_threshold_value = 50），
+###   结案后会被立刻重新立案，阶梯变成死循环。
+###   ※ 这一条是本窗为"悔改结案"补的判断（《设计定案》只对赦免/认罪
+###     明写归中）——【待主代理确认】。
+### ============================================================
+th_gensokyo_tribunal_case_close_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_closing_case
+    }
+    scope:th_tribunal_closing_case ?= {
+        ### ① 逐成员撤销第 1 档敌意 / 好感（须在摘 tarnish 之前）
+        th_gensokyo_tribunal_tier_1_remove_effect = yes
+        ### ② 撤销第 3 档禁运关系（须在摘 tarnish 之前）
+        th_gensokyo_tribunal_tier_3_remove_effect = yes
+        ### ③ 撤销第 4 档静态修正（须在摘 tarnish 之前）
+        th_gensokyo_tribunal_tier_4_remove_effect = yes
+        ### ④ 摘全部案件标记（tarnish / tier_1..4 / observation_months /
+        ###    observation_done / tribunal_agent_mark / agent_refused /
+        ###    tribunal_agent_nominee_mark）+ 撤第 4 档静态修正（幂等）
+        th_gensokyo_tribunal_case_markers_clear_effect = yes
+        ### ⑤ 价值观归中
+        set_societal_value = {
+            type = th_gensokyo_amity_vs_belligerence
+            value = 0
+        }
+    }
+    ### ⑥ 清受害国标记（全局；受害国可能有多个）
+    every_country = {
+        limit = { has_variable = th_gensokyo_victim_mark }
+        remove_variable = th_gensokyo_victim_mark
+    }
+    ### ⑥b 清代理人标记与暂挂提名标记（**必须全局扫**）
+    ### 关键区分：th_gensokyo_tribunal_agent_mark 与
+    ### th_gensokyo_tribunal_agent_nominee_mark 挂在**代理人（另一个国家）**身上，
+    ### 不在被诉国身上 —— 上方 scope:th_tribunal_closing_case 内的
+    ### case_markers_clear_effect 只作用于被诉国，清不到它们。
+    ### 不扫的后果：结案后代理人仍持领衔标记，开庭时会被当成现役代理人；
+    ### 暂挂提名标记残留还会让同意事件的 trigger 误判。
+    every_country = {
+        limit = {
+            OR = {
+                has_variable = th_gensokyo_tribunal_agent_mark
+                has_variable = th_gensokyo_tribunal_agent_nominee_mark
+            }
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_tribunal_agent_mark }
+            remove_variable = th_gensokyo_tribunal_agent_mark
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_tribunal_agent_nominee_mark }
+            remove_variable = th_gensokyo_tribunal_agent_nominee_mark
+        }
+    }
+    ### ⑦ 清物证列表（结案即销毁起诉书）
+    ###    写法蓝本：VANILLA\common\events\hre.txt:1185 /
+    ###    situations\italian_wars.txt:569-570（clear_global_variable_list = 裸名）
+    if = {
+        limit = { has_global_variable_list = th_gensokyo_stolen_location_list }
+        clear_global_variable_list = th_gensokyo_stolen_location_list
+    }
+    ### ⑧ 清罪名账本（6 条；逐条 has_variable 守卫，铁律 11）
+    if = {
+        limit = { has_variable = th_gensokyo_crime_unlawful_var }
+        set_variable = { name = th_gensokyo_crime_unlawful_var value = 0 }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_freecity_var }
+        set_variable = { name = th_gensokyo_crime_freecity_var value = 0 }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_conquest_var }
+        set_variable = { name = th_gensokyo_crime_conquest_var value = 0 }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_legal_var }
+        set_variable = { name = th_gensokyo_crime_legal_var value = 0 }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_regulated_var }
+        set_variable = { name = th_gensokyo_crime_regulated_var value = 0 }
+    }
+    if = {
+        limit = { has_variable = th_gensokyo_crime_nocb_var }
+        set_variable = { name = th_gensokyo_crime_nocb_var value = 0 }
+    }
+    ### 时间戳一并移除（它是"最近一次记账"的显示值，结案后无意义）。
+    ### 安全前提：全库查询确认目前**没有任何脚本读取点**
+    ### （仅 notorious_effects.txt:115 写入、注释提及），
+    ### UI 读取方按既有纪律必须 has_variable 守卫
+    if = {
+        limit = { has_variable = th_gensokyo_crime_last_date }
+        remove_variable = th_gensokyo_crime_last_date
+    }
+    ### ⑨ 团结度奖励（案件了结带来秩序；数值键复用"审判完成奖励团结"）
+    ###    【待主代理确认】若希望与开庭判决的奖励区分，需新增专用键
+    ###    （本窗白名单不含 script_values/）
+    international_organization:th_gensokyo_io = {
+        th_gensokyo_unity_add_effect = {
+            value = th_unity_verdict_reward_value
+        }
+    }
+    ### ============================================================
+    ### ⑩ 【2026-10-01 T2-5b】圣战「大义」的**撤销点之二**（结案侧）
+    ### 语义：《设计定案》§7 —— 大义是"战时临时修正"，战争结束**或**结案即移除。
+    ### 为什么必须挂在这里（而不是只挂战争结束）：
+    ###   被诉方【战时求和】（generic_actions/th_gensokyo_tribunal_settle.txt）
+    ###   只做三件事 —— 付款、价值观归中、摘 th_gensokyo_crusade_target_mark
+    ###   —— **它不签和约、不结束战争**（同上 :94-136）。
+    ###   战争由审判庭 auto_leave / auto_disband 的"正当性消失"驱动解散，
+    ###   但战场上的战争本身仍在 ⇒ on_ending_war（大义撤销点之一）不会触发。
+    ###   ⇒ 若只挂战争结束，求和后大义会留在参战者身上直到那场战争自然打完。
+    ### 本处为**全局扫 has_country_modifier**，与当前 scope 无关，
+    ###   因此对被诉国 / 代理人 / 三贤者 / 自愿加入者一视同仁。
+    ### 幂等：remove_country_modifier 对不持有该修正的国家是空操作；
+    ###   与战争结束侧（on_action/th_gensokyo_chain_events.txt 的
+    ###   th_gensokyo_tribunal_war_end_check 第一步）互为兜底，
+    ###   两条出口（战后宣判结案 / 求和解散）各自都会走一次。
+    ### ============================================================
+    th_gensokyo_tribunal_grand_cause_remove_effect = yes
+}
+
+### ============================================================
+### ⑧ 升档落地（T2-2b 新增）—— **时序：只在代理人接受之后调用**
+###
+### 【本窗的时序实现（§6.2 要求说明的那一条）】
+###   EU5 的事件 option **无法"不落地"** —— 事件一旦发出，
+###   接受/拒绝的后果都只能由 option 的效果决定。因此：
+###     阎魔点击「升档」→ 行动只做三件事：
+###       ① 打暂挂提名标记 th_gensokyo_tribunal_agent_nominee_mark
+###       ② 给被提名国**临时**打上 th_gensokyo_tribunal_agent_mark
+###       ③ trigger_event_non_silently 发同意事件（days = 1）
+###     → **档位在这一步不动**（被诉国仍持原档位标记，观察期也还没重置）
+###     → 被提名国选「接受」→ 调本效果 = **档位此刻才落地**（+1 档、
+###       观察期重置 6、清 observation_done）
+###     → 被提名国选「拒绝」→ 不调本效果 ⇒ 档位保留原状（"该档暂挂"），
+###       阎魔在 3 个月冷却后重新点名（被拒国已被 agent_refused 排除）
+###   已知代价：行动点击与落地之间有 1 天（days = 1，项目通知事件的通行延迟），
+###   这 1 天内面板显示的仍是旧档位 —— 与"提名 + 征求同意"的语义一致。
+###
+### 自定位：被诉国（按 th_gensokyo_tarnish_mark），不依赖调用方 scope
+### ============================================================
+th_gensokyo_tribunal_escalate_land_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_tarnish_mark }
+        save_scope_as = th_tribunal_escalating_case
+    }
+    if = {
+        limit = { exists = scope:th_tribunal_escalating_case }
+        scope:th_tribunal_escalating_case = {
+            ### 读档位标记判断**当前**档，落 当前档 + 1
+            ### （各 tier_*_apply_effect 自我定位被诉国、自动摘上一档标记、落地载体）
+            if = {
+                limit = {
+                    NOT = { has_variable = th_gensokyo_tier_4_mark }
+                }
+                if = {
+                    limit = { has_variable = th_gensokyo_tier_3_mark }
+                    th_gensokyo_tribunal_tier_4_apply_effect = yes
+                }
+                else_if = {
+                    limit = { has_variable = th_gensokyo_tier_2_mark }
+                    th_gensokyo_tribunal_tier_3_apply_effect = yes
+                }
+                else_if = {
+                    limit = { has_variable = th_gensokyo_tier_1_mark }
+                    th_gensokyo_tribunal_tier_2_apply_effect = yes
+                }
+                else = {
+                    ### 异常态（无任何档位标记）：补第 1 档，不凭空跳到高档
+                    th_gensokyo_tribunal_tier_1_apply_effect = yes
+                }
+            }
+            ### 观察期重置 + 清"可升档"标记
+            set_variable = {
+                name = th_gensokyo_observation_months
+                value = th_tribunal_observation_months
+            }
+            if = {
+                limit = { has_variable = th_gensokyo_observation_done }
+                remove_variable = th_gensokyo_observation_done
+            }
+        }
+    }
+    else = {
+        ### 案件在征求意见期间已被结案（赦免 / 悔改结案）：
+        ### 撤回暂挂的提名与临时代理人标记，**绝不凭空落档**
+        every_country = {
+            limit = {
+                OR = {
+                    has_variable = th_gensokyo_tribunal_agent_nominee_mark
+                    has_variable = th_gensokyo_tribunal_agent_mark
+                }
+            }
+            if = {
+                limit = { has_variable = th_gensokyo_tribunal_agent_nominee_mark }
+                remove_variable = th_gensokyo_tribunal_agent_nominee_mark
+            }
+            if = {
+                limit = { has_variable = th_gensokyo_tribunal_agent_mark }
+                remove_variable = th_gensokyo_tribunal_agent_mark
+            }
+        }
+    }
+}
+
+### ============================================================
+### ⑨ 代理人接受领衔（T2-2b 新增）
+### 调用点：events/th_gensokyo_tribunal_events.txt 的 .1 接受 option
+### 定位：按 th_gensokyo_tribunal_agent_nominee_mark 找被提名国
+### ============================================================
+th_gensokyo_tribunal_agent_accept_effect = {
+    ### ① 撤销旧代理人标记（全局唯一；照 T1 的 crusade_declare.txt:128-133 写法）
+    every_country = {
+        limit = { has_variable = th_gensokyo_tribunal_agent_mark }
+        remove_variable = th_gensokyo_tribunal_agent_mark
+    }
+    ### ② 领衔落地到被提名国 + 摘暂挂标记
+    every_country = {
+        limit = { has_variable = th_gensokyo_tribunal_agent_nominee_mark }
+        set_variable = th_gensokyo_tribunal_agent_mark
+        remove_variable = th_gensokyo_tribunal_agent_nominee_mark
+    }
+    ### ③ 档位此刻才落地（+1 档 + 观察期重置）
+    th_gensokyo_tribunal_escalate_land_effect = yes
+}
+
+### ============================================================
+### ⑩ 拒绝领衔的后果（T2-2b 新增）
+### 作用于**当前 scope 的国家**（调用方负责定位），两处调用点共用：
+###   ① events/th_gensokyo_tribunal_events.txt .1 的拒绝 option
+###      （经 th_gensokyo_tribunal_agent_refuse_effect 定位被提名国）
+###   ② generic_actions/th_gensokyo_tribunal_agent_refuse.txt
+###      （现役代理人**事后抗命**，actor 自己就是当前 scope）
+### 数值键（script_values/th_gensokyo_io_chain_values.txt:165-166，均为负值）：
+###   th_agent_refuse_prestige_penalty = -20 / th_agent_refuse_contribution_penalty = -20
+### 贡献惩罚的写法：复用项目既有贡献接口
+###   th_gensokyo_io_contribution_var_add_effect（scripted_effects/
+###   th_gensokyo_io_effects.txt:38-43，内部 change_variable add = $value$）
+###   —— 该接口的形态是 `add = $value$`，传负值即为扣减，
+###   与 th_gensokyo_request_expansion_gold_penalty 带符号的既有惯例一致
+###   （同文件 :38 注释"带符号，避免 -脚本值 语法风险"）
+### ============================================================
+th_gensokyo_tribunal_agent_refuse_penalty_effect = {
+    set_variable = th_gensokyo_agent_refused
+    add_prestige = {
+        value = th_agent_refuse_prestige_penalty
+    }
+    th_gensokyo_io_contribution_var_add_effect = {
+        value = th_agent_refuse_contribution_penalty
+    }
+}
+
+th_gensokyo_tribunal_agent_refuse_effect = {
+    ### ① 撤回领衔（被提名国拒绝 ⇒ 领衔撤销；照 T1 写法）
+    every_country = {
+        limit = { has_variable = th_gensokyo_tribunal_agent_mark }
+        remove_variable = th_gensokyo_tribunal_agent_mark
+    }
+    ### ② 被提名国：打"曾拒绝领衔"标记 + 威望/贡献惩罚 + 摘暂挂标记
+    every_country = {
+        limit = { has_variable = th_gensokyo_tribunal_agent_nominee_mark }
+        th_gensokyo_tribunal_agent_refuse_penalty_effect = yes
+        remove_variable = th_gensokyo_tribunal_agent_nominee_mark
+    }
+    ### ③ 通知阎魔（该档暂挂：档位保持原状，阎魔另选）。
+    ###    定位蓝本：IO 的 leader_country link（R3 §R3-5(c)；
+    ###    VANILLA\events\situations\hussite_wars.txt:58 逐字先例）
+    international_organization:th_gensokyo_io = {
+        leader_country ?= {
+            trigger_event_non_silently = {
+                id = th_gensokyo_tribunal_events.2
+                days = 1
+            }
+        }
+    }
+}
+
+### ============================================================
+### ⑪ 判决基准档（T2-5 新增，2026-10-04）
+### 调用点（**唯一**）：on_action/th_gensokyo_chain_events.txt 的
+###   th_gensokyo_tribunal_war_end_check（惩戒战争结束那一刻）
+### 语义：判决分 = 罪 + 态度 + 审判法倾向（script_values 的
+###   th_gensokyo_judgment_score_value，本窗新建的唯一合式）→ 按阈值换 1-3 档
+###   写入 th_gensokyo_sentence_baseline，供宣判四行动的 allow 夹裁量范围
+###   （《脚本规格》§10.2：allow = 基准 ±1 包含本档）
+###
+### 【为什么基准档的最小值是 1 而不是 0】
+###   阈值只有两个（th_sin_tier2_value = 50 / th_sin_tier3_value = 75，
+###   《脚本规格》§3.1"阈值沿用"），只够切出三段 ⇒ 基准域 = 1/2/3。
+###   这与本项目**既有的** AI 档位判定 th_gensokyo_trial_tier_effect
+###   （scripted_effects/th_gensokyo_crusade_effects.txt:65-101，else 分支恒为 1）
+###   完全一致 —— 两条路径同源同域，不会互相打架。
+###   档 0（仅赔款破产）依然是可达的：当基准 = 1 时，"基准 − 1" = 0
+###   （旧实现在"从轻"路径下正是用 0 档，见改造前的
+###    parliament_issues/th_gensokyo_trial_issue.txt:88-93）。四个宣判行动
+###   覆盖 0-3 全域，故改造不缩小可判范围。
+###
+### 【自定位】按 th_gensokyo_crusade_target_mark（战争结束时该标记仍在；
+###   trial_target_mark 要到宣判路径的转换步骤才打）—— 照本项目 F24 惯例
+###   "效果内按标记重新定位"，不依赖 root / 调用方 scope。
+### ============================================================
+th_gensokyo_judgment_baseline_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_crusade_target_mark }
+        save_scope_as = th_judgment_accused
+    }
+    scope:th_judgment_accused ?= {
+        ### 合式求值 → 临时变量（该脚本值 root = 国家，读 var: 前自带 has_variable 守卫）
+        set_variable = {
+            name = th_gensokyo_temp_judgment_score
+            value = th_gensokyo_judgment_score_value
+        }
+        ### 阈值换算（沿用 th_sin_tier2_value = 50 / th_sin_tier3_value = 75）
+        if = {
+            limit = { var:th_gensokyo_temp_judgment_score >= th_sin_tier3_value }
+            set_variable = {
+                name = th_gensokyo_sentence_baseline
+                value = 3
+            }
+        }
+        else_if = {
+            limit = { var:th_gensokyo_temp_judgment_score >= th_sin_tier2_value }
+            set_variable = {
+                name = th_gensokyo_sentence_baseline
+                value = 2
+            }
+        }
+        else = {
+            set_variable = {
+                name = th_gensokyo_sentence_baseline
+                value = 1
+            }
+        }
+        ### 临时量即用即清（本效果之外无人读它；UI 要显示"判决分"直接调
+        ### th_gensokyo_judgment_score_value 脚本值即可）
+        remove_variable = th_gensokyo_temp_judgment_score
+    }
+}
+
+### ============================================================
+### ⑫ 超时倒计时起算 + 意向重置（T2-5 新增）
+### 调用点（**唯一**）：同 ⑪（战争结束那一刻，紧接 ⑪ 之后）
+### 三件事：
+###   ① th_gensokyo_verdict_overdue = th_verdict_overdue_months（6）
+###      —— 逐月递减，归零当月由 ⑭ 自动按诸国意向判决（防卡死兜底）
+###   ② 清 th_gensokyo_verdict_done —— 上一案的"已宣判"标记不能阻塞本案
+###   ③ 清诸国意向（国家标记 + 审判庭 IO 变量）—— 上一案若未走到宣判
+###      （审判庭被 auto_disband / 反杀分支），意向会悬空残留；
+###      本案的议会辩论马上会重写意向，故起算时一并清干净
+### ============================================================
+th_gensokyo_verdict_overdue_start_effect = {
+    every_country = {
+        limit = { has_variable = th_gensokyo_crusade_target_mark }
+        set_variable = {
+            name = th_gensokyo_verdict_overdue
+            value = th_verdict_overdue_months
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_verdict_done }
+            remove_variable = th_gensokyo_verdict_done
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_intent_harsh }
+            remove_variable = th_gensokyo_intent_harsh
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_intent_soft }
+            remove_variable = th_gensokyo_intent_soft
+        }
+    }
+    ### 审判庭 IO 的意向变量（审判庭此刻必然存在 —— 战争结束分支刚用它发起议会）
+    international_organization:th_gensokyo_tribunal = {
+        if = {
+            limit = { has_variable = th_gensokyo_verdict_intent }
+            remove_variable = th_gensokyo_verdict_intent
+        }
+    }
+}
+
+### ============================================================
+### ⑬ 宣判落地（T2-5 新增）—— **四个宣判行动 + 超时兜底共用的唯一落地口**
+### 调用点：
+###   ① generic_actions/th_gensokyo_verdict.txt 的 t0 / t1 / t2 / t3 四个行动
+###      （调用前各自已写好 th_gensokyo_sentence_tier = 本档字面值）
+###   ② ⑭ 超时兜底（自动按诸国意向算好同一个 th_gensokyo_sentence_tier）
+### ⇒ 两条路径**不复制判决逻辑**，差别只在"谁写了 tier"
+###
+### 五步（顺序不可换，逐条理由见下）：
+###   ① 目标标记转换 crusade_target_mark → trial_target_mark
+###   ② 打 th_gensokyo_verdict_done
+###   ③ 偏离意向 → 扣幻想乡团结度
+###   ④ th_gensokyo_trial_judge_core_effect（**现有，勿改**）
+###   ⑤ th_gensokyo_trial_cleanup_effect（**现有**）
+###
+### 【① 为什么是本效果的职责（本窗最容易漏的一环）】
+###   改造前，crusade_target_mark → trial_target_mark 的转换由**议会议题回调开头**
+###   承担（旧 parliament_issues/th_gensokyo_trial_issue.txt:34-39 与 :68-73）。
+###   本窗把议题降级为"只写意向"后，那两处转换被删除 ⇒ 转换点必须由宣判路径接管，
+###   否则 th_gensokyo_trial_judge_core_effect / return_lands_effect /
+###   sentence_duration_effect 的"效果内按 trial_target_mark 自定位"全部落空，
+###   判决会静默地什么都不做（不是报错，是找不到目标）。
+###
+### 【③ 为什么必须在 ④ 之前】
+###   judge_core 尾部会 `remove_variable = th_gensokyo_sentence_tier`
+###   （crusade_effects.txt:273），tier 一旦被清就无从计算偏离量。
+###   同理 baseline / 意向标记也在本步读完后才清。
+###
+### 【偏离量算法（本窗拍板，见报告 §9）】
+###   漂移 = 实判档 − 基准档（阎魔相对"公式档"挪了几格）
+###   偏离量 = |漂移 − 意向向量|，意向向量 = 从重 +1 / 从轻 −1 / 无意向 0
+###   ⇒ 等价于 |实判档 − 意向档|，意向档 = 基准档 + 意向向量
+###   代价 = 偏离量 × th_verdict_deviation_unity_cost_value（每次调用单价）
+###   为什么不直接拿"实判档 vs 基准档"当偏离量：那样在"阎魔顺从民意"
+###   （意向从重、判基准+1）时反而会被罚 —— 罚错了对象。
+###   意向才是"民意"，偏离的参照系必须是意向档。
+###   无意向（议会未辩或辩论未产生意向）时意向向量 = 0 ⇒ 任何偏离基准
+###   都要付钱，对应《设计定案》§5.5 的"专断的价签"。
+### ============================================================
+### ============================================================
+### ⑬-前置 · 越权代价（2026-10-04 闭环改造③：裁决事件版）
+###   用途：裁决事件的四个 option 各调一次，传入本档档位 $value$（0/1/2/3）；
+###         若 |本档 − 基准档| ≥ 2（超出「基准 ±1」的裁量范围）⇒ 额外扣一次团结度。
+###   额度 = 复用既有的 th_verdict_deviation_unity_cost_value
+###     （用户 2026-10-04 拍板：「等于再偏一档」，零新增数值键）
+###   ★ 时序：必须在 th_gensokyo_verdict_apply_effect **之前**调 ——
+###     后者末尾会 remove_variable th_gensokyo_sentence_baseline，之后无从比较。
+###   写法与下面 ③ 段（偏离意向）同构：temp 变量做差 → 取绝对值 → 阈值判断。
+###   团结度接口：th_gensokyo_unity_subtract_effect（th_gensokyo_unity_effects.txt:18，
+###     $value$ 参数、clamp 0-100，必须 IO scope 调用）
+### ============================================================
+th_gensokyo_verdict_defiance_effect = {
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_crusade_target_mark
+            has_variable = th_gensokyo_sentence_baseline
+        }
+        set_variable = {
+            name = th_gensokyo_temp_defiance
+            value = var:th_gensokyo_sentence_baseline
+        }
+        change_variable = {
+            name = th_gensokyo_temp_defiance
+            subtract = $value$
+        }
+        if = {
+            limit = { var:th_gensokyo_temp_defiance < 0 }
+            change_variable = {
+                name = th_gensokyo_temp_defiance
+                multiply = -1
+            }
+        }
+        if = {
+            limit = { var:th_gensokyo_temp_defiance >= 2 }
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_verdict_deviation_unity_cost_value
+                }
+            }
+        }
+        remove_variable = th_gensokyo_temp_defiance
+    }
+}
+
+th_gensokyo_verdict_apply_effect = {
+    ### ---------------- ① 目标标记转换 ----------------
+    every_country = {
+        limit = { has_variable = th_gensokyo_crusade_target_mark }
+        set_variable = th_gensokyo_trial_target_mark
+    }
+    ### ---------------- ② 已宣判标记 ----------------
+    ### （宣判四行动的 potential 靠它失效 ⇒ 不需要 cooldown；
+    ###  超时兜底的 on_action trigger 也靠它关闭）
+    every_country = {
+        limit = { has_variable = th_gensokyo_trial_target_mark }
+        set_variable = th_gensokyo_verdict_done
+    }
+    ### ---------------- ③ 偏离意向 → 团结度代价 ----------------
+    every_country = {
+        limit = { has_variable = th_gensokyo_trial_target_mark }
+        save_scope_as = th_verdict_accused
+    }
+    scope:th_verdict_accused ?= {
+        ### 读 tier / baseline 前 has_variable 守卫（铁律 11）：两者都由本窗写，
+        ### 但旧档 / 异常态下可能缺失，缺了就整段跳过（不罚也不报类型错）
+        if = {
+            limit = {
+                has_variable = th_gensokyo_sentence_tier
+                has_variable = th_gensokyo_sentence_baseline
+            }
+            ### 漂移 = 实判档 − 基准档
+            set_variable = {
+                name = th_gensokyo_temp_verdict_drift
+                value = var:th_gensokyo_sentence_tier
+            }
+            change_variable = {
+                name = th_gensokyo_temp_verdict_drift
+                subtract = var:th_gensokyo_sentence_baseline
+            }
+            ### 再减去意向向量（从重 = +1 ⇒ 意向档 = 基准 + 1）
+            if = {
+                limit = { has_variable = th_gensokyo_intent_harsh }
+                change_variable = {
+                    name = th_gensokyo_temp_verdict_drift
+                    subtract = 1
+                }
+            }
+            else_if = {
+                limit = { has_variable = th_gensokyo_intent_soft }
+                change_variable = {
+                    name = th_gensokyo_temp_verdict_drift
+                    add = 1
+                }
+            }
+            ### 取绝对值（偏离量只关心大小）
+            ### change_variable + multiply = -1 蓝本：
+            ###   VANILLA\common\scripted_effects\global_effects.txt:137/141
+            ###   （change_variable = { name = value_1_comperator multiply = -1 }）
+            ### 负数比较蓝本：VANILLA\common\…\country.txt:701 `karma < -33`、
+            ###   :898 `self_control < -10`
+            if = {
+                limit = { var:th_gensokyo_temp_verdict_drift < 0 }
+                change_variable = {
+                    name = th_gensokyo_temp_verdict_drift
+                    multiply = -1
+                }
+            }
+            ### 偏离 1 档罚一次、2 档再罚一次（上限 2 档：
+            ### allow 已把实判档夹在基准 ±1、意向档也在基准 ±1 内）
+            ### 单价经统一接口施加（IO scope + $value$ 宏，传入的脚本值本身
+            ### 与 scope 无关，故在被调用效果内求值安全）
+            if = {
+                limit = { var:th_gensokyo_temp_verdict_drift >= 1 }
+                international_organization:th_gensokyo_io = {
+                    th_gensokyo_unity_subtract_effect = {
+                        value = th_verdict_deviation_unity_cost_value
+                    }
+                }
+            }
+            if = {
+                limit = { var:th_gensokyo_temp_verdict_drift >= 2 }
+                international_organization:th_gensokyo_io = {
+                    th_gensokyo_unity_subtract_effect = {
+                        value = th_verdict_deviation_unity_cost_value
+                    }
+                }
+            }
+            remove_variable = th_gensokyo_temp_verdict_drift
+        }
+        ### ---------------- ⑥ 清 baseline / intent / overdue ----------------
+        ### （须在 ⑤ cleanup 摘掉 crusade_target_mark 之前完成 —— cleanup 之后
+        ###   本效果再也定位不到被诉国）
+        ### **故意不清 th_gensokyo_verdict_done**：它是"本案已判"的常驻标记，
+        ### 由下一次战争结束的 ⑫ 清理（《脚本规格》§10.2 的 ⑥ 亦未列它）
+        if = {
+            limit = { has_variable = th_gensokyo_sentence_baseline }
+            remove_variable = th_gensokyo_sentence_baseline
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_intent_harsh }
+            remove_variable = th_gensokyo_intent_harsh
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_intent_soft }
+            remove_variable = th_gensokyo_intent_soft
+        }
+        if = {
+            limit = { has_variable = th_gensokyo_verdict_overdue }
+            remove_variable = th_gensokyo_verdict_overdue
+        }
+    }
+    ### 诸国意向的 IO 变量（存审判庭 —— 《脚本规格》§10.1 指定该 IO；
+    ### 审判庭随即被 ⑤ 销毁，此处只是"先清干净"）
+    international_organization:th_gensokyo_tribunal = {
+        if = {
+            limit = { has_variable = th_gensokyo_verdict_intent }
+            remove_variable = th_gensokyo_verdict_intent
+        }
+    }
+    ### ---------------- ④ 判决落地（现有核心，勿改）----------------
+    ### 内部自己按 th_gensokyo_trial_target_mark 重定位目标与阎魔，
+    ### 并读 scope:crusade_target.var:th_gensokyo_sentence_tier
+    ###
+    ### 【为什么 ④⑤ 必须整段套一个守卫（T2-5 新增的防御，不是风格问题）】
+    ###   judge_core 的头部是
+    ###     every_country = { limit = { has_variable = th_gensokyo_trial_target_mark }
+    ###                       save_scope_as = crusade_target }
+    ###   紧接着就是**无 exists 守卫**的 `scope:crusade_target = { … }`
+    ###   （crusade_effects.txt:165，现有代码，本窗不改）。
+    ###   若本效果被**第二次**调用 —— 同一 tick 内 AI 连点两个宣判档、
+    ###   或"超时兜底"与"手动宣判"撞月 —— 此时标记已被第一次的 ⑤ cleanup
+    ###   摘掉，那句 scope 引用就会带着未定义的目标进入，
+    ###   刷 "Undefined event target 'crusade_target'"（本项目 P1-12 记录过的同类报错）。
+    ###   故在调用前确认"被诉国 + 本档 tier"都还在；不在就整段跳过。
+    ###   正常路径（首次宣判）两者必然都在 ⇒ 行为不变。
+    if = {
+        limit = {
+            any_country = {
+                has_variable = th_gensokyo_trial_target_mark
+                has_variable = th_gensokyo_sentence_tier
+            }
+        }
+        ### ---------------- ④ 判决落地（现有核心，勿改）----------------
+        th_gensokyo_trial_judge_core_effect = yes
+        ### ---------------- ⑤ 清理（现有）----------------
+        ### 清 crusade_target_mark / trial_target_mark / crusade_participant
+        ### + 解散审判庭
+        th_gensokyo_trial_cleanup_effect = yes
+    }
+}
+
+### ============================================================
+### ⑭ 超时兜底脉冲体（T2-5 新增）—— "战后 6 个月阎魔仍未宣判 → 自动按诸国意向判决"
+### 调用点（**唯一**）：on_action/th_gensokyo_tribunal_pulse.txt 的
+###   th_gensokyo_tribunal_overdue_pulse
+### 前置（由该 on_action 的 trigger 保证，故此处不再全局自定位）：
+###   当前 scope = 被诉国，且 has_variable = th_gensokyo_crusade_target_mark
+###   与 has_variable = th_gensokyo_verdict_overdue 均为真，
+###   且 has_variable = th_gensokyo_verdict_done 为假
+###
+### 【载体：每月减法，不用 timed variable】
+###   理由同 ④ 观察期脉冲体（本文件 :439-449）：timed variable 的 value
+###   在存续期内恒定不变，做不了"剩余月数"倒计时（UI 要显示它）。
+###
+### 【自动档 = 意向档（不是"基准 ±1 里的某一档"）】
+###   意向档 = 基准档 + 意向向量：
+###     从重（th_gensokyo_intent_harsh）→ 基准 + 1（基准 = 3 时封顶 3）
+###     从轻（th_gensokyo_intent_soft） → 基准 − 1（基准 = 1 时封底 0）
+###     无意向                        → 基准档本身
+###   与《设计定案》§5.5"自动按诸国意向判决"逐字对应。
+###   附带效果：自动判决恰为意向档 ⇒ ⑬ 算出的偏离量恒为 0 ⇒
+###   "超时"这件事本身不额外扣团结度（阎魔的代价是失去定谳权，不是再挨罚）。
+###
+### 【幂等】归零当月调用 ⑬，⑬ 会打 verdict_done 并清 verdict_overdue
+###   ⇒ 次月 on_action trigger 即为假。
+### ============================================================
+th_gensokyo_tribunal_verdict_overdue_effect = {
+    if = {
+        limit = { var:th_gensokyo_verdict_overdue > 0 }
+        change_variable = {
+            name = th_gensokyo_verdict_overdue
+            subtract = 1
+        }
+        ### 减到 0 的**当月**立即自动宣判
+        ### （用 NOT { > 0 } 而非 = 0：数值相等的比较式无蓝本先例，不等式有 ——
+        ###  同本文件观察期脉冲体的口径）
+        if = {
+            limit = {
+                NOT = { var:th_gensokyo_verdict_overdue > 0 }
+                has_variable = th_gensokyo_sentence_baseline
+            }
+            ### 先落"意向档"到 th_gensokyo_sentence_tier（⑬ 只负责按 tier 落地）
+            set_variable = {
+                name = th_gensokyo_sentence_tier
+                value = var:th_gensokyo_sentence_baseline
+            }
+            if = {
+                limit = { has_variable = th_gensokyo_intent_harsh }
+                ### 从重：基准 + 1，基准 3 封顶（裸 if 判上界，不用 min/max 块）
+                if = {
+                    limit = { NOT = { var:th_gensokyo_sentence_baseline >= 3 } }
+                    change_variable = {
+                        name = th_gensokyo_sentence_tier
+                        add = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = { has_variable = th_gensokyo_intent_soft }
+                ### 从轻：基准 − 1，基准 1 时落到 0 档（赔款破产；0 档在 judge_core
+                ### 里有完整的落地分支，故封底 0 而不是 1）
+                change_variable = {
+                    name = th_gensokyo_sentence_tier
+                    subtract = 1
+                }
+            }
+            ### 与宣判四行动走**同一个**落地口
+            th_gensokyo_verdict_apply_effect = yes
+        }
+    }
+}
+
+### ============================================================
+### ⑮ 【2026-10-01 T2-5b】圣战「大义」—— 施加 / 移除
+### 语义：《设计定案》§7「宣战时全体参与者获『大义』临时修正（士气 / 人力 / 威望）」
+### 载体：static_modifiers/th_gensokyo_tribunal_crusade_modifiers.txt 的
+###       th_gensokyo_grand_cause_modifier
+### 数值：script_values/th_gensokyo_io_chain_values.txt 的 T2-5b 段
+###       （th_grand_cause_morale_modifier / _manpower_ / _prestige_）
+###
+### 【"参与者"如何确定 —— 本窗的判断与依据】
+###   取 **宣战那一刻的审判庭成员**（不是"参战方全体"）：
+###   ① 审判庭 IO 定义 join_offensive_wars_always（international_organizations/
+###      th_gensokyo_tribunal.txt:103-107）= 成员对"持 crusade_target_mark 的
+###      敌国"自动入战 ⇒ 成员集合 ≡ 实际入战集合（引擎在宣战当帧驱动）。
+###   ② 宣战行动（generic_actions/th_gensokyo_crusade_declare_war.txt）的
+###      potential 已要求 scope:actor 是审判庭成员 ⇒ 战争一定是审判庭打的。
+###   ③ 后来加入的义兵（generic_actions/th_gensokyo_join_crusade.txt）走
+###      add_country_to_international_organization 入庭，**本窗不给大义**：
+###      《设计定案》§7 表已把"义兵"标为"半有"、本轮不做（任务 §5 明示），
+###      且 join_crusade 已给 +5 贡献作为对价。
+###      ⇒ 后果：中途加入者拿不到大义（其加成从入庭那一刻的下一场宣战起才有）。
+###
+### 【遍历写法】international_organization:<IO> = { every_international_organization_member }
+###   —— base game 直用先例：situations/guelphs_and_ghibellines.txt:311
+###      （international_organization:guelphs_io ?= { every_international_organization_member = { ... } }）；
+###      本项目同族先例：on_action/th_gensokyo_chain_events.txt:663/674/692/707。
+###   ※ 铁律 6 的教训只针对 **ai_will_do（trigger 上下文）** 里的
+###     any_international_organization_member（scope 不匹配实测报错）；
+###     本处是 **effect 上下文**，且用 every_* 全遍历 —— 与教训不冲突。
+### ============================================================
+th_gensokyo_tribunal_grand_cause_apply_effect = {
+    ### ?= 守卫：唯一 IO 可能已被解散（工具提示预演 / 重复点击的边角态）
+    international_organization:th_gensokyo_tribunal ?= {
+        every_international_organization_member = {
+            limit = {
+                ### 被诉国不获大义（它是被告，不是执法者）。
+                ### 成员集合按 can_join_trigger 本就排除目标，这里显式再判一次：
+                ### 防"开庭时目标标记写入失败 → 被诉国混进成员集合"的配置漂移。
+                NOT = { has_variable = th_gensokyo_crusade_target_mark }
+            }
+            add_country_modifier = {
+                modifier = th_gensokyo_grand_cause_modifier
+                ### years = -1 = 永久（wiki Modifier_modding §Add modifier parameters：
+                ### "If the duration evaluates to -1, the modifier will be permanent"），
+                ### 由本文件 ⑮ 的 remove 与战争结束钩子显式移除。
+                ### 不用限期（years = N）的理由：战争长度不可预知，限期会在
+                ### 战争尚未结束时自然到期（大义中途消失），而永久 + 双出口显式移除
+                ### 可保证"战争在则大义在、战争结束则必摘"。
+                ### 同项目先例：本文件 ③ 段的第 4 档修正（:432-437）years = -1。
+                years = -1
+                ### mode = replace = 同名重复施加时"移除后按新时长重挂"（不叠加）。
+                ### 幂等依据（wiki 同上 §Add modifier parameters 的 mode 表）：
+                ###   replace = "Removes the modifier and reapplies it for the whole
+                ###   duration provided"；base game 用例：
+                ###   parliament_issues/10_hre_issues.txt:237（years = 3 mode = replace）
+                ###   —— 同一 HRE 议题反复通过不会叠出多份。
+                ### 本项目第 4 档未写 mode（默认 = extend），故此处显式写明，
+                ### 避免"重复宣战叠出多份大义"。
+                mode = replace
+            }
+        }
+    }
+}
+
+### ------------------------------------------------------------
+### ⑮b 圣战「大义」移除（**全局扫**，与当前 scope 无关）
+### 两个调用点（互为兜底，各自覆盖一条出口）：
+###   1 on_action/th_gensokyo_chain_events.txt 的
+###     th_gensokyo_tribunal_war_end_check（on_ending_war 钩子）第一步
+###     —— 覆盖"战争结束"的全部三种结局：启动审判 / 反杀 / 目标覆灭。
+###   2 本文件 ⑦ th_gensokyo_tribunal_case_close_effect ⑩ 步
+###     —— 覆盖"被诉方求和不结束战争、审判庭先解散"这条出口，
+###        以及赦免 / 悔改结案 / 认罪三条结案出口（它们都走 ⑦）。
+### 幂等：对不持有该修正的国家是空操作；两条出口重复触发无副作用。
+### ------------------------------------------------------------
+th_gensokyo_tribunal_grand_cause_remove_effect = {
+    every_country = {
+        limit = { has_country_modifier = th_gensokyo_grand_cause_modifier }
+        remove_country_modifier = th_gensokyo_grand_cause_modifier
+    }
+}
+
+### ============================================================
+### ⑯ 【2026-10-01 T2-5b】「祟」的可见载体 —— 施加 / 移除
+### 语义：《设计定案》§3.1 —— 祟 = 制裁状态的**可见载体**（失议会权 / 失保护 / 被孤立）。
+### 载体：static_modifiers/th_gensokyo_tribunal_crusade_modifiers.txt 的
+###       th_gensokyo_tarnish_modifier（**空字段纯展示修正**，理由见该文件第 2 段）
+###
+### 【这两个效果是本文件唯一"scope 内直操作"的一对】
+###   本文件头部的定位纪律规定"效果以 th_gensokyo_tarnish_mark 自我定位"，
+###   本对**故意例外**（登记于文件头 ⑮⑯ 条），理由：
+###     两个调用点都已把当前 scope 设为**被诉国本人** ——
+###       施加：generic_actions/th_gensokyo_tribunal_indict.txt 的
+###             scope:target_country = { ... } 块内（紧跟 set_variable = tarnish）
+###       移除：本文件 ① th_gensokyo_tribunal_case_markers_clear_effect 内
+###             （该效果在 indict 的逐国遍历 与 ⑤/⑦ 结案的 scope 内调用）
+###     若再做一次 every_country 重定位，等于在"逐国遍历"里嵌一层全库遍历
+###     （indict 的清理步会变成 O(国家数²)）；scope 内直操作是 O(1)。
+###
+### 【为什么不放进 tier_N_apply / tier_N_remove】升档会 remove 掉上一档标记，
+###   若祟挂在档级载体上，升档会把祟一起摘掉 —— 祟是**案级**（与 tarnish 同生命周期）。
+### ============================================================
+th_gensokyo_tribunal_tarnish_modifier_apply_effect = {
+    add_country_modifier = {
+        modifier = th_gensokyo_tarnish_modifier
+        ### 永久 + 显式移除，口径同 ⑮ 的大义（及第 4 档修正）
+        years = -1
+        ### replace：重复立案（同一国再被纠弹）不会叠出多份祟
+        mode = replace
+    }
+}
+
+th_gensokyo_tribunal_tarnish_modifier_remove_effect = {
+    ### 无 has_country_modifier 守卫：与本文件 ③ 段的第 4 档撤销段同款直接 remove
+    ### （th_gensokyo_tribunal_tier_4_remove_effect 就是
+    ###  remove_country_modifier = <键> 裸写；remove 对不持有者无副作用。
+    ###  base game 直接 remove 的先例：generic_actions/black_death.txt:336）
+    remove_country_modifier = th_gensokyo_tarnish_modifier
+}

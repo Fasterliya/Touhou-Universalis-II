@@ -28,6 +28,42 @@ th_gensokyo_crusade_declare_war = {
             NOT = {
                 has_variable = th_gensokyo_crusade_target_mark
             }
+            ### ============================================================
+            ### 2026-10-04 闭环改造①：宣战权收窄为【代理人】，代理人缺失时三贤者兜底
+            ###   代理人判定 = th_gensokyo_tribunal_agent_mark
+            ###     （写入点：本文件 :267 建庭选人 / escalate.txt:224 升档提名）
+            ###   三贤者判定逐字照本文件既有先例（:203-210）：
+            ###     has_special_status_in_international_organization = {
+            ###       type = special_status:th_gensokyo_io_sages_special_status … }
+            ###   写在 potential ⇒ 非代理人**看不到**按钮（用户 2026-10-04 拍板）
+            ### ============================================================
+            OR = {
+                has_variable = th_gensokyo_tribunal_agent_mark
+                AND = {
+                    ### 代理人缺失（未提名 / 已拒绝）时，三贤者接管宣战权
+                    NOT = {
+                        any_country = {
+                            has_variable = th_gensokyo_tribunal_agent_mark
+                        }
+                    }
+                    has_special_status_in_international_organization = {
+                        type = special_status:th_gensokyo_io_sages_special_status
+                        international_organization = international_organization:th_gensokyo_io
+                    }
+                }
+            }
+            ### ============================================================
+            ### 2026-10-04 闭环改造②：**一案只能宣战一次**
+            ###   宣战成功时在**被诉国**身上打 th_gensokyo_crusade_declared（见 effect），
+            ###   此处要求它不存在 ⇒ 点过一次后按钮消失，
+            ###   直到案件终结（case_markers_clear_effect 复位：立案清旧案 / 结案 两条出口）
+            ### ============================================================
+            NOT = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    has_variable = th_gensokyo_crusade_declared
+                }
+            }
         }
     }
 
@@ -81,11 +117,43 @@ th_gensokyo_crusade_declare_war = {
             limit = {
                 exists = scope:crusade_target
             }
-            scope:actor = {
-                declare_war_with_cb = {
-                    target = scope:crusade_target
-                    type = casus_belli:th_gensokyo_crusade_cb
+            ### ============================================================
+            ### 2026-10-04 闭环改造②（第二道锁）：防御性二次校验
+            ###   若同一 tick 内两国同抢（或 UI 与服务端不同步），后执行者会因
+            ###   标记已存在而**跳过宣战** —— 与 potential 的第一道锁互补。
+            ### ============================================================
+            if = {
+                limit = {
+                    NOT = {
+                        scope:crusade_target = {
+                            has_variable = th_gensokyo_crusade_declared
+                        }
+                    }
                 }
+                ### 先打「本庭已宣战」标记（一案一次的唯一开关）
+                ### 复位点 = case_markers_clear_effect（立案清旧案 / 结案 两条出口）
+                scope:crusade_target = {
+                    set_variable = th_gensokyo_crusade_declared
+                }
+                scope:actor = {
+                    declare_war_with_cb = {
+                        target = scope:crusade_target
+                        type = casus_belli:th_gensokyo_crusade_cb
+                    }
+                }
+                ### ============================================================
+                ### 2026-10-01 T2-5b：宣战成功 ⇒ 给**全体参与者**打「大义」
+                ### （《设计定案》§7「宣战时全体参与者获『大义』临时修正」）
+                ### 位置：declare_war_with_cb **之后** —— 只对"真的开了战"的这一次宣战生效；
+                ###   仍在 exists = scope:crusade_target 守卫内：标记缺失时宣战并未发生，
+                ###   此时不该发大义（与上方修复同一条守卫链）。
+                ### 「参与者」口径 = **宣战那一刻的审判庭成员**，不是"参战方全体"，
+                ###   判断依据与后果（后来加入的义兵拿不到）逐条见
+                ###   scripted_effects/th_gensokyo_tribunal_effects.txt 的 ⑮ 段头注释。
+                ### 幂等：该效果内部 add_country_modifier 带 mode = replace，
+                ###   重复宣战不会叠出多份大义（wiki Modifier_modding §Add modifier parameters）。
+                ### ============================================================
+                th_gensokyo_tribunal_grand_cause_apply_effect = yes
             }
         }
     }

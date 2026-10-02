@@ -1,0 +1,218 @@
+﻿### ============================================================
+### 审判庭 — 认罪赎罪（T2-3 新增，2026-10-03）
+### 规格：《脚本规格》§4.5；设计：《设计定案》§6（被诉方三出路）
+###
+### 语义：被诉国**一次结清** —— 支付"认罪价"（随已施加档数递增），
+###   当场撤销全部档位制裁、价值观归中、进入考察期。
+###   与履约行动组（逐条分期）构成被诉方真正有意义的选择：
+###     认罪 = 贵、当场了结；履约 = 便宜、但要等观察期节奏。
+###
+### 【动态认罪价：price + price_modifier（R2 §R2-3 已核实，本窗复核通过）】
+###   官方字段定义 VANILLA\common\generic_actions\readme.txt:11-12：
+###     "price = a scripted standard price ... referenced by name (like price:<price_id>)"
+###     "price_modifier = calculated value, multiplies the price;
+###      scope:actor is the country, scope:recipient, scope:target, ..."
+###   vanilla 在 generic_action 上的条件化 price_modifier 逐字先例：
+###     VANILLA\common\generic_actions\nahuatl.txt:22-33（含 scope:actor.doom）
+###     VANILLA\common\generic_actions\bureaucracy_actions.txt:15-39（含 if/limit）
+###     VANILLA\common\generic_actions\markets.txt:189-202（含 if/limit + scope 块）
+###   ⇒ **不必启用"四个固定价格键 + 按档位分流"的退路**（该退路作废，见报告 §3）
+###
+### 【档数怎么来（本窗 §7.2 的答案）】
+###   档数**只能**由 th_gensokyo_tier_1..4_mark 标记推导（0-4）——
+###   标记互斥（tier_N_apply_effect 内部先摘上一档），且《脚本规格》§1.1
+###   已定"档位一律用标记"（ai_will_do 读不到变量值）。
+###   系数落在 script_values 的 th_gensokyo_tribunal_confess_tier_factor_value
+###   = 1 + th_confess_escalation_factor × 档数（1.0 / 1.5 / 2.0 / 2.5 / 3.0）。
+###
+### 【为什么 should_execute_price = no】
+###   收款方是**幻想乡公库**，而 price 的默认收款人是"无人"
+###   （readme:14 "By default, nobody, the price disappears into the ether"）。
+###   本行动的"扣款 + 入库"由 effect 两步完成（见 effect ① 的注释），
+###   若同时让引擎执行 price 就是**双重扣款**。
+###   `should_execute_price = no` + 保留 price 供 UI 显示 =
+###   VANILLA\common\generic_actions\markets.txt:184-186 的现成范式
+###   （"we don't execute the price for this action ... We leave the price
+###     in here though for display"）。
+### ============================================================
+
+th_gensokyo_tribunal_confess = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        ### 蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:29-45
+        ### 被诉国独有（案件判据恒为 th_gensokyo_tarnish_mark）
+        scope:actor ?= {
+            has_variable = th_gensokyo_tarnish_mark
+        }
+    }
+
+    allow = {
+        ### 铁律 3：custom_tooltip 文案写"阻塞状态"、内层写**正向**条件
+        ### 正向条件 = 国库足够支付认罪价
+        ### 认罪价 = th_gensokyo_tribunal_confess_cost_value
+        ###        = th_confess_base_cost_value × 档位系数
+        ###        （与该价格对象 × price_modifier 的结果**同值**，
+        ###          见 common/prices/th_gensokyo_tribunal_prices.txt 的
+        ###          "金额同步铁律"；两处同源才能保证 UI 显示价 = 实扣额）
+        scope:actor ?= {
+            custom_tooltip = {
+                text = TH_TRIBUNAL_CONFESS_CANNOT_AFFORD_TT
+                gold >= th_gensokyo_tribunal_confess_cost_value
+            }
+        }
+    }
+
+    ### 价格对象与动态修正（字段蓝本见文件头）
+    price = price:th_gensokyo_tribunal_confess_price
+    price_modifier = {
+        add = {
+            value = th_gensokyo_tribunal_confess_tier_factor_value
+            desc = TH_TRIBUNAL_CONFESS_PRICE_TIER
+        }
+    }
+    should_execute_price = no
+
+    effect = {
+        ### 铁律 2：exists 守卫防 tooltip 预演报错
+        if = {
+            limit = { exists = scope:actor }
+            scope:actor = {
+                ### ============================================================
+                ### ① 付款：**扣款 + 入公库 = 两步**（缺一不可）
+                ###
+                ### 第一步 donate_gold_to_international_organization
+                ###   ⚠️ 它不是引擎效果，而是 **vanilla 的 scripted_effect**
+                ###      （VANILLA\common\scripted_effects\country_effects.txt:2594-2647）。
+                ###   核对结果（本窗逐行读过）：
+                ###     :2595 save_temporary_scope_as = root_country
+                ###     :2596-2642 只做一件事 —— 给 IO 成员/领袖加"捐款好感"
+                ###               （add_organization_donation_opinion_bonus）
+                ###     :2643-2646 add_gold = { value = $value$ multiply = -1 }
+                ###               ⇒ **只扣本国 gold，自己不往 IO 里放钱**
+                ###   参数形态（vanilla 唯一调用点 international_organizations.txt:274-277）：
+                ###     international_organization = <IO scope>
+                ###     value = <金额 / 脚本值>
+                ###   方向：调用者 = 付款方（内部 is_leader_of_... 判的是调用者），
+                ###         故必须在 scope:actor 内调用。
+                ###
+                ### 第二步 international_organization:th_gensokyo_io = { add_gold = X }
+                ###   = 真正入库。vanilla 同款：
+                ###     international_organizations.txt:286-288
+                ###     （scope:recipient = { add_gold = scope:target_value }，
+                ###       scope:recipient 就是被选中的 IO）
+                ###   IO 能收 add_gold 的前提 = IO 定义有 gold = yes
+                ###     （本项目 in_game/common/international_organizations/
+                ###      th_gensokyo_io.txt:19，T1 已加）
+                ###   ⚠️ 这也修正了《脚本规格》§10.7 的表述 ——
+                ###      那里把 donate_gold_to_international_organization
+                ###      列为"入账（脚本用）"，但它的实现里并没有入账动作。
+                ### ============================================================
+                donate_gold_to_international_organization = {
+                    international_organization = international_organization:th_gensokyo_io
+                    value = th_gensokyo_tribunal_confess_cost_value
+                }
+                international_organization:th_gensokyo_io = {
+                    add_gold = th_gensokyo_tribunal_confess_cost_value
+                }
+
+                ### ============================================================
+                ### ② 写 th_gensokyo_confess_paid（**本窗首次写入**）
+                ###   累加本次支付额，供《脚本规格》§6.2 履约条目 2 与
+                ###   T2-5 案卷区复用（赦免行动的 ai_will_do 也在读它的存在性，
+                ###   见 generic_actions/th_gensokyo_tribunal_pardon.txt:109-118）。
+                ###   读前守卫 + change/set 两分支：本项目既有写法
+                ###   （scripted_effects/th_gensokyo_notorious_effects.txt:99-113）。
+                ### ============================================================
+                if = {
+                    limit = { has_variable = th_gensokyo_confess_paid }
+                    change_variable = {
+                        name = th_gensokyo_confess_paid
+                        add = th_gensokyo_tribunal_confess_cost_value
+                    }
+                }
+                else = {
+                    set_variable = {
+                        name = th_gensokyo_confess_paid
+                        value = th_gensokyo_tribunal_confess_cost_value
+                    }
+                }
+
+                ### ============================================================
+                ### ③ 写 th_gensokyo_probation_until（**本窗首次写入**）＝ 考察期
+                ###
+                ### 【"多少年后"怎么表达 —— 回蓝本核实结果】
+                ###   EU5 **没有**"timed variable 到点回调"这类载体给本用途用
+                ###   （timed variable 只控制变量自身的存续，不产生到期事件；
+                ###    本项目 T2-2b 已因同一原因放弃 timed variable 做观察期倒计时，
+                ###    见 scripted_effects/th_gensokyo_tribunal_effects.txt:439-449）。
+                ###   蓝本给出的表达 = **把"到期年份"存成数值，读取端做加法比较**：
+                ###     写：VANILLA\events\government_reforms.txt:110-114
+                ###         set_variable = { name = year_of_start_of_joint_rule
+                ###                          value = current_year  days = 3000 }
+                ###    读：同文件 :41-45
+                ###         has_variable = year_of_start_of_joint_rule
+                ###         current_year >= { value = var:year_of_start_of_joint_rule
+                ###                           add = 5 }   #Have 5 years passed
+                ###   另一处同款：VANILLA\events\imperial_examination_events.txt:617-630
+                ###   ⇒ 本处采用同一口径：**存"到期年份"**
+                ###     （current_year + th_probation_years_value），
+                ###     读取端写 `current_year >= var:th_gensokyo_probation_until`。
+                ###   （`set_variable = { value = { ... } }` 的块式赋值蓝本：
+                ###     VANILLA\common\on_action\country_four_yearly.txt:260-271。）
+                ### ============================================================
+                set_variable = {
+                    name = th_gensokyo_probation_until
+                    value = {
+                        value = current_year
+                        add = th_probation_years_value
+                    }
+                }
+            }
+
+            ### ============================================================
+            ### ④ 结案 —— 复用 T2-2b 的结案总入口 th_gensokyo_tribunal_case_close_effect
+            ###   它内部按铁律顺序：tier_1_remove → tier_3_remove → tier_4_remove
+            ###   → case_markers_clear（摘 tarnish / tier_1..4 / observation /
+            ###     observation_done / 代理人标记）→ 价值观归中
+            ###   → 清受害国标记 + 物证列表 + 罪名账本 → 团结度奖励。
+            ###   **即《脚本规格》§4.5 的 ①③④⑦ 全部落在这一步之内**
+            ###   （清 tarnish / 全部档标记 / 观察期；价值观归中；团结度奖励）。
+            ###   ⚠️ 顺序铁律：该效果按 th_gensokyo_tarnish_mark 自我定位 ⇒
+            ###      必须在 tarnish 还在时调用，故本步放在最后
+            ###      （上面的 ②③ 写的是不会被结案清掉的独立变量：
+            ###        case_close 不含 confess_paid / probation_until）。
+            ### ============================================================
+            th_gensokyo_tribunal_case_close_effect = yes
+        }
+    }
+
+    ### 无 cooldown：《脚本规格》§4.5 明写"无（清掉 tarnish 后 potential 自然失效）"
+
+    ai_will_do = {
+        ### 铁律 5 的 v1.8 修订版：ai_will_do 可用 has_variable / var:
+        ### 被诉 AI 的认罪倾向：**付得起**就给高权重
+        ###   （认罪是"一次结清"，付得起时永远优于继续挨档位制裁）
+        ### 付不起时不给权重 → 让位给履约行动组（分期）
+        if = {
+            limit = {
+                scope:actor ?= {
+                    has_variable = th_gensokyo_tarnish_mark
+                    gold >= th_gensokyo_tribunal_confess_cost_value
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_CONFESS_READY
+                value = 400
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

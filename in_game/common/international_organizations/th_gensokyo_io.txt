@@ -10,6 +10,14 @@ th_gensokyo_io = {
     should_show_ruler_history = yes
     show_on_diplomatic_map = yes
 
+    # === 公库（引擎原生 IO 宝库）2026-10-01 T1 ===
+    # 蓝本：VANILLA\common\international_organizations\catholic_church.txt:30 —— gold = yes
+    # 官方字段说明：official_defines\types\international_organizations.txt:120 ——
+    #   "# - <currency type> = yes/no: whether or not this IO has a treasury containing this type of currency"
+    # 用途：审判庭判决的罚金入幻想乡公库（《脚本规格》§10.7）；宝库分页见
+    #   in_game\gui\panels\organization\th_gensokyo_io.gui 末尾的生效覆盖。
+    gold = yes
+
     # === 地图直接显示（2026-08-21 修复）===
     # 参照 base game hre / lordship_of_ireland：IO 持地在常规政治地图上
     # 以 IO 自身颜色(map_color hsv360{45 40 60}) + 名称叠加显示
@@ -164,6 +172,15 @@ th_gensokyo_io = {
     # IO整体修正
     international_organization_modifier = {
         # TODO: 后续人工填写IO全局buff
+        # === 公库"捐款"解锁（2026-10-01 T1，R1-2）===
+        # 语义：contribute_to_organization_treasury 行动的 visible 要求
+        #   （VANILLA\common\generic_actions\international_organizations.txt:243-246
+        #     visible = { has_enabled_currency = gold
+        #                 modifier:unlock_contribute_to_organization_treasury = yes }）
+        # vanilla 里"捐款"解锁只由 HRE 法律给（VANILLA\common\laws\20_hre.txt:193 / :311）；
+        # "取款"解锁则挂在 IO 修正上（catholic_church.txt:31-33）。本项目拍板：
+        # 捐款同样挂 IO 修正 → 无需新增法律，捐款行动对该 IO 全体成员可用。
+        unlock_contribute_to_organization_treasury = yes
     }
 
     # === IO 变量 ===

@@ -1,0 +1,92 @@
+﻿### ============================================================
+### 审判庭 — 观察期脉冲（T2-2b 新增，2026-10-01）
+### 载体：vanilla 的 monthly_country_pulse（唯一真正的"每国每月"钩子）
+###
+### 注册方式 = **只给已存在的 on_action 追加一个 on_actions 兄弟块**。
+###   这是官方唯一允许的扩展方式（WIKI/On_action §"Modding on actions"：
+###   "Only a new `on_actions` block can be added to existing on actions.
+###    Adding other blocks to an existing on action causes errors."，
+###   与官方 on_action 文档同文；R3 §R3-4(a) 已核实）。
+###   本项目已有 5 个文件用同一手法注册（th_gensokyo_chain_monthly.txt:5-9、
+###   th_danmaku_chain_monthly.txt:5、th_gensokyo_io_monthly.txt:4、
+###   th_hakurei_faith_monthly.txt:9、th_sages_council_io_monthly.txt:3）
+###   ⇒ 本文件**不需要**动 th_gensokyo_chain_monthly.txt。
+###   vanilla 侧的唯一定义处：VANILLA\common\on_action\country_monthly.txt:2。
+###
+### 为什么不写成 effect = { every_country = ... }：
+###   那样是"每国每月各跑一次全量遍历"，代价高一个量级；
+###   挂 monthly_country_pulse 才是引擎按国家分发的标准形态。
+### ============================================================
+
+monthly_country_pulse = {
+    on_actions = {
+        th_gensokyo_tribunal_observation_pulse
+        th_gensokyo_tribunal_overdue_pulse
+    }
+}
+
+### ============================================================
+### 廉价门控（性能纪律，照 R3 §R3-4(c) 的推荐形态）
+###   trigger 为假 ⇒ **整个 on_action 不执行 effect**
+###   （官方明文 VANILLA\common\on_action\on_actions.info:2：
+###    "If an on_action fires and its trigger returns false, nothing happens"）
+###   两个 has_variable 是最廉价的判定：全世界绝大多数国家
+###   一次哈希查空即返回，不碰 IO 成员查询、不碰社会价值观。
+###
+### 门控必须用 th_gensokyo_tarnish_mark 当"是否有案"的判据：
+###   th_gensokyo_observation_months 被 init 与月度兜底补成 0 后**恒存在**
+###   （th_gensokyo_notorious_effects.txt:79、th_gensokyo_chain_monthly.txt:106-109
+###    的 T2-2a 警告），单独用它门控会让全世界每个国家每月都跑一遍。
+###   第二个 has_variable 只是"该字段确实存在"的兜底，防旧档缺字段时
+###   效果体里的 var: 裸读（铁律 11）。
+### ============================================================
+th_gensokyo_tribunal_observation_pulse = {
+    trigger = {
+        has_variable = th_gensokyo_tarnish_mark
+        has_variable = th_gensokyo_observation_months
+    }
+    effect = {
+        ### 效果体在 scripted_effects/th_gensokyo_tribunal_effects.txt
+        ### （④ 观察期脉冲体：每月 -1，归零当月调悔改判定）
+        th_gensokyo_tribunal_observation_pulse_effect = yes
+    }
+}
+
+### ============================================================
+### 超时兜底脉冲（2026-10-04 T2-5 新增）
+### 语义：《设计定案》§5.5 判决结构表的最后一行 ——
+###   "超时兜底 | 自动 | 战后 N 个月阎魔未宣判 → 自动按诸国意向判决
+###    （防卡死，必须有）"
+### 载体与上一段同源：vanilla 的 monthly_country_pulse，与观察期脉冲并列挂在
+### 同一个 on_actions 列表里（同一次注册，不需要第二个 top-level 键；
+### 官方纪律见本文件顶部引文：只能给已存在的 on_action **追加 on_actions 块**，
+### 一个块里可以列多个 on_action 名）。
+###
+### 触发链：战争结束（th_gensokyo_verdict_overdue_start_effect 写
+###   th_gensokyo_verdict_overdue = 6 与 th_gensokyo_crusade_target_mark 仍在）
+###   → 每月本 on_action 执行一次（scope = 被诉国）
+###   → th_gensokyo_tribunal_verdict_overdue_effect 递减
+###   → 归零当月按诸国意向算 th_gensokyo_sentence_tier
+###   → 调 **与宣判四行动同一个** th_gensokyo_verdict_apply_effect 落地
+###     （不复制判决逻辑）
+###
+### 【门控：三个 has_variable，最省】
+###   被诉国标记（crusade_target_mark）是"有没有待判之案"的唯一判据 ——
+###   不能用 th_gensokyo_verdict_overdue 单独门控：该变量一旦写入就长期存在，
+###   宣判路径虽会清它，但异常态下可能残留，单用它会让全世界每月都跑一遍。
+###   第三个条件 verdict_done 缺失 = 尚未宣判（宣判后本条即为假，脉冲自停）。
+###   与上一条一样：trigger 为假 ⇒ 整个 on_action 不执行 effect
+###   （VANILLA\common\on_action\on_actions.info:2）。
+### ============================================================
+th_gensokyo_tribunal_overdue_pulse = {
+    trigger = {
+        has_variable = th_gensokyo_crusade_target_mark
+        has_variable = th_gensokyo_verdict_overdue
+        NOT = { has_variable = th_gensokyo_verdict_done }
+    }
+    effect = {
+        ### 效果体在 scripted_effects/th_gensokyo_tribunal_effects.txt
+        ### （⑭ 超时兜底脉冲体：每月 -1，归零当月自动按诸国意向宣判）
+        th_gensokyo_tribunal_verdict_overdue_effect = yes
+    }
+}

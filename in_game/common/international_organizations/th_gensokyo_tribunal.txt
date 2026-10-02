@@ -125,16 +125,24 @@ th_gensokyo_tribunal = {
 
     on_creation = {
         ### 2026-08-26（局势删除后迁移，原 situation on_start 职责）：
-        ### 新惩戒开启：目标罪值清零 + 重置上一场反杀标记
+        ### 新惩戒开启：重置上一场反杀标记
         ### （on_creation root = IO，readme.txt:63；目标经 th_gensokyo_io
         ### 成员遍历 + 标记定位，与局势 on_start 同款已验证写法）
+        ###
+        ### 【2026-10-01 主代理修正（罪/态度拆分连带）】本处原先清零
+        ### th_gensokyo_sin_var —— 语义拆分后该变量 = **立案时按罪名账本快照的
+        ### 「罪」（≤ th_sin_crime_cap = 60）**，而 on_creation 在**开庭（阶段 3）**
+        ### 才触发，晚于立案（阶段 1）：继续清零会把立案时算出的罪抹掉，导致
+        ### 阶段 4 判决恒读到 0。故改为清零 **th_gensokyo_attitude_var**（战时累积的
+        ### 「态度」）—— 它本来就该"每场圣战重新开始"，因为战争发生在开庭之后。
+        ### sin_var 由立案行动（T2-2）在每次立案时整值覆盖，不需要在这里清。
         international_organization:th_gensokyo_io = {
             every_international_organization_member = {
                 limit = {
                     has_variable = th_gensokyo_crusade_target_mark
                 }
                 set_variable = {
-                    name = th_gensokyo_sin_var
+                    name = th_gensokyo_attitude_var
                     value = 0
                 }
                 remove_variable = th_gensokyo_crusade_countered
@@ -152,14 +160,25 @@ th_gensokyo_tribunal = {
                 limit = {
                     has_variable = th_gensokyo_crusade_target_mark
                 }
-                change_variable = {
-                    name = th_gensokyo_sin_var
-                    add = th_crusade_sin_monthly_value
-                }
-                clamp_variable = {
-                    name = th_gensokyo_sin_var
-                    min = 0
-                    max = 100
+                ### 2026-10-01 T2-3 罪 / 态度分流：本处战时累积改指向
+                ### th_gensokyo_attitude_var（原写 th_gensokyo_sin_var），上限
+                ### th_attitude_cap = 40。th_gensokyo_sin_var 语义收窄为「罪」，
+                ### 今后只由 T2-2 立案时按罪名账本写入（上限 th_sin_crime_cap = 60）；
+                ### 判决公式改动属 T2-4，本窗不动。
+                ### has_variable 守卫防缺失变量 → "Value of wrong type 'none'"（铁律 11）
+                if = {
+                    limit = {
+                        has_variable = th_gensokyo_attitude_var
+                    }
+                    change_variable = {
+                        name = th_gensokyo_attitude_var
+                        add = th_crusade_sin_monthly_value
+                    }
+                    clamp_variable = {
+                        name = th_gensokyo_attitude_var
+                        min = 0
+                        max = 40
+                    }
                 }
             }
         }
