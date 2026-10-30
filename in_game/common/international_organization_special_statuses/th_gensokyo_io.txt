@@ -48,7 +48,7 @@ th_gensokyo_io_guardian_special_status = {
 	auto_rescind_trigger = {
 	}	
 	modifier = {
-		global_defensiveness_modifier = 0.10
+		global_defensive = 0.10					# [1.4] global_defensiveness_modifier 不存在，改 global_defensive
 		monthly_prestige = 0.05
 		# TODO: 后续人工填写守护席位修正值
 	}
@@ -75,7 +75,7 @@ th_gensokyo_io_sages_special_status = {
 	
 	modifier = {
 		monthly_prestige = 1.0
-		improve_relation_modifier = 0.10
+		improve_relation_impact = 0.10					# [1.4] improve_relation_modifier 不存在，改 improve_relation_impact
 		# TODO: 后续人工填写贤者席位修正值
 	}
 	### 2026-08-21（q3 用户拍板）：贤者与普通成员相同公式（无特权），
@@ -105,7 +105,7 @@ th_gensokyo_io_human_village_special_status = {
 	}
 	
 	modifier = {
-		global_tax_modifier = 0.05
+		tax_income_efficiency = 0.05					# [1.4] global_tax_modifier 不存在，改 tax_income_efficiency
 		global_population_capacity_modifier = 0.50
 		# TODO: 后续人工填写人类村落席位修正值
 	}

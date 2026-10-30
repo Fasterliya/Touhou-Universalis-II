@@ -35,7 +35,7 @@ th_gensokyo_weakness_modifier = {
         category = country
     }
     global_manpower_modifier = -0.25
-    global_tax_modifier = -0.25
+    tax_income_efficiency = -0.25					# [1.4] global_tax_modifier 不存在，改 tax_income_efficiency
 }
 
 ### WP-H 2026-08-15（设计§6 档0）：仅赔款破产 —— 经济破产 debuff（2 年）

@@ -291,7 +291,7 @@ th_scarlet_destiny_advance = {
     requires = th_new_narratives_of_incidents_advance
     
     inland_sea_proximity_impact = -0.10
-    global_food_decay_modifier = -0.05
+    global_food_decay = -0.05					# [1.4] global_food_decay_modifier 不存在，改 global_food_decay
     
     potential = {
         culture = { has_culture_group = culture_group:th_gensokyo_culture_group }
