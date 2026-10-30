@@ -18,8 +18,13 @@ th_gensokyo_culture_chronicle = {
 		always = yes
 	}
 
-	can_end = {
-		always = no
+	### [1.4] can_end 已在 1.4 移除，改用结构化 outcome 块：
+	### 只有一个 outcome 且 trigger = always no ⇒ 局势永不结束（等价旧 can_end = always no）
+	outcome = {
+		name = "th_culture_chronicle_outcome_never_ends"
+		trigger = {
+			always = no
+		}
 	}
 
 	### MP 安全：visible 禁止 is_human/is_ai（开局评估时玩家归属未定会卡死）。

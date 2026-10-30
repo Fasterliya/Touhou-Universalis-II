@@ -8,6 +8,9 @@
 # （AI 场景无 UI 展示，不影响）；排序键在 attribute_columns 内按
 # root.opinion(scope:actor) 计算（对所有 actor 正确）
 # ============================================================
+# [1.4] GUI 类型必须包在 types <Name> { } 里，否则报 'type' is not a valid widget/type/property
+types ThGensokyoColumns
+{
 type th_country_flag = widget {
 	size = { 40 32 }
 
@@ -40,4 +43,6 @@ type th_opinion_to_actor = widget {
 			text = "[InteractionTarget.GetCountry.GetDiplomacy.GetOpinionOf(GetPlayer)|0]"
 		}
 	}
+}
+
 }
