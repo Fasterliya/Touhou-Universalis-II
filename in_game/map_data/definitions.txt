@@ -1,4 +1,4 @@
-europe = {
+﻿europe = {
 	western_europe = {
 		scandinavian_region = {
 			svealand_area = {
