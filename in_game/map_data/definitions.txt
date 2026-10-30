@@ -125,7 +125,7 @@ europe = {
 					north_sea11 north_sea5 north_sea8
 				}
 			}
-			western_baltic_sea = {
+			inner_baltic_sea_area = {
 				north_baltic_sea = {
 					gavlebukten alands_hav north_baltic abo_skargard  tralhavet
 				}
@@ -133,12 +133,16 @@ europe = {
 					stockholms_skargard braviken
 					western_gotland_basin gotlands_hav
 				}
-				skagerrak_province = { frier_fjord grenen_cape jammer_bay kristiansand_fjord oslo_fjord skagerrack vigso_bay }
-				danish_sea = { alborg_bugt kattegatt oresund stora_balt lilla_balt limfjorden}
+				bothnian_sea = {  kvarken gulf_of_bothnia west_botnia east_botnia }
+			}
+			south_baltic_sea_area = {
 				south_baltic_sea = {
 					kalmar_sund skanska_kusten blekinge_kust central_baltic oland_coast
 				}
-				bothnian_sea = {  kvarken gulf_of_bothnia west_botnia east_botnia }
+			}
+			western_baltic_sea = {
+				skagerrak_province = { frier_fjord grenen_cape jammer_bay kristiansand_fjord oslo_fjord skagerrack vigso_bay }
+				danish_sea = { alborg_bugt kattegatt oresund stora_balt lilla_balt limfjorden}
 			}
 			# sea areas
 			russian_coastline = {
