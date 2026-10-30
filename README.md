@@ -63,6 +63,29 @@ Git LFS 免费额度只有 1 GB 存储 + 1 GB/月流量，而 `heightmap.bin` �
 | `tools/` | 开发与构建脚本 |
 | `.metadata/` | Paradox 启动器元数据 |
 
+> 设计与过程文档（`docs/`、`todo/`）、美术源文件、施工备份**不在版本库中**（见 `.gitignore`）。
+> 这些内容只保留在本地，不会出现在 GitHub 上，也不会被打进上传包。
+
+---
+
+## 给维护者：上传 Steam 前的固定动作
+
+mod 目录里同时住着**游戏内容**和**施工材料**（`.git/` 302 MB、`_release_assets/` 1.6 GB、`psd/`、`docs/`…）。
+Paradox 启动器打包的是"整个 mod 目录"，直接上传会把这些一起发出去。因此上传只走白名单打包：
+
+```powershell
+$P = "F:\Paradox Interactive\Europa Universalis V\mod\_TH_施工文档\tools\pack_release.ps1"
+
+& $P -Mode Audit      # 1) 审计源目录，退出码 0 才继续
+& $P -Mode Build -Force   # 2) 生成干净上传包 → mod\_TH_upload\Touhou Universalis II
+```
+
+`Build` 末尾会自动跑一次产物复验，打印 `✔ SAFE TO UPLOAD` 才可对该目录上传。
+白名单只有：`.metadata\metadata.json`、`.metadata\thumbnail.png`、`dlc\`、`in_game\`、`main_menu\`、`loading_screen\`。
+
+> 正式上传**不要**加 `-SkipTerrainCache`，否则包内缺 1.77 GB 地形缓存，订阅者进图必崩。
+> 施工文档与打包工具住在 `mod\_TH_施工文档\`（mod 目录之外），永远不在打包范围内。
+
 ---
 
 ## 给维护者：如何更新地形缓存
