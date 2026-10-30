@@ -1531,3 +1531,30 @@ th_chronicle_unknown = {
                 th_gensokyo_culture_group
         }
 }
+#妖狼（今泉影狼）
+th_yokai_wolf_culture = {
+	language = th_gensokyo_eastern_dialect
+	color = rgb {92 90 110}
+	tags = { th_gensokyo_gfx }
+	opinions = {
+	}
+	culture_groups = {
+		th_gensokyo_culture_group
+		th_gensokyo_youkai_culture_group
+		th_gensokyo_beast_culture_group
+	}
+}
+
+#妖马（骊驹早鬼）
+th_yokai_horse_culture = {
+	language = th_gensokyo_eastern_dialect
+	color = rgb {150 96 40}
+	tags = { th_gensokyo_gfx }
+	opinions = {
+	}
+	culture_groups = {
+		th_gensokyo_culture_group
+		th_gensokyo_youkai_culture_group
+		th_gensokyo_beast_culture_group
+	}
+}
