@@ -367,7 +367,7 @@ locations = {
 	th_moriya_shrine_haiden = { rank = town town_setup = th_gensokyo_town }
 	th_moriya_shrine_shamushu = { rank = town town_setup = th_gensokyo_town }
 	th_moriya_shrine_temizuya = { rank = town town_setup = th_gensokyo_town }
-	th_zealot_village = { rank = town town_setup = th_gensokyo_town }  
+	th_zealot_billage = { rank = town town_setup = th_gensokyo_town }  
 	th_cableway_start = { rank = town town_setup = th_gensokyo_town }
 	th_wind_castle = { rank = town town_setup = th_gensokyo_town } 
 	th_holy_wind_valley = { rank = town town_setup = th_gensokyo_town }
