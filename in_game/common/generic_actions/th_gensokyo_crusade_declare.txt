@@ -32,25 +32,38 @@ th_gensokyo_crusade_declare = {
     ai_tick = monthly
     ai_tick_frequency = 6
 
+    ### ============================================================
+    ### [2026-10-31 用户要求] 暂时禁用「建立审判庭」行动
+    ### 禁用方式：potential 恒假 -> 玩家看不到按钮，AI 也不会评估。
+    ### 恢复方式：删掉下面这个 potential，再把下方「原 potential（注释留档）」
+    ###           的 19 行取消 ### 前缀即可。
+    ### 注：本行动仍登记在 generic_action_ai_lists/th_gensokyo_io_list.txt:25，
+    ###     恢复 potential 后 AI 会自动重新评估，无需改列表。
+    ### ============================================================
     potential = {
-        ### P1-12 修复：potential 顶层 root=empty，须显式 scope:actor
-        scope:actor = {
-            ### 阎魔（幻想乡 IO 领袖）——2026-10-01 T1-1：本行动发起权收窄为
-            ### 只认阎魔，三贤者分支已删（《实施计划》§1.2、《脚本规格》4.7）。
-            ### 三贤者的戏份改由"强制入庭"承载（见 effect）；代理人领衔另用
-            ### th_gensokyo_tribunal_agent_mark 标记，不代表发起权。
-            is_leader_of_international_organization = international_organization:th_gensokyo_io
-            ### 审判庭已存在时不可再组建（2026-08-26 用户需求：唯一审判庭）
-            ### 2026-08-26：exists 链接对 unique 动态 IO 不可靠 → 改
-            ### any_international_organization 遍历判定（vanilla 实证触发器；
-            ### destroy 后遍历自然失效）
-            NOT = {
-                any_international_organization = {
-                    international_organization_type = international_organization_type:th_gensokyo_tribunal
-                }
-            }
-        }
+        always = no
     }
+
+    ### ---- 原 potential（注释留档，恢复时用） ----
+###     potential = {
+###         ### P1-12 修复：potential 顶层 root=empty，须显式 scope:actor
+###         scope:actor = {
+###             ### 阎魔（幻想乡 IO 领袖）——2026-10-01 T1-1：本行动发起权收窄为
+###             ### 只认阎魔，三贤者分支已删（《实施计划》§1.2、《脚本规格》4.7）。
+###             ### 三贤者的戏份改由"强制入庭"承载（见 effect）；代理人领衔另用
+###             ### th_gensokyo_tribunal_agent_mark 标记，不代表发起权。
+###             is_leader_of_international_organization = international_organization:th_gensokyo_io
+###             ### 审判庭已存在时不可再组建（2026-08-26 用户需求：唯一审判庭）
+###             ### 2026-08-26：exists 链接对 unique 动态 IO 不可靠 → 改
+###             ### any_international_organization 遍历判定（vanilla 实证触发器；
+###             ### destroy 后遍历自然失效）
+###             NOT = {
+###                 any_international_organization = {
+###                     international_organization_type = international_organization_type:th_gensokyo_tribunal
+###                 }
+###             }
+###         }
+###     }
 
     allow = {
         always = yes
