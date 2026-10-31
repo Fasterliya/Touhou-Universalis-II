@@ -1,0 +1,142 @@
+﻿### ============================================================
+### 幻想乡IO 宴会 — 价值观亲善化途径（WP-E 2026-08-15 重做）
+### 设计文档《国际组织》§4：花费金币、select location 选择开设地点、
+### 降低缘价值观偏向的获取、获得更多暂时性本地增益（location 临时修正）、
+### 可选择相邻国家领土并改善与他们的外交关系。
+### 原实现（仅 50 金 + 价值观 -20，无选址）已替换。
+### ============================================================
+
+th_gensokyo_feast = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        ### P1-12 修复：potential 顶层 root=empty，is_member 裸挂恒 false → 按钮不显示；
+        ### base game 同类行动均 scope:actor 包裹（middle_kingdom.txt:14 等）
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### WP-E：选址 — 自身地块 或 相邻 IO 成员地块（§4"可以选择相邻国家的领土"）
+    ### 2026-08-23（用户需求）：列 = 地点名称 + 所有者旗帜 + 人口
+    select_trigger = {
+        looking_for_a = location
+        target_flag = venue_location
+        column = {
+            data = name
+        }
+        column = {
+            data = owner_flag
+        }
+        column = {
+            data = population
+        }
+        interaction_source_list = {
+            scope:actor = {
+                ### 自身地块
+                every_owned_location = {
+                    limit = {
+                        is_land = yes
+                    }
+                    add_to_list = source
+                }
+                ### 相邻国家地块（经己方地块邻接展开）
+                every_owned_location = {
+                    every_neighbor_location = {
+                        limit = {
+                            ### ?= 处理无主地块（owner 空链接防护）
+                            NOT = {
+                                owner ?= scope:actor
+                            }
+                            owner ?= {
+                                is_member_of_international_organization = international_organization:th_gensokyo_io
+                            }
+                        }
+                        add_to_list = source
+                    }
+                }
+            }
+        }
+        visible = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    price = price:th_gensokyo_feast_price
+
+    effect = {
+        ### 2026-08-26：exists 守卫（同 request_expansion B1 修复）——
+        ### AI 预评估/tooltip 未选择 venue_location 时直接引用报
+        ### "Undefined event target 'venue_location'"（error.log 实证刷屏）
+        if = {
+            limit = {
+                exists = scope:venue_location
+            }
+            ### 价值观趋向亲善（削弱版 -10；本地增益/外交改善为补偿，见 chain_values）
+            scope:actor = {
+                change_societal_value = {
+                    type = th_gensokyo_amity_vs_belligerence
+                    value = th_feast_notorious_reduction_value
+                }
+            }
+            ### 选址本地增益（12 个月临时修正）
+            scope:venue_location = {
+                add_location_modifier = {
+                    modifier = th_gensokyo_feast_location_modifier
+                    months = 12
+                    mode = add_and_extend
+                }
+                ### 邻国领土 → 改善与邻国关系（好感 +15，见 biases）
+                if = {
+                    limit = {
+                        NOT = {
+                            owner = scope:actor
+                        }
+                    }
+                    owner = {
+                        add_opinion = {
+                            target = scope:actor
+                            modifier = opinion_gensokyo_feast_guest
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    cooldown = {
+        type = th_gensokyo_feast
+        months = 72
+    }
+
+    ai_will_do = {
+        ### 运行时修复 2026-08-07：generic action ai_will_do 上下文变量引用（裸 var:/scope:actor.var:）均报错
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

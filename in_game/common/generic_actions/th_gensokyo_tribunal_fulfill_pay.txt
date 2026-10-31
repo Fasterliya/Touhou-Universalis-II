@@ -1,0 +1,154 @@
+﻿### ============================================================
+### 审判庭 — 履约·支付赔款（T2-3 新增，2026-10-03）
+### 规格：《脚本规格》§10.6（被诉方履约行动组）；设计：《设计定案》§6.1
+###
+### 语义：被诉国**分期**支付赔款，累加到门槛即满足
+###   《脚本规格》§6.2 悔改条目 2「已付赔款」。
+###   分期 = 单次小额（th_gensokyo_tribunal_reparations_cost_value = 100）
+###          × 多次，配 3 个月冷却；
+###   门槛 = th_repent_paid_threshold_value（= 500，**本窗新增的专用键**，
+###          T2-2b 原先临时复用 th_confess_base_cost_value，本窗已改读新键）。
+###   ⇒ 500 / 100 = 5 次、约 15 个月，与"观察期 6 个月一档"的阶梯同量级。
+###
+### 与"认罪赎罪"的关系：两者都往 th_gensokyo_confess_paid 里累加，
+###   所以"认罪一次结清"会顺带满足本行动的悔改条目 —— 这是有意的
+###   （认罪本来就该覆盖赔款义务）。
+###
+### 【"不设按钮"的那一条（停止战争）】按 §10.6 设计走现有和约机制，
+###   本窗**不新增行动**（案卷区红字提示属 T2-5）。
+### ============================================================
+
+th_gensokyo_tribunal_fulfill_pay = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        ### 蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:29-45
+        ### 被诉国独有（案件判据恒为 th_gensokyo_tarnish_mark）
+        scope:actor ?= {
+            has_variable = th_gensokyo_tarnish_mark
+        }
+    }
+
+    allow = {
+        ### 铁律 3：custom_tooltip 文案写"阻塞状态"、内层写**正向**条件
+        ### 正向条件 = 国库足够支付本次赔款
+        ### （金额 = th_gensokyo_tribunal_reparations_cost_value，
+        ###   与价格对象 th_gensokyo_tribunal_reparations_price 同值，
+        ###   见 common/prices/th_gensokyo_tribunal_prices.txt 的"金额同步铁律"）
+        scope:actor ?= {
+            custom_tooltip = {
+                text = TH_TRIBUNAL_FULFILL_PAY_CANNOT_AFFORD_TT
+                gold >= th_gensokyo_tribunal_reparations_cost_value
+            }
+        }
+    }
+
+    ### 价格对象：单次小额（100）
+    ### should_execute_price = no 的理由同认罪赎罪（收款方是公库，不是"无人"）
+    price = price:th_gensokyo_tribunal_reparations_price
+    should_execute_price = no
+
+    effect = {
+        ### 铁律 2：exists 守卫防 tooltip 预演报错
+        if = {
+            limit = { exists = scope:actor }
+            scope:actor = {
+                ### ============================================================
+                ### ① 付款：扣款 + 入公库（两步；说明同
+                ###    generic_actions/th_gensokyo_tribunal_confess.txt 的 effect ①）
+                ###    ①-1 donate_gold_to_international_organization
+                ###          = vanilla scripted_effect
+                ###            （scripted_effects/country_effects.txt:2594-2647）
+                ###            → 本国 gold −X + 捐款好感
+                ###    ①-2 international_organization:th_gensokyo_io = { add_gold = X }
+                ###          → 公库 +X（vanilla 同款：
+                ###            generic_actions/international_organizations.txt:286-288）
+                ### ============================================================
+                donate_gold_to_international_organization = {
+                    international_organization = international_organization:th_gensokyo_io
+                    value = th_gensokyo_tribunal_reparations_cost_value
+                }
+                international_organization:th_gensokyo_io = {
+                    add_gold = th_gensokyo_tribunal_reparations_cost_value
+                }
+
+                ### ============================================================
+                ### ② 累加写 th_gensokyo_confess_paid
+                ###   读前守卫 + change/set 两分支（本项目既有写法：
+                ###   scripted_effects/th_gensokyo_notorious_effects.txt:99-113）
+                ### ============================================================
+                if = {
+                    limit = { has_variable = th_gensokyo_confess_paid }
+                    change_variable = {
+                        name = th_gensokyo_confess_paid
+                        add = th_gensokyo_tribunal_reparations_cost_value
+                    }
+                }
+                else = {
+                    set_variable = {
+                        name = th_gensokyo_confess_paid
+                        value = th_gensokyo_tribunal_reparations_cost_value
+                    }
+                }
+
+                ### ============================================================
+                ### ③ 达门槛 ⇒ 立即做一次悔改判定（"中途悔改"路径）
+                ###   达门槛判据 = th_repent_paid_threshold_value（本窗新增键）
+                ###   —— 与 T2-2b 的悔改判定内部读的是**同一个键**
+                ###      （scripted_effects/th_gensokyo_tribunal_effects.txt 的
+                ###       条目 2 段，本窗已把那一处从 th_confess_base_cost_value
+                ###       改为 th_repent_paid_threshold_value）⇒ 两处口径必然一致。
+                ###   不达门槛 ⇒ 什么都不做（继续攒）
+                ### ============================================================
+                if = {
+                    limit = { has_variable = th_gensokyo_confess_paid }
+                    if = {
+                        limit = {
+                            var:th_gensokyo_confess_paid >= th_repent_paid_threshold_value
+                        }
+                        th_gensokyo_tribunal_repentance_check_effect = yes
+                    }
+                }
+            }
+        }
+    }
+
+    ### ------------------------------------------------------------
+    ### cooldown = 3 个月（**本窗自行拍板，§10.6 未规定**，见报告 §9）
+    ### 理由：没有冷却时"分期"退化为"一个月内连点 5 次当场结清"，
+    ###   与"履约 = 便宜但要等 / 认罪 = 贵但当场了结"的设计对立面消失。
+    ### 取值：3 个月 × 5 次 = 15 个月 ≈ 观察期 6 个月 × 2.5 档的节奏。
+    ### 铁律 12：冷却写法 = { type = <key> months = N }
+    ### ------------------------------------------------------------
+    cooldown = {
+        type = th_gensokyo_tribunal_fulfill_pay
+        months = 3
+    }
+
+    ai_will_do = {
+        ### 铁律 5 v1.8：ai_will_do 可用 has_variable / var:
+        ### 被诉 AI 的赔款倾向：付得起就给权重
+        ### （注意：ai_will_do 内读 var: 需变量先存在 ⇒ 用 has_variable 守卫，
+        ###   与《脚本规格》铁律 5 v1.8 的纪律一致）
+        if = {
+            limit = {
+                scope:actor ?= {
+                    has_variable = th_gensokyo_tarnish_mark
+                    gold >= th_gensokyo_tribunal_reparations_cost_value
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_FULFILL_READY
+                value = 200
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

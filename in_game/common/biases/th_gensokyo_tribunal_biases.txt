@@ -1,0 +1,52 @@
+﻿### ============================================================
+### 审判庭 T2-2b — 第 1 档「谴责」专用 bias（2026-10-01 新增）
+###
+### 为什么必须换成专用键 —— T2-2a 用两个既有键凑第 1 档留下的两个缺陷
+### （登记在 static_modifiers/th_gensokyo_tribunal_sanction_modifiers.txt:38-76）：
+###   (1) 语义不符：敌意键 th_antagonism_unlawful_expansion 的语义是
+###       「非法扩张」、好感键 opinion_gensokyo_expansion_declined 的语义是
+###       「扩张请求被拒」，与「谴责 / 外交孤立」的文案无关；
+###   (2) 无法精准撤销：remove_antagonism 是**按 bias 键整体移除**，
+###       复用键会把与该案无关的合法敌意记录一并抹掉 ⇒ T2-2a 只能"不撤销、
+###       靠自然衰减"。换成专用键后，撤销可以逐成员精准执行。
+###
+### 字段蓝本（biases 是 Database，顶层键 = bias 名）：
+###   VANILLA\common\biases\05_antagonism_hardcoded.txt:5-8
+###     `antagonism_threatened_war = { value = 1 #multiplied by location worth
+###                                   yearly_decay = 2 }`
+###   VANILLA\common\biases\00_opinion_hardcoded.txt:5-10
+###     `opinion_dummy = { value = 1 max = 1000 min = -1000 months = 12 }`
+###   ⇒ 合法字段 = value / yearly_decay（+ 可选的 max / min / months）；
+###     本项目既有同格式先例 = biases/th_gensokyo_io_biases.txt:7-10、:47-50
+###
+### 数值口径：
+###   敌意 = th_condemn_antagonism_value（script_values/
+###     th_gensokyo_io_chain_values.txt:153 = 50）—— **写死字面量**：
+###     biases 的 value **只吃字面量**（实测全库 common/biases/ 下
+###     `^\t*value = [a-zA-Z_]` = 0 命中 ⇒ 0 处脚本值引用），
+###     与 script value 的联动只能靠注释登记（本段即登记处）。
+###   好感 = 同值取负（-50）—— add_opinion 对负值自动走 *_neg 词条
+###     （effect_localization/country_effects.txt:817-832 的 global_neg /
+###      first_neg / third_neg 六条），故负值合法。
+###   衰减 = 10/年（沿用原复用键 th_antagonism_unlawful_expansion 的 10
+###     ⇒ 约 5 年自然归零，与 T2-2a 的注释口径一致）。
+###     注：yearly_decay 允许负值（VANILLA\...\05_antagonism_hardcoded.txt:10-13
+###     的 opinion_did_not_influence_succession_antagonism 用 -2），
+###     本文件不用负值。
+###
+### 撤销端：scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###   th_gensokyo_tribunal_tier_1_remove_effect 逐成员 remove_antagonism /
+###   remove_opinion 这两个键。
+### ============================================================
+
+### 谴责敌意 —— 全体幻想乡 IO 成员对**被诉国**施加（方向：持有者 → target）
+th_antagonism_sanction_condemn = {
+    value = 50
+    yearly_decay = 10
+}
+
+### 谴责好感 —— 同上（负值）
+th_opinion_sanction_condemn = {
+    value = -50
+    yearly_decay = 10
+}

@@ -1,0 +1,68 @@
+﻿### ============================================================
+### 审判庭 — 退出行动（2026-08-23 重构）
+### 成员主动退出审判庭（on_left 自动移除对目标的 CB）
+### AI 退出由审判庭 auto_leave_trigger 驱动（敌意消退/停战/免制裁），
+### 本行动供玩家/AI 主动退出（ai_will_do 低基线，AI 主要走 auto_leave）
+### ============================================================
+
+th_gensokyo_crusade_leave = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 12
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_tribunal
+            ### 目标国不可退出（它是被惩戒对象而非成员）
+            NOT = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_tribunal
+        }
+        enabled = {
+            scope:actor = {
+                can_leave_international_organization = root
+            }
+        }
+    }
+
+    effect = {
+        if = {
+            limit = {
+                exists = scope:recipient
+            }
+            scope:recipient = {
+                remove_country_from_international_organization = {
+                    country = scope:actor
+                    reason = DecidedToLeave
+                }
+            }
+        }
+    }
+
+    ai_will_do = {
+        ### 与目标和解（好感转正/敌意消退）→ 倾向退出
+        ### （主要退出路径为 auto_leave_trigger；此处给主动退出低基线）
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

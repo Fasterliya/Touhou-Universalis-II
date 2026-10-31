@@ -1,0 +1,444 @@
+### ============================================================
+### 审判庭 — 代理人同意事件链（T2-2b 新增，2026-10-01）
+###   .1 征求同意（root = 被提名国）：接受领衔 / 拒绝领衔
+###   .2 阎魔通知：某国拒绝领衔（原档位保留，阎魔另选）
+###   .3 阎魔通知：观察期届满而未悔改（允许升档）
+###
+### 规格：《设计定案》§11.2 G（提名 + 征求同意）、《脚本规格》§4.2 路径 A
+###
+### 【字段核实（本窗必读）】
+###   事件/option 的权威说明 = VANILLA\events\readme.txt：
+###     :45   trigger        "The triggers needed by the event to fire in the first place.
+###                            root = defined scope from type"
+###     :72   outcome        "positive/neutral/negative  # The direction for the audio. Default: neutral"
+###     :85   option         可多个
+###     :86   name = <event id name>.<id number>.a
+###     :88-90 trigger       该 option 仅在这些触发器满足时可见（root = type 定义的 scope）
+###     :91   <effects>      选中后执行（root = type 定义的 scope）
+###     :99-101 ai_will_select = { <script math> }
+###                          "Defines AI willingness to pick this event option
+###                           using script math. **Overrules ai_chance**"
+###     :102-108 ai_chance   老式 MTTH 语法（本文件不用，避免两套并存时被覆盖而误读）
+###   玩家 / AI **共用同一个 option 块**，不为玩家单写分支
+###   （vanilla 实例 VANILLA\events\hre.txt:58-80 两个 option 各自带
+###    ai_chance，玩家侧照常自由点选）。
+###
+### 【ai_will_select 的写法蓝本（实测）】
+###   - 根键是 value，不是 base：VANILLA\events\government\town_rights_events.txt:48
+###     `ai_will_select = { value = 1000 }`（纯数值型全库 188 处）
+###   - if = { limit = { ... } add = N } 的增量式：
+###     VANILLA\events\DHE\flavor_mfa.txt:813-819
+###     `ai_will_select = { value = 0  if = { limit = { scope:from_country.army_size >= 0.5 } add = 20 } }`
+###   - if 内 subtract：VANILLA\common\resolutions\policy_vote.txt:731+ 的
+###     `subtract = { desc = "INERTIA" value = 10000 }`
+###   ⇒ 本文件用 value + if/add + if/subtract，全部有逐字先例。
+###
+### 【多语言】本窗白名单不含 localization/ ⇒ 本文件只登记键，不写词条。
+### ============================================================
+
+namespace = th_gensokyo_tribunal_events
+
+### ============================================================
+### .1 征求同意（root = 被提名国）
+### 触发：generic_actions/th_gensokyo_tribunal_escalate.txt 的 effect ②
+###       `trigger_event_non_silently = { id = th_gensokyo_tribunal_events.1 days = 1 }`
+### ============================================================
+th_gensokyo_tribunal_events.1 = {
+    type = country_event
+
+    title = th_gensokyo_tribunal_events.1.title
+    desc = th_gensokyo_tribunal_events.1.desc
+    outcome = neutral
+
+    trigger = {
+        ### 案件仍在（被诉国仍持「祟」）才需要征求意见。
+        ### 征求意见期间案件若被结案（赦免 / 悔改结案），本事件自动作废，
+        ### 不会凭空落档（落档 effect 内另有 exists 守卫，双保险）。
+        any_country = {
+            has_variable = th_gensokyo_tarnish_mark
+        }
+        ### 自己仍是被提名国（没被别人顶替、也没被撤案清掉）
+        has_variable = th_gensokyo_tribunal_agent_nominee_mark
+    }
+
+    ### ---------------- 接受领衔 → 档位此刻才落地 ----------------
+    option = {
+        name = th_gensokyo_tribunal_events.1.a
+
+        ai_will_select = {
+            value = 50
+            ### 与被告敌意越深，越愿意领衔（方向：本国 → 被告）
+            ### antagonism 触发器写法蓝本：generic_actions/th_gensokyo_join_crusade.txt:142-145
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_tarnish_mark
+                        root = {
+                            antagonism = {
+                                target = prev
+                                value >= th_crusade_antagonism_threshold_value
+                            }
+                        }
+                    }
+                }
+                add = 50
+            }
+            ### 打不赢就不接（行动侧候选已按 relative_strength >= 1.0 过滤，
+            ### 这里是二次保险：事件与提名之间国力可能已变化）
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_tarnish_mark
+                        root = {
+                            relative_strength = {
+                                target = prev
+                                value < 1.0
+                            }
+                        }
+                    }
+                }
+                subtract = 30
+            }
+        }
+
+        ### 领衔落地：打 th_gensokyo_tribunal_agent_mark +
+        ### 调 th_gensokyo_tribunal_escalate_land_effect（档位 +1、观察期重置 6、
+        ### 清 th_gensokyo_observation_done）
+        th_gensokyo_tribunal_agent_accept_effect = yes
+    }
+
+    ### ---------------- 拒绝领衔 → 该档暂挂，原档位保留 ----------------
+    option = {
+        name = th_gensokyo_tribunal_events.1.b
+
+        ai_will_select = {
+            value = 50
+            ### 与被告是盟友 ⇒ 不愿领衔
+            ### （is_allied_with = { target = ... } 写法蓝本同
+            ###  generic_actions/th_gensokyo_crusade_declare.txt:203-206）
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_tarnish_mark
+                        root = {
+                            is_allied_with = {
+                                target = prev
+                            }
+                        }
+                    }
+                }
+                add = 50
+            }
+        }
+
+        ### 撤销领衔（清 th_gensokyo_tribunal_agent_mark）+
+        ### 打 th_gensokyo_agent_refused + 威望/贡献惩罚 + 通知阎魔。
+        ### **不调用落地 effect** ⇒ 被诉国停在原档位、观察期不被重置
+        ### （= 《设计定案》§5.3「拒绝则保留原档位，阎魔另选」）
+        th_gensokyo_tribunal_agent_refuse_effect = yes
+    }
+}
+
+### ============================================================
+### .2 阎魔通知：某国拒绝领衔
+### 触发：th_gensokyo_tribunal_agent_refuse_effect（同意事件的拒绝 option
+###       与 th_gensokyo_tribunal_agent_refuse 行动两条路径共用）
+### root = 阎魔（幻想乡 IO 的 leader_country）
+### ============================================================
+th_gensokyo_tribunal_events.2 = {
+    type = country_event
+
+    title = th_gensokyo_tribunal_events.2.title
+    desc = th_gensokyo_tribunal_events.2.desc
+    outcome = neutral
+
+    trigger = {
+        always = yes
+    }
+
+    option = {
+        name = th_gensokyo_tribunal_events.2.a
+    }
+}
+
+### ============================================================
+### .3 阎魔通知：观察期届满未悔改（可升档）
+### 触发：th_gensokyo_tribunal_not_repented_effect
+### root = 阎魔（幻想乡 IO 的 leader_country）
+### ============================================================
+th_gensokyo_tribunal_events.3 = {
+    type = country_event
+
+    title = th_gensokyo_tribunal_events.3.title
+    desc = th_gensokyo_tribunal_events.3.desc
+    outcome = neutral
+
+    trigger = {
+        always = yes
+    }
+
+    option = {
+        name = th_gensokyo_tribunal_events.3.a
+    }
+}
+
+### ============================================================
+### .4 裁决事件（2026-10-04 闭环改造③）
+### 触发：辩论出结果 —— parliament_issues\th_gensokyo_trial_issue.txt 的
+###       on_debate_passed（从重意向）/ on_debate_failed（从轻意向）
+###       → international_organization:th_gensokyo_tribunal = { leader_country ?= { … } }
+### root = 彼岸（阎魔 = 审判庭领袖国）
+###
+### 四个选项 = 四档宣判。原先由 generic_actions\th_gensokyo_verdict.txt 的
+###   th_gensokyo_verdict_t0~t3 四个行动承载，2026-10-04 改由本事件承载，四行动删除。
+###
+### 裁量范围 = 基准档 ±1（原四行动 allow 的口径）：
+###   ★ 范围外的档位**照样可点**（用户 2026-10-04 拍板："代价更高"），
+###     代价 = th_gensokyo_verdict_defiance_effect（额外扣一次团结度；
+###     额度复用 th_verdict_deviation_unity_cost_value = "等于再偏一档"）。
+###
+### 落地唯一出口仍是 th_gensokyo_verdict_apply_effect
+###   （偏离意向扣团结度 + 标记转换 + 判决核心 + 解散审判庭），与超时兜底共用。
+### ============================================================
+th_gensokyo_tribunal_events.4 = {
+    type = country_event
+
+    title = th_gensokyo_tribunal_events.4.title
+    desc = th_gensokyo_tribunal_events.4.desc
+    outcome = neutral
+
+    ### 防重复弹：被诉国在册 ∧ 尚未裁决
+    ###   verdict_done 由 th_gensokyo_verdict_apply_effect ② 步设置
+    ###   ⇒ 辩论钩子若重复触发，本事件被 trigger 自动挡掉
+    trigger = {
+        any_country = {
+            has_variable = th_gensokyo_crusade_target_mark
+            NOT = { has_variable = th_gensokyo_verdict_done }
+        }
+    }
+
+    ### 被诉国存进具名 scope：供 option 的 loc 动态文本引用
+    ###   （写法同本文件 .1 与 th_gensokyo_judgment_baseline_effect：iterator 体内 save_scope_as）
+    ###   loc 读法先例：th_danmaku_l_simp_chinese.yml:58 [actor.MakeScope.GetVariable('…').GetValue]
+    immediate = {
+        every_country = {
+            limit = { has_variable = th_gensokyo_crusade_target_mark }
+            save_scope_as = th_verdict_accused
+        }
+    }
+
+    ### ---------------- 选项 A · 档 0 赔款破产 ----------------
+    option = {
+        ### 选项名复用既有 loc 键（四语已存在 th_gensokyo_verdict_t0）
+        name = th_gensokyo_verdict_t0
+        ### 预期 + 后果的自定义 tooltip（新键，四语）
+        custom_tooltip = {
+            text = th_gensokyo_tribunal_events.4.a.tt
+        }
+        ### AI 权重：搬自原 th_gensokyo_verdict_t0 的 ai_will_do
+        ###   顺民意 = 从轻意向取「基准 −1」档；无意向取基准本身
+        ###   （原实现里 baseline = -1 / = 0 的条件不可满足，已略去 ——
+        ###     baseline 由 th_gensokyo_judgment_baseline_effect 定为 1/2/3）
+        ai_will_select = {
+            value = 1
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        has_variable = th_gensokyo_intent_soft
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 1
+                    }
+                }
+                add = 400
+            }
+        }
+        ### 越权代价：|0 − 基准| ≥ 2 时额外扣一次团结度（必须在落地效果之前）
+        ### ★ 点击时复检（防同步）：若超时兜底已抢先落判（verdict_done 已设），
+        ###   本选项变成空操作，绝不二次落地（判一次 = 一次团结度扣、一次解散）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    NOT = { has_variable = th_gensokyo_verdict_done }
+                }
+            }
+            th_gensokyo_verdict_defiance_effect = { value = 0 }
+            every_country = {
+                limit = { has_variable = th_gensokyo_crusade_target_mark }
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 0
+                }
+            }
+            th_gensokyo_verdict_apply_effect = yes
+        }
+    }
+
+    ### ---------------- 选项 B · 档 1 归还 ----------------
+    option = {
+        name = th_gensokyo_verdict_t1
+        custom_tooltip = {
+            text = th_gensokyo_tribunal_events.4.b.tt
+        }
+        ai_will_select = {
+            value = 1
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        has_variable = th_gensokyo_intent_soft
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 2
+                    }
+                }
+                add = 400
+            }
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        NOT = { has_variable = th_gensokyo_intent_harsh }
+                        NOT = { has_variable = th_gensokyo_intent_soft }
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 1
+                    }
+                }
+                add = 200
+            }
+        }
+        ### ★ 点击时复检（防同步，同选项 A）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    NOT = { has_variable = th_gensokyo_verdict_done }
+                }
+            }
+            th_gensokyo_verdict_defiance_effect = { value = 1 }
+            every_country = {
+                limit = { has_variable = th_gensokyo_crusade_target_mark }
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 1
+                }
+            }
+            th_gensokyo_verdict_apply_effect = yes
+        }
+    }
+
+    ### ---------------- 选项 C · 档 2 削弱 ----------------
+    option = {
+        name = th_gensokyo_verdict_t2
+        custom_tooltip = {
+            text = th_gensokyo_tribunal_events.4.c.tt
+        }
+        ai_will_select = {
+            value = 1
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        has_variable = th_gensokyo_intent_harsh
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 1
+                    }
+                }
+                add = 400
+            }
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        has_variable = th_gensokyo_intent_soft
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 3
+                    }
+                }
+                add = 400
+            }
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        NOT = { has_variable = th_gensokyo_intent_harsh }
+                        NOT = { has_variable = th_gensokyo_intent_soft }
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 2
+                    }
+                }
+                add = 200
+            }
+        }
+        ### ★ 点击时复检（防同步，同选项 A）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    NOT = { has_variable = th_gensokyo_verdict_done }
+                }
+            }
+            th_gensokyo_verdict_defiance_effect = { value = 2 }
+            every_country = {
+                limit = { has_variable = th_gensokyo_crusade_target_mark }
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 2
+                }
+            }
+            th_gensokyo_verdict_apply_effect = yes
+        }
+    }
+
+    ### ---------------- 选项 D · 档 3 监管国 ----------------
+    option = {
+        name = th_gensokyo_verdict_t3
+        custom_tooltip = {
+            text = th_gensokyo_tribunal_events.4.d.tt
+        }
+        ai_will_select = {
+            value = 1
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        has_variable = th_gensokyo_intent_harsh
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 2
+                    }
+                }
+                add = 400
+            }
+            if = {
+                limit = {
+                    any_country = {
+                        has_variable = th_gensokyo_crusade_target_mark
+                        NOT = { has_variable = th_gensokyo_intent_harsh }
+                        NOT = { has_variable = th_gensokyo_intent_soft }
+                        has_variable = th_gensokyo_sentence_baseline
+                        var:th_gensokyo_sentence_baseline = 3
+                    }
+                }
+                add = 200
+            }
+        }
+        ### ★ 点击时复检（防同步，同选项 A）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    NOT = { has_variable = th_gensokyo_verdict_done }
+                }
+            }
+            th_gensokyo_verdict_defiance_effect = { value = 3 }
+            every_country = {
+                limit = { has_variable = th_gensokyo_crusade_target_mark }
+                set_variable = {
+                    name = th_gensokyo_sentence_tier
+                    value = 3
+                }
+            }
+            th_gensokyo_verdict_apply_effect = yes
+        }
+    }
+}

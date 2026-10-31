@@ -1,0 +1,58 @@
+### ============================================================
+### 幻想乡惩戒战争 CB（审判庭包围网使用，仅脚本授予）
+### war_goal_type = th_gensokyo_crusade_war_goal（教训性质，胜负定战争分数）
+### 2026-09（用户需求）：惩戒战争不能割地、不能奴役——和平诉求只能释放国家。
+### 限制在战目标层实现（common/wargoals/th_gensokyo_crusade_war_goal.txt 的
+### allowed_locations / allowed_subjugation = always no），对玩家与 AI 均生效；
+### ★ 2026-10-04（用户拍板）：本 CB **禁止单独议和**（allow_separate_peace = no）——
+###   参战方不得抛开战争领袖单独媾和；白和仍可（白和同样结束战争 → 照常进辩论）。
+###   战争仍由脚本条约（triumph/counter）收尾
+### 2026-08-23（用户修正）：AI 宣战判定 = 实力对比——
+### 审判庭成员用本 CB 对目标宣战（IO 面板按钮 / AI 自动），
+### relative_strength 0.5 = 势均力敌；强于目标才倾向宣战
+### ============================================================
+
+th_gensokyo_crusade_cb = {
+    years = 5
+
+    create_visible = {
+        always = no
+    }
+    create_enabled = {
+        always = no
+    }
+
+    war_goal_type = th_gensokyo_crusade_war_goal
+
+    ### ★ 2026-10-04：本惩戒战争**不能单独议和**
+    ###   字段出处：VANILLA\common\casus_belli\readme.txt:17 逐字
+    ###     "#   allow_separate_peace = yes/no if separate peace deals are allowed (defaults to yes)"
+    ###   同族先例（vanilla 自己也在禁）：coalition.txt:22 / hre_cbs.txt:5 /
+    ###     01_event_triggered.txt:123 三处都是 allow_separate_peace = no
+    ###   语义：只有战争领袖能谈一份涵盖全体的和约，参战方不得单独媾和。
+    ###   白和**未禁**（allow_white_peace 保持默认 yes）—— 白和同样结束战争、
+    ###   同样走 on_ending_war ⇒ 照常进辩论，不会把案件卡死。
+    allow_separate_peace = no
+
+    ai_cede_location_desire = {
+        add = {
+            add = -50
+        }
+    }
+
+    additional_war_enthusiasm = 0.1
+
+    ### AI 宣战判定（root = 持 CB 成员，scope:target = 目标国，readme 实证）
+    ai_will_do = {
+        add = {
+            desc = TH_TRIBUNAL_CB_STRENGTH
+            value = "relative_strength(scope:target)"
+            add = -0.5
+            multiply = 100
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 10
+        }
+    }
+}

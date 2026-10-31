@@ -1,0 +1,147 @@
+### ============================================================
+### 幻想乡IO 链条系统 — 价值观完整链（亲善 <-> 好战）
+### 原「恶名变量 th_gensokyo_notorious_reputation_var（0-100，完全隐藏）」已迁移为
+### 社会价值观 societal_value:th_gensokyo_amity_vs_belligerence（-100亲善 ~ +100好战，可见）
+### 映射：societal_value = 2*恶名 - 100
+### ============================================================
+
+### 链条系统开局初始化（on_game_start 调用，仅设本系统新增变量）
+th_gensokyo_chain_init_effect = {
+    ### 2026-10-01 T2-2：审判庭物证列表开局清空（**全局一次**，故写在 every_country 之外）。
+    ### 该列表由 on_took_location_in_peace_treaty 钩子（chain_events 的
+    ### th_gensokyo_unlawful_expansion_check 非法分支）在立案之前写入，
+    ### 是"涉案地块"物证；结案路径（T2-2b 赦免 / T2-3 认罪与履约完毕）
+    ### 负责在结案时清理。effect 定义蓝本：
+    ### VANILLA\common\events\hre.txt:1185 / situations\italian_wars.txt:569-570
+    ### （clear_global_variable_list = <列表名>，裸名，43 处 base game 先例）
+    clear_global_variable_list = th_gensokyo_stolen_location_list
+    every_country = {
+        limit = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### 2026-08-14 首月空窗修复：原恶名/贡献/影响力只靠月度兜底补设，
+        ### 开局首月点宴会等行动报 S11 家族 "Variable not of the 'value' scope type.
+        ### Type: empty"（实测 13:41:13）→ 开局即初始化，月度兜底保留为双保险
+        ### 价值观：开局设定为中立（0）→ 2026-08-21 曾采用作者 79faa83 改为 100
+        ### （「开局满好战，立即可被惩戒」）→ 2026-09 用户拍板推翻：
+        ### 初始缘与乱应为正中（0），不偏向任意一方（与模板 0 一致，无冲突）
+        set_societal_value = {
+            type = th_gensokyo_amity_vs_belligerence
+            value = 0
+        }
+        set_variable = {
+            name = th_gensokyo_personal_contribution_var
+            value = 0
+        }
+        set_variable = {
+            name = th_gensokyo_personal_influence_var
+            value = 0
+        }
+        ### 合法扩张配额已用数
+        set_variable = {
+            name = th_gensokyo_expansion_quota_used
+            value = 0
+        }
+        ### 合法扩张总配额（小卖铺发放）
+        set_variable = {
+            name = th_gensokyo_expansion_quota
+            value = 0
+        }
+        ### 罪值（T2 起语义收窄：罪 = 立案时按罪名账本合计写入、上限 th_sin_crime_cap；
+        ### 战时累积已改指向 th_gensokyo_attitude_var —— 见下方 T2-1 分流说明）
+        set_variable = {
+            name = th_gensokyo_sin_var
+            value = 0
+        }
+        ### 2026-10-01 T2-1：罪名账本兜底初始化（本窗只负责"写"，读取/合计由 T2-2 立案行动做）
+        ### 记账点：非法扩张 = th_gensokyo_expansion_punish_effect 咽喉（两条路径共用）；
+        ###        吞人类村落属领 = chain_events 的 free_city_cede_check 与 unlawful_annex_check 自由市分支；
+        ###        征服割地 = conquest_oa 的 th_gensokyo_conquest_chaos_pulse；
+        ###        合法扩张 = chain_events 的两条合法分支（不计罪，仅供自辩举证）；
+        ###        攻击彼岸监管国 / 对成员无 CB 宣战 = chain_events 的 on_war_declared 两个新子 action
+        set_variable = { name = th_gensokyo_crime_unlawful_var value = 0 }
+        set_variable = { name = th_gensokyo_crime_freecity_var value = 0 }
+        set_variable = { name = th_gensokyo_crime_conquest_var value = 0 }
+        set_variable = { name = th_gensokyo_crime_legal_var value = 0 }
+        set_variable = { name = th_gensokyo_crime_regulated_var value = 0 }
+        set_variable = { name = th_gensokyo_crime_nocb_var value = 0 }
+        ### 战时态度（T2 从 th_gensokyo_sin_var 拆出的"抗命"量，上限 th_attitude_cap）
+        set_variable = { name = th_gensokyo_attitude_var value = 0 }
+        ### th_gensokyo_crime_last_date 故意不在此设 0：它是时间戳，0 会让 UI 显示成"0 年"；
+        ### 首次记账时由 th_gensokyo_crime_record_effect 写入（读方必须 has_variable 守卫）
+        ### 2026-10-01 T2-2：审判庭观察期数值变量初始化。
+        ### 【本窗初始化纪律】标记类（th_gensokyo_suspect_mark / th_gensokyo_tarnish_mark /
+        ### th_gensokyo_tier_1..4_mark / th_gensokyo_victim_mark）**一律不预置** ——
+        ### 它们的语义是"不存在 = 未越线 / 未立案 / 未定罪 / 无受害国"，
+        ### 预置会让 is/has 判定恒真、把整条阶梯判定废掉。
+        ### 数值类只此一个：观察期月数（0 = 无观察期；恒存在，
+        ### 案件判据仍以 th_gensokyo_tarnish_mark 为准，见 chain_monthly 的注释）
+        set_variable = { name = th_gensokyo_observation_months value = 0 }
+        ### 2026-08-26：th_gensokyo_judged 清理已删（旧审判标记，全库零读取）
+        ### 清除合法扩张授权（授权由小卖铺按次发放）
+        remove_variable = th_gensokyo_expansion_authorized
+    }
+}
+
+### ============================================================
+### 罪名记账（T2-1 新增，2026-10-01）
+### root = 记账对象国（扩张者 / 吞并者 / 宣战方）；$crime$ = 写入的罪名变量名
+### 每次 +1，同时覆盖"最近一次记账年份"
+### 用法: th_gensokyo_crime_record_effect = { crime = th_gensokyo_crime_unlawful_var }
+### $param$ 当变量名用的蓝本：vanilla scripted_effects/global_effects.txt:89-94
+###   （limit_variable_to_max = { if = { limit = { var:$name$ > $value$ }
+###      set_variable = { name = $name$ value = $value$ } } }）
+### 时间戳记"年份"而非"年月数"：current_year 有存进变量的 vanilla 先例
+###   （government_reforms/country_specific.txt:501-505），current_month 全库只作比较、
+###   无作值先例 → 年月数写法 FAILED，退化为年份（见 T2 报告 §Verification 6）
+### ============================================================
+th_gensokyo_crime_record_effect = {
+    if = {
+        limit = {
+            has_variable = $crime$
+        }
+        change_variable = {
+            name = $crime$
+            add = 1
+        }
+    }
+    else = {
+        set_variable = {
+            name = $crime$
+            value = 1
+        }
+    }
+    set_variable = {
+        name = th_gensokyo_crime_last_date
+        value = current_year
+    }
+}
+
+### 价值观月度：自然趋向亲善（可叠加宴会削减）
+### 国家 scope 调用，仅 IO 成员
+### 引擎自动钳制社会价值观于 -100 ~ +100，无需额外 clamp
+th_gensokyo_notorious_monthly_effect = {
+    ### WP-B 2026-08-15（设计文档《国际组织》§2）：乱与缘价值观"一般不会变动"，
+    ### 取消月度自然漂移（原 th_notorious_decay_monthly_value = -2/月 趋向缘），
+    ### 价值观仅由事件/行动驱动（征服、宴会、扩张、惩戒等）。
+    ### 如需恢复自动衰减，取消下行注释并在 chain_values 调回数值。
+    # change_societal_value = {
+    #     type = th_gensokyo_amity_vs_belligerence
+    #     value = th_notorious_decay_monthly_value
+    # }
+    ### 2026-08-21（需求 2/3 用户决策）：删除弃民档标记镜像段
+    ### （pariah/outcast modifier mirror —— 阶段性修正系统；
+    ### 两纯标记修正定义已从 expansion_cost_modifiers 删除，
+    ### 作者版此处引用的 modifier 已不存在，必须删除避免悬空；
+    ### 提案选国过滤改直接 societal_value 检测（propose_crusade））
+    ### 左右法律能力接口
+    ### 现状无落点：普通成员无议会投票权（power=0），IO 法律 requires_vote=no
+    ### 待骨架实现"个人影响力→议会投票权重"后，在此按价值观档位削减权重
+    ### 注 2026-08-21：投票权重已改「幻想乡影响力」动态公式（special_status_power），
+    ### 本接口仍保留空实现（骨架预留）
+    th_gensokyo_notorious_influence_interface_effect = yes
+}
+
+### 左右法律能力接口（空实现，见上注释）
+th_gensokyo_notorious_influence_interface_effect = {
+}

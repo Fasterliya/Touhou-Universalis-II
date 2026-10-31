@@ -1,0 +1,816 @@
+
+### ============================================================
+### 幻想乡IO 链条系统 — 事件钩子
+### 非法扩张检测 / 自由市吞并惩罚 / 罪值累积（4B 追加）
+### ============================================================
+
+### === 和约夺地（root=winner, scope:location/winner/loser） ===
+### 注：反杀判定已改由反杀条约 th_gensokyo_crusade_counter 承担（B3 决策），代理判定已移除
+on_took_location_in_peace_treaty = {
+    on_actions = {
+        th_gensokyo_unlawful_expansion_check
+        th_gensokyo_free_city_cede_check
+    }
+}
+
+
+### === 战斗胜利（root = 胜利国，scope:actor = 胜利军队，见 base game _hardcoded.txt:2783） → 罪值累积（目标国赢战斗 = 屠杀联军军队） ===
+### 按战果折算：罪 += scope:war_score（on_battle_won 提供，_hardcoded.txt:2789）
+### 退路：若 scope:war_score 折算异常，改回固定值 th_crusade_sin_battle_value
+### P1-09 修复：root 是胜利国而非军队，直接判定/累加，不再经 owner 链
+on_battle_won = {
+    on_actions = {
+        th_gensokyo_sin_battle_check
+    }
+}
+
+
+### === 拒绝强制和平（调停被拒） → 罪值累积 ===
+on_enforce_peace_declined = {
+    on_actions = {
+        th_gensokyo_sin_refusal_check
+    }
+}
+
+
+### === 反杀检测已移除（B3 决策：反杀唯一判定 = 反杀条约 th_gensokyo_crusade_counter） ===
+
+### === 自由市保护（B7 修正 2026-08-07：除贤者与自由市外全部触发三贤者参战） ===
+### 触发对象 = 除人类村落成员和贤者以外的所有国家（含阎魔/IO 普通成员/外界）
+### 豁免: 贤者攻击自由市 / 人类村落互相吞并（只吃惩罚链，不触发贤者参战）
+on_war_declared = {
+    on_actions = {
+        th_gensokyo_free_city_protection_check
+        th_gensokyo_invasion_check
+        th_gensokyo_regulated_protection
+        th_gensokyo_tribunal_war_activate
+        ### 2026-10-01 T2-1 罪名账本新增两个子 action（定义见本文件尾部）
+        th_gensokyo_crime_regulated_check
+        th_gensokyo_crime_nocb_check
+    }
+}
+
+
+on_annex = {
+    on_actions = {
+        th_gensokyo_unlawful_annex_check
+    }
+}
+
+
+th_gensokyo_unlawful_expansion_check = {
+    trigger = {
+        scope:winner = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        scope:loser = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                th_gensokyo_has_authorized_expansion_trigger
+            }
+            ### 合法扩张：消耗配额 1 块 + 少量趋向好战（B6：敌意镜像，量小）
+            change_variable = {
+                name = th_gensokyo_expansion_quota_used
+                add = 1
+            }
+            th_gensokyo_values_shift_belligerent_effect = {
+                value = th_expansion_legal_notorious_value
+            }
+            ### 2026-10-01 T2-1 罪名账本：合法扩张 +1 次
+            ### 罪名为「合法扩张」——**不计入罪值合计**，仅供 T2-2 立案后自辩举证
+            ### （铁律 11：记账走 has_variable 守卫的共享 effect）
+            th_gensokyo_crime_record_effect = {
+                crime = th_gensokyo_crime_legal_var
+            }
+        }
+        else = {
+            ### 非法扩张：惩罚链（恶名量更大，B6）
+            scope:loser = {
+                save_scope_as = expansion_victim
+            }
+            th_gensokyo_expansion_punish_effect = {
+                value = th_expansion_unlawful_notorious_value
+                unity = th_expansion_unlawful_unity_value
+            }
+            ### ============================================================
+            ### 2026-10-01 T2-2-④：涉案地块 + 受害国入物证（起诉书用）
+            ### 依据 = 本钩子的官方 scope 契约，逐字见
+            ###   VANILLA\common\on_action\_hardcoded.txt:2341
+            ###   "#root = winner, scope:location = location, scope:winner = new owner,
+            ###    scope:loser = old owner"
+            ###   （同文件 :2347-2369 即该契约的逐字用法先例：scope:location 直接
+            ###    作为 add_to_global_variable_list 的 target）
+            ### 为什么记在这里而不是立案时：T2-1 的记账点只累加**次数**，
+            ###   "地块"只在本钩子一次性可得（《脚本规格》§6.1-4 的结论）。
+            ###   立案时若 clear_global_variable_list 重填，等于销毁起诉书 →
+            ###   本窗立案行动**不清理**该列表（见 th_gensokyo_tribunal_indict.txt ④ 注释）。
+            ### 写入门：只在作案者**尚无在办案件**（无 tarnish）时记录 ⇒
+            ###   立案之后该国的继续作案不会污染"本案物证"；
+            ###   旧案物证的清理由结案路径（T2-2b / T2-3）与开局 init 负责。
+            ### 去重：同一地块可能因多个钩子重复触发，用
+            ###   is_target_in_global_variable_list 先查（触发器存在性：
+            ###   VANILLA\common\trigger_localization\common_triggers.txt:130；
+            ###   用法先例 events\disaster\hook_and_cod_wars.txt:1300）
+            ### 本 on_action 的 trigger 已保证 scope:winner / scope:loser 都是
+            ###   幻想乡 IO 成员 ⇒ 物证天然限定在幻想乡相关国家
+            ### ============================================================
+            if = {
+                limit = {
+                    exists = scope:location
+                    NOT = { has_variable = th_gensokyo_tarnish_mark }
+                    NOT = {
+                        is_target_in_global_variable_list = {
+                            name = th_gensokyo_stolen_location_list
+                            target = scope:location
+                        }
+                    }
+                }
+                add_to_global_variable_list = {
+                    name = th_gensokyo_stolen_location_list
+                    target = scope:location
+                }
+                ### 受害国标记（?= 空链接守卫；被吞并的旧主可能已不存在）
+                scope:loser ?= {
+                    set_variable = th_gensokyo_victim_mark
+                }
+            }
+            change_variable = {
+                name = th_gensokyo_expansion_quota_used
+                add = 1
+            }
+        }
+    }
+}
+
+
+### === 自由市割让（B1：战争条约割让人类国家地块 = 强制吞并） ===
+### 地块本身已有引擎敌意（成员夺地自动），此处追加：额外 +500% 敌意（bias 值体现）+ 恶名获取 x500%（x6 增幅）
+th_gensokyo_free_city_cede_check = {
+    trigger = {
+        scope:loser = {
+            th_gensokyo_is_free_city_trigger
+        }
+    }
+    effect = {
+        ### 巨额敌意（bias 1250 ≈ 基础 x6，体现 500% 增幅，待调）
+        ### 方向修复 2026-08-14：add_antagonism 语义 = target 对 root 增加敌意（用户实测），
+        ### 故在扩张者（root=winner）处执行、target=受害方
+        add_antagonism = {
+            target = scope:loser
+            modifier = th_antagonism_free_city_annex
+        }
+        ### 价值观 x500% 增幅（基础非法扩张 x6 → 趋向好战 +96）
+        th_gensokyo_values_shift_belligerent_effect = {
+            value = th_free_city_annex_values_shift_value
+        }
+        ### 人间之里被侵占 → 团结扣减
+        international_organization:th_gensokyo_io = {
+            th_gensokyo_unity_subtract_effect = {
+                value = th_unity_free_city_annex_value
+            }
+        }
+        ### 2026-10-01 T2-1 罪名账本：吞人类村落属领 +1 次
+        ### 限幻想乡相关国家：账本只发给幻想乡 IO 成员（本钩子原本只查受害方是不是
+        ### 自由市，未查 root，故此处显式加成员门；非成员不入账，其行为由
+        ### th_gensokyo_invasion_check 的团结扣减另计）
+        ### 记 root（= 扩张者 / winner），绝不给 scope:loser（受害方）记账
+        if = {
+            limit = {
+                is_member_of_international_organization = international_organization:th_gensokyo_io
+            }
+            th_gensokyo_crime_record_effect = {
+                crime = th_gensokyo_crime_freecity_var
+            }
+        }
+    }
+}
+
+
+th_gensokyo_sin_battle_check = {
+    trigger = {
+        has_variable = th_gensokyo_crusade_target_mark
+    }
+    effect = {
+        ### 2026-10-01 T2-3 罪 / 态度分流：战时累积改指向 th_gensokyo_attitude_var
+        ### （原写 th_gensokyo_sin_var）。th_gensokyo_sin_var 语义收窄为「罪」，
+        ### 今后只由立案时按罪名账本写入、上限 th_sin_crime_cap；本窗不改判决读法（属 T2-4）。
+        ### 上限 = th_attitude_cap（clamp 参数吃不动 script_value 名，数字化，
+        ### 同 expansion_effects 既有注释）；has_variable 守卫防缺失变量类型错（铁律 11）
+        if = {
+            limit = {
+                has_variable = th_gensokyo_attitude_var
+            }
+            change_variable = {
+                name = th_gensokyo_attitude_var
+                add = scope:war_score
+            }
+            clamp_variable = {
+                name = th_gensokyo_attitude_var
+                min = 0
+                max = 40
+            }
+        }
+    }
+}
+
+
+th_gensokyo_sin_refusal_check = {
+    trigger = {
+        OR = {
+            has_variable = th_gensokyo_crusade_target_mark
+            scope:recipient = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+    }
+    effect = {
+        ### 2026-10-01 T2-3 罪 / 态度分流：两个分支的战时累积都改指向
+        ### th_gensokyo_attitude_var（原写 th_gensokyo_sin_var），上限 th_attitude_cap = 40。
+        ### th_gensokyo_sin_var 语义收窄为「罪」，今后只由立案时按账本写入（T2-2）；
+        ### 本窗不改判决读法（属 T2-4）。两处都加 has_variable 守卫（铁律 11）。
+        if = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+                has_variable = th_gensokyo_attitude_var
+            }
+            change_variable = {
+                name = th_gensokyo_attitude_var
+                add = th_crusade_sin_refusal_value
+            }
+            clamp_variable = {
+                name = th_gensokyo_attitude_var
+                min = 0
+                max = 40
+            }
+        }
+        else_if = {
+            limit = {
+                scope:recipient = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    has_variable = th_gensokyo_attitude_var
+                }
+            }
+            scope:recipient = {
+                change_variable = {
+                    name = th_gensokyo_attitude_var
+                    add = th_crusade_sin_refusal_value
+                }
+                clamp_variable = {
+                    name = th_gensokyo_attitude_var
+                    min = 0
+                    max = 40
+                }
+            }
+        }
+    }
+}
+
+
+### === 审判庭宣战 → 召唤全体成员入战（2026-08-23 重构 / 2026-08-26 再修） ===
+### 用户决定：局势（战争界面）已删除（2026-08-26）——系统由审判庭 IO 全权驱动：
+###   - 全员自动入战 = IO join_*_wars_always 引擎触发器（scope:target 标记判定，
+###     见 th_gensokyo_tribunal.txt）+ 本钩子 join_war_as_attacker 双保险
+###   - 态度累积 = IO monthly_effect（2026-10-01 T2-3：由 th_gensokyo_sin_var 改指
+###     th_gensokyo_attitude_var，见 th_gensokyo_tribunal.txt monthly_effect）；
+###     战后审判 = on_ending_war 钩子（本文件尾部）
+### 2026-08-26 修复：
+###   - 原 target 机制判定改标记法（target 恒空 → 钩子恒 false，局势永不激活）
+###   - 删除 situation_is_active 防重判定与 casus_belli 判定（标记已唯一标识
+###     惩戒战争，触发器越简单越不易失效）
+th_gensokyo_tribunal_war_activate = {
+    trigger = {
+        ### 宣战国是审判庭成员
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_tribunal
+        }
+        ### 被宣战国是惩戒目标（标记法）
+        scope:recipient = {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+    }
+    effect = {
+        ### 召唤审判庭全体成员加入对目标战争（join_offensive_wars_always
+        ### 引擎层双保险；scope:war 实证可用）
+        international_organization:th_gensokyo_tribunal = {
+            every_international_organization_member = {
+                limit = {
+                    NOT = {
+                        this = scope:actor
+                    }
+                    NOT = {
+                        is_at_war_with = scope:recipient
+                    }
+                }
+                join_war_as_attacker = {
+                    war = scope:war
+                    call_in_subjects = yes
+                }
+            }
+        }
+    }
+}
+
+
+th_gensokyo_free_city_protection_check = {
+    trigger = {
+        scope:recipient = {
+            th_gensokyo_is_free_city_trigger
+            ### ============================================================
+            ### 2026-10-01 T2-5b「失保护」门
+            ### （《设计定案》§3.1 / §7：祟三义之一 = 不再受保护义务庇护）
+            ### 门加在**保护对象资格层**（scope:recipient = 本钩子的受保护方，
+            ###   即"被宣战的自由市"，正是上一行 already 判定的那个国家），
+            ###   而不是加在"贤者是否出手"的效果层 —— 理由：
+            ###   ① 语义准确：失去的是**被保护资格**，不是贤者的出手意愿；
+            ###   ② 与既有判定同层，读起来是一条完整资格式；
+            ###   ③ 触发器层先失败先返回，代价最低。
+            ### 判据 = 「持祟 ∧ 尚未宣判」，与案卷区状态②（已立案·制裁中）同源：
+            ###   gui/panels/organization/th_gensokyo_io.gui:319-320
+            ###     ② = tarnish ∧ ¬verdict_done ／ ③ = tarnish ∧ verdict_done
+            ### 为什么**不是**裸 NOT = { has_variable = th_gensokyo_tarnish_mark }：
+            ###   宣判之后祟仍在册（服刑期 = ③ 态）——
+            ###   已宣判国若被摘掉保护，会永久失去保护义务庇护。
+            ###   证明见报告 §5（verdict 路径不清 tarnish；监管国正由该路径产生）
+            ###   ⇒ 故加一条"已宣判即恢复保护"的排除项，只对**在审**的祟生效。
+            ### 已知边界（保守方向，宁多保护不误伤）：verdict_done 是常驻标记，
+            ###   由"下一场战争结束"的判定重置 ⇒ 已宣判国再度被立案时本门暂不生效。
+            ### ============================================================
+            OR = {
+                NOT = { has_variable = th_gensokyo_tarnish_mark }
+                has_variable = th_gensokyo_verdict_done
+            }
+        }
+        ### C1 修复 2026-08-14：宣战国判定改显式 scope:actor（on_war_declared 的 root 语义未证，
+        ### _hardcoded 注释仅称"root = country"；显式引用消除 root 依赖）
+        scope:actor = {
+            NOT = {
+                th_gensokyo_is_sage_trigger
+            }
+            NOT = {
+                th_gensokyo_is_free_city_trigger
+            }
+        }
+    }
+    effect = {
+        ### 三位贤者以防御方自动加入战争（神罗皇帝同款保护）
+        ### C2 修复 2026-08-14：收敛为 base game 27 处先例公共子集 { war = scope:war }；
+        ### reason(自定义 loc 键)/ignore_rules 在 join_war_as_defender 无先例，实测不触发时移除
+        every_country = {
+            limit = {
+                th_gensokyo_is_sage_trigger
+            }
+            join_war_as_defender = {
+                war = scope:war
+            }
+        }
+    }
+}
+
+
+### === 外界入侵：非 IO 成员对成员宣战 → 团结扣减 ===
+th_gensokyo_invasion_check = {
+    trigger = {
+        scope:recipient = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### C1 修复：宣战国判定显式 scope:actor
+        scope:actor = {
+            NOT = {
+                is_member_of_international_organization = international_organization:th_gensokyo_io
+            }
+        }
+    }
+    effect = {
+        international_organization:th_gensokyo_io = {
+            th_gensokyo_unity_subtract_effect = {
+                value = th_unity_invasion_value
+            }
+        }
+    }
+}
+
+
+th_gensokyo_unlawful_annex_check = {
+    trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+        scope:target = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    effect = {
+        ### 自由市吞并：巨型敌意 + 团结扣 + 恶名 x500% 增幅（x6）
+        if = {
+            limit = {
+                scope:target = {
+                    th_gensokyo_is_free_city_trigger
+                }
+            }
+            scope:target = {
+                save_scope_as = expansion_victim
+            }
+            ### 方向修复 2026-08-14：add_antagonism = target 对 root 增加敌意 → 在吞并者（root）处执行
+            add_antagonism = {
+                target = scope:target
+                modifier = th_antagonism_free_city_annex
+            }
+            th_gensokyo_values_shift_belligerent_effect = {
+                value = th_free_city_annex_values_shift_value
+            }
+            international_organization:th_gensokyo_io = {
+                th_gensokyo_unity_subtract_effect = {
+                    value = th_unity_free_city_annex_value
+                }
+            }
+            ### 2026-10-01 T2-1 罪名账本：吞人类村落属领 +1 次
+            ### 记 root（= 吞并者），绝不给 scope:target（被吞并方）记账。
+            ### 本 action 的 trigger 已保证 root 与 scope:target 都是幻想乡 IO 成员，
+            ### 无需再加成员门（与 free_city_cede_check 那条无 root 检查的钩子不同）
+            th_gensokyo_crime_record_effect = {
+                crime = th_gensokyo_crime_freecity_var
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    NOT = {
+                        th_gensokyo_has_authorized_expansion_trigger
+                    }
+                }
+                ### 常规非法吞并：惩罚链
+                scope:target = {
+                    save_scope_as = expansion_victim
+                }
+                th_gensokyo_expansion_punish_effect = {
+                    value = th_expansion_unlawful_notorious_value
+                    unity = th_expansion_unlawful_unity_value
+                }
+                change_variable = {
+                    name = th_gensokyo_expansion_quota_used
+                    add = 1
+                }
+            }
+            else = {
+                ### 合法吞并：消耗配额
+                change_variable = {
+                    name = th_gensokyo_expansion_quota_used
+                    add = 1
+                }
+                ### 2026-10-01 T2-1 罪名账本：合法扩张 +1 次（**不计罪**，仅供自辩举证）
+                ### 与 unlawful_expansion_check 的合法分支对称 —— 否则"合法吞并"不入账、
+                ### 立案后自辩拿不出证据，账本会偏向只记黑账
+                th_gensokyo_crime_record_effect = {
+                    crime = th_gensokyo_crime_legal_var
+                }
+            }
+        }
+    }
+}
+
+
+### ============================================================
+### 惩戒辩论规则自动投票 — 已移至 propose_crusade effect 尾部
+### （2026-08-21 实测结论：crusade_issue.on_debate_start 触发时机早于议会激活，
+###  投票被引擎忽略；on_io_parliament_started 硬编码钩子不触发——两条回调均已移除；
+###  唯一可靠执行点 = generic action effect 内 call_io_parliament 之后）
+### ============================================================
+
+### === 监管国防御保护（2026-08-23：阎魔义务，F14） ===
+### 场景：彼岸监管国被外部宣战 → 阎魔（IO 领袖/宗主）强制加入防御方
+### 结构同 th_gensokyo_free_city_protection_check（贤者参战先例，join_war_as_defender
+### + war = scope:war）；防重：阎魔已与攻击者交战（引擎默认
+### overlord_protects_external = yes 可能已自动拉入）→ 跳过
+###
+### ============================================================
+### 【2026-10-01 T2-5b 决策记录：本钩子**故意不加**「祟即失保护」门】
+### 结论：加了会误伤服刑保护，或成为永不触发的死条件 ⇒ 本窗不改本钩子。
+### 证明（三段，逐条可复核）：
+###   ① 监管国是**宣判之后**才产生的：判决档 3 的落地 =
+###      th_gensokyo_trial_judge_core_effect 里的 make_subject_of
+###      type = subject_type:th_gensokyo_regulated_state
+###      （scripted_effects/th_gensokyo_crusade_effects.txt:209-228），
+###      它由 th_gensokyo_verdict_apply_effect ④ 步调用
+###      （scripted_effects/th_gensokyo_tribunal_effects.txt ⑬）。
+###   ② **verdict 路径不清「祟」**：同一效果 ② 步先打 th_gensokyo_verdict_done，
+###      然后 ⑤ 步只调 th_gensokyo_trial_cleanup_effect —— 该效果只清
+###      crusade_target_mark / trial_target_mark / crusade_participant 与解散审判庭
+###      （crusade_effects.txt:438-462），**全文件 0 处提及 tarnish**。
+###      案卷区 GUI 也把这一点写成了状态机：
+###      gui/panels/organization/th_gensokyo_io.gui:320
+###        「③ 服刑中  tarnish_mark ∧ verdict_done」
+###      ⇒ **服刑期的监管国必然持「祟」**（设计如此：案件在册到结案为止）。
+###   ③ 因此：
+###      · 若照字面加裸门 NOT = { has_variable = th_gensokyo_tarnish_mark }
+###        ⇒ 每一个服刑中的监管国都会失去阎魔的保护义务庇护
+###          （正是任务 §3.3 要求"发现即停下报告、不要硬加"的情形）。
+###      · 若改用本窗在自由市钩子上用的修正门
+###        （祟 ∧ ¬verdict_done ⇒ 失保护）
+###        ⇒ 监管国恒有 verdict_done ⇒ 门恒为真 ⇒ **永不触发**，
+###          只是一条死条件（监管国只可能因"再度被立案"而持祟，
+###          而那种情形下 verdict_done 也仍在）。
+### ⇒ 两个写法都不可取，故本钩子保持原样。
+### 【后续窗若要做"服刑国被再犯立案时失去保护"，正确做法 =
+###   先给"新一轮案件"一个能区分于旧案的判据（如立案时清 verdict_done），
+###   再回来加门；那是独立改动，不在本窗。】
+### ============================================================
+th_gensokyo_regulated_protection = {
+    trigger = {
+        ### 被宣战国是彼岸监管国（is_subject_type 实证：维基 Subject_types:471）
+        scope:recipient = {
+            is_subject_type = subject_type:th_gensokyo_regulated_state
+        }
+        ### 2026-08-23 补充：排除惩戒战争——阎魔经局势 on_start 的
+        ### declare_war_with_cb 对监管国发动惩戒战争时（CB = th_gensokyo_crusade_cb），
+        ### 本钩子不应把阎魔拉入防御方（自己打自己）；casus_belli 软取语法同
+        ### peace_treaties 先例
+        scope:war = {
+            NOT = {
+                casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+    effect = {
+        ### 定位阎魔（IO 领袖）
+        international_organization:th_gensokyo_io = {
+            leader_country ?= {
+                if = {
+                    limit = {
+                        NOT = {
+                            is_at_war_with = scope:actor
+                        }
+                    }
+                    join_war_as_defender = {
+                        war = scope:war
+                        call_in_subjects = yes
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+### ============================================================
+### 罪名账本 · on_war_declared 新增子 action（2026-10-01 T2-1）
+### 作用域（同 on_war_declared 全族）：root = 宣战国，scope:actor = 宣战国，
+### scope:recipient = 被宣战国，scope:war = 该场战争
+### 两条纪律：① 限幻想乡相关国家（scope:actor 必须是幻想乡 IO 成员，否则不入账）
+###           ② 只记 scope:actor，绝不给 scope:recipient 也记一笔
+### ============================================================
+
+### --- 罪名「攻击彼岸监管国」---
+### 触发：宣战方 vs 被宣战方**任一方**是彼岸监管国 → 记「先动手」的一方
+### （监管国被攻击 = 攻击者有罪；监管国自己挑起战争 = 同为越权，仍记先动手方；
+###  受害方永不被记账）
+th_gensokyo_crime_regulated_check = {
+    trigger = {
+        ### ① 限幻想乡相关国家：只有幻想乡 IO 成员持有账本，外界不入账
+        ### （外界攻击监管国的行为由 th_gensokyo_invasion_check 的团结扣减承担）
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### ② 任一方是彼岸监管国。is_subject_type 用**裸键**：
+        ### base game 全库 0 处 subject_type: 前缀、264 处裸键（报告 §Verification 4）
+        OR = {
+            scope:actor = {
+                is_subject_type = th_gensokyo_regulated_state
+            }
+            scope:recipient = {
+                is_subject_type = th_gensokyo_regulated_state
+            }
+        }
+        ### ③ 排除惩戒战争：阎魔持 th_gensokyo_crusade_cb 对监管国执法时不该被
+        ### 自己记罪 —— 同 th_gensokyo_regulated_protection 的排除写法（本文件上方）
+        scope:war = {
+            NOT = {
+                casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+            }
+        }
+    }
+    effect = {
+        ### 只记宣战方（先动手者），不给 scope:recipient 记账
+        th_gensokyo_crime_record_effect = {
+            crime = th_gensokyo_crime_regulated_var
+        }
+    }
+}
+
+
+### --- 罪名「对成员无 CB 宣战」---
+### 触发：宣战方对幻想乡 IO 成员、且该战争无 CB
+### 无 CB 判定 = war scope 触发器 is_no_cb_war = yes
+### 定义：VANILLA\common\trigger_localization\war_triggers.txt:7-11
+### 用例：VANILLA\common\peace_treaties\force_tributary.txt:26-28（scope:war = { is_no_cb_war = no ... }）
+### 备选判定 has_casus_belli_on（VANILLA\common\international_organizations\hre.txt:1171
+### 注释 "declare no no-cb wars"）——不采用：宣战后 CB 可能已被消耗，会误报。
+th_gensokyo_crime_nocb_check = {
+    trigger = {
+        ### ① 限幻想乡相关国家（同上一子 action）
+        scope:actor = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### ② 受害方是幻想乡 IO 成员（罪名要件：对"成员"无 CB 宣战）
+        scope:recipient = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        ### ③ 该战争无 CB
+        scope:war = {
+            is_no_cb_war = yes
+        }
+    }
+    effect = {
+        ### 只记宣战方，不给 scope:recipient 记账
+        th_gensokyo_crime_record_effect = {
+            crime = th_gensokyo_crime_nocb_var
+        }
+    }
+}
+
+
+### === 惩戒战争结束 → 审判（2026-08-26：局势删除后迁移，原 situation on_ended 职责） ===
+### on_ending_war 文档（_hardcoded.txt:1777-1778）：root = country（双方各触发一次），
+### scope:winner = country, scope:loser = country, scope:war = war
+### ★ 2026-10-04 精确判定：仅当 **进攻方领袖 = 本案代理人（或代理人缺失时的三贤者）**
+###   且 **防守方领袖 = 本案在册罪人** 时执行一次（见下方 trigger 两条新判定）。
+###   引擎无"和平"专属钩子（on_peace / on_peace_made / on_war_end 全库 0 命中），
+###   一切战争收尾都只能在这个 on_ending_war 里判。
+### 审判议会发起 → 审判议题投票（只产生诸国意向）→ **辩论结束由彼岸跳裁决事件**
+###   （events/th_gensokyo_tribunal_events.txt 的 .4；
+###    原 generic_actions/th_gensokyo_verdict.txt 四个宣判行动已于 2026-10-04 删除）
+###   超时未裁决则由 th_gensokyo_tribunal_overdue_pulse 自动按意向判
+###   （本 action 在这一刻算基准档 + 起超时倒计时：见 effect 内的 T2-5 追加段）
+on_ending_war = {
+    on_actions = {
+        th_gensokyo_tribunal_war_end_check
+    }
+}
+
+th_gensokyo_tribunal_war_end_check = {
+    trigger = {
+        ### 惩戒战争结束（其它战争不触发）
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+        }
+        ### 去重：仅攻击方领袖执行（attacker_leader 用法照 crusade.txt:207）
+        scope:war = {
+            attacker_leader = root
+        }
+        ### ============================================================
+        ### 2026-10-04 闭环改造⑤：把"战争结束"精确到 **代理人 ↔ 罪人** 这一对
+        ###   用户指出原判定的缺口：只认"本 CB + 我是进攻方领袖"，
+        ###   既没校验对面是谁，也没校验我方身份 ⇒ 任何持本 CB 者打罪人都会开辩。
+        ###   attacker_leader / defender_leader 是合法的**战争作用域**判定
+        ###   （vanilla 205 处在用：hre.txt:1560-1561 /
+        ###    guelphs_and_ghibellines.txt:365-386 / hundred_years_war.txt:111-119）。
+        ### ============================================================
+        ### ② 对面（防守方领袖）必须就是本案在册的罪人
+        scope:war = {
+            defender_leader = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+        ### ③ 我方（进攻方领袖）必须是本案的执行者：
+        ###     代理人；代理人缺失时三贤者兜底（与宣战权口径完全一致）
+        scope:war = {
+            attacker_leader = {
+                OR = {
+                    has_variable = th_gensokyo_tribunal_agent_mark
+                    has_special_status_in_international_organization = {
+                        type = special_status:th_gensokyo_io_sages_special_status
+                        international_organization = international_organization:th_gensokyo_io
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        ### ============================================================
+        ### 2026-10-01 T2-5b：圣战结束 ⇒ 撤销全体参战者的「大义」
+        ### （《设计定案》§7：大义是"战时临时修正"，战争一结束即移除）
+        ### 位置 = 本效果的**第一步**，在三条结局分支之前：
+        ###   本 action 的三个结局（启动审判 / 反杀 / 目标已覆灭）都要摘，
+        ###   写在分支之前天然全覆盖；且它是**全局扫 has_country_modifier**，
+        ###   与被诉国标记、scope:winner/loser 都无关 ⇒ 放在任何标记清理
+        ###   之前都不会读到"已被清掉的判据"。
+        ### 与另一条出口的关系（求和不结束战争）：被诉方求和时审判庭会解散，
+        ###   但战场上的战争仍在走 ⇒ 本钩子不会触发 —— 那一条由
+        ###   scripted_effects/th_gensokyo_tribunal_effects.txt ⑦
+        ###   th_gensokyo_tribunal_case_close_effect ⑩ 步兜底。
+        ### 幂等：对不持有该修正的国家是空操作。
+        ### ============================================================
+        th_gensokyo_tribunal_grand_cause_remove_effect = yes
+        ### 目标国仍存在才进入审判流程（覆灭/被吞并 → 直接清理解散；
+        ### 替代原 situation on_monthly 的"目标不存在 → 结束"守卫）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+            ### 非反杀结局 → 惩戒战争平息奖励团结（C2）→ 启动审判（议会辩论）
+            if = {
+                limit = {
+                    NOT = {
+                        any_country = {
+                            has_variable = th_gensokyo_crusade_countered
+                        }
+                    }
+                }
+                ### ============================================================
+                ### 【2026-10-04 T2-5 追加：判决基准档 + 超时倒计时】
+                ### 时点 = **战争结束那一刻**（《设计定案》§5.5：
+                ###   "战争结束 → 公式算【基准档】→ 议会辩论产生【诸国意向】"）
+                ### ① 基准档 = 罪 + 态度 + 审判法倾向 → 1-3 档
+                ###    （th_gensokyo_judgment_baseline_effect 内按阈值 50/75 换算，
+                ###     结果写 th_gensokyo_sentence_baseline，供宣判四行动的 allow
+                ###     夹裁量范围 + T2-5 案卷区显示）
+                ### ② 超时倒计时 = th_verdict_overdue_months（6 个月）+
+                ###    清上一案的 verdict_done 与残留意向
+                ###    （th_gensokyo_verdict_overdue_start_effect）
+                ### 两个效果都按 th_gensokyo_crusade_target_mark 自定位被诉国，
+                ### 不依赖本处的 root / scope；放在议会发起**之前**，
+                ### 保证辩论期间就能读到基准档（议题"只读不写"）。
+                ### 【只追加，不动本 action 的其它职责】—— 团结奖励、议会发起、
+                ### 无领袖退路、反杀分支、目标覆灭分支、参战标记清理全部原样保留。
+                ### ============================================================
+                th_gensokyo_judgment_baseline_effect = yes
+                th_gensokyo_verdict_overdue_start_effect = yes
+                international_organization:th_gensokyo_io = {
+                    th_gensokyo_unity_add_effect = {
+                        value = th_unity_crusade_settled_value
+                    }
+                    ### 审判 = 审判庭议会辩论（th_gensokyo_trial_issue：
+                    ### 是否从重惩罚），参战成员在审判庭内投票；
+                    ### 团结奖励仍由幻想乡 IO 发放
+                    international_organization:th_gensokyo_tribunal = {
+                        if = {
+                            limit = {
+                                exists = leader_country
+                            }
+                            leader_country = {
+                                set_parliament_location = this.capital
+                                set_parliament_active = yes
+                                set_parliament_issue = parliament_issue:th_gensokyo_trial_issue
+                                call_io_parliament = {
+                                    international_organization = international_organization:th_gensokyo_tribunal
+                                }
+                            }
+                        }
+                        else = {
+                            ### 无领袖（全体已自动退出）→ 审判无法发起：
+                            ### 直接清理解散，防 unique 审判庭残留阻塞下次宣告
+                            ### （标记清除后 auto_disband 兜底销毁）
+                            every_international_organization_member = {
+                                remove_variable = th_gensokyo_crusade_target_mark
+                            }
+                        }
+                    }
+                }
+            }
+            else = {
+                ### 反杀结局：无审判，清理目标标记（countered 标记保留供
+                ### 反攻扩张行动使用）；审判庭解散（免制裁期由反杀条约打标）
+                international_organization:th_gensokyo_io = {
+                    every_international_organization_member = {
+                        remove_variable = th_gensokyo_crusade_target_mark
+                    }
+                }
+                ### destroy 需 country scope（"Inconsistent effect scopes"
+                ### 实证）——经 leader_country 调用，target 参数 = IO 链接
+                international_organization:th_gensokyo_tribunal = {
+                    leader_country ?= {
+                        destroy_international_organization = {
+                            target = international_organization:th_gensokyo_tribunal
+                        }
+                    }
+                }
+            }
+        }
+        else = {
+            ### 目标已覆灭：无审判，清理标记 + 解散（auto_disband 为兜底）
+            international_organization:th_gensokyo_io = {
+                every_international_organization_member = {
+                    remove_variable = th_gensokyo_crusade_target_mark
+                }
+            }
+            international_organization:th_gensokyo_tribunal = {
+                leader_country ?= {
+                    destroy_international_organization = {
+                        target = international_organization:th_gensokyo_tribunal
+                    }
+                }
+            }
+        }
+        ### 清理参战标记（势力计算/审判站队用；审判完成后由
+        ### th_gensokyo_trial_cleanup_effect 清理 target_mark）
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                remove_variable = th_gensokyo_crusade_participant
+            }
+        }
+    }
+}
+

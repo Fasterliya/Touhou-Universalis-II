@@ -1,3 +1,272 @@
 ﻿l_japanese:
  th_human_village_io: "人間の里"
  th_human_village_io_desc: "人間の里及び命蓮寺区域の諸国より成る聯合組織なり。"
+
+ th_gensokyo_io: "幻想郷"
+ th_gensokyo_io_desc: "幻想郷の諸国の均衡を保つ国際組織。賢者と閻魔が共に大結界の秩序を守護する。"
+
+ th_sages_council_io: "賢者議会"
+ th_sages_council_io_desc: "幻想郷に最も古き三賢者より成る最高議事機関。"
+
+ ### 特殊席位
+ th_gensokyo_io_sages_special_status: "賢者"
+ th_gensokyo_io_sages_special_status_desc: "幻想郷に最も古き三賢者の一人にして、大結界の要衝を守護する者。"
+
+ th_gensokyo_io_yama_special_status: "閻魔"
+ th_gensokyo_io_yama_special_status_desc: "彼岸を司る審判者。幻想郷の諸国の是非善悪を裁き、幻想郷議会の長を務める。"
+
+ th_gensokyo_io_guardian_special_status: "幻想郷の守護"
+ th_gensokyo_io_guardian_special_status_desc: "博麗神社の巫女、大結界の永遠なる守護者。代々受け継がれる博麗の力が幻想郷と外界の境界を保つ。"
+
+ th_gensokyo_io_human_village_special_status: "人間の里"
+ th_gensokyo_io_human_village_special_status_desc: "人間の里の代表として、幻想郷の人間集落の権益を守護する者。"
+
+ th_gensokyo_io_yama_leader_title: "閻魔"
+
+ ### IO変数（エンジンが表示名＋円グラフ＋月次変化の説明をここから読み取る）
+ th_gensokyo_unity_var: "幻想郷団結度"
+ th_gensokyo_unity_var_desc: "幻想郷の諸国の結束力を測る指標。異変解決や平和構築などの積極的行為によって得られ、侵略的拡大や外界からの侵入によって損耗する。"
+ TH_GENSOKYO_UNITY_FORMAT: "$VAL$"
+ VARIABLE_CHANGE_FORMAT: "$KEY$: $VALUE|+=2$"
+ TH_GENSOKYO_UNITY_BASE: "基礎維持"
+ TH_GENSOKYO_UNITY_FROM_PEACE: "内部平和"
+
+ ### 国家変数
+ th_gensokyo_personal_contribution_var: "個人貢献度"
+ th_gensokyo_personal_influence_var: "個人影響力"
+ ### 価値観（縁 <-> 乱、社会的価値観バー）
+th_gensokyo_amity_vs_belligerence: "縁と乱"
+th_gensokyo_amity_vs_belligerence_desc: "縁の者は衆生と縁を結び、和して心を一つにし、人間の里を守り大結界の安寧を保つ。乱の者は兵を興し乱をなし、窮兵黷武、儚き夢を追い、幻想郷の秩序を乱す。心の向かう所、衆生皆これを見る。"
+th_gensokyo_amity_focus: "縁"
+belligerence_focus: "乱"
+
+### 開局特殊属領（永久属領、併合不可）
+th_gensokyo_satori_vassal: "地霊殿の属領"
+th_gensokyo_satori_vassal_desc: "名目上は覚の領地だが、実質は彼女のペットたちが自ら切り回している。灼熱地獄の火の海と溶岩は、すべて彼女のペットたちが一手に管理している。"
+th_gensokyo_forest_territory: "森林領地"
+th_gensokyo_forest_territory_desc: "魔法の森の妖怪領主たちは、魔女に対して絶対の服従ではなく緩やかな従属関係を保っている。"
+th_gensokyo_cloud_realm: "雲上領"
+th_gensokyo_cloud_realm_desc: "天界の秩序の外にある竜宮の体制。竜宮使い・永江衣玖が往来の権を司る——高みの天人といえども、その存在には一目置かざるを得ない。"
+
+### 幻想郷の法律体系（法律グループ）
+th_feudal_legalism_law: "封建法理法"
+th_legal_code_law: "法典"
+th_education_law: "教育法"
+th_cultural_traditions_law: "文化伝統"
+th_administration_law: "行政体系"
+### 封建法理法
+th_old_charter: "旧章"
+th_old_charter_desc: "大結界が成った当初に定められた継承の旧規。代々受け継がれ、時勢によって改まることはない。法理は既に定まり、後人はただその旧を守るのみ。"
+### 法典
+th_old_customary_law: "旧例法"
+th_old_customary_law_desc: "各地の妖怪はそれぞれが長年守ってきた旧規に従って行動する。族群ごとに風習は異なるが、代々伝わる旧例が破られぬことだけを願う。"
+th_harmony_first_law: "和を以て貴しとなす"
+th_harmony_first_law_desc: "人間の里の律法は紛争の調停を重んじ、厳罰によって威厳を示すことはしない。争いが起これば、村で徳のある者が仲立ちとなる。"
+th_separate_laws: "人妖分律"
+th_separate_laws_desc: "人間と妖怪はそれぞれ自らの法度と旧例に従い、互いの事柄に干渉しない。人間の争いは律法で、妖怪の諍いは旧俗で処する。"
+th_statute_law: "幻想郷成文法"
+th_statute_law_desc: "印刷技術の普及に伴い、各地に散在する風俗や決まりが徐々に律法典籍として編纂され、条理分明、条目明晰となる。"
+### 教育法
+th_farming_and_reading: "耕読立家"
+th_farming_and_reading_desc: "人間の里は耕作を家業の根本とし、子孫には農事・四時・節気のみを授け、書巻や文辞を尚ばない。"
+th_no_education: "無教而行"
+th_no_education_desc: "妖怪には学問の教えがない。ただ強弱のみを基準とし、教育を設けず、書文も伝えず、天性のままに行動する。"
+th_old_learning_only: "旧学独伝"
+th_old_learning_only_desc: "教学は古い典籍のみを正統の根拠とし、外来の学問や新しい学説を受け入れない。知識の伝授は旧来の義理を守り、外界の新知は一切採り入れない。"
+th_publications: "刊行物と新聞の伝習"
+th_publications_desc: "印刷技術の発展により刊行物や新聞が次第に盛行し、見聞や物語を刊行して伝えることができる。民は博聞広見となり、領内外の様々な情報を知るようになる。"
+th_terakoya_system: "寺子屋体系"
+th_terakoya_system_desc: "寺子屋の方式を模した正規の私塾が次第に興り、各地の子供が入塾して学べるようになる。読み書きは少数者の特権ではなくなり、一般の民も文字と基礎学識を得る機会を持つ。"
+th_farming_and_education: "農教並重"
+th_farming_and_education_desc: "教化と農耕を並行して推し進める。子供は私塾で道理を学ぶと同時に農事にも携わり、学識の修習と田間の実践を並行して、どちらも怠らない。"
+### 文化伝統
+th_hundred_youkai_banquet: "百妖夜宴"
+th_hundred_youkai_banquet_desc: "妖怪たちが同じ席で酒を交わし、弾幕勝負と杯の往来の間に、幻想郷の旧い絆を保ち続ける。"
+th_word_of_mouth: "口口相伝"
+th_word_of_mouth_desc: "様々な奇聞怪談が口伝えで代々伝わり、『幻想郷縁起』に記録される。人間は怪談を聞いて里の外の世界への畏れを抱き、聞く者それぞれに感悟があり、旧日の往事は長く留まる。"
+### 行政体系
+th_personal_rule: "個人統御"
+th_personal_rule_desc: "我らが指導者の個人の強大な威望と能力を中核とする行政体系。しかし現実の制約により、行政全体の効率は大きく制限される。"
+th_youkai_autonomy: "妖怪自治"
+th_youkai_autonomy_desc: "各地の妖怪は地方自治を行い、領内の大小の事務はすべてその地の妖怪が自ら決断して処理する。"
+th_clan_society: "宗族社会"
+th_clan_society_desc: "人間の里は宗族を治める単位とし、各宗族は自らの家規を守って自治を行う。族内の紛争や家事の教化は宗族内部で処理し、他の勢力は勝手に介入できない。"
+
+ ### 法律
+ th_gensokyo_unity_vision_law: "結束の理念"
+ th_gensokyo_unity_vision_law_desc: "幻想郷の結束の力の方向性と運用の道を定める。"
+
+ th_gensokyo_barrier_policy_law: "大結界政策"
+ th_gensokyo_barrier_policy_law_desc: "幻想郷の大結界の維持強度と開放度を定める。"
+
+ th_gensokyo_incident_response_law: "異変対応方針"
+ th_gensokyo_incident_response_law_desc: "幻想郷で異変が発生した際の対応戦略と行動指針を定める。"
+
+ isolation_defense_policy: "孤立堅守"
+ isolation_defense_policy_desc: "大結界の門を固く閉ざし、内部の平和によって結束の力を凝集する。"
+ balance_path_policy: "均衡の道"
+ balance_path_policy_desc: "大結界の既存の法を維持し、偏らず揺るがず。"
+ open_inclusive_policy: "開放包摂"
+ open_inclusive_policy_desc: "大結界の制限を緩和し、外界の新しき思いを歓迎する。"
+
+ reinforced_barrier_policy: "結界強化"
+ reinforced_barrier_policy_desc: "全郷の力を結集して大結界を強化する。"
+ maintained_barrier_policy: "結界維持"
+ maintained_barrier_policy_desc: "既存の伝統に従い大結界の運転を維持する。"
+ relaxed_barrier_policy: "結界緩和"
+ relaxed_barrier_policy_desc: "交流を円滑にするため大結界の制限を適度に緩和する。"
+
+ duel_resolution_policy: "弾幕決闘規則"
+ duel_resolution_policy_desc: "一対一の弾幕決闘によって異変を解決する。"
+ joint_suppression_policy: "連合鎮圧"
+ joint_suppression_policy_desc: "諸国が連合して行動し、集団の力で異変を鎮圧する。"
+ diplomatic_mediation_policy: "外交調停"
+ diplomatic_mediation_policy_desc: "交渉と調停によって異変の根本原因を解消する。"
+
+ ### 診断インタラクション（特殊席状態確認用）
+ th_sages_diagnostic_select_io: "幻想郷国際組織を選択"
+ th_sages_diagnostic_interaction: "賢者席診断"
+ th_sages_diagnostic_interaction_desc: "このインタラクションは幻想郷IOの「賢者」特殊席を保持する国家のみに表示される。特殊席が正しく割り当てられているかの確認用。"
+ th_sages_diagnostic_interaction_act: "賢者席を確認"
+ th_sages_diagnostic_interaction_effect_text: "[SCOPE.sCountry('actor').GetName]が幻想郷「賢者」特殊席を保持していることを確認した。"
+ th_sages_diagnostic_success_tt: "§G✓ 診断成功§!：この国家は幻想郷IOの「賢者」特殊席（th_gensokyo_io_sages_special_status）を保持している。"
+
+ ### 席アンロック法（仮検証用）
+ th_gensokyo_seat_unlock_law: "席アンロック"
+ th_gensokyo_seat_unlock_law_desc: "制定すると幻想郷の席が解放され、特殊地位の授与が可能になる。"
+ th_gensokyo_seat_unlock_policy: "席アンロック"
+ th_gensokyo_seat_unlock_policy_desc: "発動すると幻想郷席が有効化され、貢献度が最も高い構成国が自動的にその席を獲得する。"
+ th_gensokyo_io_seat_special_status: "幻想郷席"
+ th_gensokyo_io_seat_special_status_desc: "席アンロック法によって有効化される特殊地位。貢献度が最も高い構成国に授与される。"
+
+ ### 賢者議会 — 思潮導入（議会討論）
+ th_sages_council_member_special_status: "賢者席"
+ th_sages_council_member_special_status_desc: "賢者議会の席。三人の最古の賢者が各一席を有し、議会討論において等しい投票権を持つ。"
+
+ th_sages_council_io_parliament: "賢者議会大評議会"
+ th_sages_introduce_institution_issue: "思潮導入"
+ th_sages_introduce_institution_issue_desc: "新たな思潮を全ての賢者の首都に導入する提案。"
+
+ th_sages_introduce_institution: "思潮導入"
+ th_sages_introduce_institution_desc: "世界に出現したが賢者にまだ行き渡っていない思潮を選ぶ。賢者議会で討論が行われ、少なくとも二人の賢者が支持すれば、思潮は各賢者の首都に出現する。"
+ th_sages_introduce_institution_notification: "思潮導入を巡り、賢者議会で討論が招集された。"
+ th_sages_pending_institution: "導入予定思潮"
+ th_sages_introduced_institutions: "導入済み思潮"
+
+ th_sages_propose_policy: "政策の提案"
+ th_sages_propose_policy_desc: "賢者の議会で審議する政策を提案します。三人の賢者のうち二人以上が支持すれば、政策は議会全体に適用されます。召集には金300が必要です。"
+
+ th_sages_barrier_policy_issue: "大結界の強化"
+ th_sages_barrier_policy_issue_desc: "幻想郷を囲む大結界を強化します: 防御+10%、安定度コスト-5%。"
+ th_sages_unity_policy_issue: "幻想郷団結の憲章"
+ th_sages_unity_policy_issue_desc: "幻想郷諸国の融和を図ります: 威信+0.1/月、関係改善+15%、外交名声+1。"
+ th_sages_reform_policy_issue: "賢者の会議改革"
+ th_sages_reform_policy_issue_desc: "議会の行政を刷新します: 税収+10%、人的資源+10%。"
+ th_sages_propose_policy_no_issues: "提案できる政策がありません。"
+
+ ### 思潮導入 — 条件（詳細なツールチップ）
+
+ ### 2026-08-23：悪名の段階的修正システム（tier1~4 auto_modifier）削除——
+ ### 修正は価値観体系の漸進的付与（societal_values left/right_modifier）が担う。
+ ### 旧 tier キー（th_gensokyo_io_notorious_tier1~4_auto_modifier(_desc)）削除済み。
+
+ ### 静的修正（賢者威信五段）
+ STATIC_MODIFIER_NAME_th_sages_tier_20_modifier: "賢者の端緒"
+ STATIC_MODIFIER_DESC_th_sages_tier_20_modifier: "賢者の意志が兆し始める。税収効率+3%、月間威信+0.05。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_40_modifier: "賢者の凝聚"
+ STATIC_MODIFIER_DESC_th_sages_tier_40_modifier: "賢者の号令が合意となる。税収効率+5%、月間威信+0.08、関係改善+15%、外交評判+1。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_60_modifier: "賢者の威厳"
+ STATIC_MODIFIER_DESC_th_sages_tier_60_modifier: "賢者の裁定は諸国に畏敬を与える。税収効率+8%、月間威信+0.10、関係改善+20%、人的資源+5%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_80_modifier: "賢者の崇敬"
+ STATIC_MODIFIER_DESC_th_sages_tier_80_modifier: "賢者の意志は大結界の如く揺るがぬ。税収効率+10%、月間威信+0.20、関係改善+25%、人的資源+10%、外交評判+1、安定投資+10%。"
+
+ STATIC_MODIFIER_NAME_th_sages_tier_100_modifier: "賢者の神話"
+ STATIC_MODIFIER_DESC_th_sages_tier_100_modifier: "三賢者の名は伝説となる。税収効率+15%、月間威信+0.30、関係改善+35%、人的資源+15%、外交評判+2、全域防御+10%。賢者は戦争への介入と平和の強制を行い得る。"
+### === 賢者の議会の政策 ===
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier: "大結界の強化"
+ STATIC_MODIFIER_NAME_th_sages_barrier_policy_modifier_desc: "防御+10%、安定度コスト-5%。"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier: "幻想郷団結の憲章"
+ STATIC_MODIFIER_NAME_th_sages_unity_policy_modifier_desc: "威信+0.1/月、関係改善+15%、外交名声+1。"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier: "賢者の会議改革"
+ STATIC_MODIFIER_NAME_th_sages_reform_policy_modifier_desc: "税収+10%、人的資源+10%。"
+
+### ============================================================
+### WP-A 2026-08-15: 賢者威信フォーマット（欠落バグ修正）
+### ============================================================
+ TH_SAGES_PRESTIGE_FORMAT: "$VAL$"
+
+### ============================================================
+### WP-G 2026-08-15: 博麗大結界 中核法（§7）
+### ============================================================
+ th_gensokyo_barrier_law: "博麗大結界"
+ th_gensokyo_barrier_law_desc: "幻想郷を外界から隔てる至高の結界。全五級あり、級が高いほど結界は安定し保守的になる。この法は討議や指導者の改定では変えられず、大事件のみが動かす。"
+ th_gensokyo_barrier_fantasy_policy: "結界・幻想（五級）"
+ th_gensokyo_barrier_fantasy_policy_desc: "結界の全盛、最も保守的：防御大幅増、秩序安定、変革は遅い。"
+ th_gensokyo_barrier_profound_policy: "結界・深邃（四級）"
+ th_gensokyo_barrier_profound_policy_desc: "堅固な結界：防御と秩序は良好。"
+ th_gensokyo_barrier_flourish_policy: "結界・繁英（三級）"
+ th_gensokyo_barrier_flourish_policy_desc: "安定した結界、基準となる段階。"
+ th_gensokyo_barrier_forgotten_policy: "結界・遺忘（二級）"
+ th_gensokyo_barrier_forgotten_policy_desc: "衰えゆく結界：防御と秩序が緩み始める。"
+ th_gensokyo_barrier_extinct_policy: "結界・滅尽（一級）"
+ th_gensokyo_barrier_extinct_policy_desc: "結界は崩壊寸前：秩序は揺らぎ、防御は失われる。"
+ th_gensokyo_barrier_level: "大結界の等級"
+ th_gensokyo_barrier_level_desc: "博麗大結界の現在の強度（1-5）。等級が高いほど保守的で安定し、大事件のみがこれを変え得る。"
+ TH_GENSOKYO_BARRIER_LEVEL_FORMAT: "$VAL$"
+ TH_GENSOKYO_BARRIER_BASE: "結界の維持"
+
+### ============================================================
+### WP-D 2026-08-15: 幻想郷内拡張の要請（§3.1）
+### ============================================================
+ th_gensokyo_request_expansion: "幻想郷内拡張を要請"
+ th_gensokyo_request_expansion_desc: "賢者に幻想郷内での拡張許可を求める：まず賢者を選び、次に自領に隣接する地点を選ぶ。人間の里と、要請した賢者自身の領土は保護され請求できない。賢者が承認すれば宣戦布告名分を得、拒否すれば乱心の鎮めを得る。"
+ th_gensokyo_sage_expansion_cb: "賢者公認の拡張"
+ th_gensokyo_sage_expansion_cb_PROV: "賢者公認の拡張（[PROVINCE.GetName]）"
+ th_gensokyo_sage_expansion_cb_desc: "賢者の認可を得た拡張戦争：割譲の戦争点数コスト+150%、獲得する敵意-50%。"
+ opinion_gensokyo_expansion_approved: "賢者が拡張を認可"
+ opinion_gensokyo_expansion_declined: "拡張要請が拒否された"
+
+### ============================================================
+### WP-E 2026-08-15: 宴会会場の地域効果（§4）
+### ============================================================
+ th_gensokyo_feast_location_modifier: "宴の余韻"
+ th_gensokyo_feast_location_modifier_desc: "ここで盛大な宴が開かれたばかり。生産も人心も鼓舞されている。"
+ opinion_gensokyo_feast_guest: "宴の好意"
+
+### ============================================================
+### WP-H 2026-08-15: 審判投票と懲戒の補完（§6）
+### ============================================================
+ th_gensokyo_bankruptcy_modifier: "破産の罰"
+ th_gensokyo_bankruptcy_modifier_desc: "閻魔が課した賠償が国庫を空にし、経済は動揺する。"
+ th_gensokyo_sanction_immunity: "制裁免除期間"
+ th_gensokyo_sanction_immunity_desc: "この国は懲戒戦争に逆転勝利した。幻想郷の諸国は20年間これを制裁できない。"
+ TH_TRIAL_PHASE_LABEL: "審判段階"
+ TH_TRIAL_VOTE_MONTHS_LABEL: "残り投票月数"
+ TH_TRIAL_VOTE_TALLY_LABEL: "投票集計（民意のみ、判決に影響せず）"
+ TH_TRIAL_VOTE_MERCY: "寛大（勧善寄り）"
+ TH_TRIAL_VOTE_ORDER: "中庸（有叙寄り）"
+ TH_TRIAL_VOTE_KARMA: "厳罰（因果寄り）"
+
+### ============================================================
+### WP-D 2026-08-15: 拡張要請の裁定イベント（§3.1）
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "拡張の要請"
+ th_gensokyo_expansion_request_events.1.desc: "ある国が幻想郷内での拡張許可を求め、賢者であるあなたの裁可を請うている。宣戦布告名分を授けることも、戒めとして拒むこともできる。"
+ th_gensokyo_expansion_request_events.1.a: "認可：拡張の宣戦布告名分を授ける"
+ th_gensokyo_expansion_request_events.1.b: "拒否：許可せず（要請者の乱心は少し鎮まる）"
+ th_gensokyo_expansion_request_events.2.title: "賢者が拡張を認可"
+ th_gensokyo_expansion_request_events.2.desc: "賢者が拡張要請を認可した。対象地点への宣戦布告名分を得た：割譲の戦争点数コスト+150%、獲得する敵意-50%。"
+ th_gensokyo_expansion_request_events.2.a: "承知した"
+ th_gensokyo_expansion_request_events.3.title: "拡張要請が拒否された"
+ th_gensokyo_expansion_request_events.3.desc: "賢者は拡張要請を拒否し、乱心を鎮めるよう諭した。乱への傾きはやや下がり、賢者のあなたへの見方も変わった。"
+ th_gensokyo_expansion_request_events.3.a: "教えを胸に刻む"
+
+### ============================================================
+### WP-H 2026-08-15: 審判投票イベント + 賠償判決（§6）
+### ============================================================
+ th_gensokyo_trial_events.1.e: "賠償のみ：国庫の半分を移譲し破産の罰を課す"
+ th_country_flag: "旗"
+ th_opinion_to_actor: "わが国への好感"

@@ -1,0 +1,76 @@
+﻿### ============================================================
+### 审判庭 T2-2 — 制裁档位载体：静态修正（国家级）
+### 2026-10-01 新增
+###
+### 四档的落地载体（《脚本规格》§7.3 v1.8 已逐档回蓝本核实）：
+###   1 谴责 —— **无 modifier 字段**。敌意与好感都是"逐对国家、有方向"的量，
+###             EU5 没有"被所有人讨厌"这类聚合字段（R2 §R2-1(a)：全表 13 个
+###             antagonism_* 字段无一可用）⇒ 载体 = 逐成员 effect
+###             （scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###              th_gensokyo_tribunal_tier_1_apply_effect）。**本文件第 1 档无条目**。
+###   2 夺权 —— **无 modifier 字段**。全表搜 special_status_power|vote|voting|
+###             elector|election 共 21 命中，无一为"投票权重"（R2 §R2-1 第 2 档表）
+###             ⇒ 载体 = script value（th_gensokyo_io_vote_power_value 公式内归零，
+###             见 script_values/th_gensokyo_io_chain_values.txt）。**本文件无条目**。
+###   3 禁运 —— **无 modifier 字段**。真禁运是 scripted_relation 开关
+###             （VANILLA\common\scripted_relations\embargo_nation.txt:1-12
+###              `type = diplomacy` / `relation_type = oneway` / `embargo = yes`）
+###             ⇒ 载体 = create_relation / remove_relation。**本文件无条目**。
+###   4 限张 —— 本文件的主角。正名为「扩张招致更大国际反弹」（2026-10-01 用户拍板）。
+###
+### 数值映射口径（照本目录 th_gensokyo_expansion_cost_modifiers.txt:8 的既有注释）：
+###   antagonism_received_modifier 是 percent 型**可加 delta**，
+###   "承受倍数 M" ⇒ delta = M − 1
+###   （既有三档：-0.75→承受 x0.25 / +0.25→承受 x1.25 / +0.50→承受 x1.5）
+###   《脚本规格》§8 th_expansion_cost_sanctioned_value = 2.0
+###   ⇒ 承受 x2.0 ⇒ delta = 2.0 − 1 = 1.00
+### 字段存在性：GAMEROOT\main_menu\common\modifier_type_definitions\00_modifier_types.txt:6207
+###   （percent / color=bad / country；base game 37 处先例）
+### ============================================================
+
+th_gensokyo_sanction_expansion_modifier = {
+    game_data = {
+        category = country
+    }
+    antagonism_received_modifier = 1.00
+}
+
+### ------------------------------------------------------------
+### 【留给后续窗（T2-2b）—— 本窗白名单不含 common/biases/，此处只登记定义】
+###
+### 第 1 档目前复用两个既有 bias 键：
+###   敌意 = th_antagonism_unlawful_expansion（value 50 / yearly_decay 10，
+###          与 th_condemn_antagonism_value = 50 数值一致）
+###   好感 = opinion_gensokyo_expansion_declined（value -10 / yearly_decay 1）
+###
+### 复用带来的两个已知缺陷：
+###   (1) 敌意的语义理由是"非法扩张"、好感的语义理由是"扩张请求被拒"，
+###       与"谴责"文案不符（两条键在 base game 语义里各有自己的出处）；
+###   (2) 撤销时不能调 remove_antagonism —— 它是按 bias 键**整体移除**，
+###       会连带抹掉与该案无关的合法敌意记录（详见
+###       scripted_effects/th_gensokyo_tribunal_effects.txt 的 tier_1_remove 段）。
+###
+### 正确终局 = 各建一条专用 bias。字段蓝本：
+###   VANILLA\common\biases\05_antagonism_hardcoded.txt:5-8
+###     （value = <值> / yearly_decay = <值>；yearly_decay 可为负，
+###      同文件 :10-13 的 opinion_did_not_influence_succession_antagonism 用 -2）
+### 建议落盘位置：MOD\in_game\common\biases\th_gensokyo_tribunal_biases.txt（新建）
+###   （与本目录既有 th_gensokyo_io_biases.txt 同目录同格式；
+###     R2 §R2-1(b) 的"可直接复制的写法"即此方案）
+### 可直接落盘的定义（值取自 th_condemn_antagonism_value = 50）：
+###
+### th_antagonism_sanction_condemn = {
+###     value = 50
+###     yearly_decay = 10
+### }
+###
+### th_opinion_sanction_condemn = {
+###     value = -50
+###     yearly_decay = 10
+### }
+###
+### 配套还需 4 条 loc 键（四语，本窗不写 localization/）：
+###   th_antagonism_sanction_condemn / th_opinion_sanction_condemn
+###   （注：现有 th_antagonism_unlawful_expansion 在四语 loc 里**本来也没有词条**，
+###     现状即"显示原始键"；换上专用键后一并补齐即可）
+### ------------------------------------------------------------

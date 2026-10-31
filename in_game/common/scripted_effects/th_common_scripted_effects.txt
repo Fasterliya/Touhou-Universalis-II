@@ -160,12 +160,16 @@ th_common_history_setup_character_scr_effect = {
 ### 脚本：填充幻想乡各省份的粮食到上限
 ### 用途：开局调用
 th_gensokyo_fill_province_food_scr_effect = {
-	every_province = {
-		limit = {
-			any_location_in_province = {
-				continent = continent:th_gensokyo_continent
+	# [1.4] on_game_start 的 effect 根作用域不是国家，every_province 需要国家作用域
+	# 因此外包一层 every_country（省份归属唯一，每省仍只处理一次）
+	every_country = {
+		every_province = {
+			limit = {
+				any_location_in_province = {
+					continent = continent:th_gensokyo_continent
+				}
 			}
+			change_province_food = 1000
 		}
-		change_province_food = 1000
 	}
 }

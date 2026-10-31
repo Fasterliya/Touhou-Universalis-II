@@ -1,0 +1,270 @@
+﻿### ============================================================
+### 审判庭 — 纠弹立案（T2-2 新增，2026-10-01）
+### 链路：阎魔（幻想乡 IO 领袖，独占）→
+###       ① 选幻想乡 IO → ② 选被诉国（持「嫌疑」标记、非阎魔、非免制裁期）→
+###       ③ 打「祟」th_gensokyo_tarnish_mark + 摘「嫌疑」→
+###       ④ 读罪名账本合计罪值（≤60）写入 th_gensokyo_sin_var →
+###       ⑤ 观察期 = th_tribunal_observation_months（6）→
+###       ⑥ 施加第 1 档「谴责」（全体成员对被诉国敌意 + 好感惩罚）
+###
+### 与 th_gensokyo_crusade_declare（开庭）的分工：
+###   本行动 = 阶段 1 立案（制裁期开始）；declare = 阶段 4 开庭（制裁到期未悔改）
+###   两者都是阎魔在幻想乡 IO 面板上的行动，前置与效果完全不同，**不合并**
+###   （《脚本规格》§4.1 尾注、《设计定案》§5.1-5.3）
+###
+### 与 T1/T2-1 的接口（只读，不写）：
+###   代理人标记 th_gensokyo_tribunal_agent_mark（T1 写）
+###   罪名账本 th_gensokyo_crime_*_var（T2-1 写，本行动首次读取）
+###   账本时间戳 th_gensokyo_crime_last_date 只存**年份**（current_month 作值无蓝本）
+###
+### 观察期倒计时 / 悔改判定 / 升档 / 赦免 = T2-2b，不在本行动内
+### ============================================================
+
+th_gensokyo_tribunal_indict = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        ### （蓝本：generic_actions/th_gensokyo_crusade_declare.txt:31-33）
+        scope:actor ?= {
+            ### 只认阎魔（幻想乡 IO 领袖）；三贤者无立案权
+            ### （《设计定案》§5.2：立案与撤销都由阎魔独断，不需要表决）
+            is_leader_of_international_organization = international_organization:th_gensokyo_io
+            ### 《脚本规格》§4.1 的"再排除已存在审判庭"：
+            ### 照 th_gensokyo_crusade_declare.txt:47-51 的既有判定写法
+            ### （exists 链接对 unique 动态 IO 不可靠 → 用 any_international_organization 遍历）
+            NOT = {
+                any_international_organization = {
+                    international_organization_type = international_organization_type:th_gensokyo_tribunal
+                }
+            }
+        }
+    }
+
+    allow = {
+        ### 存在够格被纠弹的嫌疑国（铁律 3：any_country + scope 依赖值必须用
+        ### custom_tooltip 包住，否则 jomini_trigger_description.cpp:205 刷屏；
+        ### 蓝本 generic_actions/th_gensokyo_crusade_declare_war.txt:34-54，
+        ### tooltip 文案写"阻塞状态"、内层写正向条件，同该文件惯例）
+        custom_tooltip = {
+            text = TH_TRIBUNAL_NO_SUSPECT_TT
+            any_country = {
+                has_variable = th_gensokyo_suspect_mark
+                NOT = {
+                    has_variable = th_gensokyo_sanction_immunity
+                }
+            }
+        }
+    }
+
+    ### ① 选幻想乡 IO（recipient 注入，供 ② 的 interaction_source_list 使用）
+    ### 照 generic_actions/th_gensokyo_crusade_declare.txt:60-71
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        ### 铁律 4：每个 select_trigger 必须带 column = { data = name } 防 assertion
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### ② 选被诉国：幻想乡 IO 成员中持「嫌疑」标记者
+    ### 照 generic_actions/th_gensokyo_crusade_declare.txt:74-116
+    select_trigger = {
+        looking_for_a = country
+        source = actor
+        target_flag = target_country
+        name = "choose_country"
+        ### 三个 column 照蓝本逐字（选择器必备，防 assertion）
+        column = {
+            data = name
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = great_power_score
+        }
+        interaction_source_list = {
+            ### 铁律 16：候选列表用 interaction_source_list + add_to_list = source
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        ### 必须持「嫌疑」标记（越线产物，见 on_action/th_gensokyo_chain_monthly.txt）
+                        has_variable = th_gensokyo_suspect_mark
+                        ### 非阎魔自己（彼岸不动手）
+                        NOT = {
+                            this = scope:actor
+                        }
+                        ### 非领袖（同一件事，显式再判一次防 scope 语义差异）
+                        NOT = {
+                            is_leader_of_international_organization = international_organization:th_gensokyo_io
+                        }
+                        ### 免制裁期（反杀后 20 年）内不可被纠弹
+                        NOT = {
+                            has_variable = th_gensokyo_sanction_immunity
+                        }
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    effect = {
+        ### ============================================================
+        ### ① 清旧案的位置标记（全局唯一案件）
+        ### 照 T1 已写的旧标记清理写法（th_gensokyo_crusade_declare.txt:120-133
+        ### 的 every_country + limit + remove_variable）
+        ### **不清** th_gensokyo_victim_mark 与 th_gensokyo_stolen_location_list：
+        ### 二者是本案物证，立案时清掉等于销毁起诉书 —— 详见
+        ### scripted_effects/th_gensokyo_tribunal_effects.txt 顶部说明与报告 §5
+        ### ============================================================
+        every_country = {
+            limit = {
+                OR = {
+                    has_variable = th_gensokyo_tarnish_mark
+                    has_variable = th_gensokyo_tier_1_mark
+                    has_variable = th_gensokyo_tier_2_mark
+                    has_variable = th_gensokyo_tier_3_mark
+                    has_variable = th_gensokyo_tier_4_mark
+                    has_variable = th_gensokyo_observation_done
+                    has_variable = th_gensokyo_tribunal_agent_mark
+                    has_variable = th_gensokyo_agent_refused
+                }
+            }
+            th_gensokyo_tribunal_case_markers_clear_effect = yes
+        }
+        ### ============================================================
+        ### ②-⑥ 立案主流程（铁律 2：exists 守卫防 tooltip 预演报错，
+        ### 蓝本 th_gensokyo_crusade_declare.txt:137-144 / vanilla lordship_of_ireland.txt:193-216）
+        ### ============================================================
+        if = {
+            limit = {
+                exists = scope:target_country
+            }
+            scope:target_country = {
+                ### ② 打「祟」、摘「嫌疑」
+                set_variable = th_gensokyo_tarnish_mark
+                ### ============================================================
+                ### 2026-10-01 T2-5b：「祟」的**可见载体**（静态修正）与标记同步施加
+                ### 《设计定案》§3.1 —— 祟 = 制裁状态的可见载体（图标 + tooltip）。
+                ###   载体 = static_modifiers/th_gensokyo_tribunal_crusade_modifiers.txt 的
+                ###          th_gensokyo_tarnish_modifier（**空字段纯展示修正**，
+                ###          为什么留空、为什么不重复施加三义，见该文件第 2 段）
+                ###   效果 = scripted_effects/th_gensokyo_tribunal_effects.txt 的 ⑯
+                ###   scope：本块内当前 scope = 被诉国，⑯ 就是 scope 内直操作（O(1)）；
+                ###          **必须在 set_variable 之后调用**，与标记同生。
+                ###   撤销点：① case_markers_clear_effect（四条结案出口全覆盖）——
+                ###          本行动顶部的"清旧案"遍历也会经过它，
+                ###          但那时旧案的祟本就该被摘掉，语义正确。
+                ###   ⚠️ 故意不放进 tier_1_apply_effect：升档会摘掉第 1 档标记，
+                ###      会把祟一起摘掉 —— 祟是**案级**、不是档级。
+                ### ============================================================
+                th_gensokyo_tribunal_tarnish_modifier_apply_effect = yes
+                if = {
+                    limit = {
+                        has_variable = th_gensokyo_suspect_mark
+                    }
+                    remove_variable = th_gensokyo_suspect_mark
+                }
+                ### ============================================================
+                ### ③ 罪值合计：读 T2-1 的罪名账本快照，整值覆盖写 th_gensokyo_sin_var
+                ### 罪 = unlawful×16 + freecity×96 + conquest×3 + regulated×30 + nocb×15
+                ###     （合法扩张不计；上限 th_sin_crime_cap = 60，clamp 写数字）
+                ### 合计逻辑在 scripted_effects/th_gensokyo_tribunal_effects.txt
+                ### 的 th_gensokyo_tribunal_sin_total_effect（含逐项蓝本注释）
+                ### 本行动是 th_gensokyo_sin_var 今后**唯一**的写入点
+                ### （init / 月度兜底除外；主代理已修掉 tribunal.txt 的 on_creation 清零）
+                ### ============================================================
+                th_gensokyo_tribunal_sin_total_effect = yes
+                ### ============================================================
+                ### ⑤ 观察期 = th_tribunal_observation_months（script_values = 6）
+                ### 档位标记不在这里写 —— 由 ⑥ 的 tier_1_apply_effect 统一写，
+                ### 避免同一标记两处写入（升档属 T2-2b，届时同样只改 apply effect）
+                ### 【接口提醒 T2-2b】th_gensokyo_observation_months 被 init/月度兜底
+                ### 补成 0 后**恒存在**，它本身不是"是否有案"的判据；
+                ### 案件判据 = has_variable = th_gensokyo_tarnish_mark
+                ### ============================================================
+                set_variable = {
+                    name = th_gensokyo_observation_months
+                    value = th_tribunal_observation_months
+                }
+            }
+            ### ============================================================
+            ### ⑥ 施加第 1 档「谴责」（载体 = 逐成员 effect，本档无 modifier 字段）
+            ### 该 effect 自我定位被诉国（按 th_gensokyo_tarnish_mark），
+            ### 不依赖 root / 调用方 scope —— 见 th_gensokyo_tribunal_effects.txt
+            ### ============================================================
+            th_gensokyo_tribunal_tier_1_apply_effect = yes
+        }
+        ### ============================================================
+        ### ④ 记录受害国与涉案地块 —— **本窗改为在上游钩子完成**（见报告 §5）
+        ### 钩子 = on_action/th_gensokyo_chain_events.txt 的
+        ###        th_gensokyo_unlawful_expansion_check（非法分支）
+        ### 依据 = VANILLA\common\on_action\_hardcoded.txt:2341 的钩子 scope 注释
+        ###        "#root = winner, scope:location = location, scope:winner = new owner,
+        ###         scope:loser = old owner"（:2347-2369 为逐字用法先例）
+        ### 因此立案时**不再** clear_global_variable_list 重填（那样会把物证清空），
+        ### 物证的清理责任移到结案路径（T2-2b 赦免 / T2-3 认罪与履约完毕）与开局 init
+        ### ============================================================
+    }
+
+    ### 铁律 12：冷却写法 = { type = <key> months = N }
+    ### （蓝本 generic_actions/th_gensokyo_feast.txt:130-133；
+    ###  字段定义 VANILLA\common\generic_actions\readme.txt:73
+    ###  "cooldown = { type = <any tag> days/weeks/months/years = <integer> }"）
+    cooldown = {
+        type = th_gensokyo_tribunal_indict
+        months = 12
+    }
+
+    ai_will_do = {
+        ### 铁律 5 的 v1.8 修订版：ai_will_do **可以**用 has_variable 与 var:，
+        ### 前提是变量先存在（正证 VANILLA\common\generic_actions\io_parliament_bribes.txt:235
+        ### 的 ai_will_do 内 :251 has_variable、:253 裸 var:）。
+        ### 铁律 6：不用 any_international_organization_member（scope 不匹配实测报
+        ### "Inconsistent trigger scopes"），改 any_country + 显式成员判定
+        ### （蓝本 th_gensokyo_crusade_declare.txt:304-340）
+        if = {
+            limit = {
+                any_country = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                    has_variable = th_gensokyo_suspect_mark
+                    NOT = {
+                        this = scope:actor
+                    }
+                    NOT = {
+                        is_leader_of_international_organization = international_organization:th_gensokyo_io
+                    }
+                    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                    NOT = {
+                        has_variable = th_gensokyo_sanction_immunity
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_SUSPECT_FOUND
+                value = 10000
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

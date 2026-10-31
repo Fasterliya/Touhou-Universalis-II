@@ -1,0 +1,100 @@
+﻿### ============================================================
+### 审判庭 — 拒绝领衔（T2-2b 新增，2026-10-01）
+### 规格：《脚本规格》§4.9、《设计定案》§11.2 G
+###
+### 两个职责合并在本行动：
+###   (1) **主职责** = 现役代理人的"事后抗命"出口 —— 领衔一旦被接受，
+###       代理人若反悔，从这里退出（清标记 + 打 agent_refused +
+###       威望/贡献惩罚 + 通知阎魔）；
+###   (2) 同意事件（events/th_gensokyo_tribunal_events.txt .1）的
+###       "拒绝" option 走的是同一个惩罚效果
+###       （th_gensokyo_tribunal_agent_refuse_penalty_effect），
+###       保证两条拒绝路径的后果一致。
+###
+### 与"该档暂挂"的关系（时序说明）：
+###   同意事件里的拒绝 ⇒ **档位根本不落地**（升档行动只提名、不落档，
+###   落地在被提名国接受之后，见
+###   scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###   th_gensokyo_tribunal_escalate_land_effect 头注）。
+###   因此被提名国拒绝时，被诉国仍停在原档位、观察期也未被重置 ——
+###   这正是《设计定案》§5.3 的"拒绝则保留原档位，阎魔另选"。
+###   本行动负责的是"已经领衔之后反悔"这条补充路径。
+### ============================================================
+
+th_gensokyo_tribunal_agent_refuse = {
+    ### 类型沿用本项目既有惯例：type = internationalorganization
+    ### （本目录 10 个动作用它；非领袖国家当 actor 的同型先例 =
+    ###  generic_actions/th_gensokyo_join_crusade.txt:11-33 的
+    ###  "任意成员点 IO 面板里的行动"）
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        scope:actor ?= {
+            ### 持代理人标记者（§4.9 的 potential）
+            has_variable = th_gensokyo_tribunal_agent_mark
+            ### 补充：代理人必然先是幻想乡 IO 成员（§5 合格候选第 1 条），
+            ### 显式再判一次，防标记残留时被非成员捡到
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    effect = {
+        scope:actor = {
+            ### ① 清代理人标记（撤销领衔）
+            if = {
+                limit = { has_variable = th_gensokyo_tribunal_agent_mark }
+                remove_variable = th_gensokyo_tribunal_agent_mark
+            }
+            ### ② 打"曾拒绝领衔"标记 + 威望 / 贡献惩罚（§4.9 的三件事）
+            ###    （惩罚内容与同意事件的拒绝 option 共用一个效果）
+            th_gensokyo_tribunal_agent_refuse_penalty_effect = yes
+        }
+        ### ③ 通知阎魔（该档暂挂 / 原档位保留，阎魔另选）
+        ###    定位蓝本：IO 的 leader_country link + ?= 空链接守卫
+        ###    （R3 §R3-5(c)；VANILLA\events\situations\hussite_wars.txt:58）
+        international_organization:th_gensokyo_io = {
+            leader_country ?= {
+                trigger_event_non_silently = {
+                    id = th_gensokyo_tribunal_events.2
+                    days = 1
+                }
+            }
+        }
+    }
+
+    ai_will_do = {
+        ### 低基线：AI 代理人只在"自己根本打不动被诉国"时才考虑抗命。
+        ### 铁律 5 v1.8：ai_will_do 可用 has_variable / var:（变量须先存在）；
+        ### 铁律 6：不写 any_international_organization_member（scope 不匹配），
+        ### 改 any_country + 显式成员判定。
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_tarnish_mark
+                    scope:actor = {
+                        relative_strength = {
+                            target = prev
+                            value < 0.5
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_REFUSE_WEAK
+                value = 50
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

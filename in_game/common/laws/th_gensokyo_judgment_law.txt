@@ -1,0 +1,41 @@
+﻿### ============================================================
+### 审判法（阎魔决定变更，不走议会投票 —— 标注待定）
+### 3 互斥政策：劝善（从宽）/ 有序（中庸）/ 因果必尝（从严）
+### 政策本体仅作标记，数值由判决脚本读 international_organization_has_policy 应用
+### ============================================================
+
+th_gensokyo_judgment_law = {
+    type = international_organization
+    law_category = administrative
+    requires_vote = no
+    custom_tags = {
+        forbids_no_policy
+    }
+    potential = {
+        international_organization_type = international_organization_type:th_gensokyo_io
+    }
+    allow = {
+        always = yes
+    }
+
+    ### 劝善：审判从严偏移 -10，刑期加成 0，团结扣减系数小
+    th_judgment_mercy_policy = {
+        international_organization_modifier = {
+            monthly_prestige = 0.05
+        }
+    }
+
+    ### 有序：基准（默认激活）
+    th_judgment_order_policy = {
+        international_organization_modifier = {
+            monthly_prestige = 0.02
+        }
+    }
+
+    ### 因果必尝：审判从严偏移 +10，刑期加成 +，团结扣减系数大
+    th_judgment_karma_policy = {
+        international_organization_modifier = {
+            monthly_prestige = 0.01
+        }
+    }
+}

@@ -1,0 +1,46 @@
+﻿### ============================================================
+### 幻想乡 AI 行动评估列表（generic_action_ai_lists）
+### generic_actions 的 ai_tick 仅是评估频率，行动必须出现在本列表
+### 才会被 AI 评估（base game 先例：international_organization_list /
+### black_death_list / hussite_wars_list）
+### 2026-08-23 重构（审判庭链路）：
+###   - propose_crusade（旧提案-辩论）→ th_gensokyo_crusade_declare（宣战）
+###   - th_gensokyo_trial_vote 已删除（审判改为议会辩论，AI 投票走
+###     wants_this_parliament_issue_bias）
+###   - 补注册 th_gensokyo_crusade_leave（退出审判庭）
+### 不注册：th_sages_diagnostic_interaction（调试行动 ai_will_do=0）
+### ============================================================
+acgv_touhou_religion_list = { 
+	potential = {
+		exists = international_organization:th_gensokyo_io
+		OR = {
+			is_member_of_international_organization = international_organization:th_gensokyo_io
+			is_member_of_international_organization = international_organization:th_sages_council_io
+		}
+	}
+	actions = {
+		th_sages_diagnostic_interaction
+		### 幻想乡 IO 行动
+		th_gensokyo_feast
+		th_gensokyo_crusade_declare
+		th_gensokyo_request_expansion
+		th_gensokyo_counter_expansion
+		th_gensokyo_join_crusade
+		th_gensokyo_crusade_leave
+		th_gensokyo_crusade_declare_war
+		### 贤者议会行动
+		th_sages_introduce_institution
+		th_sages_propose_policy
+	} 
+}
+th_gensokyo_religion_old_hakurei_action_list = {
+	potential = {
+		OR = { 
+			religion ?= religion:th_gensokyo_old_hakurei_shinto
+		}
+	}
+	actions = {
+		th_hakurei_change_statue
+		th_hakurei_change_minor_aspect
+	}
+}

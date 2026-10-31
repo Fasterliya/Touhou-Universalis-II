@@ -1,0 +1,28 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 — 团结度统一接口（IO scope 调用）
+### 所有扣/奖点必须走此接口（clamp 0-100）
+### ============================================================
+
+th_gensokyo_unity_add_effect = {
+    change_variable = {
+        name = th_gensokyo_unity_var
+        add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_unity_var
+        min = 0
+        max = 100
+    }
+}
+
+th_gensokyo_unity_subtract_effect = {
+    change_variable = {
+        name = th_gensokyo_unity_var
+        subtract = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_unity_var
+        min = 0
+        max = 100
+    }
+}

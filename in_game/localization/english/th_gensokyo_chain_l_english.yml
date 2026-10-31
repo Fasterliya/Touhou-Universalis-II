@@ -1,0 +1,484 @@
+﻿l_english:
+### ============================================================
+### Gensokyo IO Chain System Localization (English)
+### ============================================================
+
+### Values (En <-> Ran, societal value bar)
+ th_gensokyo_amity_vs_belligerence: "En and Ran"
+ th_gensokyo_amity_vs_belligerence_desc: "Those of En weave bonds with all living things, joining hearts in harmony, guarding the Human Village and keeping the Great Barrier at peace; those of Ran raise arms in discord, waging endless war, chasing fleeting dreams and disturbing Gensokyo's order. The leaning of one's heart is plain for all to see."
+ th_gensokyo_amity_focus: "En (Bond)"
+ belligerence_focus: "Ran (Discord)"
+
+### 2026-08-23: stage-based notorious value modifier keys removed
+### (th_notorious_tier_clean/pariah/outcast — system deleted with tier auto_modifiers)
+
+### Feast
+ th_gensokyo_feast: "Hold a Feast"
+ th_gensokyo_feast_desc: "Hold a grand feast in Gensokyo, entertaining yokai and sages alike to temper your discordant heart and return to the path of En."
+ PERFORM_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
+ WE_PERFORM_th_gensokyo_feast_ACTION: "We held a feast in Gensokyo"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION: "Held a feast in Gensokyo"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US: "Held a feast in Gensokyo"
+ TH_FEAST_AI_HIGH_NOTORIETY: "Discordant heart running high, in need of temperance"
+
+### Crusade peace treaty
+ th_gensokyo_crusade_triumph: "Total Victory (Crusade)"
+ th_gensokyo_crusade_triumph_desc: "Total victory in a punitive crusade: the enemy surrenders unconditionally and accepts all verdicts of Gensokyo."
+ ### 2026-08-21 (issue 4): peace deal entry keys (offer_peace _entry/_entry_short pattern)
+ th_gensokyo_crusade_triumph_entry: "$th_gensokyo_crusade_triumph$"
+ th_gensokyo_crusade_triumph_entry_short: "$th_gensokyo_crusade_triumph$"
+ TH_EXPANSION_AI_TARGET_FOUND: "A sage willing to grant expansion exists"
+
+### Crusade
+ th_gensokyo_crusade_cb: "Punitive Crusade"
+ th_gensokyo_crusade_cb_desc: "A crusade declared by the Yama and the Sage Council against those who threaten Gensokyo's order."
+ ### 2026-08-26: crusade situation removed (IO-driven redesign) — th_gensokyo_crusade(_desc) deleted
+ th_gensokyo_crusade_declare: "Declare Punitive Crusade"
+ th_gensokyo_crusade_declare_desc: "The Yama or a sage selects a belligerent member and establishes the Tribunal — a temporary international organization against the target. Members join, then the Tribunal declares war on the target; the war situation begins once war is declared."
+ PERFORM_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
+ WE_PERFORM_th_gensokyo_crusade_declare_ACTION: "We established the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION: "Established the Tribunal"
+ ACTION_th_gensokyo_crusade_declare_PERFORMED_ON_US: "Established the Tribunal"
+ th_gensokyo_crusade_leave: "Leave the Tribunal"
+ th_gensokyo_crusade_leave_desc: "Leave the Tribunal against the target. Your casus belli is revoked."
+ PERFORM_th_gensokyo_crusade_leave_ACTION: "Left the Tribunal"
+ WE_PERFORM_th_gensokyo_crusade_leave_ACTION: "We left the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_crusade_leave_ACTION: "Left the Tribunal"
+ ACTION_th_gensokyo_crusade_leave_PERFORMED_ON_US: "Left the Tribunal"
+ th_gensokyo_counter_expansion: "Counter-Expansion"
+ th_gensokyo_counter_expansion_desc: "Having turned the tide of the crusade, you gain the right to expand within Gensokyo."
+ PERFORM_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION: "We launched a counter-expansion"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION: "Launched a counter-expansion"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US: "Launched a counter-expansion"
+
+### Judgment law
+ th_gensokyo_judgment_law: "Judgment Law"
+ th_gensokyo_judgment_law_desc: "The principles the Yama follows when passing judgment."
+ th_judgment_mercy_policy: "Mercy"
+ th_judgment_mercy_policy_desc: "Lenient judgment, shorter sentences, less turmoil."
+ th_judgment_order_policy: "Order"
+ th_judgment_order_policy_desc: "Judgment by the book, impartial."
+ th_judgment_karma_policy: "Karma"
+ th_judgment_karma_policy_desc: "Harsh judgment, longer sentences, as a warning to all."
+
+### Regulated state
+ th_gensokyo_regulated_state: "Regulated State of the Underworld"
+ th_gensokyo_regulated_state_desc: "A subject sentenced by the Yama, stripped of all autonomy, released as independent when the sentence ends."
+ LEAD_th_gensokyo_regulated_state: "$LIST$ is a [SUBJECT_TYPE.GetName]"
+ AM_th_gensokyo_regulated_state: "[SUBJECT_TYPE.GetName] of $LIST$."
+
+### Initial special subjects (permanent, cannot be annexed)
+ th_gensokyo_satori_vassal: "Satori Vassal"
+ th_gensokyo_satori_vassal_desc: "Nominally the territory of Satori, in truth it is run by her pets on their own. The seas of fire and molten lava of the scorching hell are all managed single-handedly by her pets."
+ th_gensokyo_forest_territory: "Forest Territory"
+ th_gensokyo_forest_territory_desc: "The youkai lords of the Magic Forest keep a loose subordinate bond with the magician, rather than absolute submission."
+ th_gensokyo_cloud_realm: "Cloud Realm"
+ th_gensokyo_cloud_realm_desc: "A Dragon Palace system beyond Heaven's order, its rights of passage held by the Dragon Palace envoy Nagae Iku — even the lofty celestials must show respect before such a presence."
+
+### Gensokyo Law System (law categories)
+ th_feudal_legalism_law: "Feudal Legalism"
+ th_legal_code_law: "Legal Code"
+ th_education_law: "Education"
+ th_cultural_traditions_law: "Cultural Traditions"
+ th_administration_law: "Administration"
+### Feudal Legalism
+ th_old_charter: "Old Charter"
+ th_old_charter_desc: "The succession customs laid down when the Great Barrier was formed, passed down through the generations, unchanging with the times. The legal foundation is set; posterity has only to keep it."
+### Legal Code
+ th_old_customary_law: "Old Customary Law"
+ th_old_customary_law_desc: "Each youkai group follows the old customs handed down in its own land; every clan keeps its own ways, so long as the old precedents remain unbroken."
+ th_harmony_first_law: "Harmony Above All"
+ th_harmony_first_law_desc: "The laws of the human village prize mediation over harsh punishment. When disputes arise, elders of standing step in to settle them."
+ th_separate_laws: "Separate Laws for Man and Youkai"
+ th_separate_laws_desc: "Humans and youkai each follow their own customs and do not meddle in each other's affairs. Human quarrels are settled by law; youkai disputes, by old custom."
+ th_statute_law: "Gensokyo Statute Law"
+ th_statute_law_desc: "As printing spreads, the scattered customs of the land are compiled into clear and orderly legal codes."
+### Education
+ th_farming_and_reading: "Farming and Reading"
+ th_farming_and_reading_desc: "Human villages rest on farming as the foundation of the household; children are taught only husbandry and the seasons, not books."
+ th_no_education: "No Schooling"
+ th_no_education_desc: "Youkai have no schools; strength alone is the rule. No education, no letters — only instinct."
+ th_old_learning_only: "Only the Old Learning"
+ th_old_learning_only_desc: "Teaching treats only ancient texts as orthodox, rejecting foreign doctrines and new learning. New knowledge from outside is not accepted."
+ th_publications: "Gazettes and Newspapers"
+ th_publications_desc: "As printing advances, broadsheets and newspapers spread; tales and news alike are printed, and the people grow well-informed of the realm and beyond."
+ th_terakoya_system: "Terakoya Schools"
+ th_terakoya_system_desc: "Proper private schools in the terakoya style rise across the land. Literacy is no longer the privilege of the few."
+ th_farming_and_education: "Farming and Education in Tandem"
+ th_farming_and_education_desc: "Schooling and tillage go hand in hand: children study in class and work the fields, neither neglected."
+### Cultural Traditions
+ th_hundred_youkai_banquet: "Hundred Youkai Feast"
+ th_hundred_youkai_banquet_desc: "Youkai gather at one table, sharing drink between danmaku duels and cups, keeping the old bonds of Gensokyo."
+ th_word_of_mouth: "Word of Mouth"
+ th_word_of_mouth_desc: "Tales and legends pass down by word of mouth, recorded in the Gensokyo Chronicle. Hearing of the world beyond the village, humans learn fear, and the old days endure."
+### Administration
+ th_personal_rule: "Personal Rule"
+ th_personal_rule_desc: "An administration built on the leader's personal might and prestige, yet greatly limited in efficiency by circumstance."
+ th_youkai_autonomy: "Youkai Autonomy"
+ th_youkai_autonomy_desc: "Youkai govern their own lands; all matters within are decided by the youkai of the territory."
+ th_clan_society: "Clan Society"
+ th_clan_society_desc: "Human villages are governed by clans, each keeping its own house rules. Clan disputes and upbringing are settled within; outsiders may not intrude."
+
+### Trial events
+ th_gensokyo_trial_events.2.title: "Released from the Underworld"
+ th_gensokyo_trial_events.2.desc: "Your sentence has been served. You are released from the Underworld's supervision and regain independence."
+ th_gensokyo_trial_events.2.a: "Freedom at last"
+
+### Variables
+ th_gensokyo_sin_var: "Sin"
+ th_gensokyo_expansion_quota: "Legal Expansion Quota"
+ th_gensokyo_expansion_quota_used: "Quota Used"
+ th_gensokyo_sentence_tier: "Sentence Tier"
+ th_gensokyo_sentence_months: "Sentence (months)"
+ th_gensokyo_effective_sin: "Effective Sin"
+ th_gensokyo_temp_sentence_years: "Sentence Bonus (years)"
+ th_gensokyo_temp_gold: "Transferred Gold"
+
+### Target selection
+ choose_crusade_target: "Choose crusade target"
+
+### Join crusade
+ th_gensokyo_join_crusade: "Join the Punitive Crusade"
+ th_gensokyo_join_crusade_desc: "Join the Tribunal against the crusade target. You gain a casus belli and join the encirclement war."
+ PERFORM_th_gensokyo_join_crusade_ACTION: "Joined the Tribunal"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION: "We joined the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION: "Joined the Tribunal"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US: "Joined the Tribunal"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM: "Antagonistic toward the crusade target"
+ TH_JOIN_CRUSADE_AI_ALLIED_TARGET: "Allied or subject of the crusade target"
+ TH_TRIBUNAL_AI_RIVAL: "Rival or enemy of the crusade target"
+ TH_TRIBUNAL_AI_STRENGTH: "Strong enough against the crusade target"
+ TH_TRIBUNAL_AI_TARGET_FOUND: "A belligerent target worthy of the Tribunal exists"
+ TH_TRIBUNAL_CB_STRENGTH: "Strong enough to declare war on the target"
+ TH_TRIBUNAL_ALREADY_AT_WAR_TT: "Not already at war with the Tribunal's target"
+ th_gensokyo_crusade_declare_war: "Declare War on the Tribunal Target"
+ th_gensokyo_crusade_declare_war_desc: "Declare a punitive war against the Tribunal's target with the punishment casus belli."
+ PERFORM_th_gensokyo_crusade_declare_war_ACTION: "Declared war on the Tribunal target"
+ WE_PERFORM_th_gensokyo_crusade_declare_war_ACTION: "We declared war on the Tribunal target"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_war_ACTION: "Declared war on the Tribunal target"
+ ACTION_th_gensokyo_crusade_declare_war_PERFORMED_ON_US: "Declared war on the Tribunal target"
+
+### Counter treaty
+ th_gensokyo_crusade_counter: "Counter-Victory (Crusade)"
+ th_gensokyo_crusade_counter_desc: "Turning the tide of the punitive crusade: you crushed Gensokyo's encirclement and earned the right to expand."
+ ### 2026-08-21 (issue 4): peace deal entry keys
+ th_gensokyo_crusade_counter_entry: "$th_gensokyo_crusade_counter$"
+ th_gensokyo_crusade_counter_entry_short: "$th_gensokyo_crusade_counter$"
+
+### Trial parliament issue (2026-08-23: debate = judgment)
+ th_gensokyo_trial_issue: "Judgment: Punish Severely?"
+ th_gensokyo_trial_issue_desc: "After the crusade, the IO parliament judges the defeated target. Passing means severe punishment; failing means lenient treatment."
+ TH_TRIAL_BIAS_PARTICIPANT: "Fought in the crusade — favors severity"
+ TH_TRIAL_BIAS_AT_WAR: "At war with the target — favors severity"
+ TH_TRIAL_BIAS_TARGET_SIDE: "Ally or subject of the target — favors leniency"
+
+### Prices
+ th_gensokyo_feast_price: "Feast Cost"
+ subject_pays_regulated: "Regulated State Tribute"
+
+### Modifier display
+ th_gensokyo_weakness_modifier: "Weakened Power"
+ th_gensokyo_weakness_modifier_desc: "Punitive weakening imposed by judgment."
+ th_gensokyo_expansion_cost_authorized_modifier: "Sage-Authorized Expansion"
+ th_gensokyo_expansion_cost_authorized_modifier_desc: "With the sages' approval, expansion is far cheaper."
+ th_gensokyo_expansion_cost_incident_modifier: "Incident Expansion"
+ th_gensokyo_expansion_cost_incident_modifier_desc: "Expanding during an incident, at a slightly higher cost."
+ th_gensokyo_expansion_cost_unauthorized_modifier: "Unauthorized Expansion"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc: "Expansion without the sages' approval is costly."
+ ### 2026-08-21 (requirement 3): th_gensokyo_notorious_pariah_modifier(_desc) removed
+ ### (stage-based modifier system, removed together with the pariah marker)
+
+### 2026-08-26: situation panel + situation variable loc keys removed with the
+### deleted crusade situation (TH_CRUSADE_SUPPORTER_STRENGTH / TH_CRUSADE_TARGET_STRENGTH /
+### TH_CRUSADE_SIN_DISPLAY / th_crusade_supporter_strength / th_crusade_target_strength /
+### th_crusade_temp_strength / th_crusade_target_ref / th_crusade_sin_display)
+
+### Unity sources
+ TH_GENSOKYO_UNITY_FROM_MEMBERS: "Member Scale"
+
+### Sage protection
+ th_gensokyo_sages_defend_reason: "Defending the Human Village"
+
+### ============================================================
+### WP-D 2026-08-15: Expansion request adjudication events (§3.1)
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title: "An Expansion Request"
+ th_gensokyo_expansion_request_events.1.desc: "A nation requests permission to expand within Gensokyo and asks for your approval as a sage. You may grant a casus belli, or refuse as a lesson."
+ th_gensokyo_expansion_request_events.1.a: "Approve: grant the casus belli for expansion"
+ th_gensokyo_expansion_request_events.1.b: "Refuse: deny permission (the requester's chaotic heart is somewhat tempered)"
+ th_gensokyo_expansion_request_events.2.title: "Expansion Approved by a Sage"
+ th_gensokyo_expansion_request_events.2.desc: "A sage has approved your expansion request. You have gained a casus belli for the target location: ceding provinces costs +75% war score, and antagonism gained is reduced by 40%."
+ th_gensokyo_expansion_request_events.2.a: "Understood"
+ th_gensokyo_expansion_request_events.3.title: "Expansion Request Refused"
+ th_gensokyo_expansion_request_events.3.desc: "The sage refused your expansion request and admonished you to temper your chaotic heart. Your chaotic leaning recedes slightly, and the sage's opinion of you has changed."
+ th_gensokyo_expansion_request_events.3.a: "I shall heed the lesson"
+
+### ============================================================
+### 2026-08-23 重构：审判改议会辩论（th_gensokyo_trial_issue）——
+### trial_vote_events / trial_events.1（手动裁决）键已删除
+### ============================================================
+
+### ============================================================
+### Tribunal panel (T1) — added 2026-10-01
+### Overview tab relationship chart / retinue flags / tabs / empty state
+### / debate tab expected tier
+### ============================================================
+
+### Overview tab · relationship chart (Higan -> Secular Proxy -> Sinner State)
+ TH_TRIBUNAL_HIGAN: "Higan"
+ TH_TRIBUNAL_YAMA_COURT: "Court of Judgment"
+ TH_TRIBUNAL_AGENT: "Secular Proxy"
+ TH_TRIBUNAL_AGENT_LEAD: "Strongest Neighbor · Lead"
+ TH_TRIBUNAL_SINNER: "Sinner State"
+
+### Overview tab · retinue flags
+ TH_TRIBUNAL_RETINUE: "Retinue"
+ TH_TRIBUNAL_RETINUE_UNIT: "states"
+
+### Tabs and empty state
+ TH_TRIBUNAL_TAB_DEBATE: "Debate"
+ TH_TRIBUNAL_NOT_OPENED: "This court has not convened"
+
+### Debate tab · expected tier
+ TH_TRIAL_EXPECTED_TIER: "Expected tier:"
+ TH_TRIBUNAL_VERDICT_T2: "2. Weakening"
+ TH_TRIBUNAL_VERDICT_T3: "3. Regulated State"
+
+### ============================================================
+### Tribunal action group (T2-4) — added 2026-10-01
+### 13 actions x 6 keys (name / desc / generic message / we / other / on us)
+### Note: th_gensokyo_verdict_t0 / _t1 were panel placeholders ("0. Reparations
+###       Bankruptcy" / "1. Restitution"); they now serve as the action names of
+###       the four verdict actions. The uppercase TH_TRIBUNAL_VERDICT_T2 / _T3
+###       keys belong to the panel's "expected tier" line and stay separate.
+### ============================================================
+
+### Indictment
+ th_gensokyo_tribunal_indict: "File an Indictment"
+ th_gensokyo_tribunal_indict_desc: "The Yama reads the ledger of charges and opens the case: the accused bears the Taint, sanctions begin at the first tier, Condemnation, and a six-month observation period follows."
+ PERFORM_th_gensokyo_tribunal_indict_ACTION: "Filed an indictment before the Tribunal"
+ WE_PERFORM_th_gensokyo_tribunal_indict_ACTION: "We filed an indictment before the Tribunal"
+ OTHER_PERFORMS_th_gensokyo_tribunal_indict_ACTION: "Filed an indictment before the Tribunal"
+ ACTION_th_gensokyo_tribunal_indict_PERFORMED_ON_US: "Filed an indictment before the Tribunal"
+
+### Escalation
+ th_gensokyo_tribunal_escalate: "Escalate Sanctions"
+ th_gensokyo_tribunal_escalate_desc: "The observation period has expired with no repentance: the Yama names the nearest strong power to lead, raising the sanctions by one tier."
+ PERFORM_th_gensokyo_tribunal_escalate_ACTION: "Raised the sanctions by one tier"
+ WE_PERFORM_th_gensokyo_tribunal_escalate_ACTION: "We raised the sanctions by one tier"
+ OTHER_PERFORMS_th_gensokyo_tribunal_escalate_ACTION: "Raised the sanctions by one tier"
+ ACTION_th_gensokyo_tribunal_escalate_PERFORMED_ON_US: "Raised the sanctions by one tier"
+
+### Pardon
+ th_gensokyo_tribunal_pardon: "Pardon"
+ th_gensokyo_tribunal_pardon_desc: "The Yama pardons the accused outright: all sanctions are lifted, its leaning returns to the center, and the case is closed."
+ PERFORM_th_gensokyo_tribunal_pardon_ACTION: "Granted a pardon and lifted all sanctions"
+ WE_PERFORM_th_gensokyo_tribunal_pardon_ACTION: "We granted a pardon and lifted all sanctions"
+ OTHER_PERFORMS_th_gensokyo_tribunal_pardon_ACTION: "Granted a pardon and lifted all sanctions"
+ ACTION_th_gensokyo_tribunal_pardon_PERFORMED_ON_US: "Granted a pardon and lifted all sanctions"
+
+### Refusal to lead
+ th_gensokyo_tribunal_agent_refuse: "Refuse to Lead"
+ th_gensokyo_tribunal_agent_refuse_desc: "The named Secular Proxy disobeys: its lead status is cleared, and it suffers a penalty to prestige and contribution."
+ PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION: "Refused to lead"
+ WE_PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION: "We refused to lead"
+ OTHER_PERFORMS_th_gensokyo_tribunal_agent_refuse_ACTION: "Refused to lead"
+ ACTION_th_gensokyo_tribunal_agent_refuse_PERFORMED_ON_US: "Refused to lead"
+
+### Defense
+ th_gensokyo_tribunal_defend: "Defend Yourself"
+ th_gensokyo_tribunal_defend_desc: "The accused spends personal influence to rebut the charges one by one. Any charge successfully rebutted is halved; if all are overturned, the sanctions are lifted and the case is closed."
+ PERFORM_th_gensokyo_tribunal_defend_ACTION: "Offered a defense"
+ WE_PERFORM_th_gensokyo_tribunal_defend_ACTION: "We offered a defense"
+ OTHER_PERFORMS_th_gensokyo_tribunal_defend_ACTION: "Offered a defense"
+ ACTION_th_gensokyo_tribunal_defend_PERFORMED_ON_US: "Offered a defense"
+
+### Confession and atonement
+ th_gensokyo_tribunal_confess: "Confess and Atone"
+ th_gensokyo_tribunal_confess_desc: "The accused pays a confession fee, rising with each tier already imposed. Payment returns its leaning to the center, lifts all sanctions, and places it under probation."
+ PERFORM_th_gensokyo_tribunal_confess_ACTION: "Confessed and atoned"
+ WE_PERFORM_th_gensokyo_tribunal_confess_ACTION: "We confessed and atoned"
+ OTHER_PERFORMS_th_gensokyo_tribunal_confess_ACTION: "Confessed and atoned"
+ ACTION_th_gensokyo_tribunal_confess_PERFORMED_ON_US: "Confessed and atoned"
+
+### Wartime settlement
+ th_gensokyo_tribunal_settle: "Sue for Peace"
+ th_gensokyo_tribunal_settle_desc: "Suing for peace during the crusade: the accused pays the settlement price and its leaning falls, whereupon the Tribunal loses its legitimacy and disbands."
+ PERFORM_th_gensokyo_tribunal_settle_ACTION: "Sued for peace"
+ WE_PERFORM_th_gensokyo_tribunal_settle_ACTION: "We sued for peace"
+ OTHER_PERFORMS_th_gensokyo_tribunal_settle_ACTION: "Sued for peace"
+ ACTION_th_gensokyo_tribunal_settle_PERFORMED_ON_US: "Sued for peace"
+
+### Fulfillment: return land
+ th_gensokyo_tribunal_fulfill_land: "Fulfill: Return Land"
+ th_gensokyo_tribunal_fulfill_land_desc: "Return one of the lands at issue to the injured country. One fulfillment item: if the lands are back in the injured country's hands by the end of the observation period, the accused is judged repentant."
+ PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION: "Returned a land at issue"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION: "We returned a land at issue"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_land_ACTION: "Returned a land at issue"
+ ACTION_th_gensokyo_tribunal_fulfill_land_PERFORMED_ON_US: "Returned a land at issue"
+
+### Fulfillment: pay reparations
+ th_gensokyo_tribunal_fulfill_pay: "Fulfill: Pay Reparations"
+ th_gensokyo_tribunal_fulfill_pay_desc: "The accused pays reparations in installments into the Gensokyo Treasury. One fulfillment item: once the cumulative sum meets the requirement, it is complete."
+ PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION: "Paid a sum of reparations"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION: "We paid a sum of reparations"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_pay_ACTION: "Paid a sum of reparations"
+ ACTION_th_gensokyo_tribunal_fulfill_pay_PERFORMED_ON_US: "Paid a sum of reparations"
+
+### Verdict: reparations bankruptcy (was the panel placeholder "0. Reparations Bankruptcy")
+ th_gensokyo_verdict_t0: "Verdict: Reparations Bankruptcy"
+ th_gensokyo_verdict_t0_desc: "Verdict: half the target's treasury is transferred to the Gensokyo Treasury, and it suffers bankruptcy for 2 years."
+ PERFORM_th_gensokyo_verdict_t0_ACTION: "Passed the verdict: Reparations Bankruptcy"
+ WE_PERFORM_th_gensokyo_verdict_t0_ACTION: "We passed the verdict: Reparations Bankruptcy"
+ OTHER_PERFORMS_th_gensokyo_verdict_t0_ACTION: "Passed the verdict: Reparations Bankruptcy"
+ ACTION_th_gensokyo_verdict_t0_PERFORMED_ON_US: "Passed the verdict: Reparations Bankruptcy"
+
+### Verdict: restitution (was the panel placeholder "1. Restitution")
+ th_gensokyo_verdict_t1: "Verdict: Restitution"
+ th_gensokyo_verdict_t1_desc: "Verdict: the target returns all the lands it seized unlawfully."
+ PERFORM_th_gensokyo_verdict_t1_ACTION: "Passed the verdict: Restitution"
+ WE_PERFORM_th_gensokyo_verdict_t1_ACTION: "We passed the verdict: Restitution"
+ OTHER_PERFORMS_th_gensokyo_verdict_t1_ACTION: "Passed the verdict: Restitution"
+ ACTION_th_gensokyo_verdict_t1_PERFORMED_ON_US: "Passed the verdict: Restitution"
+
+### Verdict: weakening
+ th_gensokyo_verdict_t2: "Verdict: Weakening"
+ th_gensokyo_verdict_t2_desc: "Verdict: the target's power is weakened for 5 years."
+ PERFORM_th_gensokyo_verdict_t2_ACTION: "Passed the verdict: Weakening"
+ WE_PERFORM_th_gensokyo_verdict_t2_ACTION: "We passed the verdict: Weakening"
+ OTHER_PERFORMS_th_gensokyo_verdict_t2_ACTION: "Passed the verdict: Weakening"
+ ACTION_th_gensokyo_verdict_t2_PERFORMED_ON_US: "Passed the verdict: Weakening"
+
+### Verdict: regulated state
+ th_gensokyo_verdict_t3: "Verdict: Regulated State"
+ th_gensokyo_verdict_t3_desc: "Verdict: the target's treasury is emptied and it becomes a Regulated State of Higan, with a sentence of 20 years (up to 30)."
+ PERFORM_th_gensokyo_verdict_t3_ACTION: "Passed the verdict: Regulated State"
+ WE_PERFORM_th_gensokyo_verdict_t3_ACTION: "We passed the verdict: Regulated State"
+ OTHER_PERFORMS_th_gensokyo_verdict_t3_ACTION: "Passed the verdict: Regulated State"
+ ACTION_th_gensokyo_verdict_t3_PERFORMED_ON_US: "Passed the verdict: Regulated State"
+
+### Prices and bias names (5 keys added with this batch)
+ th_gensokyo_tribunal_confess_price: "Confession Fee"
+ th_gensokyo_tribunal_reparations_price: "Reparations"
+ th_gensokyo_tribunal_settle_price: "Settlement Price"
+ th_antagonism_sanction_condemn: "Sanction Condemnation (Antagonism)"
+ th_opinion_sanction_condemn: "Sanction Condemnation (Opinion)"
+
+### ============================================================
+### Tribunal · Localization batch L2
+### Action blockers / AI weight reasons / proxy events / marks and
+### variables / Human Village IO
+### Note: the two Human Village IO keys live here by decision (loc keys are
+###       global within a language, so they need not return to
+###       th_gensokyo_io_l_*.yml); their wording matches the main_menu keys
+###       of the same name verbatim.
+### ============================================================
+
+### Actions · blocking states (allow)
+ TH_TRIBUNAL_NO_SUSPECT_TT: "No suspect country eligible for indictment at present"
+ TH_TRIBUNAL_NO_ESCALATION_TT: "No accused country has passed its observation period without repentance"
+ TH_TRIBUNAL_NO_ACCUSED_TT: "There is no accused country at present"
+ TH_TRIBUNAL_DEFEND_NO_GROUND_TT: "No charge left to rebut"
+ TH_TRIBUNAL_CONFESS_CANNOT_AFFORD_TT: "The treasury cannot cover the confession fee"
+ TH_TRIBUNAL_SETTLE_NOT_AT_WAR_TT: "Not currently at war in a crusade"
+ TH_TRIBUNAL_FULFILL_LAND_NO_TARGET_TT: "No land at issue is held that can be returned"
+ TH_TRIBUNAL_FULFILL_PAY_CANNOT_AFFORD_TT: "The treasury cannot cover this reparation payment"
+ TH_TRIBUNAL_VERDICT_RANGE_T0_TT: "Reparations Bankruptcy lies outside this case's discretion: a verdict may fall only one tier above or below the baseline under the law"
+ TH_TRIBUNAL_VERDICT_RANGE_T1_TT: "Restitution lies outside this case's discretion: a verdict may fall only one tier above or below the baseline under the law"
+ TH_TRIBUNAL_VERDICT_RANGE_T2_TT: "Weakening lies outside this case's discretion: a verdict may fall only one tier above or below the baseline under the law"
+ TH_TRIBUNAL_VERDICT_RANGE_T3_TT: "The Regulated State lies outside this case's discretion: a verdict may fall only one tier above or below the baseline under the law"
+
+### Actions · AI weight reasons (ai_will_do)
+ TH_TRIBUNAL_AI_SUSPECT_FOUND: "A suspect country eligible for indictment exists"
+ TH_TRIBUNAL_AI_ESCALATE_READY: "The accused has passed its observation period without repentance"
+ TH_TRIBUNAL_AI_PARDON_READY: "The accused has fulfilled its terms; only lifting the sanctions remains"
+ TH_TRIBUNAL_AI_REFUSE_WEAK: "Not strong enough to lead"
+ TH_TRIBUNAL_AI_DEFEND_READY: "Charges remain to rebut, and influence suffices"
+ TH_TRIBUNAL_AI_CONFESS_READY: "The treasury can cover the confession fee, and settling is preferable"
+ TH_TRIBUNAL_AI_SETTLE_READY: "The war goes badly; a punitive settlement is preferable"
+ TH_TRIBUNAL_AI_FULFILL_READY: "Fulfillment items remain outstanding"
+ TH_TRIBUNAL_AI_VERDICT_WITH_INTENT: "The verdict follows the assembled intent"
+ TH_TRIBUNAL_AI_VERDICT_BASELINE: "No intent to follow; the verdict rests on the baseline under the law"
+ TH_TRIBUNAL_CONFESS_PRICE_TIER: "The confession fee rises with each sanction tier already imposed"
+
+### Events · proxy consent chain (namespace = th_gensokyo_tribunal_events)
+ th_gensokyo_tribunal_events.1.title: "A Call to Lead"
+ th_gensokyo_tribunal_events.1.desc: "The Court of Judgment has ruled that sanctions must be carried out by a secular hand. The Yama names you to lead: accept, and the sanctions against the accused rise by one tier and the observation period restarts; refuse, and the current tier stands while the Yama names another."
+ th_gensokyo_tribunal_events.1.a: "Accept the lead"
+ th_gensokyo_tribunal_events.1.b: "Refuse to lead"
+ th_gensokyo_tribunal_events.2.title: "The Lead Was Refused"
+ th_gensokyo_tribunal_events.2.desc: "The named country has refused to lead. The case keeps its current tier and the observation period is not reset. The Court of Judgment asks you to name another to lead."
+ th_gensokyo_tribunal_events.2.a: "Understood"
+ th_gensokyo_tribunal_events.3.title: "The Observation Period Has Expired"
+ th_gensokyo_tribunal_events.3.desc: "The accused's observation period has expired with neither fulfillment nor repentance. The case may be escalated: the nearest strong power takes the lead, the sanctions rise one tier, and the observation period restarts."
+ th_gensokyo_tribunal_events.3.a: "Understood"
+ th_gensokyo_tribunal_events.4.title: "Final Judgment"
+ th_gensokyo_tribunal_events.4.desc: "The debate is over, and the dossier is laid before Higan.\nThe sins of [th_verdict_accused.GetName] are established; the baseline under the law is tier #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!.\nYou may follow the law, follow the will of the member states, or rule alone — but every departure from that will, and every step beyond your discretion, is charged to Gensokyo's unity."
+ th_gensokyo_tribunal_events.4.a.tt: "#T0. Reparations Bankruptcy#!\n$BULLET$Effect: half the accused's treasury is paid out and it goes bankrupt; the reparation enters the Gensokyo treasury\n$BULLET$Baseline under the law: tier #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; discretion = one tier above or below it\n$BULLET$Against the will of the member states: each tier of deviation costs #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! Gensokyo Unity\n$BULLET$Beyond your discretion: an additional #Requal#! amount of Unity is charged\n$BULLET$Aftermath: the verdict takes effect, the Tribunal is dissolved and the case enters its sentence"
+ th_gensokyo_tribunal_events.4.b.tt: "#T1. Restitution#!\n$BULLET$Effect: the accused returns the land it took unlawfully\n$BULLET$Baseline under the law: tier #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; discretion = one tier above or below it\n$BULLET$Against the will of the member states: each tier of deviation costs #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! Gensokyo Unity\n$BULLET$Beyond your discretion: an additional #Requal#! amount of Unity is charged\n$BULLET$Aftermath: the verdict takes effect, the Tribunal is dissolved and the case enters its sentence"
+ th_gensokyo_tribunal_events.4.c.tt: "#T2. Weakening#!\n$BULLET$Effect: the land is returned and the country is weakened for years\n$BULLET$Baseline under the law: tier #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; discretion = one tier above or below it\n$BULLET$Against the will of the member states: each tier of deviation costs #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! Gensokyo Unity\n$BULLET$Beyond your discretion: an additional #Requal#! amount of Unity is charged\n$BULLET$Aftermath: the verdict takes effect, the Tribunal is dissolved and the case enters its sentence"
+ th_gensokyo_tribunal_events.4.d.tt: "#T3. The Regulated State#!\n$BULLET$Effect: the accused's treasury is emptied and it is reduced to a regulated state under Higan until its sentence is served\n$BULLET$Baseline under the law: tier #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; discretion = one tier above or below it\n$BULLET$Against the will of the member states: each tier of deviation costs #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! Gensokyo Unity\n$BULLET$Beyond your discretion: an additional #Requal#! amount of Unity is charged\n$BULLET$Aftermath: the verdict takes effect, the Tribunal is dissolved and the case enters its sentence"
+
+### Marks and variables (required in the UI by the design)
+ th_gensokyo_tarnish_mark: "Taint"
+ th_gensokyo_tarnish_mark_desc: "The mark borne by a country indicted before the Tribunal.\n$BULLET$Every member of Gensokyo grows more antagonistic and less friendly toward it\n$BULLET$While its case is under review, the sages are no longer obliged to protect it\n$BULLET$Sanctions escalate tier by tier: from the second tier on, its vote in the Gensokyo parliament falls to zero\n$BULLET$Returning land, paying reparations, ending its wars or confessing lifts the mark"
+ th_gensokyo_suspect_mark: "Suspicion"
+ th_gensokyo_suspect_mark_desc: "The mark borne by a country that has crossed the line of belligerence.\n$BULLET$Its belligerent leaning has passed Gensokyo's line of tolerance\n$BULLET$It is now eligible for indictment by the Yama, though no case is open yet\n$BULLET$A country under sanction immunity is never marked as a suspect"
+ th_gensokyo_observation_months: "Observation Period (months remaining)"
+ th_gensokyo_tier_1_mark: "Condemnation"
+ th_gensokyo_tier_1_mark_desc: "The first sanction tier.\n$BULLET$Every member of Gensokyo grows more antagonistic and less friendly toward it\n$BULLET$It is isolated diplomatically, but its military and finances are untouched\n$BULLET$Lifting the sanctions removes that antagonism and ill will together"
+ th_gensokyo_tier_2_mark: "Disenfranchisement"
+ th_gensokyo_tier_2_mark_desc: "The second sanction tier.\n$BULLET$Its vote in the Gensokyo parliament falls to zero\n$BULLET$Its contribution and influence no longer count toward Gensokyo\n$BULLET$Its voice is still heard in the Tribunal's votes of intent, but it no longer weighs"
+ th_gensokyo_tier_3_mark: "Embargo"
+ th_gensokyo_tier_3_mark_desc: "The third sanction tier.\n$BULLET$Every member of Gensokyo embargoes it, cutting off trade\n$BULLET$The embargo lasts until the sanctions are lifted\n$BULLET$From this tier on, the sanctions are no longer a matter of name alone"
+ th_gensokyo_tier_4_mark: "Expansion Restraint"
+ th_gensokyo_tier_4_mark_desc: "The fourth and final sanction tier.\n$BULLET$Its expansion within Gensokyo draws a far greater international backlash\n$BULLET$What it gains from expansion is unchanged; what it pays is heavier\n$BULLET$If it still does not repent, the Yama convenes the court and passes verdict"
+
+### Crusade · war goal tooltips (referenced by the war goal file)
+ TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT: "A punitive crusade may not take land"
+ TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT: "A punitive crusade may not subjugate"
+
+### Human Village IO (R1 debt: missing from all four in-game files; wording
+### matches the main_menu keys of the same name verbatim)
+ th_human_village_io: "Human Village"
+ th_human_village_io_desc: "A confederation formed by nations in the Human Village and Myouren Temple regions."
+
+### ============================================================
+### Tribunal L3 (2026-10-05)
+### 1 Dossier tab UI (T2-5a; th_gensokyo_io.gui)
+### 2 Loc for the two new static modifiers (T2-5b). Both key shapes are
+###   written on purpose: this project's older modifiers use the bare key,
+###   while the danmaku / sages modifiers use vanilla's
+###   STATIC_MODIFIER_NAME_ / _DESC_ prefix, and which one the engine reads
+###   is unproven.
+### ============================================================
+
+### Dossier tab UI (T2-5a)
+ TH_TRIBUNAL_TAB_DOSSIER: "Dossier"
+ TH_TRIBUNAL_TAB_DOSSIER_TT_TEXT: "The Yama's desk. Every warmongering suspect, active sanction and closed case in Gensokyo is recorded here."
+ TH_TRIBUNAL_DOSSIER_TITLE: "Tribunal Dossier"
+ TH_TRIBUNAL_DOSSIER_LEAD: "The Yama's Desk"
+ TH_TRIBUNAL_GROUP_SUSPECT: "Suspects"
+ TH_TRIBUNAL_GROUP_INDICTED: "Indicted · Under Sanction"
+ TH_TRIBUNAL_GROUP_SERVING: "Serving Sentence"
+ TH_TRIBUNAL_GROUP_CLOSED: "Closed Cases"
+ TH_TRIBUNAL_BADGE_INDICTED: "Indicted"
+ TH_TRIBUNAL_BADGE_SERVING: "Serving"
+ TH_TRIBUNAL_BADGE_CLOSED: "Closed"
+ TH_TRIBUNAL_TIER_LABEL: "Sanction"
+ TH_TRIBUNAL_OBSERVATION_LEFT: "Observation left"
+ TH_TRIBUNAL_MONTHS: "months"
+ TH_TRIBUNAL_ATTITUDE: "Attitude"
+ TH_TRIBUNAL_CONFESS_PAID: "Reparations paid"
+ TH_TRIBUNAL_CLOSED_NOTE: "Case file sealed"
+
+### Static modifiers: Grand Cause / Taint (T2-5b)
+ th_gensokyo_grand_cause_modifier: "Grand Cause"
+ th_gensokyo_grand_cause_modifier_desc: "The crusade's participants stand as one against a common foe, gaining morale, manpower and prestige."
+ STATIC_MODIFIER_NAME_th_gensokyo_grand_cause_modifier: "Grand Cause"
+ STATIC_MODIFIER_DESC_th_gensokyo_grand_cause_modifier: "The crusade's participants stand as one against a common foe, gaining morale, manpower and prestige."
+ th_gensokyo_tarnish_modifier: "Taint"
+ th_gensokyo_tarnish_modifier_desc: "The mark borne by a country indicted before the Tribunal."
+ STATIC_MODIFIER_NAME_th_gensokyo_tarnish_modifier: "Taint"
+ STATIC_MODIFIER_DESC_th_gensokyo_tarnish_modifier: "The mark borne by a country indicted before the Tribunal."

@@ -1,2 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# 二进制资源：禁止任何换行 / 编码规范化，保证字节级完全一致
+*.bin  binary
+*.dds  binary
+*.png  binary
+*.psd  binary
+*.dat  binary
+*.tga  binary
+*.zip  binary

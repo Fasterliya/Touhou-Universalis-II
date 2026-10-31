@@ -1,0 +1,18 @@
+### ============================================================
+### 贤者议会 — 开局人口
+### 固定三贤者：迷途之家(T05)、后户之国(T13)、华扇的仙界(T83)
+### 贤者威望初始值 100（设计文档：贤者威望开局即巅峰，随团结度自然波动）
+### 注：变量初始化采用 vanilla 块内 variables 模式（对标 hre imperial_authority）
+###     五档阈值应用移至 on_game_start（th_game_start_oa.txt）执行
+### ============================================================
+
+international_organization_manager = {
+    add_international_organization = {
+        type = th_sages_council_io
+        creation_date = 1337.4.1
+        members = { T05 T13 T83 }
+        variables = {
+            th_sages_prestige_var = 100
+        }
+    }
+}

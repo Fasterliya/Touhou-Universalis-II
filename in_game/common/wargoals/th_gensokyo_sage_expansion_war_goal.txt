@@ -1,0 +1,23 @@
+### ============================================================
+### 贤者授权扩张 — 战争目标（WP-D 2026-08-15 / 数值修正 2026-08-19）
+### 用户测试确认（2026-08-19）：
+###   - 战争分数花费修正 +150%（conquer_cost = 2.5）
+###   - 敌意影响修正 50%（antagonism = 0.5）
+###   - 防守方与进攻方对等（conquer_cost / antagonism 相同）
+###   - 取消 allowed_locations 的 mark 限制（不再限定可割让地块，
+###     因 mark 战败不清除且可能误伤其他国际标记，改由 CB 层放开）
+### ============================================================
+
+th_gensokyo_sage_expansion_war_goal = {
+    type = take_province
+
+    attacker = {
+        conquer_cost = 2.5
+        antagonism = 0.5
+    }
+    defender = {
+        conquer_cost = 2.5
+        antagonism = 0.5
+    }
+    ticking_war_score = 0.5
+}

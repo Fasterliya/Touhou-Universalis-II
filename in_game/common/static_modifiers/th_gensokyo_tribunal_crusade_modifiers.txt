@@ -1,0 +1,96 @@
+﻿### ============================================================
+### 审判庭 T2-5b — 圣战状态载体：静态修正（国家级）
+### 2026-10-01 新增
+###
+### 本文件两个修正（《设计定案》§7「内部圣战的定性」）：
+###   1 th_gensokyo_grand_cause_modifier —— 「大义」
+###       宣战时全体参与者获得的临时修正（士气 / 人力 / 威望）；
+###       战争结束或结案时显式移除。
+###   2 th_gensokyo_tarnish_modifier —— 「祟」的可见载体
+###       **空字段修正**（只有 game_data.category），纯展示用：
+###       祟的三个机制效果全部由别处承担（见第 2 段逐条说明），
+###       本修正只负责在国家修正栏里给玩家一个图标 + tooltip。
+###
+### 【空字段合法性的核实结论】base game 实机共 33 个"只有 game_data"的
+###   空静态修正，其中
+###     VANILLA\main_menu\common\static_modifiers\country.txt:12362-12364
+###       hre_internal_peace_enforced = { game_data = { category = country } }
+###   就是"纯展示标记"的同型先例：机制由引擎代码 / 别处脚本承担，修正本体
+###   只提供 UI 可见性；其 loc 键见
+###   VANILLA\main_menu\localization\english\static_modifiers_l_english.yml:747-748
+###   （STATIC_MODIFIER_NAME_ / STATIC_MODIFIER_DESC_ 两行），挂载先例见
+###   VANILLA\common\parliament_issues\10_hre_issues.txt:237/249/261
+###   （add_country_modifier + years 3/5/10 + mode = replace）。
+###   同类另有 character.txt:1981 gag_favors_guelphs（_hardcoded.txt:3399 挂载）、
+###   free_cities.txt:46 fc_league_timer 等。
+### ============================================================
+
+### ------------------------------------------------------------
+### 1 · 大义（th_gensokyo_grand_cause_modifier）
+### 语义：《设计定案》§7「宣战时全体参与者获『大义』临时修正（士气 / 人力 / 威望）」
+### 数值：三项全部走 script_values/th_gensokyo_io_chain_values.txt 的
+###       T2-5b 段。**那三个键必须写成裸数值（不写 { value = X } 块）**，
+###       因为 modifier 字段值只接受"直接求值为数的静态脚本值"——
+###       原因与实证见 script_values 文件尾 T2-5b 段的注释。
+###
+### 字段蓝本（GAMEROOT\main_menu\common\modifier_type_definitions\00_modifier_types.txt）：
+###   land_morale_modifier :4254-4259（percent=yes，category=**unit**）
+###     ※ category=unit 的字段写在 category=country 的修正里是 base game 常态：
+###       VANILLA\main_menu\common\static_modifiers\country.txt:1125-1131
+###         receiving_send_officers = { game_data = { category = country }
+###                                     land_morale_modifier = 0.1
+###                                     loyalty_to_overlord = 5 }
+###     ※ 士气三候选的核实结论：global_army_morale / army_morale **全表 0 命中**；
+###       land_morale（:4248）是**绝对值**（无 percent）⇒ 百分比加成必须用
+###       land_morale_modifier。
+###   global_manpower_modifier :4069-4074（percent=yes，category=country）
+###     先例 country.txt:1250 / :2482、free_cities.txt:43
+###   monthly_prestige :5520-5524（category=country，无 percent ⇒ 每月绝对值）
+###     先例 country.txt:140（= 0.05）
+###
+### 挂载（调用点见 scripted_effects/th_gensokyo_tribunal_effects.txt 的
+###   ⑮ th_gensokyo_tribunal_grand_cause_apply_effect / _remove_effect）：
+###   add_country_modifier + years = -1（永久，直到显式 remove）+ mode = replace
+###   幂等依据：wiki Modifier_modding §Add modifier parameters ——
+###     "If the duration evaluates to -1, the modifier will be permanent"；
+###     mode = replace = "Removes the modifier and reapplies it for the whole
+###     duration provided" ⇒ 同名重复施加**不叠加**，只刷新一份实例。
+###   （同项目先例：scripted_effects/th_gensokyo_tribunal_effects.txt:432-437
+###     第 4 档修正的 years = -1 挂载。）
+### ------------------------------------------------------------
+th_gensokyo_grand_cause_modifier = {
+    game_data = {
+        category = country
+    }
+    land_morale_modifier = th_grand_cause_morale_modifier
+    global_manpower_modifier = th_grand_cause_manpower_modifier
+    monthly_prestige = th_grand_cause_prestige_modifier
+}
+
+### ------------------------------------------------------------
+### 2 · 祟（th_gensokyo_tarnish_modifier）—— 纯展示载体，**故意留空**
+### 《设计定案》§3.1：祟 = 制裁状态的**可见载体**；三义 = 失议会权 / 失保护 / 被孤立。
+###
+### 【三义全部由别处承担 —— 本修正不得重复施加任何一项】：
+###   被孤立   = 第 1 档逐成员 effect（scripted_effects/th_gensokyo_tribunal_effects.txt
+###              的 th_gensokyo_tribunal_tier_1_apply_effect：
+###              add_antagonism th_antagonism_sanction_condemn /
+###              add_opinion th_opinion_sanction_condemn，方向 root → target）
+###   失议会权 = script_values/th_gensokyo_io_chain_values.txt:113-131
+###              th_gensokyo_io_vote_power_value：持第 2/3/4 档标记 ⇒ 归零
+###   失保护   = on_action/th_gensokyo_chain_events.txt 的
+###              th_gensokyo_free_city_protection_check 触发条件（T2-5b 新增的门）
+###
+### 【代价（已知并接受）】空修正在国家修正栏里**没有数值行**，只有
+###   名称 + 描述两行文本 —— 与 base game hre_internal_peace_enforced 同形态。
+###
+### 【为什么不做"最小字段"版】为凑一行数值而加一项别处没有的轻度惩罚，
+###   会把"祟"从状态载体变成第二个制裁档：《设计定案》§5.3 已明确否决
+###   在祟/制裁之外再叠加惩罚（「取消保护」等额外惩罚未采纳），
+###   且第 1 档的敌意/好感、第 2 档的夺权已是既有的惩罚载体，语义重叠。
+### ------------------------------------------------------------
+th_gensokyo_tarnish_modifier = {
+    game_data = {
+        category = country
+    }
+}

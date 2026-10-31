@@ -1,0 +1,135 @@
+﻿l_simp_chinese:
+### ============================================================
+### 弹幕战系统 本地化（简中）
+### ============================================================
+
+### === 弹幕火力 修正类型 ===
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_base_modifier: "弹幕火力值"
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_base_modifier_desc: "弹幕火力水平的平加分量，来源于符卡规则、符卡改革等科技，以及各类事件与异变修正。"
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_modifier: "弹幕火力值修正"
+ MODIFIER_TYPE_NAME_th_danmaku_firepower_modifier_desc: "以百分比放大弹幕火力水平。"
+
+### === 对决战临时修正 ===
+ STATIC_MODIFIER_NAME_th_danmaku_champion_modifier: "弹幕战冠军"
+ STATIC_MODIFIER_DESC_th_danmaku_champion_modifier: "在一对一弹幕对决中证明了自己。月度威望 +0.10，弹幕火力值 +30。"
+
+### === 主动挑战行动 ===
+ th_danmaku_challenge: "符卡挑战"
+ th_danmaku_challenge_desc: "向幻想乡的一名成员发起一对一的弹幕对决。胜者赢得威望与名望，败者付出代价。"
+ th_danmaku_challenge_none_available: "没有可挑战的对象"
+ PERFORM_th_danmaku_challenge_ACTION: "发起了弹幕对决"
+ WE_PERFORM_th_danmaku_challenge_ACTION: "我们发起了弹幕对决"
+ OTHER_PERFORMS_th_danmaku_challenge_ACTION: "发起了弹幕对决"
+ ACTION_th_danmaku_challenge_PERFORMED_ON_US: "发起了弹幕对决"
+
+### ============================================================
+### 遭遇战事件（2026-08-30 取消；仅保留 .6 平手供妖兽战共用）
+### ============================================================
+
+
+
+
+
+ th_danmaku_events.6.title: "平手：势均力敌"
+ th_danmaku_events.6.desc: "最后一轮弹幕同时消散，双方皆未能压倒对方。对方悻悻退去，你亦全身而退。"
+ th_danmaku_events.6.a: "彼此彼此。"
+ th_danmaku_events.6.a.tt: "无金币与威望得失。"
+
+### ============================================================
+### 对决战事件
+### ============================================================
+ th_danmaku_events.10.title: "弹幕对决"
+ th_danmaku_events.10.desc: "[target.GetName]的统治者立于对面，符卡已然在握。这是一对一的符卡对决，胜负将决定威望与名望的归属。"
+ th_danmaku_events.10.a: "确认挑战"
+ th_danmaku_events.10.a.tt: "以礼相待，公平对决。\n我方火力 #T [actor.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n对方火力 #T [target.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n确认后，对方将收到应战邀请。"
+ th_danmaku_events.10.b: "怯战"
+ th_danmaku_events.10.b.tt: "无意应战，取消这场对决。\n威望 #R [actor.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!"
+
+ th_danmaku_events.11.title: "弹幕对决 · 应战确认"
+ th_danmaku_events.11.desc: "[actor.GetName]的统治者发来了符卡挑战。是否接受这场一对一的弹幕对决？"
+ th_danmaku_events.11.a: "接受对决"
+ th_danmaku_events.11.a.tt: "以礼应战。\n我方火力 #T [target.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n对方火力 #T [actor.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!"
+ th_danmaku_events.11.b: "投降"
+ th_danmaku_events.11.b.tt: "自认不敌，放弃应战。\n威望 #R [target.MakeScope.ScriptValue('th_danmaku_cowardice_prestige_value')]#!\n发起方将收到取消通知。"
+ th_danmaku_events.12.title: "对决取消"
+ th_danmaku_events.12.desc: "这场弹幕对决未能开始，挑战就此作罢。"
+ th_danmaku_events.12.a: "也罢。"
+
+ th_danmaku_events.20.title: "弹幕对决 · 第 [actor.MakeScope.GetVariable('th_danmaku_duel_round_var').GetValue] 回合"
+ th_danmaku_events.20.desc: "弹幕交错，光雨纷飞。\n我方分数：#T [actor.MakeScope.GetVariable('th_danmaku_duel_player_score_var').GetValue]#!\n对方分数：#T [actor.MakeScope.GetVariable('th_danmaku_duel_enemy_score_var').GetValue]#!\n上一轮：我方 +[actor.MakeScope.GetVariable('th_danmaku_duel_last_player_gain_var').GetValue]，对方 +[actor.MakeScope.GetVariable('th_danmaku_duel_last_enemy_gain_var').GetValue]\n选择本回合的战术："
+ th_danmaku_events.20.a: "守势布阵"
+ th_danmaku_events.20.a.tt: "稳扎稳打，不冒进。\n命中率 #T [actor.MakeScope.ScriptValue('th_danmaku_tactic_1_hit_chance_value')|1]#!%\n命中得分 #G 6~10#!，未命中得分 #G 2~4#!（不会得 0）"
+ th_danmaku_events.20.b: "稳健进攻"
+ th_danmaku_events.20.b.tt: "攻守兼备。\n命中率 #T [actor.MakeScope.ScriptValue('th_danmaku_tactic_2_hit_chance_value')|1]#!%\n命中得分 #G 8~14#!，未命中得分 #G 3~6#!（不会得 0）"
+ th_danmaku_events.20.c: "全力弹幕"
+ th_danmaku_events.20.c.tt: "倾泻火力，搏取高分。\n命中率 #T [actor.MakeScope.ScriptValue('th_danmaku_tactic_3_hit_chance_value')|1]#!%\n命中得分 #G 10~20#!，未命中得分 #G 4~8#!（不会得 0）"
+ th_danmaku_events.20.d: "搏命一击"
+ th_danmaku_events.20.d.tt: "孤注一掷！\n命中率 #T [actor.MakeScope.ScriptValue('th_danmaku_tactic_4_hit_chance_value')|1]#!%\n命中得分 #G 12~26#!，未命中得分 #G 5~10#!（不会得 0）"
+
+ th_danmaku_events.21.title: "对手回合"
+ th_danmaku_events.21.desc: "对手正在酝酿下一轮弹幕。"
+ th_danmaku_events.21.a: "继续"
+
+ th_danmaku_events.22.title: "弹幕对决 · 尘埃落定"
+ th_danmaku_events.22.desc: "最后一缕弹幕消散在夜空。\n我方分数：[actor.MakeScope.GetVariable('th_danmaku_duel_player_score_var').GetValue]\n对方分数：[actor.MakeScope.GetVariable('th_danmaku_duel_enemy_score_var').GetValue]"
+ th_danmaku_events.22.a: "大胜"
+ th_danmaku_events.22.a.tt: "以压倒性优势赢得对决。\n获得 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! 金币与 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! 威望。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_great_victory_research_value')]#!，稳定度 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_great_victory_stability_value')]#!。\n获得「弹幕战冠军」增益（弹幕火力值 +30，月度威望 +0.10，持续 1 年）"
+ th_danmaku_events.22.b: "胜利"
+ th_danmaku_events.22.b.tt: "赢得这场弹幕对决。\n获得 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! 金币与 #G [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! 威望。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_victory_research_value')]#!，稳定度 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_victory_stability_value')]#!。\n获得「弹幕战冠军」增益（弹幕火力值 +30，月度威望 +0.10，持续 1 年）"
+ th_danmaku_events.22.c: "平手"
+ th_danmaku_events.22.c.tt: "双方势均力敌，握手言和。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_draw_research_value')]#!，贡献度 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_draw_contribution_value')]#!"
+ th_danmaku_events.22.d: "败北"
+ th_danmaku_events.22.d.tt: "惜败于对手。\n失去 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! 金币与 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! 威望。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_defeat_research_value')]#!"
+ th_danmaku_events.22.e: "满目疮痍"
+ th_danmaku_events.22.e.tt: "惨败收场，颜面尽失。\n失去 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_gold_var').GetValue]#! 金币与 #R [actor.MakeScope.GetVariable('th_danmaku_duel_final_prestige_var').GetValue]#! 威望。\n研究点数 #G +[actor.MakeScope.ScriptValue('th_danmaku_duel_rout_research_value')]#!，稳定度 #R [actor.MakeScope.ScriptValue('th_danmaku_duel_rout_stability_value')]#!"
+ th_danmaku_events.22.f: "……收拾残局。"
+ th_danmaku_events.22.f.tt: "对决状态异常，草草收场。"
+
+ th_danmaku_events.23.title: "对决不了了之"
+ th_danmaku_events.23.desc: "对手迟迟未现身，这场弹幕对决不了了之。"
+ th_danmaku_events.23.a: "也罢。"
+
+### ============================================================
+### 妖兽作乱 / 退治妖兽
+### ============================================================
+ STATIC_MODIFIER_NAME_th_beast_rampage_modifier: "妖兽作乱"
+ STATIC_MODIFIER_DESC_th_beast_rampage_modifier: "狂乱的妖兽在此地肆虐，税收（产出）效率 #R -10%#!。可通过「退治妖兽」行动驱除。"
+
+ th_danmaku_subjugate_beast: "退治妖兽"
+ th_danmaku_subjugate_beast_desc: "前往一处妖兽作乱的地点，以弹幕一战定胜负。胜利将驱除妖兽，恢复当地税收。"
+ th_danmaku_subjugate_beast_none_available: "治下没有妖兽作乱的地点"
+ PERFORM_th_danmaku_subjugate_beast_ACTION: "前往退治妖兽"
+ WE_PERFORM_th_danmaku_subjugate_beast_ACTION: "我们前往退治妖兽"
+ OTHER_PERFORMS_th_danmaku_subjugate_beast_ACTION: "前往退治妖兽"
+ ACTION_th_danmaku_subjugate_beast_PERFORMED_ON_US: "妖兽作乱之地被退治"
+
+ th_danmaku_events.30.title: "妖兽遭遇"
+ th_danmaku_events.30.desc: "在 [SCOPE.sLocation('th_danmaku_beast_loc').GetName]，狂暴的妖兽踏碎田野、惊扰众生。它嗅到你的气息，昂首摆出弹幕架势——唯有战而胜之，方能还此地安宁。"
+ th_danmaku_events.30.a: "应战！"
+ th_danmaku_events.30.a.tt: "我方火力 #T [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_firepower_value')|1]#!\n妖兽火力 #T [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_encounter_youkai_fp_var').GetValue]#!\n\n大胜概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_v_prob_var').GetValue]#!%\n胜利概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_victory_prob_var').GetValue]#!%\n平手概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_draw_prob_var').GetValue]#!%\n败北概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_defeat_prob_var').GetValue]#!%\n大败概率：#G [ROOT.GetCountry.MakeScope.GetVariable('th_danmaku_great_defeat_prob_var').GetValue]#!%"
+
+ th_danmaku_events.31.title: "妖兽退治 · 大胜"
+ th_danmaku_events.31.desc: "弹幕如海啸般吞没妖兽，它哀嚎着化作光点消散。妖兽作乱的阴霾一扫而空。"
+ th_danmaku_events.31.a: "此地重归安宁。"
+ th_danmaku_events.31.a.tt: "妖兽作乱已驱除。获得 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_gold_value')]#! 金币与 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_research_value')]#! 研究点数。"
+
+ th_danmaku_events.32.title: "妖兽退治 · 胜利"
+ th_danmaku_events.32.desc: "一番缠斗后，妖兽终于力竭溃散，逃入深山再不敢来。"
+ th_danmaku_events.32.a: "辛苦了。"
+ th_danmaku_events.32.a.tt: "妖兽作乱已驱除。获得 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_gold_value')]#! 金币与 #G [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_beast_victory_research_value')]#! 研究点数。"
+
+ th_danmaku_events.33.title: "妖兽退治 · 败北"
+ th_danmaku_events.33.desc: "妖兽的弹幕凶猛异常，你被迫退出战场。它仍在此地肆虐，需再寻战机。"
+ th_danmaku_events.33.a: "来日再战。"
+ th_danmaku_events.33.a.tt: "妖兽仍在作乱。损失 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_gold_value')]#! 金币与 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_defeat_prestige_value')]#! 威望。"
+
+ th_danmaku_events.34.title: "妖兽退治 · 大败"
+ th_danmaku_events.34.desc: "弹幕全面溃败，你狼狈撤离。妖兽的咆哮声在身后久久回荡，此地之患更甚。"
+ th_danmaku_events.34.a: "……休整后再来。"
+ th_danmaku_events.34.a.tt: "妖兽仍在作乱。损失 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_gold_value')]#! 金币与 #R [ROOT.GetCountry.MakeScope.ScriptValue('th_danmaku_encounter_great_defeat_prestige_value')]#! 威望。"
+
+ th_danmaku_events.40.title: "狂乱妖兽"
+ th_danmaku_events.40.desc: "近来幻想乡妖气躁动，传闻有狂乱妖兽在国境附近出没。若不及时处置，恐有百姓受害、税赋受损。"
+ th_danmaku_events.40.a: "妖兽现身，就地作乱"
+ th_danmaku_events.40.a.tt: "治下随机地点将出现「妖兽作乱」：税收（产出）效率 #R -10%#!，持续 #T 10#! 年。可派遣「退治妖兽」驱除。"
+ th_danmaku_events.40.b: "虚惊一场，妖兽离去"

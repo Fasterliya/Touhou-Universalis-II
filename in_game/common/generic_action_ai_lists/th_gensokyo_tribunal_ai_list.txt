@@ -1,0 +1,36 @@
+﻿### ============================================================
+### 幻想乡审判庭 — AI 行动评估列表（1.4 适配新增 2026-10-31）
+###
+### 背景：generic_actions 的 ai_will_do 只有在行动被某个
+### generic_action_ai_lists 收录后才会被 AI 评估
+### （见 th_gensokyo_io_list.txt 头部说明；base game 先例
+###  advisor_management_list / global_list）。
+###
+### 本 mod 的 9 个审判庭动作都写了明确的 ai_will_do 权重
+###   indict 10000 / escalate 500 / confess 400 / fulfill_land 300 /
+###   settle 300 / defend 200 / pardon 200 / fulfill_pay 200 /
+###   agent_refuse 50
+### 却一个都没登记 → AI 永不评估，且启动时报
+###   ai_will_do trigger [ Invalid generic action '' ]
+###
+### 不收录（作者本意是玩家专属）：
+###   th_danmaku_challenge / th_danmaku_subjugate_beast
+###   （二者 ai_will_do 权重为 0）
+### ============================================================
+th_gensokyo_tribunal_ai_list = {
+	potential = {
+		exists = international_organization:th_gensokyo_io
+		is_member_of_international_organization = international_organization:th_gensokyo_io
+	}
+	actions = {
+		th_gensokyo_tribunal_indict
+		th_gensokyo_tribunal_defend
+		th_gensokyo_tribunal_confess
+		th_gensokyo_tribunal_escalate
+		th_gensokyo_tribunal_settle
+		th_gensokyo_tribunal_pardon
+		th_gensokyo_tribunal_fulfill_pay
+		th_gensokyo_tribunal_fulfill_land
+		th_gensokyo_tribunal_agent_refuse
+	}
+}

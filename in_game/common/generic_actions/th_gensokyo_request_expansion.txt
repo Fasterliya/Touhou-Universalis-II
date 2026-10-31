@@ -1,0 +1,279 @@
+﻿### ============================================================
+### 幻想乡IO 行动 — 请求幻想乡内扩张（WP-D 2026-08-15）
+### 设计文档《国际组织》§3.1：
+###   ① select 任意贤者国家（好感度/结盟等原版外交因素判定）
+###   ② select 自身相邻 location
+###      （人间之里 region 受保护不可索取；被请求贤者自身地块不可索取，
+###        另两位贤者的地块可索取）
+###   → 向贤者触发事件：同意 = 授予 CB（战争分数+75%、敌意-40%）
+###     / 拒绝 = 补偿（乱-5 + 贤者好感变化）
+### 链路: 打标记（请求者/目标地块/目标国）→ 贤者事件裁决
+### ============================================================
+
+th_gensokyo_request_expansion = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 12
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            ### 单次挂起请求限制（标记存留至贤者事件裁决）
+            NOT = {
+                has_variable = th_gensokyo_expansion_requester_mark
+            }
+        }
+    }
+
+    allow = {
+        ### 花费门槛（金币 + 威望，支付给对应贤者）
+        scope:actor = {
+            gold >= th_gensokyo_request_expansion_gold_cost
+            prestige >= 10
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    ### ① 选贤者 — 外交因素判定（好感 ≥ 0 或 同盟；可调阈值）
+    select_trigger = {
+        looking_for_a = country
+        source = recipient
+        target_flag = target_sage
+        name = "choose_country"
+        ### 2026-08-23 error.log 修复：补 column——原缺 column 导致
+        ### "There is no column to display in this stage of select-interaction-target"
+        ### assertion（22:55:05 实证）→ 选国流程失败。
+        ### 对齐先例：japanese_shogunate.txt:66-68（choose_country + column）
+        ### 2026-08-23（用户需求）：列 = 旗帜 + 名称 + 人口 + 大国分 + 对 actor 好感度
+        ### （th_country_flag / th_opinion_to_actor 为自定义列，见
+        ###  common/attribute_columns/zz_th_gensokyo.txt；若不支持请回退）
+        column = {
+            data = th_country_flag
+        }
+        column = {
+            data = name
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = great_power_score
+        }
+        column = {
+            data = th_opinion_to_actor
+        }
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        ### 裸脚本触发器需 = yes（EU5 1.3 解析要求；参照 chain_triggers）
+                        th_gensokyo_is_sage_trigger = yes
+                        NOT = {
+                            this = scope:actor
+                        }
+                        OR = {
+                            opinion = {
+                                target = scope:actor
+                                value >= 0
+                            }
+                            ### is_allied_with 为带参脚本触发器（块形式，见 country_triggers.txt:263）
+                            is_allied_with = {
+                                target = scope:actor
+                            }
+                        }
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        visible = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    ### ② 选目标 location — 自身/附属国边境相邻的外国省份（2026-08-23 扩展）
+    ### 2026-08-23（用户需求）：原仅遍历 actor 自身地块的邻居 → 扩展为
+    ### actor 与自身附属国（subjects）的边境共同覆盖的相邻外国省份；
+    ### 人间之里/所选贤者地块仍受保护
+    ### 2026-08-23（用户需求）：列 = 地点名称 + 所有者旗帜 + 人口 + 发展度
+    select_trigger = {
+        looking_for_a = location
+        source = actor
+        target_flag = target_location
+        column = {
+            data = name
+        }
+        column = {
+            data = owner_flag
+        }
+        column = {
+            data = population
+        }
+        column = {
+            data = development
+        }
+        interaction_source_list = {
+            scope:actor = {
+                ### 自身边境
+                every_owned_location = {
+                    every_neighbor_location = {
+                        limit = {
+                            ### ?= 处理无主地块（owner 空链接，修复 "Event target link 'owner' returned an invalid object" 刷屏）
+                            NOT = {
+                                owner ?= scope:actor
+                            }
+                            th_gensokyo_is_gensokyo_location_trigger = yes
+                            NOT = {
+                                region = region:th_gensokyo_human_village_region
+                            }
+                            owner ?= {
+                                is_member_of_international_organization = international_organization:th_gensokyo_io
+                                NOT = {
+                                    this = scope:target_sage
+                                }
+                            }
+                        }
+                        add_to_list = source
+                    }
+                }
+                ### 附属国边境（2026-08-23 扩展：every_subject 内 prev = 附属国，
+                ### every_owned_location 遍历附属国地块，limit 排除 actor 自身地
+                ### 与 actor 附属国地——"外国省份"）
+                every_subject = {
+                    every_owned_location = {
+                        every_neighbor_location = {
+                            limit = {
+                                NOT = {
+                                    owner ?= scope:actor
+                                }
+                                ### 排除附属国自身地块（subject 的邻居含其其它地）
+                                NOT = {
+                                    owner ?= {
+                                        is_subject_of = scope:actor
+                                    }
+                                }
+                                th_gensokyo_is_gensokyo_location_trigger = yes
+                                NOT = {
+                                    region = region:th_gensokyo_human_village_region
+                                }
+                                owner ?= {
+                                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                                    NOT = {
+                                        this = scope:target_sage
+                                    }
+                                }
+                            }
+                            add_to_list = source
+                        }
+                    }
+                }
+            }
+        }
+        visible = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+        enabled = {
+            is_owned_by_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+
+    effect = {
+        ### 修复 2026-08-19：exists 守卫（同 propose_crusade B1 修复），
+        ### 防止 tooltip/AI 预评估未选择状态时报 "Undefined event target"
+        if = {
+            limit = {
+                exists = scope:target_sage
+                exists = scope:target_location
+            }
+            ### 请求者挂起标记（贤者事件裁决后清理）
+            scope:actor = {
+                set_variable = th_gensokyo_expansion_requester_mark
+                ### 花费：金币 + 威望（2026-08-23 时序调整：发起国先扣——
+                ### 贤者同意后获得（事件 .1 同意 option），拒绝时返还（decline_effect）；
+                ### 数值见 chain_values）
+                add_gold = th_gensokyo_request_expansion_gold_penalty
+                add_prestige = {
+                    value = th_gensokyo_request_expansion_prestige_penalty
+                }
+            }
+            ### 目标国标记（贤者事件读取；2026-08-19 不再打地块 mark，
+            ### CB 割让限制已取消，地块 mark 无意义且战败不清除易致 bug）
+            scope:target_location = {
+                owner = {
+                    set_variable = th_gensokyo_expansion_target_owner_mark
+                }
+            }
+            ### 2026-08-23：花费不再立即支付给贤者——
+            ### 同意 option 内 root（贤者）获得 +200 金 +10 威望；
+            ### 拒绝 option → decline_effect 返还发起国（见 expansion_effects）
+            ### 向贤者发起裁决事件
+            scope:target_sage = {
+                trigger_event_non_silently = {
+                    id = th_gensokyo_expansion_request_events.1
+                    days = 1
+                }
+            }
+        }
+    }
+
+    cooldown = {
+        ### 修复 2026-08-19：原误用 th_gensokyo_feast 类型
+        type = th_gensokyo_request_expansion
+        months = 24
+    }
+
+    ai_will_do = {
+        ### 2026-08-23 修复（用户反馈：AI 几乎不请求扩张，玩家贤者收不到请求）：
+        ### 原 value = 1 极低基线 → AI 从不发起。参照 propose_crusade 条件加权模式：
+        ### 存在可请求贤者（sage 成员、非自己、关系满足 select 过滤同款条件）→ 拉高倾向
+        ### （500 = 温和量级；与 select_trigger interaction_source_list 的 limit 一致，
+        ###  改动需同步：th_gensokyo_is_sage_trigger + opinion>=0 OR is_allied_with）
+        if = {
+            limit = {
+                ### 2026-08-26：any_international_organization_member 在 ai_will_do
+                ### 上下文 scope 不匹配（"Inconsistent trigger scopes" 实证）→
+                ### 改 any_country + is_member 显式判定（同 declare 行动修复）
+                any_country = {
+                    is_member_of_international_organization = international_organization:th_gensokyo_io
+                    th_gensokyo_is_sage_trigger = yes
+                    NOT = {
+                        this = scope:actor
+                    }
+                    OR = {
+                        opinion = {
+                            target = scope:actor
+                            value >= 0
+                        }
+                        is_allied_with = {
+                            target = scope:actor
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_EXPANSION_AI_TARGET_FOUND
+                value = 500
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

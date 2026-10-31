@@ -1,0 +1,22 @@
+﻿### ============================================================
+### 弹幕战系统 — 弹幕火力 修饰符类型定义（in_game 副本）
+### 双目录注册（对齐 th_gensokyo_io_influence_modifier 先例）：
+### 必须与 main_menu/common/modifier_type_definitions/ 同名文件内容保持同步，
+### 否则 in_game 阶段静态修正校验会报 "Non-existent modifier type"。
+### ============================================================
+
+### 弹幕火力值（平加分量，弹幕火力水平组成部分之一）
+### 来源：advance 科技挂钩 / 事件 / 异变临时修正（add_country_modifier 施加）
+th_danmaku_firepower_base_modifier = {
+	game_data = {
+		category = country
+	}
+}
+
+### 弹幕火力值修正（百分比分量，整体放大弹幕火力水平）
+th_danmaku_firepower_modifier = {
+	percent = yes
+	game_data = {
+		category = country
+	}
+}

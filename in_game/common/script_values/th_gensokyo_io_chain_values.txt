@@ -1,0 +1,373 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 集中数值（平衡调整入口）
+### 数值均为初值，标注待调
+### ============================================================
+
+### 价值观（亲善 <-> 好战，社会价值观尺度 -100 ~ +100，左=亲善/负值，右=好战/正值）
+### 原恶名变量（0-100）已迁移：societal_value = 2*恶名 - 100
+### WP-B 2026-08-15：月度自然衰减已停用（设计文档：价值观"一般不会变动"），
+### 此值保留供恢复自动衰减时使用（原 -2/月，趋向缘）
+th_notorious_decay_monthly_value = { value = -2 }        # （停用）月度自然趋向亲善（原恶名衰减 -1 → -2，待调）
+### 2026-08-21（需求 3）：pariah 阈值/贡献系数已删（阶段性修正系统整体移除）；
+### outcast 阈值保留 —— 作者 propose_crusade 过滤行直接引用本键
+### （合并自作者仓库 9d1186c；本键值 50 = 我方 ai_will_do 字面值 50，等价并存）
+th_notorious_outcast_threshold_value = { value = 0 }    # 弃民二档阈值（原恶名75 → +50，惩戒目标门槛；propose 过滤引用）
+
+### 宴会（花费走 common/prices/th_gensokyo_feast_price，CD 写死 12 月）
+### WP-E 2026-08-15：-20 → -10（本地增益/外交改善补偿部分缘收益，待调）
+th_feast_notorious_reduction_value = { value = -2 }        # 宴会趋向亲善（原减恶名 10 → -20 → 现 -10，待调）
+
+### 扩张限制
+th_expansion_quota_limit_value = { value = 4 }             # 合法扩张配额上限 2-4（待调）
+th_expansion_legal_notorious_value = { value = 2 }         # 合法扩张趋向好战/地块（原恶名+1 → +2，待调）
+th_expansion_unlawful_notorious_value = { value = 16 }     # 非法扩张趋向好战/地块（原恶名+8 → +16，待调）
+th_free_city_annex_values_shift_value = { value = 96 }     # 吞自由市趋向好战（原恶名 8×6=48 → +96，待调）
+th_expansion_unlawful_unity_value = { value = 2 }          # 非法扩张扣团结/地块（待调）
+th_expansion_cost_unauthorized_value = { value = 1.5 }     # 独自议会扩张代价 x1.5（待调）
+th_expansion_cost_incident_value = { value = 1.25 }        # 异变扩张代价 x1.25（待调）
+th_expansion_cost_authorized_value = { value = 0.25 }      # 贤者授权扩张代价 x0.25（待调）
+
+### WP-F 2026-08-15（设计文档《国际组织》§3.0/§5）：征服与割让
+### 2026-08-19 用户测试确认：正常扩张割让每地块 +2；贤者CB战争仅 +1
+th_gensokyo_conquest_chaos_per_location_value = { value = 3 }   # 正常扩张 乱倾向 +2/地块（§5，待调）
+th_gensokyo_sage_expansion_chaos_per_location_value = { value = 1 }   # 贤者授权扩张CB战争 乱倾向 +1/地块（2026-08-19）
+th_gensokyo_cede_antagonism_extra_value = { value = 75 }          # 被割让追加敌意层（§3.0 时代接口；默认由 IO 字段承担，本层待时代系统启用）
+
+### WP-D 2026-08-19：请求扩张花费（发起者支付给对应贤者，§3.1）
+th_gensokyo_request_expansion_gold_cost = { value = 200 }          # 金币花费（待调）
+th_gensokyo_request_expansion_gold_penalty = { value = -200 }      # 发起者金币 -200（带符号，避免 -脚本值 语法风险）
+th_gensokyo_request_expansion_prestige_penalty = { value = -10 }   # 发起者威望 -10（待调）
+th_gensokyo_request_expansion_prestige_bonus = { value = 10 }      # 贤者获得威望 +10（待调）
+
+### 惩戒战争
+th_crusade_antagonism_threshold_value = { value = 50 }     # 提案敌意阈值（待调）
+th_crusade_sin_battle_value = { value = 5 }                # 战斗胜利罪值（备用固定值，现按 war_score 折算）
+th_crusade_sin_monthly_value = { value = 1 }               # 战争时长罪/月（待调）
+th_crusade_sin_refusal_value = { value = 10 }              # 拒绝议和罪（待调）
+th_sin_tier1_value = { value = 0 }                          # 罪值零档边界（sin_low/mid1 触发器引用；P1-17 修复补定义，当前触发器无调用）
+th_sin_tier2_value = { value = 50 }                        # 判决档位阈值：轻判 <50 / 中判 50-75 / 重判 >=75
+th_sin_tier3_value = { value = 75 }                        # 判决档位阈值 3（重判门槛）
+th_sentence_base_years_value = { value = 20 }              # 监管基础刑期（年）
+th_sentence_max_years_value = { value = 30 }               # 监管最大刑期（年）
+th_join_contribution_value = { value = 5 }                 # 加入惩戒战争获贡献（C1）
+th_unity_crusade_settled_value = { value = 5 }             # 惩戒战争平息奖励团结（C2）
+
+### 团结度
+th_unity_sentence_t0_value = { value = 3 }              # 仅赔款破产扣团结（WP-H 档0，待调）
+th_unity_sentence_t1_value = { value = 5 }               # 轻判扣团结（待调）
+th_unity_sentence_t2_value = { value = 10 }              # 中判扣团结（待调）
+th_unity_sentence_t3_value = { value = 15 }              # 重判扣团结（待调）
+th_unity_verdict_reward_value = { value = 10 }           # 审判完成奖励团结（C5：有序 10 / 劝善 8 / 因果必尝 12）
+th_unity_release_reward_value = { value = 5 }              # 刑满释放奖励团结（待调）
+th_unity_free_city_annex_value = { value = 10 }            # 吞并自由市扣团结（待调）
+th_unity_big_war_value = { value = 5 }                     # 大规模战争扣团结（未启用 B6，指代范围待定）
+th_unity_invasion_value = { value = 10 }                   # 外界入侵扣团结（待调）
+th_unity_members_multiplier_value = { value = 0.002 }      # 成员数团结加成系数/成员（C4，给低点）
+
+### ============================================================
+### 幻想乡影响力（2026-08-21，用户规格：投票权重来源；我方修复，合并保留）
+### 公式 = 经济基础 + 预留异变贡献值 + 人口归一化（分量系数独立可调）
+### 用途: 议会投票权重（special_status_power 动态公式引用）——
+###       th_gensokyo_io_vote_power_value = 影响力 × (1 + 幻想乡影响力修正)
+###       （修正来自价值观条 left/right modifier：缘 +50% / 乱 -50%，渐进式）
+### 数值为初值「待调」：实测权重分布后调系数（人口归一化 100000 与税基权重）
+### 2026-08-21 实测修复：country_tax_base 是引擎硬编码 script value
+###   （base game hre_action_values.txt:6 直接 value = country_tax_base 引用），
+###   不是 modifier 字段——原 modifier: 前缀读取为空 → 影响力恒 0 →
+###   combined_special_status_power = 0 → 议会投票权重 0（投了没票）
+### ============================================================
+th_gensokyo_io_influence_value = {
+    value = country_tax_base                # 经济基础（引擎 script value，裸引用）
+    ### 2026-08-23 实测修复：var: 裸引用在变量未设置时（旧档/后加入成员）
+    ### 导致整个 script value 返回 none 类型 → special_status_power 失效 →
+    ### 议会投票权重异常（game.log "Value of wrong type ... Got value of type
+    ### 'none'" at th_gensokyo_io.txt:31/201 + "Failed to fetch variable" 刷屏实证）。
+    ### 守卫包装（维基 Variable:898 / 反模式 142 同款）：变量存在才加，缺失按 0
+    if = {
+        limit = {
+            has_variable = th_gensokyo_personal_contribution_var
+        }
+        add = var:th_gensokyo_personal_contribution_var   # 预留的异变贡献值（现有变量）
+    }
+    add = {
+        value = total_population             # 人口（total_population 实证：diplomatic_values.txt:132）
+        divide = 100000
+    }
+}
+
+### 投票权重 = 影响力 × (1 + 影响力修正)
+### modifier:th_gensokyo_io_influence_modifier 读取自定义修正字段
+### （modifier: 读取实证：union.txt:110 / hre_action_values.txt:84；字段定义见
+###  modifier_type_definitions/th_gensokyo_societal_value_modifiers.txt 双目录）
+### 2026-10-01 T2-2 第 2 档「夺权」落地（本文件唯一被改动的公式）：
+### 被诉国（th_gensokyo_tier_2_mark 或更高档）议会投票权归零。
+### 依据链：
+###  - special_status_power 的 root = 国家（官方
+###    VANILLA\common\international_organization_special_statuses\readme.txt:12；
+###    块形式先例 hre.txt:15-38，引用外部 script value 先例 tatar_yoke.txt:78）
+###  - 本项目 6 个席位的 special_status_power **全部**指向本公式
+###    （international_organization_special_statuses/th_gensokyo_io.txt:31/56/83/119/165/201）
+###    ⇒ 单点改动即全归零（R2 §R2-1(c) 改法 A）
+###  - **必须写 else 分支**：任何路径都不产出数值时 script value 返回 none，
+###    special_status_power 失效 → 议会权重异常（本文件 :81-85 记载的历史 bug 实证）
+th_gensokyo_io_vote_power_value = {
+    if = {
+        limit = {
+            OR = {
+                has_variable = th_gensokyo_tier_2_mark
+                has_variable = th_gensokyo_tier_3_mark
+                has_variable = th_gensokyo_tier_4_mark
+            }
+        }
+        value = 0
+    }
+    else = {
+        value = th_gensokyo_io_influence_value
+        add = {
+            value = th_gensokyo_io_influence_value
+            multiply = modifier:th_gensokyo_io_influence_modifier
+        }
+    }
+}
+
+### ============================================================
+### 审判庭 T2 数值（2026-10-01 追加，出处《脚本规格》§8 —— 已按 v1.8 修正：
+### th_embargo_trade_penalty_value 作废不建，第 3 档改真禁运关系，无连续量可承载）
+### 全部为初值【待调】；记账/立案/判决的写入与读取点见
+### on_action/th_gensokyo_chain_events.txt 与 scripted_effects/th_gensokyo_notorious_effects.txt
+### ============================================================
+
+### 立案与观察期
+th_tribunal_observation_months = { value = 6 }              # 每档观察期（月）
+
+### 罪名权重（立案时：罪 = 罪名次数 × 本系数 合计，clamp 0 ~ th_sin_crime_cap）
+th_crime_unlawful_weight = { value = 16 }                   # 非法扩张罪值系数/次
+th_crime_freecity_weight = { value = 96 }                   # 吞人类村落属领罪值系数/次
+th_crime_conquest_weight = { value = 3 }                    # 征服割地罪值系数/次
+th_crime_regulated_weight = { value = 30 }                  # 攻击彼岸监管国罪值系数/次
+th_crime_nocb_weight = { value = 15 }                       # 对成员无 CB 宣战罪值系数/次
+th_sin_crime_cap = { value = 60 }                           # 罪值上限（防单次顶满重判档 75）
+th_attitude_cap = { value = 40 }                            # 态度上限（战时累积，由 th_gensokyo_attitude_var 承担）
+
+### 第 1 档「谴责」（T2-2 落地）
+th_condemn_antagonism_value = { value = 50 }                # 第 1 档敌意（全体成员对目标）
+th_condemn_unity_cost_value = { value = 1 }                 # 第 1 档团结度月度自伤代价
+
+### 第 4 档「扩张招致更大国际反弹」（v1.8 正名；挂 antagonism_received_modifier）
+th_expansion_cost_sanctioned_value = { value = 2.0 }        # 第 4 档承受敌意倍数
+
+### 认罪赎罪（T2-6）
+th_confess_base_cost_value = { value = 500 }                # 认罪基础价（金币）
+th_confess_escalation_factor = { value = 0.5 }              # 认罪价随档数递增系数
+th_probation_years_value = { value = 10 }                   # 认罪后考察期（年）
+
+### 拒绝领衔的惩罚（T2-4；带符号，避免 -脚本值 语法风险，同本文件 :38 惯例）
+th_agent_refuse_prestige_penalty = { value = -20 }          # 拒绝领衔：威望 -20
+th_agent_refuse_contribution_penalty = { value = -20 }      # 拒绝领衔：幻想乡贡献 -20
+
+### ============================================================
+### 审判庭 T2-3 数值（2026-10-03 追加）—— 被诉方四出路 + 履约行动组
+### 出处《脚本规格》§4.4 / §4.5 / §4.6 / §10.6；初值全部【待调】
+### 全部为本窗新增键，查重：VANILLA 0 命中、MOD 全库 0 命中（报告 §7）
+### ============================================================
+
+### 已付赔款门槛（《脚本规格》§6.2 悔改条目 2 的判据）
+### 【本窗修正一处历史复用】T2-2b 曾临时复用 th_confess_base_cost_value（=500，
+### 见本文件 :160）作门槛，并留了"建议后续窗新增专用键"的注释
+### （scripted_effects/th_gensokyo_tribunal_effects.txt:576-580）。
+### 本窗新增本键并**已把那一处读取同步改为读本键**（同一文件 :584）。
+th_repent_paid_threshold_value = { value = 500 }            # 累付赔款达此额 ⇒ "已付赔款"成立（待调）
+
+### ------------------------------------------------------------
+### 认罪价（《脚本规格》§4.5"认罪价 = 基础价 × (1 + 0.5 × 档数)"）
+### 档数由 th_gensokyo_tier_1..4_mark **标记**推导（0-4；标记互斥，
+### 见 scripted_effects/th_gensokyo_tribunal_effects.txt 的 tier_*_apply_effect）：
+###   无标记=0 / tier_1=1 / tier_2=2 / tier_3=3 / tier_4=4
+###
+### 【为什么读变量前一律显式写 scope:actor】
+###   price_modifier 的 root scope 无官方承诺（官 readme:12 只承诺
+###   "scope:actor is the country, scope:recipient, scope:target..."），
+###   且 vanilla 两处 price_modifier 都显式写 scope:actor
+###   （VANILLA\common\generic_actions\nahuatl.txt:29 `scope:actor.doom`、
+###    bureaucracy_actions.txt:35 `scope:actor.modifier:...`）
+###   ⇒ 本值在 price_modifier 与行动 effect 两处都会被求值，一律显式限定。
+### ------------------------------------------------------------
+th_gensokyo_tribunal_confess_tier_factor_value = {
+    value = 1
+    if = {
+        limit = { scope:actor = { has_variable = th_gensokyo_tier_1_mark } }
+        add = { value = th_confess_escalation_factor multiply = 1 }
+    }
+    if = {
+        limit = { scope:actor = { has_variable = th_gensokyo_tier_2_mark } }
+        add = { value = th_confess_escalation_factor multiply = 2 }
+    }
+    if = {
+        limit = { scope:actor = { has_variable = th_gensokyo_tier_3_mark } }
+        add = { value = th_confess_escalation_factor multiply = 3 }
+    }
+    if = {
+        limit = { scope:actor = { has_variable = th_gensokyo_tier_4_mark } }
+        add = { value = th_confess_escalation_factor multiply = 4 }
+    }
+}
+
+### 认罪价实付额 = th_confess_base_cost_value × 档位系数
+### 【金额同步铁律】本值必须恒等于
+###   common/prices/th_gensokyo_tribunal_prices.txt 的
+###   th_gensokyo_tribunal_confess_price.gold
+###   × th_gensokyo_tribunal_confess_tier_factor_value
+###   —— 该价格对象的 gold 现值 500 = th_confess_base_cost_value，
+###      两文件互相登记了这条同步关系（改一处必须改另一处）。
+### 消费者：① 本值用于行动 allow 的"国库是否够付"正向条件；
+###          ② 用于 effect 里入公库的金额（保证 UI 显示价 = 实扣额）
+### 顶层 `value = A × multiply = B` 写法蓝本：
+###   VANILLA\common\script_values\diplomatic_values.txt:26-29
+###   （value = 3 / multiply = scope:recipient.<script_value>）
+th_gensokyo_tribunal_confess_cost_value = {
+    value = th_confess_base_cost_value
+    multiply = th_gensokyo_tribunal_confess_tier_factor_value
+}
+
+### 履约·支付赔款：单次金额（与价格对象
+### th_gensokyo_tribunal_reparations_price.gold 同步，现值 100）
+### 分期语义：500 / 100 = 5 次，配 3 个月冷却 ≈ 15 个月
+th_gensokyo_tribunal_reparations_cost_value = { value = 100 }   # 单次赔款（待调）
+
+### 战时求和：一次性战时代价（与价格对象
+### th_gensokyo_tribunal_settle_price.gold 同步，现值 1200）
+### 量级：高于认罪基础价 500，低于战败判决的"半数/全库转移" 【待调】
+th_settle_cost_value = { value = 1200 }                     # 求和代价（待调）
+
+### 自辩：每条**成功反驳**消耗的个人影响力
+### 接口 th_gensokyo_io_influence_var_subtract_effect（国家 scope，
+### scripted_effects/th_gensokyo_io_effects.txt:62-67，内部 subtract = $value$）
+th_defend_influence_cost_value = { value = 10 }             # 每条自辩举证的影响力代价（待调）
+
+### ============================================================
+### 审判庭 T2-5 数值（2026-10-04 追加）—— 判决结构改造
+### （基准档 / 宣判四行动 / 罚金入公库 / 超时兜底）
+### 出处：《设计定案》§5.5（判决权归阎魔）· §5.7（罚金池）、
+###       《脚本规格》§10.1 / §10.2 / §10.3 / §3.1
+### 全部为本窗新增键，查重：VANILLA 0 命中、MOD 全库 0 命中（报告 §7）
+### ============================================================
+
+### 超时兜底：战后未宣判的倒计时（月）
+### 语义 = 战争结束那一刻起算（th_gensokyo_verdict_overdue_start_effect），
+###   逐月递减，归零当月自动按【诸国意向】判决
+###   （《设计定案》§5.5"战后 N 个月阎魔未宣判 → 自动按诸国意向判决"，防卡死"必须有"）
+th_verdict_overdue_months = { value = 6 }                   # 超时自动宣判月数（待调）
+
+### ------------------------------------------------------------
+### 审判法倾向（−10 / 0 / +10）
+### 三条政策的**语义**由 common/laws/th_gensokyo_judgment_law.txt 的既有注释给定
+### （劝善"审判从严偏移 -10"(:21) / 有序"基准"(:28) / 因果必尝"审判从严偏移 +10"(:35)），
+### 该法律文件只作标记、本身不存数值 ⇒ 数值在此落地，**照其原语义取，不新造**。
+### 读取点：th_gensokyo_judgment_score_value（本文件下方）
+### ------------------------------------------------------------
+th_judgment_mercy_bias_value = { value = -10 }              # 劝善（从宽）倾向（待调）
+th_judgment_order_bias_value = { value = 0 }                # 有序（中庸）倾向
+th_judgment_karma_bias_value = { value = 10 }               # 因果必尝（从严）倾向（待调）
+
+### ------------------------------------------------------------
+### 判决分 = 罪（≤ th_sin_crime_cap = 60）+ 态度（≤ th_attitude_cap = 40）+ 审判法倾向
+### root = 被诉国（**country scope**，故 GUI 可直接 ScriptValue 取用）。
+### 换算阈值沿用 th_sin_tier2_value = 50 / th_sin_tier3_value = 75（《脚本规格》§3.1）
+### 用途：① 战争结束时换算基准档（scripted_effects 的
+###          th_gensokyo_judgment_baseline_effect）
+###       ② T2-5 案卷区可读本值显示"判决分"明细
+### 读 var: 前一律 has_variable 守卫（铁律 11）
+### 蓝本：
+###   - 脚本值内的 scope 块 + if 分支：
+###     VANILLA\common\script_values\hre_action_values.txt:100-110
+###     （if = { limit = { scope:recipient = { <trigger> } } add = { … } }）
+###   - IO 政策查询 international_organization_has_policy：
+###     VANILLA\common\trigger_localization\international_organization_triggers.txt:316；
+###     用法先例 VANILLA\common\generic_actions\middle_kingdom.txt:17-23
+###     （allow 内 international_organization:X = { var:… / international_organization_has_policy = … }）
+###   - 脚本值内 if / else_if / else：VANILLA\common\script_values\
+###     economy_satisfaction_target.txt:5-23（23 处 else_if 之一）
+### ------------------------------------------------------------
+th_gensokyo_judgment_score_value = {
+    value = 0
+    ### 罪：立案时按罪名账本快照写入
+    ### （唯一写入点 = th_gensokyo_tribunal_sin_total_effect）
+    if = {
+        limit = { has_variable = th_gensokyo_sin_var }
+        add = var:th_gensokyo_sin_var
+    }
+    ### 态度：战时累积（T2-3 罪 / 态度分流后的"抗命"量）
+    if = {
+        limit = { has_variable = th_gensokyo_attitude_var }
+        add = var:th_gensokyo_attitude_var
+    }
+    ### 审判法倾向：三条政策互斥，故 if / else_if / else 恰好命中一条
+    if = {
+        limit = {
+            international_organization:th_gensokyo_io = {
+                international_organization_has_policy = policy:th_judgment_karma_policy
+            }
+        }
+        add = th_judgment_karma_bias_value
+    }
+    else_if = {
+        limit = {
+            international_organization:th_gensokyo_io = {
+                international_organization_has_policy = policy:th_judgment_mercy_policy
+            }
+        }
+        add = th_judgment_mercy_bias_value
+    }
+    else = {
+        add = th_judgment_order_bias_value
+    }
+}
+
+### ------------------------------------------------------------
+### 偏离意向的团结度代价（每偏离 1 档 = 本值；偏离量 0-2 档）
+### 语义（《设计定案》§5.5"判决偏离意向 → 阎魔按偏离量付出代价"）：
+###   意向档 = 基准档 + 意向向量（从重 +1 / 从轻 −1 / 无意向 0）
+###   偏离量 = |实判档 − 意向档| ∈ {0, 1, 2}
+### 支付载体 = 幻想乡团结度（th_gensokyo_unity_subtract_effect，IO scope 调用）；
+###   施加点 = th_gensokyo_verdict_apply_effect（每偏离一档调用本值一次）
+### 【本窗新增，超出《脚本规格》§7 的列举】理由：§7 未给"每档偏离单价"键，
+###   而偏离代价必须可独立调参 —— 复用 th_unity_sentence_t*_value 会把
+###   "判决本身扣团结"与"偏离意向罚团结"两个语义耦合成同一个旋钮。
+### ------------------------------------------------------------
+th_verdict_deviation_unity_cost_value = { value = 5 }        # 每偏离一档的团结度代价（待调）
+
+### ============================================================
+### 审判庭 T2-5b 数值（2026-10-01 追加）—— 圣战「大义」修正
+### 出处《设计定案》§7（内部圣战定性）+ §8.1（数值表）
+### 载体 = in_game/common/static_modifiers/th_gensokyo_tribunal_crusade_modifiers.txt
+###        的 th_gensokyo_grand_cause_modifier
+###
+### ⚠️ 【本三键必须写成裸数值，不能写 { value = X } 块 —— 引擎硬约束】
+###   它们是**静态修正的字段值**（modifier 字段值只接受"直接求值为数"的
+###   静态脚本值，块形式会被忽略 → 数值静默变 0）：
+###   官方 wiki，Modifier modding §Making modifiers：
+###     "The value can also be a static scripted value; that is, it must
+###      evaluate to a number or boolean directly – it cannot be dynamically
+###      calculated."
+###     反例逐字：test_value_2 = { value = 0.1 multiply = war_exhaustion }
+###               → "# will NOT work - no calculations on the fly"
+###   base game 静态修正字段的实证统计（本机全库扫描）：
+###     引用【裸数值】脚本值 = 821 处（如 country.txt:11583
+###       monthly_prestige = monthly_prestige_weak_bonus，
+###       该键定义于 main_menu/common/script_values/default_values.txt:47 = 0.05）
+###     引用【块形式】脚本值 = 0 处
+###   ⇒ 本文件其余键全是块形式（供 effect / script value 内部运算用），
+###     只有下面三键是裸数值；同文件混用两种形式有大量 base game 先例
+###     （VANILLA\common\script_values\building_caps.txt：裸 120 / 块 287）。
+### ============================================================
+th_grand_cause_morale_modifier = 0.1        # 大义：陆军士气加成（《设计定案》§8.1 定值）
+th_grand_cause_manpower_modifier = 0.05     # 大义：人力加成【待调】（照 §8.1"小正值"口径）
+th_grand_cause_prestige_modifier = 0.05     # 大义：月度威望【待调】（同量级先例 country.txt:140）
+
+### 【祟 无新增数值键】《设计定案》§8.1 的 th_tarnish_antagonism_value = 25
+###   本窗**不建**：祟的机制效果由第 1 档敌意 / 第 2 档夺权 / 保护钩子分别承担
+###   （逐条见 static_modifiers/th_gensokyo_tribunal_crusade_modifiers.txt 第 2 段），
+###   祟修正本体为空字段纯展示载体，没有可承载该值的字段。
+###   【发现】该键在 MOD 全库（in_game + localization + docs）0 命中（查重见报告 §7），
+###   即在 §8.1 表中登记过但从未落盘 —— 本窗不落盘，登记为后续窗的待决项：
+###   若日后要让"祟"自带一层敌意，落点应是 bias 键而非 modifier 字段。

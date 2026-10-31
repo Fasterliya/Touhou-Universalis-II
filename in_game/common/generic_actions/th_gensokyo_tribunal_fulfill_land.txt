@@ -1,0 +1,216 @@
+﻿### ============================================================
+### 审判庭 — 履约·交还领地（T2-3 新增，2026-10-03）
+### 规格：《脚本规格》§10.6（被诉方履约行动组）；设计：《设计定案》§6.1
+###
+### 语义：被诉国把**涉案地块**逐块交还给受害国。
+###   对应《脚本规格》§6.2 悔改条目 1「已归还非法所得」。
+###   与"认罪赎罪 = 一次结清"互为对照：履约 = 分期（便宜，但要逐条做到）。
+###
+### 【地块选择器：source_global_list（R3 §R3-6c 的逐字实例）】
+###   官方字段名目 VANILLA\common\generic_actions\readme.txt:24：
+###     "source_global_list = <name of global variable list with the list of
+###      candidates in> if you have a pre calculated global list of who you want
+###      in the select_trigger, use this"
+###   `looking_for_a = location` + `source_global_list` 的**逐字实例**：
+###     VANILLA\common\generic_actions\japanese_shogunate.txt:43-58
+###       （looking_for_a = location / source = recipient /
+###         target_flag = target_location / source_global_list = shugo_capital_locations /
+###         none_available_msg_key / column / enabled）
+###   另一例（area 版本，且 source_global_list 与
+###   interaction_source_list = { every_in_global_list ... } 并用）：
+###     VANILLA\common\generic_actions\chinese_treasure_voyages.txt:43-52
+###   ⇒ 本项目**不需要**退化到"interaction_source_list + every_in_global_list
+###      + add_to_list = source"（该退路作废，见报告 §5）。
+###
+### 【列表内容 = 纯 location】R3 §R3-6c 尾注明确要求
+###   "涉案地块列表**只装 location**，受害国另存"——
+###   本项目正是这样：th_gensokyo_stolen_location_list 只装 location，
+###   受害国由 th_gensokyo_victim_mark 标记承载。
+### ============================================================
+
+th_gensokyo_tribunal_fulfill_land = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        ### P1-12 纪律：potential 顶层 root 为空，必须显式 scope:actor 包装
+        ### 蓝本 generic_actions/th_gensokyo_tribunal_indict.txt:29-45
+        ### 被诉国独有（案件判据恒为 th_gensokyo_tarnish_mark）
+        scope:actor ?= {
+            has_variable = th_gensokyo_tarnish_mark
+        }
+    }
+
+    allow = {
+        ### 铁律 3：custom_tooltip 文案写"阻塞状态"、内层写**正向**条件
+        ### 正向条件 = 手上还有至少一块涉案地可还
+        ###   （否则选择器无候选，按钮点了也无事可做）
+        ### 列表读取前先 has_global_variable_list 守卫（铁律 11 同款纪律；
+        ###  T2-2b 的悔改判定对同一个列表也用了同样的守卫，
+        ###  见 scripted_effects/th_gensokyo_tribunal_effects.txt:540-561）
+        scope:actor ?= {
+            custom_tooltip = {
+                text = TH_TRIBUNAL_FULFILL_LAND_NO_TARGET_TT
+                has_global_variable_list = th_gensokyo_stolen_location_list
+                any_in_global_list = {
+                    variable = th_gensokyo_stolen_location_list
+                    owner ?= scope:actor
+                }
+            }
+        }
+    }
+
+    ### ------------------------------------------------------------
+    ### 选址：候选 = 全局物证列表 th_gensokyo_stolen_location_list
+    ### 写法逐字照 VANILLA\common\generic_actions\japanese_shogunate.txt:43-58
+    ### 说明：与项目内 th_gensokyo_feast.txt:42-86 的"选址"不同，那里用的是
+    ### interaction_source_list + every_owned_location（候选要现算）；
+    ### 本处候选是一份**预先存在的全局列表**，正是 source_global_list 的用途。
+    ###
+    ### visible / enabled 都限定"该地块现在仍归本国"
+    ###   —— R3 §R3-6a 的"若该地块已归受害国 → 无需操作（守卫）"在这里落成
+    ###      UI 层过滤（不可选），effect 里还有第二道同名守卫（防并发/预演）。
+    ###   owner 是 location 的引擎 link（本项目既有用法：
+    ###   generic_actions/th_gensokyo_feast.txt:69/71 的 owner ?= ...）
+    ### ------------------------------------------------------------
+    select_trigger = {
+        looking_for_a = location
+        target_flag = return_location
+        name = "choose_province"
+        none_available_msg_key = "no_provinces_available"
+        source_global_list = th_gensokyo_stolen_location_list
+        column = {
+            data = name
+        }
+        column = {
+            data = owner_flag
+        }
+        column = {
+            data = population
+        }
+        visible = {
+            owner ?= scope:actor
+        }
+        enabled = {
+            owner ?= scope:actor
+        }
+    }
+
+    effect = {
+        ### 铁律 2：exists 守卫防 tooltip 预演报错
+        ### （AI 预评估 / tooltip 未选择 return_location 时直接引用会刷
+        ###  "Undefined event target 'return_location'" —— 同款修复见
+        ###  generic_actions/th_gensokyo_feast.txt:91-96）
+        if = {
+            limit = { exists = scope:return_location }
+
+            ### ============================================================
+            ### ① 定位受害国（归还目标）
+            ### 《脚本规格》§6.1：受害国由 th_gensokyo_victim_mark 承载
+            ### （立案前由 on_took_location_in_peace_treaty 钩子写入）。
+            ### R3 §R3-6a 的硬要求之一：**目标国家必须 country_exists 守卫**
+            ###   —— vanilla 的规范守卫链在
+            ###     VANILLA\common\country_interactions\hre.txt:2077-2093
+            ###     （exists = previous_owner → is_core_of → ≠ 双方 →
+            ###      trigger_if = { limit = { country_exists = previous_owner } ... }）
+            ###   本项目已有的同款守卫：scripted_effects/th_gensokyo_crusade_effects.txt:138
+            ###   （`country_exists = previous_owner`）。
+            ###   本处用 `country_exists = this`（this = 候选受害国）达到同一目的：
+            ###   亡国的受害国不会被选中 ⇒ change_location_owner 永远拿到活国。
+            ### 【为什么不用 previous_owner】R3 §R3-2d / §6 已定谳：
+            ###   previous_owner 语义 = "上一任所有者"，中间二次转手即错，
+            ###   且无生命周期说明 ⇒ 一律回读立案时的快照（受害国标记 + 地块列表）。
+            ### ============================================================
+            every_country = {
+                limit = {
+                    has_variable = th_gensokyo_victim_mark
+                    country_exists = this
+                }
+                save_scope_as = th_tribunal_land_victim
+            }
+
+            if = {
+                limit = { exists = scope:th_tribunal_land_victim }
+                scope:return_location = {
+                    ### 第二道守卫：地块仍归本国（"若已归受害国 → 无需操作"）
+                    if = {
+                        limit = { owner ?= scope:actor }
+                        ### ============================================================
+                        ### ② 归还：change_location_owner = <持受害国标记的国家 scope>
+                        ### 参数形态 = 一个 country scope（R3 §R3-6a：
+                        ###   vanilla 全部用例都是 `= c:TAG` / `= scope:X` / `= <link>`；
+                        ###   本项目已有先例 scripted_effects/th_gensokyo_crusade_effects.txt:140）
+                        ###
+                        ### ③ **必须补 change_integration_level**（R3 §R3-6a 的第二条硬要求）：
+                        ###   change_location_owner 之后地块的 integration_level
+                        ###   **不会自动变**，会带着"被征服"整合度回到受害国。
+                        ###   vanilla 的补法逐字照
+                        ###     VANILLA\common\country_interactions\hre.txt:2093-2099
+                        ###       change_location_owner = previous_owner
+                        ###       hidden_effect = {
+                        ###           if = { limit = { integration_level = conquered }
+                        ###                change_integration_level = integrated } }
+                        ###   （同款重复出现在 :2123-2129；
+                        ###     change_integration_level 的取值枚举 = core / integrated，
+                        ###     见 effect_localization/location_effects.txt:214-219
+                        ###      与全库 56 处用法，全部是这两个字面量）
+                        ###   ⚠️ 本项目 th_gensokyo_trial_return_lands_effect
+                        ###      （th_gensokyo_crusade_effects.txt:111-143）**缺这一步** ——
+                        ###      属 T2-4 的既有缺陷，本窗不动那个文件，登记在报告 §10。
+                        ### ============================================================
+                        change_location_owner = scope:th_tribunal_land_victim
+                        hidden_effect = {
+                            if = {
+                                limit = { integration_level = conquered }
+                                change_integration_level = integrated
+                            }
+                        }
+                    }
+                }
+            }
+
+            ### ============================================================
+            ### ④ 中途悔改探测（T2-2b 已留的钩子）
+            ### 直接复用 th_gensokyo_tribunal_repentance_check_effect：
+            ###   条件全成立（条目 1 已归还 + 条目 2 已付赔款 + 条目 3 已停战，
+            ###   或条目 4 自请监管短路）⇒ 立即结案；
+            ###   不成立 ⇒ **无副作用**（这也是本窗对 T2-2b 的唯一一处微调：
+            ###   把 th_gensokyo_tribunal_not_repented_effect 的副作用限定在
+            ###   "观察期确实已归零"，否则中途探测会提前打开升档闸门、
+            ###   让 6 个月观察期作废。详见
+            ###   scripted_effects/th_gensokyo_tribunal_effects.txt 的 ⑥ 段注释）。
+            ### ============================================================
+            th_gensokyo_tribunal_repentance_check_effect = yes
+        }
+    }
+
+    ### 无 cooldown：候选是有限的地块列表，每点一次消耗一块，
+    ### 天然被列表长度限流（且"全部归还"是结案的必经路径，加冷却只会拖慢它）
+
+    ai_will_do = {
+        ### 铁律 5 v1.8：ai_will_do 可用 has_variable / var: / 全局列表触发器
+        ### 被诉 AI 的履约倾向：手上还有涉案地块 ⇒ 高权重（交还就能推进悔改）
+        if = {
+            limit = {
+                scope:actor ?= {
+                    has_variable = th_gensokyo_tarnish_mark
+                }
+                has_global_variable_list = th_gensokyo_stolen_location_list
+                any_in_global_list = {
+                    variable = th_gensokyo_stolen_location_list
+                    owner ?= scope:actor
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_FULFILL_READY
+                value = 300
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

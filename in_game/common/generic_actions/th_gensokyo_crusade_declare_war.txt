@@ -1,0 +1,192 @@
+### ============================================================
+### 审判庭 — 宣战行动（2026-08-26 新增）
+### 链路：审判庭成员（阎魔/贤者/加入者）→ 选审判庭 →
+###       对目标（th_gensokyo_crusade_target_mark 标记国）宣战
+### 替代原 IO 面板 declare_war_on_target_casus_belli 按钮
+### （引擎 target 机制脚本不可控，2026-08-26 实证）
+### AI 判定：实力对比（relative_strength ≥ 0.5 才宣战）
+### 宣战后 on_war_declared 钩子召唤全体成员入战（战争界面已随局势删除，
+### 2026-08-26 用户决策：系统由审判庭 IO 全权驱动）
+### 2026-08-26 修复（error.log 取证）：
+###   - allow 内 any_country + is_at_war_with 触发 tooltip 描述帧报错
+###     （jomini_trigger_description.cpp:205 刷屏）→ 照 vanilla
+###     coup_attempt_actions.txt:8-21 先例，用 custom_tooltip 包住防重复判定
+###   - effect 顶层 scope:crusade_target 无条件引用 → 引擎 tooltip 预演时
+###     未设置会报错 → 照 lordship_of_ireland.txt:193-216 先例加 exists 守卫
+### ============================================================
+
+th_gensokyo_crusade_declare_war = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_tribunal
+            ### 目标国不可宣战自己
+            NOT = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            ### ============================================================
+            ### 2026-10-04 闭环改造①：宣战权收窄为【代理人】，代理人缺失时三贤者兜底
+            ###   代理人判定 = th_gensokyo_tribunal_agent_mark
+            ###     （写入点：本文件 :267 建庭选人 / escalate.txt:224 升档提名）
+            ###   三贤者判定逐字照本文件既有先例（:203-210）：
+            ###     has_special_status_in_international_organization = {
+            ###       type = special_status:th_gensokyo_io_sages_special_status … }
+            ###   写在 potential ⇒ 非代理人**看不到**按钮（用户 2026-10-04 拍板）
+            ### ============================================================
+            OR = {
+                has_variable = th_gensokyo_tribunal_agent_mark
+                AND = {
+                    ### 代理人缺失（未提名 / 已拒绝）时，三贤者接管宣战权
+                    NOT = {
+                        any_country = {
+                            has_variable = th_gensokyo_tribunal_agent_mark
+                        }
+                    }
+                    has_special_status_in_international_organization = {
+                        type = special_status:th_gensokyo_io_sages_special_status
+                        international_organization = international_organization:th_gensokyo_io
+                    }
+                }
+            }
+            ### ============================================================
+            ### 2026-10-04 闭环改造②：**一案只能宣战一次**
+            ###   宣战成功时在**被诉国**身上打 th_gensokyo_crusade_declared（见 effect），
+            ###   此处要求它不存在 ⇒ 点过一次后按钮消失，
+            ###   直到案件终结（case_markers_clear_effect 复位：立案清旧案 / 结案 两条出口）
+            ### ============================================================
+            NOT = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    has_variable = th_gensokyo_crusade_declared
+                }
+            }
+        }
+    }
+
+    allow = {
+        ### 目标标记存在（审判庭有惩戒对象）
+        any_country = {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+        ### 尚未与目标交战（防重复宣战）
+        ### 2026-08-26 修复：any 触发器内的 scope 依赖值会让引擎无法生成
+        ### tooltip 描述（jomini_trigger_description.cpp:205 每帧报错）→
+        ### 照 vanilla 先例用 custom_tooltip 显式提供描述文本
+        custom_tooltip = {
+            text = TH_TRIBUNAL_ALREADY_AT_WAR_TT
+            NOT = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        is_at_war_with = prev
+                    }
+                }
+            }
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_tribunal
+        }
+    }
+
+    effect = {
+        ### 目标定位（标记法）
+        every_country = {
+            limit = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            save_scope_as = crusade_target
+        }
+        ### 宣战（惩戒 CB；入战由 IO join 触发器 + on_war_declared 钩子驱动）
+        ### 2026-08-26 修复：exists 守卫防 tooltip 预演/标记缺失时报错
+        ### （vanilla lordship_of_ireland.txt:193-216 先例）
+        if = {
+            limit = {
+                exists = scope:crusade_target
+            }
+            ### ============================================================
+            ### 2026-10-04 闭环改造②（第二道锁）：防御性二次校验
+            ###   若同一 tick 内两国同抢（或 UI 与服务端不同步），后执行者会因
+            ###   标记已存在而**跳过宣战** —— 与 potential 的第一道锁互补。
+            ### ============================================================
+            if = {
+                limit = {
+                    NOT = {
+                        scope:crusade_target = {
+                            has_variable = th_gensokyo_crusade_declared
+                        }
+                    }
+                }
+                ### 先打「本庭已宣战」标记（一案一次的唯一开关）
+                ### 复位点 = case_markers_clear_effect（立案清旧案 / 结案 两条出口）
+                scope:crusade_target = {
+                    set_variable = th_gensokyo_crusade_declared
+                }
+                scope:actor = {
+                    declare_war_with_cb = {
+                        target = scope:crusade_target
+                        type = casus_belli:th_gensokyo_crusade_cb
+                    }
+                }
+                ### ============================================================
+                ### 2026-10-01 T2-5b：宣战成功 ⇒ 给**全体参与者**打「大义」
+                ### （《设计定案》§7「宣战时全体参与者获『大义』临时修正」）
+                ### 位置：declare_war_with_cb **之后** —— 只对"真的开了战"的这一次宣战生效；
+                ###   仍在 exists = scope:crusade_target 守卫内：标记缺失时宣战并未发生，
+                ###   此时不该发大义（与上方修复同一条守卫链）。
+                ### 「参与者」口径 = **宣战那一刻的审判庭成员**，不是"参战方全体"，
+                ###   判断依据与后果（后来加入的义兵拿不到）逐条见
+                ###   scripted_effects/th_gensokyo_tribunal_effects.txt 的 ⑮ 段头注释。
+                ### 幂等：该效果内部 add_country_modifier 带 mode = replace，
+                ###   重复宣战不会叠出多份大义（wiki Modifier_modding §Add modifier parameters）。
+                ### ============================================================
+                th_gensokyo_tribunal_grand_cause_apply_effect = yes
+            }
+        }
+    }
+
+    ### 2026-08-26（用户补充）：宣战后按钮冷却变灰，防止重复点击
+    ### （与 allow 的 is_at_war_with 判定双保险）
+    cooldown = {
+        type = th_gensokyo_crusade_declare_war
+        months = 12
+    }
+
+    ai_will_do = {
+        ### 实力对比：actor 不弱于目标才宣战（0.5 = 势均力敌）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        relative_strength = {
+                            target = prev
+                            value >= 0.5
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_CB_STRENGTH
+                value = 500
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 10
+        }
+    }
+}

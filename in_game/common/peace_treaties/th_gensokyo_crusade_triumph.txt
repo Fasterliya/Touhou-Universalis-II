@@ -1,0 +1,57 @@
+### ============================================================
+### 幻想乡惩戒战争 完全胜利条约（100 分）
+### 仅 th_gensokyo_crusade_cb 战争可用；100 分时可提出 → 战争以完全胜利告终
+### 2026-08-26：th_gensokyo_crusade_defeated 标记删除（加载日志实证
+### "is set but is never used"——审判走议会辩论，不再读取该标记）
+### ============================================================
+
+th_gensokyo_crusade_triumph = {
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+
+    potential = {
+        scope:war = {
+            casus_belli ?= casus_belli:th_gensokyo_crusade_cb
+        }
+        ### 仅阎魔（和约提出方为领袖）可见；反杀方使用 th_gensokyo_crusade_counter（互不可见）
+        scope:winner = {
+            is_leader_of_international_organization = international_organization:th_gensokyo_io
+        }
+    }
+    allow = {
+    }
+
+    effect = {
+        ### 战败方价值观归中（缘=0，2026-08-21 拷问 Q3 用户拍板）：
+        ### 远离 +50 惩戒门槛（th_notorious_outcast_threshold_value），
+        ### 避免被连续惩戒/审判（防再制裁唯一机制；2026-08-26 起
+        ### th_gensokyo_judged 标记已删——全库零读取，归中方案为唯一根治；
+        ### 归中不给满额亲善 buff——用户拍板 0 而非 -100）
+        scope:loser = {
+            set_societal_value = {
+                type = th_gensokyo_amity_vs_belligerence
+                value = 0
+            }
+        }
+        ### 胜利方威望 + 贡献（维护幻想乡和平的报酬）
+        scope:winner = {
+            add_prestige = {
+                value = 10
+            }
+            th_gensokyo_io_contribution_var_add_effect = {
+                value = 10
+            }
+        }
+    }
+
+    ai_desire = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+}

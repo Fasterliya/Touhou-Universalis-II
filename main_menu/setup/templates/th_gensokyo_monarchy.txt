@@ -12,13 +12,14 @@ government = {
 	aristocracy_vs_plutocracy = -40
 	serfdom_vs_free_subjects = -10
 	mercantilism_vs_free_trade = -10
-	belligerent_vs_conciliatory = 10
+	# belligerent_vs_conciliatory = 10  # 幻想乡IO成员国禁用原版条（见 common/societal_values/th_gensokyo_values.txt allow 覆盖）
 	quality_vs_quantity = 0
 	offensive_vs_defensive = -20
 	land_vs_naval = -30
 	capital_economy_vs_traditional_economy = 40
 	individualism_vs_communalism = 20
 	outward_vs_inward = 20
+	th_gensokyo_amity_vs_belligerence = 0
 	#下面这个是议事会的类型
 	#有需要去in_game/common/parliament_types里写新的东西
 	parliament = {
@@ -54,18 +55,20 @@ government = {
 		medieval_levy_law = peasant_levies
 		royal_court_customs_law = aristocratic_court_policy
 		censorship = limited_censorship
-		education_masses_law = basic_religious_education
-		administrative_system = feudal_administration
-		cultural_traditions_law = martial_society
 		marriage_law = monogamous_marriage
 		heir_religion_law = heir_same_religion
-		legal_code_law = civil_law_policy
 		maritime_law = protect_trade_routes
 		piracy_law = anti_piracy_policy
 		distribution_of_power_law = dop_favor_the_ruler
 		immigration_law = open_borders_law
 		mining_law = nobles_mining_law
 		coin_laws = silver_coins
+		# 幻想乡法律系统（非人初始）：旧章/旧例法/无教而行/百妖夜宴/个人统御
+		feudal_de_jure_law = th_old_charter
+		legal_code_law = th_old_customary_law
+		education_masses_law = th_no_education
+		cultural_traditions_law = th_hundred_youkai_banquet
+		administrative_system = th_personal_rule
 	}
 }
 

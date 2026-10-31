@@ -1,0 +1,328 @@
+### ============================================================
+### 审判庭（th_gensokyo_tribunal）— 临时包围网型国际组织（2026-08-23 重构）
+### 参考：base game international_organizations/coalition.txt（结构逐字段对照）
+### 定位：阎魔/贤者宣告后动态创建（create_international_organization，
+###       unique = yes 全局唯一，战后台审判议会结束后 destroy）
+### 2026-08-26 修复（日志实证）：引擎 target 机制脚本不可控——
+###   - create 的 target 参数不识别（"Field: target ... Type: none"）
+###   - 全库无设置 IO target 的效果（原版 coalition 的 target 为引擎自动流程）
+###   → 目标统一用 th_gensokyo_crusade_target_mark 国家标记定位：
+###     宣战（自定义行动）/ 授撤 CB / 自动参战 / 自动退出解散 /
+###     AI 加入判定 全部走标记（coalition 的 scope:target 引用逐一替换）
+###   删除依赖引擎 target 的字段：has_target / declare_war_on_target_casus_belli /
+###   show_strength_comparison_with_target / can_target_trigger /
+###   potential_target_trigger / target_modifier
+###   （兵力对比 = 局势 GUI 现有 strength 变量；宣战 = 自定义行动）
+### 2026-08-26 第二次修复（game.log 取证）：
+###   - join_defensive/offensive_wars_always 原用 scope:recipient 判定敌国 →
+###     "Undefined event target 'recipient'" 每帧刷屏且判定恒 false（成员永不
+###     自动入战）。IO readme.txt:94-99：scope:actor = caller、scope:recipient =
+###     被召唤成员、scope:target = against who（敌国）→ 改 scope:target 标记判定
+###     （照 vanilla coalition.txt:38-53 结构，引擎 target 链接换标记法）
+###   - 局势删除（2026-08-26 用户决策）→ 罪值累积迁入 monthly_effect、
+###     初始化（罪值清零/反杀标记重置）迁入 on_creation、战后审判迁入
+###     on_ending_war 钩子（th_gensokyo_chain_events.txt）
+### ============================================================
+
+th_gensokyo_tribunal = {
+    unique = yes
+    show_on_diplomatic_map = yes
+    expel_members_who_are_targets_of_other_members = yes
+    expel_members_who_are_attackers_at_war_with_other_members = yes
+    expel_members_who_are_defenders_at_war_with_other_members = yes
+    has_leader_country = yes
+    leader_type = country
+    promote_strongest_member_to_war_leader = yes
+
+    ### 议会（2026-08-26 用户需求）：审判庭自身议会——
+    ### 战后审判（th_gensokyo_trial_issue）在审判庭内部进行，参战成员投票
+    has_parliament = yes
+    parliament_type = th_gensokyo_tribunal_parliament
+    resolution_widget = parliament
+
+    gives_food_access_to_members = yes
+
+    ### 仅脚本创建（宣告行动），外交界面不可见
+    create_visible_trigger = {
+        always = no
+    }
+    create_enabled_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+
+    ### 加入：幻想乡 IO 成员（非目标标记国、非免制裁期）
+    can_join_trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+        NOT = {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+        NOT = {
+            has_variable = th_gensokyo_sanction_immunity
+        }
+    }
+    join_visible_trigger = {
+        is_member_of_international_organization = international_organization:th_gensokyo_io
+    }
+
+    ### 退出：随时可退
+    can_leave_trigger = {
+        always = yes
+    }
+
+    ### 自动退出（2026-08-26 用户修正：以价值观条为标准，不再检测敌意）：
+    ### 惩戒目标的好战价值观回落到阈值（<50）以下 → 惩戒失去正当性 → 自动退出
+    auto_leave_trigger = {
+        any_country = {
+            has_variable = th_gensokyo_crusade_target_mark
+            societal_value:th_gensokyo_amity_vs_belligerence < th_notorious_outcast_threshold_value
+        }
+    }
+
+    ### 解散（2026-08-26 用户修正）：仅以目标标记消除为解散条件
+    ### （审判完成 cleanup 清理标记后自动解散；不再判 total_members）
+    auto_disband_trigger = {
+        NOT = {
+            any_country = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+        }
+    }
+
+    ### 对目标的战争自动加入（包围网联合作战；目标 = 标记国）
+    ### 2026-08-26 修复：scope:recipient（被召唤成员）→ scope:target（敌国）
+    ### 标记判定（IO readme.txt:94-99 语义 + vanilla coalition.txt:38-53 结构；
+    ### 原 scope:recipient 写法实测 "Undefined event target 'recipient'" 刷屏）
+    join_defensive_wars_always = {
+        scope:target ?= {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+    }
+    join_offensive_wars_always = {
+        scope:target ?= {
+            has_variable = th_gensokyo_crusade_target_mark
+        }
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    modifier = {
+    }
+
+    ### 成员纪律（2026-08-26 用户修正：取消 CB 自动授予——
+    ### 惩戒 CB 不再随加入自动解锁；宣战唯一入口 = 审判庭宣战按钮
+    ### （th_gensokyo_crusade_declare_war，declare_war_with_cb 直接开战），
+    ### CB 持有与否不再影响宣战；triumph/counter 条约的 CB 类型判定
+    ### 为战争级检查，与持有无关）
+    on_joined = {
+    }
+    on_left = {
+    }
+
+    on_creation = {
+        ### 2026-08-26（局势删除后迁移，原 situation on_start 职责）：
+        ### 新惩戒开启：重置上一场反杀标记
+        ### （on_creation root = IO，readme.txt:63；目标经 th_gensokyo_io
+        ### 成员遍历 + 标记定位，与局势 on_start 同款已验证写法）
+        ###
+        ### 【2026-10-01 主代理修正（罪/态度拆分连带）】本处原先清零
+        ### th_gensokyo_sin_var —— 语义拆分后该变量 = **立案时按罪名账本快照的
+        ### 「罪」（≤ th_sin_crime_cap = 60）**，而 on_creation 在**开庭（阶段 3）**
+        ### 才触发，晚于立案（阶段 1）：继续清零会把立案时算出的罪抹掉，导致
+        ### 阶段 4 判决恒读到 0。故改为清零 **th_gensokyo_attitude_var**（战时累积的
+        ### 「态度」）—— 它本来就该"每场圣战重新开始"，因为战争发生在开庭之后。
+        ### sin_var 由立案行动（T2-2）在每次立案时整值覆盖，不需要在这里清。
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                set_variable = {
+                    name = th_gensokyo_attitude_var
+                    value = 0
+                }
+                remove_variable = th_gensokyo_crusade_countered
+            }
+        }
+    }
+    on_disband = {
+    }
+
+    ### 月度罪值累积（2026-08-26：局势删除后迁移，原 situation on_monthly 职责；
+    ### readme.txt:67 monthly_effect root = IO）
+    monthly_effect = {
+        international_organization:th_gensokyo_io = {
+            every_international_organization_member = {
+                limit = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                }
+                ### 2026-10-01 T2-3 罪 / 态度分流：本处战时累积改指向
+                ### th_gensokyo_attitude_var（原写 th_gensokyo_sin_var），上限
+                ### th_attitude_cap = 40。th_gensokyo_sin_var 语义收窄为「罪」，
+                ### 今后只由 T2-2 立案时按罪名账本写入（上限 th_sin_crime_cap = 60）；
+                ### 判决公式改动属 T2-4，本窗不动。
+                ### has_variable 守卫防缺失变量 → "Value of wrong type 'none'"（铁律 11）
+                if = {
+                    limit = {
+                        has_variable = th_gensokyo_attitude_var
+                    }
+                    change_variable = {
+                        name = th_gensokyo_attitude_var
+                        add = th_crusade_sin_monthly_value
+                    }
+                    clamp_variable = {
+                        name = th_gensokyo_attitude_var
+                        min = 0
+                        max = 40
+                    }
+                }
+            }
+        }
+    }
+
+    ### AI 加入判定（coalition ai_desire_to_join 同款结构；scope:target
+    ### 全部改 any_country 标记定位 + trigger 判定，2026-08-26）
+    ### root = 潜在加入者（country），scope:recipient = 审判庭
+    ai_desire_to_join = {
+        ### 与目标交战 → 加入
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    is_at_war_with = prev
+                }
+            }
+            add = {
+                desc = "AT_WAR_TRIGGER"
+                value = 20
+            }
+        }
+        ### 对目标敌意 ≥50 → 加入（2026-08-26 用户：AI 主动加入倾向保留敌意判定；
+        ### 补充：敌意 ≥50 → +10000 压倒性加入意愿）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    antagonism = {
+                        target = prev
+                        value >= 50
+                    }
+                }
+            }
+            add = {
+                desc = "game_concept_antagonism"
+                value = 10000
+            }
+        }
+        ### 目标好战价值观 ≥50 → 加入；≥75 → 再追加（2026-08-26 用户：
+        ### 加入倾向以目标国乱价值观为标尺，分级递增）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    societal_value:th_gensokyo_amity_vs_belligerence >= th_notorious_outcast_threshold_value
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_TARGET_FOUND
+                value = 200
+            }
+        }
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    societal_value:th_gensokyo_amity_vs_belligerence >= th_sin_tier3_value
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_TARGET_FOUND
+                value = 200
+            }
+        }
+        ### 目标盟友 → 绝不加入（盟友关系判定）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    OR = {
+                        is_allied_with = {
+                            target = prev
+                        }
+                        is_subject_of = prev
+                        prev = {
+                            is_subject_of = root
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = "OPINION"
+                value = -1000
+            }
+        }
+        ### 目标宿敌/敌人 → 强烈加入
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    OR = {
+                        is_rival_of = prev
+                        is_enemy_of = prev
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_RIVAL
+                value = 500
+            }
+        }
+        ### 实力对比：个体相对目标不弱 → 倾向加入
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    relative_strength = {
+                        target = prev
+                        value >= 0.4
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_STRENGTH
+                value = 100
+            }
+        }
+        ### 对目标好感 → 抵消（好感高不加入）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    opinion = {
+                        target = prev
+                        value >= 0
+                    }
+                }
+            }
+            add = {
+                desc = "OPINION"
+                value = -200
+            }
+        }
+        add = {
+            desc = "BASE_VALUE"
+            value = -20
+        }
+    }
+
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
+    }
+}

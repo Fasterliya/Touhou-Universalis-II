@@ -1,0 +1,42 @@
+# ============================================================
+# 地形缓存：单文件超过 GitHub 100 MiB 硬限制，无法入库
+# 分发方式：GitHub Releases 附件，协作者下载后解压到
+#           in_game/gfx/terrain2/ 即可
+# ============================================================
+/in_game/gfx/terrain2/terrain_cache/heightmap.bin
+/in_game/gfx/terrain2/terrain_cache/index_map.bin
+/in_game/gfx/terrain2/terrain_cache/materials.bin
+/in_game/gfx/terrain2/terrain_cache/quadtree_nodes.bin
+
+# 打包给 Release 的临时产物（上传完请删除本目录）
+/_release_assets/
+
+# Python 构建 / 临时目录
+/.tmp/
+__pycache__/
+*.pyc
+
+# 编辑器 / 系统杂项
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ============================================================
+# 施工文档 / 设计过程稿：不进 GitHub（本地保留，不影响阅读与引用）
+# 2026-10-30 起：docs/ todo/ *.md 取消跟踪；README.md 作为仓库门面例外
+# 历史提交里的旧版本仍可通过 git log 找回；如需彻底抹除需 filter-repo（未执行）
+# ============================================================
+/docs/
+/todo/
+*.md
+!README.md
+
+# 施工临时备份曾误入库（42 个 .txt 快照）
+/.tmp/
+
+# 上传暂存区（pack_release.ps1 默认输出到 mod 目录之外的 mod\_TH_upload\；
+# 本行是双保险，防止有人把 -Out 指到 mod 内部）
+/_TH_upload/
+
+# 编辑器 / AI 工具残留
+.claude/

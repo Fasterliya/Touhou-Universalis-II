@@ -1,0 +1,491 @@
+﻿l_russian:
+### ============================================================
+### Touhou-Universalis-II Russian Localization
+### Автоматический перевод (машинный) — глоссарий согласован
+### ============================================================
+
+### ============================================================
+
+### Gensokyo IO Chain System Localization (English)
+
+### ============================================================
+
+### Values (En <-> Ran, societal value bar)
+ th_gensokyo_amity_vs_belligerence:"Эн и Ран"
+ th_gensokyo_amity_vs_belligerence_desc:"Эн — узы, связующие всё живое: сердца в согласии, Деревня людей под защитой, покой Великого Барьера. Ран — смута и раздор: бесконечные войны, погоня за призрачными мечтами, нарушение порядка Генсокё. Наклон сердца виден всем."
+ th_gensokyo_amity_focus:"Эн (Узы)"
+ belligerence_focus:"Ран (Смута)"
+
+### 2026-08-23: ключи ступенчатой системы модификаторов удалены
+### (th_notorious_tier_clean/pariah/outcast — система удалена вместе с tier auto_modifiers)
+
+### Feast
+ th_gensokyo_feast:"Устроить пир"
+ th_gensokyo_feast_desc:"Устройте грандиозный пир в Генсокё, развлекая и ёкаев, и мудрецов, чтобы смягчить своё мятежное сердце и вернуться на путь Эн."
+ PERFORM_th_gensokyo_feast_ACTION:"Устроен пир в Генсокё"
+ WE_PERFORM_th_gensokyo_feast_ACTION:"Мы устроили пир в Генсокё"
+ OTHER_PERFORMS_th_gensokyo_feast_ACTION:"Устроен пир в Генсокё"
+ ACTION_th_gensokyo_feast_PERFORMED_ON_US:"Устроен пир в Генсокё"
+ TH_FEAST_AI_HIGH_NOTORIETY:"Мятежное сердце на подъёме, нуждается в смягчении"
+
+### Crusade peace treaty
+ th_gensokyo_crusade_triumph:"Полная победа (крестовый поход)"
+ th_gensokyo_crusade_triumph_desc:"Полная победа в карательном походе: враг безоговорочно сдаётся и принимает все приговоры Генсокё."
+ ### 2026-08-21 (проблема 4): ключи пунктов мирного договора
+ th_gensokyo_crusade_triumph_entry:"$th_gensokyo_crusade_triumph$"
+ th_gensokyo_crusade_triumph_entry_short:"$th_gensokyo_crusade_triumph$"
+ TH_EXPANSION_AI_TARGET_FOUND:"Существует мудрец, готовый одобрить экспансию"
+
+### Crusade
+ th_gensokyo_crusade_cb:"Карательный поход"
+ th_gensokyo_crusade_cb_desc:"Карательный поход, объявленный Ямой и Советом мудрецов против тех, кто угрожает порядку Генсокё."
+ ### 2026-08-26: ситуация похода удалена (IO-driven) — th_gensokyo_crusade(_desc) удалены
+ th_gensokyo_crusade_declare:"Объявить карательный поход"
+ th_gensokyo_crusade_declare_desc:"Яма или мудрец выбирает воинственного члена и учреждает Трибунал — временную международную организацию против цели. Члены присоединяются, затем Трибунал объявляет войну цели; ситуация начинается после объявления войны."
+ PERFORM_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
+ WE_PERFORM_th_gensokyo_crusade_declare_ACTION:"Мы учредили Трибунал"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_ACTION:"Учреждён Трибунал"
+ ACTION_th_gensokyo_crusade_declare_PERFORMED_ON_US:"Учреждён Трибунал"
+ th_gensokyo_crusade_leave:"Покинуть Трибунал"
+ th_gensokyo_crusade_leave_desc:"Покинуть Трибунал против цели. Ваш повод к войне будет снят."
+ PERFORM_th_gensokyo_crusade_leave_ACTION:"Покинул Трибунал"
+ WE_PERFORM_th_gensokyo_crusade_leave_ACTION:"Мы покинули Трибунал"
+ OTHER_PERFORMS_th_gensokyo_crusade_leave_ACTION:"Покинул Трибунал"
+ ACTION_th_gensokyo_crusade_leave_PERFORMED_ON_US:"Покинул Трибунал"
+ th_gensokyo_counter_expansion:"Встречная экспансия"
+ th_gensokyo_counter_expansion_desc:"Переломив ход похода, вы получаете право на экспансию в Генсокё."
+ PERFORM_th_gensokyo_counter_expansion_ACTION:"Начата встречная экспансия"
+ WE_PERFORM_th_gensokyo_counter_expansion_ACTION:"Мы начали встречную экспансию"
+ OTHER_PERFORMS_th_gensokyo_counter_expansion_ACTION:"Начата встречная экспансия"
+ ACTION_th_gensokyo_counter_expansion_PERFORMED_ON_US:"Начата встречная экспансия"
+
+### Judgment law
+ th_gensokyo_judgment_law:"Закон суда"
+ th_gensokyo_judgment_law_desc:"Принципы, которым следует Яма при вынесении приговора."
+ th_judgment_mercy_policy:"Милосердие"
+ th_judgment_mercy_policy_desc:"Мягкий приговор, более короткие сроки, меньше потрясений."
+ th_judgment_order_policy:"Порядок"
+ th_judgment_order_policy_desc:"Суд по закону, беспристрастный."
+ th_judgment_karma_policy:"Карма"
+ th_judgment_karma_policy_desc:"Суровый приговор, более длительные сроки, как предупреждение для всех."
+
+### Regulated state
+ th_gensokyo_regulated_state:"Поднадзорное государство Подземного мира"
+ th_gensokyo_regulated_state_desc:"Субъект, приговорённый Ямой, лишённый всякой автономии, вновь обретает независимость по окончании срока."
+ LEAD_th_gensokyo_regulated_state:"$LIST$ — [SUBJECT_TYPE.GetName|l]"
+ AM_th_gensokyo_regulated_state:"[SUBJECT_TYPE.GetName] державы $LIST$."
+
+### Initial special subjects (permanent, cannot be annexed)
+ th_gensokyo_satori_vassal:"Вассал Сатори"
+ th_gensokyo_satori_vassal_desc:"Номинально это владения Сатори, но на деле всем заправляют её питомцы. Моря огня и лава Раскалённого ада — всё это дело рук её питомцев."
+ th_gensokyo_forest_territory:"Лесная территория"
+ th_gensokyo_forest_territory_desc:"Ёкаи-лорды Магического леса связаны с магами свободными вассальными узами, а не абсолютным подчинением."
+ th_gensokyo_cloud_realm:"Облачный удел"
+ th_gensokyo_cloud_realm_desc:"Система Драконьего дворца вне порядка Небес: правом прохода ведает посланница Драконьего дворца Нагаэ Ику — даже высокомерные небожители вынуждены уступать ей."
+
+### Система законов Генсокё (категории)
+ th_feudal_legalism_law:"Феодальный легизм"
+ th_legal_code_law:"Свод законов"
+ th_education_law:"Образование"
+ th_cultural_traditions_law:"Культурные традиции"
+ th_administration_law:"Администрация"
+### Феодальный легизм
+ th_old_charter:"Старая хартия"
+ th_old_charter_desc:"Обычаи наследования, установленные при сотворении Великого барьера, передаются из поколения в поколение, не меняясь со временем. Основа права задана — потомкам остаётся лишь хранить её."
+### Свод законов
+ th_old_customary_law:"Старое обычное право"
+ th_old_customary_law_desc:"Каждая группа ёкаев следует старым обычаям своей земли; у каждого клана свои нравы, лишь бы не нарушались заветы предков."
+ th_harmony_first_law:"Мир превыше всего"
+ th_harmony_first_law_desc:"Законы людской деревни ценят примирение выше суровых кар. При споре слово берут уважаемые старейшины и мирят стороны."
+ th_separate_laws:"Раздельные законы для людей и ёкаев"
+ th_separate_laws_desc:"Люди и ёкаи следуют своим обычаям и не вмешиваются в дела друг друга. Людские распри решаются законом, ёкайские — старым обычаем."
+ th_statute_law:"Писаный закон Генсокё"
+ th_statute_law_desc:"С распространением книгопечатания разрозненные обычаи земли сводятся в ясные и упорядоченные кодексы."
+### Образование
+ th_farming_and_reading:"Земледелие и грамота"
+ th_farming_and_reading_desc:"Людские деревни зиждутся на земледелии; детей учат лишь хлебопашеству и смене времён года, а не книгам."
+ th_no_education:"Без учения"
+ th_no_education_desc:"У ёкаев нет школ; правит лишь сила. Ни образования, ни письма — одно природное чутьё."
+ th_old_learning_only:"Только старое учение"
+ th_old_learning_only_desc:"Учение признаёт лишь древние книги и отвергает чужие и новые доктрины. Новые знания извне не принимаются."
+ th_publications:"Газеты и журналы"
+ th_publications_desc:"С развитием печати распространяются листовки и газеты; слухи и сказания печатаются, и народ узнаёт о делах в стране и за её пределами."
+ th_terakoya_system:"Школы-тэракоя"
+ th_terakoya_system_desc:"По всей земле возникают настоящие частные школы в стиле тэракоя. Грамота перестаёт быть привилегией немногих."
+ th_farming_and_education:"Земледелие и учение вместе"
+ th_farming_and_education_desc:"Учение и хлебопашество идут рука об руку: дети учатся в школе и работают в поле — ни то, ни другое не в ущерб."
+### Культурные традиции
+ th_hundred_youkai_banquet:"Пир ста ёкаев"
+ th_hundred_youkai_banquet_desc:"Ёкаи сходятся за одним столом, обмениваясь чародейскими дуэлями и чарами, и хранят старые узы Генсокё."
+ th_word_of_mouth:"Из уст в уста"
+ th_word_of_mouth_desc:"Слухи и легенды передаются из уст в уста и записываются в «Хронику Генсокё». Слыша о мире за пределами деревни, люди познают страх, и старина живёт."
+### Администрация
+ th_personal_rule:"Личное правление"
+ th_personal_rule_desc:"Администрация, зиждущаяся на личной мощи и авторитете вождя, но крайне ограниченная в эффективности обстоятельствами."
+ th_youkai_autonomy:"Автономия ёкаев"
+ th_youkai_autonomy_desc:"Ёкаи правят своими землями сами; все дела в пределах решают ёкаи этих владений."
+ th_clan_society:"Родовое общество"
+ th_clan_society_desc:"Людские деревни управляются родами, каждый держится своих правил. Родовые распри и воспитание решаются внутри; чужакам вход воспрещён."
+
+### 2026-08-23: ручной приговор (trial_events.1) удалён — суд переведён в
+### парламентские дебаты (th_gensokyo_trial_issue)
+ th_gensokyo_trial_events.2.title:"Освобождение из Подземного мира"
+ th_gensokyo_trial_events.2.desc:"Срок наказания истёк. Вы освобождены из-под надзора Подземного мира и вновь обретаете независимость."
+ th_gensokyo_trial_events.2.a:"Свобода"
+
+### ============================================================
+### WP-D 2026-08-15: События решения о расширении (§3.1)
+### ============================================================
+ th_gensokyo_expansion_request_events.1.title:"Запрос на экспансию"
+ th_gensokyo_expansion_request_events.1.desc:"Государство просит разрешения на экспансию в Генсокё и обращается к вам как к мудрецу. Вы можете даровать повод к войне или отказать в назидание."
+ th_gensokyo_expansion_request_events.1.a:"Одобрить: даровать повод к войне за расширение"
+ th_gensokyo_expansion_request_events.1.b:"Отказать: не давать разрешения (хаотичное сердце просителя слегка успокоится)"
+ th_gensokyo_expansion_request_events.2.title:"Экспансия одобрена мудрецом"
+ th_gensokyo_expansion_request_events.2.desc:"Мудрец одобрил ваш запрос. Вы получили повод к войне за целевой участок: уступка провинций стоит +75% военных очков, получаемая враждебность снижена на 40%."
+ th_gensokyo_expansion_request_events.2.a:"Понятно"
+ th_gensokyo_expansion_request_events.3.title:"В экспансии отказано"
+ th_gensokyo_expansion_request_events.3.desc:"Мудрец отказал вам в экспансии и призвал утихомирить хаотичное сердце. Ваша склонность к смуте слегка снизилась, а мнение мудреца о вас изменилось."
+ th_gensokyo_expansion_request_events.3.a:"Внемлю наставлению"
+
+### 2026-08-23: голосование суда (trial_vote_events) удалено —
+### суд переведён в парламентские дебаты (th_gensokyo_trial_issue)
+
+### Variables
+ th_gensokyo_sin_var:"Грех"
+ th_gensokyo_expansion_quota:"Квота легального расширения"
+ th_gensokyo_expansion_quota_used:"Использованная квота"
+ th_gensokyo_sentence_tier:"Уровень приговора"
+ th_gensokyo_sentence_months:"Срок (в месяцах)"
+ th_gensokyo_effective_sin:"Эффективный грех"
+ th_gensokyo_temp_sentence_years:"Бонус к сроку (лет)"
+ th_gensokyo_temp_gold:"Переданное золото"
+
+### Target selection
+ choose_crusade_target:"Выбрать цель похода"
+
+### Join tribunal
+ th_gensokyo_join_crusade:"Присоединиться к Трибуналу"
+ th_gensokyo_join_crusade_desc:"Присоединиться к Трибуналу против цели. Вы получаете повод к войне и автоматически вступаете в войну окружения."
+ PERFORM_th_gensokyo_join_crusade_ACTION:"Присоединился к Трибуналу"
+ WE_PERFORM_th_gensokyo_join_crusade_ACTION:"Мы присоединились к Трибуналу"
+ OTHER_PERFORMS_th_gensokyo_join_crusade_ACTION:"Присоединился к Трибуналу"
+ ACTION_th_gensokyo_join_crusade_PERFORMED_ON_US:"Присоединился к Трибуналу"
+ TH_JOIN_CRUSADE_AI_ANTAGONISM:"Враждебен цели карательного похода"
+ TH_JOIN_CRUSADE_AI_ALLIED_TARGET:"Союзник или подданный цели похода"
+ TH_TRIBUNAL_AI_RIVAL:"Соперник или враг цели похода"
+ TH_TRIBUNAL_AI_STRENGTH:"Достаточно силён против цели похода"
+ TH_TRIBUNAL_AI_TARGET_FOUND:"Существует воинственная цель, достойная Трибунала"
+ TH_TRIBUNAL_CB_STRENGTH:"Достаточно силён, чтобы объявить войну цели"
+ TH_TRIBUNAL_ALREADY_AT_WAR_TT:"Уже не воюет с целью Трибунала"
+ th_gensokyo_crusade_declare_war:"Объявить войну цели Трибунала"
+ th_gensokyo_crusade_declare_war_desc:"Объявить карательную войну против цели Трибунала с поводом к войне."
+ PERFORM_th_gensokyo_crusade_declare_war_ACTION:"Объявил войну цели Трибунала"
+ WE_PERFORM_th_gensokyo_crusade_declare_war_ACTION:"Мы объявили войну цели Трибунала"
+ OTHER_PERFORMS_th_gensokyo_crusade_declare_war_ACTION:"Объявил войну цели Трибунала"
+ ACTION_th_gensokyo_crusade_declare_war_PERFORMED_ON_US:"Объявил войну цели Трибунала"
+
+### Counter treaty
+ th_gensokyo_crusade_counter:"Контр-победа (Карательный поход)"
+ th_gensokyo_crusade_counter_desc:"Вы переломили ход карательного похода: сокрушили окружение Генсокё и получили право на расширение."
+ ### 2026-08-21 (проблема 4): ключи пунктов мирного договора
+ th_gensokyo_crusade_counter_entry:"$th_gensokyo_crusade_counter$"
+ th_gensokyo_crusade_counter_entry_short:"$th_gensokyo_crusade_counter$"
+
+### Trial parliament issue (2026-08-23: дебаты = суд)
+ th_gensokyo_trial_issue:"Суд: наказать строго?"
+ th_gensokyo_trial_issue_desc:"После похода парламент Генсокё судит поверженную цель. Принятие = строгое наказание, отклонение = мягкое решение."
+ TH_TRIAL_BIAS_PARTICIPANT:"Участвовал в походе — за строгость"
+ TH_TRIAL_BIAS_AT_WAR:"Воюет с целью — за строгость"
+ TH_TRIAL_BIAS_TARGET_SIDE:"Союзник или подданный цели — за мягкость"
+
+### Prices
+ th_gensokyo_feast_price:"Стоимость пира"
+ subject_pays_regulated:"Дань Поднадзорного государства"
+
+### Modifier display
+ th_gensokyo_weakness_modifier:"Ослабленная сила"
+ th_gensokyo_weakness_modifier_desc:"Карательное ослабление, налагаемое судом."
+ th_gensokyo_expansion_cost_authorized_modifier:"Расширение, санкционированное мудрецами"
+ th_gensokyo_expansion_cost_authorized_modifier_desc:"При одобрении мудрецов расширение обходится гораздо дешевле."
+ th_gensokyo_expansion_cost_incident_modifier:"Расширение во время инцидента"
+ th_gensokyo_expansion_cost_incident_modifier_desc:"Расширение во время инцидента обходится немного дороже."
+ th_gensokyo_expansion_cost_unauthorized_modifier:"Несанкционированное расширение"
+ th_gensokyo_expansion_cost_unauthorized_modifier_desc:"Расширение без одобрения мудрецов обойдётся дорого."
+ ### 2026-08-21 (требование 3): th_gensokyo_notorious_pariah_modifier(_desc) удалено
+
+### 2026-08-26: ключи панели/переменных ситуации удалены вместе с ситуацией
+### (TH_CRUSADE_SUPPORTER_STRENGTH / TH_CRUSADE_TARGET_STRENGTH /
+###  TH_CRUSADE_SIN_DISPLAY / th_crusade_supporter_strength /
+###  th_crusade_target_strength / th_crusade_temp_strength /
+###  th_crusade_target_ref / th_crusade_sin_display)
+
+### Unity sources
+ TH_GENSOKYO_UNITY_FROM_MEMBERS:"Масштаб участников"
+
+### Sage protection
+ th_gensokyo_sages_defend_reason:"Защита Деревни людей"
+
+### ============================================================
+### Панель Трибунала (T1) — добавлено 2026-10-01
+### Схема связей на вкладке обзора / знамёна свиты / вкладки /
+### пустое состояние / ожидаемая ступень на вкладке прений
+### ============================================================
+
+### Вкладка обзора · схема связей (Хиган -> Мирской посредник -> Государство-грешник)
+ TH_TRIBUNAL_HIGAN:"Хиган"
+ TH_TRIBUNAL_YAMA_COURT:"Суд Ямы"
+ TH_TRIBUNAL_AGENT:"Мирской посредник"
+ TH_TRIBUNAL_AGENT_LEAD:"Сильнейший сосед · Глава"
+ TH_TRIBUNAL_SINNER:"Государство-грешник"
+
+### Вкладка обзора · знамёна свиты
+ TH_TRIBUNAL_RETINUE:"Свита"
+ TH_TRIBUNAL_RETINUE_UNIT:"гос."
+
+### Вкладки и пустое состояние
+ TH_TRIBUNAL_TAB_DEBATE:"Прения"
+ TH_TRIBUNAL_NOT_OPENED:"Суд ещё не заседал"
+
+### Вкладка прений · ожидаемая ступень
+ TH_TRIAL_EXPECTED_TIER:"Ожидаемая ступень:"
+ TH_TRIBUNAL_VERDICT_T2:"2. Ослабление"
+ TH_TRIBUNAL_VERDICT_T3:"3. Подопечное государство"
+
+### ============================================================
+### Группа действий Трибунала (T2-4) — добавлено 2026-10-01
+### 13 действий x 6 ключей (название / описание / общее сообщение / мы / другие / против нас)
+### Примечание: th_gensokyo_verdict_t0 / _t1 были зарезервированы для панели
+###       ("0. Репарации и банкротство" / "1. Возврат"); теперь они служат
+###       названиями четырёх действий приговора. Ключи в верхнем регистре
+###       TH_TRIBUNAL_VERDICT_T2 / _T3 относятся к строке «ожидаемая ступень»
+###       панели и намеренно остаются отдельными.
+### ============================================================
+
+### Возбуждение дела
+ th_gensokyo_tribunal_indict:"Возбудить дело"
+ th_gensokyo_tribunal_indict_desc:"Яма оглашает книгу обвинений и возбуждает дело: на обвиняемого ложится «Скверна», санкции начинаются с первой ступени (осуждение), и начинается шестимесячный срок наблюдения."
+ PERFORM_th_gensokyo_tribunal_indict_ACTION:"Возбуждено дело в Трибунале"
+ WE_PERFORM_th_gensokyo_tribunal_indict_ACTION:"Мы возбудили дело в Трибунале"
+ OTHER_PERFORMS_th_gensokyo_tribunal_indict_ACTION:"Возбуждено дело в Трибунале"
+ ACTION_th_gensokyo_tribunal_indict_PERFORMED_ON_US:"Возбуждено дело в Трибунале"
+
+### Повышение ступени
+ th_gensokyo_tribunal_escalate:"Повысить ступень"
+ th_gensokyo_tribunal_escalate_desc:"Срок наблюдения истёк, но обвиняемый так и не раскаялся: Яма называет ближайшую сильную державу главой и поднимает санкции на одну ступень."
+ PERFORM_th_gensokyo_tribunal_escalate_ACTION:"Санкции подняты на ступень"
+ WE_PERFORM_th_gensokyo_tribunal_escalate_ACTION:"Мы подняли санкции на ступень"
+ OTHER_PERFORMS_th_gensokyo_tribunal_escalate_ACTION:"Санкции подняты на ступень"
+ ACTION_th_gensokyo_tribunal_escalate_PERFORMED_ON_US:"Санкции подняты на ступень"
+
+### Помилование
+ th_gensokyo_tribunal_pardon:"Помиловать"
+ th_gensokyo_tribunal_pardon_desc:"Яма единолично отменяет все санкции, ценности обвиняемого возвращаются к середине, дело закрывается."
+ PERFORM_th_gensokyo_tribunal_pardon_ACTION:"Даровано помилование, санкции сняты"
+ WE_PERFORM_th_gensokyo_tribunal_pardon_ACTION:"Мы даровали помилование, санкции сняты"
+ OTHER_PERFORMS_th_gensokyo_tribunal_pardon_ACTION:"Даровано помилование, санкции сняты"
+ ACTION_th_gensokyo_tribunal_pardon_PERFORMED_ON_US:"Даровано помилование, санкции сняты"
+
+### Отказ возглавить
+ th_gensokyo_tribunal_agent_refuse:"Отказаться возглавить"
+ th_gensokyo_tribunal_agent_refuse_desc:"Названный мирской посредник ослушался: его статус главы снят, и он теряет престиж и вклад."
+ PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION:"Отказался возглавить"
+ WE_PERFORM_th_gensokyo_tribunal_agent_refuse_ACTION:"Мы отказались возглавить"
+ OTHER_PERFORMS_th_gensokyo_tribunal_agent_refuse_ACTION:"Отказался возглавить"
+ ACTION_th_gensokyo_tribunal_agent_refuse_PERFORMED_ON_US:"Отказался возглавить"
+
+### Защита
+ th_gensokyo_tribunal_defend:"Защищаться"
+ th_gensokyo_tribunal_defend_desc:"Обвиняемый тратит личное влияние, чтобы опровергнуть обвинения по пунктам. Успешно опровергнутое обвинение уменьшается вдвое; если опровергнуты все, санкции снимаются и дело закрывается."
+ PERFORM_th_gensokyo_tribunal_defend_ACTION:"Представлена защита"
+ WE_PERFORM_th_gensokyo_tribunal_defend_ACTION:"Мы представили защиту"
+ OTHER_PERFORMS_th_gensokyo_tribunal_defend_ACTION:"Представлена защита"
+ ACTION_th_gensokyo_tribunal_defend_PERFORMED_ON_US:"Представлена защита"
+
+### Признание вины и искупление
+ th_gensokyo_tribunal_confess:"Признать вину и искупить"
+ th_gensokyo_tribunal_confess_desc:"Обвиняемый платит за признание вины; сумма растёт с каждой уже применённой ступенью. После уплаты ценности возвращаются к середине, все санкции снимаются и начинается испытательный срок."
+ PERFORM_th_gensokyo_tribunal_confess_ACTION:"Признана вина и принесено искупление"
+ WE_PERFORM_th_gensokyo_tribunal_confess_ACTION:"Мы признали вину и принесли искупление"
+ OTHER_PERFORMS_th_gensokyo_tribunal_confess_ACTION:"Признана вина и принесено искупление"
+ ACTION_th_gensokyo_tribunal_confess_PERFORMED_ON_US:"Признана вина и принесено искупление"
+
+### Просьба о мире
+ th_gensokyo_tribunal_settle:"Просить мира"
+ th_gensokyo_tribunal_settle_desc:"Просьба о мире во время похода: обвиняемый платит цену примирения и его ценности падают, после чего Трибунал лишается правомерности и распускается."
+ PERFORM_th_gensokyo_tribunal_settle_ACTION:"Запрошен мир"
+ WE_PERFORM_th_gensokyo_tribunal_settle_ACTION:"Мы запросили мир"
+ OTHER_PERFORMS_th_gensokyo_tribunal_settle_ACTION:"Запрошен мир"
+ ACTION_th_gensokyo_tribunal_settle_PERFORMED_ON_US:"Запрошен мир"
+
+### Исполнение: вернуть земли
+ th_gensokyo_tribunal_fulfill_land:"Исполнение: вернуть земли"
+ th_gensokyo_tribunal_fulfill_land_desc:"Обвиняемый возвращает пострадавшей стране одну из спорных земель. Один из пунктов исполнения: если к концу срока наблюдения земли возвращены, обвиняемый признаётся раскаявшимся."
+ PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION:"Возвращена спорная земля"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_land_ACTION:"Мы вернули спорную землю"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_land_ACTION:"Возвращена спорная земля"
+ ACTION_th_gensokyo_tribunal_fulfill_land_PERFORMED_ON_US:"Возвращена спорная земля"
+
+### Исполнение: выплатить репарации
+ th_gensokyo_tribunal_fulfill_pay:"Исполнение: выплатить репарации"
+ th_gensokyo_tribunal_fulfill_pay_desc:"Обвиняемый выплачивает репарации частями в общую казну Генсокё. Один из пунктов исполнения: когда накопленная сумма достигает нужной, пункт считается выполненным."
+ PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION:"Выплачена часть репараций"
+ WE_PERFORM_th_gensokyo_tribunal_fulfill_pay_ACTION:"Мы выплатили часть репараций"
+ OTHER_PERFORMS_th_gensokyo_tribunal_fulfill_pay_ACTION:"Выплачена часть репараций"
+ ACTION_th_gensokyo_tribunal_fulfill_pay_PERFORMED_ON_US:"Выплачена часть репараций"
+
+### Приговор: репарации и банкротство (был резерв панели "0. Репарации и банкротство")
+ th_gensokyo_verdict_t0:"Приговор: репарации и банкротство"
+ th_gensokyo_verdict_t0_desc:"Приговор: половина казны цели переходит в общую казну Генсокё, и на 2 года налагается банкротство."
+ PERFORM_th_gensokyo_verdict_t0_ACTION:"Вынесен приговор: репарации и банкротство"
+ WE_PERFORM_th_gensokyo_verdict_t0_ACTION:"Мы вынесли приговор: репарации и банкротство"
+ OTHER_PERFORMS_th_gensokyo_verdict_t0_ACTION:"Вынесен приговор: репарации и банкротство"
+ ACTION_th_gensokyo_verdict_t0_PERFORMED_ON_US:"Вынесен приговор: репарации и банкротство"
+
+### Приговор: возврат (был резерв панели "1. Возврат")
+ th_gensokyo_verdict_t1:"Приговор: возврат"
+ th_gensokyo_verdict_t1_desc:"Приговор: цель возвращает все незаконно захваченные земли."
+ PERFORM_th_gensokyo_verdict_t1_ACTION:"Вынесен приговор: возврат"
+ WE_PERFORM_th_gensokyo_verdict_t1_ACTION:"Мы вынесли приговор: возврат"
+ OTHER_PERFORMS_th_gensokyo_verdict_t1_ACTION:"Вынесен приговор: возврат"
+ ACTION_th_gensokyo_verdict_t1_PERFORMED_ON_US:"Вынесен приговор: возврат"
+
+### Приговор: ослабление
+ th_gensokyo_verdict_t2:"Приговор: ослабление"
+ th_gensokyo_verdict_t2_desc:"Приговор: сила цели ослаблена на 5 лет."
+ PERFORM_th_gensokyo_verdict_t2_ACTION:"Вынесен приговор: ослабление"
+ WE_PERFORM_th_gensokyo_verdict_t2_ACTION:"Мы вынесли приговор: ослабление"
+ OTHER_PERFORMS_th_gensokyo_verdict_t2_ACTION:"Вынесен приговор: ослабление"
+ ACTION_th_gensokyo_verdict_t2_PERFORMED_ON_US:"Вынесен приговор: ослабление"
+
+### Приговор: поднадзорное государство
+ th_gensokyo_verdict_t3:"Приговор: поднадзорное государство"
+ th_gensokyo_verdict_t3_desc:"Приговор: казна цели обнуляется, и она становится поднадзорным государством Хигана со сроком 20 лет (до 30)."
+ PERFORM_th_gensokyo_verdict_t3_ACTION:"Вынесен приговор: поднадзорное государство"
+ WE_PERFORM_th_gensokyo_verdict_t3_ACTION:"Мы вынесли приговор: поднадзорное государство"
+ OTHER_PERFORMS_th_gensokyo_verdict_t3_ACTION:"Вынесен приговор: поднадзорное государство"
+ ACTION_th_gensokyo_verdict_t3_PERFORMED_ON_US:"Вынесен приговор: поднадзорное государство"
+
+### Цены и названия склонностей (5 ключей, добавлены этим пакетом)
+ th_gensokyo_tribunal_confess_price:"Плата за признание"
+ th_gensokyo_tribunal_reparations_price:"Репарации"
+ th_gensokyo_tribunal_settle_price:"Цена примирения"
+ th_antagonism_sanction_condemn:"Санкция: осуждение (враждебность)"
+ th_opinion_sanction_condemn:"Санкция: осуждение (мнение)"
+
+### ============================================================
+### Трибунал · Пакет локализации L2
+### Блокирующие подсказки действий / причины веса ИИ / события
+### посредника / метки и переменные / IO Деревни людей
+### Примечание: два ключа IO Деревни людей размещены здесь по решению
+###       (ключи локализации глобальны в пределах языка, возвращаться в
+###        th_gensokyo_io_l_*.yml не нужно); формулировка дословно совпадает
+###        с одноимёнными ключами в main_menu.
+### ============================================================
+
+### Действия · блокирующие состояния (allow)
+ TH_TRIBUNAL_NO_SUSPECT_TT:"Сейчас нет стран-подозреваемых, подлежащих обвинению"
+ TH_TRIBUNAL_NO_ESCALATION_TT:"Нет обвиняемых, у которых срок наблюдения истёк без раскаяния"
+ TH_TRIBUNAL_NO_ACCUSED_TT:"Сейчас нет обвиняемых стран"
+ TH_TRIBUNAL_DEFEND_NO_GROUND_TT:"Нет обвинений, которые можно опровергнуть"
+ TH_TRIBUNAL_CONFESS_CANNOT_AFFORD_TT:"Казна не может покрыть плату за признание вины"
+ TH_TRIBUNAL_SETTLE_NOT_AT_WAR_TT:"Сейчас не ведётся карательная война"
+ TH_TRIBUNAL_FULFILL_LAND_NO_TARGET_TT:"Нет спорных земель, которые можно вернуть"
+ TH_TRIBUNAL_FULFILL_PAY_CANNOT_AFFORD_TT:"Казна не может покрыть этот платёж репараций"
+ TH_TRIBUNAL_VERDICT_RANGE_T0_TT:"«Репарации и банкротство» вне пределов усмотрения по этому делу: приговор может отклоняться от закона не более чем на одну ступень"
+ TH_TRIBUNAL_VERDICT_RANGE_T1_TT:"«Возврат» вне пределов усмотрения по этому делу: приговор может отклоняться от закона не более чем на одну ступень"
+ TH_TRIBUNAL_VERDICT_RANGE_T2_TT:"«Ослабление» вне пределов усмотрения по этому делу: приговор может отклоняться от закона не более чем на одну ступень"
+ TH_TRIBUNAL_VERDICT_RANGE_T3_TT:"«Поднадзорное государство» вне пределов усмотрения по этому делу: приговор может отклоняться от закона не более чем на одну ступень"
+
+### Действия · причины веса ИИ (ai_will_do)
+ TH_TRIBUNAL_AI_SUSPECT_FOUND:"Есть страна-подозреваемый, подлежащая обвинению"
+ TH_TRIBUNAL_AI_ESCALATE_READY:"Обвиняемый прошёл срок наблюдения, но не раскаялся"
+ TH_TRIBUNAL_AI_PARDON_READY:"Обвиняемый исполнил условия — остаётся лишь снять санкции"
+ TH_TRIBUNAL_AI_REFUSE_WEAK:"Недостаточно сил, чтобы возглавить"
+ TH_TRIBUNAL_AI_DEFEND_READY:"Есть что опровергнуть, и влияния достаточно"
+ TH_TRIBUNAL_AI_CONFESS_READY:"Казна покрывает плату за признание, и выгоднее закрыть дело"
+ TH_TRIBUNAL_AI_SETTLE_READY:"Война идёт плохо — выгоднее примириться с карой"
+ TH_TRIBUNAL_AI_FULFILL_READY:"Остаются невыполненные пункты исполнения"
+ TH_TRIBUNAL_AI_VERDICT_WITH_INTENT:"Приговор следует намерению собравшихся"
+ TH_TRIBUNAL_AI_VERDICT_BASELINE:"Намерения нет — приговор по закону"
+ TH_TRIBUNAL_CONFESS_PRICE_TIER:"Плата за признание растёт с каждой уже применённой ступенью санкций"
+
+### События · цепочка согласия посредника (namespace = th_gensokyo_tribunal_events)
+ th_gensokyo_tribunal_events.1.title:"Предложение возглавить"
+ th_gensokyo_tribunal_events.1.desc:"Суд Ямы постановил, что санкции должны проводить в жизнь мирские руки. Яма называет главой вас: если вы согласитесь, санкции против обвиняемого поднимутся на одну ступень, а срок наблюдения начнётся заново; при отказе ступень сохранится, и Яма назовёт другого."
+ th_gensokyo_tribunal_events.1.a:"Принять главенство"
+ th_gensokyo_tribunal_events.1.b:"Отказаться возглавить"
+ th_gensokyo_tribunal_events.2.title:"В главенстве отказано"
+ th_gensokyo_tribunal_events.2.desc:"Названная страна отказалась возглавить. Дело сохраняет текущую ступень, срок наблюдения не сбрасывается. Суд Ямы просит вас назвать другого главу."
+ th_gensokyo_tribunal_events.2.a:"Понятно"
+ th_gensokyo_tribunal_events.3.title:"Срок наблюдения истёк"
+ th_gensokyo_tribunal_events.3.desc:"Срок наблюдения за обвиняемым истёк: ни исполнения, ни раскаяния. Дело можно поднять на ступень: ближайшая сильная держава возглавит, санкции вырастут на одну ступень, а срок наблюдения начнётся заново."
+ th_gensokyo_tribunal_events.3.a:"Понятно"
+ th_gensokyo_tribunal_events.4.title:"Последний приговор"
+ th_gensokyo_tribunal_events.4.desc:"Прения окончены, дело представлено Хигану.\nВиновность [th_verdict_accused.GetName] установлена; основание по закону — ступень #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!.\nМожно следовать закону, воле членов или решать единолично — но каждое отклонение от этой воли и каждый шаг за пределы усмотрения записывается в единство Генсокё."
+ th_gensokyo_tribunal_events.4.a.tt:"#T0. Репарации и банкротство#!\n$BULLET$Итог: половина казны обвиняемого изымается, он становится банкротом, а репарации идут в казну Генсокё\n$BULLET$Основание по закону: ступень #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; усмотрение = одна ступень вверх или вниз\n$BULLET$Против воли членов: каждая ступень отклонения — #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! к единству Генсокё\n$BULLET$За пределами усмотрения: дополнительно #Rстолько же#! единства\n$BULLET$Итог дела: приговор вступает в силу, Трибунал распускается, дело переходит к отбыванию"
+ th_gensokyo_tribunal_events.4.b.tt:"#T1. Возврат#!\n$BULLET$Итог: обвиняемый возвращает незаконно занятые земли\n$BULLET$Основание по закону: ступень #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; усмотрение = одна ступень вверх или вниз\n$BULLET$Против воли членов: каждая ступень отклонения — #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! к единству Генсокё\n$BULLET$За пределами усмотрения: дополнительно #Rстолько же#! единства\n$BULLET$Итог дела: приговор вступает в силу, Трибунал распускается, дело переходит к отбыванию"
+ th_gensokyo_tribunal_events.4.c.tt:"#T2. Ослабление#!\n$BULLET$Итог: земли возвращаются, а страна ослабляется на несколько лет\n$BULLET$Основание по закону: ступень #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; усмотрение = одна ступень вверх или вниз\n$BULLET$Против воли членов: каждая ступень отклонения — #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! к единству Генсокё\n$BULLET$За пределами усмотрения: дополнительно #Rстолько же#! единства\n$BULLET$Итог дела: приговор вступает в силу, Трибунал распускается, дело переходит к отбыванию"
+ th_gensokyo_tribunal_events.4.d.tt:"#T3. Поднадзорное государство#!\n$BULLET$Итог: казна обнуляется, страна переходит под надзор Хигана до конца срока\n$BULLET$Основание по закону: ступень #T[th_verdict_accused.MakeScope.GetVariable('th_gensokyo_sentence_baseline').GetValue]#!; усмотрение = одна ступень вверх или вниз\n$BULLET$Против воли членов: каждая ступень отклонения — #R[th_verdict_accused.MakeScope.ScriptValue('th_verdict_deviation_unity_cost_value')|0]#! к единству Генсокё\n$BULLET$За пределами усмотрения: дополнительно #Rстолько же#! единства\n$BULLET$Итог дела: приговор вступает в силу, Трибунал распускается, дело переходит к отбыванию"
+
+### Метки и переменные (по решению должны быть в интерфейсе)
+ th_gensokyo_tarnish_mark:"Скверна"
+ th_gensokyo_tarnish_mark_desc:"Метка, которую несёт страна, против которой Трибунал возбудил дело.\n$BULLET$Все члены Генсокё питают к ней больше враждебности и меньше расположения\n$BULLET$Пока её дело рассматривается, мудрецы больше не обязаны её защищать\n$BULLET$Санкции растут ступень за ступенью: со второй ступени её голос в парламенте Генсокё обнуляется\n$BULLET$Возврат земель, выплата репараций, прекращение войн или признание вины снимают метку"
+ th_gensokyo_suspect_mark:"Подозрение"
+ th_gensokyo_suspect_mark_desc:"Метка, которую несёт страна, перешедшая черту воинственности.\n$BULLET$Её воинственный настрой перешёл черту терпимости Генсокё\n$BULLET$Она подлежит обвинению Ямой, хотя дело ещё не возбуждено\n$BULLET$Страна под иммунитетом от санкций не получает эту метку"
+ th_gensokyo_observation_months:"Срок наблюдения (осталось месяцев)"
+ th_gensokyo_tier_1_mark:"Осуждение"
+ th_gensokyo_tier_1_mark_desc:"Первая ступень санкций.\n$BULLET$Все члены Генсокё питают к ней больше враждебности и меньше расположения\n$BULLET$Она в дипломатической изоляции, но её армия и казна не затронуты\n$BULLET$При снятии санкций враждебность и расположение снимаются вместе"
+ th_gensokyo_tier_2_mark:"Лишение голоса"
+ th_gensokyo_tier_2_mark_desc:"Вторая ступень санкций.\n$BULLET$Её голос в парламенте Генсокё обнуляется\n$BULLET$Её вклад и влияние больше не учитываются в Генсокё\n$BULLET$В голосованиях о намерении при Трибунале её мнение видно, но ничего не весит"
+ th_gensokyo_tier_3_mark:"Эмбарго"
+ th_gensokyo_tier_3_mark_desc:"Третья ступень санкций.\n$BULLET$Все члены Генсокё вводят против неё эмбарго, торговля прерывается\n$BULLET$Эмбарго держится до снятия санкций\n$BULLET$С этой ступени санкции перестают быть вопросом одной лишь репутации"
+ th_gensokyo_tier_4_mark:"Сдерживание экспансии"
+ th_gensokyo_tier_4_mark_desc:"Четвёртая и последняя ступень санкций.\n$BULLET$Её экспансия в Генсокё вызывает куда больший международный отпор\n$BULLET$Приобретения от экспансии не меняются — тяжелее становится цена\n$BULLET$Если она и после этого не раскается, Яма открывает заседание и выносит приговор"
+
+### Поход · подсказки военной цели (на них ссылается файл военных целей)
+ TH_TRIBUNAL_WAR_NO_TAKE_LAND_TT:"Карательный поход не предусматривает захвата земель"
+ TH_TRIBUNAL_WAR_NO_SUBJUGATE_TT:"Карательный поход не предусматривает подчинения"
+
+### IO Деревни людей (долг R1: отсутствует во всех четырёх in_game-файлах;
+### формулировка дословно совпадает с одноимёнными ключами в main_menu)
+ th_human_village_io:"Деревня людей"
+ th_human_village_io_desc:"Конфедерация, образованная государствами в регионах Деревни людей и храма Мёдэн."
+
+### ============================================================
+### Трибунал L3 (2026-10-05)
+### 1 Интерфейс вкладки «Досье» (T2-5a; th_gensokyo_io.gui)
+### 2 Локализация двух новых статических модификаторов (T2-5b).
+###   Обе формы ключей написаны намеренно: прежние модификаторы проекта
+###   используют голый ключ, а модификаторы данмаку / мудрецов — ванильный
+###   префикс STATIC_MODIFIER_NAME_ / _DESC_; какую форму читает движок,
+###   не доказано.
+### ============================================================
+
+### Вкладка «Досье» (T2-5a)
+ TH_TRIBUNAL_TAB_DOSSIER:"Досье"
+ TH_TRIBUNAL_TAB_DOSSIER_TT_TEXT:"Стол Ямы. Здесь записаны все подозреваемые в агрессии, действующие санкции и закрытые дела Гэнсокё."
+ TH_TRIBUNAL_DOSSIER_TITLE:"Досье трибунала"
+ TH_TRIBUNAL_DOSSIER_LEAD:"Стол Ямы"
+ TH_TRIBUNAL_GROUP_SUSPECT:"Подозреваемые"
+ TH_TRIBUNAL_GROUP_INDICTED:"Дело возбуждено · Под санкциями"
+ TH_TRIBUNAL_GROUP_SERVING:"Отбывает наказание"
+ TH_TRIBUNAL_GROUP_CLOSED:"Закрытые дела"
+ TH_TRIBUNAL_BADGE_INDICTED:"Возбуждено"
+ TH_TRIBUNAL_BADGE_SERVING:"Отбывает"
+ TH_TRIBUNAL_BADGE_CLOSED:"Закрыто"
+ TH_TRIBUNAL_TIER_LABEL:"Санкция"
+ TH_TRIBUNAL_OBSERVATION_LEFT:"Срок наблюдения: осталось"
+ TH_TRIBUNAL_MONTHS:"мес."
+ TH_TRIBUNAL_ATTITUDE:"Отношение"
+ TH_TRIBUNAL_CONFESS_PAID:"Выплачено репараций"
+ TH_TRIBUNAL_CLOSED_NOTE:"Дело в архиве"
+
+### Статические модификаторы: Правое дело / Скверна (T2-5b)
+ th_gensokyo_grand_cause_modifier:"Правое дело"
+ th_gensokyo_grand_cause_modifier_desc:"Участники похода сплочены общей целью: их боевой дух, людские резервы и престиж растут."
+ STATIC_MODIFIER_NAME_th_gensokyo_grand_cause_modifier:"Правое дело"
+ STATIC_MODIFIER_DESC_th_gensokyo_grand_cause_modifier:"Участники похода сплочены общей целью: их боевой дух, людские резервы и престиж растут."
+ th_gensokyo_tarnish_modifier:"Скверна"
+ th_gensokyo_tarnish_modifier_desc:"Метка, которую несёт страна, против которой Трибунал возбудил дело."
+ STATIC_MODIFIER_NAME_th_gensokyo_tarnish_modifier:"Скверна"
+ STATIC_MODIFIER_DESC_th_gensokyo_tarnish_modifier:"Метка, которую несёт страна, против которой Трибунал возбудил дело."

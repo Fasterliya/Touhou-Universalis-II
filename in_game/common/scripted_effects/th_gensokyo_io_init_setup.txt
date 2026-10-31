@@ -1,0 +1,33 @@
+﻿### ===========================================================
+### 幻想乡IO — 开局国家变量初始化
+### IO团结度+领袖+特殊席位已在 start/th_gensokyo_io.txt 中预分配
+### 此处仅初始化成员国的个人变量（国家scope上的变量）
+### ===========================================================
+th_gensokyo_io_init_setup_scr_effect = {
+    # === 初始化所有成员国的个人变量 ===
+    every_country = {
+        limit = {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+        }
+
+        # 个人影响力 — 初始为0
+        set_variable = {
+            name = th_gensokyo_personal_influence_var
+            value = 0
+        }
+
+        # 个人贡献度 — 初始为0
+        set_variable = {
+            name = th_gensokyo_personal_contribution_var
+            value = 0
+        }
+
+        ### 2026-08-23 矛盾消除：开局价值观统一由 chain_init_effect 负责
+        ### （th_gensokyo_notorious_effects.txt:19-22，set_societal_value = 0，
+        ### 用户 2026-09 拍板「初始缘与乱正中 0，不偏向任意一方」；
+        ### 早前 2026-08-21 的「开局满好战（100）」决策已撤销）——
+        ### 本处不再 set_societal_value（旧 -100 段已删），避免与 chain_init 并存
+        ### 冲突（on_game_start 内两 effect 执行顺序不确定 → 最终值不可靠；
+        ### 交接文档 P0-3 矛盾项；模板开局 0 与 chain_init 现一致，无覆盖问题）
+    }
+}

@@ -1,0 +1,60 @@
+﻿### ============================================================
+### 幻想乡IO — 博丽大结界等级接口（WP-G 2026-08-15）
+### 设计文档《国际组织》§7：
+###   大结界 5 级（幻想5/深邃4/繁英3/遗忘2/灭尽1），初始 5，
+###   越高越保守，无法通过辩论或领袖修订，仅随大事件改动。
+### 唯一改动入口 = th_gensokyo_barrier_change_level_effect（root = 幻想乡IO）
+### 法律本体见 laws/th_gensokyo_barrier_law.txt
+### ============================================================
+
+### 等级 → 政策同步（root = 幻想乡IO，内部使用）
+th_gensokyo_barrier_sync_policy_effect = {
+    remove_policy_from_international_organization = policy:th_gensokyo_barrier_fantasy_policy
+    remove_policy_from_international_organization = policy:th_gensokyo_barrier_profound_policy
+    remove_policy_from_international_organization = policy:th_gensokyo_barrier_flourish_policy
+    remove_policy_from_international_organization = policy:th_gensokyo_barrier_forgotten_policy
+    remove_policy_from_international_organization = policy:th_gensokyo_barrier_extinct_policy
+    if = {
+        limit = {
+            var:th_gensokyo_barrier_level >= 5
+        }
+        add_policy_to_international_organization = policy:th_gensokyo_barrier_fantasy_policy
+    }
+    else_if = {
+        limit = {
+            var:th_gensokyo_barrier_level >= 4
+        }
+        add_policy_to_international_organization = policy:th_gensokyo_barrier_profound_policy
+    }
+    else_if = {
+        limit = {
+            var:th_gensokyo_barrier_level >= 3
+        }
+        add_policy_to_international_organization = policy:th_gensokyo_barrier_flourish_policy
+    }
+    else_if = {
+        limit = {
+            var:th_gensokyo_barrier_level >= 2
+        }
+        add_policy_to_international_organization = policy:th_gensokyo_barrier_forgotten_policy
+    }
+    else = {
+        add_policy_to_international_organization = policy:th_gensokyo_barrier_extinct_policy
+    }
+}
+
+### 大结界等级变动（大事件唯一入口，root = 幻想乡IO）
+### 使用: th_gensokyo_barrier_change_level_effect = { value = -1 }
+### （value 为等级增量，自动钳制 1-5 并同步政策）
+th_gensokyo_barrier_change_level_effect = {
+    change_variable = {
+        name = th_gensokyo_barrier_level
+        add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_barrier_level
+        min = 1
+        max = 5
+    }
+    th_gensokyo_barrier_sync_policy_effect = yes
+}

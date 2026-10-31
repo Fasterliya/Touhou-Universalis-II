@@ -1,0 +1,48 @@
+﻿### ============================================================
+### 幻想乡自定义 attribute columns（2026-08-23）
+### 追加到原版 country 对象（vanilla 06_country.txt）末尾：
+###   th_country_flag     — 国家旗帜列（widget: gui/attribute_columns/th_gensokyo.gui）
+###   th_opinion_to_actor — 对 actor 的好感度列（widget 显示对玩家的好感；
+###                         排序按 root.opinion(scope:actor)，对任意 actor 正确）
+### ⚠️ 数据库操作关键字（INJECT:）对 attribute_columns 目录的支持未经
+### 官方文档确认（EU5_Multi_Mod_Compatibility: "并非所有数据库目录都支持"）。
+### 若加载报错（Unexpected token / 不识别 INJECT）→ 删除本文件与
+### gui/attribute_columns/th_gensokyo.gui，并移除 generic_actions 中
+### data = th_country_flag / th_opinion_to_actor 的 column 引用（回退现成列）
+### ============================================================
+INJECT:country = {
+	th_country_flag = {
+		widget = th_country_flag
+		width = 50
+		fixed_height = 32
+		sort = {
+			sort_key = "th_country_flag"
+			sort_text = {
+				if = {
+					limit = {
+						exists = root
+					}
+					value = "SORT_TEXT_COUNTRY_NAME"
+				}
+				else = {
+					value = "MODIFIER_NONE"
+				}
+			}
+			sort_by_tooltip_key = "COUNTRY_SORT_BY_NAME"
+		}
+	}
+
+	th_opinion_to_actor = {
+		widget = th_opinion_to_actor
+		width = 80
+		fixed_height = 32
+		sort = {
+			sort_key = "th_opinion_to_actor"
+			sort_value = {
+				value = "root.opinion(scope:actor)"
+			}
+			sort_order = "Ascending"
+			sort_by_tooltip_key = "COUNTRY_SORT_BY_OPINION"
+		}
+	}
+}

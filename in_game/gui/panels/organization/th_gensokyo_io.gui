@@ -1,0 +1,881 @@
+# organization_panel = {
+
+#     # ================================================================
+#     # 1. 概览标签 — 始终可见
+#     # ================================================================
+#     blockoverride "organization_overview_tab_visible" {}
+#     blockoverride "organization_panel_overview_visible" {
+#         visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+#     }
+
+#     # ================================================================
+#     # 2. 成员标签 — 独立切换
+#     # ================================================================
+#     blockoverride "organization_members_tab_down" {
+#         down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+#     }
+#     blockoverride "organization_panel_members_visible" {
+#         visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+#     }
+
+#     # ================================================================
+#     # 3. 空状态隐藏
+#     # ================================================================
+#     blockoverride "scroll_overview_empty_visible" { visible = no }
+
+#     blockoverride "card_header_button_header_content" { # Remove leave/join/invite IO icon + add member icon
+#         margin_left = 18
+#         icon = {
+#             size = { 30 30 }
+#             block "card_header_button_icon_texture" {
+#                 texture = "gfx/interface/icons/religious_doctrines/catholic/religious_actions.dds"
+#             }
+#             texture_density = 2
+#             glow = {
+#                 name = "drop_shadow"
+#                 glow_radius = 3
+#                 color = {0.0 0.0 0.0 1.0}
+#                 alpha = 0.3
+#             }
+#         }
+#         block "card_header_button_text_single" {
+#             text_single = {
+#                 margin_left = 7
+#                 block "card_header_button_raw_text" {
+#                     raw_text = "IO or Situation"
+#                 }
+#             }
+#         }
+#         expand = {}
+#     }
+
+#     # ================================================================
+#     # 4. 主要行动图标
+#     # ================================================================
+#     blockoverride "io_main_actions_icon" {
+#         texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetIcon]"
+#     }
+
+#     # ================================================================
+#     # 5. 额外主要行动区可见
+#     # ================================================================
+#     blockoverride "organization_main_actions_extra_visible" {
+#         visible = yes 
+#     }
+
+#     # ================================================================
+#     # 6. 概览顶部 — 幻想乡IO描述信息卡（可折叠）
+#     #    (参考 lordship_of_ireland.gui L50-101 / high_kingship.gui L50-101)
+#     # ================================================================
+#     blockoverride "organization_overview_list_custom_top_extra" {
+#         vbox = {
+#             margin = { 10 5 }
+#             layoutpolicy_horizontal = expanding
+#             card_expandable = {
+#                 blockoverride "header_content" {
+#                     margin = { 20 0 }
+#                     icon = {
+#                         size = { 30 30 }
+#                         block "common_header_icon_texture" {
+#                               texture = "[GetSpecialStatusIconFromKey('th_gensokyo_io')]"
+#                         }
+#                         texture_density = 2
+#                     }
+#                     text_single = {
+#                         block "header_text" {
+#                             margin = { 10 0 }
+#                             text = "th_gensokyo_io_title"
+#                         }
+#                     }
+#                     expand = {}
+#                 }
+#                 blockoverride "bottom_content" {
+#                     margin_top = 15
+#                     hbox = {
+#                         layoutpolicy_horizontal = expanding
+#                         spacing = 4
+#                         text_single = {
+#                             margin = { 20 10 }
+#                             text = "th_gensokyo_io_desc"
+#                             multiline = yes
+#                             autoresize = yes
+#                             layoutpolicy_horizontal = expanding
+#                         }
+#                     }
+#                 }
+#                 blockoverride "header_button_onclick" {
+#                     onclick = "[GetVariableSystem.Toggle( 'th_gensokyo_io_info' )]"
+#                 }
+#                 blockoverride "icon_replace_visible_yes" {
+#                     visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
+#                 }
+#                 blockoverride "icon_replace_visible_not" {
+#                     visible = "[Not(GetVariableSystem.Exists( 'th_gensokyo_io_info' ))]"
+#                 }
+#                 blockoverride "bottom_content_onclick" {
+#                     visible = "[GetVariableSystem.Exists( 'th_gensokyo_io_info' )]"
+#                 }
+#                 margin_bottom = 10
+#             }
+#         }
+#     }
+
+#     blockoverride "members_item_content" { #Hide special members in overview panels since there is already character portraits
+#         hbox = {
+#             layoutpolicy_horizontal = expanding
+#             margin = {0 10}
+#             dynamicgridbox = {
+#                 flipdirection = yes
+#                 datamodel_wrap = 14
+#                 datamodel = "[MemberTypeItem.GetCountries]"
+#                 item = {
+#                     country_flag_small = {}
+#                 }
+#             }
+#         }
+#         visible = "[Not(EqualTo_string(MemberTypeItem.GetName, ShowSpecialStatusName('th_gensokyo_io')))]"		
+#     }
+
+#     # ================================================================
+#     # 7. 额外主要行动：请求加入 / 离开 IO
+#     #    (参考 lordship_of_ireland.gui L183-246)
+#     # ================================================================
+#     blockoverride "organization_main_actions_extra" {
+#         # 请求加入
+#         action_button_diamond = {
+#             size = { 470 30 }
+#             title = "INT_ORG_MEMBERSHIP_TITLE"
+#             text = "ASK_FOR_IO_MEMBERSHIP"
+#             actor = "[InternationalOrganizationsView.GetPlayer]"
+#             parameter = {
+#                 parameter_name = "recipient"
+#                 parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization.GetLeaderCountry]"
+#             }
+#             left_action = {
+#                 action_name = "ask_to_join_international_organization"
+#                 action_direction = "request"
+#                 parameter = {
+#                     parameter_name = "international_organization"
+#                     parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+#                 }
+#             }
+#             tooltipwidget = {
+#                 using = io_join_button_tooltip
+#             }
+#             visible = "[Not(Player.IsMemberOfInternationalOrganization(InternationalOrganizationsView.GetInternationalOrganization))]"
+#         }
+#         # 离开
+#         action_button_diamond = {
+#             size = { 470 30 }
+#             title = "INT_ORG_MEMBERSHIP_TITLE"
+#             actor = "[InternationalOrganizationsView.GetPlayer]"
+#             left_click_and_hold_action = {
+#                 action_name = "leave_international_organization"
+#                 action_direction = "offer"
+#                 parameter = {
+#                     parameter_name = "recipient"
+#                     parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+#                 }
+#             }
+#             tooltipwidget = {
+#                 using = io_leave_button_tooltip
+#             }
+#             text = "LEAVE_IO_MEMBERSHIP"
+#         }
+#     }
+# }
+
+### ================================================================
+### 【生效覆盖】2026-10-02 T1 · 公库入口（《脚本规格》§10.7 / R1-2）
+### ----------------------------------------------------------------
+### 本文件上方 186 行是历史版本（整份被 # 注释 = 无生效内容）。
+### 这里只追加一个"点状覆盖"，让幻想乡 IO 的默认面板显形「宝库」分页：
+###   目标 block 声明：VANILLA\gui\panels\organization\common.gui:232-236
+###       button_secondary_tab_alt = { ... block "organization_treasury_tab_visible" { visible = no } ... }
+###   写法蓝本：VANILLA\gui\panels\organization\hre.gui:2471-2474
+###       blockoverride "organization_treasury_tab_visible" {
+###           visible = yes
+###           enabled = "[Or(GreaterThan_int32(GetDataModelSize(...GetPayments), '(int32)0' ),
+###                          ...IsCurrencyEnabled('gold'))]"
+###       }
+###   与蓝本的唯一差异：visible 取 IsCurrencyEnabled('gold') 而不是蓝本的 visible = yes ——
+###     HRE 恒有 payments，本 IO 没有；且若引擎实为"全局合并"而非按文件名分流，
+###     visible = yes 会把宝库分页强加给所有 IO 面板。语义等价、风险更低。
+###   说明：整份替换 panel_content 的面板（如 th_sages_council_io.gui）树上没有本 block，
+###     打不上 override —— 本覆盖只在走 vanilla 默认骨架的本 IO 上生效。
+### ================================================================
+organization_panel = {
+    blockoverride "organization_treasury_tab_visible" {
+        visible = "[InternationalOrganizationsView.GetInternationalOrganization.IsCurrencyEnabled('gold')]"
+        enabled = "[Or(GreaterThan_int32(GetDataModelSize(InternationalOrganizationsView.GetInternationalOrganization.GetPayments), '(int32)0' ), InternationalOrganizationsView.GetInternationalOrganization.IsCurrencyEnabled('gold'))]"
+    }
+
+    ### ════════════════════════════════════════════════════════════════
+    ### 【生效覆盖】2026-10-03 T2-5a · 二级分页「案卷」（阎魔的办公桌）
+    ### ----------------------------------------------------------------
+    ### 路线 A = vanilla 的 custom tab 机制（本窗取证结论：**当前版本可用**）
+    ###   分页按钮与内容区声明（全部**未被注释**，即生效）：
+    ###     VANILLA\gui\panels\organization\common.gui:428-445
+    ###       button_secondary_tab_alt = {
+    ###         block "organization_custom_tab_visible" { visible = no }      ← :430-432
+    ###         blockoverride "tab_text" { block "organization_custom_tab_text" { text = "" } }  ← :433-437
+    ###         block "organization_custom_tab_tooltip" { tooltip_enabled = no }  ← :438-440
+    ###         onclick = "[...Vars.Set( 'organizations', 'custom' )]"          ← :442（不在命名 block 内，勿覆写）
+    ###         down    = "[...Vars.HasValue( 'organizations', 'custom' )]"     ← :443
+    ###       }
+    ###     VANILLA\gui\panels\organization\common.gui:584-598
+    ###       vbox = {                                                     ← :585
+    ###         block "organization_custom_content_visible" { visible = no }  ← :588-590
+    ###         vbox = { block "organization_custom_content" {} }           ← :591-597
+    ###       }                                                           ← :598
+    ###   ★ 被注释掉的是**另一组**（:599-606 organization_custom_content_second_visible /
+    ###     _second，与 :608 organization_custom_contents）—— 本窗**不用**它们。
+    ###   整份可用蓝本（同一 block 名、同一分页机制，两处都在生产环境跑）：
+    ###     VANILLA\gui\panels\organization\hre.gui:2496-2514
+    ###       blockoverride "organization_custom_tab_visible"   { enabled = "..." }
+    ###       blockoverride "organization_custom_tab_text"      { text = "HRE_CIRCLES_TAB" }
+    ###       blockoverride "organization_custom_tab_tooltip"   { tooltipwidget = { using = ... } }
+    ###       blockoverride "organization_custom_content_visible" { visible = "[...Vars.HasValue( 'organizations', 'custom' )]" }
+    ###       blockoverride "organization_custom_content"       { vbox = { ... } }
+    ###     VANILLA\gui\panels\organization\middle_kingdom.gui:163-209（同款五件套）
+    ###       —— 该文件 :164 用 visible = "[...GetLeaderCountry.MakeScope.GetVariable('enabled_treasure_voyages').IsSet]"
+    ###          即"按领袖国变量决定分页可见"的 vanilla 先例（本窗改按领袖身份判，见下）。
+    ###
+    ### 分页落点：custom 分页在 vanilla 分页条里排在「议会(辩论)」之后、「成员」之前
+    ###   （common.gui:405-426 议会 → :428-445 custom → :447-467 成员）。
+    ###   本窗不改分页顺序（那要整份重写分页条，风险不可接受）。
+    ###
+    ### 【可见性硬约束】只有彼岸（阎魔 = 本 IO 领袖国）能看到「案卷」分页
+    ###   领袖判定函数（官方引擎函数表）：
+    ###     KB\reference_official_defines\docs\data_types_uncategorized.txt:78771
+    ###       InternationalOrganization.IsIOLeaderCountry( Arg0 )
+    ###       Definition type: Function / Return type: bool
+    ###   逐字用法先例：VANILLA\gui\panels\organization\independence_movement.gui:336
+    ###     visible = "[And3(InternationalOrganizationsView.GetInternationalOrganization.IsIOLeaderCountry(GetPlayer), ...)]"
+    ###   GetPlayer 定义：KB 同表 :775-777（Global promote / Return type: Country）。
+    ###   等价备选（vanilla 先例 parliament.gui:904）：
+    ###     ObjectsEqual(...GetLeaderCountry, InternationalOrganizationsView.GetPlayer)
+    ###   ★ 不存在 Player.IsLeaderOfInternationalOrganization（base game 全 GUI 库 0 处）。
+    ###
+    ### 【二层保险】两层条件都带 GetType.GetNameKey 判定（vanilla 同款 common.gui:345/535），
+    ###   万一引擎实为"全局合并"而非"按同名文件分流"，本覆盖也不会把「案卷」分页
+    ###   装到别人（HRE / 圣战 / 独立运动…）的面板上。
+    ###   （分流机制证据：一 IO 一文件——VANILLA\gui\panels\situation\readme.txt:2
+    ###    "create a new file in the situations folder with the name of the situation"；
+    ###    且 hre.gui:1 用 organization_panel 而 middle_kingdom.gui:1 用
+    ###    organization_geodiplomatic_theme（= organization_panel {} 的空子类型，
+    ###    theme_templates.gui:3-5），二者覆写**同名** block 却给出不同文案
+    ###    ——若为全局合并，vanilla 自身即自相矛盾。）
+    ### ════════════════════════════════════════════════════════════════
+
+    blockoverride "organization_custom_tab_visible" {
+        visible = "[And(EqualTo_string(InternationalOrganizationsView.GetInternationalOrganization.GetType.GetNameKey,'th_gensokyo_io'), InternationalOrganizationsView.GetInternationalOrganization.IsIOLeaderCountry(GetPlayer))]"
+    }
+
+    blockoverride "organization_custom_tab_text" {
+        text = "TH_TRIBUNAL_TAB_DOSSIER"
+    }
+
+    ### tooltip 结构逐字照 middle_kingdom.gui:171-203（同一 IO 面板族的 custom tab tooltip）
+    ### ConceptTooltipType = 类型（先例 cooltip_types.gui:1598 —— type SimpleConceptTooltipType = ConceptTooltipType）
+    ### tooltip_concept_title_icon_size = 模板（cooltip_types.gui:7）
+    blockoverride "organization_custom_tab_tooltip" {
+        tooltipwidget = {
+            ConceptTooltipType = {
+                blockoverride "title_icon" {
+                    icon = {
+                        texture = "gfx/interface/icons/flat_icons/laws.dds"
+                        using = tooltip_concept_title_icon_size
+                    }
+                }
+                blockoverride "title_text" {
+                    block "title" {
+                        text = "TH_TRIBUNAL_TAB_DOSSIER"
+                    }
+                }
+                blockoverride "tooltip_content" {
+                    TooltipTextBlock = {
+                        blockoverride "text" {
+                            text = "TH_TRIBUNAL_TAB_DOSSIER_TT_TEXT"
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ### 内容区显隐：vanilla 写法是只判 Vars（hre.gui:2511 / middle_kingdom.gui:206），
+    ###   本窗额外再与"本 IO + 领袖"两项 —— Vars 是**视图级**变量（不分 IO），
+    ###   玩家上次在别的 IO 上停在 'custom' 页时，若只判 Vars 会出现
+    ###   "分页条上没有案卷、内容区却在渲染"的错位。
+    blockoverride "organization_custom_content_visible" {
+        visible = "[And3(InternationalOrganizationsView.Vars.HasValue( 'organizations', 'custom' ), EqualTo_string(InternationalOrganizationsView.GetInternationalOrganization.GetType.GetNameKey,'th_gensokyo_io'), InternationalOrganizationsView.GetInternationalOrganization.IsIOLeaderCountry(GetPlayer))]"
+    }
+
+    ### ════════════════════════════════════════════════════════════════
+    ### 案卷区本体（《UI规格》§3 图 2 / 《字符画》图 6b）
+    ###   四段 = 同一套「幻想乡 IO 成员遍历 + 标记过滤」，各段判据不同：
+    ###     ① 嫌疑        suspect_mark
+    ###     ② 已立案·制裁中 tarnish_mark ∧ ¬verdict_done
+    ###     ③ 服刑中       tarnish_mark ∧  verdict_done
+    ###     ④ 已结案      ¬tarnish_mark ∧  verdict_done
+    ###   判据取证见下方各段注释。
+    ###   遍历源取证（item 作用域 = Country）：
+    ###     VANILLA\gui\panels\situation\war_of_religions.gui:279-282
+    ###       datamodel = "[GetInternationalOrganization('protestant_union').GetMembers]"
+    ###       item = { country_flag_small = {} }
+    ###   滚动区结构取证：VANILLA\gui\panels\organization\factions.gui:8-17
+    ###     （scrollarea + layoutpolicy_* = expanding + Scrollbar_Vertical + scrollwidget.vbox）
+    ###   旗控件：country_flag_small = 36×24（VANILLA\gui\shared\coat_of_arms.gui:199-200）
+    ###   字体模板：Font_Size_Small / Font_Size_Very_Small / Font_Type_Headers
+    ###     （loading_screen\gui\preload\fonts.gui:16 / :10 / :55）
+    ###   文本色格式：#header_titles / #subtle_name / #color_yellow;bold
+    ###     （vanilla 逐字：ui_library.gui:419 等；★ base game 无裸 "#color_yellow"，必须带 ;bold）
+    ### ════════════════════════════════════════════════════════════════
+    blockoverride "organization_custom_content" {
+        vbox = {
+            layoutpolicy_horizontal = expanding
+            layoutpolicy_vertical = expanding
+            margin = { 6 4 }
+            spacing = 4
+
+            ### 标题行（静态文案；GUI 层拿不到"计数"与"上次结案日期"，故不做计数行）
+            hbox = {
+                layoutpolicy_horizontal = expanding
+                spacing = 6
+                text_single = {
+                    using = Font_Type_Headers
+                    using = Font_Size_Small
+                    default_format = "#header_titles"
+                    raw_text = "[Localize('TH_TRIBUNAL_DOSSIER_TITLE')]"
+                }
+                text_single = {
+                    using = Font_Size_Very_Small
+                    default_format = "#subtle_name"
+                    raw_text = "[Localize('TH_TRIBUNAL_DOSSIER_LEAD')]"
+                }
+                expand = {}
+            }
+
+            scrollarea = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                scrollbarpolicy_horizontal = always_off
+                scrollbar_vertical = {
+                    using = Scrollbar_Vertical
+                }
+                scrollwidget = {
+                    vbox = {
+                        layoutpolicy_horizontal = expanding
+                        ### 2026-10-02 三改：段间距 6 → 3（配合自建紧凑卡，四张头紧贴）
+                        spacing = 3
+
+                        ### ────────────────────────────────────────────
+                        ### ① 嫌疑（《UI规格》§3 卡片 2 / 图 6b 卡 2）
+                        ###   过滤标记：th_gensokyo_suspect_mark
+                        ###     写入点：on_action\th_gensokyo_chain_monthly.txt:136-141
+                        ###       （好战越线且非免制裁期 → set_variable）
+                        ###     摘除点：generic_actions\th_gensokyo_tribunal_indict.txt:165-167
+                        ###       （立案即摘「嫌疑」）⇒ 与②互斥，两段不会重复列同一国
+                        ###   显示：旗 + 国名 + 「嫌疑」徽记 + 罪孽（有则显示）
+                        ### ────────────────────────────────────────────
+                        ### 【紧凑卡·三改 2026-10-02】弃用 vanilla card_expandable ——
+                        ###   它的底部容器带 margin = {10 10}，而**那不是命名 block、覆写不掉**
+                        ###   （cards.gui:2595-2600）⇒ 折叠后每张卡仍留 ~20px 空高，
+                        ###   叠上外层 spacing 就表现为"四个卡头离得远、折叠没效果"。
+                        ###   自建骨架（每件都有 vanilla 逐字先例）：
+                        ###     卡头底 = using = bg_scroll_card_header（backgrounds.gui:3521）
+                        ###     卡头   = button 裸用（alert_settings.gui:11 / common.gui:20）
+                        ###     开合键 = GetVariableSystem.Toggle / Exists（court_and_country.gui:25/39）
+                        ###     开合箭头 = 两个 icon 换 visible：
+                        ###       gfx/interface/buttons/flats/button_simple_right.dds（收起）
+                        ###       gfx/interface/buttons/flats/button_simple_down.dds（展开）
+                        ###       同款逐字：message_settings_menu.gui:130-142 /
+                        ###       government_lateralview.gui:1467-1481 / peace_offer_view.gui:724-735
+                        ###     行底   = using = bg_paper_card（backgrounds.gui:244-270，轻量纸面）
+                        ###   ⇒ 折叠 = 卡体整块 visible = no，**完全不留空高**
+                        ###   默认折叠（键未设 = 收起）；段内判据表达式逐字未改
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            spacing = 0
+
+                            ### 卡头（整条可点）
+                            button = {
+                                layoutpolicy_horizontal = expanding
+                                size = { -1 32 }
+                                using = bg_scroll_card_header
+                                onclick = "[GetVariableSystem.Toggle( 'th_tribunal_case_suspect' )]"
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    spacing = 5
+                                    margin = { 10 0 }
+                                    icon = {
+                                        size = { 20 20 }
+                                        texture = "gfx/interface/icons/flat_icons/laws.dds"
+                                        texture_density = 2
+                                    }
+                                    text_single = {
+                                        using = Font_Size_Small
+                                        default_format = "#header_titles"
+                                        raw_text = "[Localize('TH_TRIBUNAL_GROUP_SUSPECT')]"
+                                    }
+                                    expand = {}
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_right.dds"
+                                        visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_case_suspect' ))]"
+                                    }
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_down.dds"
+                                        visible = "[GetVariableSystem.Exists( 'th_tribunal_case_suspect' )]"
+                                    }
+                                }
+                            }
+
+                            ### 卡体（折叠 = 整块不占位）
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                ### ★ 2026-10-02 三改修复：ignoreinvisible 必须写在**带 visible 的
+                                ###   那个控件**上（语义 = "本控件隐形时不占位"，逐字先例
+                                ###   VANILLA\hre.gui:3146-3148 / :3132-3134 / :2899-2903）。
+                                ###   写在容器上无效（容器恒可见），这正是"折叠后仍留 ~110px 空档"的根因。
+                                visible = "[GetVariableSystem.Exists( 'th_tribunal_case_suspect' )]"
+                                ignoreinvisible = yes
+                                margin = { 4 3 }
+                                spacing = 2
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                ignoreinvisible = yes
+                                datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                                item = {
+                                    hbox = {
+                                        using = bg_paper_card
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 5
+                                        margin = { 4 1 }
+                                        visible = "[Country.MakeScope.GetVariable('th_gensokyo_suspect_mark').IsSet]"
+                                        ### ★ 隐形时不占位（语义与先例见本卡卡体注释）
+                                        ignoreinvisible = yes
+                                        country_flag_small = {}
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            raw_text = "[Country.GetNameWithNoTooltip]"
+                                        }
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            default_format = "#color_yellow;bold"
+                                            raw_text = "[Localize('th_gensokyo_suspect_mark')]"
+                                        }
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            default_format = "#subtle_name"
+                                            visible = "[Country.MakeScope.GetVariable('th_gensokyo_sin_var').IsSet]"
+                                            raw_text = "[Localize('th_gensokyo_sin_var')] [Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue|0]"
+                                        }
+                                        expand = {}
+                                    }
+                                }
+                            }
+                            }
+                        }
+
+                        ### ────────────────────────────────────────────
+                        ### ② 已立案 · 制裁中
+                        ###   判据：th_gensokyo_tarnish_mark ∧ ¬th_gensokyo_verdict_done
+                        ###     tarnish_mark = "本案在册"的**唯一**案件判据
+                        ###       （on_action\th_gensokyo_tribunal_pulse.txt:36-46 明文规定
+                        ###        门控必须用它，不能用 observation_months —— 后者被
+                        ###        init/月度兜底补成 0 后**恒存在**）
+                        ###     摘除点唯一（除立案清旧案外）：
+                        ###       scripted_effects\th_gensokyo_tribunal_effects.txt:37-61
+                        ###       （① 案件标记清理效果；调用点 = indict.txt:150 与
+                        ###        effects:716 = ⑦ 案件结案）
+                        ###     ⇒ ¬tarnish ⇒ 案已结（制裁与观察期均已撤销）
+                        ###   显示：旗 + 国名 + 「已立案」徽记 + 当前制裁档位 + 观察期剩余月数
+                        ###         + 罪孽 / 态度 / 已付赔款
+                        ###   档位判定：四档标记互斥（升档时先摘旧档再打新档，
+                        ###     effects:277-278 / :298-301 / :344-347 / :406-409），
+                        ###     故四行并列、各带 visible，天然只亮一行（最高档在前）。
+                        ###   档位名沿用已落盘 loc：th_gensokyo_tier_1..4_mark
+                        ###     （simp_chinese\th_gensokyo_chain_l_simp_chinese.yml:425-432
+                        ###      = 谴责 / 夺权 / 禁运 / 限张）
+                        ###   读值先例：vanilla union.gui:317
+                        ###     （datamodel item 内 Country.MakeScope.GetVariable('x').GetValue）
+                        ### ────────────────────────────────────────────
+                        ### ② 已立案 · 制裁中 —— 紧凑卡（写法同 ①，见段首取证注释）
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            spacing = 0
+
+                            button = {
+                                layoutpolicy_horizontal = expanding
+                                size = { -1 32 }
+                                using = bg_scroll_card_header
+                                onclick = "[GetVariableSystem.Toggle( 'th_tribunal_case_indicted' )]"
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    spacing = 5
+                                    margin = { 10 0 }
+                                    icon = {
+                                        size = { 20 20 }
+                                        texture = "gfx/interface/icons/flat_icons/laws.dds"
+                                        texture_density = 2
+                                    }
+                                    text_single = {
+                                        using = Font_Size_Small
+                                        default_format = "#header_titles"
+                                        raw_text = "[Localize('TH_TRIBUNAL_GROUP_INDICTED')]"
+                                    }
+                                    expand = {}
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_right.dds"
+                                        visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_case_indicted' ))]"
+                                    }
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_down.dds"
+                                        visible = "[GetVariableSystem.Exists( 'th_tribunal_case_indicted' )]"
+                                    }
+                                }
+                            }
+
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                visible = "[GetVariableSystem.Exists( 'th_tribunal_case_indicted' )]"
+                                ### 隐形即不占位（语义/先例见 ① 卡注释）
+                                ignoreinvisible = yes
+                                margin = { 4 3 }
+                                spacing = 2
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                ignoreinvisible = yes
+                                datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                                item = {
+                                    vbox = {
+                                        using = bg_paper_card
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 1
+                                        margin = { 2 1 }
+                                        visible = "[And(Country.MakeScope.GetVariable('th_gensokyo_tarnish_mark').IsSet, Not(Country.MakeScope.GetVariable('th_gensokyo_verdict_done').IsSet))]"
+                                        ### ★ 隐形时不占位（否则每行都预留空高）
+                                        ignoreinvisible = yes
+                                        hbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            spacing = 5
+                                            margin = { 8 1 }
+                                            country_flag_small = {}
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                raw_text = "[Country.GetNameWithNoTooltip]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_red;bold"
+                                                raw_text = "[Localize('TH_TRIBUNAL_BADGE_INDICTED')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_4_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_4_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_3_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_3_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_2_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_2_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_1_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_1_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_observation_months').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_OBSERVATION_LEFT')] [Country.MakeScope.GetVariable('th_gensokyo_observation_months').GetValue|0] [Localize('TH_TRIBUNAL_MONTHS')]"
+                                            }
+                                            expand = {}
+                                        }
+                                        hbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            spacing = 5
+                                            margin = { 8 0 }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_sin_var').IsSet]"
+                                                raw_text = "[Localize('th_gensokyo_sin_var')] [Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue|0]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_attitude_var').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_ATTITUDE')] [Country.MakeScope.GetVariable('th_gensokyo_attitude_var').GetValue|0]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_confess_paid').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_CONFESS_PAID')] [Country.MakeScope.GetVariable('th_gensokyo_confess_paid').GetValue|0]"
+                                            }
+                                            expand = {}
+                                        }
+                                    }
+                                }
+                            }
+                            }
+                        }
+
+                        ### ────────────────────────────────────────────
+                        ### ③ 服刑中（已宣判、案仍在册）
+                        ###   判据：th_gensokyo_tarnish_mark ∧ th_gensokyo_verdict_done
+                        ###     verdict_done 写入点：effects:1107-1110（⑬ 宣判落地，
+                        ###       四档宣判行动 + 超时兜底共用的唯一落地口）
+                        ###     verdict_done **故意不在结案时清**：effects:1186-1187
+                        ###       "它是'本案已判'的常驻标记，由下一次战争结束的 ⑫ 清理"
+                        ###     ⇒ tarnish ∧ verdict_done = 已判但案件仍在册 = 服刑/观察期
+                        ###   显示：与②同款字段（档位 / 观察期 / 罪·态度·赔款）
+                        ### ────────────────────────────────────────────
+                        ### ③ 服刑中 —— 紧凑卡（写法同 ①，见段首取证注释）
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            spacing = 0
+
+                            button = {
+                                layoutpolicy_horizontal = expanding
+                                size = { -1 32 }
+                                using = bg_scroll_card_header
+                                onclick = "[GetVariableSystem.Toggle( 'th_tribunal_case_serving' )]"
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    spacing = 5
+                                    margin = { 10 0 }
+                                    icon = {
+                                        size = { 20 20 }
+                                        texture = "gfx/interface/icons/flat_icons/laws.dds"
+                                        texture_density = 2
+                                    }
+                                    text_single = {
+                                        using = Font_Size_Small
+                                        default_format = "#header_titles"
+                                        raw_text = "[Localize('TH_TRIBUNAL_GROUP_SERVING')]"
+                                    }
+                                    expand = {}
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_right.dds"
+                                        visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_case_serving' ))]"
+                                    }
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_down.dds"
+                                        visible = "[GetVariableSystem.Exists( 'th_tribunal_case_serving' )]"
+                                    }
+                                }
+                            }
+
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                visible = "[GetVariableSystem.Exists( 'th_tribunal_case_serving' )]"
+                                ### 隐形即不占位（语义/先例见 ① 卡注释）
+                                ignoreinvisible = yes
+                                margin = { 4 3 }
+                                spacing = 2
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                ignoreinvisible = yes
+                                datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                                item = {
+                                    vbox = {
+                                        using = bg_paper_card
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 1
+                                        margin = { 2 1 }
+                                        visible = "[And(Country.MakeScope.GetVariable('th_gensokyo_tarnish_mark').IsSet, Country.MakeScope.GetVariable('th_gensokyo_verdict_done').IsSet)]"
+                                        ### ★ 隐形时不占位（否则每行都预留空高）
+                                        ignoreinvisible = yes
+                                        hbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            spacing = 5
+                                            margin = { 8 1 }
+                                            country_flag_small = {}
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                raw_text = "[Country.GetNameWithNoTooltip]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_red;bold"
+                                                raw_text = "[Localize('TH_TRIBUNAL_BADGE_SERVING')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_4_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_4_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_3_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_3_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_2_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_2_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tier_1_mark').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_TIER_LABEL')] [Localize('th_gensokyo_tier_1_mark')]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_observation_months').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_OBSERVATION_LEFT')] [Country.MakeScope.GetVariable('th_gensokyo_observation_months').GetValue|0] [Localize('TH_TRIBUNAL_MONTHS')]"
+                                            }
+                                            expand = {}
+                                        }
+                                        hbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            spacing = 5
+                                            margin = { 8 0 }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_sin_var').IsSet]"
+                                                raw_text = "[Localize('th_gensokyo_sin_var')] [Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue|0]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_attitude_var').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_ATTITUDE')] [Country.MakeScope.GetVariable('th_gensokyo_attitude_var').GetValue|0]"
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_confess_paid').IsSet]"
+                                                raw_text = "[Localize('TH_TRIBUNAL_CONFESS_PAID')] [Country.MakeScope.GetVariable('th_gensokyo_confess_paid').GetValue|0]"
+                                            }
+                                            expand = {}
+                                        }
+                                    }
+                                }
+                            }
+                            }
+                        }
+
+                        ### ────────────────────────────────────────────
+                        ### ④ 已结案（案卷封存）
+                        ###   判据：¬th_gensokyo_tarnish_mark ∧ th_gensokyo_verdict_done
+                        ###     = 曾被宣判（verdict_done 常驻，effects:1186-1187）
+                        ###       且案件已结（tarnish 已被 ① 清理效果摘除，
+                        ###       effects:37-61 ← 调用点 effects:716 ⑦ 案件结案）
+                        ###   ★ 为什么"审判庭是否已解散"不能当判据：
+                        ###     ⑤ 清理（effects:1238-1241）在**宣判当场**就
+                        ###     th_gensokyo_trial_cleanup_effect（解散审判庭）
+                        ###     ⇒ 服刑态与已结案态的审判庭**都**已解散，该条件不可区分。
+                        ###   ★ GUI 拿不到"结案日期 / 刑期"（无对应国家变量），
+                        ###     故本卡只出徽记 + 封存提示，不做日期与刑期（见报告 §8）。
+                        ### ────────────────────────────────────────────
+                        ### ④ 已结案 —— 紧凑卡（写法同 ①，见段首取证注释）
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            spacing = 0
+
+                            button = {
+                                layoutpolicy_horizontal = expanding
+                                size = { -1 32 }
+                                using = bg_scroll_card_header
+                                onclick = "[GetVariableSystem.Toggle( 'th_tribunal_case_closed' )]"
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    spacing = 5
+                                    margin = { 10 0 }
+                                    icon = {
+                                        size = { 20 20 }
+                                        texture = "gfx/interface/icons/flat_icons/laws.dds"
+                                        texture_density = 2
+                                    }
+                                    text_single = {
+                                        using = Font_Size_Small
+                                        default_format = "#header_titles"
+                                        raw_text = "[Localize('TH_TRIBUNAL_GROUP_CLOSED')]"
+                                    }
+                                    expand = {}
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_right.dds"
+                                        visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_case_closed' ))]"
+                                    }
+                                    icon = {
+                                        size = { 18 18 }
+                                        texture = "gfx/interface/buttons/flats/button_simple_down.dds"
+                                        visible = "[GetVariableSystem.Exists( 'th_tribunal_case_closed' )]"
+                                    }
+                                }
+                            }
+
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                visible = "[GetVariableSystem.Exists( 'th_tribunal_case_closed' )]"
+                                ### 隐形即不占位（语义/先例见 ① 卡注释）
+                                ignoreinvisible = yes
+                                margin = { 4 3 }
+                                spacing = 2
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                ignoreinvisible = yes
+                                datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                                item = {
+                                    hbox = {
+                                        using = bg_paper_card
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 5
+                                        margin = { 4 1 }
+                                        visible = "[And(Not(Country.MakeScope.GetVariable('th_gensokyo_tarnish_mark').IsSet), Country.MakeScope.GetVariable('th_gensokyo_verdict_done').IsSet)]"
+                                        ### ★ 隐形时不占位（否则每行都预留空高）
+                                        ignoreinvisible = yes
+                                        country_flag_small = {}
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            raw_text = "[Country.GetNameWithNoTooltip]"
+                                        }
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            default_format = "#subtle_name"
+                                            raw_text = "[Localize('TH_TRIBUNAL_BADGE_CLOSED')]"
+                                        }
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            default_format = "#subtle_name"
+                                            raw_text = "[Localize('TH_TRIBUNAL_CLOSED_NOTE')]"
+                                        }
+                                        expand = {}
+                                    }
+                                }
+                            }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

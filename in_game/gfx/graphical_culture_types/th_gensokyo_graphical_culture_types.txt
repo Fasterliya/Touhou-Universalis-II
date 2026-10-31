@@ -1,10 +1,20 @@
-﻿#fallbacks are just tags used during asset lookup. They don't need to match existing graphical cultures
+#fallbacks are just tags used during asset lookup. They don't need to match existing graphical cultures
 
 #技术提示-文化tag：这个是用来填有文化tag的角色生成的ethnicity的
 #其实也可以不写，但是我希望相同作品的角色会互相传递
 th_gensokyo_gfx = {
 	priority = 850 # 二次元的最好都填的等于这个数值
 	culture_tag = th_gensokyo_gfx
+	ethnicities = {
+		100 = th_gensokyo_ethnicity
+	}
+}
+
+# 文化图鉴立绘专用图形文化（吸血鬼）：priority 高于 th_gensokyo_gfx 确保优先命中
+# 素材目录：gfx/interface/graphical_cultures/th_vampire_gfx/portrait.dds
+th_vampire_gfx = {
+	priority = 860
+	culture_tag = th_vampire_gfx
 	ethnicities = {
 		100 = th_gensokyo_ethnicity
 	}

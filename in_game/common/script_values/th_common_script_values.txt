@@ -4,3 +4,15 @@
         add = 1
     }
 }
+
+### 2026-08-17：仅统计"已接纳文化"数量（不含主流文化），供 auto_modifier 缩放使用。
+### 勿与上面的 th_gensokyo_accepted_culture_script_value 混用——那个是 `1 + 已接纳数`，
+### 其 +1 疑为计入主流文化（语义未证实），直接用会使文化容量按"1+已接纳数"超发。
+### 【2026-09-15 接入】蓝本旁证支持"不含主流文化"口径：概念 primary_or_accepted_culture
+###   （game_concepts/00_game_concepts.txt:382）与 accepted_culture（:401）为两个不同概念。
+th_gensokyo_accepted_culture_count_value = {
+    value = 0
+    every_accepted_culture = {
+        add = 1
+    }
+}

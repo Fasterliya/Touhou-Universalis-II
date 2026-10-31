@@ -1,0 +1,706 @@
+### ============================================================
+### 审判庭（th_gensokyo_tribunal）— IO 面板 · T1「看得见」
+### ------------------------------------------------------------
+### 【路线 P：点状覆盖】
+###   机制蓝本（一 IO 类型一同名 GUI 文件）：
+###     gui/panels/organization/<IO 类型 key>.gui
+###     —— 同类系统的成文约定见 VANILLA\gui\panels\situation\readme.txt:1-5
+###        （"create a new file in the situations folder with the name of the situation"）；
+###        base game 36 个 IO 类型 / 34 个同名 .gui（R1-1 实测）。
+###   写法蓝本（点状 blockoverride，不整份替换）：
+###     VANILLA\gui\panels\organization\hre.gui:1
+###         organization_panel = { blockoverride "..." { ... } }
+###     VANILLA\gui\panels\organization\crusade.gui:185
+###         同一 block 内画总览顶部内容（本文件关系图同款位置）
+###     VANILLA\gui\panels\organization\tatar_yoke.gui:1-64
+###         同款块名清单（含跨文件 block 覆写先例）
+###   ★ 绝不写 blockoverride "panel_content"：整份替换会让成员/法律/议会/候选/宝库
+###     等全部分页从实例树上消失（R1-2 实证：th_sages_council_io.gui 的宝库分页即如此丢失）。
+###
+### 【本文件覆盖的三个命名 block】（全部先回 base game 核对"当前版本仍在"）
+###   ① organization_parliament_tab_text            ← common.gui:411（议会分页文案 → 「辩论」）
+###   ② organization_overview_list_custom_top_extra ← members.gui:74（总览 tab 顶部：关系图 = 图 1）
+###   ③ parliament_items_extra_top                  ← parliament.gui:556（辩论 tab 顶部：预计档位 = 图 4）
+###
+### 【路线 P 天然保留、本文件不动的部分】
+###   标题栏（IO 图标 + 名称 + 收藏按钮）  common.gui:7-62
+###   二级分页条                          common.gui:206-472（总览/辩论/成员…按条件显示）
+###   行动区（GetActions 自动列表）        members.gui:75-156 —— T1 零 GUI 改动即可加按钮
+###   议会区域本体                        parliament.gui:61 起（organization_panel_parliament_area）
+###
+### 【二层保险】所有注入内容都带 GetType.GetNameKey 判定
+###   （vanilla 同款：common.gui:177/185/199/345/535）。
+###   万一引擎实际是"全局合并"而不是"按文件名分流"，本文件也不会污染其它 IO 面板。
+###
+### 【T1 数据源】全部只读；本窗不写任何脚本
+###   左段 彼岸   = 审判庭 leader_country（阎魔 = 幻想乡 IO 领袖，tag T25）
+###   中段 代理人 = 幻想乡 IO（th_gensokyo_io）成员中持【国家变量】
+###                th_gensokyo_tribunal_agent_mark 者（T1-β / T2-2b 写入）
+###   右段 罪人   = 幻想乡 IO（th_gensokyo_io）成员中持【国家变量】
+###                th_gensokyo_crusade_target_mark 者 + th_gensokyo_sin_var
+###   随征        = 审判庭成员（剔除代理人），计数 = 成员数 - 1
+###   审判法      = th_gensokyo_judgment_law 的当前政策（GetLaw + GetPolicyForLaw）
+###
+### 【2026-10-02 修旗窗（本窗）】中/右两段原先各用一种"非全量"枚举源
+###   （中段 = 审判庭自身成员，右段 = GetQuickVisibleCountries 的可见国家）；
+###   现统一为「幻想乡 IO 成员」枚举 —— 逐段理由与逐字蓝本见 §② 两段内注释。
+### ============================================================
+
+organization_panel = {
+
+    ### ════════════════════════════════════════════════════════════════
+    ### ① 二级分页：议会分页 → 「辩论」
+    ###   block 声明：common.gui:411（嵌在 blockoverride "tab_text" 内）
+    ###   同款嵌套覆写先例：VANILLA\tatar_yoke.gui:3（覆写 organization_laws_tab_text）
+    ###   SelectLocalization 先例：common.gui:372 / MOD th_sages_council_io.gui:43
+    ###   保留 vanilla 键 game_concept_parliament 作为兜底（万一被别的 IO 复用到本文件）
+    ### ════════════════════════════════════════════════════════════════
+    blockoverride "organization_parliament_tab_text" {
+        text = "[SelectLocalization(EqualTo_string(InternationalOrganizationsView.GetInternationalOrganization.GetType.GetNameKey,'th_gensokyo_tribunal'), 'TH_TRIBUNAL_TAB_DEBATE', 'game_concept_parliament')]"
+    }
+
+    ### ════════════════════════════════════════════════════════════════
+    ### ② 总览 tab 顶部：关系图（《UI规格》§2 图 1 / §2.1；《字符画》图 1、图 10）
+    ###   block 声明：members.gui:74（默认空块；crusade.gui:185 同款用法）
+    ###   布局：三段横排，横跨整宽（不做左右分栏）；代理人下方为"随征 N 国 + 小旗排"
+    ### ════════════════════════════════════════════════════════════════
+    blockoverride "organization_overview_list_custom_top_extra" {
+        vbox = {
+            layoutpolicy_horizontal = expanding
+            spacing = 6
+            margin = { 4 6 }
+            ### 二层保险：只在审判庭面板渲染（vanilla common.gui:345 同款写法）
+            visible = "[EqualTo_string(InternationalOrganizationsView.GetInternationalOrganization.GetType.GetNameKey,'th_gensokyo_tribunal')]"
+
+            ### ────────────────────────────────────────────────
+            ### 关系图：彼岸（阎魔）──→ 世俗代理人 ──→ 罪人国家
+            ### ────────────────────────────────────────────────
+            hbox = {
+                layoutpolicy_horizontal = expanding
+                spacing = 2
+                ignoreinvisible = yes
+
+                ### ＝＝ 左段 · 彼岸 ＝＝
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutstretchfactor_horizontal = 1
+                    spacing = 2
+                    text_single = {
+                        layoutpolicy_horizontal = expanding
+                        align = center
+                        using = Font_Type_Headers
+                        using = Font_Size_Small
+                        default_format = "#header_titles"
+                        raw_text = "[Localize('TH_TRIBUNAL_HIGAN')]"
+                    }
+                    hbox = {
+                        layoutpolicy_horizontal = expanding
+                        expand = {}
+                        country_flag_mid = {
+                            ### 固定 = 审判庭领袖（阎魔）；先例 crusade.gui:135-138
+                            datacontext = "[InternationalOrganizationsView.GetInternationalOrganization.GetLeaderCountry]"
+                            visible = "[InternationalOrganizationsView.GetInternationalOrganization.HasValidLeaderCountry]"
+                        }
+                        expand = {}
+                    }
+                    text_single = {
+                        layoutpolicy_horizontal = expanding
+                        align = center
+                        raw_text = "[InternationalOrganizationsView.GetInternationalOrganization.GetLeaderCountry.GetNameWithNoTooltip]"
+                    }
+                    text_single = {
+                        layoutpolicy_horizontal = expanding
+                        align = center
+                        using = Font_Size_Very_Small
+                        default_format = "#subtle_name"
+                        raw_text = "[Localize('TH_TRIBUNAL_YAMA_COURT')]"
+                    }
+                }
+
+                ### ＝＝ 箭头 1（静态贴图；《UI规格》§2.1）＝＝
+                ### 贴图路径先例：vanilla government_lateralview.gui:480 / combat_tooltips.gui:1117
+                vbox = {
+                    layoutpolicy_vertical = expanding
+                    expand = {}
+                    icon = {
+                        size = { 22 22 }
+                        texture = "gfx/interface/icons/flat_icons/arrow.dds"
+                        texture_density = 2
+                    }
+                    expand = {}
+                }
+
+                ### ＝＝ 中段 · 世俗代理人 ＝＝
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutstretchfactor_horizontal = 1
+                    spacing = 2
+                    text_single = {
+                        layoutpolicy_horizontal = expanding
+                        align = center
+                        using = Font_Type_Headers
+                        using = Font_Size_Small
+                        default_format = "#header_titles"
+                        raw_text = "[Localize('TH_TRIBUNAL_AGENT')]"
+                    }
+                    ### 活数据：幻想乡 IO 成员遍历 → 仅持 th_gensokyo_tribunal_agent_mark 的那一国可见
+                    ### ★ 2026-10-02 修旗：原写法 = InternationalOrganizationsView.GetMemberItems
+                    ###   → MemberTypeItem.GetCountries（= **审判庭自身**成员的两层遍历）。
+                    ###   隐患：代理人**不必然是审判庭成员** —— T2-2b 升档
+                    ###   （th_gensokyo_tribunal_escalate.txt:203-233）只给被提名国打标记，
+                    ###   全流程**没有** add_country_to_international_organization
+                    ###   （对比 declare:271-279 开庭路径有强制入庭）⇒ 升档后本段会开天窗。
+                    ###   代理人却**必然**是幻想乡 IO 成员：
+                    ###     declare.txt:189-236 / :245-258（兜底三贤者）、escalate.txt:145-180
+                    ###     的候选池都是幻想乡 IO（scope:recipient）成员遍历；
+                    ###     而幻想乡 IO can_leave_trigger = always = no
+                    ###     （th_gensokyo_io.txt:97-99）⇒ 成员身份永久、不可丢失。
+                    ### 蓝本（对**非当前 IO**按 key 取成员列表作 datamodel，item scope = Country）：
+                    ###   VANILLA\gui\panels\situation\war_of_religions.gui:279
+                    ###     datamodel = "[GetInternationalOrganization('protestant_union').GetMembers]"
+                    ###     item = { country_flag_small = {} }
+                    ###   同款逐字：red_turban_rebellions.gui:312（GetInternationalOrganization('red_turban_rebels')）
+                    ###             guelphs_and_ghibellines.gui:13（GetUniqueInternationalOrganization('guelphs_io')）
+                    ### 国家变量读取先例（国家 datamodel 的 item 内）：
+                    ###   union.gui:314-317（MemberTypeItem.GetCountries → Country.MakeScope.GetVariable(...).GetValue）
+                    ###   .IsSet 用法：middle_kingdom.gui:164 / war_of_religions.gui:326
+                    vbox = {
+                        layoutpolicy_horizontal = expanding
+                        ignoreinvisible = yes
+                        datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                        item = {
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                spacing = 2
+                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_tribunal_agent_mark').IsSet]"
+                                ### ★ 2026-10-02 同类占位 bug 修复：无代理人时本项不再预留空高。
+                                ###   只加这一个属性，布局/内容/数据源一字未动
+                                ###   （语义与先例：VANILLA\hre.gui:3146-3148）
+                                ignoreinvisible = yes
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    expand = {}
+                                    country_flag_mid = {}
+                                    expand = {}
+                                }
+                                text_single = {
+                                    layoutpolicy_horizontal = expanding
+                                    align = center
+                                    raw_text = "[Country.GetNameWithNoTooltip]"
+                                }
+                            }
+                        }
+                    }
+                    text_single = {
+                        layoutpolicy_horizontal = expanding
+                        align = center
+                        using = Font_Size_Very_Small
+                        default_format = "#subtle_name"
+                        raw_text = "[Localize('TH_TRIBUNAL_AGENT_LEAD')]"
+                    }
+                }
+
+                ### ＝＝ 箭头 2 ＝＝
+                vbox = {
+                    layoutpolicy_vertical = expanding
+                    expand = {}
+                    icon = {
+                        size = { 22 22 }
+                        texture = "gfx/interface/icons/flat_icons/arrow.dds"
+                        texture_density = 2
+                    }
+                    expand = {}
+                }
+
+                ### ＝＝ 右段 · 罪人国家 ＝＝
+                ### 活数据：幻想乡 IO 成员遍历 → 仅持 th_gensokyo_crusade_target_mark 的那一国可见
+                ### ★ 2026-10-02 修旗（本窗根因）：原写法是
+                ###     datacontext = "[GetQuickVisibleCountries(Player.Self)]"
+                ###     datamodel  = "[QuickVisibleCountries.GetVisibleCountries]"
+                ###   而该数据源**只枚举"对该玩家可见 / 已知"的国家** —— vanilla 全库仅两处
+                ###   用法，两处都把它喂给"选国家"菜单，标题键都是 VISIBLE_COUNTRIES_TT：
+                ###     VANILLA\gui\foreign_country_lateralview.gui:4807-4830
+                ###       （select_menu_left + blockoverride "menu_setup" { name = "foreign_country_select_country" }）
+                ###     VANILLA\gui\diplomacy_macrobuilder_lateralview.gui:2343-2364
+                ###       （同款 select_menu_left / "diplomacy_macrobuilder_select_country"）
+                ###   ⇒ 被诉国只要不在玩家的"可见国家"集合里，本段就取不到旗帜；
+                ###     而本段标题/副标在 datamodel 之外 ⇒ 现象正是"标题在、旗帜不在"。
+                ###   被诉国是**脚本侧**从幻想乡 IO 成员里选出的（与雾战无关）：
+                ###     th_gensokyo_crusade_declare.txt:89-109 的 interaction_source_list
+                ###       = scope:recipient（幻想乡 IO）every_international_organization_member
+                ###     th_gensokyo_crusade_declare.txt:141-142
+                ###       = scope:target_country { set_variable = th_gensokyo_crusade_target_mark }
+                ###     （立案路径同构：th_gensokyo_tribunal_indict.txt:96-119，同一候选池规则）
+                ###   ⇒ 改用与中段完全同构的幻想乡 IO 成员枚举，必然命中、且不受玩家可见性影响。
+                ###   蓝本逐字：VANILLA\gui\panels\situation\war_of_religions.gui:279-282
+                ###     datamodel = "[GetInternationalOrganization('protestant_union').GetMembers]"
+                ###     item = { country_flag_small = {} }        ← item scope = Country
+                ### 残余风险：幻想乡 IO 若不存在，GetMembers 取空（本 IO unique = yes +
+                ###   auto_disband_trigger = always = no，th_gensokyo_io.txt:5/103-105 ⇒ 常驻）。
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutstretchfactor_horizontal = 1
+                    spacing = 2
+                    text_single = {
+                        layoutpolicy_horizontal = expanding
+                        align = center
+                        using = Font_Type_Headers
+                        using = Font_Size_Small
+                        default_format = "#header_titles"
+                        raw_text = "[Localize('TH_TRIBUNAL_SINNER')]"
+                    }
+                    ### 单层 vbox 直接挂 datamodel（不再需要 datacontext 提升层）——
+                    ### 与中段、与 vanilla war_of_religions.gui:273-282 完全同构
+                    vbox = {
+                        layoutpolicy_horizontal = expanding
+                        ignoreinvisible = yes
+                        datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                        item = {
+                            vbox = {
+                                layoutpolicy_horizontal = expanding
+                                spacing = 2
+                                visible = "[Country.MakeScope.GetVariable('th_gensokyo_crusade_target_mark').IsSet]"
+                                ### ★ 同类占位 bug 修复（见中段注释）：无被诉国时不预留空高
+                                ignoreinvisible = yes
+                                hbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    expand = {}
+                                    country_flag_mid = {}
+                                    expand = {}
+                                }
+                                text_single = {
+                                    layoutpolicy_horizontal = expanding
+                                    align = center
+                                    raw_text = "[Country.GetNameWithNoTooltip]"
+                                }
+                                text_single = {
+                                    layoutpolicy_horizontal = expanding
+                                    align = center
+                                    using = Font_Size_Very_Small
+                                    default_format = "#subtle_name"
+                                    ### 「罪孽 N」——沿用既有变量 loc 键（th_gensokyo_chain_l_*.yml）。
+                                    ### 读值先例：vanilla attribute_columns\country.gui:511（同款 GetValue）
+                                    raw_text = "[Localize('th_gensokyo_sin_var')] [Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue|0]"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ### ────────────────────────────────────────────────
+            ### 随征 · 阵营卡（card_expandable，2026-10-02 卡片化）
+            ###   计数 = 审判庭成员数 - 1（剔除代理人）
+            ###   GetMembersAmount 先例：vanilla io_tooltips.gui:451
+            ###   （旧紧凑旗排已于 2026-10-02 二改**删除**：它的 flipdirection = yes +
+            ###    datamodel_wrap = 8 是**列优先**排布，进了卡内会变成一竖列小旗，
+            ###    与下面的名册重复；DataModelFirst 截断随之作废）
+            ###   卡类型定义与可用 block：VANILLA\gui\shared\cards.gui:2492-2629
+            ###     card_expandable_size :2495-2497 / header_content :2518-2533
+            ###     header_button_onclick :2555-2557 / icon_replace_visible_yes :2562-2564
+            ###     icon_replace_visible_not :2578-2580 / bottom_content_onclick :2598-2600
+            ###     bottom_content :2601-2626
+            ###   ★ 卡默认折叠键是**全局** 'toggled'（cards.gui:2556/2563/2579/2599）——
+            ###     四件套必须逐卡覆写成自己的键，否则同屏多卡会联动。
+            ###   同 block 内的 vanilla 逐字先例（本 block = organization_overview_list_custom_top_extra）：
+            ###     high_kingship.gui:69-216（连放三张可折叠卡 + 三个独立 toggle 键）
+            ###     lordship_of_ireland.gui:70-121 / tatar_yoke.gui:116-133
+            ###   阵营面板（factions.gui:28-106）每张"阵营卡"即此类型 —— 本窗即按它做。
+            ###   卡宽：根节点 hbox 本身没有 expanding（模板只给子 vbox 设），宽度原本
+            ###     只靠 minimumsize {500 -1}（cards.gui:2495-2497）撑 →
+            ###     实例级补 layoutpolicy_horizontal = expanding（见卡内注释），
+            ###     minimumsize 保持 { -1 -1 } 以免窄面板溢出。
+            ###   卡内一段：成员名册（2026-10-02 二改）
+            ###     · 每行一张小卡：bg_paper_card + bg_cabinet_card_frame
+            ###       （vanilla 同款逐字：gui\shared\cards.gui:134-137 io_member_country_row）
+            ###     · 旗 36×24 → 54×36：country_flag_small_plus
+            ###       （VANILLA\gui\shared\coat_of_arms.gui:187-188）
+            ###     · 国名与数值 12px → 15px：Font_Size_Small
+            ###       （loading_screen\gui\preload\fonts.gui:16-19）
+            ###     · 军力 = Country.GetMilitaryStrength（CFixedPoint）
+            ###       官方：KB\reference_official_defines\docs\data_types_uncategorized.txt:54393
+            ###       vanilla：attribute_columns\country.gui:573（|2 数值格式先例：
+            ###       relative_power_tooltip.gui:178）
+            ###     · 陆军 = Country.GetArmySize（CString，已格式化）
+            ###       官方同表:53211；vanilla country.gui:531
+            ###     · 国旗/国名读法先例：vanilla cards.gui:193-200（io_member_country_row）
+            card_expandable = {
+                ### ★ 2026-10-02 修复（"居中窄条 + 箭头点不到"）：
+                ###   card_expandable 的**根节点是 hbox，模板只给子 vbox 设了**
+                ###   layoutpolicy_horizontal = expanding（cards.gui:2493-2494），
+                ###   根节点自己没有 expanding ⇒ 卡片宽度**只靠 minimumsize 撑**
+                ###   （vanilla 默认 {500 -1}，cards.gui:2495-2497）。
+                ###   一旦把 minimumsize 覆写成 { -1 -1 }，宽度就塌成内容宽度 →
+                ###   一条居中的窄条；溢出的内容被父容器裁掉，箭头按钮因此
+                ###   排到了父矩形之外 —— 画得出来、鼠标吃不到。
+                ###   正解：在**实例**上补 layoutpolicy_horizontal = expanding，
+                ###   让卡片吃满父容器宽度（本块父容器即 expanding vbox，与
+                ###   vanilla 卡片用例同构；minimumsize 保持 -1 以免溢出窄面板）。
+                layoutpolicy_horizontal = expanding
+                blockoverride "card_expandable_size" {
+                    minimumsize = { -1 -1 }
+                }
+                blockoverride "header_content" {
+                    margin = { 10 0 }
+                    icon = {
+                        size = { 22 22 }
+                        texture = "gfx/interface/icons/flat_icons/military.dds"
+                        texture_density = 2
+                    }
+                    text_single = {
+                        using = Font_Size_Very_Small
+                        default_format = "#subtle_name"
+                        raw_text = "[Localize('TH_TRIBUNAL_RETINUE')]"
+                    }
+                    text_single = {
+                        using = Font_Size_Very_Small
+                        default_format = "#color_white"
+                        raw_text = "[Subtract_int32(InternationalOrganizationsView.GetInternationalOrganization.GetMembersAmount, '(int32)1')]"
+                    }
+                    text_single = {
+                        using = Font_Size_Very_Small
+                        default_format = "#subtle_name"
+                        raw_text = "[Localize('TH_TRIBUNAL_RETINUE_UNIT')]"
+                    }
+                    ### 2026-10-02 二改：原「超出 8 面 (+N)」提示随旧旗排一并删除
+                    ###   （旗排已删，(+N) 失去意义；名册已列全成员）
+                    expand = {}
+                }
+                blockoverride "header_button_onclick" {
+                    onclick = "[GetVariableSystem.Toggle( 'th_tribunal_retinue' )]"
+                }
+                blockoverride "icon_replace_visible_yes" {
+                    visible = "[GetVariableSystem.Exists( 'th_tribunal_retinue' )]"
+                }
+                blockoverride "icon_replace_visible_not" {
+                    visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_retinue' ))]"
+                }
+                blockoverride "bottom_content_onclick" {
+                    visible = "[GetVariableSystem.Exists( 'th_tribunal_retinue' )]"
+                }
+                blockoverride "bottom_content" {
+                    vbox = {
+                        layoutpolicy_horizontal = expanding
+                        ### 折叠显隐**显式**写在这里（与模板 block "bottom_content_onclick"
+                        ### 的隐式门控同键同步）：base game 没有那层隐式语义的文档，
+                        ### 只靠约定；显式条件让"折叠"不依赖引擎未公开的行为。
+                        ### vanilla 折叠键逐字用法：court_and_country.gui:23-47
+                        visible = "[GetVariableSystem.Exists( 'th_tribunal_retinue' )]"
+                        ### ★ 2026-10-02 修复：ignoreinvisible 必须写在**带 visible 的控件**上
+                        ###   （语义 = "隐形时不占位"，逐字先例 VANILLA\hre.gui:3146-3148）；
+                        ###   写在容器上无效 → 折叠后仍预留内容高度。
+                        ignoreinvisible = yes
+                        spacing = 3
+
+                        ### 成员名册（2026-10-02 二改：删旧旗排 + 放大旗与字 + 每行一张小卡）
+                        ###   · 行底：bg_paper_card + bg_cabinet_card_frame
+                        ###     —— vanilla 同款逐字：gui\shared\cards.gui:134-137
+                        ###        （type io_member_country_row = hbox { using = bg_paper_card
+                        ###         using = bg_cabinet_card_frame ... }）
+                        ###   · 旗：country_flag_small（36×24）→ country_flag_small_plus（54×36）
+                        ###     VANILLA\gui\shared\coat_of_arms.gui:187-188
+                        ###   · 字：国名与两个数值 12px → 15px（Font_Size_Small）
+                        ###     loading_screen\gui\preload\fonts.gui:16-19
+                        ###   · 数值图标 14×14 → 16×16
+                        ###   · 同款剔除代理人（agent 标记）；三贤者在列，故本册永不为空
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            ignoreinvisible = yes
+                            spacing = 3
+                            datamodel = "[InternationalOrganizationsView.GetMemberItems]"
+                            item = {
+                                vbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    ignoreinvisible = yes
+                                    datamodel = "[MemberTypeItem.GetCountries]"
+                                    item = {
+                                        hbox = {
+                                            using = bg_paper_card
+                                            using = bg_cabinet_card_frame
+                                            layoutpolicy_horizontal = expanding
+                                            spacing = 5
+                                            margin = { 6 1 }
+                                            visible = "[Not(Country.MakeScope.GetVariable('th_gensokyo_tribunal_agent_mark').IsSet)]"
+                                            ### ★ 隐形时不占位（否则被剔除的代理人行仍预留空高）
+                                            ignoreinvisible = yes
+                                            country_flag_small_plus = {}
+                                            text_single = {
+                                                layoutpolicy_horizontal = expanding
+                                                using = Font_Size_Small
+                                                raw_text = "[Country.GetNameWithNoTooltip]"
+                                            }
+                                            icon = {
+                                                size = { 16 16 }
+                                                texture = "gfx/interface/icons/flat_icons/military.dds"
+                                                texture_density = 2
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Small
+                                                default_format = "#subtle_name"
+                                                raw_text = "[Country.GetMilitaryStrength|2]"
+                                            }
+                                            icon = {
+                                                size = { 16 16 }
+                                                texture = "gfx/interface/icons/flat_icons/declare_war/army_size.dds"
+                                                texture_density = 2
+                                            }
+                                            text_single = {
+                                                using = Font_Size_Small
+                                                default_format = "#subtle_name"
+                                                raw_text = "[Country.GetArmySize]"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ### ────────────────────────────────────────────────
+            ### 空状态：本庭尚未开庭（TH_TRIBUNAL_NOT_OPENED）
+            ### ★ Verification — FAILED（详见报告 §7）：
+            ###   《UI规格》§8 T1-⑤ 的字面条件"不存在持目标标记的国家"在 GUI 层无法求值 ——
+            ###   引擎既无"按变量检索国家"也无"计数匹配项"的函数（官方函数表
+            ###   KB\reference_official_defines\docs\data_types_common.txt 全量核对）。
+            ###   本窗退路（有先例、可达）：本庭对当前玩家"无事可做"时视为尚未开庭 ——
+            ###   InternationalOrganizationsView.HasActions 先例：vanilla members.gui:78。
+            ###   T2 建议接口：建庭时脚本把目标国写进审判庭 IO 变量（set_variable 到 IO scope，
+            ###   照 vanilla 局势把国家存进变量再让 GUI 直读的模式），即可精确判定。
+            ### ────────────────────────────────────────────────
+            text_single = {
+                layoutpolicy_horizontal = expanding
+                align = center
+                using = Font_Size_Very_Small
+                default_format = "#subtle_name"
+                visible = "[Not(InternationalOrganizationsView.HasActions)]"
+                ### ★ 同类占位 bug 修复：开着庭时这行提示不再占一行高
+                ignoreinvisible = yes
+                raw_text = "[Localize('TH_TRIBUNAL_NOT_OPENED')]"
+            }
+        }
+    }
+
+    ### ════════════════════════════════════════════════════════════════
+    ### ③ 辩论 tab 顶部：量刑卡（罪孽 + 预计档位 + 进度条）
+    ###   《UI规格》§4 图 3 / 《字符画》图 4；2026-10-02 卡片化 + 字号放大 + 进度条
+    ###   block 声明：parliament.gui:556「parliament_items_extra_top」
+    ###
+    ###   T1 版本（估算）：按 th_gensokyo_sin_var 与当前审判法倾向估算档位。
+    ###     估算规则照 MOD 现有议会审判分支：
+    ###       parliament_issues\th_gensokyo_trial_issue.txt:41-60（on_debate_passed：
+    ###       罪值 ≥ 75 → 档3 监管国，否则 → 档2 削弱）；
+    ###     阈值不写死数字，读 script value：
+    ###       common\script_values\th_gensokyo_io_chain_values.txt:48-49
+    ###       （th_sin_tier2_value = 50 / th_sin_tier3_value = 75）
+    ###
+    ###   ⚠ T2 判决结构改造后（《设计定案》§5.5）：本卡必须改为读"基准档变量" ——
+    ###     届时删掉下面两档 visible 估算块，直接读脚本写入的基准档变量即可；
+    ###     审判法偏移（±10）目前只作用于 th_gensokyo_trial_tier_effect
+    ###     （th_gensokyo_crusade_effects.txt:17-61），故本卡只展示审判法名、不参与估算。
+    ###
+    ###   【本窗取证】
+    ###   · 阵营卡类型/可用 block：VANILLA\gui\shared\cards.gui:2492-2629
+    ###   · ★ 本卡**默认展开**（案卷/随征卡是默认折叠）——
+    ###     做法 = 把 vanilla 的"键 Exists 才可见"翻转成"键 Not(Exists) 才可见"
+    ###     （vanilla 默认语义：cards.gui:2598-2600）；四件套逐条翻转见下。
+    ###   · 进度条：vanilla 通用控件 progressbar，**value 取 0–100 的百分比**
+    ###       rebels_details.gui:176 / peasants_war.gui:70
+    ###         value = "[Multiply_float(FixedPointToFloat(<0–1 值>), '(float)100')]"
+    ###       ui_library.gui:823 value = 50（纯数字）
+    ###     ⇒ 罪孽本就 0–100（罪 ≤60 + 态度 ≤40），直接喂 GetValue，无需换算。
+    ###   · 红条模板：main_menu\gui\shared\progressbars.gui:126-132（progress_bar_red_alt）
+    ###     备选：:150 progress_bar_green_alt / :59 morale_progressbar_bar
+    ###   · progressbar 在 IO 面板内的逐字先例：VANILLA\gui\panels\organization\hre.gui:2856-2868
+    ###   · FixedPointToFloat(GetVariable(...)) 同款先例：th_sages_council_io.gui:149
+    ###   · 字号模板只有 5 档（loading_screen\gui\preload\fonts.gui:10/16/21/34/39）：
+    ###     Very_Small=12 / Small=15 / Medium=18 / Big=23 —— 本卡 Medium 显档位与罪孽值、
+    ###     Small 显标签。★ base game **无 Font_Size_Tiny**（禁用；项目里有别处在用，存疑）。
+    ###   · `#color_yellow` 必须带 `;bold`（裸用 vanilla 全库 0 处；例 ui_library.gui:419）
+    ### ════════════════════════════════════════════════════════════════
+    blockoverride "parliament_items_extra_top" {
+        vbox = {
+            layoutpolicy_horizontal = expanding
+            margin = { 10 4 }
+            visible = "[EqualTo_string(InternationalOrganizationsView.GetInternationalOrganization.GetType.GetNameKey,'th_gensokyo_tribunal')]"
+
+            ### 目标国定位（2026-10-02 同源修复，与 §② 右段一致）：
+            ###   原用 GetQuickVisibleCountries(Player.Self) / QuickVisibleCountries.GetVisibleCountries
+            ###   = vanilla「选国家菜单」用的"可见国家集合"（标题键 VISIBLE_COUNTRIES_TT，
+            ###   先例 foreign_country_lateralview.gui:4807/4821/4830），**受可见性过滤**；
+            ###   被诉国若对当前玩家不可见 ⇒ 本行整行消失（与右段旗帜同一个 bug）。
+            ###   改用幻想乡 IO 的成员表（被诉国恒为幻想乡 IO 成员，且该 IO 的
+            ###   can_leave/auto_leave/auto_disband 全为 always = no ⇒ 成员身份不可丢失）。
+            ###   蓝本：VANILLA\gui\panels\situation\war_of_religions.gui:279-282
+            ###         datamodel = "[GetInternationalOrganization('protestant_union').GetMembers]"
+            ###         item = { country_flag_small = {} }   ← item 作用域 = Country
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    ignoreinvisible = yes
+                    datamodel = "[GetInternationalOrganization('th_gensokyo_io').GetMembers]"
+                    item = {
+                        card_expandable = {
+                            ### 只对被诉国（持目标标记者）渲染（原 hbox 的 visible 上提到卡上）
+                            visible = "[Country.MakeScope.GetVariable('th_gensokyo_crusade_target_mark').IsSet]"
+                            ### ★ 无被诉国时整卡不占位（ignoreinvisible 语义见随征卡注释）
+                            ignoreinvisible = yes
+                            ### ★ 2026-10-02 修复（"居中窄条 + 箭头点不到"）：根节点 hbox
+                            ###   自身没有 expanding（模板只给子 vbox 设，cards.gui:2493-2494），
+                            ###   宽度原本靠 minimumsize {500 -1} 撑；被覆写成 -1 后塌成窄条，
+                            ###   溢出的箭头按钮落在父矩形外 → 画得出、点不到。补实例级 expanding。
+                            layoutpolicy_horizontal = expanding
+                            blockoverride "card_expandable_size" {
+                                minimumsize = { -1 -1 }
+                            }
+
+                            ### ── 卡头：预计档位（Medium=18，原 Very_Small=12）──
+                            blockoverride "header_content" {
+                                margin = { 10 0 }
+                                icon = {
+                                    size = { 26 26 }
+                                    texture = "gfx/interface/icons/flat_icons/laws.dds"
+                                    texture_density = 2
+                                }
+                                text_single = {
+                                    using = Font_Size_Small
+                                    default_format = "#subtle_name"
+                                    raw_text = "[Localize('TH_TRIAL_EXPECTED_TIER')]"
+                                }
+                                ### 从重分支：罪值 ≥ th_sin_tier3_value（= 75）→ 3.监管国
+                                text_single = {
+                                    using = Font_Size_Medium
+                                    default_format = "#color_yellow;bold"
+                                    visible = "[GreaterThanOrEqualTo_CFixedPoint(Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue, Country.MakeScope.ScriptValue('th_sin_tier3_value'))]"
+                                    raw_text = "[Localize('TH_TRIBUNAL_VERDICT_T3')]"
+                                }
+                                ### 否则 → 2.削弱
+                                text_single = {
+                                    using = Font_Size_Medium
+                                    default_format = "#color_yellow;bold"
+                                    visible = "[LessThan_CFixedPoint(Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue, Country.MakeScope.ScriptValue('th_sin_tier3_value'))]"
+                                    raw_text = "[Localize('TH_TRIBUNAL_VERDICT_T2')]"
+                                }
+                                expand = {}
+                            }
+
+                            ### ── ★ 默认展开：vanilla 默认是"键 Exists 才展开"（cards.gui:2598-2600），
+                            ###    这里把四件套全部翻转成 Not(Exists) ⇒ 初始未设键 = 展开 ──
+                            blockoverride "header_button_onclick" {
+                                onclick = "[GetVariableSystem.Toggle( 'th_tribunal_verdict_preview' )]"
+                            }
+                            blockoverride "icon_replace_visible_yes" {
+                                visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_verdict_preview' ))]"
+                            }
+                            blockoverride "icon_replace_visible_not" {
+                                visible = "[GetVariableSystem.Exists( 'th_tribunal_verdict_preview' )]"
+                            }
+                            blockoverride "bottom_content_onclick" {
+                                visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_verdict_preview' ))]"
+                            }
+
+                            ### ── 卡内：罪孽行 + 进度条 + 刻度尺 ──
+                            blockoverride "bottom_content" {
+                                vbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    ### 折叠显隐显式化（本卡**默认展开**：键未设 = 展开）
+                                    visible = "[Not(GetVariableSystem.Exists( 'th_tribunal_verdict_preview' ))]"
+                                    ### ★ 隐形时不占位（语义/先例见随征卡注释）
+                                    ignoreinvisible = yes
+                                    spacing = 3
+                                    margin_top = 4
+
+                                    ### ① 罪孽：标签 + 大字数值 + /100 + 当前审判法政策名
+                                    hbox = {
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 6
+                                        text_single = {
+                                            using = Font_Size_Small
+                                            default_format = "#header_titles"
+                                            raw_text = "[Localize('th_gensokyo_sin_var')]"
+                                        }
+                                        ### 罪孽数值（Medium=18；红色）
+                                        text_single = {
+                                            using = Font_Size_Medium
+                                            default_format = "#color_red;bold"
+                                            raw_text = "[Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue|0]"
+                                        }
+                                        text_single = {
+                                            using = Font_Size_Very_Small
+                                            default_format = "#subtle_name"
+                                            raw_text = "/ 100"
+                                        }
+                                        expand = {}
+                                        ### 当前审判法政策名（先例：vanilla laws.gui:340 / golden_age_of_piracy.gui:51）
+                                        text_single = {
+                                            using = Font_Size_Small
+                                            default_format = "#subtle_name"
+                                            visible = "[InternationalOrganizationsView.GetInternationalOrganization.HasPolicyForLaw(GetLaw('th_gensokyo_judgment_law').Self)]"
+                                            raw_text = "[InternationalOrganizationsView.GetInternationalOrganization.GetPolicyForLaw(GetLaw('th_gensokyo_judgment_law').Self).GetNameWithNoTooltip]"
+                                        }
+                                    }
+
+                                    ### ② 罪孽进度条（红条）。
+                                    ###   value 语义 = 0–100 的百分比（rebels_details.gui:176 /
+                                    ###   peasants_war.gui:70 / ui_library.gui:823）；
+                                    ###   罪孽原生即 0–100，故直接喂 FixedPointToFloat(GetValue)。
+                                    progressbar = {
+                                        layoutpolicy_horizontal = expanding
+                                        size = { -1 14 }
+                                        using = progress_bar_red_alt
+                                        value = "[FixedPointToFloat(Country.MakeScope.GetVariable('th_gensokyo_sin_var').GetValue)]"
+                                    }
+
+                                    ### ③ 刻度尺：三段按 50 / 25 / 25 拉伸，数字各自右对齐
+                                    ###   ⇒ 数字正好落在 50% / 75% / 100% 处（= 两档阈值与上限）。
+                                    ###   ★ 三段比例是写死的布局参数，对应 script value
+                                    ###     th_sin_tier2_value = 50 / th_sin_tier3_value = 75 / 上限 100；
+                                    ###     数字本身动态读取（不会说谎），但若日后改阈值，这里要一起改。
+                                    hbox = {
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 0
+                                        vbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            layoutstretchfactor_horizontal = 50
+                                            text_single = {
+                                                layoutpolicy_horizontal = expanding
+                                                align = right
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                raw_text = "[Country.MakeScope.ScriptValue('th_sin_tier2_value')|0]"
+                                            }
+                                        }
+                                        vbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            layoutstretchfactor_horizontal = 25
+                                            text_single = {
+                                                layoutpolicy_horizontal = expanding
+                                                align = right
+                                                using = Font_Size_Very_Small
+                                                default_format = "#color_yellow;bold"
+                                                raw_text = "[Country.MakeScope.ScriptValue('th_sin_tier3_value')|0]"
+                                            }
+                                        }
+                                        vbox = {
+                                            layoutpolicy_horizontal = expanding
+                                            layoutstretchfactor_horizontal = 25
+                                            text_single = {
+                                                layoutpolicy_horizontal = expanding
+                                                align = right
+                                                using = Font_Size_Very_Small
+                                                default_format = "#subtle_name"
+                                                raw_text = "100"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

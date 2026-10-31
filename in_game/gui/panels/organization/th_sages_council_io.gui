@@ -1,0 +1,367 @@
+### 贤者议会 — IO面板
+### 覆写 panel_content (ACGV模式)
+### 变量: ios_information_header (PDS标准 | 贤者威望+团结度)
+### 二级标签: 概览+辩论
+
+organization_panel = {
+    blockoverride "panel_content" {
+
+        ### ==============================================
+        ### 1. 标题栏
+        ### ==============================================
+        window_header_alt = {
+            using = bg_main_inner_alt
+            blockoverride "window_header_alt_color_texture"{
+                using = color_default_brown_texture
+            }
+            blockoverride "header_text_object" {
+                flowcontainer = {
+                    parentanchor = center
+                    ignoreinvisible = yes
+                    spacing = 5
+                    datacontext = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                    button = {
+                        size = { 100% 100% }
+                        tooltip_enabled = no
+                        onmousehierarchyenter = "[PdxGuiWidget.SetHighlightInternationalOrganization( InternationalOrganization.Self)]"
+                    }
+                    icon = {
+                        size = {30 30}
+                        texture = "[InternationalOrganization.GetIcon]"
+                        texture_density = 2
+                        glow = { name = "drop_shadow" glow_radius = 3 color = {0.0 0.0 0.0 1.0} alpha = 0.3 }
+                    }
+                    header_title = {
+                        autoresize = yes maximumsize = { 420 -1 }
+                        text = "[InternationalOrganization.GetNameWithNoTooltip]"
+                    }
+                    button_pin = {
+                        parentanchor = vcenter size = { 23 23 }
+                        visible = "[IsPlayerValid]"
+                        onclick = "[ToggleIOFav(InternationalOrganization.Self)]"
+                        checked = "[IsIOFaved(InternationalOrganization.Self)]"
+                        tooltipwidget = { LeftClickButtonTooltip = { blockoverride "onclick_text" { text = "[SelectLocalization(IsIOFaved(InternationalOrganization.Self), 'UNPIN_OUTLINER', 'PIN_OUTLINER')]" } } }
+                    }
+                    tooltipwidget = { using = InternationalOrganization_tooltip }
+                }
+            }
+        }
+
+        ### ==============================================
+        ### 2. 主体
+        ### ==============================================
+        vbox = {
+            using = layoutpolicy_expanding
+            using = bg_main_inner_notabs_alt
+            using = window_main_tabs_margin_alt
+
+            ### 子标题栏
+            block "ios_common_subheader" {
+                hbox = {
+                    block "common_ios_subheader_properties" {
+                        layoutpolicy_horizontal = expanding size = { -1 35 } margin = { 5 }
+                    }
+                    block "common_ios_subheader_decor" {}
+                    hbox = {
+                        block "common_ios_subheader_left_data_properties" {
+                            layoutpolicy_horizontal = expanding layoutstretchfactor_horizontal = 1 spacing = 5
+                        }
+                        widget = { size = { 30 40 } }
+                        expand = {}
+                    }
+                    block "organization_panel_middle_botton" {}
+                    hbox = {
+                        block "common_ios_subheader_right_data_properties" {
+                            layoutpolicy_horizontal = expanding layoutstretchfactor_horizontal = 1 spacing = 5
+                        }
+                        expand = {}
+                        block "organization_panel_right_header" {}
+                    }
+                }
+            }
+
+            datacontext = "[InternationalOrganizationsView.GetInternationalOrganization]"
+
+            ### ==============================================
+            ### IO变量信息栏 (PDS ios_information_header)
+            ### 修复 2026-08-15（WP-A）：消除三槽重复 + 修复不可交互 tooltip
+            ###   原实现：原版左侧 GetType.GetVariables 自动列表(贤者威望) +
+            ###   content_extra_1(威望重复) + content_extra_2(团结度) = 三槽；
+            ###   且 TH_SAGES_PRESTIGE_FORMAT loc 键缺失 → 左槽值渲染为空。
+            ### 修复：
+            ###   1) 不再覆写 content_extra_1 → 威望仅由左侧自动列表显示一次
+            ###      （格式键已补，见本地化 TH_SAGES_PRESTIGE_FORMAT）；
+            ###   2) 覆写 ios_variable_tooltip → 左侧槽 tooltip 换成富文本
+            ###      档位/预览/描述（参考 Glorp UI catholic_church.gui 同款覆写）；
+            ###   3) content_extra_2 保留团结度，tooltipwidget 包裹带尺寸内容
+            ###      保证可悬停交互。
+            ### 注：不做全局类型覆写，避免影响幻想乡IO的原版面板。
+            ### ==============================================
+            ios_information_header = {
+                blockoverride "ios_information_header_visible" { visible = yes }
+                blockoverride "ios_variable_tooltip" {
+                    tooltipwidget = {
+                        ContextualTooltipType = {
+                            blockoverride "title_icon_texture" {
+                                texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetVariableIcon('th_sages_prestige_var')]"
+                            }
+                            blockoverride "title_text" { raw_text = "[Localize('th_sages_prestige_var')]" }
+                            blockoverride "concept_link" { text = "[international_organization|e]" }
+                            blockoverride "tooltip_content" {
+                                vbox = {
+                                    spacing = 3
+                                    text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_ACTIVE_TIERS_LABEL')]" margins_bottom = 2 }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_20')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet]" using = Font_Size_Tiny default_format = "#color_green" raw_text = "[Localize('th_sages_prestige_tier_40')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_60').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_60')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_80').IsSet]" using = Font_Size_Tiny default_format = "#color_concept" raw_text = "[Localize('th_sages_prestige_tier_80')]" }
+                                    text_single = { visible = "[InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_100').IsSet]" using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" }
+                                    text_single = { visible = "[And(Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_20').IsSet),Not(InternationalOrganizationsView.GetInternationalOrganization.MakeScope.GetVariable('th_sages_prestige_tier_40').IsSet))]" using = Font_Size_Tiny default_format = "#subtle_name" raw_text = "[Localize('TH_SAGES_NO_ACTIVE_TIER')]" }
+                                    widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                    hbox = { spacing = 4 margins_bottom = 2 icon = { size = { 16 16 } texture = "gfx/interface/icons/modifiers/_default.dds" texture_density = 2 } text_single = { using = Font_Size_Tiny default_format = "#header_titles" raw_text = "[Localize('TH_SAGES_MAX_PREVIEW_LABEL')]" } }
+                                    text_single = { using = Font_Size_Tiny default_format = "#color_yellow" raw_text = "[Localize('th_sages_prestige_tier_100')]" margins_bottom = 1 }
+                                    text_multi = { using = Font_Size_Tiny default_format = "#subtle_name" max_width = 200 raw_text = "[Localize('th_sages_prestige_tier_100_desc')]" margins_bottom = 2 }
+                                    text_multi = { using = Font_Size_Tiny default_format = "#color_white" max_width = 200 raw_text = "[Localize('TH_SAGES_TIER_100_MODIFIERS_PREVIEW')]" }
+                                    widget = { size = { -1 1 } margins_top = 4 margins_bottom = 4 divider_horizontal_bg = {} }
+                                    text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_sages_prestige_var_desc')]" }
+                                }
+                            }
+                        }
+                    }
+                }
+                blockoverride "ios_information_header_content_extra_2" {
+                    using = ios_header_content_extra_template
+                    blockoverride "ios_header_content_extra" {
+                        ### 修复 2026-08-19：tooltipwidget 只允许单一子节点（tooltip 类型），
+                        ### 显示内容 hbox 作为兄弟节点（原版/社区模组惯例）。
+                        ### 原实现把 hbox 包进 tooltipwidget 导致
+                        ### "Malformed item desc, item descriptions can only contain a single child"
+                        hbox = {
+                            spacing = 4
+                            text_single = {
+                                margin_right = 4 autoresize = yes align = right fontsize = 13
+                                raw_text = "[GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var').GetValue|0]"
+                            }
+                            widget = {
+                                size = { 25 25 }
+                                using = organization_piechart_template
+                                blockoverride "organization_piechart_value" {
+                                    value = "[FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var'))]"
+                                }
+                                blockoverride "organization_piechart_max_value" {
+                                    value = "[Subtract_float(FixedPointToFloat('(float)100'), FixedPointToFloat(GetInternationalOrganization('th_gensokyo_io').MakeScope.GetVariable('th_gensokyo_unity_var')))]"
+                                }
+                                blockoverride "organization_piechart_icon" {
+                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
+                                }
+                            }
+                        }
+                        tooltipwidget = {
+                            ContextualTooltipType = {
+                                blockoverride "title_icon_texture" {
+                                    texture = "[GetInternationalOrganization('th_gensokyo_io').GetVariableIcon('th_gensokyo_unity_var')]"
+                                }
+                                blockoverride "title_text" { raw_text = "[Localize('th_gensokyo_unity_var')]" }
+                                blockoverride "concept_link" { text = "[international_organization|e]" }
+                                blockoverride "tooltip_content" {
+                                    vbox = {
+                                        spacing = 3
+                                        text_multi = { using = Font_Size_Tiny default_format = "#color_gray" max_width = 200 raw_text = "[Localize('th_gensokyo_unity_var_desc')]" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ### ==============================================
+            ### 二级标签
+            ### ==============================================
+            header_secondary_tabs = {
+                blockoverride "secondary_tabs_margin" { margin_top = 4 spacing = 2 }
+                blockoverride "content" {
+                    button_secondary_tab_alt = {
+                        using = layoutpolicy_expanding visible = yes
+                        blockoverride "tab_text" { raw_text = "[Localize('TH_SAGES_TAB_OVERVIEW')]" }
+                        onclick = "[InternationalOrganizationsView.Vars.Set( 'organizations', 'overview' )]"
+                        down = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+                    }
+                    button_secondary_tab_alt = {
+                        using = layoutpolicy_expanding visible = yes
+                        blockoverride "tab_text" { raw_text = "[Localize('TH_SAGES_TAB_DEBATE')]" }
+                        onclick = "[InternationalOrganizationsView.Vars.Set( 'organizations', 'parliament' )]"
+                        down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'parliament' )]"
+                    }
+                }
+            }
+
+            ### ==============================================
+            ### 内容面板
+            ### ==============================================
+            vbox = {
+                using = layoutpolicy_expanding
+                using = bg_secondary_inner_alt
+
+                ### === 总览 Tab ===
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+                    spacing = 6
+                    margin = { 10 10 }
+
+                    ### 插图 + 三国旗帜
+                    widget = {
+                        layoutpolicy_horizontal = expanding
+                        size = { -1 160 }
+                        margins_top = 4 margins_bottom = 4
+
+                        background = {
+                            texture = "gfx/interface/illustrations/international_organization_types/th_sages_council_io.dds"
+                            texture_density = 1 spriteType = stretched spriteborder = { 0 0 }
+                        }
+                        block "sages_council_io_illustration" {}
+
+                        hbox = {
+                            parentanchor = center widgetanchor = center spacing = 48 ignoreinvisible = yes
+
+                            vbox = {
+                                spacing = 4
+                                country_flag_mid = { datacontext = "[GetCountry('T13')]" }
+                                text_single = { using = Font_Size_Small default_format = "#color_white" raw_text = "[GetCountry('T13').GetNameWithNoTooltip]" }
+                            }
+                            vbox = {
+                                spacing = 4
+                                country_flag_mid_plus = { datacontext = "[GetCountry('T05')]" }
+                                text_single = { using = Font_Size_Medium default_format = "#color_white" raw_text = "[GetCountry('T05').GetNameWithNoTooltip]" }
+                            }
+                            vbox = {
+                                spacing = 4
+                                country_flag_mid = { datacontext = "[GetCountry('T83')]" }
+                                text_single = { using = Font_Size_Small default_format = "#color_white" raw_text = "[GetCountry('T83').GetNameWithNoTooltip]" }
+                            }
+                        }
+                    }
+
+                    ### 分隔
+                    widget = { parentanchor = hcenter size = { 480 1 } margins_top = 4 margins_bottom = 6 divider_horizontal_bg = {} }
+
+                    ### ==============================================
+                    ### Main Actions 区域
+                    ### 参考: members.gui io_overview_actions (InternationalOrganizationsView.GetActions)
+                    ### 行动由 common/generic_actions/ 定义 (type = internationalorganization)，
+                    ### 本卡片通过 dynamicgridbox 自动列出，无需手写按钮/tooltip。
+                    ### 旧架构 (country_interaction ↔ scripted_gui) 已由 generic_action 取代。
+                    ### ==============================================
+                    vbox = {
+                        using = bg_paper_card_situations
+                        using = bg_cabinet_card_frame
+                        layoutpolicy_horizontal = expanding spacing = 4 margins_top = 2 margins_bottom = 4 margin = { 20 0 }
+                        ### 无可用行动时整卡隐藏（同 members.gui:78 HasActions 门控）
+                        visible = "[InternationalOrganizationsView.HasActions]"
+
+                        ### 卡片头部 — 对应 members.gui card_actions header
+                        widget = {
+                            layoutpolicy_horizontal = expanding
+                            size = { -1 40 }
+                            minimumsize = { 400 40 }
+                            using = bg_scroll_card_header
+
+                            hbox = {
+                                layoutpolicy_horizontal = expanding spacing = 4 margin = { 10 0 }
+                                expand = {}
+                                icon = {
+                                    size = { 25 25 }
+                                    texture = "[InternationalOrganizationsView.GetInternationalOrganization.GetIcon]"
+                                    texture_density = 2
+                                }
+                                text_single = {
+                                    using = Font_Size_Small default_format = "#header_titles"
+                                    raw_text = "[Localize('TH_SAGES_ACTIONS_LABEL')]"
+                                }
+                                expand = {}
+                            }
+                        }
+
+                        ### 按钮列表 — 对应 members.gui organization_main_actions_extra
+                        vbox = {
+                            layoutpolicy_horizontal = expanding spacing = 6 margin = { 15 10 }
+
+                            ### 原版 IO 行动自动列表 (members.gui:103-126 模式)
+                            ### datamodel = InternationalOrganizationsView.GetActions →
+                            ### 列出所有 type = internationalorganization 且 potential/allow/select_trigger 通过的行动
+                            ### (button_regular_diamond + ScriptedGui 手写方案已由 generic_action 取代)
+                            scrollarea = {
+                                maximumsize = { 470 400 }
+                                scrollbarpolicy_horizontal = always_off
+                                autoresizescrollarea = yes
+
+                                scrollbar_vertical = {
+                                    using = Scrollbar_Vertical
+                                }
+
+                                scrollwidget = {
+                                    dynamicgridbox = {
+                                        datamodel = "[InternationalOrganizationsView.GetActions]"
+                                        item = {
+                                            widget = {
+                                                size = { 470 37 }
+                                                action_button_diamond = {
+                                                    parentanchor = center
+                                                    ### 宝库捐款卡在原版有专门卡片展示，这里过滤掉
+                                                    visible = "[Not(EqualTo_string(GenericAction.GetKey, 'contribute_to_organization_treasury'))]"
+                                                    size = { 470 30 }
+                                                    text = "[GenericAction.GetNameWithNoTooltip]"
+                                                    title = "[GenericAction.GetNameWithNoTooltip]"
+                                                    actor = "[InternationalOrganizationsView.GetPlayer]"
+                                                    parameter = {
+                                                        parameter_name = "recipient"
+                                                        parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+                                                    }
+                                                    left_action = { action_name = "[GenericAction.GetKey]" }
+                                                    tooltipwidget = {
+                                                        ### members.gui:995 模板 — 自动渲染 图标/名称/条件/效果
+                                                        using = io_generic_action_button_tooltip
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            ### ════════════════════════════════════════
+                            ### 预留位: 添加新行动按 generic_action 方案
+                            ### ════════════════════════════════════════
+                            ### 本列表由 datamodel = InternationalOrganizationsView.GetActions
+                            ### 自动渲染，无需任何 GUI 改动。每添加一个行动只需:
+                            ###   1. common/generic_actions/<key>.txt — type = internationalorganization
+                            ###      potential(scope:actor) / allow(scope:actor) / effect(scope:recipient=IO)
+                            ###      select_trigger 限定 visible = { international_organization_type =
+                            ###      international_organization_type:th_sages_council_io }
+                            ###   2. localization: <key>, <key>_desc
+                            ###
+                            ### 参考:
+                            ###   - 本模组 th_gensokyo_propose_crusade (generic_actions/ 已有先例)
+                            ###   - 原版 generic_actions/readme.txt (字段全解)
+                            ###   - 原版 members.gui:103-126 + io_generic_action_button_tooltip
+                            ###   - show_in_gui_list = no 可让行动只由自定义按钮触发
+                            ###   - cooldown = {...} / price = price:xxx 可选原生功能
+                            ### ════════════════════════════════════════
+                        }
+                    }
+
+                    expand = {}
+                }
+
+                ### === 辩论 Tab ===
+                organization_panel_parliament_area = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'parliament' )]"
+                }
+            }
+        }
+    }
+}

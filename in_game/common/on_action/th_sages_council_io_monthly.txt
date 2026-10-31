@@ -1,0 +1,30 @@
+﻿### 贤者议会 — 月度脉冲
+
+monthly_country_pulse = {
+    on_actions = {
+        th_sages_council_io_monthly_pulse
+    }
+}
+
+### ============================================================
+### 贤者议会月度维护
+### 在IO scope上运行
+### monthly_country_pulse 对每国每月触发一次，威望变更属 IO 全局，
+### 故仅在中央贤者 T05 的国家脉冲中执行一次，避免乘 95 次。
+### ============================================================
+th_sages_council_io_monthly_pulse = {
+    trigger = {
+        tag = T05
+    }
+    effect = {
+        # 幻想乡团结度高位 → 贤者威望自然增长
+        # 团结度低位 → 贤者威望衰减
+        # 公式已封装在 th_sages_council_monthly_effect（th_sages_council_effects.txt）
+        th_sages_council_monthly_effect = yes
+
+        # 威望阈值重新检查（确保修正与当前值同步）
+        international_organization:th_sages_council_io = {
+            th_sages_council_apply_prestige_thresholds_effect = yes
+        }
+    }
+}

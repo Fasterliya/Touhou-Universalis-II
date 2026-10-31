@@ -1,0 +1,92 @@
+### ============================================================
+### 贤者议会 — 政策议题（议会辩论驱动的政策）
+### 链路: generic_action th_sages_propose_policy 选议题 → 内联发起议会辩论
+### 通过 (2/3 票): 对贤者议会IO施加对应政策修正 (static_modifier, mode = replace)
+### 失败: 无效果（发起资源已扣除，不退还）
+### 参照: th_sages_introduce_institution_issue.txt 同款结构
+### ============================================================
+
+### 政策1：强化大结界
+th_sages_barrier_policy_issue = {
+	type = international_organization
+	special_status = th_sages_council_member_special_status
+
+	potential = {
+		always = yes
+	}
+	allow = {
+	}
+	selectable_for = {
+		is_member_of_international_organization = scope:recipient
+	}
+	chance = 100
+
+	on_debate_passed = {
+		### 显式 IO scope 包裹（root 语义在不同引擎版本可能不同，显式保证作用在贤者议会）
+		international_organization:th_sages_council_io = {
+			add_international_organization_modifier = {
+				modifier = th_sages_barrier_policy_modifier
+				mode = replace
+			}
+		}
+	}
+
+	on_debate_failed = {
+	}
+}
+
+### 政策2：幻想乡团结宪章
+th_sages_unity_policy_issue = {
+	type = international_organization
+	special_status = th_sages_council_member_special_status
+
+	potential = {
+		always = yes
+	}
+	allow = {
+	}
+	selectable_for = {
+		is_member_of_international_organization = scope:recipient
+	}
+	chance = 100
+
+	on_debate_passed = {
+		international_organization:th_sages_council_io = {
+			add_international_organization_modifier = {
+				modifier = th_sages_unity_policy_modifier
+				mode = replace
+			}
+		}
+	}
+
+	on_debate_failed = {
+	}
+}
+
+### 政策3：贤者会议改革
+th_sages_reform_policy_issue = {
+	type = international_organization
+	special_status = th_sages_council_member_special_status
+
+	potential = {
+		always = yes
+	}
+	allow = {
+	}
+	selectable_for = {
+		is_member_of_international_organization = scope:recipient
+	}
+	chance = 100
+
+	on_debate_passed = {
+		international_organization:th_sages_council_io = {
+			add_international_organization_modifier = {
+				modifier = th_sages_reform_policy_modifier
+				mode = replace
+			}
+		}
+	}
+
+	on_debate_failed = {
+	}
+}

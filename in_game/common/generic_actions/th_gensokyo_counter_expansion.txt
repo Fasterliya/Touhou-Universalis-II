@@ -1,0 +1,60 @@
+﻿### ============================================================
+### 幻想乡惩戒战争 反杀行动（目标国击败阎魔与惩戒战争后解锁）
+### 效果: 获得合法扩张配额（多场扩张），局势存在期间可重复使用
+### ============================================================
+
+th_gensokyo_counter_expansion = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        ### 运行时修复 2026-08-07：generic action potential 顶层 root 在面板枚举阶段为 empty scope，
+        ### has_variable 对 empty scope 报错 → 用 scope:actor ?= 包裹（join_crusade 同款已验证）
+        ### P1-14 修复：移除 can_see_situation —— 反杀条约签订后惩戒局势立即结束，
+        ### can_see_situation 恒 false 会把行动永久锁死；解锁条件改为仅 countered 标记
+        ### （标记生命周期：反杀条约打标 → 持久解锁至下一次惩戒局势 on_start 重置，CD 12 月限制频率）
+        scope:actor ?= {
+            has_variable = th_gensokyo_crusade_countered
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_io
+        }
+    }
+
+    effect = {
+        ### 反杀者获得合法扩张配额（数值待调）
+        scope:actor = {
+            th_gensokyo_expansion_quota_grant_effect = {
+                value = 2
+            }
+        }
+    }
+
+    cooldown = {
+        type = th_gensokyo_counter_expansion
+        months = 12
+    }
+
+    ai_will_do = {
+        add = {
+            desc = BASE_VALUE
+            value = 50
+        }
+    }
+}

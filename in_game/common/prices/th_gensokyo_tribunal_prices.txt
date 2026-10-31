@@ -1,0 +1,78 @@
+﻿### ============================================================
+### 审判庭 — 价格对象（T2-3 新增，2026-10-03）
+### 格式蓝本 common/prices/th_gensokyo_feast_price.txt（单字段 gold）
+### 字段名录 VANILLA\common\prices\readme.txt:1-3（"<price id> = { gold = <float> }"）
+###
+### 【本窗的价格用法与宴会不同：一律 should_execute_price = no】
+###   三个消费方（认罪 / 履约·赔款 / 求和）都要把同一笔钱送进**幻想乡公库**
+###   （IO 宝库，th_gensokyo_io.txt:19 `gold = yes`），而 `price` 的默认收款人
+###   是"无人"——官方 readme:14：
+###     "payee = script to determine who gets paid. By default, nobody,
+###      the price disappears into the ether"
+###   ⇒ 若既让引擎收 price、又调 donate_gold_to_international_organization
+###     （该脚本效果末尾自带 `add_gold = { value = $value$ multiply = -1 }`，
+###      见下）扣款，就是**双重扣款**。
+###   ⇒ 本窗口径（蓝本 VANILLA\common\generic_actions\markets.txt:184-186：
+###     "we don't execute the price for this action ... We leave the price in
+###      here though for display" + `should_execute_price = no`）：
+###       price 只作 **UI 显示 + 价格语义载体**（行动里写 should_execute_price = no），
+###       真正的"扣款 + 入库"在行动 effect 里两步走：
+###         ① donate_gold_to_international_organization
+###              → 本国 gold −X（外加"捐款好感"，引擎侧脚本效果自带）
+###         ② international_organization:th_gensokyo_io = { add_gold = X }
+###              → 公库 +X
+###       两步的出处：
+###         ① VANILLA\common\scripted_effects\country_effects.txt:2594-2647
+###            （**注意：它不是引擎效果而是 vanilla 的 scripted_effect**，
+###              全文只做两件事：给 IO 成员/领袖加捐款好感 +
+###              在 :2643-2646 扣本国 gold；**它自己不往 IO 里放钱**）
+###         ② VANILLA\common\generic_actions\international_organizations.txt:274-288
+###            （vanilla 自己的同款两步：donate 在 actor 侧、
+###              `scope:recipient = { add_gold = scope:target_value }` 在 IO 侧）
+###
+### 【金额同步铁律（改一处必须改另一处）】
+###   认罪价的 price_modifier 乘的是**本文件的价格**，
+###   而 effect 里入库/校验金额读的是 **script_values 的同名公式** ⇒
+###     `th_gensokyo_tribunal_confess_price` 的 gold
+###       必须恒等于 `th_confess_base_cost_value`
+###     `th_gensokyo_tribunal_reparations_price` 的 gold
+###       必须恒等于 `th_gensokyo_tribunal_reparations_cost_value`
+###     `th_gensokyo_tribunal_settle_price` 的 gold
+###       必须恒等于 `th_settle_cost_value`
+###   现值出处：script_values/th_gensokyo_io_chain_values.txt 的 T2-3 追加段
+###   （该段每个键都写明了"与哪个价格对象同步"）。
+### ============================================================
+
+### ------------------------------------------------------------
+### 认罪赎罪：基础价 500（= th_confess_base_cost_value，见上"金额同步铁律"）
+### 实付额 = 本值 × price_modifier
+### price_modifier = 档位系数 1.0 / 1.5 / 2.0 / 2.5 / 3.0
+###                = 1 + th_confess_escalation_factor × 已施加档数
+### 档数由 th_gensokyo_tier_1..4_mark **标记**推导（《脚本规格》§1.1：
+### ai_will_do 读不到变量，档位一律用标记；本处同样用标记，保持全系统单一口径）
+### ------------------------------------------------------------
+th_gensokyo_tribunal_confess_price = {
+    gold = 500
+}
+
+### ------------------------------------------------------------
+### 履约·支付赔款：单次小额（**分期**语义，与"认罪 = 一次结清"构成选择）
+### 定价意图：500（= th_repent_paid_threshold_value）/ 100 = 5 次，
+###   配 3 个月冷却 ⇒ 约 15 个月的履约节奏，与"观察期 6 个月一档"的阶梯同量级
+### 【待调】
+### ------------------------------------------------------------
+th_gensokyo_tribunal_reparations_price = {
+    gold = 100
+}
+
+### ------------------------------------------------------------
+### 战时求和：一次性"战时代价"
+### 量级定位 —— 《设计定案》只说"介于提前认罪与战败判决之间"，本窗给初值【待调】：
+###   高于 认罪基础价（th_confess_base_cost_value = 500）
+###   低于 战败判决档 0 / 档 3 的"半数国库 / 全库转移"
+###        （scripted_effects/th_gensokyo_crusade_effects.txt:180-182 / :219-221）
+###   ⇒ 1200
+### ------------------------------------------------------------
+th_gensokyo_tribunal_settle_price = {
+    gold = 1200
+}

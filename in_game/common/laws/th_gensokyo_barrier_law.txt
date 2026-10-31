@@ -1,0 +1,104 @@
+﻿### ============================================================
+### 博丽大结界 — 核心法律（WP-G 2026-08-15）
+### 设计文档《国际组织》§7：
+###   5 级互斥政策：幻想(5) / 深邃(4) / 繁英(3) / 遗忘(2) / 灭尽(1)
+###   初始 5 级；越接近满级越保守（秩序/防御强、变化慢）
+###   locked = yes + requires_vote = no → 无法辩论或领袖修订，
+###   仅大事件通过 th_gensokyo_barrier_change_level_effect 改动（见 scripted_effects）
+### ============================================================
+
+th_gensokyo_barrier_law = {
+    type = international_organization
+    law_category = military
+    requires_vote = no
+    ### 锁定：玩家/领袖无法通过任何界面改动（laws.txt:11 locked 字段）
+    locked = {
+        always = yes
+    }
+    custom_tags = {
+        forbids_no_policy
+    }
+    potential = {
+        international_organization_type = international_organization_type:th_gensokyo_io
+    }
+    allow = {
+        always = yes
+    }
+
+    ### 等级5 — 幻想：结界全盛，最保守（防御高、秩序稳、变革慢）
+    th_gensokyo_barrier_fantasy_policy = {
+        international_organization_modifier = {
+            global_defensive = 0.10
+            stability_cost_efficiency = 0.10
+            research_speed_modifier = -0.05
+            monthly_legitimacy = 0.05
+            stability_decay = -0.00025
+        }
+        on_activate = {
+            set_variable = {
+                name = th_gensokyo_barrier_level
+                value = 5
+            }
+        }
+    }
+
+    ### 等级4 — 深邃：结界稳固
+    th_gensokyo_barrier_profound_policy = {
+        international_organization_modifier = {
+            global_defensive = 0.08
+            stability_cost_efficiency = 0.05
+            research_speed_modifier = -0.025
+            monthly_legitimacy = 0.03
+        }
+        on_activate = {
+            set_variable = {
+                name = th_gensokyo_barrier_level
+                value = 4
+            }
+        }
+    }
+
+    ### 等级3 — 繁英：结界平稳（基准）
+    th_gensokyo_barrier_flourish_policy = {
+        international_organization_modifier = {
+            global_defensive = 0.05
+            stability_cost_efficiency = 0.02
+            monthly_legitimacy = 0.02
+        }
+        on_activate = {
+            set_variable = {
+                name = th_gensokyo_barrier_level
+                value = 3
+            }
+        }
+    }
+
+    ### 等级2 — 遗忘：结界衰微
+    th_gensokyo_barrier_forgotten_policy = {
+        international_organization_modifier = {
+            global_defensive = 0.02
+            stability_cost_efficiency = -0.02
+        }
+        on_activate = {
+            set_variable = {
+                name = th_gensokyo_barrier_level
+                value = 2
+            }
+        }
+    }
+
+    ### 等级1 — 灭尽：结界濒临破碎，秩序动摇
+    th_gensokyo_barrier_extinct_policy = {
+        international_organization_modifier = {
+            global_defensive = -0.05
+            stability_cost_efficiency = -0.05
+            stability_decay = 0.00025
+        }
+        on_activate = {
+            set_variable = {
+                name = th_gensokyo_barrier_level
+                value = 1
+            }
+        }
+    }
+}

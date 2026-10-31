@@ -1,0 +1,15 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 启动初始化（追加 on_game_start，不动现有文件）
+### ============================================================
+
+on_game_start = {
+    on_actions = {
+        th_gensokyo_chain_init
+    }
+}
+
+th_gensokyo_chain_init = {
+    effect = {
+        th_gensokyo_chain_init_effect = yes
+    }
+}

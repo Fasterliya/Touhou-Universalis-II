@@ -1,0 +1,181 @@
+﻿### ============================================================
+### 幻想乡IO 链条系统 — 扩张限制
+### 配额制：th_gensokyo_expansion_quota（总配额）/ th_gensokyo_expansion_quota_used（已用）
+### 合法扩张 = 余额 > 0；非法扩张 = 无余额（惩罚链）
+### ============================================================
+
+### 合法扩张配额发放（小卖铺调用接口）
+### 使用: th_gensokyo_expansion_quota_grant_effect = { value = 4 }
+th_gensokyo_expansion_quota_grant_effect = {
+    change_variable = {
+        name = th_gensokyo_expansion_quota
+        add = $value$
+    }
+    clamp_variable = {
+        name = th_gensokyo_expansion_quota
+        min = 0
+        max = 4        # 与 th_expansion_quota_limit_value 联动（clamp 参数 script_value 名不可靠，数字化）
+    }
+}
+
+### 非法扩张惩罚链（root = 扩张者，scope:expansion_victim = 受害方）
+### value = 恶名量，unity = 团结扣减量
+th_gensokyo_expansion_punish_effect = {    ### 1. 受害方对扩张者的额外敌意
+    ### 方向修复 2026-08-14：add_antagonism 语义 = target 对 root 增加敌意（用户实测），
+    ### 故在扩张者（root）处执行、target=受害方 → 受害方对扩张者敌意 +50
+    add_antagonism = {
+        target = scope:expansion_victim
+        modifier = th_antagonism_unlawful_expansion
+    }
+    ### 2. 价值观（趋向好战；异变中扩张豁免，接口：异变系统实现后替换 th_gensokyo_in_incident_trigger）
+    if = {
+        limit = {
+            NOT = {
+                th_gensokyo_in_incident_trigger
+            }
+        }
+        th_gensokyo_values_shift_belligerent_effect = {
+            value = $value$
+        }
+    }
+    ### 3. 团结扣减
+    international_organization:th_gensokyo_io = {
+        th_gensokyo_unity_subtract_effect = {
+            value = $unity$
+        }
+    }
+    ### 4. 罪名账本（2026-10-01 T2-1）：非法扩张 +1 次
+    ### root = 扩张者。本 effect 是非法扩张的唯一咽喉，两个调用点都在
+    ### chain_events：unlawful_expansion_check（和约割地，trigger 已保证双方都是
+    ### 幻想乡 IO 成员）与 unlawful_annex_check 的非法分支（同款双成员 trigger）
+    ### → 记账点天然限定在幻想乡相关国家，无需再套成员判定。
+    ### 增量固定 +1（地块数由调用频率自然累计，数值系数见 script_values
+    ### th_crime_unlawful_weight，立案时由 T2-2 合计）
+    th_gensokyo_crime_record_effect = {
+        crime = th_gensokyo_crime_unlawful_var
+    }
+}
+
+### 扩张代价修正 月度互斥挂载（国家 scope 调用）
+### 授权 x0.25 / 异变 x1.25 / 独自议会 x1.5（敌意修正字段，数值待调）
+th_gensokyo_expansion_cost_apply_effect = {
+    remove_country_modifier = th_gensokyo_expansion_cost_authorized_modifier
+    remove_country_modifier = th_gensokyo_expansion_cost_incident_modifier
+    remove_country_modifier = th_gensokyo_expansion_cost_unauthorized_modifier
+    if = {
+        limit = {
+            th_gensokyo_has_authorized_expansion_trigger
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_expansion_cost_authorized_modifier
+            years = -1
+        }
+    }
+    else_if = {
+        limit = {
+            th_gensokyo_in_incident_trigger
+        }
+        add_country_modifier = {
+            modifier = th_gensokyo_expansion_cost_incident_modifier
+            years = -1
+        }
+    }
+    else = {
+        add_country_modifier = {
+            modifier = th_gensokyo_expansion_cost_unauthorized_modifier
+            years = -1
+        }
+    }
+}
+
+### ============================================================
+### 请求扩张 — 裁决执行效果（WP-D 2026-08-19 重构 / F24 2026-08-23 修复）
+### 2026-08-23 error.log 实测修复：save_scope_as 跨 scripted_effect 不可靠——
+### 事件 option 内 save_scope_as 的 scope 在 scripted effect 内解析为
+### "Undefined event target 'expansion_requester'" + "Event target link 'scope'
+### returned an unset scope"（38+38 次）+ add_casus_belli target none（19 次，
+### CB 从未授予）；连带 THIRD_TRIGGER_EVENT_EFFECT 的 [COUNTRY.GetName] 渲染失败。
+### 修复（对齐 v5.2 交接文档 F24）：定位移入 effect 内按标记重新 save——
+### th_gensokyo_expansion_requester_mark / th_gensokyo_expansion_target_owner_mark
+### （事件调用时标记仍挂起，option 内清理发生在 effect 调用之后）
+### ============================================================
+
+### 同意：授予请求者 CB（2026-08-19：取消地块 mark 限制与补标逻辑，
+### 割让省份不再受 mark 限定）
+th_gensokyo_expansion_grant_cb_effect = {
+    ### F24：效果内按标记重新定位（root = 裁决贤者；标记法同审判局势）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_expansion_requester_mark
+        }
+        save_scope_as = expansion_requester
+    }
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_expansion_target_owner_mark
+        }
+        save_scope_as = expansion_target
+    }
+    ### 授予 CB（针对目标国；可割让省份不受限）
+    scope:expansion_requester ?= {
+        if = {
+            limit = {
+                exists = scope:expansion_target
+            }
+            add_casus_belli = {
+                target = scope:expansion_target
+                type = casus_belli:th_gensokyo_sage_expansion_cb
+            }
+        }
+        ### 通知请求者（同意）
+        trigger_event_non_silently = {
+            id = th_gensokyo_expansion_request_events.2
+            days = 1
+        }
+    }
+    ### 贤者对请求者好感提升
+    if = {
+        limit = {
+            exists = scope:expansion_requester
+        }
+        add_opinion = {
+            target = scope:expansion_requester
+            modifier = opinion_gensokyo_expansion_approved
+        }
+    }
+}
+
+### 拒绝：返还费用 + 好感变化，不授予 CB
+### 2026-08-23 时序调整：发起国先扣（action effect），拒绝时全额返还
+### （+200 金 +10 威望 = th_gensokyo_request_expansion_gold_cost /
+###  th_gensokyo_request_expansion_prestige_bonus，带符号正值）
+th_gensokyo_expansion_decline_effect = {
+    ### F24：效果内按标记重新定位（root = 裁决贤者）
+    every_country = {
+        limit = {
+            has_variable = th_gensokyo_expansion_requester_mark
+        }
+        save_scope_as = expansion_requester
+    }
+    scope:expansion_requester ?= {
+        ### 返还费用（拒绝补偿：乱收敛 -5 已废止，改全额退款）
+        add_gold = th_gensokyo_request_expansion_gold_cost
+        add_prestige = {
+            value = th_gensokyo_request_expansion_prestige_bonus
+        }
+        ### 通知请求者（拒绝）
+        trigger_event_non_silently = {
+            id = th_gensokyo_expansion_request_events.3
+            days = 1
+        }
+    }
+    if = {
+        limit = {
+            exists = scope:expansion_requester
+        }
+        add_opinion = {
+            target = scope:expansion_requester
+            modifier = opinion_gensokyo_expansion_declined
+        }
+    }
+}

@@ -1,0 +1,79 @@
+﻿l_english:
+ ### ============================================================
+ ### Gensokyo — Primary Government Reforms (localization)
+ ### ============================================================
+ # Generic (Gensokyo Monarchy)
+ th_gensokyo_government_reform: "Gensokyo Monarchy"
+ th_gensokyo_government_reform_desc: "A loose monarchy held together by the Great Barrier and the Gensokyo Council. Each realm nominally bows to the same order, yet governs itself by its own strength."
+ # 1. Shrine Centralization
+ th_shrine_centralization: "Shrine Centralization"
+ th_shrine_centralization_desc: "A state centered on the shrine, where the priestess or head priest is both master of rites and secular ruler. Sacred and royal authority are one here."
+ # 2. Fairy Politics
+ th_fairy_politics: "Fairy Politics"
+ th_fairy_politics_desc: "A carefree polity run by fairies on a whim. No strict bureaucracy, no long-term plans — everything depends on the weather and the mood."
+ # 3. Myouren Sangha
+ th_myouren_sangha: "Myouren Sangha"
+ th_myouren_sangha_desc: "A monastic polity bound together by the temple. Ascetics and the faithful live by the precepts, ruling through compassion and harmony."
+ # 4. Mountain Hierarchy
+ th_mountain_hierarchy: "Mountain Hierarchy"
+ th_mountain_hierarchy_desc: "Tengu society ordered by strict rank and merit. From the lowest to the highest, everyone knows their place upon the mountain."
+ # 5. Divine Realm
+ th_divine_realm: "Divine Realm"
+ th_divine_realm_desc: "A realm ruled directly by the gods. Its rulers are not mortals, but the very deities worshiped by their people."
+ # 6. Yama Emperor
+ th_yama_emperor: "Yama Emperor"
+ th_yama_emperor_desc: "A polity devoted to judgment and verdict. The Yama weighs right and wrong, and the order of the realm rests upon its rulings."
+ # 7. Lunar Sage Council
+ th_lunar_sage_council: "Lunar Sage Council"
+ th_lunar_sage_council_desc: "A state governed by the assembled Lunar Sages. Wisdom and foresight are the only currency of power here."
+ # 8. Scientific Society
+ th_scientific_society: "Scientific Society"
+ th_scientific_society_desc: "A society ruled by reason and evidence. Scholars and researchers hold power, and every tradition must survive the test of experiment."
+ # 9. Path of Beasts
+ th_beast_path: "Path of Beasts"
+ th_beast_path_desc: "A beast polity built on fangs and strength. Leadership is won by force, and the strong devour the weak."
+ # 10. Sage Politics
+ th_sage_politics: "Sage Politics"
+ th_sage_politics_desc: "A state steered from behind by reclusive sages. Above the squabbles of the mundane, someone weighs the whole board with a millennium of wisdom."
+ # 11. Twin Dreams
+ th_dream_twin: "Twin Dreams"
+ th_dream_twin_desc: "A strange polity where dream and reality intertwine. The ruler exists in two worlds at once, and their will is as elusive as it is absolute."
+ # 12. Human Village
+ th_human_village: "Human Village"
+ th_human_village_desc: "A polity of allied human settlements. Markets, village schools and households keep order as they seek a quiet living amid the youkai."
+ # 13. Sacred Virtue Monarchy
+ th_holy_virtue_monarchy: "Sacred Virtue Monarchy"
+ th_holy_virtue_monarchy_desc: "A monarchy founded on virtue and enlightenment. The sovereign is revered as a sage, ruling by wisdom rather than by force."
+ # 14. Beyond the Clouds
+ th_cloud_beyond_sky: "Beyond the Clouds"
+ th_cloud_beyond_sky_desc: "A dragon-palace polity dwelling above the sea of clouds. Sea and sky are its domain, and the Dragon Palace envoy carries out the mandate of heaven."
+ # 15. Vast Heaven and Earth
+ th_heaven_earth_desolation: "Vast Heaven and Earth"
+ th_heaven_earth_desolation_desc: "An audacious polity that styles itself supreme over heaven and earth. Its ruler reigns as a usurper, coveting a height that belongs to no mortal."
+ # 16. Kappa State
+ th_kappa_state: "Kappa State"
+ th_kappa_state_desc: "A state founded on the engineering of kappa and mountain kappa. Workshops replace palaces, and the artisan is the most honored of all."
+ # 17. Undead Monarchy
+ th_undead_monarchy: "Undead Monarchy"
+ th_undead_monarchy_desc: "A polity of the dead ruled by the Undead Princess. The living and the dead share one realm, and order persists within the silence."
+ # 18. Grassroots Youkai Alliance
+ th_grassroots_youkai_alliance: "Grassroots Youkai Alliance"
+ th_grassroots_youkai_alliance_desc: "A loose alliance of wandering lesser youkai. No noble blood — only the shared loyalty of the road."
+ # 19. The Underground
+ th_underground_realm: "The Underground"
+ th_underground_realm_desc: "An old-city polity dwelling deep beneath the earth. Amid darkness and magma, the exiled have made a realm where no light reaches."
+ # 20. Satori System
+ th_satori_system: "Satori System"
+ th_satori_system_desc: "The Palace of the Earth Spirits, held together by mind-reading. Before a satori who sees every thought, no secret can be kept."
+ # 21. Forest Lordship
+ th_forest_lordship: "Forest Lordship"
+ th_forest_lordship_desc: "A lordship whose domain is the woodland. The forest's denizens keep their own grounds, and the youkai lord shelters order within the sea of trees."
+ # 22. Magician Politics
+ th_magician_politics: "Magician Politics"
+ th_magician_politics_desc: "A self-governing polity of magicians. Study and magic measure all things, and ordinary power carries no weight here."
+ # 24. Youkai Polity
+ th_youkai_polity: "Youkai Polity"
+ th_youkai_polity_desc: "A common youkai polity. Strength rules, clans are the boundary, and each youkai holds its own ground."
+ # 25. Spirit Polity
+ th_spirit_polity: "Spirit Polity"
+ th_spirit_polity_desc: "A common polity of spirits. Ghosts, phantoms and drifting souls share their realm by rules beyond life and death."

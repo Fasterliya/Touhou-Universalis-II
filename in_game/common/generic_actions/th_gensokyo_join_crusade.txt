@@ -1,0 +1,177 @@
+﻿### ============================================================
+### 审判庭 — 加入行动（2026-08-23 重构）
+### 幻想乡 IO 成员加入审判庭（目标国除外）：
+###   - on_joined 自动授予对目标的惩戒 CB（审判庭 IO 定义）
+###   - join_offensive_wars_always 自动加入成员对目标的战争（包围网联合作战）
+###   - 加入即获贡献 +5（C1 保留）+ participant 标记（势力计算）
+### AI 判定（ai_will_do 与审判庭 ai_desire_to_join 同款逻辑）：
+###   对目标好感/敌意 + 盟友敌人关系 + 实力对比
+### ============================================================
+
+th_gensokyo_join_crusade = {
+    type = internationalorganization
+
+    ai_tick = monthly
+    ai_tick_frequency = 3
+
+    potential = {
+        scope:actor ?= {
+            is_member_of_international_organization = international_organization:th_gensokyo_io
+            ### 已是审判庭成员则不可重复加入
+            NOT = {
+                is_member_of_international_organization = international_organization:th_gensokyo_tribunal
+            }
+            ### 目标国不可加入（被惩戒对象）
+            NOT = {
+                has_variable = th_gensokyo_crusade_target_mark
+            }
+            ### 免制裁期不可加入惩戒
+            NOT = {
+                has_variable = th_gensokyo_sanction_immunity
+            }
+        }
+    }
+
+    allow = {
+        always = yes
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        source = actor
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            international_organization_type = international_organization_type:th_gensokyo_tribunal
+        }
+        enabled = {
+            scope:actor = {
+                can_join_international_organization = root
+            }
+        }
+    }
+
+    effect = {
+        ### 加入审判庭（on_joined 授 CB + join_offensive_wars_always 自动参战）
+        if = {
+            limit = {
+                exists = scope:recipient
+            }
+            scope:recipient = {
+                add_country_to_international_organization = scope:actor
+            }
+        }
+        ### C1：加入即获贡献（与 th_join_contribution_value 联动）
+        scope:actor = {
+            th_gensokyo_io_contribution_var_add_effect = {
+                value = th_join_contribution_value
+            }
+            ### 参战标记（势力计算/审判站队用）
+            set_variable = th_gensokyo_crusade_participant
+        }
+    }
+
+    ai_will_do = {
+        ### 与目标交战 → 强烈加入
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        is_at_war_with = prev
+                    }
+                }
+            }
+            add = {
+                desc = TH_JOIN_CRUSADE_AI_ANTAGONISM
+                value = 1000
+            }
+        }
+        ### 目标盟友/附属 → 绝不加入（盟友关系判定）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    OR = {
+                        scope:actor = {
+                            is_allied_with = {
+                                target = prev
+                            }
+                        }
+                        scope:actor = {
+                            is_subject_of = prev
+                        }
+                        prev = {
+                            is_subject_of = scope:actor
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_JOIN_CRUSADE_AI_ALLIED_TARGET
+                value = -1000
+            }
+        }
+        ### 目标宿敌/敌人 → 强烈加入（敌人关系判定）
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        OR = {
+                            is_rival_of = prev
+                            is_enemy_of = prev
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_RIVAL
+                value = 800
+            }
+        }
+        ### 对目标敌意 ≥ 阈值 → 加入
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        antagonism = {
+                            target = prev
+                            value >= th_crusade_antagonism_threshold_value
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_JOIN_CRUSADE_AI_ANTAGONISM
+                value = 500
+            }
+        }
+        ### 实力对比：actor 相对目标不弱 → 倾向加入
+        if = {
+            limit = {
+                any_country = {
+                    has_variable = th_gensokyo_crusade_target_mark
+                    scope:actor = {
+                        relative_strength = {
+                            target = prev
+                            value >= 0.4
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = TH_TRIBUNAL_AI_STRENGTH
+                value = 100
+            }
+        }
+        add = {
+            desc = BASE_VALUE
+            value = 1
+        }
+    }
+}

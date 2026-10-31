@@ -1,4 +1,4 @@
-﻿th_culture_chronicle_refresh_lists = {
+th_culture_chronicle_refresh_lists = {
 	clear_global_variable_list = th_culture_chronicle_accepted
 	clear_global_variable_list = th_culture_chronicle_unaccepted
 
@@ -802,8 +802,7 @@
 }
 
 th_cc_refresh_display = {
-	clear_variable_list = th_cc_accepted_display
-	clear_variable_list = th_cc_unaccepted_display
+	clear_variable_list = th_cc_display
 
 	set_variable = { name = th_cc_idx value = 0 }
 
@@ -823,7 +822,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_goblin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_goblin_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -833,7 +833,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_goblin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -849,7 +850,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yama_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yama_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -859,7 +861,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yama_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -875,7 +878,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_itsuna_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_itsuna_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -885,7 +889,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_itsuna_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -901,7 +906,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_fox_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_fox_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -911,7 +917,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_fox_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -927,7 +934,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -937,7 +945,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -953,7 +962,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_vampire_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_vampire_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -963,7 +973,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_vampire_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -979,7 +990,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_maid_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_maid_fairy_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -989,7 +1001,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_maid_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1005,7 +1018,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_hell_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_hell_fairy_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1015,7 +1029,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_hell_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1031,7 +1046,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_light_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_light_fairy_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1041,7 +1057,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_light_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1057,7 +1074,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_flower_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_flower_fairy_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1067,7 +1085,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_flower_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1083,7 +1102,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_season_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_season_fairy_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1093,7 +1113,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_season_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1109,7 +1130,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_zombie_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_zombie_fairy_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1119,7 +1141,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_zombie_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1135,7 +1158,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_phenomenon_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_phenomenon_fairy_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1145,7 +1169,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_phenomenon_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1161,7 +1186,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_elemental_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_elemental_fairy_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1171,7 +1197,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_elemental_fairy_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1187,7 +1214,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_half_human_half_phantom_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_half_human_half_phantom_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1197,7 +1225,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_half_human_half_phantom_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1213,7 +1242,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_mermaid_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_mermaid_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1223,7 +1253,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_mermaid_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1239,7 +1270,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_beastman_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_beastman_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1249,7 +1281,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_beastman_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1265,7 +1298,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_demon_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_demon_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1275,7 +1309,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_demon_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1291,7 +1326,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_angel_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_angel_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1301,7 +1337,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_angel_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1317,7 +1354,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_korobori_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_korobori_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1327,7 +1365,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_korobori_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1343,7 +1382,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_mirror_tsukumogami_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_mirror_tsukumogami_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1353,7 +1393,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_mirror_tsukumogami_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1369,7 +1410,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_instrument_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_instrument_yokai_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1379,7 +1421,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_instrument_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1395,7 +1438,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_suzuhime_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_suzuhime_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1405,7 +1449,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_suzuhime_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1421,7 +1466,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_menreiki_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_menreiki_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1431,7 +1477,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_menreiki_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1447,7 +1494,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_umbrella_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_umbrella_yokai_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1457,7 +1505,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_umbrella_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1473,7 +1522,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_fuguruma_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_fuguruma_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1483,7 +1533,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_fuguruma_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1499,7 +1550,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_zashiki_warashi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_zashiki_warashi_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1509,7 +1561,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_zashiki_warashi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1525,7 +1578,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_oni_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_oni_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1535,7 +1589,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_oni_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1551,7 +1606,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_ushioni_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_ushioni_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1561,7 +1617,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_ushioni_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1577,7 +1634,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_human_oni_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_human_oni_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1587,7 +1645,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_human_oni_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1603,7 +1662,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_kappa_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_kappa_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1613,7 +1673,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_kappa_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1629,7 +1690,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yamawaro_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yamawaro_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1639,7 +1701,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamawaro_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1655,7 +1718,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_white_wolf_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_white_wolf_tengu_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1665,7 +1729,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_white_wolf_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1681,7 +1746,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_long_nose_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_long_nose_tengu_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1691,7 +1757,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_long_nose_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1707,7 +1774,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_leaf_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_leaf_tengu_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1717,7 +1785,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_leaf_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1733,7 +1802,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yamabushi_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yamabushi_tengu_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1743,7 +1813,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamabushi_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1759,7 +1830,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_crow_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_crow_tengu_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1769,7 +1841,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_crow_tengu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1785,7 +1858,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_shell_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_shell_yokai_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1795,7 +1869,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_shell_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1811,7 +1886,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_chimi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chimi_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1821,7 +1897,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_chimi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1837,7 +1914,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_monster_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_monster_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1847,7 +1925,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_monster_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1863,7 +1942,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yamabiko_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yamabiko_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1873,7 +1953,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamabiko_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1889,7 +1970,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_heavenly_dragon_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_heavenly_dragon_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1899,7 +1981,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_heavenly_dragon_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1915,7 +1998,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_tsuchigumo_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_tsuchigumo_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1925,7 +2009,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_tsuchigumo_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1941,7 +2026,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_insect_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_insect_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1951,7 +2037,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_insect_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1967,7 +2054,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_dog_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_dog_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1977,7 +2065,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_dog_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -1993,7 +2082,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_turtle_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_turtle_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2003,7 +2093,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_turtle_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2019,7 +2110,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_tanuki_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_tanuki_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2029,7 +2121,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_tanuki_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2045,7 +2138,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_monkey_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_monkey_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2055,7 +2149,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_monkey_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2071,7 +2166,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_tiger_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_tiger_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2081,7 +2177,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_tiger_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2097,7 +2194,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_cat_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_cat_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2107,7 +2205,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_cat_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2123,7 +2222,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_bird_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_bird_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2133,7 +2233,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_bird_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2149,7 +2250,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_ox_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_ox_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2159,7 +2261,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_ox_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2175,7 +2278,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_snake_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_snake_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2185,7 +2289,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_snake_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2201,7 +2306,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_rat_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_rat_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2211,7 +2317,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_rat_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2227,7 +2334,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yokai_rabbit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yokai_rabbit_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2237,7 +2345,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yokai_rabbit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2253,7 +2362,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_night_sparrow_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_night_sparrow_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2263,7 +2373,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_night_sparrow_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2279,7 +2390,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_komainu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_komainu_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2289,7 +2401,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_komainu_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2305,7 +2418,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_unnamable_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_unnamable_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2315,7 +2429,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_unnamable_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2331,7 +2446,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_jizo_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_jizo_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2341,7 +2457,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_jizo_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2357,7 +2474,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yomi_woman_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yomi_woman_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2367,7 +2485,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yomi_woman_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2383,7 +2502,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_jiangshi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_jiangshi_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2393,7 +2513,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_jiangshi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2409,7 +2530,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_satori_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_satori_yokai_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2419,7 +2541,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_satori_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2435,7 +2558,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_yamanba_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_yamanba_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2445,7 +2569,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_yamanba_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2461,7 +2586,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_mountain_woman_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_mountain_woman_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2471,7 +2597,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_mountain_woman_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2487,7 +2614,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_bone_tour_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_bone_tour_yokai_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2497,7 +2625,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_bone_tour_yokai_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2513,7 +2642,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_creator_god_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_creator_god_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2523,7 +2653,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_creator_god_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2539,7 +2670,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_moon_rabbit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_moon_rabbit_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2549,7 +2681,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_rabbit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2565,7 +2698,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_houraijin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_houraijin_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2575,7 +2709,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_houraijin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2591,7 +2726,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_shikaisen_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_shikaisen_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2601,7 +2737,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_shikaisen_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2617,7 +2754,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_tennin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_tennin_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2627,7 +2765,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_tennin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2643,7 +2782,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_sennin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_sennin_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2653,7 +2793,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_sennin_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2669,7 +2810,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_makai_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_makai_people_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2679,7 +2821,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_makai_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2695,7 +2838,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_magician_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_magician_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2705,7 +2849,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_magician_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2721,7 +2866,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_purified_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_purified_people_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2731,7 +2877,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_purified_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2747,7 +2894,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_village_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_village_human_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2757,7 +2905,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_village_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2773,7 +2922,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_wild_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_wild_human_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2783,7 +2933,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_wild_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2799,7 +2950,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_niwatari_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_niwatari_people_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2809,7 +2961,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_niwatari_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2825,7 +2978,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_houjou_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_houjou_people_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2835,7 +2989,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_houjou_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2851,7 +3006,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_old_gensokyo_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_old_gensokyo_human_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2861,7 +3017,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_old_gensokyo_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2877,7 +3034,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_dream_dweller_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_dream_dweller_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2887,7 +3045,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_dream_dweller_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2903,7 +3062,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_mountain_settlement_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_mountain_settlement_human_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2913,7 +3073,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_mountain_settlement_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2929,7 +3090,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_shrine_surrounding_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_shrine_surrounding_human_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2939,7 +3101,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_shrine_surrounding_human_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2955,7 +3118,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_moriya_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_moriya_people_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2965,7 +3129,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_moriya_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2981,7 +3146,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_outside_world_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_outside_world_people_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -2991,7 +3157,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_outside_world_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3007,7 +3174,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_little_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_little_people_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3017,7 +3185,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_little_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3033,7 +3202,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_other_world_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_other_world_people_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3043,7 +3213,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_other_world_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3059,7 +3230,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_barrier_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_barrier_people_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3069,7 +3241,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_barrier_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3085,7 +3258,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_moon_people_human_village_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_moon_people_human_village_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3095,7 +3269,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_people_human_village_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3111,7 +3286,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_moon_people_eientei_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_moon_people_eientei_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3121,7 +3297,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_people_eientei_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3137,7 +3314,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_moon_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_moon_people_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3147,7 +3325,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_moon_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3163,7 +3342,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_great_eagle_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_great_eagle_spirit_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3173,7 +3353,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_great_eagle_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3189,7 +3370,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_primate_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_primate_spirit_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3199,7 +3381,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_primate_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3215,7 +3398,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_otter_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_otter_spirit_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3225,7 +3409,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_otter_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3241,7 +3426,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_wolf_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_wolf_spirit_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3251,7 +3437,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_wolf_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3267,7 +3454,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_mizuko_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_mizuko_spirit_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3277,7 +3465,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_mizuko_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3293,7 +3482,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_undead_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_undead_spirit_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3303,7 +3493,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_undead_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3319,7 +3510,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_ship_ghost_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_ship_ghost_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3329,7 +3521,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_ship_ghost_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3345,7 +3538,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_earthbound_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_earthbound_spirit_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3355,7 +3549,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_earthbound_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3371,7 +3566,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_earth_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_earth_spirit_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3381,7 +3577,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_earth_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3397,7 +3594,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_evil_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_evil_spirit_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3407,7 +3605,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_evil_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3423,7 +3622,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_floating_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_floating_spirit_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3433,7 +3633,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_floating_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3449,7 +3650,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_poltergeist_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_poltergeist_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3459,7 +3661,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_poltergeist_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3475,7 +3678,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_living_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_living_spirit_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3485,7 +3689,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_living_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3501,7 +3706,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_vengeful_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_vengeful_spirit_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3511,7 +3717,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_vengeful_spirit_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3527,7 +3734,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_ghost_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_ghost_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3537,7 +3745,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_ghost_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3553,7 +3762,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_tsurube_otoshi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_tsurube_otoshi_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3563,7 +3773,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_tsurube_otoshi_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3579,7 +3790,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_calamity_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_calamity_people_culture }
+			set_variable = { name = th_cc_row_1_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3589,7 +3801,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_calamity_people_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_1_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3605,7 +3818,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_hashihime_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_hashihime_culture }
+			set_variable = { name = th_cc_row_2_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3615,7 +3829,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_hashihime_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_2_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3631,7 +3846,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_doll_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_doll_culture }
+			set_variable = { name = th_cc_row_3_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3641,7 +3857,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_doll_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_3_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3657,7 +3874,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_shinigami_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_shinigami_culture }
+			set_variable = { name = th_cc_row_4_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3667,7 +3885,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_shinigami_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_4_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3683,7 +3902,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_amanjaku_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_amanjaku_culture }
+			set_variable = { name = th_cc_row_5_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3693,7 +3913,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_amanjaku_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_5_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3709,7 +3930,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_ancient_god_person_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_ancient_god_person_culture }
+			set_variable = { name = th_cc_row_6_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3719,7 +3941,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_ancient_god_person_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_6_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3735,7 +3958,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_accepted_display target = culture:th_sky_fire_person_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_sky_fire_person_culture }
+			set_variable = { name = th_cc_row_0_adopted value = 1 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3745,7 +3969,8 @@ th_cc_refresh_display = {
 				var:th_cc_idx >= var:th_cc_page_start
 				var:th_cc_idx < var:th_cc_page_end
 			}
-			add_to_variable_list = { name = th_cc_unaccepted_display target = culture:th_sky_fire_person_culture }
+			add_to_variable_list = { name = th_cc_display target = culture:th_chronicle_unknown }
+			set_variable = { name = th_cc_row_0_adopted value = 0 }
 		}
 		change_variable = { name = th_cc_idx add = 1 }
 	}
@@ -3759,4 +3984,12 @@ th_cc_refresh_display = {
 	else = {
 		set_variable = { name = th_cc_has_next_page value = 0 }
 	}
+
+	# page display: current page (1-based) / total pages = ceil(total cultures / 7 per page)
+	set_variable = { name = th_cc_total_cultures value = var:th_cc_idx }
+	set_variable = { name = th_cc_page_display value = var:th_cc_page }
+	change_variable = { name = th_cc_page_display add = 1 }
+	set_variable = { name = th_cc_total_pages value = var:th_cc_idx }
+	change_variable = { name = th_cc_total_pages add = 6 }
+	change_variable = { name = th_cc_total_pages divide = 7 }
 }

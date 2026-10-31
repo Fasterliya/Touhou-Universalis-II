@@ -1,0 +1,28 @@
+﻿### ============================================================
+### 弹幕战系统 — 运行时临时修正（add_country_modifier 施加）
+### 全部采用 EU5 1.3 已验证修饰符名（对齐 th_sages_council_modifiers.txt）
+### ============================================================
+
+### 弹幕战冠军（对决战胜利，12 个月 = years 1）
+### 名号型增益：威望自然增长 + 小幅火力提升
+th_danmaku_champion_modifier = {
+	game_data = {
+		category = country
+	}
+	monthly_prestige = 0.10
+	### 1 军事=10 火力口径：冠军火力 +30
+	th_danmaku_firepower_base_modifier = 30
+}
+
+### ============================================================
+### 妖兽作乱（地点修正，10 年；add_location_modifier 施加）
+### EU5 1.3 无地点税收字段（tax_income_efficiency 为 country 类，
+### 00_modifier_types.txt:4055）→ 以地点产出效率承担"-10% 税收（产出）效率"
+### （同款已验证字段：模组 th_gensokyo_feast_location_modifier）
+### ============================================================
+th_beast_rampage_modifier = {
+	game_data = {
+		category = location
+	}
+	local_production_efficiency = -0.10
+}
