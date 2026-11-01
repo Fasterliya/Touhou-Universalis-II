@@ -1,0 +1,30 @@
+# 东方风云 II · 主菜单 / 读盘进度条 音乐覆盖
+#
+# 为什么用 Menu 而不是 InGame：
+#   读盘进度条阶段「游戏世界还没建好」——脚本不运行，InGame 作用域也还没初始化，
+#   所以那时唯一已经存在、且由引擎自动发事件的钩子，就是主菜单加载时初始化的 Menu 作用域对象。
+#   Menu 对象初始化后一直存活到退出游戏，因此曲子会从主菜单一路延续过读盘条、进入游戏。
+#
+# 两个对象配合：
+#   1) th_menu_music    → post 我们的曲子（事件自带 Stop(Music)，会把原版主菜单曲切掉）
+#   2) th_menu_silence  → post 原版 mus_sys_noMusic，把原版音乐状态机切到 mus_systemType_nomusic
+#                         （那条分支指向静音循环），于是读盘阶段原版不会插自己的 loadingscreen 曲，
+#                         我们的曲子不会被抢/叠音。
+#   注：mus_sys_noMusic 只影响原版那套 SwitchContainer，不影响我们自己库里的段。
+#
+# 蓝本：loading_screen/sound/persistent_objects/00_audio_persistent_objects.txt
+#   scope 取值 Asap / Menu / InGame；init_event 会在对象创建时被 post 一次。
+#
+# 回滚：删掉本文件即可。
+
+th_menu_music = {
+	name = "TH Menu Music"
+	scope = Menu
+	init_event = MusicPlayer_th_t02
+}
+
+th_menu_silence = {
+	name = "TH Menu Silence"
+	scope = Menu
+	init_event = mus_sys_noMusic
+}

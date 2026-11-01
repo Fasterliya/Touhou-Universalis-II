@@ -14,8 +14,15 @@ th_music_take_over_on_start = {
 	}
 }
 
-# ↓↓↓ 需要「进游戏即接管 BGM」时，取消本行注释 ↓↓↓
-# on_game_start = { on_actions = { th_music_take_over_on_start } }
+# 进游戏时只「压掉原版动态音乐」，不重复发我们的曲子
+# （曲子由 loading_screen/sound/persistent_objects/th_music_persistent.txt 在 InGame 作用域里发）
+th_silence_vanilla_on_start = {
+	effect = {
+		th_silence_vanilla_music_effect = yes
+	}
+}
+
+on_game_start = { on_actions = { th_silence_vanilla_on_start } }
 
 # 想在这些时机也重放一次（注意：每次触发都会从头播放，4 分钟的曲子别挂月度脉冲）
 # on_ending_war = { on_actions = { th_music_take_over_on_start } }
