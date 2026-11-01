@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{02CFA96C-565A-4705-A725-D7E4F9436317}" SchemaVersion="133">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{02CFA96C-565A-4705-A725-D7E4F9436317}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="mus_ispastmainmenu" ID="{81E5D8DE-A8F1-4101-9D95-793124DA34F3}">
+					<ChildrenList>
+						<Switch Name="mus_ispastmainmenu_false" ID="{BC3AEFAF-F0A9-4FF7-9ED9-E5AB23DB0124}"/>
+						<Switch Name="mus_ispastmainmenu_true" ID="{22D40EAD-2DAB-4E7D-AB60-AC4A5F28E04C}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Gamestate_startSequence" ID="{979218F3-0931-422A-A03B-03D30AC78172}">
+					<ChildrenList>
+						<Switch Name="None_01" ID="{E2D42545-F607-449B-93EB-6CDFA226DD5A}"/>
+						<Switch Name="ingame" ID="{245D2252-8A26-40EF-9BCE-ACAF50E47E4F}"/>
+						<Switch Name="mainmenu" ID="{0EF80CA5-FA8E-484E-9AD7-F0EB9E9AF19F}"/>
+						<Switch Name="loadingscreen_first" ID="{6E44A4A8-6509-4742-B703-739700D5BFA5}"/>
+						<Switch Name="loadingscreen_second" ID="{1375DCD1-741A-4BB5-A7C0-698B6708DA5F}"/>
+						<Switch Name="ending_game" ID="{F7617B85-A636-47F7-A149-12A30C422FCF}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

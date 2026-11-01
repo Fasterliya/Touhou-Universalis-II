@@ -1,0 +1,12 @@
+﻿# 由 tools/bgm_pipeline.py 生成；改曲名改 tools/music_meta.json 后重跑 data
+# 键必须与 bank 里的 Wwise 事件名一致
+
+MusicPlayer_th_t01 = {
+	composer = Tutti_Sound
+	performer = Tutti_Sound
+}
+
+MusicPlayer_th_t02 = {
+	composer = YUMU
+	performer = YUMU
+}

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{646223E3-4F7C-4C75-947D-8FDC2D9CE485}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{646223E3-4F7C-4C75-947D-8FDC2D9CE485}" PersistMode="Standalone">
+			<ChildrenList>
+<Event Name="MusicPlayer_th_t01" ID="{75671C7B-BBFD-4411-81C2-FB9C0708D3F9}">
+					<ChildrenList>
+						<Action Name="" ID="{CDB89FC4-D07B-42DF-B279-7B0504827369}" ShortID="1422371437">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{3C7A1E52-9B41-4E77-8F1D-2A4C6E8B0D13}" WorkUnitID="{1994BBAA-9376-4BCA-A075-B3AFC73D46CB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C61B652C-3226-4760-861C-947694B83D43}" ShortID="1094806978">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="th_Tutti_Sound_百鬼夜行" ID="{08E2305F-CB27-4805-9FCE-AD413FC49A43}" WorkUnitID="{8D686ADF-6AA5-41E3-8873-D77C9A16801F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+<!--EVENTS-->
+<Event Name="MusicPlayer_th_TEMPLATE" ID="{C5C2AF18-5EFF-479D-881F-E3EEEC20F181}">
+					<ChildrenList>
+						<Action Name="" ID="{2E9453E5-45DE-49F4-9FDE-C78DE76CD8F1}" ShortID="300000081">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{3C7A1E52-9B41-4E77-8F1D-2A4C6E8B0D13}" WorkUnitID="{1994BBAA-9376-4BCA-A075-B3AFC73D46CB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5328BE74-3C1A-4CDA-9211-2922EDC44256}" ShortID="1031283609">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="th_Song_Template" ID="{EA935535-7BCA-48CF-98C2-32053E975A2A}" WorkUnitID="{8D686ADF-6AA5-41E3-8873-D77C9A16801F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

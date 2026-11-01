@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6E49A2C4-581F-4682-AB42-4DECC3C612DE}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{6E49A2C4-581F-4682-AB42-4DECC3C612DE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="MusicPlayer_th_t01" ID="{4214C9FC-AD61-4365-9A69-8B045BD52F17}">
+					<ChildrenList>
+						<Action Name="" ID="{9DD4E565-518B-4822-8F8B-9DE80D8A0AF2}" ShortID="300000817">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{5A62E242-3A1F-4C2C-B3C7-03E65FA67871}" WorkUnitID="{6E3C8D25-1ED0-4891-967C-B7ACD570E8D3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{514A72E3-F745-4AFD-9961-E2FA287C88B4}" ShortID="181370489">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="th_Tutti_Sound_百鬼夜行" ID="{15D6C465-F08F-4A83-A32D-6D7C91A635F4}" WorkUnitID="{2907FB41-B705-4ADF-A243-4904A9A6990B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MusicPlayer_th_t02" ID="{DEFD7FC4-E20F-406C-A353-78075C32057E}">
+					<ChildrenList>
+<Action Name="" ID="{7F7DFD71-269B-4A68-A035-1E38FD1D2596}" ShortID="300001798">
+<PropertyList>
+<Property Name="ActionType" Type="int16" Value="2"/>
+<Property Name="Scope" Type="int16" Value="1"/>
+</PropertyList>
+<ReferenceList>
+<Reference Name="Target">
+<ObjectRef Name="Music" ID="{5A62E242-3A1F-4C2C-B3C7-03E65FA67871}" WorkUnitID="{6E3C8D25-1ED0-4891-967C-B7ACD570E8D3}"/>
+</Reference>
+</ReferenceList>
+</Action>
+
+						<Action Name="" ID="{B360D0DA-1F08-4A30-90EC-0394A5243571}" ShortID="468467101">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="th_Eastern_Dream" ID="{85388F81-2D6A-400B-83AF-71642E3506EA}" WorkUnitID="{2907FB41-B705-4ADF-A243-4904A9A6990B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

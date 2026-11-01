@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2907FB41-B705-4ADF-A243-4904A9A6990B}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{2907FB41-B705-4ADF-A243-4904A9A6990B}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="th_Tutti_Sound_百鬼夜行" ID="{15D6C465-F08F-4A83-A32D-6D7C91A635F4}" ShortID="806757905">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="232613"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-19.6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{5A62E242-3A1F-4C2C-B3C7-03E65FA67871}" WorkUnitID="{6E3C8D25-1ED0-4891-967C-B7ACD570E8D3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="th_Tutti_Sound_百鬼夜行" ID="{0D0FED56-8B0B-4063-9725-64550188C477}" ShortID="249496895">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{5A62E242-3A1F-4C2C-B3C7-03E65FA67871}" WorkUnitID="{6E3C8D25-1ED0-4891-967C-B7ACD570E8D3}"/>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{4DE91C31-F5D7-4B0A-BD19-00AAEC79ACB1}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Tutti_Sound_百鬼夜行" ID="{B46364F5-2CB5-44E1-9718-8619A03BE070}">
+									<Language>SFX</Language>
+									<AudioFile>Tutti_Sound_百鬼夜行.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="361674279"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<MusicTrackSequence Name="" ID="{105E3AAB-7BC1-45EA-AEFD-C7A932C61D5D}">
+										<ObjectLists>
+											<ObjectList Name="Clips">
+												<MusicClip Name="Tutti_Sound_百鬼夜行" ID="{6C35A292-D825-41AC-A277-FEBF07A17226}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="232613.333333333"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Tutti_Sound_百鬼夜行" ID="{B46364F5-2CB5-44E1-9718-8619A03BE070}"/>
+												</MusicClip>
+											</ObjectList>
+										</ObjectLists>
+									</MusicTrackSequence>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<MusicCue Name="Entry Cue" ID="{0A1A82C9-5EB0-43FE-ADEE-AB84435093C6}"/>
+							<MusicCue Name="Exit Cue" ID="{C211404F-25C8-4719-960B-9E9A8677DD7C}">
+								<PropertyList>
+									<Property Name="CueType" Type="int16" Value="1"/>
+									<Property Name="TimeMs" Type="Real64" Value="232613.333333333"/>
+								</PropertyList>
+							</MusicCue>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
+				<MusicSegment Name="th_Eastern_Dream" ID="{85388F81-2D6A-400B-83AF-71642E3506EA}" ShortID="61667474">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="245054.693877551"/>
+						<Property Name="Volume" Type="Real64">
+		<ValueList>
+			<Value>-19.6</Value>
+		</ValueList>
+	</Property>
+</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{5A62E242-3A1F-4C2C-B3C7-03E65FA67871}" WorkUnitID="{6E3C8D25-1ED0-4891-967C-B7ACD570E8D3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="th_Eastern_Dream" ID="{10D509A3-44CC-46E1-99C0-A430C84FB5A1}" ShortID="245293433">
+<PropertyList>
+<Property Name="IsStreamingEnabled" Type="bool">
+<ValueList>
+<Value>False</Value>
+</ValueList>
+</Property>
+</PropertyList>
+<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{5A62E242-3A1F-4C2C-B3C7-03E65FA67871}" WorkUnitID="{6E3C8D25-1ED0-4891-967C-B7ACD570E8D3}"/>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{71AEB170-1F11-4CDA-A008-954CC71E650B}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="YUMU_Eastern_Dream" ID="{C23F612A-BA71-4BE1-B00B-044642C79553}">
+									<Language>SFX</Language>
+									<AudioFile>YUMU_Eastern_Dream.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="458286962"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<MusicTrackSequence Name="" ID="{1A011929-D002-4618-85ED-47FAD4E4B4CB}">
+										<ObjectLists>
+											<ObjectList Name="Clips">
+												<MusicClip Name="YUMU_Eastern_Dream" ID="{B32D532C-8384-4C86-9CF5-27E0C7F0A8BD}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="245054.693877551"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="YUMU_Eastern_Dream" ID="{C23F612A-BA71-4BE1-B00B-044642C79553}"/>
+												</MusicClip>
+											</ObjectList>
+										</ObjectLists>
+									</MusicTrackSequence>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<MusicCue Name="Entry Cue" ID="{84B87230-B08C-4F70-AA8B-D9BA8E573C70}"/>
+							<MusicCue Name="Exit Cue" ID="{79F98384-1F34-4114-8D6D-8539E6B30DE2}">
+								<PropertyList>
+									<Property Name="CueType" Type="int16" Value="1"/>
+									<Property Name="TimeMs" Type="Real64" Value="245054.693877551"/>
+								</PropertyList>
+							</MusicCue>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>

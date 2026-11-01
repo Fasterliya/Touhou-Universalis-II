@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3943244096	MusicPlayer_th_t01			\Default Work Unit\MusicPlayer_th_t01	
+	3943244099	MusicPlayer_th_t02			\Default Work Unit\MusicPlayer_th_t02	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	361674279	th_Tutti_Sound_百鬼夜行	.cache\70\{709B8E3F-F84F-87F7-EE32-CE3C22B4ACFE}.wem		\Containers\Default Work Unit\th_Tutti_Sound_百鬼夜行\th_Tutti_Sound_百鬼夜行		3886633
+	458286962	th_Eastern_Dream	.cache\7A\{7AEC6639-FA32-FC19-C80A-5E690E5FAADD}.wem		\Containers\Default Work Unit\th_Eastern_Dream\th_Eastern_Dream		3998012
+

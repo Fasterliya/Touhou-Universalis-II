@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8D686ADF-6AA5-41E3-8873-D77C9A16801F}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{8D686ADF-6AA5-41E3-8873-D77C9A16801F}" PersistMode="Standalone">
+			<ChildrenList>
+<MusicSegment Name="th_Tutti_Sound_百鬼夜行" ID="{08E2305F-CB27-4805-9FCE-AD413FC49A43}" ShortID="1899720520">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="232613"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-19.6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{3C7A1E52-9B41-4E77-8F1D-2A4C6E8B0D13}" WorkUnitID="{1994BBAA-9376-4BCA-A075-B3AFC73D46CB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="th_Tutti_Sound_百鬼夜行" ID="{C9426C7B-B831-4EA7-BC81-E8A502C0CAA9}" ShortID="434160199">
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Music" ID="{3C7A1E52-9B41-4E77-8F1D-2A4C6E8B0D13}" WorkUnitID="{1994BBAA-9376-4BCA-A075-B3AFC73D46CB}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{CCB4C278-0A80-4F35-A5BE-ABC265E09F7E}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="th_Tutti_Sound_百鬼夜行" ID="{61AD9847-633B-40FE-ACD1-AAE34DAA94E9}">
+													<Language>SFX</Language>
+													<AudioFile>th_Tutti_Sound_百鬼夜行.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="3348172117"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<MusicTrackSequence Name="" ID="{D0F99D8D-1C63-4F04-AA65-8B58FB4AD278}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<MusicClip Name="th_Tutti_Sound_百鬼夜行" ID="{DCDE8B9C-3DC7-4190-B04F-CCCEB7B4F1EF}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="232613"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="th_Tutti_Sound_百鬼夜行" ID="{61AD9847-633B-40FE-ACD1-AAE34DAA94E9}"/>
+																</MusicClip>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<MusicCue Name="Entry Cue" ID="{D0C8A536-A780-44CF-ADD0-3FB881D9C74A}"/>
+											<MusicCue Name="Exit Cue" ID="{4BC4B292-0FF1-4D36-B484-1CE07F265135}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="232613"/>
+												</PropertyList>
+											</MusicCue>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+<!--SONGS-->
+<MusicSegment Name="th_Song_Template" ID="{EA935535-7BCA-48CF-98C2-32053E975A2A}" ShortID="784193465">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="10000"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-19.6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{3C7A1E52-9B41-4E77-8F1D-2A4C6E8B0D13}" WorkUnitID="{1994BBAA-9376-4BCA-A075-B3AFC73D46CB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="th_Song_Template" ID="{BE77F6D4-9EE7-44A6-8BBE-89B7D369CB5B}" ShortID="916819421">
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Music" ID="{3C7A1E52-9B41-4E77-8F1D-2A4C6E8B0D13}" WorkUnitID="{1994BBAA-9376-4BCA-A075-B3AFC73D46CB}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{7DD6432C-BD61-4837-9AC7-E6420DB5EB35}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="th_Song_Template" ID="{E348C362-E67E-4D11-A694-1FB4CC91C381}">
+													<Language>SFX</Language>
+													<AudioFile>th_Song_Template.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="314159265"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<MusicTrackSequence Name="" ID="{0898B364-3A69-4E2F-BF7B-C53EEDBADDA6}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<MusicClip Name="th_Song_Template" ID="{1CDDCE2D-F668-4715-B105-538A6F7B4B3A}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="10000"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="th_Song_Template" ID="{E348C362-E67E-4D11-A694-1FB4CC91C381}"/>
+																</MusicClip>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<MusicCue Name="Entry Cue" ID="{507D3F75-78BB-4CDC-9DDB-48E89248FCA6}"/>
+											<MusicCue Name="Exit Cue" ID="{98D1C5B6-3916-4353-857A-2648A6DB80E6}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="10000"/>
+												</PropertyList>
+											</MusicCue>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>

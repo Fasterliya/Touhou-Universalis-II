@@ -1,0 +1,34 @@
+﻿###################################################
+### 东方风云 II · 音乐播放控制
+### 作用：用 EU5 效应器 post_audio_event 在 music_manager 持久音频对象上发事件
+### 蓝本证据：
+###  - eu5.exe 内嵌签名：post_audio_event = { persistent_object / event / player / parameters / switches }
+###  - loading_screen/sound/persistent_objects/00_audio_persistent_objects.txt
+###    music_manager = { name = "Persistent Music Manager"  scope = Asap  init_event = mus_system_start }
+###  - sb_music_logic.txt：mus_sys_noMusic = \ev_music\system type settings\mus_sys_noMusic
+### 注意：曲目事件（MusicPlayer_th_tNN）必须真的存在于已加载的 bank 里，
+###       否则日志报 [Wwise] Event '...' not found。
+###################################################
+
+# 播放我们自己的曲目（事件名 = bank 事件名 = 曲目库 th_music_tracks.txt 的键）
+th_play_track_t01_effect = {
+	post_audio_event = {
+		persistent_object = music_manager
+		event = MusicPlayer_th_t01
+	}
+}
+
+# 让原版动态音乐闭嘴：切到 mus_systemType_nomusic 分支的静音循环
+# （不要用 mus_system_stop：它会把 Gamestate 推到 ending_game，主菜单/读盘音乐一起废掉）
+th_silence_vanilla_music_effect = {
+	post_audio_event = {
+		persistent_object = music_manager
+		event = mus_sys_noMusic
+	}
+}
+
+# 接管：先压原版，再放自己的曲子（事件自带 Stop(Music)，不用手动停）
+th_take_over_music_effect = {
+	th_silence_vanilla_music_effect = yes
+	th_play_track_t01_effect = yes
+}

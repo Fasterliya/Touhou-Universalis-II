@@ -1,0 +1,14 @@
+{
+  "tracks": [
+    {
+      "index": 1,
+      "event": "MusicPlayer_th_t01",
+      "segment": "th_Tutti_Sound_百鬼夜行",
+      "audio": "th_Tutti_Sound_百鬼夜行.wav",
+      "duration_ms": 232613
+    }
+  ],
+  "project": "TH_MUSIC",
+  "author": "Touhou Universalis II",
+  "generated_by": "bgm_pipeline.py"
+}

@@ -1,0 +1,69 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "212674898",
+    "Type": "User",
+    "GUID": "{B96BBB30-8325-4EAC-A32A-F91F71561C36}",
+    "Language": "SFX",
+    "Hash": "{5A69005B-A10C-4C5B-0C8C-59D198EF22F6}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\sb_music_media_th",
+    "ShortName": "sb_music_media_th",
+    "Path": "sb_music_media_th.bnk",
+    "Media": [
+     {
+      "Id": "361674279",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Tutti_Sound_百鬼夜行.wav",
+      "CachePath": "70/{709B8E3F-F84F-87F7-EE32-CE3C22B4ACFE}.wem"
+     },
+     {
+      "Id": "458286962",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "YUMU_Eastern_Dream.wav",
+      "CachePath": "7A/{7AEC6639-FA32-FC19-C80A-5E690E5FAADD}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3943244096",
+      "Name": "MusicPlayer_th_t01",
+      "ObjectPath": "\\Events\\Default Work Unit\\MusicPlayer_th_t01",
+      "GUID": "{4214C9FC-AD61-4365-9A69-8B045BD52F17}",
+      "DurationType": "OneShot",
+      "DurationMin": "232.61333",
+      "DurationMax": "232.61333",
+      "MediaRefs": [
+       {
+        "Id": "361674279"
+       }
+      ]
+     },
+     {
+      "Id": "3943244099",
+      "Name": "MusicPlayer_th_t02",
+      "ObjectPath": "\\Events\\Default Work Unit\\MusicPlayer_th_t02",
+      "GUID": "{DEFD7FC4-E20F-406C-A353-78075C32057E}",
+      "DurationType": "OneShot",
+      "DurationMin": "245.05469",
+      "DurationMax": "245.05469",
+      "MediaRefs": [
+       {
+        "Id": "458286962"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{62593E80-7BA1-A07F-1E24-4D35B0CF53E0}"
+ }
+}
